@@ -35,11 +35,14 @@ export async function onRequestPost(context) {
 
         const gladiaKey = env.GLADIA_API_KEY;
         if (!gladiaKey) {
+            console.log('[Gladia CF] GLADIA_API_KEY is not set in environment');
             return new Response(JSON.stringify({ error: 'GLADIA_API_KEY not set' }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' }
             });
         }
+
+        console.log('[Gladia CF] API key found, length:', gladiaKey.length);
 
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
         console.log(`[Gladia CF] Starting transcription for: ${youtubeUrl}`);
@@ -57,12 +60,16 @@ export async function onRequestPost(context) {
             })
         });
 
+        console.log('[Gladia CF] Submit response status:', submitResponse.status);
+
         if (!submitResponse.ok) {
-            const errorData = await submitResponse.json().catch(() => ({}));
-            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${errorData.message || 'Unknown'}`);
+            const errorText = await submitResponse.text();
+            console.log('[Gladia CF] Submit error response:', errorText);
+            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${errorText}`);
         }
 
         const submitData = await submitResponse.json();
+        console.log('[Gladia CF] Submit response:', JSON.stringify(submitData).substring(0, 200));
         const resultUrl = submitData.result_url;
 
         if (!resultUrl) {
