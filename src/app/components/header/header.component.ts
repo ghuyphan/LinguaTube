@@ -254,7 +254,7 @@ export class HeaderComponent {
 
     // Clear video and subtitles when switching languages
     // primarily to prevent mismatch between language mode and content
-    this.youtube.destroy();
+    this.youtube.reset();
     this.subtitles.clear();
 
     this.settings.setLanguage(lang);

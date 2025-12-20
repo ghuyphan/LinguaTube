@@ -528,6 +528,13 @@ export class VideoPlayerComponent implements OnDestroy {
         }, 0);
       }
     });
+
+    // Clear URL input when video is reset (e.g. from header language switch)
+    effect(() => {
+      if (!this.youtube.currentVideo()) {
+        this.videoUrl = '';
+      }
+    });
   }
 
   async loadVideo(): Promise<void> {
