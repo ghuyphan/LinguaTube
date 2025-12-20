@@ -7,17 +7,17 @@ import { WordPopupComponent } from '../../components/word-popup/word-popup.compo
 import { Token } from '../../models';
 
 @Component({
-    selector: 'app-video-page',
-    standalone: true,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        CommonModule,
-        VideoPlayerComponent,
-        SubtitleDisplayComponent,
-        VocabularyListComponent,
-        WordPopupComponent
-    ],
-    template: `
+  selector: 'app-video-page',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CommonModule,
+    VideoPlayerComponent,
+    SubtitleDisplayComponent,
+    VocabularyListComponent,
+    WordPopupComponent
+  ],
+  template: `
     <div class="layout">
       <div class="layout-main">
         <app-video-player />
@@ -31,14 +31,14 @@ import { Token } from '../../models';
     </div>
 
     <!-- Word popup -->
-    @defer (on interaction) {
+    @defer (when selectedWord()) {
       <app-word-popup 
         [selectedWord]="selectedWord()"
         (closed)="selectedWord.set(null)"
       />
     }
   `,
-    styles: [`
+  styles: [`
     .layout {
       display: grid;
       grid-template-columns: 1fr 340px;
@@ -94,9 +94,9 @@ import { Token } from '../../models';
   `]
 })
 export class VideoPageComponent {
-    selectedWord = signal<Token | null>(null);
+  selectedWord = signal<Token | null>(null);
 
-    onWordClicked(token: Token): void {
-        this.selectedWord.set(token);
-    }
+  onWordClicked(token: Token): void {
+    this.selectedWord.set(token);
+  }
 }
