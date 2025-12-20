@@ -39,35 +39,6 @@ import { SubtitleCue, Token } from '../../models';
                   <app-icon name="sparkles" [size]="16" />
                   <span>AI-Powered</span>
                 </div>
-                <!-- ... existing content ... -->
-// ... skipping to styles ...
-    /* Current subtitle */
-    .current-subtitle {
-      min-height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-lg);
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .current-subtitle.is-generating {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
-      animation: containerPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes containerPulse {
-      0%, 100% { 
-        box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.05);
-      }
-      50% { 
-        box-shadow: inset 0 0 40px rgba(139, 92, 246, 0.15);
-      }
-    }
-
                 <div class="ai-spinner">
                   <div class="ai-spinner-ring"></div>
                   <app-icon name="wand" [size]="28" class="ai-wand" />
@@ -163,6 +134,20 @@ import { SubtitleCue, Token } from '../../models';
       line-height: 2;
       text-align: center;
       word-break: keep-all;
+    }
+
+    .current-subtitle.is-generating {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+      animation: containerPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes containerPulse {
+      0%, 100% { 
+        box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.05);
+      }
+      50% { 
+        box-shadow: inset 0 0 40px rgba(139, 92, 246, 0.15);
+      }
     }
 
     .current-subtitle--small .subtitle-text {

@@ -4,6 +4,14 @@
     "secure": false,
     "changeOrigin": true
   },
+  "/api/translate": {
+    "target": "https://lingva.ml/api/v1",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/translate": ""
+    }
+  },
   "/api/transcript": {
     "target": "https://www.youtube.com",
     "secure": true,

@@ -1,14 +1,15 @@
 import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
-import { DictionaryService, VocabularyService, SettingsService } from '../../services';
+import { DictionaryService, VocabularyService, SettingsService, TranslationService } from '../../services';
 import { Token, DictionaryEntry } from '../../models';
 
 @Component({
   selector: 'app-word-popup',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent],
   template: `
     @if (isVisible()) {
       <div class="popup-overlay" (click)="close()">
@@ -21,12 +22,30 @@ import { Token, DictionaryEntry } from '../../models';
             <h2 class="popup-word" [class]="'text-' + settings.settings().language">
               {{ selectedWord()?.surface }}
             </h2>
-            @if (entry()?.reading) {
-              <span class="popup-reading">{{ entry()?.reading }}</span>
-            }
-            @if (entry()?.pinyin) {
-              <span class="popup-pinyin">{{ entry()?.pinyin }}</span>
-            }
+            
+            <div class="header-meta">
+              @if (entry()?.reading) {
+                <span class="popup-reading">{{ entry()?.reading }}</span>
+              }
+              @if (entry()?.pinyin) {
+                <span class="popup-pinyin">{{ entry()?.pinyin }}</span>
+              }
+            </div>
+
+            <!-- Language Target Selector (for translation) -->
+            <div class="translation-controls">
+              <label for="target-lang" class="sr-only">Translation Language</label>
+              <select 
+                id="target-lang"
+                class="lang-select"
+                [ngModel]="targetLang()"
+                (ngModelChange)="targetLang.set($event)"
+              >
+                @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
+                  <option [value]="lang.code">{{ lang.flag }} {{ lang.name }}</option>
+                }
+              </select>
+            </div>
           </div>
 
           <div class="popup-body">
@@ -50,7 +69,32 @@ import { Token, DictionaryEntry } from '../../models';
                   <div class="meaning-item">
                     <span class="meaning-num">{{ $index + 1 }}</span>
                     <div class="meaning-content">
-                      <span class="meaning-text">{{ meaning.definition }}</span>
+                      <div class="meaning-row">
+                        <span class="meaning-text">{{ meaning.definition }}</span>
+                        
+                        <!-- Translate Button -->
+                        <button 
+                          class="translate-btn"
+                          (click)="translateDefinition($index, meaning.definition)"
+                          [disabled]="isTranslating($index)"
+                          title="Translate to {{ targetLang() }}"
+                        >
+                          @if (isTranslating($index)) {
+                            <app-icon name="loader" [size]="14" class="spin" />
+                          } @else {
+                            <app-icon name="languages" [size]="14" />
+                          }
+                        </button>
+                      </div>
+
+                      <!-- Translated Text -->
+                      @if (getTranslation($index); as translatedText) {
+                        <div class="translation-result">
+                          <span class="translation-flag">{{ getFlag(targetLang()) }}</span>
+                          <span>{{ translatedText }}</span>
+                        </div>
+                      }
+
                       @if (meaning.tags && meaning.tags.length > 0) {
                         <div class="meaning-tags">
                           @for (tag of meaning.tags; track tag) {
@@ -157,20 +201,44 @@ import { Token, DictionaryEntry } from '../../models';
       padding-right: 48px;
       border-bottom: 1px solid var(--border-color);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
     }
 
     .popup-word {
       font-size: 2rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 4px;
+      margin: 0;
       line-height: 1.2;
+    }
+
+    .header-meta {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
     }
 
     .popup-reading,
     .popup-pinyin {
       font-size: 1rem;
       color: var(--text-secondary);
+    }
+
+    .translation-controls {
+      margin-top: var(--space-xs);
+    }
+
+    .lang-select {
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      cursor: pointer;
     }
 
     .popup-body {
@@ -233,12 +301,59 @@ import { Token, DictionaryEntry } from '../../models';
 
     .meaning-content {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meaning-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-xs);
     }
 
     .meaning-text {
       font-size: 0.9375rem;
       color: var(--text-primary);
       line-height: 1.5;
+      flex: 1;
+    }
+
+    .translate-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      transition: all var(--transition-fast);
+      opacity: 0.6;
+    }
+
+    .translate-btn:hover {
+      background: var(--bg-secondary);
+      color: var(--accent-primary);
+      opacity: 1;
+    }
+
+    .translation-result {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .translation-flag {
+      font-size: 1rem;
     }
 
     .meaning-tags {
@@ -292,6 +407,14 @@ import { Token, DictionaryEntry } from '../../models';
 
     .level-select {
       flex: 1;
+    }
+
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
 
     @keyframes fadeIn {
@@ -362,6 +485,7 @@ export class WordPopupComponent {
   dictionary = inject(DictionaryService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
+  translation = inject(TranslationService);
 
   selectedWord = input<Token | null>(null);
   closed = output<void>();
@@ -370,12 +494,20 @@ export class WordPopupComponent {
   isVisible = signal(false);
   isSaved = signal(false);
 
+  // Translation state
+  targetLang = signal('vi'); // Default target language (can make sticky later)
+  translatedDefinitions = signal<Map<number, string>>(new Map());
+  translatingIndices = signal<Set<number>>(new Set());
+
   constructor() {
     effect(() => {
       const word = this.selectedWord();
       if (word) {
         this.isVisible.set(true);
         this.isSaved.set(this.vocab.hasWord(word.surface));
+        // Reset translations when word changes
+        this.translatedDefinitions.set(new Map());
+        this.translatingIndices.set(new Set());
         this.lookupWord(word.surface);
       }
     });
@@ -415,6 +547,46 @@ export class WordPopupComponent {
     if (item) {
       this.vocab.updateLevel(item.id, level);
     }
+  }
+
+  translateDefinition(index: number, text: string): void {
+    // If already translated, do nothing (or toggle off, but let's keep it simple)
+    if (this.translatedDefinitions().has(index)) return;
+
+    this.toggleTranslating(index, true);
+
+    this.translation.translate(text, 'en', this.targetLang()).subscribe(translatedText => {
+      if (translatedText) {
+        this.translatedDefinitions.update(map => {
+          const newMap = new Map(map);
+          newMap.set(index, translatedText);
+          return newMap;
+        });
+      }
+      this.toggleTranslating(index, false);
+    });
+  }
+
+  isTranslating(index: number): boolean {
+    return this.translatingIndices().has(index);
+  }
+
+  toggleTranslating(index: number, state: boolean): void {
+    this.translatingIndices.update(set => {
+      const newSet = new Set(set);
+      if (state) newSet.add(index);
+      else newSet.delete(index);
+      return newSet;
+    });
+  }
+
+  getTranslation(index: number): string | undefined {
+    return this.translatedDefinitions().get(index);
+  }
+
+  getFlag(code: string): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
+    return lang ? lang.flag : '🌐';
   }
 
   close(): void {
