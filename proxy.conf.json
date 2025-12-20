@@ -1,0 +1,115 @@
+{
+  "/api/whisper": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/transcript": {
+    "target": "https://www.youtube.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/transcript": "/api/timedtext"
+    },
+    "headers": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Referer": "https://www.youtube.com/"
+    }
+  },
+  "/youtube": {
+    "target": "https://www.youtube.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/youtube": ""
+    }
+  },
+  "/innertube": {
+    "target": "https://www.youtube.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/innertube": "/youtubei/v1"
+    },
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Origin": "https://www.youtube.com",
+      "Referer": "https://www.youtube.com/",
+      "Accept": "*/*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "X-Youtube-Client-Name": "1",
+      "X-Youtube-Client-Version": "2.20231219.04.00"
+    }
+  },
+  "/invidious1": {
+    "target": "https://yewtu.be",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/invidious1": ""
+    }
+  },
+  "/invidious2": {
+    "target": "https://invidious.f5.si",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/invidious2": ""
+    }
+  },
+  "/invidious3": {
+    "target": "https://inv.nadeko.net",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/invidious3": ""
+    }
+  },
+  "/invidious4": {
+    "target": "https://inv.perditum.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/invidious4": ""
+    }
+  },
+  "/piped1": {
+    "target": "https://pipedapi.kavin.rocks",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/piped1": ""
+    }
+  },
+  "/piped2": {
+    "target": "https://api.piped.yt",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/piped2": ""
+    }
+  },
+  "/jisho": {
+    "target": "https://jisho.org",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/jisho": ""
+    }
+  },
+  "/jotoba": {
+    "target": "https://jotoba.de",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/jotoba": ""
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
+  }
+}

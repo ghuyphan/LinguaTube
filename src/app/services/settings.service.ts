@@ -1,0 +1,107 @@
+import { Injectable, signal, effect } from '@angular/core';
+import { UserSettings } from '../models';
+
+const STORAGE_KEY = 'linguatube_settings';
+
+const DEFAULT_SETTINGS: UserSettings = {
+  theme: 'system',
+  language: 'ja',
+  showFurigana: true,
+  showPinyin: true,
+  autoAdvance: false,
+  fontSize: 'medium',
+  playbackSpeed: 1
+};
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SettingsService {
+  readonly settings = signal<UserSettings>(DEFAULT_SETTINGS);
+
+  constructor() {
+    this.loadFromStorage();
+    this.applyTheme();
+
+    // Auto-save and apply theme when settings change
+    effect(() => {
+      const current = this.settings();
+      this.saveToStorage(current);
+      this.applyTheme();
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (this.settings().theme === 'system') {
+        this.applyTheme();
+      }
+    });
+  }
+
+  updateSettings(partial: Partial<UserSettings>): void {
+    this.settings.update(current => ({ ...current, ...partial }));
+  }
+
+  setTheme(theme: 'light' | 'dark' | 'system'): void {
+    this.updateSettings({ theme });
+  }
+
+  setLanguage(language: 'ja' | 'zh'): void {
+    this.updateSettings({ language });
+  }
+
+  toggleFurigana(): void {
+    this.updateSettings({ showFurigana: !this.settings().showFurigana });
+  }
+
+  togglePinyin(): void {
+    this.updateSettings({ showPinyin: !this.settings().showPinyin });
+  }
+
+  setFontSize(fontSize: 'small' | 'medium' | 'large'): void {
+    this.updateSettings({ fontSize });
+  }
+
+  setPlaybackSpeed(speed: number): void {
+    this.updateSettings({ playbackSpeed: speed });
+  }
+
+  resetToDefaults(): void {
+    this.settings.set(DEFAULT_SETTINGS);
+  }
+
+  private loadFromStorage(): void {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored) as Partial<UserSettings>;
+        this.settings.set({ ...DEFAULT_SETTINGS, ...parsed });
+      }
+    } catch (err) {
+      console.error('Failed to load settings:', err);
+    }
+  }
+
+  private saveToStorage(settings: UserSettings): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+    } catch (err) {
+      console.error('Failed to save settings:', err);
+    }
+  }
+
+  private applyTheme(): void {
+    const { theme } = this.settings();
+    let effectiveTheme: 'light' | 'dark';
+
+    if (theme === 'system') {
+      effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    } else {
+      effectiveTheme = theme;
+    }
+
+    document.documentElement.setAttribute('data-theme', effectiveTheme);
+  }
+}

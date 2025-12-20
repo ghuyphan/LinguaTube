@@ -1,0 +1,561 @@
+import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
+import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService } from '../../services';
+import { SubtitleCue, Token } from '../../models';
+
+@Component({
+  selector: 'app-subtitle-display',
+  standalone: true,
+  imports: [CommonModule, IconComponent],
+  template: `
+    <div class="subtitle-panel">
+      <!-- Current subtitle -->
+      <div class="current-subtitle" 
+           [class.current-subtitle--small]="settings.settings().fontSize === 'small'"
+           [class.current-subtitle--large]="settings.settings().fontSize === 'large'">
+        @if (subtitles.currentCue(); as cue) {
+          <div class="subtitle-text" [class]="'text-' + settings.settings().language">
+            @for (token of tokenize(cue.text); track $index) {
+              <span 
+                class="word"
+                [class.word--new]="getWordLevel(token.surface) === 'new'"
+                [class.word--learning]="getWordLevel(token.surface) === 'learning'"
+                [class.word--known]="getWordLevel(token.surface) === 'known'"
+                [class.word--saved]="vocab.hasWord(token.surface)"
+                (click)="onWordClick(token)"
+              >
+                @if (settings.settings().showFurigana && token.reading) {
+                  <ruby>
+                    {{ token.surface }}
+                    <rt>{{ token.reading }}</rt>
+                  </ruby>
+                } @else {
+                  {{ token.surface }}
+                }
+              </span>
+            }
+          </div>
+        } @else {
+          <div class="subtitle-empty">
+            @if (transcript.isGeneratingAI()) {
+              <div class="ai-generating">
+                <div class="ai-spinner"></div>
+                <p class="ai-title">Generating transcript with AI...</p>
+                <p class="ai-hint">This video has no captions. Using Whisper to transcribe.</p>
+              </div>
+            } @else if (transcript.isLoading()) {
+              <div class="loading-indicator">
+                <app-icon name="loader" [size]="24" class="spin" />
+                <p>Fetching captions...</p>
+              </div>
+            } @else if (subtitles.subtitles().length === 0) {
+              <app-icon name="subtitles" [size]="32" class="empty-icon" />
+              <p class="empty-title">No subtitles loaded</p>
+              <p class="empty-hint">Upload a subtitle file below or wait for auto-fetch</p>
+            } @else {
+              <p class="subtitle-waiting">Waiting for subtitles...</p>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Subtitle list (scrollable) -->
+      @if (subtitles.subtitles().length > 0) {
+        <div class="subtitle-list" #subtitleList>
+          @for (cue of subtitles.subtitles(); track cue.id) {
+            <button
+              class="cue-item"
+              [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
+              [class.cue-item--past]="cue.endTime < youtube.currentTime()"
+              [attr.data-cue-id]="cue.id"
+              (click)="seekToCue(cue)"
+            >
+              <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
+              <span class="cue-text">{{ cue.text }}</span>
+            </button>
+          }
+        </div>
+      }
+
+      <!-- Controls -->
+      <div class="subtitle-controls">
+        <label class="toggle-control">
+          <input 
+            type="checkbox" 
+            [checked]="settings.settings().showFurigana"
+            (change)="settings.toggleFurigana()"
+          />
+          <span class="toggle-label">
+            @if (settings.settings().language === 'ja') {
+              Furigana
+            } @else {
+              Pinyin
+            }
+          </span>
+        </label>
+
+        <div class="font-controls">
+          <button 
+            class="font-btn"
+            [class.active]="settings.settings().fontSize === 'small'"
+            (click)="settings.setFontSize('small')"
+            title="Small font"
+          >A</button>
+          <button 
+            class="font-btn font-btn--medium"
+            [class.active]="settings.settings().fontSize === 'medium'"
+            (click)="settings.setFontSize('medium')"
+            title="Medium font"
+          >A</button>
+          <button 
+            class="font-btn font-btn--large"
+            [class.active]="settings.settings().fontSize === 'large'"
+            (click)="settings.setFontSize('large')"
+            title="Large font"
+          >A</button>
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .subtitle-panel {
+      background: var(--bg-card);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    /* Current subtitle */
+    .current-subtitle {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-lg);
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .subtitle-text {
+      font-size: 1.375rem;
+      line-height: 2;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .current-subtitle--small .subtitle-text {
+      font-size: 1.125rem;
+    }
+
+    .current-subtitle--large .subtitle-text {
+      font-size: 1.75rem;
+    }
+
+    .subtitle-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      text-align: center;
+      padding: var(--space-md);
+    }
+
+    .empty-icon {
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    .empty-title {
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .empty-hint {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* AI Generation Indicator */
+    .ai-generating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+    }
+
+    .ai-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border-color);
+      border-top-color: var(--accent-primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .ai-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+
+    .ai-hint {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .loading-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--text-muted);
+    }
+
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .subtitle-waiting {
+      color: var(--text-muted);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Word styling */
+    .word {
+      cursor: pointer;
+      padding: 2px 4px;
+      margin: 0 1px;
+      border-radius: 4px;
+      transition: all var(--transition-fast);
+      display: inline;
+    }
+
+    .word:hover {
+      background: var(--accent-tertiary);
+      transform: scale(1.02);
+    }
+
+    .word--saved {
+      border-bottom: 2px solid var(--accent-primary);
+    }
+
+    .word--new {
+      background: var(--word-new);
+    }
+
+    .word--learning {
+      background: var(--word-learning);
+    }
+
+    .word--known {
+      background: var(--word-known);
+    }
+
+    ruby {
+      ruby-align: center;
+    }
+
+    ruby rt {
+      font-size: 0.5em;
+      color: var(--text-muted);
+    }
+
+    /* Subtitle list */
+    .subtitle-list {
+      max-height: 180px;
+      overflow-y: auto;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .cue-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: inherit;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+    }
+
+    .cue-item:last-child {
+      border-bottom: none;
+    }
+
+    .cue-item:hover {
+      background: var(--bg-secondary);
+    }
+
+    .cue-item--active {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    .cue-item--active:hover {
+      background: var(--accent-primary);
+    }
+
+    .cue-item--past {
+      opacity: 0.5;
+    }
+
+    .cue-time {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      min-width: 44px;
+      flex-shrink: 0;
+    }
+
+    .cue-item--active .cue-time {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .cue-text {
+      flex: 1;
+      line-height: 1.4;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /* Controls */
+    .subtitle-controls {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+    }
+
+    .toggle-control {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      cursor: pointer;
+    }
+
+    .toggle-control input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent-primary);
+      cursor: pointer;
+    }
+
+    .toggle-label {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .font-controls {
+      display: flex;
+      gap: 2px;
+      background: var(--bg-secondary);
+      padding: 2px;
+      border-radius: 6px;
+      margin-left: auto;
+    }
+
+    .font-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all var(--transition-fast);
+    }
+
+    .font-btn--medium {
+      font-size: 0.8125rem;
+    }
+
+    .font-btn--large {
+      font-size: 0.9375rem;
+    }
+
+    .font-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .font-btn.active {
+      background: var(--bg-card);
+      color: var(--accent-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    @media (max-width: 640px) {
+      .subtitle-text {
+        font-size: 1.125rem;
+        line-height: 2.2;
+      }
+
+      .current-subtitle--small .subtitle-text {
+        font-size: 0.9375rem;
+      }
+
+      .current-subtitle--large .subtitle-text {
+        font-size: 1.375rem;
+      }
+
+      .word {
+        padding: 4px 6px;
+        margin: 2px;
+        min-height: 32px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .subtitle-list {
+        max-height: 150px;
+      }
+
+      .cue-item {
+        padding: var(--space-md);
+        min-height: 48px;
+      }
+
+      .subtitle-controls {
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+      }
+
+      .font-controls {
+        margin-left: 0;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+      .current-subtitle {
+        min-height: 80px;
+        padding: var(--space-md);
+      }
+
+      .subtitle-text {
+        font-size: 1rem;
+      }
+
+      .current-subtitle--small .subtitle-text {
+        font-size: 0.875rem;
+      }
+
+      .current-subtitle--large .subtitle-text {
+        font-size: 1.25rem;
+      }
+    }
+  `]
+})
+export class SubtitleDisplayComponent implements AfterViewChecked {
+  subtitles = inject(SubtitleService);
+  youtube = inject(YoutubeService);
+  vocab = inject(VocabularyService);
+  settings = inject(SettingsService);
+  transcript = inject(TranscriptService);
+
+  @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
+
+  wordClicked = output<Token>();
+
+  private lastScrolledCueId: number | null = null;
+
+  constructor() {
+    // Update current cue based on video time
+    effect(() => {
+      const time = this.youtube.currentTime();
+      this.subtitles.updateCurrentCue(time);
+    });
+  }
+
+  ngAfterViewChecked(): void {
+    this.scrollToActiveCue();
+  }
+
+  private scrollToActiveCue(): void {
+    const currentCue = this.subtitles.currentCue();
+    if (!currentCue || !this.subtitleList?.nativeElement) return;
+
+    // Avoid redundant scrolls for the same cue
+    if (this.lastScrolledCueId === currentCue.id) return;
+    this.lastScrolledCueId = currentCue.id;
+
+    const container = this.subtitleList.nativeElement;
+    const activeElement = container.querySelector(`[data-cue-id="${currentCue.id}"]`) as HTMLElement;
+
+    if (activeElement) {
+      // Calculate scroll position manually to avoid scrollIntoView affecting parent containers
+      const containerHeight = container.clientHeight;
+      const elementTop = activeElement.offsetTop;
+      const elementHeight = activeElement.offsetHeight;
+
+      // Center the element in the container
+      const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
+
+      // Check if element is not fully visible before scrolling
+      const currentScrollTop = container.scrollTop;
+      const isAboveView = elementTop < currentScrollTop;
+      const isBelowView = elementTop + elementHeight > currentScrollTop + containerHeight;
+
+      if (isAboveView || isBelowView) {
+        container.scrollTo({
+          top: Math.max(0, targetScrollTop),
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  tokenize(text: string): Token[] {
+    const lang = this.settings.settings().language;
+    if (lang === 'zh') {
+      return this.subtitles.tokenizeChinese(text);
+    }
+    return this.subtitles.tokenizeJapanese(text);
+  }
+
+  getWordLevel(word: string): string | null {
+    return this.vocab.getWordLevel(word);
+  }
+
+  onWordClick(token: Token): void {
+    this.wordClicked.emit(token);
+  }
+
+  seekToCue(cue: SubtitleCue): void {
+    this.youtube.seekTo(cue.startTime);
+  }
+
+  formatTime(seconds: number): string {
+    if (!seconds || isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+}
