@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService } from '../../services';
@@ -6,6 +6,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
 @Component({
   selector: 'app-header',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent],
   template: `
     <header class="header">
@@ -54,9 +55,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
           class="btn btn-icon btn-ghost"
           (click)="toggleTheme()"
           [attr.aria-label]="'Toggle theme'"
-          [attr.title]="settings.settings().theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+          [attr.title]="settings.getEffectiveTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
         >
-          @if (settings.settings().theme === 'dark') {
+          @if (settings.getEffectiveTheme() === 'dark') {
             <app-icon name="sun" [size]="18" />
           } @else {
             <app-icon name="moon" [size]="18" />
@@ -260,8 +261,9 @@ export class HeaderComponent {
   }
 
   toggleTheme(): void {
-    const current = this.settings.settings().theme;
-    const next = current === 'dark' ? 'light' : 'dark';
+    // Use effective theme (resolves 'system' to actual light/dark)
+    const effectiveTheme = this.settings.getEffectiveTheme();
+    const next = effectiveTheme === 'dark' ? 'light' : 'dark';
     this.settings.setTheme(next);
   }
 }

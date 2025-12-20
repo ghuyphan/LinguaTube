@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type IconName =
@@ -11,11 +11,13 @@ export type IconName =
   | 'loader' | 'alert-circle' | 'info' | 'bookmark'
   | 'repeat' | 'languages' | 'subtitles' | 'captions'
   | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
-  | 'chevron-left' | 'chevron-right' | 'layers';
+  | 'chevron-left' | 'chevron-right' | 'layers'
+  | 'sparkles' | 'wand';
 
 @Component({
   selector: 'app-icon',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <svg
@@ -208,6 +210,24 @@ export type IconName =
         @case ('fast-forward') {
           <polygon points="13 19 22 12 13 5 13 19"></polygon>
           <polygon points="2 19 11 12 2 5 2 19"></polygon>
+        }
+        @case ('sparkles') {
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        }
+        @case ('wand') {
+          <path d="M15 4V2"></path>
+          <path d="M15 16v-2"></path>
+          <path d="M8 9h2"></path>
+          <path d="M20 9h2"></path>
+          <path d="M17.8 11.8 19 13"></path>
+          <path d="M15 9h0"></path>
+          <path d="M17.8 6.2 19 5"></path>
+          <path d="m3 21 9-9"></path>
+          <path d="M12.2 6.2 11 5"></path>
         }
       }
     </svg>

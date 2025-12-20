@@ -131,11 +131,17 @@ export class SubtitleService {
 
   /**
    * Update current cue based on video time
+   * Implements "sticky" subtitles - if no active cue, show the most recent one that ended
    */
   updateCurrentCue(currentTime: number): void {
     const subs = this.subtitles();
-    // Use reverse loop to find the last (most recent) active cue.
-    // This handles overlapping subtitles (common in YouTube) by preferring the one that started most recently.
+    if (subs.length === 0) {
+      this.currentCueIndex.set(-1);
+      return;
+    }
+
+    // First, try to find an active cue (current time is within start/end)
+    // Use reverse loop to prefer the most recently started cue for overlapping subtitles
     let index = -1;
     for (let i = subs.length - 1; i >= 0; i--) {
       if (currentTime >= subs[i].startTime && currentTime <= subs[i].endTime) {
@@ -143,6 +149,23 @@ export class SubtitleService {
         break;
       }
     }
+
+    // If no active cue, implement "sticky" behavior:
+    // Find the last subtitle that ended before current time (but only if we've started playing past first subtitle)
+    if (index === -1 && currentTime > 0) {
+      for (let i = subs.length - 1; i >= 0; i--) {
+        if (subs[i].endTime <= currentTime) {
+          // Found a subtitle that already ended - show it as "sticky"
+          // But only if the next subtitle hasn't started yet
+          const nextSub = subs[i + 1];
+          if (!nextSub || currentTime < nextSub.startTime) {
+            index = i;
+          }
+          break;
+        }
+      }
+    }
+
     this.currentCueIndex.set(index);
   }
 

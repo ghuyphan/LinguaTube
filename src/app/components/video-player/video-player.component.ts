@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnDestroy, effect } from '@angular/core';
+import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
@@ -7,6 +7,7 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
 @Component({
   selector: 'app-video-player',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, IconComponent],
   template: `
     <div class="video-player">

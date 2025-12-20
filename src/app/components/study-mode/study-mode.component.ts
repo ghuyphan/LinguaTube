@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { VocabularyService, SettingsService } from '../../services';
@@ -12,6 +12,7 @@ interface StudyCard {
 @Component({
   selector: 'app-study-mode',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent],
   template: `
     <div class="study-mode">
@@ -495,6 +496,7 @@ interface StudyCard {
       .flashcard__back {
         min-height: 250px;
         padding: var(--space-lg);
+        box-shadow: none; /* Remove shadow on mobile for cleaner look */
       }
 
       .card-word {
@@ -508,6 +510,12 @@ interface StudyCard {
       .answer-btn {
         flex-direction: row;
         justify-content: center;
+      }
+
+      /* Disable hover effects on mobile to prevent sticky hover states */
+      .answer-btn:hover {
+        transform: none;
+        box-shadow: none;
       }
     }
   `]

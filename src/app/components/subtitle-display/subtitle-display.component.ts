@@ -1,4 +1,4 @@
-import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService } from '../../services';
@@ -7,6 +7,7 @@ import { SubtitleCue, Token } from '../../models';
 @Component({
   selector: 'app-subtitle-display',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent],
   template: `
     <div class="subtitle-panel">
@@ -25,14 +26,7 @@ import { SubtitleCue, Token } from '../../models';
                 [class.word--saved]="vocab.hasWord(token.surface)"
                 (click)="onWordClick(token)"
               >
-                @if (settings.settings().showFurigana && token.reading) {
-                  <ruby>
-                    {{ token.surface }}
-                    <rt>{{ token.reading }}</rt>
-                  </ruby>
-                } @else {
-                  {{ token.surface }}
-                }
+                {{ token.surface }}
               </span>
             }
           </div>
@@ -40,9 +34,16 @@ import { SubtitleCue, Token } from '../../models';
           <div class="subtitle-empty">
             @if (transcript.isGeneratingAI()) {
               <div class="ai-generating">
-                <app-icon name="loader" [size]="32" class="spin" />
-                <p class="ai-title">Generating transcript with AI...</p>
-                <p class="ai-hint">This video has no captions. Using Whisper to transcribe.</p>
+                <div class="ai-badge">
+                  <app-icon name="sparkles" [size]="16" />
+                  <span>AI-Powered</span>
+                </div>
+                <div class="ai-spinner">
+                  <div class="ai-spinner-ring"></div>
+                  <app-icon name="wand" [size]="28" class="ai-wand" />
+                </div>
+                <p class="ai-title">Generating transcript...</p>
+                <p class="ai-hint">Using Whisper AI to transcribe audio</p>
               </div>
             } @else if (transcript.isLoading()) {
               <div class="loading-indicator">
@@ -84,20 +85,6 @@ import { SubtitleCue, Token } from '../../models';
 
       <!-- Controls -->
       <div class="subtitle-controls">
-        <label class="toggle-control">
-          <input 
-            type="checkbox" 
-            [checked]="settings.settings().showFurigana"
-            (change)="settings.toggleFurigana()"
-          />
-          <span class="toggle-label">
-            @if (settings.settings().language === 'ja') {
-              Furigana
-            } @else {
-              Pinyin
-            }
-          </span>
-        </label>
 
         <div class="font-controls">
           <button 
@@ -185,13 +172,73 @@ import { SubtitleCue, Token } from '../../models';
       color: var(--text-muted);
     }
 
-    /* AI Generation Indicator */
+    /* AI Generation Indicator - Enhanced */
     .ai-generating {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: var(--space-md);
-      padding: var(--space-lg);
+      padding: var(--space-xl);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+      border-radius: var(--border-radius-lg);
+      margin: var(--space-sm);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      animation: aiPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes aiPulse {
+      0%, 100% { 
+        border-color: rgba(139, 92, 246, 0.2);
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+      }
+      50% { 
+        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 0 20px 2px rgba(139, 92, 246, 0.15);
+      }
+    }
+
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: 4px 12px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      color: white;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 100px;
+    }
+
+    .ai-spinner {
+      position: relative;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ai-spinner-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 3px solid transparent;
+      border-top-color: #8b5cf6;
+      border-right-color: #ec4899;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+    }
+
+    .ai-wand {
+      color: #8b5cf6;
+      animation: wandPulse 1s ease-in-out infinite;
+    }
+
+    @keyframes wandPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
     }
 
     .ai-title {
@@ -341,25 +388,6 @@ import { SubtitleCue, Token } from '../../models';
       align-items: center;
       gap: var(--space-md);
       padding: var(--space-sm) var(--space-md);
-    }
-
-    .toggle-control {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      cursor: pointer;
-    }
-
-    .toggle-control input {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--accent-primary);
-      cursor: pointer;
-    }
-
-    .toggle-label {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
     }
 
     .font-controls {

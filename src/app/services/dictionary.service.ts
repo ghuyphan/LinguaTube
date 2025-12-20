@@ -15,6 +15,10 @@ export class DictionaryService {
   private readonly JOTOBA_API = '/jotoba/api/search/words';
   private readonly FREEDICT_API = '/freedict';
 
+  // Cache settings
+  private readonly CACHE_KEY = 'linguatube_dict_cache';
+  private readonly MAX_CACHE_SIZE = 200;
+
   constructor(private http: HttpClient) { }
 
   /**
@@ -22,6 +26,13 @@ export class DictionaryService {
    */
   lookupJapanese(word: string): Observable<DictionaryEntry | null> {
     if (!word.trim()) return of(null);
+
+    // Check cache first
+    const cached = this.getFromCache(word, 'ja');
+    if (cached) {
+      this.lastLookup.set(cached);
+      return of(cached);
+    }
 
     this.isLoading.set(true);
 
@@ -62,6 +73,7 @@ export class DictionaryService {
         };
 
         this.lastLookup.set(result);
+        this.saveToCache(word, 'ja', result);
         return result;
       }),
       catchError(err => {
@@ -79,10 +91,23 @@ export class DictionaryService {
   lookupChinese(word: string): Observable<DictionaryEntry | null> {
     if (!word.trim()) return of(null);
 
+    // Check cache first
+    const cached = this.getFromCache(word, 'zh');
+    if (cached) {
+      this.lastLookup.set(cached);
+      return of(cached);
+    }
+
     this.isLoading.set(true);
 
     return this.http.get<any[]>(`${this.FREEDICT_API}/zh/${encodeURIComponent(word)}`).pipe(
-      map(response => this.parseFreeDictResponse(response, word)),
+      map(response => {
+        const result = this.parseFreeDictResponse(response, word);
+        if (result) {
+          this.saveToCache(word, 'zh', result);
+        }
+        return result;
+      }),
       tap(() => this.isLoading.set(false)),
       catchError(err => {
         this.isLoading.set(false);
@@ -254,6 +279,73 @@ export class DictionaryService {
     };
 
     return commonWords[word] || null;
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Cache helpers (localStorage with LRU eviction)
+  // ─────────────────────────────────────────────────────────────
+
+  /**
+   * Get cached dictionary entry from localStorage
+   */
+  private getFromCache(word: string, lang: 'ja' | 'zh'): DictionaryEntry | null {
+    try {
+      const cache = this.loadCache();
+      const key = `${lang}:${word}`;
+      const entry = cache[key];
+      if (entry) {
+        // Update access time for LRU
+        entry.accessTime = Date.now();
+        this.saveCache(cache);
+        console.log('[Dictionary] Cache hit:', word);
+        return entry.data;
+      }
+    } catch (e) {
+      console.warn('[Dictionary] Cache read error:', e);
+    }
+    return null;
+  }
+
+  /**
+   * Save dictionary entry to localStorage cache
+   */
+  private saveToCache(word: string, lang: 'ja' | 'zh', data: DictionaryEntry): void {
+    try {
+      const cache = this.loadCache();
+      const key = `${lang}:${word}`;
+
+      // Add new entry
+      cache[key] = {
+        data,
+        accessTime: Date.now()
+      };
+
+      // Evict oldest entries if over limit (LRU)
+      const keys = Object.keys(cache);
+      if (keys.length > this.MAX_CACHE_SIZE) {
+        const sorted = keys.sort((a, b) => cache[a].accessTime - cache[b].accessTime);
+        const toRemove = sorted.slice(0, keys.length - this.MAX_CACHE_SIZE);
+        toRemove.forEach(k => delete cache[k]);
+      }
+
+      this.saveCache(cache);
+      console.log('[Dictionary] Cached:', word);
+    } catch (e) {
+      console.warn('[Dictionary] Cache write error:', e);
+    }
+  }
+
+  private loadCache(): Record<string, { data: DictionaryEntry; accessTime: number }> {
+    try {
+      const stored = localStorage.getItem(this.CACHE_KEY);
+      return stored ? JSON.parse(stored) : {};
+    } catch {
+      return {};
+    }
+  }
+
+  private saveCache(cache: Record<string, { data: DictionaryEntry; accessTime: number }>): void {
+    localStorage.setItem(this.CACHE_KEY, JSON.stringify(cache));
   }
 }
 

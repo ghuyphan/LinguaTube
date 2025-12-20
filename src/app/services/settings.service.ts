@@ -90,18 +90,21 @@ export class SettingsService {
     }
   }
 
-  private applyTheme(): void {
+  /**
+   * Get the effective theme (resolves 'system' to actual light/dark)
+   */
+  getEffectiveTheme(): 'light' | 'dark' {
     const { theme } = this.settings();
-    let effectiveTheme: 'light' | 'dark';
-
     if (theme === 'system') {
-      effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
         : 'light';
-    } else {
-      effectiveTheme = theme;
     }
+    return theme;
+  }
 
+  private applyTheme(): void {
+    const effectiveTheme = this.getEffectiveTheme();
     document.documentElement.setAttribute('data-theme', effectiveTheme);
   }
 }

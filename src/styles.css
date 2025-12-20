@@ -235,6 +235,13 @@ a:hover {
   border: 1px solid var(--border-color);
 }
 
+/* Remove card shadow on mobile */
+@media (max-width: 480px) {
+  .card {
+    box-shadow: none;
+  }
+}
+
 /* Input fields */
 input,
 textarea,

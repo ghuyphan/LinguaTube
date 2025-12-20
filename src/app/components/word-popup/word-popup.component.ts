@@ -1,4 +1,4 @@
-import { Component, inject, input, output, signal, effect } from '@angular/core';
+import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { DictionaryService, VocabularyService, SettingsService } from '../../services';
@@ -7,6 +7,7 @@ import { Token, DictionaryEntry } from '../../models';
 @Component({
   selector: 'app-word-popup',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent],
   template: `
     @if (isVisible()) {
