@@ -55,8 +55,7 @@ export async function onRequestPost(context) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                audio_url: youtubeUrl,
-                output_format: 'json',
+                audio_url: youtubeUrl
             })
         });
 
