@@ -6,6 +6,9 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
+        const videoId = body.videoId;
+
+        console.log(`[Innertube] Fetching captions for video: ${videoId}`);
 
         // Forward to YouTube's innertube API
         const url = new URL(request.url);
@@ -15,16 +18,25 @@ export async function onRequestPost(context) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': '*/*',
+                'Accept-Language': 'en-US,en;q=0.9',
                 'Origin': 'https://www.youtube.com',
-                'Referer': 'https://www.youtube.com/',
-                'X-Youtube-Client-Name': '1',
-                'X-Youtube-Client-Version': '2.20240905.01.00'
+                'Referer': 'https://www.youtube.com/'
             },
             body: JSON.stringify(body)
         });
 
         const data = await response.json();
+
+        // Log what we got for debugging
+        const hasCaptions = !!data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+        const captionCount = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.length || 0;
+        console.log(`[Innertube] Response status: ${response.status}, has captions: ${hasCaptions}, count: ${captionCount}`);
+
+        if (data.playabilityStatus?.status === 'ERROR') {
+            console.log(`[Innertube] Playability error: ${data.playabilityStatus.reason}`);
+        }
 
         return new Response(JSON.stringify(data), {
             status: 200,
@@ -35,7 +47,7 @@ export async function onRequestPost(context) {
         });
 
     } catch (error) {
-        console.error('[Innertube Proxy] Error:', error.message);
+        console.error('[Innertube] Error:', error.message);
         return new Response(JSON.stringify({ error: error.message }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
@@ -53,3 +65,4 @@ export async function onRequestOptions() {
         }
     });
 }
+
