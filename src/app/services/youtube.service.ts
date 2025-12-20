@@ -272,11 +272,17 @@ export class YoutubeService {
     } catch (e) { }
 
     this.player = null;
-    this.currentVideo.set(null);
+    // Don't clear currentVideo here to allow restoring state on navigation
+    // Reset other transport states
     this.isPlaying.set(false);
-    this.currentTime.set(0);
-    this.duration.set(0);
     this.isReady.set(false);
     this.error.set(null);
+  }
+
+  reset(): void {
+    this.destroy();
+    this.currentVideo.set(null);
+    this.currentTime.set(0);
+    this.duration.set(0);
   }
 }

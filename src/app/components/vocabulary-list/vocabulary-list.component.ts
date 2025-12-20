@@ -361,13 +361,50 @@ import { VocabularyItem, WordLevel } from '../../models';
     @media (max-width: 768px) {
       .vocab-panel {
         max-height: none;
+        /* Keep card styling on mobile */
+        border-radius: var(--border-radius-lg);
+        border: 1px solid var(--border-color);
+        background: var(--bg-card);
+        margin-bottom: var(--space-xl);
+      }
+
+      .vocab-header {
+        /* Remove extra bottom margin on header */
+        margin-bottom: 0;
+        border-bottom: 1px solid var(--border-color);
+        border-top-left-radius: var(--border-radius-lg);
+        border-top-right-radius: var(--border-radius-lg);
+      }
+
+      .vocab-filters {
+        /* Integrate filters into the card */
+        background: var(--bg-card);
         border-radius: 0;
-        border-left: none;
-        border-right: none;
+        margin-bottom: 0;
+        border: none;
+        border-bottom: 1px solid var(--border-color);
       }
 
       .word-list {
-        max-height: 50vh;
+        max-height: none;
+        padding: 0;
+        overflow: visible;
+      }
+      
+      /* Flattened list style for mobile */
+      .word-card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: var(--space-md);
+        border-bottom: 1px solid var(--border-color);
+        border-left: none;
+        border-radius: 0;
+      }
+
+      .word-card:last-child {
+        border-bottom: none;
       }
     }
 

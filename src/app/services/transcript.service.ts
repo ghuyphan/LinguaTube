@@ -39,16 +39,12 @@ export class TranscriptService {
 
   // Piped instances - most reliable for subtitle fetching
   private readonly PIPED_INSTANCES = [
-    '/piped1',   // proxies to https://pipedapi.kavin.rocks
-    '/piped2'    // proxies to https://api.piped.yt
+    '/piped1'   // proxies to https://pipedapi.kavin.rocks
   ];
 
   // Invidious instances as fallback
   private readonly INVIDIOUS_INSTANCES = [
-    '/invidious1',  // proxies to https://yewtu.be
-    '/invidious2',  // proxies to https://invidious.f5.si
-    '/invidious3',  // proxies to https://inv.nadeko.net
-    '/invidious4'   // proxies to https://inv.perditum.com
+    '/invidious1'  // proxies to https://yewtu.be
   ];
 
   constructor(private http: HttpClient) { }
@@ -90,66 +86,37 @@ export class TranscriptService {
   }
 
   /**
-   * Fetch caption tracks - tries Piped first, then innertube, then Invidious
+   * Fetch caption tracks - Prioritize YouTube Innertube API
    */
   private fetchCaptionsFromInvidious(videoId: string): Observable<CaptionTrack[]> {
     return new Observable<CaptionTrack[]>(observer => {
-      // First try Piped API (most reliable for subtitles)
-      this.tryPipedFallback(videoId, 0, observer, () => {
-        // Then try YouTube innertube API
-        this.fetchCaptionsFromYouTube(videoId).subscribe({
-          next: (tracks) => {
-            if (tracks.length > 0) {
-              observer.next(tracks);
-              observer.complete();
-            } else {
-              this.tryInvidiousFallback(videoId, observer);
-            }
-          },
-          error: () => {
-            this.tryInvidiousFallback(videoId, observer);
+      // Direct YouTube Innertube API (most reliable for direct fetching)
+      this.fetchCaptionsFromYouTube(videoId).subscribe({
+        next: (tracks) => {
+          if (tracks.length > 0) {
+            observer.next(tracks);
+            observer.complete();
+          } else {
+            // If Innertube fails, we could try others, but user requested to stop spamming.
+            // Directly complete deeply to trigger Whisper fallback in fetchTranscript
+            observer.next([]);
+            observer.complete();
           }
-        });
+        },
+        error: () => {
+          observer.next([]);
+          observer.complete();
+        }
       });
     });
   }
 
   /**
    * Try Piped API instances for fetching subtitles
+   * @deprecated Disabled to prevent console spam
    */
   private tryPipedFallback(videoId: string, index: number, observer: any, onAllFailed: () => void): void {
-    if (index >= this.PIPED_INSTANCES.length) {
-      console.log('[TranscriptService] All Piped instances failed, trying next method');
-      onAllFailed();
-      return;
-    }
-
-    const instance = this.PIPED_INSTANCES[index];
-    const url = `${instance}/streams/${videoId}`;
-    console.log('[TranscriptService] Trying Piped:', url);
-
-    this.http.get<any>(url).subscribe({
-      next: (response) => {
-        const subtitles = response?.subtitles;
-        if (subtitles && subtitles.length > 0) {
-          console.log('[TranscriptService] Piped found subtitles:', subtitles.length);
-          const tracks: CaptionTrack[] = subtitles.map((s: any) => ({
-            languageCode: s.code || s.name?.substring(0, 2).toLowerCase() || 'unknown',
-            label: s.name || s.code,
-            url: s.url  // Piped returns full URLs
-          }));
-          observer.next(tracks);
-          observer.complete();
-        } else {
-          console.log('[TranscriptService] Piped: no subtitles in response');
-          this.tryPipedFallback(videoId, index + 1, observer, onAllFailed);
-        }
-      },
-      error: (err) => {
-        console.log('[TranscriptService] Piped instance failed:', instance, err.message || err.status);
-        this.tryPipedFallback(videoId, index + 1, observer, onAllFailed);
-      }
-    });
+    onAllFailed();
   }
 
   /**
@@ -162,7 +129,7 @@ export class TranscriptService {
       context: {
         client: {
           clientName: 'WEB',
-          clientVersion: '2.20231219.04.00'
+          clientVersion: '2.20240905.01.00'
         }
       },
       videoId: videoId
@@ -266,7 +233,7 @@ export class TranscriptService {
 
       const instance = this.INVIDIOUS_INSTANCES[currentIdx++];
       const url = `${instance}/api/v1/captions/${videoId}`;
-      console.log('[TranscriptService] Trying Invidious:', url);
+      // console.log('[TranscriptService] Trying Invidious:', url);
 
       this.http.get<InvidiousCaptionResponse>(url).subscribe({
         next: (response) => {
@@ -305,7 +272,7 @@ export class TranscriptService {
       }
     }
 
-    console.log('[TranscriptService] Fetching caption content from:', fetchUrl.substring(0, 100) + '...');
+    // console.log('[TranscriptService] Fetching caption content from:', fetchUrl.substring(0, 100) + '...');
 
     return this.http.get(fetchUrl, { responseType: 'text' }).pipe(
       map(content => {
@@ -441,12 +408,25 @@ export class TranscriptService {
   private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
     this.isLoading.set(false);
 
-    return segments.map((segment, index) => ({
-      id: index,
-      startTime: segment.start,
-      endTime: segment.start + segment.duration,
-      text: segment.text.trim()
-    }));
+    return segments.map((segment, index) => {
+      let endTime = segment.start + segment.duration;
+
+      // User Request: "subtitle shouldn't hide, it should show until the next timestamp"
+      // Sticky Logic: Extend end time to the start of the next segment
+      if (index < segments.length - 1) {
+        endTime = segments[index + 1].start;
+      } else {
+        // For the last segment, ensure it stays visible for a reasonable time (min 3s)
+        endTime = Math.max(endTime, segment.start + 3);
+      }
+
+      return {
+        id: index,
+        startTime: segment.start,
+        endTime: endTime,
+        text: segment.text.trim()
+      };
+    });
   }
 
   /**
@@ -525,7 +505,15 @@ export class TranscriptService {
           this.isGeneratingAI.set(false);
           this.pendingRequests.delete(videoId);
 
-          const errorMessage = err.error?.error || err.message || 'AI transcription failed';
+          let errorMessage = 'AI transcription failed';
+          if (err.error && typeof err.error === 'object' && err.error.error) {
+            errorMessage = err.error.error;
+          } else if (typeof err.error === 'string') {
+            errorMessage = err.error;
+          } else if (err.message) {
+            errorMessage = err.message;
+          }
+
           this.error.set(errorMessage);
         }
       }),

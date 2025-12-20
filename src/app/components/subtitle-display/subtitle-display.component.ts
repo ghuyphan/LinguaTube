@@ -40,7 +40,7 @@ import { SubtitleCue, Token } from '../../models';
           <div class="subtitle-empty">
             @if (transcript.isGeneratingAI()) {
               <div class="ai-generating">
-                <div class="ai-spinner"></div>
+                <app-icon name="loader" [size]="32" class="spin" />
                 <p class="ai-title">Generating transcript with AI...</p>
                 <p class="ai-hint">This video has no captions. Using Whisper to transcribe.</p>
               </div>
@@ -185,15 +185,6 @@ import { SubtitleCue, Token } from '../../models';
       padding: var(--space-lg);
     }
 
-    .ai-spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--border-color);
-      border-top-color: var(--accent-primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
     .ai-title {
       font-weight: 600;
       color: var(--text-primary);
@@ -273,6 +264,7 @@ import { SubtitleCue, Token } from '../../models';
       max-height: 180px;
       overflow-y: auto;
       border-bottom: 1px solid var(--border-color);
+      position: relative;
     }
 
     .cue-item {
@@ -412,9 +404,13 @@ import { SubtitleCue, Token } from '../../models';
     }
 
     @media (max-width: 640px) {
+      .subtitle-panel {
+        border-radius: var(--border-radius-lg);
+      }
+
       .subtitle-text {
         font-size: 1.125rem;
-        line-height: 2.2;
+        line-height: 1.6;
       }
 
       .current-subtitle--small .subtitle-text {
@@ -422,35 +418,30 @@ import { SubtitleCue, Token } from '../../models';
       }
 
       .current-subtitle--large .subtitle-text {
-        font-size: 1.375rem;
+        font-size: 1.25rem;
       }
 
       .word {
-        padding: 4px 6px;
-        margin: 2px;
-        min-height: 32px;
-        display: inline-flex;
-        align-items: center;
+        padding: 2px 4px;
+        margin: 1px;
+        min-height: auto;
       }
 
       .subtitle-list {
-        max-height: 150px;
+        max-height: 250px;
       }
 
       .cue-item {
-        padding: var(--space-md);
-        min-height: 48px;
+        padding: var(--space-sm);
+        min-height: auto;
+        font-size: 0.8125rem;
       }
 
       .subtitle-controls {
         flex-wrap: wrap;
         gap: var(--space-sm);
+        padding: var(--space-sm);
       }
-
-      .font-controls {
-        margin-left: 0;
-      }
-
     }
 
     @media (max-width: 480px) {
@@ -458,17 +449,10 @@ import { SubtitleCue, Token } from '../../models';
         min-height: 80px;
         padding: var(--space-md);
       }
-
+      
       .subtitle-text {
-        font-size: 1rem;
-      }
-
-      .current-subtitle--small .subtitle-text {
-        font-size: 0.875rem;
-      }
-
-      .current-subtitle--large .subtitle-text {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
       }
     }
   `]

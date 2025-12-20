@@ -6,20 +6,20 @@ import { DictionaryService, VocabularyService, SettingsService } from '../../ser
 import { DictionaryEntry } from '../../models';
 
 @Component({
-    selector: 'app-dictionary-panel',
-    standalone: true,
-    imports: [CommonModule, FormsModule, IconComponent],
-    template: `
+  selector: 'app-dictionary-panel',
+  standalone: true,
+  imports: [CommonModule, FormsModule, IconComponent],
+  template: `
     <div class="dict-panel">
       <div class="dict-header">
         <h2>Dictionary</h2>
         <p class="dict-subtitle">Look up any word without a video</p>
       </div>
 
-      <!-- Search -->
-      <div class="dict-search">
+      <!-- Search / Filters -->
+      <div class="dict-filters">
         <div class="search-box">
-          <app-icon name="search" [size]="18" />
+          <app-icon name="search" [size]="16" class="search-icon" />
           <input 
             type="text" 
             [(ngModel)]="searchQuery"
@@ -29,7 +29,7 @@ import { DictionaryEntry } from '../../models';
           />
           @if (searchQuery) {
             <button class="clear-btn" (click)="clearSearch()">
-              <app-icon name="x" [size]="16" />
+              <app-icon name="x" [size]="14" />
             </button>
           }
         </div>
@@ -45,7 +45,7 @@ import { DictionaryEntry } from '../../models';
       <!-- Results -->
       <div class="dict-results">
         @if (result()) {
-          <div class="result-card card">
+          <div class="result-content">
             <div class="result-header">
               <h3 class="result-word" [class]="'text-' + settings.settings().language">
                 {{ result()!.word }}
@@ -100,122 +100,140 @@ import { DictionaryEntry } from '../../models';
             </div>
           </div>
         } @else if (hasSearched() && !isLoading()) {
-          <div class="no-results card">
+          <div class="no-results">
             <app-icon name="info" [size]="24" />
             <p>No results found for "<strong>{{ lastQuery }}</strong>"</p>
             <p class="hint">Try a different spelling or search term</p>
           </div>
         } @else if (!hasSearched()) {
-          <div class="search-prompt">
-            <app-icon name="book-open" [size]="32" class="prompt-icon" />
-            <p>Enter a word above to look up its meaning</p>
-          </div>
+          <!-- Show recent searches here if no current search -->
+          @if (recentSearches().length > 0) {
+            <div class="dict-recent">
+              <h4>Recent Searches</h4>
+              <div class="recent-list">
+                @for (term of recentSearches(); track term) {
+                  <button class="recent-item" (click)="searchRecent(term)">
+                    {{ term }}
+                  </button>
+                }
+              </div>
+            </div>
+          } @else {
+            <div class="search-prompt">
+              <app-icon name="book-open" [size]="32" class="prompt-icon" />
+              <p>Enter a word above to look up its meaning</p>
+            </div>
+          }
         }
       </div>
-
-      <!-- Recent searches -->
-      @if (recentSearches().length > 0 && !result()) {
-        <div class="dict-recent">
-          <h4>Recent Searches</h4>
-          <div class="recent-list">
-            @for (term of recentSearches(); track term) {
-              <button class="recent-item" (click)="searchRecent(term)">
-                {{ term }}
-              </button>
-            }
-          </div>
-        </div>
-      }
     </div>
   `,
-    styles: [`
+  styles: [`
     .dict-panel {
+      background: var(--bg-card);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      gap: var(--space-md);
+      height: auto;
+      margin-bottom: var(--space-xl);
+    }
+
+    .dict-header {
+      padding: var(--space-md);
+      border-bottom: 1px solid var(--border-color);
+      text-align: left; 
     }
 
     .dict-header h2 {
-      margin-bottom: var(--space-xs);
+      margin-bottom: 4px;
+      font-size: 1rem;
+      font-weight: 600;
     }
 
     .dict-subtitle {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       color: var(--text-muted);
     }
 
-    .dict-search {
+    .dict-filters {
       display: flex;
       gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-card); /* Ensure bg matches */
     }
 
     .search-box {
       flex: 1;
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
-      padding: var(--space-sm) var(--space-md);
-      background: var(--bg-card);
-      border-radius: var(--border-radius);
-      border: 1px solid var(--border-color);
-      transition: all var(--transition-fast);
+      position: relative; /* For icon positioning */
+      min-width: 0;
     }
-
-    .search-box:focus-within {
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
+    
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      color: var(--text-muted);
+      pointer-events: none;
     }
 
     .search-input {
-      flex: 1;
-      border: none;
-      background: none;
-      padding: 0;
-      min-height: 36px;
-      font-size: 1rem;
+      width: 100%;
+      padding-left: 32px; /* Space for icon */
+      height: 36px;
+      font-size: 0.8125rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      background: var(--bg-secondary);
+      transition: all var(--transition-fast);
     }
 
     .search-input:focus {
-      box-shadow: none;
+      background: var(--bg-card);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
     }
-
+    
     .clear-btn {
-      width: 28px;
-      height: 28px;
+      position: absolute;
+      right: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       border: none;
-      background: var(--bg-secondary);
+      background: transparent;
       color: var(--text-muted);
-      border-radius: var(--border-radius);
       cursor: pointer;
-      transition: all var(--transition-fast);
+      padding: 4px;
     }
 
     .clear-btn:hover {
-      background: var(--border-color);
       color: var(--text-primary);
     }
 
     .search-btn {
-      min-width: 80px;
+      height: 36px;
+      min-width: 70px; /* matched vocab filter-select rough width */
+      font-size: 0.8125rem;
     }
 
     .dict-results {
-      min-height: 200px;
+      padding: var(--space-md);
     }
 
-    .result-card {
-      padding: var(--space-lg);
+    .result-content {
+      animation: fadeIn 0.3s ease;
     }
 
     .result-header {
       margin-bottom: var(--space-sm);
+      text-align: center;
     }
 
     .result-word {
-      font-size: 2rem;
+      font-size: 1.75rem; /* Slightly smaller to fit */
       font-weight: 600;
       line-height: 1.2;
     }
@@ -229,6 +247,7 @@ import { DictionaryEntry } from '../../models';
 
     .result-badges {
       display: flex;
+      justify-content: center;
       gap: var(--space-xs);
       margin-bottom: var(--space-md);
     }
@@ -248,22 +267,24 @@ import { DictionaryEntry } from '../../models';
     .result-meanings {
       display: flex;
       flex-direction: column;
-      gap: var(--space-sm);
+      gap: var(--space-md);
       margin-bottom: var(--space-lg);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--border-color);
     }
 
     .meaning-item {
       display: flex;
-      gap: var(--space-sm);
+      gap: var(--space-md);
     }
 
     .meaning-num {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.6875rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--text-muted);
       background: var(--bg-secondary);
@@ -276,7 +297,7 @@ import { DictionaryEntry } from '../../models';
     }
 
     .meaning-text {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       color: var(--text-primary);
       line-height: 1.5;
     }
@@ -299,16 +320,20 @@ import { DictionaryEntry } from '../../models';
     .result-actions {
       padding-top: var(--space-md);
       border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: center;
     }
 
     .no-results {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: var(--space-sm);
-      padding: var(--space-xl);
+      padding: var(--space-xl) 0;
       text-align: center;
       color: var(--text-muted);
+      height: 100%;
     }
 
     .no-results p {
@@ -324,21 +349,23 @@ import { DictionaryEntry } from '../../models';
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: var(--space-md);
-      padding: var(--space-xl);
+      padding: var(--space-xl) 0;
       text-align: center;
       color: var(--text-muted);
+      height: 100%;
+      opacity: 0.7;
     }
 
     .prompt-icon {
+      color: var(--text-muted);
       opacity: 0.5;
     }
 
+    /* Keep Recent Searches clean within the results area */
     .dict-recent {
-      padding: var(--space-md);
-      background: var(--bg-card);
-      border-radius: var(--border-radius);
-      border: 1px solid var(--border-color);
+      padding: 0;
     }
 
     .dict-recent h4 {
@@ -360,108 +387,111 @@ import { DictionaryEntry } from '../../models';
       padding: 6px 12px;
       font-size: 0.875rem;
       font-family: var(--font-jp);
-      background: var(--bg-secondary);
+      background: var(--bg-secondary); 
       border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
+      border-radius: 100px;
       cursor: pointer;
       transition: all var(--transition-fast);
     }
 
     .recent-item:hover {
-      background: var(--bg-card);
       border-color: var(--accent-primary);
       color: var(--accent-primary);
+      background: var(--bg-card);
+      transform: translateY(-1px);
     }
 
     @media (max-width: 480px) {
-      .dict-search {
-        flex-direction: column;
-      }
-
-      .search-btn {
-        width: 100%;
-      }
-
-      .result-word {
-        font-size: 1.75rem;
-      }
-
-      .result-card {
-        padding: var(--space-md);
-      }
+       /* Adjustments for specific mobile constraints if needed */
     }
-  `]
+    `]
 })
 export class DictionaryPanelComponent {
-    dictionary = inject(DictionaryService);
-    vocab = inject(VocabularyService);
-    settings = inject(SettingsService);
+  dictionary = inject(DictionaryService);
+  vocab = inject(VocabularyService);
+  settings = inject(SettingsService);
 
-    searchQuery = '';
-    lastQuery = '';
-    result = signal<DictionaryEntry | null>(null);
-    isLoading = signal(false);
-    hasSearched = signal(false);
-    isSaved = signal(false);
-    recentSearches = signal<string[]>([]);
+  searchQuery = '';
+  lastQuery = '';
+  result = signal<DictionaryEntry | null>(null);
+  isLoading = signal(false);
+  hasSearched = signal(false);
+  isSaved = signal(false);
+  recentSearches = signal<string[]>([]);
 
-    constructor() {
-        // Load recent searches from localStorage
-        const saved = localStorage.getItem('linguatube-recent-searches');
-        if (saved) {
-            try {
-                this.recentSearches.set(JSON.parse(saved));
-            } catch { }
-        }
+  constructor() {
+    // Init from service state (persistence)
+    this.searchQuery = this.dictionary.lastQuery();
+    this.result.set(this.dictionary.lastLookup());
+
+    if (this.searchQuery && this.result()) {
+      this.hasSearched.set(true);
+      this.lastQuery = this.searchQuery;
+      this.isSaved.set(this.vocab.hasWord(this.result()!.word));
     }
 
-    search(): void {
-        const query = this.searchQuery.trim();
-        if (!query) return;
-
-        this.lastQuery = query;
-        this.isLoading.set(true);
-        this.hasSearched.set(true);
-
-        const lang = this.settings.settings().language;
-        this.dictionary.lookup(query, lang).subscribe({
-            next: (entry) => {
-                this.result.set(entry);
-                this.isLoading.set(false);
-                this.isSaved.set(entry ? this.vocab.hasWord(entry.word) : false);
-                this.addToRecent(query);
-            },
-            error: () => {
-                this.result.set(null);
-                this.isLoading.set(false);
-            }
-        });
+    // Load recent searches from localStorage
+    const saved = localStorage.getItem('linguatube-recent-searches');
+    if (saved) {
+      try {
+        this.recentSearches.set(JSON.parse(saved));
+      } catch { }
     }
+  }
 
-    clearSearch(): void {
-        this.searchQuery = '';
+  search(): void {
+    const query = this.searchQuery.trim();
+    if (!query) return;
+
+    this.lastQuery = query;
+    this.isLoading.set(true);
+    this.hasSearched.set(true);
+
+    // Update service state
+    this.dictionary.lastQuery.set(query);
+
+    const lang = this.settings.settings().language;
+    this.dictionary.lookup(query, lang).subscribe({
+      next: (entry) => {
+        this.result.set(entry);
+        this.isLoading.set(false);
+        this.isSaved.set(entry ? this.vocab.hasWord(entry.word) : false);
+        this.addToRecent(query);
+      },
+      error: () => {
         this.result.set(null);
-        this.hasSearched.set(false);
-    }
+        this.isLoading.set(false);
+      }
+    });
+  }
 
-    searchRecent(term: string): void {
-        this.searchQuery = term;
-        this.search();
-    }
+  clearSearch(): void {
+    this.searchQuery = '';
+    this.result.set(null);
+    this.hasSearched.set(false);
+    // Clear service state
+    this.dictionary.lastQuery.set('');
+    this.dictionary.lastLookup.set(null);
+  }
 
-    saveWord(): void {
-        const entry = this.result();
-        if (!entry) return;
+  searchRecent(term: string): void {
+    this.searchQuery = term;
+    this.search();
+  }
 
-        const lang = this.settings.settings().language;
-        this.vocab.addFromDictionary(entry, lang);
-        this.isSaved.set(true);
-    }
+  saveWord(): void {
+    const entry = this.result();
+    if (!entry) return;
 
-    private addToRecent(term: string): void {
-        const current = this.recentSearches();
-        const updated = [term, ...current.filter(t => t !== term)].slice(0, 10);
-        this.recentSearches.set(updated);
-        localStorage.setItem('linguatube-recent-searches', JSON.stringify(updated));
-    }
+    const lang = this.settings.settings().language;
+    this.vocab.addFromDictionary(entry, lang);
+    this.isSaved.set(true);
+  }
+
+  private addToRecent(term: string): void {
+    const current = this.recentSearches();
+    const updated = [term, ...current.filter(t => t !== term)].slice(0, 10);
+    this.recentSearches.set(updated);
+    localStorage.setItem('linguatube-recent-searches', JSON.stringify(updated));
+  }
 }

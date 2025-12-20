@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService } from '../../services';
 
 @Component({
   selector: 'app-header',
@@ -23,14 +23,14 @@ import { SettingsService, VocabularyService } from '../../services';
         <button 
           class="lang-btn"
           [class.active]="settings.settings().language === 'ja'"
-          (click)="settings.setLanguage('ja')"
+          (click)="setLanguage('ja')"
         >
           日本語
         </button>
         <button 
           class="lang-btn"
           [class.active]="settings.settings().language === 'zh'"
-          (click)="settings.setLanguage('zh')"
+          (click)="setLanguage('zh')"
         >
           中文
         </button>
@@ -65,16 +65,22 @@ import { SettingsService, VocabularyService } from '../../services';
     </header>
   `,
   styles: [`
-    .header {
-      display: flex;
-      align-items: center;
-      gap: var(--space-lg);
-      padding: var(--space-md) var(--space-lg);
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border-color);
+    :host {
+      display: block;
       position: sticky;
       top: 0;
       z-index: 100;
+      width: 100%;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-sm) var(--space-lg);
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      height: 64px; /* Explicit height to keep it consistent */
     }
 
     .header__brand {
@@ -194,9 +200,16 @@ import { SettingsService, VocabularyService } from '../../services';
     }
 
     @media (max-width: 768px) {
+      /* Keep header sticky on mobile */
+      :host {
+        position: sticky;
+        top: 0;
+      }
+
       .header {
-        gap: var(--space-sm);
-        padding: var(--space-sm) var(--space-md);
+        gap: var(--space-md);
+        padding: 0 var(--space-md);
+        height: 64px; /* Consistent height with desktop */
       }
 
       .header__title-group {
@@ -204,58 +217,26 @@ import { SettingsService, VocabularyService } from '../../services';
       }
 
       .header__nav {
-        order: 3;
-        margin-left: 0;
+        /* Move nav to absolute center or hidden menu if needed, 
+           but for now keeping it compact */
+        margin-left: auto;
+        padding: 2px;
       }
 
       .header__stats {
-        margin-left: auto;
-        gap: var(--space-sm);
+        display: none; /* Hide stats on mobile header to save space */
       }
-
-      .stat-value {
-        font-size: 1rem;
-      }
-
-      .stat-divider {
-        height: 20px;
+      
+      .lang-btn {
+         padding: 4px 8px;
+         font-size: 0.75rem;
       }
     }
 
     @media (max-width: 480px) {
+      /* Keep consistent spacing on small screens */
       .header {
-        padding: var(--space-xs) var(--space-sm);
-      }
-
-      .header__logo {
-        width: 32px;
-        height: 32px;
-      }
-
-      .logo-text {
-        font-size: 1rem;
-      }
-
-      .lang-btn {
-        padding: 4px 10px;
-        font-size: 0.75rem;
-      }
-
-      .stat-item {
-        gap: 0;
-      }
-
-      .stat-value {
-        font-size: 0.875rem;
-      }
-
-      .stat-label {
-        font-size: 0.5625rem;
-      }
-
-      .header__actions .btn-icon {
-        width: 36px;
-        height: 36px;
+        padding: 0 var(--space-md);
       }
     }
   `]
@@ -263,6 +244,19 @@ import { SettingsService, VocabularyService } from '../../services';
 export class HeaderComponent {
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
+  youtube = inject(YoutubeService);
+  subtitles = inject(SubtitleService);
+
+  setLanguage(lang: 'ja' | 'zh'): void {
+    if (this.settings.settings().language === lang) return;
+
+    // Clear video and subtitles when switching languages
+    // primarily to prevent mismatch between language mode and content
+    this.youtube.destroy();
+    this.subtitles.clear();
+
+    this.settings.setLanguage(lang);
+  }
 
   toggleTheme(): void {
     const current = this.settings.settings().theme;

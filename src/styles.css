@@ -59,6 +59,11 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 
+  /* Icon Sizes */
+  /* Added */
+  --icon-size-md: 20px;
+  /* Added */
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
@@ -207,12 +212,18 @@ a:hover {
 .btn-icon {
   width: 36px;
   height: 36px;
-  padding: 0;
-  border-radius: var(--border-radius);
+  padding: 8px;
+  border-radius: var(--border-radius-round);
+}
+
+.btn-icon app-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
 }
 
 .btn-sm {
-  padding: 0.375rem 0.75rem;
+  height: 32px;
+  padding: 0 12px;
   font-size: 0.8125rem;
 }
 
@@ -284,6 +295,12 @@ select {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
 }
 
 .flex {
@@ -483,8 +500,8 @@ ruby rt {
 /* Mobile-specific (phones) */
 @media (max-width: 480px) {
   :root {
-    --space-md: 0.75rem;
-    --space-lg: 0.875rem;
+    --space-md: 1rem;
+    --space-lg: 1.25rem;
   }
 
   h1 {
@@ -528,11 +545,10 @@ ruby rt {
   right: 0;
   height: 64px;
   background: var(--bg-card);
-  border-top: 1px solid var(--border-color);
   padding: var(--space-xs) 0;
   padding-bottom: env(safe-area-inset-bottom, var(--space-xs));
   z-index: 1000;
-  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .bottom-nav__items {
@@ -548,19 +564,26 @@ ruby rt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   padding: var(--space-xs) var(--space-md);
   background: none;
   border: none;
   color: var(--text-muted);
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
+  /* Standardized small text */
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
+  text-transform: none;
+  /* Removed uppercase for cleaner look */
+  letter-spacing: normal;
   cursor: pointer;
   transition: all var(--transition-fast);
   border-radius: var(--border-radius);
   min-width: 64px;
+}
+
+.bottom-nav__item app-icon {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
 }
 
 .bottom-nav__item:hover {
@@ -573,15 +596,7 @@ ruby rt {
 }
 
 .bottom-nav__item.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 3px;
-  background: var(--accent-primary);
-  border-radius: 3px 3px 0 0;
+  display: none;
 }
 
 @media (max-width: 768px) {

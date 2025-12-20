@@ -9,6 +9,7 @@ import { Observable, of, catchError, map } from 'rxjs';
 export class DictionaryService {
   readonly isLoading = signal(false);
   readonly lastLookup = signal<DictionaryEntry | null>(null);
+  readonly lastQuery = signal<string>(''); // Persistence for search term
 
   // Use proxy to avoid CORS issues
   private readonly JOTOBA_API = '/jotoba/api/search/words';
@@ -53,9 +54,9 @@ export class DictionaryService {
           reading: reading,
           meanings: entry.senses?.map((sense: any) => ({
             definition: sense.glosses?.join(', ') || '',
-            tags: sense.pos?.map((p: any) => this.extractPosString(p)).filter(Boolean) || []
+            tags: sense.pos?.map((p: any) => extractPosString(p)).filter(Boolean) || []
           })) || [],
-          partOfSpeech: entry.senses?.[0]?.pos?.map((p: any) => this.extractPosString(p)).filter(Boolean) || [],
+          partOfSpeech: entry.senses?.[0]?.pos?.map((p: any) => extractPosString(p)).filter(Boolean) || [],
           jlptLevel
         };
 
@@ -103,20 +104,7 @@ export class DictionaryService {
     return this.lookupJapanese(word);
   }
 
-  /**
-   * Extract string from Jotoba's pos (part of speech) object
-   * Jotoba returns pos as objects like { Pretty: "Noun", Short: "n" } or just strings
-   */
-  private extractPosString(pos: any): string {
-    if (typeof pos === 'string') {
-      return pos;
-    }
-    if (typeof pos === 'object' && pos !== null) {
-      // Try various property names Jotoba might use
-      return pos.Pretty || pos.Short || pos.name || pos.full || '';
-    }
-    return '';
-  }
+  /* method removed */
 
   /**
    * Simple language detection based on character types
@@ -240,4 +228,19 @@ export class DictionaryService {
 
     return commonWords[word] || null;
   }
+}
+
+/**
+ * Extract string from Jotoba's pos (part of speech) object
+ * Jotoba returns pos as objects like { Pretty: "Noun", Short: "n" } or just strings
+ */
+function extractPosString(pos: any): string {
+  if (typeof pos === 'string') {
+    return pos;
+  }
+  if (typeof pos === 'object' && pos !== null) {
+    // Try various property names Jotoba might use
+    return pos.Pretty || pos.Short || pos.name || pos.full || '';
+  }
+  return '';
 }

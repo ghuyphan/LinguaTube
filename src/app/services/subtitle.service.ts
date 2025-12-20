@@ -8,14 +8,14 @@ import { SubtitleCue, Token } from '../models';
 export class SubtitleService {
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal<number>(-1);
-  
+
   readonly currentCue = computed(() => {
     const index = this.currentCueIndex();
     const subs = this.subtitles();
     return index >= 0 && index < subs.length ? subs[index] : null;
   });
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /**
    * Parse SRT subtitle format
@@ -70,7 +70,7 @@ export class SubtitleService {
   parseASS(content: string): SubtitleCue[] {
     const cues: SubtitleCue[] = [];
     const lines = content.split('\n');
-    
+
     for (const line of lines) {
       if (!line.startsWith('Dialogue:')) continue;
 
@@ -102,7 +102,7 @@ export class SubtitleService {
    */
   parseSubtitles(content: string, filename?: string): SubtitleCue[] {
     const ext = filename?.split('.').pop()?.toLowerCase();
-    
+
     if (ext === 'vtt' || content.startsWith('WEBVTT')) {
       return this.parseVTT(content);
     } else if (ext === 'ass' || ext === 'ssa' || content.includes('[Script Info]')) {
@@ -134,9 +134,15 @@ export class SubtitleService {
    */
   updateCurrentCue(currentTime: number): void {
     const subs = this.subtitles();
-    const index = subs.findIndex(
-      cue => currentTime >= cue.startTime && currentTime <= cue.endTime
-    );
+    // Use reverse loop to find the last (most recent) active cue.
+    // This handles overlapping subtitles (common in YouTube) by preferring the one that started most recently.
+    let index = -1;
+    for (let i = subs.length - 1; i >= 0; i--) {
+      if (currentTime >= subs[i].startTime && currentTime <= subs[i].endTime) {
+        index = i;
+        break;
+      }
+    }
     this.currentCueIndex.set(index);
   }
 
@@ -162,12 +168,12 @@ export class SubtitleService {
 
     for (const char of text) {
       const type = this.getCharType(char);
-      
+
       if (type !== currentType && currentWord) {
         tokens.push({ surface: currentWord });
         currentWord = '';
       }
-      
+
       currentWord += char;
       currentType = type;
     }
@@ -236,7 +242,7 @@ export class SubtitleService {
 
   private getCharType(char: string): string {
     const code = char.charCodeAt(0);
-    
+
     // Hiragana
     if (code >= 0x3040 && code <= 0x309F) return 'hiragana';
     // Katakana
@@ -247,7 +253,7 @@ export class SubtitleService {
     if (code >= 0x0020 && code <= 0x007F) return 'ascii';
     // Punctuation
     if (/[。、！？「」『』（）]/.test(char)) return 'punctuation';
-    
+
     return 'other';
   }
 }

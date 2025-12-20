@@ -5,15 +5,15 @@ import { VocabularyService, SettingsService } from '../../services';
 import { VocabularyItem } from '../../models';
 
 interface StudyCard {
-    item: VocabularyItem;
-    showAnswer: boolean;
+  item: VocabularyItem;
+  showAnswer: boolean;
 }
 
 @Component({
-    selector: 'app-study-mode',
-    standalone: true,
-    imports: [CommonModule, IconComponent],
-    template: `
+  selector: 'app-study-mode',
+  standalone: true,
+  imports: [CommonModule, IconComponent],
+  template: `
     <div class="study-mode">
       @if (!isStudying()) {
         <!-- Study Start Screen -->
@@ -172,7 +172,7 @@ interface StudyCard {
       }
     </div>
   `,
-    styles: [`
+  styles: [`
     .study-mode {
       display: flex;
       flex-direction: column;
@@ -457,8 +457,38 @@ interface StudyCard {
     }
 
     @media (max-width: 480px) {
+      .study-mode {
+        padding: 0; /* Remove padding to allow full width usage */
+      }
+
       .study-start {
-        padding: var(--space-lg);
+        padding: var(--space-lg) var(--space-md);
+        max-width: none;
+      }
+
+      /* Make stats grid on mobile */
+      .study-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xs);
+      }
+
+      .stat-card {
+         padding: var(--space-sm) 2px;
+      }
+
+      .stat-value {
+        font-size: 1.25rem;
+      }
+
+      .stat-label {
+        font-size: 0.625rem;
+      }
+
+      .btn-lg {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-md);
       }
 
       .flashcard__front,
@@ -483,115 +513,115 @@ interface StudyCard {
   `]
 })
 export class StudyModeComponent {
-    vocab = inject(VocabularyService);
-    settings = inject(SettingsService);
+  vocab = inject(VocabularyService);
+  settings = inject(SettingsService);
 
-    // Options
-    includeNew = true;
-    includeLearning = true;
-    includeKnown = false;
+  // Options
+  includeNew = true;
+  includeLearning = true;
+  includeKnown = false;
 
-    // State
-    isStudying = signal(false);
-    isComplete = signal(false);
-    studyCards = signal<StudyCard[]>([]);
-    currentIndex = signal(0);
+  // State
+  isStudying = signal(false);
+  isComplete = signal(false);
+  studyCards = signal<StudyCard[]>([]);
+  currentIndex = signal(0);
 
-    sessionStats = signal({ total: 0, correct: 0, incorrect: 0 });
+  sessionStats = signal({ total: 0, correct: 0, incorrect: 0 });
 
-    availableCards = computed(() => {
-        return this.vocab.vocabulary().filter(item => {
-            if (item.level === 'new' && this.includeNew) return true;
-            if (item.level === 'learning' && this.includeLearning) return true;
-            if (item.level === 'known' && this.includeKnown) return true;
-            return false;
-        }).length;
+  availableCards = computed(() => {
+    return this.vocab.vocabulary().filter(item => {
+      if (item.level === 'new' && this.includeNew) return true;
+      if (item.level === 'learning' && this.includeLearning) return true;
+      if (item.level === 'known' && this.includeKnown) return true;
+      return false;
+    }).length;
+  });
+
+  currentCard = computed(() => {
+    const cards = this.studyCards();
+    const index = this.currentIndex();
+    return cards[index] || null;
+  });
+
+  startSession(): void {
+    const items = this.vocab.vocabulary().filter(item => {
+      if (item.level === 'new' && this.includeNew) return true;
+      if (item.level === 'learning' && this.includeLearning) return true;
+      if (item.level === 'known' && this.includeKnown) return true;
+      return false;
     });
 
-    currentCard = computed(() => {
-        const cards = this.studyCards();
-        const index = this.currentIndex();
-        return cards[index] || null;
-    });
+    // Shuffle cards
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
 
-    startSession(): void {
-        const items = this.vocab.vocabulary().filter(item => {
-            if (item.level === 'new' && this.includeNew) return true;
-            if (item.level === 'learning' && this.includeLearning) return true;
-            if (item.level === 'known' && this.includeKnown) return true;
-            return false;
-        });
+    this.studyCards.set(shuffled.map(item => ({
+      item,
+      showAnswer: false
+    })));
 
-        // Shuffle cards
-        const shuffled = [...items].sort(() => Math.random() - 0.5);
+    this.currentIndex.set(0);
+    this.isStudying.set(true);
+    this.isComplete.set(false);
+    this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
+  }
 
-        this.studyCards.set(shuffled.map(item => ({
-            item,
-            showAnswer: false
-        })));
+  flipCard(): void {
+    const cards = this.studyCards();
+    const index = this.currentIndex();
 
-        this.currentIndex.set(0);
-        this.isStudying.set(true);
-        this.isComplete.set(false);
-        this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
+    if (cards[index] && !cards[index].showAnswer) {
+      cards[index].showAnswer = true;
+      this.studyCards.set([...cards]);
+    }
+  }
+
+  markAnswer(answer: 'wrong' | 'hard' | 'good' | 'easy'): void {
+    const card = this.currentCard();
+    if (!card) return;
+
+    const stats = this.sessionStats();
+    stats.total++;
+
+    // Update word level based on answer (simple SRS)
+    let newLevel = card.item.level;
+
+    if (answer === 'wrong') {
+      stats.incorrect++;
+      newLevel = 'new';
+    } else if (answer === 'hard') {
+      newLevel = 'learning';
+    } else if (answer === 'good') {
+      stats.correct++;
+      newLevel = card.item.level === 'new' ? 'learning' : 'known';
+    } else if (answer === 'easy') {
+      stats.correct++;
+      newLevel = 'known';
     }
 
-    flipCard(): void {
-        const cards = this.studyCards();
-        const index = this.currentIndex();
+    this.sessionStats.set({ ...stats });
 
-        if (cards[index] && !cards[index].showAnswer) {
-            cards[index].showAnswer = true;
-            this.studyCards.set([...cards]);
-        }
+    // Update vocabulary
+    if (newLevel !== card.item.level) {
+      this.vocab.updateLevel(card.item.id, newLevel);
     }
 
-    markAnswer(answer: 'wrong' | 'hard' | 'good' | 'easy'): void {
-        const card = this.currentCard();
-        if (!card) return;
-
-        const stats = this.sessionStats();
-        stats.total++;
-
-        // Update word level based on answer (simple SRS)
-        let newLevel = card.item.level;
-
-        if (answer === 'wrong') {
-            stats.incorrect++;
-            newLevel = 'new';
-        } else if (answer === 'hard') {
-            newLevel = 'learning';
-        } else if (answer === 'good') {
-            stats.correct++;
-            newLevel = card.item.level === 'new' ? 'learning' : 'known';
-        } else if (answer === 'easy') {
-            stats.correct++;
-            newLevel = 'known';
-        }
-
-        this.sessionStats.set({ ...stats });
-
-        // Update vocabulary
-        if (newLevel !== card.item.level) {
-            this.vocab.updateLevel(card.item.id, newLevel);
-        }
-
-        // Next card or complete
-        if (this.currentIndex() < this.studyCards().length - 1) {
-            this.currentIndex.update(i => i + 1);
-        } else {
-            this.isStudying.set(false);
-            this.isComplete.set(true);
-        }
+    // Next card or complete
+    if (this.currentIndex() < this.studyCards().length - 1) {
+      this.currentIndex.update(i => i + 1);
+    } else {
+      this.isStudying.set(false);
+      this.isComplete.set(true);
     }
+  }
 
-    endSession(): void {
-        this.isStudying.set(false);
-        this.isComplete.set(false);
-    }
+  endSession(): void {
+    this.isStudying.set(false);
+    this.isComplete.set(false);
+  }
 
-    resetSession(): void {
-        this.isComplete.set(false);
-        this.startSession();
-    }
+  resetSession(): void {
+    this.isComplete.set(false);
+    this.startSession();
+  }
 }

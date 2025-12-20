@@ -183,13 +183,23 @@ type AppView = 'video' | 'dictionary' | 'study';
       }
 
       .main {
-        padding-bottom: 80px;
+        padding: var(--space-sm) 0 calc(64px + var(--space-sm)) 0;
+      }
+      
+      .layout {
+        gap: var(--space-sm);
+      }
+      
+      .layout-main,
+      .dictionary-view {
+        gap: var(--space-sm);
       }
     }
 
     @media (max-width: 480px) {
+      .layout-main,
       .dictionary-view {
-        gap: var(--space-md);
+        gap: var(--space-sm);
       }
     }
   `]
