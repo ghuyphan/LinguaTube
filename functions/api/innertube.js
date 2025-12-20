@@ -8,7 +8,7 @@ export async function onRequestPost(context) {
         const body = await request.json();
         const videoId = body.videoId;
 
-        console.log(`[Innertube] Fetching captions for video: ${videoId}`);
+        console.log(`[Innertube v2.0] Fetching captions for video: ${videoId}`);
 
         // Strategy 1: Try innertube API first
         let data = await tryInnertubeAPI(body);
