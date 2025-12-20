@@ -1,9 +1,12 @@
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationStart } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { VideoPlayerComponent } from '../../components/video-player/video-player.component';
 import { SubtitleDisplayComponent } from '../../components/subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../components/vocabulary-list/vocabulary-list.component';
 import { WordPopupComponent } from '../../components/word-popup/word-popup.component';
+import { YoutubeService } from '../../services';
 import { Token } from '../../models';
 
 @Component({
@@ -94,7 +97,22 @@ import { Token } from '../../models';
   `]
 })
 export class VideoPageComponent {
+  private router = inject(Router);
+  private youtube = inject(YoutubeService);
+
   selectedWord = signal<Token | null>(null);
+
+  constructor() {
+    // Pause video when navigating away
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationStart)
+    ).subscribe(() => {
+      // Only pause if the player is ready and playing
+      if (this.youtube.isReady() && this.youtube.isPlaying()) {
+        this.youtube.pauseVideo();
+      }
+    });
+  }
 
   onWordClicked(token: Token): void {
     this.selectedWord.set(token);

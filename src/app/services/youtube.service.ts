@@ -194,6 +194,14 @@ export class YoutubeService {
     } catch (e) { }
   }
 
+  pauseVideo(): void {
+    try {
+      this.player?.pauseVideo();
+    } catch (e) {
+      console.warn('Could not pause video', e);
+    }
+  }
+
   togglePlay(): void {
     if (this.isPlaying()) {
       this.pause();
