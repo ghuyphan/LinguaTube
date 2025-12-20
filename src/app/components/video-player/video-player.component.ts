@@ -231,6 +231,17 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
       padding-bottom: 56.25%; /* 16:9 */
       background: #000;
       overflow: hidden;
+      /* Cap height on desktop so subtitle panel is visible at 100% zoom */
+      max-height: 50vh;
+    }
+    
+    /* When max-height is reached, switch from padding-hack to direct sizing */
+    @media (min-width: 769px) {
+      .video-wrapper {
+        padding-bottom: 0;
+        height: min(56.25vw, 50vh);
+        max-height: 50vh;
+      }
     }
 
     /* Target the youtube-player div and the iframe it creates */
