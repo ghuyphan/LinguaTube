@@ -114,6 +114,85 @@ app.post('/api/whisper', async (req, res) => {
     }
 });
 
+/**
+ * GET /api/mdbg
+ * Scrape MDBG for Chinese dictionary entries
+ * Mirrors functions/api/mdbg.js logic for local dev
+ */
+app.get('/api/mdbg', async (req, res) => {
+    const word = req.query.q;
+    if (!word) {
+        return res.status(400).json({ error: 'Missing query parameter "q"' });
+    }
+
+    try {
+        const targetUrl = `https://www.mdbg.net/chinese/dictionary?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0&wdqtm=0&wdqcham=1`;
+        console.log(`[MDBG Local] Fetching: ${targetUrl}`);
+
+        const response = await fetch(targetUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
+        });
+
+        const html = await response.text();
+        const entries = [];
+
+        // Simple Regex Parser for Local Dev
+        // Split by rows to isolate entries
+        const rowSplits = html.split('<tr class="row">');
+
+        for (let i = 1; i < rowSplits.length; i++) {
+            const rowFragment = rowSplits[i].split('</tr>')[0];
+
+            // Extract Word
+            // Note: MDBG might put multiple chars in spans, but usually one main span class="mpt4"
+            const wordMatch = rowFragment.match(/<span class="mpt4">([^<]+)<\/span>/);
+            const word = wordMatch ? wordMatch[1].trim() : null;
+
+            if (!word) continue;
+
+            // Extract Pinyin (it appears after the word usually in a div class="pinyin")
+            const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>.*?<span class="mpt4">([^<]+)<\/span>/s);
+            const pinyin = pinyinMatch ? pinyinMatch[1].trim() : '';
+
+            // Extract Definitions
+            const defsMatch = rowFragment.match(/<div class="defs">([\s\S]*?)<\/div>/);
+            let definitions = [];
+            let hsk = null;
+
+            if (defsMatch) {
+                // Remove tags but keep slashes usually denoted by <strong>/</strong>
+                // We'll just strip all tags and split by /
+                const rawDefs = defsMatch[1];
+                const textOnly = rawDefs.replace(/<[^>]+>/g, '/'); // distinct separators
+                definitions = textOnly.split('/')
+                    .map(d => d.trim())
+                    .filter(d => d && d !== '&nbsp;');
+            }
+
+            // Extract HSK
+            const hskMatch = rowFragment.match(/HSK\s*(\d+)/);
+            if (hskMatch) {
+                hsk = parseInt(hskMatch[1]);
+            }
+
+            entries.push({
+                word,
+                pinyin,
+                definitions,
+                hsk
+            });
+        }
+
+        res.json(entries);
+
+    } catch (error) {
+        console.error('[MDBG Local] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({

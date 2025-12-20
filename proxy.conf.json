@@ -120,12 +120,9 @@
       "Content-Type": "application/json"
     }
   },
-  "/freedict": {
-    "target": "https://api.dictionaryapi.dev/api/v2/entries",
-    "secure": true,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/freedict": ""
-    }
+  "/api/mdbg": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
   }
 }

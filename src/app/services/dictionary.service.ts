@@ -13,7 +13,7 @@ export class DictionaryService {
 
   // Use proxy to avoid CORS issues
   private readonly JOTOBA_API = '/jotoba/api/search/words';
-  private readonly FREEDICT_API = '/freedict';
+  private readonly MDBG_API = '/api/mdbg';
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
@@ -86,7 +86,7 @@ export class DictionaryService {
   }
 
   /**
-   * Look up a Chinese word using Free Dictionary API
+   * Look up a Chinese word using MDBG Scraper Proxy
    */
   lookupChinese(word: string): Observable<DictionaryEntry | null> {
     if (!word.trim()) return of(null);
@@ -100,9 +100,9 @@ export class DictionaryService {
 
     this.isLoading.set(true);
 
-    return this.http.get<any[]>(`${this.FREEDICT_API}/zh/${encodeURIComponent(word)}`).pipe(
+    return this.http.get<any[]>(`${this.MDBG_API}?q=${encodeURIComponent(word)}`).pipe(
       map(response => {
-        const result = this.parseFreeDictResponse(response, word);
+        const result = this.parseMdbgResponse(response, word);
         if (result) {
           this.saveToCache(word, 'zh', result);
         }
@@ -111,7 +111,7 @@ export class DictionaryService {
       tap(() => this.isLoading.set(false)),
       catchError(err => {
         this.isLoading.set(false);
-        console.log('FreeDictionary lookup failed, using local:', err.message);
+        console.log('MDBG lookup failed, using local:', err.message);
         const result = this.localChineseLookup(word);
         if (result) this.lastLookup.set(result);
         return of(result);
@@ -120,9 +120,9 @@ export class DictionaryService {
   }
 
   /**
-   * Parse Free Dictionary API response to DictionaryEntry format
+   * Parse MDBG Scraper response to DictionaryEntry format
    */
-  private parseFreeDictResponse(response: any[], word: string): DictionaryEntry | null {
+  private parseMdbgResponse(response: any[], word: string): DictionaryEntry | null {
     if (!response || response.length === 0) {
       return this.localChineseLookup(word);
     }
@@ -130,14 +130,13 @@ export class DictionaryService {
     const entry = response[0];
     const result: DictionaryEntry = {
       word: entry.word || word,
-      pinyin: entry.phonetic || entry.phonetics?.[0]?.text || '',
-      meanings: entry.meanings?.flatMap((m: any) =>
-        m.definitions?.map((d: any) => ({
-          definition: d.definition || '',
-          examples: d.example ? [d.example] : []
-        })) || []
-      ) || [],
-      partOfSpeech: entry.meanings?.map((m: any) => m.partOfSpeech).filter(Boolean) || []
+      pinyin: entry.pinyin || '',
+      meanings: entry.definitions?.map((def: string) => ({
+        definition: def,
+        examples: []
+      })) || [],
+      partOfSpeech: [], // MDBG doesn't reliably provide POS in the scraper yet
+      hskLevel: entry.hsk
     };
 
     this.lastLookup.set(result);
