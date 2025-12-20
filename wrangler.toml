@@ -1,0 +1,7 @@
+name = "lingua-tube"
+pages_build_output_dir = "dist/lingua-tube/browser"
+compatibility_date = "2024-12-20"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# GROQ_API_KEY should be set in Cloudflare Dashboard
