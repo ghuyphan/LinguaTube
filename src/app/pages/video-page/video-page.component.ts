@@ -103,15 +103,8 @@ export class VideoPageComponent {
   selectedWord = signal<Token | null>(null);
 
   constructor() {
-    // Pause video when navigating away
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationStart)
-    ).subscribe(() => {
-      // Only pause if the player is ready and playing
-      if (this.youtube.isReady() && this.youtube.isPlaying()) {
-        this.youtube.pauseVideo();
-      }
-    });
+    // No explicit pause logic needed here; component destruction naturally stops playback,
+    // and YoutubeService signals persist the timestamp for restoration.
   }
 
   onWordClicked(token: Token): void {

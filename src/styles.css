@@ -248,7 +248,10 @@ textarea,
 select {
   font-family: var(--font-sans);
   font-size: 0.9375rem;
-  padding: 0.625rem 0.875rem;
+  padding: 0 0.875rem;
+  height: 48px;
+  /* Standardize height */
+  line-height: normal;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   background: var(--bg-card);
@@ -678,4 +681,36 @@ ruby rt {
     border-radius: 0;
     animation: slideUp 0.2s ease;
   }
+}
+
+/* Utility to lock body scroll */
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
+/* Fix YouTube iframe overflow globally (handles dynamic iframe) */
+.video-embed-ratio iframe,
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal scroll globally */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
 }

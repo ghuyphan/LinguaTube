@@ -34,7 +34,7 @@ import { IconComponent } from './components/icon/icon.component';
             routerLink="/video"
             routerLinkActive="active"
           >
-            <app-icon name="video" [size]="20" />
+            <app-icon name="play-circle" [size]="20" />
             <span>Video</span>
           </a>
           <a

@@ -1,4 +1,4 @@
-import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService } from '../../services';
@@ -494,7 +494,7 @@ import { SubtitleCue, Token } from '../../models';
     }
   `]
 })
-export class SubtitleDisplayComponent implements AfterViewChecked {
+export class SubtitleDisplayComponent {
   subtitles = inject(SubtitleService);
   youtube = inject(YoutubeService);
   vocab = inject(VocabularyService);
@@ -505,51 +505,44 @@ export class SubtitleDisplayComponent implements AfterViewChecked {
 
   wordClicked = output<Token>();
 
-  private lastScrolledCueId: number | null = null;
-
   constructor() {
     // Update current cue based on video time
     effect(() => {
       const time = this.youtube.currentTime();
       this.subtitles.updateCurrentCue(time);
     });
+
+    // Auto-scroll to active cue using effect for better reactivity
+    effect(() => {
+      const currentCue = this.subtitles.currentCue();
+      // Ensure we have a cue and the list element is available
+      if (currentCue && this.subtitleList?.nativeElement) {
+        // Use timeout to allow DOM update (class changes) before measuring
+        setTimeout(() => this.scrollToActiveCue(currentCue.id), 0);
+      }
+    });
   }
 
-  ngAfterViewChecked(): void {
-    this.scrollToActiveCue();
-  }
+  // Removed ngAfterViewChecked as we use effect now
 
-  private scrollToActiveCue(): void {
-    const currentCue = this.subtitles.currentCue();
-    if (!currentCue || !this.subtitleList?.nativeElement) return;
-
-    // Avoid redundant scrolls for the same cue
-    if (this.lastScrolledCueId === currentCue.id) return;
-    this.lastScrolledCueId = currentCue.id;
+  private scrollToActiveCue(cueId: number): void {
+    if (!this.subtitleList?.nativeElement) return;
 
     const container = this.subtitleList.nativeElement;
-    const activeElement = container.querySelector(`[data-cue-id="${currentCue.id}"]`) as HTMLElement;
+    const activeElement = container.querySelector(`[data-cue-id="${cueId}"]`) as HTMLElement;
 
     if (activeElement) {
-      // Calculate scroll position manually to avoid scrollIntoView affecting parent containers
       const containerHeight = container.clientHeight;
       const elementTop = activeElement.offsetTop;
       const elementHeight = activeElement.offsetHeight;
 
-      // Center the element in the container
+      // Center the element
       const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
 
-      // Check if element is not fully visible before scrolling
-      const currentScrollTop = container.scrollTop;
-      const isAboveView = elementTop < currentScrollTop;
-      const isBelowView = elementTop + elementHeight > currentScrollTop + containerHeight;
-
-      if (isAboveView || isBelowView) {
-        container.scrollTo({
-          top: Math.max(0, targetScrollTop),
-          behavior: 'smooth'
-        });
-      }
+      container.scrollTo({
+        top: Math.max(0, targetScrollTop),
+        behavior: 'smooth'
+      });
     }
   }
 

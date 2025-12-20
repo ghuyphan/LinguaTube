@@ -12,7 +12,7 @@ export type IconName =
   | 'repeat' | 'languages' | 'subtitles' | 'captions'
   | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
   | 'chevron-left' | 'chevron-right' | 'layers'
-  | 'sparkles' | 'wand';
+  | 'sparkles' | 'wand' | 'play-circle';
 
 @Component({
   selector: 'app-icon',
@@ -228,6 +228,10 @@ export type IconName =
           <path d="M17.8 6.2 19 5"></path>
           <path d="m3 21 9-9"></path>
           <path d="M12.2 6.2 11 5"></path>
+        }
+        @case ('play-circle') {
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8"></polygon>
         }
       }
     </svg>

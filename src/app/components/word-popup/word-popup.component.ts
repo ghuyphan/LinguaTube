@@ -506,11 +506,17 @@ export class WordPopupComponent {
       const word = this.selectedWord();
       if (word) {
         this.isVisible.set(true);
+        document.body.classList.add('no-scroll'); // Lock scroll
+
         this.isSaved.set(this.vocab.hasWord(word.surface));
         // Reset translations when word changes
         this.translatedDefinitions.set(new Map());
         this.translatingIndices.set(new Set());
         this.lookupWord(word.surface);
+      } else {
+        // Handle case where input signal is cleared externally
+        this.isVisible.set(false);
+        document.body.classList.remove('no-scroll');
       }
     });
   }
@@ -593,6 +599,7 @@ export class WordPopupComponent {
 
   close(): void {
     this.isVisible.set(false);
+    document.body.classList.remove('no-scroll'); // Unlock scroll
     this.entry.set(null);
     this.closed.emit();
   }
