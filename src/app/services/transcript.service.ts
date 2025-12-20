@@ -124,7 +124,7 @@ export class TranscriptService {
    * This is more reliable than HTML parsing as it generates fresh URLs
    */
   private fetchCaptionsFromYouTube(videoId: string): Observable<CaptionTrack[]> {
-    const url = '/innertube/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
+    const url = '/api/innertube?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
     const body = {
       context: {
         client: {

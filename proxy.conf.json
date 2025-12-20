@@ -26,12 +26,12 @@
       "^/youtube": ""
     }
   },
-  "/innertube": {
+  "/api/innertube": {
     "target": "https://www.youtube.com",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
-      "^/innertube": "/youtubei/v1"
+      "^/api/innertube": "/youtubei/v1/player"
     },
     "headers": {
       "Content-Type": "application/json",

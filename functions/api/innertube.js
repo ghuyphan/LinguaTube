@@ -1,5 +1,5 @@
 // Cloudflare Pages Function to proxy YouTube innertube API
-// This enables caption fetching on production
+// Route: /api/innertube
 
 export async function onRequestPost(context) {
     const { request } = context;
@@ -8,8 +8,8 @@ export async function onRequestPost(context) {
         const body = await request.json();
 
         // Forward to YouTube's innertube API
-        const youtubeUrl = new URL(request.url);
-        const key = youtubeUrl.searchParams.get('key') || 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
+        const url = new URL(request.url);
+        const key = url.searchParams.get('key') || 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
 
         const response = await fetch(`https://www.youtube.com/youtubei/v1/player?key=${key}`, {
             method: 'POST',
