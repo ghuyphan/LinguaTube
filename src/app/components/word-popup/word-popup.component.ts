@@ -154,7 +154,7 @@ import { Token, DictionaryEntry } from '../../models';
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      z-index: 1100; /* Above bottom nav (1000) */
       padding: var(--space-md);
       animation: fadeIn 0.15s ease;
     }
@@ -164,7 +164,7 @@ import { Token, DictionaryEntry } from '../../models';
       border-radius: var(--border-radius-lg);
       box-shadow: var(--shadow-lg);
       width: 100%;
-      max-width: 380px;
+      max-width: 380px; /* Tablet/Desktop width */
       max-height: 80vh;
       overflow: hidden;
       display: flex;
@@ -442,6 +442,8 @@ import { Token, DictionaryEntry } from '../../models';
 
       .popup {
         max-width: 100%;
+        width: 100%;
+        margin: 0; 
         max-height: 90vh;
         border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
         animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);

@@ -3,12 +3,13 @@ pages_build_output_dir = "dist/lingua-tube/browser"
 compatibility_date = "2024-12-20"
 compatibility_flags = ["nodejs_compat"]
 
-# KV Namespace for caching transcripts (optional - uncomment after creating)
+# KV Namespace for caching transcripts
 # Create with: wrangler kv:namespace create TRANSCRIPT_CACHE
-# Then uncomment below and update the id with the returned value
-# [[kv_namespaces]]
-# binding = "TRANSCRIPT_CACHE"
-# id = "YOUR_KV_NAMESPACE_ID"
+# Then replace the id below with your actual Namespace ID
+[[kv_namespaces]]
+binding = "TRANSCRIPT_CACHE"
+id = "e4ccbf86e2654f31be92af593b912eb8"
+
 
 [vars]
 # GLADIA_API_KEY should be set in Cloudflare Dashboard
