@@ -26,15 +26,15 @@ interface StudyCard {
 
           <div class="study-stats">
             <div class="stat-card">
-              <span class="stat-value">{{ vocab.stats().new }}</span>
+              <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).new }}</span>
               <span class="stat-label">New</span>
             </div>
             <div class="stat-card">
-              <span class="stat-value">{{ vocab.stats().learning }}</span>
+              <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
               <span class="stat-label">Learning</span>
             </div>
             <div class="stat-card">
-              <span class="stat-value">{{ vocab.stats().known }}</span>
+              <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
               <span class="stat-label">Known</span>
             </div>
           </div>
@@ -530,7 +530,10 @@ export class StudyModeComponent {
   sessionStats = signal({ total: 0, correct: 0, incorrect: 0 });
 
   availableCards = computed(() => {
+    const currentLang = this.settings.settings().language;
     return this.vocab.vocabulary().filter(item => {
+      // Only include items matching current language
+      if (item.language !== currentLang) return false;
       if (item.level === 'new' && this.includeNew) return true;
       if (item.level === 'learning' && this.includeLearning) return true;
       if (item.level === 'known' && this.includeKnown) return true;
@@ -545,7 +548,10 @@ export class StudyModeComponent {
   });
 
   startSession(): void {
+    const currentLang = this.settings.settings().language;
     const items = this.vocab.vocabulary().filter(item => {
+      // Only include items matching current language
+      if (item.language !== currentLang) return false;
       if (item.level === 'new' && this.includeNew) return true;
       if (item.level === 'learning' && this.includeLearning) return true;
       if (item.level === 'known' && this.includeKnown) return true;

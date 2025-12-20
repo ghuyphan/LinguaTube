@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../models';
-import { Observable, of, catchError, map } from 'rxjs';
+import { Observable, of, catchError, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ export class DictionaryService {
 
   // Use proxy to avoid CORS issues
   private readonly JOTOBA_API = '/jotoba/api/search/words';
+  private readonly FREEDICT_API = '/freedict';
 
   constructor(private http: HttpClient) { }
 
@@ -73,23 +74,49 @@ export class DictionaryService {
   }
 
   /**
-   * Look up a Chinese word (using local dictionary or API)
+   * Look up a Chinese word using Free Dictionary API
    */
   lookupChinese(word: string): Observable<DictionaryEntry | null> {
     if (!word.trim()) return of(null);
 
     this.isLoading.set(true);
 
-    // For Chinese, we'll use a local dictionary approach
-    // In production, integrate MDBG or CC-CEDICT
-    const result = this.localChineseLookup(word);
-    this.isLoading.set(false);
+    return this.http.get<any[]>(`${this.FREEDICT_API}/zh/${encodeURIComponent(word)}`).pipe(
+      map(response => this.parseFreeDictResponse(response, word)),
+      tap(() => this.isLoading.set(false)),
+      catchError(err => {
+        this.isLoading.set(false);
+        console.log('FreeDictionary lookup failed, using local:', err.message);
+        const result = this.localChineseLookup(word);
+        if (result) this.lastLookup.set(result);
+        return of(result);
+      })
+    );
+  }
 
-    if (result) {
-      this.lastLookup.set(result);
+  /**
+   * Parse Free Dictionary API response to DictionaryEntry format
+   */
+  private parseFreeDictResponse(response: any[], word: string): DictionaryEntry | null {
+    if (!response || response.length === 0) {
+      return this.localChineseLookup(word);
     }
 
-    return of(result);
+    const entry = response[0];
+    const result: DictionaryEntry = {
+      word: entry.word || word,
+      pinyin: entry.phonetic || entry.phonetics?.[0]?.text || '',
+      meanings: entry.meanings?.flatMap((m: any) =>
+        m.definitions?.map((d: any) => ({
+          definition: d.definition || '',
+          examples: d.example ? [d.example] : []
+        })) || []
+      ) || [],
+      partOfSpeech: entry.meanings?.map((m: any) => m.partOfSpeech).filter(Boolean) || []
+    };
+
+    this.lastLookup.set(result);
+    return result;
   }
 
   /**

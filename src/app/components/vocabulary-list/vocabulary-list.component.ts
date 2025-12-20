@@ -14,9 +14,9 @@ import { VocabularyItem, WordLevel } from '../../models';
       <div class="vocab-header">
         <h2 class="vocab-title">Vocabulary</h2>
         <div class="vocab-badges">
-          <span class="badge badge--new">{{ vocab.stats().new }} new</span>
-          <span class="badge badge--learning">{{ vocab.stats().learning }} learning</span>
-          <span class="badge badge--known">{{ vocab.stats().known }} known</span>
+          <span class="badge badge--new">{{ vocab.getStatsByLanguage(settings.settings().language).new }} new</span>
+          <span class="badge badge--learning">{{ vocab.getStatsByLanguage(settings.settings().language).learning }} learning</span>
+          <span class="badge badge--known">{{ vocab.getStatsByLanguage(settings.settings().language).known }} known</span>
         </div>
       </div>
 
@@ -599,6 +599,10 @@ export class VocabularyListComponent {
 
   filteredWords = computed(() => {
     let items = this.vocab.vocabulary();
+
+    // Filter by current language
+    const currentLang = this.settings.settings().language;
+    items = items.filter(item => item.language === currentLang);
 
     if (this.searchQuery) {
       const query = this.searchQuery.toLowerCase();

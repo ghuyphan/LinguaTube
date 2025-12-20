@@ -40,16 +40,14 @@ app.post('/api/whisper', async (req, res) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                audio_url: youtubeUrl,
-                // Enable word-level timestamps for better subtitle sync
-                output_format: 'json',
-                toggle_direct_translate: false,
+                audio_url: youtubeUrl
             })
         });
 
         if (!submitResponse.ok) {
             const errorData = await submitResponse.json().catch(() => ({}));
-            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${errorData.message || 'Unknown error'}`);
+            console.log('[Gladia] Full error:', JSON.stringify(errorData, null, 2));
+            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${JSON.stringify(errorData)}`);
         }
 
         const submitData = await submitResponse.json();

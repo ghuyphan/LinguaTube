@@ -1,8 +1,10 @@
 
 // Cloudflare Pages Function handler
 // Uses Gladia API - accepts YouTube URLs directly
+// Caches transcripts in KV to avoid redundant API calls
 export async function onRequestPost(context) {
     const { request, env } = context;
+    const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE; // KV binding
 
     try {
         const body = await request.json();
@@ -13,6 +15,22 @@ export async function onRequestPost(context) {
                 status: 400,
                 headers: { 'Content-Type': 'application/json' }
             });
+        }
+
+        // Check cache first
+        if (TRANSCRIPT_CACHE) {
+            try {
+                const cached = await TRANSCRIPT_CACHE.get(`transcript:${videoId}`, 'json');
+                if (cached) {
+                    console.log(`[Gladia CF] Cache hit for ${videoId}`);
+                    return new Response(JSON.stringify(cached), {
+                        status: 200,
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                }
+            } catch (cacheErr) {
+                console.log('[Gladia CF] Cache read error:', cacheErr.message);
+            }
         }
 
         const gladiaKey = env.GLADIA_API_KEY;
@@ -75,12 +93,28 @@ export async function onRequestPost(context) {
                     duration: (utt.end || 0) - (utt.start || 0)
                 }));
 
-                return new Response(JSON.stringify({
+                const response = {
                     success: true,
                     language: resultData.result?.transcription?.languages?.[0] || 'unknown',
                     duration: resultData.result?.metadata?.audio_duration || 0,
                     segments
-                }), {
+                };
+
+                // Cache the result (expire in 30 days)
+                if (TRANSCRIPT_CACHE) {
+                    try {
+                        await TRANSCRIPT_CACHE.put(
+                            `transcript:${videoId}`,
+                            JSON.stringify(response),
+                            { expirationTtl: 60 * 60 * 24 * 30 }
+                        );
+                        console.log(`[Gladia CF] Cached transcript for ${videoId}`);
+                    } catch (cacheErr) {
+                        console.log('[Gladia CF] Cache write error:', cacheErr.message);
+                    }
+                }
+
+                return new Response(JSON.stringify(response), {
                     status: 200,
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -103,3 +137,4 @@ export async function onRequestPost(context) {
         });
     }
 }
+

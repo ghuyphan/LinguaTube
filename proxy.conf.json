@@ -111,5 +111,13 @@
       "Accept": "application/json",
       "Content-Type": "application/json"
     }
+  },
+  "/freedict": {
+    "target": "https://api.dictionaryapi.dev/api/v2/entries",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/freedict": ""
+    }
   }
 }

@@ -8,7 +8,7 @@ const STORAGE_KEY = 'linguatube_vocabulary';
 })
 export class VocabularyService {
   readonly vocabulary = signal<VocabularyItem[]>([]);
-  
+
   readonly stats = computed(() => {
     const items = this.vocabulary();
     return {
@@ -21,6 +21,19 @@ export class VocabularyService {
       chinese: items.filter(i => i.language === 'zh').length
     };
   });
+
+  /**
+   * Get stats filtered by language
+   */
+  getStatsByLanguage(language: 'ja' | 'zh') {
+    const items = this.vocabulary().filter(i => i.language === language);
+    return {
+      total: items.length,
+      new: items.filter(i => i.level === 'new').length,
+      learning: items.filter(i => i.level === 'learning').length,
+      known: items.filter(i => i.level === 'known').length
+    };
+  }
 
   readonly recentItems = computed(() => {
     return [...this.vocabulary()]
@@ -41,7 +54,7 @@ export class VocabularyService {
 
   constructor() {
     this.loadFromStorage();
-    
+
     // Auto-save to localStorage whenever vocabulary changes
     effect(() => {
       this.saveToStorage(this.vocabulary());
@@ -78,8 +91,8 @@ export class VocabularyService {
    * Add a word manually
    */
   addWord(
-    word: string, 
-    meaning: string, 
+    word: string,
+    meaning: string,
     language: 'ja' | 'zh',
     reading?: string,
     pinyin?: string
@@ -124,7 +137,7 @@ export class VocabularyService {
     this.vocabulary.update(items =>
       items.map(item => {
         if (item.id !== id) return item;
-        
+
         const newReviewCount = item.reviewCount + 1;
         let newLevel: WordLevel = item.level;
 

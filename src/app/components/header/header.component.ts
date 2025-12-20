@@ -36,14 +36,15 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
         </button>
       </nav>
 
+
       <div class="header__stats">
         <div class="stat-item">
-          <span class="stat-value">{{ vocab.stats().total }}</span>
+          <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
           <span class="stat-label">Words</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-value stat-value--success">{{ vocab.stats().known }}</span>
+          <span class="stat-value stat-value--success">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
           <span class="stat-label">Known</span>
         </div>
       </div>
