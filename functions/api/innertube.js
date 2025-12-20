@@ -90,26 +90,50 @@ async function tryInnertubeAPI(body) {
 // Strategy 2: Scrape watch page for ytInitialPlayerResponse
 async function tryWatchPageScrape(videoId) {
     try {
+        console.log(`[Innertube] Scraping watch page for ${videoId}`);
         const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.9'
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'identity'
             }
         });
 
+        console.log(`[Innertube] Watch page response status: ${response.status}`);
         const html = await response.text();
+        console.log(`[Innertube] Watch page HTML length: ${html.length}`);
 
-        // Extract ytInitialPlayerResponse
-        const match = html.match(/ytInitialPlayerResponse\s*=\s*(\{.+?\});/s);
-        if (match && match[1]) {
-            // Find the complete JSON by matching braces
-            const jsonStr = extractJSON(html, html.indexOf('ytInitialPlayerResponse'));
-            if (jsonStr) {
-                return JSON.parse(jsonStr);
+        // Try to extract ytInitialPlayerResponse using balanced brace matching
+        const jsonStr = extractJSON(html, 0);
+        if (jsonStr) {
+            console.log(`[Innertube] Extracted JSON length: ${jsonStr.length}`);
+            const parsed = JSON.parse(jsonStr);
+            const hasCaps = !!parsed?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+            console.log(`[Innertube] Parsed data has captions: ${hasCaps}`);
+            return parsed;
+        }
+
+        // Fallback: Try to extract just the caption tracks using regex
+        console.log('[Innertube] JSON extraction failed, trying regex fallback');
+        const captionMatch = html.match(/"captionTracks":\s*(\[[\s\S]*?\])/);
+        if (captionMatch) {
+            try {
+                const captionTracks = JSON.parse(captionMatch[1]);
+                console.log(`[Innertube] Regex extracted ${captionTracks.length} caption tracks`);
+                return {
+                    captions: {
+                        playerCaptionsTracklistRenderer: {
+                            captionTracks: captionTracks
+                        }
+                    }
+                };
+            } catch (e) {
+                console.log('[Innertube] Regex caption parse failed:', e.message);
             }
         }
 
+        console.log('[Innertube] No captions found in watch page');
         return {};
     } catch (error) {
         console.error('[Innertube] Watch page scrape error:', error.message);
