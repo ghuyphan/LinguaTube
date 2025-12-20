@@ -32,7 +32,7 @@ export async function onRequest(context) {
                     entries.push(currentEntry);
                 }
             })
-            .on('tr.row .hanzi .mpt4', {
+            .on('tr.row .hanzi span', {
                 text(text) {
                     if (currentEntry && !currentEntry.word) {
                         // Just take the first one or accumulate? MDBG has one main word per row usually.
@@ -41,7 +41,7 @@ export async function onRequest(context) {
                     }
                 }
             })
-            .on('tr.row .pinyin .mpt4', {
+            .on('tr.row .pinyin span', {
                 text(text) {
                     if (currentEntry) {
                         // Pinyin chunks

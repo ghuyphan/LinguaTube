@@ -146,14 +146,14 @@ app.get('/api/mdbg', async (req, res) => {
             const rowFragment = rowSplits[i].split('</tr>')[0];
 
             // Extract Word
-            // Note: MDBG might put multiple chars in spans, but usually one main span class="mpt4"
-            const wordMatch = rowFragment.match(/<span class="mpt4">([^<]+)<\/span>/);
+            // Note: MDBG change class mpt1-mpt5 based on tone. We should match any mpt digit or just span
+            const wordMatch = rowFragment.match(/<span class="mpt\d">([^<]+)<\/span>/);
             const word = wordMatch ? wordMatch[1].trim() : null;
 
             if (!word) continue;
 
             // Extract Pinyin (it appears after the word usually in a div class="pinyin")
-            const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>.*?<span class="mpt4">([^<]+)<\/span>/s);
+            const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>.*?<span class="mpt\d">([^<]+)<\/span>/s);
             const pinyin = pinyinMatch ? pinyinMatch[1].trim() : '';
 
             // Extract Definitions
