@@ -86,28 +86,48 @@ export class TranscriptService {
   }
 
   /**
-   * Fetch caption tracks - Prioritize YouTube Innertube API
+   * Fetch caption tracks - Prioritize YouTube Innertube API with retry logic
    */
   private fetchCaptionsFromInvidious(videoId: string): Observable<CaptionTrack[]> {
     return new Observable<CaptionTrack[]>(observer => {
-      // Direct YouTube Innertube API (most reliable for direct fetching)
-      this.fetchCaptionsFromYouTube(videoId).subscribe({
-        next: (tracks) => {
-          if (tracks.length > 0) {
-            observer.next(tracks);
-            observer.complete();
-          } else {
-            // If Innertube fails, we could try others, but user requested to stop spamming.
-            // Directly complete deeply to trigger Whisper fallback in fetchTranscript
-            observer.next([]);
-            observer.complete();
+      const maxRetries = 3;
+      let attempt = 0;
+
+      const tryFetch = () => {
+        attempt++;
+        console.log(`[TranscriptService] Caption fetch attempt ${attempt}/${maxRetries}`);
+
+        this.fetchCaptionsFromYouTube(videoId).subscribe({
+          next: (tracks) => {
+            if (tracks.length > 0) {
+              console.log(`[TranscriptService] Success on attempt ${attempt}: ${tracks.length} tracks`);
+              observer.next(tracks);
+              observer.complete();
+            } else if (attempt < maxRetries) {
+              // Retry with exponential backoff (500ms, 1000ms, 2000ms)
+              const delay = 500 * Math.pow(2, attempt - 1);
+              console.log(`[TranscriptService] No tracks, retrying in ${delay}ms...`);
+              setTimeout(tryFetch, delay);
+            } else {
+              console.log('[TranscriptService] All caption attempts failed');
+              observer.next([]);
+              observer.complete();
+            }
+          },
+          error: (err) => {
+            console.log(`[TranscriptService] Attempt ${attempt} error:`, err.message);
+            if (attempt < maxRetries) {
+              const delay = 500 * Math.pow(2, attempt - 1);
+              setTimeout(tryFetch, delay);
+            } else {
+              observer.next([]);
+              observer.complete();
+            }
           }
-        },
-        error: () => {
-          observer.next([]);
-          observer.complete();
-        }
-      });
+        });
+      };
+
+      tryFetch();
     });
   }
 
