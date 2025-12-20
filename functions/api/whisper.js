@@ -1,5 +1,6 @@
 
 // Cloudflare Pages Function handler
+// Uses Gladia API - accepts YouTube URLs directly
 export async function onRequestPost(context) {
     const { request, env } = context;
 
@@ -14,122 +15,91 @@ export async function onRequestPost(context) {
             });
         }
 
-        if (!env.GROQ_API_KEY) {
-            return new Response(JSON.stringify({ error: 'GROQ_API_KEY not set in environment variables' }), {
+        const gladiaKey = env.GLADIA_API_KEY;
+        if (!gladiaKey) {
+            return new Response(JSON.stringify({ error: 'GLADIA_API_KEY not set' }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' }
             });
         }
 
-        console.log(`[Whisper CF] Starting transcription for video: ${videoId} `);
+        const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        console.log(`[Gladia CF] Starting transcription for: ${youtubeUrl}`);
 
-        // Use Cobalt API to get audio
-        const cobaltData = await tryCobaltFallback(videoId);
-
-        if (!cobaltData) {
-            return new Response(JSON.stringify({ error: 'Could not fetch video audio (Cobalt API failed)' }), {
-                status: 500,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-
-        const response = await fetch(cobaltData.url);
-        if (!response.ok) throw new Error(`Cobalt fetch failed status: ${response.status} `);
-
-        const arrayBuffer = await response.arrayBuffer();
-        const audioBuffer = Buffer.from(arrayBuffer); // Needs nodejs_compat in wrangler.toml
-
-        if (audioBuffer.length > 25 * 1024 * 1024) {
-            return new Response(JSON.stringify({ error: 'Audio file too large.' }), {
-                status: 400,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-
-        const file = new File([audioBuffer], 'audio.mp3', { type: 'audio/mpeg' });
-
-        // Call Groq Whisper API directly using fetch to avoid node:sqlite dependency in groq-sdk
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('model', 'whisper-large-v3-turbo');
-        formData.append('response_format', 'verbose_json');
-        formData.append('timestamp_granularities[]', 'segment');
-
-        const groqResponse = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', {
+        // Step 1: Submit transcription request
+        const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${env.GROQ_API_KEY} `,
+                'x-gladia-key': gladiaKey,
+                'Content-Type': 'application/json',
             },
-            body: formData
+            body: JSON.stringify({
+                audio_url: youtubeUrl,
+                output_format: 'json',
+            })
         });
 
-        if (!groqResponse.ok) {
-            const errorText = await groqResponse.text();
-            throw new Error(`Groq API failed: ${groqResponse.status} ${errorText} `);
+        if (!submitResponse.ok) {
+            const errorData = await submitResponse.json().catch(() => ({}));
+            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${errorData.message || 'Unknown'}`);
         }
 
-        const transcription = await groqResponse.json();
+        const submitData = await submitResponse.json();
+        const resultUrl = submitData.result_url;
 
-        const segments = (transcription.segments || []).map((seg, index) => ({
-            id: index,
-            text: seg.text.trim(),
-            start: seg.start,
-            duration: seg.end - seg.start
-        }));
+        if (!resultUrl) {
+            throw new Error('No result_url from Gladia');
+        }
 
-        return new Response(JSON.stringify({
-            success: true,
-            language: transcription.language,
-            duration: transcription.duration,
-            segments
-        }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        // Step 2: Poll for results (max 5 min, but CF has 30s limit so we try quickly)
+        const maxAttempts = 60;
+        const pollInterval = 3000;
+
+        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+            await new Promise(resolve => setTimeout(resolve, pollInterval));
+
+            const resultResponse = await fetch(resultUrl, {
+                headers: { 'x-gladia-key': gladiaKey }
+            });
+
+            if (!resultResponse.ok) continue;
+
+            const resultData = await resultResponse.json();
+
+            if (resultData.status === 'done') {
+                const utterances = resultData.result?.transcription?.utterances || [];
+                const segments = utterances.map((utt, index) => ({
+                    id: index,
+                    text: utt.text?.trim() || '',
+                    start: utt.start || 0,
+                    duration: (utt.end || 0) - (utt.start || 0)
+                }));
+
+                return new Response(JSON.stringify({
+                    success: true,
+                    language: resultData.result?.transcription?.languages?.[0] || 'unknown',
+                    duration: resultData.result?.metadata?.audio_duration || 0,
+                    segments
+                }), {
+                    status: 200,
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            }
+
+            if (resultData.status === 'error') {
+                throw new Error(`Gladia error: ${resultData.error_message}`);
+            }
+        }
+
+        throw new Error('Transcription timed out');
 
     } catch (error) {
-        console.error('[Whisper CF] Error:', error.message);
-
+        console.error('[Gladia CF] Error:', error.message);
         return new Response(JSON.stringify({
-            error: `Transcription failed.Details: ${error.message} `
+            error: `Transcription failed: ${error.message}`
         }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });
     }
 }
-
-
-async function tryCobaltFallback(videoId) {
-    const instances = [
-        'https://co.wuk.sh/api/json',
-        'https://api.cobalt.tools/api/json',
-        'https://cobalt.api.kwiatekmiki.pl/api/json'
-    ];
-
-    for (const instance of instances) {
-        try {
-            const response = await fetch(instance, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    url: `https://www.youtube.com/watch?v=${videoId}`,
-                    isAudioOnly: true,
-                    aFormat: 'mp3'
-                })
-            });
-
-            const data = await response.json();
-            if (data.url) {
-                return data;
-            }
-        } catch (e) {
-            console.log(`[Whisper CF] Instance ${instance} failed: ${e.message}`);
-        }
-    }
-    return null;
-}
-

@@ -1,9 +1,6 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
-const Groq = require('groq-sdk');
-const ytdl = require('@distube/ytdl-core');
-const { PassThrough } = require('stream');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,245 +9,125 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Initialize Groq client
-const groq = new Groq({
-    apiKey: process.env.GROQ_API_KEY
-});
-
-// Configure ytdl agent with specific client options to avoid 403
-// Using IOS client often bypasses the blocks that WEB client hits
-const agent = ytdl.createAgent(undefined, {
-    os: 'ios',
-    osVersion: '17.1.1',
-    clientName: 'IOS'
-});
-
-
 /**
  * POST /api/whisper
- * Transcribe YouTube video audio using Groq Whisper
+ * Transcribe YouTube video using Gladia API
+ * Gladia accepts YouTube URLs directly - no audio extraction needed!
  */
 app.post('/api/whisper', async (req, res) => {
     const { videoId } = req.body;
+    const gladiaKey = process.env.GLADIA_API_KEY;
 
     if (!videoId) {
         return res.status(400).json({ error: 'videoId is required' });
     }
 
-    if (!process.env.GROQ_API_KEY) {
+    if (!gladiaKey) {
         return res.status(500).json({
-            error: 'GROQ_API_KEY not set. Get your free key at console.groq.com'
+            error: 'GLADIA_API_KEY not set. Get your free key at gladia.io'
         });
     }
 
-    console.log(`[Whisper] Starting transcription for video: ${videoId}`);
+    const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    console.log(`[Gladia] Starting transcription for: ${youtubeUrl}`);
 
     try {
-        // Get video info first to check availability
-        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        const info = await ytdl.getInfo(videoUrl, { agent });
+        // Step 1: Submit transcription request to Gladia
+        const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
+            method: 'POST',
+            headers: {
+                'x-gladia-key': gladiaKey,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                audio_url: youtubeUrl,
+                // Enable word-level timestamps for better subtitle sync
+                output_format: 'json',
+                toggle_direct_translate: false,
+            })
+        });
 
-        console.log(`[Whisper] Video title: ${JSON.stringify(info.videoDetails.title)}`);
-        console.log(`[Whisper] Duration: ${info.videoDetails.lengthSeconds}s`);
+        if (!submitResponse.ok) {
+            const errorData = await submitResponse.json().catch(() => ({}));
+            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${errorData.message || 'Unknown error'}`);
+        }
 
-        // Check video length - Groq has a 25MB limit
-        const durationSeconds = parseInt(info.videoDetails.lengthSeconds);
-        if (durationSeconds > 1800) { // 30 minutes
-            return res.status(400).json({
-                error: 'Video too long. Please use videos under 30 minutes.'
+        const submitData = await submitResponse.json();
+        console.log('[Gladia] Transcription submitted:', submitData.id || 'pending');
+
+        // Step 2: Poll for results (Gladia is async)
+        const resultUrl = submitData.result_url;
+        if (!resultUrl) {
+            throw new Error('No result_url returned from Gladia');
+        }
+
+        // Poll for completion (max 5 minutes)
+        const maxAttempts = 60;
+        const pollInterval = 5000; // 5 seconds
+
+        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+            await new Promise(resolve => setTimeout(resolve, pollInterval));
+
+            const resultResponse = await fetch(resultUrl, {
+                headers: { 'x-gladia-key': gladiaKey }
             });
-        }
 
-        // Get audio-only stream
-        const audioFormat = ytdl.chooseFormat(info.formats, {
-            quality: 'lowestaudio',
-            filter: 'audioonly'
-        });
+            if (!resultResponse.ok) {
+                console.log(`[Gladia] Poll attempt ${attempt + 1} failed: ${resultResponse.status}`);
+                continue;
+            }
 
-        if (!audioFormat) {
-            return res.status(400).json({ error: 'Could not find audio format' });
-        }
+            const resultData = await resultResponse.json();
 
-        console.log(`[Whisper] Audio format: ${audioFormat.mimeType}, bitrate: ${audioFormat.audioBitrate}`);
+            if (resultData.status === 'done') {
+                console.log(`[Gladia] Transcription complete!`);
 
-        // Download audio to buffer
-        const audioChunks = [];
-        const audioStream = ytdl.downloadFromInfo(info, { format: audioFormat, agent });
-
-        await new Promise((resolve, reject) => {
-            audioStream.on('data', chunk => audioChunks.push(chunk));
-            audioStream.on('end', resolve);
-            audioStream.on('error', reject);
-        });
-
-        const audioBuffer = Buffer.concat(audioChunks);
-        console.log(`[Whisper] Audio downloaded: ${(audioBuffer.length / 1024 / 1024).toFixed(2)} MB`);
-
-        // Check file size limit (Groq limit is 25MB)
-        if (audioBuffer.length > 25 * 1024 * 1024) {
-            return res.status(400).json({
-                error: 'Audio file too large. Please use a shorter video.'
-            });
-        }
-
-        // Create a File-like object for Groq using helper
-        const audioFile = await toFile(audioBuffer, 'audio.mp4', {
-            type: audioFormat.mimeType || 'audio/mp4'
-        });
-
-        // Call Groq Whisper API
-        console.log('[Whisper] Sending to Groq Whisper API...');
-
-        const transcription = await groq.audio.transcriptions.create({
-            file: audioFile,
-            model: 'whisper-large-v3-turbo',
-            response_format: 'verbose_json',
-            timestamp_granularities: ['segment']
-        });
-
-        console.log(`[Whisper] Transcription complete. Segments: ${transcription.segments?.length || 0}`);
-
-        // Convert to our expected format
-        const segments = (transcription.segments || []).map((seg, index) => ({
-            id: index,
-            text: seg.text.trim(),
-            start: seg.start,
-            duration: seg.end - seg.start
-        }));
-
-        res.json({
-            success: true,
-            language: transcription.language,
-            duration: transcription.duration,
-            segments
-        });
-
-    } catch (error) {
-        console.error('[Whisper] ytdl Error:', error.message);
-
-        // Try Cobalt fallback if ytdl fails (403, 429, or parsing errors)
-        console.log('[Whisper] Attempting Cobalt API fallback...');
-        try {
-            const cobaltData = await tryCobaltFallback(videoId);
-            if (cobaltData) {
-                console.log('[Whisper] Cobalt success, downloading audio...');
-                // Download from Cobalt URL
-                const response = await fetch(cobaltData.url);
-                const arrayBuffer = await response.arrayBuffer();
-                const audioBuffer = Buffer.from(arrayBuffer);
-
-                console.log(`[Whisper] Audio downloaded via Cobalt: ${(audioBuffer.length / 1024 / 1024).toFixed(2)} MB`);
-
-                // Check file size 
-                if (audioBuffer.length > 25 * 1024 * 1024) {
-                    return res.status(400).json({ error: 'Audio file too large.' });
-                }
-
-                const file = await toFile(audioBuffer, 'audio.mp3', { type: 'audio/mpeg' }); // Cobalt usually returns mp3/ogg
-
-                const transcription = await groq.audio.transcriptions.create({
-                    file: file,
-                    model: 'whisper-large-v3-turbo',
-                    response_format: 'verbose_json',
-                    timestamp_granularities: ['segment']
-                });
-
-                const segments = (transcription.segments || []).map((seg, index) => ({
+                // Convert Gladia format to our expected format
+                const utterances = resultData.result?.transcription?.utterances || [];
+                const segments = utterances.map((utt, index) => ({
                     id: index,
-                    text: seg.text.trim(),
-                    start: seg.start,
-                    duration: seg.end - seg.start
+                    text: utt.text?.trim() || '',
+                    start: utt.start || 0,
+                    duration: (utt.end || 0) - (utt.start || 0)
                 }));
 
                 return res.json({
                     success: true,
-                    language: transcription.language,
-                    duration: transcription.duration,
+                    language: resultData.result?.transcription?.languages?.[0] || 'unknown',
+                    duration: resultData.result?.metadata?.audio_duration || 0,
                     segments
                 });
             }
-        } catch (cobaltError) {
-            console.error('[Whisper] Cobalt fallback failed:', cobaltError.message);
+
+            if (resultData.status === 'error') {
+                throw new Error(`Gladia transcription error: ${resultData.error_message || 'Unknown'}`);
+            }
+
+            console.log(`[Gladia] Status: ${resultData.status} (attempt ${attempt + 1}/${maxAttempts})`);
         }
 
-        // Original error handling if fallback also fails
-        if (error.message?.includes('Video unavailable')) {
-            return res.status(400).json({ error: 'Video unavailable or private' });
-        }
+        throw new Error('Transcription timed out after 5 minutes');
+
+    } catch (error) {
+        console.error('[Gladia] Error:', error.message);
         res.status(500).json({
             error: error.message || 'Transcription failed'
         });
     }
 });
 
-/**
- * Helper to try fetching audio URL from Cobalt API
- */
-async function tryCobaltFallback(videoId) {
-    const instances = [
-        'https://co.wuk.sh/api/json',
-        'https://api.cobalt.tools/api/json', // Official, sometimes rate limited
-        'https://cobalt.api.kwiatekmiki.pl/api/json'
-    ];
-
-    for (const instance of instances) {
-        try {
-            console.log(`[Whisper] Trying Cobalt instance: ${instance}`);
-            const response = await fetch(instance, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    url: `https://www.youtube.com/watch?v=${videoId}`,
-                    isAudioOnly: true,
-                    aFormat: 'mp3'
-                })
-            });
-
-            const data = await response.json();
-            if (data.url) {
-                return data;
-            }
-        } catch (e) {
-            console.log(`[Whisper] Instance ${instance} failed: ${e.message}`);
-        }
-    }
-    return null;
-}
-
-// Helper to convert Buffer to File-like object for Groq SDK
-async function toFile(buffer, filename, options) {
-    try {
-        const { File } = require('node:buffer');
-        if (File) {
-            return new File([buffer], filename, options);
-        }
-    } catch (e) {
-        console.warn('Node File API not found, falling back');
-    }
-
-    return {
-        name: filename,
-        type: options.type,
-        arrayBuffer: async () => buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength),
-        [Symbol.toStringTag]: 'File'
-    };
-}
-
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'ok',
-        hasApiKey: !!process.env.GROQ_API_KEY
+        hasGladiaKey: !!process.env.GLADIA_API_KEY
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`[Server] Whisper transcription server running on port ${PORT}`);
-    if (!process.env.GROQ_API_KEY) {
-        console.warn('[Server] WARNING: GROQ_API_KEY not set!');
-        console.warn('[Server] Get your free key at: https://console.groq.com');
+    console.log(`[Server] Gladia transcription server running on port ${PORT}`);
+    if (!process.env.GLADIA_API_KEY) {
+        console.warn('[Server] WARNING: GLADIA_API_KEY not set!');
+        console.warn('[Server] Get your free key at: https://gladia.io');
     }
 });

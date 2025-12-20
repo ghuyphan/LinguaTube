@@ -49,10 +49,14 @@ import { SubtitleCue, Token } from '../../models';
                 <app-icon name="loader" [size]="24" class="spin" />
                 <p>Fetching captions...</p>
               </div>
+            } @else if (transcript.error()) {
+              <app-icon name="alert-circle" [size]="32" class="error-icon" />
+              <p class="empty-title">No subtitles available</p>
+              <p class="empty-hint">This video doesn't have captions and AI transcription is unavailable.</p>
             } @else if (subtitles.subtitles().length === 0) {
               <app-icon name="subtitles" [size]="32" class="empty-icon" />
               <p class="empty-title">No subtitles loaded</p>
-              <p class="empty-hint">Upload a subtitle file below or wait for auto-fetch</p>
+              <p class="empty-hint">Try a video with captions enabled</p>
             } @else {
               <p class="subtitle-waiting">Waiting for subtitles...</p>
             }
@@ -164,6 +168,11 @@ import { SubtitleCue, Token } from '../../models';
     .empty-icon {
       color: var(--text-muted);
       opacity: 0.5;
+    }
+
+    .error-icon {
+      color: var(--text-muted);
+      opacity: 0.6;
     }
 
     .empty-title {
