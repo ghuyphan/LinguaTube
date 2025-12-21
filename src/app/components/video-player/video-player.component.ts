@@ -76,7 +76,7 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
                 <!-- YouTube-style play/pause feedback animation -->
                 @if (playPauseFeedback()) {
                   <div class="play-pause-feedback" [class.animate]="playPauseFeedback()">
-                    <app-icon [name]="youtube.isPlaying() ? 'play' : 'pause'" [size]="48" />
+                    <app-icon [name]="feedbackIconName()" [size]="48" />
                   </div>
                 }
                 <!-- Big play button when paused and controls hidden -->
@@ -180,11 +180,11 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
 
     .url-input {
       padding-left: 40px;
-      height: 44px;
+      height: 40px;
     }
 
     .load-btn {
-      height: 44px;
+      height: 40px;
       padding: 0 16px;
     }
 
@@ -490,7 +490,7 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
       color: var(--text-muted);
     }
 
-    /* Mobile */
+    /* Mobile (tablet-sized) */
     @media (max-width: 640px) {
       .video-container {
         border-radius: 0;
@@ -508,6 +508,18 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
       
       .video-input {
         padding: var(--space-md);
+      }
+    }
+    
+    /* Mobile (phone-sized) - container uses --space-md padding on ≤480px */
+    @media (max-width: 480px) {
+      .video-container {
+        margin: 0 calc(var(--space-md) * -1);
+        width: calc(100% + var(--space-md) * 2);
+      }
+      
+      .custom-controls {
+        padding: var(--space-sm) var(--space-md);
       }
     }
   `]
@@ -529,6 +541,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // Feedback animations
   rewindFeedback = signal(false);
   forwardFeedback = signal(false);
+  feedbackIconName = signal<'play' | 'pause'>('play');
   playPauseFeedback = signal(false);
 
   private controlsTimeout: any;
@@ -625,6 +638,10 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   togglePlay() {
+    // Capture the action we're about to take BEFORE toggling
+    const willPlay = !this.youtube.isPlaying();
+    this.feedbackIconName.set(willPlay ? 'play' : 'pause');
+
     this.youtube.togglePlay();
     this.triggerPlayPauseFeedback();
     this.showControls();
@@ -696,27 +713,10 @@ export class VideoPlayerComponent implements OnDestroy {
     this.lastTapTime = currentTime;
   }
 
-  // Handle center tap - single tap shows controls or plays, double tap toggles
+  // Handle center tap - single tap always toggles play/pause
   handleCenterTap() {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - this.lastTapTime;
-
-    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
-      // Double tap = toggle play
-      clearTimeout(this.tapTimeout);
-      this.togglePlay();
-    } else {
-      // Single tap = show controls if playing, or toggle if paused
-      this.tapTimeout = setTimeout(() => {
-        if (this.youtube.isPlaying()) {
-          this.showControls();
-        } else {
-          this.togglePlay();
-        }
-      }, this.DOUBLE_TAP_DELAY);
-    }
-
-    this.lastTapTime = currentTime;
+    // No double-tap detection needed for center - just toggle immediately
+    this.togglePlay();
   }
 
   private triggerFeedback(type: 'rewind' | 'forward') {

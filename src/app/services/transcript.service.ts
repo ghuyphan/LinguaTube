@@ -63,13 +63,17 @@ export class TranscriptService {
           throw new Error('No captions available for this video');
         }
 
-        // Find the requested language or fall back to first available
+        // Find the requested language - do NOT fall back to other languages
+        // This ensures we get subtitles in the user's selected language, not English when they want Chinese
         const track = captionTracks.find(t => t.languageCode === lang)
-          || captionTracks.find(t => t.languageCode.startsWith(lang))
-          || captionTracks[0];
+          || captionTracks.find(t => t.languageCode.startsWith(lang));
 
         if (!track) {
-          throw new Error('No captions found');
+          // No matching language found - throw error to trigger Whisper AI fallback
+          // which will transcribe the audio in the actual spoken language
+          const availableLangs = captionTracks.map(t => t.languageCode).join(', ');
+          console.log(`[TranscriptService] Requested '${lang}' not found. Available: ${availableLangs}`);
+          throw new Error(`No ${lang} captions available (found: ${availableLangs})`);
         }
 
         console.log('[TranscriptService] Selected track:', track.languageCode, track.label);

@@ -137,12 +137,13 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
     }
 
     .lang-btn {
-      padding: 6px 14px;
+      padding: 4px 12px;
       font-family: var(--font-jp);
       font-size: 0.8125rem;
       font-weight: 500;
       border: none;
       border-radius: 6px;
+      line-height: 1.2;
       background: transparent;
       color: var(--text-secondary);
       cursor: pointer;
@@ -199,6 +200,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
     .header__actions {
       display: flex;
       gap: var(--space-xs);
+      margin-left: var(--space-sm);
     }
 
     @media (max-width: 768px) {
@@ -210,7 +212,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
 
       .header {
         gap: var(--space-sm);
-        padding: 0 var(--space-sm);
+        padding: 0 var(--space-md);
         height: 44px;
       }
 
@@ -229,8 +231,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
       }
       
       .lang-btn {
-        padding: 4px 10px;
-        font-size: 0.6875rem;
+        padding: 3px 8px;
+        font-size: 0.75rem;
         border-radius: 4px;
       }
       
@@ -243,7 +245,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
 
     @media (max-width: 480px) {
       .header {
-        padding: 0 var(--space-sm);
+        padding: 0 var(--space-md);
       }
       
       .header__logo {

@@ -196,17 +196,19 @@ import { VocabularyItem, WordLevel } from '../../models';
 
     .search-input {
       padding-left: 32px;
-      height: 36px;
-      font-size: 0.8125rem;
+      height: 40px;
+      font-size: 0.875rem;
+      background: var(--bg-card);
     }
 
     .filter-select {
       width: auto;
       min-width: 100px;
-      height: 36px;
-      font-size: 0.8125rem;
+      height: 40px;
+      font-size: 0.875rem;
       padding: 0 28px 0 10px;
       flex-shrink: 0;
+      background: var(--bg-card);
     }
 
     .word-list {

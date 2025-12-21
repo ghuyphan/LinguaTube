@@ -182,19 +182,24 @@ import { DictionaryEntry } from '../../models';
 
     .search-input {
       width: 100%;
-      padding-left: 32px; /* Space for icon */
-      height: 36px;
-      font-size: 0.8125rem;
+      padding-left: 32px;
+      height: 40px;
+      font-size: 0.875rem;
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
-      background: var(--bg-secondary);
+      background: var(--bg-card);
       transition: all var(--transition-fast);
     }
 
     .search-input:focus {
-      background: var(--bg-card);
       border-color: var(--accent-primary);
       box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
+    }
+
+    .search-btn {
+      height: 40px;
+      min-width: 80px;
+      font-size: 0.875rem;
     }
     
     .clear-btn {
