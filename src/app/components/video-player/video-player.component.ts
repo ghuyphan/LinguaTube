@@ -73,8 +73,14 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
                 </div>
               </div>
               <div class="zone center" (click)="handleCenterTap()">
+                <!-- YouTube-style play/pause feedback animation -->
+                @if (playPauseFeedback()) {
+                  <div class="play-pause-feedback" [class.animate]="playPauseFeedback()">
+                    <app-icon [name]="youtube.isPlaying() ? 'play' : 'pause'" [size]="48" />
+                  </div>
+                }
                 <!-- Big play button when paused and controls hidden -->
-                @if (!youtube.isPlaying() && !areControlsVisible()) {
+                @if (!youtube.isPlaying() && !areControlsVisible() && !playPauseFeedback()) {
                   <div class="big-play-btn">
                     <app-icon name="play" [size]="48" />
                   </div>
@@ -288,6 +294,30 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
       animation: fadeIn 0.2s ease;
     }
 
+    .play-pause-feedback {
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .play-pause-feedback.animate {
+      animation: playPausePop 0.4s ease-out forwards;
+    }
+
+    @keyframes playPausePop {
+      0% { opacity: 0; transform: scale(0.5); }
+      30% { opacity: 1; transform: scale(1.1); }
+      60% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
@@ -499,6 +529,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // Feedback animations
   rewindFeedback = signal(false);
   forwardFeedback = signal(false);
+  playPauseFeedback = signal(false);
 
   private controlsTimeout: any;
   private lastTap = 0; // For double tap detection if needed
@@ -595,7 +626,13 @@ export class VideoPlayerComponent implements OnDestroy {
 
   togglePlay() {
     this.youtube.togglePlay();
+    this.triggerPlayPauseFeedback();
     this.showControls();
+  }
+
+  private triggerPlayPauseFeedback() {
+    this.playPauseFeedback.set(true);
+    setTimeout(() => this.playPauseFeedback.set(false), 400);
   }
 
   toggleMute() {

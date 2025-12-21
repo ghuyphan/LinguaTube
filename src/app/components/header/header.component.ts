@@ -79,10 +79,10 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
       display: flex;
       align-items: center;
       gap: var(--space-md);
-      padding: var(--space-sm) var(--space-lg);
+      padding: var(--space-xs) var(--space-lg);
       background: var(--bg-card);
       border-bottom: 1px solid var(--border-color);
-      height: 64px; /* Explicit height to keep it consistent */
+      height: 48px;
     }
 
     .header__brand {
@@ -92,18 +92,18 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
     }
 
     .header__logo {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, var(--accent-primary), #e85a56);
-      border-radius: 8px;
+      border-radius: 6px;
     }
 
     .logo-text {
       font-family: var(--font-jp);
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 700;
       color: white;
     }
@@ -115,7 +115,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
     }
 
     .header__title {
-      font-size: 1.125rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--text-primary);
       line-height: 1.2;
@@ -173,7 +173,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
     }
 
     .stat-value {
-      font-size: 1.125rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--text-primary);
       line-height: 1;
@@ -209,9 +209,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
       }
 
       .header {
-        gap: var(--space-md);
+        gap: var(--space-sm);
         padding: 0 var(--space-md);
-        height: 64px; /* Consistent height with desktop */
+        height: 44px;
       }
 
       .header__title-group {
