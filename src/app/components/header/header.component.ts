@@ -231,9 +231,14 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
       }
       
       .lang-btn {
-        padding: 3px 8px;
-        font-size: 0.75rem;
-        border-radius: 4px;
+        padding: 6px 10px;
+        font-size: 0.8125rem;
+        border-radius: 5px;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        touch-action: manipulation;
+        min-height: 32px;
+        line-height: 1;
       }
       
       .header__actions .btn-icon {
