@@ -1,54 +1,80 @@
 // Cloudflare Pages Function to proxy YouTube innertube API
 // Route: /api/innertube
 
+const DEBUG = false; // Set to true for verbose logging
+
+function log(...args) {
+    if (DEBUG) console.log('[Innertube]', ...args);
+}
+
 export async function onRequestPost(context) {
-    const { request } = context;
+    const { request, env } = context;
+    const CAPTION_CACHE = env.TRANSCRIPT_CACHE; // Reuse existing KV namespace
 
     try {
         const body = await request.json();
         const videoId = body.videoId;
+        const cacheKey = `captions:${videoId}`;
 
-        console.log(`[Innertube v2.0] Fetching captions for video: ${videoId}`);
+        // Check cache first
+        if (CAPTION_CACHE) {
+            try {
+                const cached = await CAPTION_CACHE.get(cacheKey, 'json');
+                if (cached) {
+                    log('Cache hit for', videoId);
+                    return new Response(JSON.stringify({ ...cached, source: 'cache' }), {
+                        status: 200,
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Access-Control-Allow-Origin': '*'
+                        }
+                    });
+                }
+            } catch (e) {
+                // Cache read failed, continue with fetch
+            }
+        }
 
         // Strategy 1: Try innertube API first
         let data = await tryInnertubeAPI(body);
+        let source = 'innertube';
 
         // Check if we got captions
         let hasCaptions = !!data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-        let captionCount = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.length || 0;
-
-        console.log(`[Innertube] Innertube API result: has captions: ${hasCaptions}, count: ${captionCount}`);
 
         // Strategy 2: If no captions, try scraping the watch page
         if (!hasCaptions) {
-            console.log(`[Innertube] Innertube failed, trying watch page scrape...`);
+            log('Innertube failed, trying watch page scrape');
             const scrapedData = await tryWatchPageScrape(videoId);
 
             if (scrapedData?.captions?.playerCaptionsTracklistRenderer?.captionTracks) {
                 data = scrapedData;
                 hasCaptions = true;
-                captionCount = scrapedData.captions.playerCaptionsTracklistRenderer.captionTracks.length;
-                console.log(`[Innertube] Watch page scrape successful: ${captionCount} tracks found`);
+                source = 'scrape';
             }
         }
 
         // Strategy 3: If still no captions, try third-party API
         if (!hasCaptions) {
-            console.log(`[Innertube] Scrape failed, trying third-party API...`);
+            log('Scrape failed, trying third-party API');
             const thirdPartyData = await tryThirdPartyAPI(videoId);
 
             if (thirdPartyData?.captions?.playerCaptionsTracklistRenderer?.captionTracks) {
                 data = thirdPartyData;
-                captionCount = thirdPartyData.captions.playerCaptionsTracklistRenderer.captionTracks.length;
-                console.log(`[Innertube] Third-party API successful: ${captionCount} tracks found`);
+                source = 'piped';
             }
         }
 
-        if (data.playabilityStatus?.status === 'ERROR') {
-            console.log(`[Innertube] Playability error: ${data.playabilityStatus.reason}`);
+        // Cache successful responses with captions (24 hour TTL)
+        if (data?.captions?.playerCaptionsTracklistRenderer?.captionTracks && CAPTION_CACHE) {
+            try {
+                await CAPTION_CACHE.put(cacheKey, JSON.stringify(data), { expirationTtl: 60 * 60 * 24 });
+            } catch (e) {
+                // Cache write failed, continue
+            }
         }
 
-        return new Response(JSON.stringify(data), {
+        return new Response(JSON.stringify({ ...data, source }), {
             status: 200,
             headers: {
                 'Content-Type': 'application/json',
@@ -64,6 +90,7 @@ export async function onRequestPost(context) {
         });
     }
 }
+
 
 // Strategy 1: Direct innertube API
 async function tryInnertubeAPI(body) {
@@ -82,7 +109,7 @@ async function tryInnertubeAPI(body) {
         });
         return await response.json();
     } catch (error) {
-        console.error('[Innertube] Innertube API error:', error.message);
+        log('Innertube API error:', error.message);
         return {};
     }
 }
@@ -90,7 +117,6 @@ async function tryInnertubeAPI(body) {
 // Strategy 2: Scrape watch page for ytInitialPlayerResponse
 async function tryWatchPageScrape(videoId) {
     try {
-        console.log(`[Innertube] Scraping watch page for ${videoId}`);
         const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -100,27 +126,19 @@ async function tryWatchPageScrape(videoId) {
             }
         });
 
-        console.log(`[Innertube] Watch page response status: ${response.status}`);
         const html = await response.text();
-        console.log(`[Innertube] Watch page HTML length: ${html.length}`);
 
         // Try to extract ytInitialPlayerResponse using balanced brace matching
         const jsonStr = extractJSON(html, 0);
         if (jsonStr) {
-            console.log(`[Innertube] Extracted JSON length: ${jsonStr.length}`);
-            const parsed = JSON.parse(jsonStr);
-            const hasCaps = !!parsed?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-            console.log(`[Innertube] Parsed data has captions: ${hasCaps}`);
-            return parsed;
+            return JSON.parse(jsonStr);
         }
 
         // Fallback: Try to extract just the caption tracks using regex
-        console.log('[Innertube] JSON extraction failed, trying regex fallback');
         const captionMatch = html.match(/"captionTracks":\s*(\[[\s\S]*?\])/);
         if (captionMatch) {
             try {
                 const captionTracks = JSON.parse(captionMatch[1]);
-                console.log(`[Innertube] Regex extracted ${captionTracks.length} caption tracks`);
                 return {
                     captions: {
                         playerCaptionsTracklistRenderer: {
@@ -129,14 +147,13 @@ async function tryWatchPageScrape(videoId) {
                     }
                 };
             } catch (e) {
-                console.log('[Innertube] Regex caption parse failed:', e.message);
+                // Regex parse failed
             }
         }
 
-        console.log('[Innertube] No captions found in watch page');
         return {};
     } catch (error) {
-        console.error('[Innertube] Watch page scrape error:', error.message);
+        log('Watch page scrape error:', error.message);
         return {};
     }
 }
@@ -179,11 +196,8 @@ async function tryThirdPartyAPI(videoId) {
 
     for (const apiUrl of apis) {
         try {
-            console.log(`[Innertube] Trying: ${apiUrl}`);
             const response = await fetch(apiUrl, {
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
 
             if (!response.ok) continue;
@@ -205,7 +219,7 @@ async function tryThirdPartyAPI(videoId) {
                 };
             }
         } catch (error) {
-            console.log(`[Innertube] Third-party API ${apiUrl} failed:`, error.message);
+            // Continue to next API
         }
     }
 

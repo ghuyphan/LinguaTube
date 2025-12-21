@@ -2,9 +2,15 @@
 // Cloudflare Pages Function handler
 // Uses Gladia API - accepts YouTube URLs directly
 // Caches transcripts in KV to avoid redundant API calls
+
+const DEBUG = false;
+function log(...args) {
+    if (DEBUG) console.log('[Gladia]', ...args);
+}
+
 export async function onRequestPost(context) {
     const { request, env } = context;
-    const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE; // KV binding
+    const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE;
 
     try {
         const body = await request.json();
@@ -22,30 +28,26 @@ export async function onRequestPost(context) {
             try {
                 const cached = await TRANSCRIPT_CACHE.get(`transcript:${videoId}`, 'json');
                 if (cached) {
-                    console.log(`[Gladia CF] Cache hit for ${videoId}`);
+                    log('Cache hit for', videoId);
                     return new Response(JSON.stringify(cached), {
                         status: 200,
                         headers: { 'Content-Type': 'application/json' }
                     });
                 }
-            } catch (cacheErr) {
-                console.log('[Gladia CF] Cache read error:', cacheErr.message);
+            } catch (e) {
+                // Cache read failed, continue
             }
         }
 
         const gladiaKey = env.GLADIA_API_KEY;
         if (!gladiaKey) {
-            console.log('[Gladia CF] GLADIA_API_KEY is not set in environment');
             return new Response(JSON.stringify({ error: 'GLADIA_API_KEY not set' }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' }
             });
         }
 
-        console.log('[Gladia CF] API key found, length:', gladiaKey.length);
-
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        console.log(`[Gladia CF] Starting transcription for: ${youtubeUrl}`);
 
         // Step 1: Submit transcription request
         const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
@@ -54,28 +56,22 @@ export async function onRequestPost(context) {
                 'x-gladia-key': gladiaKey,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                audio_url: youtubeUrl
-            })
+            body: JSON.stringify({ audio_url: youtubeUrl })
         });
-
-        console.log('[Gladia CF] Submit response status:', submitResponse.status);
 
         if (!submitResponse.ok) {
             const errorText = await submitResponse.text();
-            console.log('[Gladia CF] Submit error response:', errorText);
-            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${errorText}`);
+            throw new Error(`Gladia submit failed: ${submitResponse.status}`);
         }
 
         const submitData = await submitResponse.json();
-        console.log('[Gladia CF] Submit response:', JSON.stringify(submitData).substring(0, 200));
         const resultUrl = submitData.result_url;
 
         if (!resultUrl) {
             throw new Error('No result_url from Gladia');
         }
 
-        // Step 2: Poll for results (max 5 min, but CF has 30s limit so we try quickly)
+        // Step 2: Poll for results
         const maxAttempts = 60;
         const pollInterval = 3000;
 
@@ -114,9 +110,8 @@ export async function onRequestPost(context) {
                             JSON.stringify(response),
                             { expirationTtl: 60 * 60 * 24 * 30 }
                         );
-                        console.log(`[Gladia CF] Cached transcript for ${videoId}`);
-                    } catch (cacheErr) {
-                        console.log('[Gladia CF] Cache write error:', cacheErr.message);
+                    } catch (e) {
+                        // Cache write failed, continue
                     }
                 }
 
@@ -134,13 +129,12 @@ export async function onRequestPost(context) {
         throw new Error('Transcription timed out');
 
     } catch (error) {
-        console.error('[Gladia CF] Error:', error.message);
+        console.error('[Gladia] Error:', error.message);
         return new Response(JSON.stringify({
-            error: `Transcription failed: ${error.message}`
+            error: `AI transcription failed: ${error.message}`
         }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });
     }
 }
-

@@ -31,6 +31,7 @@ export class TranscriptService {
   readonly error = signal<string | null>(null);
   readonly availableLanguages = signal<string[]>([]);
   readonly isGeneratingAI = signal(false);
+  readonly captionSource = signal<'youtube' | 'ai' | null>(null);
 
   // Cache for generated transcripts to prevent redundant API calls
   private transcriptCache = new Map<string, SubtitleCue[]>();
@@ -56,6 +57,7 @@ export class TranscriptService {
   fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
     this.isLoading.set(true);
     this.error.set(null);
+    this.captionSource.set(null);
 
     return this.fetchCaptionsFromInvidious(videoId).pipe(
       switchMap(captionTracks => {
@@ -64,25 +66,19 @@ export class TranscriptService {
         }
 
         // Find the requested language - do NOT fall back to other languages
-        // This ensures we get subtitles in the user's selected language, not English when they want Chinese
         const track = captionTracks.find(t => t.languageCode === lang)
           || captionTracks.find(t => t.languageCode.startsWith(lang));
 
         if (!track) {
-          // No matching language found - throw error to trigger Whisper AI fallback
-          // which will transcribe the audio in the actual spoken language
-          const availableLangs = captionTracks.map(t => t.languageCode).join(', ');
-          console.log(`[TranscriptService] Requested '${lang}' not found. Available: ${availableLangs}`);
-          throw new Error(`No ${lang} captions available (found: ${availableLangs})`);
+          throw new Error(`No ${lang} captions available`);
         }
 
-        console.log('[TranscriptService] Selected track:', track.languageCode, track.label);
         this.availableLanguages.set(captionTracks.map(t => t.languageCode));
+        this.captionSource.set('youtube');
         return this.fetchCaptionContent(track.url);
       }),
       map(segments => this.convertToSubtitleCues(segments)),
       catchError(err => {
-        console.log('[TranscriptService] Caption fetch failed, trying Whisper AI:', err.message);
         // No captions found - fallback to Whisper AI transcription
         return this.generateWithWhisper(videoId);
       })
@@ -95,41 +91,31 @@ export class TranscriptService {
    */
   private fetchCaptionsFromInvidious(videoId: string): Observable<CaptionTrack[]> {
     return new Observable<CaptionTrack[]>(observer => {
-      const maxRetries = 5;
+      const maxRetries = 3; // Reduced from 5 since server now handles retries
       let attempt = 0;
-      let confirmedNoCaptions = false; // Track if YouTube confirmed no captions (vs API failure)
 
       const tryFetch = () => {
         attempt++;
-        console.log(`[TranscriptService] Caption fetch attempt ${attempt}/${maxRetries}`);
 
         this.fetchCaptionsFromYouTube(videoId).subscribe({
           next: (result: { tracks: CaptionTrack[], validResponse: boolean }) => {
             if (result.tracks.length > 0) {
-              console.log(`[TranscriptService] Success on attempt ${attempt}: ${result.tracks.length} tracks`);
               observer.next(result.tracks);
               observer.complete();
             } else if (result.validResponse) {
-              // YouTube returned a valid response with no captions - video has no subtitles
-              // Skip remaining retries and go straight to Whisper
-              console.log('[TranscriptService] Video confirmed to have no captions, skipping to Whisper');
-              confirmedNoCaptions = true;
+              // YouTube confirmed no captions - skip to Whisper
               observer.next([]);
               observer.complete();
             } else if (attempt < maxRetries) {
-              // API might be rate-limited or not ready - retry with exponential backoff
-              // Delays: 1000ms, 2000ms, 4000ms, 8000ms
+              // Retry with exponential backoff
               const delay = 1000 * Math.pow(2, attempt - 1);
-              console.log(`[TranscriptService] No tracks (API issue), retrying in ${delay}ms...`);
               setTimeout(tryFetch, delay);
             } else {
-              console.log('[TranscriptService] All caption attempts failed');
               observer.next([]);
               observer.complete();
             }
           },
-          error: (err) => {
-            console.log(`[TranscriptService] Attempt ${attempt} error:`, err.message);
+          error: () => {
             if (attempt < maxRetries) {
               const delay = 1000 * Math.pow(2, attempt - 1);
               setTimeout(tryFetch, delay);
@@ -141,9 +127,8 @@ export class TranscriptService {
         });
       };
 
-      // Initial delay before first fetch - gives YouTube CDN time to prepare
-      console.log('[TranscriptService] Waiting 1s before caption fetch...');
-      setTimeout(tryFetch, 1000);
+      // Small initial delay for CDN readiness
+      setTimeout(tryFetch, 500);
     });
   }
 
@@ -157,7 +142,6 @@ export class TranscriptService {
 
   /**
    * Extract caption tracks using YouTube's innertube API
-   * This is more reliable than HTML parsing as it generates fresh URLs
    * Returns { tracks, validResponse } to distinguish "no captions" from "API failure"
    */
   private fetchCaptionsFromYouTube(videoId: string): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
@@ -172,21 +156,14 @@ export class TranscriptService {
       videoId: videoId
     };
 
-    console.log('[TranscriptService] Trying innertube API for video:', videoId);
-
     return this.http.post<any>(url, body).pipe(
       map(response => {
-        // Check if we got a valid player response (has videoDetails or playabilityStatus)
         const hasValidResponse = !!(response?.videoDetails || response?.playabilityStatus);
         const captionTracks = response?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
 
         if (!captionTracks || captionTracks.length === 0) {
-          console.log('[TranscriptService] No captions in innertube response, valid:', hasValidResponse);
-          // Return whether this was a valid "no captions" response or an incomplete/rate-limited response
           return { tracks: [], validResponse: hasValidResponse };
         }
-
-        console.log('[TranscriptService] Innertube found:', captionTracks.length, 'tracks');
 
         const tracks = captionTracks.map((track: any) => ({
           languageCode: track.languageCode,
@@ -196,9 +173,7 @@ export class TranscriptService {
 
         return { tracks, validResponse: true };
       }),
-      catchError(err => {
-        console.log('[TranscriptService] Innertube API failed:', err.message);
-        // API error - not a valid response, should retry
+      catchError(() => {
         return of({ tracks: [], validResponse: false });
       })
     );
@@ -307,21 +282,14 @@ export class TranscriptService {
     let fetchUrl = url;
 
     if (url.includes('youtube.com/api/timedtext')) {
-      // Convert YouTube URL to proxy URL and request JSON3 format
       fetchUrl = url.replace('https://www.youtube.com/api/timedtext', '/api/transcript');
-      // CRITICAL: Add fmt=json3 to get actual content (YouTube returns empty without this)
       if (!fetchUrl.includes('fmt=')) {
         fetchUrl += '&fmt=json3';
       }
     }
 
-    // console.log('[TranscriptService] Fetching caption content from:', fetchUrl.substring(0, 100) + '...');
-
     return this.http.get(fetchUrl, { responseType: 'text' }).pipe(
       map(content => {
-        console.log('[TranscriptService] Received content, length:', content.length);
-
-        // Detect format and parse accordingly
         if (content.startsWith('{') && content.includes('"events"')) {
           return this.parseJSON3(content);
         } else if (content.includes('<?xml') || content.includes('<text start=')) {
@@ -329,10 +297,7 @@ export class TranscriptService {
         }
         return this.parseVTT(content);
       }),
-      catchError(err => {
-        console.error('[TranscriptService] Failed to fetch caption content:', err);
-        return of([]);
-      })
+      catchError(() => of([]))
     );
   }
 
@@ -346,7 +311,6 @@ export class TranscriptService {
       const segments: TranscriptSegment[] = [];
 
       for (const event of events) {
-        // Skip events without segments (these are styling/window events)
         if (!event.segs) continue;
 
         const text = event.segs.map((seg: any) => seg.utf8 || '').join('');
@@ -359,10 +323,8 @@ export class TranscriptService {
         }
       }
 
-      console.log('[TranscriptService] Parsed JSON3 segments:', segments.length);
       return segments;
-    } catch (err) {
-      console.error('[TranscriptService] Failed to parse JSON3:', err);
+    } catch {
       return [];
     }
   }
@@ -385,7 +347,6 @@ export class TranscriptService {
       }
     }
 
-    console.log('[TranscriptService] Parsed XML segments:', segments.length);
     return segments;
   }
 
@@ -427,7 +388,6 @@ export class TranscriptService {
       }
     }
 
-    console.log('[TranscriptService] Parsed VTT segments:', segments.length);
     return segments;
   }
 
@@ -489,27 +449,24 @@ export class TranscriptService {
   }
 
   /**
-   * Generate subtitles using Whisper API (Groq) via backend
+   * Generate subtitles using Whisper API via backend
    * Called automatically when no captions are available
    */
   generateWithWhisper(videoId: string): Observable<SubtitleCue[]> {
-    // 1. Check cache first
+    // Check cache first
     if (this.transcriptCache.has(videoId)) {
-      console.log('[TranscriptService] Using cached Whisper transcript');
+      this.captionSource.set('ai');
       return of(this.transcriptCache.get(videoId)!);
     }
 
-    // 2. Check if request is already pending
+    // Check if request is already pending
     if (this.pendingRequests.has(videoId)) {
-      console.log('[TranscriptService] Request already pending, joining existing request');
       return this.pendingRequests.get(videoId)!;
     }
 
-    console.log('[TranscriptService] Starting Whisper AI transcription...');
     this.isGeneratingAI.set(true);
     this.error.set(null);
 
-    // 3. Create new request
     const request = this.http.post<{
       success: boolean;
       language: string;
@@ -519,12 +476,9 @@ export class TranscriptService {
     }>('/api/whisper', { videoId }).pipe(
       map(response => {
         if (!response.success || !response.segments) {
-          throw new Error(response.error || 'Whisper transcription failed');
+          throw new Error(response.error || 'AI transcription failed');
         }
 
-        console.log(`[TranscriptService] Whisper transcription complete. Language: ${response.language}, Segments: ${response.segments.length}`);
-
-        // Convert to SubtitleCue format
         const cues = response.segments.map((seg, index) => ({
           id: index,
           startTime: seg.start,
@@ -532,7 +486,6 @@ export class TranscriptService {
           text: seg.text.trim()
         }));
 
-        // Cache the result
         this.transcriptCache.set(videoId, cues);
         return cues;
       }),
@@ -540,16 +493,16 @@ export class TranscriptService {
         next: () => {
           this.isLoading.set(false);
           this.isGeneratingAI.set(false);
+          this.captionSource.set('ai');
           this.pendingRequests.delete(videoId);
         },
         error: (err) => {
-          console.error('[TranscriptService] Whisper API error:', err);
           this.isLoading.set(false);
           this.isGeneratingAI.set(false);
           this.pendingRequests.delete(videoId);
 
           let errorMessage = 'AI transcription failed';
-          if (err.error && typeof err.error === 'object' && err.error.error) {
+          if (err.error?.error) {
             errorMessage = err.error.error;
           } else if (typeof err.error === 'string') {
             errorMessage = err.error;
@@ -560,14 +513,11 @@ export class TranscriptService {
           this.error.set(errorMessage);
         }
       }),
-      // Use shareReplay so multiple subscribers waiting share the same single API call
       shareReplay(1)
     );
 
-    // Store request
     this.pendingRequests.set(videoId, request);
 
-    // Return request but we need to catch errors to return empty array for the UI logic
     return request.pipe(
       catchError(() => of([]))
     );
