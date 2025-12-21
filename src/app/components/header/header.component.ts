@@ -35,6 +35,13 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
         >
           中文
         </button>
+        <button 
+          class="lang-btn"
+          [class.active]="settings.settings().language === 'ko'"
+          (click)="setLanguage('ko')"
+        >
+          한국어
+        </button>
       </nav>
 
 
@@ -270,7 +277,7 @@ export class HeaderComponent {
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
 
-  setLanguage(lang: 'ja' | 'zh'): void {
+  setLanguage(lang: 'ja' | 'zh' | 'ko'): void {
     if (this.settings.settings().language === lang) return;
 
     // Clear video and subtitles when switching languages

@@ -25,7 +25,7 @@ export class SubtitleService {
    * Batch tokenize all subtitle cues
    * Collects unique texts, sends single API request per language, distributes tokens to cues
    */
-  async tokenizeAllCues(lang: 'ja' | 'zh'): Promise<void> {
+  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko'): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -96,7 +96,7 @@ export class SubtitleService {
   /**
    * Batch tokenize multiple texts in one API call
    */
-  private async batchTokenize(texts: string[], lang: 'ja' | 'zh'): Promise<Token[][]> {
+  private async batchTokenize(texts: string[], lang: 'ja' | 'zh' | 'ko'): Promise<Token[][]> {
     const results: Token[][] = [];
 
     // Process in chunks to avoid payload limits (max 50 per batch)
@@ -117,7 +117,7 @@ export class SubtitleService {
   /**
    * Tokenize single text via API
    */
-  private async tokenizeSingle(text: string, lang: 'ja' | 'zh'): Promise<Token[]> {
+  private async tokenizeSingle(text: string, lang: 'ja' | 'zh' | 'ko'): Promise<Token[]> {
     try {
       const response = await fetch(`/api/tokenize/${lang}`, {
         method: 'POST',
@@ -137,9 +137,13 @@ export class SubtitleService {
   /**
    * Fast fallback tokenization (client-side)
    */
-  private fallbackTokenize(text: string, lang: 'ja' | 'zh'): Token[] {
+  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko'): Token[] {
     if (lang === 'zh') {
       return text.split('').map(char => ({ surface: char }));
+    }
+    if (lang === 'ko') {
+      // Korean is space-delimited, split by spaces and filter empty
+      return text.split(/\s+/).filter(w => w.trim()).map(word => ({ surface: word }));
     }
     return this.tokenizeJapaneseBasic(text);
   }
@@ -147,7 +151,7 @@ export class SubtitleService {
   /**
    * Get tokens for a cue (uses pre-computed tokens from cue, falls back to basic)
    */
-  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh'): Token[] {
+  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko'): Token[] {
     // Use pre-computed tokens if available
     if (cue.tokens && cue.tokens.length > 0) {
       return cue.tokens;

@@ -46,7 +46,7 @@ export class SettingsService {
     this.updateSettings({ theme });
   }
 
-  setLanguage(language: 'ja' | 'zh'): void {
+  setLanguage(language: 'ja' | 'zh' | 'ko'): void {
     this.updateSettings({ language });
   }
 

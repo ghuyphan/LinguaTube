@@ -18,14 +18,15 @@ export class VocabularyService {
       known: items.filter(i => i.level === 'known').length,
       ignored: items.filter(i => i.level === 'ignored').length,
       japanese: items.filter(i => i.language === 'ja').length,
-      chinese: items.filter(i => i.language === 'zh').length
+      chinese: items.filter(i => i.language === 'zh').length,
+      korean: items.filter(i => i.language === 'ko').length
     };
   });
 
   /**
    * Get stats filtered by language
    */
-  getStatsByLanguage(language: 'ja' | 'zh') {
+  getStatsByLanguage(language: 'ja' | 'zh' | 'ko') {
     const items = this.vocabulary().filter(i => i.language === language);
     return {
       total: items.length,
@@ -83,7 +84,7 @@ export class VocabularyService {
   /**
    * Add a word from dictionary entry
    */
-  addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh', sourceSentence?: string): VocabularyItem {
+  addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko', sourceSentence?: string): VocabularyItem {
     const existing = this.findWord(entry.word);
     if (existing) {
       return existing;
@@ -94,6 +95,7 @@ export class VocabularyService {
       word: entry.word,
       reading: entry.reading,
       pinyin: entry.pinyin,
+      romanization: entry.romanization,
       meaning: entry.meanings[0]?.definition || '',
       language,
       level: 'new',
@@ -118,9 +120,10 @@ export class VocabularyService {
   addWord(
     word: string,
     meaning: string,
-    language: 'ja' | 'zh',
+    language: 'ja' | 'zh' | 'ko',
     reading?: string,
     pinyin?: string,
+    romanization?: string,
     sourceSentence?: string
   ): VocabularyItem {
     const existing = this.findWord(word);
@@ -133,6 +136,7 @@ export class VocabularyService {
       word,
       reading,
       pinyin,
+      romanization,
       meaning,
       language,
       level: 'new',
@@ -281,7 +285,7 @@ export class VocabularyService {
   /**
    * Filter vocabulary by language
    */
-  getByLanguage(language: 'ja' | 'zh'): VocabularyItem[] {
+  getByLanguage(language: 'ja' | 'zh' | 'ko'): VocabularyItem[] {
     return this.vocabulary().filter(item => item.language === language);
   }
 
@@ -301,7 +305,8 @@ export class VocabularyService {
       item.word.toLowerCase().includes(q) ||
       item.meaning.toLowerCase().includes(q) ||
       item.reading?.toLowerCase().includes(q) ||
-      item.pinyin?.toLowerCase().includes(q)
+      item.pinyin?.toLowerCase().includes(q) ||
+      item.romanization?.toLowerCase().includes(q)
     );
   }
 

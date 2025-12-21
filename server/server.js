@@ -257,6 +257,35 @@ app.post('/api/tokenize/ja', async (req, res) => {
     }
 });
 
+/**
+ * POST /api/tokenize/ko
+ * Tokenize Korean text using Intl.Segmenter (built into Node.js)
+ * Korean is space-delimited, making segmentation straightforward
+ */
+const koSegmenter = new Intl.Segmenter('ko', { granularity: 'word' });
+
+app.post('/api/tokenize/ko', async (req, res) => {
+    const { text } = req.body;
+
+    if (!text || typeof text !== 'string') {
+        return res.status(400).json({ error: 'Missing or invalid "text" field' });
+    }
+
+    try {
+        // Use Intl.Segmenter for word segmentation
+        const segments = [...koSegmenter.segment(text)];
+
+        const tokens = segments
+            .filter(seg => seg.isWordLike || seg.segment.trim())
+            .map(seg => ({ surface: seg.segment }));
+
+        res.json({ tokens });
+    } catch (error) {
+        console.error('[Tokenize KO] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`[Server] Gladia transcription server running on port ${PORT}`);
     if (!process.env.GLADIA_API_KEY) {

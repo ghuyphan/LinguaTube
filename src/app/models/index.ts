@@ -11,6 +11,7 @@ export interface Token {
   surface: string;        // The word as it appears
   reading?: string;       // Hiragana reading (Japanese)
   pinyin?: string;        // Pinyin (Chinese)
+  romanization?: string;  // Romanization (Korean)
   baseForm?: string;      // Dictionary form
   partOfSpeech?: string;  // Noun, verb, etc.
 }
@@ -21,8 +22,9 @@ export interface VocabularyItem {
   word: string;
   reading?: string;
   pinyin?: string;
+  romanization?: string;  // Korean romanization
   meaning: string;
-  language: 'ja' | 'zh';
+  language: 'ja' | 'zh' | 'ko';
   level: WordLevel;
   examples: string[];
   addedAt: Date;
@@ -48,10 +50,12 @@ export interface DictionaryEntry {
   word: string;
   reading?: string;
   pinyin?: string;
+  romanization?: string;  // Korean romanization
   meanings: DictionaryMeaning[];
   partOfSpeech?: string[];
   jlptLevel?: string;
   hskLevel?: number;
+  topikLevel?: number;    // Korean proficiency level
 }
 
 export interface DictionaryMeaning {
@@ -71,7 +75,7 @@ export interface VideoInfo {
 
 // App state
 export interface AppState {
-  currentLanguage: 'ja' | 'zh';
+  currentLanguage: 'ja' | 'zh' | 'ko';
   currentVideo?: VideoInfo;
   subtitles: SubtitleCue[];
   vocabulary: VocabularyItem[];
@@ -82,7 +86,7 @@ export interface AppState {
 // Settings
 export interface UserSettings {
   theme: 'light' | 'dark' | 'system';
-  language: 'ja' | 'zh';
+  language: 'ja' | 'zh' | 'ko';
   showFurigana: boolean;
   showPinyin: boolean;
   autoAdvance: boolean;

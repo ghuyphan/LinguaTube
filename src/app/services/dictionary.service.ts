@@ -120,6 +120,34 @@ export class DictionaryService {
   }
 
   /**
+   * Look up a Korean word
+   * Uses local dictionary for now (KRDICT API requires registration)
+   */
+  lookupKorean(word: string): Observable<DictionaryEntry | null> {
+    if (!word.trim()) return of(null);
+
+    // Check cache first
+    const cached = this.getFromCache(word, 'ko');
+    if (cached) {
+      this.lastLookup.set(cached);
+      return of(cached);
+    }
+
+    this.isLoading.set(true);
+
+    // Use local dictionary (can be expanded with KRDICT API later)
+    const result = this.localKoreanLookup(word);
+    this.isLoading.set(false);
+
+    if (result) {
+      this.lastLookup.set(result);
+      this.saveToCache(word, 'ko', result);
+    }
+
+    return of(result);
+  }
+
+  /**
    * Parse MDBG Scraper response to DictionaryEntry format
    */
   private parseMdbgResponse(response: any[], word: string): DictionaryEntry | null {
@@ -146,11 +174,14 @@ export class DictionaryService {
   /**
    * Auto-detect language and look up
    */
-  lookup(word: string, language?: 'ja' | 'zh'): Observable<DictionaryEntry | null> {
+  lookup(word: string, language?: 'ja' | 'zh' | 'ko'): Observable<DictionaryEntry | null> {
     const detectedLang = language || this.detectLanguage(word);
 
     if (detectedLang === 'zh') {
       return this.lookupChinese(word);
+    }
+    if (detectedLang === 'ko') {
+      return this.lookupKorean(word);
     }
     return this.lookupJapanese(word);
   }
@@ -160,12 +191,16 @@ export class DictionaryService {
   /**
    * Simple language detection based on character types
    */
-  private detectLanguage(text: string): 'ja' | 'zh' {
+  private detectLanguage(text: string): 'ja' | 'zh' | 'ko' {
+    // Check for Korean (Hangul)
+    if (/[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/.test(text)) {
+      return 'ko';
+    }
     // Check for Japanese-specific characters (Hiragana/Katakana)
     if (/[\u3040-\u309F\u30A0-\u30FF]/.test(text)) {
       return 'ja';
     }
-    // Default to Chinese for CJK ideographs without kana
+    // Default to Chinese for CJK ideographs without kana or hangul
     return 'zh';
   }
 
@@ -280,6 +315,86 @@ export class DictionaryService {
     return commonWords[word] || null;
   }
 
+  /**
+   * Local Korean dictionary fallback
+   */
+  private localKoreanLookup(word: string): DictionaryEntry | null {
+    const commonWords: Record<string, DictionaryEntry> = {
+      '한국': {
+        word: '한국',
+        romanization: 'hanguk',
+        meanings: [{ definition: 'Korea, South Korea' }],
+        partOfSpeech: ['Noun'],
+        topikLevel: 1
+      },
+      '안녕하세요': {
+        word: '안녕하세요',
+        romanization: 'annyeonghaseyo',
+        meanings: [{ definition: 'hello (formal)' }],
+        partOfSpeech: ['Interjection'],
+        topikLevel: 1
+      },
+      '감사합니다': {
+        word: '감사합니다',
+        romanization: 'gamsahamnida',
+        meanings: [{ definition: 'thank you (formal)' }],
+        partOfSpeech: ['Expression'],
+        topikLevel: 1
+      },
+      '사랑': {
+        word: '사랑',
+        romanization: 'sarang',
+        meanings: [{ definition: 'love' }],
+        partOfSpeech: ['Noun'],
+        topikLevel: 1
+      },
+      '먹다': {
+        word: '먹다',
+        romanization: 'meokda',
+        meanings: [{ definition: 'to eat' }],
+        partOfSpeech: ['Verb'],
+        topikLevel: 1
+      },
+      '보다': {
+        word: '보다',
+        romanization: 'boda',
+        meanings: [{ definition: 'to see, to watch, to look' }],
+        partOfSpeech: ['Verb'],
+        topikLevel: 1
+      },
+      '듣다': {
+        word: '듣다',
+        romanization: 'deutda',
+        meanings: [{ definition: 'to hear, to listen' }],
+        partOfSpeech: ['Verb'],
+        topikLevel: 1
+      },
+      '오늘': {
+        word: '오늘',
+        romanization: 'oneul',
+        meanings: [{ definition: 'today' }],
+        partOfSpeech: ['Noun'],
+        topikLevel: 1
+      },
+      '친구': {
+        word: '친구',
+        romanization: 'chingu',
+        meanings: [{ definition: 'friend' }],
+        partOfSpeech: ['Noun'],
+        topikLevel: 1
+      },
+      '학교': {
+        word: '학교',
+        romanization: 'hakgyo',
+        meanings: [{ definition: 'school' }],
+        partOfSpeech: ['Noun'],
+        topikLevel: 1
+      }
+    };
+
+    return commonWords[word] || null;
+  }
+
   // ─────────────────────────────────────────────────────────────
   // Cache helpers (localStorage with LRU eviction)
   // ─────────────────────────────────────────────────────────────
@@ -287,7 +402,7 @@ export class DictionaryService {
   /**
    * Get cached dictionary entry from localStorage
    */
-  private getFromCache(word: string, lang: 'ja' | 'zh'): DictionaryEntry | null {
+  private getFromCache(word: string, lang: 'ja' | 'zh' | 'ko'): DictionaryEntry | null {
     try {
       const cache = this.loadCache();
       const key = `${lang}:${word}`;
@@ -308,7 +423,7 @@ export class DictionaryService {
   /**
    * Save dictionary entry to localStorage cache
    */
-  private saveToCache(word: string, lang: 'ja' | 'zh', data: DictionaryEntry): void {
+  private saveToCache(word: string, lang: 'ja' | 'zh' | 'ko', data: DictionaryEntry): void {
     try {
       const cache = this.loadCache();
       const key = `${lang}:${word}`;
