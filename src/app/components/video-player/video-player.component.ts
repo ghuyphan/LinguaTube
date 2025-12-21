@@ -228,11 +228,11 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
       overflow: hidden;
     }
     
-    /* Desktop Max Height Cap */
+    /* Desktop: 16:9 aspect ratio with reasonable max-height */
     @media (min-width: 769px) {
       .video-embed-ratio {
-        padding-bottom: 0;
-        height: min(56.25vw, 50vh);
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        max-height: 60vh;
       }
     }
 
