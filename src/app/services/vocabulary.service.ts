@@ -42,13 +42,32 @@ export class VocabularyService {
   });
 
   readonly reviewQueue = computed(() => {
+    const now = new Date();
     return this.vocabulary()
       .filter(i => i.level === 'new' || i.level === 'learning')
       .sort((a, b) => {
-        // Prioritize items not reviewed recently
-        const aTime = a.lastReviewedAt ? new Date(a.lastReviewedAt).getTime() : 0;
-        const bTime = b.lastReviewedAt ? new Date(b.lastReviewedAt).getTime() : 0;
-        return aTime - bTime;
+        // Prioritize by next review date (earlier dates first)
+        const aDate = a.nextReviewDate ? new Date(a.nextReviewDate).getTime() : 0;
+        const bDate = b.nextReviewDate ? new Date(b.nextReviewDate).getTime() : 0;
+        return aDate - bDate;
+      });
+  });
+
+  /**
+   * Get words that are due for review (nextReviewDate <= now)
+   */
+  readonly dueForReview = computed(() => {
+    const now = new Date();
+    return this.vocabulary()
+      .filter(i => {
+        if (i.level === 'ignored') return false;
+        if (!i.nextReviewDate) return i.level === 'new'; // New words always due
+        return new Date(i.nextReviewDate) <= now;
+      })
+      .sort((a, b) => {
+        const aDate = a.nextReviewDate ? new Date(a.nextReviewDate).getTime() : 0;
+        const bDate = b.nextReviewDate ? new Date(b.nextReviewDate).getTime() : 0;
+        return aDate - bDate;
       });
   });
 
@@ -64,7 +83,7 @@ export class VocabularyService {
   /**
    * Add a word from dictionary entry
    */
-  addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh'): VocabularyItem {
+  addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh', sourceSentence?: string): VocabularyItem {
     const existing = this.findWord(entry.word);
     if (existing) {
       return existing;
@@ -80,7 +99,13 @@ export class VocabularyService {
       level: 'new',
       examples: [],
       addedAt: new Date(),
-      reviewCount: 0
+      reviewCount: 0,
+      // SRS defaults
+      easeFactor: 2.5,
+      interval: 0,
+      repetitions: 0,
+      // Sentence mining
+      sourceSentence
     };
 
     this.vocabulary.update(items => [...items, item]);
@@ -95,7 +120,8 @@ export class VocabularyService {
     meaning: string,
     language: 'ja' | 'zh',
     reading?: string,
-    pinyin?: string
+    pinyin?: string,
+    sourceSentence?: string
   ): VocabularyItem {
     const existing = this.findWord(word);
     if (existing) {
@@ -112,7 +138,13 @@ export class VocabularyService {
       level: 'new',
       examples: [],
       addedAt: new Date(),
-      reviewCount: 0
+      reviewCount: 0,
+      // SRS defaults
+      easeFactor: 2.5,
+      interval: 0,
+      repetitions: 0,
+      // Sentence mining
+      sourceSentence
     };
 
     this.vocabulary.update(items => [...items, item]);
@@ -131,31 +163,66 @@ export class VocabularyService {
   }
 
   /**
-   * Mark word as reviewed
+   * Mark word as reviewed using SM-2 algorithm
+   * @param quality 0-5 scale (0-2 = incorrect, 3-5 = correct with varying difficulty)
    */
-  markReviewed(id: string, correct: boolean): void {
+  markReviewedSRS(id: string, quality: number): void {
     this.vocabulary.update(items =>
       items.map(item => {
         if (item.id !== id) return item;
 
-        const newReviewCount = item.reviewCount + 1;
+        // SM-2 Algorithm
+        let { easeFactor, interval, repetitions } = item;
         let newLevel: WordLevel = item.level;
 
-        if (correct) {
-          if (item.level === 'new') newLevel = 'learning';
-          else if (item.level === 'learning' && newReviewCount >= 5) newLevel = 'known';
+        if (quality < 3) {
+          // Incorrect - reset
+          repetitions = 0;
+          interval = 0;
+          newLevel = item.level === 'known' ? 'learning' : 'new';
         } else {
-          if (item.level === 'known') newLevel = 'learning';
+          // Correct
+          repetitions++;
+
+          if (repetitions === 1) {
+            interval = 1;
+          } else if (repetitions === 2) {
+            interval = 6;
+          } else {
+            interval = Math.round(interval * easeFactor);
+          }
+
+          // Update ease factor (min 1.3)
+          easeFactor = Math.max(1.3, easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+
+          // Update level based on repetitions
+          if (item.level === 'new') newLevel = 'learning';
+          else if (item.level === 'learning' && repetitions >= 3) newLevel = 'known';
         }
+
+        const nextReviewDate = new Date();
+        nextReviewDate.setDate(nextReviewDate.getDate() + interval);
 
         return {
           ...item,
           level: newLevel,
           lastReviewedAt: new Date(),
-          reviewCount: newReviewCount
+          reviewCount: item.reviewCount + 1,
+          easeFactor,
+          interval,
+          repetitions,
+          nextReviewDate
         };
       })
     );
+  }
+
+  /**
+   * Mark word as reviewed (legacy simple method)
+   */
+  markReviewed(id: string, correct: boolean): void {
+    // Map boolean to SM-2 quality: correct = 4 (good), incorrect = 1 (bad)
+    this.markReviewedSRS(id, correct ? 4 : 1);
   }
 
   /**

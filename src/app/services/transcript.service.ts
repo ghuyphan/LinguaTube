@@ -87,26 +87,36 @@ export class TranscriptService {
 
   /**
    * Fetch caption tracks - Prioritize YouTube Innertube API with retry logic
+   * Uses initial delay + exponential backoff to handle YouTube CDN timing issues
    */
   private fetchCaptionsFromInvidious(videoId: string): Observable<CaptionTrack[]> {
     return new Observable<CaptionTrack[]>(observer => {
-      const maxRetries = 3;
+      const maxRetries = 5;
       let attempt = 0;
+      let confirmedNoCaptions = false; // Track if YouTube confirmed no captions (vs API failure)
 
       const tryFetch = () => {
         attempt++;
         console.log(`[TranscriptService] Caption fetch attempt ${attempt}/${maxRetries}`);
 
         this.fetchCaptionsFromYouTube(videoId).subscribe({
-          next: (tracks) => {
-            if (tracks.length > 0) {
-              console.log(`[TranscriptService] Success on attempt ${attempt}: ${tracks.length} tracks`);
-              observer.next(tracks);
+          next: (result: { tracks: CaptionTrack[], validResponse: boolean }) => {
+            if (result.tracks.length > 0) {
+              console.log(`[TranscriptService] Success on attempt ${attempt}: ${result.tracks.length} tracks`);
+              observer.next(result.tracks);
+              observer.complete();
+            } else if (result.validResponse) {
+              // YouTube returned a valid response with no captions - video has no subtitles
+              // Skip remaining retries and go straight to Whisper
+              console.log('[TranscriptService] Video confirmed to have no captions, skipping to Whisper');
+              confirmedNoCaptions = true;
+              observer.next([]);
               observer.complete();
             } else if (attempt < maxRetries) {
-              // Retry with exponential backoff (500ms, 1000ms, 2000ms)
-              const delay = 500 * Math.pow(2, attempt - 1);
-              console.log(`[TranscriptService] No tracks, retrying in ${delay}ms...`);
+              // API might be rate-limited or not ready - retry with exponential backoff
+              // Delays: 1000ms, 2000ms, 4000ms, 8000ms
+              const delay = 1000 * Math.pow(2, attempt - 1);
+              console.log(`[TranscriptService] No tracks (API issue), retrying in ${delay}ms...`);
               setTimeout(tryFetch, delay);
             } else {
               console.log('[TranscriptService] All caption attempts failed');
@@ -117,7 +127,7 @@ export class TranscriptService {
           error: (err) => {
             console.log(`[TranscriptService] Attempt ${attempt} error:`, err.message);
             if (attempt < maxRetries) {
-              const delay = 500 * Math.pow(2, attempt - 1);
+              const delay = 1000 * Math.pow(2, attempt - 1);
               setTimeout(tryFetch, delay);
             } else {
               observer.next([]);
@@ -127,7 +137,9 @@ export class TranscriptService {
         });
       };
 
-      tryFetch();
+      // Initial delay before first fetch - gives YouTube CDN time to prepare
+      console.log('[TranscriptService] Waiting 1s before caption fetch...');
+      setTimeout(tryFetch, 1000);
     });
   }
 
@@ -142,8 +154,9 @@ export class TranscriptService {
   /**
    * Extract caption tracks using YouTube's innertube API
    * This is more reliable than HTML parsing as it generates fresh URLs
+   * Returns { tracks, validResponse } to distinguish "no captions" from "API failure"
    */
-  private fetchCaptionsFromYouTube(videoId: string): Observable<CaptionTrack[]> {
+  private fetchCaptionsFromYouTube(videoId: string): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
     const url = '/api/innertube?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
     const body = {
       context: {
@@ -159,24 +172,30 @@ export class TranscriptService {
 
     return this.http.post<any>(url, body).pipe(
       map(response => {
+        // Check if we got a valid player response (has videoDetails or playabilityStatus)
+        const hasValidResponse = !!(response?.videoDetails || response?.playabilityStatus);
         const captionTracks = response?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
 
         if (!captionTracks || captionTracks.length === 0) {
-          console.log('[TranscriptService] No captions in innertube response');
-          return [];
+          console.log('[TranscriptService] No captions in innertube response, valid:', hasValidResponse);
+          // Return whether this was a valid "no captions" response or an incomplete/rate-limited response
+          return { tracks: [], validResponse: hasValidResponse };
         }
 
         console.log('[TranscriptService] Innertube found:', captionTracks.length, 'tracks');
 
-        return captionTracks.map((track: any) => ({
+        const tracks = captionTracks.map((track: any) => ({
           languageCode: track.languageCode,
           label: track.name?.simpleText || track.languageCode,
           url: track.baseUrl
         }));
+
+        return { tracks, validResponse: true };
       }),
       catchError(err => {
         console.log('[TranscriptService] Innertube API failed:', err.message);
-        return of([]);
+        // API error - not a valid response, should retry
+        return of({ tracks: [], validResponse: false });
       })
     );
   }

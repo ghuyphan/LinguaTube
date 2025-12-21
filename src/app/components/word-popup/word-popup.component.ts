@@ -571,6 +571,7 @@ export class WordPopupComponent {
   popupBody = viewChild<ElementRef<HTMLElement>>('popupBody');
 
   selectedWord = input<Token | null>(null);
+  currentSentence = input<string>('');  // Sentence context for sentence mining
   closed = output<void>();
 
   entry = signal<DictionaryEntry | null>(null);
@@ -733,13 +734,14 @@ export class WordPopupComponent {
     const word = this.selectedWord();
     const entryData = this.entry();
     const lang = this.settings.settings().language;
+    const sentence = this.currentSentence();
 
     if (!word) return;
 
     if (entryData) {
-      this.vocab.addFromDictionary(entryData, lang);
+      this.vocab.addFromDictionary(entryData, lang, sentence);
     } else {
-      this.vocab.addWord(word.surface, '', lang);
+      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, sentence);
     }
 
     this.isSaved.set(true);

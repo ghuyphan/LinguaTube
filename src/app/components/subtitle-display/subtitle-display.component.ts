@@ -29,9 +29,13 @@ import { SubtitleCue, Token } from '../../models';
                   [class.word--learning]="getWordLevel(token.surface) === 'learning'"
                   [class.word--known]="getWordLevel(token.surface) === 'known'"
                   [class.word--saved]="vocab.hasWord(token.surface)"
-                  (click)="onWordClick(token)"
+                  (click)="onWordClick(token, cue.text)"
                 >
-                  {{ token.surface }}
+                  @if (showReading() && getReading(token)) {
+                    <ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>
+                  } @else {
+                    {{ token.surface }}
+                  }
                 </span>
               }
             }
@@ -91,6 +95,16 @@ import { SubtitleCue, Token } from '../../models';
 
       <!-- Controls -->
       <div class="subtitle-controls">
+        <!-- Reading Toggle -->
+        <button 
+          class="reading-toggle"
+          [class.active]="showReading()"
+          (click)="toggleReading()"
+          [title]="settings.settings().language === 'ja' ? 'Toggle Furigana' : 'Toggle Pinyin'"
+        >
+          <app-icon [name]="showReading() ? 'eye' : 'eye-off'" [size]="16" />
+          <span>{{ settings.settings().language === 'ja' ? 'Furigana' : 'Pinyin' }}</span>
+        </button>
 
         <div class="font-controls">
           <button 
@@ -438,6 +452,33 @@ import { SubtitleCue, Token } from '../../models';
       box-shadow: var(--shadow-sm);
     }
 
+    /* Reading Toggle */
+    .reading-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 10px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .reading-toggle:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+    }
+
+    .reading-toggle.active {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: white;
+    }
+
 
 
     @keyframes pulse {
@@ -508,7 +549,15 @@ export class SubtitleDisplayComponent {
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
 
-  wordClicked = output<Token>();
+  wordClicked = output<{ token: Token; sentence: string }>();
+
+  // Computed signal for reading display
+  showReading = computed(() => {
+    const lang = this.settings.settings().language;
+    return lang === 'ja'
+      ? this.settings.settings().showFurigana
+      : this.settings.settings().showPinyin;
+  });
 
   constructor() {
     // Update current cue based on video time
@@ -560,8 +609,22 @@ export class SubtitleDisplayComponent {
     return this.vocab.getWordLevel(word);
   }
 
-  onWordClick(token: Token): void {
-    this.wordClicked.emit(token);
+  onWordClick(token: Token, sentence: string): void {
+    this.wordClicked.emit({ token, sentence });
+  }
+
+  getReading(token: Token): string | undefined {
+    const lang = this.settings.settings().language;
+    return lang === 'ja' ? token.reading : token.pinyin;
+  }
+
+  toggleReading(): void {
+    const lang = this.settings.settings().language;
+    if (lang === 'ja') {
+      this.settings.toggleFurigana();
+    } else {
+      this.settings.togglePinyin();
+    }
   }
 
   seekToCue(cue: SubtitleCue): void {

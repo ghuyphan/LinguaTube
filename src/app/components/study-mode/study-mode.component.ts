@@ -117,6 +117,12 @@ interface StudyCard {
                   <div class="card-meaning">
                     {{ currentCard()!.item.meaning || '(no definition)' }}
                   </div>
+                  @if (currentCard()!.item.sourceSentence) {
+                    <div class="card-sentence">
+                      <span class="sentence-label">Example:</span>
+                      {{ currentCard()!.item.sourceSentence }}
+                    </div>
+                  }
                 </div>
               </div>
             </div>
@@ -385,6 +391,27 @@ interface StudyCard {
       line-height: 1.6;
     }
 
+    .card-sentence {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: var(--space-md);
+      padding: var(--space-sm);
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      line-height: 1.5;
+    }
+
+    .sentence-label {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
     /* Answer Buttons */
     .answer-buttons {
       display: grid;
@@ -597,28 +624,27 @@ export class StudyModeComponent {
     const stats = this.sessionStats();
     stats.total++;
 
-    // Update word level based on answer (simple SRS)
-    let newLevel = card.item.level;
-
+    // Map answer to SM-2 quality score (0-5)
+    // wrong=1, hard=2, good=4, easy=5
+    let quality: number;
     if (answer === 'wrong') {
+      quality = 1;
       stats.incorrect++;
-      newLevel = 'new';
     } else if (answer === 'hard') {
-      newLevel = 'learning';
+      quality = 2;
+      stats.incorrect++;  // Hard counts as needing more practice
     } else if (answer === 'good') {
+      quality = 4;
       stats.correct++;
-      newLevel = card.item.level === 'new' ? 'learning' : 'known';
-    } else if (answer === 'easy') {
+    } else {
+      quality = 5;
       stats.correct++;
-      newLevel = 'known';
     }
 
     this.sessionStats.set({ ...stats });
 
-    // Update vocabulary
-    if (newLevel !== card.item.level) {
-      this.vocab.updateLevel(card.item.id, newLevel);
-    }
+    // Update vocabulary using SM-2 algorithm
+    this.vocab.markReviewedSRS(card.item.id, quality);
 
     // Next card or complete
     if (this.currentIndex() < this.studyCards().length - 1) {

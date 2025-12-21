@@ -37,6 +37,7 @@ import { Token } from '../../models';
     @defer (when selectedWord()) {
       <app-word-popup 
         [selectedWord]="selectedWord()"
+        [currentSentence]="currentSentence()"
         (closed)="selectedWord.set(null)"
       />
     }
@@ -101,13 +102,15 @@ export class VideoPageComponent {
   private youtube = inject(YoutubeService);
 
   selectedWord = signal<Token | null>(null);
+  currentSentence = signal<string>('');
 
   constructor() {
     // No explicit pause logic needed here; component destruction naturally stops playback,
     // and YoutubeService signals persist the timestamp for restoration.
   }
 
-  onWordClicked(token: Token): void {
-    this.selectedWord.set(token);
+  onWordClicked(event: { token: Token; sentence: string }): void {
+    this.selectedWord.set(event.token);
+    this.currentSentence.set(event.sentence);
   }
 }

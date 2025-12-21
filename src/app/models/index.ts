@@ -28,6 +28,17 @@ export interface VocabularyItem {
   addedAt: Date;
   lastReviewedAt?: Date;
   reviewCount: number;
+
+  // SRS fields (SM-2 algorithm)
+  easeFactor: number;        // Default 2.5, min 1.3
+  interval: number;          // Days until next review
+  nextReviewDate?: Date;     // When to show again
+  repetitions: number;       // Times correctly recalled in a row
+
+  // Sentence mining fields
+  sourceSentence?: string;   // Context sentence where word was found
+  sourceVideoId?: string;    // YouTube video ID
+  sourceTimestamp?: number;  // Time in video (seconds)
 }
 
 export type WordLevel = 'new' | 'learning' | 'known' | 'ignored';

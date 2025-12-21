@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
+import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
@@ -60,20 +60,27 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
         </div>
       } @else {
         <!-- Video Loaded State -->
-        <div class="video-container">
+        <div class="video-container" #videoContainer>
           <div class="video-embed-ratio">
             <div id="youtube-player"></div>
             
             <!-- Interaction Overlay Layer -->
-            <div class="player-overlay">
-              <div class="zone left" (click)="handleSeekTap(-5)">
+            <div class="player-overlay" (touchstart)="onUserActivity()">
+              <div class="zone left" (click)="handleZoneTap(-5)">
                 <div class="feedback-icon" [class.animate]="rewindFeedback()">
                   <app-icon name="rewind" [size]="40" />
                   <span>-5s</span>
                 </div>
               </div>
-              <div class="zone center" (click)="togglePlay()" (dblclick)="togglePlay()"></div>
-              <div class="zone right" (click)="handleSeekTap(5)">
+              <div class="zone center" (click)="handleCenterTap()">
+                <!-- Big play button when paused and controls hidden -->
+                @if (!youtube.isPlaying() && !areControlsVisible()) {
+                  <div class="big-play-btn">
+                    <app-icon name="play" [size]="48" />
+                  </div>
+                }
+              </div>
+              <div class="zone right" (click)="handleZoneTap(5)">
                  <div class="feedback-icon" [class.animate]="forwardFeedback()">
                   <app-icon name="fast-forward" [size]="40" />
                   <span>+5s</span>
@@ -262,7 +269,28 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
     
     .zone.center {
       width: 40%;
-      cursor: pointer; /* or default if we want only controls to work? No, toggle is good */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .big-play-btn {
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .feedback-icon {
@@ -476,6 +504,24 @@ export class VideoPlayerComponent implements OnDestroy {
   private lastTap = 0; // For double tap detection if needed
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
+  @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
+
+  // Hide controls when clicking outside video player
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  onDocumentClick(event: Event) {
+    // Only care about this when controls are visible
+    if (!this.areControlsVisible() || !this.youtube.isPlaying()) return;
+
+    const target = event.target as HTMLElement;
+    const videoContainer = this.videoContainerRef?.nativeElement;
+
+    // If click is outside the video container, hide controls immediately
+    if (videoContainer && !videoContainer.contains(target)) {
+      this.areControlsVisible.set(false);
+      this.clearControlsTimeout();
+    }
+  }
 
   constructor() {
     // Restoring player state when component initializes/re-creates
@@ -510,6 +556,17 @@ export class VideoPlayerComponent implements OnDestroy {
     effect(() => {
       if (!this.youtube.currentVideo()) {
         this.videoUrl = '';
+      }
+    });
+
+    // Auto-hide controls when video starts playing
+    effect(() => {
+      if (this.youtube.isPlaying()) {
+        this.showControls(); // Start the auto-hide timer
+      } else {
+        // Show controls when paused
+        this.areControlsVisible.set(true);
+        this.clearControlsTimeout();
       }
     });
   }
@@ -577,6 +634,48 @@ export class VideoPlayerComponent implements OnDestroy {
       this.tapTimeout = setTimeout(() => {
         // Single tap action (toggle play/controls)
         this.togglePlay();
+      }, this.DOUBLE_TAP_DELAY);
+    }
+
+    this.lastTapTime = currentTime;
+  }
+
+  // Handle zone tap (left/right) - single tap shows controls, double tap seeks
+  handleZoneTap(seconds: number) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - this.lastTapTime;
+
+    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
+      // Double tap = seek
+      clearTimeout(this.tapTimeout);
+      this.seekRelative(seconds);
+    } else {
+      // Single tap = show controls (with delay to detect double tap)
+      this.tapTimeout = setTimeout(() => {
+        this.showControls();
+      }, this.DOUBLE_TAP_DELAY);
+    }
+
+    this.lastTapTime = currentTime;
+  }
+
+  // Handle center tap - single tap shows controls or plays, double tap toggles
+  handleCenterTap() {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - this.lastTapTime;
+
+    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
+      // Double tap = toggle play
+      clearTimeout(this.tapTimeout);
+      this.togglePlay();
+    } else {
+      // Single tap = show controls if playing, or toggle if paused
+      this.tapTimeout = setTimeout(() => {
+        if (this.youtube.isPlaying()) {
+          this.showControls();
+        } else {
+          this.togglePlay();
+        }
       }, this.DOUBLE_TAP_DELAY);
     }
 
