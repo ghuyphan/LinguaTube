@@ -68,15 +68,13 @@ export class AuthService {
      * Render Google Sign-In button
      */
     renderButton(element: HTMLElement): void {
-        if (!this.clientId || typeof google === 'undefined') return;
+        if (typeof google === 'undefined') return;
 
         google.accounts.id.renderButton(element, {
             theme: 'outline',
             size: 'large',
-            type: 'standard',
-            shape: 'pill',
-            text: 'signin', // Shorter text
-            // Removed fixed width to allow auto-sizing
+            type: 'icon',
+            shape: 'circle'
         });
     }
 

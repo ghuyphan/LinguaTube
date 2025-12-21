@@ -83,10 +83,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
             }
           </div>
         } @else {
-          <div class="auth-wrapper">
-            <span class="sync-hint">Sync data</span>
-            <div #googleBtn class="google-signin-btn"></div>
-          </div>
+          <div #googleBtn class="google-signin-btn"></div>
         }
         
         <button 
@@ -243,31 +240,11 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       margin-left: var(--space-md);
     }
     
-    .auth-wrapper {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      background: var(--bg-secondary);
-      padding: 4px 6px 4px 12px;
-      border-radius: 100px;
-      border: 1px solid var(--border-color);
-      height: 44px;
-    }
-    
-    .sync-hint {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
     .google-signin-btn {
-      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden; /* Prevent iframe flash */
-      border-radius: 20px;
+      overflow: hidden;
     }
     
     .theme-btn {
@@ -383,20 +360,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         gap: var(--space-sm);
       }
       
-      /* Keep auth wrapper visible and styled on mobile */
-      .auth-wrapper {
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        padding: 4px 6px 4px 10px;
-        gap: var(--space-sm);
-        height: 36px; /* Slightly compact */
-      }
-      
-      .sync-hint {
-        /* Keep visible */
-        font-size: 0.6875rem;
-        display: block;
-      }
+
       
       .theme-btn {
         display: none; /* Hide theme toggle on mobile to save space if needed, or keep minimal */
@@ -423,11 +387,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         font-size: 0.75rem;
       }
       
-      /* Ensure google button fits */
-      .google-signin-btn {
-        transform: scale(0.9);
-        transform-origin: right center;
-      }
+
     }
   `]
 })
