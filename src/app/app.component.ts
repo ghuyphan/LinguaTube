@@ -67,7 +67,7 @@ import { IconComponent } from './components/icon/icon.component';
 
     .main {
       flex: 1;
-      padding: var(--space-lg) 0;
+      padding: var(--space-xl) 0;
     }
 
     /* Desktop */

@@ -73,8 +73,10 @@ export class AuthService {
         google.accounts.id.renderButton(element, {
             theme: 'outline',
             size: 'large',
-            type: 'icon',
-            shape: 'circle'
+            type: 'standard',
+            shape: 'pill',
+            text: 'signin_with',
+            width: 200
         });
     }
 

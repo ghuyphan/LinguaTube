@@ -342,12 +342,11 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       
       /* Ensure google button doesn't break layout */
       .google-signin-btn {
-        height: 40px; /* Match icon button size */
-        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden; /* Prevent overflow */
+        min-width: 140px; /* Ensure space for standard button */
       }
     }
 
