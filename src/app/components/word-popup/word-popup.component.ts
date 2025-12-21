@@ -513,6 +513,7 @@ import { Token, DictionaryEntry } from '../../models';
 
       .popup-header {
         padding: var(--space-sm) var(--space-md) var(--space-md);
+        padding-left: 48px;
         padding-right: 48px;
       }
 
