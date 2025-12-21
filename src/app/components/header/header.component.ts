@@ -1,7 +1,7 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService, YoutubeService, SubtitleService } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService } from '../../services';
 
 @Component({
   selector: 'app-header',
@@ -58,6 +58,29 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
       </div>
 
       <div class="header__actions">
+        <!-- User Auth Section -->
+        @if (auth.isLoggedIn()) {
+          <div class="user-menu">
+            <img 
+              [src]="auth.user()?.picture" 
+              [alt]="auth.user()?.name" 
+              class="user-avatar"
+              (click)="showUserMenu = !showUserMenu"
+            />
+            @if (showUserMenu) {
+              <div class="user-dropdown">
+                <div class="user-info">
+                  <span class="user-name">{{ auth.user()?.name }}</span>
+                  <span class="user-email">{{ auth.user()?.email }}</span>
+                </div>
+                <button class="dropdown-btn" (click)="signOut()">Sign out</button>
+              </div>
+            }
+          </div>
+        } @else {
+          <div #googleBtn class="google-signin-btn"></div>
+        }
+        
         <button 
           class="btn btn-icon btn-ghost"
           (click)="toggleTheme()"
@@ -206,8 +229,76 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
 
     .header__actions {
       display: flex;
-      gap: var(--space-xs);
+      align-items: center;
+      gap: var(--space-sm);
       margin-left: var(--space-sm);
+    }
+    
+    .google-signin-btn {
+      height: 32px;
+    }
+    
+    .user-menu {
+      position: relative;
+    }
+    
+    .user-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color var(--transition-fast);
+    }
+    
+    .user-avatar:hover {
+      border-color: var(--accent-primary);
+    }
+    
+    .user-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: var(--space-xs);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-lg);
+      min-width: 200px;
+      z-index: 1000;
+    }
+    
+    .user-info {
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .user-name {
+      display: block;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .user-email {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    .dropdown-btn {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      background: transparent;
+      border: none;
+      text-align: left;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+    
+    .dropdown-btn:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
     }
 
     @media (max-width: 768px) {
@@ -271,27 +362,45 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
     }
   `]
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
+  auth = inject(AuthService);
+
+  @ViewChild('googleBtn') googleBtnRef?: ElementRef<HTMLElement>;
+
+  showUserMenu = false;
+
+  ngAfterViewInit(): void {
+    // Render button once auth is initialized and element is ready
+    this.tryRenderButton();
+  }
+
+  private tryRenderButton(): void {
+    if (this.auth.isInitialized() && this.googleBtnRef?.nativeElement) {
+      this.auth.renderButton(this.googleBtnRef.nativeElement);
+    } else {
+      setTimeout(() => this.tryRenderButton(), 200);
+    }
+  }
 
   setLanguage(lang: 'ja' | 'zh' | 'ko'): void {
     if (this.settings.settings().language === lang) return;
-
-    // Clear video and subtitles when switching languages
-    // primarily to prevent mismatch between language mode and content
     this.youtube.reset();
     this.subtitles.clear();
-
     this.settings.setLanguage(lang);
   }
 
   toggleTheme(): void {
-    // Use effective theme (resolves 'system' to actual light/dark)
     const effectiveTheme = this.settings.getEffectiveTheme();
     const next = effectiveTheme === 'dark' ? 'light' : 'dark';
     this.settings.setTheme(next);
+  }
+
+  signOut(): void {
+    this.auth.signOut();
+    this.showUserMenu = false;
   }
 }

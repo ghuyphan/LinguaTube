@@ -4,12 +4,17 @@ compatibility_date = "2024-12-20"
 compatibility_flags = ["nodejs_compat"]
 
 # KV Namespace for caching transcripts
-# Create with: wrangler kv:namespace create TRANSCRIPT_CACHE
-# Then replace the id below with your actual Namespace ID
 [[kv_namespaces]]
 binding = "TRANSCRIPT_CACHE"
 id = "e4ccbf86e2654f31be92af593b912eb8"
 
+# D1 Database for vocabulary sync
+# Create with: wrangler d1 create linguatube-vocab
+# Then add the database_id below
+[[d1_databases]]
+binding = "VOCAB_DB"
+database_name = "linguatube-vocab"
+database_id = "YOUR_D1_DATABASE_ID"
 
 [vars]
-# GLADIA_API_KEY should be set in Cloudflare Dashboard
+# GLADIA_API_KEY and GOOGLE_CLIENT_ID should be set in Cloudflare Dashboard

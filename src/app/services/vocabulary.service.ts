@@ -353,6 +353,36 @@ export class VocabularyService {
     this.vocabulary.set([]);
   }
 
+  /**
+   * Get all items (for sync)
+   */
+  getAllItems(): VocabularyItem[] {
+    return this.vocabulary();
+  }
+
+  /**
+   * Import/merge items (for sync)
+   */
+  importItems(items: VocabularyItem[]): void {
+    const merged = new Map<string, VocabularyItem>();
+
+    // Add existing items
+    for (const item of this.vocabulary()) {
+      merged.set(`${item.word}-${item.language}`, item);
+    }
+
+    // Merge incoming items
+    for (const item of items) {
+      const key = `${item.word}-${item.language}`;
+      const existing = merged.get(key);
+      if (!existing) {
+        merged.set(key, item);
+      }
+    }
+
+    this.vocabulary.set(Array.from(merged.values()));
+  }
+
   // Private methods
 
   private loadFromStorage(): void {
