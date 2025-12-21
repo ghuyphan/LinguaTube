@@ -746,10 +746,9 @@ export class VideoPlayerComponent implements OnDestroy {
     this.isLoading.set(true);
     this.error.set(null);
 
-    // Allow view update
-    // await new Promise(resolve => setTimeout(resolve, 0)); // Removed hacky delay, signal updates should be sufficient
-
     try {
+      // Wait for Angular to render the video container before initializing
+      await this.waitForElement('youtube-player');
       await this.youtube.initPlayer('youtube-player', videoId);
       this.fetchCaptions(videoId);
     } catch (err: unknown) {
