@@ -75,8 +75,8 @@ export class AuthService {
             size: 'large',
             type: 'standard',
             shape: 'pill',
-            text: 'signin_with',
-            width: 200
+            text: 'signin', // Shorter text
+            // Removed fixed width to allow auto-sizing
         });
     }
 

@@ -602,6 +602,7 @@ export class WordPopupComponent {
   // Threshold for dismissing (pixels)
   private readonly DISMISS_THRESHOLD = 100;
   private readonly VELOCITY_THRESHOLD = 0.5;
+  private readonly ANIMATION_DURATION = 250;
 
   constructor() {
     effect(() => {
@@ -727,7 +728,7 @@ export class WordPopupComponent {
       this.lockBodyScroll(false);
       this.entry.set(null);
       this.closed.emit();
-    }, 250); // Match animation duration
+    }, this.ANIMATION_DURATION); // Match animation duration
   }
 
   lookupWord(word: string): void {

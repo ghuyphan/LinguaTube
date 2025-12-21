@@ -544,7 +544,7 @@ export class VideoPlayerComponent implements OnDestroy {
   feedbackIconName = signal<'play' | 'pause'>('play');
   playPauseFeedback = signal(false);
 
-  private controlsTimeout: any;
+  private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private lastTap = 0; // For double tap detection if needed
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
@@ -665,7 +665,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Double-tap state
   private lastTapTime = 0;
-  private tapTimeout: any;
+  private tapTimeout: ReturnType<typeof setTimeout> | null = null;
   private readonly DOUBLE_TAP_DELAY = 300;
 
   seekRelative(seconds: number) {
@@ -681,7 +681,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
     if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
       // Double tap detected
-      clearTimeout(this.tapTimeout); // Cancel single tap action
+      if (this.tapTimeout) clearTimeout(this.tapTimeout); // Cancel single tap action
       this.seekRelative(seconds);
     } else {
       // WaitFor double tap
@@ -701,7 +701,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
     if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
       // Double tap = seek
-      clearTimeout(this.tapTimeout);
+      if (this.tapTimeout) clearTimeout(this.tapTimeout);
       this.seekRelative(seconds);
     } else {
       // Single tap = show controls (with delay to detect double tap)
@@ -747,13 +747,14 @@ export class VideoPlayerComponent implements OnDestroy {
     this.error.set(null);
 
     // Allow view update
-    await new Promise(resolve => setTimeout(resolve, 0));
+    // await new Promise(resolve => setTimeout(resolve, 0)); // Removed hacky delay, signal updates should be sufficient
 
     try {
       await this.youtube.initPlayer('youtube-player', videoId);
       this.fetchCaptions(videoId);
-    } catch (err: any) {
-      this.error.set(err.message || 'Failed to load video');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to load video';
+      this.error.set(errorMessage);
       console.error(err);
     } finally {
       this.isLoading.set(false);
@@ -763,7 +764,7 @@ export class VideoPlayerComponent implements OnDestroy {
   private async restorePlayer(videoId: string): Promise<void> {
     try {
       await this.youtube.initPlayer('youtube-player', videoId);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Failed to restore player:', err);
     }
   }

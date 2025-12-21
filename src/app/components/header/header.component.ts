@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy, AfterViewInit, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, AfterViewInit, ElementRef, ViewChild, HostListener, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService } from '../../services';
@@ -73,16 +73,24 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
                   <span class="user-name">{{ auth.user()?.name }}</span>
                   <span class="user-email">{{ auth.user()?.email }}</span>
                 </div>
+                <!-- Data Sync Status -->
+                <div class="sync-status">
+                  <app-icon name="check" [size]="14" class="sync-icon" />
+                  <span>Data Synced</span>
+                </div>
                 <button class="dropdown-btn" (click)="signOut()">Sign out</button>
               </div>
             }
           </div>
         } @else {
-          <div #googleBtn class="google-signin-btn"></div>
+          <div class="auth-wrapper">
+            <span class="sync-hint">Sync data</span>
+            <div #googleBtn class="google-signin-btn"></div>
+          </div>
         }
         
         <button 
-          class="btn btn-icon btn-ghost"
+          class="btn btn-icon btn-ghost theme-btn"
           (click)="toggleTheme()"
           [attr.aria-label]="'Toggle theme'"
           [attr.title]="settings.getEffectiveTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
@@ -227,15 +235,45 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       background: var(--border-color);
     }
 
+    /* Actions & Auth */
     .header__actions {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
-      margin-left: var(--space-sm);
+      gap: var(--space-md);
+      margin-left: var(--space-md);
     }
     
+    .auth-wrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      background: var(--bg-secondary);
+      padding: 4px 6px 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border-color);
+      height: 44px;
+    }
+    
+    .sync-hint {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
     .google-signin-btn {
-      height: 32px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Prevent iframe flash */
+      border-radius: 20px;
+    }
+    
+    .theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
     }
     
     .user-menu {
@@ -283,6 +321,23 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       display: block;
       font-size: 0.75rem;
       color: var(--text-muted);
+      margin-top: 2px;
+    }
+    
+    .sync-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--bg-secondary);
+      font-size: 0.75rem;
+      color: var(--success);
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .sync-icon {
+      color: var(--success);
     }
     
     .dropdown-btn {
@@ -302,66 +357,76 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     }
 
     @media (max-width: 768px) {
-      /* Keep header sticky on mobile */
-      :host {
-        position: sticky;
-        top: 0;
-      }
-
       .header {
-        gap: var(--space-xs);
         padding: 0 var(--space-md);
-        height: 52px; /* Slightly taller for mobile touch targets */
+        height: 56px;
+        justify-content: space-between;
       }
 
-      .header__title-group {
+      .header__title-group, .header__stats {
         display: none;
       }
 
       .header__nav {
-        margin-left: auto;
-        padding: 2px;
-        gap: 0;
-        background: transparent; /* Remove background on mobile to save visual weight */
-      }
-
-      .header__stats {
-        display: none;
+        margin: 0;
+        position: absolute; /* Center nav absolutely on mobile */
+        left: 50%;
+        transform: translateX(-50%);
       }
       
       .lang-btn {
-        padding: 6px 8px;
-        font-size: 0.875rem; /* Larger font for readability */
-        border-radius: 6px;
+        padding: 6px 10px;
       }
       
       .header__actions {
-        gap: var(--space-xs);
-        margin-left: var(--space-xs);
+        margin: 0;
+        gap: var(--space-sm);
       }
       
-      /* Ensure google button doesn't break layout */
-      .google-signin-btn {
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 140px; /* Ensure space for standard button */
+      /* Keep auth wrapper visible and styled on mobile */
+      .auth-wrapper {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        padding: 4px 6px 4px 10px;
+        gap: var(--space-sm);
+        height: 36px; /* Slightly compact */
+      }
+      
+      .sync-hint {
+        /* Keep visible */
+        font-size: 0.6875rem;
+        display: block;
+      }
+      
+      .theme-btn {
+        display: none; /* Hide theme toggle on mobile to save space if needed, or keep minimal */
       }
     }
 
     @media (max-width: 480px) {
       .header {
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-sm);
       }
       
-      .header__logo {
-        width: 28px;
-        height: 28px;
+      .header__nav {
+        /* On very small screens, let it flow or shrink */
+        position: static;
+        transform: none;
+        margin-left: auto;
+        margin-right: var(--space-xs);
+        flex-shrink: 1;
+        overflow-x: auto;
       }
       
-      .logo-text {
-        font-size: 1rem;
+      .lang-btn {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+      }
+      
+      /* Ensure google button fits */
+      .google-signin-btn {
+        transform: scale(0.9);
+        transform-origin: right center;
       }
     }
   `]
@@ -377,17 +442,22 @@ export class HeaderComponent implements AfterViewInit {
 
   showUserMenu = false;
 
-  ngAfterViewInit(): void {
-    // Render button once auth is initialized and element is ready
-    this.tryRenderButton();
+  constructor() {
+    effect(() => {
+      // Re-run this effect whenever auth initialized state or googleBtnRef changes
+      if (this.auth.isInitialized() && this.googleBtnRef?.nativeElement) {
+        // Use a small timeout to ensure the DOM element is fully ready if we're in the same tick as view init
+        setTimeout(() => {
+          if (this.googleBtnRef?.nativeElement) {
+            this.auth.renderButton(this.googleBtnRef.nativeElement);
+          }
+        }, 0);
+      }
+    });
   }
 
-  private tryRenderButton(): void {
-    if (this.auth.isInitialized() && this.googleBtnRef?.nativeElement) {
-      this.auth.renderButton(this.googleBtnRef.nativeElement);
-    } else {
-      setTimeout(() => this.tryRenderButton(), 200);
-    }
+  ngAfterViewInit(): void {
+    // Effect handles rendering
   }
 
   setLanguage(lang: 'ja' | 'zh' | 'ko'): void {

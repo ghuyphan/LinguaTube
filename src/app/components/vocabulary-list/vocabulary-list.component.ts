@@ -601,7 +601,7 @@ export class VocabularyListComponent {
   // Toast notification state
   toastMessage = signal<string | null>(null);
   toastType = signal<'success' | 'error'>('success');
-  private toastTimeout: any = null;
+  private toastTimeout: ReturnType<typeof setTimeout> | null = null;
 
   filteredWords = computed(() => {
     let items = this.vocab.vocabulary();
