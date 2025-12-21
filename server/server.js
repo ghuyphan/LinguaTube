@@ -201,6 +201,62 @@ app.get('/api/health', (req, res) => {
     });
 });
 
+/**
+ * POST /api/tokenize/zh
+ * Tokenize Chinese text using Intl.Segmenter (built into Node.js)
+ */
+const zhSegmenter = new Intl.Segmenter('zh', { granularity: 'word' });
+
+app.post('/api/tokenize/zh', async (req, res) => {
+    const { text } = req.body;
+
+    if (!text || typeof text !== 'string') {
+        return res.status(400).json({ error: 'Missing or invalid "text" field' });
+    }
+
+    try {
+        // Use Intl.Segmenter for word segmentation
+        const segments = [...zhSegmenter.segment(text)];
+
+        const tokens = segments
+            .filter(seg => seg.isWordLike || seg.segment.trim())
+            .map(seg => ({ surface: seg.segment }));
+
+        res.json({ tokens });
+    } catch (error) {
+        console.error('[Tokenize ZH] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+/**
+ * POST /api/tokenize/ja
+ * Tokenize Japanese text using Intl.Segmenter (built into Node.js)
+ */
+const jaSegmenter = new Intl.Segmenter('ja', { granularity: 'word' });
+
+app.post('/api/tokenize/ja', async (req, res) => {
+    const { text } = req.body;
+
+    if (!text || typeof text !== 'string') {
+        return res.status(400).json({ error: 'Missing or invalid "text" field' });
+    }
+
+    try {
+        // Use Intl.Segmenter for word segmentation
+        const segments = [...jaSegmenter.segment(text)];
+
+        const tokens = segments
+            .filter(seg => seg.isWordLike || seg.segment.trim())
+            .map(seg => ({ surface: seg.segment }));
+
+        res.json({ tokens });
+    } catch (error) {
+        console.error('[Tokenize JA] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`[Server] Gladia transcription server running on port ${PORT}`);
     if (!process.env.GLADIA_API_KEY) {

@@ -1,5 +1,5 @@
-import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy, ElementRef, viewChild, PLATFORM_ID } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 import { DictionaryService, VocabularyService, SettingsService, TranslationService } from '../../services';
@@ -12,8 +12,22 @@ import { Token, DictionaryEntry } from '../../models';
   imports: [CommonModule, FormsModule, IconComponent],
   template: `
     @if (isVisible()) {
-      <div class="popup-overlay" (click)="close()">
-        <div class="popup" (click)="$event.stopPropagation()">
+      <div class="popup-overlay" (click)="close()" [class.closing]="isClosing()">
+        <div 
+          class="popup" 
+          #popupEl
+          [class.closing]="isClosing()"
+          [style.transform]="isDragging() ? 'translateY(' + dragOffset() + 'px)' : null"
+          (click)="$event.stopPropagation()"
+          (touchstart)="onTouchStart($event)"
+          (touchmove)="onTouchMove($event)"
+          (touchend)="onTouchEnd($event)"
+        >
+          <!-- Drag Handle for mobile -->
+          <div class="popup-drag-handle">
+            <div class="popup-drag-indicator"></div>
+          </div>
+
           <button class="popup-close" (click)="close()">
             <app-icon name="x" [size]="18" />
           </button>
@@ -48,7 +62,7 @@ import { Token, DictionaryEntry } from '../../models';
             </div>
           </div>
 
-          <div class="popup-body">
+          <div class="popup-body" #popupBody>
             @if (dictionary.isLoading()) {
               <div class="popup-loading">
                 <app-icon name="loader" [size]="20" />
@@ -156,7 +170,11 @@ import { Token, DictionaryEntry } from '../../models';
       justify-content: center;
       z-index: 1100; /* Above bottom nav (1000) */
       padding: var(--space-md);
-      animation: fadeIn 0.15s ease;
+      animation: fadeIn 0.15s ease forwards;
+    }
+
+    .popup-overlay.closing {
+      animation: fadeOut 0.2s ease forwards;
     }
 
     .popup {
@@ -171,6 +189,28 @@ import { Token, DictionaryEntry } from '../../models';
       flex-direction: column;
       position: relative;
       animation: slideUp 0.2s ease;
+      will-change: transform;
+    }
+
+    /* Drag handle - visible on mobile */
+    .popup-drag-handle {
+      display: none;
+      padding: 12px 0 4px;
+      cursor: grab;
+      touch-action: none;
+    }
+
+    .popup-drag-indicator {
+      width: 36px;
+      height: 4px;
+      background: var(--border-color);
+      border-radius: 2px;
+      margin: 0 auto;
+      transition: background 0.2s;
+    }
+
+    .popup-drag-handle:active .popup-drag-indicator {
+      background: var(--text-muted);
     }
 
     .popup-close {
@@ -245,6 +285,8 @@ import { Token, DictionaryEntry } from '../../models';
       flex: 1;
       overflow-y: auto;
       padding: var(--space-md);
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
 
     .popup-loading {
@@ -422,6 +464,11 @@ import { Token, DictionaryEntry } from '../../models';
       to { opacity: 1; }
     }
 
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
     @keyframes slideUp {
       from {
         opacity: 0;
@@ -433,7 +480,7 @@ import { Token, DictionaryEntry } from '../../models';
       }
     }
 
-    /* Mobile full-screen modal */
+    /* Mobile bottom sheet styling */
     @media (max-width: 480px) {
       .popup-overlay {
         padding: 0;
@@ -444,14 +491,29 @@ import { Token, DictionaryEntry } from '../../models';
         max-width: 100%;
         width: 100%;
         margin: 0; 
-        max-height: 90vh;
-        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+        max-height: 85vh;
+        border-radius: 16px 16px 0 0;
+        animation: mobileSlideUp 0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        touch-action: none;
+      }
+
+      .popup.closing {
+        animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+      }
+
+      /* Show drag handle on mobile */
+      .popup-drag-handle {
+        display: block;
+      }
+
+      .popup-close {
+        top: 12px;
+        right: 12px;
       }
 
       .popup-header {
-        padding: var(--space-md);
-        padding-top: var(--space-lg);
+        padding: var(--space-sm) var(--space-md) var(--space-md);
+        padding-right: 48px;
       }
 
       .popup-word {
@@ -460,6 +522,9 @@ import { Token, DictionaryEntry } from '../../models';
 
       .popup-body {
         padding: var(--space-md);
+        /* Allow scrolling inside popup body */
+        touch-action: pan-y;
+        overscroll-behavior: contain;
       }
 
       .popup-footer {
@@ -481,13 +546,29 @@ import { Token, DictionaryEntry } from '../../models';
         transform: translateY(0);
       }
     }
+
+    @keyframes mobileSlideDown {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(100%);
+      }
+    }
   `]
 })
 export class WordPopupComponent {
+  private document = inject(DOCUMENT);
+  private platformId = inject(PLATFORM_ID);
+
   dictionary = inject(DictionaryService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   translation = inject(TranslationService);
+
+  // View children
+  popupEl = viewChild<ElementRef<HTMLElement>>('popupEl');
+  popupBody = viewChild<ElementRef<HTMLElement>>('popupBody');
 
   selectedWord = input<Token | null>(null);
   closed = output<void>();
@@ -495,18 +576,32 @@ export class WordPopupComponent {
   entry = signal<DictionaryEntry | null>(null);
   isVisible = signal(false);
   isSaved = signal(false);
+  isClosing = signal(false);
+
+  // Drag state for bottom sheet gesture
+  isDragging = signal(false);
+  dragOffset = signal(0);
+
+  private touchStartY = 0;
+  private touchCurrentY = 0;
+  private isDragGesture = false;
 
   // Translation state
   targetLang = signal('vi'); // Default target language (can make sticky later)
   translatedDefinitions = signal<Map<number, string>>(new Map());
   translatingIndices = signal<Set<number>>(new Set());
 
+  // Threshold for dismissing (pixels)
+  private readonly DISMISS_THRESHOLD = 100;
+  private readonly VELOCITY_THRESHOLD = 0.5;
+
   constructor() {
     effect(() => {
       const word = this.selectedWord();
       if (word) {
         this.isVisible.set(true);
-        document.body.classList.add('no-scroll'); // Lock scroll
+        this.isClosing.set(false);
+        this.lockBodyScroll(true);
 
         this.isSaved.set(this.vocab.hasWord(word.surface));
         // Reset translations when word changes
@@ -516,9 +611,115 @@ export class WordPopupComponent {
       } else {
         // Handle case where input signal is cleared externally
         this.isVisible.set(false);
-        document.body.classList.remove('no-scroll');
+        this.lockBodyScroll(false);
       }
     });
+  }
+
+  private lockBodyScroll(lock: boolean): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    if (lock) {
+      this.document.body.classList.add('no-scroll');
+      // Prevent touchmove on body
+      this.document.body.style.setProperty('position', 'fixed');
+      this.document.body.style.setProperty('width', '100%');
+      this.document.body.style.setProperty('top', `-${window.scrollY}px`);
+    } else {
+      const scrollY = this.document.body.style.top;
+      this.document.body.classList.remove('no-scroll');
+      this.document.body.style.removeProperty('position');
+      this.document.body.style.removeProperty('width');
+      this.document.body.style.removeProperty('top');
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+  }
+
+  // Touch gesture handlers for drag-to-dismiss
+  onTouchStart(event: TouchEvent): void {
+    const popupBody = this.popupBody()?.nativeElement;
+
+    // Only start drag gesture if we're at the top of scroll or touching the handle area
+    const isAtTop = !popupBody || popupBody.scrollTop <= 0;
+    const touch = event.touches[0];
+
+    // Check if touch is in the drag handle area (top 50px)
+    const popupEl = this.popupEl()?.nativeElement;
+    if (popupEl) {
+      const rect = popupEl.getBoundingClientRect();
+      const touchRelativeY = touch.clientY - rect.top;
+
+      // Start drag if in handle area or at scroll top
+      if (touchRelativeY < 50 || isAtTop) {
+        this.touchStartY = touch.clientY;
+        this.touchCurrentY = touch.clientY;
+        this.isDragGesture = false; // Will be set true if they drag down
+      }
+    }
+  }
+
+  onTouchMove(event: TouchEvent): void {
+    if (this.touchStartY === 0) return;
+
+    const touch = event.touches[0];
+    const deltaY = touch.clientY - this.touchStartY;
+
+    // Only allow dragging down
+    if (deltaY > 10) {
+      this.isDragGesture = true;
+      this.isDragging.set(true);
+
+      // Apply rubber-band effect for overscroll
+      const resistance = 0.5;
+      this.dragOffset.set(deltaY * resistance);
+
+      // Prevent scroll while dragging
+      event.preventDefault();
+    }
+
+    this.touchCurrentY = touch.clientY;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    if (!this.isDragGesture) {
+      this.resetDragState();
+      return;
+    }
+
+    const deltaY = this.touchCurrentY - this.touchStartY;
+    const velocity = deltaY / (event.timeStamp - (event.timeStamp - 100)); // Approximate velocity
+
+    // Dismiss if dragged far enough or with enough velocity
+    if (deltaY > this.DISMISS_THRESHOLD || velocity > this.VELOCITY_THRESHOLD) {
+      this.animatedClose();
+    } else {
+      // Snap back
+      this.isDragging.set(false);
+      this.dragOffset.set(0);
+    }
+
+    this.resetDragState();
+  }
+
+  private resetDragState(): void {
+    this.touchStartY = 0;
+    this.touchCurrentY = 0;
+    this.isDragGesture = false;
+  }
+
+  private animatedClose(): void {
+    this.isClosing.set(true);
+    this.isDragging.set(false);
+    this.dragOffset.set(0);
+
+    // Wait for animation to complete
+    setTimeout(() => {
+      this.isVisible.set(false);
+      this.isClosing.set(false);
+      this.lockBodyScroll(false);
+      this.entry.set(null);
+      this.closed.emit();
+    }, 250); // Match animation duration
   }
 
   lookupWord(word: string): void {
@@ -598,9 +799,14 @@ export class WordPopupComponent {
   }
 
   close(): void {
-    this.isVisible.set(false);
-    document.body.classList.remove('no-scroll'); // Unlock scroll
-    this.entry.set(null);
-    this.closed.emit();
+    // Use animated close on mobile
+    if (isPlatformBrowser(this.platformId) && window.innerWidth <= 480) {
+      this.animatedClose();
+    } else {
+      this.isVisible.set(false);
+      this.lockBodyScroll(false);
+      this.entry.set(null);
+      this.closed.emit();
+    }
   }
 }

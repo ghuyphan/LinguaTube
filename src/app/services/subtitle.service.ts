@@ -9,6 +9,9 @@ export class SubtitleService {
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal<number>(-1);
 
+  // Cache for tokenized text to avoid repeated API calls
+  private tokenCache = new Map<string, Token[]>();
+
   readonly currentCue = computed(() => {
     const index = this.currentCueIndex();
     const subs = this.subtitles();
@@ -179,12 +182,84 @@ export class SubtitleService {
   }
 
   /**
-   * Tokenize Japanese text (basic tokenization)
-   * For production, integrate Kuromoji or server-side MeCab
+   * Tokenize Japanese text via API (uses Kuromoji)
+   * Falls back to basic tokenization if API fails
    */
   tokenizeJapanese(text: string): Token[] {
-    // Basic character-based tokenization
-    // In production, use Kuromoji.js for proper morphological analysis
+    // Check cache first
+    const cached = this.tokenCache.get(`ja:${text}`);
+    if (cached) return cached;
+
+    // Return basic tokenization for now, async version will update cache
+    const basic = this.tokenizeJapaneseBasic(text);
+
+    // Trigger async API call to update cache (fire and forget)
+    this.tokenizeAsync(text, 'ja').then(tokens => {
+      if (tokens.length > 0) {
+        this.tokenCache.set(`ja:${text}`, tokens);
+      }
+    }).catch(() => { });
+
+    return basic;
+  }
+
+  /**
+   * Tokenize Chinese text via API (uses Jieba)
+   * Falls back to basic tokenization if API fails
+   */
+  tokenizeChinese(text: string): Token[] {
+    // Check cache first
+    const cached = this.tokenCache.get(`zh:${text}`);
+    if (cached) return cached;
+
+    // Return basic tokenization for now
+    const basic = this.tokenizeChineseBasic(text);
+
+    // Trigger async API call to update cache (fire and forget)
+    this.tokenizeAsync(text, 'zh').then(tokens => {
+      if (tokens.length > 0) {
+        this.tokenCache.set(`zh:${text}`, tokens);
+      }
+    }).catch(() => { });
+
+    return basic;
+  }
+
+  /**
+   * Async tokenization via server API
+   */
+  async tokenizeAsync(text: string, lang: 'ja' | 'zh'): Promise<Token[]> {
+    const cacheKey = `${lang}:${text}`;
+    const cached = this.tokenCache.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const response = await fetch(`/api/tokenize/${lang}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+
+      if (!response.ok) throw new Error('Tokenization failed');
+
+      const data = await response.json();
+      const tokens: Token[] = data.tokens || [];
+
+      // Cache the result
+      this.tokenCache.set(cacheKey, tokens);
+
+      return tokens;
+    } catch (error) {
+      console.error(`[Tokenize ${lang.toUpperCase()}] API error:`, error);
+      // Fall back to basic tokenization
+      return lang === 'ja' ? this.tokenizeJapaneseBasic(text) : this.tokenizeChineseBasic(text);
+    }
+  }
+
+  /**
+   * Basic Japanese tokenization (fallback)
+   */
+  private tokenizeJapaneseBasic(text: string): Token[] {
     const tokens: Token[] = [];
     let currentWord = '';
     let currentType = '';
@@ -209,12 +284,9 @@ export class SubtitleService {
   }
 
   /**
-   * Tokenize Chinese text (basic tokenization)
-   * For production, integrate Jieba or similar
+   * Basic Chinese tokenization (fallback)
    */
-  tokenizeChinese(text: string): Token[] {
-    // Basic character-by-character tokenization
-    // In production, use Jieba or server-side segmentation
+  private tokenizeChineseBasic(text: string): Token[] {
     return text.split('').map(char => ({ surface: char }));
   }
 

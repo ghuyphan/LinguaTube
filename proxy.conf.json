@@ -124,5 +124,10 @@
     "target": "http://localhost:3001",
     "secure": false,
     "changeOrigin": true
+  },
+  "/api/tokenize": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
   }
 }
