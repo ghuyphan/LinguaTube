@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, AfterViewInit, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService } from '../../services';
@@ -309,9 +309,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
 
       .header {
-        gap: var(--space-sm);
+        gap: var(--space-xs);
         padding: 0 var(--space-md);
-        height: 44px;
+        height: 52px; /* Slightly taller for mobile touch targets */
       }
 
       .header__title-group {
@@ -321,7 +321,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       .header__nav {
         margin-left: auto;
         padding: 2px;
-        gap: 1px;
+        gap: 0;
+        background: transparent; /* Remove background on mobile to save visual weight */
       }
 
       .header__stats {
@@ -329,20 +330,24 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .lang-btn {
-        padding: 6px 10px;
-        font-size: 0.8125rem;
-        border-radius: 5px;
-        -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
-        touch-action: manipulation;
-        min-height: 32px;
-        line-height: 1;
+        padding: 6px 8px;
+        font-size: 0.875rem; /* Larger font for readability */
+        border-radius: 6px;
       }
       
-      .header__actions .btn-icon {
-        width: 32px;
-        height: 32px;
-        padding: 6px;
+      .header__actions {
+        gap: var(--space-xs);
+        margin-left: var(--space-xs);
+      }
+      
+      /* Ensure google button doesn't break layout */
+      .google-signin-btn {
+        height: 40px; /* Match icon button size */
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Prevent overflow */
       }
     }
 
@@ -402,5 +407,15 @@ export class HeaderComponent implements AfterViewInit {
   signOut(): void {
     this.auth.signOut();
     this.showUserMenu = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    if (!this.showUserMenu) return;
+
+    const target = event.target as HTMLElement;
+    if (!target.closest('.user-menu')) {
+      this.showUserMenu = false;
+    }
   }
 }

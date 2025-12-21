@@ -100,10 +100,10 @@ import { SubtitleCue, Token } from '../../models';
           class="reading-toggle"
           [class.active]="showReading()"
           (click)="toggleReading()"
-          [title]="settings.settings().language === 'ja' ? 'Toggle Furigana' : 'Toggle Pinyin'"
+          [title]="'Toggle ' + readingLabel()"
         >
           <app-icon [name]="showReading() ? 'eye' : 'eye-off'" [size]="16" />
-          <span>{{ settings.settings().language === 'ja' ? 'Furigana' : 'Pinyin' }}</span>
+          <span>{{ readingLabel() }}</span>
         </button>
 
         <div class="font-controls">
@@ -613,9 +613,22 @@ export class SubtitleDisplayComponent {
     this.wordClicked.emit({ token, sentence });
   }
 
+  // Computed reading label
+  readingLabel = computed(() => {
+    const lang = this.settings.settings().language;
+    switch (lang) {
+      case 'ja': return 'Furigana';
+      case 'zh': return 'Pinyin';
+      case 'ko': return 'Romanization';
+      default: return 'Reading';
+    }
+  });
+
   getReading(token: Token): string | undefined {
     const lang = this.settings.settings().language;
-    return lang === 'ja' ? token.reading : token.pinyin;
+    if (lang === 'ja') return token.reading;
+    if (lang === 'zh') return token.pinyin;
+    return token.romanization || token.pinyin; // Fallback to pinyin if romanization missing (or if used interchangeably)
   }
 
   toggleReading(): void {
@@ -623,7 +636,7 @@ export class SubtitleDisplayComponent {
     if (lang === 'ja') {
       this.settings.toggleFurigana();
     } else {
-      this.settings.togglePinyin();
+      this.settings.togglePinyin(); // Reusing pinyin toggle for other langs for now
     }
   }
 
