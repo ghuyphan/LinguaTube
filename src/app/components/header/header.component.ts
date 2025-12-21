@@ -210,7 +210,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
 
       .header {
         gap: var(--space-sm);
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-sm);
         height: 44px;
       }
 
@@ -219,26 +219,40 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService } f
       }
 
       .header__nav {
-        /* Move nav to absolute center or hidden menu if needed, 
-           but for now keeping it compact */
         margin-left: auto;
         padding: 2px;
+        gap: 1px;
       }
 
       .header__stats {
-        display: none; /* Hide stats on mobile header to save space */
+        display: none;
       }
       
       .lang-btn {
-         padding: 4px 8px;
-         font-size: 0.75rem;
+        padding: 4px 10px;
+        font-size: 0.6875rem;
+        border-radius: 4px;
+      }
+      
+      .header__actions .btn-icon {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
       }
     }
 
     @media (max-width: 480px) {
-      /* Keep consistent spacing on small screens */
       .header {
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-sm);
+      }
+      
+      .header__logo {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .logo-text {
+        font-size: 1rem;
       }
     }
   `]
