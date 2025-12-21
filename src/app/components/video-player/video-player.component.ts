@@ -638,6 +638,8 @@ export class VideoPlayerComponent implements OnDestroy {
       next: (cues) => {
         if (cues.length > 0) {
           this.subtitles.subtitles.set(cues);
+          // Pre-tokenize all cues for consistent display
+          this.subtitles.tokenizeAllCues(lang);
         }
       },
       error: (err) => console.log('Auto-caption fetch failed:', err)

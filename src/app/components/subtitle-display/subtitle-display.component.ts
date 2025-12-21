@@ -18,17 +18,22 @@ import { SubtitleCue, Token } from '../../models';
            [class.is-generating]="transcript.isGeneratingAI()">
         @if (subtitles.currentCue(); as cue) {
           <div class="subtitle-text" [class]="'text-' + settings.settings().language">
-            @for (token of tokenize(cue.text); track $index) {
-              <span 
-                class="word"
-                [class.word--new]="getWordLevel(token.surface) === 'new'"
-                [class.word--learning]="getWordLevel(token.surface) === 'learning'"
-                [class.word--known]="getWordLevel(token.surface) === 'known'"
-                [class.word--saved]="vocab.hasWord(token.surface)"
-                (click)="onWordClick(token)"
-              >
-                {{ token.surface }}
-              </span>
+            @if (subtitles.isTokenizing()) {
+              <!-- Show raw text while tokenizing -->
+              <span class="word">{{ cue.text }}</span>
+            } @else {
+              @for (token of getTokens(cue); track $index) {
+                <span 
+                  class="word"
+                  [class.word--new]="getWordLevel(token.surface) === 'new'"
+                  [class.word--learning]="getWordLevel(token.surface) === 'learning'"
+                  [class.word--known]="getWordLevel(token.surface) === 'known'"
+                  [class.word--saved]="vocab.hasWord(token.surface)"
+                  (click)="onWordClick(token)"
+                >
+                  {{ token.surface }}
+                </span>
+              }
             }
           </div>
         } @else {
@@ -546,12 +551,9 @@ export class SubtitleDisplayComponent {
     }
   }
 
-  tokenize(text: string): Token[] {
+  getTokens(cue: SubtitleCue): Token[] {
     const lang = this.settings.settings().language;
-    if (lang === 'zh') {
-      return this.subtitles.tokenizeChinese(text);
-    }
-    return this.subtitles.tokenizeJapanese(text);
+    return this.subtitles.getTokens(cue, lang);
   }
 
   getWordLevel(word: string): string | null {

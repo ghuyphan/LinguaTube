@@ -8,6 +8,7 @@ import { SubtitleCue, Token } from '../models';
 export class SubtitleService {
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal<number>(-1);
+  readonly isTokenizing = signal(false);
 
   // Cache for tokenized text to avoid repeated API calls
   private tokenCache = new Map<string, Token[]>();
@@ -21,115 +22,144 @@ export class SubtitleService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Parse SRT subtitle format
+   * Batch tokenize all subtitle cues
+   * Collects unique texts, sends single API request per language, distributes tokens to cues
    */
-  parseSRT(content: string): SubtitleCue[] {
-    const cues: SubtitleCue[] = [];
-    const blocks = content.trim().split(/\n\n+/);
+  async tokenizeAllCues(lang: 'ja' | 'zh'): Promise<void> {
+    const cues = this.subtitles();
+    if (cues.length === 0) return;
 
-    for (const block of blocks) {
-      const lines = block.split('\n');
-      if (lines.length < 2) continue;
+    this.isTokenizing.set(true);
 
-      // Parse timing line (format: 00:00:00,000 --> 00:00:00,000)
-      const timingLine = lines.find(line => line.includes('-->'));
-      if (!timingLine) continue;
+    try {
+      // Collect unique texts that need tokenization
+      const uniqueTexts = new Map<string, number[]>(); // text -> cue indices
 
-      const [startStr, endStr] = timingLine.split('-->').map(s => s.trim());
-      const startTime = this.parseTimestamp(startStr);
-      const endTime = this.parseTimestamp(endStr);
+      cues.forEach((cue, index) => {
+        const cacheKey = `${lang}:${cue.text}`;
+        if (this.tokenCache.has(cacheKey)) {
+          // Already cached, use cached tokens
+          cue.tokens = this.tokenCache.get(cacheKey);
+        } else {
+          // Need to tokenize
+          if (!uniqueTexts.has(cue.text)) {
+            uniqueTexts.set(cue.text, []);
+          }
+          uniqueTexts.get(cue.text)!.push(index);
+        }
+      });
 
-      // Get text (everything after timing line)
-      const timingIndex = lines.indexOf(timingLine);
-      const text = lines.slice(timingIndex + 1).join('\n').trim();
-
-      if (text && !isNaN(startTime) && !isNaN(endTime)) {
-        cues.push({
-          id: cues.length,
-          startTime,
-          endTime,
-          text: this.cleanSubtitleText(text)
-        });
+      if (uniqueTexts.size === 0) {
+        // All already cached
+        this.subtitles.set([...cues]);
+        return;
       }
-    }
 
-    return cues;
-  }
+      // Batch tokenize using server API
+      const textsToTokenize = Array.from(uniqueTexts.keys());
+      console.log(`[SubtitleService] Batch tokenizing ${textsToTokenize.length} unique texts for ${lang}`);
 
-  /**
-   * Parse VTT subtitle format
-   */
-  parseVTT(content: string): SubtitleCue[] {
-    // Remove WEBVTT header
-    const withoutHeader = content.replace(/^WEBVTT\n\n?/, '');
-    // VTT uses . instead of , for milliseconds, normalize to SRT format
-    const normalized = withoutHeader.replace(/(\d{2}:\d{2}:\d{2})\.(\d{3})/g, '$1,$2');
-    return this.parseSRT(normalized);
-  }
+      // Send batch request (multiple texts in one call)
+      const tokenizedResults = await this.batchTokenize(textsToTokenize, lang);
 
-  /**
-   * Parse ASS/SSA subtitle format (basic support)
-   */
-  parseASS(content: string): SubtitleCue[] {
-    const cues: SubtitleCue[] = [];
-    const lines = content.split('\n');
+      // Distribute tokens to cues
+      textsToTokenize.forEach((text, i) => {
+        const tokens = tokenizedResults[i] || this.fallbackTokenize(text, lang);
+        const cacheKey = `${lang}:${text}`;
+        this.tokenCache.set(cacheKey, tokens);
 
-    for (const line of lines) {
-      if (!line.startsWith('Dialogue:')) continue;
-
-      const parts = line.substring(10).split(',');
-      if (parts.length < 10) continue;
-
-      const startTime = this.parseASSTimestamp(parts[1]);
-      const endTime = this.parseASSTimestamp(parts[2]);
-      const text = parts.slice(9).join(',')
-        .replace(/\{[^}]*\}/g, '') // Remove style tags
-        .replace(/\\N/g, '\n')     // Convert line breaks
-        .trim();
-
-      if (text && !isNaN(startTime) && !isNaN(endTime)) {
-        cues.push({
-          id: cues.length,
-          startTime,
-          endTime,
-          text
+        // Apply to all cues with this text
+        const indices = uniqueTexts.get(text) || [];
+        indices.forEach(cueIndex => {
+          cues[cueIndex].tokens = tokens;
         });
-      }
-    }
+      });
 
-    return cues;
+      // Trigger update
+      this.subtitles.set([...cues]);
+      console.log(`[SubtitleService] Tokenization complete for ${cues.length} cues`);
+
+    } catch (error) {
+      console.error('[SubtitleService] Batch tokenization failed:', error);
+      // Fallback: apply basic tokenization to all cues
+      cues.forEach(cue => {
+        if (!cue.tokens) {
+          cue.tokens = this.fallbackTokenize(cue.text, lang);
+        }
+      });
+      this.subtitles.set([...cues]);
+    } finally {
+      this.isTokenizing.set(false);
+    }
   }
 
   /**
-   * Auto-detect format and parse
+   * Batch tokenize multiple texts in one API call
    */
-  parseSubtitles(content: string, filename?: string): SubtitleCue[] {
-    const ext = filename?.split('.').pop()?.toLowerCase();
+  private async batchTokenize(texts: string[], lang: 'ja' | 'zh'): Promise<Token[][]> {
+    const results: Token[][] = [];
 
-    if (ext === 'vtt' || content.startsWith('WEBVTT')) {
-      return this.parseVTT(content);
-    } else if (ext === 'ass' || ext === 'ssa' || content.includes('[Script Info]')) {
-      return this.parseASS(content);
-    } else {
-      return this.parseSRT(content);
+    // Process in chunks to avoid payload limits (max 50 per batch)
+    const chunkSize = 50;
+    for (let i = 0; i < texts.length; i += chunkSize) {
+      const chunk = texts.slice(i, i + chunkSize);
+
+      // Tokenize each text in chunk (could be optimized further with a true batch endpoint)
+      const chunkResults = await Promise.all(
+        chunk.map(text => this.tokenizeSingle(text, lang))
+      );
+      results.push(...chunkResults);
+    }
+
+    return results;
+  }
+
+  /**
+   * Tokenize single text via API
+   */
+  private async tokenizeSingle(text: string, lang: 'ja' | 'zh'): Promise<Token[]> {
+    try {
+      const response = await fetch(`/api/tokenize/${lang}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+
+      if (!response.ok) throw new Error('Tokenization failed');
+
+      const data = await response.json();
+      return data.tokens || [];
+    } catch {
+      return this.fallbackTokenize(text, lang);
     }
   }
 
   /**
-   * Load subtitles from file
+   * Fast fallback tokenization (client-side)
    */
-  loadFromFile(file: File): Promise<SubtitleCue[]> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const content = e.target?.result as string;
-        const cues = this.parseSubtitles(content, file.name);
-        this.subtitles.set(cues);
-        resolve(cues);
-      };
-      reader.onerror = () => reject(new Error('Failed to read file'));
-      reader.readAsText(file);
-    });
+  private fallbackTokenize(text: string, lang: 'ja' | 'zh'): Token[] {
+    if (lang === 'zh') {
+      return text.split('').map(char => ({ surface: char }));
+    }
+    return this.tokenizeJapaneseBasic(text);
+  }
+
+  /**
+   * Get tokens for a cue (uses pre-computed tokens from cue, falls back to basic)
+   */
+  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh'): Token[] {
+    // Use pre-computed tokens if available
+    if (cue.tokens && cue.tokens.length > 0) {
+      return cue.tokens;
+    }
+
+    // Fallback to cached or basic tokenization
+    const cacheKey = `${lang}:${cue.text}`;
+    if (this.tokenCache.has(cacheKey)) {
+      return this.tokenCache.get(cacheKey)!;
+    }
+
+    return this.fallbackTokenize(cue.text, lang);
   }
 
   /**
@@ -173,124 +203,6 @@ export class SubtitleService {
   }
 
   /**
-   * Get cue at specific time
-   */
-  getCueAtTime(time: number): SubtitleCue | null {
-    return this.subtitles().find(
-      cue => time >= cue.startTime && time <= cue.endTime
-    ) || null;
-  }
-
-  /**
-   * Tokenize Japanese text via API (uses Kuromoji)
-   * Falls back to basic tokenization if API fails
-   */
-  tokenizeJapanese(text: string): Token[] {
-    // Check cache first
-    const cached = this.tokenCache.get(`ja:${text}`);
-    if (cached) return cached;
-
-    // Return basic tokenization for now, async version will update cache
-    const basic = this.tokenizeJapaneseBasic(text);
-
-    // Trigger async API call to update cache (fire and forget)
-    this.tokenizeAsync(text, 'ja').then(tokens => {
-      if (tokens.length > 0) {
-        this.tokenCache.set(`ja:${text}`, tokens);
-      }
-    }).catch(() => { });
-
-    return basic;
-  }
-
-  /**
-   * Tokenize Chinese text via API (uses Jieba)
-   * Falls back to basic tokenization if API fails
-   */
-  tokenizeChinese(text: string): Token[] {
-    // Check cache first
-    const cached = this.tokenCache.get(`zh:${text}`);
-    if (cached) return cached;
-
-    // Return basic tokenization for now
-    const basic = this.tokenizeChineseBasic(text);
-
-    // Trigger async API call to update cache (fire and forget)
-    this.tokenizeAsync(text, 'zh').then(tokens => {
-      if (tokens.length > 0) {
-        this.tokenCache.set(`zh:${text}`, tokens);
-      }
-    }).catch(() => { });
-
-    return basic;
-  }
-
-  /**
-   * Async tokenization via server API
-   */
-  async tokenizeAsync(text: string, lang: 'ja' | 'zh'): Promise<Token[]> {
-    const cacheKey = `${lang}:${text}`;
-    const cached = this.tokenCache.get(cacheKey);
-    if (cached) return cached;
-
-    try {
-      const response = await fetch(`/api/tokenize/${lang}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text })
-      });
-
-      if (!response.ok) throw new Error('Tokenization failed');
-
-      const data = await response.json();
-      const tokens: Token[] = data.tokens || [];
-
-      // Cache the result
-      this.tokenCache.set(cacheKey, tokens);
-
-      return tokens;
-    } catch (error) {
-      console.error(`[Tokenize ${lang.toUpperCase()}] API error:`, error);
-      // Fall back to basic tokenization
-      return lang === 'ja' ? this.tokenizeJapaneseBasic(text) : this.tokenizeChineseBasic(text);
-    }
-  }
-
-  /**
-   * Basic Japanese tokenization (fallback)
-   */
-  private tokenizeJapaneseBasic(text: string): Token[] {
-    const tokens: Token[] = [];
-    let currentWord = '';
-    let currentType = '';
-
-    for (const char of text) {
-      const type = this.getCharType(char);
-
-      if (type !== currentType && currentWord) {
-        tokens.push({ surface: currentWord });
-        currentWord = '';
-      }
-
-      currentWord += char;
-      currentType = type;
-    }
-
-    if (currentWord) {
-      tokens.push({ surface: currentWord });
-    }
-
-    return tokens;
-  }
-
-  /**
-   * Basic Chinese tokenization (fallback)
-   */
-  private tokenizeChineseBasic(text: string): Token[] {
-    return text.split('').map(char => ({ surface: char }));
-  }
-
-  /**
    * Clear all subtitles
    */
   clear(): void {
@@ -326,6 +238,33 @@ export class SubtitleService {
       parseInt(seconds) +
       parseInt(cs) / 100
     );
+  }
+
+  /**
+   * Basic Japanese tokenization (fallback) - groups by character type
+   */
+  private tokenizeJapaneseBasic(text: string): Token[] {
+    const tokens: Token[] = [];
+    let currentWord = '';
+    let currentType = '';
+
+    for (const char of text) {
+      const type = this.getCharType(char);
+
+      if (type !== currentType && currentWord) {
+        tokens.push({ surface: currentWord });
+        currentWord = '';
+      }
+
+      currentWord += char;
+      currentType = type;
+    }
+
+    if (currentWord) {
+      tokens.push({ surface: currentWord });
+    }
+
+    return tokens;
   }
 
   private cleanSubtitleText(text: string): string {
