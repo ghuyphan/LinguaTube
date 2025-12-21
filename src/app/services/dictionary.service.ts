@@ -14,6 +14,7 @@ export class DictionaryService {
   // Use proxy to avoid CORS issues
   private readonly JOTOBA_API = '/jotoba/api/search/words';
   private readonly MDBG_API = '/api/mdbg';
+  private readonly KRDICT_API = '/api/krdict';
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
@@ -120,8 +121,7 @@ export class DictionaryService {
   }
 
   /**
-   * Look up a Korean word
-   * Uses local dictionary for now (KRDICT API requires registration)
+   * Look up a Korean word using Naver Korean-English Dictionary
    */
   lookupKorean(word: string): Observable<DictionaryEntry | null> {
     if (!word.trim()) return of(null);
@@ -135,16 +135,46 @@ export class DictionaryService {
 
     this.isLoading.set(true);
 
-    // Use local dictionary (can be expanded with KRDICT API later)
-    const result = this.localKoreanLookup(word);
-    this.isLoading.set(false);
+    return this.http.get<any[]>(`${this.KRDICT_API}?q=${encodeURIComponent(word)}`).pipe(
+      map(response => {
+        const result = this.parseKrdictResponse(response, word);
+        if (result) {
+          this.saveToCache(word, 'ko', result);
+        }
+        return result;
+      }),
+      tap(() => this.isLoading.set(false)),
+      catchError(err => {
+        this.isLoading.set(false);
+        console.log('Naver lookup failed, using local:', err.message);
+        const result = this.localKoreanLookup(word);
+        if (result) this.lastLookup.set(result);
+        return of(result);
+      })
+    );
+  }
 
-    if (result) {
-      this.lastLookup.set(result);
-      this.saveToCache(word, 'ko', result);
+  /**
+   * Parse Naver Korean Dictionary response to DictionaryEntry format
+   */
+  private parseKrdictResponse(response: any[], word: string): DictionaryEntry | null {
+    if (!response || response.length === 0) {
+      return this.localKoreanLookup(word);
     }
 
-    return of(result);
+    const entry = response[0];
+    const result: DictionaryEntry = {
+      word: entry.word || word,
+      romanization: entry.romanization || '',
+      meanings: entry.definitions?.map((def: string) => ({
+        definition: def,
+        examples: []
+      })) || [],
+      partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : []
+    };
+
+    this.lastLookup.set(result);
+    return result;
   }
 
   /**

@@ -193,6 +193,77 @@ app.get('/api/mdbg', async (req, res) => {
     }
 });
 
+/**
+ * GET /api/krdict
+ * Fetch Korean dictionary entries from Naver API
+ * Mirrors functions/api/krdict.js logic for local dev
+ */
+app.get('/api/krdict', async (req, res) => {
+    const word = req.query.q;
+    if (!word) {
+        return res.status(400).json({ error: 'Missing query parameter "q"' });
+    }
+
+    try {
+        const targetUrl = `https://en.dict.naver.com/api3/enko/search?query=${encodeURIComponent(word)}&m=pc&range=all`;
+        console.log(`[KRDict Local] Fetching: ${targetUrl}`);
+
+        const response = await fetch(targetUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'application/json',
+                'Referer': 'https://en.dict.naver.com/'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Naver API returned ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Parse searchResultMap -> searchResultListMap -> WORD -> items
+        const wordResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
+
+        const entries = wordResults.slice(0, 5).map(item => {
+            // Extract word (handle HTML entities)
+            const word = (item.expEntry || '').replace(/<[^>]+>/g, '');
+
+            // Extract romanization/pronunciation
+            const romanization = (item.expEntrySuperscript || item.phoneticSigns?.[0]?.sign || '').replace(/<[^>]+>/g, '');
+
+            // Extract definitions from meansCollector
+            const definitions = [];
+            if (item.meansCollector) {
+                item.meansCollector.forEach(collector => {
+                    if (collector.means) {
+                        collector.means.forEach(mean => {
+                            const def = (mean.value || '').replace(/<[^>]+>/g, '').trim();
+                            if (def) definitions.push(def);
+                        });
+                    }
+                });
+            }
+
+            // Extract part of speech
+            const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
+
+            return {
+                word,
+                romanization,
+                definitions,
+                partOfSpeech
+            };
+        }).filter(e => e.word && e.definitions.length > 0);
+
+        res.json(entries);
+
+    } catch (error) {
+        console.error('[KRDict Local] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({

@@ -57,6 +57,9 @@ import { DictionaryEntry } from '../../models';
               @if (result()!.pinyin) {
                 <span class="result-reading">{{ result()!.pinyin }}</span>
               }
+              @if (result()!.romanization) {
+                <span class="result-reading">{{ result()!.romanization }}</span>
+              }
             </div>
 
             <div class="result-badges">
@@ -65,6 +68,9 @@ import { DictionaryEntry } from '../../models';
               }
               @if (result()!.hskLevel) {
                 <span class="badge">HSK {{ result()!.hskLevel }}</span>
+              }
+              @if (result()!.topikLevel) {
+                <span class="badge">TOPIK {{ result()!.topikLevel }}</span>
               }
             </div>
 

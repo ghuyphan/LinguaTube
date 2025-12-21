@@ -44,6 +44,9 @@ import { Token, DictionaryEntry } from '../../models';
               @if (entry()?.pinyin) {
                 <span class="popup-pinyin">{{ entry()?.pinyin }}</span>
               }
+              @if (entry()?.romanization) {
+                <span class="popup-pinyin">{{ entry()?.romanization }}</span>
+              }
             </div>
 
             <!-- Language Target Selector (for translation) -->
@@ -75,6 +78,9 @@ import { Token, DictionaryEntry } from '../../models';
                 }
                 @if (entry()?.hskLevel) {
                   <span class="badge">HSK {{ entry()?.hskLevel }}</span>
+                }
+                @if (entry()?.topikLevel) {
+                  <span class="badge">TOPIK {{ entry()?.topikLevel }}</span>
                 }
               </div>
 
@@ -742,7 +748,7 @@ export class WordPopupComponent {
     if (entryData) {
       this.vocab.addFromDictionary(entryData, lang, sentence);
     } else {
-      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, sentence);
+      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence);
     }
 
     this.isSaved.set(true);

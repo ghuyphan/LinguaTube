@@ -67,6 +67,9 @@ import { VocabularyItem, WordLevel } from '../../models';
                 @if (item.pinyin) {
                   <span class="word-reading">{{ item.pinyin }}</span>
                 }
+                @if (item.romanization) {
+                  <span class="word-reading">{{ item.romanization }}</span>
+                }
               </div>
               
               <p class="word-meaning">{{ item.meaning || '(no definition)' }}</p>
@@ -613,7 +616,8 @@ export class VocabularyListComponent {
         item.word.toLowerCase().includes(query) ||
         item.meaning.toLowerCase().includes(query) ||
         item.reading?.toLowerCase().includes(query) ||
-        item.pinyin?.toLowerCase().includes(query)
+        item.pinyin?.toLowerCase().includes(query) ||
+        item.romanization?.toLowerCase().includes(query)
       );
     }
 

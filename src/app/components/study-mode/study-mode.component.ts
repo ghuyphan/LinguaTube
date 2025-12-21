@@ -106,6 +106,9 @@ interface StudyCard {
                   @if (currentCard()!.item.pinyin) {
                     <span class="card-reading">{{ currentCard()!.item.pinyin }}</span>
                   }
+                  @if (currentCard()!.item.romanization) {
+                    <span class="card-reading">{{ currentCard()!.item.romanization }}</span>
+                  }
                   <p class="tap-hint">Tap to reveal</p>
                 </div>
 
