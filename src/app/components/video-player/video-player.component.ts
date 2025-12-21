@@ -576,14 +576,14 @@ export class VideoPlayerComponent implements OnDestroy {
       if (currentVideo && !this.youtube.isReady() && !this.isLoading()) {
         const savedTime = this.youtube.currentTime(); // Capture saved time
 
-        // Use a slight timeout to ensure DOM is ready
-        setTimeout(async () => {
+        // Wait for DOM element to exist before initializing player
+        this.waitForElement('youtube-player').then(async () => {
           await this.restorePlayer(currentVideo.id);
           // Restore playback position
           if (savedTime > 0) {
             this.youtube.seekTo(savedTime);
           }
-        }, 0);
+        });
       }
     });
 
@@ -767,6 +767,33 @@ export class VideoPlayerComponent implements OnDestroy {
     } catch (err: unknown) {
       console.error('Failed to restore player:', err);
     }
+  }
+
+  /**
+   * Wait for a DOM element to exist before proceeding
+   * Polls for element with exponential backoff, max ~2 seconds
+   */
+  private waitForElement(elementId: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      let attempts = 0;
+      const maxAttempts = 10;
+
+      const check = () => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          resolve();
+        } else if (attempts >= maxAttempts) {
+          reject(new Error(`Element #${elementId} not found after ${maxAttempts} attempts`));
+        } else {
+          attempts++;
+          // Exponential backoff: 50, 100, 150, 200, 250...
+          setTimeout(check, 50 * attempts);
+        }
+      };
+
+      // Start with requestAnimationFrame for initial check
+      requestAnimationFrame(check);
+    });
   }
 
   private fetchCaptions(videoId: string): void {

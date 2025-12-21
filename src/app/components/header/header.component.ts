@@ -361,9 +361,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
 
-      
       .theme-btn {
-        display: none; /* Hide theme toggle on mobile to save space if needed, or keep minimal */
+        width: 36px;
+        height: 36px;
       }
     }
 

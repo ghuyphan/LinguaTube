@@ -400,6 +400,7 @@ import { DictionaryEntry } from '../../models';
       font-size: 0.875rem;
       font-family: var(--font-jp);
       background: var(--bg-secondary); 
+      color: var(--text-primary);
       border: 1px solid var(--border-color);
       border-radius: 100px;
       cursor: pointer;
