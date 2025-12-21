@@ -14,7 +14,7 @@ id = "e4ccbf86e2654f31be92af593b912eb8"
 [[d1_databases]]
 binding = "VOCAB_DB"
 database_name = "linguatube-vocab"
-database_id = "YOUR_D1_DATABASE_ID"
+database_id = "35b6faad-cba0-4ad0-8033-f55799d061aa"
 
 [vars]
 # GLADIA_API_KEY and GOOGLE_CLIENT_ID should be set in Cloudflare Dashboard
