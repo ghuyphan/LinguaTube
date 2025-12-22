@@ -74,7 +74,7 @@ export class TranscriptService {
     this.error.set(null);
     this.captionSource.set(null);
 
-    console.log('[TranscriptService] Fetching transcript for:', videoId, 'lang:', lang);
+    // console.debug('[TranscriptService] Fetching transcript for:', videoId, 'lang:', lang);
 
     return this.fetchCaptionsFromInvidious(videoId).pipe(
       switchMap(captionTracks => {
@@ -83,15 +83,15 @@ export class TranscriptService {
         return this.processCaptionTracks(captionTracks, videoId, lang);
       }),
       catchError(err => {
-        console.log('[TranscriptService] Initial fetch failed:', err.message);
+        // console.debug('[TranscriptService] Initial fetch failed:', err.message);
 
         // Retry ONCE with forceRefresh if it was likely a cache issue (e.g. valid response but no captions or specific lang)
         if (err.message.includes('No captions available') || err.message.includes('No ' + lang + ' captions')) {
-          console.log('[TranscriptService] Retrying with forceRefresh...');
+          // console.debug('[TranscriptService] Retrying with forceRefresh...');
           return this.fetchCaptionsFromInvidious(videoId, true).pipe(
             switchMap(tracks => this.processCaptionTracks(tracks, videoId, lang)),
             catchError(retryErr => {
-              console.log('[TranscriptService] Retry failed:', retryErr.message);
+              // console.debug('[TranscriptService] Retry failed:', retryErr.message);
               return this.generateWithWhisper(videoId);
             })
           );
@@ -148,26 +148,26 @@ export class TranscriptService {
 
       const tryFetch = () => {
         attempt++;
-        console.log(`[TranscriptService] Attempt ${attempt}/${maxRetries} to fetch captions (forceRefresh=${forceRefresh})`);
+        // console.debug(`[TranscriptService] Attempt ${attempt}/${maxRetries} to fetch captions (forceRefresh=${forceRefresh})`);
 
         this.fetchCaptionsFromYouTube(videoId, forceRefresh).subscribe({
           next: (result: { tracks: CaptionTrack[], validResponse: boolean }) => {
             if (result.tracks.length > 0) {
-              console.log('[TranscriptService] Got caption tracks:', result.tracks.length);
+              // console.debug('[TranscriptService] Got caption tracks:', result.tracks.length);
               observer.next(result.tracks);
               observer.complete();
             } else if (result.validResponse) {
               // YouTube confirmed no captions - skip to Whisper
-              console.log('[TranscriptService] Valid response but no captions');
+              // console.debug('[TranscriptService] Valid response but no captions');
               observer.next([]);
               observer.complete();
             } else if (attempt < maxRetries) {
               // Retry with exponential backoff
               const delay = 1000 * Math.pow(2, attempt - 1);
-              console.log(`[TranscriptService] Retrying in ${delay}ms`);
+              // console.debug(`[TranscriptService] Retrying in ${delay}ms`);
               setTimeout(tryFetch, delay);
             } else {
-              console.log('[TranscriptService] All retries exhausted');
+              // console.debug('[TranscriptService] All retries exhausted');
               observer.next([]);
               observer.complete();
             }
@@ -209,17 +209,19 @@ export class TranscriptService {
     // Send only videoId - the backend will construct the proper innertube request
     const body = { videoId, forceRefresh };
 
-    console.log('[TranscriptService] Calling innertube API for:', videoId);
+    // console.debug('[TranscriptService] Calling innertube API for:', videoId);
 
     return this.http.post<any>(url, body).pipe(
       map(response => {
-        console.log('[TranscriptService] Innertube response:', {
+        /*
+        console.debug('[TranscriptService] Innertube response:', {
           hasVideoDetails: !!response?.videoDetails,
           hasPlayabilityStatus: !!response?.playabilityStatus,
           hasCaptions: !!response?.captions,
           source: response?.source,
           error: response?.error
         });
+        */
 
         // Check for error response
         if (response?.error) {
@@ -231,11 +233,11 @@ export class TranscriptService {
         const captionTracks = response?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
 
         if (!captionTracks || captionTracks.length === 0) {
-          console.log('[TranscriptService] No caption tracks in response');
+          // console.debug('[TranscriptService] No caption tracks in response');
           return { tracks: [], validResponse: hasValidResponse };
         }
 
-        console.log('[TranscriptService] Found caption tracks:', captionTracks.length);
+        // console.debug('[TranscriptService] Found caption tracks:', captionTracks.length);
 
         const tracks = captionTracks.map((track: any) => ({
           languageCode: track.languageCode,
@@ -247,7 +249,7 @@ export class TranscriptService {
 
         // Log which tracks have pre-fetched content
         const tracksWithContent = tracks.filter((t: CaptionTrack) => t.content);
-        console.log('[TranscriptService] Tracks with pre-fetched content:', tracksWithContent.length);
+        // console.debug('[TranscriptService] Tracks with pre-fetched content:', tracksWithContent.length);
 
         return { tracks, validResponse: true };
       }),
@@ -360,7 +362,7 @@ export class TranscriptService {
   private fetchCaptionContent(url: string): Observable<TranscriptSegment[]> {
     let fetchUrl = url;
 
-    console.log('[TranscriptService] Fetching caption content from:', url);
+    // console.debug('[TranscriptService] Fetching caption content from:', url);
 
     if (url.includes('youtube.com/api/timedtext')) {
       fetchUrl = url.replace('https://www.youtube.com/api/timedtext', '/api/transcript');
@@ -369,11 +371,11 @@ export class TranscriptService {
       }
     }
 
-    console.log('[TranscriptService] Actual fetch URL:', fetchUrl);
+    // console.debug('[TranscriptService] Actual fetch URL:', fetchUrl);
 
     return this.http.get(fetchUrl, { responseType: 'text' }).pipe(
       map(content => {
-        console.log('[TranscriptService] Caption content received, length:', content.length);
+        // console.debug('[TranscriptService] Caption content received, length:', content.length);
         if (content.startsWith('{') && content.includes('"events"')) {
           return this.parseJSON3(content);
         } else if (content.includes('<?xml') || content.includes('<text start=')) {

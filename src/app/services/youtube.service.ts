@@ -118,7 +118,9 @@ export class YoutubeService {
             fs: 0,                 // Hide fullscreen button
             disablekb: 0,          // Allow keyboard controls
             showinfo: 0,           // Hide video info
-            origin: window.location.origin
+            origin: window.location.origin, // Check origin for CORS
+            enablejsapi: 1,        // Enable JS API
+            host: 'https://www.youtube.com' // Explicit host can help with origin check
           },
           events: {
             onReady: (event: any) => {

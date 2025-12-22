@@ -543,32 +543,37 @@ function parseVTTTime(time) {
 /**
  * Strategy 3: Third-party APIs (Piped/Invidious)
  * These services handle content fetching internally, avoiding signature issues
+ * 
+ * 2025 Update: We use a "Shotgun Strategy" - trying multiple high-uptime instances.
+ * Public instances often block bots, so we need a diverse list.
+ * 
+ * PERFORMANCE FIX: Requests are now parallelized. The first one to return valid captions wins.
  */
 async function tryThirdPartyAPIs(videoId) {
     const apis = [
-        // Piped Instances
-        { url: `https://pipedapi.kavin.rocks/streams/${videoId}`, name: 'kavin.rocks (Piped)', type: 'piped' },
-        { url: `https://api.piped.video/streams/${videoId}`, name: 'piped.video (Piped)', type: 'piped' },
-        { url: `https://pipedapi.drg.li/streams/${videoId}`, name: 'drg.li (Piped)', type: 'piped' },
-        { url: `https://api.piped.privacydev.net/streams/${videoId}`, name: 'privacydev (Piped)', type: 'piped' },
-        { url: `https://pipedapi.ducks.party/streams/${videoId}`, name: 'ducks.party (Piped)', type: 'piped' },
-        { url: `https://pipedapi.adminforge.de/streams/${videoId}`, name: 'adminforge (Piped)', type: 'piped' },
+        // Flagship / Most Stable Instances (Priority)
+        { url: `https://yewtu.be/api/v1/captions/${videoId}`, name: 'yewtu.be (Europe)', type: 'invidious' },
+        { url: `https://api.piped.video/streams/${videoId}`, name: 'piped.video (Official)', type: 'piped' },
+        { url: `https://vid.puffyan.us/api/v1/captions/${videoId}`, name: 'puffyan (US)', type: 'invidious' },
+        { url: `https://pipedapi.kavin.rocks/streams/${videoId}`, name: 'kavin.rocks (India)', type: 'piped' },
 
-        // Invidious Instances
-        { url: `https://yewtu.be/api/v1/captions/${videoId}`, name: 'yewtu.be (Invidious)', type: 'invidious' },
-        { url: `https://vid.puffyan.us/api/v1/captions/${videoId}`, name: 'puffyan (Invidious)', type: 'invidious' },
+        // Reliable Backups
+        { url: `https://inv.tux.pizza/api/v1/captions/${videoId}`, name: 'tux.pizza', type: 'invidious' },
+        { url: `https://pipedapi.drg.li/streams/${videoId}`, name: 'drg.li (Piped)', type: 'piped' },
         { url: `https://invidious.drg.li/api/v1/captions/${videoId}`, name: 'drg.li (Invidious)', type: 'invidious' },
-        { url: `https://inv.tux.pizza/api/v1/captions/${videoId}`, name: 'tux.pizza (Invidious)', type: 'invidious' },
-        { url: `https://invidious.nerdvpn.de/api/v1/captions/${videoId}`, name: 'nerdvpn (Invidious)', type: 'invidious' }
+        { url: `https://invidious.nerdvpn.de/api/v1/captions/${videoId}`, name: 'nerdvpn', type: 'invidious' },
+
+        // Deep Reserves
+        { url: `https://api.piped.privacydev.net/streams/${videoId}`, name: 'privacydev', type: 'piped' },
+        { url: `https://pipedapi.adminforge.de/streams/${videoId}`, name: 'adminforge', type: 'piped' }
     ];
 
-    for (const api of apis) {
+    // Helper to process a single API
+    const checkApi = async (api) => {
         try {
-            log('Trying', api.name);
-
-            // Use AbortSignal for tighter timeout
+            log('Starting check for', api.name);
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 6000);
+            const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s max per request
 
             const response = await fetch(api.url, {
                 headers: {
@@ -579,73 +584,68 @@ async function tryThirdPartyAPIs(videoId) {
             });
             clearTimeout(timeoutId);
 
-            if (!response.ok) continue;
+            if (!response.ok) throw new Error(`Status ${response.status}`);
 
             const data = await response.json();
             const captionTracks = [];
 
             // Handle Piped Response
             if (api.type === 'piped') {
-                if (!data.subtitles || data.subtitles.length === 0) {
-                    log(api.name, '- no subtitles');
-                    continue;
-                }
+                if (!data.subtitles || data.subtitles.length === 0) throw new Error('No subtitles');
 
-                log(api.name, '- found', data.subtitles.length, 'subtitles');
+                // log(api.name, '- found', data.subtitles.length, 'subtitles');
 
-                for (const sub of data.subtitles) {
+                // Piped: Fetch content for the first available track to verify it works
+                // We don't need to fetch ALL tracks to prove the API works, but we should try to grab at least one
+                // to match the "content pre-fetch" architecture.
+
+                // Optimization: Fetch all tracks in parallel
+                const validTracks = await Promise.all(data.subtitles.map(async (sub) => {
                     try {
                         const content = await fetchThirdPartyContent(sub.url);
                         if (content && content.length > 0) {
-                            captionTracks.push({
+                            return {
                                 baseUrl: sub.url,
                                 languageCode: sub.code,
                                 name: { simpleText: sub.name || sub.code },
                                 content: content
-                            });
+                            };
                         }
-                    } catch (e) {
-                        // ignore failed track
-                    }
-                }
+                    } catch (e) { return null; }
+                }));
+
+                captionTracks.push(...validTracks.filter(t => t));
+
             }
             // Handle Invidious Response
             else if (api.type === 'invidious') {
-                // Invidious returns { captions: [...] } or just [...]
                 const captions = Array.isArray(data.captions) ? data.captions : (Array.isArray(data) ? data : []);
+                if (captions.length === 0) throw new Error('No subtitles');
 
-                if (captions.length === 0) {
-                    log(api.name, '- no subtitles');
-                    continue;
-                }
+                // log(api.name, '- found', captions.length, 'subtitles');
 
-                log(api.name, '- found', captions.length, 'subtitles');
+                const instanceUrl = new URL(api.url).origin;
 
-                for (const sub of captions) {
+                const validTracks = await Promise.all(captions.map(async (sub) => {
                     try {
-                        // Invidious URLs are relative, need to prepend instance URL
-                        // But wait! Invidious API returns `url` which is usually relative like `/api/v1/captions/ID?label=...`
-                        // We need to construct the full URL
-                        const instanceUrl = new URL(api.url).origin;
                         const fullUrl = sub.url.startsWith('http') ? sub.url : `${instanceUrl}${sub.url}`;
-
                         const content = await fetchThirdPartyContent(fullUrl);
                         if (content && content.length > 0) {
-                            captionTracks.push({
+                            return {
                                 baseUrl: fullUrl,
-                                languageCode: sub.languageCode || sub.label, // Invidious uses 'label' often? Check schema. usually 'languageCode' or 'label'
+                                languageCode: sub.languageCode || sub.label,
                                 name: { simpleText: sub.label || sub.languageCode },
                                 content: content
-                            });
+                            };
                         }
-                    } catch (e) {
-                        // ignore failed track
-                    }
-                }
+                    } catch (e) { return null; }
+                }));
+
+                captionTracks.push(...validTracks.filter(t => t));
             }
 
             if (captionTracks.length > 0) {
-                // Return consistent structure
+                log('Dynamic Win:', api.name);
                 return {
                     success: true,
                     hasContent: true,
@@ -664,12 +664,26 @@ async function tryThirdPartyAPIs(videoId) {
                 };
             }
 
-        } catch (error) {
-            log(api.name, 'error:', error.message);
-        }
-    }
+            throw new Error('No valid content found');
 
-    return { success: false, hasContent: false, data: {} };
+        } catch (error) {
+            // log(api.name, 'failed:', error.message);
+            throw error;
+        }
+    };
+
+    // Run all checks in parallel and return the first success
+    // We map each promise to invert rejection so Promise.any logic applies correctly
+    // or simply use Promise.any if available (Cloudflare support newer JS)
+
+    try {
+        // We limit concurrency slightly or just blast them all? 10 requests is fine for CF.
+        const result = await Promise.any(apis.map(api => checkApi(api)));
+        return result;
+    } catch (aggregateError) {
+        log('All third-party APIs failed');
+        return { success: false, hasContent: false, data: {} };
+    }
 }
 
 /**
