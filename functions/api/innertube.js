@@ -12,6 +12,7 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
+import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 
 // ============================================================================
 // Configuration
@@ -432,7 +433,9 @@ async function fetchThirdPartyContent(url) {
         if (!response.ok) return null;
 
         const text = await response.text();
-        return parseCaption(text, 'vtt');
+        const segments = parseCaption(text, 'vtt');
+        // Clean segments server-side
+        return segments?.length ? cleanTranscriptSegments(segments) : null;
 
     } catch {
         clearTimeout(timeoutId);
@@ -495,7 +498,10 @@ async function fetchCaptionContent(baseUrl, userAgent) {
             if (text.length < 10 || text === '1') continue;
 
             const segments = parseCaption(text, format);
-            if (segments?.length > 0) return segments;
+            if (segments?.length > 0) {
+                // Clean segments server-side for deduplication and timing fixes
+                return cleanTranscriptSegments(segments);
+            }
 
         } catch { /* try next format */ }
     }

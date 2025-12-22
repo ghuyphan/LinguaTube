@@ -33,9 +33,6 @@ interface InnertubeResponse {
   warning?: string;
 }
 
-// Minimum gap between cues to consider them separate (in seconds)
-// Increased for AI transcripts which often have closely-spaced segments
-const MIN_CUE_GAP = 0.5;
 // Minimum duration for a cue (in seconds)
 const MIN_CUE_DURATION = 0.5;
 // Maximum duration for a single cue (prevents overly long sticky subtitles)
@@ -154,9 +151,8 @@ export class TranscriptService {
 
         this.captionSource.set('youtube');
 
-        // Clean and deduplicate before converting
-        const cleanedSegments = this.cleanTranscriptSegments(track.content);
-        const cues = this.convertToSubtitleCues(cleanedSegments);
+        // Server already cleans segments, just convert to SubtitleCues
+        const cues = this.convertToSubtitleCues(track.content);
 
         return { cues, validResponse: true };
       }),
@@ -202,9 +198,8 @@ export class TranscriptService {
           throw new Error(response.error || 'AI transcription failed');
         }
 
-        // Clean Whisper output too
-        const cleanedSegments = this.cleanTranscriptSegments(response.segments);
-        const cues = this.convertToSubtitleCues(cleanedSegments);
+        // Server already cleans segments, just convert to SubtitleCues
+        const cues = this.convertToSubtitleCues(response.segments);
 
         this.transcriptCache.set(cacheKey, cues);
         return of(cues);
@@ -234,155 +229,6 @@ export class TranscriptService {
     }
 
     return request$;
-  }
-
-  // ============================================================================
-  // Transcript Cleaning & Deduplication
-  // ============================================================================
-
-  /**
-   * Clean transcript segments:
-   * 1. Remove duplicates at same timestamp
-   * 2. Merge overlapping segments
-   * 3. Remove very short/empty segments
-   * 4. Sort by start time
-   */
-  private cleanTranscriptSegments(segments: TranscriptSegment[]): TranscriptSegment[] {
-    if (!segments?.length) return [];
-
-    // Step 1: Sort by start time
-    const sorted = [...segments].sort((a, b) => a.start - b.start);
-
-    // Step 2: Group segments at same/very close timestamps
-    const grouped = this.groupByTimestamp(sorted);
-
-    // Step 3: Pick best segment from each group & merge overlaps
-    const cleaned = this.mergeGroups(grouped);
-
-    // Step 4: Filter out invalid segments
-    return cleaned.filter(seg =>
-      seg.text.trim().length > 0 &&
-      seg.duration >= MIN_CUE_DURATION
-    );
-  }
-
-  /**
-   * Group segments that start at the same time (within MIN_CUE_GAP)
-   */
-  private groupByTimestamp(segments: TranscriptSegment[]): TranscriptSegment[][] {
-    const groups: TranscriptSegment[][] = [];
-    let currentGroup: TranscriptSegment[] = [];
-    let groupStart = -1;
-
-    for (const seg of segments) {
-      if (groupStart === -1 || Math.abs(seg.start - groupStart) <= MIN_CUE_GAP) {
-        currentGroup.push(seg);
-        if (groupStart === -1) groupStart = seg.start;
-      } else {
-        if (currentGroup.length > 0) {
-          groups.push(currentGroup);
-        }
-        currentGroup = [seg];
-        groupStart = seg.start;
-      }
-    }
-
-    if (currentGroup.length > 0) {
-      groups.push(currentGroup);
-    }
-
-    return groups;
-  }
-
-  /**
-   * Pick best segment from each group
-   * Priority: longer text, longer duration
-   */
-  private mergeGroups(groups: TranscriptSegment[][]): TranscriptSegment[] {
-    const result: TranscriptSegment[] = [];
-
-    for (const group of groups) {
-      if (group.length === 1) {
-        result.push(group[0]);
-        continue;
-      }
-
-      // Multiple segments at same timestamp - pick the best one
-      // Score: text length + duration bonus
-      const best = group.reduce((a, b) => {
-        const scoreA = a.text.trim().length + (a.duration * 10);
-        const scoreB = b.text.trim().length + (b.duration * 10);
-        return scoreB > scoreA ? b : a;
-      });
-
-      // Check if we should merge with previous
-      const prev = result[result.length - 1];
-      if (prev && this.shouldMerge(prev, best)) {
-        // Merge: extend previous segment
-        prev.text = this.mergeText(prev.text, best.text);
-        prev.duration = Math.max(prev.duration, (best.start - prev.start) + best.duration);
-      } else {
-        result.push({ ...best });
-      }
-    }
-
-    return result;
-  }
-
-  /**
-   * Check if two segments should be merged
-   */
-  private shouldMerge(prev: TranscriptSegment, curr: TranscriptSegment): boolean {
-    // Merge if:
-    // 1. Current starts before/at previous end
-    // 2. Texts are similar (one contains the other)
-    const prevEnd = prev.start + prev.duration;
-    const overlaps = curr.start <= prevEnd + MIN_CUE_GAP;
-
-    if (!overlaps) return false;
-
-    // Check text similarity
-    const prevText = prev.text.trim();
-    const currText = curr.text.trim();
-
-    return prevText.includes(currText) ||
-      currText.includes(prevText) ||
-      this.textSimilarity(prevText, currText) > 0.5;
-  }
-
-  /**
-   * Merge two text strings, avoiding duplication
-   */
-  private mergeText(a: string, b: string): string {
-    const textA = a.trim();
-    const textB = b.trim();
-
-    // If one contains the other, use the longer one
-    if (textA.includes(textB)) return textA;
-    if (textB.includes(textA)) return textB;
-
-    // If they're very similar, use the longer one
-    if (this.textSimilarity(textA, textB) > 0.7) {
-      return textA.length >= textB.length ? textA : textB;
-    }
-
-    // Otherwise, keep the first one (already displayed)
-    return textA;
-  }
-
-  /**
-   * Simple text similarity (Jaccard on characters)
-   */
-  private textSimilarity(a: string, b: string): number {
-    if (!a || !b) return 0;
-
-    const setA = new Set(a);
-    const setB = new Set(b);
-
-    const intersection = new Set([...setA].filter(x => setB.has(x)));
-    const union = new Set([...setA, ...setB]);
-
-    return intersection.size / union.size;
   }
 
   // ============================================================================

@@ -354,7 +354,7 @@ import { SubtitleCue, Token } from '../../models';
     ruby {
       ruby-align: center;
       ruby-position: over;
-      display: inline;
+      display: inline-block;
     }
 
     ruby rt {
@@ -365,7 +365,12 @@ import { SubtitleCue, Token } from '../../models';
       font-weight: 400;
     }
 
-    /* Japanese furigana - smaller and tighter */
+    /* Japanese text - tighter word spacing for natural flow */
+    .text-ja .word {
+      margin: 0;
+      padding: 2px 0;
+    }
+    
     .text-ja ruby {
       ruby-overhang: none;
     }

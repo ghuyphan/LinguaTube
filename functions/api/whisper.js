@@ -5,6 +5,7 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
+import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -113,12 +114,15 @@ export async function onRequestPost(context) {
 
                 if (resultData.status === 'done') {
                     const utterances = resultData.result?.transcription?.utterances || [];
-                    const segments = utterances.map((utt, index) => ({
+                    const rawSegments = utterances.map((utt, index) => ({
                         id: index,
                         text: utt.text?.trim() || '',
                         start: utt.start || 0,
                         duration: (utt.end || 0) - (utt.start || 0)
                     }));
+
+                    // Clean segments server-side for deduplication and timing fixes
+                    const segments = cleanTranscriptSegments(rawSegments);
 
                     const response = {
                         success: true,
