@@ -1,130 +1,87 @@
-# LinguaTube
+# LinguaTube 📺 🎌
 
-Learn Japanese and Chinese from YouTube videos with interactive subtitles, instant word lookup, and vocabulary tracking.
+**Turn any YouTube video into a powerful language learning lesson.**
 
-## Features
+LinguaTube is a modern, immersive web application designed to help you learn **Japanese**, **Chinese**, and **Korean** directly from authentic content. It combines the vast library of YouTube with advanced language tools like interactive subtitles, instant dictionary lookups, and AI-powered transcription.
 
-- **YouTube Integration** - Paste any YouTube URL to start learning
-- **Auto Caption Fetch** - Automatically attempts to fetch captions from YouTube
-- **Subtitle Upload** - Upload .srt, .vtt, or .ass subtitle files when auto-fetch isn't available
-- **Interactive Subtitles** - Click any word to see its definition
-- **Vocabulary Tracking** - Save words and track progress (new → learning → known)
-- **Export to Anki** - Export vocabulary for spaced repetition study
-- **Dark Mode** - Toggle between light and dark themes
-- **Japanese & Chinese** - Support for both languages with Furigana/Pinyin toggle
+![Angular 19](https://img.shields.io/badge/Angular-19-%23DD0031?style=flat-square&logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-%233178C6?style=flat-square&logo=typescript)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-Serverless-%23F38020?style=flat-square&logo=cloudflare)
 
-## Getting Started
+## ✨ Key Features
+
+### 🎬 Universal Video Support
+-   **YouTube Integration**: Paste any YouTube URL to start learning immediately.
+-   **Auto-Caption Fetching**: Seamlessly extracts existing subtitles in your target language.
+-   **AI Transcription Fallback**: No subtitles? No problem. LinguaTube uses **Gladia AI** to generate accurate, timestamped transcripts on the fly.
+
+### 🧠 Smart Linguistics
+-   **Advanced Tokenization**: Uses server-side morphological analysis (via `Kuromoji` for Japanese, `Jieba` for Chinese) to correctly segment sentences into interactive words.
+-   **Instant Dictionary**: Click any word to see detailed definitions, pronunciation, and examples.
+-   **Dual-Language Support**: Displays learning subtitles alongside your native language.
+-   **Phonetic Guides**: Toggle Furigana (Japanese) or Pinyin (Chinese) to aid reading.
+
+### 📚 Study Tools
+-   **Vocabulary Tracking**: Mark words as **New**, **Learning**, or **Known**.
+-   **Contextual Review**: Words are saved with the sentence context where you found them.
+-   **Smart Playback**: "Sticky" subtitles ensure you never miss a phrase, with auto-pause on hover.
+-   **Cloud Sync**: Sync your progress and vocabulary across devices (Preview).
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
-- Node.js 18+ 
-- npm
+-   Node.js 18+
+-   npm
 
 ### Installation
 
-```bash
-# Install dependencies
-npm install
+1.  **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    cd lingua-tube
+    ```
 
-# Start development server
-npm start
-```
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-The app will be available at `http://localhost:4200`
+3.  **Environment Setup**
+    To use AI transcription features, you need a Gladia API key.
+    -   Set `GLADIA_API_KEY` in your environment or Cloudflare configuration.
 
-### Building for Production
+4.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+    This command runs both the Angular frontend (at `http://localhost:4200`) and the local API server backend.
 
-```bash
-npm run build
-```
+## 🛠️ Architecture & Tech Stack
 
-## Usage
+LinguaTube is built as a **Progressive Web App (PWA)** leveraging edge computing for performance.
 
-1. **Load a Video**: Paste a YouTube URL and click "Load Video"
-2. **Subtitles**: The app will try to auto-fetch captions. If unavailable, upload a subtitle file
-3. **Watch & Learn**: Click on words in the subtitles to see definitions
-4. **Save Words**: Click "Save Word" to add to your vocabulary
-5. **Review**: Track your progress in the vocabulary panel
-6. **Export**: Export to Anki or JSON for further study
+-   **Frontend**: Angular 19 (Signals, Standalone Components), RxJS, Lucide Icons.
+-   **Backend**: Cloudflare Pages Functions (Serverless).
+-   **Tokenization**:
+    -   **Japanese**: `@patdx/kuromoji` (Morphological Analyzer)
+    -   **Chinese**: `jieba-js` (Text Segmentation)
+    -   **Korean**: Space-based + API
+-   **Data & Caching**: Cloudflare KV (Key-Value storage) for caching tokenization results and AI transcripts to minimize latency and API costs.
 
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── components/
-│   │   ├── icon/                # SVG icon component
-│   │   ├── header/              # App header with language toggle
-│   │   ├── video-player/        # YouTube player with controls
-│   │   ├── subtitle-display/    # Interactive subtitle display
-│   │   ├── subtitle-upload/     # File upload for subtitles
-│   │   ├── word-popup/          # Dictionary lookup popup
-│   │   └── vocabulary-list/     # Saved vocabulary list
-│   ├── services/
-│   │   ├── youtube.service.ts   # YouTube API integration
-│   │   ├── subtitle.service.ts  # Subtitle parsing
-│   │   ├── transcript.service.ts # Auto caption fetching
-│   │   ├── dictionary.service.ts # Word lookup
-│   │   ├── vocabulary.service.ts # Vocabulary management
-│   │   └── settings.service.ts  # User settings
-│   └── models/
-│       └── index.ts             # TypeScript interfaces
-├── styles.css                   # Global styles (CSS variables, theme)
-└── index.html                   # Entry HTML
-```
-
-## Tech Stack
-
-- **Angular 19** - Standalone components, Signals
-- **TypeScript** - Type safety throughout
-- **CSS Custom Properties** - Theming support
-- **localStorage** - Persistent vocabulary storage
-- **YouTube IFrame API** - Video playback
-
-## Extending
-
-### Adding Kuromoji for Better Japanese Tokenization
-
-The current implementation uses basic character-type tokenization. For production:
-
-```bash
-npm install kuromoji
-```
-
-Then update `subtitle.service.ts` to use Kuromoji for proper morphological analysis.
-
-### Adding Whisper for Transcription
-
-For videos without subtitles, you can integrate OpenAI's Whisper API:
-
-1. Set up a backend to extract audio with `yt-dlp`
-2. Send audio to Whisper API (Groq offers a free tier)
-3. Return timestamped transcripts
-
-### Dictionary Integration
-
-For Japanese:
-- [JMDict](http://www.edrdg.org/wiki/index.php/JMDict-EDICT_Dictionary_Project)
-- Use `jmdict-simplified` npm package
-
-For Chinese:
-- [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict)
-
-## Keyboard Shortcuts
+## ⌨️ Keyboard Shortcuts
 
 | Key | Action |
 |-----|--------|
-| `Space` | Play/Pause (when focused) |
-| `←` | Rewind 5 seconds |
-| `→` | Forward 5 seconds |
-| `Esc` | Close popup |
+| `Space` | Play/Pause |
+| `←` / `→` | Seek -5s / +5s |
+| `Esc` | Close Dictionary Popup |
 
-## License
+## 📄 License
 
 MIT License
 
 ## Acknowledgments
 
-- Inspired by [Language Reactor](https://www.languagereactor.com/) and [LinguaCafe](https://github.com/simjanos-dev/LinguaCafe)
-- Dictionary data from [Jisho.org](https://jisho.org/) and [MDBG](https://www.mdbg.net/)
-# LinguaTube
+-   Inspired by [Language Reactor](https://www.languagereactor.com/) and [LinguaCafe](https://github.com/simjanos-dev/LinguaCafe)
+-   Dictionary data from [Jisho.org](https://jisho.org/) and [MDBG](https://www.mdbg.net/)
+-   Transcription services by [Gladia](https://gladia.io/)
