@@ -13,6 +13,12 @@ import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh']);
 
+// Kanji detection (CJK Unified Ideographs)
+const KANJI_REGEX = /[\u4E00-\u9FFF]/;
+function hasKanji(text) {
+    return KANJI_REGEX.test(text);
+}
+
 // ============================================================================
 // Kuromoji Tokenizer (Japanese)
 // ============================================================================
@@ -52,6 +58,7 @@ async function getKuromojiTokenizer() {
 
 /**
  * Tokenize Japanese text with kuromoji
+ * Only adds reading (furigana) for tokens containing kanji
  */
 async function tokenizeJapanese(text) {
     const tokenizer = await getKuromojiTokenizer();
@@ -60,8 +67,9 @@ async function tokenizeJapanese(text) {
     return kuromojiTokens.map(t => {
         const token = { surface: t.surface_form };
 
-        // Add reading (hiragana) if different from surface
-        if (t.reading && t.reading !== t.surface_form) {
+        // Only add reading for tokens containing kanji
+        // (hiragana/katakana-only tokens don't need furigana)
+        if (t.reading && hasKanji(t.surface_form)) {
             // Kuromoji returns reading in katakana, convert to hiragana
             token.reading = katakanaToHiragana(t.reading);
         }

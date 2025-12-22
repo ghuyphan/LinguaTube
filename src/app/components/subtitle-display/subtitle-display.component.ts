@@ -358,7 +358,23 @@ import { SubtitleCue, Token } from '../../models';
     ruby rt {
       font-size: 0.75em;
       color: var(--text-muted);
-      padding-bottom: 4px; /* Add space between reading and text */
+      padding-bottom: 4px;
+    }
+
+    /* Japanese furigana - smaller and tighter */
+    .text-ja ruby rt {
+      font-size: 0.5em;
+      font-weight: 400;
+      padding-bottom: 2px;
+      letter-spacing: 0;
+    }
+
+    /* Chinese/Korean readings - larger for romanized text */
+    .text-zh ruby rt,
+    .text-ko ruby rt {
+      font-size: 0.65em;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
 
     /* Subtitle list */
@@ -572,24 +588,14 @@ import { SubtitleCue, Token } from '../../models';
       .font-controls {
         flex-shrink: 0;
         margin-left: auto;
-        padding: 0;
-        gap: 1px;
+        padding: 2px;
+        gap: 2px;
       }
 
       .font-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 0;
-      }
-      
-      .font-btn:first-child {
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px;
-      }
-
-      .font-btn:last-child {
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
       }
     }
 
