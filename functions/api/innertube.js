@@ -3,15 +3,16 @@
  * Robust caption fetching with multiple fallback strategies
  *
  * Strategy Order:
- * 1. Innertube API (iOS/Android/Web clients) - fetch content immediately
+ * 1. Innertube API (TV/Web clients in PARALLEL) - first success wins
  * 2. Watch page scrape + immediate content fetch
- * 3. Third-party APIs (Piped/Invidious) - they handle content fetching internally
+ * 3. Third-party APIs (Piped/Invidious) - parallel race
  *
- * Key Insight: YouTube's timedtext URLs have IP-bound signatures that expire quickly.
- * We MUST fetch caption content immediately after getting the URLs, in the same request context.
+ * Environment:
+ * - INNERTUBE_API_KEY: YouTube Innertube API key (optional, has default)
+ * - TRANSCRIPT_CACHE: KV namespace binding for caching
  *
- * @version 2.0.0
- * @updated 2025-01
+ * @version 3.0.0
+ * @updated 2025-12
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -20,78 +21,62 @@ import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../
 // Configuration
 // ============================================================================
 
-const CONFIG = {
-    debug: true,
-    cache: {
-        ttl: 60 * 60 * 24, // 24 hours
-        keyPrefix: 'captions:v2:'
-    },
-    timeouts: {
-        innertubeRequest: 10000,
-        watchPageRequest: 10000,
-        thirdPartyRequest: 8000,
-        captionFetch: 5000
-    },
-    retries: {
-        captionFetch: 2,
-        retryDelayMs: 100
-    }
+const DEBUG = false;
+const CACHE_TTL = 60 * 60 * 24; // 24 hours
+const DEFAULT_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
+
+const TIMEOUTS = {
+    innertube: 8000,
+    watchPage: 8000,
+    thirdParty: 8000,
+    caption: 5000
 };
 
-// YouTube's public Innertube API key (improves reliability)
-const INNERTUBE_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
-
-// Client configurations - Update versions periodically when YouTube changes requirements
-// Check: https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube.py for latest
+/**
+ * Client configurations - Updated December 2025
+ * Based on yt-dlp source: https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube/_base.py
+ * 
+ * Note: iOS/Android clients now require PO tokens and are deprecated
+ * Default priority: tv_simply, tv, web
+ */
 const CLIENT_CONFIGS = [
+    // TV Simply - Best for captions, no PO token required
     {
-        clientName: 'IOS',
-        clientVersion: '19.45.4',
-        deviceMake: 'Apple',
-        deviceModel: 'iPhone16,2',
-        osName: 'iOS',
-        osVersion: '18.1.0.22B83',
-        userAgent: 'com.google.ios.youtube/19.45.4 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)',
-        clientId: '5'
+        clientName: 'TVHTML5_SIMPLY',
+        clientVersion: '1.0',
+        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/25.lts.30.1034943-gold',
+        clientId: '85'
     },
+    // TV HTML5 - Cobalt-based client
     {
-        clientName: 'ANDROID',
-        clientVersion: '19.44.38',
-        androidSdkVersion: 34,
-        osName: 'Android',
-        osVersion: '14',
-        userAgent: 'com.google.android.youtube/19.44.38 (Linux; U; Android 14; en_US; sdk_gphone64_x86_64 Build/UE1A.230829.036.A1) gzip',
-        clientId: '3'
+        clientName: 'TVHTML5',
+        clientVersion: '7.20250312.16.00',
+        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/25.lts.30.1034943-gold',
+        clientId: '7'
     },
+    // Web - Standard browser client
     {
         clientName: 'WEB',
-        clientVersion: '2.20250115.01.00',
+        clientVersion: '2.20250312.04.00',
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         clientId: '1'
     },
+    // Mobile Web - iPad Safari
     {
-        clientName: 'TVHTML5_SIMPLY_EMBEDDED_PLAYER',
-        clientVersion: '2.0',
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        clientId: '85'
+        clientName: 'MWEB',
+        clientVersion: '2.20250311.03.00',
+        userAgent: 'Mozilla/5.0 (iPad; CPU OS 16_7_10 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1,gzip(gfe)',
+        clientId: '2'
     }
 ];
 
-// Third-party API instances (sorted by reliability)
 const THIRD_PARTY_APIS = [
-    // Flagship / Most Stable
     { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' },
     { url: 'https://api.piped.video/streams/', name: 'piped.video', type: 'piped' },
     { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' },
     { url: 'https://pipedapi.kavin.rocks/streams/', name: 'kavin.rocks', type: 'piped' },
-    // Reliable Backups
     { url: 'https://inv.tux.pizza/api/v1/captions/', name: 'tux.pizza', type: 'invidious' },
-    { url: 'https://pipedapi.drg.li/streams/', name: 'drg.li-piped', type: 'piped' },
-    { url: 'https://invidious.drg.li/api/v1/captions/', name: 'drg.li-inv', type: 'invidious' },
-    { url: 'https://invidious.nerdvpn.de/api/v1/captions/', name: 'nerdvpn', type: 'invidious' },
-    // Deep Reserves
-    { url: 'https://api.piped.privacydev.net/streams/', name: 'privacydev', type: 'piped' },
-    { url: 'https://pipedapi.adminforge.de/streams/', name: 'adminforge', type: 'piped' }
+    { url: 'https://invidious.nerdvpn.de/api/v1/captions/', name: 'nerdvpn', type: 'invidious' }
 ];
 
 // ============================================================================
@@ -99,13 +84,7 @@ const THIRD_PARTY_APIS = [
 // ============================================================================
 
 function log(...args) {
-    if (CONFIG.debug) {
-        console.log('[Innertube]', ...args);
-    }
-}
-
-function logError(...args) {
-    console.error('[Innertube]', ...args);
+    if (DEBUG) console.log('[Innertube]', ...args);
 }
 
 // ============================================================================
@@ -118,6 +97,7 @@ export async function onRequestOptions() {
 
 export async function onRequestPost(context) {
     const { request, env } = context;
+    const apiKey = env.INNERTUBE_API_KEY || DEFAULT_API_KEY;
     const cache = env.TRANSCRIPT_CACHE;
 
     try {
@@ -127,14 +107,13 @@ export async function onRequestPost(context) {
         log('Request for videoId:', videoId);
 
         if (!validateVideoId(videoId)) {
-            log('Validation failed for videoId:', videoId);
             return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
         }
 
-        const cacheKey = `${CONFIG.cache.keyPrefix}${videoId}`;
+        const cacheKey = `captions:v3:${videoId}`;
 
         // Check cache (unless force refresh)
-        if (!forceRefresh) {
+        if (!forceRefresh && cache) {
             const cached = await getCachedResult(cache, cacheKey);
             if (cached) {
                 log('Cache hit for', videoId);
@@ -142,11 +121,11 @@ export async function onRequestPost(context) {
             }
         }
 
-        // Execute strategies in order
-        const result = await executeStrategies(videoId);
+        // Execute strategies
+        const result = await executeStrategies(videoId, apiKey);
 
         // Cache successful results
-        if (result.hasContent) {
+        if (result.hasContent && cache) {
             await cacheResult(cache, cacheKey, result.data);
         }
 
@@ -157,7 +136,7 @@ export async function onRequestPost(context) {
         });
 
     } catch (error) {
-        logError('Request error:', error.message);
+        console.error('[Innertube] Error:', error.message);
         return errorResponse(error.message);
     }
 }
@@ -166,13 +145,13 @@ export async function onRequestPost(context) {
 // Strategy Orchestration
 // ============================================================================
 
-async function executeStrategies(videoId) {
-    // Strategy 1: Innertube API
-    log('Strategy 1: Innertube API');
-    let result = await tryInnertubeWithContent(videoId);
+async function executeStrategies(videoId, apiKey) {
+    // Strategy 1: Innertube API (PARALLEL - first success wins)
+    log('Strategy 1: Innertube API (parallel)');
+    let result = await tryInnertubeParallel(videoId, apiKey);
 
     if (result.success && result.hasContent) {
-        log('Innertube success');
+        log('Innertube success via', result.client);
         return { ...result, source: 'innertube' };
     }
 
@@ -185,7 +164,7 @@ async function executeStrategies(videoId) {
         return { ...result, source: 'scrape' };
     }
 
-    // Strategy 3: Third-party APIs
+    // Strategy 3: Third-party APIs (parallel)
     log('Strategy 3: Third-party APIs');
     result = await tryThirdPartyAPIs(videoId);
 
@@ -209,120 +188,124 @@ async function executeStrategies(videoId) {
 }
 
 // ============================================================================
-// Strategy 1: Innertube API
+// Strategy 1: Innertube API (PARALLEL)
 // ============================================================================
 
-async function tryInnertubeWithContent(videoId) {
-    let bestData = null;
-    let ageRestricted = false;
+async function tryInnertubeParallel(videoId, apiKey) {
+    const controllers = [];
 
-    for (const config of CLIENT_CONFIGS) {
+    const tryClient = async (config) => {
+        const controller = new AbortController();
+        controllers.push(controller);
+
+        const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.innertube);
+
         try {
             log('Trying client:', config.clientName);
 
-            const data = await fetchInnertubePlayer(videoId, config);
+            const requestBody = {
+                context: {
+                    client: {
+                        clientName: config.clientName,
+                        clientVersion: config.clientVersion,
+                        hl: 'en',
+                        gl: 'US'
+                    }
+                },
+                videoId,
+                contentCheckOk: true,
+                racyCheckOk: true
+            };
 
-            if (!data) continue;
+            const response = await fetch(
+                `https://www.youtube.com/youtubei/v1/player?key=${apiKey}&prettyPrint=false`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'User-Agent': config.userAgent,
+                        'Accept': '*/*',
+                        'Accept-Language': 'en-US,en;q=0.9',
+                        'Origin': 'https://www.youtube.com',
+                        'Referer': 'https://www.youtube.com/',
+                        'X-Youtube-Client-Name': config.clientId,
+                        'X-Youtube-Client-Version': config.clientVersion
+                    },
+                    body: JSON.stringify(requestBody),
+                    signal: controller.signal
+                }
+            );
 
-            // Check for age restriction
+            clearTimeout(timeoutId);
+
+            if (!response.ok) throw new Error(`Status ${response.status}`);
+
+            const data = await response.json();
+
+            // Check for errors
             if (data.playabilityStatus?.status === 'LOGIN_REQUIRED') {
-                ageRestricted = true;
-                log('Age-restricted content detected');
-                continue;
+                throw new Error('Age-restricted');
             }
 
-            // Save video details as fallback
-            if (data.videoDetails) {
-                bestData = data;
+            if (data.playabilityStatus?.status === 'ERROR') {
+                throw new Error(data.playabilityStatus.reason || 'Playback error');
             }
 
             const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
 
             if (!captionTracks?.length) {
-                log('Client', config.clientName, '- no captions');
-                continue;
+                throw new Error('No captions');
             }
 
             log('Client', config.clientName, '- found', captionTracks.length, 'tracks');
 
-            // Fetch content immediately while URLs are valid
+            // Fetch content immediately
             await fetchAllCaptionContent(captionTracks, config.userAgent);
 
             const tracksWithContent = captionTracks.filter(t => t.content?.length > 0);
-            log('Tracks with content:', tracksWithContent.length, '/', captionTracks.length);
 
-            if (tracksWithContent.length > 0) {
-                return { success: true, hasContent: true, data };
+            if (tracksWithContent.length === 0) {
+                throw new Error('Failed to fetch caption content');
             }
+
+            log('Client', config.clientName, '- success with', tracksWithContent.length, 'tracks');
+
+            return {
+                success: true,
+                hasContent: true,
+                client: config.clientName,
+                data
+            };
 
         } catch (error) {
-            log('Client', config.clientName, 'error:', error.message);
+            clearTimeout(timeoutId);
+            throw error;
         }
-    }
-
-    return {
-        success: !!bestData,
-        hasContent: false,
-        data: bestData || {},
-        warning: ageRestricted ? 'Video may be age-restricted. Sign-in required.' : undefined
     };
-}
-
-async function fetchInnertubePlayer(videoId, config) {
-    const requestBody = {
-        context: {
-            client: {
-                clientName: config.clientName,
-                clientVersion: config.clientVersion,
-                hl: 'en',
-                gl: 'US',
-                ...(config.deviceMake && { deviceMake: config.deviceMake }),
-                ...(config.deviceModel && { deviceModel: config.deviceModel }),
-                ...(config.osName && { osName: config.osName }),
-                ...(config.osVersion && { osVersion: config.osVersion }),
-                ...(config.androidSdkVersion && { androidSdkVersion: config.androidSdkVersion })
-            }
-        },
-        videoId,
-        contentCheckOk: true,
-        racyCheckOk: true
-    };
-
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), CONFIG.timeouts.innertubeRequest);
 
     try {
-        const response = await fetch(
-            `https://www.youtube.com/youtubei/v1/player?key=${INNERTUBE_API_KEY}&prettyPrint=false`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'User-Agent': config.userAgent,
-                    'Accept': '*/*',
-                    'Accept-Language': 'en-US,en;q=0.9',
-                    'Origin': 'https://www.youtube.com',
-                    'Referer': 'https://www.youtube.com/',
-                    'X-Youtube-Client-Name': config.clientId,
-                    'X-Youtube-Client-Version': config.clientVersion
-                },
-                body: JSON.stringify(requestBody),
-                signal: controller.signal
-            }
+        // Race all clients - first success wins
+        const result = await Promise.any(CLIENT_CONFIGS.map(tryClient));
+
+        // Abort remaining requests
+        controllers.forEach(c => c.abort());
+
+        return result;
+
+    } catch (aggregateError) {
+        controllers.forEach(c => c.abort());
+
+        // Check if age-restricted
+        const ageRestricted = aggregateError.errors?.some(e =>
+            e.message?.includes('Age-restricted')
         );
 
-        clearTimeout(timeoutId);
-
-        if (!response.ok) {
-            log('Client', config.clientName, 'status:', response.status);
-            return null;
-        }
-
-        return await response.json();
-
-    } catch (error) {
-        clearTimeout(timeoutId);
-        throw error;
+        return {
+            success: false,
+            hasContent: false,
+            data: {},
+            warning: ageRestricted ? 'Video may be age-restricted' : undefined
+        };
     }
 }
 
@@ -335,7 +318,7 @@ async function tryWatchPageWithContent(videoId) {
 
     try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), CONFIG.timeouts.watchPageRequest);
+        const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.watchPage);
 
         const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
             headers: {
@@ -368,11 +351,9 @@ async function tryWatchPageWithContent(videoId) {
 
         log('Scrape found', captionTracks.length, 'tracks');
 
-        // Fetch content immediately
         await fetchAllCaptionContent(captionTracks, userAgent);
 
         const tracksWithContent = captionTracks.filter(t => t.content?.length > 0);
-        log('Scrape - tracks with content:', tracksWithContent.length);
 
         return {
             success: true,
@@ -400,25 +381,13 @@ function extractPlayerResponse(html) {
     for (let i = jsonStart; i < html.length && i < jsonStart + 500000; i++) {
         const char = html[i];
 
-        if (escape) {
-            escape = false;
-            continue;
-        }
-
-        if (char === '\\' && inString) {
-            escape = true;
-            continue;
-        }
-
-        if (char === '"' && !escape) {
-            inString = !inString;
-            continue;
-        }
+        if (escape) { escape = false; continue; }
+        if (char === '\\' && inString) { escape = true; continue; }
+        if (char === '"' && !escape) { inString = !inString; continue; }
 
         if (!inString) {
-            if (char === '{') {
-                braceCount++;
-            } else if (char === '}') {
+            if (char === '{') braceCount++;
+            else if (char === '}') {
                 braceCount--;
                 if (braceCount === 0) {
                     try {
@@ -435,7 +404,7 @@ function extractPlayerResponse(html) {
 }
 
 // ============================================================================
-// Strategy 3: Third-Party APIs
+// Strategy 3: Third-Party APIs (Parallel)
 // ============================================================================
 
 async function tryThirdPartyAPIs(videoId) {
@@ -445,7 +414,7 @@ async function tryThirdPartyAPIs(videoId) {
         const controller = new AbortController();
         controllers.push(controller);
 
-        const timeoutId = setTimeout(() => controller.abort(), CONFIG.timeouts.thirdPartyRequest);
+        const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.thirdParty);
 
         try {
             const response = await fetch(`${api.url}${videoId}`, {
@@ -458,12 +427,10 @@ async function tryThirdPartyAPIs(videoId) {
 
             clearTimeout(timeoutId);
 
-            if (!response.ok) {
-                throw new Error(`Status ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`Status ${response.status}`);
 
             const data = await response.json();
-            const captionTracks = await processThirdPartyResponse(api, data, videoId);
+            const captionTracks = await processThirdPartyResponse(api, data);
 
             if (captionTracks.length > 0) {
                 log('Third-party win:', api.name);
@@ -485,18 +452,15 @@ async function tryThirdPartyAPIs(videoId) {
 
             throw new Error('No valid content');
 
-        } catch (error) {
+        } catch {
             clearTimeout(timeoutId);
-            throw error;
+            throw new Error('Failed');
         }
     };
 
     try {
         const result = await Promise.any(THIRD_PARTY_APIS.map(checkApi));
-
-        // Abort all other pending requests
         controllers.forEach(c => c.abort());
-
         return result;
 
     } catch {
@@ -506,7 +470,7 @@ async function tryThirdPartyAPIs(videoId) {
     }
 }
 
-async function processThirdPartyResponse(api, data, videoId) {
+async function processThirdPartyResponse(api, data) {
     const captionTracks = [];
 
     if (api.type === 'piped') {
@@ -563,7 +527,7 @@ async function processThirdPartyResponse(api, data, videoId) {
 
 async function fetchThirdPartyContent(url) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), CONFIG.timeouts.captionFetch);
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.caption);
 
     try {
         const response = await fetch(url, {
@@ -592,80 +556,54 @@ async function fetchAllCaptionContent(captionTracks, userAgent) {
     await Promise.all(
         captionTracks.map(async (track) => {
             try {
-                track.content = await fetchCaptionContentWithRetry(track.baseUrl, userAgent);
-            } catch (error) {
-                log('Failed to fetch content for', track.languageCode, ':', error.message);
+                track.content = await fetchCaptionContent(track.baseUrl, userAgent);
+            } catch {
                 track.content = null;
             }
         })
     );
 }
 
-async function fetchCaptionContentWithRetry(baseUrl, userAgent) {
+async function fetchCaptionContent(baseUrl, userAgent) {
     const formats = ['json3', 'srv3', 'vtt'];
-    const { retries, retryDelayMs } = CONFIG.retries;
 
     for (const format of formats) {
-        for (let attempt = 0; attempt <= retries; attempt++) {
-            try {
-                const url = buildCaptionUrl(baseUrl, format);
-                const segments = await fetchCaptionFormat(url, userAgent, format);
+        try {
+            const url = baseUrl.includes('fmt=')
+                ? baseUrl.replace(/fmt=[^&]+/, `fmt=${format}`)
+                : `${baseUrl}&fmt=${format}`;
 
-                if (segments?.length > 0) {
-                    log(`Fetched ${segments.length} segments using ${format}`);
-                    return segments;
-                }
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.caption);
 
-            } catch {
-                if (attempt < retries) {
-                    await sleep(retryDelayMs * (attempt + 1));
-                }
+            const response = await fetch(url, {
+                headers: {
+                    'User-Agent': userAgent,
+                    'Accept': '*/*',
+                    'Accept-Language': 'en-US,en;q=0.9',
+                    'Referer': 'https://www.youtube.com/'
+                },
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) continue;
+
+            const text = await response.text();
+
+            if (text.length < 10 || text === '1') continue;
+
+            const segments = parseCaption(text, format);
+
+            if (segments?.length > 0) {
+                return segments;
             }
-        }
+
+        } catch { /* try next format */ }
     }
 
     return null;
-}
-
-function buildCaptionUrl(baseUrl, format) {
-    if (baseUrl.includes('fmt=')) {
-        return baseUrl.replace(/fmt=[^&]+/, `fmt=${format}`);
-    }
-    return `${baseUrl}&fmt=${format}`;
-}
-
-async function fetchCaptionFormat(url, userAgent, format) {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), CONFIG.timeouts.captionFetch);
-
-    try {
-        const response = await fetch(url, {
-            headers: {
-                'User-Agent': userAgent,
-                'Accept': '*/*',
-                'Accept-Language': 'en-US,en;q=0.9',
-                'Referer': 'https://www.youtube.com/'
-            },
-            signal: controller.signal
-        });
-
-        clearTimeout(timeoutId);
-
-        if (!response.ok) return null;
-
-        const text = await response.text();
-
-        // Validate response
-        if (text.length < 10 || text === '1' || text.includes('404')) {
-            return null;
-        }
-
-        return parseCaption(text, format);
-
-    } catch {
-        clearTimeout(timeoutId);
-        return null;
-    }
 }
 
 // ============================================================================
@@ -673,7 +611,6 @@ async function fetchCaptionFormat(url, userAgent, format) {
 // ============================================================================
 
 function parseCaption(text, format) {
-    // Try format-specific parsing first
     if (format === 'json3' || (text.startsWith('{') && text.includes('"events"'))) {
         const result = parseJSON3(text);
         if (result?.length) return result;
@@ -689,7 +626,6 @@ function parseCaption(text, format) {
         if (result?.length) return result;
     }
 
-    // Fallback: try all parsers
     return parseJSON3(text) || parseXML(text) || parseVTT(text) || [];
 }
 
@@ -714,7 +650,6 @@ function parseJSON3(text) {
         }
 
         return segments;
-
     } catch {
         return null;
     }
@@ -727,7 +662,6 @@ function parseXML(text) {
 
     while ((match = regex.exec(text)) !== null) {
         const cleanText = decodeHtmlEntities(match[3].trim());
-
         if (cleanText) {
             segments.push({
                 text: cleanText,
@@ -793,34 +727,23 @@ function parseVTTTime(time) {
 // ============================================================================
 
 async function getCachedResult(cache, key) {
-    if (!cache) return null;
-
     try {
         const cached = await cache.get(key, 'json');
-
-        // Validate cached data has actual content
         const hasContent = cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.some(
             t => t.content?.length > 0
         );
-
         return hasContent ? cached : null;
-
-    } catch (error) {
-        log('Cache read error:', error.message);
+    } catch {
         return null;
     }
 }
 
 async function cacheResult(cache, key, data) {
-    if (!cache) return;
-
     try {
-        await cache.put(key, JSON.stringify(data), {
-            expirationTtl: CONFIG.cache.ttl
-        });
+        await cache.put(key, JSON.stringify(data), { expirationTtl: CACHE_TTL });
         log('Cached result');
-    } catch (error) {
-        log('Cache write error:', error.message);
+    } catch (e) {
+        log('Cache error:', e.message);
     }
 }
 
@@ -838,8 +761,4 @@ function decodeHtmlEntities(text) {
         .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(parseInt(num, 10)))
         .replace(/\n/g, ' ')
         .trim();
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
