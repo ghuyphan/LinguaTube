@@ -186,11 +186,16 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       font-weight: 500;
       border: none;
       border-radius: 6px;
-      line-height: 1.2;
+      line-height: normal; /* Reset line-height */
       background: transparent;
       color: var(--text-secondary);
       cursor: pointer;
       transition: all var(--transition-fast);
+      /* Fix alignment issues */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
     }
 
     .lang-btn:hover {
@@ -201,6 +206,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       background: var(--bg-card);
       color: var(--accent-primary);
       box-shadow: var(--shadow-sm);
+      font-weight: 600;
     }
 
     .header__stats {
@@ -432,15 +438,15 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       
       .header__nav {
         padding: 2px;
-        flex: 1 1 auto;
-        min-width: 0;
-        justify-content: center;
+        flex: 0 1 auto; /* Don't grow, just shrink if needed */
+        margin: 0 auto; /* Center horizontally */
+        width: fit-content; /* Ensure background only wraps buttons */
       }
       
       .lang-btn {
-        padding: 5px 10px;
-        font-size: 0.6875rem;
-        min-height: 28px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        min-height: 32px;
       }
       
       .header__actions {

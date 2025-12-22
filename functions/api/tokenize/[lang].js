@@ -4,6 +4,8 @@
  * Uses Intl.Segmenter for word segmentation (built-in)
  */
 
+import { pinyin } from 'pinyin-pro';
+import { convert as romanizeKorean } from 'hangul-romanization';
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh']);
@@ -40,10 +42,35 @@ export async function onRequest(context) {
         const segmenter = new Intl.Segmenter(lang, { granularity: 'word' });
         const segments = [...segmenter.segment(text)];
 
-        // Convert to token format
+        // Convert to token format and add readings
         const tokens = segments
             .filter(seg => seg.isWordLike || seg.segment.trim())
-            .map(seg => ({ surface: seg.segment }));
+            .map(seg => {
+                const token = { surface: seg.segment };
+
+                // Add Chinese Pinyin
+                if (lang === 'zh') {
+                    try {
+                        const py = pinyin(token.surface, { toneType: 'symbol', type: 'string' });
+                        if (py !== token.surface) {
+                            token.pinyin = py;
+                        }
+                    } catch (e) {
+                        // Ignore errors
+                    }
+                }
+
+                // Add Korean Romanization
+                if (lang === 'ko') {
+                    try {
+                        token.romanization = romanizeKorean(token.surface);
+                    } catch (e) {
+                        // Ignore errors
+                    }
+                }
+
+                return token;
+            });
 
         return jsonResponse({ tokens });
 
