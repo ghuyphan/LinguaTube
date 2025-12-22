@@ -52,6 +52,20 @@ export class TranscriptService {
   constructor(private http: HttpClient) { }
 
   /**
+   * Reset all state signals.
+   * Call this when clearing the video or when a fresh start is needed.
+   */
+  reset(): void {
+    this.isLoading.set(false);
+    this.error.set(null);
+    this.isGeneratingAI.set(false);
+    this.captionSource.set(null);
+    // cancel any pending requests naturally by their subscription ending, 
+    // but we clear the map reference to be safe
+    this.pendingRequests.clear();
+  }
+
+  /**
    * Fetch transcript from YouTube video using Innertube API
    * Falls back to Whisper AI transcription if no captions available
    */
@@ -84,6 +98,12 @@ export class TranscriptService {
         }
 
         return this.generateWithWhisper(videoId);
+      }),
+      // Ensure loading state is cleared when observable completes or is unsubscribed
+      finalize(() => {
+        // We only clear isLoading here. 
+        // If it switched to AI generation, isGeneratingAI will be true, handled by generateWithWhisper
+        this.isLoading.set(false);
       })
     );
   }

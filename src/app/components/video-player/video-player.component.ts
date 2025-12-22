@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
@@ -106,8 +106,8 @@ import { Subscription } from 'rxjs';
                    (touchstart)="startSeeking($event)"
                    #progressBar>
                 <div class="progress-bg"></div>
-                <div class="progress-fill" [style.width.%]="(youtube.currentTime() / youtube.duration()) * 100"></div>
-                <div class="progress-handle" [style.left.%]="(youtube.currentTime() / youtube.duration()) * 100"></div>
+                <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
+                <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
               </div>
 
               <div class="controls-row">
@@ -117,7 +117,7 @@ import { Subscription } from 'rxjs';
 
                 <!-- Time Display -->
                 <div class="time-display">
-                  <span class="time-current">{{ formatTime(youtube.currentTime()) }}</span>
+                  <span class="time-current">{{ formatTime(displayTime()) }}</span>
                   <span class="time-separator">/</span>
                   <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
                 </div>
@@ -385,7 +385,7 @@ import { Subscription } from 'rxjs';
       cursor: pointer;
       transition: height 0.1s;
       border-radius: 2px;
-      margin-bottom: 4px;
+      /* removed margin-bottom to make controls closer */
     }
 
     .progress-container:hover {
@@ -626,6 +626,21 @@ export class VideoPlayerComponent implements OnDestroy {
   // UI State
   areControlsVisible = signal(true);
   isMuted = signal(false);
+
+  // Seeking State
+  isDragging = signal(false);
+  previewTime = signal(0);
+
+  displayTime = computed(() => {
+    return this.isDragging() ? this.previewTime() : this.youtube.currentTime();
+  });
+
+  progressPercentage = computed(() => {
+    const time = this.displayTime();
+    const duration = this.youtube.duration();
+    if (!duration) return 0;
+    return (time / duration) * 100;
+  });
 
   // Feedback animations
   rewindFeedback = signal(false);
@@ -952,12 +967,14 @@ export class VideoPlayerComponent implements OnDestroy {
     this.subtitles.cancelTokenization();
     this.youtube.reset();
     this.subtitles.clear();
+    this.transcript.reset(); // Crucial: clear loading/error states immediately
     this.videoUrl = '';
     this.error.set(null);
   }
 
   // Progress Bar Logic
   startSeeking(event: MouseEvent | TouchEvent) {
+    this.isDragging.set(true);
     this.updateSeek(event);
 
     // Bind to document to handle drag outside
@@ -967,6 +984,7 @@ export class VideoPlayerComponent implements OnDestroy {
     };
 
     const onUp = () => {
+      this.stopSeeking();
       document.removeEventListener('mousemove', onMove);
       document.removeEventListener('touchmove', onMove);
       document.removeEventListener('mouseup', onUp);
@@ -987,7 +1005,15 @@ export class VideoPlayerComponent implements OnDestroy {
     const offsetX = clientX - rect.left;
     const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
 
-    this.youtube.seekTo(percentage * this.youtube.duration());
+    // Just update preview time, don't seek video yet
+    this.previewTime.set(percentage * this.youtube.duration());
+  }
+
+  private stopSeeking() {
+    if (this.isDragging()) {
+      this.youtube.seekTo(this.previewTime());
+      this.isDragging.set(false);
+    }
   }
 
   formatTime(seconds: number): string {

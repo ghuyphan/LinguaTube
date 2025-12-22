@@ -44,7 +44,7 @@ import { SubtitleCue, Token } from '../../models';
           </div>
         } @else {
           <div class="subtitle-empty">
-            @if (transcript.isGeneratingAI()) {
+            @if (youtube.currentVideo() && transcript.isGeneratingAI()) {
               <div class="ai-generating">
                 <div class="ai-badge">
                   <app-icon name="sparkles" [size]="16" />
@@ -57,7 +57,7 @@ import { SubtitleCue, Token } from '../../models';
                 <p class="ai-title">Generating transcript...</p>
                 <p class="ai-hint">Using Whisper AI to transcribe audio</p>
               </div>
-            } @else if (transcript.isLoading()) {
+            } @else if (youtube.currentVideo() && transcript.isLoading()) {
               <div class="loading-indicator">
                 <app-icon name="loader" [size]="24" class="spin" />
                 <p>Fetching captions...</p>
@@ -169,6 +169,14 @@ import { SubtitleCue, Token } from '../../models';
       line-height: 2;
       text-align: center;
       word-break: keep-all;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      padding: 4px 12px;
+    }
+
+    .subtitle-text.is-looping {
+      box-shadow: 0 0 0 2px var(--accent-primary), 0 0 12px rgba(199, 62, 58, 0.4);
+      background: rgba(199, 62, 58, 0.05);
     }
 
     .current-subtitle.is-generating {
@@ -613,7 +621,7 @@ export class SubtitleDisplayComponent {
   isLoopEnabled = signal(false);
   loopCount = signal(0);
   maxLoops = signal(5); // 0 = infinite
-  private lastCueId = -1;
+  private loopTargetId = signal<number>(-1);
   private loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
   // Keyboard shortcut for loop toggle
@@ -662,37 +670,60 @@ export class SubtitleDisplayComponent {
     effect(() => {
       const currentCue = this.subtitles.currentCue();
       const currentTime = this.youtube.currentTime();
+      const targetId = this.loopTargetId();
 
-      if (!this.isLoopEnabled() || !currentCue) return;
+      if (!this.isLoopEnabled() || targetId === -1) return;
 
-      // Detect cue change (user clicked different subtitle or manual seek)
-      if (currentCue.id !== this.lastCueId && this.lastCueId !== -1) {
-        // User manually changed cue - disable loop
+      // If we don't have a current cue (e.g. gap between subtitles), do nothing yet
+      // unless we drifted too far.
+      if (!currentCue) {
+        // Option: Check if we are past the target cue's end time significantly?
+        // For now, let's rely on cue presence or time check.
+        return;
+      }
+
+      // 1. Detect if user manually seeked away or we drifted too far to a DIFFERENT, NON-ADJACENT cue
+      // We allow currentCue.id to be targetId OR targetId + 1 (the next one)
+      // If it is targetId + 1, it means we naturally played past the end.
+      if (currentCue.id !== targetId && currentCue.id !== targetId + 1) {
+        // User likely clicked a different cue. Disable loop.
         this.disableLoop();
         return;
       }
 
-      this.lastCueId = currentCue.id;
+      // 2. Check overlap/end condition
+      // If we are on the target cue, check if we reached end
+      // If we are on targetId + 1, we definitely reached end
+      let shouldLoop = false;
+      const targetCue = this.subtitles.subtitles().find(c => c.id === targetId);
 
-      // Check if we've reached the end of the current cue
-      if (currentTime >= currentCue.endTime - 0.1) {
+      if (!targetCue) {
+        this.disableLoop();
+        return;
+      }
+
+      const isPastEndTime = currentTime >= targetCue.endTime - 0.1;
+      const movedToNextCue = currentCue.id === targetId + 1;
+
+      if (isPastEndTime || movedToNextCue) {
+        shouldLoop = true;
+      }
+
+      if (shouldLoop) {
         const maxLoopsValue = this.maxLoops();
         const currentLoopCount = this.loopCount();
 
-        // Check if we should continue looping
         if (maxLoopsValue === 0 || currentLoopCount < maxLoopsValue) {
-          // Clear any existing timeout
-          if (this.loopTimeoutId) {
-            clearTimeout(this.loopTimeoutId);
+          // Debounce the seek to avoid rapid firing
+          if (!this.loopTimeoutId) {
+            this.loopTimeoutId = setTimeout(() => {
+              this.loopCount.update(c => c + 1);
+              this.youtube.seekTo(targetCue.startTime);
+              this.loopTimeoutId = null; // Reset timeout ref
+            }, 300);
           }
-
-          // Delay before seeking back
-          this.loopTimeoutId = setTimeout(() => {
-            this.loopCount.update(c => c + 1);
-            this.youtube.seekTo(currentCue.startTime);
-          }, 300);
         } else {
-          // Max loops reached - disable loop and let video continue
+          // Max loops reached
           this.disableLoop();
         }
       }
@@ -778,7 +809,7 @@ export class SubtitleDisplayComponent {
       this.loopCount.set(0);
       const currentCue = this.subtitles.currentCue();
       if (currentCue) {
-        this.lastCueId = currentCue.id;
+        this.loopTargetId.set(currentCue.id);
       }
     }
   }
@@ -786,7 +817,7 @@ export class SubtitleDisplayComponent {
   private disableLoop(): void {
     this.isLoopEnabled.set(false);
     this.loopCount.set(0);
-    this.lastCueId = -1;
+    this.loopTargetId.set(-1);
     if (this.loopTimeoutId) {
       clearTimeout(this.loopTimeoutId);
       this.loopTimeoutId = null;
