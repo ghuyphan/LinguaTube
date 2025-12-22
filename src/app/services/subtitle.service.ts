@@ -1,67 +1,58 @@
 import { Injectable, signal, computed } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { SubtitleCue, Token } from '../models';
 
-// Max cached tokenization entries (LRU eviction)
 const MAX_TOKEN_CACHE_SIZE = 500;
+const BATCH_CHUNK_SIZE = 50;
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubtitleService {
+  // State
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal<number>(-1);
   readonly isTokenizing = signal(false);
 
-  // Cache for tokenized text to avoid repeated API calls (LRU at 500 entries)
-  private tokenCache = new Map<string, Token[]>();
-
-  private cancellationRequested = signal(false);
-
+  // Computed
   readonly currentCue = computed(() => {
     const index = this.currentCueIndex();
     const subs = this.subtitles();
     return index >= 0 && index < subs.length ? subs[index] : null;
   });
 
-  constructor(private http: HttpClient) { }
+  readonly hasSubtitles = computed(() => this.subtitles().length > 0);
 
-  /**
-   * Add to cache with LRU eviction
-   */
-  private addToCache(key: string, tokens: Token[]): void {
-    // LRU eviction: remove oldest entry if at capacity
-    if (this.tokenCache.size >= MAX_TOKEN_CACHE_SIZE) {
-      const firstKey = this.tokenCache.keys().next().value;
-      if (firstKey) {
-        this.tokenCache.delete(firstKey);
-      }
-    }
-    this.tokenCache.set(key, tokens);
-  }
+  // Cache (LRU)
+  private tokenCache = new Map<string, Token[]>();
+
+  // Cancellation
+  private abortController: AbortController | null = null;
 
   /**
    * Batch tokenize all subtitle cues
-   * Collects unique texts, sends single API request per language, distributes tokens to cues
+   * Collects unique texts, sends API requests, distributes tokens to cues
    */
   async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko'): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
+    // Cancel any in-progress tokenization
+    this.cancelTokenization();
+
     this.isTokenizing.set(true);
-    this.cancellationRequested.set(false);
+    this.abortController = new AbortController();
 
     try {
-      // Collect unique texts that need tokenization
+      // Collect unique texts needing tokenization
       const uniqueTexts = new Map<string, number[]>(); // text -> cue indices
 
       cues.forEach((cue, index) => {
         const cacheKey = `${lang}:${cue.text}`;
-        if (this.tokenCache.has(cacheKey)) {
-          // Already cached, use cached tokens
-          cue.tokens = this.tokenCache.get(cacheKey);
-        } else {
-          // Need to tokenize
+        const cached = this.tokenCache.get(cacheKey);
+
+        if (cached) {
+          cue.tokens = cached;
+        } else if (cue.text.trim()) {
           if (!uniqueTexts.has(cue.text)) {
             uniqueTexts.set(cue.text, []);
           }
@@ -70,131 +61,75 @@ export class SubtitleService {
       });
 
       if (uniqueTexts.size === 0) {
-        // All already cached
         this.subtitles.set([...cues]);
         return;
       }
 
-      // Batch tokenize using server API
-      const textsToTokenize = Array.from(uniqueTexts.keys());
-      console.log(`[SubtitleService] Batch tokenizing ${textsToTokenize.length} unique texts for ${lang}`);
+      console.log(`[SubtitleService] Tokenizing ${uniqueTexts.size} unique texts (${lang})`);
 
-      // Send batch request (multiple texts in one call)
-      const tokenizedResults = await this.batchTokenize(textsToTokenize, lang);
+      // Batch tokenize
+      const textsToTokenize = Array.from(uniqueTexts.keys());
+      const results = await this.batchTokenize(textsToTokenize, lang);
 
       // Distribute tokens to cues
       textsToTokenize.forEach((text, i) => {
-        const tokens = tokenizedResults[i] || this.fallbackTokenize(text, lang);
+        const tokens = results[i] || this.fallbackTokenize(text, lang);
         const cacheKey = `${lang}:${text}`;
         this.addToCache(cacheKey, tokens);
 
-        // Apply to all cues with this text
-        const indices = uniqueTexts.get(text) || [];
-        indices.forEach(cueIndex => {
+        uniqueTexts.get(text)?.forEach(cueIndex => {
           cues[cueIndex].tokens = tokens;
         });
       });
 
-      // Trigger update
       this.subtitles.set([...cues]);
-      console.log(`[SubtitleService] Tokenization complete for ${cues.length} cues`);
+      console.log(`[SubtitleService] Tokenization complete`);
 
     } catch (error) {
-      console.error('[SubtitleService] Batch tokenization failed:', error);
-      // Fallback: apply basic tokenization to all cues
+      if ((error as Error).name === 'AbortError') {
+        console.log('[SubtitleService] Tokenization cancelled');
+        return;
+      }
+
+      console.error('[SubtitleService] Tokenization failed:', error);
+
+      // Apply fallback to all cues without tokens
       cues.forEach(cue => {
         if (!cue.tokens) {
           cue.tokens = this.fallbackTokenize(cue.text, lang);
         }
       });
       this.subtitles.set([...cues]);
+
     } finally {
       this.isTokenizing.set(false);
+      this.abortController = null;
     }
   }
 
+  /**
+   * Cancel ongoing tokenization
+   */
   cancelTokenization(): void {
-    if (this.isTokenizing()) {
-      console.log('[SubtitleService] Tokenization cancelled');
-      this.cancellationRequested.set(true);
-      this.isTokenizing.set(false);
+    if (this.abortController) {
+      this.abortController.abort();
+      this.abortController = null;
     }
+    this.isTokenizing.set(false);
   }
 
   /**
-   * Batch tokenize multiple texts in one API call
-   */
-  private async batchTokenize(texts: string[], lang: 'ja' | 'zh' | 'ko'): Promise<Token[][]> {
-    const results: Token[][] = [];
-
-    // Process in chunks to avoid payload limits (max 50 per batch)
-    const chunkSize = 50;
-    for (let i = 0; i < texts.length; i += chunkSize) {
-      const chunk = texts.slice(i, i + chunkSize);
-
-      if (this.cancellationRequested()) {
-        throw new Error('Tokenization cancelled');
-      }
-
-      // Tokenize each text in chunk (could be optimized further with a true batch endpoint)
-      const chunkResults = await Promise.all(
-        chunk.map(text => this.tokenizeSingle(text, lang))
-      );
-      results.push(...chunkResults);
-    }
-
-    return results;
-  }
-
-  /**
-   * Tokenize single text via API
-   */
-  private async tokenizeSingle(text: string, lang: 'ja' | 'zh' | 'ko'): Promise<Token[]> {
-    try {
-      const response = await fetch(`/api/tokenize/${lang}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text })
-      });
-
-      if (!response.ok) throw new Error('Tokenization failed');
-
-      const data = await response.json();
-      return data.tokens || [];
-    } catch {
-      return this.fallbackTokenize(text, lang);
-    }
-  }
-
-  /**
-   * Fast fallback tokenization (client-side)
-   */
-  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko'): Token[] {
-    if (lang === 'zh') {
-      return text.split('').map(char => ({ surface: char }));
-    }
-    if (lang === 'ko') {
-      // Korean is space-delimited, split by spaces and filter empty
-      return text.split(/\s+/).filter(w => w.trim()).map(word => ({ surface: word }));
-    }
-    return this.tokenizeJapaneseBasic(text);
-  }
-
-
-
-  /**
-   * Get tokens for a cue (uses pre-computed tokens from cue, falls back to basic)
+   * Get tokens for a cue (pre-computed or fallback)
    */
   getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko'): Token[] {
-    // Use pre-computed tokens if available
-    if (cue.tokens && cue.tokens.length > 0) {
+    if (cue.tokens?.length) {
       return cue.tokens;
     }
 
-    // Fallback to cached or basic tokenization
     const cacheKey = `${lang}:${cue.text}`;
-    if (this.tokenCache.has(cacheKey)) {
-      return this.tokenCache.get(cacheKey)!;
+    const cached = this.tokenCache.get(cacheKey);
+    if (cached) {
+      return cached;
     }
 
     return this.fallbackTokenize(cue.text, lang);
@@ -202,17 +137,17 @@ export class SubtitleService {
 
   /**
    * Update current cue based on video time
-   * Implements "sticky" subtitles - if no active cue, show the most recent one that ended
+   * Implements "sticky" subtitles - shows most recent cue if no active one
    */
   updateCurrentCue(currentTime: number): void {
     const subs = this.subtitles();
+
     if (subs.length === 0) {
       this.currentCueIndex.set(-1);
       return;
     }
 
-    // First, try to find an active cue (current time is within start/end)
-    // Use reverse loop to prefer the most recently started cue for overlapping subtitles
+    // Find active cue (prefer later one for overlaps)
     let index = -1;
     for (let i = subs.length - 1; i >= 0; i--) {
       if (currentTime >= subs[i].startTime && currentTime <= subs[i].endTime) {
@@ -221,13 +156,10 @@ export class SubtitleService {
       }
     }
 
-    // If no active cue, implement "sticky" behavior:
-    // Find the last subtitle that ended before current time (but only if we've started playing past first subtitle)
+    // Sticky behavior: show last ended cue if no active one
     if (index === -1 && currentTime > 0) {
       for (let i = subs.length - 1; i >= 0; i--) {
         if (subs[i].endTime <= currentTime) {
-          // Found a subtitle that already ended - show it as "sticky"
-          // But only if the next subtitle hasn't started yet
           const nextSub = subs[i + 1];
           if (!nextSub || currentTime < nextSub.startTime) {
             index = i;
@@ -241,90 +173,132 @@ export class SubtitleService {
   }
 
   /**
-   * Clear all subtitles
+   * Clear all subtitles and reset state
    */
   clear(): void {
+    this.cancelTokenization();
     this.subtitles.set([]);
     this.currentCueIndex.set(-1);
   }
 
-  // Private helpers
-
-  private parseTimestamp(str: string): number {
-    // Format: 00:00:00,000 or 00:00:00.000
-    const match = str.match(/(\d{1,2}):(\d{2}):(\d{2})[,.](\d{3})/);
-    if (!match) return NaN;
-
-    const [, hours, minutes, seconds, ms] = match;
-    return (
-      parseInt(hours) * 3600 +
-      parseInt(minutes) * 60 +
-      parseInt(seconds) +
-      parseInt(ms) / 1000
-    );
+  /**
+   * Clear token cache
+   */
+  clearCache(): void {
+    this.tokenCache.clear();
   }
 
-  private parseASSTimestamp(str: string): number {
-    // Format: 0:00:00.00
-    const match = str.trim().match(/(\d+):(\d{2}):(\d{2})\.(\d{2})/);
-    if (!match) return NaN;
+  // ============================================================================
+  // Private Methods
+  // ============================================================================
 
-    const [, hours, minutes, seconds, cs] = match;
-    return (
-      parseInt(hours) * 3600 +
-      parseInt(minutes) * 60 +
-      parseInt(seconds) +
-      parseInt(cs) / 100
-    );
+  private addToCache(key: string, tokens: Token[]): void {
+    if (this.tokenCache.size >= MAX_TOKEN_CACHE_SIZE) {
+      // LRU eviction
+      const firstKey = this.tokenCache.keys().next().value;
+      if (firstKey) this.tokenCache.delete(firstKey);
+    }
+    this.tokenCache.set(key, tokens);
+  }
+
+  private async batchTokenize(texts: string[], lang: 'ja' | 'zh' | 'ko'): Promise<Token[][]> {
+    const results: Token[][] = [];
+    const signal = this.abortController?.signal;
+
+    for (let i = 0; i < texts.length; i += BATCH_CHUNK_SIZE) {
+      if (signal?.aborted) throw new DOMException('Aborted', 'AbortError');
+
+      const chunk = texts.slice(i, i + BATCH_CHUNK_SIZE);
+      const chunkResults = await Promise.all(
+        chunk.map(text => this.tokenizeSingle(text, lang, signal))
+      );
+      results.push(...chunkResults);
+    }
+
+    return results;
+  }
+
+  private async tokenizeSingle(
+    text: string,
+    lang: 'ja' | 'zh' | 'ko',
+    signal?: AbortSignal
+  ): Promise<Token[]> {
+    try {
+      const response = await fetch(`/api/tokenize/${lang}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+        signal
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      return data.tokens || [];
+
+    } catch (error) {
+      if ((error as Error).name === 'AbortError') throw error;
+      return this.fallbackTokenize(text, lang);
+    }
   }
 
   /**
-   * Basic Japanese tokenization (fallback) - groups by character type
+   * Fast client-side fallback tokenization
    */
-  private tokenizeJapaneseBasic(text: string): Token[] {
+  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko'): Token[] {
+    if (!text.trim()) return [];
+
+    switch (lang) {
+      case 'zh':
+        // Chinese: character by character
+        return text.split('').map(char => ({ surface: char }));
+
+      case 'ko':
+        // Korean: space-delimited
+        return text.split(/\s+/).filter(Boolean).map(word => ({ surface: word }));
+
+      case 'ja':
+      default:
+        // Japanese: group by character type
+        return this.tokenizeByCharType(text);
+    }
+  }
+
+  /**
+   * Group text by character type (for Japanese)
+   */
+  private tokenizeByCharType(text: string): Token[] {
     const tokens: Token[] = [];
-    let currentWord = '';
+    let current = '';
     let currentType = '';
 
     for (const char of text) {
       const type = this.getCharType(char);
 
-      if (type !== currentType && currentWord) {
-        tokens.push({ surface: currentWord });
-        currentWord = '';
+      if (type !== currentType && current) {
+        tokens.push({ surface: current });
+        current = '';
       }
 
-      currentWord += char;
+      current += char;
       currentType = type;
     }
 
-    if (currentWord) {
-      tokens.push({ surface: currentWord });
+    if (current) {
+      tokens.push({ surface: current });
     }
 
     return tokens;
   }
 
-  private cleanSubtitleText(text: string): string {
-    return text
-      .replace(/<[^>]+>/g, '')     // Remove HTML tags
-      .replace(/\{[^}]*\}/g, '')   // Remove style tags
-      .trim();
-  }
-
   private getCharType(char: string): string {
     const code = char.charCodeAt(0);
 
-    // Hiragana
     if (code >= 0x3040 && code <= 0x309F) return 'hiragana';
-    // Katakana
     if (code >= 0x30A0 && code <= 0x30FF) return 'katakana';
-    // CJK Unified Ideographs (Kanji/Hanzi)
     if (code >= 0x4E00 && code <= 0x9FFF) return 'kanji';
-    // ASCII
     if (code >= 0x0020 && code <= 0x007F) return 'ascii';
-    // Punctuation
-    if (/[。、！？「」『』（）]/.test(char)) return 'punctuation';
+    if (/[。、！？「」『』（）・]/.test(char)) return 'punctuation';
 
     return 'other';
   }
