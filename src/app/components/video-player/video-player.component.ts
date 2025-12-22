@@ -419,8 +419,10 @@ import { Subscription } from 'rxjs';
       transition: opacity 0.1s;
     }
 
-    .progress-container:hover .progress-handle {
-      opacity: 1;
+    @media (hover: hover) {
+      .progress-container:hover .progress-handle {
+        opacity: 1;
+      }
     }
 
     /* Controls Row */
@@ -443,9 +445,11 @@ import { Subscription } from 'rxjs';
       transition: all 0.2s;
     }
 
-    .control-btn:hover {
-      background: rgba(255,255,255,0.15);
-      color: white;
+    @media (hover: hover) {
+      .control-btn:hover {
+        background: rgba(255,255,255,0.15);
+        color: white;
+      }
     }
     
     .play-btn {
@@ -507,7 +511,7 @@ import { Subscription } from 'rxjs';
       /* Larger progress bar for easier scrubbing */
       .progress-container {
         height: 8px;
-        margin-bottom: var(--space-sm);
+        margin-bottom: 2px;
       }
       
       .progress-handle {

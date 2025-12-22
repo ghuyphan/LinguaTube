@@ -199,8 +199,10 @@ a {
   transition: color var(--transition-fast);
 }
 
-a:hover {
-  color: var(--accent-secondary);
+@media (hover: hover) {
+  a:hover {
+    color: var(--accent-secondary);
+  }
 }
 
 /* Buttons */
@@ -231,9 +233,11 @@ a:hover {
   color: var(--text-inverse);
 }
 
-.btn-primary:hover:not(:disabled) {
-  background: #a83532;
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .btn-primary:hover:not(:disabled) {
+    background: #a83532;
+    transform: translateY(-1px);
+  }
 }
 
 .btn-secondary {
@@ -242,9 +246,11 @@ a:hover {
   border: 1px solid var(--border-color);
 }
 
-.btn-secondary:hover:not(:disabled) {
-  background: var(--bg-card);
-  box-shadow: var(--shadow-sm);
+@media (hover: hover) {
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .btn-ghost {
@@ -252,9 +258,11 @@ a:hover {
   color: var(--text-secondary);
 }
 
-.btn-ghost:hover:not(:disabled) {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
+@media (hover: hover) {
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
 }
 
 .btn-icon {
@@ -344,8 +352,10 @@ select {
   border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+@media (hover: hover) {
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+  }
 }
 
 /* Utility classes */
@@ -408,9 +418,11 @@ select {
   display: inline;
 }
 
-.word:hover {
-  background: var(--accent-tertiary);
-  color: var(--text-primary);
+@media (hover: hover) {
+  .word:hover {
+    background: var(--accent-tertiary);
+    color: var(--text-primary);
+  }
 }
 
 .word--new {
@@ -644,9 +656,11 @@ ruby rt {
   height: var(--icon-size-lg);
 }
 
-.bottom-nav__item:hover {
-  color: var(--text-primary);
-  background: var(--bg-secondary);
+@media (hover: hover) {
+  .bottom-nav__item:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+  }
 }
 
 .bottom-nav__item.active {
@@ -799,15 +813,18 @@ body {
   position: relative;
 }
 
-.toggle-btn:hover {
-  border-color: var(--accent-primary);
-  color: var(--text-primary);
+@media (hover: hover) {
+  .toggle-btn:hover {
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+  }
 }
 
 .toggle-btn.active {
-  background: var(--accent-primary);
+  background: var(--bg-card);
   border-color: var(--accent-primary);
-  color: white;
+  color: var(--accent-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .toggle-btn__badge {

@@ -118,7 +118,7 @@ import { SubtitleCue, Token } from '../../models';
           (click)="toggleReading()"
           [title]="'Toggle ' + readingLabel()"
         >
-          <app-icon [name]="showReading() ? 'eye' : 'eye-off'" [size]="16" />
+          <app-icon name="type" [size]="16" />
           <span>{{ readingLabel() }}</span>
         </button>
 
@@ -320,9 +320,11 @@ import { SubtitleCue, Token } from '../../models';
       display: inline;
     }
 
-    .word:hover {
-      background: var(--accent-tertiary);
-      transform: scale(1.02);
+    @media (hover: hover) {
+      .word:hover {
+        background: var(--accent-tertiary);
+        transform: scale(1.02);
+      }
     }
 
     .word--saved {
@@ -346,8 +348,9 @@ import { SubtitleCue, Token } from '../../models';
     }
 
     ruby rt {
-      font-size: 0.5em;
+      font-size: 0.75em;
       color: var(--text-muted);
+      padding-bottom: 4px; /* Add space between reading and text */
     }
 
     /* Subtitle list */
@@ -379,8 +382,10 @@ import { SubtitleCue, Token } from '../../models';
       border-bottom: none;
     }
 
-    .cue-item:hover {
-      background: var(--bg-secondary);
+    @media (hover: hover) {
+      .cue-item:hover {
+        background: var(--bg-secondary);
+      }
     }
 
     .cue-item--active {
@@ -388,8 +393,10 @@ import { SubtitleCue, Token } from '../../models';
       color: white;
     }
 
-    .cue-item--active:hover {
-      background: var(--accent-primary);
+    @media (hover: hover) {
+      .cue-item--active:hover {
+        background: var(--accent-primary);
+      }
     }
 
     .cue-item--past {
@@ -459,14 +466,16 @@ import { SubtitleCue, Token } from '../../models';
       font-size: 0.9375rem;
     }
 
-    .font-btn:hover {
-      color: var(--text-primary);
+    @media (hover: hover) {
+      .font-btn:hover {
+        color: var(--text-primary);
+      }
     }
 
     .font-btn.active {
       background: var(--bg-card);
       color: var(--accent-primary);
-      box-shadow: var(--shadow-sm);
+      box-shadow: none;
     }
 
 
@@ -477,13 +486,7 @@ import { SubtitleCue, Token } from '../../models';
     }
 
     @media (max-width: 640px) {
-      .subtitle-panel {
-        border-radius: 0;
-        margin: 0 calc(var(--mobile-padding) * -1);
-        width: calc(100% + var(--mobile-padding) * 2);
-        border-left: none;
-        border-right: none;
-      }
+
 
       .current-subtitle {
         min-height: 120px;
@@ -547,20 +550,38 @@ import { SubtitleCue, Token } from '../../models';
 
       .toggle-btn {
         min-height: 40px;
-        padding: 8px 14px;
+        padding: 0;
+        width: 40px;
+        justify-content: center;
         font-size: 0.8125rem;
-        white-space: nowrap;
         flex-shrink: 0;
+      }
+
+      .toggle-btn span:not(.toggle-btn__badge) {
+        display: none;
       }
 
       .font-controls {
         flex-shrink: 0;
         margin-left: auto;
+        padding: 0;
+        gap: 1px;
       }
 
       .font-btn {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
+        border-radius: 0;
+      }
+      
+      .font-btn:first-child {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+
+      .font-btn:last-child {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
       }
     }
 

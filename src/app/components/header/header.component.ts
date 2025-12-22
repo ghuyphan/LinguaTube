@@ -200,8 +200,10 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       flex: 0 0 auto;
     }
 
-    .lang-btn:hover {
-      color: var(--text-primary);
+    @media (hover: hover) {
+      .lang-btn:hover {
+        color: var(--text-primary);
+      }
     }
 
     .lang-btn.active {
@@ -272,9 +274,11 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       white-space: nowrap;
     }
     
-    .google-btn:hover {
-      background: var(--bg-secondary);
-      border-color: var(--text-muted);
+    @media (hover: hover) {
+      .google-btn:hover {
+        background: var(--bg-secondary);
+        border-color: var(--text-muted);
+      }
     }
     
     .google-logo {
@@ -304,8 +308,10 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       transition: border-color var(--transition-fast);
     }
     
-    .user-avatar:hover {
-      border-color: var(--accent-primary);
+    @media (hover: hover) {
+      .user-avatar:hover {
+        border-color: var(--accent-primary);
+      }
     }
     
     .user-dropdown {
@@ -366,9 +372,11 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       transition: background var(--transition-fast);
     }
     
-    .dropdown-btn:hover {
-      background: var(--bg-secondary);
-      color: var(--text-primary);
+    @media (hover: hover) {
+      .dropdown-btn:hover {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+      }
     }
 
     /* Mobile: Tablet and below */
@@ -439,10 +447,13 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .header__nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 2px;
-        flex: 0 1 auto; /* Don't grow, just shrink if needed */
-        margin: 0 auto; /* Center horizontally */
-        width: fit-content; /* Ensure background only wraps buttons */
+        margin: 0;
+        width: fit-content;
+        z-index: 10;
       }
       
       .lang-btn {
@@ -454,14 +465,17 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       .header__actions {
         gap: 4px;
         flex-shrink: 0;
+        margin-left: auto; /* Push to right since nav is absolute */
       }
       
       .google-btn {
         padding: 6px;
-        border-radius: 50%;
+        border-radius: 50% !important;
         width: 32px;
         height: 32px;
         justify-content: center;
+        gap: 0;
+        order: 2; /* Switch order with theme button */
       }
       
       .google-btn-text {
@@ -471,6 +485,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       .theme-btn {
         width: 32px;
         height: 32px;
+        order: 1; /* Switch order with google button */
       }
       
       .user-avatar {
