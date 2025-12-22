@@ -568,11 +568,16 @@ async function tryThirdPartyAPIs(videoId) {
         { url: `https://pipedapi.adminforge.de/streams/${videoId}`, name: 'adminforge', type: 'piped' }
     ];
 
+    // Track controllers to abort losers
+    const controllers = [];
+
     // Helper to process a single API
     const checkApi = async (api) => {
+        const controller = new AbortController();
+        controllers.push(controller);
+
         try {
             log('Starting check for', api.name);
-            const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s max per request
 
             const response = await fetch(api.url, {
@@ -679,9 +684,15 @@ async function tryThirdPartyAPIs(videoId) {
     try {
         // We limit concurrency slightly or just blast them all? 10 requests is fine for CF.
         const result = await Promise.any(apis.map(api => checkApi(api)));
+
+        // CLEANUP: Abort all other pending requests immediately
+        controllers.forEach(c => c.abort());
+
         return result;
     } catch (aggregateError) {
         log('All third-party APIs failed');
+        // Ensure cleanup even on failure
+        controllers.forEach(c => c.abort());
         return { success: false, hasContent: false, data: {} };
     }
 }
