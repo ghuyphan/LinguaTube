@@ -87,6 +87,22 @@ export class AuthService {
     }
 
     /**
+     * Trigger sign-in flow (for custom button)
+     * Shows Google One-Tap prompt with user interaction
+     */
+    signIn(): void {
+        if (!this.clientId || typeof google === 'undefined') return;
+
+        // Show the Google One-Tap prompt with explicit user_select to show account chooser
+        google.accounts.id.prompt((notification: any) => {
+            // If the user dismissed or skipped, the notification will have a reason
+            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                console.log('[Auth] One-Tap not displayed, reason:', notification.getNotDisplayedReason?.() || notification.getSkippedReason?.());
+            }
+        });
+    }
+
+    /**
      * Sign out
      */
     signOut(): void {
