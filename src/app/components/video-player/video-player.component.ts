@@ -550,6 +550,45 @@ export class VideoPlayerComponent implements OnDestroy {
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
   @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
 
+  // Keyboard controls for video player
+  @HostListener('document:keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    // Only handle keyboard events when video is loaded
+    if (!this.youtube.currentVideo()) return;
+
+    // Don't intercept if user is typing in an input field
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
+      return;
+    }
+
+    switch (event.code) {
+      case 'Space':
+        event.preventDefault(); // Prevent page scroll
+        this.togglePlay();
+        break;
+      case 'ArrowLeft':
+        event.preventDefault();
+        this.seekRelative(-5);
+        break;
+      case 'ArrowRight':
+        event.preventDefault();
+        this.seekRelative(5);
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        this.youtube.setVolume(Math.min(100, this.youtube.getVolume() + 10));
+        break;
+      case 'ArrowDown':
+        event.preventDefault();
+        this.youtube.setVolume(Math.max(0, this.youtube.getVolume() - 10));
+        break;
+      case 'KeyM':
+        this.toggleMute();
+        break;
+    }
+  }
+
   // Hide controls when clicking outside video player
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
