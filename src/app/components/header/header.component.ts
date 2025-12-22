@@ -366,7 +366,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     /* Mobile: Tablet and below */
     @media (max-width: 768px) {
       .header {
-        padding: 0 16px; /* Consistent 16px padding on both sides */
+        padding: 0 var(--mobile-padding);
         height: 52px;
         gap: var(--space-sm);
       }
@@ -376,13 +376,16 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
 
       .header__nav {
-        margin: 0 auto; /* Center with auto margins instead of absolute */
+        margin: 0 auto;
         flex: 0 1 auto;
+        padding: 2px;
+        gap: 1px;
       }
       
       .lang-btn {
-        padding: 6px 10px;
-        font-size: 0.75rem;
+        padding: 5px 10px;
+        font-size: 0.6875rem;
+        min-height: 28px;
       }
       
       .header__actions {

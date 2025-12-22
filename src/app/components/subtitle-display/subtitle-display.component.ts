@@ -1,4 +1,4 @@
-import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService } from '../../services';
@@ -17,7 +17,9 @@ import { SubtitleCue, Token } from '../../models';
            [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
            [class.is-generating]="transcript.isGeneratingAI()">
         @if (subtitles.currentCue(); as cue) {
-          <div class="subtitle-text" [class]="'text-' + settings.settings().language">
+          <div class="subtitle-text" 
+               [class]="'text-' + settings.settings().language"
+               [class.is-looping]="isLoopEnabled()">
             @if (subtitles.isTokenizing()) {
               <!-- Show raw text while tokenizing -->
               <span class="word">{{ cue.text }}</span>
@@ -95,9 +97,23 @@ import { SubtitleCue, Token } from '../../models';
 
       <!-- Controls -->
       <div class="subtitle-controls">
+        <!-- Loop Toggle -->
+        <button 
+          class="toggle-btn"
+          [class.active]="isLoopEnabled()"
+          (click)="toggleLoop()"
+          title="Toggle segment loop (L)"
+        >
+          <app-icon name="repeat" [size]="16" />
+          <span>Loop</span>
+          @if (isLoopEnabled() && loopCount() > 0) {
+            <span class="toggle-btn__badge">{{ loopCount() }}/{{ maxLoops() }}</span>
+          }
+        </button>
+
         <!-- Reading Toggle -->
         <button 
-          class="reading-toggle"
+          class="toggle-btn"
           [class.active]="showReading()"
           (click)="toggleReading()"
           [title]="'Toggle ' + readingLabel()"
@@ -405,8 +421,9 @@ import { SubtitleCue, Token } from '../../models';
     .subtitle-controls {
       display: flex;
       align-items: center;
-      gap: var(--space-md);
+      gap: var(--space-sm);
       padding: var(--space-sm) var(--space-md);
+      flex-wrap: wrap;
     }
 
     .font-controls {
@@ -452,33 +469,6 @@ import { SubtitleCue, Token } from '../../models';
       box-shadow: var(--shadow-sm);
     }
 
-    /* Reading Toggle */
-    .reading-toggle {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 6px 10px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-secondary);
-      color: var(--text-muted);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-
-    .reading-toggle:hover {
-      border-color: var(--accent-primary);
-      color: var(--text-primary);
-    }
-
-    .reading-toggle.active {
-      background: var(--accent-primary);
-      border-color: var(--accent-primary);
-      color: white;
-    }
-
 
 
     @keyframes pulse {
@@ -488,54 +478,101 @@ import { SubtitleCue, Token } from '../../models';
 
     @media (max-width: 640px) {
       .subtitle-panel {
-        border-radius: var(--border-radius-lg);
+        border-radius: 0;
+        margin: 0 calc(var(--mobile-padding) * -1);
+        width: calc(100% + var(--mobile-padding) * 2);
+        border-left: none;
+        border-right: none;
+      }
+
+      .current-subtitle {
+        min-height: 120px;
+        padding: var(--space-lg) var(--mobile-padding);
       }
 
       .subtitle-text {
-        font-size: 1.125rem;
-        line-height: 1.6;
+        font-size: 1.25rem;
+        line-height: 1.8;
       }
 
       .current-subtitle--small .subtitle-text {
-        font-size: 0.9375rem;
+        font-size: 1.0625rem;
       }
 
       .current-subtitle--large .subtitle-text {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
 
+      /* Words need bigger touch targets */
       .word {
-        padding: 2px 4px;
-        margin: 1px;
-        min-height: auto;
+        padding: 4px 6px;
+        margin: 2px;
+        border-radius: 6px;
+        display: inline-block;
+        min-height: 32px;
+        line-height: 1.4;
       }
 
       .subtitle-list {
-        max-height: 250px;
+        max-height: 200px;
       }
 
       .cue-item {
-        padding: var(--space-sm);
-        min-height: auto;
-        font-size: 0.8125rem;
+        padding: var(--space-md) var(--mobile-padding);
+        min-height: 56px;
       }
 
+      .cue-time {
+        font-size: 0.75rem;
+        min-width: 48px;
+      }
+
+      .cue-text {
+        font-size: 0.9375rem;
+        line-height: 1.5;
+      }
+
+      /* Controls row */
       .subtitle-controls {
-        flex-wrap: wrap;
+        padding: var(--space-sm) var(--mobile-padding);
         gap: var(--space-sm);
-        padding: var(--space-sm);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .subtitle-controls::-webkit-scrollbar {
+        display: none;
+      }
+
+      .toggle-btn {
+        min-height: 40px;
+        padding: 8px 14px;
+        font-size: 0.8125rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .font-controls {
+        flex-shrink: 0;
+        margin-left: auto;
+      }
+
+      .font-btn {
+        width: 36px;
+        height: 36px;
       }
     }
 
     @media (max-width: 480px) {
       .current-subtitle {
-        min-height: 80px;
+        min-height: 100px;
         padding: var(--space-md);
       }
       
       .subtitle-text {
         font-size: 1.125rem;
-        line-height: 1.5;
+        line-height: 1.6;
       }
     }
   `]
@@ -550,6 +587,30 @@ export class SubtitleDisplayComponent {
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
+
+  // Loop feature state
+  isLoopEnabled = signal(false);
+  loopCount = signal(0);
+  maxLoops = signal(5); // 0 = infinite
+  private lastCueId = -1;
+  private loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
+
+  // Keyboard shortcut for loop toggle
+  @HostListener('document:keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    // Only handle when subtitles are loaded
+    if (this.subtitles.subtitles().length === 0) return;
+
+    // Don't intercept if user is typing in an input field
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
+      return;
+    }
+
+    if (event.code === 'KeyL') {
+      this.toggleLoop();
+    }
+  }
 
   // Computed signal for reading display
   showReading = computed(() => {
@@ -573,6 +634,46 @@ export class SubtitleDisplayComponent {
       if (currentCue && this.subtitleList?.nativeElement) {
         // Use timeout to allow DOM update (class changes) before measuring
         setTimeout(() => this.scrollToActiveCue(currentCue.id), 0);
+      }
+    });
+
+    // Segment loop effect
+    effect(() => {
+      const currentCue = this.subtitles.currentCue();
+      const currentTime = this.youtube.currentTime();
+
+      if (!this.isLoopEnabled() || !currentCue) return;
+
+      // Detect cue change (user clicked different subtitle or manual seek)
+      if (currentCue.id !== this.lastCueId && this.lastCueId !== -1) {
+        // User manually changed cue - disable loop
+        this.disableLoop();
+        return;
+      }
+
+      this.lastCueId = currentCue.id;
+
+      // Check if we've reached the end of the current cue
+      if (currentTime >= currentCue.endTime - 0.1) {
+        const maxLoopsValue = this.maxLoops();
+        const currentLoopCount = this.loopCount();
+
+        // Check if we should continue looping
+        if (maxLoopsValue === 0 || currentLoopCount < maxLoopsValue) {
+          // Clear any existing timeout
+          if (this.loopTimeoutId) {
+            clearTimeout(this.loopTimeoutId);
+          }
+
+          // Delay before seeking back
+          this.loopTimeoutId = setTimeout(() => {
+            this.loopCount.update(c => c + 1);
+            this.youtube.seekTo(currentCue.startTime);
+          }, 300);
+        } else {
+          // Max loops reached - disable loop and let video continue
+          this.disableLoop();
+        }
       }
     });
   }
@@ -641,7 +742,34 @@ export class SubtitleDisplayComponent {
   }
 
   seekToCue(cue: SubtitleCue): void {
+    // Disable loop when user manually selects a different cue
+    if (this.isLoopEnabled()) {
+      this.disableLoop();
+    }
     this.youtube.seekTo(cue.startTime);
+  }
+
+  toggleLoop(): void {
+    if (this.isLoopEnabled()) {
+      this.disableLoop();
+    } else {
+      this.isLoopEnabled.set(true);
+      this.loopCount.set(0);
+      const currentCue = this.subtitles.currentCue();
+      if (currentCue) {
+        this.lastCueId = currentCue.id;
+      }
+    }
+  }
+
+  private disableLoop(): void {
+    this.isLoopEnabled.set(false);
+    this.loopCount.set(0);
+    this.lastCueId = -1;
+    if (this.loopTimeoutId) {
+      clearTimeout(this.loopTimeoutId);
+      this.loopTimeoutId = null;
+    }
   }
 
   formatTime(seconds: number): string {

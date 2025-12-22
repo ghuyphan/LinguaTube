@@ -494,24 +494,108 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService } f
     @media (max-width: 640px) {
       .video-container {
         border-radius: 0;
-        margin: 0 calc(var(--space-lg) * -1);
-        width: calc(100% + var(--space-lg) * 2);
+        margin: 0 calc(var(--mobile-padding) * -1);
+        width: calc(100% + var(--mobile-padding) * 2);
       }
       
       .custom-controls {
-        padding: var(--space-sm) var(--space-lg);
+        padding: var(--space-md) var(--mobile-padding);
+        padding-bottom: calc(var(--space-md) + 4px);
+      }
+      
+      /* Larger progress bar for easier scrubbing */
+      .progress-container {
+        height: 8px;
+        margin-bottom: var(--space-sm);
+      }
+      
+      .progress-handle {
+        width: 20px;
+        height: 20px;
+        opacity: 1; /* Always visible on mobile */
       }
       
       .control-btn {
-        padding: 8px; /* Larger touch target */
+        width: var(--touch-target-min);
+        height: var(--touch-target-min);
+        border-radius: 10px;
+      }
+      
+      .play-btn {
+        width: 48px;
+        height: 48px;
+      }
+      
+      .time-display {
+        font-size: 0.8125rem;
+      }
+      
+      .controls-row {
+        gap: var(--space-sm);
       }
       
       .video-input {
-        padding: var(--space-md);
+        padding: var(--mobile-padding);
+        border-radius: var(--mobile-card-radius);
+      }
+      
+      .input-group {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+      
+      .input-wrapper {
+        width: 100%;
+      }
+      
+      .url-input {
+        height: 48px;
+        font-size: 16px; /* Prevents iOS zoom */
+        border-radius: 10px;
+        padding-left: var(--touch-target-min);
+      }
+      
+      .input-icon {
+        left: 14px;
+      }
+      
+      .load-btn {
+        width: 100%;
+        height: 48px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      
+      /* Video info */
+      .video-info {
+        padding: var(--space-md) 0;
+      }
+      
+      .video-title {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      
+      .video-channel {
+        font-size: 0.8125rem;
+      }
+      
+      /* Larger tap zones on mobile */
+      .zone.left, .zone.right {
+        width: 35%;
+      }
+      
+      .zone.center {
+        width: 30%;
+      }
+      
+      .feedback-icon {
+        padding: 20px;
       }
     }
     
-    /* Mobile (phone-sized) - container uses --space-md padding on ≤480px */
+    /* Mobile (phone-sized) */
     @media (max-width: 480px) {
       .video-container {
         margin: 0 calc(var(--space-md) * -1);
