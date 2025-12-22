@@ -353,26 +353,33 @@ import { SubtitleCue, Token } from '../../models';
 
     ruby {
       ruby-align: center;
+      ruby-position: over;
+      display: inline;
     }
 
     ruby rt {
-      font-size: 0.75em;
+      font-size: 0.6em;
       color: var(--text-muted);
-      padding-bottom: 4px;
+      text-align: center;
+      ruby-align: center;
+      font-weight: 400;
     }
 
     /* Japanese furigana - smaller and tighter */
+    .text-ja ruby {
+      ruby-overhang: none;
+    }
+    
     .text-ja ruby rt {
-      font-size: 0.5em;
-      font-weight: 400;
-      padding-bottom: 2px;
-      letter-spacing: 0;
+      font-size: 0.45em;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     /* Chinese/Korean readings - larger for romanized text */
     .text-zh ruby rt,
     .text-ko ruby rt {
-      font-size: 0.65em;
+      font-size: 0.55em;
       font-weight: 500;
       letter-spacing: 0.02em;
     }

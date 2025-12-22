@@ -34,9 +34,12 @@ interface InnertubeResponse {
 }
 
 // Minimum gap between cues to consider them separate (in seconds)
-const MIN_CUE_GAP = 0.1;
+// Increased for AI transcripts which often have closely-spaced segments
+const MIN_CUE_GAP = 0.5;
 // Minimum duration for a cue (in seconds)
-const MIN_CUE_DURATION = 0.3;
+const MIN_CUE_DURATION = 0.5;
+// Maximum duration for a single cue (prevents overly long sticky subtitles)
+const MAX_CUE_DURATION = 10;
 
 @Injectable({
   providedIn: 'root'
@@ -344,7 +347,7 @@ export class TranscriptService {
 
     return prevText.includes(currText) ||
       currText.includes(prevText) ||
-      this.textSimilarity(prevText, currText) > 0.7;
+      this.textSimilarity(prevText, currText) > 0.5;
   }
 
   /**
@@ -391,10 +394,23 @@ export class TranscriptService {
    */
   private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
     return segments.map((segment, index) => {
-      // Sticky: extend to next segment's start time
-      const endTime = index < segments.length - 1
-        ? segments[index + 1].start
-        : Math.max(segment.start + segment.duration, segment.start + 3);
+      // Calculate end time with sticky behavior but capped at MAX_CUE_DURATION
+      let endTime: number;
+
+      if (index < segments.length - 1) {
+        // Sticky: extend to next segment's start time, but cap it
+        const nextStart = segments[index + 1].start;
+        const maxEnd = segment.start + MAX_CUE_DURATION;
+        endTime = Math.min(nextStart, maxEnd);
+      } else {
+        // Last segment: use actual duration capped at MAX_CUE_DURATION
+        endTime = segment.start + Math.min(segment.duration, MAX_CUE_DURATION);
+      }
+
+      // Ensure minimum duration
+      if (endTime - segment.start < MIN_CUE_DURATION) {
+        endTime = segment.start + MIN_CUE_DURATION;
+      }
 
       return {
         id: index,

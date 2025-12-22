@@ -411,20 +411,36 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
 
       .google-btn {
-        padding: 6px 10px;
+        padding: 6px;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        justify-content: center;
+        gap: 0;
         flex-shrink: 0;
+        order: 2;
+      }
+      
+      .google-btn-text {
+        display: none;
       }
 
       .theme-btn {
         width: 34px;
         height: 34px;
         flex-shrink: 0;
+        order: 1;
+      }
+      
+      .user-menu {
+        order: 2;
       }
       
       .user-avatar {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
         flex-shrink: 0;
+        border-width: 0;
       }
     }
 
@@ -469,28 +485,18 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .google-btn {
-        padding: 6px;
-        border-radius: 50% !important;
         width: 32px;
         height: 32px;
-        justify-content: center;
-        gap: 0;
-        order: 2; /* Switch order with theme button */
-      }
-      
-      .google-btn-text {
-        display: none;
       }
 
       .theme-btn {
         width: 32px;
         height: 32px;
-        order: 1; /* Switch order with google button */
       }
       
       .user-avatar {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
       }
     }
   `]

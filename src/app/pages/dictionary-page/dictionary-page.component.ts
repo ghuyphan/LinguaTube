@@ -4,15 +4,15 @@ import { DictionaryPanelComponent } from '../../components/dictionary-panel/dict
 import { VocabularyListComponent } from '../../components/vocabulary-list/vocabulary-list.component';
 
 @Component({
-    selector: 'app-dictionary-page',
-    standalone: true,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        CommonModule,
-        DictionaryPanelComponent,
-        VocabularyListComponent
-    ],
-    template: `
+  selector: 'app-dictionary-page',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CommonModule,
+    DictionaryPanelComponent,
+    VocabularyListComponent
+  ],
+  template: `
     <div class="dictionary-view">
       <app-dictionary-panel />
       
@@ -21,7 +21,7 @@ import { VocabularyListComponent } from '../../components/vocabulary-list/vocabu
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     .dictionary-view {
       display: flex;
       flex-direction: column;
@@ -31,7 +31,7 @@ import { VocabularyListComponent } from '../../components/vocabulary-list/vocabu
     }
 
     .vocab-section {
-      margin-top: var(--space-md);
+      /* Gap from parent handles spacing */
     }
 
     .mobile-only {
