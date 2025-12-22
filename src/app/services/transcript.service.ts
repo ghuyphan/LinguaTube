@@ -3,6 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, catchError, map, switchMap, finalize, tap, shareReplay, timer } from 'rxjs';
 import { SubtitleCue } from '../models';
 
+// ============================================================================
+// Types
+// ============================================================================
+
 interface TranscriptSegment {
   text: string;
   start: number;
@@ -11,21 +15,16 @@ interface TranscriptSegment {
 
 interface CaptionTrack {
   languageCode: string;
-  label: string;
-  url: string;
-  content?: TranscriptSegment[] | null;
+  name: { simpleText: string };
+  baseUrl: string;
+  content?: TranscriptSegment[];
 }
 
 interface InnertubeResponse {
   videoDetails?: { title: string; author: string; videoId: string };
   captions?: {
     playerCaptionsTracklistRenderer: {
-      captionTracks: Array<{
-        languageCode: string;
-        name: { simpleText: string };
-        baseUrl: string;
-        content?: TranscriptSegment[];
-      }>;
+      captionTracks: CaptionTrack[];
     };
   };
   source?: string;
@@ -33,50 +32,64 @@ interface InnertubeResponse {
   warning?: string;
 }
 
+interface CachedTranscript {
+  cues: SubtitleCue[];
+  availableLanguages: string[];
+  source: 'youtube' | 'ai';
+}
+
+// ============================================================================
+// Service
+// ============================================================================
+
 @Injectable({
   providedIn: 'root'
 })
 export class TranscriptService {
-  // State signals
+  // State
   readonly isLoading = signal(false);
   readonly error = signal<string | null>(null);
   readonly availableLanguages = signal<string[]>([]);
   readonly isGeneratingAI = signal(false);
   readonly captionSource = signal<'youtube' | 'ai' | null>(null);
 
-  // Computed state for UI
+  // Computed
   readonly isBusy = computed(() => this.isLoading() || this.isGeneratingAI());
 
   // Cache
-  private readonly transcriptCache = new Map<string, SubtitleCue[]>();
+  private readonly cache = new Map<string, CachedTranscript>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
 
   constructor(private http: HttpClient) { }
 
+  // ============================================================================
+  // Public API
+  // ============================================================================
+
   /**
-   * Reset all state
+   * Reset all state (call when clearing video)
    */
   reset(): void {
     this.isLoading.set(false);
     this.error.set(null);
     this.isGeneratingAI.set(false);
     this.captionSource.set(null);
+    this.availableLanguages.set([]);
     this.pendingRequests.clear();
   }
 
   /**
-   * Main entry point - fetch transcript for a video
-   * Backend handles all strategies (Innertube, scrape, third-party)
-   * Falls back to Whisper AI if no captions available
+   * Fetch transcript for a video
+   * Tries backend first, falls back to Whisper AI
    */
   fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
-    // Check cache first
     const cacheKey = `${videoId}:${lang}`;
-    if (this.transcriptCache.has(cacheKey)) {
-      const cached = this.transcriptCache.get(cacheKey)!;
-      this.captionSource.set('youtube');
-      this.availableLanguages.set([lang]);
-      return of(cached);
+
+    // Check cache first
+    const cached = this.cache.get(cacheKey);
+    if (cached) {
+      this.restoreFromCache(cached);
+      return of(cached.cues);
     }
 
     this.isLoading.set(true);
@@ -89,22 +102,23 @@ export class TranscriptService {
           return of(result.cues);
         }
 
-        // No content - try force refresh once
+        // Retry with force refresh if response was invalid
         if (!result.validResponse) {
           return this.fetchFromBackend(videoId, lang, true).pipe(
-            switchMap(retry => {
-              if (retry.cues.length > 0) return of(retry.cues);
-              return this.generateWithWhisper(videoId);
-            })
+            switchMap(retry =>
+              retry.cues.length > 0
+                ? of(retry.cues)
+                : this.generateWithWhisper(videoId)
+            )
           );
         }
 
-        // Valid response but no captions - go to Whisper
+        // Valid response but no captions - use Whisper
         return this.generateWithWhisper(videoId);
       }),
       tap(cues => {
         if (cues.length > 0 && this.captionSource() === 'youtube') {
-          this.transcriptCache.set(cacheKey, cues);
+          this.saveToCache(cacheKey, cues, 'youtube');
         }
       }),
       catchError(err => {
@@ -116,65 +130,16 @@ export class TranscriptService {
   }
 
   /**
-   * Fetch captions from backend (single API call)
-   * Backend handles: Innertube API, watch page scrape, third-party APIs
-   */
-  private fetchFromBackend(
-    videoId: string,
-    lang: string,
-    forceRefresh: boolean
-  ): Observable<{ cues: SubtitleCue[]; validResponse: boolean }> {
-    return this.http.post<InnertubeResponse>('/api/innertube', {
-      videoId,
-      targetLanguages: [lang, 'en'], // Fallback to English
-      forceRefresh
-    }).pipe(
-      map(response => {
-        if (response.error) {
-          console.warn('[TranscriptService] API error:', response.error);
-          return { cues: [], validResponse: false };
-        }
-
-        const tracks = response.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
-        const validResponse = !!(response.videoDetails || tracks.length > 0);
-
-        // Update available languages
-        if (tracks.length > 0) {
-          this.availableLanguages.set(tracks.map(t => t.languageCode));
-        }
-
-        // Find matching track (exact match first, then prefix match)
-        const track = tracks.find(t => t.languageCode === lang)
-          || tracks.find(t => t.languageCode?.startsWith(lang))
-          || tracks[0]; // Fallback to first available
-
-        if (!track?.content?.length) {
-          return { cues: [], validResponse };
-        }
-
-        this.captionSource.set('youtube');
-        const cues = this.convertToSubtitleCues(track.content);
-
-        return { cues, validResponse: true };
-      }),
-      catchError(err => {
-        console.error('[TranscriptService] Backend error:', err);
-        return of({ cues: [], validResponse: false });
-      })
-    );
-  }
-
-  /**
-   * Generate subtitles using Whisper AI
-   * Supports polling for long-running transcriptions
+   * Generate transcript using Whisper AI
    */
   generateWithWhisper(videoId: string, resultUrl?: string): Observable<SubtitleCue[]> {
     const cacheKey = `whisper:${videoId}`;
 
     // Check cache
-    if (!resultUrl && this.transcriptCache.has(cacheKey)) {
-      this.captionSource.set('ai');
-      return of(this.transcriptCache.get(cacheKey)!);
+    const cached = this.cache.get(cacheKey);
+    if (!resultUrl && cached) {
+      this.restoreFromCache(cached);
+      return of(cached.cues);
     }
 
     // Check pending request
@@ -182,7 +147,7 @@ export class TranscriptService {
       return this.pendingRequests.get(videoId)!;
     }
 
-    this.isLoading.set(false); // Switch from loading to generating
+    this.isLoading.set(false);
     this.isGeneratingAI.set(true);
     this.error.set(null);
 
@@ -203,14 +168,8 @@ export class TranscriptService {
           throw new Error(response.error || 'AI transcription failed');
         }
 
-        const cues: SubtitleCue[] = response.segments.map((seg: any, i: number) => ({
-          id: i,
-          startTime: seg.start,
-          endTime: seg.start + seg.duration,
-          text: seg.text.trim()
-        }));
-
-        this.transcriptCache.set(cacheKey, cues);
+        const cues = this.convertSegmentsToCues(response.segments);
+        this.saveToCache(cacheKey, cues, 'ai');
         return of(cues);
       }),
       tap({
@@ -241,12 +200,75 @@ export class TranscriptService {
   }
 
   /**
-   * Convert segments to SubtitleCue with sticky timing
-   * Each subtitle stays visible until the next one appears
+   * Clear cache for a specific video or all
    */
-  private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
+  clearCache(videoId?: string): void {
+    if (videoId) {
+      for (const key of this.cache.keys()) {
+        if (key.includes(videoId)) {
+          this.cache.delete(key);
+        }
+      }
+    } else {
+      this.cache.clear();
+    }
+  }
+
+  // ============================================================================
+  // Private Methods
+  // ============================================================================
+
+  private fetchFromBackend(
+    videoId: string,
+    lang: string,
+    forceRefresh: boolean
+  ): Observable<{ cues: SubtitleCue[]; validResponse: boolean }> {
+    return this.http.post<InnertubeResponse>('/api/innertube', {
+      videoId,
+      targetLanguages: [lang, 'en'],
+      forceRefresh
+    }).pipe(
+      map(response => {
+        if (response.error) {
+          console.warn('[TranscriptService] API error:', response.error);
+          return { cues: [], validResponse: false };
+        }
+
+        const tracks = response.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
+        const validResponse = !!(response.videoDetails || tracks.length > 0);
+
+        // Update available languages
+        if (tracks.length > 0) {
+          this.availableLanguages.set(tracks.map(t => t.languageCode));
+        }
+
+        // Find best matching track
+        const track = this.findBestTrack(tracks, lang);
+        if (!track?.content?.length) {
+          return { cues: [], validResponse };
+        }
+
+        this.captionSource.set('youtube');
+        return { cues: this.convertSegmentsToCues(track.content), validResponse: true };
+      }),
+      catchError(err => {
+        console.error('[TranscriptService] Backend error:', err);
+        return of({ cues: [], validResponse: false });
+      })
+    );
+  }
+
+  private findBestTrack(tracks: CaptionTrack[], lang: string): CaptionTrack | undefined {
+    return (
+      tracks.find(t => t.languageCode === lang) ||
+      tracks.find(t => t.languageCode?.startsWith(lang)) ||
+      tracks[0]
+    );
+  }
+
+  private convertSegmentsToCues(segments: TranscriptSegment[]): SubtitleCue[] {
     return segments.map((segment, index) => {
-      // Sticky: extend to next segment's start time
+      // Sticky timing: extend to next segment's start
       const endTime = index < segments.length - 1
         ? segments[index + 1].start
         : Math.max(segment.start + segment.duration, segment.start + 3);
@@ -260,29 +282,16 @@ export class TranscriptService {
     });
   }
 
-  /**
-   * Clear cache for a specific video or all
-   */
-  clearCache(videoId?: string): void {
-    if (videoId) {
-      // Clear all entries for this video
-      for (const key of this.transcriptCache.keys()) {
-        if (key.includes(videoId)) {
-          this.transcriptCache.delete(key);
-        }
-      }
-    } else {
-      this.transcriptCache.clear();
-    }
+  private saveToCache(key: string, cues: SubtitleCue[], source: 'youtube' | 'ai'): void {
+    this.cache.set(key, {
+      cues,
+      availableLanguages: this.availableLanguages(),
+      source
+    });
   }
 
-  /**
-   * Get cache stats (for debugging)
-   */
-  getCacheStats(): { size: number; keys: string[] } {
-    return {
-      size: this.transcriptCache.size,
-      keys: Array.from(this.transcriptCache.keys())
-    };
+  private restoreFromCache(cached: CachedTranscript): void {
+    this.captionSource.set(cached.source);
+    this.availableLanguages.set(cached.availableLanguages);
   }
 }

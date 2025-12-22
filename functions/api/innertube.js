@@ -1,19 +1,13 @@
 /**
  * YouTube Innertube Proxy (Cloudflare Function)
- * Optimized caption fetching with parallel fallback strategies
+ * Fetches captions using parallel fallback strategies
  *
- * Strategy: Race ALL sources simultaneously - first success wins
+ * Strategies (raced in parallel):
  * - Innertube API (TV/Web clients)
  * - Watch page scrape
  * - Third-party APIs (Piped/Invidious)
  *
- * Optimizations:
- * - All strategies run in PARALLEL (not sequential)
- * - Only fetches target languages (default: ja, zh, en)
- * - Reduced timeouts for faster failures
- * - Optional metadata-only mode for instant response
- *
- * @version 4.0.0
+ * @version 4.1.0
  * @updated 2025-12
  */
 
@@ -26,8 +20,8 @@ import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../
 const DEBUG = false;
 const CACHE_TTL = 60 * 60 * 24; // 24 hours
 const DEFAULT_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
+const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'en'];
 
-// Reduced timeouts for faster response
 const TIMEOUTS = {
     innertube: 5000,
     watchPage: 5000,
@@ -35,13 +29,6 @@ const TIMEOUTS = {
     caption: 3000
 };
 
-// Default languages for LinguaTube (Japanese, Chinese, English)
-const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'en'];
-
-/**
- * Client configurations - December 2025
- * Based on yt-dlp: https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube/_base.py
- */
 const CLIENT_CONFIGS = [
     {
         clientName: 'TVHTML5_SIMPLY',
@@ -75,17 +62,13 @@ const THIRD_PARTY_APIS = [
 // Logging
 // ============================================================================
 
-function log(...args) {
-    if (DEBUG) console.log('[Innertube]', ...args);
-}
+const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 
 // ============================================================================
 // Request Handlers
 // ============================================================================
 
-export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
-}
+export const onRequestOptions = () => handleOptions(['POST', 'OPTIONS']);
 
 export async function onRequestPost(context) {
     const { request, env } = context;
@@ -98,7 +81,7 @@ export async function onRequestPost(context) {
             videoId,
             forceRefresh = false,
             targetLanguages = DEFAULT_TARGET_LANGS,
-            metadataOnly = false  // If true, skip content fetching
+            metadataOnly = false
         } = body;
 
         log('Request:', { videoId, targetLanguages, metadataOnly });
@@ -119,9 +102,9 @@ export async function onRequestPost(context) {
         }
 
         // Execute all strategies in parallel
-        const result = await executeStrategiesParallel(videoId, apiKey, targetLanguages, metadataOnly);
+        const result = await executeStrategies(videoId, apiKey, targetLanguages, metadataOnly);
 
-        // Cache successful results (only if content was fetched)
+        // Cache successful results
         if (result.hasContent && cache && !metadataOnly) {
             await cacheResult(cache, cacheKey, result.data);
         }
@@ -139,35 +122,32 @@ export async function onRequestPost(context) {
 }
 
 // ============================================================================
-// Strategy Orchestration - ALL PARALLEL
+// Strategy Orchestration
 // ============================================================================
 
-async function executeStrategiesParallel(videoId, apiKey, targetLanguages, metadataOnly) {
-    const controllers = [];
-
-    // Create abort controller for all strategies
+async function executeStrategies(videoId, apiKey, targetLanguages, metadataOnly) {
     const masterController = new AbortController();
+    const { signal } = masterController;
 
     const strategies = [
         // Innertube clients
         ...CLIENT_CONFIGS.map(config =>
-            tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, masterController.signal)
+            tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, signal)
                 .then(r => ({ ...r, source: `innertube:${config.clientName}` }))
         ),
         // Watch page scrape
-        tryWatchPage(videoId, targetLanguages, metadataOnly, masterController.signal)
+        tryWatchPage(videoId, targetLanguages, metadataOnly, signal)
             .then(r => ({ ...r, source: 'scrape' })),
         // Third-party APIs
         ...THIRD_PARTY_APIS.map(api =>
-            tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, masterController.signal)
+            tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, signal)
                 .then(r => ({ ...r, source: `thirdparty:${api.name}` }))
         )
     ];
 
     try {
-        // Race all strategies - first success wins
         const result = await Promise.any(strategies);
-        masterController.abort(); // Cancel remaining requests
+        masterController.abort();
         log('Success via:', result.source);
         return result;
 
@@ -175,7 +155,6 @@ async function executeStrategiesParallel(videoId, apiKey, targetLanguages, metad
         masterController.abort();
         log('All strategies failed');
 
-        // Check for specific errors
         const ageRestricted = aggregateError.errors?.some(e =>
             e.message?.includes('Age-restricted')
         );
@@ -197,12 +176,10 @@ async function executeStrategiesParallel(videoId, apiKey, targetLanguages, metad
 // Innertube Client
 // ============================================================================
 
-async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, signal) {
+async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, masterSignal) {
     const controller = new AbortController();
+    const cleanup = linkSignal(masterSignal, controller);
     const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.innertube);
-
-    // Link to master signal
-    signal.addEventListener('abort', () => controller.abort());
 
     try {
         const response = await fetch(
@@ -253,29 +230,23 @@ async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, meta
         const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
         if (!captionTracks?.length) throw new Error('No captions');
 
-        // Filter to target languages only
         const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
         if (!filteredTracks.length) throw new Error('No matching language tracks');
 
-        // Fetch content (unless metadata only)
         if (!metadataOnly) {
-            await fetchTargetedCaptionContent(filteredTracks, config.userAgent);
-            const tracksWithContent = filteredTracks.filter(t => t.content?.length > 0);
-            if (!tracksWithContent.length) throw new Error('Failed to fetch content');
+            await fetchCaptionContents(filteredTracks, config.userAgent);
+            if (!filteredTracks.some(t => t.content?.length > 0)) {
+                throw new Error('Failed to fetch content');
+            }
         }
 
-        // Update data with filtered tracks
         data.captions.playerCaptionsTracklistRenderer.captionTracks = filteredTracks;
 
-        return {
-            success: true,
-            hasContent: !metadataOnly,
-            data
-        };
+        return { success: true, hasContent: !metadataOnly, data };
 
-    } catch (error) {
+    } finally {
         clearTimeout(timeoutId);
-        throw error;
+        cleanup();
     }
 }
 
@@ -283,12 +254,11 @@ async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, meta
 // Watch Page Scrape
 // ============================================================================
 
-async function tryWatchPage(videoId, targetLanguages, metadataOnly, signal) {
+async function tryWatchPage(videoId, targetLanguages, metadataOnly, masterSignal) {
     const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
     const controller = new AbortController();
+    const cleanup = linkSignal(masterSignal, controller);
     const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.watchPage);
-
-    signal.addEventListener('abort', () => controller.abort());
 
     try {
         const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
@@ -307,7 +277,6 @@ async function tryWatchPage(videoId, targetLanguages, metadataOnly, signal) {
 
         const html = await response.text();
         const data = extractPlayerResponse(html);
-
         if (!data) throw new Error('Failed to extract player response');
 
         const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
@@ -317,22 +286,19 @@ async function tryWatchPage(videoId, targetLanguages, metadataOnly, signal) {
         if (!filteredTracks.length) throw new Error('No matching language tracks');
 
         if (!metadataOnly) {
-            await fetchTargetedCaptionContent(filteredTracks, userAgent);
-            const tracksWithContent = filteredTracks.filter(t => t.content?.length > 0);
-            if (!tracksWithContent.length) throw new Error('Failed to fetch content');
+            await fetchCaptionContents(filteredTracks, userAgent);
+            if (!filteredTracks.some(t => t.content?.length > 0)) {
+                throw new Error('Failed to fetch content');
+            }
         }
 
         data.captions.playerCaptionsTracklistRenderer.captionTracks = filteredTracks;
 
-        return {
-            success: true,
-            hasContent: !metadataOnly,
-            data
-        };
+        return { success: true, hasContent: !metadataOnly, data };
 
-    } catch (error) {
+    } finally {
         clearTimeout(timeoutId);
-        throw error;
+        cleanup();
     }
 }
 
@@ -371,14 +337,13 @@ function extractPlayerResponse(html) {
 }
 
 // ============================================================================
-// Third-Party API
+// Third-Party APIs
 // ============================================================================
 
-async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, signal) {
+async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, masterSignal) {
     const controller = new AbortController();
+    const cleanup = linkSignal(masterSignal, controller);
     const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.thirdParty);
-
-    signal.addEventListener('abort', () => controller.abort());
 
     try {
         const response = await fetch(`${api.url}${videoId}`, {
@@ -411,9 +376,9 @@ async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, sig
             }
         };
 
-    } catch (error) {
+    } finally {
         clearTimeout(timeoutId);
-        throw error;
+        cleanup();
     }
 }
 
@@ -437,14 +402,11 @@ async function processThirdPartyResponse(api, data, targetLanguages, metadataOnl
         }));
     }
 
-    // Filter by target languages
     const filteredTracks = filterTracksByLanguage(rawTracks, targetLanguages);
-
     if (metadataOnly) return filteredTracks;
 
-    // Fetch content for filtered tracks
     await Promise.all(
-        filteredTracks.map(async (track) => {
+        filteredTracks.map(async track => {
             try {
                 track.content = await fetchThirdPartyContent(track.baseUrl);
             } catch {
@@ -479,7 +441,7 @@ async function fetchThirdPartyContent(url) {
 }
 
 // ============================================================================
-// Caption Content Fetching - TARGETED
+// Caption Content Fetching
 // ============================================================================
 
 function filterTracksByLanguage(tracks, targetLanguages) {
@@ -491,9 +453,9 @@ function filterTracksByLanguage(tracks, targetLanguages) {
     });
 }
 
-async function fetchTargetedCaptionContent(captionTracks, userAgent) {
+async function fetchCaptionContents(captionTracks, userAgent) {
     await Promise.all(
-        captionTracks.map(async (track) => {
+        captionTracks.map(async track => {
             try {
                 track.content = await fetchCaptionContent(track.baseUrl, userAgent);
             } catch {
@@ -504,7 +466,6 @@ async function fetchTargetedCaptionContent(captionTracks, userAgent) {
 }
 
 async function fetchCaptionContent(baseUrl, userAgent) {
-    // Try json3 first (fastest to parse), then others
     const formats = ['json3', 'srv3', 'vtt'];
 
     for (const format of formats) {
@@ -536,7 +497,7 @@ async function fetchCaptionContent(baseUrl, userAgent) {
             const segments = parseCaption(text, format);
             if (segments?.length > 0) return segments;
 
-        } catch { /* try next */ }
+        } catch { /* try next format */ }
     }
 
     return null;
@@ -562,7 +523,6 @@ function parseCaption(text, format) {
         if (result?.length) return result;
     }
 
-    // Fallback: try all parsers
     return parseJSON3(text) || parseXML(text) || parseVTT(text) || [];
 }
 
@@ -669,7 +629,6 @@ async function getCachedResult(cache, key, targetLanguages) {
 
         const tracks = cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
 
-        // Check if cached result has content for target languages
         const hasTargetContent = tracks.some(t =>
             t.content?.length > 0 &&
             targetLanguages.some(lang => t.languageCode?.toLowerCase().startsWith(lang.toLowerCase()))
@@ -693,6 +652,15 @@ async function cacheResult(cache, key, data) {
 // ============================================================================
 // Utilities
 // ============================================================================
+
+/**
+ * Link child abort controller to master signal (with cleanup)
+ */
+function linkSignal(masterSignal, childController) {
+    const onAbort = () => childController.abort();
+    masterSignal.addEventListener('abort', onAbort, { once: true });
+    return () => masterSignal.removeEventListener('abort', onAbort);
+}
 
 function decodeHtmlEntities(text) {
     return text

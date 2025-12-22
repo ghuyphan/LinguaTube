@@ -1,305 +1,430 @@
 import { Injectable, signal, computed } from '@angular/core';
-import { SubtitleCue, Token } from '../models';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of, catchError, map, switchMap, finalize, tap, shareReplay, timer } from 'rxjs';
+import { SubtitleCue } from '../models';
 
-const MAX_TOKEN_CACHE_SIZE = 500;
-const BATCH_CHUNK_SIZE = 50;
+interface TranscriptSegment {
+  text: string;
+  start: number;
+  duration: number;
+}
+
+interface CaptionTrack {
+  languageCode: string;
+  label: string;
+  url: string;
+  content?: TranscriptSegment[] | null;
+}
+
+interface InnertubeResponse {
+  videoDetails?: { title: string; author: string; videoId: string };
+  captions?: {
+    playerCaptionsTracklistRenderer: {
+      captionTracks: Array<{
+        languageCode: string;
+        name: { simpleText: string };
+        baseUrl: string;
+        content?: TranscriptSegment[];
+      }>;
+    };
+  };
+  source?: string;
+  error?: string;
+  warning?: string;
+}
+
+// Minimum gap between cues to consider them separate (in seconds)
+const MIN_CUE_GAP = 0.1;
+// Minimum duration for a cue (in seconds)
+const MIN_CUE_DURATION = 0.3;
 
 @Injectable({
   providedIn: 'root'
 })
-export class SubtitleService {
-  // State
-  readonly subtitles = signal<SubtitleCue[]>([]);
-  readonly currentCueIndex = signal<number>(-1);
-  readonly isTokenizing = signal(false);
+export class TranscriptService {
+  // State signals
+  readonly isLoading = signal(false);
+  readonly error = signal<string | null>(null);
+  readonly availableLanguages = signal<string[]>([]);
+  readonly isGeneratingAI = signal(false);
+  readonly captionSource = signal<'youtube' | 'ai' | null>(null);
 
-  // Computed
-  readonly currentCue = computed(() => {
-    const index = this.currentCueIndex();
-    const subs = this.subtitles();
-    return index >= 0 && index < subs.length ? subs[index] : null;
-  });
+  // Computed state for UI
+  readonly isBusy = computed(() => this.isLoading() || this.isGeneratingAI());
 
-  readonly hasSubtitles = computed(() => this.subtitles().length > 0);
+  // Cache
+  private readonly transcriptCache = new Map<string, SubtitleCue[]>();
+  private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
 
-  // Cache (LRU)
-  private tokenCache = new Map<string, Token[]>();
-
-  // Cancellation
-  private abortController: AbortController | null = null;
+  constructor(private http: HttpClient) { }
 
   /**
-   * Batch tokenize all subtitle cues
-   * Collects unique texts, sends API requests, distributes tokens to cues
+   * Reset all state
    */
-  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko'): Promise<void> {
-    const cues = this.subtitles();
-    if (cues.length === 0) return;
+  reset(): void {
+    this.isLoading.set(false);
+    this.error.set(null);
+    this.isGeneratingAI.set(false);
+    this.captionSource.set(null);
+    this.pendingRequests.clear();
+  }
 
-    // Cancel any in-progress tokenization
-    this.cancelTokenization();
+  /**
+   * Main entry point - fetch transcript for a video
+   */
+  fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
+    const cacheKey = `${videoId}:${lang}`;
+    if (this.transcriptCache.has(cacheKey)) {
+      const cached = this.transcriptCache.get(cacheKey)!;
+      this.captionSource.set('youtube');
+      this.availableLanguages.set([lang]);
+      return of(cached);
+    }
 
-    this.isTokenizing.set(true);
-    this.abortController = new AbortController();
+    this.isLoading.set(true);
+    this.error.set(null);
+    this.captionSource.set(null);
 
-    try {
-      // Collect unique texts needing tokenization
-      const uniqueTexts = new Map<string, number[]>(); // text -> cue indices
-
-      cues.forEach((cue, index) => {
-        const cacheKey = `${lang}:${cue.text}`;
-        const cached = this.tokenCache.get(cacheKey);
-
-        if (cached) {
-          cue.tokens = cached;
-        } else if (cue.text.trim()) {
-          if (!uniqueTexts.has(cue.text)) {
-            uniqueTexts.set(cue.text, []);
-          }
-          uniqueTexts.get(cue.text)!.push(index);
+    return this.fetchFromBackend(videoId, lang, false).pipe(
+      switchMap(result => {
+        if (result.cues.length > 0) {
+          return of(result.cues);
         }
-      });
 
-      if (uniqueTexts.size === 0) {
-        this.subtitles.set([...cues]);
-        return;
-      }
-
-      console.log(`[SubtitleService] Tokenizing ${uniqueTexts.size} unique texts (${lang})`);
-
-      // Batch tokenize
-      const textsToTokenize = Array.from(uniqueTexts.keys());
-      const results = await this.batchTokenize(textsToTokenize, lang);
-
-      // Distribute tokens to cues
-      textsToTokenize.forEach((text, i) => {
-        const tokens = results[i] || this.fallbackTokenize(text, lang);
-        const cacheKey = `${lang}:${text}`;
-        this.addToCache(cacheKey, tokens);
-
-        uniqueTexts.get(text)?.forEach(cueIndex => {
-          cues[cueIndex].tokens = tokens;
-        });
-      });
-
-      this.subtitles.set([...cues]);
-      console.log(`[SubtitleService] Tokenization complete`);
-
-    } catch (error) {
-      if ((error as Error).name === 'AbortError') {
-        console.log('[SubtitleService] Tokenization cancelled');
-        return;
-      }
-
-      console.error('[SubtitleService] Tokenization failed:', error);
-
-      // Apply fallback to all cues without tokens
-      cues.forEach(cue => {
-        if (!cue.tokens) {
-          cue.tokens = this.fallbackTokenize(cue.text, lang);
+        if (!result.validResponse) {
+          return this.fetchFromBackend(videoId, lang, true).pipe(
+            switchMap(retry => {
+              if (retry.cues.length > 0) return of(retry.cues);
+              return this.generateWithWhisper(videoId);
+            })
+          );
         }
-      });
-      this.subtitles.set([...cues]);
 
-    } finally {
-      this.isTokenizing.set(false);
-      this.abortController = null;
-    }
-  }
-
-  /**
-   * Cancel ongoing tokenization
-   */
-  cancelTokenization(): void {
-    if (this.abortController) {
-      this.abortController.abort();
-      this.abortController = null;
-    }
-    this.isTokenizing.set(false);
-  }
-
-  /**
-   * Get tokens for a cue (pre-computed or fallback)
-   */
-  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko'): Token[] {
-    if (cue.tokens?.length) {
-      return cue.tokens;
-    }
-
-    const cacheKey = `${lang}:${cue.text}`;
-    const cached = this.tokenCache.get(cacheKey);
-    if (cached) {
-      return cached;
-    }
-
-    return this.fallbackTokenize(cue.text, lang);
-  }
-
-  /**
-   * Update current cue based on video time
-   * Implements "sticky" subtitles - shows most recent cue if no active one
-   */
-  updateCurrentCue(currentTime: number): void {
-    const subs = this.subtitles();
-
-    if (subs.length === 0) {
-      this.currentCueIndex.set(-1);
-      return;
-    }
-
-    // Find active cue (prefer later one for overlaps)
-    let index = -1;
-    for (let i = subs.length - 1; i >= 0; i--) {
-      if (currentTime >= subs[i].startTime && currentTime <= subs[i].endTime) {
-        index = i;
-        break;
-      }
-    }
-
-    // Sticky behavior: show last ended cue if no active one
-    if (index === -1 && currentTime > 0) {
-      for (let i = subs.length - 1; i >= 0; i--) {
-        if (subs[i].endTime <= currentTime) {
-          const nextSub = subs[i + 1];
-          if (!nextSub || currentTime < nextSub.startTime) {
-            index = i;
-          }
-          break;
+        return this.generateWithWhisper(videoId);
+      }),
+      tap(cues => {
+        if (cues.length > 0 && this.captionSource() === 'youtube') {
+          this.transcriptCache.set(cacheKey, cues);
         }
-      }
+      }),
+      catchError(err => {
+        console.error('[TranscriptService] Error:', err.message);
+        return this.generateWithWhisper(videoId);
+      }),
+      finalize(() => this.isLoading.set(false))
+    );
+  }
+
+  /**
+   * Fetch captions from backend
+   */
+  private fetchFromBackend(
+    videoId: string,
+    lang: string,
+    forceRefresh: boolean
+  ): Observable<{ cues: SubtitleCue[]; validResponse: boolean }> {
+    return this.http.post<InnertubeResponse>('/api/innertube', {
+      videoId,
+      targetLanguages: [lang, 'en'],
+      forceRefresh
+    }).pipe(
+      map(response => {
+        if (response.error) {
+          console.warn('[TranscriptService] API error:', response.error);
+          return { cues: [], validResponse: false };
+        }
+
+        const tracks = response.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
+        const validResponse = !!(response.videoDetails || tracks.length > 0);
+
+        if (tracks.length > 0) {
+          this.availableLanguages.set(tracks.map(t => t.languageCode));
+        }
+
+        const track = tracks.find(t => t.languageCode === lang)
+          || tracks.find(t => t.languageCode?.startsWith(lang))
+          || tracks[0];
+
+        if (!track?.content?.length) {
+          return { cues: [], validResponse };
+        }
+
+        this.captionSource.set('youtube');
+
+        // Clean and deduplicate before converting
+        const cleanedSegments = this.cleanTranscriptSegments(track.content);
+        const cues = this.convertToSubtitleCues(cleanedSegments);
+
+        return { cues, validResponse: true };
+      }),
+      catchError(err => {
+        console.error('[TranscriptService] Backend error:', err);
+        return of({ cues: [], validResponse: false });
+      })
+    );
+  }
+
+  /**
+   * Generate subtitles using Whisper AI
+   */
+  generateWithWhisper(videoId: string, resultUrl?: string): Observable<SubtitleCue[]> {
+    const cacheKey = `whisper:${videoId}`;
+
+    if (!resultUrl && this.transcriptCache.has(cacheKey)) {
+      this.captionSource.set('ai');
+      return of(this.transcriptCache.get(cacheKey)!);
     }
 
-    this.currentCueIndex.set(index);
-  }
+    if (!resultUrl && this.pendingRequests.has(videoId)) {
+      return this.pendingRequests.get(videoId)!;
+    }
 
-  /**
-   * Clear all subtitles and reset state
-   */
-  clear(): void {
-    this.cancelTokenization();
-    this.subtitles.set([]);
-    this.currentCueIndex.set(-1);
-  }
+    this.isLoading.set(false);
+    this.isGeneratingAI.set(true);
+    this.error.set(null);
 
-  /**
-   * Clear token cache
-   */
-  clearCache(): void {
-    this.tokenCache.clear();
+    const request$ = this.http.post<any>('/api/whisper', {
+      videoId,
+      ...(resultUrl && { result_url: resultUrl })
+    }).pipe(
+      switchMap(response => {
+        if (response.status === 'processing' && response.result_url) {
+          console.log('[TranscriptService] AI processing... polling in 4s');
+          return timer(4000).pipe(
+            switchMap(() => this.generateWithWhisper(videoId, response.result_url))
+          );
+        }
+
+        if (!response.success || !response.segments?.length) {
+          throw new Error(response.error || 'AI transcription failed');
+        }
+
+        // Clean Whisper output too
+        const cleanedSegments = this.cleanTranscriptSegments(response.segments);
+        const cues = this.convertToSubtitleCues(cleanedSegments);
+
+        this.transcriptCache.set(cacheKey, cues);
+        return of(cues);
+      }),
+      tap({
+        next: () => {
+          this.isGeneratingAI.set(false);
+          this.captionSource.set('ai');
+          this.pendingRequests.delete(videoId);
+        },
+        error: () => {
+          this.isGeneratingAI.set(false);
+          this.pendingRequests.delete(videoId);
+        }
+      }),
+      catchError(err => {
+        const message = err.error?.error || err.message || 'AI transcription failed';
+        this.error.set(message);
+        console.error('[TranscriptService] Whisper error:', message);
+        return of([]);
+      }),
+      shareReplay(1)
+    );
+
+    if (!resultUrl) {
+      this.pendingRequests.set(videoId, request$);
+    }
+
+    return request$;
   }
 
   // ============================================================================
-  // Private Methods
+  // Transcript Cleaning & Deduplication
   // ============================================================================
 
-  private addToCache(key: string, tokens: Token[]): void {
-    if (this.tokenCache.size >= MAX_TOKEN_CACHE_SIZE) {
-      // LRU eviction
-      const firstKey = this.tokenCache.keys().next().value;
-      if (firstKey) this.tokenCache.delete(firstKey);
-    }
-    this.tokenCache.set(key, tokens);
-  }
+  /**
+   * Clean transcript segments:
+   * 1. Remove duplicates at same timestamp
+   * 2. Merge overlapping segments
+   * 3. Remove very short/empty segments
+   * 4. Sort by start time
+   */
+  private cleanTranscriptSegments(segments: TranscriptSegment[]): TranscriptSegment[] {
+    if (!segments?.length) return [];
 
-  private async batchTokenize(texts: string[], lang: 'ja' | 'zh' | 'ko'): Promise<Token[][]> {
-    const results: Token[][] = [];
-    const signal = this.abortController?.signal;
+    // Step 1: Sort by start time
+    const sorted = [...segments].sort((a, b) => a.start - b.start);
 
-    for (let i = 0; i < texts.length; i += BATCH_CHUNK_SIZE) {
-      if (signal?.aborted) throw new DOMException('Aborted', 'AbortError');
+    // Step 2: Group segments at same/very close timestamps
+    const grouped = this.groupByTimestamp(sorted);
 
-      const chunk = texts.slice(i, i + BATCH_CHUNK_SIZE);
-      const chunkResults = await Promise.all(
-        chunk.map(text => this.tokenizeSingle(text, lang, signal))
-      );
-      results.push(...chunkResults);
-    }
+    // Step 3: Pick best segment from each group & merge overlaps
+    const cleaned = this.mergeGroups(grouped);
 
-    return results;
-  }
-
-  private async tokenizeSingle(
-    text: string,
-    lang: 'ja' | 'zh' | 'ko',
-    signal?: AbortSignal
-  ): Promise<Token[]> {
-    try {
-      const response = await fetch(`/api/tokenize/${lang}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text }),
-        signal
-      });
-
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-      const data = await response.json();
-      return data.tokens || [];
-
-    } catch (error) {
-      if ((error as Error).name === 'AbortError') throw error;
-      return this.fallbackTokenize(text, lang);
-    }
+    // Step 4: Filter out invalid segments
+    return cleaned.filter(seg =>
+      seg.text.trim().length > 0 &&
+      seg.duration >= MIN_CUE_DURATION
+    );
   }
 
   /**
-   * Fast client-side fallback tokenization
+   * Group segments that start at the same time (within MIN_CUE_GAP)
    */
-  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko'): Token[] {
-    if (!text.trim()) return [];
+  private groupByTimestamp(segments: TranscriptSegment[]): TranscriptSegment[][] {
+    const groups: TranscriptSegment[][] = [];
+    let currentGroup: TranscriptSegment[] = [];
+    let groupStart = -1;
 
-    switch (lang) {
-      case 'zh':
-        // Chinese: character by character
-        return text.split('').map(char => ({ surface: char }));
-
-      case 'ko':
-        // Korean: space-delimited
-        return text.split(/\s+/).filter(Boolean).map(word => ({ surface: word }));
-
-      case 'ja':
-      default:
-        // Japanese: group by character type
-        return this.tokenizeByCharType(text);
+    for (const seg of segments) {
+      if (groupStart === -1 || Math.abs(seg.start - groupStart) <= MIN_CUE_GAP) {
+        currentGroup.push(seg);
+        if (groupStart === -1) groupStart = seg.start;
+      } else {
+        if (currentGroup.length > 0) {
+          groups.push(currentGroup);
+        }
+        currentGroup = [seg];
+        groupStart = seg.start;
+      }
     }
+
+    if (currentGroup.length > 0) {
+      groups.push(currentGroup);
+    }
+
+    return groups;
   }
 
   /**
-   * Group text by character type (for Japanese)
+   * Pick best segment from each group
+   * Priority: longer text, longer duration
    */
-  private tokenizeByCharType(text: string): Token[] {
-    const tokens: Token[] = [];
-    let current = '';
-    let currentType = '';
+  private mergeGroups(groups: TranscriptSegment[][]): TranscriptSegment[] {
+    const result: TranscriptSegment[] = [];
 
-    for (const char of text) {
-      const type = this.getCharType(char);
-
-      if (type !== currentType && current) {
-        tokens.push({ surface: current });
-        current = '';
+    for (const group of groups) {
+      if (group.length === 1) {
+        result.push(group[0]);
+        continue;
       }
 
-      current += char;
-      currentType = type;
+      // Multiple segments at same timestamp - pick the best one
+      // Score: text length + duration bonus
+      const best = group.reduce((a, b) => {
+        const scoreA = a.text.trim().length + (a.duration * 10);
+        const scoreB = b.text.trim().length + (b.duration * 10);
+        return scoreB > scoreA ? b : a;
+      });
+
+      // Check if we should merge with previous
+      const prev = result[result.length - 1];
+      if (prev && this.shouldMerge(prev, best)) {
+        // Merge: extend previous segment
+        prev.text = this.mergeText(prev.text, best.text);
+        prev.duration = Math.max(prev.duration, (best.start - prev.start) + best.duration);
+      } else {
+        result.push({ ...best });
+      }
     }
 
-    if (current) {
-      tokens.push({ surface: current });
-    }
-
-    return tokens;
+    return result;
   }
 
-  private getCharType(char: string): string {
-    const code = char.charCodeAt(0);
+  /**
+   * Check if two segments should be merged
+   */
+  private shouldMerge(prev: TranscriptSegment, curr: TranscriptSegment): boolean {
+    // Merge if:
+    // 1. Current starts before/at previous end
+    // 2. Texts are similar (one contains the other)
+    const prevEnd = prev.start + prev.duration;
+    const overlaps = curr.start <= prevEnd + MIN_CUE_GAP;
 
-    if (code >= 0x3040 && code <= 0x309F) return 'hiragana';
-    if (code >= 0x30A0 && code <= 0x30FF) return 'katakana';
-    if (code >= 0x4E00 && code <= 0x9FFF) return 'kanji';
-    if (code >= 0x0020 && code <= 0x007F) return 'ascii';
-    if (/[。、！？「」『』（）・]/.test(char)) return 'punctuation';
+    if (!overlaps) return false;
 
-    return 'other';
+    // Check text similarity
+    const prevText = prev.text.trim();
+    const currText = curr.text.trim();
+
+    return prevText.includes(currText) ||
+      currText.includes(prevText) ||
+      this.textSimilarity(prevText, currText) > 0.7;
+  }
+
+  /**
+   * Merge two text strings, avoiding duplication
+   */
+  private mergeText(a: string, b: string): string {
+    const textA = a.trim();
+    const textB = b.trim();
+
+    // If one contains the other, use the longer one
+    if (textA.includes(textB)) return textA;
+    if (textB.includes(textA)) return textB;
+
+    // If they're very similar, use the longer one
+    if (this.textSimilarity(textA, textB) > 0.7) {
+      return textA.length >= textB.length ? textA : textB;
+    }
+
+    // Otherwise, keep the first one (already displayed)
+    return textA;
+  }
+
+  /**
+   * Simple text similarity (Jaccard on characters)
+   */
+  private textSimilarity(a: string, b: string): number {
+    if (!a || !b) return 0;
+
+    const setA = new Set(a);
+    const setB = new Set(b);
+
+    const intersection = new Set([...setA].filter(x => setB.has(x)));
+    const union = new Set([...setA, ...setB]);
+
+    return intersection.size / union.size;
+  }
+
+  // ============================================================================
+  // Conversion
+  // ============================================================================
+
+  /**
+   * Convert segments to SubtitleCue with sticky timing
+   */
+  private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
+    return segments.map((segment, index) => {
+      // Sticky: extend to next segment's start time
+      const endTime = index < segments.length - 1
+        ? segments[index + 1].start
+        : Math.max(segment.start + segment.duration, segment.start + 3);
+
+      return {
+        id: index,
+        startTime: segment.start,
+        endTime,
+        text: segment.text.trim()
+      };
+    });
+  }
+
+  // ============================================================================
+  // Cache Management
+  // ============================================================================
+
+  clearCache(videoId?: string): void {
+    if (videoId) {
+      for (const key of this.transcriptCache.keys()) {
+        if (key.includes(videoId)) {
+          this.transcriptCache.delete(key);
+        }
+      }
+    } else {
+      this.transcriptCache.clear();
+    }
+  }
+
+  getCacheStats(): { size: number; keys: string[] } {
+    return {
+      size: this.transcriptCache.size,
+      keys: Array.from(this.transcriptCache.keys())
+    };
   }
 }
