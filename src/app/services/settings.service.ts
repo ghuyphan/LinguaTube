@@ -1,4 +1,4 @@
-import { Injectable, signal, effect } from '@angular/core';
+import { Injectable, signal, effect, untracked } from '@angular/core';
 import { UserSettings } from '../models';
 
 const STORAGE_KEY = 'linguatube_settings';
@@ -23,11 +23,14 @@ export class SettingsService {
     this.loadFromStorage();
     this.applyTheme();
 
-    // Auto-save and apply theme when settings change
+    // Combined effect: save to storage and apply theme when settings change
+    // Using untracked to prevent signal loops during localStorage writes
     effect(() => {
       const current = this.settings();
-      this.saveToStorage(current);
-      this.applyTheme();
+      untracked(() => {
+        this.saveToStorage(current);
+        this.applyTheme();
+      });
     });
 
     // Listen for system theme changes

@@ -1,13 +1,17 @@
-import { Injectable, signal, computed, effect } from '@angular/core';
+import { Injectable, signal, computed, effect, untracked } from '@angular/core';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../models';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
+const SAVE_DEBOUNCE_MS = 300;
 
 @Injectable({
   providedIn: 'root'
 })
 export class VocabularyService {
   readonly vocabulary = signal<VocabularyItem[]>([]);
+
+  // Debounce timer for localStorage writes
+  private saveTimeout: ReturnType<typeof setTimeout> | null = null;
 
   readonly stats = computed(() => {
     const items = this.vocabulary();
@@ -75,9 +79,17 @@ export class VocabularyService {
   constructor() {
     this.loadFromStorage();
 
-    // Auto-save to localStorage whenever vocabulary changes
+    // Debounced auto-save to localStorage (300ms debounce to prevent rapid writes)
     effect(() => {
-      this.saveToStorage(this.vocabulary());
+      const items = this.vocabulary();
+      // Clear previous timeout
+      if (this.saveTimeout) {
+        clearTimeout(this.saveTimeout);
+      }
+      // Debounce the save operation
+      this.saveTimeout = setTimeout(() => {
+        untracked(() => this.saveToStorage(items));
+      }, SAVE_DEBOUNCE_MS);
     });
   }
 
@@ -412,6 +424,6 @@ export class VocabularyService {
   }
 
   private generateId(): string {
-    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
   }
 }

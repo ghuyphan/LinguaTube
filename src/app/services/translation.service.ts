@@ -1,52 +1,77 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, catchError, of } from 'rxjs';
+import { Observable, map, catchError, of, shareReplay, finalize } from 'rxjs';
 
 export interface TranslationResponse {
     translation: string;
-    info?: any;
+    info?: unknown;
 }
+
+// Cache configuration
+const CACHE_KEY = 'linguatube_translations';
+const MAX_CACHE_SIZE = 200;
 
 @Injectable({
     providedIn: 'root'
 })
 export class TranslationService {
-    // Use local proxy in dev, direct URL could change depending on enviroment
     private readonly API_URL = '/api/translate';
 
-    // Track loading state for specific translation requests (by ID or key)
-    // We can use a Map to track individual translation requests
+    // In-memory cache for translations
+    private translationCache = new Map<string, string>();
+    // Pending requests for deduplication
+    private pendingRequests = new Map<string, Observable<string | null>>();
+    // Loading states
     private loadingStates = signal<Set<string>>(new Set());
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        this.loadCacheFromStorage();
+    }
 
     /**
      * Translate text from source language to target language
-     * @param text Text to translate
-     * @param source Source language code (e.g., 'en')
-     * @param target Target language code (e.g., 'es', 'vi')
+     * With caching and request deduplication
      */
     translate(text: string, source: string, target: string): Observable<string | null> {
         if (!text.trim()) return of(null);
 
         const key = `${source}:${target}:${text}`;
+
+        // Check memory cache first
+        if (this.translationCache.has(key)) {
+            return of(this.translationCache.get(key)!);
+        }
+
+        // Check if request is already pending (deduplication)
+        if (this.pendingRequests.has(key)) {
+            return this.pendingRequests.get(key)!;
+        }
+
         this.setLoading(key, true);
 
-        // Lingva API format: /api/v1/{source}/{target}/{text}
-        // Our proxy handles the base URL
         const url = `${this.API_URL}/${source}/${target}/${encodeURIComponent(text)}`;
 
-        return this.http.get<TranslationResponse>(url).pipe(
+        const request$ = this.http.get<TranslationResponse>(url).pipe(
             map(response => {
-                this.setLoading(key, false);
-                return response.translation || null;
+                const translation = response.translation || null;
+                if (translation) {
+                    this.addToCache(key, translation);
+                }
+                return translation;
             }),
             catchError(err => {
                 console.error('Translation failed:', err);
-                this.setLoading(key, false);
                 return of(null);
+            }),
+            shareReplay(1),
+            finalize(() => {
+                this.setLoading(key, false);
+                this.pendingRequests.delete(key);
             })
         );
+
+        this.pendingRequests.set(key, request$);
+        return request$;
     }
 
     isLoading(key: string): boolean {
@@ -63,6 +88,42 @@ export class TranslationService {
             }
             return newStates;
         });
+    }
+
+    /**
+     * Add to cache with LRU eviction and persist to localStorage
+     */
+    private addToCache(key: string, translation: string): void {
+        // LRU eviction
+        if (this.translationCache.size >= MAX_CACHE_SIZE) {
+            const firstKey = this.translationCache.keys().next().value;
+            if (firstKey) {
+                this.translationCache.delete(firstKey);
+            }
+        }
+        this.translationCache.set(key, translation);
+        this.saveCacheToStorage();
+    }
+
+    private loadCacheFromStorage(): void {
+        try {
+            const stored = localStorage.getItem(CACHE_KEY);
+            if (stored) {
+                const entries: [string, string][] = JSON.parse(stored);
+                this.translationCache = new Map(entries.slice(-MAX_CACHE_SIZE));
+            }
+        } catch {
+            // Ignore cache load errors
+        }
+    }
+
+    private saveCacheToStorage(): void {
+        try {
+            const entries = Array.from(this.translationCache.entries());
+            localStorage.setItem(CACHE_KEY, JSON.stringify(entries.slice(-MAX_CACHE_SIZE)));
+        } catch {
+            // Ignore storage errors
+        }
     }
 
     /**

@@ -1,4 +1,4 @@
-import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy, ElementRef, viewChild, PLATFORM_ID } from '@angular/core';
+import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy, ElementRef, viewChild, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
@@ -564,7 +564,7 @@ import { Token, DictionaryEntry } from '../../models';
     }
   `]
 })
-export class WordPopupComponent {
+export class WordPopupComponent implements OnDestroy {
   private document = inject(DOCUMENT);
   private platformId = inject(PLATFORM_ID);
 
@@ -818,5 +818,10 @@ export class WordPopupComponent {
       this.entry.set(null);
       this.closed.emit();
     }
+  }
+
+  ngOnDestroy(): void {
+    // Ensure body scroll is unlocked when component is destroyed
+    this.lockBodyScroll(false);
   }
 }

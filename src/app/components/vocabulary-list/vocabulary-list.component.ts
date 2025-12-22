@@ -591,8 +591,28 @@ export class VocabularyListComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
 
-  searchQuery = '';
+  // Search with debounce (300ms)
+  private searchInput = signal('');
+  private debouncedSearch = signal('');
+  private searchTimeout: ReturnType<typeof setTimeout> | null = null;
+
   levelFilter: WordLevel | 'all' = 'all';
+
+  // Getter/setter for two-way binding with debounce
+  get searchQuery(): string {
+    return this.searchInput();
+  }
+
+  set searchQuery(value: string) {
+    this.searchInput.set(value);
+    // Debounce the actual filter update
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+    }
+    this.searchTimeout = setTimeout(() => {
+      this.debouncedSearch.set(value);
+    }, 300);
+  }
 
   // Delete modal state
   deleteModalVisible = signal(false);
@@ -603,6 +623,11 @@ export class VocabularyListComponent {
   toastType = signal<'success' | 'error'>('success');
   private toastTimeout: ReturnType<typeof setTimeout> | null = null;
 
+  // Track by function for better list performance
+  trackByWordId(index: number, item: VocabularyItem): string {
+    return item.id;
+  }
+
   filteredWords = computed(() => {
     let items = this.vocab.vocabulary();
 
@@ -610,8 +635,9 @@ export class VocabularyListComponent {
     const currentLang = this.settings.settings().language;
     items = items.filter(item => item.language === currentLang);
 
-    if (this.searchQuery) {
-      const query = this.searchQuery.toLowerCase();
+    // Use debounced search value
+    const query = this.debouncedSearch().toLowerCase();
+    if (query) {
       items = items.filter(item =>
         item.word.toLowerCase().includes(query) ||
         item.meaning.toLowerCase().includes(query) ||

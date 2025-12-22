@@ -2,6 +2,9 @@ import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SubtitleCue, Token } from '../models';
 
+// Max cached tokenization entries (LRU eviction)
+const MAX_TOKEN_CACHE_SIZE = 500;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +13,7 @@ export class SubtitleService {
   readonly currentCueIndex = signal<number>(-1);
   readonly isTokenizing = signal(false);
 
-  // Cache for tokenized text to avoid repeated API calls
+  // Cache for tokenized text to avoid repeated API calls (LRU at 500 entries)
   private tokenCache = new Map<string, Token[]>();
 
   readonly currentCue = computed(() => {
@@ -20,6 +23,20 @@ export class SubtitleService {
   });
 
   constructor(private http: HttpClient) { }
+
+  /**
+   * Add to cache with LRU eviction
+   */
+  private addToCache(key: string, tokens: Token[]): void {
+    // LRU eviction: remove oldest entry if at capacity
+    if (this.tokenCache.size >= MAX_TOKEN_CACHE_SIZE) {
+      const firstKey = this.tokenCache.keys().next().value;
+      if (firstKey) {
+        this.tokenCache.delete(firstKey);
+      }
+    }
+    this.tokenCache.set(key, tokens);
+  }
 
   /**
    * Batch tokenize all subtitle cues
@@ -66,7 +83,7 @@ export class SubtitleService {
       textsToTokenize.forEach((text, i) => {
         const tokens = tokenizedResults[i] || this.fallbackTokenize(text, lang);
         const cacheKey = `${lang}:${text}`;
-        this.tokenCache.set(cacheKey, tokens);
+        this.addToCache(cacheKey, tokens);
 
         // Apply to all cues with this text
         const indices = uniqueTexts.get(text) || [];
