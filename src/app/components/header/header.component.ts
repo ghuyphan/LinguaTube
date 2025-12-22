@@ -378,8 +378,63 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       .header__nav {
         margin: 0 auto;
         flex: 0 1 auto;
+        padding: 3px;
+        gap: 2px;
+      }
+      
+      .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        min-height: 32px;
+      }
+      
+      .header__actions {
+        margin: 0;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+
+      .google-btn {
+        padding: 6px 10px;
+        flex-shrink: 0;
+      }
+
+      .theme-btn {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+      }
+      
+      .user-avatar {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+    }
+
+    /* Mobile: Phone */
+    @media (max-width: 480px) {
+      .header {
+        padding: 0 12px;
+        height: 48px;
+        gap: 6px;
+      }
+      
+      .header__logo {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+      }
+      
+      .logo-text {
+        font-size: 0.9375rem;
+      }
+      
+      .header__nav {
         padding: 2px;
-        gap: 1px;
+        flex: 1 1 auto;
+        min-width: 0;
+        justify-content: center;
       }
       
       .lang-btn {
@@ -389,54 +444,16 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .header__actions {
-        margin: 0;
-        gap: 8px;
-      }
-
-      .google-btn {
-        padding: 6px 12px;
-      }
-
-      .theme-btn {
-        width: 34px;
-        height: 34px;
-      }
-    }
-
-    /* Mobile: Phone */
-    @media (max-width: 480px) {
-      .header {
-        padding: 0 12px; /* Slightly smaller but still consistent */
-        height: 48px;
-        gap: 8px;
-      }
-      
-      .header__logo {
-        width: 28px;
-        height: 28px;
-      }
-      
-      .logo-text {
-        font-size: 0.9375rem;
-      }
-      
-      .header__nav {
-        padding: 2px;
-        flex-shrink: 0; /* Don't shrink the nav */
-      }
-      
-      .lang-btn {
-        padding: 4px 8px;
-        font-size: 0.6875rem;
-      }
-      
-      .header__actions {
-        gap: 6px;
+        gap: 4px;
+        flex-shrink: 0;
       }
       
       .google-btn {
         padding: 6px;
         border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
       }
       
       .google-btn-text {
@@ -446,6 +463,11 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       .theme-btn {
         width: 32px;
         height: 32px;
+      }
+      
+      .user-avatar {
+        width: 28px;
+        height: 28px;
       }
     }
   `]
