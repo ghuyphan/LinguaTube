@@ -1,13 +1,41 @@
+/**
+ * Chinese Dictionary API (Cloudflare Function)
+ * Scrapes MDBG Chinese dictionary for word definitions
+ * Uses KV caching for performance
+ */
+
+import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
+
+const CACHE_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
+
 export async function onRequest(context) {
-    const { request } = context;
+    const { request, env } = context;
+
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+        return handleOptions(['GET', 'OPTIONS']);
+    }
+
     const url = new URL(request.url);
     const word = url.searchParams.get('q');
 
     if (!word) {
-        return new Response(JSON.stringify({ error: 'Missing query parameter "q"' }), {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
+    }
+
+    const DICT_CACHE = env.DICT_CACHE;
+    const cacheKey = `mdbg:${word}`;
+
+    // Check cache first
+    if (DICT_CACHE) {
+        try {
+            const cached = await DICT_CACHE.get(cacheKey, 'json');
+            if (cached) {
+                return jsonResponse(cached, 200, { 'X-Cache': 'HIT' });
+            }
+        } catch (e) {
+            // Cache read failed, continue with fetch
+        }
     }
 
     const targetUrl = `https://www.mdbg.net/chinese/dictionary?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0&wdqtm=0&wdqcham=1`;
@@ -22,7 +50,7 @@ export async function onRequest(context) {
         // We will use HTMLRewriter to extract data
         const entries = [];
         let currentEntry = null;
-        let captureText = null; // 'word', 'pinyin', 'defs', 'hsk'
+        let captureText = null;
 
         // HTMLRewriter handlers
         const rewriter = new HTMLRewriter()
@@ -35,8 +63,6 @@ export async function onRequest(context) {
             .on('tr.row .hanzi span', {
                 text(text) {
                     if (currentEntry && !currentEntry.word) {
-                        // Just take the first one or accumulate? MDBG has one main word per row usually.
-                        // But sometimes it splits characters. captureText logic is safer.
                         if (text.text.trim()) currentEntry.word += text.text;
                     }
                 }
@@ -44,7 +70,6 @@ export async function onRequest(context) {
             .on('tr.row .pinyin span', {
                 text(text) {
                     if (currentEntry) {
-                        // Pinyin chunks
                         if (text.text.trim()) currentEntry.pinyin += text.text;
                     }
                 }
@@ -53,8 +78,6 @@ export async function onRequest(context) {
                 element() { captureText = 'defs'; },
                 text(text) {
                     if (currentEntry && captureText === 'defs') {
-                        // We need to handle the output text manually, splitting by '/'
-                        // But HTMLRewriter streams text chunks. We should accumulate raw text then split.
                         if (!currentEntry._rawDefs) currentEntry._rawDefs = '';
                         currentEntry._rawDefs += text.text;
                     }
@@ -70,11 +93,10 @@ export async function onRequest(context) {
             });
 
         // Process the response
-        await rewriter.transform(response).arrayBuffer(); // Consume the stream to trigger handlers
+        await rewriter.transform(response).arrayBuffer();
 
         // Post-process entries
         const cleanEntries = entries.map(e => {
-            // Clean definitions
             const defs = e._rawDefs
                 ? e._rawDefs.split('/').map(d => d.trim()).filter(d => d)
                 : [];
@@ -85,19 +107,21 @@ export async function onRequest(context) {
                 definitions: defs,
                 hsk: e.hsk
             };
-        }).filter(e => e.word); // Filter empty
+        }).filter(e => e.word);
 
-        return new Response(JSON.stringify(cleanEntries), {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+        // Cache successful responses
+        if (DICT_CACHE && cleanEntries.length > 0) {
+            try {
+                await DICT_CACHE.put(cacheKey, JSON.stringify(cleanEntries), { expirationTtl: CACHE_TTL });
+            } catch (e) {
+                // Cache write failed, continue
             }
-        });
+        }
+
+        return jsonResponse(cleanEntries, 200, { 'X-Cache': 'MISS' });
 
     } catch (error) {
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        console.error('[MDBG] Error:', error);
+        return errorResponse(error.message);
     }
 }

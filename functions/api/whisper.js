@@ -1,11 +1,24 @@
+/**
+ * Whisper/Gladia Transcription API (Cloudflare Function)
+ * Uses Gladia API for YouTube video transcription
+ * Features: KV caching, exponential backoff, timeout handling
+ */
 
-// Cloudflare Pages Function handler
-// Uses Gladia API - accepts YouTube URLs directly
-// Caches transcripts in KV to avoid redundant API calls
+import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 
 const DEBUG = false;
+const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
+const INITIAL_DELAY_MS = 1000;
+const MAX_DELAY_MS = 5000;
+const FETCH_TIMEOUT_MS = 10000;
+
 function log(...args) {
     if (DEBUG) console.log('[Gladia]', ...args);
+}
+
+// Handle preflight requests
+export async function onRequestOptions() {
+    return handleOptions(['POST', 'OPTIONS']);
 }
 
 export async function onRequestPost(context) {
@@ -16,11 +29,9 @@ export async function onRequestPost(context) {
         const body = await request.json();
         const { videoId } = body;
 
-        if (!videoId) {
-            return new Response(JSON.stringify({ error: 'videoId is required' }), {
-                status: 400,
-                headers: { 'Content-Type': 'application/json' }
-            });
+        // Validate video ID
+        if (!validateVideoId(videoId)) {
+            return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
         }
 
         // Check cache first
@@ -29,10 +40,7 @@ export async function onRequestPost(context) {
                 const cached = await TRANSCRIPT_CACHE.get(`transcript:${videoId}`, 'json');
                 if (cached) {
                     log('Cache hit for', videoId);
-                    return new Response(JSON.stringify(cached), {
-                        status: 200,
-                        headers: { 'Content-Type': 'application/json' }
-                    });
+                    return jsonResponse(cached);
                 }
             } catch (e) {
                 // Cache read failed, continue
@@ -41,10 +49,7 @@ export async function onRequestPost(context) {
 
         const gladiaKey = env.GLADIA_API_KEY;
         if (!gladiaKey) {
-            return new Response(JSON.stringify({ error: 'GLADIA_API_KEY not set' }), {
-                status: 500,
-                headers: { 'Content-Type': 'application/json' }
-            });
+            return errorResponse('GLADIA_API_KEY not set');
         }
 
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
@@ -56,11 +61,11 @@ export async function onRequestPost(context) {
                 'x-gladia-key': gladiaKey,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ audio_url: youtubeUrl })
+            body: JSON.stringify({ audio_url: youtubeUrl }),
+            signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
         });
 
         if (!submitResponse.ok) {
-            const errorText = await submitResponse.text();
             throw new Error(`Gladia submit failed: ${submitResponse.status}`);
         }
 
@@ -71,58 +76,70 @@ export async function onRequestPost(context) {
             throw new Error('No result_url from Gladia');
         }
 
-        // Step 2: Poll for results
-        const maxAttempts = 60;
-        const pollInterval = 3000;
+        // Step 2: Poll for results with exponential backoff
+        const startTime = Date.now();
+        let delay = INITIAL_DELAY_MS;
 
-        for (let attempt = 0; attempt < maxAttempts; attempt++) {
-            await new Promise(resolve => setTimeout(resolve, pollInterval));
+        while (Date.now() - startTime < MAX_DURATION_MS) {
+            await new Promise(resolve => setTimeout(resolve, delay));
 
-            const resultResponse = await fetch(resultUrl, {
-                headers: { 'x-gladia-key': gladiaKey }
-            });
+            try {
+                const resultResponse = await fetch(resultUrl, {
+                    headers: { 'x-gladia-key': gladiaKey },
+                    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+                });
 
-            if (!resultResponse.ok) continue;
-
-            const resultData = await resultResponse.json();
-
-            if (resultData.status === 'done') {
-                const utterances = resultData.result?.transcription?.utterances || [];
-                const segments = utterances.map((utt, index) => ({
-                    id: index,
-                    text: utt.text?.trim() || '',
-                    start: utt.start || 0,
-                    duration: (utt.end || 0) - (utt.start || 0)
-                }));
-
-                const response = {
-                    success: true,
-                    language: resultData.result?.transcription?.languages?.[0] || 'unknown',
-                    duration: resultData.result?.metadata?.audio_duration || 0,
-                    segments
-                };
-
-                // Cache the result (expire in 30 days)
-                if (TRANSCRIPT_CACHE) {
-                    try {
-                        await TRANSCRIPT_CACHE.put(
-                            `transcript:${videoId}`,
-                            JSON.stringify(response),
-                            { expirationTtl: 60 * 60 * 24 * 30 }
-                        );
-                    } catch (e) {
-                        // Cache write failed, continue
-                    }
+                if (!resultResponse.ok) {
+                    // Apply exponential backoff and continue
+                    delay = Math.min(delay * 2, MAX_DELAY_MS);
+                    continue;
                 }
 
-                return new Response(JSON.stringify(response), {
-                    status: 200,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
+                const resultData = await resultResponse.json();
 
-            if (resultData.status === 'error') {
-                throw new Error(`Gladia error: ${resultData.error_message}`);
+                if (resultData.status === 'done') {
+                    const utterances = resultData.result?.transcription?.utterances || [];
+                    const segments = utterances.map((utt, index) => ({
+                        id: index,
+                        text: utt.text?.trim() || '',
+                        start: utt.start || 0,
+                        duration: (utt.end || 0) - (utt.start || 0)
+                    }));
+
+                    const response = {
+                        success: true,
+                        language: resultData.result?.transcription?.languages?.[0] || 'unknown',
+                        duration: resultData.result?.metadata?.audio_duration || 0,
+                        segments
+                    };
+
+                    // Cache the result (expire in 30 days)
+                    if (TRANSCRIPT_CACHE) {
+                        try {
+                            await TRANSCRIPT_CACHE.put(
+                                `transcript:${videoId}`,
+                                JSON.stringify(response),
+                                { expirationTtl: 60 * 60 * 24 * 30 }
+                            );
+                        } catch (e) {
+                            // Cache write failed, continue
+                        }
+                    }
+
+                    return jsonResponse(response);
+                }
+
+                if (resultData.status === 'error') {
+                    throw new Error(`Gladia error: ${resultData.error_message}`);
+                }
+
+                // Still processing, apply exponential backoff
+                delay = Math.min(delay * 2, MAX_DELAY_MS);
+
+            } catch (fetchError) {
+                // Handle fetch timeout or network errors, continue polling
+                log('Poll error:', fetchError.message);
+                delay = Math.min(delay * 2, MAX_DELAY_MS);
             }
         }
 
@@ -130,11 +147,8 @@ export async function onRequestPost(context) {
 
     } catch (error) {
         console.error('[Gladia] Error:', error.message);
-        return new Response(JSON.stringify({
+        return jsonResponse({
             error: `AI transcription failed: ${error.message}`
-        }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        }, 500);
     }
 }

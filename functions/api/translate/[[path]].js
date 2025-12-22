@@ -1,53 +1,70 @@
 /**
- * GET /api/translate/[[path]]
- * Proxy requests to Lingva Translate API
- * path segments: [source, target, text]
+ * Translation Proxy API (Cloudflare Function)
+ * Proxies requests to Lingva Translate with fallback instances
+ * Route: /api/translate/[[path]]
  */
+
+import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+
+const LINGVA_INSTANCES = [
+    'https://lingva.ml',
+    'https://lingva.lunar.icu',
+    'https://translate.plausibility.cloud'
+];
+
+const INSTANCE_TIMEOUT_MS = 5000;
+
+// Handle preflight requests
+export async function onRequestOptions() {
+    return handleOptions(['GET', 'OPTIONS']);
+}
+
 export async function onRequestGet(context) {
     const { params } = context;
     const pathSegments = params.path; // e.g., ['en', 'vi', 'hello']
 
     if (!pathSegments || pathSegments.length < 3) {
-        return new Response(JSON.stringify({ error: 'Invalid path' }), {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return jsonResponse({ error: 'Invalid path. Expected: /api/translate/{source}/{target}/{text}' }, 400);
     }
 
-    // Construct the target URL
-    // Lingva API: https://lingva.ml/api/v1/{source}/{target}/{text}
     const source = pathSegments[0];
     const target = pathSegments[1];
-    const text = pathSegments.slice(2).join('/'); // Rejoin valid text that might contain slashes
+    const text = pathSegments.slice(2).join('/'); // Rejoin text that might contain slashes
 
-    const url = `https://lingva.ml/api/v1/${source}/${target}/${text}`;
-
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                // Mimic a browser to avoid some bot blocks, though Lingva is usually open
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            }
-        });
-
-        // Forward the response
-        const data = await response.json();
-
-        return new Response(JSON.stringify(data), {
-            status: response.status,
-            headers: {
-                'Content-Type': 'application/json',
-                // Allow CORS for our frontend
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET',
-                'Access-Control-Allow-Headers': 'Content-Type'
-            }
-        });
-    } catch (error) {
-        return new Response(JSON.stringify({ error: 'Translation proxy failed' }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+    if (!source || !target || !text) {
+        return jsonResponse({ error: 'Missing source, target, or text' }, 400);
     }
+
+    // Try each Lingva instance until one succeeds
+    let lastError = null;
+
+    for (const instance of LINGVA_INSTANCES) {
+        const url = `${instance}/api/v1/${source}/${target}/${encodeURIComponent(text)}`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                },
+                signal: AbortSignal.timeout(INSTANCE_TIMEOUT_MS)
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                return jsonResponse(data, 200, {
+                    'X-Lingva-Instance': instance
+                });
+            }
+
+            lastError = new Error(`${instance} returned ${response.status}`);
+        } catch (error) {
+            lastError = error;
+            // Continue to next instance
+        }
+    }
+
+    // All instances failed
+    console.error('[Translate] All instances failed:', lastError?.message);
+    return errorResponse(`Translation failed: ${lastError?.message || 'All instances unavailable'}`);
 }

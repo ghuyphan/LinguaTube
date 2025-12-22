@@ -40,12 +40,12 @@ export class TranscriptService {
 
   // Piped instances - most reliable for subtitle fetching
   private readonly PIPED_INSTANCES = [
-    '/piped1'   // proxies to https://pipedapi.kavin.rocks
+    '/proxy/piped1'   // proxies to https://pipedapi.kavin.rocks
   ];
 
   // Invidious instances as fallback
   private readonly INVIDIOUS_INSTANCES = [
-    '/invidious1'  // proxies to https://yewtu.be
+    '/proxy/invidious1'  // proxies to https://yewtu.be
   ];
 
   constructor(private http: HttpClient) { }

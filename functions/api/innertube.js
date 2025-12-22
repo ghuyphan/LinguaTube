@@ -1,19 +1,34 @@
-// Cloudflare Pages Function to proxy YouTube innertube API
-// Route: /api/innertube
+/**
+ * YouTube Innertube Proxy (Cloudflare Function)
+ * Fetches captions with parallel fallback strategies
+ */
 
-const DEBUG = false; // Set to true for verbose logging
+import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
+
+const DEBUG = false;
 
 function log(...args) {
     if (DEBUG) console.log('[Innertube]', ...args);
 }
 
+// Handle preflight requests
+export async function onRequestOptions() {
+    return handleOptions(['POST', 'OPTIONS']);
+}
+
 export async function onRequestPost(context) {
     const { request, env } = context;
-    const CAPTION_CACHE = env.TRANSCRIPT_CACHE; // Reuse existing KV namespace
+    const CAPTION_CACHE = env.TRANSCRIPT_CACHE;
 
     try {
         const body = await request.json();
         const videoId = body.videoId;
+
+        // Validate video ID
+        if (!validateVideoId(videoId)) {
+            return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
+        }
+
         const cacheKey = `captions:${videoId}`;
 
         // Check cache first
@@ -22,13 +37,7 @@ export async function onRequestPost(context) {
                 const cached = await CAPTION_CACHE.get(cacheKey, 'json');
                 if (cached) {
                     log('Cache hit for', videoId);
-                    return new Response(JSON.stringify({ ...cached, source: 'cache' }), {
-                        status: 200,
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Access-Control-Allow-Origin': '*'
-                        }
-                    });
+                    return jsonResponse({ ...cached, source: 'cache' });
                 }
             } catch (e) {
                 // Cache read failed, continue with fetch
@@ -42,26 +51,24 @@ export async function onRequestPost(context) {
         // Check if we got captions
         let hasCaptions = !!data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
 
-        // Strategy 2: If no captions, try scraping the watch page
+        // Strategy 2 & 3: If no captions, run fallbacks in parallel
         if (!hasCaptions) {
-            log('Innertube failed, trying watch page scrape');
-            const scrapedData = await tryWatchPageScrape(videoId);
+            log('Innertube failed, trying fallbacks in parallel');
 
-            if (scrapedData?.captions?.playerCaptionsTracklistRenderer?.captionTracks) {
-                data = scrapedData;
-                hasCaptions = true;
-                source = 'scrape';
-            }
-        }
+            const results = await Promise.allSettled([
+                tryWatchPageScrape(videoId),
+                tryThirdPartyAPI(videoId)
+            ]);
 
-        // Strategy 3: If still no captions, try third-party API
-        if (!hasCaptions) {
-            log('Scrape failed, trying third-party API');
-            const thirdPartyData = await tryThirdPartyAPI(videoId);
-
-            if (thirdPartyData?.captions?.playerCaptionsTracklistRenderer?.captionTracks) {
-                data = thirdPartyData;
-                source = 'piped';
+            // Find first successful result with captions
+            for (const result of results) {
+                if (result.status === 'fulfilled' &&
+                    result.value?.captions?.playerCaptionsTracklistRenderer?.captionTracks) {
+                    data = result.value;
+                    hasCaptions = true;
+                    source = result === results[0] ? 'scrape' : 'piped';
+                    break;
+                }
             }
         }
 
@@ -74,23 +81,13 @@ export async function onRequestPost(context) {
             }
         }
 
-        return new Response(JSON.stringify({ ...data, source }), {
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        });
+        return jsonResponse({ ...data, source });
 
     } catch (error) {
         console.error('[Innertube] Error:', error.message);
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return errorResponse(error.message);
     }
 }
-
 
 // Strategy 1: Direct innertube API
 async function tryInnertubeAPI(body) {
@@ -225,15 +222,3 @@ async function tryThirdPartyAPI(videoId) {
 
     return {};
 }
-
-// Handle preflight requests
-export async function onRequestOptions() {
-    return new Response(null, {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type'
-        }
-    });
-}
-

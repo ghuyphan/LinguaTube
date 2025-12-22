@@ -1,15 +1,21 @@
-// Cloudflare Pages Function for vocabulary sync
-// Uses D1 database for persistent storage
+/**
+ * Vocabulary Sync API (Cloudflare Function)
+ * Uses D1 database for persistent storage with batch operations
+ */
+
+import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
+
+// Handle CORS preflight
+export async function onRequestOptions() {
+    return handleOptions(['GET', 'POST', 'DELETE', 'OPTIONS']);
+}
 
 export async function onRequestGet(context) {
     const { request, env } = context;
     const DB = env.VOCAB_DB;
 
     if (!DB) {
-        return new Response(JSON.stringify({ error: 'Database not configured' }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return errorResponse('Database not configured');
     }
 
     // Get user ID from query params
@@ -17,10 +23,7 @@ export async function onRequestGet(context) {
     const userId = url.searchParams.get('userId');
 
     if (!userId) {
-        return new Response(JSON.stringify({ error: 'userId required' }), {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return jsonResponse({ error: 'userId required' }, 400);
     }
 
     try {
@@ -28,19 +31,14 @@ export async function onRequestGet(context) {
             'SELECT * FROM vocabulary WHERE user_id = ? ORDER BY updated_at DESC'
         ).bind(userId).all();
 
-        return new Response(JSON.stringify({
+        return jsonResponse({
             success: true,
             items: results,
             count: results.length
-        }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' }
         });
     } catch (error) {
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        console.error('[Sync] GET Error:', error);
+        return errorResponse(error.message);
     }
 }
 
@@ -49,27 +47,25 @@ export async function onRequestPost(context) {
     const DB = env.VOCAB_DB;
 
     if (!DB) {
-        return new Response(JSON.stringify({ error: 'Database not configured' }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return errorResponse('Database not configured');
     }
 
     try {
         const { userId, items } = await request.json();
 
         if (!userId || !items || !Array.isArray(items)) {
-            return new Response(JSON.stringify({ error: 'userId and items[] required' }), {
-                status: 400,
-                headers: { 'Content-Type': 'application/json' }
-            });
+            return jsonResponse({ error: 'userId and items[] required' }, 400);
+        }
+
+        if (items.length === 0) {
+            return jsonResponse({ success: true, synced: 0 });
         }
 
         const now = Date.now();
-        let synced = 0;
 
-        for (const item of items) {
-            await DB.prepare(`
+        // Use D1 batch operations for bulk inserts/updates
+        const statements = items.map(item =>
+            DB.prepare(`
                 INSERT INTO vocabulary (id, user_id, word, reading, pinyin, romanization, meaning, language, level, examples, added_at, updated_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(user_id, word, language) DO UPDATE SET
@@ -93,22 +89,19 @@ export async function onRequestPost(context) {
                 JSON.stringify(item.examples || []),
                 item.addedAt || now,
                 now
-            ).run();
-            synced++;
-        }
+            )
+        );
 
-        return new Response(JSON.stringify({
+        // Execute all statements in a single batch
+        await DB.batch(statements);
+
+        return jsonResponse({
             success: true,
-            synced
-        }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' }
+            synced: items.length
         });
     } catch (error) {
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        console.error('[Sync] POST Error:', error);
+        return errorResponse(error.message);
     }
 }
 
@@ -117,34 +110,23 @@ export async function onRequestDelete(context) {
     const DB = env.VOCAB_DB;
 
     if (!DB) {
-        return new Response(JSON.stringify({ error: 'Database not configured' }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return errorResponse('Database not configured');
     }
 
     try {
         const { userId, word, language } = await request.json();
 
         if (!userId || !word || !language) {
-            return new Response(JSON.stringify({ error: 'userId, word, and language required' }), {
-                status: 400,
-                headers: { 'Content-Type': 'application/json' }
-            });
+            return jsonResponse({ error: 'userId, word, and language required' }, 400);
         }
 
         await DB.prepare(
             'DELETE FROM vocabulary WHERE user_id = ? AND word = ? AND language = ?'
         ).bind(userId, word, language).run();
 
-        return new Response(JSON.stringify({ success: true }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return jsonResponse({ success: true });
     } catch (error) {
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        console.error('[Sync] DELETE Error:', error);
+        return errorResponse(error.message);
     }
 }

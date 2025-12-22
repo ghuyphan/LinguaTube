@@ -12,7 +12,7 @@ export class DictionaryService {
   readonly lastQuery = signal<string>(''); // Persistence for search term
 
   // Use proxy to avoid CORS issues
-  private readonly JOTOBA_API = '/jotoba/api/search/words';
+  private readonly JOTOBA_API = '/proxy/jotoba/api/search/words';
   private readonly MDBG_API = '/api/mdbg';
   private readonly KRDICT_API = '/api/krdict';
 

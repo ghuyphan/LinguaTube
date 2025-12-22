@@ -1,18 +1,41 @@
 /**
  * Korean Dictionary API (Cloudflare Function)
  * Scrapes Naver Korean-English dictionary for word definitions
+ * Uses KV caching for performance
  */
 
+import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
+
+const CACHE_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
+
 export async function onRequest(context) {
-    const { request } = context;
+    const { request, env } = context;
+
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+        return handleOptions(['GET', 'OPTIONS']);
+    }
+
     const url = new URL(request.url);
     const word = url.searchParams.get('q');
 
     if (!word) {
-        return new Response(JSON.stringify({ error: 'Missing query parameter "q"' }), {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
+    }
+
+    const DICT_CACHE = env.DICT_CACHE;
+    const cacheKey = `krdict:${word}`;
+
+    // Check cache first
+    if (DICT_CACHE) {
+        try {
+            const cached = await DICT_CACHE.get(cacheKey, 'json');
+            if (cached) {
+                return jsonResponse(cached, 200, { 'X-Cache': 'HIT' });
+            }
+        } catch (e) {
+            // Cache read failed, continue with fetch
+        }
     }
 
     // Use Naver Korean-English dictionary
@@ -38,7 +61,7 @@ export async function onRequest(context) {
 
         const entries = wordResults.slice(0, 5).map(item => {
             // Extract word (handle HTML entities)
-            const word = (item.expEntry || '').replace(/<[^>]+>/g, '');
+            const wordText = (item.expEntry || '').replace(/<[^>]+>/g, '');
 
             // Extract romanization/pronunciation
             const romanization = (item.expEntrySuperscript || item.phoneticSigns?.[0]?.sign || '').replace(/<[^>]+>/g, '');
@@ -60,26 +83,29 @@ export async function onRequest(context) {
             const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
 
             return {
-                word,
+                word: wordText,
                 romanization,
                 definitions,
                 partOfSpeech
             };
         }).filter(e => e.word && e.definitions.length > 0);
 
-        return new Response(JSON.stringify(entries), {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Cache-Control': 'public, max-age=86400' // Cache for 1 day
+        // Cache successful responses
+        if (DICT_CACHE && entries.length > 0) {
+            try {
+                await DICT_CACHE.put(cacheKey, JSON.stringify(entries), { expirationTtl: CACHE_TTL });
+            } catch (e) {
+                // Cache write failed, continue
             }
+        }
+
+        return jsonResponse(entries, 200, {
+            'Cache-Control': 'public, max-age=86400',
+            'X-Cache': 'MISS'
         });
 
     } catch (error) {
         console.error('[Korean Dict] Error:', error);
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return errorResponse(error.message);
     }
 }

@@ -8,6 +8,11 @@ compatibility_flags = ["nodejs_compat"]
 binding = "TRANSCRIPT_CACHE"
 id = "e4ccbf86e2654f31be92af593b912eb8"
 
+# KV Namespace for caching dictionary lookups (krdict, mdbg)
+[[kv_namespaces]]
+binding = "DICT_CACHE"
+id = "0ecedc49f49e4e6f9724e8ca96d18524"
+
 # D1 Database for vocabulary sync
 # Create with: wrangler d1 create linguatube-vocab
 # Then add the database_id below
@@ -18,3 +23,4 @@ database_id = "35b6faad-cba0-4ad0-8033-f55799d061aa"
 
 [vars]
 # GLADIA_API_KEY and GOOGLE_CLIENT_ID should be set in Cloudflare Dashboard
+

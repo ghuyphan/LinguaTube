@@ -1,5 +1,14 @@
-// Cloudflare Pages Function to proxy YouTube timedtext API
-// This fetches the actual caption content
+/**
+ * Transcript Proxy API (Cloudflare Function)
+ * Proxies YouTube timedtext API for caption content
+ */
+
+import { handleOptions, errorResponse } from '../_shared/utils.js';
+
+// Handle preflight requests
+export async function onRequestOptions() {
+    return handleOptions(['GET', 'OPTIONS']);
+}
 
 export async function onRequestGet(context) {
     const { request } = context;
@@ -34,9 +43,6 @@ export async function onRequestGet(context) {
 
     } catch (error) {
         console.error('[Transcript Proxy] Error:', error.message);
-        return new Response(JSON.stringify({ error: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        return errorResponse(error.message);
     }
 }
