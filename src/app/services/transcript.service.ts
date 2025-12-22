@@ -76,7 +76,10 @@ export class TranscriptService {
 
     // console.debug('[TranscriptService] Fetching transcript for:', videoId, 'lang:', lang);
 
-    return this.fetchCaptionsFromInvidious(videoId).pipe(
+    // Pass the target language to the backend to optimize fetching
+    const targetLanguages = [lang];
+
+    return this.fetchCaptionsWithRetry(videoId, false, targetLanguages).pipe(
       switchMap(captionTracks => {
         // ... (existing logic to find track) ...
         // We will refactor this entire block to be more robust
@@ -88,7 +91,7 @@ export class TranscriptService {
         // Retry ONCE with forceRefresh if it was likely a cache issue (e.g. valid response but no captions or specific lang)
         if (err.message.includes('No captions available') || err.message.includes('No ' + lang + ' captions')) {
           // console.debug('[TranscriptService] Retrying with forceRefresh...');
-          return this.fetchCaptionsFromInvidious(videoId, true).pipe(
+          return this.fetchCaptionsWithRetry(videoId, true, targetLanguages).pipe(
             switchMap(tracks => this.processCaptionTracks(tracks, videoId, lang)),
             catchError(retryErr => {
               // console.debug('[TranscriptService] Retry failed:', retryErr.message);
@@ -141,7 +144,7 @@ export class TranscriptService {
    * Fetch caption tracks - Prioritize YouTube Innertube API with retry logic
    * Uses initial delay + exponential backoff to handle YouTube CDN timing issues
    */
-  private fetchCaptionsFromInvidious(videoId: string, forceRefresh = false): Observable<CaptionTrack[]> {
+  private fetchCaptionsWithRetry(videoId: string, forceRefresh = false, targetLanguages: string[] = []): Observable<CaptionTrack[]> {
     return new Observable<CaptionTrack[]>(observer => {
       const maxRetries = forceRefresh ? 1 : 3; // Fewer retries for forced refresh
       let attempt = 0;
@@ -150,7 +153,7 @@ export class TranscriptService {
         attempt++;
         // console.debug(`[TranscriptService] Attempt ${attempt}/${maxRetries} to fetch captions (forceRefresh=${forceRefresh})`);
 
-        this.fetchCaptionsFromYouTube(videoId, forceRefresh).subscribe({
+        this.fetchCaptionsFromYouTube(videoId, forceRefresh, targetLanguages).subscribe({
           next: (result: { tracks: CaptionTrack[], validResponse: boolean }) => {
             if (result.tracks.length > 0) {
               // console.debug('[TranscriptService] Got caption tracks:', result.tracks.length);
@@ -203,11 +206,14 @@ export class TranscriptService {
    * Returns { tracks, validResponse } to distinguish "no captions" from "API failure"
    * The API now pre-fetches caption content to avoid IP signature issues
    */
-  private fetchCaptionsFromYouTube(videoId: string, forceRefresh = false): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
+  private fetchCaptionsFromYouTube(videoId: string, forceRefresh = false, targetLanguages: string[] = []): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
     const url = '/api/innertube';
 
-    // Send only videoId - the backend will construct the proper innertube request
-    const body = { videoId, forceRefresh };
+    // Send videoId and targetLanguages - the backend will construct the proper innertube request
+    const body: any = { videoId, forceRefresh };
+    if (targetLanguages.length > 0) {
+      body.targetLanguages = targetLanguages;
+    }
 
     // console.debug('[TranscriptService] Calling innertube API for:', videoId);
 

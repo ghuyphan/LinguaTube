@@ -1,17 +1,19 @@
 /**
  * YouTube Innertube Proxy (Cloudflare Function)
- * Robust caption fetching with multiple fallback strategies
+ * Optimized caption fetching with parallel fallback strategies
  *
- * Strategy Order:
- * 1. Innertube API (TV/Web clients in PARALLEL) - first success wins
- * 2. Watch page scrape + immediate content fetch
- * 3. Third-party APIs (Piped/Invidious) - parallel race
+ * Strategy: Race ALL sources simultaneously - first success wins
+ * - Innertube API (TV/Web clients)
+ * - Watch page scrape
+ * - Third-party APIs (Piped/Invidious)
  *
- * Environment:
- * - INNERTUBE_API_KEY: YouTube Innertube API key (optional, has default)
- * - TRANSCRIPT_CACHE: KV namespace binding for caching
+ * Optimizations:
+ * - All strategies run in PARALLEL (not sequential)
+ * - Only fetches target languages (default: ja, zh, en)
+ * - Reduced timeouts for faster failures
+ * - Optional metadata-only mode for instant response
  *
- * @version 3.0.0
+ * @version 4.0.0
  * @updated 2025-12
  */
 
@@ -25,58 +27,48 @@ const DEBUG = false;
 const CACHE_TTL = 60 * 60 * 24; // 24 hours
 const DEFAULT_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
 
+// Reduced timeouts for faster response
 const TIMEOUTS = {
-    innertube: 8000,
-    watchPage: 8000,
-    thirdParty: 8000,
-    caption: 5000
+    innertube: 5000,
+    watchPage: 5000,
+    thirdParty: 5000,
+    caption: 3000
 };
 
+// Default languages for LinguaTube (Japanese, Chinese, English)
+const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'en'];
+
 /**
- * Client configurations - Updated December 2025
- * Based on yt-dlp source: https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube/_base.py
- * 
- * Note: iOS/Android clients now require PO tokens and are deprecated
- * Default priority: tv_simply, tv, web
+ * Client configurations - December 2025
+ * Based on yt-dlp: https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube/_base.py
  */
 const CLIENT_CONFIGS = [
-    // TV Simply - Best for captions, no PO token required
     {
         clientName: 'TVHTML5_SIMPLY',
         clientVersion: '1.0',
-        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/25.lts.30.1034943-gold',
+        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version',
         clientId: '85'
     },
-    // TV HTML5 - Cobalt-based client
     {
         clientName: 'TVHTML5',
-        clientVersion: '7.20250312.16.00',
-        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/25.lts.30.1034943-gold',
+        clientVersion: '7.20251220.00.00',
+        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version',
         clientId: '7'
     },
-    // Web - Standard browser client
     {
         clientName: 'WEB',
-        clientVersion: '2.20250312.04.00',
+        clientVersion: '2.20251220.00.00',
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         clientId: '1'
-    },
-    // Mobile Web - iPad Safari
-    {
-        clientName: 'MWEB',
-        clientVersion: '2.20250311.03.00',
-        userAgent: 'Mozilla/5.0 (iPad; CPU OS 16_7_10 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1,gzip(gfe)',
-        clientId: '2'
     }
 ];
 
 const THIRD_PARTY_APIS = [
     { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' },
-    { url: 'https://api.piped.video/streams/', name: 'piped.video', type: 'piped' },
     { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' },
-    { url: 'https://pipedapi.kavin.rocks/streams/', name: 'kavin.rocks', type: 'piped' },
     { url: 'https://inv.tux.pizza/api/v1/captions/', name: 'tux.pizza', type: 'invidious' },
-    { url: 'https://invidious.nerdvpn.de/api/v1/captions/', name: 'nerdvpn', type: 'invidious' }
+    { url: 'https://api.piped.video/streams/', name: 'piped.video', type: 'piped' },
+    { url: 'https://pipedapi.kavin.rocks/streams/', name: 'kavin.rocks', type: 'piped' }
 ];
 
 // ============================================================================
@@ -102,30 +94,35 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, forceRefresh = false } = body;
+        const {
+            videoId,
+            forceRefresh = false,
+            targetLanguages = DEFAULT_TARGET_LANGS,
+            metadataOnly = false  // If true, skip content fetching
+        } = body;
 
-        log('Request for videoId:', videoId);
+        log('Request:', { videoId, targetLanguages, metadataOnly });
 
         if (!validateVideoId(videoId)) {
             return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
         }
 
-        const cacheKey = `captions:v3:${videoId}`;
+        const cacheKey = `captions:v4:${videoId}`;
 
-        // Check cache (unless force refresh)
+        // Check cache
         if (!forceRefresh && cache) {
-            const cached = await getCachedResult(cache, cacheKey);
+            const cached = await getCachedResult(cache, cacheKey, targetLanguages);
             if (cached) {
-                log('Cache hit for', videoId);
+                log('Cache hit');
                 return jsonResponse({ ...cached, source: 'cache' });
             }
         }
 
-        // Execute strategies
-        const result = await executeStrategies(videoId, apiKey);
+        // Execute all strategies in parallel
+        const result = await executeStrategiesParallel(videoId, apiKey, targetLanguages, metadataOnly);
 
-        // Cache successful results
-        if (result.hasContent && cache) {
+        // Cache successful results (only if content was fetched)
+        if (result.hasContent && cache && !metadataOnly) {
             await cacheResult(cache, cacheKey, result.data);
         }
 
@@ -142,160 +139,43 @@ export async function onRequestPost(context) {
 }
 
 // ============================================================================
-// Strategy Orchestration
+// Strategy Orchestration - ALL PARALLEL
 // ============================================================================
 
-async function executeStrategies(videoId, apiKey) {
-    // Strategy 1: Innertube API (PARALLEL - first success wins)
-    log('Strategy 1: Innertube API (parallel)');
-    let result = await tryInnertubeParallel(videoId, apiKey);
-
-    if (result.success && result.hasContent) {
-        log('Innertube success via', result.client);
-        return { ...result, source: 'innertube' };
-    }
-
-    // Strategy 2: Watch page scrape
-    log('Strategy 2: Watch page scrape');
-    result = await tryWatchPageWithContent(videoId);
-
-    if (result.success && result.hasContent) {
-        log('Watch page success');
-        return { ...result, source: 'scrape' };
-    }
-
-    // Strategy 3: Third-party APIs (parallel)
-    log('Strategy 3: Third-party APIs');
-    result = await tryThirdPartyAPIs(videoId);
-
-    if (result.success && result.hasContent) {
-        log('Third-party success');
-        return { ...result, source: 'thirdparty' };
-    }
-
-    // All strategies failed
-    log('All strategies exhausted');
-    return {
-        success: false,
-        hasContent: false,
-        source: 'none',
-        data: {
-            videoDetails: result.data?.videoDetails || { videoId },
-            captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } }
-        },
-        warning: result.warning
-    };
-}
-
-// ============================================================================
-// Strategy 1: Innertube API (PARALLEL)
-// ============================================================================
-
-async function tryInnertubeParallel(videoId, apiKey) {
+async function executeStrategiesParallel(videoId, apiKey, targetLanguages, metadataOnly) {
     const controllers = [];
 
-    const tryClient = async (config) => {
-        const controller = new AbortController();
-        controllers.push(controller);
+    // Create abort controller for all strategies
+    const masterController = new AbortController();
 
-        const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.innertube);
-
-        try {
-            log('Trying client:', config.clientName);
-
-            const requestBody = {
-                context: {
-                    client: {
-                        clientName: config.clientName,
-                        clientVersion: config.clientVersion,
-                        hl: 'en',
-                        gl: 'US'
-                    }
-                },
-                videoId,
-                contentCheckOk: true,
-                racyCheckOk: true
-            };
-
-            const response = await fetch(
-                `https://www.youtube.com/youtubei/v1/player?key=${apiKey}&prettyPrint=false`,
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'User-Agent': config.userAgent,
-                        'Accept': '*/*',
-                        'Accept-Language': 'en-US,en;q=0.9',
-                        'Origin': 'https://www.youtube.com',
-                        'Referer': 'https://www.youtube.com/',
-                        'X-Youtube-Client-Name': config.clientId,
-                        'X-Youtube-Client-Version': config.clientVersion
-                    },
-                    body: JSON.stringify(requestBody),
-                    signal: controller.signal
-                }
-            );
-
-            clearTimeout(timeoutId);
-
-            if (!response.ok) throw new Error(`Status ${response.status}`);
-
-            const data = await response.json();
-
-            // Check for errors
-            if (data.playabilityStatus?.status === 'LOGIN_REQUIRED') {
-                throw new Error('Age-restricted');
-            }
-
-            if (data.playabilityStatus?.status === 'ERROR') {
-                throw new Error(data.playabilityStatus.reason || 'Playback error');
-            }
-
-            const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-
-            if (!captionTracks?.length) {
-                throw new Error('No captions');
-            }
-
-            log('Client', config.clientName, '- found', captionTracks.length, 'tracks');
-
-            // Fetch content immediately
-            await fetchAllCaptionContent(captionTracks, config.userAgent);
-
-            const tracksWithContent = captionTracks.filter(t => t.content?.length > 0);
-
-            if (tracksWithContent.length === 0) {
-                throw new Error('Failed to fetch caption content');
-            }
-
-            log('Client', config.clientName, '- success with', tracksWithContent.length, 'tracks');
-
-            return {
-                success: true,
-                hasContent: true,
-                client: config.clientName,
-                data
-            };
-
-        } catch (error) {
-            clearTimeout(timeoutId);
-            throw error;
-        }
-    };
+    const strategies = [
+        // Innertube clients
+        ...CLIENT_CONFIGS.map(config =>
+            tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, masterController.signal)
+                .then(r => ({ ...r, source: `innertube:${config.clientName}` }))
+        ),
+        // Watch page scrape
+        tryWatchPage(videoId, targetLanguages, metadataOnly, masterController.signal)
+            .then(r => ({ ...r, source: 'scrape' })),
+        // Third-party APIs
+        ...THIRD_PARTY_APIS.map(api =>
+            tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, masterController.signal)
+                .then(r => ({ ...r, source: `thirdparty:${api.name}` }))
+        )
+    ];
 
     try {
-        // Race all clients - first success wins
-        const result = await Promise.any(CLIENT_CONFIGS.map(tryClient));
-
-        // Abort remaining requests
-        controllers.forEach(c => c.abort());
-
+        // Race all strategies - first success wins
+        const result = await Promise.any(strategies);
+        masterController.abort(); // Cancel remaining requests
+        log('Success via:', result.source);
         return result;
 
     } catch (aggregateError) {
-        controllers.forEach(c => c.abort());
+        masterController.abort();
+        log('All strategies failed');
 
-        // Check if age-restricted
+        // Check for specific errors
         const ageRestricted = aggregateError.errors?.some(e =>
             e.message?.includes('Age-restricted')
         );
@@ -303,27 +183,118 @@ async function tryInnertubeParallel(videoId, apiKey) {
         return {
             success: false,
             hasContent: false,
-            data: {},
-            warning: ageRestricted ? 'Video may be age-restricted' : undefined
+            source: 'none',
+            data: {
+                videoDetails: { videoId },
+                captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } }
+            },
+            warning: ageRestricted ? 'Video may be age-restricted' : 'No captions available'
         };
     }
 }
 
 // ============================================================================
-// Strategy 2: Watch Page Scrape
+// Innertube Client
 // ============================================================================
 
-async function tryWatchPageWithContent(videoId) {
-    const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, signal) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.innertube);
+
+    // Link to master signal
+    signal.addEventListener('abort', () => controller.abort());
 
     try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.watchPage);
+        const response = await fetch(
+            `https://www.youtube.com/youtubei/v1/player?key=${apiKey}&prettyPrint=false`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': config.userAgent,
+                    'Accept': '*/*',
+                    'Accept-Language': 'en-US,en;q=0.9',
+                    'Origin': 'https://www.youtube.com',
+                    'Referer': 'https://www.youtube.com/',
+                    'X-Youtube-Client-Name': config.clientId,
+                    'X-Youtube-Client-Version': config.clientVersion
+                },
+                body: JSON.stringify({
+                    context: {
+                        client: {
+                            clientName: config.clientName,
+                            clientVersion: config.clientVersion,
+                            hl: 'en',
+                            gl: 'US'
+                        }
+                    },
+                    videoId,
+                    contentCheckOk: true,
+                    racyCheckOk: true
+                }),
+                signal: controller.signal
+            }
+        );
 
+        clearTimeout(timeoutId);
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+
+        // Check playability
+        if (data.playabilityStatus?.status === 'LOGIN_REQUIRED') {
+            throw new Error('Age-restricted');
+        }
+        if (data.playabilityStatus?.status === 'ERROR') {
+            throw new Error(data.playabilityStatus.reason || 'Playback error');
+        }
+
+        const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+        if (!captionTracks?.length) throw new Error('No captions');
+
+        // Filter to target languages only
+        const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
+        if (!filteredTracks.length) throw new Error('No matching language tracks');
+
+        // Fetch content (unless metadata only)
+        if (!metadataOnly) {
+            await fetchTargetedCaptionContent(filteredTracks, config.userAgent);
+            const tracksWithContent = filteredTracks.filter(t => t.content?.length > 0);
+            if (!tracksWithContent.length) throw new Error('Failed to fetch content');
+        }
+
+        // Update data with filtered tracks
+        data.captions.playerCaptionsTracklistRenderer.captionTracks = filteredTracks;
+
+        return {
+            success: true,
+            hasContent: !metadataOnly,
+            data
+        };
+
+    } catch (error) {
+        clearTimeout(timeoutId);
+        throw error;
+    }
+}
+
+// ============================================================================
+// Watch Page Scrape
+// ============================================================================
+
+async function tryWatchPage(videoId, targetLanguages, metadataOnly, signal) {
+    const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.watchPage);
+
+    signal.addEventListener('abort', () => controller.abort());
+
+    try {
         const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
             headers: {
                 'User-Agent': userAgent,
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept': 'text/html,application/xhtml+xml',
                 'Accept-Language': 'en-US,en;q=0.9',
                 'Accept-Encoding': 'identity'
             },
@@ -332,45 +303,42 @@ async function tryWatchPageWithContent(videoId) {
 
         clearTimeout(timeoutId);
 
-        if (!response.ok) {
-            return { success: false, hasContent: false, data: {} };
-        }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const html = await response.text();
         const data = extractPlayerResponse(html);
 
-        if (!data) {
-            return { success: false, hasContent: false, data: {} };
-        }
+        if (!data) throw new Error('Failed to extract player response');
 
         const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+        if (!captionTracks?.length) throw new Error('No captions');
 
-        if (!captionTracks?.length) {
-            return { success: true, hasContent: false, data };
+        const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
+        if (!filteredTracks.length) throw new Error('No matching language tracks');
+
+        if (!metadataOnly) {
+            await fetchTargetedCaptionContent(filteredTracks, userAgent);
+            const tracksWithContent = filteredTracks.filter(t => t.content?.length > 0);
+            if (!tracksWithContent.length) throw new Error('Failed to fetch content');
         }
 
-        log('Scrape found', captionTracks.length, 'tracks');
-
-        await fetchAllCaptionContent(captionTracks, userAgent);
-
-        const tracksWithContent = captionTracks.filter(t => t.content?.length > 0);
+        data.captions.playerCaptionsTracklistRenderer.captionTracks = filteredTracks;
 
         return {
             success: true,
-            hasContent: tracksWithContent.length > 0,
+            hasContent: !metadataOnly,
             data
         };
 
     } catch (error) {
-        log('Watch page error:', error.message);
-        return { success: false, hasContent: false, data: {} };
+        clearTimeout(timeoutId);
+        throw error;
     }
 }
 
 function extractPlayerResponse(html) {
     const marker = 'ytInitialPlayerResponse = ';
     const startIndex = html.indexOf(marker);
-
     if (startIndex === -1) return null;
 
     const jsonStart = startIndex + marker.length;
@@ -399,130 +367,93 @@ function extractPlayerResponse(html) {
             }
         }
     }
-
     return null;
 }
 
 // ============================================================================
-// Strategy 3: Third-Party APIs (Parallel)
+// Third-Party API
 // ============================================================================
 
-async function tryThirdPartyAPIs(videoId) {
-    const controllers = [];
+async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, signal) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.thirdParty);
 
-    const checkApi = async (api) => {
-        const controller = new AbortController();
-        controllers.push(controller);
-
-        const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.thirdParty);
-
-        try {
-            const response = await fetch(`${api.url}${videoId}`, {
-                headers: {
-                    'Accept': 'application/json',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                },
-                signal: controller.signal
-            });
-
-            clearTimeout(timeoutId);
-
-            if (!response.ok) throw new Error(`Status ${response.status}`);
-
-            const data = await response.json();
-            const captionTracks = await processThirdPartyResponse(api, data);
-
-            if (captionTracks.length > 0) {
-                log('Third-party win:', api.name);
-                return {
-                    success: true,
-                    hasContent: true,
-                    data: {
-                        captions: {
-                            playerCaptionsTracklistRenderer: { captionTracks }
-                        },
-                        videoDetails: {
-                            title: data.title || 'Unknown Title',
-                            author: data.uploader || data.author || 'Unknown Author',
-                            videoId
-                        }
-                    }
-                };
-            }
-
-            throw new Error('No valid content');
-
-        } catch {
-            clearTimeout(timeoutId);
-            throw new Error('Failed');
-        }
-    };
+    signal.addEventListener('abort', () => controller.abort());
 
     try {
-        const result = await Promise.any(THIRD_PARTY_APIS.map(checkApi));
-        controllers.forEach(c => c.abort());
-        return result;
+        const response = await fetch(`${api.url}${videoId}`, {
+            headers: {
+                'Accept': 'application/json',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            },
+            signal: controller.signal
+        });
 
-    } catch {
-        log('All third-party APIs failed');
-        controllers.forEach(c => c.abort());
-        return { success: false, hasContent: false, data: {} };
+        clearTimeout(timeoutId);
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        const captionTracks = await processThirdPartyResponse(api, data, targetLanguages, metadataOnly);
+
+        if (!captionTracks.length) throw new Error('No valid tracks');
+
+        return {
+            success: true,
+            hasContent: !metadataOnly,
+            data: {
+                captions: { playerCaptionsTracklistRenderer: { captionTracks } },
+                videoDetails: {
+                    title: data.title || 'Unknown',
+                    author: data.uploader || data.author || 'Unknown',
+                    videoId
+                }
+            }
+        };
+
+    } catch (error) {
+        clearTimeout(timeoutId);
+        throw error;
     }
 }
 
-async function processThirdPartyResponse(api, data) {
-    const captionTracks = [];
+async function processThirdPartyResponse(api, data, targetLanguages, metadataOnly) {
+    let rawTracks = [];
 
-    if (api.type === 'piped') {
-        if (!data.subtitles?.length) return [];
-
-        const results = await Promise.all(
-            data.subtitles.map(async (sub) => {
-                try {
-                    const content = await fetchThirdPartyContent(sub.url);
-                    if (content?.length > 0) {
-                        return {
-                            baseUrl: sub.url,
-                            languageCode: sub.code,
-                            name: { simpleText: sub.name || sub.code },
-                            content
-                        };
-                    }
-                } catch { /* ignore */ }
-                return null;
-            })
-        );
-
-        captionTracks.push(...results.filter(Boolean));
-
+    if (api.type === 'piped' && data.subtitles?.length) {
+        rawTracks = data.subtitles.map(sub => ({
+            baseUrl: sub.url,
+            languageCode: sub.code,
+            name: { simpleText: sub.name || sub.code }
+        }));
     } else if (api.type === 'invidious') {
         const captions = Array.isArray(data.captions) ? data.captions : (Array.isArray(data) ? data : []);
-        if (!captions.length) return [];
-
         const instanceUrl = new URL(api.url).origin;
 
-        const results = await Promise.all(
-            captions.map(async (sub) => {
-                try {
-                    const fullUrl = sub.url.startsWith('http') ? sub.url : `${instanceUrl}${sub.url}`;
-                    const content = await fetchThirdPartyContent(fullUrl);
-                    if (content?.length > 0) {
-                        return {
-                            baseUrl: fullUrl,
-                            languageCode: sub.languageCode || sub.label,
-                            name: { simpleText: sub.label || sub.languageCode },
-                            content
-                        };
-                    }
-                } catch { /* ignore */ }
-                return null;
-            })
-        );
-
-        captionTracks.push(...results.filter(Boolean));
+        rawTracks = captions.map(sub => ({
+            baseUrl: sub.url?.startsWith('http') ? sub.url : `${instanceUrl}${sub.url}`,
+            languageCode: sub.languageCode || sub.label,
+            name: { simpleText: sub.label || sub.languageCode }
+        }));
     }
 
-    return captionTracks;
+    // Filter by target languages
+    const filteredTracks = filterTracksByLanguage(rawTracks, targetLanguages);
+
+    if (metadataOnly) return filteredTracks;
+
+    // Fetch content for filtered tracks
+    await Promise.all(
+        filteredTracks.map(async (track) => {
+            try {
+                track.content = await fetchThirdPartyContent(track.baseUrl);
+            } catch {
+                track.content = null;
+            }
+        })
+    );
+
+    return filteredTracks.filter(t => t.content?.length > 0);
 }
 
 async function fetchThirdPartyContent(url) {
@@ -536,7 +467,6 @@ async function fetchThirdPartyContent(url) {
         });
 
         clearTimeout(timeoutId);
-
         if (!response.ok) return null;
 
         const text = await response.text();
@@ -549,10 +479,19 @@ async function fetchThirdPartyContent(url) {
 }
 
 // ============================================================================
-// Caption Content Fetching
+// Caption Content Fetching - TARGETED
 // ============================================================================
 
-async function fetchAllCaptionContent(captionTracks, userAgent) {
+function filterTracksByLanguage(tracks, targetLanguages) {
+    return tracks.filter(track => {
+        const langCode = track.languageCode?.toLowerCase() || '';
+        return targetLanguages.some(target =>
+            langCode.startsWith(target.toLowerCase())
+        );
+    });
+}
+
+async function fetchTargetedCaptionContent(captionTracks, userAgent) {
     await Promise.all(
         captionTracks.map(async (track) => {
             try {
@@ -565,6 +504,7 @@ async function fetchAllCaptionContent(captionTracks, userAgent) {
 }
 
 async function fetchCaptionContent(baseUrl, userAgent) {
+    // Try json3 first (fastest to parse), then others
     const formats = ['json3', 'srv3', 'vtt'];
 
     for (const format of formats) {
@@ -591,16 +531,12 @@ async function fetchCaptionContent(baseUrl, userAgent) {
             if (!response.ok) continue;
 
             const text = await response.text();
-
             if (text.length < 10 || text === '1') continue;
 
             const segments = parseCaption(text, format);
+            if (segments?.length > 0) return segments;
 
-            if (segments?.length > 0) {
-                return segments;
-            }
-
-        } catch { /* try next format */ }
+        } catch { /* try next */ }
     }
 
     return null;
@@ -626,6 +562,7 @@ function parseCaption(text, format) {
         if (result?.length) return result;
     }
 
+    // Fallback: try all parsers
     return parseJSON3(text) || parseXML(text) || parseVTT(text) || [];
 }
 
@@ -681,12 +618,11 @@ function parseVTT(text) {
 
     while (i < lines.length) {
         const line = lines[i].trim();
-        const timestampMatch = line.match(/(\d{2}:\d{2}:\d{2}\.\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}\.\d{3})/);
+        const match = line.match(/(\d{2}:\d{2}:\d{2}\.\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}\.\d{3})/);
 
-        if (timestampMatch) {
-            const startTime = parseVTTTime(timestampMatch[1]);
-            const endTime = parseVTTTime(timestampMatch[2]);
-
+        if (match) {
+            const startTime = parseVTTTime(match[1]);
+            const endTime = parseVTTTime(match[2]);
             let text = '';
             i++;
 
@@ -726,13 +662,20 @@ function parseVTTTime(time) {
 // Caching
 // ============================================================================
 
-async function getCachedResult(cache, key) {
+async function getCachedResult(cache, key, targetLanguages) {
     try {
         const cached = await cache.get(key, 'json');
-        const hasContent = cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.some(
-            t => t.content?.length > 0
+        if (!cached) return null;
+
+        const tracks = cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
+
+        // Check if cached result has content for target languages
+        const hasTargetContent = tracks.some(t =>
+            t.content?.length > 0 &&
+            targetLanguages.some(lang => t.languageCode?.toLowerCase().startsWith(lang.toLowerCase()))
         );
-        return hasContent ? cached : null;
+
+        return hasTargetContent ? cached : null;
     } catch {
         return null;
     }
@@ -741,7 +684,7 @@ async function getCachedResult(cache, key) {
 async function cacheResult(cache, key, data) {
     try {
         await cache.put(key, JSON.stringify(data), { expirationTtl: CACHE_TTL });
-        log('Cached result');
+        log('Cached');
     } catch (e) {
         log('Cache error:', e.message);
     }

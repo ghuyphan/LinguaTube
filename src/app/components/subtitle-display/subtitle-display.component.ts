@@ -623,6 +623,7 @@ export class SubtitleDisplayComponent {
   maxLoops = signal(5); // 0 = infinite
   private loopTargetId = signal<number>(-1);
   private loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
+  private lastLoopTime = 0;
 
   // Keyboard shortcut for loop toggle
   @HostListener('document:keydown', ['$event'])
@@ -710,6 +711,9 @@ export class SubtitleDisplayComponent {
       }
 
       if (shouldLoop) {
+        // Prevent double-counting due to seek latency
+        if (Date.now() - this.lastLoopTime < 1000) return;
+
         const maxLoopsValue = this.maxLoops();
         const currentLoopCount = this.loopCount();
 
@@ -719,6 +723,7 @@ export class SubtitleDisplayComponent {
             this.loopTimeoutId = setTimeout(() => {
               this.loopCount.update(c => c + 1);
               this.youtube.seekTo(targetCue.startTime);
+              this.lastLoopTime = Date.now();
               this.loopTimeoutId = null; // Reset timeout ref
             }, 300);
           }
