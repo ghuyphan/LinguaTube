@@ -14,6 +14,7 @@ export interface Token {
   romanization?: string;  // Romanization (Korean)
   baseForm?: string;      // Dictionary form
   partOfSpeech?: string;  // Noun, verb, etc.
+  hasKanji?: boolean;     // Whether token contains kanji (Japanese)
 }
 
 // Vocabulary models

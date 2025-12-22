@@ -269,7 +269,8 @@ export class SubtitleService {
 
   private findActiveCue(subs: SubtitleCue[], time: number): number {
     for (let i = subs.length - 1; i >= 0; i--) {
-      if (time >= subs[i].startTime && time <= subs[i].endTime) {
+      // Use exclusive end time to prevent boundary overlap
+      if (time >= subs[i].startTime && time < subs[i].endTime) {
         return i;
       }
     }
@@ -278,6 +279,7 @@ export class SubtitleService {
 
   private findStickyCue(subs: SubtitleCue[], time: number): number {
     for (let i = subs.length - 1; i >= 0; i--) {
+      // Use exclusive: endTime <= time means cue has fully ended
       if (subs[i].endTime <= time) {
         const next = subs[i + 1];
         if (!next || time < next.startTime) {
