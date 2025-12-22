@@ -546,49 +546,56 @@ function parseVTTTime(time) {
  */
 async function tryThirdPartyAPIs(videoId) {
     const apis = [
-        { url: `https://pipedapi.kavin.rocks/streams/${videoId}`, name: 'kavin.rocks' },
-        { url: `https://api.piped.yt/streams/${videoId}`, name: 'piped.yt' },
-        { url: `https://pipedapi.in.projectsegfau.lt/streams/${videoId}`, name: 'projectsegfau.lt' }
+        // Piped Instances
+        { url: `https://pipedapi.kavin.rocks/streams/${videoId}`, name: 'kavin.rocks (Piped)', type: 'piped' },
+        { url: `https://api.piped.video/streams/${videoId}`, name: 'piped.video (Piped)', type: 'piped' },
+        { url: `https://pipedapi.drg.li/streams/${videoId}`, name: 'drg.li (Piped)', type: 'piped' },
+        { url: `https://api.piped.privacydev.net/streams/${videoId}`, name: 'privacydev (Piped)', type: 'piped' },
+        { url: `https://pipedapi.ducks.party/streams/${videoId}`, name: 'ducks.party (Piped)', type: 'piped' },
+        { url: `https://pipedapi.adminforge.de/streams/${videoId}`, name: 'adminforge (Piped)', type: 'piped' },
+
+        // Invidious Instances
+        { url: `https://yewtu.be/api/v1/captions/${videoId}`, name: 'yewtu.be (Invidious)', type: 'invidious' },
+        { url: `https://vid.puffyan.us/api/v1/captions/${videoId}`, name: 'puffyan (Invidious)', type: 'invidious' },
+        { url: `https://invidious.drg.li/api/v1/captions/${videoId}`, name: 'drg.li (Invidious)', type: 'invidious' },
+        { url: `https://inv.tux.pizza/api/v1/captions/${videoId}`, name: 'tux.pizza (Invidious)', type: 'invidious' },
+        { url: `https://invidious.nerdvpn.de/api/v1/captions/${videoId}`, name: 'nerdvpn (Invidious)', type: 'invidious' }
     ];
 
     for (const api of apis) {
         try {
             log('Trying', api.name);
 
+            // Use AbortSignal for tighter timeout
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 6000);
+
             const response = await fetch(api.url, {
                 headers: {
                     'Accept': 'application/json',
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
                 },
-                signal: AbortSignal.timeout(8000)
+                signal: controller.signal
             });
+            clearTimeout(timeoutId);
 
             if (!response.ok) continue;
 
             const data = await response.json();
-
-            if (!data.subtitles || data.subtitles.length === 0) {
-                log(api.name, '- no subtitles');
-                continue;
-            }
-
-            log(api.name, '- found', data.subtitles.length, 'subtitles');
-
-            // Fetch content for each subtitle track
             const captionTracks = [];
 
-            for (const sub of data.subtitles) {
-                try {
-                    // Piped provides direct VTT URLs that don't have signature issues
-                    const subResponse = await fetch(sub.url, {
-                        headers: { 'Accept': '*/*' },
-                        signal: AbortSignal.timeout(5000)
-                    });
+            // Handle Piped Response
+            if (api.type === 'piped') {
+                if (!data.subtitles || data.subtitles.length === 0) {
+                    log(api.name, '- no subtitles');
+                    continue;
+                }
 
-                    if (subResponse.ok) {
-                        const text = await subResponse.text();
-                        const content = parseCaption(text, 'vtt');
+                log(api.name, '- found', data.subtitles.length, 'subtitles');
 
+                for (const sub of data.subtitles) {
+                    try {
+                        const content = await fetchThirdPartyContent(sub.url);
                         if (content && content.length > 0) {
                             captionTracks.push({
                                 baseUrl: sub.url,
@@ -596,15 +603,49 @@ async function tryThirdPartyAPIs(videoId) {
                                 name: { simpleText: sub.name || sub.code },
                                 content: content
                             });
-                            log('Fetched', content.length, 'segments for', sub.code);
                         }
+                    } catch (e) {
+                        // ignore failed track
                     }
-                } catch (e) {
-                    log('Failed to fetch subtitle for', sub.code);
+                }
+            }
+            // Handle Invidious Response
+            else if (api.type === 'invidious') {
+                // Invidious returns { captions: [...] } or just [...]
+                const captions = Array.isArray(data.captions) ? data.captions : (Array.isArray(data) ? data : []);
+
+                if (captions.length === 0) {
+                    log(api.name, '- no subtitles');
+                    continue;
+                }
+
+                log(api.name, '- found', captions.length, 'subtitles');
+
+                for (const sub of captions) {
+                    try {
+                        // Invidious URLs are relative, need to prepend instance URL
+                        // But wait! Invidious API returns `url` which is usually relative like `/api/v1/captions/ID?label=...`
+                        // We need to construct the full URL
+                        const instanceUrl = new URL(api.url).origin;
+                        const fullUrl = sub.url.startsWith('http') ? sub.url : `${instanceUrl}${sub.url}`;
+
+                        const content = await fetchThirdPartyContent(fullUrl);
+                        if (content && content.length > 0) {
+                            captionTracks.push({
+                                baseUrl: fullUrl,
+                                languageCode: sub.languageCode || sub.label, // Invidious uses 'label' often? Check schema. usually 'languageCode' or 'label'
+                                name: { simpleText: sub.label || sub.languageCode },
+                                content: content
+                            });
+                        }
+                    } catch (e) {
+                        // ignore failed track
+                    }
                 }
             }
 
             if (captionTracks.length > 0) {
+                // Return consistent structure
                 return {
                     success: true,
                     hasContent: true,
@@ -615,8 +656,8 @@ async function tryThirdPartyAPIs(videoId) {
                             }
                         },
                         videoDetails: {
-                            title: data.title,
-                            author: data.uploader,
+                            title: data.title || 'Unknown Title',
+                            author: data.uploader || data.author || 'Unknown Author',
                             videoId: videoId
                         }
                     }
@@ -629,6 +670,31 @@ async function tryThirdPartyAPIs(videoId) {
     }
 
     return { success: false, hasContent: false, data: {} };
+}
+
+/**
+ * Helper to fetch content from third-party URL
+ */
+async function fetchThirdPartyContent(url) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+    try {
+        const response = await fetch(url, {
+            headers: { 'Accept': '*/*' },
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+
+        if (response.ok) {
+            const text = await response.text();
+            // Piped/Invidious usually return VTT
+            return parseCaption(text, 'vtt');
+        }
+        return null;
+    } catch (e) {
+        return null;
+    }
 }
 
 /**
