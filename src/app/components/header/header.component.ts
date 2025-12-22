@@ -363,11 +363,12 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       color: var(--text-primary);
     }
 
+    /* Mobile: Tablet and below */
     @media (max-width: 768px) {
       .header {
-        padding: 0 var(--space-md);
-        height: 56px;
-        justify-content: space-between;
+        padding: 0 16px; /* Consistent 16px padding on both sides */
+        height: 52px;
+        gap: var(--space-sm);
       }
 
       .header__title-group, .header__stats {
@@ -375,56 +376,74 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
 
       .header__nav {
-        margin: 0;
-        position: absolute; /* Center nav absolutely on mobile */
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 0 auto; /* Center with auto margins instead of absolute */
+        flex: 0 1 auto;
       }
       
       .lang-btn {
         padding: 6px 10px;
+        font-size: 0.75rem;
       }
       
       .header__actions {
         margin: 0;
-        gap: var(--space-sm);
+        gap: 8px;
       }
-      
+
+      .google-btn {
+        padding: 6px 12px;
+      }
 
       .theme-btn {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
       }
     }
 
+    /* Mobile: Phone */
     @media (max-width: 480px) {
       .header {
-        padding: 0 var(--space-sm);
+        padding: 0 12px; /* Slightly smaller but still consistent */
+        height: 48px;
+        gap: 8px;
+      }
+      
+      .header__logo {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .logo-text {
+        font-size: 0.9375rem;
       }
       
       .header__nav {
-        /* On very small screens, let it flow or shrink */
-        position: static;
-        transform: none;
-        margin-left: auto;
-        margin-right: var(--space-xs);
-        flex-shrink: 1;
-        overflow-x: auto;
+        padding: 2px;
+        flex-shrink: 0; /* Don't shrink the nav */
       }
       
       .lang-btn {
         padding: 4px 8px;
-        font-size: 0.75rem;
+        font-size: 0.6875rem;
+      }
+      
+      .header__actions {
+        gap: 6px;
       }
       
       .google-btn {
-        padding: 8px;
+        padding: 6px;
+        border-radius: 50%;
       }
       
       .google-btn-text {
         display: none;
       }
 
+      .theme-btn {
+        width: 32px;
+        height: 32px;
+      }
     }
   `]
 })
