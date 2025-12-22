@@ -1,6 +1,8 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SubtitleCue, Token } from '../models';
+import { pinyin } from 'pinyin-pro';
+import { convert as romanizeKorean } from 'hangul-romanization';
 
 // Max cached tokenization entries (LRU eviction)
 const MAX_TOKEN_CACHE_SIZE = 500;
@@ -145,24 +147,82 @@ export class SubtitleService {
       if (!response.ok) throw new Error('Tokenization failed');
 
       const data = await response.json();
-      return data.tokens || [];
+      const tokens = data.tokens || [];
+
+      // Enhance with readings (pinyin/romanization) for Chinese and Korean
+      return this.enhanceTokensWithReadings(tokens, lang);
     } catch {
       return this.fallbackTokenize(text, lang);
     }
   }
 
   /**
-   * Fast fallback tokenization (client-side)
+   * Fast fallback tokenization (client-side) - now with readings!
    */
   private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko'): Token[] {
     if (lang === 'zh') {
-      return text.split('').map(char => ({ surface: char }));
+      // Chinese: character-by-character with pinyin
+      return text.split('').map(char => {
+        const charPinyin = this.getPinyin(char);
+        return {
+          surface: char,
+          pinyin: charPinyin !== char ? charPinyin : undefined
+        };
+      });
     }
     if (lang === 'ko') {
-      // Korean is space-delimited, split by spaces and filter empty
-      return text.split(/\s+/).filter(w => w.trim()).map(word => ({ surface: word }));
+      // Korean is space-delimited, split by spaces with romanization
+      return text.split(/\s+/).filter(w => w.trim()).map(word => ({
+        surface: word,
+        romanization: this.getRomanization(word)
+      }));
     }
     return this.tokenizeJapaneseBasic(text);
+  }
+
+  /**
+   * Get pinyin for Chinese text using pinyin-pro
+   */
+  private getPinyin(text: string): string {
+    try {
+      return pinyin(text, { toneType: 'symbol', type: 'string' });
+    } catch {
+      return text;
+    }
+  }
+
+  /**
+   * Get romanization for Korean text
+   */
+  private getRomanization(text: string): string {
+    try {
+      return romanizeKorean(text);
+    } catch {
+      return text;
+    }
+  }
+
+  /**
+   * Enhance tokens with readings after server tokenization
+   */
+  private enhanceTokensWithReadings(tokens: Token[], lang: 'ja' | 'zh' | 'ko'): Token[] {
+    if (lang === 'zh') {
+      return tokens.map(token => {
+        const tokenPinyin = this.getPinyin(token.surface);
+        return {
+          ...token,
+          pinyin: tokenPinyin !== token.surface ? tokenPinyin : undefined
+        };
+      });
+    }
+    if (lang === 'ko') {
+      return tokens.map(token => ({
+        ...token,
+        romanization: this.getRomanization(token.surface)
+      }));
+    }
+    // Japanese: server should provide readings (furigana)
+    return tokens;
   }
 
   /**

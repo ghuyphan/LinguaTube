@@ -26,8 +26,10 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "hangul-romanization": "^1.0.1",
     "jieba-js": "^1.0.2",
     "lucide-angular": "^0.469.0",
+    "pinyin-pro": "^3.27.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.6.0",
     "zone.js": "~0.15.0"
