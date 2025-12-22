@@ -196,6 +196,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       align-items: center;
       justify-content: center;
       white-space: nowrap;
+      width: auto;
+      flex: 0 0 auto;
     }
 
     .lang-btn:hover {

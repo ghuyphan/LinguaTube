@@ -16,6 +16,8 @@ export class SubtitleService {
   // Cache for tokenized text to avoid repeated API calls (LRU at 500 entries)
   private tokenCache = new Map<string, Token[]>();
 
+  private cancellationRequested = signal(false);
+
   readonly currentCue = computed(() => {
     const index = this.currentCueIndex();
     const subs = this.subtitles();
@@ -47,6 +49,7 @@ export class SubtitleService {
     if (cues.length === 0) return;
 
     this.isTokenizing.set(true);
+    this.cancellationRequested.set(false);
 
     try {
       // Collect unique texts that need tokenization
@@ -110,6 +113,14 @@ export class SubtitleService {
     }
   }
 
+  cancelTokenization(): void {
+    if (this.isTokenizing()) {
+      console.log('[SubtitleService] Tokenization cancelled');
+      this.cancellationRequested.set(true);
+      this.isTokenizing.set(false);
+    }
+  }
+
   /**
    * Batch tokenize multiple texts in one API call
    */
@@ -120,6 +131,10 @@ export class SubtitleService {
     const chunkSize = 50;
     for (let i = 0; i < texts.length; i += chunkSize) {
       const chunk = texts.slice(i, i + chunkSize);
+
+      if (this.cancellationRequested()) {
+        throw new Error('Tokenization cancelled');
+      }
 
       // Tokenize each text in chunk (could be optimized further with a true batch endpoint)
       const chunkResults = await Promise.all(

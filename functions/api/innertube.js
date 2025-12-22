@@ -32,16 +32,24 @@ export async function onRequestPost(context) {
         const body = await request.json();
         const videoId = body.videoId;
 
-        log('Request for videoId:', videoId);
+        log('Request body:', JSON.stringify(body));
+        log('Request for videoId:', videoId, 'type:', typeof videoId);
 
         if (!validateVideoId(videoId)) {
+            log('Validation failed for videoId:', videoId);
             return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
         }
 
         const cacheKey = `captions:v2:${videoId}`;
 
-        // Check cache first
-        if (CAPTION_CACHE) {
+        const forceRefresh = body.forceRefresh === true;
+
+        if (forceRefresh) {
+            log('Force refresh requested - bypassing cache read');
+        }
+
+        // Check cache first (if not forced)
+        if (CAPTION_CACHE && !forceRefresh) {
             try {
                 const cached = await CAPTION_CACHE.get(cacheKey, 'json');
                 if (cached && cached.captions?.playerCaptionsTracklistRenderer?.captionTracks?.some(t => t.content)) {

@@ -64,60 +64,73 @@ export class TranscriptService {
 
     return this.fetchCaptionsFromInvidious(videoId).pipe(
       switchMap(captionTracks => {
-        console.log('[TranscriptService] Caption tracks found:', captionTracks.length);
-
-        if (!captionTracks || captionTracks.length === 0) {
-          throw new Error('No captions available for this video');
-        }
-
-        // Find the requested language - do NOT fall back to other languages
-        const track = captionTracks.find(t => t.languageCode === lang)
-          || captionTracks.find(t => t.languageCode.startsWith(lang));
-
-        if (!track) {
-          throw new Error(`No ${lang} captions available`);
-        }
-
-        console.log('[TranscriptService] Using caption track:', track.languageCode, 'hasPreFetchedContent:', !!track.content);
-
-        this.availableLanguages.set(captionTracks.map(t => t.languageCode));
-        this.captionSource.set('youtube');
-
-        // Use pre-fetched content from innertube API
-        // The server handles all caption fetching to avoid IP signature issues
-        if (track.content && Array.isArray(track.content) && track.content.length > 0) {
-          console.log('[TranscriptService] Using pre-fetched content:', track.content.length, 'segments');
-          return of(track.content);
-        }
-
-        // No pre-fetched content means server couldn't fetch it (signature expired, etc.)
-        // Don't try fetching from URL - it will fail. Let Whisper handle it.
-        console.log('[TranscriptService] No pre-fetched content available, falling back to Whisper');
-        throw new Error('Caption content not available');
+        // ... (existing logic to find track) ...
+        // We will refactor this entire block to be more robust
+        return this.processCaptionTracks(captionTracks, videoId, lang);
       }),
-      map(segments => this.convertToSubtitleCues(segments)),
       catchError(err => {
-        console.log('[TranscriptService] Caption fetch failed:', err.message);
-        // No captions found - fallback to Whisper AI transcription
+        console.log('[TranscriptService] Initial fetch failed:', err.message);
+
+        // Retry ONCE with forceRefresh if it was likely a cache issue (e.g. valid response but no captions or specific lang)
+        if (err.message.includes('No captions available') || err.message.includes('No ' + lang + ' captions')) {
+          console.log('[TranscriptService] Retrying with forceRefresh...');
+          return this.fetchCaptionsFromInvidious(videoId, true).pipe(
+            switchMap(tracks => this.processCaptionTracks(tracks, videoId, lang)),
+            catchError(retryErr => {
+              console.log('[TranscriptService] Retry failed:', retryErr.message);
+              return this.generateWithWhisper(videoId);
+            })
+          );
+        }
+
         return this.generateWithWhisper(videoId);
       })
     );
+  }
+
+  private processCaptionTracks(captionTracks: CaptionTrack[], videoId: string, lang: string): Observable<SubtitleCue[]> {
+    console.log('[TranscriptService] Caption tracks found:', captionTracks.length);
+
+    if (!captionTracks || captionTracks.length === 0) {
+      throw new Error('No captions available for this video');
+    }
+
+    // Find the requested language
+    const track = captionTracks.find(t => t.languageCode === lang)
+      || captionTracks.find(t => t.languageCode.startsWith(lang));
+
+    if (!track) {
+      throw new Error(`No ${lang} captions available`);
+    }
+
+    console.log('[TranscriptService] Using caption track:', track.languageCode, 'hasPreFetchedContent:', !!track.content);
+
+    this.availableLanguages.set(captionTracks.map(t => t.languageCode));
+    this.captionSource.set('youtube');
+
+    if (track.content && Array.isArray(track.content) && track.content.length > 0) {
+      console.log('[TranscriptService] Using pre-fetched content:', track.content.length, 'segments');
+      return of(this.convertToSubtitleCues(track.content));
+    }
+
+    console.log('[TranscriptService] No pre-fetched content available, falling back to Whisper');
+    throw new Error('Caption content not available');
   }
 
   /**
    * Fetch caption tracks - Prioritize YouTube Innertube API with retry logic
    * Uses initial delay + exponential backoff to handle YouTube CDN timing issues
    */
-  private fetchCaptionsFromInvidious(videoId: string): Observable<CaptionTrack[]> {
+  private fetchCaptionsFromInvidious(videoId: string, forceRefresh = false): Observable<CaptionTrack[]> {
     return new Observable<CaptionTrack[]>(observer => {
-      const maxRetries = 3;
+      const maxRetries = forceRefresh ? 1 : 3; // Fewer retries for forced refresh
       let attempt = 0;
 
       const tryFetch = () => {
         attempt++;
-        console.log(`[TranscriptService] Attempt ${attempt}/${maxRetries} to fetch captions`);
+        console.log(`[TranscriptService] Attempt ${attempt}/${maxRetries} to fetch captions (forceRefresh=${forceRefresh})`);
 
-        this.fetchCaptionsFromYouTube(videoId).subscribe({
+        this.fetchCaptionsFromYouTube(videoId, forceRefresh).subscribe({
           next: (result: { tracks: CaptionTrack[], validResponse: boolean }) => {
             if (result.tracks.length > 0) {
               console.log('[TranscriptService] Got caption tracks:', result.tracks.length);
@@ -170,11 +183,11 @@ export class TranscriptService {
    * Returns { tracks, validResponse } to distinguish "no captions" from "API failure"
    * The API now pre-fetches caption content to avoid IP signature issues
    */
-  private fetchCaptionsFromYouTube(videoId: string): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
+  private fetchCaptionsFromYouTube(videoId: string, forceRefresh = false): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
     const url = '/api/innertube';
 
     // Send only videoId - the backend will construct the proper innertube request
-    const body = { videoId };
+    const body = { videoId, forceRefresh };
 
     console.log('[TranscriptService] Calling innertube API for:', videoId);
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService } from '../../services';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-video-player',
@@ -630,6 +631,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private lastTap = 0; // For double tap detection if needed
+  private transcriptSubscription: Subscription | null = null;
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
   @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
@@ -920,7 +922,13 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private fetchCaptions(videoId: string): void {
     const lang = this.settings.settings().language;
-    this.transcript.fetchTranscript(videoId, lang).subscribe({
+
+    // Unsubscribe previous request if any
+    if (this.transcriptSubscription) {
+      this.transcriptSubscription.unsubscribe();
+    }
+
+    this.transcriptSubscription = this.transcript.fetchTranscript(videoId, lang).subscribe({
       next: (cues) => {
         if (cues.length > 0) {
           this.subtitles.subtitles.set(cues);
@@ -933,6 +941,11 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   closeVideo(): void {
+    if (this.transcriptSubscription) {
+      this.transcriptSubscription.unsubscribe();
+      this.transcriptSubscription = null;
+    }
+    this.subtitles.cancelTokenization();
     this.youtube.reset();
     this.subtitles.clear();
     this.videoUrl = '';
