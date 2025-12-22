@@ -161,6 +161,8 @@ async function tryInnertubeWithContent(videoId) {
         }
     ];
 
+    let bestData = null;
+
     for (const config of clientConfigs) {
         try {
             log('Trying client:', config.clientName);
@@ -205,14 +207,20 @@ async function tryInnertubeWithContent(videoId) {
             }
 
             const data = await response.json();
+
+            // Save this data if it has video details, as a fallback
+            if (data?.videoDetails) {
+                bestData = data;
+            }
+
             const captionTracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
 
             if (!captionTracks || captionTracks.length === 0) {
                 log('Client', config.clientName, '- no captions, hasVideo:', !!data?.videoDetails);
-                // If video exists but no captions, don't retry other clients
-                if (data?.videoDetails) {
-                    return { success: true, hasContent: false, data };
+                if (data?.captions) {
+                    log('Client', config.clientName, '- captions object keys:', Object.keys(data.captions));
                 }
+                // Continue to next client even if video found, because maybe another client sees captions
                 continue;
             }
 
@@ -235,6 +243,11 @@ async function tryInnertubeWithContent(videoId) {
         } catch (error) {
             log('Client', config.clientName, 'error:', error.message);
         }
+    }
+
+    // If we have valid video data but no captions after all retries
+    if (bestData) {
+        return { success: true, hasContent: false, data: bestData };
     }
 
     return { success: false, hasContent: false, data: {} };

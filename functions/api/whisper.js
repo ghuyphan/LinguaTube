@@ -27,60 +27,74 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId } = body;
-
-        // Validate video ID
-        if (!validateVideoId(videoId)) {
-            return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
-        }
-
-        // Check cache first
-        if (TRANSCRIPT_CACHE) {
-            try {
-                const cached = await TRANSCRIPT_CACHE.get(`transcript:${videoId}`, 'json');
-                if (cached) {
-                    log('Cache hit for', videoId);
-                    return jsonResponse(cached);
-                }
-            } catch (e) {
-                // Cache read failed, continue
-            }
-        }
+        const { videoId, result_url: providedResultUrl } = body;
 
         const gladiaKey = env.GLADIA_API_KEY;
         if (!gladiaKey) {
             return errorResponse('GLADIA_API_KEY not set');
         }
 
-        const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        let resultUrl = providedResultUrl;
 
-        // Step 1: Submit transcription request
-        const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
-            method: 'POST',
-            headers: {
-                'x-gladia-key': gladiaKey,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ audio_url: youtubeUrl }),
-            signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
-        });
-
-        if (!submitResponse.ok) {
-            throw new Error(`Gladia submit failed: ${submitResponse.status}`);
-        }
-
-        const submitData = await submitResponse.json();
-        const resultUrl = submitData.result_url;
-
+        // Step 1: Submit transcription request (Only if not polling existing job)
         if (!resultUrl) {
-            throw new Error('No result_url from Gladia');
+            // Validate video ID only for new requests
+            if (!validateVideoId(videoId)) {
+                return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
+            }
+
+            // Check cache first (only for new requests)
+            if (TRANSCRIPT_CACHE) {
+                try {
+                    const cached = await TRANSCRIPT_CACHE.get(`transcript:${videoId}`, 'json');
+                    if (cached) {
+                        log('Cache hit for', videoId);
+                        return jsonResponse(cached);
+                    }
+                } catch (e) {
+                    // Cache read failed, continue
+                }
+            }
+
+            const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+            const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
+                method: 'POST',
+                headers: {
+                    'x-gladia-key': gladiaKey,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ audio_url: youtubeUrl }),
+                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+            });
+
+            if (!submitResponse.ok) {
+                throw new Error(`Gladia submit failed: ${submitResponse.status}`);
+            }
+
+            const submitData = await submitResponse.json();
+            resultUrl = submitData.result_url;
+
+            if (!resultUrl) {
+                throw new Error('No result_url from Gladia');
+            }
         }
 
         // Step 2: Poll for results with exponential backoff
         const startTime = Date.now();
         let delay = INITIAL_DELAY_MS;
 
+        // Poll as long as we have time left in this function execution
         while (Date.now() - startTime < MAX_DURATION_MS) {
+
+            // Check if we are running out of time
+            if (Date.now() - startTime > 20000) { // If > 20s passed, return processing status
+                return jsonResponse({
+                    status: 'processing',
+                    result_url: resultUrl
+                });
+            }
+
             await new Promise(resolve => setTimeout(resolve, delay));
 
             try {
@@ -113,8 +127,8 @@ export async function onRequestPost(context) {
                         segments
                     };
 
-                    // Cache the result (expire in 30 days)
-                    if (TRANSCRIPT_CACHE) {
+                    // Cache the result (expire in 30 days) - ONLY if we have videoId
+                    if (TRANSCRIPT_CACHE && videoId) {
                         try {
                             await TRANSCRIPT_CACHE.put(
                                 `transcript:${videoId}`,
@@ -143,7 +157,11 @@ export async function onRequestPost(context) {
             }
         }
 
-        throw new Error('Transcription timed out');
+        // If we exit the loop, we ran out of time
+        return jsonResponse({
+            status: 'processing',
+            result_url: resultUrl
+        });
 
     } catch (error) {
         console.error('[Gladia] Error:', error.message);

@@ -539,34 +539,54 @@ export class TranscriptService {
    * Generate subtitles using Whisper API via backend
    * Called automatically when no captions are available
    */
-  generateWithWhisper(videoId: string): Observable<SubtitleCue[]> {
-    // Check cache first
-    if (this.transcriptCache.has(videoId)) {
+  /**
+   * Generate subtitles using Whisper API via backend
+   * Called automatically when no captions are available
+   * Supports polling for long-running transcriptions
+   */
+  generateWithWhisper(videoId: string, resultUrl?: string): Observable<SubtitleCue[]> {
+    // Check cache first (only if starting fresh)
+    if (!resultUrl && this.transcriptCache.has(videoId)) {
       this.captionSource.set('ai');
       return of(this.transcriptCache.get(videoId)!);
     }
 
-    // Check if request is already pending
-    if (this.pendingRequests.has(videoId)) {
+    // Check if request is already pending (only if starting fresh)
+    if (!resultUrl && this.pendingRequests.has(videoId)) {
       return this.pendingRequests.get(videoId)!;
     }
 
     this.isGeneratingAI.set(true);
     this.error.set(null);
 
-    const request = this.http.post<{
-      success: boolean;
-      language: string;
-      duration: number;
-      segments: Array<{ id: number; text: string; start: number; duration: number }>;
-      error?: string;
-    }>('/api/whisper', { videoId }).pipe(
-      map(response => {
+    const requestBody = resultUrl ? { videoId, result_url: resultUrl } : { videoId };
+
+    const request: Observable<SubtitleCue[]> = this.http.post<any>('/api/whisper', requestBody).pipe(
+      switchMap(response => {
+        // Handle polling case
+        if (response.status === 'processing' && response.result_url) {
+          console.log('[TranscriptService] AI Generation processing... polling in 4s');
+          // Wait 4s and retry with the result_url
+          return new Observable<SubtitleCue[]>(observer => {
+            setTimeout(() => {
+              this.generateWithWhisper(videoId, response.result_url).subscribe({
+                next: (res) => {
+                  observer.next(res);
+                  observer.complete();
+                },
+                error: (err) => {
+                  observer.error(err);
+                }
+              });
+            }, 4000);
+          });
+        }
+
         if (!response.success || !response.segments) {
           throw new Error(response.error || 'AI transcription failed');
         }
 
-        const cues = response.segments.map((seg, index) => ({
+        const cues = response.segments.map((seg: any, index: number) => ({
           id: index,
           startTime: seg.start,
           endTime: seg.start + seg.duration,
@@ -574,7 +594,7 @@ export class TranscriptService {
         }));
 
         this.transcriptCache.set(videoId, cues);
-        return cues;
+        return of(cues);
       }),
       tap({
         next: () => {
@@ -603,10 +623,15 @@ export class TranscriptService {
       shareReplay(1)
     );
 
-    this.pendingRequests.set(videoId, request);
+    if (!resultUrl) {
+      this.pendingRequests.set(videoId, request);
+    }
 
     return request.pipe(
-      catchError(() => of([]))
+      catchError((err) => {
+        console.error('[TranscriptService] Whisper error:', err);
+        return of([]); // Return empty array on final failure so UI doesn't break
+      })
     );
   }
 }

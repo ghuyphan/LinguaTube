@@ -15,12 +15,8 @@ app.use(express.json());
  * Gladia accepts YouTube URLs directly - no audio extraction needed!
  */
 app.post('/api/whisper', async (req, res) => {
-    const { videoId } = req.body;
+    const { videoId, result_url: providedResultUrl } = req.body;
     const gladiaKey = process.env.GLADIA_API_KEY;
-
-    if (!videoId) {
-        return res.status(400).json({ error: 'videoId is required' });
-    }
 
     if (!gladiaKey) {
         return res.status(500).json({
@@ -28,42 +24,69 @@ app.post('/api/whisper', async (req, res) => {
         });
     }
 
-    const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    console.log(`[Gladia] Starting transcription for: ${youtubeUrl}`);
+    let resultUrl = providedResultUrl;
+
+    if (!resultUrl) {
+        if (!videoId) {
+            return res.status(400).json({ error: 'videoId is required' });
+        }
+
+        const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        console.log(`[Gladia] Starting transcription for: ${youtubeUrl}`);
+
+        try {
+            // Step 1: Submit transcription request to Gladia
+            const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
+                method: 'POST',
+                headers: {
+                    'x-gladia-key': gladiaKey,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    audio_url: youtubeUrl
+                })
+            });
+
+            if (!submitResponse.ok) {
+                const errorData = await submitResponse.json().catch(() => ({}));
+                console.log('[Gladia] Full error:', JSON.stringify(errorData, null, 2));
+                throw new Error(`Gladia submit failed: ${submitResponse.status} - ${JSON.stringify(errorData)}`);
+            }
+
+            const submitData = await submitResponse.json();
+            console.log('[Gladia] Transcription submitted:', submitData.id || 'pending');
+            resultUrl = submitData.result_url;
+
+            if (!resultUrl) {
+                throw new Error('No result_url returned from Gladia');
+            }
+        } catch (error) {
+            console.error('[Gladia] Submit Error:', error.message);
+            return res.status(500).json({ error: error.message });
+        }
+    } else {
+        console.log('[Gladia] Polling existing job:', resultUrl);
+    }
 
     try {
-        // Step 1: Submit transcription request to Gladia
-        const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
-            method: 'POST',
-            headers: {
-                'x-gladia-key': gladiaKey,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                audio_url: youtubeUrl
-            })
-        });
-
-        if (!submitResponse.ok) {
-            const errorData = await submitResponse.json().catch(() => ({}));
-            console.log('[Gladia] Full error:', JSON.stringify(errorData, null, 2));
-            throw new Error(`Gladia submit failed: ${submitResponse.status} - ${JSON.stringify(errorData)}`);
-        }
-
-        const submitData = await submitResponse.json();
-        console.log('[Gladia] Transcription submitted:', submitData.id || 'pending');
-
         // Step 2: Poll for results (Gladia is async)
-        const resultUrl = submitData.result_url;
-        if (!resultUrl) {
-            throw new Error('No result_url returned from Gladia');
-        }
+        // For local dev, we can set a shorter timeout to simulate Cloudflare behavior if we want,
+        // but 20-30s is good to mimic the "return processing" behavior.
+        const startTime = Date.now();
+        const MAX_DURATION_MS = 25000;
+        const pollInterval = 3000;
 
-        // Poll for completion (max 5 minutes)
-        const maxAttempts = 60;
-        const pollInterval = 5000; // 5 seconds
+        while (Date.now() - startTime < MAX_DURATION_MS) {
 
-        for (let attempt = 0; attempt < maxAttempts; attempt++) {
+            // Check if we are running out of time
+            if (Date.now() - startTime > 20000) {
+                console.log('[Gladia] Timeout limit reached, returning processing status');
+                return res.json({
+                    status: 'processing',
+                    result_url: resultUrl
+                });
+            }
+
             await new Promise(resolve => setTimeout(resolve, pollInterval));
 
             const resultResponse = await fetch(resultUrl, {
@@ -71,7 +94,7 @@ app.post('/api/whisper', async (req, res) => {
             });
 
             if (!resultResponse.ok) {
-                console.log(`[Gladia] Poll attempt ${attempt + 1} failed: ${resultResponse.status}`);
+                console.log(`[Gladia] Poll failed: ${resultResponse.status}`);
                 continue;
             }
 
@@ -101,10 +124,14 @@ app.post('/api/whisper', async (req, res) => {
                 throw new Error(`Gladia transcription error: ${resultData.error_message || 'Unknown'}`);
             }
 
-            console.log(`[Gladia] Status: ${resultData.status} (attempt ${attempt + 1}/${maxAttempts})`);
+            console.log(`[Gladia] Status: ${resultData.status}`);
         }
 
-        throw new Error('Transcription timed out after 5 minutes');
+        // If time runs out
+        return res.json({
+            status: 'processing',
+            result_url: resultUrl
+        });
 
     } catch (error) {
         console.error('[Gladia] Error:', error.message);
