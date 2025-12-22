@@ -13,6 +13,7 @@ interface CaptionTrack {
   languageCode: string;
   label: string;
   url: string;
+  content?: TranscriptSegment[] | null; // Pre-fetched content from server
 }
 
 interface InvidiousCaptionResponse {
@@ -77,11 +78,22 @@ export class TranscriptService {
           throw new Error(`No ${lang} captions available`);
         }
 
-        console.log('[TranscriptService] Using caption track:', track.languageCode, track.url);
+        console.log('[TranscriptService] Using caption track:', track.languageCode, 'hasPreFetchedContent:', !!track.content);
 
         this.availableLanguages.set(captionTracks.map(t => t.languageCode));
         this.captionSource.set('youtube');
-        return this.fetchCaptionContent(track.url);
+
+        // Use pre-fetched content from innertube API
+        // The server handles all caption fetching to avoid IP signature issues
+        if (track.content && Array.isArray(track.content) && track.content.length > 0) {
+          console.log('[TranscriptService] Using pre-fetched content:', track.content.length, 'segments');
+          return of(track.content);
+        }
+
+        // No pre-fetched content means server couldn't fetch it (signature expired, etc.)
+        // Don't try fetching from URL - it will fail. Let Whisper handle it.
+        console.log('[TranscriptService] No pre-fetched content available, falling back to Whisper');
+        throw new Error('Caption content not available');
       }),
       map(segments => this.convertToSubtitleCues(segments)),
       catchError(err => {
@@ -156,6 +168,7 @@ export class TranscriptService {
   /**
    * Extract caption tracks using YouTube's innertube API
    * Returns { tracks, validResponse } to distinguish "no captions" from "API failure"
+   * The API now pre-fetches caption content to avoid IP signature issues
    */
   private fetchCaptionsFromYouTube(videoId: string): Observable<{ tracks: CaptionTrack[], validResponse: boolean }> {
     const url = '/api/innertube';
@@ -194,8 +207,14 @@ export class TranscriptService {
         const tracks = captionTracks.map((track: any) => ({
           languageCode: track.languageCode,
           label: track.name?.simpleText || track.languageCode,
-          url: track.baseUrl
+          url: track.baseUrl,
+          // Pre-fetched content from the server (avoids IP signature issues)
+          content: track.content || null
         }));
+
+        // Log which tracks have pre-fetched content
+        const tracksWithContent = tracks.filter((t: CaptionTrack) => t.content);
+        console.log('[TranscriptService] Tracks with pre-fetched content:', tracksWithContent.length);
 
         return { tracks, validResponse: true };
       }),

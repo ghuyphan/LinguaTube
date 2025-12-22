@@ -1,0 +1,2 @@
+# SPA fallback - route all requests to index.html for Angular routing
+/*    /index.html   200
