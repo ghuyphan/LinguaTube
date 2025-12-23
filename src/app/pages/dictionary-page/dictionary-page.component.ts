@@ -44,7 +44,7 @@ import { VocabularyListComponent } from '../../components/vocabulary-list/vocabu
       }
       
       .dictionary-view {
-        gap: var(--space-sm);
+        gap: var(--space-md);
       }
     }
   `]

@@ -143,7 +143,6 @@ import { DictionaryEntry } from '../../models';
       display: flex;
       flex-direction: column;
       height: auto;
-      margin-bottom: var(--space-xl);
     }
 
     .dict-header {

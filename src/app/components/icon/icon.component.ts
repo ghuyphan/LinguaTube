@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 export type IconName =
   | 'play' | 'pause' | 'skip-back' | 'skip-forward'
   | 'rewind' | 'fast-forward'
-  | 'volume-2' | 'volume-x' | 'sun' | 'moon'
+  | 'volume-2' | 'volume-x' | 'volume-1' | 'sun' | 'moon'
   | 'search' | 'plus' | 'check' | 'x' | 'trash-2'
   | 'upload' | 'download' | 'file-text' | 'book-open'
   | 'settings' | 'chevron-down' | 'external-link'
-  | 'loader' | 'alert-circle' | 'info' | 'bookmark'
+  | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus'
   | 'repeat' | 'languages' | 'subtitles' | 'captions'
   | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
   | 'chevron-left' | 'chevron-right' | 'layers'
   | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
-  | 'type';
+  | 'type' | 'log-out' | 'maximize' | 'minimize';
 
 @Component({
   selector: 'app-icon',
@@ -149,6 +149,11 @@ export type IconName =
         @case ('bookmark') {
           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
         }
+        @case ('bookmark-plus') {
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          <line x1="12" y1="7" x2="12" y2="13"></line>
+          <line x1="9" y1="10" x2="15" y2="10"></line>
+        }
         @case ('repeat') {
           <polyline points="17 1 21 5 17 9"></polyline>
           <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
@@ -245,6 +250,27 @@ export type IconName =
         @case ('type') {
           <polyline points="4 7 4 4 20 4 20 7"></polyline>
           <line x1="12" y1="4" x2="12" y2="20"></line>
+        }
+        @case ('log-out') {
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        }
+        @case ('maximize') {
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        }
+        @case ('minimize') {
+          <polyline points="4 14 10 14 10 20"></polyline>
+          <polyline points="20 10 14 10 14 4"></polyline>
+          <line x1="14" y1="10" x2="21" y2="3"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        }
+        @case ('volume-1') {
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
         }
       }
     </svg>

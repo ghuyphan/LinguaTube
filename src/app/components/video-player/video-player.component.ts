@@ -1,10 +1,18 @@
 import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService } from '../../services';
 import { Subscription } from 'rxjs';
+
+type PlaybackSpeed = 0.25 | 0.5 | 0.75 | 1 | 1.25 | 1.5 | 1.75 | 2;
+
+interface SeekPreview {
+  visible: boolean;
+  time: number;
+  position: number;
+}
 
 @Component({
   selector: 'app-video-player',
@@ -12,12 +20,7 @@ import { Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, IconComponent],
   template: `
-    <div 
-      class="player-wrapper"
-      (mousemove)="onUserActivity()" 
-      (click)="onUserActivity()"
-      (touchstart)="onUserActivity()"
-    >
+    <div class="player-wrapper">
       @if (!youtube.currentVideo() && !isLoading() && !youtube.pendingVideoId()) {
         <!-- URL Input State -->
         <div class="video-input">
@@ -62,11 +65,19 @@ import { Subscription } from 'rxjs';
         </div>
       } @else {
         <!-- Video Loaded State -->
-        <div class="video-container" #videoContainer>
+        <div 
+          class="video-container" 
+          #videoContainer
+          [class.is-fullscreen]="isFullscreen()"
+          (mousemove)="onUserActivity()" 
+          (click)="onUserActivity()"
+          (touchstart)="onUserActivity()"
+          (mouseleave)="onMouseLeave()"
+        >
           <div class="video-embed-ratio">
             <div id="youtube-player"></div>
             
-            <!-- Loading Indicator (shown when loading from URL) -->
+            <!-- Loading Overlay -->
             @if (youtube.pendingVideoId() && !youtube.currentVideo()) {
               <div class="loading-overlay">
                 <div class="loading-spinner">
@@ -78,32 +89,60 @@ import { Subscription } from 'rxjs';
             
             <!-- Interaction Overlay Layer -->
             <div class="player-overlay" (touchstart)="onUserActivity()">
-              <div class="zone left" (click)="handleZoneTap(-5)">
-                <div class="feedback-icon" [class.animate]="rewindFeedback()">
-                  <app-icon name="rewind" [size]="40" />
-                  <span>-5s</span>
+              <!-- Centered Feedback Elements -->
+              @if (playPauseFeedback()) {
+                <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
+                  <app-icon [name]="feedbackIconName()" [size]="48" />
                 </div>
-              </div>
-              <div class="zone center" (click)="handleCenterTap()">
-                <!-- YouTube-style play/pause feedback animation -->
-                @if (playPauseFeedback()) {
-                  <div class="play-pause-feedback" [class.animate]="playPauseFeedback()">
-                    <app-icon [name]="feedbackIconName()" [size]="48" />
+              }
+              @if (volumeFeedback()) {
+                <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
+                  <app-icon [name]="volumeFeedbackIcon()" [size]="32" />
+                  <div class="volume-bar">
+                    <div class="volume-bar__fill" [style.width.%]="volume()"></div>
                   </div>
+                </div>
+              }
+
+              <!-- Left Zone - Rewind -->
+              <div class="zone left" (click)="handleZoneTap(-10)">
+                <div class="feedback-icon" [class.animate]="rewindFeedback()">
+                  <app-icon name="rewind" [size]="32" />
+                  <span>10s</span>
+                </div>
+                <!-- Double-tap ripple -->
+                @if (leftRipple()) {
+                  <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
                 }
-                <!-- Big play button when paused and controls hidden -->
+              </div>
+              
+              <!-- Center Zone - Play/Pause -->
+              <div class="zone center" (click)="handleCenterTap()">
                 @if (!youtube.isPlaying() && !areControlsVisible() && !playPauseFeedback()) {
                   <div class="big-play-btn">
                     <app-icon name="play" [size]="48" />
                   </div>
                 }
               </div>
-              <div class="zone right" (click)="handleZoneTap(5)">
-                 <div class="feedback-icon" [class.animate]="forwardFeedback()">
-                  <app-icon name="fast-forward" [size]="40" />
-                  <span>+5s</span>
+              
+              <!-- Right Zone - Forward -->
+              <div class="zone right" (click)="handleZoneTap(10)">
+                <div class="feedback-icon" [class.animate]="forwardFeedback()">
+                  <app-icon name="fast-forward" [size]="32" />
+                  <span>10s</span>
                 </div>
+                @if (rightRipple()) {
+                  <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+                }
               </div>
+            </div>
+
+            <!-- Mini Progress Bar (visible when controls hidden) -->
+            <div 
+              class="mini-progress" 
+              [class.visible]="!areControlsVisible() && youtube.isPlaying()"
+            >
+              <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
             </div>
             
             <!-- Custom Controls -->
@@ -112,49 +151,152 @@ import { Subscription } from 'rxjs';
               [class.controls-hidden]="!areControlsVisible() && youtube.isPlaying()"
             >
               <!-- Progress Bar -->
-              <div class="progress-container" 
-                   (mousedown)="startSeeking($event)" 
-                   (touchstart)="startSeeking($event)"
-                   #progressBar>
-                <div class="progress-bg"></div>
+              <div 
+                class="progress-container" 
+                (mousedown)="startSeeking($event)" 
+                (touchstart)="startSeeking($event)"
+                (mousemove)="updateSeekPreview($event)"
+                (mouseleave)="hideSeekPreview()"
+                #progressBar
+              >
+                <!-- Buffered indicator -->
+                <div class="progress-buffered" [style.width.%]="bufferedPercentage()"></div>
                 <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
                 <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
+                
+                <!-- Seek Preview Tooltip -->
+                @if (seekPreview().visible) {
+                  <div 
+                    class="seek-tooltip" 
+                    [style.left.px]="seekPreview().position"
+                  >
+                    {{ formatTime(seekPreview().time) }}
+                  </div>
+                }
               </div>
 
               <div class="controls-row">
-                <button class="control-btn play-btn" (click)="togglePlay()">
-                  <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="20" />
-                </button>
+                <!-- Left Controls -->
+                <div class="controls-left">
+                  <!-- Play/Pause -->
+                  <button class="control-btn play-btn" (click)="togglePlay()" title="Play/Pause (Space)">
+                    <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
+                  </button>
 
-                <!-- Time Display -->
-                <div class="time-display">
-                  <span class="time-current">{{ formatTime(displayTime()) }}</span>
-                  <span class="time-separator">/</span>
-                  <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
+                  <!-- Skip Backward -->
+                  <button class="control-btn skip-btn" (click)="seekRelative(-10)" title="Rewind 10s (←)">
+                    <app-icon name="rewind" [size]="18" />
+                  </button>
+
+                  <!-- Skip Forward -->
+                  <button class="control-btn skip-btn" (click)="seekRelative(10)" title="Forward 10s (→)">
+                    <app-icon name="fast-forward" [size]="18" />
+                  </button>
+
+                  <!-- Volume Control -->
+                  <div class="volume-control" (mouseenter)="showVolumeSlider()" (mouseleave)="hideVolumeSlider()">
+                    <button class="control-btn" (click)="toggleMute()" title="Mute (M)">
+                      <app-icon [name]="getVolumeIcon()" [size]="18" />
+                    </button>
+                    <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
+                      <input 
+                        type="range" 
+                        class="volume-slider"
+                        min="0" 
+                        max="100" 
+                        [value]="volume()"
+                        (input)="onVolumeChange($event)"
+                        (mousedown)="$event.stopPropagation()"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Time Display -->
+                  <div class="time-display">
+                    <span class="time-current">{{ formatTime(displayTime()) }}</span>
+                    <span class="time-separator">/</span>
+                    <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
+                  </div>
                 </div>
 
-                <div class="spacer"></div>
+                <!-- Right Controls -->
+                <div class="controls-right">
+                  <!-- Playback Speed -->
+                  <div class="speed-control" [class.open]="isSpeedMenuOpen()">
+                    <button 
+                      class="control-btn speed-btn" 
+                      (click)="toggleSpeedMenu($event)"
+                      title="Playback Speed"
+                    >
+                      <span class="speed-label">{{ currentSpeed() }}x</span>
+                    </button>
+                    @if (isSpeedMenuOpen()) {
+                      <div class="speed-menu" (click)="$event.stopPropagation()">
+                        @for (speed of playbackSpeeds; track speed) {
+                          <button 
+                            class="speed-option"
+                            [class.active]="currentSpeed() === speed"
+                            (click)="setPlaybackSpeed(speed)"
+                          >
+                            {{ speed === 1 ? 'Normal' : speed + 'x' }}
+                          </button>
+                        }
+                      </div>
+                    }
+                  </div>
 
-                <!-- Volume / Mute -->
-                <button class="control-btn" (click)="toggleMute()">
-                  <app-icon [name]="isMuted() ? 'volume-x' : 'volume-2'" [size]="18" />
-                </button>
-                
-                <button class="control-btn close-btn" (click)="closeVideo()" title="Close Video">
-                  <app-icon name="x" [size]="18" />
-                </button>
+                  <!-- Settings Menu -->
+                  <div class="settings-control" [class.open]="isSettingsOpen()">
+                    <button 
+                      class="control-btn" 
+                      (click)="toggleSettings($event)"
+                      title="Settings"
+                    >
+                      <app-icon name="settings" [size]="18" />
+                    </button>
+                    @if (isSettingsOpen()) {
+                      <div class="settings-menu" (click)="$event.stopPropagation()">
+                        <div class="settings-item">
+                          <span class="settings-label">Quality</span>
+                          <span class="settings-value">Auto</span>
+                        </div>
+                        <div class="settings-item" (click)="toggleSpeedFromSettings()">
+                          <span class="settings-label">Playback speed</span>
+                          <span class="settings-value">{{ currentSpeed() }}x</span>
+                          <app-icon name="chevron-right" [size]="14" />
+                        </div>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Fullscreen -->
+                  <button 
+                    class="control-btn" 
+                    (click)="toggleFullscreen()"
+                    title="Fullscreen (F)"
+                  >
+                    <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
+                  </button>
+                  
+                  <!-- Close Video -->
+                  <button class="control-btn close-btn" (click)="closeVideo()" title="Close Video">
+                    <app-icon name="x" [size]="18" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Video Info -->
-        <div class="video-info">
-          <h2 class="video-title">{{ youtube.currentVideo()?.title }}</h2>
-          @if (youtube.currentVideo()?.channel) {
-            <span class="video-channel">{{ youtube.currentVideo()?.channel }}</span>
-          }
-        </div>
+        <!-- Video Info (outside fullscreen container) -->
+        @if (!isFullscreen()) {
+          <div class="video-info">
+            <h2 class="video-title">{{ youtube.currentVideo()?.title }}</h2>
+            @if (youtube.currentVideo()?.channel) {
+              <span class="video-channel">{{ youtube.currentVideo()?.channel }}</span>
+            }
+          </div>
+        }
       }
     </div>
   `,
@@ -163,7 +305,9 @@ import { Subscription } from 'rxjs';
       width: 100%;
     }
 
-    /* Input State */
+    /* ============================================
+       INPUT STATE
+       ============================================ */
     .video-input {
       background: var(--bg-card);
       border-radius: var(--border-radius-lg);
@@ -224,7 +368,9 @@ import { Subscription } from 'rxjs';
       color: var(--text-muted);
     }
 
-    /* Video Container */
+    /* ============================================
+       VIDEO CONTAINER
+       ============================================ */
     .video-container {
       background: #000;
       border-radius: var(--border-radius-lg);
@@ -232,20 +378,24 @@ import { Subscription } from 'rxjs';
       position: relative;
     }
 
+    .video-container.is-fullscreen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      border-radius: 0;
+    }
+
     .video-embed-ratio {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       background: #000;
       overflow: hidden;
     }
-    
-    /* Desktop: 16:9 aspect ratio with reasonable max-height */
-    @media (min-width: 769px) {
-      .video-embed-ratio {
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        max-height: 60vh;
-      }
+
+    .is-fullscreen .video-embed-ratio {
+      padding-bottom: 0;
+      height: 100vh;
     }
 
     #youtube-player {
@@ -257,7 +407,9 @@ import { Subscription } from 'rxjs';
       border: none;
     }
 
-    /* Loading Overlay */
+    /* ============================================
+       LOADING OVERLAY
+       ============================================ */
     .loading-overlay {
       position: absolute;
       top: 0;
@@ -288,13 +440,15 @@ import { Subscription } from 'rxjs';
       to { transform: rotate(360deg); }
     }
 
-    /* Transparent Overlay & Zones */
+    /* ============================================
+       PLAYER OVERLAY & ZONES
+       ============================================ */
     .player-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 70px);
       z-index: 10;
       display: flex;
       -webkit-tap-highlight-color: transparent;
@@ -303,13 +457,13 @@ import { Subscription } from 'rxjs';
     .zone {
       height: 100%;
       position: relative;
-      /* Debug: background: rgba(0,0,0,0.1); */
       -webkit-tap-highlight-color: transparent;
       outline: none;
+      overflow: hidden;
     }
 
     .zone.left, .zone.right {
-      width: 30%;
+      width: 25%;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -317,7 +471,7 @@ import { Subscription } from 'rxjs';
     }
     
     .zone.center {
-      width: 40%;
+      width: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -335,6 +489,11 @@ import { Subscription } from 'rxjs';
       color: white;
       backdrop-filter: blur(4px);
       animation: fadeIn 0.2s ease;
+      transition: transform 0.2s ease;
+    }
+
+    .big-play-btn:hover {
+      transform: scale(1.1);
     }
 
     .play-pause-feedback {
@@ -350,15 +509,23 @@ import { Subscription } from 'rxjs';
       pointer-events: none;
     }
 
+    .center-feedback {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+    }
+
     .play-pause-feedback.animate {
       animation: playPausePop 0.4s ease-out forwards;
     }
 
     @keyframes playPausePop {
-      0% { opacity: 0; transform: scale(0.5); }
-      30% { opacity: 1; transform: scale(1.1); }
-      60% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(1); }
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      30% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+      60% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
     }
 
     @keyframes fadeIn {
@@ -368,8 +535,8 @@ import { Subscription } from 'rxjs';
 
     .feedback-icon {
       color: rgba(255, 255, 255, 0.9);
-      background: rgba(0, 0, 0, 0.4);
-      padding: 16px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 16px 20px;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
@@ -377,7 +544,6 @@ import { Subscription } from 'rxjs';
       gap: 4px;
       opacity: 0;
       transform: scale(0.8);
-      transition: opacity 0.2s, transform 0.2s;
       pointer-events: none;
     }
 
@@ -397,125 +563,443 @@ import { Subscription } from 'rxjs';
       100% { opacity: 0; transform: scale(0.8); }
     }
 
-    /* Custom Controls */
+    /* Volume Feedback */
+    .volume-feedback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      color: white;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .volume-feedback.animate {
+      animation: volumePop 0.6s ease-out forwards;
+    }
+
+    @keyframes volumePop {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+      80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .volume-bar {
+      width: 80px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .volume-bar__fill {
+      height: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: width 0.1s ease;
+    }
+
+    /* Ripple Effect */
+    .ripple-effect {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) scale(0);
+      animation: ripple 0.6s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+    }
+
+    /* ============================================
+       MINI PROGRESS BAR
+       ============================================ */
+    .mini-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 25;
+    }
+
+    .mini-progress.visible {
+      opacity: 1;
+    }
+
+    .mini-progress__fill {
+      height: 100%;
+      background: var(--accent-primary);
+      transition: width 0.1s linear;
+    }
+
+    /* ============================================
+       CUSTOM CONTROLS
+       ============================================ */
     .custom-controls {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      padding: var(--space-md);
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+      padding: var(--space-lg) var(--space-md) var(--space-md);
       z-index: 20;
       display: flex;
       flex-direction: column;
       gap: var(--space-sm);
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
       opacity: 1;
+      visibility: visible;
     }
 
     .controls-hidden {
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
     }
 
-    /* Progress Bar */
+    /* ============================================
+       PROGRESS BAR
+       ============================================ */
     .progress-container {
       width: 100%;
-      height: 4px;
-      background: rgba(255,255,255,0.3);
+      height: 5px;
+      background: rgba(255, 255, 255, 0.2);
       position: relative;
       cursor: pointer;
-      transition: height 0.1s;
-      border-radius: 2px;
-      /* removed margin-bottom to make controls closer */
+      border-radius: 2.5px;
+      transition: height 0.1s ease;
     }
 
     .progress-container:hover {
-      height: 6px;
+      height: 7px;
     }
 
-    .progress-bg {
-      width: 100%;
-      height: 100%;
+    .progress-container:hover .progress-handle {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
 
-    .progress-fill {
-      height: 100%;
-      background: var(--accent-primary);
-      width: 0%;
-      border-radius: 2px;
+    .progress-buffered {
       position: absolute;
       top: 0;
       left: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 2.5px;
+      pointer-events: none;
+    }
+
+    .progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--accent-primary);
+      border-radius: 2.5px;
+      pointer-events: none;
     }
 
     .progress-handle {
       position: absolute;
       top: 50%;
-      transform: translate(-50%, -50%);
-      width: 12px;
-      height: 12px;
+      transform: translate(-50%, -50%) scale(0);
+      width: 14px;
+      height: 14px;
       background: var(--accent-primary);
       border-radius: 50%;
       opacity: 0;
-      transition: opacity 0.1s;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    @media (hover: hover) {
-      .progress-container:hover .progress-handle {
-        opacity: 1;
-      }
+    /* Seek Preview Tooltip */
+    .seek-tooltip {
+      position: absolute;
+      bottom: 16px;
+      transform: translateX(-50%);
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 30;
     }
 
-    /* Controls Row */
+    /* ============================================
+       CONTROLS ROW
+       ============================================ */
     .controls-row {
       display: flex;
       align-items: center;
-      gap: var(--space-md);
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .controls-left, .controls-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
     }
 
     .control-btn {
       background: none;
       border: none;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       cursor: pointer;
-      padding: 6px;
+      padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 4px;
-      transition: all 0.2s;
+      transition: all 0.15s ease;
+      min-width: 36px;
+      height: 36px;
     }
 
     @media (hover: hover) {
       .control-btn:hover {
-        background: rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.1);
         color: white;
       }
     }
+
+    .control-btn:active {
+      transform: scale(0.95);
+    }
     
     .play-btn {
-      color: white;
-      padding: 0;
+      min-width: 40px;
+      height: 40px;
     }
 
+    .skip-btn {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .skip-btn {
+        display: flex;
+      }
+    }
+
+    /* Time Display */
     .time-display {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.9);
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.9);
       display: flex;
       gap: 4px;
+      margin-left: var(--space-xs);
+      user-select: none;
     }
     
     .time-separator {
-      color: rgba(255,255,255,0.5);
+      color: rgba(255, 255, 255, 0.5);
     }
 
-    .spacer {
+    /* ============================================
+       VOLUME CONTROL
+       ============================================ */
+    .volume-control {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .volume-slider-container {
+      width: 0;
+      overflow: hidden;
+      transition: width 0.2s ease, opacity 0.2s ease;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+    }
+
+    .volume-slider-container.visible {
+      width: 80px;
+      opacity: 1;
+      padding-left: var(--space-xs);
+    }
+
+    .volume-slider {
+      width: 100%;
+      height: 4px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .volume-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .volume-slider::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* ============================================
+       SPEED CONTROL
+       ============================================ */
+    .speed-control {
+      position: relative;
+    }
+
+    .speed-btn {
+      min-width: 48px;
+    }
+
+    .speed-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+
+    .speed-menu {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 8px;
+      background: rgba(28, 28, 28, 0.95);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 120px;
+      max-height: 250px;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      animation: menuSlideUp 0.15s ease;
+    }
+
+    /* Clamp speed menu to video container */
+    .is-fullscreen .speed-menu {
+      max-height: 60vh;
+    }
+
+    @keyframes menuSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .speed-option {
+      width: 100%;
+      padding: 10px 16px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.875rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .speed-option:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .speed-option.active {
+      color: var(--accent-primary);
+      font-weight: 500;
+    }
+
+    .speed-option.active::after {
+      content: '✓';
+      font-size: 0.75rem;
+    }
+
+    /* ============================================
+       SETTINGS MENU
+       ============================================ */
+    .settings-control {
+      position: relative;
+    }
+
+    .settings-menu {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 8px;
+      background: rgba(28, 28, 28, 0.95);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 200px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      animation: menuSlideUp 0.15s ease;
+    }
+
+    .settings-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.1s ease;
+    }
+
+    .settings-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .settings-label {
       flex: 1;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.875rem;
     }
 
-    /* Video Info */
+    .settings-value {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8125rem;
+      margin-right: var(--space-xs);
+    }
+
+    /* ============================================
+       VIDEO INFO
+       ============================================ */
     .video-info {
       padding: var(--space-md) 0;
     }
@@ -537,125 +1021,134 @@ import { Subscription } from 'rxjs';
       color: var(--text-muted);
     }
 
-    /* Mobile (tablet-sized) */
+    /* ============================================
+       MOBILE RESPONSIVE
+       ============================================ */
     @media (max-width: 640px) {
       .video-container {
         border-radius: 0;
         margin: 0 calc(var(--mobile-padding) * -1);
         width: calc(100% + var(--mobile-padding) * 2);
       }
+
+      .player-overlay {
+        height: calc(100% - 60px);
+      }
+
+      .zone.left, .zone.right {
+        width: 30%;
+      }
       
+      .zone.center {
+        width: 40%;
+      }
+
       .custom-controls {
-        padding: var(--space-md) var(--mobile-padding);
-        padding-bottom: calc(var(--space-md) + 4px);
+        padding: var(--space-md) var(--space-sm) var(--space-sm);
       }
-      
-      /* Larger progress bar for easier scrubbing */
+
       .progress-container {
-        height: 8px;
-        margin-bottom: 2px;
+        height: 6px;
       }
-      
+
       .progress-handle {
-        width: 20px;
-        height: 20px;
-        opacity: 1; /* Always visible on mobile */
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
-      
+
       .control-btn {
-        width: var(--touch-target-min);
-        height: var(--touch-target-min);
-        border-radius: 10px;
+        min-width: 40px;
+        height: 40px;
+        padding: 10px;
       }
-      
+
       .play-btn {
-        width: 48px;
-        height: 48px;
+        min-width: 44px;
+        height: 44px;
       }
-      
+
       .time-display {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
       }
-      
-      .controls-row {
-        gap: var(--space-sm);
+
+      .speed-label {
+        font-size: 0.75rem;
       }
-      
+
+      .speed-btn {
+        min-width: 44px;
+      }
+
+      /* Volume slider always visible on mobile (simplified) */
+      .volume-slider-container {
+        display: none;
+      }
+
       .video-input {
         padding: var(--mobile-padding);
         border-radius: var(--mobile-card-radius);
       }
-      
+
       .input-group {
         flex-direction: column;
         gap: var(--space-sm);
       }
-      
-      .input-wrapper {
-        width: 100%;
-      }
-      
+
       .url-input {
         height: 48px;
-        font-size: 16px; /* Prevents iOS zoom */
+        font-size: 16px;
         border-radius: 10px;
-        padding-left: var(--touch-target-min);
       }
-      
-      .input-icon {
-        left: 14px;
-      }
-      
+
       .load-btn {
         width: 100%;
         height: 48px;
         border-radius: 10px;
         font-size: 1rem;
-        font-weight: 600;
       }
-      
-      /* Video info */
+
       .video-info {
         padding: var(--space-md) 0;
       }
-      
-      .video-title {
-        font-size: 1rem;
-        line-height: 1.4;
-      }
-      
-      .video-channel {
-        font-size: 0.8125rem;
-      }
-      
-      /* Larger tap zones on mobile */
-      .zone.left, .zone.right {
-        width: 35%;
-      }
-      
-      .zone.center {
-        width: 30%;
-      }
-      
-      .feedback-icon {
-        padding: 20px;
-      }
     }
-    
-    /* Mobile (phone-sized) */
+
     @media (max-width: 480px) {
       .video-container {
         margin: 0 calc(var(--space-md) * -1);
         width: calc(100% + var(--space-md) * 2);
       }
-      
-      .custom-controls {
-        padding: var(--space-sm) var(--space-md);
+
+      .close-btn {
+        display: none;
       }
+
+      .settings-control {
+        display: none;
+      }
+    }
+
+    /* Fullscreen specific */
+    .is-fullscreen .video-info {
+      display: none;
+    }
+
+    .is-fullscreen .close-btn {
+      display: none;
+    }
+
+    .is-fullscreen .skip-btn {
+      display: flex;
+    }
+
+    .is-fullscreen .volume-slider-container.visible {
+      width: 100px;
     }
   `]
 })
 export class VideoPlayerComponent implements OnDestroy {
+  private document = inject(DOCUMENT);
   private router = inject(Router);
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
@@ -668,11 +1161,21 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // UI State
   areControlsVisible = signal(true);
-  isMuted = signal(false);
+  isFullscreen = signal(false);
+  isVolumeSliderVisible = signal(false);
+  isSpeedMenuOpen = signal(false);
+  isSettingsOpen = signal(false);
+  volume = signal(100);
+  currentSpeed = signal<PlaybackSpeed>(1);
 
   // Seeking State
   isDragging = signal(false);
   previewTime = signal(0);
+  seekPreview = signal<SeekPreview>({ visible: false, time: 0, position: 0 });
+  bufferedPercentage = signal(0);
+
+  // Playback speeds
+  readonly playbackSpeeds: PlaybackSpeed[] = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 
   displayTime = computed(() => {
     return this.isDragging() ? this.previewTime() : this.youtube.currentTime();
@@ -690,21 +1193,33 @@ export class VideoPlayerComponent implements OnDestroy {
   forwardFeedback = signal(false);
   feedbackIconName = signal<'play' | 'pause'>('play');
   playPauseFeedback = signal(false);
+  leftRipple = signal(false);
+  rightRipple = signal(false);
+  ripplePos = signal({ x: 0, y: 0 });
+
+  // Volume feedback
+  volumeFeedback = signal(false);
+  volumeFeedbackIcon = signal<'volume-2' | 'volume-1' | 'volume-x'>('volume-2');
+
+  // Touch detection
+  private isTouchDevice = false;
 
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
-  private lastTap = 0; // For double tap detection if needed
+  private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
+  private lastTapTime = 0;
+  private tapTimeout: ReturnType<typeof setTimeout> | null = null;
+  private readonly DOUBLE_TAP_DELAY = 300;
+  private bufferedInterval: ReturnType<typeof setInterval> | null = null;
   private transcriptSubscription: Subscription | null = null;
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
   @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
 
-  // Keyboard controls for video player
+  // Keyboard controls
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    // Only handle keyboard events when video is loaded
     if (!this.youtube.currentVideo()) return;
 
-    // Don't intercept if user is typing in an input field
     const target = event.target as HTMLElement;
     if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
       return;
@@ -712,61 +1227,86 @@ export class VideoPlayerComponent implements OnDestroy {
 
     switch (event.code) {
       case 'Space':
-        event.preventDefault(); // Prevent page scroll
+        event.preventDefault();
         this.togglePlay();
         break;
       case 'ArrowLeft':
         event.preventDefault();
-        this.seekRelative(-5);
+        this.seekRelative(-10);
+        this.triggerFeedback('rewind');
         break;
       case 'ArrowRight':
         event.preventDefault();
-        this.seekRelative(5);
+        this.seekRelative(10);
+        this.triggerFeedback('forward');
         break;
       case 'ArrowUp':
         event.preventDefault();
-        this.youtube.setVolume(Math.min(100, this.youtube.getVolume() + 10));
+        this.adjustVolume(10);
+        this.showVolumeFeedback();
         break;
       case 'ArrowDown':
         event.preventDefault();
-        this.youtube.setVolume(Math.max(0, this.youtube.getVolume() - 10));
+        this.adjustVolume(-10);
+        this.showVolumeFeedback();
         break;
       case 'KeyM':
         this.toggleMute();
         break;
+      case 'KeyF':
+        this.toggleFullscreen();
+        break;
+      case 'Comma':
+        if (event.shiftKey) {
+          this.decreaseSpeed();
+        }
+        break;
+      case 'Period':
+        if (event.shiftKey) {
+          this.increaseSpeed();
+        }
+        break;
     }
   }
 
-  // Hide controls when clicking outside video player
   @HostListener('document:click', ['$event'])
-  @HostListener('document:touchstart', ['$event'])
   onDocumentClick(event: Event) {
-    // Only care about this when controls are visible
-    if (!this.areControlsVisible() || !this.youtube.isPlaying()) return;
-
+    // Close menus when clicking outside
     const target = event.target as HTMLElement;
-    const videoContainer = this.videoContainerRef?.nativeElement;
+    if (!target.closest('.speed-control')) {
+      this.isSpeedMenuOpen.set(false);
+    }
+    if (!target.closest('.settings-control')) {
+      this.isSettingsOpen.set(false);
+    }
 
-    // If click is outside the video container, hide controls immediately
+    // Hide controls when clicking outside video
+    if (!this.areControlsVisible() || !this.youtube.isPlaying()) return;
+    const videoContainer = this.videoContainerRef?.nativeElement;
     if (videoContainer && !videoContainer.contains(target)) {
       this.areControlsVisible.set(false);
       this.clearControlsTimeout();
     }
   }
 
+  @HostListener('document:fullscreenchange')
+  onFullscreenChange() {
+    this.isFullscreen.set(!!this.document.fullscreenElement);
+  }
+
   constructor() {
-    // Restoring player state when component initializes/re-creates
-    // This runs when navigating back to the video page
+    // Detect touch device
+    if (typeof window !== 'undefined') {
+      this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
+
+    // Restore player state
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
-      // If we have a video in the service but no active player (isReady is false), we need to restore
       if (currentVideo && !this.youtube.isReady() && !this.isLoading()) {
-        const savedTime = this.youtube.currentTime(); // Capture saved time
-
-        // Wait for DOM element to exist before initializing player
+        const savedTime = this.youtube.currentTime();
         this.waitForElement('youtube-player').then(async () => {
           await this.restorePlayer(currentVideo.id);
-          // Restore playback position
           if (savedTime > 0) {
             this.youtube.seekTo(savedTime);
           }
@@ -774,36 +1314,45 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Sync mute state
+    // Sync volume and speed
     effect(() => {
-      // When player becomes ready, sync mute state
       if (this.youtube.isReady()) {
-        this.isMuted.set(this.youtube.isMuted());
+        this.volume.set(this.youtube.getVolume());
+        this.currentSpeed.set(this.youtube.getPlaybackRate() as PlaybackSpeed);
+        this.startBufferedTracking();
       }
     });
 
-    // We do NOT clear videoUrl from input here to allow easy re-copying if desired,
-    // or we can sync it with currentVideo if we want the input to reflect current state.
+    // Reset URL input when no video
     effect(() => {
       if (!this.youtube.currentVideo()) {
         this.videoUrl = '';
       }
     });
 
-    // Auto-hide controls when video starts playing
+    // Auto-hide controls
     effect(() => {
       if (this.youtube.isPlaying()) {
-        this.showControls(); // Start the auto-hide timer
+        this.showControls();
       } else {
-        // Show controls when paused
         this.areControlsVisible.set(true);
         this.clearControlsTimeout();
       }
     });
   }
 
+  // ============================================
+  // USER ACTIVITY
+  // ============================================
+
   onUserActivity() {
     this.showControls();
+  }
+
+  onMouseLeave() {
+    if (this.youtube.isPlaying()) {
+      this.hideControlsAfterDelay(1000);
+    }
   }
 
   private showControls() {
@@ -811,10 +1360,16 @@ export class VideoPlayerComponent implements OnDestroy {
     this.clearControlsTimeout();
 
     if (this.youtube.isPlaying()) {
-      this.controlsTimeout = setTimeout(() => {
-        this.areControlsVisible.set(false);
-      }, 3000); // Hide after 3s
+      this.hideControlsAfterDelay(3000);
     }
+  }
+
+  private hideControlsAfterDelay(ms: number) {
+    this.controlsTimeout = setTimeout(() => {
+      if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.isSettingsOpen()) {
+        this.areControlsVisible.set(false);
+      }
+    }, ms);
   }
 
   private clearControlsTimeout() {
@@ -824,11 +1379,13 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
+  // ============================================
+  // PLAYBACK CONTROLS
+  // ============================================
+
   togglePlay() {
-    // Capture the action we're about to take BEFORE toggling
     const willPlay = !this.youtube.isPlaying();
     this.feedbackIconName.set(willPlay ? 'play' : 'pause');
-
     this.youtube.togglePlay();
     this.triggerPlayPauseFeedback();
     this.showControls();
@@ -839,71 +1396,9 @@ export class VideoPlayerComponent implements OnDestroy {
     setTimeout(() => this.playPauseFeedback.set(false), 400);
   }
 
-  toggleMute() {
-    if (this.isMuted()) {
-      this.youtube.unmute();
-      this.isMuted.set(false);
-    } else {
-      this.youtube.mute();
-      this.isMuted.set(true);
-    }
-    this.showControls();
-  }
-
-  // Double-tap state
-  private lastTapTime = 0;
-  private tapTimeout: ReturnType<typeof setTimeout> | null = null;
-  private readonly DOUBLE_TAP_DELAY = 300;
-
   seekRelative(seconds: number) {
     this.youtube.seekRelative(seconds);
-    this.triggerFeedback(seconds < 0 ? 'rewind' : 'forward');
     this.showControls();
-  }
-
-  // Handle tap interaction: Single tap = toggle play/controls, Double tap = seek
-  handleSeekTap(seconds: number) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - this.lastTapTime;
-
-    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
-      // Double tap detected
-      if (this.tapTimeout) clearTimeout(this.tapTimeout); // Cancel single tap action
-      this.seekRelative(seconds);
-    } else {
-      // WaitFor double tap
-      this.tapTimeout = setTimeout(() => {
-        // Single tap action (toggle play/controls)
-        this.togglePlay();
-      }, this.DOUBLE_TAP_DELAY);
-    }
-
-    this.lastTapTime = currentTime;
-  }
-
-  // Handle zone tap (left/right) - single tap shows controls, double tap seeks
-  handleZoneTap(seconds: number) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - this.lastTapTime;
-
-    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
-      // Double tap = seek
-      if (this.tapTimeout) clearTimeout(this.tapTimeout);
-      this.seekRelative(seconds);
-    } else {
-      // Single tap = show controls (with delay to detect double tap)
-      this.tapTimeout = setTimeout(() => {
-        this.showControls();
-      }, this.DOUBLE_TAP_DELAY);
-    }
-
-    this.lastTapTime = currentTime;
-  }
-
-  // Handle center tap - single tap always toggles play/pause
-  handleCenterTap() {
-    // No double-tap detection needed for center - just toggle immediately
-    this.togglePlay();
   }
 
   private triggerFeedback(type: 'rewind' | 'forward') {
@@ -916,102 +1411,210 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  loadVideo(): void {
-    const url = this.videoUrl.trim();
-    if (!url) {
-      this.error.set('Please enter a YouTube URL');
+  // ============================================
+  // ZONE TAP HANDLING
+  // ============================================
+
+  handleZoneTap(seconds: number, event?: MouseEvent) {
+    // Only allow double-tap seek on touch devices
+    if (!this.isTouchDevice) {
+      this.showControls();
       return;
     }
 
-    const videoId = this.youtube.extractVideoId(url);
+    const currentTime = Date.now();
+    const tapLength = currentTime - this.lastTapTime;
 
-    if (!videoId) {
-      this.error.set('Invalid YouTube URL');
-      return;
+    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
+      // Double tap = seek
+      if (this.tapTimeout) clearTimeout(this.tapTimeout);
+      this.seekRelative(seconds);
+      this.triggerFeedback(seconds < 0 ? 'rewind' : 'forward');
+
+      // Trigger ripple
+      if (seconds < 0) {
+        this.leftRipple.set(true);
+        setTimeout(() => this.leftRipple.set(false), 600);
+      } else {
+        this.rightRipple.set(true);
+        setTimeout(() => this.rightRipple.set(false), 600);
+      }
+    } else {
+      this.tapTimeout = setTimeout(() => {
+        this.showControls();
+      }, this.DOUBLE_TAP_DELAY);
     }
 
-    // Navigate to /video?id=<videoId> - the video page will handle loading
-    this.router.navigate(['/video'], { queryParams: { id: videoId } });
+    this.lastTapTime = currentTime;
   }
 
-  private async restorePlayer(videoId: string): Promise<void> {
+  handleCenterTap() {
+    this.togglePlay();
+  }
+
+  // ============================================
+  // VOLUME CONTROL
+  // ============================================
+
+  toggleMute() {
+    if (this.youtube.isMuted() || this.volume() === 0) {
+      this.youtube.unmute();
+      if (this.volume() === 0) {
+        this.youtube.setVolume(50);
+        this.volume.set(50);
+      }
+    } else {
+      this.youtube.mute();
+    }
+    this.showControls();
+  }
+
+  getVolumeIcon(): 'volume-2' | 'volume-x' {
+    if (this.youtube.isMuted() || this.volume() === 0) {
+      return 'volume-x';
+    }
+    return 'volume-2';
+  }
+
+  showVolumeSlider() {
+    if (this.volumeSliderTimeout) {
+      clearTimeout(this.volumeSliderTimeout);
+    }
+    this.isVolumeSliderVisible.set(true);
+  }
+
+  hideVolumeSlider() {
+    this.volumeSliderTimeout = setTimeout(() => {
+      this.isVolumeSliderVisible.set(false);
+    }, 500);
+  }
+
+  onVolumeChange(event: Event) {
+    const value = parseInt((event.target as HTMLInputElement).value);
+    this.volume.set(value);
+    this.youtube.setVolume(value);
+    if (value > 0 && this.youtube.isMuted()) {
+      this.youtube.unmute();
+    }
+  }
+
+  private adjustVolume(delta: number) {
+    const newVolume = Math.max(0, Math.min(100, this.volume() + delta));
+    this.volume.set(newVolume);
+    this.youtube.setVolume(newVolume);
+    if (newVolume > 0 && this.youtube.isMuted()) {
+      this.youtube.unmute();
+    }
+  }
+
+  private showVolumeFeedback() {
+    const vol = this.volume();
+    if (vol === 0 || this.youtube.isMuted()) {
+      this.volumeFeedbackIcon.set('volume-x');
+    } else if (vol < 50) {
+      this.volumeFeedbackIcon.set('volume-1');
+    } else {
+      this.volumeFeedbackIcon.set('volume-2');
+    }
+    this.volumeFeedback.set(true);
+    setTimeout(() => this.volumeFeedback.set(false), 600);
+  }
+
+  // ============================================
+  // PLAYBACK SPEED
+  // ============================================
+
+  toggleSpeedMenu(event: Event) {
+    event.stopPropagation();
+    this.isSettingsOpen.set(false);
+    this.isSpeedMenuOpen.update(v => !v);
+  }
+
+  setPlaybackSpeed(speed: PlaybackSpeed) {
+    this.currentSpeed.set(speed);
+    this.youtube.setPlaybackRate(speed);
+    this.isSpeedMenuOpen.set(false);
+  }
+
+  private increaseSpeed() {
+    const currentIndex = this.playbackSpeeds.indexOf(this.currentSpeed());
+    if (currentIndex < this.playbackSpeeds.length - 1) {
+      this.setPlaybackSpeed(this.playbackSpeeds[currentIndex + 1]);
+    }
+  }
+
+  private decreaseSpeed() {
+    const currentIndex = this.playbackSpeeds.indexOf(this.currentSpeed());
+    if (currentIndex > 0) {
+      this.setPlaybackSpeed(this.playbackSpeeds[currentIndex - 1]);
+    }
+  }
+
+  // ============================================
+  // SETTINGS MENU
+  // ============================================
+
+  toggleSettings(event: Event) {
+    event.stopPropagation();
+    this.isSpeedMenuOpen.set(false);
+    this.isSettingsOpen.update(v => !v);
+  }
+
+  toggleSpeedFromSettings() {
+    this.isSettingsOpen.set(false);
+    this.isSpeedMenuOpen.set(true);
+  }
+
+  // ============================================
+  // FULLSCREEN
+  // ============================================
+
+  async toggleFullscreen() {
+    const container = this.videoContainerRef?.nativeElement;
+    if (!container) return;
+
     try {
-      await this.youtube.initPlayer('youtube-player', videoId);
-    } catch (err: unknown) {
-      console.error('Failed to restore player:', err);
+      if (this.isFullscreen()) {
+        await this.document.exitFullscreen();
+      } else {
+        await container.requestFullscreen();
+      }
+    } catch (err) {
+      console.warn('Fullscreen not supported:', err);
     }
   }
 
-  /**
-   * Wait for a DOM element to exist before proceeding
-   * Polls for element with exponential backoff, max ~2 seconds
-   */
-  private waitForElement(elementId: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      let attempts = 0;
-      const maxAttempts = 10;
+  // ============================================
+  // PROGRESS BAR & SEEKING
+  // ============================================
 
-      const check = () => {
-        const element = document.getElementById(elementId);
-        if (element) {
-          resolve();
-        } else if (attempts >= maxAttempts) {
-          reject(new Error(`Element #${elementId} not found after ${maxAttempts} attempts`));
-        } else {
-          attempts++;
-          // Exponential backoff: 50, 100, 150, 200, 250...
-          setTimeout(check, 50 * attempts);
-        }
-      };
+  updateSeekPreview(event: MouseEvent) {
+    if (!this.youtube.duration() || !this.progressBar?.nativeElement) return;
 
-      // Start with requestAnimationFrame for initial check
-      requestAnimationFrame(check);
+    const rect = this.progressBar.nativeElement.getBoundingClientRect();
+    const offsetX = event.clientX - rect.left;
+    const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
+    const time = percentage * this.youtube.duration();
+
+    this.seekPreview.set({
+      visible: true,
+      time,
+      position: Math.max(30, Math.min(rect.width - 30, offsetX))
     });
   }
 
-  private fetchCaptions(videoId: string): void {
-    const lang = this.settings.settings().language;
-
-    // Unsubscribe previous request if any
-    if (this.transcriptSubscription) {
-      this.transcriptSubscription.unsubscribe();
+  hideSeekPreview() {
+    if (!this.isDragging()) {
+      this.seekPreview.set({ visible: false, time: 0, position: 0 });
     }
-
-    this.transcriptSubscription = this.transcript.fetchTranscript(videoId, lang).subscribe({
-      next: (cues) => {
-        if (cues.length > 0) {
-          this.subtitles.subtitles.set(cues);
-          // Pre-tokenize all cues for consistent display
-          this.subtitles.tokenizeAllCues(lang);
-        }
-      },
-      error: (err) => console.log('Auto-caption fetch failed:', err)
-    });
   }
 
-  closeVideo(): void {
-    if (this.transcriptSubscription) {
-      this.transcriptSubscription.unsubscribe();
-      this.transcriptSubscription = null;
-    }
-    this.subtitles.cancelTokenization();
-    this.youtube.reset();
-    this.subtitles.clear();
-    this.transcript.reset(); // Crucial: clear loading/error states immediately
-    this.videoUrl = '';
-    this.error.set(null);
-    // Clear query params from URL
-    this.router.navigate(['/video'], { replaceUrl: true });
-  }
-
-  // Progress Bar Logic
   startSeeking(event: MouseEvent | TouchEvent) {
     this.isDragging.set(true);
     this.updateSeek(event);
 
-    // Bind to document to handle drag outside
     const onMove = (e: MouseEvent | TouchEvent) => {
-      e.preventDefault(); // Prevent scroll while seeking
+      e.preventDefault();
       this.updateSeek(e);
     };
 
@@ -1037,7 +1640,6 @@ export class VideoPlayerComponent implements OnDestroy {
     const offsetX = clientX - rect.left;
     const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
 
-    // Just update preview time, don't seek video yet
     this.previewTime.set(percentage * this.youtube.duration());
   }
 
@@ -1045,7 +1647,100 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.isDragging()) {
       this.youtube.seekTo(this.previewTime());
       this.isDragging.set(false);
+      this.hideSeekPreview();
     }
+  }
+
+  // ============================================
+  // BUFFERED TRACKING
+  // ============================================
+
+  private startBufferedTracking() {
+    if (this.bufferedInterval) {
+      clearInterval(this.bufferedInterval);
+    }
+
+    this.bufferedInterval = setInterval(() => {
+      // YouTube API doesn't expose buffered directly, estimate it
+      // In a real implementation, you'd use player.getVideoLoadedFraction()
+      const loadedFraction = this.getLoadedFraction();
+      this.bufferedPercentage.set(loadedFraction * 100);
+    }, 1000);
+  }
+
+  private getLoadedFraction(): number {
+    // Placeholder - YouTube IFrame API has getVideoLoadedFraction()
+    // For now, return a sensible estimate based on current time
+    const duration = this.youtube.duration();
+    const currentTime = this.youtube.currentTime();
+    if (!duration) return 0;
+
+    // Simulate buffering ahead by 30 seconds
+    const bufferedTime = Math.min(currentTime + 30, duration);
+    return bufferedTime / duration;
+  }
+
+  // ============================================
+  // VIDEO LOADING
+  // ============================================
+
+  loadVideo(): void {
+    const url = this.videoUrl.trim();
+    if (!url) {
+      this.error.set('Please enter a YouTube URL');
+      return;
+    }
+
+    const videoId = this.youtube.extractVideoId(url);
+    if (!videoId) {
+      this.error.set('Invalid YouTube URL');
+      return;
+    }
+
+    this.router.navigate(['/video'], { queryParams: { id: videoId } });
+  }
+
+  private async restorePlayer(videoId: string): Promise<void> {
+    try {
+      await this.youtube.initPlayer('youtube-player', videoId);
+    } catch (err) {
+      console.error('Failed to restore player:', err);
+    }
+  }
+
+  private waitForElement(elementId: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      let attempts = 0;
+      const maxAttempts = 10;
+
+      const check = () => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          resolve();
+        } else if (attempts >= maxAttempts) {
+          reject(new Error(`Element #${elementId} not found`));
+        } else {
+          attempts++;
+          setTimeout(check, 50 * attempts);
+        }
+      };
+
+      requestAnimationFrame(check);
+    });
+  }
+
+  closeVideo(): void {
+    if (this.transcriptSubscription) {
+      this.transcriptSubscription.unsubscribe();
+      this.transcriptSubscription = null;
+    }
+    this.subtitles.cancelTokenization();
+    this.youtube.reset();
+    this.subtitles.clear();
+    this.transcript.reset();
+    this.videoUrl = '';
+    this.error.set(null);
+    this.router.navigate(['/video'], { replaceUrl: true });
   }
 
   formatTime(seconds: number): string {
@@ -1057,6 +1752,15 @@ export class VideoPlayerComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.clearControlsTimeout();
+    if (this.volumeSliderTimeout) {
+      clearTimeout(this.volumeSliderTimeout);
+    }
+    if (this.bufferedInterval) {
+      clearInterval(this.bufferedInterval);
+    }
+    if (this.tapTimeout) {
+      clearTimeout(this.tapTimeout);
+    }
     this.youtube.destroy();
   }
 }

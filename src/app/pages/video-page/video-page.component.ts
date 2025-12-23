@@ -81,17 +81,17 @@ import { Token } from '../../models';
       }
       
       .layout {
-        gap: var(--space-sm);
+        gap: var(--space-md);
       }
       
       .layout-main {
-        gap: var(--space-sm);
+        gap: var(--space-md);
       }
     }
 
     @media (max-width: 480px) {
       .layout-main {
-        gap: var(--space-sm);
+        gap: var(--space-md);
       }
     }
   `]

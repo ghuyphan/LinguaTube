@@ -1,3 +1,4 @@
+export * from './bottom-sheet/bottom-sheet.component';
 export * from './icon/icon.component';
 export * from './header/header.component';
 export * from './video-player/video-player.component';
@@ -7,3 +8,5 @@ export * from './word-popup/word-popup.component';
 export * from './vocabulary-list/vocabulary-list.component';
 export * from './dictionary-panel/dictionary-panel.component';
 export * from './study-mode/study-mode.component';
+export * from './settings-sheet/settings-sheet.component';
+export * from './vocabulary-quick-view/vocabulary-quick-view.component';

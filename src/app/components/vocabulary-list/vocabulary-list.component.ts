@@ -371,7 +371,6 @@ import { VocabularyItem, WordLevel } from '../../models';
         border-radius: var(--border-radius-lg);
         border: 1px solid var(--border-color);
         background: var(--bg-card);
-        margin-bottom: var(--space-xl);
       }
 
       .vocab-header {
