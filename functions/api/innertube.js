@@ -166,6 +166,7 @@ export async function onRequestPost(context) {
         // Tier 3: Apify fallback (proxy-based, uses credits)
         // =====================================================================
         const apifyApiKey = env.APIFY_API_KEY;
+        log('Apify key configured:', !!apifyApiKey);
         if (apifyApiKey) {
             try {
                 const apifyResult = await tryApifyTranscript(videoId, targetLanguages, apifyApiKey);
