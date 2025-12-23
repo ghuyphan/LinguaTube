@@ -24,22 +24,14 @@ import { SubtitleCue, Token } from '../../models';
               <!-- Show raw text while tokenizing -->
               <span class="word">{{ cue.text }}</span>
             } @else {
-              @for (token of getTokens(cue); track $index) {
-                <span 
+              @for (token of getTokens(cue); track $index) {<span 
                   class="word"
                   [class.word--new]="getWordLevel(token.surface) === 'new'"
                   [class.word--learning]="getWordLevel(token.surface) === 'learning'"
                   [class.word--known]="getWordLevel(token.surface) === 'known'"
                   [class.word--saved]="vocab.hasWord(token.surface)"
                   (click)="onWordClick(token, cue.text)"
-                >
-                  @if (showReading() && getReading(token)) {
-                    <ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>
-                  } @else {
-                    {{ token.surface }}
-                  }
-                </span>
-              }
+                >@if (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>} @else {{{ token.surface }}}</span>}
             }
           </div>
         } @else {
@@ -166,7 +158,7 @@ import { SubtitleCue, Token } from '../../models';
 
     .subtitle-text {
       font-size: 1.375rem;
-      line-height: 2;
+      line-height: 2.2;
       text-align: center;
       word-break: keep-all;
       transition: all 0.3s ease;
@@ -195,10 +187,12 @@ import { SubtitleCue, Token } from '../../models';
 
     .current-subtitle--small .subtitle-text {
       font-size: 1.125rem;
+      line-height: 2;
     }
 
     .current-subtitle--large .subtitle-text {
       font-size: 1.75rem;
+      line-height: 2.4;
     }
 
     .subtitle-empty {
@@ -318,20 +312,23 @@ import { SubtitleCue, Token } from '../../models';
       animation: pulse 2s ease-in-out infinite;
     }
 
-    /* Word styling */
+    /* ============================================
+       WORD & RUBY STYLING - Fixed for proper spacing
+       ============================================ */
+    
     .word {
       cursor: pointer;
-      padding: 2px 4px;
-      margin: 0 1px;
+      padding: 2px 3px;
+      margin: 0;
       border-radius: 4px;
-      transition: all var(--transition-fast);
+      transition: background var(--transition-fast);
       display: inline;
+      vertical-align: baseline;
     }
 
     @media (hover: hover) {
       .word:hover {
         background: var(--accent-tertiary);
-        transform: scale(1.02);
       }
     }
 
@@ -351,42 +348,64 @@ import { SubtitleCue, Token } from '../../models';
       background: var(--word-known);
     }
 
+    /* Ruby base styling - use native ruby display for proper alignment */
     ruby {
+      display: ruby;
       ruby-align: center;
       ruby-position: over;
-      display: inline-block;
     }
 
     ruby rt {
-      font-size: 0.6em;
+      display: ruby-text;
+      font-size: 0.5em;
       color: var(--text-muted);
       text-align: center;
-      ruby-align: center;
       font-weight: 400;
+      line-height: 1.2;
     }
 
-    /* Japanese text - tighter word spacing for natural flow */
-    .text-ja .word {
-      margin: 0;
-      padding: 2px 0;
+    /* Japanese text - natural flow without gaps */
+    .text-ja {
+      letter-spacing: 0;
+      word-spacing: 0;
     }
     
-    .text-ja ruby {
-      ruby-overhang: none;
+    .text-ja .word {
+      padding: 2px 1px;
     }
     
     .text-ja ruby rt {
-      font-size: 0.45em;
-      line-height: 1;
+      font-size: 0.42em;
       white-space: nowrap;
+      letter-spacing: -0.02em;
     }
 
-    /* Chinese/Korean readings - larger for romanized text */
-    .text-zh ruby rt,
-    .text-ko ruby rt {
-      font-size: 0.55em;
-      font-weight: 500;
+    /* Chinese text */
+    .text-zh {
       letter-spacing: 0.02em;
+    }
+    
+    .text-zh .word {
+      padding: 2px 2px;
+    }
+    
+    .text-zh ruby rt {
+      font-size: 0.48em;
+      font-weight: 500;
+    }
+
+    /* Korean text */
+    .text-ko {
+      word-spacing: 0.1em;
+    }
+    
+    .text-ko .word {
+      padding: 2px 3px;
+    }
+    
+    .text-ko ruby rt {
+      font-size: 0.48em;
+      font-weight: 500;
     }
 
     /* Subtitle list */
@@ -514,16 +533,12 @@ import { SubtitleCue, Token } from '../../models';
       box-shadow: none;
     }
 
-
-
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
     }
 
     @media (max-width: 640px) {
-
-
       .current-subtitle {
         min-height: 120px;
         padding: var(--space-lg) var(--mobile-padding);
@@ -531,7 +546,7 @@ import { SubtitleCue, Token } from '../../models';
 
       .subtitle-text {
         font-size: 1.25rem;
-        line-height: 1.8;
+        line-height: 2;
       }
 
       .current-subtitle--small .subtitle-text {
@@ -544,10 +559,8 @@ import { SubtitleCue, Token } from '../../models';
 
       /* Words need bigger touch targets */
       .word {
-        padding: 4px 6px;
-        margin: 2px;
+        padding: 4px 4px;
         border-radius: 6px;
-        display: inline-block;
         min-height: 32px;
         line-height: 1.4;
       }
@@ -619,7 +632,7 @@ import { SubtitleCue, Token } from '../../models';
       
       .subtitle-text {
         font-size: 1.125rem;
-        line-height: 1.6;
+        line-height: 1.8;
       }
     }
   `]
