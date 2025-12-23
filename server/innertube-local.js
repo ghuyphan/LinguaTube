@@ -47,15 +47,8 @@ const INNERTUBE_CLIENTS = [
 
 // Last resort - be respectful, try sequentially
 const THIRD_PARTY_APIS = [
-    // Piped Instances (Often more reliable than Invidious for captions)
-    { url: 'https://pipedapi.kavin.rocks/streams/', name: 'piped-kavin', type: 'piped' },
-    { url: 'https://api.piped.otter.sh/streams/', name: 'piped-otter', type: 'piped' },
-    { url: 'https://pipedapi.drgns.space/streams/', name: 'piped-drgns', type: 'piped' },
-
-    // Invidious Instances
     { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' },
-    { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' },
-    { url: 'https://invidious.drgns.space/api/v1/captions/', name: 'inv-drgns', type: 'invidious' }
+    { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' }
 ];
 
 // ============================================================================
@@ -305,7 +298,11 @@ async function tryInnertubeClient(videoId, apiKey, client, targetLanguages, meta
             throw new Error('No captions');
         }
 
-        const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
+        let filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
+        if (!filteredTracks.length && captionTracks.length > 0) {
+            filteredTracks = [captionTracks[0]];
+        }
+
         if (!filteredTracks.length) {
             throw new Error('No matching languages');
         }
@@ -364,7 +361,11 @@ async function tryWatchPage(videoId, targetLanguages, metadataOnly, masterSignal
             throw new Error('No captions');
         }
 
-        const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
+        let filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
+        if (!filteredTracks.length && captionTracks.length > 0) {
+            filteredTracks = [captionTracks[0]];
+        }
+
         if (!filteredTracks.length) {
             throw new Error('No matching languages');
         }
@@ -508,7 +509,10 @@ async function processThirdPartyResponse(api, data, targetLanguages, metadataOnl
         }));
     }
 
-    const filteredTracks = filterTracksByLanguage(rawTracks, targetLanguages);
+    let filteredTracks = filterTracksByLanguage(rawTracks, targetLanguages);
+    if (!filteredTracks.length && rawTracks.length > 0) {
+        filteredTracks = [rawTracks[0]];
+    }
 
     if (metadataOnly) {
         return filteredTracks;
