@@ -19,7 +19,6 @@ import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 
 const DEBUG = false;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
-const DEFAULT_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
 const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'ko', 'en'];
 
 const TIMEOUTS = {
@@ -88,7 +87,10 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
         }
 
-        const apiKey = env.INNERTUBE_API_KEY || DEFAULT_API_KEY;
+        const apiKey = env.INNERTUBE_API_KEY;
+        if (!apiKey) {
+            return errorResponse('INNERTUBE_API_KEY not configured', 500);
+        }
         const cache = env.TRANSCRIPT_CACHE;
         const cacheKey = `captions:v5:${videoId}`;
 

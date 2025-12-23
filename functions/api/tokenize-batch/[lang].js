@@ -2,110 +2,12 @@
  * Batch Tokenization API (Cloudflare Function)
  * Tokenizes multiple texts at once and caches as single entry per video
  * - Reduces KV writes from ~200 to 1 per video
- * - Supports Japanese (kuromoji), Korean (Intl.Segmenter), Chinese (Intl.Segmenter)
  */
 
-import * as kuromoji from '@patdx/kuromoji';
-import { pinyin } from 'pinyin-pro';
-import { convert as romanizeKorean } from 'hangul-romanization';
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../../_shared/utils.js';
+import { tokenize } from '../../_shared/tokenizer.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh']);
-
-// Kanji detection (CJK Unified Ideographs)
-const KANJI_REGEX = /[\u4E00-\u9FFF]/;
-function hasKanji(text) {
-    return KANJI_REGEX.test(text);
-}
-
-// ============================================================================
-// Kuromoji Tokenizer (Japanese)
-// ============================================================================
-
-let tokenizerPromise = null;
-
-const cdnLoader = {
-    async loadArrayBuffer(url) {
-        url = url.replace('.gz', '');
-        const cdnUrl = 'https://cdn.jsdelivr.net/npm/@aiktb/kuromoji@1.0.2/dict/' + url;
-        const res = await fetch(cdnUrl);
-        if (!res.ok) {
-            throw new Error(`Failed to fetch dictionary: ${cdnUrl}, status: ${res.status}`);
-        }
-        return res.arrayBuffer();
-    }
-};
-
-async function getKuromojiTokenizer() {
-    if (!tokenizerPromise) {
-        console.log('[Tokenize Batch] Initializing kuromoji tokenizer...');
-        tokenizerPromise = new kuromoji.TokenizerBuilder({
-            loader: cdnLoader
-        }).build();
-    }
-    return tokenizerPromise;
-}
-
-function katakanaToHiragana(str) {
-    return str.replace(/[\u30A1-\u30F6]/g, (match) =>
-        String.fromCharCode(match.charCodeAt(0) - 0x60)
-    );
-}
-
-async function tokenizeJapanese(text) {
-    const tokenizer = await getKuromojiTokenizer();
-    const kuromojiTokens = tokenizer.tokenize(text);
-
-    return kuromojiTokens.map(t => {
-        const token = { surface: t.surface_form };
-
-        if (t.reading && hasKanji(t.surface_form)) {
-            token.reading = katakanaToHiragana(t.reading);
-        }
-
-        if (t.basic_form && t.basic_form !== t.surface_form && t.basic_form !== '*') {
-            token.baseForm = t.basic_form;
-        }
-
-        if (t.pos && t.pos !== '*') {
-            token.partOfSpeech = t.pos;
-        }
-
-        return token;
-    });
-}
-
-function tokenizeKoreanChinese(text, lang) {
-    const segmenter = new Intl.Segmenter(lang, { granularity: 'word' });
-    const segments = [...segmenter.segment(text)];
-
-    return segments
-        .filter(seg => seg.isWordLike || seg.segment.trim())
-        .map(seg => {
-            const token = { surface: seg.segment };
-
-            if (lang === 'zh') {
-                try {
-                    const py = pinyin(token.surface, { toneType: 'symbol', type: 'string' });
-                    if (py !== token.surface) {
-                        token.pinyin = py;
-                    }
-                } catch (e) { }
-            }
-
-            if (lang === 'ko') {
-                try {
-                    token.romanization = romanizeKorean(token.surface);
-                } catch (e) { }
-            }
-
-            return token;
-        });
-}
-
-// ============================================================================
-// Main Handler
-// ============================================================================
 
 export async function onRequest(context) {
     const { request, params, env } = context;
@@ -155,20 +57,10 @@ export async function onRequest(context) {
 
         console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang})`);
 
-        // Tokenize all texts
-        const allTokens = [];
-        for (const text of texts) {
-            if (!text || typeof text !== 'string') {
-                allTokens.push([]);
-                continue;
-            }
-
-            if (lang === 'ja') {
-                allTokens.push(await tokenizeJapanese(text));
-            } else {
-                allTokens.push(tokenizeKoreanChinese(text, lang));
-            }
-        }
+        // Tokenize all texts using shared module
+        const allTokens = await Promise.all(
+            texts.map(text => tokenize(text, lang))
+        );
 
         const result = { tokens: allTokens };
 
