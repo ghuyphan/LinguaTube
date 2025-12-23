@@ -1,6 +1,7 @@
 import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService } from '../../services';
 import { Subscription } from 'rxjs';
@@ -614,6 +615,7 @@ import { Subscription } from 'rxjs';
   `]
 })
 export class VideoPlayerComponent implements OnDestroy {
+  private router = inject(Router);
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
   transcript = inject(TranscriptService);
@@ -873,7 +875,7 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  async loadVideo(): Promise<void> {
+  loadVideo(): void {
     const url = this.videoUrl.trim();
     if (!url) {
       this.error.set('Please enter a YouTube URL');
@@ -887,21 +889,8 @@ export class VideoPlayerComponent implements OnDestroy {
       return;
     }
 
-    this.isLoading.set(true);
-    this.error.set(null);
-
-    try {
-      // Wait for Angular to render the video container before initializing
-      await this.waitForElement('youtube-player');
-      await this.youtube.initPlayer('youtube-player', videoId);
-      this.fetchCaptions(videoId);
-    } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to load video';
-      this.error.set(errorMessage);
-      console.error(err);
-    } finally {
-      this.isLoading.set(false);
-    }
+    // Navigate to /video?id=<videoId> - the video page will handle loading
+    this.router.navigate(['/video'], { queryParams: { id: videoId } });
   }
 
   private async restorePlayer(videoId: string): Promise<void> {

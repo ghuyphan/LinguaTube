@@ -1,12 +1,11 @@
-import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, NavigationStart } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../../components/video-player/video-player.component';
 import { SubtitleDisplayComponent } from '../../components/subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../components/vocabulary-list/vocabulary-list.component';
 import { WordPopupComponent } from '../../components/word-popup/word-popup.component';
-import { YoutubeService } from '../../services';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService } from '../../services';
 import { Token } from '../../models';
 
 @Component({
@@ -97,16 +96,71 @@ import { Token } from '../../models';
     }
   `]
 })
-export class VideoPageComponent {
+export class VideoPageComponent implements OnInit {
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
   private youtube = inject(YoutubeService);
+  private subtitles = inject(SubtitleService);
+  private transcript = inject(TranscriptService);
+  private settings = inject(SettingsService);
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
 
-  constructor() {
-    // No explicit pause logic needed here; component destruction naturally stops playback,
-    // and YoutubeService signals persist the timestamp for restoration.
+  ngOnInit(): void {
+    // Read video ID from URL query parameter
+    this.route.queryParamMap.subscribe(params => {
+      const videoId = params.get('id');
+      // Only load if there's an ID and no video is currently loaded
+      if (videoId && !this.youtube.currentVideo()) {
+        this.loadVideoFromUrl(videoId);
+      }
+    });
+  }
+
+  private async loadVideoFromUrl(videoId: string): Promise<void> {
+    try {
+      // Wait for DOM element to exist
+      await this.waitForElement('youtube-player');
+      await this.youtube.initPlayer('youtube-player', videoId);
+      this.fetchCaptions(videoId);
+    } catch (err) {
+      console.error('Failed to load video from URL:', err);
+    }
+  }
+
+  private waitForElement(elementId: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      let attempts = 0;
+      const maxAttempts = 10;
+
+      const check = () => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          resolve();
+        } else if (attempts >= maxAttempts) {
+          reject(new Error(`Element #${elementId} not found after ${maxAttempts} attempts`));
+        } else {
+          attempts++;
+          setTimeout(check, 50 * attempts);
+        }
+      };
+
+      requestAnimationFrame(check);
+    });
+  }
+
+  private fetchCaptions(videoId: string): void {
+    const lang = this.settings.settings().language;
+    this.transcript.fetchTranscript(videoId, lang).subscribe({
+      next: (cues) => {
+        if (cues.length > 0) {
+          this.subtitles.subtitles.set(cues);
+          this.subtitles.tokenizeAllCues(lang);
+        }
+      },
+      error: (err) => console.log('Auto-caption fetch failed:', err)
+    });
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {

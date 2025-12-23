@@ -19,7 +19,7 @@ import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 // ============================================================================
 
 const DEBUG = false;
-const CACHE_TTL = 60 * 60 * 24; // 24 hours
+const CACHE_TTL = 60 * 60 * 24 * 30;
 const DEFAULT_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
 const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'en'];
 
