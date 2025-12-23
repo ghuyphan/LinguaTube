@@ -174,6 +174,8 @@ export class TranscriptService {
       return of(this.transcriptCache.get(cacheKey)!);
     }
 
+    // If we're polling (transcriptId exists), we shouldn't use the pending request cache
+    // because we *need* to make a new request to check status
     if (!transcriptId && this.pendingRequests.has(videoId)) {
       return this.pendingRequests.get(videoId)!;
     }
@@ -225,6 +227,7 @@ export class TranscriptService {
       shareReplay(1)
     );
 
+    // Only cache the *initial* request (not polling requests)
     if (!transcriptId) {
       this.pendingRequests.set(videoId, request$);
     }

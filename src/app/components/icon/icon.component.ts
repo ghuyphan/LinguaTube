@@ -287,17 +287,14 @@ export type IconName =
     }
     
     /* iOS/macOS-style activity indicator - rotating arc */
-    .icon--loader {
-      animation: spinLoader 0.8s linear infinite;
-    }
-    
     .spinner-track {
       stroke: currentColor;
     }
     
     .spinner-head {
       stroke: currentColor;
-      transform-origin: center;
+      transform-origin: 12px 12px;
+      animation: spinLoader 0.8s linear infinite;
     }
     
     @keyframes spinLoader {

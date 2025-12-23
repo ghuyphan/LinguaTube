@@ -17,7 +17,7 @@ import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 // Configuration
 // ============================================================================
 
-const DEBUG = false;
+const DEBUG = true;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'ko', 'en'];
 
