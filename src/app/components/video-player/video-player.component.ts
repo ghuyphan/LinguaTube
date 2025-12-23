@@ -98,10 +98,7 @@ interface SeekPreview {
               }
               @if (volumeFeedback()) {
                 <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
-                  <app-icon [name]="volumeFeedbackIcon()" [size]="32" />
-                  <div class="volume-bar">
-                    <div class="volume-bar__fill" [style.width.%]="volume()"></div>
-                  </div>
+                  <app-icon [name]="volumeFeedbackIcon()" [size]="48" />
                 </div>
               }
 
@@ -283,11 +280,7 @@ interface SeekPreview {
                           <span class="settings-label">Quality</span>
                           <span class="settings-value">Auto</span>
                         </div>
-                        <div class="settings-item" (click)="toggleSpeedFromSettings()">
-                          <span class="settings-label">Playback speed</span>
-                          <span class="settings-value">{{ currentSpeed() }}x</span>
-                          <app-icon name="chevron-right" [size]="14" />
-                        </div>
+
                       </div>
                     }
                   </div>
@@ -404,7 +397,7 @@ interface SeekPreview {
     .video-container.is-fullscreen {
       position: fixed;
       inset: 0;
-      z-index: 9999;
+      z-index: 9998;
       border-radius: 0;
     }
 
@@ -471,7 +464,7 @@ interface SeekPreview {
       top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% - 70px);
+      height: 100%;
       z-index: 10;
       display: flex;
       -webkit-tap-highlight-color: transparent;
@@ -588,13 +581,13 @@ interface SeekPreview {
 
     /* Volume Feedback */
     .volume-feedback {
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      padding: 16px 20px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 12px;
+      justify-content: center;
       color: white;
       backdrop-filter: blur(4px);
       pointer-events: none;
@@ -611,20 +604,7 @@ interface SeekPreview {
       100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
     }
 
-    .volume-bar {
-      width: 80px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 2px;
-      overflow: hidden;
-    }
 
-    .volume-bar__fill {
-      height: 100%;
-      background: white;
-      border-radius: 2px;
-      transition: width 0.1s ease;
-    }
 
     /* Ripple Effect */
     .ripple-effect {
@@ -1000,7 +980,6 @@ interface SeekPreview {
       display: flex;
       align-items: center;
       padding: 12px 16px;
-      cursor: pointer;
       transition: background 0.1s ease;
     }
 
@@ -1689,10 +1668,7 @@ export class VideoPlayerComponent implements OnDestroy {
     this.isSettingsOpen.update(v => !v);
   }
 
-  toggleSpeedFromSettings() {
-    this.isSettingsOpen.set(false);
-    this.isSpeedMenuOpen.set(true);
-  }
+
 
   // ============================================
   // FULLSCREEN
