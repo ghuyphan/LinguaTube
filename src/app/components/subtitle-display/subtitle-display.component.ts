@@ -34,7 +34,7 @@ import { SubtitleCue, Token } from '../../models';
               <span class="word">{{ cue.text }}</span>
             } @else {
               <span class="subtitle-content" @subtitleFade>
-                @for (token of getTokens(cue); track $index) {@if (isPunctuation(token.surface)) {<span class="punctuation">{{ token.surface }}</span>} @else {<span 
+                @for (token of getTokens(cue); track cue.id + '-' + $index + '-' + token.surface) {@if (isPunctuation(token.surface)) {<span class="punctuation">{{ token.surface }}</span>} @else {<span 
                     class="word"
                     [class.word--new]="getWordLevel(token.surface) === 'new'"
                     [class.word--learning]="getWordLevel(token.surface) === 'learning'"
