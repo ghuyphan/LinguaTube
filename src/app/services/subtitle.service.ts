@@ -177,6 +177,7 @@ export class SubtitleService {
     this.cancelTokenization();
     this.subtitles.set([]);
     this.currentCueIndex.set(-1);
+    this.tokenCache.clear(); // Clear old tokens to prevent stale data
   }
 
   /**
