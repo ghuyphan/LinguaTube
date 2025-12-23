@@ -142,25 +142,30 @@ interface SeekPreview {
             </div>
 
             <!-- Fullscreen Subtitle Overlay -->
-            @if (isFullscreen() && subtitles.currentCue(); as cue) {
+            @if (isFullscreen()) {
               <div 
                 class="fullscreen-subtitle" 
                 [class.controls-visible]="areControlsVisible()"
                 [class.fs-small]="settings.settings().fontSize === 'small'"
                 [class.fs-large]="settings.settings().fontSize === 'large'"
                 [class.popup-open]="fsPopupVisible()"
+                [class.has-content]="!!subtitles.currentCue()"
               >
-                <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
-                  @if (subtitles.isTokenizing()) {
-                    <span class="fs-word">{{ cue.text }}</span>
-                  } @else {
-                    @for (token of getFullscreenTokens(cue); track $index) {<span 
-                        class="fs-word"
-                        [class.fs-word--saved]="vocab.hasWord(token.surface)"
-                        (click)="onFullscreenWordClick(token, cue.text, $event)"
-                      >{{ token.surface }}</span>}
-                  }
-                </div>
+                @if (subtitles.currentCue(); as cue) {
+                  <div class="fs-subtitle-inner">
+                    <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
+                      @if (subtitles.isTokenizing()) {
+                        <span class="fs-word">{{ cue.text }}</span>
+                      } @else {
+                        @for (token of getFullscreenTokens(cue); track $index) {<span 
+                            class="fs-word"
+                            [class.fs-word--saved]="vocab.hasWord(token.surface)"
+                            (click)="onFullscreenWordClick(token, cue.text, $event)"
+                          >{{ token.surface }}</span>}
+                      }
+                    </div>
+                  </div>
+                }
               </div>
             }
 
@@ -857,36 +862,48 @@ interface SeekPreview {
     .volume-slider-container.visible {
       width: 80px;
       opacity: 1;
-      padding-left: var(--space-xs);
+      padding-left: 8px;
     }
 
     .volume-slider {
-      width: 100%;
-      height: 4px;
       -webkit-appearance: none;
       appearance: none;
+      width: 100%;
+      height: 8px;
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 2px;
+      border-radius: 4px;
       cursor: pointer;
+      outline: none;
+      margin: 0;
+      padding: 0;
     }
 
     .volume-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 12px;
-      height: 12px;
-      background: white;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .volume-slider::-moz-range-thumb {
-      width: 12px;
-      height: 12px;
+      width: 20px;
+      height: 20px;
       background: white;
       border-radius: 50%;
       cursor: pointer;
       border: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .volume-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .volume-slider::-moz-range-track {
+      background: rgba(255, 255, 255, 0.3);
+      height: 8px;
+      border-radius: 4px;
     }
 
     /* ============================================
@@ -988,10 +1005,13 @@ interface SeekPreview {
       left: 50%;
       transform: translateX(-50%);
       max-width: 90%;
+      width: 90%;
       z-index: 18;
       text-align: center;
       transition: bottom 0.3s ease, opacity 0.3s ease;
       pointer-events: auto;
+      display: flex;
+      justify-content: center;
     }
 
     .fullscreen-subtitle.controls-visible {
@@ -1002,15 +1022,51 @@ interface SeekPreview {
       opacity: 0.4;
     }
 
+    /* Inner container with background for long subtitles */
+    .fs-subtitle-inner {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 12px 20px;
+      max-height: 35vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      animation: subtitleFadeIn 0.25s ease-out;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    }
+
+    .fs-subtitle-inner::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .fs-subtitle-inner::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .fs-subtitle-inner::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+    }
+
+    @keyframes subtitleFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .fs-subtitle-text {
       display: inline;
       font-size: 1.5rem;
       line-height: 2;
       color: white;
-      text-shadow: 
-        0 1px 3px rgba(0, 0, 0, 0.8),
-        0 2px 6px rgba(0, 0, 0, 0.6),
-        0 0 20px rgba(0, 0, 0, 0.4);
+      text-shadow: none;
       word-break: keep-all;
     }
 
@@ -1026,24 +1082,26 @@ interface SeekPreview {
 
     .fs-word {
       cursor: pointer;
-      padding: 2px 3px;
+      padding: 2px 4px;
       border-radius: 4px;
-      transition: background 0.15s ease;
+      transition: background 0.15s ease, transform 0.1s ease;
       display: inline;
     }
 
     @media (hover: hover) {
       .fs-word:hover {
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.2);
       }
     }
 
     .fs-word:active {
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0.98);
     }
 
     .fs-word--saved {
       border-bottom: 2px solid var(--accent-primary);
+      background: rgba(199, 62, 58, 0.15);
     }
 
     /* ============================================
@@ -1294,20 +1352,37 @@ interface SeekPreview {
       .fullscreen-subtitle {
         bottom: 60px;
         max-width: 95%;
-        padding: 0 var(--space-sm);
+        width: 95%;
+        padding: 0;
       }
 
       .fullscreen-subtitle.controls-visible {
         bottom: 70px;
       }
 
+      .fs-subtitle-inner {
+        padding: 10px 16px;
+        max-height: 40vh;
+        border-radius: 10px;
+      }
+
       .fs-subtitle-text {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+        line-height: 1.7;
+      }
+
+      .fullscreen-subtitle.fs-small .fs-subtitle-text {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .fullscreen-subtitle.fs-large .fs-subtitle-text {
+        font-size: 1.375rem;
         line-height: 1.8;
       }
 
       .fs-word {
-        padding: 4px 4px;
+        padding: 4px 5px;
         border-radius: 6px;
       }
 
@@ -1351,19 +1426,62 @@ interface SeekPreview {
     @media (max-height: 500px) and (orientation: landscape) {
       .fullscreen-subtitle {
         bottom: 55px;
+        max-width: 80%;
+        width: 80%;
       }
 
       .fullscreen-subtitle.controls-visible {
         bottom: 65px;
       }
 
+      .fs-subtitle-inner {
+        padding: 8px 14px;
+        max-height: 30vh;
+      }
+
       .fs-subtitle-text {
-        font-size: 1.125rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        line-height: 1.5;
       }
 
       .fs-popup {
         max-width: 400px;
+      }
+    }
+
+    /* Portrait phone fullscreen - critical for long subtitles */
+    @media (max-width: 480px) and (orientation: portrait) {
+      .is-fullscreen .fullscreen-subtitle {
+        bottom: 55px;
+        max-width: 96%;
+        width: 96%;
+      }
+
+      .is-fullscreen .fullscreen-subtitle.controls-visible {
+        bottom: 65px;
+      }
+
+      .is-fullscreen .fs-subtitle-inner {
+        padding: 10px 14px;
+        max-height: 45vh;
+        border-radius: 8px;
+      }
+
+      .is-fullscreen .fs-subtitle-text {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .is-fullscreen .fullscreen-subtitle.fs-small .fs-subtitle-text {
+        font-size: 0.9375rem;
+      }
+
+      .is-fullscreen .fullscreen-subtitle.fs-large .fs-subtitle-text {
+        font-size: 1.25rem;
+      }
+
+      .is-fullscreen .fs-word {
+        padding: 3px 4px;
       }
     }
   `]

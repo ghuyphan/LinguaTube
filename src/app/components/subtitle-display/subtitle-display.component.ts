@@ -1,5 +1,6 @@
 import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../icon/icon.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService } from '../../services';
 import { SubtitleCue, Token } from '../../models';
@@ -9,6 +10,14 @@ import { SubtitleCue, Token } from '../../models';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent],
+  animations: [
+    trigger('subtitleFade', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(4px)' }),
+        animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ],
   template: `
     <div class="subtitle-panel">
       <!-- Current subtitle -->
@@ -24,14 +33,16 @@ import { SubtitleCue, Token } from '../../models';
               <!-- Show raw text while tokenizing -->
               <span class="word">{{ cue.text }}</span>
             } @else {
-              @for (token of getTokens(cue); track $index) {<span 
-                  class="word"
-                  [class.word--new]="getWordLevel(token.surface) === 'new'"
-                  [class.word--learning]="getWordLevel(token.surface) === 'learning'"
-                  [class.word--known]="getWordLevel(token.surface) === 'known'"
-                  [class.word--saved]="vocab.hasWord(token.surface)"
-                  (click)="onWordClick(token, cue.text)"
-                >@if (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>} @else {{{ token.surface }}}</span>}
+              <span class="subtitle-content" @subtitleFade>
+                @for (token of getTokens(cue); track $index) {<span 
+                    class="word"
+                    [class.word--new]="getWordLevel(token.surface) === 'new'"
+                    [class.word--learning]="getWordLevel(token.surface) === 'learning'"
+                    [class.word--known]="getWordLevel(token.surface) === 'known'"
+                    [class.word--saved]="vocab.hasWord(token.surface)"
+                    (click)="onWordClick(token, cue.text)"
+                  >@if (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>} @else {{{ token.surface }}}</span>}
+              </span>
             }
           </div>
         } @else {
@@ -161,9 +172,13 @@ import { SubtitleCue, Token } from '../../models';
       line-height: 2.2;
       text-align: center;
       word-break: keep-all;
-      transition: all 0.3s ease;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
       border-radius: 12px;
       padding: 4px 12px;
+    }
+
+    .subtitle-content {
+      display: inline;
     }
 
     .subtitle-text.is-looping {
@@ -321,7 +336,7 @@ import { SubtitleCue, Token } from '../../models';
       padding: 2px 3px;
       margin: 0;
       border-radius: 4px;
-      transition: background var(--transition-fast);
+      transition: background 0.15s ease, transform 0.1s ease;
       display: inline;
       vertical-align: baseline;
     }
@@ -329,7 +344,12 @@ import { SubtitleCue, Token } from '../../models';
     @media (hover: hover) {
       .word:hover {
         background: var(--accent-tertiary);
+        transform: translateY(-1px);
       }
+    }
+
+    .word:active {
+      transform: scale(0.98);
     }
 
     .word--saved {
