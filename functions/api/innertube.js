@@ -163,6 +163,29 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
+        // Tier 3: Apify fallback (proxy-based, uses credits)
+        // =====================================================================
+        const apifyApiKey = env.APIFY_API_KEY;
+        if (apifyApiKey) {
+            try {
+                const apifyResult = await tryApifyTranscript(videoId, targetLanguages, apifyApiKey);
+                if (apifyResult.success) {
+                    log(`Apify success (${timer()}ms)`);
+                    if (apifyResult.hasContent && cache && !metadataOnly) {
+                        cacheResult(cache, cacheKey, apifyResult);
+                    }
+                    return jsonResponse({
+                        ...apifyResult,
+                        source: 'apify',
+                        timing: timer()
+                    });
+                }
+            } catch (apifyError) {
+                log('Apify failed:', apifyError.message);
+            }
+        }
+
+        // =====================================================================
         // All failed
         // =====================================================================
         log(`All strategies failed (${timer()}ms)`);
@@ -278,6 +301,77 @@ async function tryThirdPartySources(videoId, targetLanguages, metadataOnly) {
         log('Third-party strategies failed:', errors.map(e => e?.error || 'unknown'));
         return { success: false };
     }
+}
+
+// ============================================================================
+// Tier 3: Apify YouTube Transcript Actor (proxy-based, high reliability)
+// ============================================================================
+
+async function tryApifyTranscript(videoId, targetLanguages, apifyApiKey) {
+    if (!apifyApiKey) {
+        throw new Error('APIFY_API_KEY not configured');
+    }
+
+    log('Apify: starting transcript extraction');
+
+    const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+    // Use synchronous actor run with 25s timeout (CF limit is 30s)
+    const response = await fetch(
+        `https://api.apify.com/v2/acts/karamelo~youtube-transcripts/run-sync-get-dataset-items?token=${apifyApiKey}`,
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                urls: [youtubeUrl],
+                outputFormat: 'with_timestamps',  // Get {start, end, text}
+                retries: 2
+            })
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error(`Apify API failed: HTTP ${response.status}`);
+    }
+
+    const results = await response.json();
+
+    if (!results || results.length === 0) {
+        throw new Error('Apify returned empty results');
+    }
+
+    const result = results[0];
+
+    if (!result.captions || result.captions.length === 0) {
+        throw new Error('Apify: no captions in result');
+    }
+
+    log(`Apify: found ${result.captions.length} captions`);
+
+    // Convert Apify format to our format
+    const cues = result.captions.map((cap, index) => ({
+        id: index,
+        start: cap.start || 0,
+        duration: (cap.end || cap.start + 2) - (cap.start || 0),
+        text: (cap.text || '').replace(/<[^>]*>/g, '').trim()  // Strip HTML tags
+    })).filter(cue => cue.text.length > 0);
+
+    const cleanedCues = cleanTranscriptSegments(cues);
+
+    return {
+        success: true,
+        hasContent: true,
+        captions: {
+            playerCaptionsTracklistRenderer: {
+                captionTracks: [{
+                    languageCode: targetLanguages[0] || 'en',
+                    content: cleanedCues
+                }]
+            }
+        },
+        cues: cleanedCues,
+        totalCues: cleanedCues.length
+    };
 }
 
 // ============================================================================
