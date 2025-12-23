@@ -959,6 +959,8 @@ export class VideoPlayerComponent implements OnDestroy {
     this.transcript.reset(); // Crucial: clear loading/error states immediately
     this.videoUrl = '';
     this.error.set(null);
+    // Clear query params from URL
+    this.router.navigate(['/video'], { replaceUrl: true });
   }
 
   // Progress Bar Logic

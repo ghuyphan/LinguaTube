@@ -295,5 +295,6 @@ export class YoutubeService {
     this.currentVideo.set(null);
     this.currentTime.set(0);
     this.duration.set(0);
+    this.pendingVideoId.set(null);
   }
 }
