@@ -4,10 +4,10 @@
  * Hybrid fallback strategy for speed + reliability:
  *   1. Cache (instant)
  *   2. Race YouTube sources in parallel (Innertube + scrape)
- *   3. Sequential third-party fallback (respectful)
+ *   3. Parallel third-party fallback
  *
- * @version 5.0.0
- * @updated 2024-12
+ * @version 6.0.0
+ * @updated 2025-12
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -22,40 +22,48 @@ const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'ko', 'en'];
 
 const TIMEOUTS = {
-    youtube: 5000,   // Innertube + scrape
-    thirdParty: 4000,
-    caption: 3000
+    youtube: 6000,   // Innertube + scrape (slightly increased for reliability)
+    thirdParty: 4000, // Per-API timeout for racing
+    caption: 2500    // Individual caption fetch
 };
 
-// Ordered by reliability for captions
+// Ordered by reliability for captions (2025 update)
 const INNERTUBE_CLIENTS = [
-    {
-        name: 'TVHTML5_SIMPLY',
-        clientName: 'TVHTML5_SIMPLY',
-        clientVersion: '1.0',
-        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version',
-        clientId: '85'
-    },
     {
         name: 'WEB',
         clientName: 'WEB',
         clientVersion: '2.20241220.00.00',
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         clientId: '1'
+    },
+    {
+        name: 'IOS',
+        clientName: 'IOS',
+        clientVersion: '19.45.4',
+        userAgent: 'com.google.ios.youtube/19.45.4 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)',
+        clientId: '5'
+    },
+    {
+        name: 'TVHTML5_SIMPLY',
+        clientName: 'TVHTML5_SIMPLY',
+        clientVersion: '1.0',
+        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version',
+        clientId: '85'
     }
 ];
 
-// Last resort - be respectful, try sequentially
+// Third-party fallback - raced in parallel (2025 verified instances)
 const THIRD_PARTY_APIS = [
-    // Piped Instances (Often more reliable than Invidious for captions)
+    // Piped Instances (primary - often more reliable)
     { url: 'https://pipedapi.kavin.rocks/streams/', name: 'piped-kavin', type: 'piped' },
     { url: 'https://api.piped.otter.sh/streams/', name: 'piped-otter', type: 'piped' },
     { url: 'https://pipedapi.drgns.space/streams/', name: 'piped-drgns', type: 'piped' },
 
-    // Invidious Instances
-    { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' },
-    { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' },
-    { url: 'https://invidious.drgns.space/api/v1/captions/', name: 'inv-drgns', type: 'invidious' }
+    // Invidious Instances (2025 verified from api.invidious.io)
+    { url: 'https://inv.nadeko.net/api/v1/captions/', name: 'nadeko', type: 'invidious' },
+    { url: 'https://invidious.nerdvpn.de/api/v1/captions/', name: 'nerdvpn', type: 'invidious' },
+    { url: 'https://invidious.f5.si/api/v1/captions/', name: 'f5.si', type: 'invidious' },
+    { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' }
 ];
 
 // ============================================================================
@@ -140,7 +148,7 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // Tier 2: Sequential third-party fallback
+        // Tier 2: Parallel third-party fallback
         // =====================================================================
         const thirdPartyResult = await tryThirdPartySources(videoId, targetLanguages, metadataOnly);
 
