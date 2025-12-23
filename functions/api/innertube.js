@@ -1,14 +1,13 @@
 /**
- * YouTube Innertube Proxy (Cloudflare Function)
- * Fetches captions using parallel fallback strategies
+ * YouTube Transcript Proxy (Cloudflare Function)
  *
- * Strategies (raced in parallel):
- * - Innertube API (TV/Web clients)
- * - Watch page scrape
- * - Third-party APIs (Piped/Invidious)
+ * Hybrid fallback strategy for speed + reliability:
+ *   1. Cache (instant)
+ *   2. Race YouTube sources in parallel (Innertube + scrape)
+ *   3. Sequential third-party fallback (respectful)
  *
- * @version 4.1.0
- * @updated 2025-12
+ * @version 5.0.0
+ * @updated 2024-12
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -19,51 +18,50 @@ import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 // ============================================================================
 
 const DEBUG = false;
-const CACHE_TTL = 60 * 60 * 24 * 30;
+const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_API_KEY = 'AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w';
-const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'en'];
+const DEFAULT_TARGET_LANGS = ['ja', 'zh', 'ko', 'en'];
 
 const TIMEOUTS = {
-    innertube: 5000,
-    watchPage: 5000,
-    thirdParty: 5000,
+    youtube: 5000,   // Innertube + scrape
+    thirdParty: 4000,
     caption: 3000
 };
 
-const CLIENT_CONFIGS = [
+// Ordered by reliability for captions
+const INNERTUBE_CLIENTS = [
     {
+        name: 'TVHTML5_SIMPLY',
         clientName: 'TVHTML5_SIMPLY',
         clientVersion: '1.0',
         userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version',
         clientId: '85'
     },
     {
-        clientName: 'TVHTML5',
-        clientVersion: '7.20251220.00.00',
-        userAgent: 'Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version',
-        clientId: '7'
-    },
-    {
+        name: 'WEB',
         clientName: 'WEB',
-        clientVersion: '2.20251220.00.00',
+        clientVersion: '2.20241220.00.00',
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         clientId: '1'
     }
 ];
 
+// Last resort - be respectful, try sequentially
 const THIRD_PARTY_APIS = [
     { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' },
-    { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' },
-    { url: 'https://inv.tux.pizza/api/v1/captions/', name: 'tux.pizza', type: 'invidious' },
-    { url: 'https://api.piped.video/streams/', name: 'piped.video', type: 'piped' },
-    { url: 'https://pipedapi.kavin.rocks/streams/', name: 'kavin.rocks', type: 'piped' }
+    { url: 'https://vid.puffyan.us/api/v1/captions/', name: 'puffyan', type: 'invidious' }
 ];
 
 // ============================================================================
-// Logging
+// Logging & Timing
 // ============================================================================
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
+
+function createTimer() {
+    const start = Date.now();
+    return () => Date.now() - start;
+}
 
 // ============================================================================
 // Request Handlers
@@ -73,8 +71,7 @@ export const onRequestOptions = () => handleOptions(['POST', 'OPTIONS']);
 
 export async function onRequestPost(context) {
     const { request, env } = context;
-    const apiKey = env.INNERTUBE_API_KEY || DEFAULT_API_KEY;
-    const cache = env.TRANSCRIPT_CACHE;
+    const timer = createTimer();
 
     try {
         const body = await request.json();
@@ -85,35 +82,80 @@ export async function onRequestPost(context) {
             metadataOnly = false
         } = body;
 
-        log('Request:', { videoId, targetLanguages, metadataOnly });
+        log('Request:', { videoId, targetLanguages, metadataOnly, forceRefresh });
 
         if (!validateVideoId(videoId)) {
             return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
         }
 
-        const cacheKey = `captions:v4:${videoId}`;
+        const apiKey = env.INNERTUBE_API_KEY || DEFAULT_API_KEY;
+        const cache = env.TRANSCRIPT_CACHE;
+        const cacheKey = `captions:v5:${videoId}`;
 
-        // Check cache
+        // =====================================================================
+        // Tier 0: Cache (instant)
+        // =====================================================================
         if (!forceRefresh && cache) {
             const cached = await getCachedResult(cache, cacheKey, targetLanguages);
             if (cached) {
-                log('Cache hit');
-                return jsonResponse({ ...cached, source: 'cache' });
+                log(`Cache hit (${timer()}ms)`);
+                return jsonResponse({ ...cached, source: 'cache', timing: timer() });
             }
         }
 
-        // Execute all strategies in parallel
-        const result = await executeStrategies(videoId, apiKey, targetLanguages, metadataOnly);
+        // =====================================================================
+        // Tier 1: Race YouTube sources (Innertube + scrape)
+        // =====================================================================
+        const youtubeResult = await tryYouTubeSources(videoId, apiKey, targetLanguages, metadataOnly);
 
-        // Cache successful results
-        if (result.hasContent && cache && !metadataOnly) {
-            await cacheResult(cache, cacheKey, result.data);
+        if (youtubeResult.success) {
+            log(`YouTube success via ${youtubeResult.source} (${timer()}ms)`);
+            if (youtubeResult.hasContent && cache && !metadataOnly) {
+                cacheResult(cache, cacheKey, youtubeResult.data); // Don't await
+            }
+            return jsonResponse({
+                ...youtubeResult.data,
+                source: youtubeResult.source,
+                timing: timer()
+            });
         }
 
+        // Check for age-restriction (don't bother with third-party)
+        if (youtubeResult.ageRestricted) {
+            return jsonResponse({
+                ...createEmptyResponse(videoId),
+                source: 'none',
+                warning: 'Video is age-restricted',
+                timing: timer()
+            });
+        }
+
+        // =====================================================================
+        // Tier 2: Sequential third-party fallback
+        // =====================================================================
+        const thirdPartyResult = await tryThirdPartySources(videoId, targetLanguages, metadataOnly);
+
+        if (thirdPartyResult.success) {
+            log(`Third-party success via ${thirdPartyResult.source} (${timer()}ms)`);
+            if (thirdPartyResult.hasContent && cache && !metadataOnly) {
+                cacheResult(cache, cacheKey, thirdPartyResult.data);
+            }
+            return jsonResponse({
+                ...thirdPartyResult.data,
+                source: thirdPartyResult.source,
+                timing: timer()
+            });
+        }
+
+        // =====================================================================
+        // All failed
+        // =====================================================================
+        log(`All strategies failed (${timer()}ms)`);
         return jsonResponse({
-            ...result.data,
-            source: result.source,
-            ...(result.warning && { warning: result.warning })
+            ...createEmptyResponse(videoId),
+            source: 'none',
+            warning: 'No captions available',
+            timing: timer()
         });
 
     } catch (error) {
@@ -123,64 +165,83 @@ export async function onRequestPost(context) {
 }
 
 // ============================================================================
-// Strategy Orchestration
+// Tier 1: YouTube Sources (raced in parallel)
 // ============================================================================
 
-async function executeStrategies(videoId, apiKey, targetLanguages, metadataOnly) {
-    const masterController = new AbortController();
-    const { signal } = masterController;
+async function tryYouTubeSources(videoId, apiKey, targetLanguages, metadataOnly) {
+    const controller = new AbortController();
+    const { signal } = controller;
 
     const strategies = [
         // Innertube clients
-        ...CLIENT_CONFIGS.map(config =>
-            tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, signal)
-                .then(r => ({ ...r, source: `innertube:${config.clientName}` }))
+        ...INNERTUBE_CLIENTS.map(client =>
+            tryInnertubeClient(videoId, apiKey, client, targetLanguages, metadataOnly, signal)
+                .then(r => ({ ...r, source: `innertube:${client.name}` }))
+                .catch(e => ({ success: false, error: e.message }))
         ),
         // Watch page scrape
         tryWatchPage(videoId, targetLanguages, metadataOnly, signal)
-            .then(r => ({ ...r, source: 'scrape' })),
-        // Third-party APIs
-        ...THIRD_PARTY_APIS.map(api =>
-            tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, signal)
-                .then(r => ({ ...r, source: `thirdparty:${api.name}` }))
-        )
+            .then(r => ({ ...r, source: 'scrape' }))
+            .catch(e => ({ success: false, error: e.message }))
     ];
 
+    // Set overall timeout
+    const timeoutPromise = new Promise(resolve => {
+        setTimeout(() => resolve({ success: false, timeout: true }), TIMEOUTS.youtube);
+    });
+
     try {
-        const result = await Promise.any(strategies);
-        masterController.abort();
-        log('Success via:', result.source);
+        // Race all YouTube strategies
+        const result = await Promise.any([
+            ...strategies.map(p => p.then(r => {
+                if (r.success) return r;
+                throw r; // Convert failure to rejection for Promise.any
+            })),
+            timeoutPromise.then(() => { throw { timeout: true }; })
+        ]);
+
+        controller.abort(); // Cancel pending requests
         return result;
 
     } catch (aggregateError) {
-        masterController.abort();
-        log('All strategies failed');
+        controller.abort();
 
-        const ageRestricted = aggregateError.errors?.some(e =>
-            e.message?.includes('Age-restricted')
-        );
+        // Check if any error was age-restriction
+        const errors = aggregateError.errors || [aggregateError];
+        const ageRestricted = errors.some(e => e?.error === 'Age-restricted' || e?.ageRestricted);
 
-        return {
-            success: false,
-            hasContent: false,
-            source: 'none',
-            data: {
-                videoDetails: { videoId },
-                captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } }
-            },
-            warning: ageRestricted ? 'Video may be age-restricted' : 'No captions available'
-        };
+        return { success: false, ageRestricted };
     }
 }
 
 // ============================================================================
-// Innertube Client
+// Tier 2: Third-Party Sources (sequential, respectful)
 // ============================================================================
 
-async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, metadataOnly, masterSignal) {
+async function tryThirdPartySources(videoId, targetLanguages, metadataOnly) {
+    for (const api of THIRD_PARTY_APIS) {
+        try {
+            log(`Trying third-party: ${api.name}`);
+            const result = await tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly);
+
+            if (result.success) {
+                return { ...result, source: `thirdparty:${api.name}` };
+            }
+        } catch (error) {
+            log(`${api.name} failed:`, error.message);
+        }
+    }
+
+    return { success: false };
+}
+
+// ============================================================================
+// Innertube Client Implementation
+// ============================================================================
+
+async function tryInnertubeClient(videoId, apiKey, client, targetLanguages, metadataOnly, masterSignal) {
     const controller = new AbortController();
-    const cleanup = linkSignal(masterSignal, controller);
-    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.innertube);
+    const cleanup = linkAbortSignals(masterSignal, controller);
 
     try {
         const response = await fetch(
@@ -189,19 +250,19 @@ async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, meta
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'User-Agent': config.userAgent,
+                    'User-Agent': client.userAgent,
                     'Accept': '*/*',
                     'Accept-Language': 'en-US,en;q=0.9',
                     'Origin': 'https://www.youtube.com',
                     'Referer': 'https://www.youtube.com/',
-                    'X-Youtube-Client-Name': config.clientId,
-                    'X-Youtube-Client-Version': config.clientVersion
+                    'X-Youtube-Client-Name': client.clientId,
+                    'X-Youtube-Client-Version': client.clientVersion
                 },
                 body: JSON.stringify({
                     context: {
                         client: {
-                            clientName: config.clientName,
-                            clientVersion: config.clientVersion,
+                            clientName: client.clientName,
+                            clientVersion: client.clientVersion,
                             hl: 'en',
                             gl: 'US'
                         }
@@ -214,28 +275,36 @@ async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, meta
             }
         );
 
-        clearTimeout(timeoutId);
-
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
 
         const data = await response.json();
 
-        // Check playability
-        if (data.playabilityStatus?.status === 'LOGIN_REQUIRED') {
+        // Check playability status
+        const status = data.playabilityStatus?.status;
+        if (status === 'LOGIN_REQUIRED') {
             throw new Error('Age-restricted');
         }
-        if (data.playabilityStatus?.status === 'ERROR') {
-            throw new Error(data.playabilityStatus.reason || 'Playback error');
+        if (status === 'ERROR' || status === 'UNPLAYABLE') {
+            throw new Error(data.playabilityStatus?.reason || 'Video unavailable');
         }
 
+        // Extract and filter caption tracks
         const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-        if (!captionTracks?.length) throw new Error('No captions');
+        if (!captionTracks?.length) {
+            throw new Error('No captions');
+        }
 
         const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
-        if (!filteredTracks.length) throw new Error('No matching language tracks');
+        if (!filteredTracks.length) {
+            throw new Error('No matching languages');
+        }
 
+        // Fetch caption content
         if (!metadataOnly) {
-            await fetchCaptionContents(filteredTracks, config.userAgent);
+            await fetchCaptionContents(filteredTracks, client.userAgent);
+
             if (!filteredTracks.some(t => t.content?.length > 0)) {
                 throw new Error('Failed to fetch content');
             }
@@ -246,20 +315,18 @@ async function tryInnertubeClient(videoId, apiKey, config, targetLanguages, meta
         return { success: true, hasContent: !metadataOnly, data };
 
     } finally {
-        clearTimeout(timeoutId);
         cleanup();
     }
 }
 
 // ============================================================================
-// Watch Page Scrape
+// Watch Page Scrape Implementation
 // ============================================================================
 
 async function tryWatchPage(videoId, targetLanguages, metadataOnly, masterSignal) {
-    const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+    const userAgent = INNERTUBE_CLIENTS[1].userAgent; // Use WEB client UA
     const controller = new AbortController();
-    const cleanup = linkSignal(masterSignal, controller);
-    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.watchPage);
+    const cleanup = linkAbortSignals(masterSignal, controller);
 
     try {
         const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
@@ -272,22 +339,30 @@ async function tryWatchPage(videoId, targetLanguages, metadataOnly, masterSignal
             signal: controller.signal
         });
 
-        clearTimeout(timeoutId);
-
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
 
         const html = await response.text();
         const data = extractPlayerResponse(html);
-        if (!data) throw new Error('Failed to extract player response');
+
+        if (!data) {
+            throw new Error('Failed to extract player response');
+        }
 
         const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-        if (!captionTracks?.length) throw new Error('No captions');
+        if (!captionTracks?.length) {
+            throw new Error('No captions');
+        }
 
         const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
-        if (!filteredTracks.length) throw new Error('No matching language tracks');
+        if (!filteredTracks.length) {
+            throw new Error('No matching languages');
+        }
 
         if (!metadataOnly) {
             await fetchCaptionContents(filteredTracks, userAgent);
+
             if (!filteredTracks.some(t => t.content?.length > 0)) {
                 throw new Error('Failed to fetch content');
             }
@@ -298,33 +373,50 @@ async function tryWatchPage(videoId, targetLanguages, metadataOnly, masterSignal
         return { success: true, hasContent: !metadataOnly, data };
 
     } finally {
-        clearTimeout(timeoutId);
         cleanup();
     }
 }
 
+/**
+ * Extract ytInitialPlayerResponse from watch page HTML
+ * Optimized JSON boundary detection
+ */
 function extractPlayerResponse(html) {
     const marker = 'ytInitialPlayerResponse = ';
-    const startIndex = html.indexOf(marker);
-    if (startIndex === -1) return null;
+    const startIdx = html.indexOf(marker);
+    if (startIdx === -1) return null;
 
-    const jsonStart = startIndex + marker.length;
-    let braceCount = 0;
+    const jsonStart = startIdx + marker.length;
+    let depth = 0;
     let inString = false;
-    let escape = false;
+    let escaped = false;
 
-    for (let i = jsonStart; i < html.length && i < jsonStart + 500000; i++) {
+    // Limit search to 500KB to prevent hanging on malformed responses
+    const maxLen = Math.min(html.length, jsonStart + 500000);
+
+    for (let i = jsonStart; i < maxLen; i++) {
         const char = html[i];
 
-        if (escape) { escape = false; continue; }
-        if (char === '\\' && inString) { escape = true; continue; }
-        if (char === '"' && !escape) { inString = !inString; continue; }
+        if (escaped) {
+            escaped = false;
+            continue;
+        }
+
+        if (char === '\\' && inString) {
+            escaped = true;
+            continue;
+        }
+
+        if (char === '"') {
+            inString = !inString;
+            continue;
+        }
 
         if (!inString) {
-            if (char === '{') braceCount++;
+            if (char === '{') depth++;
             else if (char === '}') {
-                braceCount--;
-                if (braceCount === 0) {
+                depth--;
+                if (depth === 0) {
                     try {
                         return JSON.parse(html.substring(jsonStart, i + 1));
                     } catch {
@@ -334,35 +426,39 @@ function extractPlayerResponse(html) {
             }
         }
     }
+
     return null;
 }
 
 // ============================================================================
-// Third-Party APIs
+// Third-Party API Implementation
 // ============================================================================
 
-async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, masterSignal) {
+async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly) {
     const controller = new AbortController();
-    const cleanup = linkSignal(masterSignal, controller);
     const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.thirdParty);
 
     try {
         const response = await fetch(`${api.url}${videoId}`, {
             headers: {
                 'Accept': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                'User-Agent': 'Mozilla/5.0 (compatible; LinguaTube/1.0)'
             },
             signal: controller.signal
         });
 
         clearTimeout(timeoutId);
 
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
 
         const data = await response.json();
         const captionTracks = await processThirdPartyResponse(api, data, targetLanguages, metadataOnly);
 
-        if (!captionTracks.length) throw new Error('No valid tracks');
+        if (!captionTracks.length) {
+            throw new Error('No valid tracks');
+        }
 
         return {
             success: true,
@@ -370,16 +466,15 @@ async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, mas
             data: {
                 captions: { playerCaptionsTracklistRenderer: { captionTracks } },
                 videoDetails: {
-                    title: data.title || 'Unknown',
-                    author: data.uploader || data.author || 'Unknown',
-                    videoId
+                    videoId,
+                    title: data.title || '',
+                    author: data.uploader || data.author || ''
                 }
             }
         };
 
     } finally {
         clearTimeout(timeoutId);
-        cleanup();
     }
 }
 
@@ -393,19 +488,24 @@ async function processThirdPartyResponse(api, data, targetLanguages, metadataOnl
             name: { simpleText: sub.name || sub.code }
         }));
     } else if (api.type === 'invidious') {
-        const captions = Array.isArray(data.captions) ? data.captions : (Array.isArray(data) ? data : []);
-        const instanceUrl = new URL(api.url).origin;
+        const captions = Array.isArray(data.captions) ? data.captions :
+            Array.isArray(data) ? data : [];
+        const baseUrl = new URL(api.url).origin;
 
         rawTracks = captions.map(sub => ({
-            baseUrl: sub.url?.startsWith('http') ? sub.url : `${instanceUrl}${sub.url}`,
+            baseUrl: sub.url?.startsWith('http') ? sub.url : `${baseUrl}${sub.url}`,
             languageCode: sub.languageCode || sub.label,
             name: { simpleText: sub.label || sub.languageCode }
         }));
     }
 
     const filteredTracks = filterTracksByLanguage(rawTracks, targetLanguages);
-    if (metadataOnly) return filteredTracks;
 
+    if (metadataOnly) {
+        return filteredTracks;
+    }
+
+    // Fetch content for all tracks in parallel
     await Promise.all(
         filteredTracks.map(async track => {
             try {
@@ -430,16 +530,17 @@ async function fetchThirdPartyContent(url) {
         });
 
         clearTimeout(timeoutId);
+
         if (!response.ok) return null;
 
         const text = await response.text();
+        if (text.length < 10) return null;
+
         const segments = parseCaption(text, 'vtt');
-        // Clean segments server-side
         return segments?.length ? cleanTranscriptSegments(segments) : null;
 
-    } catch {
+    } finally {
         clearTimeout(timeoutId);
-        return null;
     }
 }
 
@@ -448,17 +549,17 @@ async function fetchThirdPartyContent(url) {
 // ============================================================================
 
 function filterTracksByLanguage(tracks, targetLanguages) {
+    const targets = targetLanguages.map(t => t.toLowerCase());
+
     return tracks.filter(track => {
-        const langCode = track.languageCode?.toLowerCase() || '';
-        return targetLanguages.some(target =>
-            langCode.startsWith(target.toLowerCase())
-        );
+        const lang = (track.languageCode || '').toLowerCase();
+        return targets.some(target => lang.startsWith(target));
     });
 }
 
-async function fetchCaptionContents(captionTracks, userAgent) {
+async function fetchCaptionContents(tracks, userAgent) {
     await Promise.all(
-        captionTracks.map(async track => {
+        tracks.map(async track => {
             try {
                 track.content = await fetchCaptionContent(track.baseUrl, userAgent);
             } catch {
@@ -469,6 +570,7 @@ async function fetchCaptionContents(captionTracks, userAgent) {
 }
 
 async function fetchCaptionContent(baseUrl, userAgent) {
+    // Try formats in order of preference (json3 is fastest to parse)
     const formats = ['json3', 'srv3', 'vtt'];
 
     for (const format of formats) {
@@ -499,11 +601,11 @@ async function fetchCaptionContent(baseUrl, userAgent) {
 
             const segments = parseCaption(text, format);
             if (segments?.length > 0) {
-                // Clean segments server-side for deduplication and timing fixes
                 return cleanTranscriptSegments(segments);
             }
-
-        } catch { /* try next format */ }
+        } catch {
+            // Try next format
+        }
     }
 
     return null;
@@ -513,23 +615,28 @@ async function fetchCaptionContent(baseUrl, userAgent) {
 // Caption Parsing
 // ============================================================================
 
-function parseCaption(text, format) {
-    if (format === 'json3' || (text.startsWith('{') && text.includes('"events"'))) {
-        const result = parseJSON3(text);
+function parseCaption(text, hint) {
+    // Try hinted format first, then auto-detect
+    const parsers = [
+        { check: () => hint === 'json3' || text.trimStart().startsWith('{'), parse: parseJSON3 },
+        { check: () => hint === 'srv3' || text.includes('<text start='), parse: parseXML },
+        { check: () => hint === 'vtt' || text.includes('WEBVTT'), parse: parseVTT }
+    ];
+
+    for (const { check, parse } of parsers) {
+        if (check()) {
+            const result = parse(text);
+            if (result?.length) return result;
+        }
+    }
+
+    // Fallback: try all parsers
+    for (const { parse } of parsers) {
+        const result = parse(text);
         if (result?.length) return result;
     }
 
-    if (format === 'srv3' || text.includes('<?xml') || text.includes('<text start=')) {
-        const result = parseXML(text);
-        if (result?.length) return result;
-    }
-
-    if (format === 'vtt' || text.includes('WEBVTT')) {
-        const result = parseVTT(text);
-        if (result?.length) return result;
-    }
-
-    return parseJSON3(text) || parseXML(text) || parseVTT(text) || [];
+    return [];
 }
 
 function parseJSON3(text) {
@@ -540,7 +647,7 @@ function parseJSON3(text) {
         for (const event of events) {
             if (!event.segs) continue;
 
-            const segmentText = event.segs.map(seg => seg.utf8 || '').join('');
+            const segmentText = event.segs.map(s => s.utf8 || '').join('');
             const cleanText = decodeHtmlEntities(segmentText.trim());
 
             if (cleanText) {
@@ -584,22 +691,23 @@ function parseVTT(text) {
 
     while (i < lines.length) {
         const line = lines[i].trim();
-        const match = line.match(/(\d{2}:\d{2}:\d{2}\.\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}\.\d{3})/);
+        const timeMatch = line.match(/(\d{2}:\d{2}:\d{2}\.\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}\.\d{3})/);
 
-        if (match) {
-            const startTime = parseVTTTime(match[1]);
-            const endTime = parseVTTTime(match[2]);
-            let text = '';
+        if (timeMatch) {
+            const startTime = parseVTTTimestamp(timeMatch[1]);
+            const endTime = parseVTTTimestamp(timeMatch[2]);
+            let textContent = '';
             i++;
 
-            while (i < lines.length && lines[i].trim() !== '' && !lines[i].includes('-->')) {
-                text += (text ? ' ' : '') + lines[i].trim();
+            // Collect all text lines until empty line or next timestamp
+            while (i < lines.length && lines[i].trim() && !lines[i].includes('-->')) {
+                textContent += (textContent ? ' ' : '') + lines[i].trim();
                 i++;
             }
 
-            if (text) {
+            if (textContent) {
                 segments.push({
-                    text: decodeHtmlEntities(text),
+                    text: decodeHtmlEntities(textContent),
                     start: startTime,
                     duration: endTime - startTime
                 });
@@ -612,16 +720,14 @@ function parseVTT(text) {
     return segments;
 }
 
-function parseVTTTime(time) {
-    const [hours, minutes, secondsMs] = time.split(':');
-    const [seconds, milliseconds] = secondsMs.split('.');
+function parseVTTTimestamp(timestamp) {
+    const [hours, minutes, rest] = timestamp.split(':');
+    const [seconds, ms] = rest.split('.');
 
-    return (
-        parseInt(hours, 10) * 3600 +
-        parseInt(minutes, 10) * 60 +
-        parseInt(seconds, 10) +
-        parseInt(milliseconds, 10) / 1000
-    );
+    return parseInt(hours) * 3600 +
+        parseInt(minutes) * 60 +
+        parseInt(seconds) +
+        parseInt(ms) / 1000;
 }
 
 // ============================================================================
@@ -634,13 +740,15 @@ async function getCachedResult(cache, key, targetLanguages) {
         if (!cached) return null;
 
         const tracks = cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
+        const targets = targetLanguages.map(t => t.toLowerCase());
 
-        const hasTargetContent = tracks.some(t =>
-            t.content?.length > 0 &&
-            targetLanguages.some(lang => t.languageCode?.toLowerCase().startsWith(lang.toLowerCase()))
+        // Verify cache has content for at least one target language
+        const hasValidContent = tracks.some(track =>
+            track.content?.length > 0 &&
+            targets.some(t => (track.languageCode || '').toLowerCase().startsWith(t))
         );
 
-        return hasTargetContent ? cached : null;
+        return hasValidContent ? cached : null;
     } catch {
         return null;
     }
@@ -649,7 +757,7 @@ async function getCachedResult(cache, key, targetLanguages) {
 async function cacheResult(cache, key, data) {
     try {
         await cache.put(key, JSON.stringify(data), { expirationTtl: CACHE_TTL });
-        log('Cached');
+        log('Cached successfully');
     } catch (e) {
         log('Cache error:', e.message);
     }
@@ -659,12 +767,23 @@ async function cacheResult(cache, key, data) {
 // Utilities
 // ============================================================================
 
+function createEmptyResponse(videoId) {
+    return {
+        videoDetails: { videoId },
+        captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } }
+    };
+}
+
 /**
- * Link child abort controller to master signal (with cleanup)
+ * Link child AbortController to master signal
+ * Returns cleanup function to remove listener
  */
-function linkSignal(masterSignal, childController) {
+function linkAbortSignals(masterSignal, childController) {
+    if (!masterSignal) return () => { };
+
     const onAbort = () => childController.abort();
     masterSignal.addEventListener('abort', onAbort, { once: true });
+
     return () => masterSignal.removeEventListener('abort', onAbort);
 }
 
@@ -675,7 +794,7 @@ function decodeHtmlEntities(text) {
         .replace(/&amp;/g, '&')
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
-        .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(parseInt(num, 10)))
+        .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n)))
         .replace(/\n/g, ' ')
         .trim();
 }
