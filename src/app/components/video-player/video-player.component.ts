@@ -1526,7 +1526,7 @@ export class VideoPlayerComponent implements OnDestroy {
   handleZoneTap(seconds: number, event?: MouseEvent) {
     // Only allow double-tap seek on touch devices
     if (!this.isTouchDevice) {
-      this.showControls();
+      this.togglePlay();
       return;
     }
 
