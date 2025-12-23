@@ -1,9 +1,10 @@
-import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener, computed } from '@angular/core';
+import { Component, inject, signal, OnDestroy, effect, ChangeDetectionStrategy, ViewChild, ElementRef, HostListener, computed, output } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService } from '../../services';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService } from '../../services';
+import { Token, SubtitleCue } from '../../models';
 import { Subscription } from 'rxjs';
 
 type PlaybackSpeed = 0.25 | 0.5 | 0.75 | 1 | 1.25 | 1.5 | 1.75 | 2;
@@ -144,6 +145,28 @@ interface SeekPreview {
             >
               <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
             </div>
+
+            <!-- Fullscreen Subtitle Overlay -->
+            @if (isFullscreen() && subtitles.currentCue(); as cue) {
+              <div 
+                class="fullscreen-subtitle" 
+                [class.controls-visible]="areControlsVisible()"
+                [class.fs-small]="settings.settings().fontSize === 'small'"
+                [class.fs-large]="settings.settings().fontSize === 'large'"
+              >
+                <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
+                  @if (subtitles.isTokenizing()) {
+                    <span class="fs-word">{{ cue.text }}</span>
+                  } @else {
+                    @for (token of getFullscreenTokens(cue); track $index) {<span 
+                        class="fs-word"
+                        [class.fs-word--saved]="vocab.hasWord(token.surface)"
+                        (click)="onFullscreenWordClick(token, cue.text, $event)"
+                      >{{ token.surface }}</span>}
+                  }
+                </div>
+              </div>
+            }
             
             <!-- Custom Controls -->
             <div 
@@ -1145,6 +1168,116 @@ interface SeekPreview {
     .is-fullscreen .volume-slider-container.visible {
       width: 100px;
     }
+
+    /* ============================================
+       FULLSCREEN SUBTITLE OVERLAY
+       ============================================ */
+    .fullscreen-subtitle {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+      z-index: 18;
+      text-align: center;
+      transition: bottom 0.3s ease, opacity 0.3s ease;
+      pointer-events: auto;
+    }
+
+    .fullscreen-subtitle.controls-visible {
+      bottom: 90px;
+    }
+
+    .fs-subtitle-text {
+      display: inline;
+      font-size: 1.5rem;
+      line-height: 2;
+      color: white;
+      text-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.8),
+        0 2px 6px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4);
+      word-break: keep-all;
+    }
+
+    .fullscreen-subtitle.fs-small .fs-subtitle-text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .fullscreen-subtitle.fs-large .fs-subtitle-text {
+      font-size: 2rem;
+      line-height: 2.2;
+    }
+
+    .fs-word {
+      cursor: pointer;
+      padding: 2px 3px;
+      border-radius: 4px;
+      transition: background 0.15s ease, color 0.15s ease;
+      display: inline;
+    }
+
+    @media (hover: hover) {
+      .fs-word:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+    }
+
+    .fs-word:active {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .fs-word--saved {
+      border-bottom: 2px solid var(--accent-primary);
+    }
+
+    /* Mobile fullscreen adjustments */
+    @media (max-width: 640px) {
+      .fullscreen-subtitle {
+        bottom: 70px;
+        max-width: 95%;
+        padding: 0 var(--space-sm);
+      }
+
+      .fullscreen-subtitle.controls-visible {
+        bottom: 80px;
+      }
+
+      .fs-subtitle-text {
+        font-size: 1.25rem;
+        line-height: 1.8;
+      }
+
+      .fullscreen-subtitle.fs-small .fs-subtitle-text {
+        font-size: 1.0625rem;
+      }
+
+      .fullscreen-subtitle.fs-large .fs-subtitle-text {
+        font-size: 1.5rem;
+      }
+
+      .fs-word {
+        padding: 4px 4px;
+        border-radius: 6px;
+      }
+    }
+
+    /* Landscape phone adjustments */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .fullscreen-subtitle {
+        bottom: 65px;
+      }
+
+      .fullscreen-subtitle.controls-visible {
+        bottom: 75px;
+      }
+
+      .fs-subtitle-text {
+        font-size: 1.125rem;
+        line-height: 1.6;
+      }
+    }
   `]
 })
 export class VideoPlayerComponent implements OnDestroy {
@@ -1154,6 +1287,10 @@ export class VideoPlayerComponent implements OnDestroy {
   subtitles = inject(SubtitleService);
   transcript = inject(TranscriptService);
   settings = inject(SettingsService);
+  vocab = inject(VocabularyService);
+
+  // Outputs
+  fullscreenWordClicked = output<{ token: Token; sentence: string }>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -1741,6 +1878,30 @@ export class VideoPlayerComponent implements OnDestroy {
     this.videoUrl = '';
     this.error.set(null);
     this.router.navigate(['/video'], { replaceUrl: true });
+  }
+
+  // ============================================
+  // FULLSCREEN SUBTITLE
+  // ============================================
+
+  getFullscreenTokens(cue: SubtitleCue): Token[] {
+    const lang = this.settings.settings().language;
+    return this.subtitles.getTokens(cue, lang);
+  }
+
+  onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
+    event.stopPropagation();
+
+    // Pause video for better learning experience
+    if (this.youtube.isPlaying()) {
+      this.youtube.pause();
+    }
+
+    // Emit event for parent to handle popup
+    this.fullscreenWordClicked.emit({ token, sentence });
+
+    // Keep controls visible so user can resume
+    this.showControls();
   }
 
   formatTime(seconds: number): string {

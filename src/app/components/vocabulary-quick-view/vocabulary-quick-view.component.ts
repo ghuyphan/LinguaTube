@@ -5,11 +5,11 @@ import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { VocabularyService, SettingsService } from '../../services';
 
 @Component({
-    selector: 'app-vocabulary-quick-view',
-    standalone: true,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, BottomSheetComponent],
-    template: `
+  selector: 'app-vocabulary-quick-view',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, IconComponent, BottomSheetComponent],
+  template: `
     <app-bottom-sheet [isOpen]="isOpen()" (closed)="closed.emit()">
       <div class="quick-view">
         <div class="quick-view-header">
@@ -60,7 +60,7 @@ import { VocabularyService, SettingsService } from '../../services';
       </div>
     </app-bottom-sheet>
   `,
-    styles: [`
+  styles: [`
     .quick-view {
       padding: var(--space-md);
       padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
@@ -189,27 +189,69 @@ import { VocabularyService, SettingsService } from '../../services';
       background: var(--word-known);
       color: var(--word-known-text);
     }
+
+    /* Landscape phones: more compact layout */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .quick-view {
+        padding: var(--space-sm) var(--space-md);
+        padding-bottom: var(--space-md);
+        max-height: calc(100vh - 120px);
+      }
+
+      .quick-view-header {
+        margin-bottom: var(--space-sm);
+      }
+
+      .quick-view-header h2 {
+        font-size: 1rem;
+      }
+
+      .empty-state {
+        padding: var(--space-md);
+        gap: var(--space-xs);
+      }
+
+      .empty-state p {
+        font-size: 0.875rem;
+      }
+
+      .word-list {
+        gap: var(--space-xs);
+      }
+
+      .word-item {
+        padding: var(--space-xs) var(--space-sm);
+      }
+
+      .word-surface {
+        font-size: 1rem;
+      }
+
+      .word-meaning {
+        font-size: 0.8125rem;
+      }
+    }
   `]
 })
 export class VocabularyQuickViewComponent {
-    vocab = inject(VocabularyService);
-    settings = inject(SettingsService);
+  vocab = inject(VocabularyService);
+  settings = inject(SettingsService);
 
-    isOpen = input<boolean>(false);
-    closed = output<void>();
+  isOpen = input<boolean>(false);
+  closed = output<void>();
 
-    recentWords = computed(() => {
-        const lang = this.settings.settings().language;
-        const allWords = this.vocab.getByLanguage(lang);
-        // Sort by addedAt descending, take first 20
-        return [...allWords]
-            .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime())
-            .slice(0, 20);
-    });
+  recentWords = computed(() => {
+    const lang = this.settings.settings().language;
+    const allWords = this.vocab.getByLanguage(lang);
+    // Sort by addedAt descending, take first 20
+    return [...allWords]
+      .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime())
+      .slice(0, 20);
+  });
 
-    updateLevel(id: string, event: Event): void {
-        const select = event.target as HTMLSelectElement;
-        const level = select.value as 'new' | 'learning' | 'known' | 'ignored';
-        this.vocab.updateLevel(id, level);
-    }
+  updateLevel(id: string, event: Event): void {
+    const select = event.target as HTMLSelectElement;
+    const level = select.value as 'new' | 'learning' | 'known' | 'ignored';
+    this.vocab.updateLevel(id, level);
+  }
 }

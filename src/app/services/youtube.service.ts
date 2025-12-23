@@ -26,6 +26,9 @@ export class YoutubeService {
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null); // Set when loading from URL
 
+  // Track if video was paused when leaving page (for restore)
+  private wasPausedOnLeave = false;
+
   constructor() {
     this.apiReadyPromise = new Promise(resolve => {
       this.resolveApiReady = resolve;
@@ -140,6 +143,12 @@ export class YoutubeService {
             onStateChange: (event: any) => {
               const state = event.data;
               this.isPlaying.set(state === window.YT.PlayerState.PLAYING);
+
+              // If we should restore to paused state, pause immediately after playing starts
+              if (state === window.YT.PlayerState.PLAYING && this.wasPausedOnLeave) {
+                this.wasPausedOnLeave = false;
+                this.pause();
+              }
 
               // Update duration when video loads
               if (state === window.YT.PlayerState.PLAYING || state === window.YT.PlayerState.PAUSED) {
@@ -284,6 +293,8 @@ export class YoutubeService {
 
     this.player = null;
     // Don't clear currentVideo here to allow restoring state on navigation
+    // Track if video was paused when leaving
+    this.wasPausedOnLeave = !this.isPlaying();
     // Reset other transport states
     this.isPlaying.set(false);
     this.isReady.set(false);

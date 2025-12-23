@@ -606,6 +606,21 @@ ruby rt {
   }
 }
 
+/* ============================================
+   MOBILE BREAKPOINTS - LANDSCAPE AWARE
+   ============================================
+   Use these patterns for mobile-responsive styles:
+   
+   Mobile (portrait + landscape phones):
+   @media (max-width: 768px), (max-height: 500px) and (orientation: landscape)
+   
+   Small mobile (portrait phones only):
+   @media (max-width: 480px)
+   
+   Touch devices (regardless of size):
+   @media (hover: none) and (pointer: coarse)
+   ============================================ */
+
 /* Bottom Navigation for Mobile */
 .bottom-nav {
   display: none;
@@ -686,7 +701,8 @@ ruby rt {
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px),
+(max-height: 500px) and (orientation: landscape) {
   .bottom-nav {
     display: block;
   }

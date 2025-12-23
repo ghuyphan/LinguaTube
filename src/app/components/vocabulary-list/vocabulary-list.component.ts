@@ -364,6 +364,13 @@ import { VocabularyItem, WordLevel } from '../../models';
       }
     }
 
+    /* Landscape phones - limit height */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .vocab-panel {
+        max-height: 250px;
+      }
+    }
+
     @media (max-width: 768px) {
       .vocab-panel {
         max-height: none;

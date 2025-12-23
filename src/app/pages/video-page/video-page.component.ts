@@ -22,7 +22,7 @@ import { Token } from '../../models';
   template: `
     <div class="layout">
       <div class="layout-main">
-        <app-video-player />
+        <app-video-player (fullscreenWordClicked)="onWordClicked($event)" />
         <app-subtitle-display (wordClicked)="onWordClicked($event)" />
       </div>
 
@@ -75,7 +75,7 @@ import { Token } from '../../models';
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
       .desktop-only {
         display: none;
       }
