@@ -37,6 +37,13 @@ const INNERTUBE_CLIENTS = [
         clientId: '1'
     },
     {
+        name: 'ANDROID_MUSIC',
+        clientName: 'ANDROID_MUSIC',
+        clientVersion: '7.27.52',
+        userAgent: 'com.google.android.apps.youtube.music/7.27.52 (Linux; U; Android 14; Pixel 8 Pro)',
+        clientId: '21'
+    },
+    {
         name: 'TVHTML5_SIMPLY',
         clientName: 'TVHTML5_SIMPLY',
         clientVersion: '1.0',
@@ -322,11 +329,15 @@ async function tryInnertubeClient(videoId, apiKey, client, targetLanguages, meta
         // Extract and filter caption tracks
         const captionTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
         if (!captionTracks?.length) {
+            log(`${client.name}: No caption tracks returned`);
             throw new Error('No captions');
         }
 
+        log(`${client.name}: Found ${captionTracks.length} caption tracks:`, captionTracks.map(t => t.languageCode));
+
         const filteredTracks = filterTracksByLanguage(captionTracks, targetLanguages);
         if (!filteredTracks.length) {
+            log(`${client.name}: No tracks match target languages`, targetLanguages);
             throw new Error('No matching languages');
         }
 
