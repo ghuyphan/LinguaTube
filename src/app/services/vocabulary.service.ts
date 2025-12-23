@@ -424,9 +424,28 @@ export class VocabularyService {
 
   private saveToStorage(items: VocabularyItem[]): void {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      const data = JSON.stringify(items);
+      localStorage.setItem(STORAGE_KEY, data);
     } catch (err) {
-      console.error('Failed to save vocabulary to storage:', err);
+      // Handle QuotaExceededError
+      if (err instanceof DOMException && (
+        err.code === 22 || // QuotaExceededError
+        err.name === 'QuotaExceededError' ||
+        err.name === 'NS_ERROR_DOM_QUOTA_REACHED'
+      )) {
+        console.warn('[VocabularyService] Storage quota exceeded, cleaning up old data');
+        // Try to free up space by removing old ignored words
+        const filtered = items.filter(item => item.level !== 'ignored');
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+          this.vocabulary.set(filtered);
+          console.log('[VocabularyService] Removed ignored words to free space');
+        } catch {
+          console.error('[VocabularyService] Still cannot save after cleanup');
+        }
+      } else {
+        console.error('Failed to save vocabulary to storage:', err);
+      }
     }
   }
 

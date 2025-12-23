@@ -22,6 +22,49 @@ export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
 }
 
+// Rate limiting configuration
+const RATE_LIMIT_MAX = 10; // Max AI transcriptions per window
+const RATE_LIMIT_WINDOW = 60 * 60; // 1 hour window
+
+async function checkRateLimit(cache, clientIP) {
+    if (!cache || !clientIP) return true; // Allow if no cache or IP
+
+    const key = `ratelimit:whisper:${clientIP}`;
+    try {
+        const current = await cache.get(key, 'json') || { count: 0, reset: Date.now() + RATE_LIMIT_WINDOW * 1000 };
+
+        // Reset if window expired
+        if (Date.now() > current.reset) {
+            return true;
+        }
+
+        return current.count < RATE_LIMIT_MAX;
+    } catch {
+        return true; // Allow on error
+    }
+}
+
+async function incrementRateLimit(cache, clientIP) {
+    if (!cache || !clientIP) return;
+
+    const key = `ratelimit:whisper:${clientIP}`;
+    try {
+        const current = await cache.get(key, 'json') || { count: 0, reset: Date.now() + RATE_LIMIT_WINDOW * 1000 };
+
+        // Reset if window expired
+        if (Date.now() > current.reset) {
+            current.count = 1;
+            current.reset = Date.now() + RATE_LIMIT_WINDOW * 1000;
+        } else {
+            current.count++;
+        }
+
+        await cache.put(key, JSON.stringify(current), { expirationTtl: RATE_LIMIT_WINDOW });
+    } catch {
+        // Ignore rate limit errors
+    }
+}
+
 export async function onRequestPost(context) {
     const { request, env } = context;
     const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE;
@@ -47,7 +90,7 @@ export async function onRequestPost(context) {
             // Check cache first (only for new requests)
             if (TRANSCRIPT_CACHE) {
                 try {
-                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v2:${videoId}`, 'json');
+                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v3:${videoId}`, 'json');
                     if (cached) {
                         log('Cache hit for', videoId);
                         return jsonResponse(cached);
@@ -56,6 +99,18 @@ export async function onRequestPost(context) {
                     // Cache read failed, continue
                 }
             }
+
+            // Rate limit check for new requests
+            const clientIP = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For')?.split(',')[0];
+            if (!(await checkRateLimit(TRANSCRIPT_CACHE, clientIP))) {
+                return jsonResponse({
+                    error: 'Rate limit exceeded. Please try again later.',
+                    retryAfter: 3600
+                }, 429);
+            }
+
+            // Increment rate limit counter
+            await incrementRateLimit(TRANSCRIPT_CACHE, clientIP);
 
             const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
@@ -135,7 +190,7 @@ export async function onRequestPost(context) {
                     if (TRANSCRIPT_CACHE && videoId) {
                         try {
                             await TRANSCRIPT_CACHE.put(
-                                `transcript:v2:${videoId}`,
+                                `transcript:v3:${videoId}`,
                                 JSON.stringify(response),
                                 { expirationTtl: 60 * 60 * 24 * 30 }
                             );
