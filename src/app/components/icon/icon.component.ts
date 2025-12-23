@@ -127,15 +127,9 @@ export type IconName =
           <line x1="10" y1="14" x2="21" y2="3"></line>
         }
         @case ('loader') {
-          <!-- iOS/macOS-style activity indicator with 8 fading lines -->
-          <line class="spinner-line spinner-line-1" x1="12" y1="2" x2="12" y2="6"></line>
-          <line class="spinner-line spinner-line-2" x1="16.24" y1="4.93" x2="14.12" y2="7.05"></line>
-          <line class="spinner-line spinner-line-3" x1="18" y1="12" x2="22" y2="12"></line>
-          <line class="spinner-line spinner-line-4" x1="16.24" y1="19.07" x2="14.12" y2="16.95"></line>
-          <line class="spinner-line spinner-line-5" x1="12" y1="18" x2="12" y2="22"></line>
-          <line class="spinner-line spinner-line-6" x1="7.76" y1="19.07" x2="9.88" y2="16.95"></line>
-          <line class="spinner-line spinner-line-7" x1="2" y1="12" x2="6" y2="12"></line>
-          <line class="spinner-line spinner-line-8" x1="7.76" y1="4.93" x2="9.88" y2="7.05"></line>
+          <!-- iOS/macOS-style activity indicator - simple rotating arc -->
+          <circle class="spinner-track" cx="12" cy="12" r="9" fill="none" stroke-width="2.5" stroke-opacity="0.2"></circle>
+          <circle class="spinner-head" cx="12" cy="12" r="9" fill="none" stroke-width="2.5" stroke-dasharray="20 36" stroke-linecap="round"></circle>
         }
         @case ('alert-circle') {
           <circle cx="12" cy="12" r="10"></circle>
@@ -292,25 +286,23 @@ export type IconName =
       flex-shrink: 0;
     }
     
-    /* iOS/macOS-style activity indicator */
-    .spinner-line {
-      stroke-linecap: round;
-      stroke-width: 2;
-      animation: iosSpinner 0.8s ease-in-out infinite;
+    /* iOS/macOS-style activity indicator - rotating arc */
+    .icon--loader {
+      animation: spinLoader 0.8s linear infinite;
     }
     
-    .spinner-line-1 { animation-delay: -0.7s; }
-    .spinner-line-2 { animation-delay: -0.6s; }
-    .spinner-line-3 { animation-delay: -0.5s; }
-    .spinner-line-4 { animation-delay: -0.4s; }
-    .spinner-line-5 { animation-delay: -0.3s; }
-    .spinner-line-6 { animation-delay: -0.2s; }
-    .spinner-line-7 { animation-delay: -0.1s; }
-    .spinner-line-8 { animation-delay: 0s; }
+    .spinner-track {
+      stroke: currentColor;
+    }
     
-    @keyframes iosSpinner {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.15; }
+    .spinner-head {
+      stroke: currentColor;
+      transform-origin: center;
+    }
+    
+    @keyframes spinLoader {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
   `]
 })
