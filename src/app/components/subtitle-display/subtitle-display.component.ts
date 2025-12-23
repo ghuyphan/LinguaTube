@@ -34,14 +34,14 @@ import { SubtitleCue, Token } from '../../models';
               <span class="word">{{ cue.text }}</span>
             } @else {
               <span class="subtitle-content" @subtitleFade>
-                @for (token of getTokens(cue); track $index) {<span 
+                @for (token of getTokens(cue); track $index) {@if (isPunctuation(token.surface)) {<span class="punctuation">{{ token.surface }}</span>} @else {<span 
                     class="word"
                     [class.word--new]="getWordLevel(token.surface) === 'new'"
                     [class.word--learning]="getWordLevel(token.surface) === 'learning'"
                     [class.word--known]="getWordLevel(token.surface) === 'known'"
                     [class.word--saved]="vocab.hasWord(token.surface)"
                     (click)="onWordClick(token, cue.text)"
-                  >@if (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>} @else {{{ token.surface }}}</span>}
+                  >@if (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>} @else {{{ token.surface }}}</span>}}
               </span>
             }
           </div>
@@ -329,6 +329,13 @@ import { SubtitleCue, Token } from '../../models';
     .subtitle-waiting {
       color: var(--text-muted);
       animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Punctuation - no interactive styling */
+    .punctuation {
+      display: inline;
+      cursor: default;
+      color: var(--text-secondary);
     }
 
     /* ============================================
@@ -885,6 +892,13 @@ export class SubtitleDisplayComponent {
 
   onWordClick(token: Token, sentence: string): void {
     this.wordClicked.emit({ token, sentence });
+  }
+
+  // Check if a string is punctuation (CJK + Western)
+  isPunctuation(text: string): boolean {
+    // Regex covers: CJK punctuation, Western punctuation, brackets, whitespace
+    const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–]+$/u;
+    return punctuationRegex.test(text);
   }
 
   // Computed reading label
