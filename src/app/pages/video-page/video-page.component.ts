@@ -124,7 +124,11 @@ export class VideoPageComponent implements OnInit {
         if (!currentVideo || currentVideo.id !== videoId) {
           // Clear old state before loading new video
           this.subtitles.clear();
+          this.transcript.reset();
           this.loadVideoFromUrl(videoId);
+        } else if (this.subtitles.subtitles().length === 0) {
+          // Same video but no subtitles (e.g., after refresh) - refetch
+          this.fetchCaptions(videoId);
         }
       }
     });
