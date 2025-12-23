@@ -46,14 +46,14 @@ const INNERTUBE_CLIENTS = [
 ];
 
 // Third-party fallback - raced in parallel
+// Note: All Invidious instances have api:false as of Dec 2024, use Piped only
 const THIRD_PARTY_APIS = [
-    // Piped Instances (primary - often more reliable)
     { url: 'https://pipedapi.kavin.rocks/streams/', name: 'piped-kavin', type: 'piped' },
     { url: 'https://api.piped.otter.sh/streams/', name: 'piped-otter', type: 'piped' },
     { url: 'https://pipedapi.drgns.space/streams/', name: 'piped-drgns', type: 'piped' },
-
-    // Invidious Instances (verified with api: true)
-    { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' }
+    { url: 'https://pipedapi.tokhmi.xyz/streams/', name: 'piped-tokhmi', type: 'piped' },
+    { url: 'https://pipedapi.moomoo.me/streams/', name: 'piped-moomoo', type: 'piped' },
+    { url: 'https://pipedapi.syncpundit.io/streams/', name: 'piped-syncpundit', type: 'piped' }
 ];
 
 // ============================================================================
@@ -97,7 +97,7 @@ export async function onRequestPost(context) {
             return errorResponse('INNERTUBE_API_KEY not configured', 500);
         }
         const cache = env.TRANSCRIPT_CACHE;
-        const cacheKey = `captions:v5:${videoId}`;
+        const cacheKey = `captions:v6:${videoId}`;
 
         // =====================================================================
         // Tier 0: Cache (instant)

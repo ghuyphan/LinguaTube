@@ -42,7 +42,7 @@ export async function onRequest(context) {
         }
 
         // Check cache first - ONE read for entire video
-        const cacheKey = `tokens:${lang}:${videoId}`;
+        const cacheKey = `tokens:v2:${lang}:${videoId}`;
         if (TOKEN_CACHE) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');

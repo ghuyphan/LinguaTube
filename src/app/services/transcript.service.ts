@@ -69,6 +69,7 @@ export class TranscriptService {
     this.error.set(null);
     this.isGeneratingAI.set(false);
     this.captionSource.set(null);
+    this.availableLanguages.set([]);
     this.pendingRequests.clear();
   }
 
