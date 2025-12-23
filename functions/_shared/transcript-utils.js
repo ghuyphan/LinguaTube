@@ -120,7 +120,7 @@ function shouldMerge(prev, curr) {
 
     return prevText.includes(currText) ||
         currText.includes(prevText) ||
-        textSimilarity(prevText, currText) > 0.5;
+        textSimilarity(prevText, currText) > 0.8;
 }
 
 /**
@@ -138,7 +138,7 @@ function mergeText(a, b) {
     if (textB.includes(textA)) return textB;
 
     // If they're very similar, use the longer one
-    if (textSimilarity(textA, textB) > 0.5) {
+    if (textSimilarity(textA, textB) > 0.8) {
         return textA.length >= textB.length ? textA : textB;
     }
 

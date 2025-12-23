@@ -16,6 +16,9 @@ interface CaptionTrack {
   content?: TranscriptSegment[] | null;
 }
 
+const DEBUG = true;
+const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', ...args);
+
 interface InnertubeResponse {
   videoDetails?: { title: string; author: string; videoId: string };
   captions?: {
@@ -86,7 +89,9 @@ export class TranscriptService {
     this.captionSource.set(null);
 
     return this.fetchFromBackend(videoId, lang, false).pipe(
+      tap(() => log('Fetching from backend:', { videoId, lang })),
       switchMap(result => {
+        log('Backend result:', { cues: result.cues.length, validResponse: result.validResponse });
         if (result.cues.length > 0) {
           return of(result.cues);
         }
@@ -136,6 +141,13 @@ export class TranscriptService {
 
         const tracks = response.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
         const validResponse = !!(response.videoDetails || tracks.length > 0);
+
+        log('API response:', {
+          source: response.source,
+          tracks: tracks.length,
+          trackLangs: tracks.map(t => t.languageCode),
+          hasContent: tracks.map(t => ({ lang: t.languageCode, segments: t.content?.length || 0 }))
+        });
 
         if (tracks.length > 0) {
           this.availableLanguages.set(tracks.map(t => t.languageCode));

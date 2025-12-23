@@ -27,7 +27,7 @@ const TIMEOUTS = {
     caption: 2500    // Individual caption fetch
 };
 
-// Ordered by reliability for captions (2025 update)
+// Ordered by reliability for captions
 const INNERTUBE_CLIENTS = [
     {
         name: 'WEB',
@@ -35,13 +35,6 @@ const INNERTUBE_CLIENTS = [
         clientVersion: '2.20241220.00.00',
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         clientId: '1'
-    },
-    {
-        name: 'IOS',
-        clientName: 'IOS',
-        clientVersion: '19.45.4',
-        userAgent: 'com.google.ios.youtube/19.45.4 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)',
-        clientId: '5'
     },
     {
         name: 'TVHTML5_SIMPLY',
@@ -52,17 +45,14 @@ const INNERTUBE_CLIENTS = [
     }
 ];
 
-// Third-party fallback - raced in parallel (2025 verified instances)
+// Third-party fallback - raced in parallel
 const THIRD_PARTY_APIS = [
     // Piped Instances (primary - often more reliable)
     { url: 'https://pipedapi.kavin.rocks/streams/', name: 'piped-kavin', type: 'piped' },
     { url: 'https://api.piped.otter.sh/streams/', name: 'piped-otter', type: 'piped' },
     { url: 'https://pipedapi.drgns.space/streams/', name: 'piped-drgns', type: 'piped' },
 
-    // Invidious Instances (2025 verified from api.invidious.io)
-    { url: 'https://inv.nadeko.net/api/v1/captions/', name: 'nadeko', type: 'invidious' },
-    { url: 'https://invidious.nerdvpn.de/api/v1/captions/', name: 'nerdvpn', type: 'invidious' },
-    { url: 'https://invidious.f5.si/api/v1/captions/', name: 'f5.si', type: 'invidious' },
+    // Invidious Instances (verified with api: true)
     { url: 'https://yewtu.be/api/v1/captions/', name: 'yewtu.be', type: 'invidious' }
 ];
 
@@ -232,7 +222,7 @@ async function tryYouTubeSources(videoId, apiKey, targetLanguages, metadataOnly)
 }
 
 // ============================================================================
-// Tier 2: Third-Party Sources (sequential, respectful)
+// Tier 2: Third-Party Sources (raced in parallel)
 // ============================================================================
 
 async function tryThirdPartySources(videoId, targetLanguages, metadataOnly) {
@@ -763,7 +753,10 @@ function parseVTTTimestamp(timestamp) {
 async function getCachedResult(cache, key, targetLanguages) {
     try {
         const cached = await cache.get(key, 'json');
-        if (!cached) return null;
+        if (!cached) {
+            log('Cache miss: no data');
+            return null;
+        }
 
         const tracks = cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
         const targets = targetLanguages.map(t => t.toLowerCase());
@@ -774,8 +767,13 @@ async function getCachedResult(cache, key, targetLanguages) {
             targets.some(t => (track.languageCode || '').toLowerCase().startsWith(t))
         );
 
+        if (!hasValidContent) {
+            log('Cache miss: no valid content for', targets, 'in', tracks.length, 'tracks');
+        }
+
         return hasValidContent ? cached : null;
-    } catch {
+    } catch (e) {
+        log('Cache error:', e.message);
         return null;
     }
 }
