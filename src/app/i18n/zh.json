@@ -114,7 +114,31 @@
         "totalWords": "总词汇数"
     },
     "study": {
-        "title": "学习模式"
+        "title": "学习模式",
+        "subtitle": "用闪卡复习词汇",
+        "new": "新词",
+        "learning": "学习中",
+        "known": "已掌握",
+        "includeNew": "包含新词",
+        "includeLearning": "包含学习中的词",
+        "reviewKnown": "复习已掌握的词",
+        "start": "开始",
+        "cards": "张",
+        "noWords": "没有可学习的词汇。请先从视频中保存一些词汇！",
+        "end": "结束",
+        "tapToReveal": "点击显示",
+        "example": "例句：",
+        "again": "再来",
+        "hard": "困难",
+        "good": "良好",
+        "easy": "简单",
+        "sessionComplete": "学习完成！",
+        "cardsReviewed": "已复习卡片",
+        "correct": "正确",
+        "toReview": "待复习",
+        "studyAgain": "再次学习",
+        "recentlyAdded": "最近添加",
+        "tapWordsHint": "点击字幕中的词汇进行保存"
     },
     "common": {
         "loading": "加载中...",

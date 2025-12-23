@@ -114,7 +114,31 @@
         "totalWords": "総単語数"
     },
     "study": {
-        "title": "学習モード"
+        "title": "学習モード",
+        "subtitle": "フラッシュカードで語彙を復習",
+        "new": "新規",
+        "learning": "学習中",
+        "known": "既知",
+        "includeNew": "新しい単語を含める",
+        "includeLearning": "学習中の単語を含める",
+        "reviewKnown": "既知の単語を復習",
+        "start": "スタート",
+        "cards": "枚",
+        "noWords": "学習する単語がありません。動画から単語を保存してください！",
+        "end": "終了",
+        "tapToReveal": "タップして表示",
+        "example": "例文：",
+        "again": "もう一度",
+        "hard": "難しい",
+        "good": "良い",
+        "easy": "簡単",
+        "sessionComplete": "セッション完了！",
+        "cardsReviewed": "復習したカード",
+        "correct": "正解",
+        "toReview": "復習が必要",
+        "studyAgain": "もう一度学習",
+        "recentlyAdded": "最近追加した単語",
+        "tapWordsHint": "字幕の単語をタップして保存"
     },
     "common": {
         "loading": "読み込み中...",

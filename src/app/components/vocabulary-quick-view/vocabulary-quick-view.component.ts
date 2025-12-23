@@ -2,7 +2,7 @@ import { Component, inject, input, output, computed, ChangeDetectionStrategy } f
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { VocabularyService, SettingsService } from '../../services';
+import { VocabularyService, SettingsService, I18nService } from '../../services';
 
 @Component({
   selector: 'app-vocabulary-quick-view',
@@ -13,15 +13,15 @@ import { VocabularyService, SettingsService } from '../../services';
     <app-bottom-sheet [isOpen]="isOpen()" (closed)="closed.emit()">
       <div class="quick-view">
         <div class="quick-view-header">
-          <h2>Recently Added</h2>
+          <h2>{{ i18n.t('study.recentlyAdded') }}</h2>
           <span class="count-badge">{{ recentWords().length }}</span>
         </div>
 
         @if (recentWords().length === 0) {
           <div class="empty-state">
             <app-icon name="bookmark" [size]="32" />
-            <p>No words saved yet</p>
-            <p class="hint">Tap on words in subtitles to save them</p>
+            <p>{{ i18n.t('vocab.noWordsSaved') }}</p>
+            <p class="hint">{{ i18n.t('study.tapWordsHint') }}</p>
           </div>
         } @else {
           <ul class="word-list">
@@ -47,10 +47,10 @@ import { VocabularyService, SettingsService } from '../../services';
                     [value]="word.level"
                     (change)="updateLevel(word.id, $event)"
                   >
-                    <option value="new">New</option>
-                    <option value="learning">Learning</option>
-                    <option value="known">Known</option>
-                    <option value="ignored">Ignored</option>
+                    <option value="new">{{ i18n.t('vocab.new') | titlecase }}</option>
+                    <option value="learning">{{ i18n.t('vocab.learning') | titlecase }}</option>
+                    <option value="known">{{ i18n.t('vocab.known') | titlecase }}</option>
+                    <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
                   </select>
                 </div>
               </li>
@@ -236,6 +236,7 @@ import { VocabularyService, SettingsService } from '../../services';
 export class VocabularyQuickViewComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
+  i18n = inject(I18nService);
 
   isOpen = input<boolean>(false);
   closed = output<void>();

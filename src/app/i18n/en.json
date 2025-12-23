@@ -114,7 +114,31 @@
         "totalWords": "Total Words"
     },
     "study": {
-        "title": "Study Mode"
+        "title": "Study Mode",
+        "subtitle": "Review your vocabulary with flashcards",
+        "new": "NEW",
+        "learning": "LEARNING",
+        "known": "KNOWN",
+        "includeNew": "Include new words",
+        "includeLearning": "Include learning words",
+        "reviewKnown": "Review known words",
+        "start": "Start",
+        "cards": "cards",
+        "noWords": "No words to study. Save some words from videos first!",
+        "end": "End",
+        "tapToReveal": "Tap to reveal",
+        "example": "Example:",
+        "again": "Again",
+        "hard": "Hard",
+        "good": "Good",
+        "easy": "Easy",
+        "sessionComplete": "Session Complete!",
+        "cardsReviewed": "Cards Reviewed",
+        "correct": "Correct",
+        "toReview": "To Review",
+        "studyAgain": "Study Again",
+        "recentlyAdded": "Recently Added",
+        "tapWordsHint": "Tap on words in subtitles to save them"
     },
     "common": {
         "loading": "Loading...",

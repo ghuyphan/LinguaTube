@@ -114,7 +114,31 @@
         "totalWords": "총 단어 수"
     },
     "study": {
-        "title": "학습 모드"
+        "title": "학습 모드",
+        "subtitle": "플래시카드로 어휘 복습",
+        "new": "새 단어",
+        "learning": "학습 중",
+        "known": "암기완료",
+        "includeNew": "새 단어 포함",
+        "includeLearning": "학습 중인 단어 포함",
+        "reviewKnown": "암기한 단어 복습",
+        "start": "시작",
+        "cards": "장",
+        "noWords": "학습할 단어가 없습니다. 동영상에서 단어를 저장하세요!",
+        "end": "종료",
+        "tapToReveal": "탭하여 보기",
+        "example": "예문:",
+        "again": "다시",
+        "hard": "어려움",
+        "good": "좋음",
+        "easy": "쉬움",
+        "sessionComplete": "세션 완료!",
+        "cardsReviewed": "복습한 카드",
+        "correct": "정답",
+        "toReview": "복습 필요",
+        "studyAgain": "다시 학습",
+        "recentlyAdded": "최근 추가됨",
+        "tapWordsHint": "자막의 단어를 탭하여 저장"
     },
     "common": {
         "loading": "로딩 중...",

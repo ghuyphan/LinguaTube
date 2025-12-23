@@ -114,7 +114,31 @@
         "totalWords": "Tổng số từ"
     },
     "study": {
-        "title": "Chế độ học"
+        "title": "Chế độ học",
+        "subtitle": "Ôn từ vựng với flashcard",
+        "new": "MỚI",
+        "learning": "ĐANG HỌC",
+        "known": "ĐÃ BIẾT",
+        "includeNew": "Bao gồm từ mới",
+        "includeLearning": "Bao gồm từ đang học",
+        "reviewKnown": "Ôn từ đã biết",
+        "start": "Bắt đầu",
+        "cards": "thẻ",
+        "noWords": "Không có từ để học. Hãy lưu từ từ video trước!",
+        "end": "Kết thúc",
+        "tapToReveal": "Chạm để xem",
+        "example": "Ví dụ:",
+        "again": "Lại",
+        "hard": "Khó",
+        "good": "Tốt",
+        "easy": "Dễ",
+        "sessionComplete": "Hoàn thành!",
+        "cardsReviewed": "Thẻ đã ôn",
+        "correct": "Đúng",
+        "toReview": "Cần ôn lại",
+        "studyAgain": "Học lại",
+        "recentlyAdded": "Thêm gần đây",
+        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu"
     },
     "common": {
         "loading": "Đang tải...",
