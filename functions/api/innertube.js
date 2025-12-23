@@ -228,20 +228,37 @@ async function tryYouTubeSources(videoId, apiKey, targetLanguages, metadataOnly)
 // ============================================================================
 
 async function tryThirdPartySources(videoId, targetLanguages, metadataOnly) {
-    for (const api of THIRD_PARTY_APIS) {
-        try {
-            log(`Trying third-party: ${api.name}`);
-            const result = await tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly);
+    const controller = new AbortController();
+    const { signal } = controller;
 
-            if (result.success) {
-                return { ...result, source: `thirdparty:${api.name}` };
-            }
-        } catch (error) {
-            log(`${api.name} failed:`, error.message);
-        }
+    // Race all third-party APIs in parallel
+    const promises = THIRD_PARTY_APIS.map(api =>
+        tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, signal)
+            .then(r => ({ ...r, source: `thirdparty:${api.name}` }))
+            .catch(e => ({ success: false, error: `${api.name}: ${e.message}` }))
+    );
+
+    // Set overall timeout for third-party phase
+    const timeoutPromise = new Promise(resolve => {
+        setTimeout(() => resolve({ success: false, timeout: true }), TIMEOUTS.thirdParty);
+    });
+
+    try {
+        const result = await Promise.any([
+            ...promises.map(p => p.then(r => {
+                if (r.success) return r;
+                throw r; // Convert failure to rejection for Promise.any
+            })),
+            timeoutPromise.then(() => { throw { timeout: true }; })
+        ]);
+
+        controller.abort(); // Cancel other pending requests
+        return result;
+
+    } catch (aggregateError) {
+        controller.abort();
+        return { success: false };
     }
-
-    return { success: false };
 }
 
 // ============================================================================
@@ -443,48 +460,40 @@ function extractPlayerResponse(html) {
 // Third-Party API Implementation
 // ============================================================================
 
-async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly) {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), TIMEOUTS.thirdParty);
+async function tryThirdPartyAPI(videoId, api, targetLanguages, metadataOnly, signal) {
+    const response = await fetch(`${api.url}${videoId}`, {
+        headers: {
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (compatible; LinguaTube/1.0)'
+        },
+        signal
+    });
 
-    try {
-        const response = await fetch(`${api.url}${videoId}`, {
-            headers: {
-                'Accept': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (compatible; LinguaTube/1.0)'
-            },
-            signal: controller.signal
-        });
 
-        clearTimeout(timeoutId);
 
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        const data = await response.json();
-        const captionTracks = await processThirdPartyResponse(api, data, targetLanguages, metadataOnly);
-
-        if (!captionTracks.length) {
-            throw new Error('No valid tracks');
-        }
-
-        return {
-            success: true,
-            hasContent: !metadataOnly,
-            data: {
-                captions: { playerCaptionsTracklistRenderer: { captionTracks } },
-                videoDetails: {
-                    videoId,
-                    title: data.title || '',
-                    author: data.uploader || data.author || ''
-                }
-            }
-        };
-
-    } finally {
-        clearTimeout(timeoutId);
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
     }
+
+    const data = await response.json();
+    const captionTracks = await processThirdPartyResponse(api, data, targetLanguages, metadataOnly);
+
+    if (!captionTracks.length) {
+        throw new Error('No valid tracks');
+    }
+
+    return {
+        success: true,
+        hasContent: !metadataOnly,
+        data: {
+            captions: { playerCaptionsTracklistRenderer: { captionTracks } },
+            videoDetails: {
+                videoId,
+                title: data.title || '',
+                author: data.uploader || data.author || ''
+            }
+        }
+    };
 }
 
 async function processThirdPartyResponse(api, data, targetLanguages, metadataOnly) {
