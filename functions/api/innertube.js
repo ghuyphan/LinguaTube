@@ -105,7 +105,7 @@ export async function onRequestPost(context) {
             return errorResponse('INNERTUBE_API_KEY not configured', 500);
         }
         const cache = env.TRANSCRIPT_CACHE;
-        const cacheKey = `captions:v6:${videoId}`;
+        const cacheKey = `captions:v7:${videoId}`;
 
         // =====================================================================
         // Tier 0: Cache (instant)

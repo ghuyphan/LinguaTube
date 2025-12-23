@@ -90,7 +90,7 @@ export async function onRequestPost(context) {
             // Check cache first (only for new requests)
             if (TRANSCRIPT_CACHE) {
                 try {
-                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v3:${videoId}`, 'json');
+                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v4:${videoId}`, 'json');
                     if (cached) {
                         log('Cache hit for', videoId);
                         return jsonResponse(cached);
@@ -190,7 +190,7 @@ export async function onRequestPost(context) {
                     if (TRANSCRIPT_CACHE && videoId) {
                         try {
                             await TRANSCRIPT_CACHE.put(
-                                `transcript:v3:${videoId}`,
+                                `transcript:v4:${videoId}`,
                                 JSON.stringify(response),
                                 { expirationTtl: 60 * 60 * 24 * 30 }
                             );
