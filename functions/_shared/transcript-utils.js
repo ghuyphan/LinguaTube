@@ -72,8 +72,7 @@ function groupByTimestamp(segments) {
 }
 
 /**
- * Pick best segment from each group
- * Priority: longer text, longer duration
+ * Pick best segment from each timestamp group (no cross-group merging)
  */
 function mergeGroups(groups) {
     const result = [];
@@ -84,22 +83,14 @@ function mergeGroups(groups) {
             continue;
         }
 
-        // Multiple segments at same timestamp - pick the best one
+        // Multiple segments at same timestamp - pick the best one (longest text)
         const best = group.reduce((a, b) => {
             const scoreA = (a.text?.trim().length || 0) + (a.duration * 10);
             const scoreB = (b.text?.trim().length || 0) + (b.duration * 10);
             return scoreB > scoreA ? b : a;
         });
 
-        // Check if we should merge with previous
-        const prev = result[result.length - 1];
-        if (prev && shouldMerge(prev, best)) {
-            // Merge: extend previous segment
-            prev.text = mergeText(prev.text, best.text);
-            prev.duration = Math.max(prev.duration, (best.start - prev.start) + best.duration);
-        } else {
-            result.push({ ...best });
-        }
+        result.push({ ...best });
     }
 
     return result;
@@ -107,24 +98,30 @@ function mergeGroups(groups) {
 
 /**
  * Check if two segments should be merged
+ * Only merge if texts are nearly identical (true duplicates)
  */
 function shouldMerge(prev, curr) {
     const prevEnd = prev.start + prev.duration;
-    const overlaps = curr.start <= prevEnd + MIN_CUE_GAP;
+    const gap = curr.start - prevEnd;
 
-    if (!overlaps) return false;
+    // Only consider merging if there's overlap or very small gap
+    if (gap > 0.1) return false;
 
-    // Check text similarity
+    // Only merge if one text contains the other exactly
     const prevText = prev.text?.trim() || '';
     const currText = curr.text?.trim() || '';
 
-    return prevText.includes(currText) ||
-        currText.includes(prevText) ||
-        textSimilarity(prevText, currText) > 0.8;
+    // Skip if either is empty
+    if (!prevText || !currText) return false;
+
+    // Only merge if one is subset of the other (true duplicate)
+    return prevText === currText ||
+        prevText.includes(currText) ||
+        currText.includes(prevText);
 }
 
 /**
- * Merge two text strings, avoiding duplication
+ * Merge two text strings - use the longer one
  */
 function mergeText(a, b) {
     const textA = a?.trim() || '';
@@ -133,17 +130,8 @@ function mergeText(a, b) {
     if (!textA) return textB;
     if (!textB) return textA;
 
-    // If one contains the other, use the longer one
-    if (textA.includes(textB)) return textA;
-    if (textB.includes(textA)) return textB;
-
-    // If they're very similar, use the longer one
-    if (textSimilarity(textA, textB) > 0.8) {
-        return textA.length >= textB.length ? textA : textB;
-    }
-
-    // Otherwise, keep the first one
-    return textA;
+    // Use the longer one (likely more complete)
+    return textA.length >= textB.length ? textA : textB;
 }
 
 /**
