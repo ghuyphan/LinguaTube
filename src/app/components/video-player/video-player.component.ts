@@ -3,8 +3,8 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService } from '../../services';
-import { Token, SubtitleCue } from '../../models';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService, DictionaryService } from '../../services';
+import { Token, SubtitleCue, DictionaryEntry } from '../../models';
 import { Subscription } from 'rxjs';
 
 type PlaybackSpeed = 0.25 | 0.5 | 0.75 | 1 | 1.25 | 1.5 | 1.75 | 2;
@@ -31,7 +31,7 @@ interface SeekPreview {
               <input
                 type="text"
                 [(ngModel)]="videoUrl"
-                placeholder="Paste YouTube URL (e.g., https://youtube.com/watch?v=...)"
+                placeholder="Paste YouTube URL..."
                 class="url-input"
                 (keyup.enter)="loadVideo()"
               />
@@ -43,7 +43,6 @@ interface SeekPreview {
             >
               @if (isLoading()) {
                 <app-icon name="loader" [size]="16" />
-                Loading
               } @else {
                 Load
               }
@@ -60,7 +59,7 @@ interface SeekPreview {
           <div class="hints">
             <p class="hint-text">
               <app-icon name="info" [size]="14" />
-              Paste a YouTube URL to start learning. We'll try to fetch captions automatically.
+              Paste a YouTube URL to start learning
             </p>
           </div>
         </div>
@@ -108,7 +107,6 @@ interface SeekPreview {
                   <app-icon name="rewind" [size]="32" />
                   <span>10s</span>
                 </div>
-                <!-- Double-tap ripple -->
                 @if (leftRipple()) {
                   <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
                 }
@@ -150,6 +148,7 @@ interface SeekPreview {
                 [class.controls-visible]="areControlsVisible()"
                 [class.fs-small]="settings.settings().fontSize === 'small'"
                 [class.fs-large]="settings.settings().fontSize === 'large'"
+                [class.popup-open]="fsPopupVisible()"
               >
                 <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
                   @if (subtitles.isTokenizing()) {
@@ -161,6 +160,77 @@ interface SeekPreview {
                         (click)="onFullscreenWordClick(token, cue.text, $event)"
                       >{{ token.surface }}</span>}
                   }
+                </div>
+              </div>
+            }
+
+            <!-- Fullscreen Word Popup (inline) -->
+            @if (isFullscreen() && fsPopupVisible()) {
+              <div class="fs-popup-overlay" (click)="closeFsPopup()">
+                <div class="fs-popup" (click)="$event.stopPropagation()">
+                  <button class="fs-popup-close" (click)="closeFsPopup()">
+                    <app-icon name="x" [size]="18" />
+                  </button>
+                  
+                  <div class="fs-popup-header">
+                    <h3 class="fs-popup-word" [class]="'text-' + settings.settings().language">
+                      {{ fsSelectedWord()?.surface }}
+                    </h3>
+                    @if (fsEntry()?.reading) {
+                      <span class="fs-popup-reading">{{ fsEntry()?.reading }}</span>
+                    }
+                    @if (fsEntry()?.pinyin) {
+                      <span class="fs-popup-reading">{{ fsEntry()?.pinyin }}</span>
+                    }
+                    @if (fsEntry()?.romanization) {
+                      <span class="fs-popup-reading">{{ fsEntry()?.romanization }}</span>
+                    }
+                  </div>
+
+                  <div class="fs-popup-body">
+                    @if (fsLookupLoading()) {
+                      <div class="fs-popup-loading">
+                        <app-icon name="loader" [size]="20" />
+                      </div>
+                    } @else if (fsEntry()) {
+                      @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
+                        <div class="fs-popup-badges">
+                          @if (fsEntry()?.jlptLevel) {
+                            <span class="badge">{{ fsEntry()?.jlptLevel }}</span>
+                          }
+                          @if (fsEntry()?.hskLevel) {
+                            <span class="badge">HSK {{ fsEntry()?.hskLevel }}</span>
+                          }
+                          @if (fsEntry()?.topikLevel) {
+                            <span class="badge">TOPIK {{ fsEntry()?.topikLevel }}</span>
+                          }
+                        </div>
+                      }
+                      <div class="fs-popup-meaning">
+                        {{ fsEntry()?.meanings?.[0]?.definition || '(no definition)' }}
+                      </div>
+                    } @else {
+                      <div class="fs-popup-meaning">No definition found</div>
+                    }
+                  </div>
+
+                  <div class="fs-popup-actions">
+                    @if (fsWordSaved()) {
+                      <button class="fs-popup-btn fs-popup-btn--saved" disabled>
+                        <app-icon name="check" [size]="16" />
+                        Saved
+                      </button>
+                    } @else {
+                      <button class="fs-popup-btn fs-popup-btn--save" (click)="saveFsWord()">
+                        <app-icon name="plus" [size]="16" />
+                        Save
+                      </button>
+                    }
+                    <button class="fs-popup-btn" (click)="resumeAndClose()">
+                      <app-icon name="play" [size]="16" />
+                      Resume
+                    </button>
+                  </div>
                 </div>
               </div>
             }
@@ -179,17 +249,12 @@ interface SeekPreview {
                 (mouseleave)="hideSeekPreview()"
                 #progressBar
               >
-                <!-- Buffered indicator -->
                 <div class="progress-buffered" [style.width.%]="bufferedPercentage()"></div>
                 <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
                 <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
                 
-                <!-- Seek Preview Tooltip -->
                 @if (seekPreview().visible) {
-                  <div 
-                    class="seek-tooltip" 
-                    [style.left.px]="seekPreview().position"
-                  >
+                  <div class="seek-tooltip" [style.left.px]="seekPreview().position">
                     {{ formatTime(seekPreview().time) }}
                   </div>
                 }
@@ -198,23 +263,20 @@ interface SeekPreview {
               <div class="controls-row">
                 <!-- Left Controls -->
                 <div class="controls-left">
-                  <!-- Play/Pause -->
                   <button class="control-btn play-btn" (click)="togglePlay()" title="Play/Pause (Space)">
                     <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
                   </button>
 
-                  <!-- Skip Backward -->
-                  <button class="control-btn skip-btn" (click)="seekRelative(-10)" title="Rewind 10s (←)">
+                  <!-- Skip buttons - desktop only -->
+                  <button class="control-btn skip-btn desktop-only" (click)="seekRelative(-10)" title="Rewind 10s">
                     <app-icon name="rewind" [size]="18" />
                   </button>
-
-                  <!-- Skip Forward -->
-                  <button class="control-btn skip-btn" (click)="seekRelative(10)" title="Forward 10s (→)">
+                  <button class="control-btn skip-btn desktop-only" (click)="seekRelative(10)" title="Forward 10s">
                     <app-icon name="fast-forward" [size]="18" />
                   </button>
 
-                  <!-- Volume Control -->
-                  <div class="volume-control" (mouseenter)="showVolumeSlider()" (mouseleave)="hideVolumeSlider()">
+                  <!-- Volume - desktop only -->
+                  <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider()" (mouseleave)="hideVolumeSlider()">
                     <button class="control-btn" (click)="toggleMute()" title="Mute (M)">
                       <app-icon [name]="getVolumeIcon()" [size]="18" />
                     </button>
@@ -241,13 +303,9 @@ interface SeekPreview {
 
                 <!-- Right Controls -->
                 <div class="controls-right">
-                  <!-- Playback Speed -->
-                  <div class="speed-control" [class.open]="isSpeedMenuOpen()">
-                    <button 
-                      class="control-btn speed-btn" 
-                      (click)="toggleSpeedMenu($event)"
-                      title="Playback Speed"
-                    >
+                  <!-- Playback Speed - desktop only -->
+                  <div class="speed-control desktop-only" [class.open]="isSpeedMenuOpen()">
+                    <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" title="Speed">
                       <span class="speed-label">{{ currentSpeed() }}x</span>
                     </button>
                     @if (isSpeedMenuOpen()) {
@@ -265,39 +323,17 @@ interface SeekPreview {
                     }
                   </div>
 
-                  <!-- Settings Menu -->
-                  <div class="settings-control" [class.open]="isSettingsOpen()">
-                    <button 
-                      class="control-btn" 
-                      (click)="toggleSettings($event)"
-                      title="Settings"
-                    >
-                      <app-icon name="settings" [size]="18" />
-                    </button>
-                    @if (isSettingsOpen()) {
-                      <div class="settings-menu" (click)="$event.stopPropagation()">
-                        <div class="settings-item">
-                          <span class="settings-label">Quality</span>
-                          <span class="settings-value">Auto</span>
-                        </div>
-
-                      </div>
-                    }
-                  </div>
-
                   <!-- Fullscreen -->
-                  <button 
-                    class="control-btn" 
-                    (click)="toggleFullscreen()"
-                    title="Fullscreen (F)"
-                  >
+                  <button class="control-btn" (click)="toggleFullscreen()" title="Fullscreen (F)">
                     <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
                   </button>
                   
-                  <!-- Close Video -->
-                  <button class="control-btn close-btn" (click)="closeVideo()" title="Close Video">
-                    <app-icon name="x" [size]="18" />
-                  </button>
+                  <!-- Close - not in fullscreen -->
+                  @if (!isFullscreen()) {
+                    <button class="control-btn close-btn" (click)="closeVideo()" title="Close">
+                      <app-icon name="x" [size]="18" />
+                    </button>
+                  }
                 </div>
               </div>
             </div>
@@ -352,12 +388,12 @@ interface SeekPreview {
 
     .url-input {
       padding-left: 40px;
-      height: 40px;
+      height: 44px;
     }
 
     .load-btn {
-      height: 40px;
-      padding: 0 16px;
+      height: 44px;
+      padding: 0 20px;
     }
 
     .error-banner {
@@ -495,8 +531,8 @@ interface SeekPreview {
     }
 
     .big-play-btn {
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 50%;
       display: flex;
@@ -505,16 +541,11 @@ interface SeekPreview {
       color: white;
       backdrop-filter: blur(4px);
       animation: fadeIn 0.2s ease;
-      transition: transform 0.2s ease;
-    }
-
-    .big-play-btn:hover {
-      transform: scale(1.1);
     }
 
     .play-pause-feedback {
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 50%;
       display: flex;
@@ -579,10 +610,9 @@ interface SeekPreview {
       100% { opacity: 0; transform: scale(0.8); }
     }
 
-    /* Volume Feedback */
     .volume-feedback {
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 50%;
       display: flex;
@@ -604,9 +634,6 @@ interface SeekPreview {
       100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
     }
 
-
-
-    /* Ripple Effect */
     .ripple-effect {
       position: absolute;
       width: 80px;
@@ -656,8 +683,8 @@ interface SeekPreview {
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
-      padding: var(--space-lg) var(--space-md) var(--space-md);
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+      padding: var(--space-lg) var(--space-md) var(--space-sm);
       z-index: 20;
       display: flex;
       flex-direction: column;
@@ -728,7 +755,6 @@ interface SeekPreview {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    /* Seek Preview Tooltip */
     .seek-tooltip {
       position: absolute;
       bottom: 16px;
@@ -791,17 +817,10 @@ interface SeekPreview {
       height: 40px;
     }
 
-    .skip-btn {
-      display: none;
+    .desktop-only {
+      display: flex;
     }
 
-    @media (min-width: 640px) {
-      .skip-btn {
-        display: flex;
-      }
-    }
-
-    /* Time Display */
     .time-display {
       font-family: var(--font-mono);
       font-size: 0.8125rem;
@@ -859,11 +878,6 @@ interface SeekPreview {
       background: white;
       border-radius: 50%;
       cursor: pointer;
-      transition: transform 0.1s ease;
-    }
-
-    .volume-slider::-webkit-slider-thumb:hover {
-      transform: scale(1.2);
     }
 
     .volume-slider::-moz-range-thumb {
@@ -908,20 +922,9 @@ interface SeekPreview {
       animation: menuSlideUp 0.15s ease;
     }
 
-    /* Clamp speed menu to video container */
-    .is-fullscreen .speed-menu {
-      max-height: 60vh;
-    }
-
     @keyframes menuSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .speed-option {
@@ -934,9 +937,6 @@ interface SeekPreview {
       text-align: left;
       cursor: pointer;
       transition: all 0.1s ease;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
     .speed-option:hover {
@@ -951,52 +951,8 @@ interface SeekPreview {
 
     .speed-option.active::after {
       content: '✓';
+      float: right;
       font-size: 0.75rem;
-    }
-
-    /* ============================================
-       SETTINGS MENU
-       ============================================ */
-    .settings-control {
-      position: relative;
-    }
-
-    .settings-menu {
-      position: absolute;
-      bottom: 100%;
-      right: 0;
-      margin-bottom: 8px;
-      background: rgba(28, 28, 28, 0.95);
-      border-radius: 8px;
-      padding: 8px 0;
-      min-width: 200px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      animation: menuSlideUp 0.15s ease;
-    }
-
-    .settings-item {
-      display: flex;
-      align-items: center;
-      padding: 12px 16px;
-      transition: background 0.1s ease;
-    }
-
-    .settings-item:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .settings-label {
-      flex: 1;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 0.875rem;
-    }
-
-    .settings-value {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.8125rem;
-      margin-right: var(--space-xs);
     }
 
     /* ============================================
@@ -1024,128 +980,11 @@ interface SeekPreview {
     }
 
     /* ============================================
-       MOBILE RESPONSIVE
-       ============================================ */
-    @media (max-width: 640px) {
-      .video-container {
-        border-radius: 0;
-        margin: 0 calc(var(--mobile-padding) * -1);
-        width: calc(100% + var(--mobile-padding) * 2);
-      }
-
-      .player-overlay {
-        height: calc(100% - 60px);
-      }
-
-      .zone.left, .zone.right {
-        width: 30%;
-      }
-      
-      .zone.center {
-        width: 40%;
-      }
-
-      .custom-controls {
-        padding: var(--space-md) var(--space-sm) var(--space-sm);
-      }
-
-      .progress-container {
-        height: 6px;
-      }
-
-      .progress-handle {
-        width: 16px;
-        height: 16px;
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-
-      .control-btn {
-        min-width: 40px;
-        height: 40px;
-        padding: 10px;
-      }
-
-      .play-btn {
-        min-width: 44px;
-        height: 44px;
-      }
-
-      .time-display {
-        font-size: 0.75rem;
-      }
-
-      .speed-label {
-        font-size: 0.75rem;
-      }
-
-      .speed-btn {
-        min-width: 44px;
-      }
-
-      /* Volume slider always visible on mobile (simplified) */
-      .volume-slider-container {
-        display: none;
-      }
-
-      .video-input {
-        padding: var(--mobile-padding);
-        border-radius: var(--mobile-card-radius);
-      }
-
-      .input-group {
-        flex-direction: column;
-        gap: var(--space-sm);
-      }
-
-      .url-input {
-        height: 48px;
-        font-size: 16px;
-        border-radius: 10px;
-      }
-
-      .load-btn {
-        width: 100%;
-        height: 48px;
-        border-radius: 10px;
-        font-size: 1rem;
-      }
-
-      .video-info {
-        padding: var(--space-md) 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .video-container {
-        margin: 0 calc(var(--space-md) * -1);
-        width: calc(100% + var(--space-md) * 2);
-      }
-    }
-
-    /* Fullscreen specific */
-    .is-fullscreen .video-info {
-      display: none;
-    }
-
-    .is-fullscreen .close-btn {
-      display: none;
-    }
-
-    .is-fullscreen .skip-btn {
-      display: flex;
-    }
-
-    .is-fullscreen .volume-slider-container.visible {
-      width: 100px;
-    }
-
-    /* ============================================
        FULLSCREEN SUBTITLE OVERLAY
        ============================================ */
     .fullscreen-subtitle {
       position: absolute;
-      bottom: 80px;
+      bottom: 70px;
       left: 50%;
       transform: translateX(-50%);
       max-width: 90%;
@@ -1156,7 +995,11 @@ interface SeekPreview {
     }
 
     .fullscreen-subtitle.controls-visible {
-      bottom: 90px;
+      bottom: 80px;
+    }
+
+    .fullscreen-subtitle.popup-open {
+      opacity: 0.4;
     }
 
     .fs-subtitle-text {
@@ -1185,7 +1028,7 @@ interface SeekPreview {
       cursor: pointer;
       padding: 2px 3px;
       border-radius: 4px;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: background 0.15s ease;
       display: inline;
     }
 
@@ -1203,16 +1046,259 @@ interface SeekPreview {
       border-bottom: 2px solid var(--accent-primary);
     }
 
-    /* Mobile fullscreen adjustments */
+    /* ============================================
+       FULLSCREEN POPUP (INLINE)
+       ============================================ */
+    .fs-popup-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      animation: fadeIn 0.2s ease;
+      padding: var(--space-md);
+    }
+
+    .fs-popup {
+      background: var(--bg-card);
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      max-width: 320px;
+      width: 100%;
+      position: relative;
+      animation: popupSlideUp 0.25s ease;
+    }
+
+    @keyframes popupSlideUp {
+      from { opacity: 0; transform: translateY(20px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .fs-popup-close {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--border-radius);
+      transition: all 0.15s ease;
+      z-index: 1;
+    }
+
+    .fs-popup-close:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .fs-popup-header {
+      padding: var(--space-md);
+      padding-right: 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .fs-popup-word {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 4px;
+    }
+
+    .fs-popup-reading {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      display: block;
+    }
+
+    .fs-popup-body {
+      padding: var(--space-md);
+      min-height: 60px;
+    }
+
+    .fs-popup-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .fs-popup-loading app-icon {
+      animation: spin 1s linear infinite;
+    }
+
+    .fs-popup-badges {
+      display: flex;
+      gap: var(--space-xs);
+      justify-content: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .fs-popup-badges .badge {
+      padding: 2px 8px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+      background: rgba(199, 62, 58, 0.1);
+      border-radius: 4px;
+    }
+
+    .fs-popup-meaning {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .fs-popup-actions {
+      display: flex;
+      gap: var(--space-sm);
+      padding: var(--space-md);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .fs-popup-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      padding: 10px 16px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .fs-popup-btn:hover {
+      background: var(--bg-card);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fs-popup-btn--save {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    .fs-popup-btn--save:hover {
+      background: #b32d29;
+    }
+
+    .fs-popup-btn--saved {
+      background: var(--word-known);
+      color: var(--success);
+      cursor: default;
+    }
+
+    /* ============================================
+       MOBILE RESPONSIVE
+       ============================================ */
     @media (max-width: 640px) {
+      .video-container {
+        border-radius: 0;
+        margin: 0 calc(var(--mobile-padding) * -1);
+        width: calc(100% + var(--mobile-padding) * 2);
+      }
+
+      .desktop-only {
+        display: none !important;
+      }
+
+      .player-overlay {
+        height: calc(100% - 50px);
+      }
+
+      .zone.left, .zone.right {
+        width: 30%;
+      }
+      
+      .zone.center {
+        width: 40%;
+      }
+
+      .custom-controls {
+        padding: var(--space-md) var(--space-sm) var(--space-xs);
+      }
+
+      .progress-container {
+        height: 8px;
+      }
+
+      .progress-handle {
+        width: 18px;
+        height: 18px;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .control-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 12px;
+      }
+
+      .play-btn {
+        min-width: 48px;
+        height: 48px;
+      }
+
+      .time-display {
+        font-size: 0.75rem;
+      }
+
+      .video-input {
+        padding: var(--mobile-padding);
+        border-radius: var(--mobile-card-radius);
+      }
+
+      .input-group {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+
+      .url-input {
+        height: 48px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+
+      .load-btn {
+        width: 100%;
+        height: 48px;
+        border-radius: 10px;
+        font-size: 1rem;
+      }
+
+      .video-info {
+        padding: var(--space-sm) 0;
+      }
+
+      .video-title {
+        font-size: 0.9375rem;
+      }
+
+      /* Fullscreen subtitle mobile */
       .fullscreen-subtitle {
-        bottom: 70px;
+        bottom: 60px;
         max-width: 95%;
         padding: 0 var(--space-sm);
       }
 
       .fullscreen-subtitle.controls-visible {
-        bottom: 80px;
+        bottom: 70px;
       }
 
       .fs-subtitle-text {
@@ -1220,33 +1306,64 @@ interface SeekPreview {
         line-height: 1.8;
       }
 
-      .fullscreen-subtitle.fs-small .fs-subtitle-text {
-        font-size: 1.0625rem;
-      }
-
-      .fullscreen-subtitle.fs-large .fs-subtitle-text {
-        font-size: 1.5rem;
-      }
-
       .fs-word {
         padding: 4px 4px;
         border-radius: 6px;
       }
+
+      /* Fullscreen popup mobile */
+      .fs-popup {
+        max-width: 90%;
+      }
+
+      .fs-popup-word {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-container {
+        margin: 0 calc(var(--space-md) * -1);
+        width: calc(100% + var(--space-md) * 2);
+      }
+
+      .big-play-btn {
+        width: 56px;
+        height: 56px;
+      }
+
+      .big-play-btn app-icon {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    /* Fullscreen specific */
+    .is-fullscreen .video-info {
+      display: none;
+    }
+
+    .is-fullscreen .desktop-only {
+      display: flex;
     }
 
     /* Landscape phone adjustments */
     @media (max-height: 500px) and (orientation: landscape) {
       .fullscreen-subtitle {
-        bottom: 65px;
+        bottom: 55px;
       }
 
       .fullscreen-subtitle.controls-visible {
-        bottom: 75px;
+        bottom: 65px;
       }
 
       .fs-subtitle-text {
         font-size: 1.125rem;
         line-height: 1.6;
+      }
+
+      .fs-popup {
+        max-width: 400px;
       }
     }
   `]
@@ -1259,6 +1376,7 @@ export class VideoPlayerComponent implements OnDestroy {
   transcript = inject(TranscriptService);
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
+  private dictionary = inject(DictionaryService);
 
   // Outputs
   fullscreenWordClicked = output<{ token: Token; sentence: string }>();
@@ -1272,7 +1390,6 @@ export class VideoPlayerComponent implements OnDestroy {
   isFullscreen = signal(false);
   isVolumeSliderVisible = signal(false);
   isSpeedMenuOpen = signal(false);
-  isSettingsOpen = signal(false);
   volume = signal(100);
   currentSpeed = signal<PlaybackSpeed>(1);
 
@@ -1281,6 +1398,14 @@ export class VideoPlayerComponent implements OnDestroy {
   previewTime = signal(0);
   seekPreview = signal<SeekPreview>({ visible: false, time: 0, position: 0 });
   bufferedPercentage = signal(0);
+
+  // Fullscreen popup state
+  fsPopupVisible = signal(false);
+  fsSelectedWord = signal<Token | null>(null);
+  fsSelectedSentence = signal<string>('');
+  fsEntry = signal<DictionaryEntry | null>(null);
+  fsLookupLoading = signal(false);
+  fsWordSaved = signal(false);
 
   // Playback speeds
   readonly playbackSpeeds: PlaybackSpeed[] = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
@@ -1333,6 +1458,12 @@ export class VideoPlayerComponent implements OnDestroy {
       return;
     }
 
+    // Close fullscreen popup on Escape
+    if (event.code === 'Escape' && this.fsPopupVisible()) {
+      this.closeFsPopup();
+      return;
+    }
+
     switch (event.code) {
       case 'Space':
         event.preventDefault();
@@ -1365,30 +1496,21 @@ export class VideoPlayerComponent implements OnDestroy {
         this.toggleFullscreen();
         break;
       case 'Comma':
-        if (event.shiftKey) {
-          this.decreaseSpeed();
-        }
+        if (event.shiftKey) this.decreaseSpeed();
         break;
       case 'Period':
-        if (event.shiftKey) {
-          this.increaseSpeed();
-        }
+        if (event.shiftKey) this.increaseSpeed();
         break;
     }
   }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
-    // Close menus when clicking outside
     const target = event.target as HTMLElement;
     if (!target.closest('.speed-control')) {
       this.isSpeedMenuOpen.set(false);
     }
-    if (!target.closest('.settings-control')) {
-      this.isSettingsOpen.set(false);
-    }
 
-    // Hide controls when clicking outside video
     if (!this.areControlsVisible() || !this.youtube.isPlaying()) return;
     const videoContainer = this.videoContainerRef?.nativeElement;
     if (videoContainer && !videoContainer.contains(target)) {
@@ -1400,15 +1522,17 @@ export class VideoPlayerComponent implements OnDestroy {
   @HostListener('document:fullscreenchange')
   onFullscreenChange() {
     this.isFullscreen.set(!!this.document.fullscreenElement);
+    // Close popup when exiting fullscreen
+    if (!this.document.fullscreenElement && this.fsPopupVisible()) {
+      this.closeFsPopup();
+    }
   }
 
   constructor() {
-    // Detect touch device
     if (typeof window !== 'undefined') {
       this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     }
 
-    // Restore player state
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
       if (currentVideo && !this.youtube.isReady() && !this.isLoading()) {
@@ -1422,7 +1546,6 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Sync volume and speed
     effect(() => {
       if (this.youtube.isReady()) {
         this.volume.set(this.youtube.getVolume());
@@ -1431,14 +1554,12 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Reset URL input when no video
     effect(() => {
       if (!this.youtube.currentVideo()) {
         this.videoUrl = '';
       }
     });
 
-    // Auto-hide controls
     effect(() => {
       if (this.youtube.isPlaying()) {
         this.showControls();
@@ -1474,7 +1595,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private hideControlsAfterDelay(ms: number) {
     this.controlsTimeout = setTimeout(() => {
-      if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.isSettingsOpen()) {
+      if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible()) {
         this.areControlsVisible.set(false);
       }
     }, ms);
@@ -1523,8 +1644,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // ZONE TAP HANDLING
   // ============================================
 
-  handleZoneTap(seconds: number, event?: MouseEvent) {
-    // Only allow double-tap seek on touch devices
+  handleZoneTap(seconds: number) {
     if (!this.isTouchDevice) {
       this.togglePlay();
       return;
@@ -1534,12 +1654,10 @@ export class VideoPlayerComponent implements OnDestroy {
     const tapLength = currentTime - this.lastTapTime;
 
     if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
-      // Double tap = seek
       if (this.tapTimeout) clearTimeout(this.tapTimeout);
       this.seekRelative(seconds);
       this.triggerFeedback(seconds < 0 ? 'rewind' : 'forward');
 
-      // Trigger ripple
       if (seconds < 0) {
         this.leftRipple.set(true);
         setTimeout(() => this.leftRipple.set(false), 600);
@@ -1634,7 +1752,6 @@ export class VideoPlayerComponent implements OnDestroy {
 
   toggleSpeedMenu(event: Event) {
     event.stopPropagation();
-    this.isSettingsOpen.set(false);
     this.isSpeedMenuOpen.update(v => !v);
   }
 
@@ -1659,18 +1776,6 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   // ============================================
-  // SETTINGS MENU
-  // ============================================
-
-  toggleSettings(event: Event) {
-    event.stopPropagation();
-    this.isSpeedMenuOpen.set(false);
-    this.isSettingsOpen.update(v => !v);
-  }
-
-
-
-  // ============================================
   // FULLSCREEN
   // ============================================
 
@@ -1687,6 +1792,75 @@ export class VideoPlayerComponent implements OnDestroy {
     } catch (err) {
       console.warn('Fullscreen not supported:', err);
     }
+  }
+
+  // ============================================
+  // FULLSCREEN WORD POPUP
+  // ============================================
+
+  onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
+    event.stopPropagation();
+
+    // Pause video
+    if (this.youtube.isPlaying()) {
+      this.youtube.pause();
+    }
+
+    // If not in fullscreen, emit to parent
+    if (!this.isFullscreen()) {
+      this.fullscreenWordClicked.emit({ token, sentence });
+      return;
+    }
+
+    // Show inline popup
+    this.fsSelectedWord.set(token);
+    this.fsSelectedSentence.set(sentence);
+    this.fsPopupVisible.set(true);
+    this.fsWordSaved.set(this.vocab.hasWord(token.surface));
+    this.fsEntry.set(null);
+
+    // Lookup word
+    this.fsLookupLoading.set(true);
+    const lang = this.settings.settings().language;
+    this.dictionary.lookup(token.surface, lang).subscribe({
+      next: (entry) => {
+        this.fsEntry.set(entry);
+        this.fsLookupLoading.set(false);
+      },
+      error: () => {
+        this.fsLookupLoading.set(false);
+      }
+    });
+
+    this.showControls();
+  }
+
+  closeFsPopup(): void {
+    this.fsPopupVisible.set(false);
+    this.fsSelectedWord.set(null);
+    this.fsEntry.set(null);
+  }
+
+  saveFsWord(): void {
+    const word = this.fsSelectedWord();
+    const entry = this.fsEntry();
+    const lang = this.settings.settings().language;
+    const sentence = this.fsSelectedSentence();
+
+    if (!word) return;
+
+    if (entry) {
+      this.vocab.addFromDictionary(entry, lang, sentence);
+    } else {
+      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence);
+    }
+
+    this.fsWordSaved.set(true);
+  }
+
+  resumeAndClose(): void {
+    this.closeFsPopup();
+    this.youtube.play();
   }
 
   // ============================================
@@ -1766,21 +1940,15 @@ export class VideoPlayerComponent implements OnDestroy {
     }
 
     this.bufferedInterval = setInterval(() => {
-      // YouTube API doesn't expose buffered directly, estimate it
-      // In a real implementation, you'd use player.getVideoLoadedFraction()
       const loadedFraction = this.getLoadedFraction();
       this.bufferedPercentage.set(loadedFraction * 100);
     }, 1000);
   }
 
   private getLoadedFraction(): number {
-    // Placeholder - YouTube IFrame API has getVideoLoadedFraction()
-    // For now, return a sensible estimate based on current time
     const duration = this.youtube.duration();
     const currentTime = this.youtube.currentTime();
     if (!duration) return 0;
-
-    // Simulate buffering ahead by 30 seconds
     const bufferedTime = Math.min(currentTime + 30, duration);
     return bufferedTime / duration;
   }
@@ -1855,21 +2023,6 @@ export class VideoPlayerComponent implements OnDestroy {
   getFullscreenTokens(cue: SubtitleCue): Token[] {
     const lang = this.settings.settings().language;
     return this.subtitles.getTokens(cue, lang);
-  }
-
-  onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
-    event.stopPropagation();
-
-    // Pause video for better learning experience
-    if (this.youtube.isPlaying()) {
-      this.youtube.pause();
-    }
-
-    // Emit event for parent to handle popup
-    this.fullscreenWordClicked.emit({ token, sentence });
-
-    // Keep controls visible so user can resume
-    this.showControls();
   }
 
   formatTime(seconds: number): string {
