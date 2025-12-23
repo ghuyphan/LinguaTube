@@ -62,7 +62,7 @@ import { SubtitleCue, Token } from '../../models';
               </div>
             } @else if (youtube.currentVideo() && transcript.isLoading()) {
               <div class="loading-indicator">
-                <app-icon name="loader" [size]="24" class="spin" />
+                <app-icon name="loader" [size]="24" />
                 <p>{{ i18n.t('subtitle.fetchingCaptions') }}</p>
               </div>
             } @else if (transcript.error()) {
@@ -315,15 +315,6 @@ import { SubtitleCue, Token } from '../../models';
       align-items: center;
       gap: var(--space-sm);
       color: var(--text-muted);
-    }
-
-    .spin {
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
     }
 
     .subtitle-waiting {

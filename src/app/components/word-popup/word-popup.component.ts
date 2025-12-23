@@ -90,7 +90,7 @@ import { Token, DictionaryEntry } from '../../models';
                         title="Translate to {{ targetLang() }}"
                       >
                         @if (isTranslating($index)) {
-                          <app-icon name="loader" [size]="14" class="spin" />
+                          <app-icon name="loader" [size]="14" />
                         } @else {
                           <app-icon name="languages" [size]="14" />
                         }
@@ -400,14 +400,6 @@ import { Token, DictionaryEntry } from '../../models';
 
     .level-select {
       flex: 1;
-    }
-
-    .spin {
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
     }
 
     @keyframes fadeIn {

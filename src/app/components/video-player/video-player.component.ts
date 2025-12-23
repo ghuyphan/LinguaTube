@@ -484,17 +484,11 @@ interface SeekPreview {
 
     .loading-spinner {
       color: white;
-      animation: spin 1s linear infinite;
     }
 
     .loading-text {
       color: rgba(255, 255, 255, 0.8);
       font-size: 0.875rem;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
     }
 
     /* ============================================
