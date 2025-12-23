@@ -79,6 +79,7 @@ export class TranscriptService {
     const cacheKey = `${videoId}:${lang}`;
     if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
+      log('Client cache hit:', { videoId, lang, cues: cached.length });
       this.captionSource.set('youtube');
       this.availableLanguages.set([lang]);
       return of(cached);
