@@ -1,6 +1,6 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, catchError, map, switchMap, finalize, tap, shareReplay, timer } from 'rxjs';
+import { Observable, of, Subject, catchError, map, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
 import { SubtitleCue } from '../models';
 
 interface TranscriptSegment {
@@ -59,12 +59,16 @@ export class TranscriptService {
   private readonly transcriptCache = new Map<string, SubtitleCue[]>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
 
+  // Cancellation
+  private cancelSubject = new Subject<void>();
+
   constructor(private http: HttpClient) { }
 
   /**
-   * Reset all state
+   * Reset all state and cancel in-flight requests
    */
   reset(): void {
+    this.cancelSubject.next(); // Cancel in-flight requests
     this.isLoading.set(false);
     this.error.set(null);
     this.isGeneratingAI.set(false);
@@ -91,6 +95,7 @@ export class TranscriptService {
     this.captionSource.set(null);
 
     return this.fetchFromBackend(videoId, lang, false).pipe(
+      takeUntil(this.cancelSubject), // Allow cancellation
       tap(() => log('Fetching from backend:', { videoId, lang })),
       switchMap(result => {
         log('Backend result:', { cues: result.cues.length, validResponse: result.validResponse });
@@ -100,6 +105,7 @@ export class TranscriptService {
 
         if (!result.validResponse) {
           return this.fetchFromBackend(videoId, lang, true).pipe(
+            takeUntil(this.cancelSubject),
             switchMap(retry => {
               if (retry.cues.length > 0) return of(retry.cues);
               return this.generateWithWhisper(videoId, undefined, lang);
