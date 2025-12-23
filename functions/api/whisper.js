@@ -61,7 +61,36 @@ export async function onRequestPost(context) {
                 throw new Error(`YouTube fetch failed: ${e.message}`);
             }
 
-            const audioUrl = getAudioUrl(videoData);
+            let audioUrl = getAudioUrl(videoData);
+
+            // Fallback: Try Piped API mirrors
+            if (!audioUrl) {
+                log('Internal extraction failed, trying Piped API...');
+                const pipeds = [
+                    'https://pipedapi.kavin.rocks',
+                    'https://api.piped.otter.sh'
+                ];
+
+                for (const base of pipeds) {
+                    try {
+                        const pipedRes = await fetch(`${base}/streams/${videoId}`);
+                        if (pipedRes.ok) {
+                            const pipedData = await pipedRes.json();
+                            const audioStreams = pipedData.audioStreams || [];
+                            const bestStream = audioStreams.sort((a, b) => b.bitrate - a.bitrate)[0];
+
+                            if (bestStream) {
+                                audioUrl = bestStream.url;
+                                log(`Got audio URL from ${base}`);
+                                break;
+                            }
+                        }
+                    } catch (e) {
+                        log(`Piped ${base} failed:`, e.message);
+                    }
+                }
+            }
+
             if (!audioUrl) {
                 throw new Error('No audio stream found');
             }
