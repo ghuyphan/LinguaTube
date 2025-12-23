@@ -1,4 +1,4 @@
-import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../icon/icon.component';
@@ -165,16 +165,20 @@ import { SubtitleCue, Token } from '../../models';
       padding: var(--space-lg);
       background: var(--bg-secondary);
       border-bottom: 1px solid var(--border-color);
+      overflow-x: auto;
+      overflow-y: visible;
     }
 
     .subtitle-text {
       font-size: 1.375rem;
       line-height: 2.2;
       text-align: center;
-      word-break: keep-all;
+      word-break: break-word;
+      overflow-wrap: break-word;
       transition: box-shadow 0.3s ease, background 0.3s ease;
       border-radius: 12px;
       padding: 4px 12px;
+      max-width: 100%;
     }
 
     .subtitle-content {
@@ -667,6 +671,9 @@ export class SubtitleDisplayComponent {
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
+
+  // Input to skip heavy processing when video is in fullscreen
+  isVideoFullscreen = input(false);
 
   // Loop feature state
   isLoopEnabled = signal(false);

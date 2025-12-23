@@ -47,15 +47,28 @@ export class SubtitleService {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
+    // Skip if already tokenized (all cues have tokens)
+    const allTokenized = cues.every(cue => cue.tokens && cue.tokens.length > 0);
+    if (allTokenized) {
+      console.log('[SubtitleService] Cues already tokenized, skipping');
+      return;
+    }
+
     this.cancelTokenization();
     this.isTokenizing.set(true);
     this.abortController = new AbortController();
 
     try {
+      // Create a mutable copy of cues for safe modification
+      const updatedCues = cues.map(cue => ({ ...cue }));
+
       // Collect unique texts needing tokenization
       const uniqueTexts = new Map<string, number[]>();
 
-      cues.forEach((cue, index) => {
+      updatedCues.forEach((cue, index) => {
+        // Skip if cue already has tokens
+        if (cue.tokens && cue.tokens.length > 0) return;
+
         const cacheKey = `${lang}:${cue.text}`;
         const cached = this.tokenCache.get(cacheKey);
 
@@ -69,7 +82,7 @@ export class SubtitleService {
       });
 
       if (uniqueTexts.size === 0) {
-        this.subtitles.set([...cues]);
+        this.subtitles.set(updatedCues);
         return;
       }
 
@@ -86,11 +99,11 @@ export class SubtitleService {
         this.addToCache(cacheKey, tokens);
 
         uniqueTexts.get(text)?.forEach(cueIndex => {
-          cues[cueIndex].tokens = tokens;
+          updatedCues[cueIndex].tokens = tokens;
         });
       });
 
-      this.subtitles.set([...cues]);
+      this.subtitles.set(updatedCues);
       console.log('[SubtitleService] Tokenization complete');
 
     } catch (error) {
@@ -267,28 +280,66 @@ export class SubtitleService {
   // Private: Cue Navigation
   // ============================================================================
 
+  /**
+   * Binary search to find cue at given time - O(log n) instead of O(n)
+   */
   private findActiveCue(subs: SubtitleCue[], time: number): number {
-    for (let i = subs.length - 1; i >= 0; i--) {
-      // Use exclusive end time to prevent boundary overlap
-      if (time >= subs[i].startTime && time < subs[i].endTime) {
-        return i;
+    if (subs.length === 0) return -1;
+
+    let left = 0;
+    let right = subs.length - 1;
+    let result = -1;
+
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      const cue = subs[mid];
+
+      if (time >= cue.startTime && time < cue.endTime) {
+        // Found a match, but check if there's a later overlapping cue
+        result = mid;
+        left = mid + 1;
+      } else if (time < cue.startTime) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
       }
     }
-    return -1;
+
+    return result;
   }
 
+  /**
+   * Binary search to find last ended cue (for sticky subtitle)
+   */
   private findStickyCue(subs: SubtitleCue[], time: number): number {
-    for (let i = subs.length - 1; i >= 0; i--) {
-      // Use exclusive: endTime <= time means cue has fully ended
-      if (subs[i].endTime <= time) {
-        const next = subs[i + 1];
-        if (!next || time < next.startTime) {
-          return i;
-        }
-        break;
+    if (subs.length === 0) return -1;
+
+    let left = 0;
+    let right = subs.length - 1;
+    let result = -1;
+
+    // Find the rightmost cue that has ended
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      const cue = subs[mid];
+
+      if (cue.endTime <= time) {
+        result = mid;
+        left = mid + 1;
+      } else {
+        right = mid - 1;
       }
     }
-    return -1;
+
+    // Verify the next cue hasn't started yet (gap check)
+    if (result !== -1) {
+      const next = subs[result + 1];
+      if (next && time >= next.startTime) {
+        return -1; // We're inside the next cue, not in a gap
+      }
+    }
+
+    return result;
   }
 
   // ============================================================================

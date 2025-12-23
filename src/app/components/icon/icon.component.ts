@@ -13,7 +13,7 @@ export type IconName =
   | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
   | 'chevron-left' | 'chevron-right' | 'layers'
   | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
-  | 'type' | 'log-out' | 'maximize' | 'minimize';
+  | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe';
 
 @Component({
   selector: 'app-icon',
@@ -271,6 +271,11 @@ export type IconName =
         @case ('volume-1') {
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
           <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        }
+        @case ('globe') {
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         }
       }
     </svg>

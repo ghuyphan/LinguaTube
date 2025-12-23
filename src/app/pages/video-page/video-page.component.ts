@@ -22,8 +22,14 @@ import { Token } from '../../models';
   template: `
     <div class="layout">
       <div class="layout-main">
-        <app-video-player (fullscreenWordClicked)="onWordClicked($event)" />
-        <app-subtitle-display (wordClicked)="onWordClicked($event)" />
+        <app-video-player 
+          (fullscreenWordClicked)="onWordClicked($event)" 
+          (fullscreenChanged)="isVideoFullscreen.set($event)"
+        />
+        <app-subtitle-display 
+          [isVideoFullscreen]="isVideoFullscreen()" 
+          (wordClicked)="onWordClicked($event)" 
+        />
       </div>
 
       <!-- Desktop sidebar -->
@@ -106,14 +112,20 @@ export class VideoPageComponent implements OnInit {
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
+  isVideoFullscreen = signal(false);
 
   ngOnInit(): void {
     // Read video ID from URL query parameter
     this.route.queryParamMap.subscribe(params => {
       const videoId = params.get('id');
-      // Only load if there's an ID and no video is currently loaded
-      if (videoId && !this.youtube.currentVideo()) {
-        this.loadVideoFromUrl(videoId);
+      if (videoId) {
+        const currentVideo = this.youtube.currentVideo();
+        // Load if no video OR if the video ID changed
+        if (!currentVideo || currentVideo.id !== videoId) {
+          // Clear old state before loading new video
+          this.subtitles.clear();
+          this.loadVideoFromUrl(videoId);
+        }
       }
     });
   }

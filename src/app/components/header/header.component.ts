@@ -1,7 +1,7 @@
 import { Component, inject, ChangeDetectionStrategy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, UILanguage } from '../../services';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +15,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
           <span class="logo-text">言</span>
         </div>
         <div class="header__title-group">
-          <h1 class="header__title">LinguaTube</h1>
-          <span class="header__subtitle">Learn from YouTube</span>
+          <h1 class="header__title">{{ i18n.t('app.title') }}</h1>
+          <span class="header__subtitle">{{ i18n.t('app.subtitle') }}</span>
         </div>
       </div>
 
@@ -48,12 +48,12 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       <div class="header__stats">
         <div class="stat-item">
           <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
-          <span class="stat-label">Words</span>
+          <span class="stat-label">{{ i18n.t('header.words') }}</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-value stat-value--success">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
-          <span class="stat-label">Known</span>
+          <span class="stat-label">{{ i18n.t('header.known') }}</span>
         </div>
       </div>
 
@@ -76,9 +76,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
                 <!-- Data Sync Status -->
                 <div class="sync-status">
                   <app-icon name="check" [size]="14" class="sync-icon" />
-                  <span>Data Synced</span>
+                  <span>{{ i18n.t('header.dataSynced') }}</span>
                 </div>
-                <button class="dropdown-btn" (click)="signOut()">Sign out</button>
+                <button class="dropdown-btn" (click)="signOut()">{{ i18n.t('header.signOut') }}</button>
               </div>
             }
           </div>
@@ -90,15 +90,44 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            <span class="google-btn-text">Sign in</span>
+            <span class="google-btn-text">{{ i18n.t('header.signIn') }}</span>
           </button>
         }
         
+        <!-- Desktop Language Switcher -->
+        <div class="lang-switcher">
+          <button 
+            class="btn btn-icon btn-ghost lang-switcher-btn"
+            (click)="showLangMenu = !showLangMenu"
+            [attr.aria-label]="'Switch language'"
+            title="Switch language"
+          >
+            <app-icon name="globe" [size]="18" />
+          </button>
+          @if (showLangMenu) {
+            <div class="lang-dropdown">
+              @for (lang of i18n.availableLanguages; track lang.code) {
+                <button 
+                  class="lang-dropdown-item"
+                  [class.active]="i18n.currentLanguage() === lang.code"
+                  (click)="setUILanguage(lang.code)"
+                >
+                  <span class="lang-flag">{{ lang.flag }}</span>
+                  <span class="lang-name">{{ lang.nativeName }}</span>
+                  @if (i18n.currentLanguage() === lang.code) {
+                    <app-icon name="check" [size]="14" class="check-icon" />
+                  }
+                </button>
+              }
+            </div>
+          }
+        </div>
+
         <button 
           class="btn btn-icon btn-ghost theme-btn"
           (click)="toggleTheme()"
           [attr.aria-label]="'Toggle theme'"
-          [attr.title]="settings.getEffectiveTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+          [attr.title]="settings.getEffectiveTheme() === 'dark' ? i18n.t('header.switchToLight') : i18n.t('header.switchToDark')"
         >
           @if (settings.getEffectiveTheme() === 'dark') {
             <app-icon name="sun" [size]="18" />
@@ -379,6 +408,71 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
     }
 
+    /* Language Switcher (Desktop only) */
+    .lang-switcher {
+      position: relative;
+    }
+
+    .lang-switcher-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: var(--space-xs);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-lg);
+      min-width: 160px;
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .lang-dropdown-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    @media (hover: hover) {
+      .lang-dropdown-item:hover {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+    }
+
+    .lang-dropdown-item.active {
+      background: var(--bg-secondary);
+      color: var(--accent-primary);
+    }
+
+    .lang-dropdown-item .lang-flag {
+      font-size: 1rem;
+    }
+
+    .lang-dropdown-item .lang-name {
+      flex: 1;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .lang-dropdown-item .check-icon {
+      color: var(--accent-primary);
+    }
+
     /* Mobile: Tablet and below */
     @media (max-width: 768px) {
       .header {
@@ -387,7 +481,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         gap: var(--space-sm);
       }
 
-      .header__title-group, .header__stats {
+      .header__title-group, .header__stats, .lang-switcher {
         display: none;
       }
 
@@ -507,8 +601,10 @@ export class HeaderComponent {
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
   auth = inject(AuthService);
+  i18n = inject(I18nService);
 
   showUserMenu = false;
+  showLangMenu = false;
 
   setLanguage(lang: 'ja' | 'zh' | 'ko'): void {
     if (this.settings.settings().language === lang) return;
@@ -534,12 +630,19 @@ export class HeaderComponent {
 
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent) {
-    if (!this.showUserMenu) return;
-
     const target = event.target as HTMLElement;
-    if (!target.closest('.user-menu')) {
+
+    if (this.showUserMenu && !target.closest('.user-menu')) {
       this.showUserMenu = false;
     }
+    if (this.showLangMenu && !target.closest('.lang-switcher')) {
+      this.showLangMenu = false;
+    }
+  }
+
+  setUILanguage(lang: UILanguage): void {
+    this.i18n.setLanguage(lang);
+    this.showLangMenu = false;
   }
 }
 

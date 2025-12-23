@@ -95,12 +95,12 @@ export class TranscriptService {
           return this.fetchFromBackend(videoId, lang, true).pipe(
             switchMap(retry => {
               if (retry.cues.length > 0) return of(retry.cues);
-              return this.generateWithWhisper(videoId);
+              return this.generateWithWhisper(videoId, undefined, lang);
             })
           );
         }
 
-        return this.generateWithWhisper(videoId);
+        return this.generateWithWhisper(videoId, undefined, lang);
       }),
       tap(cues => {
         if (cues.length > 0 && this.captionSource() === 'youtube') {
@@ -109,7 +109,7 @@ export class TranscriptService {
       }),
       catchError(err => {
         console.error('[TranscriptService] Error:', err.message);
-        return this.generateWithWhisper(videoId);
+        return this.generateWithWhisper(videoId, undefined, lang);
       }),
       finalize(() => this.isLoading.set(false))
     );
@@ -166,8 +166,8 @@ export class TranscriptService {
   /**
    * Generate subtitles using Whisper AI
    */
-  generateWithWhisper(videoId: string, resultUrl?: string): Observable<SubtitleCue[]> {
-    const cacheKey = `whisper:${videoId}`;
+  generateWithWhisper(videoId: string, resultUrl?: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
+    const cacheKey = `whisper:${videoId}:${lang}`;
 
     if (!resultUrl && this.transcriptCache.has(cacheKey)) {
       this.captionSource.set('ai');
@@ -190,7 +190,7 @@ export class TranscriptService {
         if (response.status === 'processing' && response.result_url) {
           console.log('[TranscriptService] AI processing... polling in 4s');
           return timer(4000).pipe(
-            switchMap(() => this.generateWithWhisper(videoId, response.result_url))
+            switchMap(() => this.generateWithWhisper(videoId, response.result_url, lang))
           );
         }
 

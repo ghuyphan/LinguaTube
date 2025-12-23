@@ -3,7 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { DictionaryService, VocabularyService, SettingsService, TranslationService } from '../../services';
+import { DictionaryService, VocabularyService, SettingsService, TranslationService, I18nService } from '../../services';
 import { Token, DictionaryEntry } from '../../models';
 
 @Component({
@@ -59,7 +59,7 @@ import { Token, DictionaryEntry } from '../../models';
           @if (dictionary.isLoading()) {
             <div class="popup-loading">
               <app-icon name="loader" [size]="20" />
-              <span>Looking up...</span>
+              <span>{{ i18n.t('popup.lookingUp') }}</span>
             </div>
           } @else if (entry()) {
             <div class="popup-badges">
@@ -119,36 +119,36 @@ import { Token, DictionaryEntry } from '../../models';
           } @else {
             <div class="popup-empty">
               <app-icon name="info" [size]="20" />
-              <p>No dictionary entry found</p>
-              <p class="popup-empty-hint">You can still save this word manually</p>
+              <p>{{ i18n.t('popup.noDictionaryEntry') }}</p>
+              <p class="popup-empty-hint">{{ i18n.t('popup.saveManually') }}</p>
             </div>
           }
         </div>
 
         <div class="popup-footer">
           @if (isSaved()) {
-            <button class="btn btn-secondary saved-btn" disabled>
+              <button class="btn btn-secondary saved-btn" disabled>
               <app-icon name="check" [size]="14" />
-              Saved
+              {{ i18n.t('popup.saved') }}
             </button>
             <select 
               class="level-select"
               [value]="vocab.getWordLevel(selectedWord()?.surface || '')"
               (change)="updateLevel($event)"
             >
-              <option value="new">New</option>
-              <option value="learning">Learning</option>
-              <option value="known">Known</option>
-              <option value="ignored">Ignored</option>
+              <option value="new">{{ i18n.t('vocab.new') }}</option>
+              <option value="learning">{{ i18n.t('vocab.learning') }}</option>
+              <option value="known">{{ i18n.t('vocab.known') }}</option>
+              <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
             </select>
           } @else {
             <button class="btn btn-primary" (click)="saveWord()">
               <app-icon name="plus" [size]="14" />
-              Save Word
+              {{ i18n.t('popup.saveWord') }}
             </button>
           }
           <button class="btn btn-ghost" (click)="close()">
-            Close
+            {{ i18n.t('popup.close') }}
           </button>
         </div>
       </div>
@@ -445,6 +445,7 @@ export class WordPopupComponent implements OnDestroy {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   translation = inject(TranslationService);
+  i18n = inject(I18nService);
 
   selectedWord = input<Token | null>(null);
   currentSentence = input<string>('');

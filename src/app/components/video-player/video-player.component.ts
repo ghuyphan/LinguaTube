@@ -3,7 +3,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService, DictionaryService } from '../../services';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService, DictionaryService, I18nService } from '../../services';
 import { Token, SubtitleCue, DictionaryEntry } from '../../models';
 import { Subscription } from 'rxjs';
 
@@ -31,7 +31,7 @@ interface SeekPreview {
               <input
                 type="text"
                 [(ngModel)]="videoUrl"
-                placeholder="Paste YouTube URL..."
+                [placeholder]="i18n.t('player.pasteUrl')"
                 class="url-input"
                 (keyup.enter)="loadVideo()"
               />
@@ -44,7 +44,7 @@ interface SeekPreview {
               @if (isLoading()) {
                 <app-icon name="loader" [size]="16" />
               } @else {
-                Load
+                {{ i18n.t('player.load') }}
               }
             </button>
           </div>
@@ -59,7 +59,7 @@ interface SeekPreview {
           <div class="hints">
             <p class="hint-text">
               <app-icon name="info" [size]="14" />
-              Paste a YouTube URL to start learning
+              {{ i18n.t('player.hint') }}
             </p>
           </div>
         </div>
@@ -83,7 +83,7 @@ interface SeekPreview {
                 <div class="loading-spinner">
                   <app-icon name="loader" [size]="32" />
                 </div>
-                <span class="loading-text">Loading video...</span>
+                <span class="loading-text">{{ i18n.t('player.loadingVideo') }}</span>
               </div>
             }
             
@@ -215,7 +215,7 @@ interface SeekPreview {
                         {{ fsEntry()?.meanings?.[0]?.definition || '(no definition)' }}
                       </div>
                     } @else {
-                      <div class="fs-popup-meaning">No definition found</div>
+                      <div class="fs-popup-meaning">{{ i18n.t('popup.noDictionaryEntry') }}</div>
                     }
                   </div>
 
@@ -223,12 +223,12 @@ interface SeekPreview {
                     @if (fsWordSaved()) {
                       <button class="fs-popup-btn fs-popup-btn--saved" disabled>
                         <app-icon name="check" [size]="16" />
-                        Saved
+                        {{ i18n.t('popup.saved') }}
                       </button>
                     } @else {
                       <button class="fs-popup-btn fs-popup-btn--save" (click)="saveFsWord()">
                         <app-icon name="plus" [size]="16" />
-                        Save
+                        {{ i18n.t('popup.saveWord') }}
                       </button>
                     }
                     <button class="fs-popup-btn" (click)="resumeAndClose()">
@@ -321,7 +321,7 @@ interface SeekPreview {
                             [class.active]="currentSpeed() === speed"
                             (click)="setPlaybackSpeed(speed)"
                           >
-                            {{ speed === 1 ? 'Normal' : speed + 'x' }}
+                          {{ speed === 1 ? i18n.t('player.normal') : speed + 'x' }}
                           </button>
                         }
                       </div>
@@ -1495,9 +1495,11 @@ export class VideoPlayerComponent implements OnDestroy {
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
+  i18n = inject(I18nService);
 
   // Outputs
   fullscreenWordClicked = output<{ token: Token; sentence: string }>();
+  fullscreenChanged = output<boolean>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -1639,7 +1641,9 @@ export class VideoPlayerComponent implements OnDestroy {
 
   @HostListener('document:fullscreenchange')
   onFullscreenChange() {
-    this.isFullscreen.set(!!this.document.fullscreenElement);
+    const isFs = !!this.document.fullscreenElement;
+    this.isFullscreen.set(isFs);
+    this.fullscreenChanged.emit(isFs);
     // Close popup when exiting fullscreen
     if (!this.document.fullscreenElement && this.fsPopupVisible()) {
       this.closeFsPopup();
