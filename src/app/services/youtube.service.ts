@@ -24,6 +24,7 @@ export class YoutubeService {
   readonly duration = signal(0);
   readonly isReady = signal(false);
   readonly error = signal<string | null>(null);
+  readonly pendingVideoId = signal<string | null>(null); // Set when loading from URL
 
   constructor() {
     this.apiReadyPromise = new Promise(resolve => {

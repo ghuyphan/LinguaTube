@@ -120,12 +120,17 @@ export class VideoPageComponent implements OnInit {
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {
     try {
+      // Set pending video ID so the player container shows up
+      this.youtube.pendingVideoId.set(videoId);
       // Wait for DOM element to exist
       await this.waitForElement('youtube-player');
       await this.youtube.initPlayer('youtube-player', videoId);
       this.fetchCaptions(videoId);
     } catch (err) {
       console.error('Failed to load video from URL:', err);
+    } finally {
+      // Clear pending state regardless of success/failure
+      this.youtube.pendingVideoId.set(null);
     }
   }
 

@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs';
       (click)="onUserActivity()"
       (touchstart)="onUserActivity()"
     >
-      @if (!youtube.currentVideo() && !isLoading()) {
+      @if (!youtube.currentVideo() && !isLoading() && !youtube.pendingVideoId()) {
         <!-- URL Input State -->
         <div class="video-input">
           <div class="input-group">
