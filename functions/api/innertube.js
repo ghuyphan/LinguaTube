@@ -213,8 +213,11 @@ async function tryYouTubeSources(videoId, apiKey, targetLanguages, metadataOnly)
     } catch (aggregateError) {
         controller.abort();
 
-        // Check if any error was age-restriction
+        // Log all errors for debugging
         const errors = aggregateError.errors || [aggregateError];
+        log('YouTube strategies failed:', errors.map(e => e?.error || e?.message || 'unknown'));
+
+        // Check if any error was age-restriction
         const ageRestricted = errors.some(e => e?.error === 'Age-restricted' || e?.ageRestricted);
 
         return { success: false, ageRestricted };
@@ -255,6 +258,8 @@ async function tryThirdPartySources(videoId, targetLanguages, metadataOnly) {
 
     } catch (aggregateError) {
         controller.abort();
+        const errors = aggregateError.errors || [];
+        log('Third-party strategies failed:', errors.map(e => e?.error || 'unknown'));
         return { success: false };
     }
 }

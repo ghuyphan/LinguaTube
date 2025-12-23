@@ -108,8 +108,11 @@ export class TranscriptService {
         return this.generateWithWhisper(videoId, undefined, lang);
       }),
       tap(cues => {
-        if (cues.length > 0 && this.captionSource() === 'youtube') {
-          this.transcriptCache.set(cacheKey, cues);
+        if (cues.length > 0) {
+          this.error.set(null); // Clear any previous errors
+          if (this.captionSource() === 'youtube') {
+            this.transcriptCache.set(cacheKey, cues);
+          }
         }
       }),
       catchError(err => {

@@ -65,7 +65,7 @@ import { SubtitleCue, Token } from '../../models';
                 <app-icon name="loader" [size]="24" />
                 <p>{{ i18n.t('subtitle.fetchingCaptions') }}</p>
               </div>
-            } @else if (transcript.error()) {
+            } @else if (transcript.error() && subtitles.subtitles().length === 0) {
               <app-icon name="alert-circle" [size]="32" class="error-icon" />
               <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</p>
               <p class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</p>
@@ -435,7 +435,8 @@ import { SubtitleCue, Token } from '../../models';
       color: var(--text-muted);
       text-align: center;
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.4;
+      padding-bottom: 2px;
     }
 
     /* Japanese text - optimized spacing */
@@ -450,9 +451,10 @@ import { SubtitleCue, Token } from '../../models';
     }
     
     .text-ja ruby rt {
-      font-size: 0.42em;
+      font-size: 0.45em;
       white-space: nowrap;
       letter-spacing: -0.02em;
+      padding-bottom: 3px;
     }
 
     /* Chinese text - optimized spacing */
