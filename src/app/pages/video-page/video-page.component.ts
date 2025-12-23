@@ -176,6 +176,8 @@ export class VideoPageComponent implements OnInit {
     this.transcript.fetchTranscript(videoId, lang).subscribe({
       next: (cues) => {
         if (cues.length > 0) {
+          // Reset index first to prevent showing old cue during transition
+          this.subtitles.currentCueIndex.set(-1);
           this.subtitles.subtitles.set(cues);
           this.subtitles.tokenizeAllCues(lang);
         }
