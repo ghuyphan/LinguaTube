@@ -114,29 +114,7 @@
         "totalWords": "Tổng số từ"
     },
     "study": {
-        "title": "Chế độ học",
-        "subtitle": "Ôn tập từ vựng với thẻ ghi nhớ",
-        "new": "Mới",
-        "learning": "Đang học",
-        "known": "Đã biết",
-        "includeNew": "Bao gồm từ mới",
-        "includeLearning": "Bao gồm từ đang học",
-        "reviewKnown": "Ôn tập từ đã biết",
-        "start": "Bắt đầu",
-        "cards": "thẻ",
-        "noWords": "Không có từ nào để học. Hãy lưu từ mới từ video trước!",
-        "tapToReveal": "Chạm để xem",
-        "example": "Ví dụ",
-        "again": "Lại",
-        "hard": "Khó",
-        "good": "Tốt",
-        "easy": "Dễ",
-        "sessionComplete": "Hoàn thành phiên học!",
-        "cardsReviewed": "Số thẻ đã ôn",
-        "correct": "Đúng",
-        "toReview": "Cần ôn lại",
-        "studyAgain": "Học lại",
-        "endSession": "Kết thúc"
+        "title": "Chế độ học"
     },
     "common": {
         "loading": "Đang tải...",

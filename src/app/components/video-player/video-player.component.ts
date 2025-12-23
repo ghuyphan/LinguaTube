@@ -3,7 +3,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService, I18nService } from '../../services';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService, VocabularyService } from '../../services';
 import { Token, SubtitleCue } from '../../models';
 import { Subscription } from 'rxjs';
 
@@ -14,1187 +14,1263 @@ interface SeekPreview {
   time: number;
   position: number;
 }
+
 @Component({
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, IconComponent],
   template: `
-    <!-- Video Loaded State -->
-    <div 
-      class="video-container" 
-      #videoContainer
-      (mousemove)="onUserActivity()"
-      (click)="onUserActivity()"
-      (touchstart)="onUserActivity()"
-      (mouseleave)="onMouseLeave()"
-    >
-      <div class="video-embed-ratio">
-        <div id="youtube-player"></div>
-
-        <!-- Loading Overlay -->
-        @if (youtube.pendingVideoId() && !youtube.currentVideo()) {
-          <div class="loading-overlay">
-            <div class="loading-spinner">
-              <app-icon name="loader" [size]="32" />
+    <div class="player-wrapper">
+      @if (!youtube.currentVideo() && !isLoading() && !youtube.pendingVideoId()) {
+        <!-- URL Input State -->
+        <div class="video-input">
+          <div class="input-group">
+            <div class="input-wrapper">
+              <app-icon name="search" [size]="18" class="input-icon" />
+              <input
+                type="text"
+                [(ngModel)]="videoUrl"
+                placeholder="Paste YouTube URL (e.g., https://youtube.com/watch?v=...)"
+                class="url-input"
+                (keyup.enter)="loadVideo()"
+              />
             </div>
-            <span class="loading-text">{{ i18n.t('player.loadingVideo') }}</span>
+            <button 
+              class="btn btn-primary load-btn"
+              (click)="loadVideo()"
+              [disabled]="isLoading()"
+            >
+              @if (isLoading()) {
+                <app-icon name="loader" [size]="16" />
+                Loading
+              } @else {
+                Load
+              }
+            </button>
           </div>
-        }
-
-        <!-- Interaction Overlay Layer -->
-        <div class="player-overlay" (touchstart)="onUserActivity()">
-          <!-- Centered Feedback Elements -->
-          @if (playPauseFeedback()) {
-            <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
-              <app-icon [name]="feedbackIconName()" [size]="48" />
+          
+          @if (error()) {
+            <div class="error-banner">
+              <app-icon name="alert-circle" [size]="16" />
+              <span>{{ error() }}</span>
             </div>
           }
-          @if (volumeFeedback()) {
-            <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
-              <app-icon [name]="volumeFeedbackIcon()" [size]="32" />
-              <div class="volume-bar">
-                <div class="volume-bar__fill" [style.width.%]="volume()"></div>
+
+          <div class="hints">
+            <p class="hint-text">
+              <app-icon name="info" [size]="14" />
+              Paste a YouTube URL to start learning. We'll try to fetch captions automatically.
+            </p>
+          </div>
+        </div>
+      } @else {
+        <!-- Video Loaded State -->
+        <div 
+          class="video-container" 
+          #videoContainer
+          [class.is-fullscreen]="isFullscreen()"
+          (mousemove)="onUserActivity()" 
+          (click)="onUserActivity()"
+          (touchstart)="onUserActivity()"
+          (mouseleave)="onMouseLeave()"
+        >
+          <div class="video-embed-ratio">
+            <div id="youtube-player"></div>
+            
+            <!-- Loading Overlay -->
+            @if (youtube.pendingVideoId() && !youtube.currentVideo()) {
+              <div class="loading-overlay">
+                <div class="loading-spinner">
+                  <app-icon name="loader" [size]="32" />
+                </div>
+                <span class="loading-text">Loading video...</span>
               </div>
-            </div>
-          }
-          @if (rewindFeedback()) {
-            <div class="center-feedback rewind-feedback" [class.animate]="rewindFeedback()">
-              <app-icon name="rewind" [size]="48" />
-              <span>10s</span>
-            </div>
-          }
-          @if (forwardFeedback()) {
-            <div class="center-feedback forward-feedback" [class.animate]="forwardFeedback()">
-              <app-icon name="fast-forward" [size]="48" />
-              <span>10s</span>
-            </div>
-          }
-
-          <!-- Touch Zones -->
-          <div class="touch-zones">
-            <div class="zone left" (dblclick)="seekRelative(-10)" (click)="onUserActivity()"></div>
-            <div class="zone center" (click)="togglePlay()">
-              @if (!youtube.isPlaying() && !playPauseFeedback()) {
-                <div class="big-play-btn">
-                  <app-icon name="play" [size]="32" />
+            }
+            
+            <!-- Interaction Overlay Layer -->
+            <div class="player-overlay" (touchstart)="onUserActivity()">
+              <!-- Centered Feedback Elements -->
+              @if (playPauseFeedback()) {
+                <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
+                  <app-icon [name]="feedbackIconName()" [size]="48" />
                 </div>
               }
-            </div>
-            <div class="zone right" (dblclick)="seekRelative(10)" (click)="onUserActivity()"></div>
-          </div>
-        </div>
-      </div>
-          
-      <!-- Custom Controls -->
-      <div 
-        class="custom-controls" 
-        [class.controls-hidden]="!areControlsVisible() && youtube.isPlaying()"
-        (click)="$event.stopPropagation()"
-      >
-        <!-- Progress Bar -->
-        <div 
-          class="progress-container"
-          #progressBar
-          (mousedown)="startSeeking($event)"
-          (touchstart)="startSeeking($event)"
-          (mousemove)="updateSeekPreview($event)"
-          (mouseleave)="hideSeekPreview()"
-        >
-          <!-- Buffered indicator -->
-          <div class="progress-buffered" [style.width.%]="bufferedPercentage()"></div>
-          <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
-          <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
+              @if (volumeFeedback()) {
+                <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
+                  <app-icon [name]="volumeFeedbackIcon()" [size]="32" />
+                  <div class="volume-bar">
+                    <div class="volume-bar__fill" [style.width.%]="volume()"></div>
+                  </div>
+                </div>
+              }
 
-          <!-- Seek Preview Tooltip -->
-          @if (seekPreview().visible) {
-            <div 
-              class="seek-tooltip"
-              [style.left.px]="seekPreview().position"
-            >
-              {{ formatTime(seekPreview().time) }}
-            </div>
-          }
-        </div>
-
-        <div class="controls-row">
-          <!-- Left Controls -->
-          <div class="controls-left">
-            <!-- Play/Pause -->
-            <button class="control-btn play-btn" (click)="togglePlay()" [title]="i18n.t('player.playPause')">
-              <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="24" />
-            </button>
-
-            <!-- Skip Buttons (Desktop) -->
-            <button class="control-btn skip-btn" (click)="seekRelative(-10)" [title]="i18n.t('player.rewind')">
-              <app-icon name="rewind" [size]="20" />
-            </button>
-            <button class="control-btn skip-btn" (click)="seekRelative(10)" [title]="i18n.t('player.forward')">
-              <app-icon name="fast-forward" [size]="20" />
-            </button>
-
-            <!-- Volume -->
-            <div class="volume-control" (mouseenter)="isVolumeSliderVisible.set(true)" (mouseleave)="isVolumeSliderVisible.set(false)">
-              <button class="control-btn" (click)="toggleMute()" [title]="i18n.t('player.mute')">
-                <app-icon [name]="getVolumeIcon()" [size]="20" />
-              </button>
-              <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
-                <input 
-                  type="range" 
-                  class="volume-slider" 
-                  min="0" 
-                  max="100" 
-                  [value]="volume()"
-                  (input)="onVolumeChange($event)"
-                />
+              <!-- Left Zone - Rewind -->
+              <div class="zone left" (click)="handleZoneTap(-10)">
+                <div class="feedback-icon" [class.animate]="rewindFeedback()">
+                  <app-icon name="rewind" [size]="32" />
+                  <span>10s</span>
+                </div>
+                <!-- Double-tap ripple -->
+                @if (leftRipple()) {
+                  <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+                }
+              </div>
+              
+              <!-- Center Zone - Play/Pause -->
+              <div class="zone center" (click)="handleCenterTap()">
+                @if (!youtube.isPlaying() && !areControlsVisible() && !playPauseFeedback()) {
+                  <div class="big-play-btn">
+                    <app-icon name="play" [size]="48" />
+                  </div>
+                }
+              </div>
+              
+              <!-- Right Zone - Forward -->
+              <div class="zone right" (click)="handleZoneTap(10)">
+                <div class="feedback-icon" [class.animate]="forwardFeedback()">
+                  <app-icon name="fast-forward" [size]="32" />
+                  <span>10s</span>
+                </div>
+                @if (rightRipple()) {
+                  <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+                }
               </div>
             </div>
 
-            <!-- Time -->
-            <div class="time-display">
-              <span class="time-current">{{ formatTime(displayTime()) }}</span>
-              <span class="time-separator">/</span>
-              <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
+            <!-- Mini Progress Bar (visible when controls hidden) -->
+            <div 
+              class="mini-progress" 
+              [class.visible]="!areControlsVisible() && youtube.isPlaying()"
+            >
+              <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
             </div>
-          </div>
 
-          <!-- Right Controls -->
-          <div class="controls-right">
-            <!-- Playback Speed -->
-            <div class="speed-control">
-              <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" [title]="i18n.t('player.playbackSpeed')">
-                <span class="speed-label">{{ currentSpeed() }}x</span>
-              </button>
-              
-              @if (isSpeedMenuOpen()) {
-                <div class="speed-menu" (click)="$event.stopPropagation()">
-                  @for (speed of playbackSpeeds; track speed) {
-                    <button 
-                      class="speed-option" 
-                      [class.active]="currentSpeed() === speed"
-                      (click)="setPlaybackSpeed(speed)"
-                    >
-                      {{ speed === 1 ? i18n.t('player.normal') : speed + 'x' }}
-                    </button>
+            <!-- Fullscreen Subtitle Overlay -->
+            @if (isFullscreen() && subtitles.currentCue(); as cue) {
+              <div 
+                class="fullscreen-subtitle" 
+                [class.controls-visible]="areControlsVisible()"
+                [class.fs-small]="settings.settings().fontSize === 'small'"
+                [class.fs-large]="settings.settings().fontSize === 'large'"
+              >
+                <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
+                  @if (subtitles.isTokenizing()) {
+                    <span class="fs-word">{{ cue.text }}</span>
+                  } @else {
+                    @for (token of getFullscreenTokens(cue); track $index) {<span 
+                        class="fs-word"
+                        [class.fs-word--saved]="vocab.hasWord(token.surface)"
+                        (click)="onFullscreenWordClick(token, cue.text, $event)"
+                      >{{ token.surface }}</span>}
                   }
                 </div>
-              }
-            </div>
-
-            <!-- Settings -->
-            <div class="settings-control">
-              <button class="control-btn" (click)="toggleSettings($event)" [title]="i18n.t('player.settings')">
-                <app-icon name="settings" [size]="20" />
-              </button>
-              
-              @if (isSettingsOpen()) {
-                <div class="settings-menu" (click)="$event.stopPropagation()">
-                  <div class="settings-item">
-                    <span class="settings-label">{{ i18n.t('player.quality') }}</span>
-                    <span class="settings-value">{{ i18n.t('player.auto') }}</span>
+              </div>
+            }
+            
+            <!-- Custom Controls -->
+            <div 
+              class="custom-controls" 
+              [class.controls-hidden]="!areControlsVisible() && youtube.isPlaying()"
+            >
+              <!-- Progress Bar -->
+              <div 
+                class="progress-container" 
+                (mousedown)="startSeeking($event)" 
+                (touchstart)="startSeeking($event)"
+                (mousemove)="updateSeekPreview($event)"
+                (mouseleave)="hideSeekPreview()"
+                #progressBar
+              >
+                <!-- Buffered indicator -->
+                <div class="progress-buffered" [style.width.%]="bufferedPercentage()"></div>
+                <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
+                <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
+                
+                <!-- Seek Preview Tooltip -->
+                @if (seekPreview().visible) {
+                  <div 
+                    class="seek-tooltip" 
+                    [style.left.px]="seekPreview().position"
+                  >
+                    {{ formatTime(seekPreview().time) }}
                   </div>
-                  <div class="settings-item" (click)="toggleSpeedFromSettings()">
-                    <span class="settings-label">{{ i18n.t('player.playbackSpeed') }}</span>
-                    <span class="settings-value">{{ currentSpeed() }}x</span>
-                    <app-icon name="chevron-right" [size]="14" />
+                }
+              </div>
+
+              <div class="controls-row">
+                <!-- Left Controls -->
+                <div class="controls-left">
+                  <!-- Play/Pause -->
+                  <button class="control-btn play-btn" (click)="togglePlay()" title="Play/Pause (Space)">
+                    <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
+                  </button>
+
+                  <!-- Skip Backward -->
+                  <button class="control-btn skip-btn" (click)="seekRelative(-10)" title="Rewind 10s (←)">
+                    <app-icon name="rewind" [size]="18" />
+                  </button>
+
+                  <!-- Skip Forward -->
+                  <button class="control-btn skip-btn" (click)="seekRelative(10)" title="Forward 10s (→)">
+                    <app-icon name="fast-forward" [size]="18" />
+                  </button>
+
+                  <!-- Volume Control -->
+                  <div class="volume-control" (mouseenter)="showVolumeSlider()" (mouseleave)="hideVolumeSlider()">
+                    <button class="control-btn" (click)="toggleMute()" title="Mute (M)">
+                      <app-icon [name]="getVolumeIcon()" [size]="18" />
+                    </button>
+                    <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
+                      <input 
+                        type="range" 
+                        class="volume-slider"
+                        min="0" 
+                        max="100" 
+                        [value]="volume()"
+                        (input)="onVolumeChange($event)"
+                        (mousedown)="$event.stopPropagation()"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Time Display -->
+                  <div class="time-display">
+                    <span class="time-current">{{ formatTime(displayTime()) }}</span>
+                    <span class="time-separator">/</span>
+                    <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
                   </div>
                 </div>
-              }
-            </div>
 
-            <!-- Fullscreen -->
-            <button class="control-btn" (click)="toggleFullscreen()" [title]="i18n.t('player.fullscreen')">
-              <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="20" />
-            </button>
-            
-            <!-- Close Video -->
-            <button class="control-btn close-btn" (click)="closeVideo()" [title]="i18n.t('player.closeVideo')">
-              <app-icon name="x" [size]="20" />
-            </button>
+                <!-- Right Controls -->
+                <div class="controls-right">
+                  <!-- Playback Speed -->
+                  <div class="speed-control" [class.open]="isSpeedMenuOpen()">
+                    <button 
+                      class="control-btn speed-btn" 
+                      (click)="toggleSpeedMenu($event)"
+                      title="Playback Speed"
+                    >
+                      <span class="speed-label">{{ currentSpeed() }}x</span>
+                    </button>
+                    @if (isSpeedMenuOpen()) {
+                      <div class="speed-menu" (click)="$event.stopPropagation()">
+                        @for (speed of playbackSpeeds; track speed) {
+                          <button 
+                            class="speed-option"
+                            [class.active]="currentSpeed() === speed"
+                            (click)="setPlaybackSpeed(speed)"
+                          >
+                            {{ speed === 1 ? 'Normal' : speed + 'x' }}
+                          </button>
+                        }
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Settings Menu -->
+                  <div class="settings-control" [class.open]="isSettingsOpen()">
+                    <button 
+                      class="control-btn" 
+                      (click)="toggleSettings($event)"
+                      title="Settings"
+                    >
+                      <app-icon name="settings" [size]="18" />
+                    </button>
+                    @if (isSettingsOpen()) {
+                      <div class="settings-menu" (click)="$event.stopPropagation()">
+                        <div class="settings-item">
+                          <span class="settings-label">Quality</span>
+                          <span class="settings-value">Auto</span>
+                        </div>
+                        <div class="settings-item" (click)="toggleSpeedFromSettings()">
+                          <span class="settings-label">Playback speed</span>
+                          <span class="settings-value">{{ currentSpeed() }}x</span>
+                          <app-icon name="chevron-right" [size]="14" />
+                        </div>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Fullscreen -->
+                  <button 
+                    class="control-btn" 
+                    (click)="toggleFullscreen()"
+                    title="Fullscreen (F)"
+                  >
+                    <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
+                  </button>
+                  
+                  <!-- Close Video -->
+                  <button class="control-btn close-btn" (click)="closeVideo()" title="Close Video">
+                    <app-icon name="x" [size]="18" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <!-- Mini Progress (visible when controls hidden) -->
-        <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.isPlaying()">
-          <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
-        </div>
-      </div>
 
-      <!-- Fullscreen Subtitle Overlay -->
-      @if (isFullscreen() && subtitles.currentCue(); as cue) {
-        <div 
-          class="fullscreen-subtitle"
-          [class.controls-visible]="areControlsVisible()"
-          [class.fs-small]="settings.settings().fontSize === 'small'"
-          [class.fs-large]="settings.settings().fontSize === 'large'"
-        >
-          <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
-            @if (subtitles.isTokenizing()) {
-              <span class="fs-word">{{ cue.text }}</span>
-            } @else {
-              @for (token of getFullscreenTokens(cue); track $index) {
-                <span 
-                  class="fs-word"
-                  [class.fs-word--saved]="vocab.hasWord(token.surface)"
-                  (click)="onFullscreenWordClick(token, cue.text, $event)"
-                >
-                  {{ token.surface }}
-                </span>
-              }
+        <!-- Video Info (outside fullscreen container) -->
+        @if (!isFullscreen()) {
+          <div class="video-info">
+            <h2 class="video-title">{{ youtube.currentVideo()?.title }}</h2>
+            @if (youtube.currentVideo()?.channel) {
+              <span class="video-channel">{{ youtube.currentVideo()?.channel }}</span>
             }
           </div>
-        </div>
+        }
       }
     </div>
-`,
+  `,
   styles: [`
-  .player-wrapper {
-  width: 100%;
-}
+    .player-wrapper {
+      width: 100%;
+    }
 
     /* ============================================
        INPUT STATE
        ============================================ */
     .video-input {
-  background: var(--bg-card);
-  border-radius: var(--border-radius-lg);
-  padding: var(--space-lg);
-  border: 1px solid var(--border-color);
-}
+      background: var(--bg-card);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-lg);
+      border: 1px solid var(--border-color);
+    }
 
     .input-group {
-  display: flex;
-  gap: var(--space-sm);
-}
+      display: flex;
+      gap: var(--space-sm);
+    }
 
     .input-wrapper {
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
 
     .input-icon {
-  position: absolute;
-  left: 12px;
-  color: var(--text-muted);
-  pointer-events: none;
-}
+      position: absolute;
+      left: 12px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
 
     .url-input {
-  padding-left: 40px;
-  height: 40px;
-}
+      padding-left: 40px;
+      height: 40px;
+    }
 
     .load-btn {
-  height: 40px;
-  padding: 0 16px;
-}
+      height: 40px;
+      padding: 0 16px;
+    }
 
     .error-banner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--word-new);
-  color: var(--error);
-  border-radius: var(--border-radius);
-  font-size: 0.875rem;
-}
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--word-new);
+      color: var(--error);
+      border-radius: var(--border-radius);
+      font-size: 0.875rem;
+    }
 
     .hints {
-  margin-top: var(--space-lg);
-}
+      margin-top: var(--space-lg);
+    }
 
     .hint-text {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-}
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
 
     /* ============================================
        VIDEO CONTAINER
        ============================================ */
     .video-container {
-  background: #000;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  position: relative;
-}
+      background: #000;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
 
     .video-container.is-fullscreen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  border-radius: 0;
-}
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      border-radius: 0;
+    }
 
     .video-embed-ratio {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  background: #000;
-  overflow: hidden;
-}
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+      overflow: hidden;
+    }
 
-    .is-fullscreen.video-embed-ratio {
-  padding-bottom: 0;
-  height: 100vh;
-}
+    .is-fullscreen .video-embed-ratio {
+      padding-bottom: 0;
+      height: 100vh;
+    }
 
-#youtube-player {
-  position: absolute!important;
-  top: 0!important;
-  left: 0!important;
-  width: 100% !important;
-  height: 100% !important;
-  border: none;
-}
+    #youtube-player {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border: none;
+    }
 
     /* ============================================
        LOADING OVERLAY
        ============================================ */
     .loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  z-index: 15;
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+      z-index: 15;
+    }
 
     .loading-spinner {
-  color: white;
-  animation: spin 1s linear infinite;
-}
+      color: white;
+      animation: spin 1s linear infinite;
+    }
 
     .loading-text {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-}
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.875rem;
+    }
 
-@keyframes spin {
+    @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
-}
+    }
 
     /* ============================================
        PLAYER OVERLAY & ZONES
        ============================================ */
     .player-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 70px);
-  z-index: 10;
-  display: flex;
-  -webkit-tap-highlight-color: transparent;
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 70px);
+      z-index: 10;
+      display: flex;
+      -webkit-tap-highlight-color: transparent;
+    }
 
     .zone {
-  height: 100%;
-  position: relative;
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-  overflow: hidden;
-}
+      height: 100%;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      overflow: hidden;
+    }
 
     .zone.left, .zone.right {
-  width: 25%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      width: 25%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     
     .zone.center {
-  width: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      width: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .big-play-btn {
-  width: 72px;
-  height: 72px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  backdrop-filter: blur(4px);
-  animation: fadeIn 0.2s ease;
-  transition: transform 0.2s ease;
-}
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.2s ease;
+      transition: transform 0.2s ease;
+    }
 
     .big-play-btn:hover {
-  transform: scale(1.1);
-}
+      transform: scale(1.1);
+    }
 
     .play-pause-feedback {
-  width: 72px;
-  height: 72px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  backdrop-filter: blur(4px);
-  pointer-events: none;
-}
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
 
     .center-feedback {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 15;
-}
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+    }
 
     .play-pause-feedback.animate {
-  animation: playPausePop 0.4s ease-out forwards;
-}
+      animation: playPausePop 0.4s ease-out forwards;
+    }
 
-@keyframes playPausePop {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-  30% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-  60% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
-}
+    @keyframes playPausePop {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      30% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+      60% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+    }
 
-@keyframes fadeIn {
+    @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
-}
+    }
 
     .feedback-icon {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 16px 20px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  opacity: 0;
-  transform: scale(0.8);
-  pointer-events: none;
-}
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 16px 20px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
 
     .feedback-icon span {
-  font-size: 0.75rem;
-  font-weight: 600;
-}
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
 
     .feedback-icon.animate {
-  animation: flashFeedback 0.5s ease-out forwards;
-}
+      animation: flashFeedback 0.5s ease-out forwards;
+    }
 
-@keyframes flashFeedback {
-  0% { opacity: 0; transform: scale(0.5); }
-  20% { opacity: 1; transform: scale(1.1); }
-  80% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.8); }
-}
+    @keyframes flashFeedback {
+      0% { opacity: 0; transform: scale(0.5); }
+      20% { opacity: 1; transform: scale(1.1); }
+      80% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.8); }
+    }
 
     /* Volume Feedback */
     .volume-feedback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  color: white;
-  backdrop-filter: blur(4px);
-  pointer-events: none;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      color: white;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+    }
 
     .volume-feedback.animate {
-  animation: volumePop 0.6s ease-out forwards;
-}
+      animation: volumePop 0.6s ease-out forwards;
+    }
 
-@keyframes volumePop {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-  20% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
-  80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
-}
+    @keyframes volumePop {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+      80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+    }
 
     .volume-bar {
-  width: 80px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
-  overflow: hidden;
-}
+      width: 80px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
 
     .volume-bar__fill {
-  height: 100%;
-  background: white;
-  border-radius: 2px;
-  transition: width 0.1s ease;
-}
+      height: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: width 0.1s ease;
+    }
 
     /* Ripple Effect */
     .ripple-effect {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%) scale(0);
-  animation: ripple 0.6s ease-out forwards;
-  pointer-events: none;
-}
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) scale(0);
+      animation: ripple 0.6s ease-out forwards;
+      pointer-events: none;
+    }
 
-@keyframes ripple {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
-}
+    @keyframes ripple {
+      0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+    }
 
     /* ============================================
        MINI PROGRESS BAR
        ============================================ */
     .mini-progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.3);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 25;
-}
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 25;
+    }
 
     .mini-progress.visible {
-  opacity: 1;
-}
+      opacity: 1;
+    }
 
     .mini-progress__fill {
-  height: 100%;
-  background: var(--accent-primary);
-  transition: width 0.1s linear;
-}
+      height: 100%;
+      background: var(--accent-primary);
+      transition: width 0.1s linear;
+    }
 
     /* ============================================
        CUSTOM CONTROLS
        ============================================ */
     .custom-controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
-  padding: var(--space-lg) var(--space-md) var(--space-md);
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 1;
-  visibility: visible;
-}
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+      padding: var(--space-lg) var(--space-md) var(--space-md);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      opacity: 1;
+      visibility: visible;
+    }
 
     .controls-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
     /* ============================================
        PROGRESS BAR
        ============================================ */
     .progress-container {
-  width: 100%;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.2);
-  position: relative;
-  cursor: pointer;
-  border-radius: 2.5px;
-  transition: height 0.1s ease;
-}
+      width: 100%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      position: relative;
+      cursor: pointer;
+      border-radius: 2.5px;
+      transition: height 0.1s ease;
+    }
 
     .progress-container:hover {
-  height: 7px;
-}
+      height: 7px;
+    }
 
     .progress-container:hover .progress-handle {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
 
     .progress-buffered {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 2.5px;
-  pointer-events: none;
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 2.5px;
+      pointer-events: none;
+    }
 
     .progress-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: var(--accent-primary);
-  border-radius: 2.5px;
-  pointer-events: none;
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--accent-primary);
+      border-radius: 2.5px;
+      pointer-events: none;
+    }
 
     .progress-handle {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 14px;
-  height: 14px;
-  background: var(--accent-primary);
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 14px;
+      height: 14px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
 
     /* Seek Preview Tooltip */
     .seek-tooltip {
-  position: absolute;
-  bottom: 16px;
-  transform: translateX(-50%);
-  padding: 4px 8px;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 30;
-}
+      position: absolute;
+      bottom: 16px;
+      transform: translateX(-50%);
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 30;
+    }
 
     /* ============================================
        CONTROLS ROW
        ============================================ */
     .controls-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
 
     .controls-left, .controls-right {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
 
     .control-btn {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: all 0.15s ease;
-  min-width: 36px;
-  height: 36px;
-}
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+      min-width: 36px;
+      height: 36px;
+    }
 
-@media(hover: hover) {
+    @media (hover: hover) {
       .control-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-}
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+    }
 
     .control-btn:active {
-  transform: scale(0.95);
-}
+      transform: scale(0.95);
+    }
     
     .play-btn {
-  min-width: 40px;
-  height: 40px;
-}
+      min-width: 40px;
+      height: 40px;
+    }
 
     .skip-btn {
-  display: none;
-}
+      display: none;
+    }
 
-@media(min-width: 640px) {
+    @media (min-width: 640px) {
       .skip-btn {
-    display: flex;
-  }
-}
+        display: flex;
+      }
+    }
 
     /* Time Display */
     .time-display {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.9);
-  display: flex;
-  gap: 4px;
-  margin-left: var(--space-xs);
-  user-select: none;
-}
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      gap: 4px;
+      margin-left: var(--space-xs);
+      user-select: none;
+    }
     
     .time-separator {
-  color: rgba(255, 255, 255, 0.5);
-}
+      color: rgba(255, 255, 255, 0.5);
+    }
 
     /* ============================================
        VOLUME CONTROL
        ============================================ */
     .volume-control {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
 
     .volume-slider-container {
-  width: 0;
-  overflow: hidden;
-  transition: width 0.2s ease, opacity 0.2s ease;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  padding-left: 0;
-}
+      width: 0;
+      overflow: hidden;
+      transition: width 0.2s ease, opacity 0.2s ease;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+    }
 
     .volume-slider-container.visible {
-  width: 80px;
-  opacity: 1;
-  padding-left: var(--space-xs);
-}
+      width: 80px;
+      opacity: 1;
+      padding-left: var(--space-xs);
+    }
 
     .volume-slider {
-  width: 100%;
-  height: 4px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
-  cursor: pointer;
-}
+      width: 100%;
+      height: 4px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      cursor: pointer;
+    }
 
     .volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
 
     .volume-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-}
+      transform: scale(1.2);
+    }
 
     .volume-slider::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-}
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
 
     /* ============================================
        SPEED CONTROL
        ============================================ */
     .speed-control {
-  position: relative;
-}
+      position: relative;
+    }
 
     .speed-btn {
-  min-width: 48px;
-}
+      min-width: 48px;
+    }
 
     .speed-label {
-  font-size: 0.8125rem;
-  font-weight: 500;
-}
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
 
     .speed-menu {
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  margin-bottom: 8px;
-  background: rgba(28, 28, 28, 0.95);
-  border-radius: 8px;
-  padding: 8px 0;
-  min-width: 120px;
-  max-height: 250px;
-  overflow-y: auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  animation: menuSlideUp 0.15s ease;
-}
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 8px;
+      background: rgba(28, 28, 28, 0.95);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 120px;
+      max-height: 250px;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      animation: menuSlideUp 0.15s ease;
+    }
 
     /* Clamp speed menu to video container */
-    .is-fullscreen.speed-menu {
-  max-height: 60vh;
-}
+    .is-fullscreen .speed-menu {
+      max-height: 60vh;
+    }
 
-@keyframes menuSlideUp {
+    @keyframes menuSlideUp {
       from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
+        opacity: 0;
+        transform: translateY(8px);
+      }
       to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .speed-option {
-  width: 100%;
-  padding: 10px 16px;
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.1s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      width: 100%;
+      padding: 10px 16px;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.875rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     .speed-option:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
 
     .speed-option.active {
-  color: var(--accent-primary);
-  font-weight: 500;
-}
+      color: var(--accent-primary);
+      font-weight: 500;
+    }
 
     .speed-option.active::after {
-  content: '✓';
-  font-size: 0.75rem;
-}
+      content: '✓';
+      font-size: 0.75rem;
+    }
 
     /* ============================================
        SETTINGS MENU
        ============================================ */
     .settings-control {
-  position: relative;
-}
+      position: relative;
+    }
 
     .settings-menu {
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  margin-bottom: 8px;
-  background: rgba(28, 28, 28, 0.95);
-  border-radius: 8px;
-  padding: 8px 0;
-  min-width: 200px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  animation: menuSlideUp 0.15s ease;
-}
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 8px;
+      background: rgba(28, 28, 28, 0.95);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 200px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      animation: menuSlideUp 0.15s ease;
+    }
 
     .settings-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  cursor: pointer;
-  transition: background 0.1s ease;
-}
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.1s ease;
+    }
 
     .settings-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+      background: rgba(255, 255, 255, 0.1);
+    }
 
     .settings-label {
-  flex: 1;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.875rem;
-}
+      flex: 1;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.875rem;
+    }
 
     .settings-value {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.8125rem;
-  margin-right: var(--space-xs);
-}
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8125rem;
+      margin-right: var(--space-xs);
+    }
 
     /* ============================================
        VIDEO INFO
        ============================================ */
     .video-info {
-  padding: var(--space-md) 0;
-}
+      padding: var(--space-md) 0;
+    }
 
     .video-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 4px;
-}
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
 
     .video-channel {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-}
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
 
-/* ============================================
-   MOBILE RESPONSIVE
-   ============================================ */
-@media(max-width: 640px) {
+    /* ============================================
+       MOBILE RESPONSIVE
+       ============================================ */
+    @media (max-width: 640px) {
       .video-container {
-    border-radius: 0;
-    margin: 0 calc(var(--mobile-padding) * -1);
-    width: calc(100% + var(--mobile-padding) * 2);
-  }
+        border-radius: 0;
+        margin: 0 calc(var(--mobile-padding) * -1);
+        width: calc(100% + var(--mobile-padding) * 2);
+      }
 
       .player-overlay {
-    height: calc(100% - 60px);
-  }
+        height: calc(100% - 60px);
+      }
 
       .zone.left, .zone.right {
-    width: 30%;
-  }
+        width: 30%;
+      }
       
       .zone.center {
-    width: 40%;
-  }
+        width: 40%;
+      }
 
       .custom-controls {
-    padding: var(--space-md) var(--space-sm) var(--space-sm);
-  }
+        padding: var(--space-md) var(--space-sm) var(--space-sm);
+      }
 
       .progress-container {
-    height: 6px;
-  }
+        height: 6px;
+      }
 
       .progress-handle {
-    width: 16px;
-    height: 16px;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
 
       .control-btn {
-    min-width: 40px;
-    height: 40px;
-    padding: 10px;
-  }
+        min-width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
 
       .play-btn {
-    min-width: 44px;
-    height: 44px;
-  }
+        min-width: 44px;
+        height: 44px;
+      }
 
       .time-display {
-    font-size: 0.75rem;
-  }
+        font-size: 0.75rem;
+      }
 
       .speed-label {
-    font-size: 0.75rem;
-  }
+        font-size: 0.75rem;
+      }
 
       .speed-btn {
-    min-width: 44px;
-  }
+        min-width: 44px;
+      }
 
       /* Volume slider always visible on mobile (simplified) */
       .volume-slider-container {
-    display: none;
-  }
+        display: none;
+      }
 
       .video-input {
-    padding: var(--mobile-padding);
-    border-radius: var(--mobile-card-radius);
-  }
+        padding: var(--mobile-padding);
+        border-radius: var(--mobile-card-radius);
+      }
 
       .input-group {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
 
       .url-input {
-    height: 48px;
-    font-size: 16px;
-    border-radius: 10px;
-  }
+        height: 48px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
 
       .load-btn {
-    width: 100%;
-    height: 48px;
-    border-radius: 10px;
-    font-size: 1rem;
-  }
+        width: 100%;
+        height: 48px;
+        border-radius: 10px;
+        font-size: 1rem;
+      }
 
       .video-info {
-    padding: var(--space-md) 0;
-  }
-}
+        padding: var(--space-md) 0;
+      }
+    }
 
-@media(max-width: 480px) {
+    @media (max-width: 480px) {
       .video-container {
-    margin: 0 calc(var(--space-md) * -1);
-    width: calc(100% + var(--space-md) * 2);
-  }
-}
+        margin: 0 calc(var(--space-md) * -1);
+        width: calc(100% + var(--space-md) * 2);
+      }
+    }
 
     /* Fullscreen specific */
-    .is-fullscreen.video-info {
-  display: none;
-}
+    .is-fullscreen .video-info {
+      display: none;
+    }
 
-    .is-fullscreen.close-btn {
-  display: none;
-}
+    .is-fullscreen .close-btn {
+      display: none;
+    }
 
-    .is-fullscreen.skip-btn {
-  display: flex;
-}
+    .is-fullscreen .skip-btn {
+      display: flex;
+    }
 
-    .is-fullscreen.volume-slider-container.visible {
-  width: 100px;
-}
+    .is-fullscreen .volume-slider-container.visible {
+      width: 100px;
+    }
 
     /* ============================================
        FULLSCREEN SUBTITLE OVERLAY
        ============================================ */
     .fullscreen-subtitle {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 90%;
-  z-index: 18;
-  text-align: center;
-  transition: bottom 0.3s ease, opacity 0.3s ease;
-  pointer-events: auto;
-}
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+      z-index: 18;
+      text-align: center;
+      transition: bottom 0.3s ease, opacity 0.3s ease;
+      pointer-events: auto;
+    }
 
     .fullscreen-subtitle.controls-visible {
-  bottom: 90px;
-}
+      bottom: 90px;
+    }
 
     .fs-subtitle-text {
-  display: inline;
-  font-size: 1.5rem;
-  line-height: 2;
-  color: white;
-  text-shadow:
-  0 1px 3px rgba(0, 0, 0, 0.8),
-    0 2px 6px rgba(0, 0, 0, 0.6),
-      0 0 20px rgba(0, 0, 0, 0.4);
-  word-break: keep-all;
-}
+      display: inline;
+      font-size: 1.5rem;
+      line-height: 2;
+      color: white;
+      text-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.8),
+        0 2px 6px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.4);
+      word-break: keep-all;
+    }
 
-    .fullscreen-subtitle.fs-small.fs-subtitle-text {
-  font-size: 1.25rem;
-  line-height: 1.8;
-}
+    .fullscreen-subtitle.fs-small .fs-subtitle-text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
 
-    .fullscreen-subtitle.fs-large.fs-subtitle-text {
-  font-size: 2rem;
-  line-height: 2.2;
-}
+    .fullscreen-subtitle.fs-large .fs-subtitle-text {
+      font-size: 2rem;
+      line-height: 2.2;
+    }
 
     .fs-word {
-  cursor: pointer;
-  padding: 2px 3px;
-  border-radius: 4px;
-  transition: background 0.15s ease, color 0.15s ease;
-  display: inline;
-}
+      cursor: pointer;
+      padding: 2px 3px;
+      border-radius: 4px;
+      transition: background 0.15s ease, color 0.15s ease;
+      display: inline;
+    }
 
-@media(hover: hover) {
+    @media (hover: hover) {
       .fs-word:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-}
+        background: rgba(255, 255, 255, 0.25);
+      }
+    }
 
     .fs-word:active {
-  background: rgba(255, 255, 255, 0.35);
-}
+      background: rgba(255, 255, 255, 0.35);
+    }
 
     .fs-word--saved {
-  border-bottom: 2px solid var(--accent-primary);
-}
+      border-bottom: 2px solid var(--accent-primary);
+    }
 
-/* Mobile fullscreen adjustments */
-@media(max-width: 640px) {
+    /* Mobile fullscreen adjustments */
+    @media (max-width: 640px) {
       .fullscreen-subtitle {
-    bottom: 70px;
-    max-width: 95%;
-    padding: 0 var(--space-sm);
-  }
+        bottom: 70px;
+        max-width: 95%;
+        padding: 0 var(--space-sm);
+      }
 
       .fullscreen-subtitle.controls-visible {
-    bottom: 80px;
-  }
+        bottom: 80px;
+      }
 
       .fs-subtitle-text {
-    font-size: 1.25rem;
-    line-height: 1.8;
-  }
+        font-size: 1.25rem;
+        line-height: 1.8;
+      }
 
-      .fullscreen-subtitle.fs-small.fs-subtitle-text {
-    font-size: 1.0625rem;
-  }
+      .fullscreen-subtitle.fs-small .fs-subtitle-text {
+        font-size: 1.0625rem;
+      }
 
-      .fullscreen-subtitle.fs-large.fs-subtitle-text {
-    font-size: 1.5rem;
-  }
+      .fullscreen-subtitle.fs-large .fs-subtitle-text {
+        font-size: 1.5rem;
+      }
 
       .fs-word {
-    padding: 4px 4px;
-    border-radius: 6px;
-  }
-}
+        padding: 4px 4px;
+        border-radius: 6px;
+      }
+    }
 
-/* Landscape phone adjustments */
-@media(max-height: 500px) and(orientation: landscape) {
+    /* Landscape phone adjustments */
+    @media (max-height: 500px) and (orientation: landscape) {
       .fullscreen-subtitle {
-    bottom: 65px;
-  }
+        bottom: 65px;
+      }
 
       .fullscreen-subtitle.controls-visible {
-    bottom: 75px;
-  }
+        bottom: 75px;
+      }
 
       .fs-subtitle-text {
-    font-size: 1.125rem;
-    line-height: 1.6;
-  }
-}
-`]
+        font-size: 1.125rem;
+        line-height: 1.6;
+      }
+    }
+  `]
 })
 export class VideoPlayerComponent implements OnDestroy {
   private document = inject(DOCUMENT);
@@ -1204,7 +1280,6 @@ export class VideoPlayerComponent implements OnDestroy {
   transcript = inject(TranscriptService);
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
-  i18n = inject(I18nService);
 
   // Outputs
   fullscreenWordClicked = output<{ token: Token; sentence: string }>();
@@ -1723,7 +1798,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private getLoadedFraction(): number {
-    // Placeholder-YouTube IFrame API has getVideoLoadedFraction()
+    // Placeholder - YouTube IFrame API has getVideoLoadedFraction()
     // For now, return a sensible estimate based on current time
     const duration = this.youtube.duration();
     const currentTime = this.youtube.currentTime();
@@ -1825,7 +1900,7 @@ export class VideoPlayerComponent implements OnDestroy {
     if (!seconds || isNaN(seconds)) return '0:00';
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')} `;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
   }
 
   ngOnDestroy(): void {

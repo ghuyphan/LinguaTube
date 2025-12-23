@@ -2,7 +2,7 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@a
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
-import { VocabularyService, SettingsService, I18nService } from '../../services';
+import { VocabularyService, SettingsService } from '../../services';
 import { VocabularyItem, WordLevel } from '../../models';
 
 @Component({
@@ -13,11 +13,11 @@ import { VocabularyItem, WordLevel } from '../../models';
   template: `
     <div class="vocab-panel">
       <div class="vocab-header">
-        <h2 class="vocab-title">{{ i18n.t('vocab.title') }}</h2>
+        <h2 class="vocab-title">Vocabulary</h2>
         <div class="vocab-badges">
-          <span class="badge badge--new">{{ vocab.getStatsByLanguage(settings.settings().language).new }} {{ i18n.t('vocab.new') }}</span>
-          <span class="badge badge--learning">{{ vocab.getStatsByLanguage(settings.settings().language).learning }} {{ i18n.t('vocab.learning') }}</span>
-          <span class="badge badge--known">{{ vocab.getStatsByLanguage(settings.settings().language).known }} {{ i18n.t('vocab.known') }}</span>
+          <span class="badge badge--new">{{ vocab.getStatsByLanguage(settings.settings().language).new }} new</span>
+          <span class="badge badge--learning">{{ vocab.getStatsByLanguage(settings.settings().language).learning }} learning</span>
+          <span class="badge badge--known">{{ vocab.getStatsByLanguage(settings.settings().language).known }} known</span>
         </div>
       </div>
 
@@ -28,16 +28,16 @@ import { VocabularyItem, WordLevel } from '../../models';
           <input
             type="text"
             class="search-input"
-            [placeholder]="i18n.t('vocab.search')"
+            placeholder="Search..."
             [(ngModel)]="searchQuery"
           />
         </div>
         <select class="filter-select" [(ngModel)]="levelFilter">
-          <option value="all">{{ i18n.t('vocab.allLevels') }}</option>
-          <option value="new">{{ i18n.t('vocab.new') }}</option>
-          <option value="learning">{{ i18n.t('vocab.learning') }}</option>
-          <option value="known">{{ i18n.t('vocab.known') }}</option>
-          <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
+          <option value="all">All Levels</option>
+          <option value="new">New</option>
+          <option value="learning">Learning</option>
+          <option value="known">Known</option>
+          <option value="ignored">Ignored</option>
         </select>
       </div>
 
@@ -47,11 +47,11 @@ import { VocabularyItem, WordLevel } from '../../models';
           <div class="empty-state">
             @if (vocab.vocabulary().length === 0) {
               <app-icon name="book-open" [size]="32" class="empty-icon" />
-              <p class="empty-title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-              <p class="empty-hint">{{ i18n.t('vocab.clickWordsToSave') }}</p>
+              <p class="empty-title">No words saved yet</p>
+              <p class="empty-hint">Click on words in subtitles to save them</p>
             } @else {
               <app-icon name="search" [size]="24" class="empty-icon" />
-              <p class="empty-title">{{ i18n.t('vocab.noMatchesFound') }}</p>
+              <p class="empty-title">No matches found</p>
             }
           </div>
         } @else {
@@ -72,7 +72,7 @@ import { VocabularyItem, WordLevel } from '../../models';
                 }
               </div>
               
-              <p class="word-meaning">{{ item.meaning || '(' + i18n.t('vocab.noDefinition') + ')' }}</p>
+              <p class="word-meaning">{{ item.meaning || '(no definition)' }}</p>
               
               <div class="word-card-footer">
                 <select 
@@ -80,16 +80,16 @@ import { VocabularyItem, WordLevel } from '../../models';
                   [value]="item.level"
                   (change)="updateLevel(item.id, $event)"
                 >
-                  <option value="new">{{ i18n.t('vocab.new') }}</option>
-                  <option value="learning">{{ i18n.t('vocab.learning') }}</option>
-                  <option value="known">{{ i18n.t('vocab.known') }}</option>
-                  <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
+                  <option value="new">New</option>
+                  <option value="learning">Learning</option>
+                  <option value="known">Known</option>
+                  <option value="ignored">Ignored</option>
                 </select>
                 <span class="word-date">{{ formatDate(item.addedAt) }}</span>
                 <button 
                   class="btn btn-icon btn-ghost delete-btn"
                   (click)="deleteWord(item.id)"
-                  [title]="i18n.t('vocab.delete')"
+                  title="Delete"
                 >
                   <app-icon name="trash-2" [size]="14" />
                 </button>
@@ -103,15 +103,15 @@ import { VocabularyItem, WordLevel } from '../../models';
       <div class="vocab-actions">
         <button class="btn btn-sm btn-secondary" (click)="exportJSON()">
           <app-icon name="download" [size]="14" />
-          {{ i18n.t('vocab.json') }}
+          JSON
         </button>
         <button class="btn btn-sm btn-secondary" (click)="exportAnki()">
           <app-icon name="download" [size]="14" />
-          {{ i18n.t('vocab.anki') }}
+          Anki
         </button>
         <label class="btn btn-sm btn-ghost import-btn">
           <app-icon name="upload" [size]="14" />
-          {{ i18n.t('vocab.import') }}
+          Import
           <input 
             type="file" 
             accept=".json"
@@ -128,12 +128,12 @@ import { VocabularyItem, WordLevel } from '../../models';
         <div class="modal" (click)="$event.stopPropagation()">
           <div class="modal-header">
             <app-icon name="trash-2" [size]="24" class="modal-icon" />
-            <h3 class="modal-title">{{ i18n.t('vocab.deleteWord') }}</h3>
+            <h3 class="modal-title">Delete Word</h3>
           </div>
-          <p class="modal-message">{{ i18n.t('vocab.deleteConfirm') }}</p>
+          <p class="modal-message">Are you sure you want to delete this word? This action cannot be undone.</p>
           <div class="modal-actions">
-            <button class="btn btn-secondary" (click)="cancelDelete()">{{ i18n.t('vocab.cancel') }}</button>
-            <button class="btn btn-danger" (click)="confirmDelete()">{{ i18n.t('vocab.delete') }}</button>
+            <button class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+            <button class="btn btn-danger" (click)="confirmDelete()">Delete</button>
           </div>
         </div>
       </div>
@@ -596,7 +596,6 @@ import { VocabularyItem, WordLevel } from '../../models';
 export class VocabularyListComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
-  i18n = inject(I18nService);
 
   // Search with debounce (300ms)
   private searchInput = signal('');
@@ -707,9 +706,9 @@ export class VocabularyListComponent {
       const content = e.target?.result as string;
       try {
         this.vocab.importFromJSON(content);
-        this.showToast(this.i18n.t('vocab.importSuccess'), 'success');
+        this.showToast('Vocabulary imported successfully!', 'success');
       } catch (err) {
-        this.showToast(this.i18n.t('vocab.importError'), 'error');
+        this.showToast('Failed to import. Check file format.', 'error');
       }
     };
     reader.readAsText(file);

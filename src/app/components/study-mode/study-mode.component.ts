@@ -1,7 +1,7 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { VocabularyService, SettingsService, I18nService } from '../../services';
+import { VocabularyService, SettingsService } from '../../services';
 import { VocabularyItem } from '../../models';
 
 interface StudyCard {
@@ -21,49 +21,49 @@ interface StudyCard {
         <div class="study-start card">
           <div class="study-start__header">
             <app-icon name="graduation-cap" [size]="48" class="study-icon" />
-            <h2>{{ i18n.t('study.title') }}</h2>
-            <p>{{ i18n.t('study.subtitle') }}</p>
+            <h2>Study Mode</h2>
+            <p>Review your vocabulary with flashcards</p>
           </div>
 
           <div class="study-stats">
             <div class="stat-card">
               <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).new }}</span>
-              <span class="stat-label">{{ i18n.t('study.new') }}</span>
+              <span class="stat-label">New</span>
             </div>
             <div class="stat-card">
               <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
-              <span class="stat-label">{{ i18n.t('study.learning') }}</span>
+              <span class="stat-label">Learning</span>
             </div>
             <div class="stat-card">
               <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
-              <span class="stat-label">{{ i18n.t('study.known') }}</span>
+              <span class="stat-label">Known</span>
             </div>
           </div>
 
           <div class="study-options">
             <label class="option-item">
               <input type="checkbox" [(checked)]="includeNew" />
-              <span>{{ i18n.t('study.includeNew') }}</span>
+              <span>Include new words</span>
             </label>
             <label class="option-item">
               <input type="checkbox" [(checked)]="includeLearning" />
-              <span>{{ i18n.t('study.includeLearning') }}</span>
+              <span>Include learning words</span>
             </label>
             <label class="option-item">
               <input type="checkbox" [(checked)]="includeKnown" />
-              <span>{{ i18n.t('study.reviewKnown') }}</span>
+              <span>Review known words</span>
             </label>
           </div>
 
           @if (availableCards() > 0) {
             <button class="btn btn-primary btn-lg" (click)="startSession()">
               <app-icon name="play" [size]="18" />
-              {{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})
+              Start ({{ availableCards() }} cards)
             </button>
           } @else {
             <div class="no-cards">
               <app-icon name="info" [size]="20" />
-              <p>{{ i18n.t('study.noWords') }}</p>
+              <p>No words to study. Save some words from videos first!</p>
             </div>
           }
         </div>
@@ -83,7 +83,7 @@ interface StudyCard {
             </span>
             <button class="btn btn-ghost btn-sm" (click)="endSession()">
               <app-icon name="x" [size]="16" />
-              {{ i18n.t('study.endSession') }}
+              End
             </button>
           </div>
 
@@ -109,7 +109,7 @@ interface StudyCard {
                   @if (currentCard()!.item.romanization) {
                     <span class="card-reading">{{ currentCard()!.item.romanization }}</span>
                   }
-                  <p class="tap-hint">{{ i18n.t('study.tapToReveal') }}</p>
+                  <p class="tap-hint">Tap to reveal</p>
                 </div>
 
                 <!-- Back (Meaning) -->
@@ -118,11 +118,11 @@ interface StudyCard {
                     {{ currentCard()!.item.word }}
                   </span>
                   <div class="card-meaning">
-                    {{ currentCard()!.item.meaning || '(' + i18n.t('vocab.noDefinition') + ')' }}
+                    {{ currentCard()!.item.meaning || '(no definition)' }}
                   </div>
                   @if (currentCard()!.item.sourceSentence) {
                     <div class="card-sentence">
-                      <span class="sentence-label">{{ i18n.t('study.example') }}:</span>
+                      <span class="sentence-label">Example:</span>
                       {{ currentCard()!.item.sourceSentence }}
                     </div>
                   }
@@ -135,19 +135,19 @@ interface StudyCard {
               <div class="answer-buttons">
                 <button class="answer-btn answer-btn--wrong" (click)="markAnswer('wrong')">
                   <app-icon name="x" [size]="20" />
-                  <span>{{ i18n.t('study.again') }}</span>
+                  <span>Again</span>
                 </button>
                 <button class="answer-btn answer-btn--hard" (click)="markAnswer('hard')">
                   <app-icon name="rotate-ccw" [size]="20" />
-                  <span>{{ i18n.t('study.hard') }}</span>
+                  <span>Hard</span>
                 </button>
                 <button class="answer-btn answer-btn--good" (click)="markAnswer('good')">
                   <app-icon name="check" [size]="20" />
-                  <span>{{ i18n.t('study.good') }}</span>
+                  <span>Good</span>
                 </button>
                 <button class="answer-btn answer-btn--easy" (click)="markAnswer('easy')">
                   <app-icon name="chevron-right" [size]="20" />
-                  <span>{{ i18n.t('study.easy') }}</span>
+                  <span>Easy</span>
                 </button>
               </div>
             }
@@ -159,24 +159,24 @@ interface StudyCard {
       @if (isComplete()) {
         <div class="session-complete card">
           <app-icon name="check" [size]="48" class="complete-icon" />
-          <h2>{{ i18n.t('study.sessionComplete') }}</h2>
+          <h2>Session Complete!</h2>
           <div class="complete-stats">
             <div class="complete-stat">
               <span class="stat-value">{{ sessionStats().total }}</span>
-              <span class="stat-label">{{ i18n.t('study.cardsReviewed') }}</span>
+              <span class="stat-label">Cards Reviewed</span>
             </div>
             <div class="complete-stat">
               <span class="stat-value stat-value--success">{{ sessionStats().correct }}</span>
-              <span class="stat-label">{{ i18n.t('study.correct') }}</span>
+              <span class="stat-label">Correct</span>
             </div>
             <div class="complete-stat">
               <span class="stat-value stat-value--error">{{ sessionStats().incorrect }}</span>
-              <span class="stat-label">{{ i18n.t('study.toReview') }}</span>
+              <span class="stat-label">To Review</span>
             </div>
           </div>
           <button class="btn btn-primary" (click)="resetSession()">
             <app-icon name="rotate-ccw" [size]="16" />
-            {{ i18n.t('study.studyAgain') }}
+            Study Again
           </button>
         </div>
       }
@@ -553,7 +553,6 @@ interface StudyCard {
 export class StudyModeComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
-  i18n = inject(I18nService);
 
   // Options
   includeNew = true;

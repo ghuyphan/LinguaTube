@@ -46,12 +46,18 @@ export class YoutubeService {
 
     // Check if script is already being loaded
     if (document.querySelector('script[src*="youtube.com/iframe_api"]')) {
-      // Wait for existing script to load
+      // Wait for existing script to load (with max attempts to prevent infinite loop)
+      let attempts = 0;
+      const maxAttempts = 100; // 10 seconds max wait
       const checkReady = setInterval(() => {
+        attempts++;
         if (window.YT && window.YT.Player) {
           clearInterval(checkReady);
           this.apiReady.set(true);
           this.resolveApiReady();
+        } else if (attempts >= maxAttempts) {
+          clearInterval(checkReady);
+          console.warn('YouTube API failed to load after', maxAttempts * 100, 'ms');
         }
       }, 100);
       return;

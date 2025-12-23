@@ -13,7 +13,7 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
     <app-bottom-sheet [isOpen]="isOpen()" (closed)="closed.emit()">
       <div class="settings-sheet">
         <div class="settings-header">
-          <h2>{{ i18n.t('settings.title') }}</h2>
+          <h2>Settings</h2>
         </div>
 
         <!-- User Section -->
@@ -31,12 +31,12 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
               </div>
               <div class="sync-badge">
                 <app-icon name="check" [size]="12" />
-                {{ i18n.t('settings.synced') }}
+                Synced
               </div>
             </div>
             <button class="settings-btn settings-btn--danger" (click)="signOut()">
               <app-icon name="log-out" [size]="18" />
-              {{ i18n.t('header.signOut') }}
+              Sign Out
             </button>
           } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
             <button class="settings-btn google-btn" (click)="signIn()">
@@ -46,15 +46,15 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
               </svg>
-              {{ i18n.t('settings.signInGoogle') }}
-              <span class="hint">{{ i18n.t('settings.syncVocab') }}</span>
+              Sign in with Google
+              <span class="hint">Sync vocabulary across devices</span>
             </button>
           }
         </div>
 
         <!-- Language Selection -->
         <div class="settings-section">
-          <h3 class="section-title">{{ i18n.t('settings.learningLanguage') }}</h3>
+          <h3 class="section-title">Learning Language</h3>
           <div class="lang-options">
             <button 
               class="lang-option"
@@ -63,7 +63,7 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
             >
               <span class="lang-flag">🇯🇵</span>
               <span class="lang-name">日本語</span>
-              <span class="lang-label">{{ i18n.t('settings.japanese') }}</span>
+              <span class="lang-label">Japanese</span>
             </button>
             <button 
               class="lang-option"
@@ -72,7 +72,7 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
             >
               <span class="lang-flag">🇨🇳</span>
               <span class="lang-name">中文</span>
-              <span class="lang-label">{{ i18n.t('settings.chinese') }}</span>
+              <span class="lang-label">Chinese</span>
             </button>
             <button 
               class="lang-option"
@@ -81,14 +81,14 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
             >
               <span class="lang-flag">🇰🇷</span>
               <span class="lang-name">한국어</span>
-              <span class="lang-label">{{ i18n.t('settings.korean') }}</span>
+              <span class="lang-label">Korean</span>
             </button>
           </div>
         </div>
 
         <!-- UI Language Selection -->
         <div class="settings-section">
-          <h3 class="section-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
+          <h3 class="section-title">Interface Language</h3>
           <div class="ui-lang-options">
             @for (lang of i18n.availableLanguages; track lang.code) {
               <button 
@@ -105,37 +105,37 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
 
         <!-- Theme -->
         <div class="settings-section">
-          <h3 class="section-title">{{ i18n.t('settings.appearance') }}</h3>
+          <h3 class="section-title">Appearance</h3>
           <button class="settings-btn" (click)="toggleTheme()">
             @if (settings.getEffectiveTheme() === 'dark') {
               <app-icon name="sun" [size]="18" />
-              {{ i18n.t('settings.switchToLightMode') }}
+              Switch to Light Mode
             } @else {
               <app-icon name="moon" [size]="18" />
-              {{ i18n.t('settings.switchToDarkMode') }}
+              Switch to Dark Mode
             }
           </button>
         </div>
 
         <!-- Stats -->
         <div class="settings-section">
-          <h3 class="section-title">{{ i18n.t('settings.vocabStats') }}</h3>
+          <h3 class="section-title">Vocabulary Stats</h3>
           <div class="stats-grid">
             <div class="stat-card">
               <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
-              <span class="stat-label">{{ i18n.t('settings.totalWords') }}</span>
+              <span class="stat-label">Total Words</span>
             </div>
             <div class="stat-card">
               <span class="stat-value stat-value--success">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
-              <span class="stat-label">{{ i18n.t('settings.known') }}</span>
+              <span class="stat-label">Known</span>
             </div>
             <div class="stat-card">
               <span class="stat-value stat-value--warning">{{ vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
-              <span class="stat-label">{{ i18n.t('settings.learning') }}</span>
+              <span class="stat-label">Learning</span>
             </div>
             <div class="stat-card">
               <span class="stat-value stat-value--new">{{ vocab.getStatsByLanguage(settings.settings().language).new }}</span>
-              <span class="stat-label">{{ i18n.t('settings.new') }}</span>
+              <span class="stat-label">New</span>
             </div>
           </div>
         </div>

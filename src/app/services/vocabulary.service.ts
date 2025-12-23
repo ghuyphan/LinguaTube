@@ -15,16 +15,23 @@ export class VocabularyService {
 
   readonly stats = computed(() => {
     const items = this.vocabulary();
-    return {
-      total: items.length,
-      new: items.filter(i => i.level === 'new').length,
-      learning: items.filter(i => i.level === 'learning').length,
-      known: items.filter(i => i.level === 'known').length,
-      ignored: items.filter(i => i.level === 'ignored').length,
-      japanese: items.filter(i => i.language === 'ja').length,
-      chinese: items.filter(i => i.language === 'zh').length,
-      korean: items.filter(i => i.language === 'ko').length
-    };
+    // Single pass through array instead of 7 filter operations
+    return items.reduce(
+      (acc, item) => {
+        acc.total++;
+        // Count by level
+        if (item.level === 'new') acc.new++;
+        else if (item.level === 'learning') acc.learning++;
+        else if (item.level === 'known') acc.known++;
+        else if (item.level === 'ignored') acc.ignored++;
+        // Count by language
+        if (item.language === 'ja') acc.japanese++;
+        else if (item.language === 'zh') acc.chinese++;
+        else if (item.language === 'ko') acc.korean++;
+        return acc;
+      },
+      { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0 }
+    );
   });
 
   /**

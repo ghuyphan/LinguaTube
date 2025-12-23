@@ -1,4 +1,4 @@
-import { Injectable, signal, effect, untracked } from '@angular/core';
+import { Injectable, signal, effect, untracked, OnDestroy } from '@angular/core';
 import { UserSettings } from '../models';
 
 const STORAGE_KEY = 'linguatube_settings';
@@ -16,8 +16,16 @@ const DEFAULT_SETTINGS: UserSettings = {
 @Injectable({
   providedIn: 'root'
 })
-export class SettingsService {
+export class SettingsService implements OnDestroy {
   readonly settings = signal<UserSettings>(DEFAULT_SETTINGS);
+
+  // Store reference for cleanup
+  private mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  private themeChangeHandler = () => {
+    if (this.settings().theme === 'system') {
+      this.applyTheme();
+    }
+  };
 
   constructor() {
     this.loadFromStorage();
@@ -33,12 +41,12 @@ export class SettingsService {
       });
     });
 
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (this.settings().theme === 'system') {
-        this.applyTheme();
-      }
-    });
+    // Listen for system theme changes (with cleanup support)
+    this.mediaQuery.addEventListener('change', this.themeChangeHandler);
+  }
+
+  ngOnDestroy(): void {
+    this.mediaQuery.removeEventListener('change', this.themeChangeHandler);
   }
 
   updateSettings(partial: Partial<UserSettings>): void {
