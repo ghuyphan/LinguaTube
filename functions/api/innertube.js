@@ -3,15 +3,16 @@
  *
  * Hybrid fallback strategy for speed + reliability:
  *   1. Cache (instant)
- *   2. Race YouTube sources in parallel (Innertube + scrape)
+ *   2. Race YouTube sources in parallel (Innertube + scrape + youtube-caption-extractor)
  *   3. Parallel third-party fallback
  *
- * @version 6.0.0
+ * @version 7.0.0
  * @updated 2025-12
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
+import { getSubtitles, getVideoDetails } from 'youtube-caption-extractor';
 
 // ============================================================================
 // Configuration
@@ -187,6 +188,14 @@ async function tryYouTubeSources(videoId, apiKey, targetLanguages, metadataOnly)
     const { signal } = controller;
 
     const strategies = [
+        // youtube-caption-extractor package (designed for CF Workers)
+        tryYoutubeCaptionExtractor(videoId, targetLanguages)
+            .then(r => ({ ...r, source: 'youtube-caption-extractor' }))
+            .catch(e => ({ success: false, error: e.message })),
+        // Engagement panel transcript (mimics YouTube website behavior)
+        tryEngagementPanelTranscript(videoId, apiKey, targetLanguages, signal)
+            .then(r => ({ ...r, source: 'engagement_panel' }))
+            .catch(e => ({ success: false, error: e.message })),
         // Innertube clients
         ...INNERTUBE_CLIENTS.map(client =>
             tryInnertubeClient(videoId, apiKey, client, targetLanguages, metadataOnly, signal)
@@ -415,6 +424,267 @@ async function tryWatchPage(videoId, targetLanguages, metadataOnly, masterSignal
     } finally {
         cleanup();
     }
+}
+
+// ============================================================================
+// youtube-caption-extractor npm package (designed for Cloudflare Workers)
+// ============================================================================
+
+async function tryYoutubeCaptionExtractor(videoId, targetLanguages) {
+    log('youtube-caption-extractor: starting');
+
+    // Try each target language
+    for (const lang of targetLanguages) {
+        try {
+            const subtitles = await getSubtitles({ videoID: videoId, lang });
+
+            if (subtitles && subtitles.length > 0) {
+                log(`youtube-caption-extractor: found ${subtitles.length} subtitles for ${lang}`);
+
+                // Convert to our format
+                const cues = subtitles.map((sub, index) => ({
+                    id: index,
+                    start: parseFloat(sub.start),
+                    duration: parseFloat(sub.dur),
+                    text: sub.text.trim()
+                })).filter(cue => cue.text.length > 0);
+
+                const cleanedCues = cleanTranscriptSegments(cues);
+
+                return {
+                    success: true,
+                    hasContent: true,
+                    captions: {
+                        playerCaptionsTracklistRenderer: {
+                            captionTracks: [{
+                                languageCode: lang,
+                                content: cleanedCues
+                            }]
+                        }
+                    },
+                    cues: cleanedCues,
+                    totalCues: cleanedCues.length
+                };
+            }
+        } catch (err) {
+            log(`youtube-caption-extractor: ${lang} failed:`, err.message);
+        }
+    }
+
+    throw new Error('No subtitles found with youtube-caption-extractor');
+}
+
+// ============================================================================
+// Engagement Panel Transcript (mimics YouTube website behavior)
+// Uses /next + /get_transcript endpoints which may bypass bot detection
+// ============================================================================
+
+async function tryEngagementPanelTranscript(videoId, apiKey, targetLanguages, masterSignal) {
+    const controller = new AbortController();
+    const cleanup = linkAbortSignals(masterSignal, controller);
+
+    const client = {
+        clientName: 'WEB',
+        clientVersion: '2.20250222.10.00',
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
+    };
+
+    const visitorData = generateVisitorData();
+
+    try {
+        // Step 1: Call /next endpoint to get engagement panels
+        log('Engagement panel: calling /next endpoint');
+        const nextResponse = await fetch(
+            `https://www.youtube.com/youtubei/v1/next?key=${apiKey}&prettyPrint=false`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': client.userAgent,
+                    'X-Youtube-Client-Version': client.clientVersion,
+                    'X-Youtube-Client-Name': '1',
+                    'X-Goog-Visitor-Id': visitorData,
+                    'Origin': 'https://www.youtube.com',
+                    'Referer': 'https://www.youtube.com/'
+                },
+                body: JSON.stringify({
+                    context: {
+                        client: {
+                            clientName: client.clientName,
+                            clientVersion: client.clientVersion,
+                            hl: 'en',
+                            gl: 'US',
+                            visitorData
+                        }
+                    },
+                    videoId
+                }),
+                signal: controller.signal
+            }
+        );
+
+        if (!nextResponse.ok) {
+            throw new Error(`/next failed: HTTP ${nextResponse.status}`);
+        }
+
+        const nextData = await nextResponse.json();
+
+        // Step 2: Find transcript engagement panel
+        const engagementPanels = nextData.engagementPanels || [];
+        const transcriptPanel = engagementPanels.find(panel =>
+            panel?.engagementPanelSectionListRenderer?.panelIdentifier ===
+            'engagement-panel-searchable-transcript'
+        );
+
+        if (!transcriptPanel) {
+            throw new Error('No transcript panel found');
+        }
+
+        log('Engagement panel: found transcript panel');
+
+        // Step 3: Extract continuation token
+        const content = transcriptPanel.engagementPanelSectionListRenderer?.content;
+        let continuationToken = null;
+
+        // Try multiple extraction methods
+        const continuationItem = content?.continuationItemRenderer;
+        if (continuationItem?.continuationEndpoint?.getTranscriptEndpoint?.params) {
+            continuationToken = continuationItem.continuationEndpoint.getTranscriptEndpoint.params;
+        } else if (continuationItem?.continuationEndpoint?.continuationCommand?.token) {
+            continuationToken = continuationItem.continuationEndpoint.continuationCommand.token;
+        }
+
+        // Try in sectionListRenderer
+        if (!continuationToken && content?.sectionListRenderer?.contents) {
+            for (const item of content.sectionListRenderer.contents) {
+                if (item?.transcriptRenderer?.footer?.transcriptFooterRenderer?.languageMenu) {
+                    const menuItems = item.transcriptRenderer.footer.transcriptFooterRenderer
+                        .languageMenu.sortFilterSubMenuRenderer?.subMenuItems || [];
+
+                    // Find target language or first available
+                    const targets = targetLanguages.map(t => t.toLowerCase());
+                    const langItem = menuItems.find(mi =>
+                        targets.some(t => mi?.title?.toLowerCase().includes(t))
+                    ) || menuItems.find(mi => mi?.selected) || menuItems[0];
+
+                    if (langItem?.continuation?.reloadContinuationData?.continuation) {
+                        continuationToken = langItem.continuation.reloadContinuationData.continuation;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!continuationToken) {
+            throw new Error('No continuation token found');
+        }
+
+        log('Engagement panel: calling /get_transcript');
+
+        // Step 4: Call /get_transcript endpoint
+        const transcriptResponse = await fetch(
+            `https://www.youtube.com/youtubei/v1/get_transcript?key=${apiKey}&prettyPrint=false`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': client.userAgent,
+                    'X-Youtube-Client-Version': client.clientVersion,
+                    'X-Youtube-Client-Name': '1',
+                    'Origin': 'https://www.youtube.com',
+                    'Referer': 'https://www.youtube.com/'
+                },
+                body: JSON.stringify({
+                    context: {
+                        client: {
+                            clientName: client.clientName,
+                            clientVersion: client.clientVersion,
+                            hl: 'en',
+                            gl: 'US',
+                            visitorData
+                        }
+                    },
+                    params: continuationToken
+                }),
+                signal: controller.signal
+            }
+        );
+
+        if (!transcriptResponse.ok) {
+            throw new Error(`/get_transcript failed: HTTP ${transcriptResponse.status}`);
+        }
+
+        const transcriptData = await transcriptResponse.json();
+
+        // Step 5: Parse transcript segments
+        const segments = transcriptData?.actions?.[0]?.updateEngagementPanelAction?.content
+            ?.transcriptRenderer?.content?.transcriptSearchPanelRenderer?.body
+            ?.transcriptSegmentListRenderer?.initialSegments;
+
+        if (!segments?.length) {
+            throw new Error('No transcript segments found');
+        }
+
+        log(`Engagement panel: found ${segments.length} segments`);
+
+        // Convert to our format
+        const cues = segments
+            .filter(seg => seg.transcriptSegmentRenderer)
+            .map((seg, index) => {
+                const renderer = seg.transcriptSegmentRenderer;
+                const startMs = parseInt(renderer.startMs || '0');
+                const endMs = parseInt(renderer.endMs || '0');
+
+                let text = '';
+                if (renderer.snippet?.simpleText) {
+                    text = renderer.snippet.simpleText;
+                } else if (renderer.snippet?.runs) {
+                    text = renderer.snippet.runs.map(run => run.text).join('');
+                }
+
+                return {
+                    id: index,
+                    start: startMs / 1000,
+                    duration: (endMs - startMs) / 1000,
+                    text: text.trim()
+                };
+            })
+            .filter(cue => cue.text.length > 0);
+
+        // Clean and return
+        const cleanedCues = cleanTranscriptSegments(cues);
+
+        // Build response matching expected format
+        const result = {
+            success: true,
+            hasContent: true,
+            captions: {
+                playerCaptionsTracklistRenderer: {
+                    captionTracks: [{
+                        languageCode: targetLanguages[0] || 'en',
+                        content: cleanedCues
+                    }]
+                }
+            },
+            cues: cleanedCues,
+            totalCues: cleanedCues.length
+        };
+
+        return result;
+
+    } finally {
+        cleanup();
+    }
+}
+
+// Generate visitor data for better request authenticity
+function generateVisitorData() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+    let result = '';
+    for (let i = 0; i < 11; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
 }
 
 /**
