@@ -332,44 +332,91 @@ import { SubtitleCue, Token } from '../../models';
     }
 
     /* ============================================
-       WORD & RUBY STYLING - Fixed for proper spacing
+       WORD & RUBY STYLING - Optimized for tap clarity
        ============================================ */
     
     .word {
       cursor: pointer;
-      padding: 2px 3px;
-      margin: 0;
-      border-radius: 4px;
-      transition: background 0.15s ease, transform 0.1s ease;
-      display: inline;
+      padding: 4px 6px;
+      margin: 1px 2px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      display: inline-block;
       vertical-align: baseline;
+      /* Subtle background to indicate tappability */
+      background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.06);
+      border: 1px solid transparent;
+      position: relative;
+    }
+
+    /* Subtle bottom indicator for all words */
+    .word::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: var(--accent-primary);
+      opacity: 0.15;
+      border-radius: 1px;
+      transition: opacity 0.2s ease, width 0.2s ease;
     }
 
     @media (hover: hover) {
       .word:hover {
         background: var(--accent-tertiary);
-        transform: translateY(-1px);
+        border-color: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .word:hover::after {
+        opacity: 0.5;
+        width: 80%;
       }
     }
 
     .word:active {
-      transform: scale(0.98);
+      transform: scale(0.96);
+      background: var(--accent-tertiary);
     }
 
     .word--saved {
       border-bottom: 2px solid var(--accent-primary);
+      background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.1);
+    }
+
+    .word--saved::after {
+      display: none;
     }
 
     .word--new {
       background: var(--word-new);
+      border-color: rgba(var(--word-new-rgb, 239, 68, 68), 0.3);
+    }
+
+    .word--new::after {
+      background: var(--word-new-text, #991b1b);
     }
 
     .word--learning {
       background: var(--word-learning);
+      border-color: rgba(var(--word-learning-rgb, 234, 179, 8), 0.3);
+    }
+
+    .word--learning::after {
+      background: var(--word-learning-text, #854d0e);
     }
 
     .word--known {
       background: var(--word-known);
+      border-color: rgba(var(--word-known-rgb, 34, 197, 94), 0.3);
+    }
+
+    .word--known::after {
+      background: var(--word-known-text, #166534);
     }
 
     /* Ruby base styling - use native ruby display for proper alignment */
@@ -388,14 +435,15 @@ import { SubtitleCue, Token } from '../../models';
       line-height: 1.2;
     }
 
-    /* Japanese text - natural flow without gaps */
+    /* Japanese text - optimized spacing */
     .text-ja {
       letter-spacing: 0;
       word-spacing: 0;
     }
     
     .text-ja .word {
-      padding: 2px 1px;
+      padding: 4px 4px;
+      margin: 1px 1px;
     }
     
     .text-ja ruby rt {
@@ -404,13 +452,14 @@ import { SubtitleCue, Token } from '../../models';
       letter-spacing: -0.02em;
     }
 
-    /* Chinese text */
+    /* Chinese text - optimized spacing */
     .text-zh {
       letter-spacing: 0.02em;
     }
     
     .text-zh .word {
-      padding: 2px 2px;
+      padding: 4px 5px;
+      margin: 1px 2px;
     }
     
     .text-zh ruby rt {
@@ -418,13 +467,14 @@ import { SubtitleCue, Token } from '../../models';
       font-weight: 500;
     }
 
-    /* Korean text */
+    /* Korean text - optimized spacing */
     .text-ko {
       word-spacing: 0.1em;
     }
     
     .text-ko .word {
-      padding: 2px 3px;
+      padding: 4px 6px;
+      margin: 1px 3px;
     }
     
     .text-ko ruby rt {
@@ -581,12 +631,19 @@ import { SubtitleCue, Token } from '../../models';
         font-size: 1.5rem;
       }
 
-      /* Words need bigger touch targets */
+      /* Words need bigger touch targets on mobile */
       .word {
-        padding: 4px 4px;
-        border-radius: 6px;
-        min-height: 32px;
-        line-height: 1.4;
+        padding: 6px 8px;
+        border-radius: 8px;
+        min-height: 36px;
+        line-height: 1.5;
+        /* More visible background on mobile for tap clarity */
+        background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08);
+      }
+
+      .word::after {
+        opacity: 0.25;
+        height: 2px;
       }
 
       .subtitle-list {
