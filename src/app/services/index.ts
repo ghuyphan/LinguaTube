@@ -7,3 +7,4 @@ export * from './settings.service';
 export * from './translation.service';
 export * from './auth.service';
 export * from './sync.service';
+export * from './i18n.service';

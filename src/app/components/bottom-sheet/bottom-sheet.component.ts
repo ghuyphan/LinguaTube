@@ -61,7 +61,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1100;
+      z-index: 10000;
       padding: var(--space-md);
       animation: fadeIn 0.15s ease forwards;
     }
@@ -257,7 +257,10 @@ export class BottomSheetComponent implements OnDestroy {
   constructor() {
     effect(() => {
       if (this.isOpen()) {
-        this.lockBodyScroll(true);
+        // Only lock scroll on mobile - desktop modals don't need it
+        if (this.isMobile) {
+          this.lockBodyScroll(true);
+        }
         this.isClosing.set(false);
       }
     });
@@ -363,12 +366,18 @@ export class BottomSheetComponent implements OnDestroy {
 
     setTimeout(() => {
       this.isClosing.set(false);
-      this.lockBodyScroll(false);
+      // Only unlock scroll on mobile
+      if (this.isMobile) {
+        this.lockBodyScroll(false);
+      }
       this.closed.emit();
     }, this.ANIMATION_DURATION);
   }
 
   ngOnDestroy(): void {
-    this.lockBodyScroll(false);
+    // Only unlock scroll on mobile
+    if (this.isMobile) {
+      this.lockBodyScroll(false);
+    }
   }
 }

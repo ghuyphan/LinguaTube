@@ -1,8 +1,8 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
-import { DictionaryService, VocabularyService, SettingsService } from '../../services';
+import { DictionaryService, VocabularyService, SettingsService, I18nService } from '../../services';
 import { DictionaryEntry } from '../../models';
 
 @Component({
@@ -13,8 +13,8 @@ import { DictionaryEntry } from '../../models';
   template: `
     <div class="dict-panel">
       <div class="dict-header">
-        <h2>Dictionary</h2>
-        <p class="dict-subtitle">Look up any word without a video</p>
+        <h2>{{ i18n.t('dictionary.title') }}</h2>
+        <p class="dict-subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
       </div>
 
       <!-- Search / Filters -->
@@ -24,7 +24,7 @@ import { DictionaryEntry } from '../../models';
           <input 
             type="text" 
             [(ngModel)]="searchQuery"
-            placeholder="Type a word..."
+            [placeholder]="i18n.t('dictionary.typeWord')"
             class="search-input"
             (keyup.enter)="search()"
           />
@@ -38,7 +38,7 @@ import { DictionaryEntry } from '../../models';
           @if (isLoading()) {
             <app-icon name="loader" [size]="16" />
           } @else {
-            Search
+            {{ i18n.t('dictionary.search') }}
           }
         </button>
       </div>
@@ -96,12 +96,12 @@ import { DictionaryEntry } from '../../models';
               @if (isSaved()) {
                 <button class="btn btn-secondary" disabled>
                   <app-icon name="check" [size]="14" />
-                  Saved
+                  {{ i18n.t('popup.saved') }}
                 </button>
               } @else {
                 <button class="btn btn-primary" (click)="saveWord()">
                   <app-icon name="plus" [size]="14" />
-                  Save to Vocabulary
+                  {{ i18n.t('dictionary.saveToVocab') }}
                 </button>
               }
             </div>
@@ -109,14 +109,14 @@ import { DictionaryEntry } from '../../models';
         } @else if (hasSearched() && !isLoading()) {
           <div class="no-results">
             <app-icon name="info" [size]="24" />
-            <p>No results found for "<strong>{{ lastQuery }}</strong>"</p>
-            <p class="hint">Try a different spelling or search term</p>
+            <p>{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
+            <p class="hint">{{ i18n.t('dictionary.tryDifferent') }}</p>
           </div>
         } @else if (!hasSearched()) {
           <!-- Show recent searches here if no current search -->
           @if (recentSearches().length > 0) {
             <div class="dict-recent">
-              <h4>Recent Searches</h4>
+              <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
               <div class="recent-list">
                 @for (term of recentSearches(); track term) {
                   <button class="recent-item" (click)="searchRecent(term)">
@@ -128,7 +128,7 @@ import { DictionaryEntry } from '../../models';
           } @else {
             <div class="search-prompt">
               <app-icon name="book-open" [size]="32" class="prompt-icon" />
-              <p>Enter a word above to look up its meaning</p>
+              <p>{{ i18n.t('dictionary.enterWordAbove') }}</p>
             </div>
           }
         }
@@ -422,6 +422,7 @@ export class DictionaryPanelComponent {
   dictionary = inject(DictionaryService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
+  i18n = inject(I18nService);
 
   searchQuery = '';
   lastQuery = '';
