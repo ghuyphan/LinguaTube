@@ -2086,6 +2086,24 @@ export class VideoPlayerComponent implements OnDestroy {
       return;
     }
 
+    const currentVideo = this.youtube.currentVideo();
+    if (currentVideo && currentVideo.id === videoId) {
+      // Same video - just refetch captions (handles language change)
+      this.subtitles.clear();
+      this.transcript.reset();
+      const lang = this.settings.settings().language;
+      this.transcript.fetchTranscript(videoId, lang).subscribe({
+        next: (cues) => {
+          if (cues.length > 0) {
+            this.subtitles.currentCueIndex.set(-1);
+            this.subtitles.subtitles.set(cues);
+            this.subtitles.tokenizeAllCues(lang);
+          }
+        }
+      });
+      return;
+    }
+
     this.router.navigate(['/video'], { queryParams: { id: videoId } });
   }
 

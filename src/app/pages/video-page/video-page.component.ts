@@ -114,10 +114,14 @@ export class VideoPageComponent implements OnInit {
   currentSentence = signal<string>('');
   isVideoFullscreen = signal(false);
 
+  private lastLang = '';
+
   ngOnInit(): void {
     // Read video ID from URL query parameter
     this.route.queryParamMap.subscribe(params => {
       const videoId = params.get('id');
+      const currentLang = this.settings.settings().language;
+
       if (videoId) {
         const currentVideo = this.youtube.currentVideo();
         // Load if no video OR if the video ID changed
@@ -125,9 +129,13 @@ export class VideoPageComponent implements OnInit {
           // Clear old state before loading new video
           this.subtitles.clear();
           this.transcript.reset();
+          this.lastLang = currentLang;
           this.loadVideoFromUrl(videoId);
-        } else if (this.subtitles.subtitles().length === 0) {
-          // Same video but no subtitles (e.g., after refresh) - refetch
+        } else if (this.subtitles.subtitles().length === 0 || this.lastLang !== currentLang) {
+          // Same video but no subtitles OR language changed - refetch
+          this.subtitles.clear();
+          this.transcript.reset();
+          this.lastLang = currentLang;
           this.fetchCaptions(videoId);
         }
       }
