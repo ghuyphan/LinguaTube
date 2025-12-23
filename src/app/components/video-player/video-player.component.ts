@@ -66,6 +66,16 @@ import { Subscription } from 'rxjs';
           <div class="video-embed-ratio">
             <div id="youtube-player"></div>
             
+            <!-- Loading Indicator (shown when loading from URL) -->
+            @if (youtube.pendingVideoId() && !youtube.currentVideo()) {
+              <div class="loading-overlay">
+                <div class="loading-spinner">
+                  <app-icon name="loader" [size]="32" />
+                </div>
+                <span class="loading-text">Loading video...</span>
+              </div>
+            }
+            
             <!-- Interaction Overlay Layer -->
             <div class="player-overlay" (touchstart)="onUserActivity()">
               <div class="zone left" (click)="handleZoneTap(-5)">
@@ -245,6 +255,37 @@ import { Subscription } from 'rxjs';
       width: 100% !important;
       height: 100% !important;
       border: none;
+    }
+
+    /* Loading Overlay */
+    .loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+      z-index: 15;
+    }
+
+    .loading-spinner {
+      color: white;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.875rem;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     /* Transparent Overlay & Zones */

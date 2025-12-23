@@ -261,7 +261,7 @@ export type IconName =
     }
     
     .icon--loader {
-      animation: spin 1s linear infinite;
+      animation: spin 1.5s linear infinite;
     }
     
     @keyframes spin {
