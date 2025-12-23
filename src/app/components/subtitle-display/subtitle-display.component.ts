@@ -2,7 +2,7 @@ import { Component, inject, effect, output, signal, computed, ViewChild, Element
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../icon/icon.component';
-import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService } from '../../services';
+import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService } from '../../services';
 import { SubtitleCue, Token } from '../../models';
 
 @Component({
@@ -46,35 +46,35 @@ import { SubtitleCue, Token } from '../../models';
             }
           </div>
         } @else {
-          <div class="subtitle-empty">
+        <div class="subtitle-empty">
             @if (youtube.currentVideo() && transcript.isGeneratingAI()) {
               <div class="ai-generating">
                 <div class="ai-badge">
                   <app-icon name="sparkles" [size]="16" />
-                  <span>AI-Powered</span>
+                  <span>{{ i18n.t('subtitle.aiPowered') }}</span>
                 </div>
                 <div class="ai-spinner">
                   <div class="ai-spinner-ring"></div>
                   <app-icon name="wand" [size]="28" class="ai-wand" />
                 </div>
-                <p class="ai-title">Generating transcript...</p>
-                <p class="ai-hint">Using Whisper AI to transcribe audio</p>
+                <p class="ai-title">{{ i18n.t('subtitle.generatingTranscript') }}</p>
+                <p class="ai-hint">{{ i18n.t('subtitle.usingWhisperAI') }}</p>
               </div>
             } @else if (youtube.currentVideo() && transcript.isLoading()) {
               <div class="loading-indicator">
                 <app-icon name="loader" [size]="24" class="spin" />
-                <p>Fetching captions...</p>
+                <p>{{ i18n.t('subtitle.fetchingCaptions') }}</p>
               </div>
             } @else if (transcript.error()) {
               <app-icon name="alert-circle" [size]="32" class="error-icon" />
-              <p class="empty-title">No subtitles available</p>
-              <p class="empty-hint">This video doesn't have captions and AI transcription is unavailable.</p>
+              <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</p>
+              <p class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</p>
             } @else if (subtitles.subtitles().length === 0) {
               <app-icon name="subtitles" [size]="32" class="empty-icon" />
-              <p class="empty-title">No subtitles loaded</p>
-              <p class="empty-hint">Try a video with captions enabled</p>
+              <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesLoaded') }}</p>
+              <p class="empty-hint">{{ i18n.t('subtitle.tryVideoWithCaptions') }}</p>
             } @else {
-              <p class="subtitle-waiting">Waiting for subtitles...</p>
+              <p class="subtitle-waiting">{{ i18n.t('subtitle.waitingForSubtitles') }}</p>
             }
           </div>
         }
@@ -105,10 +105,10 @@ import { SubtitleCue, Token } from '../../models';
           class="toggle-btn"
           [class.active]="isLoopEnabled()"
           (click)="toggleLoop()"
-          title="Toggle segment loop (L)"
+          [title]="i18n.t('subtitle.loop') + ' (L)'"
         >
           <app-icon name="repeat" [size]="16" />
-          <span>Loop</span>
+          <span>{{ i18n.t('subtitle.loop') }}</span>
           @if (isLoopEnabled() && loopCount() > 0) {
             <span class="toggle-btn__badge">{{ loopCount() }}/{{ maxLoops() }}</span>
           }
@@ -130,19 +130,19 @@ import { SubtitleCue, Token } from '../../models';
             class="font-btn"
             [class.active]="settings.settings().fontSize === 'small'"
             (click)="settings.setFontSize('small')"
-            title="Small font"
+            [title]="i18n.t('subtitle.smallFont')"
           >A</button>
           <button 
             class="font-btn font-btn--medium"
             [class.active]="settings.settings().fontSize === 'medium'"
             (click)="settings.setFontSize('medium')"
-            title="Medium font"
+            [title]="i18n.t('subtitle.mediumFont')"
           >A</button>
           <button 
             class="font-btn font-btn--large"
             [class.active]="settings.settings().fontSize === 'large'"
             (click)="settings.setFontSize('large')"
-            title="Large font"
+            [title]="i18n.t('subtitle.largeFont')"
           >A</button>
         </div>
       </div>
@@ -667,6 +667,7 @@ export class SubtitleDisplayComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   transcript = inject(TranscriptService);
+  i18n = inject(I18nService);
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
 

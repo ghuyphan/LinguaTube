@@ -1,6 +1,6 @@
 /**
- * Whisper/Gladia Transcription API (Cloudflare Function)
- * Uses Gladia API for YouTube video transcription
+ * Whisper/AssemblyAI Transcription API (Cloudflare Function)
+ * Uses AssemblyAI API for YouTube video transcription
  * Features: KV caching, exponential backoff, timeout handling
  */
 
@@ -9,12 +9,12 @@ import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
-const INITIAL_DELAY_MS = 1000;
+const INITIAL_DELAY_MS = 2000;
 const MAX_DELAY_MS = 5000;
 const FETCH_TIMEOUT_MS = 10000;
 
 function log(...args) {
-    if (DEBUG) console.log('[Gladia]', ...args);
+    if (DEBUG) console.log('[AssemblyAI]', ...args);
 }
 
 // Handle preflight requests
@@ -28,17 +28,22 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, result_url: providedResultUrl } = body;
+        const { videoId, transcript_id: providedTranscriptId } = body;
 
-        const gladiaKey = env.GLADIA_API_KEY;
-        if (!gladiaKey) {
-            return errorResponse('GLADIA_API_KEY not set');
+        const apiKey = env.ASSEMBLYAI_API_KEY;
+        if (!apiKey) {
+            return errorResponse('ASSEMBLYAI_API_KEY not set');
         }
 
-        let resultUrl = providedResultUrl;
+        const headers = {
+            'Authorization': apiKey,
+            'Content-Type': 'application/json',
+        };
+
+        let transcriptId = providedTranscriptId;
 
         // Step 1: Submit transcription request (Only if not polling existing job)
-        if (!resultUrl) {
+        if (!transcriptId) {
             // Validate video ID only for new requests
             if (!validateVideoId(videoId)) {
                 return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
@@ -59,31 +64,36 @@ export async function onRequestPost(context) {
 
             const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
-            const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
+            // Submit transcription to AssemblyAI
+            const submitResponse = await fetch('https://api.assemblyai.com/v2/transcript', {
                 method: 'POST',
-                headers: {
-                    'x-gladia-key': gladiaKey,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ audio_url: youtubeUrl }),
+                headers,
+                body: JSON.stringify({
+                    audio_url: youtubeUrl,
+                    language_detection: true, // Auto-detect Japanese, Chinese, Korean, etc.
+                }),
                 signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
             });
 
             if (!submitResponse.ok) {
-                throw new Error(`Gladia submit failed: ${submitResponse.status}`);
+                const errorText = await submitResponse.text();
+                throw new Error(`AssemblyAI submit failed: ${submitResponse.status} - ${errorText}`);
             }
 
             const submitData = await submitResponse.json();
-            resultUrl = submitData.result_url;
+            transcriptId = submitData.id;
 
-            if (!resultUrl) {
-                throw new Error('No result_url from Gladia');
+            if (!transcriptId) {
+                throw new Error('No transcript ID from AssemblyAI');
             }
+
+            log('Submitted transcription, ID:', transcriptId);
         }
 
         // Step 2: Poll for results with exponential backoff
         const startTime = Date.now();
         let delay = INITIAL_DELAY_MS;
+        const pollUrl = `https://api.assemblyai.com/v2/transcript/${transcriptId}`;
 
         // Poll as long as we have time left in this function execution
         while (Date.now() - startTime < MAX_DURATION_MS) {
@@ -92,15 +102,15 @@ export async function onRequestPost(context) {
             if (Date.now() - startTime > 20000) { // If > 20s passed, return processing status
                 return jsonResponse({
                     status: 'processing',
-                    result_url: resultUrl
+                    transcript_id: transcriptId
                 });
             }
 
             await new Promise(resolve => setTimeout(resolve, delay));
 
             try {
-                const resultResponse = await fetch(resultUrl, {
-                    headers: { 'x-gladia-key': gladiaKey },
+                const resultResponse = await fetch(pollUrl, {
+                    headers: { 'Authorization': apiKey },
                     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
                 });
 
@@ -112,22 +122,68 @@ export async function onRequestPost(context) {
 
                 const resultData = await resultResponse.json();
 
-                if (resultData.status === 'done') {
-                    const utterances = resultData.result?.transcription?.utterances || [];
-                    const rawSegments = utterances.map((utt, index) => ({
-                        id: index,
-                        text: utt.text?.trim() || '',
-                        start: utt.start || 0,
-                        duration: (utt.end || 0) - (utt.start || 0)
-                    }));
+                if (resultData.status === 'completed') {
+                    // AssemblyAI returns words array with start/end times in milliseconds
+                    const words = resultData.words || [];
+
+                    // Group words into segments (sentences/phrases)
+                    // AssemblyAI provides utterances if speaker_labels is enabled,
+                    // otherwise we need to create segments from words
+                    let rawSegments = [];
+
+                    if (resultData.utterances && resultData.utterances.length > 0) {
+                        // Use utterances if available
+                        rawSegments = resultData.utterances.map((utt, index) => ({
+                            id: index,
+                            text: utt.text?.trim() || '',
+                            start: (utt.start || 0) / 1000, // Convert ms to seconds
+                            duration: ((utt.end || 0) - (utt.start || 0)) / 1000
+                        }));
+                    } else {
+                        // Fallback: create segments from text using sentence boundaries
+                        // Split the full text by sentence-ending punctuation
+                        const fullText = resultData.text || '';
+                        const sentences = fullText.split(/(?<=[.!?。！？])\s+/).filter(s => s.trim());
+
+                        // Create segments with estimated timing based on word positions
+                        let wordIndex = 0;
+                        sentences.forEach((sentence, index) => {
+                            const sentenceWords = sentence.split(/\s+/).length;
+                            const startWord = words[wordIndex];
+                            const endWordIndex = Math.min(wordIndex + sentenceWords - 1, words.length - 1);
+                            const endWord = words[endWordIndex];
+
+                            if (startWord) {
+                                rawSegments.push({
+                                    id: index,
+                                    text: sentence.trim(),
+                                    start: (startWord.start || 0) / 1000,
+                                    duration: ((endWord?.end || startWord.end || 0) - (startWord.start || 0)) / 1000
+                                });
+                            }
+                            wordIndex += sentenceWords;
+                        });
+
+                        // If no segments created, use full text as single segment
+                        if (rawSegments.length === 0 && fullText) {
+                            rawSegments.push({
+                                id: 0,
+                                text: fullText,
+                                start: words[0]?.start ? words[0].start / 1000 : 0,
+                                duration: words.length > 0
+                                    ? (words[words.length - 1].end - words[0].start) / 1000
+                                    : 0
+                            });
+                        }
+                    }
 
                     // Clean segments server-side for deduplication and timing fixes
                     const segments = cleanTranscriptSegments(rawSegments);
 
                     const response = {
                         success: true,
-                        language: resultData.result?.transcription?.languages?.[0] || 'unknown',
-                        duration: resultData.result?.metadata?.audio_duration || 0,
+                        language: resultData.language_code || 'unknown',
+                        duration: resultData.audio_duration || 0,
                         segments
                     };
 
@@ -144,14 +200,16 @@ export async function onRequestPost(context) {
                         }
                     }
 
+                    log('Transcription complete:', segments.length, 'segments');
                     return jsonResponse(response);
                 }
 
                 if (resultData.status === 'error') {
-                    throw new Error(`Gladia error: ${resultData.error_message}`);
+                    throw new Error(`AssemblyAI error: ${resultData.error}`);
                 }
 
-                // Still processing, apply exponential backoff
+                // Still processing (queued or processing), apply backoff
+                log('Status:', resultData.status);
                 delay = Math.min(delay * 2, MAX_DELAY_MS);
 
             } catch (fetchError) {
@@ -161,14 +219,14 @@ export async function onRequestPost(context) {
             }
         }
 
-        // If we exit the loop, we ran out of time
+        // If we exit the loop, we ran out of time - return for client to continue polling
         return jsonResponse({
             status: 'processing',
-            result_url: resultUrl
+            transcript_id: transcriptId
         });
 
     } catch (error) {
-        console.error('[Gladia] Error:', error.message);
+        console.error('[AssemblyAI] Error:', error.message);
         return jsonResponse({
             error: `AI transcription failed: ${error.message}`
         }, 500);

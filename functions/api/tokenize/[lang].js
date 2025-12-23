@@ -98,12 +98,29 @@ function katakanaToHiragana(str) {
 }
 
 // ============================================================================
+// Caching Utilities
+// ============================================================================
+
+/**
+ * Simple hash function for cache keys (djb2 algorithm)
+ */
+function hashText(text) {
+    let hash = 5381;
+    for (let i = 0; i < text.length; i++) {
+        hash = ((hash << 5) + hash) + text.charCodeAt(i);
+        hash = hash >>> 0; // Convert to unsigned 32-bit
+    }
+    return hash.toString(36);
+}
+
+// ============================================================================
 // Main Handler
 // ============================================================================
 
 export async function onRequest(context) {
-    const { request, params } = context;
+    const { request, params, env } = context;
     const lang = params.lang;
+    const TOKEN_CACHE = env.TRANSCRIPT_CACHE; // Reuse same KV namespace
 
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
@@ -127,6 +144,19 @@ export async function onRequest(context) {
 
         if (!text || typeof text !== 'string') {
             return jsonResponse({ error: 'Missing or invalid "text" field' }, 400);
+        }
+
+        // Check cache first
+        const cacheKey = `tokens:${lang}:${hashText(text)}`;
+        if (TOKEN_CACHE) {
+            try {
+                const cached = await TOKEN_CACHE.get(cacheKey, 'json');
+                if (cached) {
+                    return jsonResponse(cached);
+                }
+            } catch (e) {
+                // Cache read failed, continue with tokenization
+            }
         }
 
         let tokens;
@@ -169,10 +199,24 @@ export async function onRequest(context) {
                 });
         }
 
-        return jsonResponse({ tokens });
+        const result = { tokens };
+
+        // Cache the result (30 days TTL)
+        if (TOKEN_CACHE) {
+            try {
+                await TOKEN_CACHE.put(cacheKey, JSON.stringify(result), {
+                    expirationTtl: 60 * 60 * 24 * 30
+                });
+            } catch (e) {
+                // Cache write failed, continue
+            }
+        }
+
+        return jsonResponse(result);
 
     } catch (error) {
         console.error(`[Tokenize ${lang.toUpperCase()}] Error:`, error);
         return errorResponse(error.message);
     }
 }
+

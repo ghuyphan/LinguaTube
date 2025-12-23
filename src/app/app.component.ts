@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { IconComponent } from './components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { VocabularyQuickViewComponent } from './components/vocabulary-quick-view/vocabulary-quick-view.component';
-import { YoutubeService } from './services';
+import { YoutubeService, I18nService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -42,7 +42,7 @@ import { YoutubeService } from './services';
             [class.active]="!anySheetOpen() && isRouteActive('/video')"
           >
             <app-icon name="play-circle" [size]="20" />
-            <span>Video</span>
+            <span>{{ i18n.t('nav.video') }}</span>
           </a>
           <button
             class="bottom-nav__item"
@@ -50,7 +50,7 @@ import { YoutubeService } from './services';
             (click)="toggleAddedSheet()"
           >
             <app-icon name="bookmark-plus" [size]="20" />
-            <span>Added</span>
+            <span>{{ i18n.t('nav.added') }}</span>
           </button>
           <a
             class="bottom-nav__item"
@@ -58,7 +58,7 @@ import { YoutubeService } from './services';
             [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
           >
             <app-icon name="book-open" [size]="20" />
-            <span>Words</span>
+            <span>{{ i18n.t('nav.words') }}</span>
           </a>
           <a
             class="bottom-nav__item"
@@ -66,7 +66,7 @@ import { YoutubeService } from './services';
             [class.active]="!anySheetOpen() && isRouteActive('/study')"
           >
             <app-icon name="graduation-cap" [size]="20" />
-            <span>Study</span>
+            <span>{{ i18n.t('nav.study') }}</span>
           </a>
           <button
             class="bottom-nav__item"
@@ -74,7 +74,7 @@ import { YoutubeService } from './services';
             (click)="toggleSettingsSheet()"
           >
             <app-icon name="settings" [size]="20" />
-            <span>Settings</span>
+            <span>{{ i18n.t('nav.settings') }}</span>
           </button>
         </div>
       </nav>
@@ -149,6 +149,7 @@ export class AppComponent {
   private platformId = inject(PLATFORM_ID);
   private youtube = inject(YoutubeService);
   private router = inject(Router);
+  i18n = inject(I18nService);
 
   showSettingsSheet = signal(false);
   showAddedSheet = signal(false);

@@ -166,15 +166,15 @@ export class TranscriptService {
   /**
    * Generate subtitles using Whisper AI
    */
-  generateWithWhisper(videoId: string, resultUrl?: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
+  generateWithWhisper(videoId: string, transcriptId?: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
     const cacheKey = `whisper:${videoId}:${lang}`;
 
-    if (!resultUrl && this.transcriptCache.has(cacheKey)) {
+    if (!transcriptId && this.transcriptCache.has(cacheKey)) {
       this.captionSource.set('ai');
       return of(this.transcriptCache.get(cacheKey)!);
     }
 
-    if (!resultUrl && this.pendingRequests.has(videoId)) {
+    if (!transcriptId && this.pendingRequests.has(videoId)) {
       return this.pendingRequests.get(videoId)!;
     }
 
@@ -184,13 +184,14 @@ export class TranscriptService {
 
     const request$ = this.http.post<any>('/api/whisper', {
       videoId,
-      ...(resultUrl && { result_url: resultUrl })
+      ...(transcriptId && { transcript_id: transcriptId })
     }).pipe(
       switchMap(response => {
-        if (response.status === 'processing' && response.result_url) {
+        // AssemblyAI returns transcript_id for polling
+        if (response.status === 'processing' && response.transcript_id) {
           console.log('[TranscriptService] AI processing... polling in 4s');
           return timer(4000).pipe(
-            switchMap(() => this.generateWithWhisper(videoId, response.result_url, lang))
+            switchMap(() => this.generateWithWhisper(videoId, response.transcript_id, lang))
           );
         }
 
@@ -224,7 +225,7 @@ export class TranscriptService {
       shareReplay(1)
     );
 
-    if (!resultUrl) {
+    if (!transcriptId) {
       this.pendingRequests.set(videoId, request$);
     }
 

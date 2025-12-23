@@ -1,5 +1,6 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { SubtitleCue, Token } from '../models';
+import { YoutubeService } from './youtube.service';
 
 // ============================================================================
 // Constants
@@ -16,6 +17,8 @@ const BATCH_SIZE = 50;
   providedIn: 'root'
 })
 export class SubtitleService {
+  private youtube = inject(YoutubeService);
+
   // State
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal(-1);
@@ -88,9 +91,12 @@ export class SubtitleService {
 
       console.log(`[SubtitleService] Tokenizing ${uniqueTexts.size} unique texts (${lang})`);
 
-      // Batch tokenize
+      // Get videoId for cache key - use batch endpoint
+      const videoId = this.youtube.currentVideo()?.id;
+
+      // Batch tokenize with single API call + single cache write
       const texts = Array.from(uniqueTexts.keys());
-      const results = await this.batchTokenize(texts, lang);
+      const results = await this.batchTokenize(texts, lang, videoId);
 
       // Distribute tokens to cues
       texts.forEach((text, i) => {
@@ -184,10 +190,33 @@ export class SubtitleService {
   // Private: Tokenization
   // ============================================================================
 
-  private async batchTokenize(texts: string[], lang: string): Promise<Token[][]> {
-    const results: Token[][] = [];
+  private async batchTokenize(texts: string[], lang: string, videoId?: string): Promise<Token[][]> {
     const signal = this.abortController?.signal;
 
+    // If we have a videoId, use the new batch endpoint (1 KV write)
+    if (videoId) {
+      try {
+        const response = await fetch(`/api/tokenize-batch/${lang}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ texts, videoId }),
+          signal
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.tokens && Array.isArray(data.tokens)) {
+            return data.tokens;
+          }
+        }
+      } catch (error) {
+        if ((error as Error).name === 'AbortError') throw error;
+        console.warn('[SubtitleService] Batch tokenize failed, falling back to individual');
+      }
+    }
+
+    // Fallback: individual tokenization (old approach)
+    const results: Token[][] = [];
     for (let i = 0; i < texts.length; i += BATCH_SIZE) {
       if (signal?.aborted) {
         throw new DOMException('Aborted', 'AbortError');
