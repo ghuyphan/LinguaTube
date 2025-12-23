@@ -63,30 +63,53 @@ export async function onRequestPost(context) {
 
             let audioUrl = getAudioUrl(videoData);
 
-            // Fallback: Try Piped API mirrors
+            // Fallback: Try diverse list of Piped and Invidious instances
             if (!audioUrl) {
-                log('Internal extraction failed, trying Piped API...');
-                const pipeds = [
-                    'https://pipedapi.kavin.rocks',
-                    'https://api.piped.otter.sh'
+                log('Internal extraction failed, trying external APIs...');
+                const mirrors = [
+                    { url: 'https://pipedapi.kavin.rocks/streams/', type: 'piped' },
+                    { url: 'https://inv.tux.pizza/api/v1/videos/', type: 'invidious' },
+                    { url: 'https://api.piped.otter.sh/streams/', type: 'piped' },
+                    { url: 'https://vid.puffyan.us/api/v1/videos/', type: 'invidious' },
+                    { url: 'https://invidious.drgns.space/api/v1/videos/', type: 'invidious' }
                 ];
 
-                for (const base of pipeds) {
+                for (const mirror of mirrors) {
                     try {
-                        const pipedRes = await fetch(`${base}/streams/${videoId}`);
-                        if (pipedRes.ok) {
-                            const pipedData = await pipedRes.json();
-                            const audioStreams = pipedData.audioStreams || [];
-                            const bestStream = audioStreams.sort((a, b) => b.bitrate - a.bitrate)[0];
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout per mirror
 
-                            if (bestStream) {
-                                audioUrl = bestStream.url;
-                                log(`Got audio URL from ${base}`);
-                                break;
+                        const res = await fetch(`${mirror.url}${videoId}`, {
+                            signal: controller.signal
+                        });
+                        clearTimeout(timeoutId);
+
+                        if (res.ok) {
+                            const data = await res.json();
+
+                            if (mirror.type === 'piped') {
+                                const streams = data.audioStreams || [];
+                                const best = streams.sort((a, b) => b.bitrate - a.bitrate)[0];
+                                if (best) {
+                                    audioUrl = best.url;
+                                    log(`Got audio from Piped (${mirror.url})`);
+                                    break;
+                                }
+                            } else if (mirror.type === 'invidious') {
+                                // Invidious returns adaptiveFormats
+                                const formats = data.adaptiveFormats || [];
+                                // Filter for audio-only mp4/webm
+                                const audioFormats = formats.filter(f => f.type.includes('audio'));
+                                const best = audioFormats.sort((a, b) => (parseInt(b.bitrate) || 0) - (parseInt(a.bitrate) || 0))[0];
+                                if (best) {
+                                    audioUrl = best.url;
+                                    log(`Got audio from Invidious (${mirror.url})`);
+                                    break;
+                                }
                             }
                         }
                     } catch (e) {
-                        log(`Piped ${base} failed:`, e.message);
+                        log(`${mirror.url} failed: ${e.message}`);
                     }
                 }
             }
