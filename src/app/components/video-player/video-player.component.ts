@@ -87,12 +87,13 @@ interface SeekPreview {
             
             <!-- Interaction Overlay Layer -->
             <div class="player-overlay">
-              <!-- Centered Feedback Elements -->
-              @if (playPauseFeedback()) {
+              <!-- Desktop: Centered Play/Pause Feedback -->
+              @if (!isTouchDevice && playPauseFeedback()) {
                 <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
                   <app-icon [name]="feedbackIconName()" [size]="48" />
                 </div>
               }
+              <!-- Centered Volume Feedback -->
               @if (volumeFeedback()) {
                 <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
                   <app-icon [name]="volumeFeedbackIcon()" [size]="48" />
@@ -100,10 +101,16 @@ interface SeekPreview {
               }
 
               <!-- Left Zone - Rewind -->
-              <div class="zone left" (click)="handleZoneTap(-10, $event)">
-                <div class="feedback-icon" [class.animate]="rewindFeedback()">
-                  <app-icon name="rewind" [size]="32" />
-                  <span>10s</span>
+              <div 
+                class="zone left" 
+                (touchend)="onZoneTouchEnd('left', $event)"
+                (click)="onZoneClick('left', $event)"
+              >
+                <div class="seek-feedback" [class.animate]="rewindFeedback()">
+                  <div class="seek-feedback-inner">
+                    <app-icon name="rewind" [size]="32" />
+                    <span class="seek-time">{{ seekAccumulator() }}s</span>
+                  </div>
                 </div>
                 @if (leftRipple()) {
                   <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
@@ -111,15 +118,24 @@ interface SeekPreview {
               </div>
               
               <!-- Center Zone - Play/Pause -->
-              <div class="zone center" (click)="handleCenterTap($event)" (dblclick)="handleCenterDoubleClick()">
+              <div 
+                class="zone center" 
+                (touchend)="onZoneTouchEnd('center', $event)"
+                (click)="onZoneClick('center', $event)"
+                (dblclick)="handleCenterDoubleClick()"
+              >
                 <!-- Mobile: Show big play/pause button when controls are visible -->
-                @if (isTouchDevice && areControlsVisible() && !playPauseFeedback()) {
-                  <div class="big-play-btn" (click)="onMobilePlayPauseClick($event)">
+                @if (isTouchDevice && areControlsVisible()) {
+                  <div 
+                    class="big-play-btn" 
+                    [class.pulse]="playPauseFeedback()"
+                    (touchend)="onPlayPauseButtonTouch($event)"
+                  >
                     <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="48" />
                   </div>
                 }
-                <!-- Desktop or when paused with controls hidden: show play button -->
-                @if (!isTouchDevice && !youtube.isPlaying() && !areControlsVisible() && !playPauseFeedback()) {
+                <!-- Desktop: show play button when paused and controls hidden -->
+                @if (!isTouchDevice && !youtube.isPlaying() && !areControlsVisible()) {
                   <div class="big-play-btn">
                     <app-icon name="play" [size]="48" />
                   </div>
@@ -127,10 +143,16 @@ interface SeekPreview {
               </div>
               
               <!-- Right Zone - Forward -->
-              <div class="zone right" (click)="handleZoneTap(10, $event)">
-                <div class="feedback-icon" [class.animate]="forwardFeedback()">
-                  <app-icon name="fast-forward" [size]="32" />
-                  <span>10s</span>
+              <div 
+                class="zone right" 
+                (touchend)="onZoneTouchEnd('right', $event)"
+                (click)="onZoneClick('right', $event)"
+              >
+                <div class="seek-feedback" [class.animate]="forwardFeedback()">
+                  <div class="seek-feedback-inner">
+                    <app-icon name="fast-forward" [size]="32" />
+                    <span class="seek-time">{{ seekAccumulator() }}s</span>
+                  </div>
                 </div>
                 @if (rightRipple()) {
                   <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
@@ -553,7 +575,25 @@ interface SeekPreview {
       align-items: center;
       justify-content: center;
       color: white;
-      animation: fadeIn 0.2s ease;
+      transition: transform 0.15s ease;
+    }
+
+    .big-play-btn.pulse {
+      animation: buttonPulse 0.3s ease-out;
+    }
+
+    @keyframes buttonPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+    .center-feedback {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
     }
 
     .play-pause-feedback {
@@ -566,14 +606,6 @@ interface SeekPreview {
       justify-content: center;
       color: white;
       pointer-events: none;
-    }
-
-    .center-feedback {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 15;
     }
 
     .play-pause-feedback.animate {
@@ -592,34 +624,47 @@ interface SeekPreview {
       to { opacity: 1; transform: scale(1); }
     }
 
-    .feedback-icon {
-      color: rgba(255, 255, 255, 0.9);
-      background: rgba(0, 0, 0, 0.5);
-      padding: 16px 20px;
-      border-radius: 50%;
+    /* YouTube-style seek feedback */
+    .seek-feedback {
+      position: absolute;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
+      pointer-events: none;
       opacity: 0;
       transform: scale(0.8);
-      pointer-events: none;
+      will-change: opacity, transform;
     }
 
-    .feedback-icon span {
-      font-size: 0.75rem;
+    .seek-feedback-inner {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 12px 20px;
+      border-radius: 48px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+
+    .seek-time {
+      font-size: 1rem;
       font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      min-width: 2.5ch;
     }
 
-    .feedback-icon.animate {
-      animation: flashFeedback 0.5s ease-out forwards;
+    .seek-feedback.animate {
+      animation: seekFeedbackPop 0.8s ease-out forwards;
     }
 
-    @keyframes flashFeedback {
-      0% { opacity: 0; transform: scale(0.8); }
-      20% { opacity: 1; transform: scale(1.1); }
-      80% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.9); }
+    @keyframes seekFeedbackPop {
+      0% { opacity: 0; transform: scale(0.6); }
+      15% { opacity: 1; transform: scale(1.05); }
+      30% { opacity: 1; transform: scale(1); }
+      85% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.95); }
     }
 
     .volume-feedback {
@@ -1618,6 +1663,9 @@ export class VideoPlayerComponent implements OnDestroy {
   rightRipple = signal(false);
   ripplePos = signal({ x: 0, y: 0 });
 
+  // YouTube-style cumulative seek
+  seekAccumulator = signal(10);
+
   // Volume feedback
   volumeFeedback = signal(false);
   volumeFeedbackIcon = signal<'volume-2' | 'volume-1' | 'volume-x'>('volume-2');
@@ -1627,11 +1675,13 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
-  private lastTapTime = 0;
-  private lastCenterTapTime = 0;
-  private tapTimeout: ReturnType<typeof setTimeout> | null = null;
-  private centerTapTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  // YouTube-style double-tap tracking
+  private lastTapTime: { left: number; right: number; center: number } = { left: 0, right: 0, center: 0 };
+  private seekResetTimeout: ReturnType<typeof setTimeout> | null = null;
+  private seekFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
   private readonly DOUBLE_TAP_DELAY = 300;
+
   private bufferedInterval: ReturnType<typeof setInterval> | null = null;
   private transcriptSubscription: Subscription | null = null;
 
@@ -1823,74 +1873,154 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private triggerFeedback(type: 'rewind' | 'forward') {
+    // Set accumulator to 10s for keyboard seek (no cumulative for keyboard)
+    this.seekAccumulator.set(10);
+
     if (type === 'rewind') {
       this.rewindFeedback.set(true);
-      setTimeout(() => this.rewindFeedback.set(false), 500);
+      setTimeout(() => this.rewindFeedback.set(false), 800);
     } else {
       this.forwardFeedback.set(true);
-      setTimeout(() => this.forwardFeedback.set(false), 500);
+      setTimeout(() => this.forwardFeedback.set(false), 800);
     }
   }
 
   // ============================================
-  // ZONE TAP HANDLING
+  // YOUTUBE-STYLE ZONE TAP HANDLING
   // ============================================
 
-  handleZoneTap(seconds: number, event?: Event) {
-    if (event) {
-      event.stopPropagation();
-    }
+  /**
+   * Handle touch end on zones (mobile).
+   * YouTube behavior: single tap toggles controls, double-tap seeks.
+   * The key insight: every first tap toggles controls immediately.
+   * If a second tap comes within 300ms, we also trigger seek.
+   */
+  onZoneTouchEnd(zone: 'left' | 'center' | 'right', event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-    if (!this.isTouchDevice) {
-      this.togglePlay();
+    if (!this.isTouchDevice) return;
+
+    const now = Date.now();
+    const lastTap = this.lastTapTime[zone];
+    const isDoubleTap = now - lastTap < this.DOUBLE_TAP_DELAY && lastTap > 0;
+
+    // Update last tap time for this zone
+    this.lastTapTime[zone] = now;
+
+    if (zone === 'center') {
+      // Center zone: just toggle controls, no seeking
+      this.toggleControlsVisibility();
       return;
     }
 
-    const currentTime = Date.now();
-    const tapLength = currentTime - this.lastTapTime;
-
-    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
-      if (this.tapTimeout) clearTimeout(this.tapTimeout);
-      this.seekRelative(seconds);
-      this.triggerFeedback(seconds < 0 ? 'rewind' : 'forward');
-
-      if (seconds < 0) {
-        this.leftRipple.set(true);
-        setTimeout(() => this.leftRipple.set(false), 600);
-      } else {
-        this.rightRipple.set(true);
-        setTimeout(() => this.rightRipple.set(false), 600);
-      }
+    // Left or right zone
+    if (isDoubleTap) {
+      // Double-tap: seek and show cumulative feedback
+      this.handleDoubleTapSeek(zone, event as TouchEvent);
     } else {
-      // Single tap - toggle controls
-      if (this.areControlsVisible()) {
-        this.areControlsVisible.set(false);
-      } else {
-        this.showControls();
-      }
+      // First tap: toggle controls immediately
+      this.toggleControlsVisibility();
     }
-
-    this.lastTapTime = currentTime;
   }
 
-  handleCenterTap(event?: Event) {
-    if (event) {
-      event.stopPropagation();
-    }
-
-    if (!this.isTouchDevice) {
-      // Desktop: single click toggles play
-      this.togglePlay();
+  /**
+   * Handle click on zones (desktop).
+   * Desktop: single click toggles play.
+   */
+  onZoneClick(zone: 'left' | 'center' | 'right', event: Event) {
+    if (this.isTouchDevice) {
+      // Touch device - clicks are handled by touchend
       return;
     }
 
-    // Mobile: Toggle controls visibility immediately
-    // Removed double-tap-to-fullscreen on center to ensure snappy control toggling
+    event.stopPropagation();
+    this.togglePlay();
+  }
+
+  /**
+   * Toggle controls visibility with smooth transition
+   */
+  private toggleControlsVisibility() {
     if (this.areControlsVisible()) {
       this.areControlsVisible.set(false);
     } else {
       this.showControls();
     }
+  }
+
+  /**
+   * Handle double-tap seek with YouTube-style cumulative feedback
+   */
+  private handleDoubleTapSeek(zone: 'left' | 'right', event: TouchEvent) {
+    const seconds = zone === 'left' ? -10 : 10;
+
+    // Cumulative seek: if tapping rapidly, accumulate the seek amount
+    if (this.seekFeedbackTimeout) {
+      clearTimeout(this.seekFeedbackTimeout);
+      // Add to accumulator
+      this.seekAccumulator.update(v => v + 10);
+    } else {
+      // Reset accumulator for new seek sequence
+      this.seekAccumulator.set(10);
+    }
+
+    // Perform the seek
+    this.seekRelative(seconds);
+
+    // Show visual feedback
+    this.triggerSeekFeedback(zone);
+
+    // Show ripple at touch position
+    if (event.changedTouches && event.changedTouches.length > 0) {
+      const touch = event.changedTouches[0];
+      const target = event.currentTarget as HTMLElement;
+      if (target) {
+        const rect = target.getBoundingClientRect();
+        this.ripplePos.set({
+          x: touch.clientX - rect.left,
+          y: touch.clientY - rect.top
+        });
+      }
+    }
+
+    if (zone === 'left') {
+      this.leftRipple.set(true);
+      setTimeout(() => this.leftRipple.set(false), 600);
+    } else {
+      this.rightRipple.set(true);
+      setTimeout(() => this.rightRipple.set(false), 600);
+    }
+
+    // Reset seek feedback after animation completes
+    this.seekFeedbackTimeout = setTimeout(() => {
+      this.seekFeedbackTimeout = null;
+      this.rewindFeedback.set(false);
+      this.forwardFeedback.set(false);
+    }, 800);
+
+    // Also show controls (briefly) when seeking
+    this.showControls();
+  }
+
+  /**
+   * Trigger seek feedback animation
+   */
+  private triggerSeekFeedback(zone: 'left' | 'right') {
+    if (zone === 'left') {
+      this.rewindFeedback.set(true);
+    } else {
+      this.forwardFeedback.set(true);
+    }
+  }
+
+  /**
+   * Handle touch on play/pause button - stop propagation so zone handler doesn't fire
+   */
+  onPlayPauseButtonTouch(event: Event) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.togglePlay();
   }
 
   // Mobile: explicit play/pause button click
@@ -2321,11 +2451,11 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.bufferedInterval) {
       clearInterval(this.bufferedInterval);
     }
-    if (this.tapTimeout) {
-      clearTimeout(this.tapTimeout);
+    if (this.seekFeedbackTimeout) {
+      clearTimeout(this.seekFeedbackTimeout);
     }
-    if (this.centerTapTimeout) {
-      clearTimeout(this.centerTapTimeout);
+    if (this.seekResetTimeout) {
+      clearTimeout(this.seekResetTimeout);
     }
     this.youtube.destroy();
   }
