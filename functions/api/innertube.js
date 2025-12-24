@@ -5,11 +5,19 @@
  *
  * Strategy:
  *   Tier 0: Cache (instant)
- *   Tier 1: Race all YouTube methods in parallel (first success wins)
+ *   Tier 1: Race all YouTube methods with staggered starts (first success wins)
  *   Tier 2: Race third-party APIs (fallback)
  *   Tier 3: Apify (paid last resort)
  *
- * @version 8.0.0
+ * Features:
+ *   - Circuit breaker: Skip strategies that fail repeatedly
+ *   - Telemetry: Log timing and success/failure for each strategy
+ *   - Dynamic client versions: Auto-update from YouTube
+ *   - Prioritized racing: Fast strategies get head start
+ *   - Error categorization: Distinguish permanent vs transient failures
+ *   - Health check: GET endpoint for monitoring
+ *
+ * @version 9.0.0
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -24,6 +32,7 @@ import { getSubtitles } from 'youtube-caption-extractor';
 const DEBUG = true;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
+const CLIENT_VERSION_CACHE_TTL = 60 * 60 * 24; // 24 hours
 
 const TIMEOUT = {
     tier1: 8000,      // YouTube strategies race
@@ -31,12 +40,25 @@ const TIMEOUT = {
     caption: 3000,    // Individual caption fetch
 };
 
-// Innertube clients (Jan 2025)
+// Staggered start delays (ms) - faster strategies start first
+const STAGGER = {
+    captionExtractor: 0,    // Fastest, most reliable - starts immediately
+    innertube: 200,         // Delay slightly
+    scrape: 400,            // Slowest - delay more
+};
+
+// Circuit breaker settings
+const CIRCUIT = {
+    failureThreshold: 3,    // Open circuit after N failures
+    resetTimeout: 300000,   // 5 minutes
+};
+
+// Innertube clients (versions auto-updated)
 const CLIENTS = [
     {
         name: 'WEB',
         clientName: 'WEB',
-        clientVersion: '2.20250120.01.00',
+        clientVersion: '2.20250120.01.00', // Fallback, auto-updated
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         clientId: '1'
     },
@@ -63,11 +85,171 @@ const PIPED_INSTANCES = [
 ];
 
 // ============================================================================
+// Error Classes
+// ============================================================================
+
+/**
+ * Permanent errors that should not trigger circuit breaker
+ * (e.g., age-restricted, video unavailable - not strategy failures)
+ */
+class PermanentError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = 'PermanentError';
+        this.permanent = true;
+    }
+}
+
+// ============================================================================
+// Circuit Breaker
+// ============================================================================
+
+/**
+ * Circuit breaker to skip strategies that fail repeatedly
+ */
+class CircuitBreaker {
+    constructor() {
+        this.states = new Map();
+    }
+
+    isOpen(strategy) {
+        const state = this.states.get(strategy);
+        if (!state) return false;
+
+        // Check if circuit should reset
+        if (Date.now() - state.lastFailure > CIRCUIT.resetTimeout) {
+            this.states.delete(strategy);
+            return false;
+        }
+
+        return state.failures >= CIRCUIT.failureThreshold;
+    }
+
+    recordFailure(strategy, error) {
+        // Don't count permanent errors as strategy failures
+        if (error?.permanent) return;
+
+        const state = this.states.get(strategy) || { failures: 0, lastFailure: 0 };
+        state.failures++;
+        state.lastFailure = Date.now();
+        this.states.set(strategy, state);
+        log(`Circuit [${strategy}]: ${state.failures} failures`);
+    }
+
+    recordSuccess(strategy) {
+        if (this.states.has(strategy)) {
+            log(`Circuit [${strategy}]: reset`);
+            this.states.delete(strategy);
+        }
+    }
+
+    getStatus() {
+        const status = {};
+        for (const [strategy, state] of this.states) {
+            status[strategy] = {
+                failures: state.failures,
+                isOpen: this.isOpen(strategy),
+                resetIn: Math.max(0, CIRCUIT.resetTimeout - (Date.now() - state.lastFailure))
+            };
+        }
+        return status;
+    }
+}
+
+const circuitBreaker = new CircuitBreaker();
+
+// ============================================================================
 // Helpers
 // ============================================================================
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
+const delay = ms => new Promise(r => setTimeout(r, ms));
+
+/**
+ * Wrap a strategy promise with telemetry and circuit breaker
+ */
+async function trackStrategy(name, promiseFn) {
+    // Check if circuit is open
+    if (circuitBreaker.isOpen(name)) {
+        log(`[Telemetry] ${name}: skipped (circuit open)`);
+        throw new Error('circuit open');
+    }
+
+    const start = Date.now();
+    try {
+        const result = await promiseFn();
+        const duration = Date.now() - start;
+        log(`[Telemetry] ${name}: success in ${duration}ms`);
+        circuitBreaker.recordSuccess(name);
+        return result;
+    } catch (error) {
+        const duration = Date.now() - start;
+        log(`[Telemetry] ${name}: failed (${error.message}) in ${duration}ms`);
+        circuitBreaker.recordFailure(name, error);
+        throw error;
+    }
+}
+
+/**
+ * Fetch current YouTube client version (cached for 24h)
+ */
+async function getCurrentClientVersion(cache) {
+    const cacheKey = 'yt:client-version';
+
+    // Try cache first
+    if (cache) {
+        try {
+            const cached = await cache.get(cacheKey);
+            if (cached) {
+                log(`Client version from cache: ${cached}`);
+                return cached;
+            }
+        } catch { /* ignore */ }
+    }
+
+    // Fetch from YouTube homepage
+    try {
+        const res = await fetch('https://www.youtube.com/', {
+            headers: {
+                'User-Agent': CLIENTS[0].userAgent,
+                'Accept': 'text/html'
+            }
+        });
+
+        if (res.ok) {
+            const html = await res.text();
+            const match = html.match(/"INNERTUBE_CLIENT_VERSION":"([^"]+)"/);
+            if (match?.[1]) {
+                const version = match[1];
+                log(`Client version from YouTube: ${version}`);
+
+                // Cache it
+                if (cache) {
+                    await cache.put(cacheKey, version, { expirationTtl: CLIENT_VERSION_CACHE_TTL }).catch(() => { });
+                }
+                return version;
+            }
+        }
+    } catch (e) {
+        log(`Failed to fetch client version: ${e.message}`);
+    }
+
+    // Return fallback
+    return CLIENTS[0].clientVersion;
+}
+
+/**
+ * Get clients with dynamically updated versions
+ */
+async function getClientsWithUpdatedVersion(cache) {
+    const currentVersion = await getCurrentClientVersion(cache);
+
+    return CLIENTS.map(client => ({
+        ...client,
+        clientVersion: client.name === 'TV' ? client.clientVersion : currentVersion
+    }));
+}
 
 // Race promises, return first success or null if all fail
 async function raceForSuccess(promises, timeoutMs, label) {
@@ -93,8 +275,81 @@ async function raceForSuccess(promises, timeoutMs, label) {
 // Request Handlers
 // ============================================================================
 
-export const onRequestOptions = () => handleOptions(['POST', 'OPTIONS']);
+export const onRequestOptions = () => handleOptions(['GET', 'POST', 'OPTIONS']);
 
+/**
+ * Health check endpoint - GET /api/innertube
+ * Tests all strategies and returns their status
+ */
+export async function onRequestGet(context) {
+    const { env } = context;
+    const testVideoId = 'dQw4w9WgXcQ'; // Never gonna give you up - reliable test video
+    const testLangs = ['en'];
+    const cache = env.TRANSCRIPT_CACHE;
+
+    const elapsed = timer();
+    const results = {};
+
+    // Get updated clients
+    let clients;
+    try {
+        clients = await getClientsWithUpdatedVersion(cache);
+        results.clientVersion = clients[0].clientVersion;
+    } catch (e) {
+        clients = CLIENTS;
+        results.clientVersion = CLIENTS[0].clientVersion + ' (fallback)';
+    }
+
+    // Test each strategy with timeout
+    const testWithTimeout = async (name, fn, timeout = 5000) => {
+        const start = Date.now();
+        try {
+            const result = await Promise.race([
+                fn(),
+                new Promise((_, r) => setTimeout(() => r(new Error('timeout')), timeout))
+            ]);
+            return {
+                status: result ? 'ok' : 'empty',
+                duration: Date.now() - start,
+                circuitOpen: circuitBreaker.isOpen(name)
+            };
+        } catch (e) {
+            return {
+                status: 'error',
+                error: e.message,
+                duration: Date.now() - start,
+                circuitOpen: circuitBreaker.isOpen(name)
+            };
+        }
+    };
+
+    // Test strategies in parallel
+    const [captionExtractor, innertubeWeb, pipedKavin] = await Promise.all([
+        testWithTimeout('caption-extractor', () => tryCaptionExtractor(testVideoId, testLangs)),
+        testWithTimeout('innertube:WEB', () => tryInnertube(testVideoId, env.INNERTUBE_API_KEY, clients[0], testLangs)),
+        testWithTimeout('piped:kavin', () => tryPiped(testVideoId, testLangs, PIPED_INSTANCES[0]))
+    ]);
+
+    results.strategies = {
+        'caption-extractor': captionExtractor,
+        'innertube:WEB': innertubeWeb,
+        'piped:kavin': pipedKavin
+    };
+
+    results.circuitBreaker = circuitBreaker.getStatus();
+    results.timing = elapsed();
+    results.timestamp = new Date().toISOString();
+
+    // Determine overall health
+    const anyWorking = Object.values(results.strategies).some(s => s.status === 'ok');
+    const statusCode = anyWorking ? 200 : 503;
+
+    return jsonResponse(results, statusCode);
+}
+
+/**
+ * Main transcript endpoint - POST /api/innertube
+ */
 export async function onRequestPost(context) {
     const { request, env } = context;
     const elapsed = timer();
@@ -130,25 +385,43 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // Tier 1: Race ALL YouTube methods in parallel
+        // Get updated client versions
+        // =====================================================================
+        const clients = await getClientsWithUpdatedVersion(cache);
+
+        // =====================================================================
+        // Tier 1: Race YouTube methods with STAGGERED STARTS
+        // Fast strategies get a head start, slower ones join if needed
         // =====================================================================
         const tier1Promises = [
-            // youtube-caption-extractor
-            tryCaptionExtractor(videoId, targetLanguages)
-                .then(r => r ? { ...r, source: 'caption-extractor' } : Promise.reject(new Error('no result'))),
-
-            // Innertube clients
-            ...CLIENTS.map(client =>
-                tryInnertube(videoId, apiKey, client, targetLanguages)
-                    .then(r => r ? { ...r, source: `innertube:${client.name}` } : Promise.reject(new Error('no result')))
+            // Caption extractor - starts immediately (fastest, most reliable)
+            delay(STAGGER.captionExtractor).then(() =>
+                trackStrategy('caption-extractor', () =>
+                    tryCaptionExtractor(videoId, targetLanguages)
+                        .then(r => r ? { ...r, source: 'caption-extractor' } : Promise.reject(new Error('no result')))
+                )
             ),
 
-            // Watch page scrape
-            tryScrape(videoId, targetLanguages)
-                .then(r => r ? { ...r, source: 'scrape' } : Promise.reject(new Error('no result')))
+            // Innertube clients - delayed start
+            ...clients.map(client =>
+                delay(STAGGER.innertube).then(() =>
+                    trackStrategy(`innertube:${client.name}`, () =>
+                        tryInnertube(videoId, apiKey, client, targetLanguages)
+                            .then(r => r ? { ...r, source: `innertube:${client.name}` } : Promise.reject(new Error('no result')))
+                    )
+                )
+            ),
+
+            // Watch page scrape - most delayed (slowest)
+            delay(STAGGER.scrape).then(() =>
+                trackStrategy('scrape', () =>
+                    tryScrape(videoId, targetLanguages)
+                        .then(r => r ? { ...r, source: 'scrape' } : Promise.reject(new Error('no result')))
+                )
+            )
         ];
 
-        log(`Tier 1: Racing ${tier1Promises.length} YouTube strategies...`);
+        log(`Tier 1: Racing ${tier1Promises.length} YouTube strategies (staggered)...`);
         const tier1Result = await raceForSuccess(tier1Promises, TIMEOUT.tier1, 'Tier1');
 
         if (tier1Result) {
@@ -160,9 +433,11 @@ export async function onRequestPost(context) {
         // =====================================================================
         // Tier 2: Race third-party APIs
         // =====================================================================
-        const tier2Promises = PIPED_INSTANCES.map(instance =>
-            tryPiped(videoId, targetLanguages, instance)
-                .then(r => r ? { ...r, source: `piped:${new URL(instance).hostname}` } : Promise.reject(new Error('no result')))
+        const tier2Promises = PIPED_INSTANCES.map((instance, i) =>
+            trackStrategy(`piped:${new URL(instance).hostname}`, () =>
+                tryPiped(videoId, targetLanguages, instance)
+                    .then(r => r ? { ...r, source: `piped:${new URL(instance).hostname}` } : Promise.reject(new Error('no result')))
+            )
         );
 
         log(`Tier 2: Racing ${tier2Promises.length} Piped instances...`);
@@ -175,12 +450,14 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // Tier 3: Apify (paid, sequential - no racing needed)
+        // Tier 3: Apify (paid, with telemetry)
         // =====================================================================
         if (env.APIFY_API_KEY) {
             log('Tier 3: Trying Apify...');
             try {
-                const apifyResult = await tryApify(videoId, targetLanguages, env.APIFY_API_KEY);
+                const apifyResult = await trackStrategy('apify', () =>
+                    tryApify(videoId, targetLanguages, env.APIFY_API_KEY)
+                );
                 if (apifyResult) {
                     log(`Apify success (${elapsed()}ms)`);
                     saveToCache(cache, db, videoId, primaryLang, apifyResult.data, 'apify');
@@ -200,6 +477,7 @@ export async function onRequestPost(context) {
             captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } },
             source: 'none',
             warning: 'No captions available',
+            circuitBreaker: circuitBreaker.getStatus(),
             timing: elapsed()
         });
 
@@ -314,8 +592,8 @@ async function tryInnertube(videoId, apiKey, client, langs) {
     const data = await res.json();
 
     const status = data.playabilityStatus?.status;
-    if (status === 'LOGIN_REQUIRED') throw new Error('Age-restricted');
-    if (status === 'ERROR' || status === 'UNPLAYABLE') throw new Error('Unavailable');
+    if (status === 'LOGIN_REQUIRED') throw new PermanentError('Age-restricted');
+    if (status === 'ERROR' || status === 'UNPLAYABLE') throw new PermanentError('Video unavailable');
 
     const tracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
     if (!tracks?.length) throw new Error('No captions');
