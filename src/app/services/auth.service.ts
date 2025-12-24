@@ -1,4 +1,4 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, NgZone, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
@@ -16,6 +16,7 @@ export interface UserProfile {
 })
 export class AuthService {
     private readonly STORAGE_KEY = 'linguatube_user';
+    private ngZone = inject(NgZone);
 
     readonly user = signal<UserProfile | null>(null);
     readonly isLoggedIn = computed(() => this.user() !== null);
@@ -57,10 +58,16 @@ export class AuthService {
             if (typeof google !== 'undefined' && google.accounts) {
                 google.accounts.id.initialize({
                     client_id: this.clientId,
-                    callback: (response: any) => this.handleCredentialResponse(response),
-                    auto_select: false, // Don't auto-select, let user click button
+                    callback: (response: any) => {
+                        console.log('[Auth] Google callback received', response);
+                        this.ngZone.run(() => {
+                            this.handleCredentialResponse(response);
+                        });
+                    },
+                    auto_select: false,
                     cancel_on_tap_outside: true
                 });
+                console.log('[Auth] Google Identity initialized');
             } else {
                 setTimeout(checkAndInit, 100);
             }
@@ -113,7 +120,14 @@ export class AuthService {
      */
     private handleCredentialResponse(response: any): void {
         try {
+            console.log('[Auth] Handling credential response...');
+            if (!response.credential) {
+                console.error('[Auth] No credential in response');
+                return;
+            }
+
             const payload = this.decodeJwt(response.credential);
+            console.log('[Auth] Decoded payload:', payload);
 
             const profile: UserProfile = {
                 id: payload.sub,
@@ -122,6 +136,7 @@ export class AuthService {
                 picture: payload.picture
             };
 
+            console.log('[Auth] Setting user profile:', profile);
             this.user.set(profile);
             localStorage.setItem(this.STORAGE_KEY, JSON.stringify(profile));
 

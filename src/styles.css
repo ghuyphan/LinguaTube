@@ -798,8 +798,12 @@ html,
 body {
   overflow-x: hidden;
   width: 100%;
-  max-width: 100%;
-  position: relative;
+}
+
+/* Ensure Google One Tap / Sign In iframe is above bottom sheets (z-index 10000) */
+#credential_picker_container,
+.google-one-tap-modal-div {
+  z-index: 20000 !important;
 }
 
 .app {
@@ -1024,4 +1028,10 @@ body {
 /* Input with Icon */
 .input-with-icon {
   padding-left: 40px;
+}
+/* Google One Tap Sign-in Index Fix */
+/* Ensure the Google credential picker appears above the settings sheet (z-index: 1000) */
+#credential_picker_container {
+  z-index: 10001 !important;
+  position: fixed !important; 
 }
