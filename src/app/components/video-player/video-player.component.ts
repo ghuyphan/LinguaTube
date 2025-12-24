@@ -71,7 +71,8 @@ interface SeekPreview {
           [class.is-fullscreen]="isFullscreen()"
           (mousemove)="onUserActivity()" 
           (click)="onUserActivity()"
-          (touchstart)="onUserActivity()"
+          (click)="onUserActivity()"
+          (mouseleave)="onMouseLeave()"
           (mouseleave)="onMouseLeave()"
         >
           <div class="video-embed-ratio">
@@ -88,7 +89,7 @@ interface SeekPreview {
             }
             
             <!-- Interaction Overlay Layer -->
-            <div class="player-overlay" (touchstart)="onUserActivity()">
+            <div class="player-overlay">
               <!-- Centered Feedback Elements -->
               @if (playPauseFeedback()) {
                 <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
@@ -102,7 +103,7 @@ interface SeekPreview {
               }
 
               <!-- Left Zone - Rewind -->
-              <div class="zone left" (click)="handleZoneTap(-10)">
+              <div class="zone left" (click)="handleZoneTap(-10, $event)">
                 <div class="feedback-icon" [class.animate]="rewindFeedback()">
                   <app-icon name="rewind" [size]="32" />
                   <span>10s</span>
@@ -113,7 +114,7 @@ interface SeekPreview {
               </div>
               
               <!-- Center Zone - Play/Pause -->
-              <div class="zone center" (click)="handleCenterTap()" (dblclick)="handleCenterDoubleClick()">
+              <div class="zone center" (click)="handleCenterTap($event)" (dblclick)="handleCenterDoubleClick()">
                 <!-- Mobile: Show big play/pause button when controls are visible -->
                 @if (isTouchDevice && areControlsVisible() && !playPauseFeedback()) {
                   <div class="big-play-btn" (click)="onMobilePlayPauseClick($event)">
@@ -129,7 +130,7 @@ interface SeekPreview {
               </div>
               
               <!-- Right Zone - Forward -->
-              <div class="zone right" (click)="handleZoneTap(10)">
+              <div class="zone right" (click)="handleZoneTap(10, $event)">
                 <div class="feedback-icon" [class.animate]="forwardFeedback()">
                   <app-icon name="fast-forward" [size]="32" />
                   <span>10s</span>
@@ -450,7 +451,10 @@ interface SeekPreview {
     .video-container.is-fullscreen {
       position: fixed;
       inset: 0;
+      width: 100vw;
+      height: 100vh;
       z-index: 9998;
+      background: black;
       border-radius: 0;
     }
 
@@ -514,7 +518,9 @@ interface SeekPreview {
       height: 100%;
       z-index: 10;
       display: flex;
+      display: flex;
       -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
     .zone {
@@ -578,7 +584,7 @@ interface SeekPreview {
     }
 
     @keyframes playPausePop {
-      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
       30% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
       60% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
       100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
@@ -613,10 +619,10 @@ interface SeekPreview {
     }
 
     @keyframes flashFeedback {
-      0% { opacity: 0; transform: scale(0.5); }
+      0% { opacity: 0; transform: scale(0.8); }
       20% { opacity: 1; transform: scale(1.1); }
       80% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 0; transform: scale(0.9); }
     }
 
     .volume-feedback {
@@ -636,10 +642,10 @@ interface SeekPreview {
     }
 
     @keyframes volumePop {
-      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
       80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-      100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
     }
 
     .ripple-effect {
@@ -649,7 +655,7 @@ interface SeekPreview {
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.3);
       transform: translate(-50%, -50%) scale(0);
-      animation: ripple 0.6s ease-out forwards;
+      animation: ripple 0.6s cubic-bezier(0, 0, 0.2, 1) forwards;
       pointer-events: none;
     }
 
@@ -706,6 +712,12 @@ interface SeekPreview {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+    }
+
+    .is-fullscreen .custom-controls {
+      padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+      padding-left: max(var(--space-md), env(safe-area-inset-left));
+      padding-right: max(var(--space-md), env(safe-area-inset-right));
     }
 
     /* ============================================
@@ -1313,7 +1325,15 @@ interface SeekPreview {
       }
 
       .player-overlay {
-        height: calc(100% - 50px);
+        height: 100%;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+      }
+      
+      .is-fullscreen .player-overlay {
+        padding-bottom: max(50px, env(safe-area-inset-bottom));
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
       }
 
       .zone.left, .zone.right {
@@ -1391,6 +1411,7 @@ interface SeekPreview {
         max-width: 95%;
         width: 95%;
         padding: 0;
+        padding-bottom: env(safe-area-inset-bottom);
       }
 
       .fullscreen-subtitle.controls-visible {
@@ -1437,6 +1458,11 @@ interface SeekPreview {
       .video-container {
         margin: 0 calc(var(--space-md) * -1);
         width: calc(100% + var(--space-md) * 2);
+      }
+      
+      .is-fullscreen.video-container {
+        margin: 0;
+        width: 100%;
       }
 
       .big-play-btn {
@@ -1813,7 +1839,11 @@ export class VideoPlayerComponent implements OnDestroy {
   // ZONE TAP HANDLING
   // ============================================
 
-  handleZoneTap(seconds: number) {
+  handleZoneTap(seconds: number, event?: Event) {
+    if (event) {
+      event.stopPropagation();
+    }
+
     if (!this.isTouchDevice) {
       this.togglePlay();
       return;
@@ -1835,43 +1865,35 @@ export class VideoPlayerComponent implements OnDestroy {
         setTimeout(() => this.rightRipple.set(false), 600);
       }
     } else {
-      this.tapTimeout = setTimeout(() => {
+      // Single tap - toggle controls
+      if (this.areControlsVisible()) {
+        this.areControlsVisible.set(false);
+      } else {
         this.showControls();
-      }, this.DOUBLE_TAP_DELAY);
+      }
     }
 
     this.lastTapTime = currentTime;
   }
 
-  handleCenterTap() {
+  handleCenterTap(event?: Event) {
+    if (event) {
+      event.stopPropagation();
+    }
+
     if (!this.isTouchDevice) {
       // Desktop: single click toggles play
       this.togglePlay();
       return;
     }
 
-    // Mobile: Implement YouTube-like behavior
-    // Single tap toggles controls visibility
-    // Double tap triggers fullscreen
-    const currentTime = Date.now();
-    const tapLength = currentTime - this.lastCenterTapTime;
-
-    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
-      // Double tap - toggle fullscreen
-      if (this.centerTapTimeout) clearTimeout(this.centerTapTimeout);
-      this.toggleFullscreen();
+    // Mobile: Toggle controls visibility immediately
+    // Removed double-tap-to-fullscreen on center to ensure snappy control toggling
+    if (this.areControlsVisible()) {
+      this.areControlsVisible.set(false);
     } else {
-      // Single tap - toggle controls visibility
-      this.centerTapTimeout = setTimeout(() => {
-        if (this.areControlsVisible()) {
-          this.areControlsVisible.set(false);
-        } else {
-          this.showControls();
-        }
-      }, this.DOUBLE_TAP_DELAY);
+      this.showControls();
     }
-
-    this.lastCenterTapTime = currentTime;
   }
 
   // Mobile: explicit play/pause button click
@@ -1993,13 +2015,23 @@ export class VideoPlayerComponent implements OnDestroy {
     if (!container) return;
 
     try {
-      if (this.isFullscreen()) {
+      if (this.document.fullscreenElement) {
         await this.document.exitFullscreen();
+        if (screen.orientation && 'unlock' in screen.orientation) {
+          try { (screen.orientation as any).unlock(); } catch { }
+        }
       } else {
         await container.requestFullscreen();
+        if (screen.orientation && 'lock' in screen.orientation) {
+          try { await (screen.orientation as any).lock('landscape'); } catch { }
+        }
       }
     } catch (err) {
-      console.warn('Fullscreen not supported:', err);
+      console.warn('Fullscreen API not supported or failed, falling back to CSS fullscreen:', err);
+      // Fallback for iOS/unsupported browsers: toggle state manually
+      const newState = !this.isFullscreen();
+      this.isFullscreen.set(newState);
+      this.fullscreenChanged.emit(newState);
     }
   }
 

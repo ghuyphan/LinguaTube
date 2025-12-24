@@ -340,6 +340,8 @@ interface StudyCard {
       min-height: 300px;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
+      display: grid;
+      grid-template-areas: "card";
     }
 
     .flashcard.flipped .flashcard__inner {
@@ -348,7 +350,7 @@ interface StudyCard {
 
     .flashcard__front,
     .flashcard__back {
-      position: absolute;
+      grid-area: card;
       width: 100%;
       min-height: 300px;
       backface-visibility: hidden;
@@ -361,6 +363,8 @@ interface StudyCard {
       border-radius: var(--border-radius-lg);
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
+      /* Ensure background covers transparency */
+      background-color: var(--bg-card); 
     }
 
     .flashcard__back {

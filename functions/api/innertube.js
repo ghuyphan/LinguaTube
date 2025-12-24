@@ -12,6 +12,7 @@
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
+import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
 import { getSubtitles, getVideoDetails } from 'youtube-caption-extractor';
 
 // ============================================================================
@@ -105,7 +106,9 @@ export async function onRequestPost(context) {
             return errorResponse('INNERTUBE_API_KEY not configured', 500);
         }
         const cache = env.TRANSCRIPT_CACHE;
+        const db = env.VOCAB_DB; // D1 for persistent storage
         const cacheKey = `captions:v7:${videoId}`;
+        const primaryLang = targetLanguages[0] || 'ja';
 
         // =====================================================================
         // Tier 0: Cache (instant) - Check BOTH caption and AI transcript caches
@@ -141,6 +144,27 @@ export async function onRequestPost(context) {
             } catch (e) {
                 log('AI cache check failed:', e.message);
             }
+
+            // Tier 0.5: Check D1 database (permanent storage)
+            const d1Result = await getTranscript(db, videoId, primaryLang);
+            if (d1Result?.segments?.length > 0) {
+                log(`D1 hit for ${videoId}:${d1Result.language} (${timer()}ms)`);
+                const response = {
+                    captions: {
+                        playerCaptionsTracklistRenderer: {
+                            captionTracks: [{
+                                languageCode: d1Result.language,
+                                content: d1Result.segments
+                            }]
+                        }
+                    },
+                    source: `d1:${d1Result.source}`,
+                    timing: timer()
+                };
+                // Warm KV cache (non-blocking)
+                cacheResult(cache, cacheKey, response).catch(() => { });
+                return jsonResponse(response);
+            }
         }
 
 
@@ -153,6 +177,14 @@ export async function onRequestPost(context) {
             log(`YouTube success via ${youtubeResult.source} (${timer()}ms)`);
             if (youtubeResult.hasContent && cache && !metadataOnly) {
                 cacheResult(cache, cacheKey, youtubeResult.data); // Don't await
+            }
+            // Save to D1 (non-blocking)
+            const tracks = youtubeResult.data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+            if (tracks?.length > 0 && db) {
+                const track = tracks.find(t => t.languageCode === primaryLang) || tracks[0];
+                if (track?.content?.length > 0) {
+                    saveTranscript(db, videoId, track.languageCode, track.content, 'youtube').catch(() => { });
+                }
             }
             return jsonResponse({
                 ...youtubeResult.data,

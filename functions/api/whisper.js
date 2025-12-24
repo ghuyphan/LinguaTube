@@ -6,12 +6,14 @@
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
+import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
 const INITIAL_DELAY_MS = 1000;
 const MAX_DELAY_MS = 5000;
 const FETCH_TIMEOUT_MS = 10000;
+const PENDING_CACHE_TTL = 300; // 5 minutes for pending jobs
 
 function log(...args) {
     if (DEBUG) console.log('[Gladia]', ...args);
@@ -68,6 +70,7 @@ async function incrementRateLimit(cache, clientIP) {
 export async function onRequestPost(context) {
     const { request, env } = context;
     const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE;
+    const db = env.VOCAB_DB; // D1 for persistent storage
 
     try {
         const body = await request.json();
@@ -90,49 +93,94 @@ export async function onRequestPost(context) {
             // Check cache first (only for new requests)
             if (TRANSCRIPT_CACHE) {
                 try {
+                    // 1. Check completed transcripts
                     const cached = await TRANSCRIPT_CACHE.get(`transcript:v4:${videoId}`, 'json');
                     if (cached) {
                         log('Cache hit for', videoId);
                         return jsonResponse(cached);
+                    }
+
+                    // 2. Check pending jobs (Request Coalescing)
+                    const pendingKey = `transcript:pending:${videoId}`;
+                    const pendingUrl = await TRANSCRIPT_CACHE.get(pendingKey);
+                    if (pendingUrl) {
+                        log('Join pending job for', videoId);
+                        resultUrl = pendingUrl;
                     }
                 } catch (e) {
                     // Cache read failed, continue
                 }
             }
 
-            // Rate limit check for new requests
-            const clientIP = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For')?.split(',')[0];
-            if (!(await checkRateLimit(TRANSCRIPT_CACHE, clientIP))) {
-                return jsonResponse({
-                    error: 'Rate limit exceeded. Please try again later.',
-                    retryAfter: 3600
-                }, 429);
+            // 3. Check D1 database (permanent storage)
+            const d1Result = await getTranscript(db, videoId, 'ai');
+            if (d1Result?.segments?.length > 0) {
+                log('D1 hit for AI transcript:', videoId);
+                const response = {
+                    success: true,
+                    language: d1Result.language || 'unknown',
+                    segments: d1Result.segments
+                };
+                // Warm KV cache (non-blocking)
+                if (TRANSCRIPT_CACHE) {
+                    TRANSCRIPT_CACHE.put(
+                        `transcript:v4:${videoId}`,
+                        JSON.stringify(response),
+                        { expirationTtl: 60 * 60 * 24 * 30 }
+                    ).catch(() => { });
+                }
+                return jsonResponse(response);
             }
 
-            // Increment rate limit counter
-            await incrementRateLimit(TRANSCRIPT_CACHE, clientIP);
-
-            const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-
-            const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
-                method: 'POST',
-                headers: {
-                    'x-gladia-key': gladiaKey,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ audio_url: youtubeUrl }),
-                signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
-            });
-
-            if (!submitResponse.ok) {
-                throw new Error(`Gladia submit failed: ${submitResponse.status}`);
-            }
-
-            const submitData = await submitResponse.json();
-            resultUrl = submitData.result_url;
-
+            // Only submit new job if we didn't find a pending one
             if (!resultUrl) {
-                throw new Error('No result_url from Gladia');
+                // Rate limit check for new requests
+                const clientIP = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For')?.split(',')[0];
+                if (!(await checkRateLimit(TRANSCRIPT_CACHE, clientIP))) {
+                    return jsonResponse({
+                        error: 'Rate limit exceeded. Please try again later.',
+                        retryAfter: 3600
+                    }, 429);
+                }
+
+                // Increment rate limit counter
+                await incrementRateLimit(TRANSCRIPT_CACHE, clientIP);
+
+                const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+                const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
+                    method: 'POST',
+                    headers: {
+                        'x-gladia-key': gladiaKey,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ audio_url: youtubeUrl }),
+                    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+                });
+
+                if (!submitResponse.ok) {
+                    throw new Error(`Gladia submit failed: ${submitResponse.status}`);
+                }
+
+                const submitData = await submitResponse.json();
+                resultUrl = submitData.result_url;
+
+                if (!resultUrl) {
+                    throw new Error('No result_url from Gladia');
+                }
+
+                // Cache the pending job URL
+                if (TRANSCRIPT_CACHE) {
+                    try {
+                        await TRANSCRIPT_CACHE.put(
+                            `transcript:pending:${videoId}`,
+                            resultUrl,
+                            { expirationTtl: PENDING_CACHE_TTL }
+                        );
+                    } catch (e) {
+                        log('Failed to cache pending job:', e.message);
+                    }
+                }
             }
         }
 
@@ -194,9 +242,16 @@ export async function onRequestPost(context) {
                                 JSON.stringify(response),
                                 { expirationTtl: 60 * 60 * 24 * 30 }
                             );
+                            // Clean up pending key
+                            TRANSCRIPT_CACHE.delete(`transcript:pending:${videoId}`).catch(() => { });
                         } catch (e) {
                             // Cache write failed, continue
                         }
+                    }
+
+                    // Save to D1 (permanent, non-blocking)
+                    if (db && videoId && segments.length > 0) {
+                        saveTranscript(db, videoId, response.language || 'ai', segments, 'ai').catch(() => { });
                     }
 
                     return jsonResponse(response);
