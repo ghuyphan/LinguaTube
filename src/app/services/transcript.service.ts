@@ -51,6 +51,7 @@ export class TranscriptService {
   readonly availableLanguages = signal<string[]>([]);
   readonly isGeneratingAI = signal(false);
   readonly captionSource = signal<'youtube' | 'ai' | null>(null);
+  readonly detectedLanguage = signal<string | null>(null);
 
   // Computed state for UI
   readonly isBusy = computed(() => this.isLoading() || this.isGeneratingAI());
@@ -73,6 +74,7 @@ export class TranscriptService {
     this.error.set(null);
     this.isGeneratingAI.set(false);
     this.captionSource.set(null);
+    this.detectedLanguage.set(null);
     this.availableLanguages.set([]);
     this.pendingRequests.clear();
   }
@@ -173,6 +175,7 @@ export class TranscriptService {
         }
 
         this.captionSource.set('youtube');
+        this.detectedLanguage.set(track.languageCode);
 
         // Server already cleans segments, just convert to SubtitleCues
         const cues = this.convertToSubtitleCues(track.content);
@@ -228,6 +231,10 @@ export class TranscriptService {
 
         // Server already cleans segments, just convert to SubtitleCues
         const cues = this.convertToSubtitleCues(response.segments);
+
+        if (response.language) {
+          this.detectedLanguage.set(response.language);
+        }
 
         this.transcriptCache.set(cacheKey, cues);
         return of(cues);

@@ -1,5 +1,6 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 declare const google: any;
 
@@ -15,11 +16,13 @@ export interface UserProfile {
 })
 export class AuthService {
     private readonly STORAGE_KEY = 'linguatube_user';
-    // Cooldown logic removed to improve UX
 
     readonly user = signal<UserProfile | null>(null);
     readonly isLoggedIn = computed(() => this.user() !== null);
     readonly isInitialized = signal(false);
+
+    /** Emits when user successfully logs in via Google credential */
+    readonly loginEvent = new Subject<UserProfile>();
 
     private clientId = '';
 
@@ -83,6 +86,15 @@ export class AuthService {
         google.accounts.id.renderButton(element, { ...defaultOptions, ...options });
     }
 
+    /**
+     * Trigger Google One Tap sign-in prompt programmatically
+     * Use this with a custom button instead of the official Google button
+     */
+    promptSignIn(): void {
+        if (typeof google === 'undefined' || !this.clientId) return;
+        google.accounts.id.prompt();
+    }
+
 
 
     /**
@@ -112,6 +124,9 @@ export class AuthService {
 
             this.user.set(profile);
             localStorage.setItem(this.STORAGE_KEY, JSON.stringify(profile));
+
+            // Emit login event for sync service
+            this.loginEvent.next(profile);
         } catch (error) {
             console.error('[Auth] Failed to decode credential:', error);
         }

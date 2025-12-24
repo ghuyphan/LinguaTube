@@ -101,6 +101,8 @@
     "settings": {
         "title": "设置",
         "synced": "已同步",
+        "syncing": "同步中...",
+        "syncError": "同步失败",
         "signInGoogle": "使用Google登录",
         "syncVocab": "跨设备同步词汇",
         "learningLanguage": "学习语言",
@@ -113,7 +115,9 @@
         "switchToDarkMode": "切换到深色模式",
         "vocabStats": "词汇统计",
         "totalWords": "总词汇数",
-        "interfaceLanguage": "界面语言"
+        "interfaceLanguage": "界面语言",
+        "signOutConfirmTitle": "确定退出登录？",
+        "signOutConfirmMessage": "您的词汇将保留在本地，但在重新登录之前不会同步。"
     },
     "study": {
         "title": "学习模式",

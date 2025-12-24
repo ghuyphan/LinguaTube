@@ -101,6 +101,8 @@
     "settings": {
         "title": "設定",
         "synced": "同期済み",
+        "syncing": "同期中...",
+        "syncError": "同期失敗",
         "signInGoogle": "Googleでログイン",
         "syncVocab": "デバイス間で単語帳を同期",
         "learningLanguage": "学習言語",
@@ -113,7 +115,9 @@
         "switchToDarkMode": "ダークモードに切替",
         "vocabStats": "単語帳の統計",
         "totalWords": "総単語数",
-        "interfaceLanguage": "表示言語"
+        "interfaceLanguage": "表示言語",
+        "signOutConfirmTitle": "ログアウトしますか？",
+        "signOutConfirmMessage": "単語帳はローカルに保存されますが、再度ログインするまで同期されません。"
     },
     "study": {
         "title": "学習モード",

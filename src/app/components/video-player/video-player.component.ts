@@ -113,8 +113,15 @@ interface SeekPreview {
               </div>
               
               <!-- Center Zone - Play/Pause -->
-              <div class="zone center" (click)="handleCenterTap()">
-                @if (!youtube.isPlaying() && !areControlsVisible() && !playPauseFeedback()) {
+              <div class="zone center" (click)="handleCenterTap()" (dblclick)="handleCenterDoubleClick()">
+                <!-- Mobile: Show big play/pause button when controls are visible -->
+                @if (isTouchDevice && areControlsVisible() && !playPauseFeedback()) {
+                  <div class="big-play-btn" (click)="onMobilePlayPauseClick($event)">
+                    <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="48" />
+                  </div>
+                }
+                <!-- Desktop or when paused with controls hidden: show play button -->
+                @if (!isTouchDevice && !youtube.isPlaying() && !areControlsVisible() && !playPauseFeedback()) {
                   <div class="big-play-btn">
                     <app-icon name="play" [size]="48" />
                   </div>
@@ -161,7 +168,7 @@ interface SeekPreview {
                             class="fs-word"
                             [class.fs-word--saved]="vocab.hasWord(token.surface)"
                             (click)="onFullscreenWordClick(token, cue.text, $event)"
-                          >{{ token.surface }}</span>}
+                          >@if (showFsReading() && getFullscreenReading(token)) {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>} @else {{{ token.surface }}}</span>}
                       }
                     </div>
                   </div>
@@ -304,6 +311,11 @@ interface SeekPreview {
                     <span class="time-separator">/</span>
                     <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
                   </div>
+
+                  <!-- Mute button - mobile only -->
+                  <button class="control-btn mobile-only" (click)="toggleMute()" title="Mute">
+                    <app-icon [name]="getVolumeIcon()" [size]="18" />
+                  </button>
                 </div>
 
                 <!-- Right Controls -->
@@ -817,6 +829,10 @@ interface SeekPreview {
       display: flex;
     }
 
+    .mobile-only {
+      display: none;
+    }
+
     .time-display {
       font-family: var(--font-mono);
       font-size: 0.8125rem;
@@ -991,11 +1007,11 @@ interface SeekPreview {
        ============================================ */
     .fullscreen-subtitle {
       position: absolute;
-      bottom: 70px;
+      bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      max-width: 90%;
-      width: 90%;
+      max-width: 70%;
+      width: auto;
       z-index: 18;
       text-align: center;
       transition: bottom 0.3s ease, opacity 0.3s ease;
@@ -1014,7 +1030,7 @@ interface SeekPreview {
 
     /* Inner container with background for long subtitles */
     .fs-subtitle-inner {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.75);
       border-radius: 12px;
       padding: 12px 20px;
       max-height: 35vh;
@@ -1055,7 +1071,8 @@ interface SeekPreview {
       line-height: 2;
       color: white;
       text-shadow: none;
-      word-break: keep-all;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     .fullscreen-subtitle.fs-small .fs-subtitle-text {
@@ -1090,6 +1107,34 @@ interface SeekPreview {
     .fs-word--saved {
       border-bottom: 2px solid var(--accent-primary);
       background: rgba(199, 62, 58, 0.15);
+    }
+
+    /* Fullscreen ruby text styling */
+    .fs-subtitle-text ruby {
+      display: ruby;
+      ruby-align: center;
+      ruby-position: over;
+    }
+
+    .fs-subtitle-text ruby rt {
+      display: ruby-text;
+      font-size: 0.5em;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .fs-subtitle-text.text-ja ruby rt {
+      font-size: 0.45em;
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+    }
+
+    .fs-subtitle-text.text-zh ruby rt,
+    .fs-subtitle-text.text-ko ruby rt {
+      font-size: 0.48em;
+      font-weight: 500;
     }
 
     /* ============================================
@@ -1261,6 +1306,10 @@ interface SeekPreview {
 
       .desktop-only {
         display: none !important;
+      }
+
+      .mobile-only {
+        display: flex !important;
       }
 
       .player-overlay {
@@ -1529,6 +1578,14 @@ export class VideoPlayerComponent implements OnDestroy {
     return (time / duration) * 100;
   });
 
+  // Fullscreen reading toggle (mirrors subtitle-display behavior)
+  showFsReading = computed(() => {
+    const lang = this.settings.settings().language;
+    return lang === 'ja'
+      ? this.settings.settings().showFurigana
+      : this.settings.settings().showPinyin;
+  });
+
   // Feedback animations
   rewindFeedback = signal(false);
   forwardFeedback = signal(false);
@@ -1543,12 +1600,14 @@ export class VideoPlayerComponent implements OnDestroy {
   volumeFeedbackIcon = signal<'volume-2' | 'volume-1' | 'volume-x'>('volume-2');
 
   // Touch detection
-  private isTouchDevice = false;
+  isTouchDevice = false;
 
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
   private lastTapTime = 0;
+  private lastCenterTapTime = 0;
   private tapTimeout: ReturnType<typeof setTimeout> | null = null;
+  private centerTapTimeout: ReturnType<typeof setTimeout> | null = null;
   private readonly DOUBLE_TAP_DELAY = 300;
   private bufferedInterval: ReturnType<typeof setInterval> | null = null;
   private transcriptSubscription: Subscription | null = null;
@@ -1785,7 +1844,47 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   handleCenterTap() {
+    if (!this.isTouchDevice) {
+      // Desktop: single click toggles play
+      this.togglePlay();
+      return;
+    }
+
+    // Mobile: Implement YouTube-like behavior
+    // Single tap toggles controls visibility
+    // Double tap triggers fullscreen
+    const currentTime = Date.now();
+    const tapLength = currentTime - this.lastCenterTapTime;
+
+    if (tapLength < this.DOUBLE_TAP_DELAY && tapLength > 0) {
+      // Double tap - toggle fullscreen
+      if (this.centerTapTimeout) clearTimeout(this.centerTapTimeout);
+      this.toggleFullscreen();
+    } else {
+      // Single tap - toggle controls visibility
+      this.centerTapTimeout = setTimeout(() => {
+        if (this.areControlsVisible()) {
+          this.areControlsVisible.set(false);
+        } else {
+          this.showControls();
+        }
+      }, this.DOUBLE_TAP_DELAY);
+    }
+
+    this.lastCenterTapTime = currentTime;
+  }
+
+  // Mobile: explicit play/pause button click
+  onMobilePlayPauseClick(event: Event) {
+    event.stopPropagation();
     this.togglePlay();
+  }
+
+  // Desktop: double-click to fullscreen
+  handleCenterDoubleClick() {
+    if (!this.isTouchDevice) {
+      this.toggleFullscreen();
+    }
   }
 
   // ============================================
@@ -2091,7 +2190,19 @@ export class VideoPlayerComponent implements OnDestroy {
           if (cues.length > 0) {
             this.subtitles.currentCueIndex.set(-1);
             this.subtitles.subtitles.set(cues);
-            this.subtitles.tokenizeAllCues(lang);
+
+            // Auto-detect language mismatch
+            const detectedFull = this.transcript.detectedLanguage();
+            const detected = detectedFull?.split('-')[0]?.toLowerCase();
+            const validLangs = ['ja', 'zh', 'ko', 'en'];
+
+            if (detected && detected !== lang && validLangs.includes(detected)) {
+              console.log(`[VideoPlayer] Auto-switching language from ${lang} to ${detected}`);
+              this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
+              this.subtitles.tokenizeAllCues(detected as 'ja' | 'zh' | 'ko' | 'en');
+            } else {
+              this.subtitles.tokenizeAllCues(lang);
+            }
           }
         }
       });
@@ -2153,6 +2264,13 @@ export class VideoPlayerComponent implements OnDestroy {
     return this.subtitles.getTokens(cue, lang);
   }
 
+  getFullscreenReading(token: Token): string | undefined {
+    const lang = this.settings.settings().language;
+    if (lang === 'ja') return token.reading;
+    if (lang === 'zh') return token.pinyin;
+    return token.romanization || token.pinyin;
+  }
+
   formatTime(seconds: number): string {
     if (!seconds || isNaN(seconds)) return '0:00';
     const mins = Math.floor(seconds / 60);
@@ -2170,6 +2288,9 @@ export class VideoPlayerComponent implements OnDestroy {
     }
     if (this.tapTimeout) {
       clearTimeout(this.tapTimeout);
+    }
+    if (this.centerTapTimeout) {
+      clearTimeout(this.centerTapTimeout);
     }
     this.youtube.destroy();
   }

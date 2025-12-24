@@ -28,7 +28,8 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
         <div 
           class="sheet"
           #sheetEl
-          [class.closing]="isClosing()"
+          [class.closing]="isClosing() && !isDragClosing()"
+          [class.drag-closing]="isDragClosing()"
           [class.dragging]="isDragging()"
           [class.animated]="hasAnimated()"
           [class.desktop-modal]="!isMobile"
@@ -58,17 +59,25 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
     .sheet-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 10000;
       padding: var(--space-md);
-      animation: fadeIn 0.15s ease forwards;
     }
 
-    .sheet-overlay.closing {
-      animation: fadeOut 0.2s ease forwards;
+    /* Backdrop pseudo-element - fades independently of sheet */
+    .sheet-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+
+    .sheet-overlay.closing::before {
+      animation: fadeOut 0.2s ease-in forwards;
     }
 
     /* Desktop: centered modal */
@@ -83,12 +92,18 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
       display: flex;
       flex-direction: column;
       position: relative;
-      animation: slideUp 0.2s ease;
-      will-change: transform;
+      z-index: 1;
+      animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+      will-change: transform, opacity;
     }
 
     .sheet.closing {
-      animation: slideDown 0.2s ease forwards;
+      animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    }
+
+    /* Drag-to-close: no CSS animation, uses inline transition */
+    .sheet.drag-closing {
+      animation: none !important;
     }
 
     .sheet.dragging {
@@ -102,7 +117,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
     }
 
     /* Snap-back transition when drag ends without dismiss */
-    .sheet.animated:not(.dragging):not(.closing) {
+    .sheet.animated:not(.dragging):not(.closing):not(.drag-closing) {
       transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
     }
 
@@ -134,11 +149,29 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
       -webkit-overflow-scrolling: touch;
     }
 
+    /* Hide scrollbar on desktop modals */
+    .sheet.desktop-modal .sheet-content {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    .sheet.desktop-modal .sheet-content::-webkit-scrollbar {
+      display: none; /* Chrome/Safari/Opera */
+    }
+
     /* Mobile: bottom sheet style */
     @media (max-width: 768px) {
       .sheet-overlay {
         padding: 0;
         align-items: flex-end;
+      }
+
+      .sheet-overlay::before {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+
+      .sheet-overlay.closing::before {
+        animation: fadeOut 0.25s ease-in forwards;
       }
 
       .sheet {
@@ -147,7 +180,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
         margin: 0;
         max-height: 85vh;
         border-radius: 16px 16px 0 0;
-        animation: mobileSlideUp 0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
         touch-action: none;
       }
 
@@ -173,12 +206,20 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
         justify-content: center;
       }
 
+      .sheet-overlay::before {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+
+      .sheet-overlay.closing::before {
+        animation: fadeOut 0.25s ease-in forwards;
+      }
+
       .sheet {
         max-width: 600px;
         width: 80%;
-        max-height: calc(100vh - 80px); /* Leave room for bottom nav */
+        max-height: calc(100vh - 80px);
         border-radius: 16px 16px 0 0;
-        animation: mobileSlideUp 0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
       }
 
       .sheet.closing {
@@ -200,28 +241,30 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
       to { opacity: 0; }
     }
 
-    @keyframes slideUp {
+    /* Desktop animations - scale effect */
+    @keyframes scaleIn {
       from {
         opacity: 0;
-        transform: translateY(16px) scale(0.98);
+        transform: scale(0.95);
       }
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1);
       }
     }
 
-    @keyframes slideDown {
+    @keyframes scaleOut {
       from {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
       }
       to {
         opacity: 0;
-        transform: translateY(16px);
+        transform: scale(0.95);
       }
     }
 
+    /* Mobile animations - slide from bottom */
     @keyframes mobileSlideUp {
       from { transform: translateY(100%); }
       to { transform: translateY(0); }
@@ -253,6 +296,7 @@ export class BottomSheetComponent implements OnDestroy {
   // Internal state
   isClosing = signal(false);
   isDragging = signal(false);
+  isDragClosing = signal(false); // Tracks if closing via drag (uses transition, not animation)
   hasAnimated = signal(false); // Tracks if entry animation has completed
   dragOffset = signal(0);
 
@@ -286,6 +330,7 @@ export class BottomSheetComponent implements OnDestroy {
           this.pushHistoryState();
         }
         this.isClosing.set(false);
+        this.isDragClosing.set(false);
         // Reset hasAnimated when sheet opens (animation will play)
         this.hasAnimated.set(false);
       } else {
@@ -295,6 +340,7 @@ export class BottomSheetComponent implements OnDestroy {
         }
         // Reset animation state when closed
         this.hasAnimated.set(false);
+        this.isDragClosing.set(false);
       }
     });
   }
@@ -303,8 +349,8 @@ export class BottomSheetComponent implements OnDestroy {
    * Handle animation end to mark entry animation as complete
    */
   onAnimationEnd(event: AnimationEvent): void {
-    // Only mark as animated for entry animations (slideUp, mobileSlideUp)
-    if (event.animationName === 'mobileSlideUp' || event.animationName === 'slideUp') {
+    // Only mark as animated for entry animations (scaleIn for desktop, mobileSlideUp for mobile)
+    if (event.animationName === 'mobileSlideUp' || event.animationName === 'scaleIn') {
       this.hasAnimated.set(true);
     }
   }
@@ -420,12 +466,15 @@ export class BottomSheetComponent implements OnDestroy {
     // 1. Dragged past threshold, OR
     // 2. Velocity is high enough (quick flick gesture)
     if (deltaY > this.DISMISS_THRESHOLD || velocity > this.VELOCITY_THRESHOLD) {
-      // Clear dragging state and animate close
-      this.isDragging.set(false);
+      // Animate from current position to off-screen
       if (sheetEl) {
-        sheetEl.style.transform = '';
+        // Add transition for smooth animation from current position
+        sheetEl.style.transition = 'transform 0.25s cubic-bezier(0.32, 0.72, 0, 1)';
+        sheetEl.style.transform = 'translateY(100%)';
       }
-      this.animatedClose();
+
+      // Trigger backdrop fade and cleanup after animation
+      this.animatedCloseFromDrag();
     } else {
       // Snap back to original position
       // hasAnimated class prevents entry animation from replaying
@@ -435,12 +484,14 @@ export class BottomSheetComponent implements OnDestroy {
       if (sheetEl) {
         // Use requestAnimationFrame for proper timing
         requestAnimationFrame(() => {
+          sheetEl.style.transition = 'transform 0.25s cubic-bezier(0.32, 0.72, 0, 1)';
           sheetEl.style.transform = 'translateY(0)';
 
           // Clean up after transition completes
           setTimeout(() => {
             if (sheetEl) {
               sheetEl.style.transform = '';
+              sheetEl.style.transition = '';
             }
           }, 260); // Slightly longer than transition duration
         });
@@ -477,6 +528,44 @@ export class BottomSheetComponent implements OnDestroy {
 
     setTimeout(() => {
       this.isClosing.set(false);
+      // Only unlock scroll on mobile
+      if (this.isMobile) {
+        this.lockBodyScroll(false);
+      }
+      this.closed.emit();
+    }, this.ANIMATION_DURATION);
+  }
+
+  /**
+   * Close animation specifically for drag-to-dismiss
+   * Sheet animates via inline styles, we just handle backdrop and cleanup
+   */
+  private animatedCloseFromDrag(popHistory: boolean = true): void {
+    // Set drag closing to use inline transition instead of CSS animation
+    this.isDragClosing.set(true);
+    this.isClosing.set(true);
+    this.isDragging.set(false);
+    this.dragOffset.set(0);
+
+    // Remove popstate listener
+    window.removeEventListener('popstate', this.boundPopStateHandler);
+
+    // Pop history state if we pushed one
+    if (popHistory && this.historyPushed) {
+      this.historyPushed = false;
+      history.back();
+    }
+
+    // Clean up after animation
+    setTimeout(() => {
+      this.isClosing.set(false);
+      this.isDragClosing.set(false);
+      // Clean up inline styles
+      const sheetEl = this.sheetEl()?.nativeElement;
+      if (sheetEl) {
+        sheetEl.style.transform = '';
+        sheetEl.style.transition = '';
+      }
       // Only unlock scroll on mobile
       if (this.isMobile) {
         this.lockBodyScroll(false);

@@ -101,6 +101,8 @@
     "settings": {
         "title": "Cài đặt",
         "synced": "Đã đồng bộ",
+        "syncing": "Đang đồng bộ...",
+        "syncError": "Đồng bộ thất bại",
         "signInGoogle": "Đăng nhập với Google",
         "syncVocab": "Đồng bộ từ vựng giữa các thiết bị",
         "learningLanguage": "Ngôn ngữ đang học",
@@ -113,7 +115,9 @@
         "switchToDarkMode": "Chuyển sang chế độ tối",
         "vocabStats": "Thống kê từ vựng",
         "totalWords": "Tổng số từ",
-        "interfaceLanguage": "Ngôn ngữ giao diện"
+        "interfaceLanguage": "Ngôn ngữ giao diện",
+        "signOutConfirmTitle": "Đăng xuất?",
+        "signOutConfirmMessage": "Từ vựng của bạn vẫn được lưu cục bộ, nhưng sẽ không đồng bộ cho đến khi bạn đăng nhập lại."
     },
     "study": {
         "title": "Chế độ học",

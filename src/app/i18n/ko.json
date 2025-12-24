@@ -101,6 +101,8 @@
     "settings": {
         "title": "설정",
         "synced": "동기화됨",
+        "syncing": "동기화 중...",
+        "syncError": "동기화 실패",
         "signInGoogle": "Google로 로그인",
         "syncVocab": "기기 간 단어장 동기화",
         "learningLanguage": "학습 언어",
@@ -113,7 +115,9 @@
         "switchToDarkMode": "다크 모드로 전환",
         "vocabStats": "단어장 통계",
         "totalWords": "총 단어 수",
-        "interfaceLanguage": "인터페이스 언어"
+        "interfaceLanguage": "인터페이스 언어",
+        "signOutConfirmTitle": "로그아웃 하시겠습니까?",
+        "signOutConfirmMessage": "단어장은 로컬에 저장되지만, 다시 로그인할 때까지 동기화되지 않습니다."
     },
     "study": {
         "title": "학습 모드",

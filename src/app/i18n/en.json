@@ -101,6 +101,8 @@
     "settings": {
         "title": "Settings",
         "synced": "Synced",
+        "syncing": "Syncing...",
+        "syncError": "Sync failed",
         "signInGoogle": "Sign in with Google",
         "syncVocab": "Sync vocabulary across devices",
         "learningLanguage": "Learning Language",
@@ -113,7 +115,9 @@
         "switchToDarkMode": "Switch to Dark Mode",
         "vocabStats": "Vocabulary Stats",
         "totalWords": "Total",
-        "interfaceLanguage": "Interface Language"
+        "interfaceLanguage": "Interface Language",
+        "signOutConfirmTitle": "Sign Out?",
+        "signOutConfirmMessage": "Your vocabulary will remain saved locally, but changes won't sync until you sign in again."
     },
     "study": {
         "title": "Study Mode",

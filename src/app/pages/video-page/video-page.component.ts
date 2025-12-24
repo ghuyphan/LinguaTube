@@ -189,7 +189,19 @@ export class VideoPageComponent implements OnInit {
           // Reset index first to prevent showing old cue during transition
           this.subtitles.currentCueIndex.set(-1);
           this.subtitles.subtitles.set(cues);
-          this.subtitles.tokenizeAllCues(lang);
+
+          // Auto-detect language mismatch
+          const detectedFull = this.transcript.detectedLanguage();
+          const detected = detectedFull?.split('-')[0]?.toLowerCase(); // Handle en-US, ja-JP
+          const validLangs = ['ja', 'zh', 'ko', 'en'];
+
+          if (detected && detected !== lang && validLangs.includes(detected)) {
+            console.log(`[VideoPage] Auto-switching language from ${lang} to ${detected}`);
+            this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
+            this.subtitles.tokenizeAllCues(detected as 'ja' | 'zh' | 'ko' | 'en');
+          } else {
+            this.subtitles.tokenizeAllCues(lang);
+          }
         }
       },
       error: (err) => console.log('Auto-caption fetch failed:', err)

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, computed, Injector, afterNextRender } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -192,8 +192,18 @@ export class AppComponent {
   private platformId = inject(PLATFORM_ID);
   private youtube = inject(YoutubeService);
   private router = inject(Router);
+  private injector = inject(Injector);
   i18n = inject(I18nService);
   settings = inject(SettingsService);
+
+  constructor() {
+    // Lazy load SyncService after first render to reduce initial bundle size
+    afterNextRender(() => {
+      import('./services/sync.service').then(({ SyncService }) => {
+        this.injector.get(SyncService);
+      });
+    });
+  }
 
   showSettingsSheet = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);

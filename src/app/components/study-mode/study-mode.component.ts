@@ -191,7 +191,7 @@ interface StudyCard {
     }
 
     .study-start {
-      max-width: 400px;
+      max-width: 100%;
       width: 100%;
       padding: var(--space-xl);
       text-align: center;
@@ -297,7 +297,7 @@ interface StudyCard {
     /* Study Session */
     .study-session {
       width: 100%;
-      max-width: 500px;
+      max-width: 100%;
     }
 
     .study-progress {
@@ -463,7 +463,7 @@ interface StudyCard {
 
     /* Session Complete */
     .session-complete {
-      max-width: 400px;
+      max-width: 100%;
       width: 100%;
       padding: var(--space-xl);
       text-align: center;
@@ -551,13 +551,22 @@ interface StudyCard {
 
     /* Desktop: larger cards and wider layout */
     @media (min-width: 769px) {
+      .study-mode {
+        padding: 0;
+      }
+
       .study-start {
-        max-width: 600px;
-        padding: var(--space-2xl);
+        max-width: 100%;
+        padding: var(--space-lg);
+        /* Match dictionary panel styling */
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        box-shadow: none;
+        border-radius: var(--border-radius-lg);
       }
 
       .study-session {
-        max-width: 700px;
+        max-width: 100%;
       }
 
       .flashcard__front,
@@ -579,8 +588,13 @@ interface StudyCard {
       }
 
       .session-complete {
-        max-width: 600px;
-        padding: var(--space-2xl);
+        max-width: 100%;
+        padding: var(--space-lg);
+        /* Match dictionary panel styling */
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        box-shadow: none;
+        border-radius: var(--border-radius-lg);
       }
 
       .stat-value {
