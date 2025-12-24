@@ -5,12 +5,13 @@ import { IconComponent } from '../icon/icon.component';
 import { VocabularyQuickViewComponent } from '../vocabulary-quick-view/vocabulary-quick-view.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService } from '../../services';
 import { SubtitleCue, Token } from '../../models';
+import { ScrollingModule, CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-subtitle-display',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent],
+  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent, ScrollingModule],
   animations: [
     trigger('subtitleFade', [
       transition(':enter', [
@@ -21,8 +22,9 @@ import { SubtitleCue, Token } from '../../models';
   ],
   template: `
     <div class="subtitle-panel">
+      @if (!isVideoFullscreen()) {
       <!-- Current subtitle -->
-      <div class="current-subtitle" 
+      <div class="current-subtitle"  
            [class.current-subtitle--small]="settings.settings().fontSize === 'small'"
            [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
            [class.is-generating]="transcript.isGeneratingAI()">
@@ -81,22 +83,29 @@ import { SubtitleCue, Token } from '../../models';
         }
       </div>
 
-      <!-- Subtitle list (scrollable) -->
+       <!-- Subtitle list (scrollable) -->
       @if (subtitles.subtitles().length > 0) {
-        <div class="subtitle-list" #subtitleList>
-          @for (cue of subtitles.subtitles(); track cue.id) {
-            <button
-              class="cue-item"
-              [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
-              [class.cue-item--past]="cue.endTime < youtube.currentTime()"
-              [attr.data-cue-id]="cue.id"
-              (click)="seekToCue(cue)"
-            >
-              <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
-              <span class="cue-text">{{ cue.text }}</span>
-            </button>
-          }
-        </div>
+        <cdk-virtual-scroll-viewport itemSize="56" class="subtitle-list" #subtitleList>
+            <!-- Shuttle Highlight -->
+            <div class="shuttle-highlight"
+                 [style.transform]="'translateY(' + (subtitles.currentCueIndex() * 56) + 'px)'"
+                 [class.visible]="subtitles.currentCueIndex() >= 0">
+            </div>
+
+            <div *cdkVirtualFor="let cue of subtitles.subtitles(); trackBy: trackByCue"
+                 class="cue-item-wrapper">
+                <button
+                class="cue-item"
+                [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
+                [class.cue-item--past]="cue.endTime < youtube.currentTime()"
+                [attr.data-cue-id]="cue.id"
+                (click)="seekToCue(cue)"
+                >
+                <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
+                <span class="cue-text">{{ cue.text }}</span>
+                </button>
+            </div>
+        </cdk-virtual-scroll-viewport>
       }
 
       <!-- Controls -->
@@ -158,6 +167,7 @@ import { SubtitleCue, Token } from '../../models';
           >A</button>
         </div>
       </div>
+      }
     </div>
 
     <!-- Vocabulary Quick View Sheet -->
@@ -572,8 +582,57 @@ import { SubtitleCue, Token } from '../../models';
       line-height: 1.4;
       overflow: hidden;
       display: -webkit-box;
+      text-overflow: ellipsis;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+    }
+
+    /* Virtual Scroll & Shuttle */
+    cdk-virtual-scroll-viewport {
+      height: 100%;
+      min-height: 180px;
+      /* Remove default scrollbar styles if interfering, but usually fine */
+    }
+
+    .cue-item-wrapper {
+        height: 56px;
+        box-sizing: border-box;
+    }
+
+    .cue-item {
+        height: 100%;
+        border-bottom: none; /* Borders handled by wrapper or shuttle? */
+        /* Ensure content fits */
+    }
+
+    .shuttle-highlight {
+        position: absolute;
+        width: 100%;
+        height: 54px; /* Slightly smaller than 56px for spacing */
+        left: 0;
+        top: 0;
+        background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.1);
+        border-right: 3px solid var(--accent-primary);
+        pointer-events: none;
+        transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+        z-index: 0;
+        opacity: 0;
+        border-radius: 4px;
+    }
+
+    .shuttle-highlight.visible {
+        opacity: 1;
+    }
+
+    /* cue-item adjustments for z-index */
+    .cue-item {
+        position: relative;
+        z-index: 1;
+        background: transparent !important; /* Let highlight show through */
+    }
+    
+    .cue-item:hover {
+        background: var(--bg-secondary) !important;
     }
 
     /* Controls */
@@ -749,7 +808,7 @@ export class SubtitleDisplayComponent {
   transcript = inject(TranscriptService);
   i18n = inject(I18nService);
 
-  @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
+  @ViewChild('subtitleList') subtitleList!: CdkVirtualScrollViewport;
 
   wordClicked = output<{ token: Token; sentence: string }>();
 
@@ -805,9 +864,10 @@ export class SubtitleDisplayComponent {
 
     // Auto-scroll to active cue using effect for better reactivity
     effect(() => {
+      if (this.isVideoFullscreen()) return;
       const currentCue = this.subtitles.currentCue();
       // Ensure we have a cue and the list element is available
-      if (currentCue && this.subtitleList?.nativeElement) {
+      if (currentCue && this.subtitleList) {
         // Use timeout to allow DOM update (class changes) before measuring
         setTimeout(() => this.scrollToActiveCue(currentCue.id), 0);
       }
@@ -884,23 +944,12 @@ export class SubtitleDisplayComponent {
   // Removed ngAfterViewChecked as we use effect now
 
   private scrollToActiveCue(cueId: number): void {
-    if (!this.subtitleList?.nativeElement) return;
+    if (!this.subtitleList) return;
 
-    const container = this.subtitleList.nativeElement;
-    const activeElement = container.querySelector(`[data-cue-id="${cueId}"]`) as HTMLElement;
-
-    if (activeElement) {
-      const containerHeight = container.clientHeight;
-      const elementTop = activeElement.offsetTop;
-      const elementHeight = activeElement.offsetHeight;
-
-      // Center the element
-      const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
-
-      container.scrollTo({
-        top: Math.max(0, targetScrollTop),
-        behavior: 'smooth'
-      });
+    const index = this.subtitles.subtitles().findIndex(c => c.id === cueId);
+    if (index !== -1) {
+      // Use center strategy or auto? 'smooth' usually works
+      this.subtitleList.scrollToIndex(index, 'smooth');
     }
   }
 
@@ -991,5 +1040,9 @@ export class SubtitleDisplayComponent {
 
   toggleAddedSheet(): void {
     this.showAddedSheet.update(v => !v);
+  }
+
+  trackByCue(index: number, cue: SubtitleCue): string {
+    return cue.id.toString();
   }
 }
