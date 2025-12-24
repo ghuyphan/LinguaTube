@@ -3,7 +3,7 @@
  * Uses Free Dictionary API for word definitions
  */
 
-import { jsonResponse, handleOptions, errorResponse } from './_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
 
 const FREE_DICT_API = 'https://api.dictionaryapi.dev/api/v2/entries/en';
 

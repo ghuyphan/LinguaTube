@@ -15,8 +15,7 @@ export interface UserProfile {
 })
 export class AuthService {
     private readonly STORAGE_KEY = 'linguatube_user';
-    private readonly AUTH_COOLDOWN_KEY = 'linguatube_auth_cooldown';
-    private readonly COOLDOWN_MS = 10 * 60 * 1000; // 10 minutes
+    // Cooldown logic removed to improve UX
 
     readonly user = signal<UserProfile | null>(null);
     readonly isLoggedIn = computed(() => this.user() !== null);
@@ -53,14 +52,11 @@ export class AuthService {
     private initializeGoogleAuth(): void {
         const checkAndInit = () => {
             if (typeof google !== 'undefined' && google.accounts) {
-                // Check if we're in cooldown period
-                const shouldAutoSelect = !this.isInCooldown();
-
                 google.accounts.id.initialize({
                     client_id: this.clientId,
                     callback: (response: any) => this.handleCredentialResponse(response),
-                    auto_select: shouldAutoSelect,
-                    cancel_on_tap_outside: false
+                    auto_select: false, // Don't auto-select, let user click button
+                    cancel_on_tap_outside: true
                 });
             } else {
                 setTimeout(checkAndInit, 100);
@@ -69,77 +65,25 @@ export class AuthService {
         checkAndInit();
     }
 
-    /**
-     * Check if we're in the 10-minute cooldown period
-     */
-    private isInCooldown(): boolean {
-        try {
-            const lastAttempt = localStorage.getItem(this.AUTH_COOLDOWN_KEY);
-            if (!lastAttempt) return false;
-            const elapsed = Date.now() - parseInt(lastAttempt, 10);
-            return elapsed < this.COOLDOWN_MS;
-        } catch {
-            return false;
-        }
-    }
 
-    /**
-     * Set cooldown timestamp
-     */
-    private setCooldown(): void {
-        try {
-            localStorage.setItem(this.AUTH_COOLDOWN_KEY, Date.now().toString());
-        } catch {
-            // Ignore storage errors
-        }
-    }
 
     /**
      * Render Google Sign-In button
      */
-    renderButton(element: HTMLElement): void {
+    renderButton(element: HTMLElement, options: any = {}): void {
         if (typeof google === 'undefined') return;
 
-        google.accounts.id.renderButton(element, {
+        const defaultOptions = {
             theme: 'outline',
             size: 'large',
-            type: 'icon',
-            shape: 'circle'
-        });
+            type: 'standard',
+            shape: 'pill'
+        };
+
+        google.accounts.id.renderButton(element, { ...defaultOptions, ...options });
     }
 
-    /**
-     * Prompt one-tap sign-in
-     */
-    promptSignIn(): void {
-        if (!this.clientId || typeof google === 'undefined') return;
-        if (this.isInCooldown()) {
-            console.log('[Auth] Skipping auto-prompt, in cooldown period');
-            return;
-        }
-        google.accounts.id.prompt();
-    }
 
-    /**
-     * Trigger sign-in flow (for custom button)
-     * Shows Google One-Tap prompt with user interaction
-     */
-    signIn(): void {
-        if (!this.clientId || typeof google === 'undefined') return;
-
-        // Set cooldown to prevent rate limiting
-        this.setCooldown();
-
-        // Show the Google One-Tap prompt
-        google.accounts.id.prompt((notification: any) => {
-            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                const reason = notification.getNotDisplayedReason?.() ||
-                    notification.getSkippedReason?.() ||
-                    'unknown_reason';
-                console.log('[Auth] One-Tap not displayed, reason:', reason);
-            }
-        });
-    }
 
     /**
      * Sign out
