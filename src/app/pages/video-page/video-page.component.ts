@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../../components/video-player/video-player.component';
@@ -117,6 +117,26 @@ export class VideoPageComponent implements OnInit {
   isVideoFullscreen = signal(false);
 
   private lastLang = '';
+
+  constructor() {
+    // Watch for language changes and refetch captions when language changes
+    effect(() => {
+      const currentLang = this.settings.settings().language;
+      const currentVideo = this.youtube.currentVideo();
+
+      // Only refetch if:
+      // 1. There's a current video
+      // 2. Language has actually changed from what we last used
+      // 3. We're not in the initial load (lastLang is set)
+      if (currentVideo && this.lastLang && this.lastLang !== currentLang) {
+        console.log(`[VideoPage] Language changed from ${this.lastLang} to ${currentLang}, refetching captions`);
+        this.lastLang = currentLang;
+        this.subtitles.clear();
+        this.transcript.reset();
+        this.fetchCaptions(currentVideo.id);
+      }
+    });
+  }
 
   ngOnInit(): void {
     // Read video ID from URL query parameter

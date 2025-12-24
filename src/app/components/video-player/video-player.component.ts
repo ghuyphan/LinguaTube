@@ -39,9 +39,9 @@ interface SeekPreview {
             <button 
               class="btn btn-primary load-btn"
               (click)="loadVideo()"
-              [disabled]="isLoading()"
+              [disabled]="isLoading() || transcript.isBusy()"
             >
-              @if (isLoading()) {
+              @if (isLoading() || transcript.isBusy()) {
                 <app-icon name="loader" [size]="16" />
               } @else {
                 {{ i18n.t('player.load') }}
@@ -70,9 +70,6 @@ interface SeekPreview {
           #videoContainer
           [class.is-fullscreen]="isFullscreen()"
           (mousemove)="onUserActivity()" 
-          (click)="onUserActivity()"
-          (click)="onUserActivity()"
-          (mouseleave)="onMouseLeave()"
           (mouseleave)="onMouseLeave()"
         >
           <div class="video-embed-ratio">
