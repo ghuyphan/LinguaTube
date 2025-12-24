@@ -39,9 +39,9 @@ interface SeekPreview {
             <button 
               class="btn btn-primary load-btn"
               (click)="loadVideo()"
-              [disabled]="isLoading() || transcript.isBusy()"
+              [disabled]="isLoading()"
             >
-              @if (isLoading() || transcript.isBusy()) {
+              @if (isLoading()) {
                 <app-icon name="loader" [size]="16" />
               } @else {
                 {{ i18n.t('player.load') }}
@@ -2196,21 +2196,26 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   loadVideo(): void {
+    console.log('[VideoPlayer] loadVideo called, videoUrl:', this.videoUrl);
     const url = this.videoUrl.trim();
     if (!url) {
+      console.log('[VideoPlayer] Empty URL');
       this.error.set('Please enter a YouTube URL');
       return;
     }
 
     const videoId = this.youtube.extractVideoId(url);
+    console.log('[VideoPlayer] Extracted videoId:', videoId);
     if (!videoId) {
       this.error.set('Invalid YouTube URL');
       return;
     }
 
     const currentVideo = this.youtube.currentVideo();
+    console.log('[VideoPlayer] currentVideo:', currentVideo?.id);
     if (currentVideo && currentVideo.id === videoId) {
       // Same video - just refetch captions (handles language change)
+      console.log('[VideoPlayer] Same video, refetching captions');
       this.subtitles.clear();
       this.transcript.reset();
       const lang = this.settings.settings().language;
@@ -2238,6 +2243,7 @@ export class VideoPlayerComponent implements OnDestroy {
       return;
     }
 
+    console.log('[VideoPlayer] Navigating to /video with id:', videoId);
     this.router.navigate(['/video'], { queryParams: { id: videoId } });
   }
 
