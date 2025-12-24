@@ -37,7 +37,7 @@ export class VocabularyService {
   /**
    * Get stats filtered by language
    */
-  getStatsByLanguage(language: 'ja' | 'zh' | 'ko') {
+  getStatsByLanguage(language: 'ja' | 'zh' | 'ko' | 'en') {
     const items = this.vocabulary().filter(i => i.language === language);
     return {
       total: items.length,
@@ -103,7 +103,7 @@ export class VocabularyService {
   /**
    * Add a word from dictionary entry
    */
-  addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko', sourceSentence?: string): VocabularyItem {
+  addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string): VocabularyItem {
     const existing = this.findWord(entry.word);
     if (existing) {
       return existing;
@@ -139,7 +139,7 @@ export class VocabularyService {
   addWord(
     word: string,
     meaning: string,
-    language: 'ja' | 'zh' | 'ko',
+    language: 'ja' | 'zh' | 'ko' | 'en',
     reading?: string,
     pinyin?: string,
     romanization?: string,
@@ -180,7 +180,7 @@ export class VocabularyService {
   updateLevel(id: string, level: WordLevel): void {
     this.vocabulary.update(items =>
       items.map(item =>
-        item.id === id ? { ...item, level } : item
+        item.id === id ? { ...item, level, updatedAt: new Date() } : item
       )
     );
   }
@@ -230,6 +230,7 @@ export class VocabularyService {
           ...item,
           level: newLevel,
           lastReviewedAt: new Date(),
+          updatedAt: new Date(),
           reviewCount: item.reviewCount + 1,
           easeFactor,
           interval,
@@ -255,7 +256,7 @@ export class VocabularyService {
     this.vocabulary.update(items =>
       items.map(item =>
         item.id === id
-          ? { ...item, examples: [...item.examples, example] }
+          ? { ...item, examples: [...item.examples, example], updatedAt: new Date() }
           : item
       )
     );
@@ -267,7 +268,7 @@ export class VocabularyService {
   updateMeaning(id: string, meaning: string): void {
     this.vocabulary.update(items =>
       items.map(item =>
-        item.id === id ? { ...item, meaning } : item
+        item.id === id ? { ...item, meaning, updatedAt: new Date() } : item
       )
     );
   }
@@ -304,7 +305,7 @@ export class VocabularyService {
   /**
    * Filter vocabulary by language
    */
-  getByLanguage(language: 'ja' | 'zh' | 'ko'): VocabularyItem[] {
+  getByLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): VocabularyItem[] {
     return this.vocabulary().filter(item => item.language === language);
   }
 
@@ -381,6 +382,7 @@ export class VocabularyService {
 
   /**
    * Import/merge items (for sync)
+   * Merges items based on updatedAt timestamp - keeps the newer version
    */
   importItems(items: VocabularyItem[]): void {
     const merged = new Map<string, VocabularyItem>();
@@ -390,12 +392,26 @@ export class VocabularyService {
       merged.set(`${item.word}-${item.language}`, item);
     }
 
-    // Merge incoming items
+    // Merge incoming items, preferring newer versions
     for (const item of items) {
       const key = `${item.word}-${item.language}`;
       const existing = merged.get(key);
+
       if (!existing) {
+        // New item, add it
         merged.set(key, item);
+      } else {
+        // Compare timestamps - keep the newer one
+        const existingTime = existing.updatedAt
+          ? new Date(existing.updatedAt).getTime()
+          : new Date(existing.addedAt).getTime();
+        const incomingTime = item.updatedAt
+          ? new Date(item.updatedAt).getTime()
+          : new Date(item.addedAt).getTime();
+
+        if (incomingTime > existingTime) {
+          merged.set(key, item);
+        }
       }
     }
 
@@ -413,6 +429,7 @@ export class VocabularyService {
         const parsed = items.map(item => ({
           ...item,
           addedAt: new Date(item.addedAt),
+          updatedAt: item.updatedAt ? new Date(item.updatedAt) : undefined,
           lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : undefined
         }));
         this.vocabulary.set(parsed);

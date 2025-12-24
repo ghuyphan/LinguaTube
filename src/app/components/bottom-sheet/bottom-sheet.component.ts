@@ -29,10 +29,12 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
           class="sheet"
           #sheetEl
           [class.closing]="isClosing()"
+          [class.dragging]="isDragging()"
+          [class.animated]="hasAnimated()"
           [class.desktop-modal]="!isMobile"
-          [style.transform]="isDragging() ? 'translateY(' + dragOffset() + 'px)' : null"
           [style.maxHeight]="maxHeight()"
           (click)="$event.stopPropagation()"
+          (animationend)="onAnimationEnd($event)"
           (touchstart)="onTouchStart($event)"
           (touchmove)="onTouchMove($event)"
           (touchend)="onTouchEnd($event)"
@@ -56,8 +58,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
     .sheet-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(2px);
+      background: rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -88,6 +89,21 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 
     .sheet.closing {
       animation: slideDown 0.2s ease forwards;
+    }
+
+    .sheet.dragging {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /* After entry animation completes, disable it to prevent replay */
+    .sheet.animated {
+      animation: none;
+    }
+
+    /* Snap-back transition when drag ends without dismiss */
+    .sheet.animated:not(.dragging):not(.closing) {
+      transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
     }
 
     /* Drag handle */
@@ -237,21 +253,28 @@ export class BottomSheetComponent implements OnDestroy {
   // Internal state
   isClosing = signal(false);
   isDragging = signal(false);
+  hasAnimated = signal(false); // Tracks if entry animation has completed
   dragOffset = signal(0);
 
   // Drag gesture state
   private touchStartY = 0;
   private touchCurrentY = 0;
+  private touchStartTime = 0;
   private isDragGesture = false;
+  private historyPushed = false;
 
   // Thresholds
-  private readonly DISMISS_THRESHOLD = 100;
+  private readonly DISMISS_THRESHOLD = 80;
+  private readonly VELOCITY_THRESHOLD = 0.5; // pixels per ms
   private readonly ANIMATION_DURATION = 250;
+
+  // Bound handler for popstate
+  private boundPopStateHandler = this.onPopState.bind(this);
 
   // Check if mobile
   get isMobile(): boolean {
     if (!isPlatformBrowser(this.platformId)) return false;
-    return window.innerWidth <= 768;
+    return window.innerWidth <= 768 || window.innerHeight <= 500;
   }
 
   constructor() {
@@ -260,10 +283,54 @@ export class BottomSheetComponent implements OnDestroy {
         // Only lock scroll on mobile - desktop modals don't need it
         if (this.isMobile) {
           this.lockBodyScroll(true);
+          this.pushHistoryState();
         }
         this.isClosing.set(false);
+        // Reset hasAnimated when sheet opens (animation will play)
+        this.hasAnimated.set(false);
+      } else {
+        // Clean up history state when closed externally
+        if (this.historyPushed) {
+          this.historyPushed = false;
+        }
+        // Reset animation state when closed
+        this.hasAnimated.set(false);
       }
     });
+  }
+
+  /**
+   * Handle animation end to mark entry animation as complete
+   */
+  onAnimationEnd(event: AnimationEvent): void {
+    // Only mark as animated for entry animations (slideUp, mobileSlideUp)
+    if (event.animationName === 'mobileSlideUp' || event.animationName === 'slideUp') {
+      this.hasAnimated.set(true);
+    }
+  }
+
+  /**
+   * Push history state for back button support on mobile
+   */
+  private pushHistoryState(): void {
+    if (!isPlatformBrowser(this.platformId) || this.historyPushed) return;
+
+    // Push a new history entry so back button can close the sheet
+    history.pushState({ bottomSheet: true }, '');
+    this.historyPushed = true;
+
+    // Listen for popstate (back button/gesture)
+    window.addEventListener('popstate', this.boundPopStateHandler);
+  }
+
+  /**
+   * Handle browser back button/gesture
+   */
+  private onPopState(event: PopStateEvent): void {
+    if (this.isOpen() && this.isMobile) {
+      // Prevent default close and do our animated close
+      this.animatedClose(false); // Don't manipulate history again
+    }
   }
 
   private lockBodyScroll(lock: boolean): void {
@@ -302,6 +369,7 @@ export class BottomSheetComponent implements OnDestroy {
       if (touchRelativeY < 50 || isAtTop) {
         this.touchStartY = touch.clientY;
         this.touchCurrentY = touch.clientY;
+        this.touchStartTime = Date.now();
         this.isDragGesture = false;
       }
     }
@@ -314,13 +382,21 @@ export class BottomSheetComponent implements OnDestroy {
     const deltaY = touch.clientY - this.touchStartY;
 
     // Only allow dragging down
-    if (deltaY > 10) {
+    if (deltaY > 5) {
       this.isDragGesture = true;
-      this.isDragging.set(true);
 
-      // Apply rubber-band resistance
-      const resistance = 0.5;
-      this.dragOffset.set(deltaY * resistance);
+      // Set dragging state only once at start
+      if (!this.isDragging()) {
+        this.isDragging.set(true);
+        // Mark as animated to prevent entry animation replay on snap-back
+        this.hasAnimated.set(true);
+      }
+
+      // Direct DOM manipulation for 60fps smooth follow (bypasses Angular)
+      const sheetEl = this.sheetEl()?.nativeElement;
+      if (sheetEl) {
+        sheetEl.style.transform = `translateY(${deltaY}px)`;
+      }
 
       // Prevent scroll while dragging
       event.preventDefault();
@@ -336,14 +412,39 @@ export class BottomSheetComponent implements OnDestroy {
     }
 
     const deltaY = this.touchCurrentY - this.touchStartY;
+    const deltaTime = Date.now() - this.touchStartTime;
+    const velocity = deltaY / deltaTime; // pixels per ms
+    const sheetEl = this.sheetEl()?.nativeElement;
 
-    // Dismiss if dragged far enough
-    if (deltaY > this.DISMISS_THRESHOLD) {
+    // Dismiss if:
+    // 1. Dragged past threshold, OR
+    // 2. Velocity is high enough (quick flick gesture)
+    if (deltaY > this.DISMISS_THRESHOLD || velocity > this.VELOCITY_THRESHOLD) {
+      // Clear dragging state and animate close
+      this.isDragging.set(false);
+      if (sheetEl) {
+        sheetEl.style.transform = '';
+      }
       this.animatedClose();
     } else {
-      // Snap back
+      // Snap back to original position
+      // hasAnimated class prevents entry animation from replaying
       this.isDragging.set(false);
-      this.dragOffset.set(0);
+
+      // Animate to translateY(0) using CSS transition
+      if (sheetEl) {
+        // Use requestAnimationFrame for proper timing
+        requestAnimationFrame(() => {
+          sheetEl.style.transform = 'translateY(0)';
+
+          // Clean up after transition completes
+          setTimeout(() => {
+            if (sheetEl) {
+              sheetEl.style.transform = '';
+            }
+          }, 260); // Slightly longer than transition duration
+        });
+      }
     }
 
     this.resetDragState();
@@ -352,6 +453,7 @@ export class BottomSheetComponent implements OnDestroy {
   private resetDragState(): void {
     this.touchStartY = 0;
     this.touchCurrentY = 0;
+    this.touchStartTime = 0;
     this.isDragGesture = false;
   }
 
@@ -359,10 +461,19 @@ export class BottomSheetComponent implements OnDestroy {
     this.animatedClose();
   }
 
-  private animatedClose(): void {
+  private animatedClose(popHistory: boolean = true): void {
     this.isClosing.set(true);
     this.isDragging.set(false);
     this.dragOffset.set(0);
+
+    // Remove popstate listener
+    window.removeEventListener('popstate', this.boundPopStateHandler);
+
+    // Pop history state if we pushed one
+    if (popHistory && this.historyPushed) {
+      this.historyPushed = false;
+      history.back();
+    }
 
     setTimeout(() => {
       this.isClosing.set(false);
@@ -375,9 +486,15 @@ export class BottomSheetComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Only unlock scroll on mobile
+    // Clean up
+    window.removeEventListener('popstate', this.boundPopStateHandler);
     if (this.isMobile) {
       this.lockBodyScroll(false);
+    }
+    // Pop history if still pushed
+    if (this.historyPushed) {
+      this.historyPushed = false;
+      history.back();
     }
   }
 }

@@ -119,6 +119,21 @@ export function tokenizeKoreanChinese(text, lang) {
 }
 
 /**
+ * Tokenize English text using Intl.Segmenter
+ * Simple word-based segmentation
+ */
+export function tokenizeEnglish(text) {
+    const segmenter = new Intl.Segmenter('en', { granularity: 'word' });
+    const segments = [...segmenter.segment(text)];
+
+    return segments
+        .filter(seg => seg.isWordLike || seg.segment.trim())
+        .map(seg => ({
+            surface: seg.segment
+        }));
+}
+
+/**
  * Tokenize text based on language
  */
 export async function tokenize(text, lang) {
@@ -128,6 +143,10 @@ export async function tokenize(text, lang) {
 
     if (lang === 'ja') {
         return tokenizeJapanese(text);
+    }
+
+    if (lang === 'en') {
+        return tokenizeEnglish(text);
     }
 
     return tokenizeKoreanChinese(text, lang);

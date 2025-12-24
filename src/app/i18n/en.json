@@ -107,11 +107,13 @@
         "japanese": "Japanese",
         "chinese": "Chinese",
         "korean": "Korean",
+        "english": "English",
         "appearance": "Appearance",
         "switchToLightMode": "Switch to Light Mode",
         "switchToDarkMode": "Switch to Dark Mode",
         "vocabStats": "Vocabulary Stats",
-        "totalWords": "Total"
+        "totalWords": "Total",
+        "interfaceLanguage": "Interface Language"
     },
     "study": {
         "title": "Study Mode",

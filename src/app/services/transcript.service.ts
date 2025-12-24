@@ -211,11 +211,13 @@ export class TranscriptService {
       videoId,
       ...(resultUrl && { result_url: resultUrl })
     }).pipe(
+      takeUntil(this.cancelSubject), // Allow cancellation on reset
       switchMap(response => {
         // Gladia returns result_url for polling
         if (response.status === 'processing' && response.result_url) {
           console.log('[TranscriptService] AI processing... polling in 4s');
           return timer(4000).pipe(
+            takeUntil(this.cancelSubject), // Cancel polling timer on reset
             switchMap(() => this.generateWithWhisper(videoId, response.result_url, lang))
           );
         }
@@ -246,6 +248,11 @@ export class TranscriptService {
         this.error.set(message);
         console.error('[TranscriptService] Whisper error:', message);
         return of([]);
+      }),
+      finalize(() => {
+        // Ensure state is reset when cancelled or completed
+        this.isGeneratingAI.set(false);
+        this.pendingRequests.delete(videoId);
       }),
       shareReplay(1)
     );

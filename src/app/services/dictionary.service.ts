@@ -15,6 +15,7 @@ export class DictionaryService {
   private readonly JOTOBA_API = '/proxy/jotoba/api/search/words';
   private readonly MDBG_API = '/api/mdbg';
   private readonly KRDICT_API = '/api/krdict';
+  private readonly ENDICT_API = '/api/endict';
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
@@ -204,7 +205,7 @@ export class DictionaryService {
   /**
    * Auto-detect language and look up
    */
-  lookup(word: string, language?: 'ja' | 'zh' | 'ko'): Observable<DictionaryEntry | null> {
+  lookup(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry | null> {
     const detectedLang = language || this.detectLanguage(word);
 
     if (detectedLang === 'zh') {
@@ -213,7 +214,67 @@ export class DictionaryService {
     if (detectedLang === 'ko') {
       return this.lookupKorean(word);
     }
+    if (detectedLang === 'en') {
+      return this.lookupEnglish(word);
+    }
     return this.lookupJapanese(word);
+  }
+
+  /**
+   * Look up an English word using Free Dictionary API
+   */
+  lookupEnglish(word: string): Observable<DictionaryEntry | null> {
+    if (!word.trim()) return of(null);
+
+    // Check cache first
+    const cached = this.getFromCache(word, 'en');
+    if (cached) {
+      this.lastLookup.set(cached);
+      return of(cached);
+    }
+
+    this.isLoading.set(true);
+
+    return this.http.get<any[]>(`${this.ENDICT_API}?q=${encodeURIComponent(word)}`).pipe(
+      map(response => {
+        const result = this.parseEndictResponse(response, word);
+        if (result) {
+          this.saveToCache(word, 'en', result);
+        }
+        return result;
+      }),
+      tap(() => this.isLoading.set(false)),
+      catchError(err => {
+        this.isLoading.set(false);
+        console.log('English dictionary lookup failed, using local:', err.message);
+        const result = this.localEnglishLookup(word);
+        if (result) this.lastLookup.set(result);
+        return of(result);
+      })
+    );
+  }
+
+  /**
+   * Parse Free Dictionary API response to DictionaryEntry format
+   */
+  private parseEndictResponse(response: any[], word: string): DictionaryEntry | null {
+    if (!response || response.length === 0) {
+      return this.localEnglishLookup(word);
+    }
+
+    const entry = response[0];
+    const result: DictionaryEntry = {
+      word: entry.word || word,
+      reading: entry.phonetic || '', // IPA phonetic
+      meanings: entry.definitions?.map((def: string) => ({
+        definition: def,
+        examples: []
+      })) || [],
+      partOfSpeech: entry.partOfSpeech || []
+    };
+
+    this.lastLookup.set(result);
+    return result;
   }
 
   /* method removed */
@@ -221,7 +282,7 @@ export class DictionaryService {
   /**
    * Simple language detection based on character types
    */
-  private detectLanguage(text: string): 'ja' | 'zh' | 'ko' {
+  private detectLanguage(text: string): 'ja' | 'zh' | 'ko' | 'en' {
     // Check for Korean (Hangul)
     if (/[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/.test(text)) {
       return 'ko';
@@ -230,8 +291,12 @@ export class DictionaryService {
     if (/[\u3040-\u309F\u30A0-\u30FF]/.test(text)) {
       return 'ja';
     }
-    // Default to Chinese for CJK ideographs without kana or hangul
-    return 'zh';
+    // Check for CJK ideographs (Chinese)
+    if (/[\u4E00-\u9FFF]/.test(text)) {
+      return 'zh';
+    }
+    // Default to English for Latin characters
+    return 'en';
   }
 
   /**
@@ -425,6 +490,46 @@ export class DictionaryService {
     return commonWords[word] || null;
   }
 
+  /**
+   * Local English dictionary fallback
+   */
+  private localEnglishLookup(word: string): DictionaryEntry | null {
+    const commonWords: Record<string, DictionaryEntry> = {
+      'hello': {
+        word: 'hello',
+        reading: '/həˈloʊ/',
+        meanings: [{ definition: 'used as a greeting or to begin a phone conversation' }],
+        partOfSpeech: ['Exclamation', 'Noun']
+      },
+      'world': {
+        word: 'world',
+        reading: '/wɜːrld/',
+        meanings: [{ definition: 'the earth, together with all of its countries and peoples' }],
+        partOfSpeech: ['Noun']
+      },
+      'learn': {
+        word: 'learn',
+        reading: '/lɜːrn/',
+        meanings: [{ definition: 'gain or acquire knowledge of or skill in something' }],
+        partOfSpeech: ['Verb']
+      },
+      'study': {
+        word: 'study',
+        reading: '/ˈstʌdi/',
+        meanings: [{ definition: 'devote time and attention to acquiring knowledge' }],
+        partOfSpeech: ['Verb', 'Noun']
+      },
+      'language': {
+        word: 'language',
+        reading: '/ˈlæŋɡwɪdʒ/',
+        meanings: [{ definition: 'a system of communication used by a particular country or community' }],
+        partOfSpeech: ['Noun']
+      }
+    };
+
+    return commonWords[word.toLowerCase()] || null;
+  }
+
   // ─────────────────────────────────────────────────────────────
   // Cache helpers (localStorage with LRU eviction)
   // ─────────────────────────────────────────────────────────────
@@ -432,7 +537,7 @@ export class DictionaryService {
   /**
    * Get cached dictionary entry from localStorage
    */
-  private getFromCache(word: string, lang: 'ja' | 'zh' | 'ko'): DictionaryEntry | null {
+  private getFromCache(word: string, lang: 'ja' | 'zh' | 'ko' | 'en'): DictionaryEntry | null {
     try {
       const cache = this.loadCache();
       const key = `${lang}:${word}`;
@@ -453,7 +558,7 @@ export class DictionaryService {
   /**
    * Save dictionary entry to localStorage cache
    */
-  private saveToCache(word: string, lang: 'ja' | 'zh' | 'ko', data: DictionaryEntry): void {
+  private saveToCache(word: string, lang: 'ja' | 'zh' | 'ko' | 'en', data: DictionaryEntry): void {
     try {
       const cache = this.loadCache();
       const key = `${lang}:${word}`;

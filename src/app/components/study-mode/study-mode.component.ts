@@ -548,6 +548,45 @@ interface StudyCard {
         box-shadow: none;
       }
     }
+
+    /* Desktop: larger cards and wider layout */
+    @media (min-width: 769px) {
+      .study-start {
+        max-width: 600px;
+        padding: var(--space-2xl);
+      }
+
+      .study-session {
+        max-width: 700px;
+      }
+
+      .flashcard__front,
+      .flashcard__back {
+        min-height: 400px;
+        padding: var(--space-2xl);
+      }
+
+      .card-word {
+        font-size: 3.5rem;
+      }
+
+      .card-reading {
+        font-size: 1.5rem;
+      }
+
+      .card-meaning {
+        font-size: 1.25rem;
+      }
+
+      .session-complete {
+        max-width: 600px;
+        padding: var(--space-2xl);
+      }
+
+      .stat-value {
+        font-size: 2rem;
+      }
+    }
   `]
 })
 export class StudyModeComponent {

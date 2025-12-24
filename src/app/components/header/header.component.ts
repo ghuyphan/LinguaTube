@@ -42,6 +42,13 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         >
           한국어
         </button>
+        <button 
+          class="lang-btn"
+          [class.active]="settings.settings().language === 'en'"
+          (click)="setLanguage('en')"
+        >
+          EN
+        </button>
       </nav>
 
 
@@ -606,7 +613,7 @@ export class HeaderComponent {
   showUserMenu = false;
   showLangMenu = false;
 
-  setLanguage(lang: 'ja' | 'zh' | 'ko'): void {
+  setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
     if (this.settings.settings().language === lang) return;
     this.youtube.reset();
     this.subtitles.clear();

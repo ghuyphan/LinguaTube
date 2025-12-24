@@ -10,7 +10,8 @@ const DEFAULT_SETTINGS: UserSettings = {
   showPinyin: true,
   autoAdvance: false,
   fontSize: 'medium',
-  playbackSpeed: 1
+  playbackSpeed: 1,
+  sidebarCollapsed: false
 };
 
 @Injectable({
@@ -57,7 +58,7 @@ export class SettingsService implements OnDestroy {
     this.updateSettings({ theme });
   }
 
-  setLanguage(language: 'ja' | 'zh' | 'ko'): void {
+  setLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): void {
     this.updateSettings({ language });
   }
 
@@ -75,6 +76,10 @@ export class SettingsService implements OnDestroy {
 
   setPlaybackSpeed(speed: number): void {
     this.updateSettings({ playbackSpeed: speed });
+  }
+
+  setSidebarCollapsed(collapsed: boolean): void {
+    this.updateSettings({ sidebarCollapsed: collapsed });
   }
 
   resetToDefaults(): void {

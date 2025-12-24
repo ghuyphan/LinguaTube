@@ -10,3 +10,4 @@ export * from './dictionary-panel/dictionary-panel.component';
 export * from './study-mode/study-mode.component';
 export * from './settings-sheet/settings-sheet.component';
 export * from './vocabulary-quick-view/vocabulary-quick-view.component';
+export * from './sidebar/sidebar.component';

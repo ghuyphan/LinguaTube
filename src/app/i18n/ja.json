@@ -107,11 +107,13 @@
         "japanese": "日本語",
         "chinese": "中国語",
         "korean": "韓国語",
+        "english": "英語",
         "appearance": "外観",
         "switchToLightMode": "ライトモードに切替",
         "switchToDarkMode": "ダークモードに切替",
         "vocabStats": "単語帳の統計",
-        "totalWords": "総単語数"
+        "totalWords": "総単語数",
+        "interfaceLanguage": "表示言語"
     },
     "study": {
         "title": "学習モード",

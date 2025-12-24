@@ -7,7 +7,23 @@
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../../_shared/utils.js';
 import { tokenize } from '../../_shared/tokenizer.js';
 
-const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh']);
+const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
+
+/**
+ * Simple hash function for cache key differentiation
+ * Creates a short hash from the concatenation of all texts
+ */
+function hashTexts(texts) {
+    const str = texts.join('||');
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    // Convert to positive hex string (shorter than base10)
+    return (hash >>> 0).toString(16);
+}
 
 export async function onRequest(context) {
     const { request, params, env } = context;
@@ -20,7 +36,7 @@ export async function onRequest(context) {
 
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
-            { error: `Unsupported language: ${lang}. Supported: ja, ko, zh` },
+            { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
             400
         );
     }
@@ -41,14 +57,18 @@ export async function onRequest(context) {
             return jsonResponse({ error: 'Missing or invalid "videoId"' }, 400);
         }
 
-        // Check cache first - ONE read for entire video
-        const cacheKey = `tokens:v3:${lang}:${videoId}`;
+        // Check cache first - include hash of texts to differentiate subtitle versions
+        const textsHash = hashTexts(texts);
+        const cacheKey = `tokens:v4:${lang}:${videoId}:${textsHash}`;
         if (TOKEN_CACHE) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
-                if (cached) {
-                    console.log(`[Tokenize Batch] Cache hit for ${videoId}`);
+                // Validate: cached tokens count must match requested texts count
+                if (cached && cached.tokens && cached.tokens.length === texts.length) {
+                    console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
                     return jsonResponse(cached);
+                } else if (cached) {
+                    console.log(`[Tokenize Batch] Cache mismatch for ${videoId} (expected ${texts.length}, got ${cached.tokens?.length})`);
                 }
             } catch (e) {
                 // Cache read failed, continue

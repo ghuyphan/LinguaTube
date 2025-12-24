@@ -2,6 +2,7 @@ import { Component, inject, effect, output, signal, computed, ViewChild, Element
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../icon/icon.component';
+import { VocabularyQuickViewComponent } from '../vocabulary-quick-view/vocabulary-quick-view.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService } from '../../services';
 import { SubtitleCue, Token } from '../../models';
 
@@ -9,7 +10,7 @@ import { SubtitleCue, Token } from '../../models';
   selector: 'app-subtitle-display',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent],
+  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent],
   animations: [
     trigger('subtitleFade', [
       transition(':enter', [
@@ -34,7 +35,7 @@ import { SubtitleCue, Token } from '../../models';
               <span class="word">{{ cue.text }}</span>
             } @else {
               <span class="subtitle-content" @subtitleFade>
-                @for (token of getTokens(cue); track cue.id + '-' + $index + '-' + token.surface) {@if (isPunctuation(token.surface)) {<span class="punctuation">{{ token.surface }}</span>} @else {<span 
+                @for (token of getTokens(cue); track $index) {@if (isPunctuation(token.surface)) {<span class="punctuation">{{ token.surface }}</span>} @else {<span 
                     class="word"
                     [class.word--new]="getWordLevel(token.surface) === 'new'"
                     [class.word--learning]="getWordLevel(token.surface) === 'learning'"
@@ -125,6 +126,17 @@ import { SubtitleCue, Token } from '../../models';
           <span>{{ readingLabel() }}</span>
         </button>
 
+        <button 
+          class="toggle-btn added-btn"
+          (click)="toggleAddedSheet()"
+          [title]="i18n.t('nav.added')"
+        >
+          <app-icon name="bookmark-plus" [size]="16" />
+          @if (recentCount() > 0) {
+            <span class="toggle-btn__badge">{{ recentCount() }}</span>
+          }
+        </button>
+
         <div class="font-controls">
           <button 
             class="font-btn"
@@ -147,6 +159,12 @@ import { SubtitleCue, Token } from '../../models';
         </div>
       </div>
     </div>
+
+    <!-- Vocabulary Quick View Sheet -->
+    <app-vocabulary-quick-view 
+      [isOpen]="showAddedSheet()" 
+      (closed)="showAddedSheet.set(false)" 
+    />
   `,
   styles: [`
     .subtitle-panel {
@@ -738,6 +756,13 @@ export class SubtitleDisplayComponent {
   // Input to skip heavy processing when video is in fullscreen
   isVideoFullscreen = input(false);
 
+  // Added sheet state
+  showAddedSheet = signal(false);
+  recentCount = computed(() => {
+    const lang = this.settings.settings().language;
+    return this.vocab.getByLanguage(lang).length;
+  });
+
   // Loop feature state
   isLoopEnabled = signal(false);
   loopCount = signal(0);
@@ -962,5 +987,9 @@ export class SubtitleDisplayComponent {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  toggleAddedSheet(): void {
+    this.showAddedSheet.update(v => !v);
   }
 }

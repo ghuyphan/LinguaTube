@@ -53,6 +53,8 @@ import { Token } from '../../models';
       grid-template-columns: 1fr 340px;
       gap: var(--space-lg);
       align-items: start;
+      max-width: 1280px;
+      margin: 0 auto;
     }
 
     .layout-main {
@@ -64,7 +66,7 @@ import { Token } from '../../models';
 
     .layout-sidebar {
       position: sticky;
-      top: 80px;
+      top: var(--space-lg);
     }
 
     .desktop-only {

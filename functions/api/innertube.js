@@ -108,15 +108,41 @@ export async function onRequestPost(context) {
         const cacheKey = `captions:v7:${videoId}`;
 
         // =====================================================================
-        // Tier 0: Cache (instant)
+        // Tier 0: Cache (instant) - Check BOTH caption and AI transcript caches
         // =====================================================================
         if (!forceRefresh && cache) {
+            // Check YouTube caption cache first
             const cached = await getCachedResult(cache, cacheKey, targetLanguages);
             if (cached) {
-                log(`Cache hit (${timer()}ms)`);
+                log(`Caption cache hit (${timer()}ms)`);
                 return jsonResponse({ ...cached, source: 'cache', timing: timer() });
             }
+
+            // Check AI transcript cache (from previous Gladia processing)
+            try {
+                const aiCacheKey = `transcript:v4:${videoId}`;
+                const aiCached = await cache.get(aiCacheKey, 'json');
+                if (aiCached?.segments?.length > 0) {
+                    log(`AI transcript cache hit (${timer()}ms)`);
+                    // Convert AI transcript format to standard caption format
+                    return jsonResponse({
+                        captions: {
+                            playerCaptionsTracklistRenderer: {
+                                captionTracks: [{
+                                    languageCode: aiCached.language || targetLanguages[0] || 'ja',
+                                    content: aiCached.segments
+                                }]
+                            }
+                        },
+                        source: 'cache:ai',
+                        timing: timer()
+                    });
+                }
+            } catch (e) {
+                log('AI cache check failed:', e.message);
+            }
         }
+
 
         // =====================================================================
         // Tier 1: Race YouTube sources (Innertube + scrape)

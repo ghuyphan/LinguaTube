@@ -46,7 +46,7 @@ export class SubtitleService {
   /**
    * Batch tokenize all subtitle cues
    */
-  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko'): Promise<void> {
+  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko' | 'en'): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -139,7 +139,7 @@ export class SubtitleService {
   /**
    * Get tokens for a cue (pre-computed or fallback)
    */
-  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko'): Token[] {
+  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko' | 'en'): Token[] {
     if (cue.tokens?.length) {
       return cue.tokens;
     }
@@ -259,13 +259,14 @@ export class SubtitleService {
     }
   }
 
-  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko'): Token[] {
+  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko' | 'en'): Token[] {
     if (!text.trim()) return [];
 
     switch (lang) {
       case 'zh':
         return text.split('').map(char => ({ surface: char }));
       case 'ko':
+      case 'en':
         return text.split(/\s+/).filter(Boolean).map(word => ({ surface: word }));
       case 'ja':
       default:
@@ -297,7 +298,7 @@ export class SubtitleService {
     return tokens;
   }
 
-  private applyFallbackTokens(cues: SubtitleCue[], lang: 'ja' | 'zh' | 'ko'): void {
+  private applyFallbackTokens(cues: SubtitleCue[], lang: 'ja' | 'zh' | 'ko' | 'en'): void {
     cues.forEach(cue => {
       if (!cue.tokens) {
         cue.tokens = this.fallbackTokenize(cue.text, lang);

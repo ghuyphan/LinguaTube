@@ -47,6 +47,14 @@ import { VocabularyListComponent } from '../../components/vocabulary-list/vocabu
         gap: var(--space-md);
       }
     }
+
+    /* Desktop: wider layout */
+    @media (min-width: 769px) {
+      .dictionary-view {
+        max-width: 800px;
+        padding: var(--space-lg) 0;
+      }
+    }
   `]
 })
 export class DictionaryPageComponent { }

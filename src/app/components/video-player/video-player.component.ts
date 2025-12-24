@@ -532,26 +532,24 @@ interface SeekPreview {
     .big-play-btn {
       width: 64px;
       height: 64px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      backdrop-filter: blur(4px);
       animation: fadeIn 0.2s ease;
     }
 
     .play-pause-feedback {
       width: 64px;
       height: 64px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      backdrop-filter: blur(4px);
       pointer-events: none;
     }
 
@@ -612,13 +610,12 @@ interface SeekPreview {
     .volume-feedback {
       width: 64px;
       height: 64px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      backdrop-filter: blur(4px);
       pointer-events: none;
     }
 
@@ -921,14 +918,13 @@ interface SeekPreview {
       bottom: 100%;
       right: 0;
       margin-bottom: 8px;
-      background: rgba(28, 28, 28, 0.95);
+      background: rgba(28, 28, 28, 0.98);
       border-radius: 8px;
       padding: 8px 0;
       min-width: 120px;
       max-height: 250px;
       overflow-y: auto;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
       z-index: 100;
       animation: menuSlideUp 0.15s ease;
     }
@@ -1018,9 +1014,7 @@ interface SeekPreview {
 
     /* Inner container with background for long subtitles */
     .fs-subtitle-inner {
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.85);
       border-radius: 12px;
       padding: 12px 20px;
       max-height: 35vh;

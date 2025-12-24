@@ -6,7 +6,7 @@
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
 import { tokenize } from '../../_shared/tokenizer.js';
 
-const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh']);
+const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 
 /**
  * Simple hash function for cache keys (djb2 algorithm)
@@ -33,7 +33,7 @@ export async function onRequest(context) {
     // Validate language
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
-            { error: `Unsupported language: ${lang}. Supported: ja, ko, zh` },
+            { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
             400
         );
     }

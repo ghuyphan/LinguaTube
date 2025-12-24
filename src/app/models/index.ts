@@ -25,10 +25,11 @@ export interface VocabularyItem {
   pinyin?: string;
   romanization?: string;  // Korean romanization
   meaning: string;
-  language: 'ja' | 'zh' | 'ko';
+  language: 'ja' | 'zh' | 'ko' | 'en';
   level: WordLevel;
   examples: string[];
   addedAt: Date;
+  updatedAt?: Date;           // Last modification time for sync
   lastReviewedAt?: Date;
   reviewCount: number;
 
@@ -76,7 +77,7 @@ export interface VideoInfo {
 
 // App state
 export interface AppState {
-  currentLanguage: 'ja' | 'zh' | 'ko';
+  currentLanguage: 'ja' | 'zh' | 'ko' | 'en';
   currentVideo?: VideoInfo;
   subtitles: SubtitleCue[];
   vocabulary: VocabularyItem[];
@@ -87,10 +88,11 @@ export interface AppState {
 // Settings
 export interface UserSettings {
   theme: 'light' | 'dark' | 'system';
-  language: 'ja' | 'zh' | 'ko';
+  language: 'ja' | 'zh' | 'ko' | 'en';
   showFurigana: boolean;
   showPinyin: boolean;
   autoAdvance: boolean;
   fontSize: 'small' | 'medium' | 'large';
   playbackSpeed: number;
+  sidebarCollapsed: boolean;
 }

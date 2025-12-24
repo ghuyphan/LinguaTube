@@ -107,11 +107,13 @@
         "japanese": "Tiếng Nhật",
         "chinese": "Tiếng Trung",
         "korean": "Tiếng Hàn",
+        "english": "Tiếng Anh",
         "appearance": "Giao diện",
         "switchToLightMode": "Chuyển sang chế độ sáng",
         "switchToDarkMode": "Chuyển sang chế độ tối",
         "vocabStats": "Thống kê từ vựng",
-        "totalWords": "Tổng số từ"
+        "totalWords": "Tổng số từ",
+        "interfaceLanguage": "Ngôn ngữ giao diện"
     },
     "study": {
         "title": "Chế độ học",
