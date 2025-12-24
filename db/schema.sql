@@ -26,7 +26,9 @@ CREATE TABLE IF NOT EXISTS transcripts (
   video_id TEXT NOT NULL,
   language TEXT NOT NULL,
   source TEXT NOT NULL,  -- 'youtube' or 'ai'
-  segments TEXT NOT NULL,  -- JSON array of {start, duration, text}
+  segments TEXT,  -- JSON array of {start, duration, text}, NULL if pending
+  status TEXT DEFAULT 'complete',  -- 'pending' or 'complete'
+  gladia_result_url TEXT,  -- Gladia polling URL for pending jobs
   created_at INTEGER DEFAULT (strftime('%s', 'now')),
   PRIMARY KEY (video_id, language)
 );

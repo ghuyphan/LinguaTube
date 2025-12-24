@@ -1,19 +1,18 @@
 /**
  * Whisper/Gladia Transcription API (Cloudflare Function)
  * Uses Gladia API for YouTube video transcription
- * Features: KV caching, exponential backoff, timeout handling
+ * Features: D1 persistent pending state, KV caching, exponential backoff
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
-import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
+import { getTranscript, getPendingJob, savePendingJob, completePendingJob } from '../_shared/transcript-db.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
 const INITIAL_DELAY_MS = 1000;
 const MAX_DELAY_MS = 5000;
 const FETCH_TIMEOUT_MS = 10000;
-const PENDING_CACHE_TTL = 300; // 5 minutes for pending jobs
 
 function log(...args) {
     if (DEBUG) console.log('[Gladia]', ...args);
@@ -90,29 +89,20 @@ export async function onRequestPost(context) {
                 return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
             }
 
-            // Check cache first (only for new requests)
+            // 1. Check KV cache for completed transcripts
             if (TRANSCRIPT_CACHE) {
                 try {
-                    // 1. Check completed transcripts
                     const cached = await TRANSCRIPT_CACHE.get(`transcript:v4:${videoId}`, 'json');
                     if (cached) {
-                        log('Cache hit for', videoId);
+                        log('KV cache hit for', videoId);
                         return jsonResponse(cached);
-                    }
-
-                    // 2. Check pending jobs (Request Coalescing)
-                    const pendingKey = `transcript:pending:${videoId}`;
-                    const pendingUrl = await TRANSCRIPT_CACHE.get(pendingKey);
-                    if (pendingUrl) {
-                        log('Join pending job for', videoId);
-                        resultUrl = pendingUrl;
                     }
                 } catch (e) {
                     // Cache read failed, continue
                 }
             }
 
-            // 3. Check D1 database (permanent storage)
+            // 2. Check D1 database for completed transcript
             const d1Result = await getTranscript(db, videoId, 'ai');
             if (d1Result?.segments?.length > 0) {
                 log('D1 hit for AI transcript:', videoId);
@@ -130,6 +120,13 @@ export async function onRequestPost(context) {
                     ).catch(() => { });
                 }
                 return jsonResponse(response);
+            }
+
+            // 3. Check D1 for pending job (persistent across refreshes)
+            const pendingJob = await getPendingJob(db, videoId);
+            if (pendingJob?.gladia_result_url) {
+                log('Found pending job in D1:', videoId);
+                resultUrl = pendingJob.gladia_result_url;
             }
 
             // Only submit new job if we didn't find a pending one
@@ -169,18 +166,8 @@ export async function onRequestPost(context) {
                     throw new Error('No result_url from Gladia');
                 }
 
-                // Cache the pending job URL
-                if (TRANSCRIPT_CACHE) {
-                    try {
-                        await TRANSCRIPT_CACHE.put(
-                            `transcript:pending:${videoId}`,
-                            resultUrl,
-                            { expirationTtl: PENDING_CACHE_TTL }
-                        );
-                    } catch (e) {
-                        log('Failed to cache pending job:', e.message);
-                    }
-                }
+                // Save pending job to D1 (persistent across refreshes)
+                savePendingJob(db, videoId, 'ai', resultUrl).catch(() => { });
             }
         }
 
@@ -242,16 +229,14 @@ export async function onRequestPost(context) {
                                 JSON.stringify(response),
                                 { expirationTtl: 60 * 60 * 24 * 30 }
                             );
-                            // Clean up pending key
-                            TRANSCRIPT_CACHE.delete(`transcript:pending:${videoId}`).catch(() => { });
                         } catch (e) {
                             // Cache write failed, continue
                         }
                     }
 
-                    // Save to D1 (permanent, non-blocking)
+                    // Complete the pending job in D1 (updates status and clears result_url)
                     if (db && videoId && segments.length > 0) {
-                        saveTranscript(db, videoId, response.language || 'ai', segments, 'ai').catch(() => { });
+                        completePendingJob(db, videoId, response.language || 'ai', segments).catch(() => { });
                     }
 
                     return jsonResponse(response);
