@@ -82,12 +82,6 @@
 
       <!-- Center Controls (play/pause and other centered indicators) -->
       <div class="center-controls">
-        <!-- Desktop: Play/Pause Feedback -->
-        @if (!isTouchDevice && playPauseFeedback()) {
-        <div class="center-feedback animate">
-          <app-icon [name]="feedbackIconName()" [size]="44" />
-        </div>
-        }
 
         <!-- Volume Feedback -->
         @if (volumeFeedback()) {
