@@ -261,42 +261,48 @@ async function tryYoutubeiJS(videoId, langs) {
     // Get transcript
     const transcriptInfo = await info.getTranscript();
 
-    // Get the current language
-    const currentLang = transcriptInfo?.selectedLanguage ||
-        transcriptInfo?.transcript?.content?.header?.language_selector?.selected?.text ||
-        '';
-
-    log(`youtubei.js: Got transcript, detected language: "${currentLang}"`);
+    // Log available languages
+    const availableLangs = transcriptInfo?.languages || [];
+    const currentLang = transcriptInfo?.selectedLanguage || '';
+    log(`youtubei.js: Current="${currentLang}", Available=[${availableLangs.join(', ')}]`);
 
     // Check if current language matches any requested language
     const matchesRequested = langs.some(l =>
-        currentLang.toLowerCase().includes(l.toLowerCase()) ||
-        currentLang.toLowerCase().startsWith(l.toLowerCase())
+        currentLang.toLowerCase().includes(l.toLowerCase())
     );
 
-    // If not matching and we need a specific language, try selectLanguage
-    if (!matchesRequested && transcriptInfo?.selectLanguage) {
-        log(`youtubei.js: Transcript is "${currentLang}", trying to find ${langs.join('/')}`);
-
-        // Try to switch to a matching language
-        for (const lang of langs) {
-            try {
-                const switched = await transcriptInfo.selectLanguage(lang);
-                if (switched) {
-                    log(`youtubei.js: Switched to ${lang}`);
-                    return extractCues(switched, videoId, lang);
-                }
-            } catch (e) {
-                log(`youtubei.js: selectLanguage(${lang}) failed: ${e.message}`);
-            }
-        }
-
-        // No matching language found
-        throw new Error(`No transcript in requested languages: ${langs.join(', ')}`);
+    if (matchesRequested) {
+        log(`youtubei.js: Current language matches requested`);
+        return extractCues(transcriptInfo, videoId, currentLang);
     }
 
-    // Use the current transcript
-    return extractCues(transcriptInfo, videoId, currentLang || langs[0]);
+    // Try to find and switch to a matching language
+    for (const lang of langs) {
+        // Check if this language is available
+        const available = availableLangs.find(l =>
+            l.toLowerCase().includes(lang.toLowerCase())
+        );
+
+        if (available) {
+            try {
+                log(`youtubei.js: Switching to "${available}"...`);
+                const switched = await transcriptInfo.selectLanguage(available);
+                if (switched) {
+                    return extractCues(switched, videoId, available);
+                }
+            } catch (e) {
+                log(`youtubei.js: selectLanguage("${available}") failed: ${e.message}`);
+            }
+        }
+    }
+
+    // If no matching language but we have a transcript, use it anyway
+    if (currentLang) {
+        log(`youtubei.js: No matching lang found, using "${currentLang}" anyway`);
+        return extractCues(transcriptInfo, videoId, currentLang);
+    }
+
+    throw new Error(`No transcript in requested languages: ${langs.join(', ')}`);
 }
 
 // Helper to extract cues from transcript info
