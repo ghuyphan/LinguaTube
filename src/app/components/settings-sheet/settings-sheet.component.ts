@@ -2,7 +2,7 @@ import { Component, inject, input, output, ChangeDetectionStrategy, signal, View
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService } from '../../services';
+import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
 
 @Component({
   selector: 'app-settings-sheet',
@@ -459,6 +459,7 @@ export class SettingsSheetComponent {
   subtitles = inject(SubtitleService);
   i18n = inject(I18nService);
   sync = inject(SyncService);
+  transcript = inject(TranscriptService);
 
   @ViewChild('googleBtnSettings') googleBtnSettings!: ElementRef;
 
@@ -497,6 +498,7 @@ export class SettingsSheetComponent {
     if (this.settings.settings().language === lang) return;
     this.youtube.reset();
     this.subtitles.clear();
+    this.transcript.reset();
     this.settings.setLanguage(lang);
   }
 

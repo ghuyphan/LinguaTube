@@ -53,7 +53,9 @@
         "fetchingCaptions": "Fetching captions...",
         "aiPowered": "AI-Powered",
         "generatingTranscript": "Generating transcript...",
-        "usingWhisperAI": "Using Whisper AI to transcribe audio"
+        "usingWhisperAI": "Using Whisper AI to transcribe audio",
+        "resumingTranscript": "Resuming transcription...",
+        "resumingHint": "Continuing from a previous session"
     },
     "vocab": {
         "title": "Vocabulary",

@@ -77,6 +77,29 @@ export async function getPendingJob(db, videoId) {
 }
 
 /**
+ * Cleanup stale pending jobs (older than 24 hours)
+ * Called opportunistically during getPendingJob
+ */
+export async function cleanupStalePendingJobs(db) {
+    if (!db) return;
+
+    try {
+        const result = await db.prepare(`
+            DELETE FROM transcripts 
+            WHERE status = 'pending' 
+            AND created_at < strftime('%s', 'now') - 86400
+        `).run();
+
+        if (result.meta?.changes > 0) {
+            log('Cleaned up stale pending jobs:', result.meta.changes);
+        }
+    } catch (err) {
+        // Non-blocking - don't throw
+        console.error('[D1 Transcripts] cleanup error:', err.message);
+    }
+}
+
+/**
  * Save a pending AI job to D1 (when Gladia starts processing)
  */
 export async function savePendingJob(db, videoId, language, gladiaResultUrl) {

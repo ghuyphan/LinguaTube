@@ -4,7 +4,7 @@ import { RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
 
 @Component({
   selector: 'app-sidebar',
@@ -480,6 +480,7 @@ export class SidebarComponent {
   subtitles = inject(SubtitleService);
   auth = inject(AuthService);
   i18n = inject(I18nService);
+  transcript = inject(TranscriptService);
 
   isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
   openSettings = output<void>();
@@ -504,6 +505,7 @@ export class SidebarComponent {
     if (this.settings.settings().language === lang) return;
     this.youtube.reset();
     this.subtitles.clear();
+    this.transcript.reset();
     this.settings.setLanguage(lang);
   }
 

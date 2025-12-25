@@ -59,8 +59,8 @@ import { SubtitleCue, Token } from '../../models';
                   <div class="ai-spinner-ring"></div>
                   <app-icon name="wand" [size]="28" class="ai-wand" />
                 </div>
-                <p class="ai-title">{{ i18n.t('subtitle.generatingTranscript') }}</p>
-                <p class="ai-hint">{{ i18n.t('subtitle.usingWhisperAI') }}</p>
+                <p class="ai-title">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingTranscript') : i18n.t('subtitle.generatingTranscript') }}</p>
+                <p class="ai-hint">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingHint') : i18n.t('subtitle.usingWhisperAI') }}</p>
               </div>
             } @else if (youtube.currentVideo() && transcript.isLoading()) {
               <div class="loading-indicator">

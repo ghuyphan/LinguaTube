@@ -53,7 +53,9 @@
         "fetchingCaptions": "字幕を取得中...",
         "aiPowered": "AI搭載",
         "generatingTranscript": "文字起こしを生成中...",
-        "usingWhisperAI": "Whisper AIで音声を文字起こし中"
+        "usingWhisperAI": "Whisper AIで音声を文字起こし中",
+        "resumingTranscript": "文字起こしを再開中...",
+        "resumingHint": "前回のセッションから続行"
     },
     "vocab": {
         "title": "単語帳",

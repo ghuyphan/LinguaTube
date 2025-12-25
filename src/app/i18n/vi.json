@@ -53,7 +53,9 @@
         "fetchingCaptions": "Đang lấy phụ đề...",
         "aiPowered": "AI hỗ trợ",
         "generatingTranscript": "Đang tạo phụ đề...",
-        "usingWhisperAI": "Sử dụng Whisper AI để chuyển đổi âm thanh"
+        "usingWhisperAI": "Sử dụng Whisper AI để chuyển đổi âm thanh",
+        "resumingTranscript": "Đang tiếp tục tạo phụ đề...",
+        "resumingHint": "Tiếp tục từ phiên trước"
     },
     "vocab": {
         "title": "Từ vựng",

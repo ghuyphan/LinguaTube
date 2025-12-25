@@ -53,7 +53,9 @@
         "fetchingCaptions": "正在获取字幕...",
         "aiPowered": "AI驱动",
         "generatingTranscript": "正在生成字幕...",
-        "usingWhisperAI": "使用Whisper AI转录音频"
+        "usingWhisperAI": "使用Whisper AI转录音频",
+        "resumingTranscript": "正在恢复转录...",
+        "resumingHint": "继续上次的进度"
     },
     "vocab": {
         "title": "词汇本",

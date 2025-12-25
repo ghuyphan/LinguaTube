@@ -74,6 +74,59 @@ export class TranslationService {
         return request$;
     }
 
+    /**
+     * Batch translate multiple texts at once
+     * More efficient than individual requests for multiple translations
+     */
+    translateBatch(texts: string[], source: string, target: string): Observable<(string | null)[]> {
+        if (!texts.length) return of([]);
+
+        // Filter out empty texts and find cached ones
+        const results: (string | null)[] = new Array(texts.length).fill(null);
+        const toTranslate: { index: number; text: string }[] = [];
+
+        texts.forEach((text, i) => {
+            if (!text.trim()) {
+                results[i] = null;
+                return;
+            }
+
+            const key = `${source}:${target}:${text}`;
+            if (this.translationCache.has(key)) {
+                results[i] = this.translationCache.get(key)!;
+            } else {
+                toTranslate.push({ index: i, text });
+            }
+        });
+
+        // If all cached, return immediately
+        if (toTranslate.length === 0) {
+            return of(results);
+        }
+
+        // Batch API call for non-cached texts
+        return this.http.post<{ translations: (string | null)[] }>('/api/translate/batch', {
+            texts: toTranslate.map(t => t.text),
+            source,
+            target
+        }).pipe(
+            map(response => {
+                response.translations.forEach((translation, i) => {
+                    const { index, text } = toTranslate[i];
+                    results[index] = translation;
+                    if (translation) {
+                        this.addToCache(`${source}:${target}:${text}`, translation);
+                    }
+                });
+                return results;
+            }),
+            catchError(err => {
+                console.error('Batch translation failed:', err);
+                return of(results); // Return partial results (cached ones)
+            })
+        );
+    }
+
     isLoading(key: string): boolean {
         return this.loadingStates().has(key);
     }

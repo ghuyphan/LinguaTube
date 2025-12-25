@@ -53,6 +53,7 @@ export class TranscriptService {
   readonly availableLanguages = signal<string[]>([]);
   readonly captionSource = signal<'youtube' | 'ai' | null>(null);
   readonly detectedLanguage = signal<string | null>(null);
+  readonly isResumingPendingJob = signal(false); // True when resuming an existing AI job
 
   // Computed state for UI
   readonly isBusy = computed(() => this.status() === 'loading' || this.status() === 'generating_ai');
@@ -78,6 +79,7 @@ export class TranscriptService {
     this.captionSource.set(null);
     this.detectedLanguage.set(null);
     this.availableLanguages.set([]);
+    this.isResumingPendingJob.set(false);
     this.pendingRequests.clear();
   }
 
@@ -232,6 +234,11 @@ export class TranscriptService {
     this.status.set('generating_ai');
     this.error.set(null);
 
+    // Mark as resuming if we have a result_url to poll
+    if (resultUrl) {
+      this.isResumingPendingJob.set(true);
+    }
+
     const request$ = this.http.post<any>('/api/whisper', {
       videoId,
       ...(resultUrl && { result_url: resultUrl })
@@ -267,6 +274,7 @@ export class TranscriptService {
         next: () => {
           this.captionSource.set('ai');
           this.status.set('complete');
+          this.isResumingPendingJob.set(false);
           this.pendingRequests.delete(videoId);
         },
         error: (err) => {

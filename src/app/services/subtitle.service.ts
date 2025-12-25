@@ -8,6 +8,8 @@ import { YoutubeService } from './youtube.service';
 
 const MAX_CACHE_SIZE = 500;
 const BATCH_SIZE = 50;
+const TOKEN_STORAGE_KEY = 'linguatube_tokens';
+const MAX_STORED_VIDEOS = 10; // Max videos to keep in localStorage
 
 // ============================================================================
 // Service
@@ -20,6 +22,9 @@ export class SubtitleService {
   private youtube = inject(YoutubeService);
 
   constructor() {
+    // Load cached tokens from localStorage
+    this.loadTokensFromStorage();
+
     // Automatically update current cue based on video time
     // This ensures subtitles are synced even if display component is not active
     effect(() => {
@@ -70,6 +75,14 @@ export class SubtitleService {
     this.isTokenizing.set(true);
     this.abortController = new AbortController();
 
+    // Get videoId early for localStorage operations
+    const videoId = this.youtube.currentVideo()?.id;
+
+    // Try to load cached tokens from localStorage first
+    if (videoId) {
+      this.loadTokensForVideo(videoId, lang);
+    }
+
     try {
       // Create a mutable copy of cues for safe modification
       const updatedCues = cues.map(cue => ({ ...cue }));
@@ -100,9 +113,6 @@ export class SubtitleService {
 
       console.log(`[SubtitleService] Tokenizing ${uniqueTexts.size} unique texts (${lang})`);
 
-      // Get videoId for cache key - use batch endpoint
-      const videoId = this.youtube.currentVideo()?.id;
-
       // Batch tokenize with single API call + single cache write
       const texts = Array.from(uniqueTexts.keys());
       const results = await this.batchTokenize(texts, lang, videoId);
@@ -119,6 +129,12 @@ export class SubtitleService {
       });
 
       this.subtitles.set(updatedCues);
+
+      // Save tokens to localStorage for future visits
+      if (videoId) {
+        this.saveTokensForVideo(videoId, lang);
+      }
+
       console.log('[SubtitleService] Tokenization complete');
 
     } catch (error) {
@@ -394,6 +410,85 @@ export class SubtitleService {
       if (firstKey) this.tokenCache.delete(firstKey);
     }
     this.tokenCache.set(key, tokens);
+  }
+
+  /**
+   * Save tokens for a video to localStorage
+   */
+  saveTokensForVideo(videoId: string, lang: string): void {
+    if (!videoId) return;
+
+    try {
+      const stored = this.getStoredTokens();
+      const prefix = `${lang}:`;
+
+      // Collect tokens for this video that match the language
+      const videoTokens: Record<string, Token[]> = {};
+      let count = 0;
+
+      this.tokenCache.forEach((tokens, key) => {
+        if (key.startsWith(prefix)) {
+          videoTokens[key] = tokens;
+          count++;
+        }
+      });
+
+      if (count === 0) return;
+
+      // Store under video:lang key
+      stored[`${videoId}:${lang}`] = {
+        tokens: videoTokens,
+        timestamp: Date.now()
+      };
+
+      // LRU eviction - keep only MAX_STORED_VIDEOS
+      const keys = Object.keys(stored);
+      if (keys.length > MAX_STORED_VIDEOS) {
+        // Sort by timestamp, remove oldest
+        keys.sort((a, b) => stored[a].timestamp - stored[b].timestamp);
+        keys.slice(0, keys.length - MAX_STORED_VIDEOS).forEach(k => delete stored[k]);
+      }
+
+      localStorage.setItem(TOKEN_STORAGE_KEY, JSON.stringify(stored));
+      console.log(`[SubtitleService] Saved ${count} tokens for ${videoId}:${lang}`);
+    } catch {
+      // Ignore storage errors
+    }
+  }
+
+  /**
+   * Load tokens for a video from localStorage
+   */
+  loadTokensForVideo(videoId: string, lang: string): boolean {
+    try {
+      const stored = this.getStoredTokens();
+      const entry = stored[`${videoId}:${lang}`];
+
+      if (entry?.tokens) {
+        Object.entries(entry.tokens).forEach(([key, tokens]) => {
+          this.tokenCache.set(key, tokens as Token[]);
+        });
+        console.log(`[SubtitleService] Loaded tokens for ${videoId}:${lang} from localStorage`);
+        return true;
+      }
+    } catch {
+      // Ignore errors
+    }
+    return false;
+  }
+
+  private loadTokensFromStorage(): void {
+    // Initial load is skipped - tokens are loaded on-demand per video
+    // via loadTokensForVideo called from tokenizeAllCues
+  }
+
+  private getStoredTokens(): Record<string, { tokens: Record<string, Token[]>; timestamp: number }> {
+    try {
+      const stored = localStorage.getItem(TOKEN_STORAGE_KEY);
+      return stored ? JSON.parse(stored) : {};
+    } catch {
+      return {};
+    }
   }
 
   // ============================================================================

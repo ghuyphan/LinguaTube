@@ -24,7 +24,8 @@ const DEBUG = true;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 const PIPED_INSTANCE = 'https://pipedapi.kavin.rocks';
-const STRATEGY_TIMEOUT = 10000; // 10s per strategy
+const STRATEGY_TIMEOUT = 8000; // 8s per strategy
+const STAGGER_DELAY = 2000; // 2s between strategy starts
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
@@ -79,57 +80,19 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // Step 2: Try youtube-caption-extractor (fastest)
+        // Step 2: Race strategies with staggered starts
         // =====================================================================
-        log('Trying: caption-extractor...');
-        try {
-            const result = await withTimeout(
-                tryCaptionExtractor(videoId, targetLanguages),
-                STRATEGY_TIMEOUT
-            );
-            if (result) {
-                log(`caption-extractor success (${elapsed()}ms)`);
-                saveToCache(cache, db, videoId, primaryLang, result.data, 'caption-extractor');
-                return jsonResponse({ ...result.data, source: 'caption-extractor', timing: elapsed() });
-            }
-        } catch (e) {
-            log(`caption-extractor failed: ${e.message}`);
-        }
+        log('Starting parallel strategy race...');
 
-        // =====================================================================
-        // Step 3: Try youtubei.js
-        // =====================================================================
-        log('Trying: youtubei.js...');
         try {
-            const result = await withTimeout(
-                tryYoutubeiJS(videoId, targetLanguages),
-                STRATEGY_TIMEOUT
-            );
+            const result = await raceStrategies(videoId, targetLanguages);
             if (result) {
-                log(`youtubei.js success (${elapsed()}ms)`);
-                saveToCache(cache, db, videoId, primaryLang, result.data, 'youtubei.js');
-                return jsonResponse({ ...result.data, source: 'youtubei.js', timing: elapsed() });
+                log(`Strategy "${result.source}" won race (${elapsed()}ms)`);
+                saveToCache(cache, db, videoId, primaryLang, result.data, result.source);
+                return jsonResponse({ ...result.data, source: result.source, timing: elapsed() });
             }
         } catch (e) {
-            log(`youtubei.js failed: ${e.message}`);
-        }
-
-        // =====================================================================
-        // Step 4: Try Piped (fallback)
-        // =====================================================================
-        log('Trying: piped...');
-        try {
-            const result = await withTimeout(
-                tryPiped(videoId, targetLanguages),
-                STRATEGY_TIMEOUT
-            );
-            if (result) {
-                log(`piped success (${elapsed()}ms)`);
-                saveToCache(cache, db, videoId, primaryLang, result.data, 'piped');
-                return jsonResponse({ ...result.data, source: 'piped', timing: elapsed() });
-            }
-        } catch (e) {
-            log(`piped failed: ${e.message}`);
+            log(`All strategies failed: ${e.message}`);
         }
 
         // =====================================================================
@@ -159,6 +122,57 @@ function withTimeout(promise, ms) {
         promise,
         new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))
     ]);
+}
+
+// ============================================================================
+// Parallel Strategy Racing
+// ============================================================================
+
+/**
+ * Race strategies with staggered starts
+ * Starts the fastest strategy first, then adds others after STAGGER_DELAY
+ * First successful result wins, others are abandoned
+ */
+async function raceStrategies(videoId, targetLanguages) {
+    const strategies = [
+        { name: 'caption-extractor', fn: () => tryCaptionExtractor(videoId, targetLanguages), delay: 0 },
+        { name: 'youtubei.js', fn: () => tryYoutubeiJS(videoId, targetLanguages), delay: STAGGER_DELAY },
+        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: STAGGER_DELAY * 2 }
+    ];
+
+    return new Promise((resolve, reject) => {
+        let resolved = false;
+        let completed = 0;
+        const errors = [];
+
+        strategies.forEach(({ name, fn, delay }) => {
+            setTimeout(async () => {
+                if (resolved) return; // Race already won
+
+                try {
+                    log(`Starting: ${name}...`);
+                    const result = await withTimeout(fn(), STRATEGY_TIMEOUT);
+
+                    if (result && !resolved) {
+                        resolved = true;
+                        log(`${name} succeeded`);
+                        resolve({ ...result, source: name });
+                    } else {
+                        throw new Error('No result');
+                    }
+                } catch (e) {
+                    log(`${name} failed: ${e.message}`);
+                    errors.push({ name, error: e.message });
+                } finally {
+                    completed++;
+                    // All strategies done and none succeeded
+                    if (completed === strategies.length && !resolved) {
+                        reject(new Error(`All strategies failed: ${errors.map(e => `${e.name}:${e.error}`).join(', ')}`));
+                    }
+                }
+            }, delay);
+        });
+    });
 }
 
 // ============================================================================
@@ -393,10 +407,6 @@ async function tryPiped(videoId, langs) {
         }
     };
 }
-
-// ============================================================================
-// Subtitle Parsing Helpers
-// ============================================================================
 
 // ============================================================================
 // Subtitle Parsing Helpers

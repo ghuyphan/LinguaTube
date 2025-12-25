@@ -1,7 +1,7 @@
 import { Component, inject, ChangeDetectionStrategy, HostListener, ViewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, UILanguage } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, UILanguage, TranscriptService } from '../../services';
 
 @Component({
   selector: 'app-header',
@@ -572,6 +572,7 @@ export class HeaderComponent {
   subtitles = inject(SubtitleService);
   auth = inject(AuthService);
   i18n = inject(I18nService);
+  transcript = inject(TranscriptService);
 
   @ViewChild('googleBtnDesktop') googleBtnDesktop!: ElementRef;
   @ViewChild('googleBtnMobile') googleBtnMobile!: ElementRef;
@@ -614,6 +615,7 @@ export class HeaderComponent {
     if (this.settings.settings().language === lang) return;
     this.youtube.reset();
     this.subtitles.clear();
+    this.transcript.reset();
     this.settings.setLanguage(lang);
   }
 

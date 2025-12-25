@@ -6,7 +6,7 @@
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
-import { getTranscript, getPendingJob, savePendingJob, completePendingJob } from '../_shared/transcript-db.js';
+import { getTranscript, getPendingJob, savePendingJob, completePendingJob, cleanupStalePendingJobs } from '../_shared/transcript-db.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -128,6 +128,9 @@ export async function onRequestPost(context) {
                 log('Found pending job in D1:', videoId);
                 resultUrl = pendingJob.gladia_result_url;
             }
+
+            // Opportunistic cleanup of stale pending jobs (non-blocking)
+            cleanupStalePendingJobs(db).catch(() => { });
 
             // Only submit new job if we didn't find a pending one
             if (!resultUrl) {

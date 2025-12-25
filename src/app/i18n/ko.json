@@ -53,7 +53,9 @@
         "fetchingCaptions": "자막 가져오는 중...",
         "aiPowered": "AI 지원",
         "generatingTranscript": "전사 생성 중...",
-        "usingWhisperAI": "Whisper AI로 오디오 전사 중"
+        "usingWhisperAI": "Whisper AI로 오디오 전사 중",
+        "resumingTranscript": "전사 재개 중...",
+        "resumingHint": "이전 세션에서 계속"
     },
     "vocab": {
         "title": "단어장",
