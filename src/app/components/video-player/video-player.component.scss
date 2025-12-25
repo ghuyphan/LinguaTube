@@ -160,12 +160,22 @@
 .zone-left,
 .zone-right {
   width: 25%;
-  cursor: pointer;
+  cursor: default; // Default cursor on desktop like YouTube
 }
 
 .zone-center {
   width: 50%;
-  cursor: pointer;
+  cursor: default; // Default cursor on desktop like YouTube
+}
+
+// Show pointer cursor only on touch devices
+@media (hover: none) and (pointer: coarse) {
+
+  .zone-left,
+  .zone-right,
+  .zone-center {
+    cursor: pointer;
+  }
 }
 
 /* ============================================
