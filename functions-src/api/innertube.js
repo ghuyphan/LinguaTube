@@ -208,11 +208,12 @@ async function getHealthyPipedInstances() {
  * First successful result wins, others are abandoned
  */
 async function raceStrategies(videoId, targetLanguages) {
+    // Piped first for better language accuracy, caption-extractor can fall back to wrong language
     const strategies = [
-        { name: 'caption-extractor', fn: () => tryCaptionExtractor(videoId, targetLanguages), delay: 0 },
+        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: 0 },
+        { name: 'caption-extractor', fn: () => tryCaptionExtractor(videoId, targetLanguages), delay: STAGGER_DELAY },
         // Uncomment to enable youtubei.js:
-        // { name: 'youtubei.js', fn: () => tryYoutubeiJS(videoId, targetLanguages), delay: STAGGER_DELAY },
-        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: STAGGER_DELAY },
+        // { name: 'youtubei.js', fn: () => tryYoutubeiJS(videoId, targetLanguages), delay: STAGGER_DELAY * 2 },
         { name: 'invidious', fn: () => tryInvidious(videoId, targetLanguages), delay: STAGGER_DELAY * 2 }
     ];
 
