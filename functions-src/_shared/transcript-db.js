@@ -84,8 +84,8 @@ export async function savePendingJob(db, videoId, language, gladiaResultUrl) {
 
     try {
         await db.prepare(`
-            INSERT OR REPLACE INTO transcripts (video_id, language, source, status, gladia_result_url, created_at)
-            VALUES (?, ?, 'ai', 'pending', ?, strftime('%s', 'now'))
+            INSERT OR REPLACE INTO transcripts (video_id, language, source, status, gladia_result_url, segments, created_at)
+            VALUES (?, ?, 'ai', 'pending', ?, '[]', strftime('%s', 'now'))
         `).bind(videoId, language, gladiaResultUrl).run();
 
         log('Saved pending job:', videoId, gladiaResultUrl);
