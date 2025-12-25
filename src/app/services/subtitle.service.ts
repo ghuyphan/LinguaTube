@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, inject } from '@angular/core';
+import { Injectable, signal, computed, inject, effect } from '@angular/core';
 import { SubtitleCue, Token } from '../models';
 import { YoutubeService } from './youtube.service';
 
@@ -18,6 +18,15 @@ const BATCH_SIZE = 50;
 })
 export class SubtitleService {
   private youtube = inject(YoutubeService);
+
+  constructor() {
+    // Automatically update current cue based on video time
+    // This ensures subtitles are synced even if display component is not active
+    effect(() => {
+      const time = this.youtube.currentTime();
+      this.updateCurrentCue(time);
+    });
+  }
 
   // State
   readonly subtitles = signal<SubtitleCue[]>([]);

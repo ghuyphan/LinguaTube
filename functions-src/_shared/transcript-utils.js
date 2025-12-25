@@ -35,8 +35,8 @@ export function cleanTranscriptSegments(segments) {
 
     // Step 4: Filter out invalid segments
     const filtered = merged.filter(seg =>
-        seg.text?.trim().length > 0 &&
-        seg.duration >= MIN_CUE_DURATION
+        seg.text?.trim().length > 0
+        // removed duration check as some valid words can be short in CJK
     );
 
     // Step 5: Apply sticky timing with caps
@@ -100,6 +100,10 @@ function mergeGroups(groups) {
  * Check if two segments should be merged
  * Only merge if texts are nearly identical (true duplicates)
  */
+/**
+ * Check if two segments should be merged
+ * Only merge if texts are nearly identical (true duplicates)
+ */
 function shouldMerge(prev, curr) {
     const prevEnd = prev.start + prev.duration;
     const gap = curr.start - prevEnd;
@@ -114,10 +118,11 @@ function shouldMerge(prev, curr) {
     // Skip if either is empty
     if (!prevText || !currText) return false;
 
-    // Only merge if one is subset of the other (true duplicate)
-    return prevText === currText ||
-        prevText.includes(currText) ||
-        currText.includes(prevText);
+    // Strict equality or clean containment
+    if (prevText === currText) return true;
+
+    // Check if one is a substring of the other (likely progressive captioning)
+    return prevText.includes(currText) || currText.includes(prevText);
 }
 
 /**

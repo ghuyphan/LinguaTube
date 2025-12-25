@@ -64,7 +64,8 @@
         }
 
         <!-- Left Zone - Rewind -->
-        <div class="zone left" (touchend)="onZoneTouchEnd('left', $event)" (click)="onZoneClick('left', $event)">
+        <div class="zone left" (touchend)="handleZoneInteraction('left', $event)"
+          (click)="handleZoneInteraction('left', $event)">
           <div class="seek-feedback" [class.animate]="rewindFeedback()">
             <div class="seek-feedback-inner">
               <app-icon name="rewind" [size]="32" />
@@ -77,8 +78,9 @@
         </div>
 
         <!-- Center Zone - Play/Pause -->
-        <div class="zone center" (touchend)="onZoneTouchEnd('center', $event)" (click)="onZoneClick('center', $event)"
-          (dblclick)="handleCenterDoubleClick()">
+        <div class="zone center" (touchend)="handleZoneInteraction('center', $event)"
+          (click)="handleZoneInteraction('center', $event)" (dblclick)="handleCenterDoubleClick()">
+          <!-- dblclick logic moved to click handler generally -->
           <!-- Mobile: Always show play button when paused; show pause button only with controls -->
           @if (isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
           @if (!youtube.isPlaying()) {
@@ -108,7 +110,8 @@
         </div>
 
         <!-- Right Zone - Forward -->
-        <div class="zone right" (touchend)="onZoneTouchEnd('right', $event)" (click)="onZoneClick('right', $event)">
+        <div class="zone right" (touchend)="handleZoneInteraction('right', $event)"
+          (click)="handleZoneInteraction('right', $event)">
           <div class="seek-feedback" [class.animate]="forwardFeedback()">
             <div class="seek-feedback-inner">
               <app-icon name="fast-forward" [size]="32" />

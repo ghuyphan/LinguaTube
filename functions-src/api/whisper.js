@@ -92,7 +92,7 @@ export async function onRequestPost(context) {
             // 1. Check KV cache for completed transcripts
             if (TRANSCRIPT_CACHE) {
                 try {
-                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v5:${videoId}`, 'json');
+                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v4:${videoId}`, 'json');
                     if (cached) {
                         log('KV cache hit for', videoId);
                         return jsonResponse(cached);
@@ -114,7 +114,7 @@ export async function onRequestPost(context) {
                 // Warm KV cache (non-blocking)
                 if (TRANSCRIPT_CACHE) {
                     TRANSCRIPT_CACHE.put(
-                        `transcript:v5:${videoId}`,
+                        `transcript:v4:${videoId}`,
                         JSON.stringify(response),
                         { expirationTtl: 60 * 60 * 24 * 30 }
                     ).catch(() => { });
@@ -225,7 +225,7 @@ export async function onRequestPost(context) {
                     if (TRANSCRIPT_CACHE && videoId) {
                         try {
                             await TRANSCRIPT_CACHE.put(
-                                `transcript:v5:${videoId}`,
+                                `transcript:v4:${videoId}`,
                                 JSON.stringify(response),
                                 { expirationTtl: 60 * 60 * 24 * 30 }
                             );

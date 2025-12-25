@@ -102,7 +102,7 @@ export async function onRequestPost(context) {
         log('Trying: youtubei.js...');
         try {
             const result = await withTimeout(
-                tryYoutubeiJS(videoId, targetLanguages, env.YOUTUBE_COOKIE),
+                tryYoutubeiJS(videoId, targetLanguages),
                 STRATEGY_TIMEOUT
             );
             if (result) {
@@ -166,7 +166,7 @@ function withTimeout(promise, ms) {
 // ============================================================================
 
 async function checkCache(cache, db, videoId, lang) {
-    const cacheKey = `captions:v9:${videoId}`;
+    const cacheKey = `captions:v8:${videoId}`;
 
     // Check KV cache
     if (cache) {
@@ -199,7 +199,7 @@ async function checkCache(cache, db, videoId, lang) {
 }
 
 function saveToCache(cache, db, videoId, lang, data, source) {
-    const cacheKey = `captions:v9:${videoId}`;
+    const cacheKey = `captions:v8:${videoId}`;
 
     // Save to KV (non-blocking)
     cache?.put(cacheKey, JSON.stringify(data), { expirationTtl: CACHE_TTL }).catch(() => { });
@@ -244,27 +244,11 @@ async function tryCaptionExtractor(videoId, langs) {
 // Strategy 2: youtubei.js
 // ============================================================================
 
-// Map language codes to potential display names in YouTube UI
-const LANG_CODE_MAP = {
-    'ja': ['Japanese', '日本語'],
-    'en': ['English'],
-    'vi': ['Vietnamese', 'Tiếng Việt'],
-    'zh': ['Chinese', 'Mandarin', '中文'],
-    'ko': ['Korean', '한국어'],
-    'es': ['Spanish', 'Español'],
-    'fr': ['French', 'Français'],
-    'de': ['German', 'Deutsch'],
-    'it': ['Italian', 'Italiano'],
-    'ru': ['Russian', 'Русский'],
-    'pt': ['Portuguese', 'Português']
-};
-
-async function tryYoutubeiJS(videoId, langs, cookie) {
+async function tryYoutubeiJS(videoId, langs) {
     // Create Innertube instance
     const yt = await YoutubeiJS.create({
         retrieve_player: false,
         lang: langs[0] || 'en',
-        cookie: cookie, // Use provided cookie for authentication
         fetch: (input, init) => fetch(input, init) // Fix for "Illegal invocation" in CF Workers
     });
 
@@ -283,11 +267,9 @@ async function tryYoutubeiJS(videoId, langs, cookie) {
     log(`youtubei.js: Current="${currentLang}", Available=[${availableLangs.join(', ')}]`);
 
     // Check if current language matches any requested language
-    // We need to match code (e.g. 'ja') to name (e.g. 'Japanese')
-    const matchesRequested = langs.some(langCode => {
-        const names = LANG_CODE_MAP[langCode.toLowerCase()] || [langCode];
-        return names.some(name => currentLang.toLowerCase().includes(name.toLowerCase()));
-    });
+    const matchesRequested = langs.some(l =>
+        currentLang.toLowerCase().includes(l.toLowerCase())
+    );
 
     if (matchesRequested) {
         log(`youtubei.js: Current language matches requested`);
@@ -295,18 +277,15 @@ async function tryYoutubeiJS(videoId, langs, cookie) {
     }
 
     // Try to find and switch to a matching language
-    for (const langCode of langs) {
-        // Get potential names for this code
-        const names = LANG_CODE_MAP[langCode.toLowerCase()] || [langCode];
-
-        // Check if any of these names exist in available languages
-        const available = availableLangs.find(availName =>
-            names.some(targetName => availName.toLowerCase().includes(targetName.toLowerCase()))
+    for (const lang of langs) {
+        // Check if this language is available
+        const available = availableLangs.find(l =>
+            l.toLowerCase().includes(lang.toLowerCase())
         );
 
         if (available) {
             try {
-                log(`youtubei.js: Switching to "${available}" (matched "${langCode}")...`);
+                log(`youtubei.js: Switching to "${available}"...`);
                 const switched = await transcriptInfo.selectLanguage(available);
                 if (switched) {
                     return extractCues(switched, videoId, available);
@@ -419,7 +398,13 @@ async function tryPiped(videoId, langs) {
 // Subtitle Parsing Helpers
 // ============================================================================
 
+// ============================================================================
+// Subtitle Parsing Helpers
+// ============================================================================
+
 function parseSubtitle(text) {
+    if (!text) return null;
+
     // Try JSON3 format
     if (text.trimStart().startsWith('{')) {
         const result = parseJson3(text);
@@ -427,7 +412,7 @@ function parseSubtitle(text) {
     }
 
     // Try XML format
-    if (text.includes('<text start=')) {
+    if (text.includes('<text')) {
         const result = parseXml(text);
         if (result?.length) return result;
     }
@@ -444,11 +429,14 @@ function parseSubtitle(text) {
 function parseJson3(text) {
     try {
         const { events = [] } = JSON.parse(text);
-        return events.filter(e => e.segs).map(e => ({
-            text: decode(e.segs.map(s => s.utf8 || '').join('').trim()),
-            start: (e.tStartMs || 0) / 1000,
-            duration: (e.dDurationMs || 0) / 1000
-        })).filter(s => s.text);
+        return events
+            .filter(e => e.segs && (e.tStartMs !== undefined))
+            .map(e => ({
+                text: decode(e.segs.map(s => s.utf8 || '').join('').trim()),
+                start: (e.tStartMs || 0) / 1000,
+                duration: (e.dDurationMs || 0) / 1000
+            }))
+            .filter(s => s.text); // Filter empty lines
     } catch {
         return null;
     }
@@ -456,29 +444,76 @@ function parseJson3(text) {
 
 function parseXml(text) {
     const segs = [];
-    const re = /<text start="([^"]+)" dur="([^"]+)"[^>]*>([^<]*)<\/text>/g;
+    // More robust regex for XML attributes (handles single/double quotes and order)
+    const re = /<text\s+start="([\d.]+)"\s+dur="([\d.]+)"[^>]*>([^<]*)<\/text>/g;
+
+    // Also try to match without quotes just in case, or different order
+    // But sticking to the standard pattern first. 
+    // Let's use a simpler regex that captures attributes more loosely if the strict one fails?
+    // Actually, let's just use a slightly more flexible one.
+    const reFlex = /<text[^>]*start="([\d.]+)"[^>]*dur="([\d.]+)"[^>]*>([^<]*)<\/text>/g;
+
     let m;
-    while ((m = re.exec(text))) {
+    while ((m = reFlex.exec(text))) {
         const t = decode(m[3].trim());
-        if (t) segs.push({ text: t, start: parseFloat(m[1]), duration: parseFloat(m[2]) });
+        if (t) {
+            segs.push({
+                text: t,
+                start: parseFloat(m[1]),
+                duration: parseFloat(m[2])
+            });
+        }
     }
     return segs.length ? segs : null;
 }
 
 function parseVtt(text) {
     const segs = [];
-    const lines = text.split('\n');
+    // Normalize line endings
+    const lines = text.replace(/\r\n/g, '\n').split('\n');
 
-    for (let i = 0; i < lines.length; i++) {
-        const m = lines[i].match(/(\d{2}:\d{2}:\d{2}\.\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2}\.\d{3})/);
-        if (m) {
-            const start = vttTime(m[1]);
-            const end = vttTime(m[2]);
+    let i = 0;
+    while (i < lines.length) {
+        const line = lines[i].trim();
+
+        // Skip header and empty lines
+        if (line === 'WEBVTT' || !line) {
+            i++;
+            continue;
+        }
+
+        // Check for time range: 00:00:00.000 --> 00:00:00.000
+        const timeMatch = line.match(/((?:\d{2}:)?\d{2}:\d{2}\.\d{3})\s*-->\s*((?:\d{2}:)?\d{2}:\d{2}\.\d{3})/);
+
+        if (timeMatch) {
+            const start = vttTime(timeMatch[1]);
+            const end = vttTime(timeMatch[2]);
+
+            // Collect text lines until next empty line or timestamp
             let txt = '';
-            while (++i < lines.length && lines[i].trim() && !lines[i].includes('-->')) {
-                txt += (txt ? ' ' : '') + lines[i].trim();
+            i++;
+            while (i < lines.length) {
+                const textLine = lines[i].trim();
+                // If it looks like a timestamp or is empty, break
+                if (!textLine || textLine.includes('-->')) break;
+
+                txt += (txt ? ' ' : '') + textLine;
+                i++;
             }
-            if (txt) segs.push({ text: decode(txt), start, duration: end - start });
+
+            // Clean VTT tags like <c> or <00:00:00.000>
+            txt = txt.replace(/<[^>]*>/g, '');
+
+            if (txt) {
+                segs.push({
+                    text: decode(txt),
+                    start,
+                    duration: end - start
+                });
+            }
+        } else {
+            // Check if it's an ID line (skip)
+            i++;
         }
     }
 
@@ -486,19 +521,31 @@ function parseVtt(text) {
 }
 
 function vttTime(ts) {
-    const [h, m, r] = ts.split(':');
-    const [s, ms] = r.split('.');
-    return +h * 3600 + +m * 60 + +s + +ms / 1000;
+    const parts = ts.split(':');
+    let h = 0, m = 0, s = 0, ms = 0;
+
+    if (parts.length === 3) {
+        [h, m, s] = parts;
+    } else {
+        [m, s] = parts;
+    }
+
+    const [seconds, millis] = s.split('.');
+
+    return (+h * 3600) + (+m * 60) + (+seconds) + (+millis / 1000);
 }
 
 function decode(t) {
+    if (!t) return '';
     return t
-        .replace(/&#39;/g, "'")
         .replace(/&quot;/g, '"')
         .replace(/&amp;/g, '&')
+        .replace(/&apos;/g, "'")
+        .replace(/&#39;/g, "'")
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
+        .replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)))
         .replace(/\n/g, ' ')
         .trim();
 }

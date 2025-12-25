@@ -149,7 +149,18 @@ export class YoutubeService {
             },
             onStateChange: (event: any) => {
               const state = event.data;
-              this.isPlaying.set(state === window.YT.PlayerState.PLAYING);
+              const isPlaying = state === window.YT.PlayerState.PLAYING;
+
+              if (isPlaying !== this.isPlaying()) {
+                if (isPlaying) {
+                  this.isPlaying.set(true);
+                  this.startTimeTracking();
+                } else {
+                  this.isPlaying.set(false);
+                  cancelAnimationFrame(this.timeUpdateInterval);
+                }
+              }
+
               this.isEnded.set(state === window.YT.PlayerState.ENDED);
 
               // If we should restore to paused state, pause immediately after playing starts
@@ -186,20 +197,37 @@ export class YoutubeService {
   }
 
   private startTimeTracking(): void {
-    // Clear existing interval
-    if (this.timeUpdateInterval) {
-      clearInterval(this.timeUpdateInterval);
-    }
-
-    this.timeUpdateInterval = setInterval(() => {
+    const track = () => {
       if (this.player && typeof this.player.getCurrentTime === 'function') {
         try {
-          this.currentTime.set(this.player.getCurrentTime() || 0);
+          const time = this.player.getCurrentTime() || 0;
+          if (time !== this.currentTime()) {
+            this.currentTime.set(time);
+          }
         } catch (e) {
           // Player might be destroyed
         }
       }
-    }, 100);
+
+      if (this.isPlaying()) {
+        this.timeUpdateInterval = requestAnimationFrame(track);
+      }
+    };
+
+    // Start loop
+    cancelAnimationFrame(this.timeUpdateInterval);
+    this.timeUpdateInterval = requestAnimationFrame(track);
+  }
+
+  // Override set to handle play/pause for loop
+  private setPlaying(isPlaying: boolean) {
+    if (isPlaying && !this.isPlaying()) {
+      this.isPlaying.set(true);
+      this.startTimeTracking();
+    } else if (!isPlaying) {
+      this.isPlaying.set(false);
+      cancelAnimationFrame(this.timeUpdateInterval);
+    }
   }
 
   play(): void {
@@ -291,7 +319,7 @@ export class YoutubeService {
 
   destroy(): void {
     if (this.timeUpdateInterval) {
-      clearInterval(this.timeUpdateInterval);
+      cancelAnimationFrame(this.timeUpdateInterval);
       this.timeUpdateInterval = null;
     }
 

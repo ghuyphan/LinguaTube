@@ -41,20 +41,23 @@ const MIN_CUE_DURATION = 0.5;
 // Maximum duration for a single cue (prevents overly long sticky subtitles)
 const MAX_CUE_DURATION = 10;
 
+export type TranscriptStatus = 'idle' | 'loading' | 'generating_ai' | 'complete' | 'error';
+
 @Injectable({
   providedIn: 'root'
 })
 export class TranscriptService {
   // State signals
-  readonly isLoading = signal(false);
+  readonly status = signal<TranscriptStatus>('idle');
   readonly error = signal<string | null>(null);
   readonly availableLanguages = signal<string[]>([]);
-  readonly isGeneratingAI = signal(false);
   readonly captionSource = signal<'youtube' | 'ai' | null>(null);
   readonly detectedLanguage = signal<string | null>(null);
 
   // Computed state for UI
-  readonly isBusy = computed(() => this.isLoading() || this.isGeneratingAI());
+  readonly isBusy = computed(() => this.status() === 'loading' || this.status() === 'generating_ai');
+  readonly isGeneratingAI = computed(() => this.status() === 'generating_ai');
+  readonly isLoading = computed(() => this.status() === 'loading');
 
   // Cache
   private readonly transcriptCache = new Map<string, SubtitleCue[]>();
@@ -70,9 +73,8 @@ export class TranscriptService {
    */
   reset(): void {
     this.cancelSubject.next(); // Cancel in-flight requests
-    this.isLoading.set(false);
+    this.status.set('idle');
     this.error.set(null);
-    this.isGeneratingAI.set(false);
     this.captionSource.set(null);
     this.detectedLanguage.set(null);
     this.availableLanguages.set([]);
@@ -89,10 +91,11 @@ export class TranscriptService {
       log('Client cache hit:', { videoId, lang, cues: cached.length });
       this.captionSource.set('youtube');
       this.availableLanguages.set([lang]);
+      this.status.set('complete');
       return of(cached);
     }
 
-    this.isLoading.set(true);
+    this.status.set('loading');
     this.error.set(null);
     this.captionSource.set(null);
 
@@ -101,35 +104,54 @@ export class TranscriptService {
       tap(() => log('Fetching from backend:', { videoId, lang })),
       switchMap(result => {
         log('Backend result:', { cues: result.cues.length, validResponse: result.validResponse });
+        // Case 1: Success from YouTube
         if (result.cues.length > 0) {
           return of(result.cues);
         }
 
+        // Case 2: Invalid/Empty response -> Retry once with forceRefresh
         if (!result.validResponse) {
           return this.fetchFromBackend(videoId, lang, true).pipe(
             takeUntil(this.cancelSubject),
             switchMap(retry => {
               if (retry.cues.length > 0) return of(retry.cues);
+              // Fallback to AI
               return this.generateWithWhisper(videoId, undefined, lang);
             })
           );
         }
 
+        // Case 3: Valid response but no captions -> Fallback to AI directly
         return this.generateWithWhisper(videoId, undefined, lang);
       }),
       tap(cues => {
         if (cues.length > 0) {
           this.error.set(null); // Clear any previous errors
+          this.status.set('complete');
+
+          // Only cache 'youtube' source here. 'ai' source is cached in generateWithWhisper
           if (this.captionSource() === 'youtube') {
             this.transcriptCache.set(cacheKey, cues);
+          }
+        } else {
+          // If we got here with empty cues and no error thrown yet
+          if (this.status() !== 'error') {
+            this.error.set('No subtitles found');
+            this.status.set('error');
           }
         }
       }),
       catchError(err => {
         console.error('[TranscriptService] Error:', err.message);
-        return this.generateWithWhisper(videoId, undefined, lang);
-      }),
-      finalize(() => this.isLoading.set(false))
+        // Try AI as last resort if not already tried? 
+        // Or just let generateWithWhisper handle its own errors?
+        // If we are here, it means fetchFromBackend failed completely or generateWithWhisper failed.
+        // If generateWithWhisper failed, it already set error state? No, it returns empty array/error.
+
+        // Let's rely on generateWithWhisper to propagate error or empty list.
+        this.status.set('error');
+        return of([]);
+      })
     );
   }
 
@@ -197,17 +219,17 @@ export class TranscriptService {
 
     if (!resultUrl && this.transcriptCache.has(cacheKey)) {
       this.captionSource.set('ai');
+      this.status.set('complete');
       return of(this.transcriptCache.get(cacheKey)!);
     }
 
     // If we're polling (resultUrl exists), we shouldn't use the pending request cache
-    // because we *need* to make a new request to check status
     if (!resultUrl && this.pendingRequests.has(videoId)) {
       return this.pendingRequests.get(videoId)!;
     }
 
-    this.isLoading.set(false);
-    this.isGeneratingAI.set(true);
+    // Update status to generating_ai for both initial and polling requests
+    this.status.set('generating_ai');
     this.error.set(null);
 
     const request$ = this.http.post<any>('/api/whisper', {
@@ -219,6 +241,8 @@ export class TranscriptService {
         // Gladia returns result_url for polling
         if (response.status === 'processing' && response.result_url) {
           console.log('[TranscriptService] AI processing... polling in 4s');
+          this.status.set('generating_ai'); // Ensure status stays as generating_ai
+
           return timer(4000).pipe(
             takeUntil(this.cancelSubject), // Cancel polling timer on reset
             switchMap(() => this.generateWithWhisper(videoId, response.result_url, lang))
@@ -241,26 +265,24 @@ export class TranscriptService {
       }),
       tap({
         next: () => {
-          this.isGeneratingAI.set(false);
           this.captionSource.set('ai');
+          this.status.set('complete');
           this.pendingRequests.delete(videoId);
         },
-        error: () => {
-          this.isGeneratingAI.set(false);
+        error: (err) => {
+          this.status.set('error');
+          // Error string set in catchError below
           this.pendingRequests.delete(videoId);
         }
       }),
       catchError(err => {
         const message = err.error?.error || err.message || 'AI transcription failed';
         this.error.set(message);
+        this.status.set('error');
         console.error('[TranscriptService] Whisper error:', message);
         return of([]);
       }),
-      finalize(() => {
-        // Ensure state is reset when cancelled or completed
-        this.isGeneratingAI.set(false);
-        this.pendingRequests.delete(videoId);
-      }),
+      // Remove finalize as we control status explicitly in tap/catchError
       shareReplay(1)
     );
 

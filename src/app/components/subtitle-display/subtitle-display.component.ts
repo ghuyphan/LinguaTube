@@ -824,11 +824,7 @@ export class SubtitleDisplayComponent {
   });
 
   constructor() {
-    // Update current cue based on video time
-    effect(() => {
-      const time = this.youtube.currentTime();
-      this.subtitles.updateCurrentCue(time);
-    });
+    // Sync logic moved to SubtitleService
 
     // Auto-scroll to active cue using effect for better reactivity
     effect(() => {

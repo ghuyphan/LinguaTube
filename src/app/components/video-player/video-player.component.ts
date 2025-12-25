@@ -249,7 +249,17 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   onUserActivity() {
-    this.showControls();
+    if (!this.areControlsVisible()) {
+      this.showControls();
+      return;
+    }
+
+    // Debounce/Throttle the "extend visibility" logic
+    if (this.controlsTimeout) {
+      clearTimeout(this.controlsTimeout);
+    }
+    // Restart the hide timer
+    this.hideControlsAfterDelay(3000);
   }
 
   onMouseLeave() {
@@ -322,104 +332,106 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   /**
-   * Handle touch end on zones (mobile).
-   * YouTube behavior: single tap toggles controls, double-tap seeks.
-   * The key insight: every first tap toggles controls immediately.
-   * If a second tap comes within 300ms, we also trigger seek.
+   * Unified handler for zone interactions (Touch & Click)
    */
-  onZoneTouchEnd(zone: 'left' | 'center' | 'right', event: Event) {
-    event.preventDefault();
-    event.stopPropagation();
+  handleZoneInteraction(zone: 'left' | 'center' | 'right', event: Event) {
+    // If it's a touch device, ignore click events to prevent double-firing
+    // (touchend will handle it)
+    if (this.isTouchDevice && event.type === 'click') return;
 
-    if (!this.isTouchDevice) return;
+    // Prevent default to stop ghost clicks on touch
+    if (event.type === 'touchend') {
+      event.preventDefault();
+    }
+
+    event.stopPropagation();
 
     const now = Date.now();
     const lastTap = this.lastTapTime[zone];
-    const isDoubleTap = now - lastTap < this.DOUBLE_TAP_DELAY && lastTap > 0;
+    const isDoubleTap = now - lastTap < this.DOUBLE_TAP_DELAY;
 
-    // Update last tap time for this zone
     this.lastTapTime[zone] = now;
 
     if (zone === 'center') {
-      // Center zone: when playing, toggle controls; when paused, play the video
-      if (this.youtube.isPlaying()) {
-        this.toggleControlsVisibility();
-      } else if (!this.youtube.isEnded()) {
-        // When paused (not ended), tap to play
-        this.togglePlay();
-      }
-      // When ended, do nothing (let replay button handle it)
+      this.handleCenterZone(isDoubleTap);
       return;
     }
 
-    // Left or right zone
+    // Side zones
     if (isDoubleTap) {
-      // Double-tap: seek and show cumulative feedback
-      this.handleDoubleTapSeek(zone, event as TouchEvent);
+      this.handleSideDoubleTap(zone, event);
     } else {
-      // First tap: toggle controls immediately
+      // Delay single tap action slightly to wait for potential double tap
+      // But for "Show Controls", we want it instant.
+      // YouTube style: always toggle/show controls on any tap.
       this.toggleControlsVisibility();
     }
   }
 
-  /**
-   * Handle click on zones (desktop).
-   * Desktop: single click toggles play.
-   */
-  onZoneClick(zone: 'left' | 'center' | 'right', event: Event) {
+  private handleCenterZone(isDoubleTap: boolean) {
     if (this.isTouchDevice) {
-      // Touch device - clicks are handled by touchend
-      return;
-    }
-
-    event.stopPropagation();
-    this.togglePlay();
-  }
-
-  /**
-   * Toggle controls visibility with smooth transition
-   */
-  private toggleControlsVisibility() {
-    if (this.areControlsVisible()) {
-      this.areControlsVisible.set(false);
+      // Mobile behavior
+      if (!this.youtube.isPlaying() && !this.youtube.isEnded()) {
+        this.togglePlay(); // Tap to play if paused
+      } else {
+        this.toggleControlsVisibility(); // Otherwise toggle controls
+      }
     } else {
-      this.showControls();
+      // Desktop behavior (Clicks)
+      if (isDoubleTap) {
+        this.toggleFullscreen();
+      } else {
+        this.togglePlay();
+      }
     }
   }
 
-  /**
-   * Handle double-tap seek with YouTube-style cumulative feedback
-   */
-  private handleDoubleTapSeek(zone: 'left' | 'right', event: TouchEvent) {
+  private handleSideDoubleTap(zone: 'left' | 'right', event: Event) {
     const seconds = zone === 'left' ? -10 : 10;
 
-    // Cumulative seek: if tapping rapidly, accumulate the seek amount
+    // Clear any pending controls hide timer
+    this.showControls();
+
+    // Cumulative seek logic
     if (this.seekFeedbackTimeout) {
       clearTimeout(this.seekFeedbackTimeout);
-      // Add to accumulator
       this.seekAccumulator.update(v => v + 10);
     } else {
-      // Reset accumulator for new seek sequence
       this.seekAccumulator.set(10);
     }
 
-    // Perform the seek
     this.seekRelative(seconds);
-
-    // Show visual feedback
     this.triggerSeekFeedback(zone);
 
-    // Show ripple at touch position
-    if (event.changedTouches && event.changedTouches.length > 0) {
-      const touch = event.changedTouches[0];
+    // Ripple Effect
+    this.triggerRipple(event, zone);
+
+    // Reset feedback timer
+    this.seekFeedbackTimeout = setTimeout(() => {
+      this.seekFeedbackTimeout = null;
+      this.rewindFeedback.set(false);
+      this.forwardFeedback.set(false);
+    }, 800);
+  }
+
+  private triggerRipple(event: Event, zone: 'left' | 'right') {
+    // Extract coordinates from touch or mouse
+    let clientX, clientY;
+    if (event instanceof TouchEvent && event.changedTouches.length > 0) {
+      clientX = event.changedTouches[0].clientX;
+      clientY = event.changedTouches[0].clientY;
+    } else if (event instanceof MouseEvent) {
+      clientX = event.clientX;
+      clientY = event.clientY;
+    }
+
+    if (clientX !== undefined && clientY !== undefined) {
       const target = event.currentTarget as HTMLElement;
-      if (target) {
-        const rect = target.getBoundingClientRect();
-        this.ripplePos.set({
-          x: touch.clientX - rect.left,
-          y: touch.clientY - rect.top
-        });
-      }
+      const rect = target.getBoundingClientRect();
+      this.ripplePos.set({
+        x: clientX - rect.left,
+        y: clientY - rect.top
+      });
     }
 
     if (zone === 'left') {
@@ -429,25 +441,37 @@ export class VideoPlayerComponent implements OnDestroy {
       this.rightRipple.set(true);
       setTimeout(() => this.rightRipple.set(false), 600);
     }
+  }
 
-    // Reset seek feedback after animation completes
-    this.seekFeedbackTimeout = setTimeout(() => {
-      this.seekFeedbackTimeout = null;
-      this.rewindFeedback.set(false);
-      this.forwardFeedback.set(false);
-    }, 800);
-
-    // Also show controls (briefly) when seeking
-    this.showControls();
+  /**
+  * Toggle controls visibility with smooth transition
+  */
+  private toggleControlsVisibility() {
+    if (this.areControlsVisible()) {
+      if (this.youtube.isPlaying()) {
+        this.areControlsVisible.set(false);
+      }
+    } else {
+      this.showControls();
+    }
   }
 
   /**
    * Trigger seek feedback animation
    */
+  /**
+   * Trigger seek feedback animation with force reflow to ensure restart
+   */
   private triggerSeekFeedback(zone: 'left' | 'right') {
+    // Force reflow hack to restart animation if it's already active
     if (zone === 'left') {
+      this.rewindFeedback.set(false);
+      // Trigger reflow
+      void this.videoContainerRef?.nativeElement?.offsetLeft;
       this.rewindFeedback.set(true);
     } else {
+      this.forwardFeedback.set(false);
+      void this.videoContainerRef?.nativeElement?.offsetLeft;
       this.forwardFeedback.set(true);
     }
   }
@@ -475,12 +499,9 @@ export class VideoPlayerComponent implements OnDestroy {
     this.youtube.play();
   }
 
-  // Desktop: double-click to fullscreen
-  handleCenterDoubleClick() {
-    if (!this.isTouchDevice) {
-      this.toggleFullscreen();
-    }
-  }
+  // Desktop double-click (handled in handleZoneInteraction now)
+  // kept for template compatibility if needed, but logic is in handleZoneInteraction
+  handleCenterDoubleClick() { }
 
   // ============================================
   // VOLUME CONTROL
@@ -772,55 +793,20 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   loadVideo(): void {
-    console.log('[VideoPlayer] loadVideo called, videoUrl:', this.videoUrl);
     const url = this.videoUrl.trim();
     if (!url) {
-      console.log('[VideoPlayer] Empty URL');
       this.error.set('Please enter a YouTube URL');
       return;
     }
 
     const videoId = this.youtube.extractVideoId(url);
-    console.log('[VideoPlayer] Extracted videoId:', videoId);
     if (!videoId) {
       this.error.set('Invalid YouTube URL');
       return;
     }
 
-    const currentVideo = this.youtube.currentVideo();
-    console.log('[VideoPlayer] currentVideo:', currentVideo?.id);
-    if (currentVideo && currentVideo.id === videoId) {
-      // Same video - just refetch captions (handles language change)
-      console.log('[VideoPlayer] Same video, refetching captions');
-      this.subtitles.clear();
-      this.transcript.reset();
-      const lang = this.settings.settings().language;
-      this.transcript.fetchTranscript(videoId, lang).subscribe({
-        next: (cues) => {
-          if (cues.length > 0) {
-            this.subtitles.currentCueIndex.set(-1);
-            this.subtitles.subtitles.set(cues);
-
-            // Auto-detect language mismatch
-            const detectedFull = this.transcript.detectedLanguage();
-            const detected = detectedFull?.split('-')[0]?.toLowerCase();
-            const validLangs = ['ja', 'zh', 'ko', 'en'];
-
-            if (detected && detected !== lang && validLangs.includes(detected)) {
-              console.log(`[VideoPlayer] Auto-switching language from ${lang} to ${detected}`);
-              this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
-              this.subtitles.tokenizeAllCues(detected as 'ja' | 'zh' | 'ko' | 'en');
-            } else {
-              this.subtitles.tokenizeAllCues(lang);
-            }
-          }
-        }
-      });
-      return;
-    }
-
-    console.log('[VideoPlayer] Navigating to /video with id:', videoId);
     this.router.navigate(['/video'], { queryParams: { id: videoId } });
+    this.videoUrl = ''; // Clear input
   }
 
   private async restorePlayer(videoId: string): Promise<void> {
