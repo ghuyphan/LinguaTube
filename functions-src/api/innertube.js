@@ -102,7 +102,7 @@ export async function onRequestPost(context) {
         log('Trying: youtubei.js...');
         try {
             const result = await withTimeout(
-                tryYoutubeiJS(videoId, targetLanguages),
+                tryYoutubeiJS(videoId, targetLanguages, env.YOUTUBE_COOKIE),
                 STRATEGY_TIMEOUT
             );
             if (result) {
@@ -259,11 +259,12 @@ const LANG_CODE_MAP = {
     'pt': ['Portuguese', 'Português']
 };
 
-async function tryYoutubeiJS(videoId, langs) {
+async function tryYoutubeiJS(videoId, langs, cookie) {
     // Create Innertube instance
     const yt = await YoutubeiJS.create({
         retrieve_player: false,
         lang: langs[0] || 'en',
+        cookie: cookie, // Use provided cookie for authentication
         fetch: (input, init) => fetch(input, init) // Fix for "Illegal invocation" in CF Workers
     });
 
