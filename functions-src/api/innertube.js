@@ -4,9 +4,10 @@
  * Simple sequential fallback for easy debugging:
  *   1. Cache (KV/D1)
  *   2. youtube-caption-extractor
- *   3. Piped (multiple instances with fallback)
+ *   3. Piped (multiple instances with dynamic selection + fallback)
+ *   4. Invidious (multiple instances with fallback)
  *
- * @version 11.0.0 - Multi-Piped with youtubei.js disabled
+ * @version 12.0.0 - Multi-Piped with dynamic instances + Invidious fallback
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -24,20 +25,34 @@ const DEBUG = true;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 
-// Multiple Piped instances for fallback (ordered by reliability)
-const PIPED_INSTANCES = [
-    'https://pipedapi.kavin.rocks',           // Official
-    'https://api.piped.private.coffee',       // 99.9% uptime
-    'https://pipedapi-libre.kavin.rocks',     // Official Libre
-    'https://piped-api.privacy.com.de',       // Reliable
-    'https://pipedapi.r4fo.com',              // Backup
+// Static fallback Piped instances (used if dynamic fetch fails)
+const PIPED_INSTANCES_FALLBACK = [
+    'https://pipedapi.kavin.rocks',           // Official - most maintained
+    'https://api.piped.private.coffee',       // ~96-99% uptime
+    'https://pipedapi.adminforge.de',         // Usually reliable
+    'https://pipedapi.darkness.services',     // Backup
+];
+
+// Invidious instances for additional fallback
+const INVIDIOUS_INSTANCES = [
+    'https://invidious.snopyta.org',
+    'https://yewtu.be',
+    'https://inv.nadeko.net',
+    'https://invidious.nerdvpn.de',
+    'https://inv.tux.pizza',
 ];
 
 const STRATEGY_TIMEOUT = 8000; // 8s per strategy
-const STAGGER_DELAY = 2000; // 2s between strategy starts
+const STAGGER_DELAY = 500;     // 500ms between strategy starts (reduced for faster fallback)
+const INSTANCE_TIMEOUT = 5000; // 5s timeout per instance
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
+
+// Cache for dynamic Piped instances (in-memory, refreshed periodically)
+let cachedPipedInstances = null;
+let pipedInstancesCacheTime = 0;
+const PIPED_INSTANCES_CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
 // ============================================================================
 // Request Handlers
@@ -49,10 +64,12 @@ export const onRequestOptions = () => handleOptions(['GET', 'POST', 'OPTIONS']);
  * Health check endpoint - GET /api/innertube
  */
 export async function onRequestGet(context) {
+    const pipedInstances = await getHealthyPipedInstances();
     return jsonResponse({
         status: 'ok',
-        strategies: ['cache', 'caption-extractor', 'piped-multi'],
-        pipedInstances: PIPED_INSTANCES,
+        strategies: ['cache', 'caption-extractor', 'piped-multi', 'invidious'],
+        pipedInstances,
+        invidiousInstances: INVIDIOUS_INSTANCES,
         timestamp: new Date().toISOString()
     });
 }
@@ -135,6 +152,53 @@ function withTimeout(promise, ms) {
 }
 
 // ============================================================================
+// Dynamic Piped Instance Selection
+// ============================================================================
+
+/**
+ * Fetch healthy Piped instances from the official API
+ * Caches results for 1 hour to avoid excessive API calls
+ */
+async function getHealthyPipedInstances() {
+    const now = Date.now();
+
+    // Return cached instances if still valid
+    if (cachedPipedInstances && (now - pipedInstancesCacheTime) < PIPED_INSTANCES_CACHE_TTL) {
+        return cachedPipedInstances;
+    }
+
+    try {
+        const res = await fetch('https://piped-instances.kavin.rocks/', {
+            headers: { 'Accept': 'application/json' },
+            signal: AbortSignal.timeout(3000)
+        });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const instances = await res.json();
+
+        // Filter by uptime (>90%) and up-to-date, sort by 30-day uptime
+        const healthy = instances
+            .filter(i => i.uptime_30d > 90 && i.up_to_date !== false)
+            .sort((a, b) => (b.uptime_30d || 0) - (a.uptime_30d || 0))
+            .slice(0, 6)
+            .map(i => i.api_url);
+
+        if (healthy.length > 0) {
+            cachedPipedInstances = healthy;
+            pipedInstancesCacheTime = now;
+            log(`Fetched ${healthy.length} healthy Piped instances`);
+            return healthy;
+        }
+    } catch (e) {
+        log(`Failed to fetch Piped instances: ${e.message}`);
+    }
+
+    // Fallback to static list
+    return PIPED_INSTANCES_FALLBACK;
+}
+
+// ============================================================================
 // Parallel Strategy Racing
 // ============================================================================
 
@@ -144,11 +208,12 @@ function withTimeout(promise, ms) {
  * First successful result wins, others are abandoned
  */
 async function raceStrategies(videoId, targetLanguages) {
-    // youtubei.js commented out to save resources - using multiple Piped instances instead
     const strategies = [
         { name: 'caption-extractor', fn: () => tryCaptionExtractor(videoId, targetLanguages), delay: 0 },
+        // Uncomment to enable youtubei.js:
         // { name: 'youtubei.js', fn: () => tryYoutubeiJS(videoId, targetLanguages), delay: STAGGER_DELAY },
-        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: STAGGER_DELAY }
+        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: STAGGER_DELAY },
+        { name: 'invidious', fn: () => tryInvidious(videoId, targetLanguages), delay: STAGGER_DELAY * 2 }
     ];
 
     return new Promise((resolve, reject) => {
@@ -266,9 +331,10 @@ async function tryCaptionExtractor(videoId, langs) {
 }
 
 // ============================================================================
-// Strategy 2: youtubei.js
+// Strategy 2: youtubei.js (Commented out - uncomment to enable)
 // ============================================================================
 
+/*
 async function tryYoutubeiJS(videoId, langs) {
     try {
         // Try Desktop client first (default)
@@ -321,59 +387,52 @@ async function tryYoutubeiClient(videoId, langs, config) {
         );
     }
 
-    // 3. Fallback to English if available and allowed? 
-    // Actually, usually if we can't find the requested language, we might want to return the first one or fail.
-    // The previous logic tried to switch languages.
-    // Let's stick to the requested languages.
-
     if (!track) {
-        // One last check: "autogenerated" might be useful if nothing else?
-        // But for now fail if not found to let other strategies try or return error.
         const available = captionTracks.map(t => t.language_code).join(', ');
         throw new Error(`No matching track for [${langs.join(', ')}]. Available: [${available}]`);
     }
 
     log(`youtubei.js: Selected track "${track.language_code}" (${track.name?.text})`);
 
-    // Fetch VVT
-    const vvtUrl = `${track.base_url}&fmt=vtt`;
-    const response = await fetch(vvtUrl, {
+    // Fetch VTT
+    const vttUrl = `${track.base_url}&fmt=vtt`;
+    const response = await fetch(vttUrl, {
         headers: {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         }
     });
 
     if (!response.ok) {
-        throw new Error(`Failed to fetch VVT: ${response.status}`);
+        throw new Error(`Failed to fetch VTT: ${response.status}`);
     }
 
-    const vvtText = await response.text();
-    const cues = parseVtt(vvtText);
+    const vttText = await response.text();
+    const cues = parseVtt(vttText);
 
     if (!cues?.length) {
-        throw new Error('Failed to parse VVT');
+        throw new Error('Failed to parse VTT');
     }
 
     log(`youtubei.js: Parsed ${cues.length} cues`);
     return { data: buildResponse(videoId, track.language_code, cleanTranscriptSegments(cues)) };
 }
-
-
+*/
 
 // ============================================================================
-// Strategy 2: Piped (multiple instances with fallback)
+// Strategy 3: Piped (multiple instances with dynamic selection + fallback)
 // ============================================================================
 
 async function tryPiped(videoId, langs) {
+    const instances = await getHealthyPipedInstances();
     const errors = [];
 
-    for (const instance of PIPED_INSTANCES) {
+    for (const instance of instances) {
         try {
             log(`Trying Piped instance: ${instance}`);
 
             const res = await fetch(`${instance}/streams/${videoId}`, {
                 headers: { 'Accept': 'application/json' },
-                signal: AbortSignal.timeout(5000) // 5s timeout per instance
+                signal: AbortSignal.timeout(INSTANCE_TIMEOUT)
             });
 
             if (!res.ok) {
@@ -397,7 +456,7 @@ async function tryPiped(videoId, langs) {
 
             // Fetch subtitle content
             const subRes = await fetch(subtitle.url, {
-                signal: AbortSignal.timeout(5000)
+                signal: AbortSignal.timeout(INSTANCE_TIMEOUT)
             });
             if (!subRes.ok) {
                 throw new Error(`Subtitle fetch failed: ${subRes.status}`);
@@ -433,6 +492,79 @@ async function tryPiped(videoId, langs) {
 
     // All instances failed
     throw new Error(`All Piped instances failed: ${errors.join(', ')}`);
+}
+
+// ============================================================================
+// Strategy 4: Invidious (multiple instances with fallback)
+// ============================================================================
+
+async function tryInvidious(videoId, langs) {
+    const errors = [];
+
+    for (const instance of INVIDIOUS_INSTANCES) {
+        try {
+            log(`Trying Invidious instance: ${instance}`);
+
+            // First, get available captions
+            const captionsRes = await fetch(`${instance}/api/v1/captions/${videoId}`, {
+                headers: { 'Accept': 'application/json' },
+                signal: AbortSignal.timeout(INSTANCE_TIMEOUT)
+            });
+
+            if (!captionsRes.ok) {
+                throw new Error(`HTTP ${captionsRes.status}`);
+            }
+
+            const captionsData = await captionsRes.json();
+            const captions = captionsData.captions || captionsData;
+
+            if (!captions?.length) {
+                throw new Error('No captions available');
+            }
+
+            // Find matching language
+            const caption = captions.find(c =>
+                langs.some(l =>
+                    c.language_code?.toLowerCase().startsWith(l) ||
+                    c.label?.toLowerCase().includes(l)
+                )
+            ) || captions[0];
+
+            if (!caption) {
+                throw new Error('No matching caption track');
+            }
+
+            // Fetch the caption content (VTT format)
+            const langParam = caption.language_code || caption.label;
+            const vttRes = await fetch(`${instance}/api/v1/captions/${videoId}?label=${encodeURIComponent(caption.label || langParam)}`, {
+                headers: { 'Accept': 'text/vtt' },
+                signal: AbortSignal.timeout(INSTANCE_TIMEOUT)
+            });
+
+            if (!vttRes.ok) {
+                throw new Error(`Caption fetch failed: ${vttRes.status}`);
+            }
+
+            const vttText = await vttRes.text();
+            const cues = parseVtt(vttText);
+
+            if (!cues?.length) {
+                throw new Error('Failed to parse VTT');
+            }
+
+            log(`invidious (${instance}): Got ${cues.length} cues in ${langParam}`);
+            return {
+                data: buildResponse(videoId, caption.language_code || langParam, cleanTranscriptSegments(cues))
+            };
+        } catch (e) {
+            log(`Invidious ${instance} failed: ${e.message}`);
+            errors.push(`${instance}: ${e.message}`);
+            continue; // Try next instance
+        }
+    }
+
+    // All instances failed
+    throw new Error(`All Invidious instances failed: ${errors.join(', ')}`);
 }
 
 // ============================================================================
@@ -481,17 +613,11 @@ function parseJson3(text) {
 
 function parseXml(text) {
     const segs = [];
-    // More robust regex for XML attributes (handles single/double quotes and order)
-    const re = /<text\s+start="([\d.]+)"\s+dur="([\d.]+)"[^>]*>([^<]*)<\/text>/g;
-
-    // Also try to match without quotes just in case, or different order
-    // But sticking to the standard pattern first. 
-    // Let's use a simpler regex that captures attributes more loosely if the strict one fails?
-    // Actually, let's just use a slightly more flexible one.
-    const reFlex = /<text[^>]*start="([\d.]+)"[^>]*dur="([\d.]+)"[^>]*>([^<]*)<\/text>/g;
+    // Flexible regex that handles attribute order variations
+    const regex = /<text[^>]*start="([\d.]+)"[^>]*dur="([\d.]+)"[^>]*>([^<]*)<\/text>/g;
 
     let m;
-    while ((m = reFlex.exec(text))) {
+    while ((m = regex.exec(text))) {
         const t = decode(m[3].trim());
         if (t) {
             segs.push({
@@ -549,7 +675,7 @@ function parseVtt(text) {
                 });
             }
         } else {
-            // Check if it's an ID line (skip)
+            // Skip ID lines or other non-timestamp lines
             i++;
         }
     }
@@ -559,7 +685,7 @@ function parseVtt(text) {
 
 function vttTime(ts) {
     const parts = ts.split(':');
-    let h = 0, m = 0, s = 0, ms = 0;
+    let h = 0, m = 0, s = 0;
 
     if (parts.length === 3) {
         [h, m, s] = parts;
@@ -567,7 +693,7 @@ function vttTime(ts) {
         [m, s] = parts;
     }
 
-    const [seconds, millis] = s.split('.');
+    const [seconds, millis = '0'] = s.split('.');
 
     return (+h * 3600) + (+m * 60) + (+seconds) + (+millis / 1000);
 }
