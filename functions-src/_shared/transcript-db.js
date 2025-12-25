@@ -101,13 +101,21 @@ export async function completePendingJob(db, videoId, language, segments) {
     if (!db || !videoId || !segments?.length) return;
 
     try {
+        // 1. Insert/Update the completed transcript with the CORRECT language
         await db.prepare(`
-            UPDATE transcripts 
-            SET status = 'complete', segments = ?, gladia_result_url = NULL, created_at = strftime('%s', 'now')
-            WHERE video_id = ? AND language = ?
-        `).bind(JSON.stringify(segments), videoId, language).run();
+            INSERT OR REPLACE INTO transcripts (video_id, language, source, segments, status, gladia_result_url, created_at)
+            VALUES (?, ?, 'ai', ?, 'complete', NULL, strftime('%s', 'now'))
+        `).bind(videoId, language, JSON.stringify(segments)).run();
 
-        log('Completed pending job:', videoId, language);
+        // 2. Clean up the temporary 'ai' pending job if the language is different
+        if (language !== 'ai') {
+            await db.prepare(`
+                DELETE FROM transcripts 
+                WHERE video_id = ? AND language = 'ai' AND status = 'pending'
+            `).bind(videoId).run();
+        }
+
+        log('Completed job saved to D1:', videoId, language);
     } catch (err) {
         console.error('[D1 Transcripts] completePendingJob error:', err.message);
     }
