@@ -55,7 +55,9 @@
         "generatingTranscript": "전사 생성 중...",
         "usingWhisperAI": "Whisper AI로 오디오 전사 중",
         "resumingTranscript": "전사 재개 중...",
-        "resumingHint": "이전 세션에서 계속"
+        "resumingHint": "이전 세션에서 계속",
+        "videoTooLongTitle": "동영상이 너무 깁니다",
+        "videoTooLongHint": "AI 자막 생성은 60분 미만의 동영상만 가능합니다."
     },
     "vocab": {
         "title": "단어장",

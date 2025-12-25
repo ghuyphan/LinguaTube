@@ -1,7 +1,8 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, Subject, catchError, map, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
 import { SubtitleCue } from '../models';
+import { YoutubeService } from './youtube.service';
 
 interface TranscriptSegment {
   text: string;
@@ -47,6 +48,9 @@ export type TranscriptStatus = 'idle' | 'loading' | 'generating_ai' | 'complete'
   providedIn: 'root'
 })
 export class TranscriptService {
+  private http = inject(HttpClient);
+  private youtube = inject(YoutubeService); // Inject YoutubeService to get duration
+
   // State signals
   readonly status = signal<TranscriptStatus>('idle');
   readonly error = signal<string | null>(null);
@@ -67,7 +71,7 @@ export class TranscriptService {
   // Cancellation
   private cancelSubject = new Subject<void>();
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   /**
    * Reset all state and cancel in-flight requests
@@ -87,7 +91,7 @@ export class TranscriptService {
    * Main entry point - fetch transcript for a video
    */
   fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
-    const cacheKey = `${videoId}:${lang}`;
+    const cacheKey = `${videoId}:${lang} `;
     if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
       log('Client cache hit:', { videoId, lang, cues: cached.length });
@@ -118,13 +122,15 @@ export class TranscriptService {
             switchMap(retry => {
               if (retry.cues.length > 0) return of(retry.cues);
               // Fallback to AI
-              return this.generateWithWhisper(videoId, undefined, lang);
+              const duration = this.youtube.duration();
+              return this.generateWithWhisper(videoId, undefined, lang, duration);
             })
           );
         }
 
         // Case 3: Valid response but no captions -> Fallback to AI directly
-        return this.generateWithWhisper(videoId, undefined, lang);
+        const duration = this.youtube.duration();
+        return this.generateWithWhisper(videoId, undefined, lang, duration);
       }),
       tap(cues => {
         if (cues.length > 0) {
@@ -170,7 +176,7 @@ export class TranscriptService {
       targetLanguages: [lang, 'en'],
       forceRefresh
     }).pipe(
-      map(response => {
+      map((response: any) => {
         if (response.error) {
           console.warn('[TranscriptService] API error:', response.error);
           return { cues: [], validResponse: false };
@@ -182,29 +188,28 @@ export class TranscriptService {
         log('API response:', {
           source: response.source,
           tracks: tracks.length,
-          trackLangs: tracks.map(t => t.languageCode),
-          hasContent: tracks.map(t => ({ lang: t.languageCode, segments: t.content?.length || 0 }))
+          trackLangs: tracks.map((t: any) => t.languageCode),
+          hasContent: tracks.map((t: any) => ({ lang: t.languageCode, segments: t.content?.length || 0 })),
         });
 
         if (tracks.length > 0) {
-          this.availableLanguages.set(tracks.map(t => t.languageCode));
+          this.availableLanguages.set(tracks.map((t: any) => t.languageCode));
+
+          const track = tracks.find((t: any) => t.languageCode === lang)
+            || tracks.find((t: any) => t.languageCode?.startsWith(lang))
+            || tracks[0];
+
+          if (track?.content?.length) {
+            this.captionSource.set('youtube');
+            this.detectedLanguage.set(track.languageCode);
+
+            // Server already cleans segments, just convert to SubtitleCues
+            const cues = this.convertToSubtitleCues(track.content);
+            return { cues, validResponse: true };
+          }
         }
 
-        const track = tracks.find(t => t.languageCode === lang)
-          || tracks.find(t => t.languageCode?.startsWith(lang))
-          || tracks[0];
-
-        if (!track?.content?.length) {
-          return { cues: [], validResponse };
-        }
-
-        this.captionSource.set('youtube');
-        this.detectedLanguage.set(track.languageCode);
-
-        // Server already cleans segments, just convert to SubtitleCues
-        const cues = this.convertToSubtitleCues(track.content);
-
-        return { cues, validResponse: true };
+        return { cues: [], validResponse };
       }),
       catchError(err => {
         console.error('[TranscriptService] Backend error:', err);
@@ -216,8 +221,8 @@ export class TranscriptService {
   /**
    * Generate subtitles using Whisper AI
    */
-  generateWithWhisper(videoId: string, resultUrl?: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
-    const cacheKey = `whisper:${videoId}:${lang}`;
+  generateWithWhisper(videoId: string, resultUrl?: string, lang: string = 'ja', duration?: number): Observable<SubtitleCue[]> {
+    const cacheKey = `whisper:${videoId}:${lang} `;
 
     if (!resultUrl && this.transcriptCache.has(cacheKey)) {
       this.captionSource.set('ai');
@@ -241,10 +246,11 @@ export class TranscriptService {
 
     const request$ = this.http.post<any>('/api/whisper', {
       videoId,
-      ...(resultUrl && { result_url: resultUrl })
+      ...(resultUrl && { result_url: resultUrl }),
+      ...(duration && { duration }) // Send duration for validation
     }).pipe(
       takeUntil(this.cancelSubject), // Allow cancellation on reset
-      switchMap(response => {
+      switchMap((response: any) => {
         // Gladia returns result_url for polling
         if (response.status === 'processing' && response.result_url) {
           console.log('[TranscriptService] AI processing... polling in 4s');
@@ -278,13 +284,17 @@ export class TranscriptService {
           this.pendingRequests.delete(videoId);
         },
         error: (err) => {
-          this.status.set('error');
-          // Error string set in catchError below
           this.pendingRequests.delete(videoId);
         }
       }),
       catchError(err => {
-        const message = err.error?.error || err.message || 'AI transcription failed';
+        let message = err.error?.error || err.message || 'AI transcription failed';
+
+        // Normalize error code for UI
+        if (message === 'video_too_long') {
+          message = 'VIDEO_TOO_LONG';
+        }
+
         this.error.set(message);
         this.status.set('error');
         console.error('[TranscriptService] Whisper error:', message);

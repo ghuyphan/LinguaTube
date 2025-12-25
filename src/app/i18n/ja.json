@@ -55,7 +55,9 @@
         "generatingTranscript": "文字起こしを生成中...",
         "usingWhisperAI": "Whisper AIで音声を文字起こし中",
         "resumingTranscript": "文字起こしを再開中...",
-        "resumingHint": "前回のセッションから続行"
+        "resumingHint": "前回のセッションから続行",
+        "videoTooLongTitle": "動画が長すぎます",
+        "videoTooLongHint": "AI文字起こしは60分以内の動画に制限されています。"
     },
     "vocab": {
         "title": "単語帳",

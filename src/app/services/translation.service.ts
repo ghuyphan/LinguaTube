@@ -185,6 +185,7 @@ export class TranslationService {
     getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string }> {
         return [
             { code: 'vi', name: 'Vietnamese', flag: '🇻🇳' },
+            { code: 'en', name: 'English', flag: '🇬🇧' },
             { code: 'es', name: 'Spanish', flag: '🇪🇸' },
             { code: 'fr', name: 'French', flag: '🇫🇷' },
             { code: 'de', name: 'German', flag: '🇩🇪' },

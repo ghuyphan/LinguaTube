@@ -69,8 +69,13 @@ import { SubtitleCue, Token } from '../../models';
               </div>
             } @else if (transcript.error() && subtitles.subtitles().length === 0) {
               <app-icon name="alert-circle" [size]="32" class="error-icon" />
-              <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</p>
-              <p class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</p>
+              @if (transcript.error() === 'VIDEO_TOO_LONG') {
+                <p class="empty-title">{{ i18n.t('subtitle.videoTooLongTitle') }}</p>
+                <p class="empty-hint">{{ i18n.t('subtitle.videoTooLongHint') }}</p>
+              } @else {
+                <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</p>
+                <p class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</p>
+              }
             } @else if (subtitles.subtitles().length === 0) {
               <app-icon name="subtitles" [size]="32" class="empty-icon" />
               <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesLoaded') }}</p>

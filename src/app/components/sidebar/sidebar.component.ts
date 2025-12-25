@@ -418,10 +418,11 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     }
 
     .footer-btn-container {
-      padding: 0 12px;
+      padding: 0;
       min-height: 40px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .sidebar.collapsed .footer-btn-container {
@@ -542,7 +543,7 @@ export class SidebarComponent {
         shape: 'rectangular',
         theme: 'outline',
         size: 'medium',
-        width: '220', // Approximate width of sidebar - padding
+        width: '225', // Fill available width (260 - 32 padding = 228)
         text: 'signin_with'
       });
     }

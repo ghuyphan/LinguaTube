@@ -8,6 +8,10 @@ import { isDevMode } from '@angular/core';
 import { provideServiceWorker } from '@angular/service-worker';
 import { cacheInterceptor } from './app/interceptors';
 
+if (!isDevMode()) {
+  console.log = () => { };
+}
+
 bootstrapApplication(AppComponent, {
   providers: [
     provideAnimations(),

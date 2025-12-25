@@ -55,7 +55,9 @@
         "generatingTranscript": "Generating transcript...",
         "usingWhisperAI": "Using Whisper AI to transcribe audio",
         "resumingTranscript": "Resuming transcription...",
-        "resumingHint": "Continuing from a previous session"
+        "resumingHint": "Continuing from a previous session",
+        "videoTooLongTitle": "Video is too long",
+        "videoTooLongHint": "AI transcription is limited to 60 minutes."
     },
     "vocab": {
         "title": "Vocabulary",

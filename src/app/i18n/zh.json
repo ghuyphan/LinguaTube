@@ -55,7 +55,9 @@
         "generatingTranscript": "正在生成字幕...",
         "usingWhisperAI": "使用Whisper AI转录音频",
         "resumingTranscript": "正在恢复转录...",
-        "resumingHint": "继续上次的进度"
+        "resumingHint": "继续上次的进度",
+        "videoTooLongTitle": "视频太长",
+        "videoTooLongHint": "AI转录仅限于60分钟以内的视频。"
     },
     "vocab": {
         "title": "词汇本",

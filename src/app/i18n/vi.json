@@ -55,7 +55,9 @@
         "generatingTranscript": "Đang tạo phụ đề...",
         "usingWhisperAI": "Sử dụng Whisper AI để chuyển đổi âm thanh",
         "resumingTranscript": "Đang tiếp tục tạo phụ đề...",
-        "resumingHint": "Tiếp tục từ phiên trước"
+        "resumingHint": "Tiếp tục từ phiên trước",
+        "videoTooLongTitle": "Video quá dài",
+        "videoTooLongHint": "Tạo phụ đề AI chỉ hỗ trợ video dưới 60 phút."
     },
     "vocab": {
         "title": "Từ vựng",
