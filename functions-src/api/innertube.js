@@ -157,7 +157,7 @@ function withTimeout(promise, ms) {
 
 /**
  * Fetch healthy Piped instances from the official API
- * Caches results for 1 hour to avoid excessive API calls
+ * ALWAYS merges with static fallback to ensure we have enough instances
  */
 async function getHealthyPipedInstances() {
     const now = Date.now();
@@ -167,35 +167,37 @@ async function getHealthyPipedInstances() {
         return cachedPipedInstances;
     }
 
+    // Start with the official instance (not included in the dynamic list)
+    const allInstances = new Set(['https://pipedapi.kavin.rocks']);
+
+    // Add static fallbacks first
+    PIPED_INSTANCES_FALLBACK.forEach(i => allInstances.add(i));
+
     try {
         const res = await fetch('https://piped-instances.kavin.rocks/', {
             headers: { 'Accept': 'application/json' },
             signal: AbortSignal.timeout(3000)
         });
 
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        if (res.ok) {
+            const instances = await res.json();
 
-        const instances = await res.json();
-
-        // Filter by uptime (>90%) and up-to-date, sort by 30-day uptime
-        const healthy = instances
-            .filter(i => i.uptime_30d > 90 && i.up_to_date !== false)
-            .sort((a, b) => (b.uptime_30d || 0) - (a.uptime_30d || 0))
-            .slice(0, 6)
-            .map(i => i.api_url);
-
-        if (healthy.length > 0) {
-            cachedPipedInstances = healthy;
-            pipedInstancesCacheTime = now;
-            log(`Fetched ${healthy.length} healthy Piped instances`);
-            return healthy;
+            // Add healthy dynamic instances (>80% uptime)
+            instances
+                .filter(i => i.uptime_30d > 80 && i.up_to_date !== false && i.api_url)
+                .sort((a, b) => (b.uptime_30d || 0) - (a.uptime_30d || 0))
+                .slice(0, 5)
+                .forEach(i => allInstances.add(i.api_url));
         }
     } catch (e) {
-        log(`Failed to fetch Piped instances: ${e.message}`);
+        log(`Failed to fetch dynamic Piped instances: ${e.message}`);
     }
 
-    // Fallback to static list
-    return PIPED_INSTANCES_FALLBACK;
+    const result = Array.from(allInstances).slice(0, 8);
+    cachedPipedInstances = result;
+    pipedInstancesCacheTime = now;
+    log(`Piped instances: ${result.length} total`);
+    return result;
 }
 
 // ============================================================================
