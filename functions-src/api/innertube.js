@@ -257,7 +257,8 @@ async function raceStrategies(videoId, targetLanguages) {
 // ============================================================================
 
 async function checkCache(cache, db, videoId, lang) {
-    const cacheKey = `captions:v8:${videoId}`;
+    // KV cache key now includes language for proper separation
+    const cacheKey = `captions:v9:${videoId}:${lang}`;
 
     // Check KV cache
     if (cache) {
@@ -290,7 +291,8 @@ async function checkCache(cache, db, videoId, lang) {
 }
 
 function saveToCache(cache, db, videoId, lang, data, source) {
-    const cacheKey = `captions:v8:${videoId}`;
+    // KV cache key now includes language for proper separation
+    const cacheKey = `captions:v9:${videoId}:${lang}`;
 
     // Save to KV (non-blocking)
     cache?.put(cacheKey, JSON.stringify(data), { expirationTtl: CACHE_TTL }).catch(() => { });
