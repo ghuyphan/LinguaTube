@@ -466,13 +466,16 @@ export class SettingsSheetComponent {
   closed = output<void>();
 
   showSignOutConfirm = signal(false);
+  private buttonRendered = false;
 
   constructor() {
     effect(() => {
-      // Re-render buttons when auth initializes or settings change if needed
-      // Check isOpen() to render when sheet opens
-      if (this.isOpen() && this.auth.isInitialized() && this.auth.isAuthEnabled() && !this.auth.isLoggedIn()) {
-        setTimeout(() => this.renderGoogleButton(), 0);
+      // Only render the button once to prevent flicker from "Sign in with Google" -> "Sign in as..."
+      if (this.isOpen() && this.auth.isInitialized() && this.auth.isAuthEnabled() && !this.auth.isLoggedIn() && !this.buttonRendered) {
+        setTimeout(() => {
+          this.renderGoogleButton();
+          this.buttonRendered = true;
+        }, 0);
       }
     });
   }

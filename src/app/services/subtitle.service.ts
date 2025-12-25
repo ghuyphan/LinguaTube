@@ -275,8 +275,10 @@ export class SubtitleService {
       case 'zh':
         return text.split('').map(char => ({ surface: char }));
       case 'ko':
-      case 'en':
         return text.split(/\s+/).filter(Boolean).map(word => ({ surface: word }));
+      case 'en':
+        // Match words only (letters, numbers, apostrophes, hyphens), exclude punctuation
+        return text.match(/[\w'-]+/g)?.map(word => ({ surface: word })) || [];
       case 'ja':
       default:
         return this.tokenizeByCharType(text);

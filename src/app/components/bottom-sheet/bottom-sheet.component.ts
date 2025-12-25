@@ -24,6 +24,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
         class="sheet-overlay" 
         [class.closing]="isClosing()"
         (click)="onBackdropClick($event)"
+        (touchend)="onBackdropTouch($event)"
       >
         <div 
           class="sheet"
@@ -520,6 +521,17 @@ export class BottomSheetComponent implements OnDestroy {
   onBackdropClick(event: Event): void {
     // Only close if clicking directly on the overlay (not the sheet)
     if (event.target === event.currentTarget && this.allowBackdropClose()) {
+      this.animatedClose();
+    }
+  }
+
+  /**
+   * Handle backdrop touchend for mobile - ensures smooth animation
+   */
+  onBackdropTouch(event: TouchEvent): void {
+    // Only close if touching directly on the overlay (not the sheet)
+    if (event.target === event.currentTarget && this.allowBackdropClose()) {
+      event.preventDefault(); // Prevent ghost click
       this.animatedClose();
     }
   }

@@ -120,14 +120,15 @@ export function tokenizeKoreanChinese(text, lang) {
 
 /**
  * Tokenize English text using Intl.Segmenter
- * Simple word-based segmentation
+ * Returns only word-like tokens (no punctuation or whitespace)
  */
 export function tokenizeEnglish(text) {
     const segmenter = new Intl.Segmenter('en', { granularity: 'word' });
     const segments = [...segmenter.segment(text)];
 
+    // Only return actual words, not punctuation or whitespace
     return segments
-        .filter(seg => seg.isWordLike || seg.segment.trim())
+        .filter(seg => seg.isWordLike)
         .map(seg => ({
             surface: seg.segment
         }));

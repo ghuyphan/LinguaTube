@@ -507,6 +507,16 @@ import { SubtitleCue, Token } from '../../models';
       font-weight: 500;
     }
 
+    /* English text - natural word spacing */
+    .text-en {
+      word-spacing: 0.05em;
+    }
+    
+    .text-en .word {
+      padding: 4px 6px;
+      margin: 1px 3px;
+    }
+
     /* Subtitle list */
     .subtitle-list {
       max-height: 180px;
