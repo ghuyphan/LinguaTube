@@ -244,6 +244,21 @@ async function tryCaptionExtractor(videoId, langs) {
 // Strategy 2: youtubei.js
 // ============================================================================
 
+// Map language codes to potential display names in YouTube UI
+const LANG_CODE_MAP = {
+    'ja': ['Japanese', '日本語'],
+    'en': ['English'],
+    'vi': ['Vietnamese', 'Tiếng Việt'],
+    'zh': ['Chinese', 'Mandarin', '中文'],
+    'ko': ['Korean', '한국어'],
+    'es': ['Spanish', 'Español'],
+    'fr': ['French', 'Français'],
+    'de': ['German', 'Deutsch'],
+    'it': ['Italian', 'Italiano'],
+    'ru': ['Russian', 'Русский'],
+    'pt': ['Portuguese', 'Português']
+};
+
 async function tryYoutubeiJS(videoId, langs) {
     // Create Innertube instance
     const yt = await YoutubeiJS.create({
@@ -267,9 +282,11 @@ async function tryYoutubeiJS(videoId, langs) {
     log(`youtubei.js: Current="${currentLang}", Available=[${availableLangs.join(', ')}]`);
 
     // Check if current language matches any requested language
-    const matchesRequested = langs.some(l =>
-        currentLang.toLowerCase().includes(l.toLowerCase())
-    );
+    // We need to match code (e.g. 'ja') to name (e.g. 'Japanese')
+    const matchesRequested = langs.some(langCode => {
+        const names = LANG_CODE_MAP[langCode.toLowerCase()] || [langCode];
+        return names.some(name => currentLang.toLowerCase().includes(name.toLowerCase()));
+    });
 
     if (matchesRequested) {
         log(`youtubei.js: Current language matches requested`);
@@ -277,15 +294,18 @@ async function tryYoutubeiJS(videoId, langs) {
     }
 
     // Try to find and switch to a matching language
-    for (const lang of langs) {
-        // Check if this language is available
-        const available = availableLangs.find(l =>
-            l.toLowerCase().includes(lang.toLowerCase())
+    for (const langCode of langs) {
+        // Get potential names for this code
+        const names = LANG_CODE_MAP[langCode.toLowerCase()] || [langCode];
+
+        // Check if any of these names exist in available languages
+        const available = availableLangs.find(availName =>
+            names.some(targetName => availName.toLowerCase().includes(targetName.toLowerCase()))
         );
 
         if (available) {
             try {
-                log(`youtubei.js: Switching to "${available}"...`);
+                log(`youtubei.js: Switching to "${available}" (matched "${langCode}")...`);
                 const switched = await transcriptInfo.selectLanguage(available);
                 if (switched) {
                     return extractCues(switched, videoId, available);
