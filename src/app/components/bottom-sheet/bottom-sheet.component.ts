@@ -312,6 +312,9 @@ export class BottomSheetComponent implements OnDestroy {
   private readonly VELOCITY_THRESHOLD = 0.5; // pixels per ms
   private readonly ANIMATION_DURATION = 250;
 
+  // Unique ID for this sheet instance (for nested sheet history state management)
+  private readonly sheetId = Math.random().toString(36).substring(2, 9);
+
   // Bound handler for popstate
   private boundPopStateHandler = this.onPopState.bind(this);
 
@@ -361,8 +364,8 @@ export class BottomSheetComponent implements OnDestroy {
   private pushHistoryState(): void {
     if (!isPlatformBrowser(this.platformId) || this.historyPushed) return;
 
-    // Push a new history entry so back button can close the sheet
-    history.pushState({ bottomSheet: true }, '');
+    // Push a new history entry with unique sheet ID so nested sheets don't conflict
+    history.pushState({ bottomSheet: true, sheetId: this.sheetId }, '');
     this.historyPushed = true;
 
     // Listen for popstate (back button/gesture)
@@ -373,7 +376,10 @@ export class BottomSheetComponent implements OnDestroy {
    * Handle browser back button/gesture
    */
   private onPopState(event: PopStateEvent): void {
-    if (this.isOpen() && this.isMobile) {
+    // Only handle popstate for this specific sheet instance
+    // This prevents nested sheets from closing parent sheets
+    if (this.isOpen() && this.isMobile && this.historyPushed) {
+      this.historyPushed = false; // Mark as not pushed since history already popped
       // Prevent default close and do our animated close
       this.animatedClose(false); // Don't manipulate history again
     }

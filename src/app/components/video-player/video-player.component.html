@@ -1,0 +1,327 @@
+<div class="player-wrapper">
+  @if (!youtube.currentVideo() && !isLoading() && !youtube.pendingVideoId()) {
+  <!-- URL Input State -->
+  <div class="video-input">
+    <div class="input-group">
+      <div class="input-wrapper">
+        <app-icon name="search" [size]="18" class="input-icon" />
+        <input type="text" [(ngModel)]="videoUrl" [placeholder]="i18n.t('player.pasteUrl')" class="url-input"
+          (keyup.enter)="loadVideo()" />
+      </div>
+      <button class="btn btn-primary load-btn" (click)="loadVideo()" [disabled]="isLoading()">
+        @if (isLoading()) {
+        <app-icon name="loader" [size]="16" />
+        } @else {
+        {{ i18n.t('player.load') }}
+        }
+      </button>
+    </div>
+
+    @if (error()) {
+    <div class="error-banner">
+      <app-icon name="alert-circle" [size]="16" />
+      <span>{{ error() }}</span>
+    </div>
+    }
+
+    <div class="hints">
+      <p class="hint-text">
+        <app-icon name="info" [size]="14" />
+        {{ i18n.t('player.hint') }}
+      </p>
+    </div>
+  </div>
+  } @else {
+  <!-- Video Loaded State -->
+  <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()" (mousemove)="onUserActivity()"
+    (mouseleave)="onMouseLeave()">
+    <div class="video-embed-ratio">
+      <div id="youtube-player"></div>
+
+      <!-- Loading Overlay -->
+      @if (youtube.pendingVideoId() && !youtube.currentVideo()) {
+      <div class="loading-overlay">
+        <div class="loading-spinner">
+          <app-icon name="loader" [size]="32" />
+        </div>
+        <span class="loading-text">{{ i18n.t('player.loadingVideo') }}</span>
+      </div>
+      }
+
+      <!-- Interaction Overlay Layer -->
+      <div class="player-overlay">
+        <!-- Desktop: Centered Play/Pause Feedback -->
+        @if (!isTouchDevice && playPauseFeedback()) {
+        <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
+          <app-icon [name]="feedbackIconName()" [size]="48" />
+        </div>
+        }
+        <!-- Centered Volume Feedback -->
+        @if (volumeFeedback()) {
+        <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
+          <app-icon [name]="volumeFeedbackIcon()" [size]="48" />
+        </div>
+        }
+
+        <!-- Left Zone - Rewind -->
+        <div class="zone left" (touchend)="onZoneTouchEnd('left', $event)" (click)="onZoneClick('left', $event)">
+          <div class="seek-feedback" [class.animate]="rewindFeedback()">
+            <div class="seek-feedback-inner">
+              <app-icon name="rewind" [size]="32" />
+              <span class="seek-time">{{ seekAccumulator() }}s</span>
+            </div>
+          </div>
+          @if (leftRipple()) {
+          <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+          }
+        </div>
+
+        <!-- Center Zone - Play/Pause -->
+        <div class="zone center" (touchend)="onZoneTouchEnd('center', $event)" (click)="onZoneClick('center', $event)"
+          (dblclick)="handleCenterDoubleClick()">
+          <!-- Mobile: Always show play button when paused; show pause button only with controls -->
+          @if (isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
+          @if (!youtube.isPlaying()) {
+          <!-- Paused: always show play button -->
+          <div class="big-play-btn" [class.pulse]="playPauseFeedback()" (touchend)="onPlayPauseButtonTouch($event)">
+            <app-icon name="play" [size]="48" />
+          </div>
+          } @else if (areControlsVisible()) {
+          <!-- Playing + controls visible: show pause button -->
+          <div class="big-play-btn" [class.pulse]="playPauseFeedback()" (touchend)="onPlayPauseButtonTouch($event)">
+            <app-icon name="pause" [size]="48" />
+          </div>
+          }
+          }
+          <!-- Desktop: show play button when paused (not at video end) -->
+          @if (!isTouchDevice && youtube.isReady() && !youtube.isPlaying() && !youtube.isEnded()) {
+          <div class="big-play-btn">
+            <app-icon name="play" [size]="48" />
+          </div>
+          }
+          <!-- Custom Replay button when video ends -->
+          @if (youtube.isEnded()) {
+          <div class="big-play-btn replay-btn" (click)="onReplayClick($event)" (touchend)="onReplayClick($event)">
+            <app-icon name="rotate-ccw" [size]="48" />
+          </div>
+          }
+        </div>
+
+        <!-- Right Zone - Forward -->
+        <div class="zone right" (touchend)="onZoneTouchEnd('right', $event)" (click)="onZoneClick('right', $event)">
+          <div class="seek-feedback" [class.animate]="forwardFeedback()">
+            <div class="seek-feedback-inner">
+              <app-icon name="fast-forward" [size]="32" />
+              <span class="seek-time">{{ seekAccumulator() }}s</span>
+            </div>
+          </div>
+          @if (rightRipple()) {
+          <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+          }
+        </div>
+      </div>
+
+      <!-- Mini Progress Bar (visible when controls hidden) -->
+      <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.isPlaying()">
+        <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
+      </div>
+
+      <!-- Fullscreen Subtitle Overlay -->
+      @if (isFullscreen()) {
+      <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()"
+        [class.fs-small]="settings.settings().fontSize === 'small'"
+        [class.fs-large]="settings.settings().fontSize === 'large'" [class.popup-open]="fsPopupVisible()"
+        [class.has-content]="!!subtitles.currentCue()">
+        @if (subtitles.currentCue(); as cue) {
+        <div class="fs-subtitle-inner">
+          <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
+            @if (subtitles.isTokenizing()) {
+            <span class="fs-word">{{ cue.text }}</span>
+            } @else {
+            @for (token of getFullscreenTokens(cue); track $index) {<span class="fs-word"
+              [class.fs-word--saved]="vocab.hasWord(token.surface)"
+              (click)="onFullscreenWordClick(token, cue.text, $event)">@if (showFsReading() &&
+              getFullscreenReading(token)) {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>}
+              @else {{{ token.surface }}}</span>}
+            }
+          </div>
+        </div>
+        }
+      </div>
+      }
+
+      <!-- Fullscreen Word Popup (inline) -->
+      @if (isFullscreen() && fsPopupVisible()) {
+      <div class="fs-popup-overlay" (click)="closeFsPopup()">
+        <div class="fs-popup" (click)="$event.stopPropagation()">
+          <button class="fs-popup-close" (click)="closeFsPopup()">
+            <app-icon name="x" [size]="18" />
+          </button>
+
+          <div class="fs-popup-header">
+            <h3 class="fs-popup-word" [class]="'text-' + settings.settings().language">
+              {{ fsSelectedWord()?.surface }}
+            </h3>
+            @if (fsEntry()?.reading) {
+            <span class="fs-popup-reading">{{ fsEntry()?.reading }}</span>
+            }
+            @if (fsEntry()?.pinyin) {
+            <span class="fs-popup-reading">{{ fsEntry()?.pinyin }}</span>
+            }
+            @if (fsEntry()?.romanization) {
+            <span class="fs-popup-reading">{{ fsEntry()?.romanization }}</span>
+            }
+          </div>
+
+          <div class="fs-popup-body">
+            @if (fsLookupLoading()) {
+            <div class="fs-popup-loading">
+              <app-icon name="loader" [size]="20" />
+            </div>
+            } @else if (fsEntry()) {
+            @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
+            <div class="fs-popup-badges">
+              @if (fsEntry()?.jlptLevel) {
+              <span class="badge">{{ fsEntry()?.jlptLevel }}</span>
+              }
+              @if (fsEntry()?.hskLevel) {
+              <span class="badge">HSK {{ fsEntry()?.hskLevel }}</span>
+              }
+              @if (fsEntry()?.topikLevel) {
+              <span class="badge">TOPIK {{ fsEntry()?.topikLevel }}</span>
+              }
+            </div>
+            }
+            <div class="fs-popup-meaning">
+              {{ fsEntry()?.meanings?.[0]?.definition || '(no definition)' }}
+            </div>
+            } @else {
+            <div class="fs-popup-meaning">{{ i18n.t('popup.noDictionaryEntry') }}</div>
+            }
+          </div>
+
+          <div class="fs-popup-actions">
+            @if (fsWordSaved()) {
+            <button class="fs-popup-btn fs-popup-btn--saved" disabled>
+              <app-icon name="check" [size]="16" />
+              {{ i18n.t('popup.saved') }}
+            </button>
+            } @else {
+            <button class="fs-popup-btn fs-popup-btn--save" (click)="saveFsWord()">
+              <app-icon name="plus" [size]="16" />
+              {{ i18n.t('popup.saveWord') }}
+            </button>
+            }
+            <button class="fs-popup-btn" (click)="resumeAndClose()">
+              <app-icon name="play" [size]="16" />
+              Resume
+            </button>
+          </div>
+        </div>
+      </div>
+      }
+
+      <!-- Custom Controls -->
+      <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.isPlaying()">
+        <!-- Progress Bar -->
+        <div class="progress-container" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
+          (touchstart)="startSeeking($event)" (mousemove)="updateSeekPreview($event)" (mouseleave)="hideSeekPreview()"
+          #progressBar>
+          <div class="progress-buffered" [style.width.%]="bufferedPercentage()"></div>
+          <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
+          <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
+
+          @if (seekPreview().visible) {
+          <div class="seek-tooltip" [style.left.px]="seekPreview().position">
+            {{ formatTime(seekPreview().time) }}
+          </div>
+          }
+        </div>
+
+        <div class="controls-row">
+          <!-- Left Controls -->
+          <div class="controls-left">
+            <button class="control-btn play-btn" (click)="togglePlay()" title="Play/Pause (Space)">
+              <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
+            </button>
+
+            <!-- Skip buttons - desktop only -->
+            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(-10)" title="Rewind 10s">
+              <app-icon name="rewind" [size]="18" />
+            </button>
+            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(10)" title="Forward 10s">
+              <app-icon name="fast-forward" [size]="18" />
+            </button>
+
+            <!-- Volume - desktop only -->
+            <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider()"
+              (mouseleave)="hideVolumeSlider()">
+              <button class="control-btn" (click)="toggleMute()" title="Mute (M)">
+                <app-icon [name]="getVolumeIcon()" [size]="18" />
+              </button>
+              <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
+                <input type="range" class="volume-slider" min="0" max="100" [value]="volume()"
+                  (input)="onVolumeChange($event)" (mousedown)="$event.stopPropagation()" />
+              </div>
+            </div>
+
+            <!-- Time Display -->
+            <div class="time-display">
+              <span class="time-current">{{ formatTime(displayTime()) }}</span>
+              <span class="time-separator">/</span>
+              <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
+            </div>
+
+            <!-- Mute button - mobile only -->
+            <button class="control-btn mobile-only" (click)="toggleMute()" title="Mute">
+              <app-icon [name]="getVolumeIcon()" [size]="18" />
+            </button>
+          </div>
+
+          <!-- Right Controls -->
+          <div class="controls-right">
+            <!-- Playback Speed - desktop only -->
+            <div class="speed-control desktop-only" [class.open]="isSpeedMenuOpen()">
+              <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" title="Speed">
+                <span class="speed-label">{{ currentSpeed() }}x</span>
+              </button>
+              @if (isSpeedMenuOpen()) {
+              <div class="speed-menu" (click)="$event.stopPropagation()">
+                @for (speed of playbackSpeeds; track speed) {
+                <button class="speed-option" [class.active]="currentSpeed() === speed"
+                  (click)="setPlaybackSpeed(speed)">
+                  {{ speed === 1 ? i18n.t('player.normal') : speed + 'x' }}
+                </button>
+                }
+              </div>
+              }
+            </div>
+
+            <!-- Fullscreen -->
+            <button class="control-btn" (click)="toggleFullscreen()" title="Fullscreen (F)">
+              <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
+            </button>
+
+            <!-- Close - not in fullscreen -->
+            @if (!isFullscreen()) {
+            <button class="control-btn close-btn" (click)="closeVideo()" title="Close">
+              <app-icon name="x" [size]="18" />
+            </button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Info (outside fullscreen container) -->
+  @if (!isFullscreen()) {
+  <div class="video-info">
+    <h2 class="video-title">{{ youtube.currentVideo()?.title }}</h2>
+    @if (youtube.currentVideo()?.channel) {
+    <span class="video-channel">{{ youtube.currentVideo()?.channel }}</span>
+    }
+  </div>
+  }
+  }
+</div>
