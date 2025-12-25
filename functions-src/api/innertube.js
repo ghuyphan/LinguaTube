@@ -249,7 +249,8 @@ async function tryYoutubeiJS(videoId, langs) {
     const yt = await YoutubeiJS.create({
         retrieve_player: false,
         generate_session_locally: true,
-        lang: langs[0] || 'en'
+        lang: langs[0] || 'en',
+        fetch: (input, init) => fetch(input, init) // Fix for "Illegal invocation" in CF Workers
     });
 
     // Get video info
