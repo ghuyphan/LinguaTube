@@ -5,9 +5,10 @@ const { Innertube } = require('youtubei.js');
     try {
         const yt = await Innertube.create({
             retrieve_player: false,
-            lang: 'ja'
+            lang: 'ja',
+            device_category: 'desktop'
         });
-        const videoId = '_1enDIXa4c0'; // Video from the logs
+        const videoId = 'aDuwAmNbraE'; // Video from the new logs
         // Or 'dQw4w9WgXcQ' (Rick Roll) usually has captions.
         // Let's use '5qap5aO4i9A' (Lofi Girl) - wait, maybe a TED talk or something standard.
         // Let's use 'jNQXAC9IVRw' (Me at the zoo)

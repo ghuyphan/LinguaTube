@@ -4,17 +4,17 @@
  * Simple sequential fallback for easy debugging:
  *   1. Cache (KV/D1)
  *   2. youtube-caption-extractor
- *   3. youtubei.js
- *   4. Piped (single instance fallback)
+ *   3. Piped (multiple instances with fallback)
  *
- * @version 10.0.0 - Simplified
+ * @version 11.0.0 - Multi-Piped with youtubei.js disabled
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
 import { getSubtitles } from 'youtube-caption-extractor';
-import { Innertube as YoutubeiJS } from 'youtubei.js';
+// Commented out to save resources - using Piped instances instead
+// import { Innertube as YoutubeiJS } from 'youtubei.js';
 
 // ============================================================================
 // Configuration
@@ -23,7 +23,16 @@ import { Innertube as YoutubeiJS } from 'youtubei.js';
 const DEBUG = true;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
-const PIPED_INSTANCE = 'https://pipedapi.kavin.rocks';
+
+// Multiple Piped instances for fallback (ordered by reliability)
+const PIPED_INSTANCES = [
+    'https://pipedapi.kavin.rocks',           // Official
+    'https://api.piped.private.coffee',       // 99.9% uptime
+    'https://pipedapi-libre.kavin.rocks',     // Official Libre
+    'https://piped-api.privacy.com.de',       // Reliable
+    'https://pipedapi.r4fo.com',              // Backup
+];
+
 const STRATEGY_TIMEOUT = 8000; // 8s per strategy
 const STAGGER_DELAY = 2000; // 2s between strategy starts
 
@@ -42,7 +51,8 @@ export const onRequestOptions = () => handleOptions(['GET', 'POST', 'OPTIONS']);
 export async function onRequestGet(context) {
     return jsonResponse({
         status: 'ok',
-        strategies: ['cache', 'caption-extractor', 'youtubei.js', 'piped'],
+        strategies: ['cache', 'caption-extractor', 'piped-multi'],
+        pipedInstances: PIPED_INSTANCES,
         timestamp: new Date().toISOString()
     });
 }
@@ -134,10 +144,11 @@ function withTimeout(promise, ms) {
  * First successful result wins, others are abandoned
  */
 async function raceStrategies(videoId, targetLanguages) {
+    // youtubei.js commented out to save resources - using multiple Piped instances instead
     const strategies = [
         { name: 'caption-extractor', fn: () => tryCaptionExtractor(videoId, targetLanguages), delay: 0 },
-        { name: 'youtubei.js', fn: () => tryYoutubeiJS(videoId, targetLanguages), delay: STAGGER_DELAY },
-        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: STAGGER_DELAY * 2 }
+        // { name: 'youtubei.js', fn: () => tryYoutubeiJS(videoId, targetLanguages), delay: STAGGER_DELAY },
+        { name: 'piped', fn: () => tryPiped(videoId, targetLanguages), delay: STAGGER_DELAY }
     ];
 
     return new Promise((resolve, reject) => {
@@ -259,13 +270,30 @@ async function tryCaptionExtractor(videoId, langs) {
 // ============================================================================
 
 async function tryYoutubeiJS(videoId, langs) {
+    try {
+        // Try Desktop client first (default)
+        return await tryYoutubeiClient(videoId, langs, {
+            retrieve_player: false,
+            lang: langs[0] || 'en',
+            device_category: 'desktop',
+            fetch: (input, init) => fetch(input, init)
+        });
+    } catch (e) {
+        log(`youtubei.js (desktop) failed: ${e.message}, retrying with Android...`);
+
+        // Fallback to Android client
+        return await tryYoutubeiClient(videoId, langs, {
+            retrieve_player: false,
+            lang: langs[0] || 'en',
+            client_type: 'ANDROID',
+            fetch: (input, init) => fetch(input, init)
+        });
+    }
+}
+
+async function tryYoutubeiClient(videoId, langs, config) {
     // Create Innertube instance
-    const yt = await YoutubeiJS.create({
-        retrieve_player: false,
-        lang: langs[0] || 'en',
-        device_category: 'desktop',
-        fetch: (input, init) => fetch(input, init) // Fix for "Illegal invocation" in CF Workers
-    });
+    const yt = await YoutubeiJS.create(config);
 
     // Get video info
     const info = await yt.getInfo(videoId);
@@ -333,60 +361,78 @@ async function tryYoutubeiJS(videoId, langs) {
 
 
 // ============================================================================
-// Strategy 3: Piped (single instance fallback)
+// Strategy 2: Piped (multiple instances with fallback)
 // ============================================================================
 
 async function tryPiped(videoId, langs) {
-    const res = await fetch(`${PIPED_INSTANCE}/streams/${videoId}`, {
-        headers: { 'Accept': 'application/json' }
-    });
+    const errors = [];
 
-    if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-    }
+    for (const instance of PIPED_INSTANCES) {
+        try {
+            log(`Trying Piped instance: ${instance}`);
 
-    const data = await res.json();
+            const res = await fetch(`${instance}/streams/${videoId}`, {
+                headers: { 'Accept': 'application/json' },
+                signal: AbortSignal.timeout(5000) // 5s timeout per instance
+            });
 
-    if (!data.subtitles?.length) {
-        throw new Error('No subtitles');
-    }
-
-    // Find matching language
-    const subtitle = data.subtitles.find(s =>
-        langs.some(l => s.code?.toLowerCase().startsWith(l))
-    ) || data.subtitles[0];
-
-    if (!subtitle?.url) {
-        throw new Error('No subtitle URL');
-    }
-
-    // Fetch subtitle content
-    const subRes = await fetch(subtitle.url);
-    if (!subRes.ok) {
-        throw new Error(`Subtitle fetch failed: ${subRes.status}`);
-    }
-
-    const text = await subRes.text();
-    const cues = parseSubtitle(text);
-
-    if (!cues?.length) {
-        throw new Error('Failed to parse subtitle');
-    }
-
-    log(`piped: Got ${cues.length} cues in ${subtitle.code}`);
-    return {
-        data: {
-            videoDetails: { videoId, title: data.title, author: data.uploader },
-            captions: {
-                playerCaptionsTracklistRenderer: {
-                    captionTracks: [{
-                        languageCode: subtitle.code,
-                        content: cleanTranscriptSegments(cues)
-                    }]
-                }
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
             }
+
+            const data = await res.json();
+
+            if (!data.subtitles?.length) {
+                throw new Error('No subtitles');
+            }
+
+            // Find matching language
+            const subtitle = data.subtitles.find(s =>
+                langs.some(l => s.code?.toLowerCase().startsWith(l))
+            ) || data.subtitles[0];
+
+            if (!subtitle?.url) {
+                throw new Error('No subtitle URL');
+            }
+
+            // Fetch subtitle content
+            const subRes = await fetch(subtitle.url, {
+                signal: AbortSignal.timeout(5000)
+            });
+            if (!subRes.ok) {
+                throw new Error(`Subtitle fetch failed: ${subRes.status}`);
+            }
+
+            const text = await subRes.text();
+            const cues = parseSubtitle(text);
+
+            if (!cues?.length) {
+                throw new Error('Failed to parse subtitle');
+            }
+
+            log(`piped (${instance}): Got ${cues.length} cues in ${subtitle.code}`);
+            return {
+                data: {
+                    videoDetails: { videoId, title: data.title, author: data.uploader },
+                    captions: {
+                        playerCaptionsTracklistRenderer: {
+                            captionTracks: [{
+                                languageCode: subtitle.code,
+                                content: cleanTranscriptSegments(cues)
+                            }]
+                        }
+                    }
+                }
+            };
+        } catch (e) {
+            log(`Piped ${instance} failed: ${e.message}`);
+            errors.push(`${instance}: ${e.message}`);
+            continue; // Try next instance
         }
-    };
+    }
+
+    // All instances failed
+    throw new Error(`All Piped instances failed: ${errors.join(', ')}`);
 }
 
 // ============================================================================
