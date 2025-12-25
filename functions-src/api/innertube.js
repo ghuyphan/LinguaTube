@@ -14,7 +14,7 @@ import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
 import { getSubtitles } from 'youtube-caption-extractor';
-import { Innertube as YoutubeiJS } from 'youtubei.js/bundle/cf-worker.js';
+import { Innertube as YoutubeiJS } from 'youtubei.js';
 
 // ============================================================================
 // Configuration
