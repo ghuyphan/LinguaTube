@@ -115,7 +115,7 @@ export async function onRequestPost(context) {
             const result = await raceStrategies(videoId, targetLanguages);
             if (result) {
                 log(`Strategy "${result.source}" won race (${elapsed()}ms)`);
-                saveToCache(cache, db, videoId, primaryLang, result.data, result.source);
+                await saveToCache(cache, db, videoId, primaryLang, result.data, result.source);
                 return jsonResponse({ ...result.data, source: result.source, timing: elapsed() });
             }
         } catch (e) {
@@ -290,23 +290,26 @@ async function checkCache(cache, db, videoId, lang) {
     return null;
 }
 
-function saveToCache(cache, db, videoId, lang, data, source) {
+async function saveToCache(cache, db, videoId, lang, data, source) {
     // KV cache key now includes language for proper separation
     const cacheKey = `captions:v9:${videoId}:${lang}`;
 
     // Save to KV (non-blocking)
     cache?.put(cacheKey, JSON.stringify(data), { expirationTtl: CACHE_TTL }).catch(() => { });
 
-    // Save to D1 (non-blocking)
+    // Save to D1 - MUST await to ensure completion before Worker terminates
     const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
     const track = tracks?.find(t => t.languageCode === lang) || tracks?.[0];
 
     log(`saveToCache: db=${!!db}, tracks=${tracks?.length}, track=${!!track}, content=${track?.content?.length}`);
 
     if (track?.content?.length && db) {
-        saveTranscript(db, videoId, track.languageCode, track.content, source)
-            .then(() => log(`D1 save success: ${videoId} ${track.languageCode}`))
-            .catch(err => console.error(`D1 save error: ${err.message}`));
+        try {
+            await saveTranscript(db, videoId, track.languageCode, track.content, source);
+            log(`D1 save success: ${videoId} ${track.languageCode}`);
+        } catch (err) {
+            console.error(`D1 save error: ${err.message}`);
+        }
     } else {
         log(`D1 save skipped: db=${!!db}, content=${track?.content?.length || 0}`);
     }
