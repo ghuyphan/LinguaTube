@@ -263,6 +263,7 @@ async function tryYoutubeiJS(videoId, langs) {
     const yt = await YoutubeiJS.create({
         retrieve_player: false,
         lang: langs[0] || 'en',
+        device_category: 'desktop',
         fetch: (input, init) => fetch(input, init) // Fix for "Illegal invocation" in CF Workers
     });
 
