@@ -258,72 +258,55 @@ async function tryYoutubeiJS(videoId, langs) {
         throw new Error('No video info');
     }
 
-    // Get transcript info to see available languages
+    // Get transcript
     const transcriptInfo = await info.getTranscript();
 
-    // Check available languages from the transcript panel
-    const availableLangs = transcriptInfo?.transcript?.content?.footer?.language_menu?.sub_menu_items || [];
-    log(`youtubei.js: Available languages: ${availableLangs.map(l => l.language_code || l.title?.text).join(', ')}`);
-
-    // Find the best matching language from available options
-    let selectedLang = null;
-    let selectedTranscript = transcriptInfo;
-
-    // Check if current transcript matches any requested language
-    const currentLangCode = transcriptInfo?.selectedLanguage ||
+    // Get the current language
+    const currentLang = transcriptInfo?.selectedLanguage ||
         transcriptInfo?.transcript?.content?.header?.language_selector?.selected?.text ||
         '';
 
-    const currentLangMatches = langs.some(l =>
-        currentLangCode.toLowerCase().includes(l.toLowerCase()) ||
-        currentLangCode.toLowerCase().startsWith(l.toLowerCase())
+    log(`youtubei.js: Got transcript, detected language: "${currentLang}"`);
+
+    // Check if current language matches any requested language
+    const matchesRequested = langs.some(l =>
+        currentLang.toLowerCase().includes(l.toLowerCase()) ||
+        currentLang.toLowerCase().startsWith(l.toLowerCase())
     );
 
-    if (currentLangMatches) {
-        selectedLang = currentLangCode;
-        log(`youtubei.js: Current transcript matches requested language: ${selectedLang}`);
-    } else if (availableLangs.length > 0) {
-        // Try to find a matching language in the available options
-        for (const lang of langs) {
-            const match = availableLangs.find(l => {
-                const code = l.language_code || l.title?.text || '';
-                return code.toLowerCase().startsWith(lang.toLowerCase());
-            });
+    // If not matching and we need a specific language, try selectLanguage
+    if (!matchesRequested && transcriptInfo?.selectLanguage) {
+        log(`youtubei.js: Transcript is "${currentLang}", trying to find ${langs.join('/')}`);
 
-            if (match) {
-                // Found a matching language, try to fetch it
-                try {
-                    log(`youtubei.js: Attempting to fetch transcript in ${lang}...`);
-                    selectedTranscript = await info.getTranscript({ language: match.language_code || lang });
-                    selectedLang = match.language_code || lang;
-                    log(`youtubei.js: Successfully fetched transcript in ${selectedLang}`);
-                    break;
-                } catch (e) {
-                    log(`youtubei.js: Failed to fetch transcript in ${lang}: ${e.message}`);
+        // Try to switch to a matching language
+        for (const lang of langs) {
+            try {
+                const switched = await transcriptInfo.selectLanguage(lang);
+                if (switched) {
+                    log(`youtubei.js: Switched to ${lang}`);
+                    return extractCues(switched, videoId, lang);
                 }
+            } catch (e) {
+                log(`youtubei.js: selectLanguage(${lang}) failed: ${e.message}`);
             }
         }
+
+        // No matching language found
+        throw new Error(`No transcript in requested languages: ${langs.join(', ')}`);
     }
 
-    // If no match found, use whatever we have but log a warning
-    if (!selectedLang) {
-        selectedLang = currentLangCode || langs[0] || 'unknown';
-        log(`youtubei.js: No matching language found, using default: ${selectedLang}`);
+    // Use the current transcript
+    return extractCues(transcriptInfo, videoId, currentLang || langs[0]);
+}
 
-        // If the default doesn't match any requested language, skip this strategy
-        const anyMatch = langs.some(l => selectedLang.toLowerCase().startsWith(l.toLowerCase()));
-        if (!anyMatch) {
-            throw new Error(`No transcript available in requested languages: ${langs.join(', ')}`);
-        }
-    }
-
-    const segments = selectedTranscript?.transcript?.content?.body?.initial_segments;
+// Helper to extract cues from transcript info
+function extractCues(transcriptInfo, videoId, lang) {
+    const segments = transcriptInfo?.transcript?.content?.body?.initial_segments;
 
     if (!segments?.length) {
-        throw new Error('No transcript available');
+        throw new Error('No transcript segments');
     }
 
-    // Convert segments
     const cues = segments
         .filter(seg => seg.type === 'TranscriptSegment')
         .map((seg, i) => {
@@ -344,8 +327,8 @@ async function tryYoutubeiJS(videoId, langs) {
         throw new Error('No cues parsed');
     }
 
-    log(`youtubei.js: Got ${cues.length} cues in ${selectedLang}`);
-    return { data: buildResponse(videoId, selectedLang, cleanTranscriptSegments(cues)) };
+    log(`youtubei.js: Got ${cues.length} cues in ${lang}`);
+    return { data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)) };
 }
 
 // ============================================================================
