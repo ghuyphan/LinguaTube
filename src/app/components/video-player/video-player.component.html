@@ -41,34 +41,20 @@
       <!-- Loading Overlay -->
       @if (youtube.pendingVideoId() && !youtube.currentVideo()) {
       <div class="loading-overlay">
-        <div class="loading-spinner">
+        <div class="loading-indicator">
           <app-icon name="loader" [size]="32" />
         </div>
-        <span class="loading-text">{{ i18n.t('player.loadingVideo') }}</span>
       </div>
       }
 
-      <!-- Interaction Overlay Layer -->
-      <div class="player-overlay">
-        <!-- Desktop: Centered Play/Pause Feedback -->
-        @if (!isTouchDevice && playPauseFeedback()) {
-        <div class="center-feedback play-pause-feedback" [class.animate]="playPauseFeedback()">
-          <app-icon [name]="feedbackIconName()" [size]="48" />
-        </div>
-        }
-        <!-- Centered Volume Feedback -->
-        @if (volumeFeedback()) {
-        <div class="center-feedback volume-feedback" [class.animate]="volumeFeedback()">
-          <app-icon [name]="volumeFeedbackIcon()" [size]="48" />
-        </div>
-        }
-
-        <!-- Left Zone - Rewind -->
-        <div class="zone left" (touchend)="handleZoneInteraction('left', $event)"
-          (click)="handleZoneInteraction('left', $event)">
+      <!-- Unified Interaction Overlay -->
+      <div class="player-overlay" (touchstart)="onOverlayTouchStart($event)" (touchmove)="onOverlayTouchMove($event)"
+        (touchend)="onOverlayTouchEnd($event)" (click)="onOverlayClick($event)">
+        <!-- Left Zone (tap detection + seek feedback + ripple) -->
+        <div class="zone zone-left">
           <div class="seek-feedback" [class.animate]="rewindFeedback()">
             <div class="seek-feedback-inner">
-              <app-icon name="rewind" [size]="32" />
+              <app-icon name="rewind" [size]="28" />
               <span class="seek-time">{{ seekAccumulator() }}s</span>
             </div>
           </div>
@@ -77,44 +63,14 @@
           }
         </div>
 
-        <!-- Center Zone - Play/Pause -->
-        <div class="zone center" (touchend)="handleZoneInteraction('center', $event)"
-          (click)="handleZoneInteraction('center', $event)" (dblclick)="handleCenterDoubleClick()">
-          <!-- dblclick logic moved to click handler generally -->
-          <!-- Mobile: Always show play button when paused; show pause button only with controls -->
-          @if (isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
-          @if (!youtube.isPlaying()) {
-          <!-- Paused: always show play button -->
-          <div class="big-play-btn" [class.pulse]="playPauseFeedback()" (touchend)="onPlayPauseButtonTouch($event)">
-            <app-icon name="play" [size]="48" />
-          </div>
-          } @else if (areControlsVisible()) {
-          <!-- Playing + controls visible: show pause button -->
-          <div class="big-play-btn" [class.pulse]="playPauseFeedback()" (touchend)="onPlayPauseButtonTouch($event)">
-            <app-icon name="pause" [size]="48" />
-          </div>
-          }
-          }
-          <!-- Desktop: show play button when paused (not at video end) -->
-          @if (!isTouchDevice && youtube.isReady() && !youtube.isPlaying() && !youtube.isEnded()) {
-          <div class="big-play-btn">
-            <app-icon name="play" [size]="48" />
-          </div>
-          }
-          <!-- Custom Replay button when video ends -->
-          @if (youtube.isEnded()) {
-          <div class="big-play-btn replay-btn" (click)="onReplayClick($event)" (touchend)="onReplayClick($event)">
-            <app-icon name="rotate-ccw" [size]="48" />
-          </div>
-          }
-        </div>
+        <!-- Center Zone (just for tap detection) -->
+        <div class="zone zone-center"></div>
 
-        <!-- Right Zone - Forward -->
-        <div class="zone right" (touchend)="handleZoneInteraction('right', $event)"
-          (click)="handleZoneInteraction('right', $event)">
+        <!-- Right Zone (tap detection + seek feedback + ripple) -->
+        <div class="zone zone-right">
           <div class="seek-feedback" [class.animate]="forwardFeedback()">
             <div class="seek-feedback-inner">
-              <app-icon name="fast-forward" [size]="32" />
+              <app-icon name="fast-forward" [size]="28" />
               <span class="seek-time">{{ seekAccumulator() }}s</span>
             </div>
           </div>
@@ -122,6 +78,70 @@
           <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
           }
         </div>
+      </div>
+
+      <!-- Center Controls (play/pause and other centered indicators) -->
+      <div class="center-controls">
+        <!-- Desktop: Play/Pause Feedback -->
+        @if (!isTouchDevice && playPauseFeedback()) {
+        <div class="center-feedback animate">
+          <app-icon [name]="feedbackIconName()" [size]="44" />
+        </div>
+        }
+
+        <!-- Volume Feedback -->
+        @if (volumeFeedback()) {
+        <div class="center-feedback volume-feedback animate">
+          <app-icon [name]="volumeFeedbackIcon()" [size]="44" />
+        </div>
+        }
+
+        <!-- Gesture Seek Preview -->
+        @if (gestureSeekActive()) {
+        <div class="gesture-seek-preview">
+          <span class="gesture-seek-time">{{ formatTime(gestureSeekTime()) }}</span>
+          <span class="gesture-seek-delta">
+            @if (gestureSeekTime() > youtube.currentTime()) {
+            +{{ formatTime(gestureSeekTime() - youtube.currentTime()) }}
+            } @else {
+            -{{ formatTime(youtube.currentTime() - gestureSeekTime()) }}
+            }
+          </span>
+        </div>
+        }
+
+        <!-- Mobile: Big Play Button (when paused) -->
+        @if (isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
+        @if (!youtube.isPlaying()) {
+        <div class="big-play-btn" (touchend)="onPlayPauseButtonTouch($event)">
+          <app-icon name="play" [size]="44" />
+        </div>
+        } @else if (areControlsVisible()) {
+        <div class="big-play-btn fade-in" (touchend)="onPlayPauseButtonTouch($event)">
+          <app-icon name="pause" [size]="44" />
+        </div>
+        }
+        }
+
+        <!-- Desktop: Big Play Button -->
+        @if (!isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
+        @if (!youtube.isPlaying()) {
+        <div class="big-play-btn" (click)="onPlayPauseButtonClick($event)">
+          <app-icon name="play" [size]="44" />
+        </div>
+        } @else if (areControlsVisible()) {
+        <div class="big-play-btn fade-in" (click)="onPlayPauseButtonClick($event)">
+          <app-icon name="pause" [size]="44" />
+        </div>
+        }
+        }
+
+        <!-- Replay Button (when ended) -->
+        @if (youtube.isEnded()) {
+        <div class="big-play-btn replay-btn" (click)="onReplayClick($event)" (touchend)="onReplayClick($event)">
+          <app-icon name="rotate-ccw" [size]="44" />
+        </div>
+        }
       </div>
 
       <!-- Mini Progress Bar (visible when controls hidden) -->
@@ -140,20 +160,19 @@
           <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
             @if (subtitles.isTokenizing()) {
             <span class="fs-word">{{ cue.text }}</span>
-            } @else {
-            @for (token of getFullscreenTokens(cue); track $index) {<span class="fs-word"
+            } @else { @for (token of getFullscreenTokens(cue); track $index) {<span class="fs-word"
               [class.fs-word--saved]="vocab.hasWord(token.surface)"
               (click)="onFullscreenWordClick(token, cue.text, $event)">@if (showFsReading() &&
-              getFullscreenReading(token)) {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>}
-              @else {{{ token.surface }}}</span>}
-            }
+              getFullscreenReading(token))
+              {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>} @else {{{ token.surface
+              }}}</span>} }
           </div>
         </div>
         }
       </div>
       }
 
-      <!-- Fullscreen Word Popup (inline) -->
+      <!-- Fullscreen Word Popup -->
       @if (isFullscreen() && fsPopupVisible()) {
       <div class="fs-popup-overlay" (click)="closeFsPopup()">
         <div class="fs-popup" (click)="$event.stopPropagation()">
@@ -167,11 +186,9 @@
             </h3>
             @if (fsEntry()?.reading) {
             <span class="fs-popup-reading">{{ fsEntry()?.reading }}</span>
-            }
-            @if (fsEntry()?.pinyin) {
+            } @if (fsEntry()?.pinyin) {
             <span class="fs-popup-reading">{{ fsEntry()?.pinyin }}</span>
-            }
-            @if (fsEntry()?.romanization) {
+            } @if (fsEntry()?.romanization) {
             <span class="fs-popup-reading">{{ fsEntry()?.romanization }}</span>
             }
           </div>
@@ -181,16 +198,13 @@
             <div class="fs-popup-loading">
               <app-icon name="loader" [size]="20" />
             </div>
-            } @else if (fsEntry()) {
-            @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
+            } @else if (fsEntry()) { @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
             <div class="fs-popup-badges">
               @if (fsEntry()?.jlptLevel) {
               <span class="badge">{{ fsEntry()?.jlptLevel }}</span>
-              }
-              @if (fsEntry()?.hskLevel) {
+              } @if (fsEntry()?.hskLevel) {
               <span class="badge">HSK {{ fsEntry()?.hskLevel }}</span>
-              }
-              @if (fsEntry()?.topikLevel) {
+              } @if (fsEntry()?.topikLevel) {
               <span class="badge">TOPIK {{ fsEntry()?.topikLevel }}</span>
               }
             </div>
@@ -244,27 +258,30 @@
         <div class="controls-row">
           <!-- Left Controls -->
           <div class="controls-left">
-            <button class="control-btn play-btn" (click)="togglePlay()" title="Play/Pause (Space)">
+            <button class="control-btn play-btn" (click)="togglePlay()"
+              [attr.aria-label]="youtube.isPlaying() ? 'Pause' : 'Play'">
               <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
             </button>
 
             <!-- Skip buttons - desktop only -->
-            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(-10)" title="Rewind 10s">
+            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
+              aria-label="Rewind 10 seconds">
               <app-icon name="rewind" [size]="18" />
             </button>
-            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(10)" title="Forward 10s">
+            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(10); showSeekFeedback('right', 10)"
+              aria-label="Forward 10 seconds">
               <app-icon name="fast-forward" [size]="18" />
             </button>
 
             <!-- Volume - desktop only -->
             <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider()"
               (mouseleave)="hideVolumeSlider()">
-              <button class="control-btn" (click)="toggleMute()" title="Mute (M)">
+              <button class="control-btn" (click)="toggleMute()" aria-label="Toggle mute">
                 <app-icon [name]="getVolumeIcon()" [size]="18" />
               </button>
               <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
                 <input type="range" class="volume-slider" min="0" max="100" [value]="volume()"
-                  (input)="onVolumeChange($event)" (mousedown)="$event.stopPropagation()" />
+                  (input)="onVolumeChange($event)" (mousedown)="$event.stopPropagation()" aria-label="Volume" />
               </div>
             </div>
 
@@ -276,7 +293,7 @@
             </div>
 
             <!-- Mute button - mobile only -->
-            <button class="control-btn mobile-only" (click)="toggleMute()" title="Mute">
+            <button class="control-btn mobile-only" (click)="toggleMute()" aria-label="Toggle mute">
               <app-icon [name]="getVolumeIcon()" [size]="18" />
             </button>
           </div>
@@ -285,7 +302,7 @@
           <div class="controls-right">
             <!-- Playback Speed - desktop only -->
             <div class="speed-control desktop-only" [class.open]="isSpeedMenuOpen()">
-              <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" title="Speed">
+              <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" aria-label="Playback speed">
                 <span class="speed-label">{{ currentSpeed() }}x</span>
               </button>
               @if (isSpeedMenuOpen()) {
@@ -301,13 +318,14 @@
             </div>
 
             <!-- Fullscreen -->
-            <button class="control-btn" (click)="toggleFullscreen()" title="Fullscreen (F)">
+            <button class="control-btn" (click)="toggleFullscreen()"
+              [attr.aria-label]="isFullscreen() ? 'Exit fullscreen' : 'Fullscreen'">
               <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
             </button>
 
             <!-- Close - not in fullscreen -->
             @if (!isFullscreen()) {
-            <button class="control-btn close-btn" (click)="closeVideo()" title="Close">
+            <button class="control-btn close-btn" (click)="closeVideo()" aria-label="Close video">
               <app-icon name="x" [size]="18" />
             </button>
             }
