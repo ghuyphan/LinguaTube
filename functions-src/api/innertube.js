@@ -300,8 +300,15 @@ function saveToCache(cache, db, videoId, lang, data, source) {
     // Save to D1 (non-blocking)
     const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
     const track = tracks?.find(t => t.languageCode === lang) || tracks?.[0];
+
+    log(`saveToCache: db=${!!db}, tracks=${tracks?.length}, track=${!!track}, content=${track?.content?.length}`);
+
     if (track?.content?.length && db) {
-        saveTranscript(db, videoId, track.languageCode, track.content, source).catch(() => { });
+        saveTranscript(db, videoId, track.languageCode, track.content, source)
+            .then(() => log(`D1 save success: ${videoId} ${track.languageCode}`))
+            .catch(err => console.error(`D1 save error: ${err.message}`));
+    } else {
+        log(`D1 save skipped: db=${!!db}, content=${track?.content?.length || 0}`);
     }
 }
 
