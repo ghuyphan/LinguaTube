@@ -342,8 +342,10 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   onMouseLeave() {
-    if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible()) {
-      this.hideControlsAfterDelay(1000);
+    // Hide controls immediately when mouse leaves (like YouTube)
+    if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+      this.areControlsVisible.set(false);
+      this.clearControlsTimeout();
     }
   }
 
