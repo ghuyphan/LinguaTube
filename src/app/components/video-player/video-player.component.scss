@@ -810,6 +810,19 @@
 }
 
 /* ============================================
+   FONT SIZE CONTROL
+   ============================================ */
+.font-size-btn {
+  min-width: 40px;
+}
+
+.font-size-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
    VIDEO INFO
    ============================================ */
 .video-info {
@@ -916,6 +929,11 @@
   line-height: 2.2;
 }
 
+.fullscreen-subtitle.fs-xlarge .fs-subtitle-text {
+  font-size: 2.5rem;
+  line-height: 2.4;
+}
+
 .fs-word {
   cursor: pointer;
   padding: 2px 4px;
@@ -948,22 +966,22 @@
 
 .fs-subtitle-text ruby rt {
   display: ruby-text;
-  font-size: 0.5em;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.55em;
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
   font-weight: 400;
   line-height: 1.4;
 }
 
 .fs-subtitle-text.text-ja ruby rt {
-  font-size: 0.45em;
+  font-size: 0.5em;
   white-space: nowrap;
   letter-spacing: -0.02em;
 }
 
 .fs-subtitle-text.text-zh ruby rt,
 .fs-subtitle-text.text-ko ruby rt {
-  font-size: 0.48em;
+  font-size: 0.52em;
   font-weight: 500;
 }
 
@@ -1280,6 +1298,11 @@
     line-height: 1.85;
   }
 
+  .fullscreen-subtitle.fs-xlarge .fs-subtitle-text {
+    font-size: 1.625rem;
+    line-height: 2;
+  }
+
   .fs-word {
     padding: 3px 5px;
     border-radius: 6px;
@@ -1393,6 +1416,10 @@
 
   .is-fullscreen .fullscreen-subtitle.fs-large .fs-subtitle-text {
     font-size: 1.25rem;
+  }
+
+  .is-fullscreen .fullscreen-subtitle.fs-xlarge .fs-subtitle-text {
+    font-size: 1.4375rem;
   }
 
   .is-fullscreen .fs-word {

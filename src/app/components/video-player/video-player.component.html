@@ -147,7 +147,8 @@
       @if (isFullscreen()) {
       <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()"
         [class.fs-small]="settings.settings().fontSize === 'small'"
-        [class.fs-large]="settings.settings().fontSize === 'large'" [class.popup-open]="fsPopupVisible()"
+        [class.fs-large]="settings.settings().fontSize === 'large'"
+        [class.fs-xlarge]="settings.settings().fontSize === 'xlarge'" [class.popup-open]="fsPopupVisible()"
         [class.has-content]="!!subtitles.currentCue()">
         @if (subtitles.currentCue(); as cue) {
         <div class="fs-subtitle-inner">
@@ -310,6 +311,13 @@
               </div>
               }
             </div>
+
+            <!-- Font Size - fullscreen only -->
+            @if (isFullscreen()) {
+            <button class="control-btn font-size-btn" (click)="cycleFontSize()" aria-label="Change subtitle font size">
+              <span class="font-size-label">{{ getFontSizeLabel() }}</span>
+            </button>
+            }
 
             <!-- Fullscreen -->
             <button class="control-btn" (click)="toggleFullscreen()"

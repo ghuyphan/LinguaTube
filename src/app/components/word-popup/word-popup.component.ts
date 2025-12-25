@@ -459,6 +459,15 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   constructor() {
+    // Update targetLang when UI language changes
+    effect(() => {
+      const uiLang = this.i18n.currentLanguage();
+      const supported = this.translation.getSupportedTargetLanguages().map(l => l.code);
+      if (supported.includes(uiLang)) {
+        this.targetLang.set(uiLang);
+      }
+    });
+
     effect(() => {
       const word = this.selectedWord();
       if (word) {

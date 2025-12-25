@@ -70,7 +70,7 @@ export class SettingsService implements OnDestroy {
     this.updateSettings({ showPinyin: !this.settings().showPinyin });
   }
 
-  setFontSize(fontSize: 'small' | 'medium' | 'large'): void {
+  setFontSize(fontSize: 'small' | 'medium' | 'large' | 'xlarge'): void {
     this.updateSettings({ fontSize });
   }
 

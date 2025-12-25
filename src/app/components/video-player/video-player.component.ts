@@ -869,6 +869,41 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   // ============================================
+  // FONT SIZE CONTROL
+  // ============================================
+
+  readonly fontSizes: ('small' | 'medium' | 'large' | 'xlarge')[] = ['small', 'medium', 'large', 'xlarge'];
+
+  cycleFontSize(): void {
+    const current = this.settings.settings().fontSize;
+    const currentIndex = this.fontSizes.indexOf(current);
+    const nextIndex = (currentIndex + 1) % this.fontSizes.length;
+    this.settings.setFontSize(this.fontSizes[nextIndex]);
+  }
+
+  getFontSizeIcon(): string {
+    const size = this.settings.settings().fontSize;
+    switch (size) {
+      case 'small': return 'type';
+      case 'medium': return 'type';
+      case 'large': return 'type';
+      case 'xlarge': return 'type';
+      default: return 'type';
+    }
+  }
+
+  getFontSizeLabel(): string {
+    const size = this.settings.settings().fontSize;
+    switch (size) {
+      case 'small': return 'S';
+      case 'medium': return 'M';
+      case 'large': return 'L';
+      case 'xlarge': return 'XL';
+      default: return 'M';
+    }
+  }
+
+  // ============================================
   // PROGRESS BAR
   // ============================================
 

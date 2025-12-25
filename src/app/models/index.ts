@@ -92,7 +92,7 @@ export interface UserSettings {
   showFurigana: boolean;
   showPinyin: boolean;
   autoAdvance: boolean;
-  fontSize: 'small' | 'medium' | 'large';
+  fontSize: 'small' | 'medium' | 'large' | 'xlarge';
   playbackSpeed: number;
   sidebarCollapsed: boolean;
 }
