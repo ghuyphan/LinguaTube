@@ -100,7 +100,7 @@ import { Token, DictionaryEntry } from '../../models';
                     <!-- Translated Text -->
                     @if (getTranslation($index); as translatedText) {
                       <div class="translation-result">
-                        <span class="translation-flag">{{ getFlag(targetLang()) }}</span>
+                        <span class="translation-flag">{{ getFlag(getTranslationLang($index)) }}</span>
                         <span>{{ translatedText }}</span>
                       </div>
                     }
@@ -448,9 +448,15 @@ export class WordPopupComponent implements OnDestroy {
   isSaved = signal(false);
 
   // Translation state
-  targetLang = signal('vi');
-  translatedDefinitions = signal<Map<number, string>>(new Map());
+  targetLang = signal(this.getDefaultTargetLang());
+  translatedDefinitions = signal<Map<number, { text: string; lang: string }>>(new Map());
   translatingIndices = signal<Set<number>>(new Set());
+
+  private getDefaultTargetLang(): string {
+    const uiLang = this.i18n.currentLanguage();
+    const supported = this.translation.getSupportedTargetLanguages().map(l => l.code);
+    return supported.includes(uiLang) ? uiLang : 'vi';
+  }
 
   constructor() {
     effect(() => {
@@ -504,15 +510,18 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   translateDefinition(index: number, text: string): void {
-    if (this.translatedDefinitions().has(index)) return;
+    // Skip if already translated to current target language
+    const existing = this.translatedDefinitions().get(index);
+    if (existing && existing.lang === this.targetLang()) return;
 
     this.toggleTranslating(index, true);
 
-    this.translation.translate(text, 'en', this.targetLang()).subscribe(translatedText => {
+    const targetLang = this.targetLang();
+    this.translation.translate(text, 'en', targetLang).subscribe(translatedText => {
       if (translatedText) {
         this.translatedDefinitions.update(map => {
           const newMap = new Map(map);
-          newMap.set(index, translatedText);
+          newMap.set(index, { text: translatedText, lang: targetLang });
           return newMap;
         });
       }
@@ -534,7 +543,11 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   getTranslation(index: number): string | undefined {
-    return this.translatedDefinitions().get(index);
+    return this.translatedDefinitions().get(index)?.text;
+  }
+
+  getTranslationLang(index: number): string {
+    return this.translatedDefinitions().get(index)?.lang || this.targetLang();
   }
 
   getFlag(code: string): string {

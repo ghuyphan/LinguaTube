@@ -39,8 +39,7 @@ export async function onRequestGet(context) {
     let lastError = null;
 
     for (const instance of LINGVA_INSTANCES) {
-        const url = `${instance}/api/v1/${source}/${target}/${encodeURIComponent(text)}`;
-
+        const url = `${instance}/api/v1/${source}/${target}/${text}`;
         try {
             const response = await fetch(url, {
                 method: 'GET',

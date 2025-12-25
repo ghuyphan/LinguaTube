@@ -23,6 +23,8 @@ export class YoutubeService {
   readonly currentTime = signal(0);
   readonly duration = signal(0);
   readonly isReady = signal(false);
+  readonly isEnded = signal(false);
+  readonly isBuffering = signal(false);
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null); // Set when loading from URL
 
@@ -148,16 +150,21 @@ export class YoutubeService {
             },
             onStateChange: (event: any) => {
               const state = event.data;
-              this.isPlaying.set(state === window.YT.PlayerState.PLAYING);
+              const YT = window.YT.PlayerState;
+
+              // Update all state signals
+              this.isPlaying.set(state === YT.PLAYING);
+              this.isBuffering.set(state === YT.BUFFERING);
+              this.isEnded.set(state === YT.ENDED);
 
               // If we should restore to paused state, pause immediately after playing starts
-              if (state === window.YT.PlayerState.PLAYING && this.wasPausedOnLeave) {
+              if (state === YT.PLAYING && this.wasPausedOnLeave) {
                 this.wasPausedOnLeave = false;
                 this.pause();
               }
 
               // Update duration when video loads
-              if (state === window.YT.PlayerState.PLAYING || state === window.YT.PlayerState.PAUSED) {
+              if (state === YT.PLAYING || state === YT.PAUSED) {
                 const dur = event.target.getDuration();
                 if (dur > 0) this.duration.set(dur);
               }
@@ -222,8 +229,11 @@ export class YoutubeService {
 
   togglePlay(): void {
     if (this.isPlaying()) {
+      this.isPlaying.set(false); // Optimistic update
       this.pause();
     } else {
+      this.isPlaying.set(true);  // Optimistic update
+      this.isEnded.set(false);   // Reset ended state
       this.play();
     }
   }

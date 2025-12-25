@@ -125,7 +125,7 @@ interface SeekPreview {
                 (dblclick)="handleCenterDoubleClick()"
               >
                 <!-- Mobile: Show big play/pause button when controls are visible -->
-                @if (isTouchDevice && areControlsVisible()) {
+                @if (isTouchDevice && areControlsVisible() && !youtube.isEnded()) {
                   <div 
                     class="big-play-btn" 
                     [class.pulse]="playPauseFeedback()"
@@ -135,7 +135,7 @@ interface SeekPreview {
                   </div>
                 }
                 <!-- Desktop: show play button when paused and controls hidden -->
-                @if (!isTouchDevice && !youtube.isPlaying() && !areControlsVisible()) {
+                @if (!isTouchDevice && !youtube.isPlaying() && !youtube.isEnded() && !areControlsVisible()) {
                   <div class="big-play-btn">
                     <app-icon name="play" [size]="48" />
                   </div>
@@ -359,6 +359,13 @@ interface SeekPreview {
                       </div>
                     }
                   </div>
+
+                  <!-- Font Size - fullscreen only -->
+                  @if (isFullscreen()) {
+                    <button class="control-btn" (click)="cycleFontSize()" title="Font Size">
+                      <app-icon name="type" [size]="18" />
+                    </button>
+                  }
 
                   <!-- Fullscreen -->
                   <button class="control-btn" (click)="toggleFullscreen()" title="Fullscreen (F)">
@@ -2131,6 +2138,18 @@ export class VideoPlayerComponent implements OnDestroy {
     if (currentIndex > 0) {
       this.setPlaybackSpeed(this.playbackSpeeds[currentIndex - 1]);
     }
+  }
+
+  // ============================================
+  // FONT SIZE (Fullscreen)
+  // ============================================
+
+  cycleFontSize(): void {
+    const sizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
+    const current = this.settings.settings().fontSize;
+    const currentIndex = sizes.indexOf(current);
+    const nextIndex = (currentIndex + 1) % sizes.length;
+    this.settings.setFontSize(sizes[nextIndex]);
   }
 
   // ============================================
