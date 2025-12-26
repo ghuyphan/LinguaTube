@@ -698,7 +698,7 @@ ruby rt {
 
 .bottom-nav__item.active app-icon {
   background: var(--bg-secondary);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 [data-theme="dark"] .bottom-nav__item.active app-icon {
