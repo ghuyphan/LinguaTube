@@ -16,6 +16,7 @@ export interface UserProfile {
 })
 export class AuthService {
     private readonly STORAGE_KEY = 'linguatube_user';
+    private readonly TOKEN_KEY = 'linguatube_token';
     private ngZone = inject(NgZone);
 
     readonly user = signal<UserProfile | null>(null);
@@ -26,6 +27,7 @@ export class AuthService {
     readonly loginEvent = new Subject<UserProfile>();
 
     private clientId = '';
+    private token: string | null = null;
 
     constructor(private http: HttpClient) {
         this.loadStoredUser();
@@ -112,7 +114,9 @@ export class AuthService {
             google.accounts.id.disableAutoSelect();
         }
         this.user.set(null);
+        this.token = null;
         localStorage.removeItem(this.STORAGE_KEY);
+        localStorage.removeItem(this.TOKEN_KEY);
     }
 
     /**
@@ -138,7 +142,9 @@ export class AuthService {
 
             console.log('[Auth] Setting user profile:', profile);
             this.user.set(profile);
+            this.token = response.credential;
             localStorage.setItem(this.STORAGE_KEY, JSON.stringify(profile));
+            localStorage.setItem(this.TOKEN_KEY, response.credential);
 
             // Emit login event for sync service
             this.loginEvent.next(profile);
@@ -168,11 +174,16 @@ export class AuthService {
     private loadStoredUser(): void {
         try {
             const stored = localStorage.getItem(this.STORAGE_KEY);
+            const storedToken = localStorage.getItem(this.TOKEN_KEY);
             if (stored) {
                 this.user.set(JSON.parse(stored));
             }
+            if (storedToken) {
+                this.token = storedToken;
+            }
         } catch {
             localStorage.removeItem(this.STORAGE_KEY);
+            localStorage.removeItem(this.TOKEN_KEY);
         }
     }
 
@@ -188,5 +199,12 @@ export class AuthService {
      */
     isAuthEnabled(): boolean {
         return !!this.clientId;
+    }
+
+    /**
+     * Get the current auth token for API calls
+     */
+    getToken(): string | null {
+        return this.token;
     }
 }

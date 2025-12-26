@@ -1188,6 +1188,27 @@ function validateVideoId(id) {
 function errorResponse(message, status = 500) {
   return jsonResponse({ error: message }, status);
 }
+function validateTextLength(text, maxLength = 1e4) {
+  if (!text || typeof text !== "string") {
+    return { valid: false, error: "Missing or invalid text field" };
+  }
+  if (text.length > maxLength) {
+    return { valid: false, error: `Text too long (max ${maxLength} characters)` };
+  }
+  return { valid: true };
+}
+function validateBatchSize(items, maxSize = 100) {
+  if (!Array.isArray(items)) {
+    return { valid: false, error: "Items must be an array" };
+  }
+  if (items.length === 0) {
+    return { valid: false, error: "Items array cannot be empty" };
+  }
+  if (items.length > maxSize) {
+    return { valid: false, error: `Too many items (max ${maxSize})` };
+  }
+  return { valid: true };
+}
 var init_utils2 = __esm({
   "_shared/utils.js"() {
     "use strict";
@@ -1199,6 +1220,101 @@ var init_utils2 = __esm({
     __name(handleOptions, "handleOptions");
     __name(validateVideoId, "validateVideoId");
     __name(errorResponse, "errorResponse");
+    __name(validateTextLength, "validateTextLength");
+    __name(validateBatchSize, "validateBatchSize");
+  }
+});
+
+// _shared/rate-limiter.js
+async function checkRateLimit(cache, clientIP, config2) {
+  if (!cache || !clientIP) {
+    return { allowed: true, remaining: config2.max, resetAt: 0 };
+  }
+  const key = `ratelimit:${config2.keyPrefix}:${clientIP}`;
+  try {
+    const data = await cache.get(key, "json");
+    if (!data) {
+      return {
+        allowed: true,
+        remaining: config2.max - 1,
+        resetAt: Date.now() + config2.windowSeconds * 1e3
+      };
+    }
+    if (Date.now() > data.resetAt) {
+      return {
+        allowed: true,
+        remaining: config2.max - 1,
+        resetAt: Date.now() + config2.windowSeconds * 1e3
+      };
+    }
+    const remaining = config2.max - data.count;
+    return {
+      allowed: remaining > 0,
+      remaining: Math.max(0, remaining - 1),
+      resetAt: data.resetAt
+    };
+  } catch (e) {
+    console.error("[RateLimit] Check error:", e.message);
+    return { allowed: true, remaining: config2.max, resetAt: 0 };
+  }
+}
+async function incrementRateLimit(cache, clientIP, config2) {
+  if (!cache || !clientIP) return;
+  const key = `ratelimit:${config2.keyPrefix}:${clientIP}`;
+  try {
+    const data = await cache.get(key, "json") || {
+      count: 0,
+      resetAt: Date.now() + config2.windowSeconds * 1e3
+    };
+    if (Date.now() > data.resetAt) {
+      data.count = 1;
+      data.resetAt = Date.now() + config2.windowSeconds * 1e3;
+    } else {
+      data.count++;
+    }
+    await cache.put(key, JSON.stringify(data), {
+      expirationTtl: config2.windowSeconds
+    });
+  } catch (e) {
+    console.error("[RateLimit] Increment error:", e.message);
+  }
+}
+function getRateLimitHeaders(remaining, resetAt) {
+  return {
+    "X-RateLimit-Remaining": String(remaining),
+    "X-RateLimit-Reset": String(Math.ceil(resetAt / 1e3)),
+    "Retry-After": String(Math.ceil((resetAt - Date.now()) / 1e3))
+  };
+}
+function getClientIP(request) {
+  return request.headers.get("CF-Connecting-IP") || request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() || null;
+}
+function rateLimitResponse(resetAt) {
+  const retryAfter = Math.ceil((resetAt - Date.now()) / 1e3);
+  return new Response(JSON.stringify({
+    error: "Rate limit exceeded. Please try again later.",
+    retryAfter
+  }), {
+    status: 429,
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      ...getRateLimitHeaders(0, resetAt)
+    }
+  });
+}
+var init_rate_limiter = __esm({
+  "_shared/rate-limiter.js"() {
+    "use strict";
+    init_functionsRoutes_0_8661966525688913();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    __name(checkRateLimit, "checkRateLimit");
+    __name(incrementRateLimit, "incrementRateLimit");
+    __name(getRateLimitHeaders, "getRateLimitHeaders");
+    __name(getClientIP, "getClientIP");
+    __name(rateLimitResponse, "rateLimitResponse");
   }
 });
 
@@ -1207,7 +1323,12 @@ async function onRequestOptions() {
   return handleOptions(["POST", "OPTIONS"]);
 }
 async function onRequestPost(context2) {
-  const { request } = context2;
+  const { request, env: env2 } = context2;
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
+  }
   try {
     const body = await request.json();
     const { texts, source, target } = body;
@@ -1223,6 +1344,7 @@ async function onRequestPost(context2) {
     const translations = await Promise.all(
       texts.map((text) => translateSingle(text, source, target))
     );
+    await incrementRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     return jsonResponse({ translations });
   } catch (error3) {
     console.error("[Translate Batch] Error:", error3);
@@ -1250,7 +1372,7 @@ async function translateSingle(text, source, target) {
   }
   return null;
 }
-var LINGVA_INSTANCES, INSTANCE_TIMEOUT_MS, MAX_BATCH_SIZE;
+var LINGVA_INSTANCES, INSTANCE_TIMEOUT_MS, MAX_BATCH_SIZE, RATE_LIMIT_CONFIG;
 var init_batch = __esm({
   "api/translate/batch.js"() {
     "use strict";
@@ -1259,6 +1381,7 @@ var init_batch = __esm({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     init_utils2();
+    init_rate_limiter();
     LINGVA_INSTANCES = [
       "https://lingva.ml",
       "https://lingva.lunar.icu",
@@ -1266,6 +1389,7 @@ var init_batch = __esm({
     ];
     INSTANCE_TIMEOUT_MS = 5e3;
     MAX_BATCH_SIZE = 20;
+    RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: "translate" };
     __name(onRequestOptions, "onRequestOptions");
     __name(onRequestPost, "onRequestPost");
     __name(translateSingle, "translateSingle");
@@ -27562,6 +27686,11 @@ async function onRequest(context2) {
   if (request.method === "OPTIONS") {
     return handleOptions(["POST", "OPTIONS"]);
   }
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG2);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
+  }
   if (!SUPPORTED_LANGUAGES.has(lang)) {
     return jsonResponse(
       { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
@@ -27574,8 +27703,9 @@ async function onRequest(context2) {
   try {
     const body = await request.json();
     const { texts, videoId } = body;
-    if (!Array.isArray(texts) || texts.length === 0) {
-      return jsonResponse({ error: 'Missing or invalid "texts" array' }, 400);
+    const batchValidation = validateBatchSize(texts, MAX_BATCH_SIZE2);
+    if (!batchValidation.valid) {
+      return jsonResponse({ error: batchValidation.error }, 400);
     }
     if (!videoId || !validateVideoId(videoId)) {
       return jsonResponse({ error: 'Missing or invalid "videoId"' }, 400);
@@ -27599,6 +27729,7 @@ async function onRequest(context2) {
       texts.map((text) => tokenize(text, lang))
     );
     const result = { tokens: allTokens };
+    await incrementRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG2);
     if (TOKEN_CACHE) {
       try {
         await TOKEN_CACHE.put(cacheKey, JSON.stringify(result), {
@@ -27615,7 +27746,7 @@ async function onRequest(context2) {
     return errorResponse(error3.message);
   }
 }
-var SUPPORTED_LANGUAGES;
+var SUPPORTED_LANGUAGES, RATE_LIMIT_CONFIG2, MAX_BATCH_SIZE2;
 var init_lang = __esm({
   "api/tokenize-batch/[lang].js"() {
     "use strict";
@@ -27625,7 +27756,10 @@ var init_lang = __esm({
     init_performance2();
     init_utils2();
     init_tokenizer();
+    init_rate_limiter();
     SUPPORTED_LANGUAGES = /* @__PURE__ */ new Set(["ja", "ko", "zh", "en"]);
+    RATE_LIMIT_CONFIG2 = { max: 100, windowSeconds: 3600, keyPrefix: "tokenize" };
+    MAX_BATCH_SIZE2 = 500;
     __name(hashTexts, "hashTexts");
     __name(onRequest, "onRequest");
   }
@@ -27647,6 +27781,11 @@ async function onRequest2(context2) {
   if (request.method === "OPTIONS") {
     return handleOptions(["POST", "OPTIONS"]);
   }
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG3);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
+  }
   if (!SUPPORTED_LANGUAGES2.has(lang)) {
     return jsonResponse(
       { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
@@ -27658,8 +27797,9 @@ async function onRequest2(context2) {
   }
   try {
     const { text } = await request.json();
-    if (!text || typeof text !== "string") {
-      return jsonResponse({ error: 'Missing or invalid "text" field' }, 400);
+    const textValidation = validateTextLength(text, MAX_TEXT_LENGTH);
+    if (!textValidation.valid) {
+      return jsonResponse({ error: textValidation.error }, 400);
     }
     const cacheKey = `tokens:${lang}:${hashText(text)}`;
     if (TOKEN_CACHE) {
@@ -27673,6 +27813,7 @@ async function onRequest2(context2) {
     }
     const tokens = await tokenize(text, lang);
     const result = { tokens };
+    await incrementRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG3);
     if (TOKEN_CACHE) {
       try {
         await TOKEN_CACHE.put(cacheKey, JSON.stringify(result), {
@@ -27687,7 +27828,7 @@ async function onRequest2(context2) {
     return errorResponse(error3.message);
   }
 }
-var SUPPORTED_LANGUAGES2;
+var SUPPORTED_LANGUAGES2, RATE_LIMIT_CONFIG3, MAX_TEXT_LENGTH;
 var init_lang2 = __esm({
   "api/tokenize/[lang].js"() {
     "use strict";
@@ -27697,7 +27838,10 @@ var init_lang2 = __esm({
     init_performance2();
     init_utils2();
     init_tokenizer();
+    init_rate_limiter();
     SUPPORTED_LANGUAGES2 = /* @__PURE__ */ new Set(["ja", "ko", "zh", "en"]);
+    RATE_LIMIT_CONFIG3 = { max: 100, windowSeconds: 3600, keyPrefix: "tokenize" };
+    MAX_TEXT_LENGTH = 1e4;
     __name(hashText, "hashText");
     __name(onRequest2, "onRequest");
   }
@@ -27708,7 +27852,12 @@ async function onRequestOptions2() {
   return handleOptions(["GET", "OPTIONS"]);
 }
 async function onRequestGet(context2) {
-  const { params } = context2;
+  const { request, env: env2, params } = context2;
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG4);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
+  }
   const pathSegments = params.path;
   if (!pathSegments || pathSegments.length < 3) {
     return jsonResponse({ error: "Invalid path. Expected: /api/translate/{source}/{target}/{text}" }, 400);
@@ -27731,6 +27880,7 @@ async function onRequestGet(context2) {
         signal: AbortSignal.timeout(INSTANCE_TIMEOUT_MS2)
       });
       if (response.ok) {
+        await incrementRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG4);
         const data = await response.json();
         return jsonResponse(data, 200, {
           "X-Lingva-Instance": instance
@@ -27744,7 +27894,7 @@ async function onRequestGet(context2) {
   console.error("[Translate] All instances failed:", lastError?.message);
   return errorResponse(`Translation failed: ${lastError?.message || "All instances unavailable"}`);
 }
-var LINGVA_INSTANCES2, INSTANCE_TIMEOUT_MS2;
+var LINGVA_INSTANCES2, INSTANCE_TIMEOUT_MS2, RATE_LIMIT_CONFIG4;
 var init_path = __esm({
   "api/translate/[[path]].js"() {
     "use strict";
@@ -27753,12 +27903,14 @@ var init_path = __esm({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     init_utils2();
+    init_rate_limiter();
     LINGVA_INSTANCES2 = [
       "https://lingva.ml",
       "https://lingva.lunar.icu",
       "https://translate.plausibility.cloud"
     ];
     INSTANCE_TIMEOUT_MS2 = 5e3;
+    RATE_LIMIT_CONFIG4 = { max: 60, windowSeconds: 3600, keyPrefix: "translate" };
     __name(onRequestOptions2, "onRequestOptions");
     __name(onRequestGet, "onRequestGet");
   }
@@ -28147,6 +28299,12 @@ async function onRequestGet3(context2) {
 async function onRequestPost2(context2) {
   const { request, env: env2, waitUntil } = context2;
   const elapsed = timer();
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG5);
+  if (!rateCheck.allowed) {
+    log4(`Rate limited: ${clientIP}`);
+    return rateLimitResponse(rateCheck.resetAt);
+  }
   try {
     const body = await request.json();
     const { videoId, forceRefresh = false, targetLanguages = DEFAULT_LANGS } = body;
@@ -28174,6 +28332,7 @@ async function onRequestPost2(context2) {
     }
     if (result) {
       log4(`${source} succeeded (${elapsed()}ms)`);
+      await incrementRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG5);
       const cachePromise = saveToCache(cache, db, videoId, primaryLang, result.data, source);
       if (waitUntil) {
         waitUntil(cachePromise);
@@ -28374,7 +28533,7 @@ function buildResponse(videoId, lang, content) {
     }
   };
 }
-var __create2, __defProp2, __getOwnPropDesc2, __getOwnPropNames2, __getProtoOf2, __hasOwnProp2, __commonJS2, __copyProps2, __toESM2, require_he, require_striptags, require_dist2, import_youtube_caption_extractor, RE_YOUTUBE, USER_AGENT, RE_XML_TRANSCRIPT, YoutubeTranscriptError, YoutubeTranscriptTooManyRequestError, YoutubeTranscriptVideoUnavailableError, YoutubeTranscriptDisabledError, YoutubeTranscriptNotAvailableError, YoutubeTranscriptNotAvailableLanguageError, YoutubeTranscript, DEBUG2, CACHE_TTL, DEFAULT_LANGS, MAX_RETRIES, INITIAL_RETRY_DELAY, BACKOFF_MULTIPLIER, log4, timer, onRequestOptions5;
+var __create2, __defProp2, __getOwnPropDesc2, __getOwnPropNames2, __getProtoOf2, __hasOwnProp2, __commonJS2, __copyProps2, __toESM2, require_he, require_striptags, require_dist2, import_youtube_caption_extractor, RE_YOUTUBE, USER_AGENT, RE_XML_TRANSCRIPT, YoutubeTranscriptError, YoutubeTranscriptTooManyRequestError, YoutubeTranscriptVideoUnavailableError, YoutubeTranscriptDisabledError, YoutubeTranscriptNotAvailableError, YoutubeTranscriptNotAvailableLanguageError, YoutubeTranscript, DEBUG2, CACHE_TTL, DEFAULT_LANGS, MAX_RETRIES, INITIAL_RETRY_DELAY, RATE_LIMIT_CONFIG5, BACKOFF_MULTIPLIER, log4, timer, onRequestOptions5;
 var init_innertube = __esm({
   "api/innertube.js"() {
     "use strict";
@@ -28385,6 +28544,7 @@ var init_innertube = __esm({
     init_utils2();
     init_transcript_utils();
     init_transcript_db();
+    init_rate_limiter();
     __create2 = Object.create;
     __defProp2 = Object.defineProperty;
     __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -29404,6 +29564,7 @@ var init_innertube = __esm({
     DEFAULT_LANGS = ["ja", "zh", "ko", "en"];
     MAX_RETRIES = 2;
     INITIAL_RETRY_DELAY = 300;
+    RATE_LIMIT_CONFIG5 = { max: 30, windowSeconds: 3600, keyPrefix: "innertube" };
     BACKOFF_MULTIPLIER = 1.5;
     log4 = /* @__PURE__ */ __name((...args) => DEBUG2 && console.log("[Innertube]", ...args), "log");
     timer = /* @__PURE__ */ __name(() => {
@@ -29426,6 +29587,80 @@ var init_innertube = __esm({
   }
 });
 
+// _shared/auth.js
+async function validateAuthToken(request, env2) {
+  const authHeader = request.headers.get("Authorization");
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return { valid: false, error: "Missing or invalid Authorization header" };
+  }
+  const token = authHeader.substring(7);
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      return { valid: false, error: "Invalid token format" };
+    }
+    const header = JSON.parse(atob(parts[0].replace(/-/g, "+").replace(/_/g, "/")));
+    const payload = JSON.parse(atob(parts[1].replace(/-/g, "+").replace(/_/g, "/")));
+    const now = Math.floor(Date.now() / 1e3);
+    if (payload.exp && payload.exp < now) {
+      return { valid: false, error: "Token expired" };
+    }
+    if (payload.nbf && payload.nbf > now) {
+      return { valid: false, error: "Token not yet valid" };
+    }
+    if (payload.iat && payload.iat > now + 300) {
+      return { valid: false, error: "Invalid token issue time" };
+    }
+    const clientId = env2.GOOGLE_CLIENT_ID;
+    if (clientId && payload.aud !== clientId) {
+      return { valid: false, error: "Invalid token audience" };
+    }
+    if (!["accounts.google.com", "https://accounts.google.com"].includes(payload.iss)) {
+      return { valid: false, error: "Invalid token issuer" };
+    }
+    return {
+      valid: true,
+      userId: payload.sub,
+      email: payload.email,
+      name: payload.name
+    };
+  } catch (error3) {
+    console.error("[Auth] Token validation error:", error3.message);
+    return { valid: false, error: "Token validation failed" };
+  }
+}
+function unauthorizedResponse(message = "Unauthorized") {
+  return new Response(JSON.stringify({ error: message }), {
+    status: 401,
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "WWW-Authenticate": "Bearer"
+    }
+  });
+}
+async function requireAuth(request, env2) {
+  const result = await validateAuthToken(request, env2);
+  if (!result.valid) {
+    return { response: unauthorizedResponse(result.error) };
+  }
+  return { user: result };
+}
+var CERTS_CACHE_TTL;
+var init_auth = __esm({
+  "_shared/auth.js"() {
+    "use strict";
+    init_functionsRoutes_0_8661966525688913();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    CERTS_CACHE_TTL = 60 * 60 * 1e3;
+    __name(validateAuthToken, "validateAuthToken");
+    __name(unauthorizedResponse, "unauthorizedResponse");
+    __name(requireAuth, "requireAuth");
+  }
+});
+
 // api/sync.js
 async function onRequestOptions6() {
   return handleOptions(["GET", "POST", "DELETE", "OPTIONS"]);
@@ -29436,11 +29671,9 @@ async function onRequestGet4(context2) {
   if (!DB) {
     return errorResponse("Database not configured");
   }
-  const url = new URL(request.url);
-  const userId = url.searchParams.get("userId");
-  if (!userId) {
-    return jsonResponse({ error: "userId required" }, 400);
-  }
+  const auth = await requireAuth(request, env2);
+  if (auth.response) return auth.response;
+  const userId = auth.user.userId;
   try {
     const { results } = await DB.prepare(
       "SELECT * FROM vocabulary WHERE user_id = ? ORDER BY updated_at DESC"
@@ -29461,10 +29694,13 @@ async function onRequestPost3(context2) {
   if (!DB) {
     return errorResponse("Database not configured");
   }
+  const auth = await requireAuth(request, env2);
+  if (auth.response) return auth.response;
+  const userId = auth.user.userId;
   try {
-    const { userId, items } = await request.json();
-    if (!userId || !items || !Array.isArray(items)) {
-      return jsonResponse({ error: "userId and items[] required" }, 400);
+    const { items } = await request.json();
+    if (!items || !Array.isArray(items)) {
+      return jsonResponse({ error: "items[] required" }, 400);
     }
     if (items.length === 0) {
       return jsonResponse({ success: true, synced: 0 });
@@ -29513,10 +29749,13 @@ async function onRequestDelete(context2) {
   if (!DB) {
     return errorResponse("Database not configured");
   }
+  const auth = await requireAuth(request, env2);
+  if (auth.response) return auth.response;
+  const userId = auth.user.userId;
   try {
-    const { userId, word, language } = await request.json();
-    if (!userId || !word || !language) {
-      return jsonResponse({ error: "userId, word, and language required" }, 400);
+    const { word, language } = await request.json();
+    if (!word || !language) {
+      return jsonResponse({ error: "word and language required" }, 400);
     }
     await DB.prepare(
       "DELETE FROM vocabulary WHERE user_id = ? AND word = ? AND language = ?"
@@ -29535,6 +29774,7 @@ var init_sync = __esm({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     init_utils2();
+    init_auth();
     __name(onRequestOptions6, "onRequestOptions");
     __name(onRequestGet4, "onRequestGet");
     __name(onRequestPost3, "onRequestPost");
@@ -29549,7 +29789,7 @@ function log5(...args) {
 async function onRequestOptions7() {
   return handleOptions(["POST", "OPTIONS"]);
 }
-async function checkRateLimit(cache, clientIP) {
+async function checkRateLimit2(cache, clientIP) {
   if (!cache || !clientIP) return true;
   const key = `ratelimit:whisper:${clientIP}`;
   try {
@@ -29562,7 +29802,7 @@ async function checkRateLimit(cache, clientIP) {
     return true;
   }
 }
-async function incrementRateLimit(cache, clientIP) {
+async function incrementRateLimit2(cache, clientIP) {
   if (!cache || !clientIP) return;
   const key = `ratelimit:whisper:${clientIP}`;
   try {
@@ -29638,13 +29878,13 @@ async function onRequestPost4(context2) {
           }, 400);
         }
         const clientIP = request.headers.get("CF-Connecting-IP") || request.headers.get("X-Forwarded-For")?.split(",")[0];
-        if (!await checkRateLimit(TRANSCRIPT_CACHE, clientIP)) {
+        if (!await checkRateLimit2(TRANSCRIPT_CACHE, clientIP)) {
           return jsonResponse({
             error: "Rate limit exceeded. Please try again later.",
             retryAfter: 3600
           }, 429);
         }
-        await incrementRateLimit(TRANSCRIPT_CACHE, clientIP);
+        await incrementRateLimit2(TRANSCRIPT_CACHE, clientIP);
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
         const submitResponse = await fetch("https://api.gladia.io/v2/pre-recorded", {
           method: "POST",
@@ -29759,17 +29999,22 @@ var init_whisper = __esm({
     __name(onRequestOptions7, "onRequestOptions");
     RATE_LIMIT_MAX = 10;
     RATE_LIMIT_WINDOW = 60 * 60;
-    __name(checkRateLimit, "checkRateLimit");
-    __name(incrementRateLimit, "incrementRateLimit");
+    __name(checkRateLimit2, "checkRateLimit");
+    __name(incrementRateLimit2, "incrementRateLimit");
     __name(onRequestPost4, "onRequestPost");
   }
 });
 
 // api/endict.js
 async function onRequest4(context2) {
-  const { request } = context2;
+  const { request, env: env2 } = context2;
   if (request.method === "OPTIONS") {
     return handleOptions(["GET", "OPTIONS"]);
+  }
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG6);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
   }
   if (request.method !== "GET") {
     return jsonResponse({ error: "Method not allowed" }, 405);
@@ -29792,6 +30037,7 @@ async function onRequest4(context2) {
     if (!Array.isArray(data) || data.length === 0) {
       return jsonResponse([]);
     }
+    await incrementRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG6);
     const results = data.map((entry) => {
       const phonetic = entry.phonetics?.find((p) => p.text)?.text || "";
       const audio = entry.phonetics?.find((p) => p.audio)?.audio || "";
@@ -29819,7 +30065,7 @@ async function onRequest4(context2) {
     return errorResponse(error3.message);
   }
 }
-var FREE_DICT_API;
+var FREE_DICT_API, RATE_LIMIT_CONFIG6;
 var init_endict = __esm({
   "api/endict.js"() {
     "use strict";
@@ -29828,7 +30074,9 @@ var init_endict = __esm({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     init_utils2();
+    init_rate_limiter();
     FREE_DICT_API = "https://api.dictionaryapi.dev/api/v2/entries/en";
+    RATE_LIMIT_CONFIG6 = { max: 100, windowSeconds: 3600, keyPrefix: "dict" };
     __name(onRequest4, "onRequest");
   }
 });
@@ -29843,6 +30091,11 @@ async function onRequest5(context2) {
   const word = url.searchParams.get("q");
   if (!word) {
     return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
+  }
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG7);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
   }
   const DICT_CACHE = env2.DICT_CACHE;
   const cacheKey = `krdict:${word}`;
@@ -29892,6 +30145,7 @@ async function onRequest5(context2) {
       };
     }).filter((e) => e.word && e.definitions.length > 0);
     if (DICT_CACHE && entries.length > 0) {
+      await incrementRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG7);
       try {
         await DICT_CACHE.put(cacheKey, JSON.stringify(entries), { expirationTtl: CACHE_TTL2 });
       } catch (e) {
@@ -29906,7 +30160,7 @@ async function onRequest5(context2) {
     return errorResponse(error3.message);
   }
 }
-var CACHE_TTL2;
+var CACHE_TTL2, RATE_LIMIT_CONFIG7;
 var init_krdict = __esm({
   "api/krdict.js"() {
     "use strict";
@@ -29915,7 +30169,9 @@ var init_krdict = __esm({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     init_utils2();
+    init_rate_limiter();
     CACHE_TTL2 = 7 * 24 * 60 * 60;
+    RATE_LIMIT_CONFIG7 = { max: 100, windowSeconds: 3600, keyPrefix: "dict" };
     __name(onRequest5, "onRequest");
   }
 });
@@ -29930,6 +30186,11 @@ async function onRequest6(context2) {
   const word = url.searchParams.get("q");
   if (!word) {
     return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
+  }
+  const clientIP = getClientIP(request);
+  const rateCheck = await checkRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG8);
+  if (!rateCheck.allowed) {
+    return rateLimitResponse(rateCheck.resetAt);
   }
   const DICT_CACHE = env2.DICT_CACHE;
   const cacheKey = `mdbg:${word}`;
@@ -29998,6 +30259,7 @@ async function onRequest6(context2) {
       };
     }).filter((e) => e.word);
     if (DICT_CACHE && cleanEntries.length > 0) {
+      await incrementRateLimit(env2.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG8);
       try {
         await DICT_CACHE.put(cacheKey, JSON.stringify(cleanEntries), { expirationTtl: CACHE_TTL3 });
       } catch (e) {
@@ -30009,7 +30271,7 @@ async function onRequest6(context2) {
     return errorResponse(error3.message);
   }
 }
-var CACHE_TTL3;
+var CACHE_TTL3, RATE_LIMIT_CONFIG8;
 var init_mdbg = __esm({
   "api/mdbg.js"() {
     "use strict";
@@ -30018,7 +30280,9 @@ var init_mdbg = __esm({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     init_utils2();
+    init_rate_limiter();
     CACHE_TTL3 = 7 * 24 * 60 * 60;
+    RATE_LIMIT_CONFIG8 = { max: 100, windowSeconds: 3600, keyPrefix: "dict" };
     __name(onRequest6, "onRequest");
   }
 });
@@ -30209,13 +30473,13 @@ var init_functionsRoutes_0_8661966525688913 = __esm({
   }
 });
 
-// ../.wrangler/tmp/bundle-qgfdAP/middleware-loader.entry.ts
+// ../.wrangler/tmp/bundle-Q5tLGU/middleware-loader.entry.ts
 init_functionsRoutes_0_8661966525688913();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// ../.wrangler/tmp/bundle-qgfdAP/middleware-insertion-facade.js
+// ../.wrangler/tmp/bundle-Q5tLGU/middleware-insertion-facade.js
 init_functionsRoutes_0_8661966525688913();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -30726,7 +30990,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env2, _ctx, middlewareCtx
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// ../.wrangler/tmp/bundle-qgfdAP/middleware-insertion-facade.js
+// ../.wrangler/tmp/bundle-Q5tLGU/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -30762,7 +31026,7 @@ function __facade_invoke__(request, env2, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// ../.wrangler/tmp/bundle-qgfdAP/middleware-loader.entry.ts
+// ../.wrangler/tmp/bundle-Q5tLGU/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;

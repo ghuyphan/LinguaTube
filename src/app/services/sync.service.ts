@@ -1,5 +1,5 @@
 import { Injectable, inject, effect, untracked, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { VocabularyService } from './vocabulary.service';
 
@@ -189,11 +189,24 @@ export class SyncService {
     }
 
     /**
+     * Get HTTP headers with auth token
+     */
+    private getAuthHeaders(): HttpHeaders {
+        const token = this.auth.getToken();
+        return new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': token ? `Bearer ${token}` : ''
+        });
+    }
+
+    /**
      * Fetch vocabulary from server
      */
     private fetchRemote(userId: string): Promise<SyncItem[]> {
         return new Promise((resolve) => {
-            this.http.get<{ success: boolean; items: any[] }>(`/api/sync?userId=${userId}`).subscribe({
+            this.http.get<{ success: boolean; items: any[] }>('/api/sync', {
+                headers: this.getAuthHeaders()
+            }).subscribe({
                 next: (res) => {
                     if (res.success && res.items) {
                         resolve(res.items.map(item => ({
@@ -225,7 +238,9 @@ export class SyncService {
      */
     private pushToServer(userId: string, items: SyncItem[]): Promise<void> {
         return new Promise((resolve, reject) => {
-            this.http.post<{ success: boolean }>('/api/sync', { userId, items }).subscribe({
+            this.http.post<{ success: boolean }>('/api/sync', { items }, {
+                headers: this.getAuthHeaders()
+            }).subscribe({
                 next: (res) => {
                     if (res.success) {
                         resolve();
@@ -303,7 +318,8 @@ export class SyncService {
         if (!userId) return;
 
         this.http.delete('/api/sync', {
-            body: { userId, word, language }
+            headers: this.getAuthHeaders(),
+            body: { word, language }
         }).subscribe({
             next: () => console.log('[Sync] Deleted from server:', word),
             error: (err) => console.error('[Sync] Delete failed:', err)

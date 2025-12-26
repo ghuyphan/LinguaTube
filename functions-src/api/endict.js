@@ -4,14 +4,23 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 
 const FREE_DICT_API = 'https://api.dictionaryapi.dev/api/v2/entries/en';
+const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 
 export async function onRequest(context) {
-    const { request } = context;
+    const { request, env } = context;
 
     if (request.method === 'OPTIONS') {
         return handleOptions(['GET', 'OPTIONS']);
+    }
+
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
     }
 
     if (request.method !== 'GET') {
@@ -42,6 +51,9 @@ export async function onRequest(context) {
         if (!Array.isArray(data) || data.length === 0) {
             return jsonResponse([]);
         }
+
+        // Increment rate limit for successful external API calls
+        await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
         // Parse and format the response
         const results = data.map(entry => {
@@ -77,3 +89,4 @@ export async function onRequest(context) {
         return errorResponse(error.message);
     }
 }
+

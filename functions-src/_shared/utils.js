@@ -63,3 +63,38 @@ export function validateVideoId(id) {
 export function errorResponse(message, status = 500) {
     return jsonResponse({ error: message }, status);
 }
+
+/**
+ * Validate text input length
+ * @param {string} text - Text to validate
+ * @param {number} maxLength - Maximum allowed length in characters (default: 10000)
+ * @returns {{valid: boolean, error?: string}}
+ */
+export function validateTextLength(text, maxLength = 10000) {
+    if (!text || typeof text !== 'string') {
+        return { valid: false, error: 'Missing or invalid text field' };
+    }
+    if (text.length > maxLength) {
+        return { valid: false, error: `Text too long (max ${maxLength} characters)` };
+    }
+    return { valid: true };
+}
+
+/**
+ * Validate batch/array size
+ * @param {Array} items - Array to validate
+ * @param {number} maxSize - Maximum allowed items (default: 100)
+ * @returns {{valid: boolean, error?: string}}
+ */
+export function validateBatchSize(items, maxSize = 100) {
+    if (!Array.isArray(items)) {
+        return { valid: false, error: 'Items must be an array' };
+    }
+    if (items.length === 0) {
+        return { valid: false, error: 'Items array cannot be empty' };
+    }
+    if (items.length > maxSize) {
+        return { valid: false, error: `Too many items (max ${maxSize})` };
+    }
+    return { valid: true };
+}

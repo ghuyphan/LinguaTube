@@ -5,8 +5,10 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 
 const CACHE_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
+const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 
 export async function onRequest(context) {
     const { request, env } = context;
@@ -21,6 +23,13 @@ export async function onRequest(context) {
 
     if (!word) {
         return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
+    }
+
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
     }
 
     const DICT_CACHE = env.DICT_CACHE;
@@ -92,6 +101,8 @@ export async function onRequest(context) {
 
         // Cache successful responses
         if (DICT_CACHE && entries.length > 0) {
+            // Increment rate limit only for non-cached responses
+            await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
             try {
                 await DICT_CACHE.put(cacheKey, JSON.stringify(entries), { expirationTtl: CACHE_TTL });
             } catch (e) {

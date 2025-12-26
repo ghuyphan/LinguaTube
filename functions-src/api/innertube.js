@@ -12,6 +12,7 @@
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
 
@@ -26,6 +27,9 @@ const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 // Retry configuration - optimized for CF Workers
 const MAX_RETRIES = 2; // Reduced since we have a fallback library
 const INITIAL_RETRY_DELAY = 300; // ms
+
+// Rate limiting configuration
+const RATE_LIMIT_CONFIG = { max: 30, windowSeconds: 3600, keyPrefix: 'innertube' };
 const BACKOFF_MULTIPLIER = 1.5;
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
@@ -55,6 +59,14 @@ export async function onRequestGet(context) {
 export async function onRequestPost(context) {
     const { request, env, waitUntil } = context;
     const elapsed = timer();
+
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        log(`Rate limited: ${clientIP}`);
+        return rateLimitResponse(rateCheck.resetAt);
+    }
 
     try {
         const body = await request.json();
@@ -102,6 +114,9 @@ export async function onRequestPost(context) {
         // =====================================================================
         if (result) {
             log(`${source} succeeded (${elapsed()}ms)`);
+
+            // Increment rate limit (only for non-cached responses)
+            await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
             // Use waitUntil for non-blocking cache save
             const cachePromise = saveToCache(cache, db, videoId, primaryLang, result.data, source);

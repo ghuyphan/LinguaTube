@@ -4,10 +4,13 @@
  * - Reduces KV writes from ~200 to 1 per video
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateVideoId, validateBatchSize } from '../../_shared/utils.js';
 import { tokenize } from '../../_shared/tokenizer.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../../_shared/rate-limiter.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
+const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
+const MAX_BATCH_SIZE = 500;
 
 /**
  * Simple hash function for cache key differentiation
@@ -34,6 +37,13 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await checkRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
+    }
+
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
             { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
@@ -49,8 +59,10 @@ export async function onRequest(context) {
         const body = await request.json();
         const { texts, videoId } = body;
 
-        if (!Array.isArray(texts) || texts.length === 0) {
-            return jsonResponse({ error: 'Missing or invalid "texts" array' }, 400);
+        // Validate batch size
+        const batchValidation = validateBatchSize(texts, MAX_BATCH_SIZE);
+        if (!batchValidation.valid) {
+            return jsonResponse({ error: batchValidation.error }, 400);
         }
 
         if (!videoId || !validateVideoId(videoId)) {
@@ -84,6 +96,9 @@ export async function onRequest(context) {
 
         const result = { tokens: allTokens };
 
+        // Increment rate limit (only for non-cached responses)
+        await incrementRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+
         // Cache as ONE write for entire video (30 day TTL)
         if (TOKEN_CACHE) {
             try {
@@ -103,3 +118,4 @@ export async function onRequest(context) {
         return errorResponse(error.message);
     }
 }
+

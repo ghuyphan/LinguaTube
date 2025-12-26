@@ -5,6 +5,7 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../../_shared/rate-limiter.js';
 
 const LINGVA_INSTANCES = [
     'https://lingva.ml',
@@ -13,6 +14,7 @@ const LINGVA_INSTANCES = [
 ];
 
 const INSTANCE_TIMEOUT_MS = 5000;
+const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'translate' };
 
 // Handle preflight requests
 export async function onRequestOptions() {
@@ -20,7 +22,15 @@ export async function onRequestOptions() {
 }
 
 export async function onRequestGet(context) {
-    const { params } = context;
+    const { request, env, params } = context;
+
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
+    }
+
     const pathSegments = params.path; // e.g., ['en', 'vi', 'hello']
 
     if (!pathSegments || pathSegments.length < 3) {
@@ -50,6 +60,7 @@ export async function onRequestGet(context) {
             });
 
             if (response.ok) {
+                await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
                 const data = await response.json();
                 return jsonResponse(data, 200, {
                     'X-Lingva-Instance': instance
@@ -67,3 +78,4 @@ export async function onRequestGet(context) {
     console.error('[Translate] All instances failed:', lastError?.message);
     return errorResponse(`Translation failed: ${lastError?.message || 'All instances unavailable'}`);
 }
+

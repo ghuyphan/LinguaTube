@@ -1,9 +1,11 @@
 /**
  * Vocabulary Sync API (Cloudflare Function)
  * Uses D1 database for persistent storage with batch operations
+ * Protected by Google JWT authentication
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
+import { requireAuth } from '../_shared/auth.js';
 
 // Handle CORS preflight
 export async function onRequestOptions() {
@@ -18,13 +20,11 @@ export async function onRequestGet(context) {
         return errorResponse('Database not configured');
     }
 
-    // Get user ID from query params
-    const url = new URL(request.url);
-    const userId = url.searchParams.get('userId');
+    // Require authentication
+    const auth = await requireAuth(request, env);
+    if (auth.response) return auth.response;
 
-    if (!userId) {
-        return jsonResponse({ error: 'userId required' }, 400);
-    }
+    const userId = auth.user.userId;
 
     try {
         const { results } = await DB.prepare(
@@ -50,11 +50,17 @@ export async function onRequestPost(context) {
         return errorResponse('Database not configured');
     }
 
-    try {
-        const { userId, items } = await request.json();
+    // Require authentication
+    const auth = await requireAuth(request, env);
+    if (auth.response) return auth.response;
 
-        if (!userId || !items || !Array.isArray(items)) {
-            return jsonResponse({ error: 'userId and items[] required' }, 400);
+    const userId = auth.user.userId;
+
+    try {
+        const { items } = await request.json();
+
+        if (!items || !Array.isArray(items)) {
+            return jsonResponse({ error: 'items[] required' }, 400);
         }
 
         if (items.length === 0) {
@@ -113,11 +119,17 @@ export async function onRequestDelete(context) {
         return errorResponse('Database not configured');
     }
 
-    try {
-        const { userId, word, language } = await request.json();
+    // Require authentication
+    const auth = await requireAuth(request, env);
+    if (auth.response) return auth.response;
 
-        if (!userId || !word || !language) {
-            return jsonResponse({ error: 'userId, word, and language required' }, 400);
+    const userId = auth.user.userId;
+
+    try {
+        const { word, language } = await request.json();
+
+        if (!word || !language) {
+            return jsonResponse({ error: 'word and language required' }, 400);
         }
 
         await DB.prepare(
@@ -130,3 +142,4 @@ export async function onRequestDelete(context) {
         return errorResponse(error.message);
     }
 }
+

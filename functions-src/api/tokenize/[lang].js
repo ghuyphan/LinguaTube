@@ -3,10 +3,13 @@
  * Single-text tokenization endpoint with optional caching
  */
 
-import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '../../_shared/utils.js';
 import { tokenize } from '../../_shared/tokenizer.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../../_shared/rate-limiter.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
+const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
+const MAX_TEXT_LENGTH = 10000; // 10KB max
 
 /**
  * Simple hash function for cache keys (djb2 algorithm)
@@ -30,6 +33,13 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await checkRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
+    }
+
     // Validate language
     if (!SUPPORTED_LANGUAGES.has(lang)) {
         return jsonResponse(
@@ -45,8 +55,10 @@ export async function onRequest(context) {
     try {
         const { text } = await request.json();
 
-        if (!text || typeof text !== 'string') {
-            return jsonResponse({ error: 'Missing or invalid "text" field' }, 400);
+        // Validate text input
+        const textValidation = validateTextLength(text, MAX_TEXT_LENGTH);
+        if (!textValidation.valid) {
+            return jsonResponse({ error: textValidation.error }, 400);
         }
 
         // Check cache first
@@ -66,6 +78,9 @@ export async function onRequest(context) {
         const tokens = await tokenize(text, lang);
         const result = { tokens };
 
+        // Increment rate limit (only for non-cached responses)
+        await incrementRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+
         // Cache the result (30 days TTL)
         if (TOKEN_CACHE) {
             try {
@@ -84,3 +99,4 @@ export async function onRequest(context) {
         return errorResponse(error.message);
     }
 }
+
