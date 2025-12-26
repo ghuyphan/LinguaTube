@@ -892,6 +892,7 @@ $text-muted-fallback: #888;
    ============================================ */
 .video-info {
   padding: var(--space-md) 0;
+  min-height: 4rem; // Reserve space for title + channel to prevent CLS
 }
 
 .video-title {
