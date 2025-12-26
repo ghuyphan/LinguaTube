@@ -73,6 +73,10 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
     </div>
   `,
   styles: [`
+    :host {
+      display: block;
+    }
+
     .layout {
       display: grid;
       grid-template-columns: 1fr 320px;

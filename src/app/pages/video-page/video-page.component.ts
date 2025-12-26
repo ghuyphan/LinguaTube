@@ -48,6 +48,10 @@ import { Token } from '../../models';
     }
   `,
   styles: [`
+    :host {
+      display: block;
+    }
+
     .layout {
       display: grid;
       grid-template-columns: 1fr 340px;

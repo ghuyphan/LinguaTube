@@ -289,7 +289,8 @@
               </button>
               <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
                 <input type="range" class="volume-slider" min="0" max="100" [value]="volume()"
-                  (input)="onVolumeChange($event)" (mousedown)="$event.stopPropagation()" aria-label="Volume" />
+                  [style.--volume-percent]="volume() + '%'" (input)="onVolumeChange($event)"
+                  (mousedown)="$event.stopPropagation()" aria-label="Volume" />
               </div>
             </div>
 

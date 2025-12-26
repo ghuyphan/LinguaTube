@@ -797,11 +797,22 @@ ruby rt {
   max-width: 100vw;
 }
 
-/* Prevent horizontal scroll globally */
+/* Prevent horizontal scroll globally and hide vertical scrollbars */
 html,
 body {
   overflow-x: hidden;
   width: 100%;
+  /* Hide scrollbar but allow scrolling */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari/Opera */
 }
 
 /* Ensure Google One Tap / Sign In iframe is above bottom sheets (z-index 10000) */
@@ -813,6 +824,16 @@ body {
 .app {
   width: 100%;
   overflow-x: hidden;
+  /* Hide scrollbar but allow scrolling */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.app::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari/Opera */
 }
 
 /* ============================================
