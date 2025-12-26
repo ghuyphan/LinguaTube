@@ -670,9 +670,12 @@ ruby rt {
 }
 
 .bottom-nav__item app-icon {
-  width: 4rem;
-  height: 2rem;
-  border-radius: 1rem;
+  width: 3.5rem;
+  /* was 4rem */
+  height: 1.75rem;
+  /* was 2rem */
+  border-radius: 0.875rem;
+  /* half of height */
   display: inline-flex;
   align-items: center;
   justify-content: center;
