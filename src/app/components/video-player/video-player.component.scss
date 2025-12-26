@@ -14,7 +14,7 @@ $control-btn-size: 36px;
 $control-btn-size-mobile: 44px;
 $progress-bar-height: 4px;
 $progress-bar-height-hover: 6px;
-$progress-bar-mobile: 6px;
+$progress-bar-mobile: 4px;
 
 // === Z-INDEX LAYERS ===
 // Documented for easier maintenance and conflict resolution
@@ -1283,7 +1283,7 @@ $text-muted-fallback: #888;
   }
 
   .progress-container {
-    height: 6px;
+    height: $progress-bar-mobile;
   }
 
   .progress-handle {

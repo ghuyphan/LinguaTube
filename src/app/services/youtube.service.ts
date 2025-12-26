@@ -30,11 +30,46 @@ export class YoutubeService {
   // Track if video was paused when leaving page (for restore)
   private wasPausedOnLeave = false;
 
+  // Track if currently seeking (to prevent time tracking from overwriting optimistic update)
+  private isSeeking = false;
+  private seekingTimeout: ReturnType<typeof setTimeout> | null = null;
+
   constructor() {
     this.apiReadyPromise = new Promise(resolve => {
       this.resolveApiReady = resolve;
     });
     this.loadYouTubeAPI();
+    this.setupVisibilityHandler();
+  }
+
+  private setupVisibilityHandler(): void {
+    if (typeof document === 'undefined') return;
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && this.player) {
+        // Immediately sync time when tab becomes visible to prevent flickering
+        try {
+          const time = this.player.getCurrentTime();
+          if (time != null && time >= 0) {
+            this.currentTime.set(time);
+          }
+          // Also sync playing state
+          const state = this.player.getPlayerState();
+          if (state != null) {
+            const isPlaying = state === window.YT?.PlayerState?.PLAYING;
+            if (isPlaying !== this.isPlaying()) {
+              this.isPlaying.set(isPlaying);
+            }
+            // Restart time tracking if playing
+            if (isPlaying) {
+              this.startTimeTracking();
+            }
+          }
+        } catch (e) {
+          // Player might not be ready
+        }
+      }
+    });
   }
 
   private loadYouTubeAPI(): void {
@@ -198,7 +233,8 @@ export class YoutubeService {
 
   private startTimeTracking(): void {
     const track = () => {
-      if (this.player && typeof this.player.getCurrentTime === 'function') {
+      // Skip time updates while seeking to preserve optimistic update
+      if (!this.isSeeking && this.player && typeof this.player.getCurrentTime === 'function') {
         try {
           const time = this.player.getCurrentTime() || 0;
           if (time !== this.currentTime()) {
@@ -259,9 +295,25 @@ export class YoutubeService {
   }
 
   seekTo(seconds: number): void {
+    // Optimistic update - immediately update currentTime to prevent progress bar jumping
+    const clampedTime = Math.max(0, Math.min(seconds, this.duration() || seconds));
+    this.currentTime.set(clampedTime);
+
+    // Set seeking flag to prevent time tracking from overwriting optimistic update
+    this.isSeeking = true;
+    if (this.seekingTimeout) {
+      clearTimeout(this.seekingTimeout);
+    }
+
     try {
-      this.player?.seekTo(seconds, true);
+      this.player?.seekTo(clampedTime, true);
     } catch (e) { }
+
+    // Clear seeking flag after YouTube has time to complete the seek
+    this.seekingTimeout = setTimeout(() => {
+      this.isSeeking = false;
+      this.seekingTimeout = null;
+    }, 300);
   }
 
   seekRelative(seconds: number): void {
