@@ -17,7 +17,7 @@ export const CONTROLS_TAP_HIDE_DELAY = 4000;
 export const CONTROLS_VISIBLE_MIN_TIME = 500;
 
 /** Time window for detecting double-tap */
-export const DOUBLE_TAP_DELAY = 300;
+export const DOUBLE_TAP_DELAY = 350;
 
 /** Delay before long press activates 2x speed */
 export const LONG_PRESS_DELAY = 500;
@@ -53,7 +53,7 @@ export const FEEDBACK_DURATION = {
 export const SEEK_STEP = 10;
 
 /** Pixels of movement before registering as swipe */
-export const SWIPE_THRESHOLD = 15;
+export const SWIPE_THRESHOLD = 20;
 
 /** Seconds of seek per pixel of horizontal swipe */
 export const GESTURE_SEEK_SENSITIVITY = 0.15;

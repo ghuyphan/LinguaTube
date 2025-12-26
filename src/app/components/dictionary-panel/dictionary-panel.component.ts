@@ -1,4 +1,5 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
@@ -423,6 +424,7 @@ export class DictionaryPanelComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+  destroyRef = inject(DestroyRef);
 
   searchQuery = '';
   lastQuery = '';
@@ -464,18 +466,20 @@ export class DictionaryPanelComponent {
     this.dictionary.lastQuery.set(query);
 
     const lang = this.settings.settings().language;
-    this.dictionary.lookup(query, lang).subscribe({
-      next: (entry) => {
-        this.result.set(entry);
-        this.isLoading.set(false);
-        this.isSaved.set(entry ? this.vocab.hasWord(entry.word) : false);
-        this.addToRecent(query);
-      },
-      error: () => {
-        this.result.set(null);
-        this.isLoading.set(false);
-      }
-    });
+    this.dictionary.lookup(query, lang)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (entry) => {
+          this.result.set(entry);
+          this.isLoading.set(false);
+          this.isSaved.set(entry ? this.vocab.hasWord(entry.word) : false);
+          this.addToRecent(query);
+        },
+        error: () => {
+          this.result.set(null);
+          this.isLoading.set(false);
+        }
+      });
   }
 
   clearSearch(): void {

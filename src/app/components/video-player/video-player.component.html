@@ -160,7 +160,7 @@
           <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
             @if (subtitles.isTokenizing()) {
             <span class="fs-word">{{ cue.text }}</span>
-            } @else { @for (token of getFullscreenTokens(cue); track $index) {<button type="button" class="fs-word"
+            } @else { @for (token of fullscreenTokens(); track $index) {<button type="button" class="fs-word"
               [class.fs-word--saved]="vocab.hasWord(token.surface)" [attr.aria-label]="'Look up ' + token.surface"
               (click)="onFullscreenWordClick(token, cue.text, $event)">@if (showFsReading() &&
               getFullscreenReading(token))

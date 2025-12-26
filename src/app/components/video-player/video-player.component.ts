@@ -118,6 +118,14 @@ export class VideoPlayerComponent implements OnDestroy {
     return (time / duration) * 100;
   });
 
+  // Fullscreen tokens (computed for performance)
+  fullscreenTokens = computed(() => {
+    const cue = this.subtitles.currentCue();
+    if (!cue) return [];
+    const lang = this.settings.settings().language;
+    return this.subtitles.getTokens(cue, lang);
+  });
+
   // Fullscreen reading toggle
   showFsReading = computed(() => {
     const lang = this.settings.settings().language;

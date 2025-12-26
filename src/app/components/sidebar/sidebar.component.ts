@@ -40,7 +40,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         <a 
           class="nav-item"
           routerLink="/video"
-          [class.active]="isRouteActive('/video')"
+          routerLinkActive="active"
         >
           <app-icon name="play-circle" [size]="20" />
           @if (!isCollapsed()) {
@@ -50,7 +50,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         <a 
           class="nav-item"
           routerLink="/dictionary"
-          [class.active]="isRouteActive('/dictionary')"
+          routerLinkActive="active"
         >
           <app-icon name="book-open" [size]="20" />
           @if (!isCollapsed()) {
@@ -60,7 +60,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
         <a 
           class="nav-item"
           routerLink="/study"
-          [class.active]="isRouteActive('/study')"
+          routerLinkActive="active"
         >
           <app-icon name="graduation-cap" [size]="20" />
           @if (!isCollapsed()) {
@@ -486,17 +486,7 @@ export class SidebarComponent {
   isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
   openSettings = output<void>();
 
-  private currentUrl = toSignal(
-    this.router.events.pipe(
-      filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-      map(e => e.urlAfterRedirects),
-      startWith(this.router.url)
-    )
-  );
 
-  isRouteActive(route: string): boolean {
-    return this.currentUrl()?.startsWith(route) ?? false;
-  }
 
   toggleCollapse(): void {
     this.settings.setSidebarCollapsed(!this.isCollapsed());

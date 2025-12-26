@@ -85,7 +85,7 @@ import { VocabularyItem, WordLevel } from '../../models';
                   <option value="known">Known</option>
                   <option value="ignored">Ignored</option>
                 </select>
-                <span class="word-date">{{ formatDate(item.addedAt) }}</span>
+                <span class="word-date">{{ item.addedAt | date }}</span>
                 <button 
                   class="btn btn-icon btn-ghost delete-btn"
                   (click)="deleteWord(item.id)"
@@ -715,9 +715,7 @@ export class VocabularyListComponent {
     input.value = '';
   }
 
-  formatDate(date: Date): string {
-    return new Date(date).toLocaleDateString();
-  }
+
 
   private downloadFile(content: string, filename: string, type: string): void {
     const blob = new Blob([content], { type });

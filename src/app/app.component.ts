@@ -49,7 +49,7 @@ import { YoutubeService, I18nService, SettingsService } from './services';
           <a
             class="bottom-nav__item"
             routerLink="/video"
-            [class.active]="!anySheetOpen() && isRouteActive('/video')"
+            routerLinkActive="active"
           >
             <app-icon name="play-circle" [size]="20" />
             <span>{{ i18n.t('nav.video') }}</span>
@@ -57,7 +57,7 @@ import { YoutubeService, I18nService, SettingsService } from './services';
           <a
             class="bottom-nav__item"
             routerLink="/dictionary"
-            [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
+            routerLinkActive="active"
           >
             <app-icon name="book-open" [size]="20" />
             <span>{{ i18n.t('nav.words') }}</span>
@@ -65,7 +65,7 @@ import { YoutubeService, I18nService, SettingsService } from './services';
           <a
             class="bottom-nav__item"
             routerLink="/study"
-            [class.active]="!anySheetOpen() && isRouteActive('/study')"
+            routerLinkActive="active"
           >
             <app-icon name="graduation-cap" [size]="20" />
             <span>{{ i18n.t('nav.study') }}</span>
@@ -208,6 +208,7 @@ export class AppComponent {
   showSettingsSheet = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
+
   // Track current URL to know which page we're on
   private currentUrl = toSignal(
     this.router.events.pipe(
@@ -226,11 +227,6 @@ export class AppComponent {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() => this.showSettingsSheet());
-
-  // Check if current route matches
-  isRouteActive(route: string): boolean {
-    return this.currentUrl()?.startsWith(route) ?? false;
-  }
 
   toggleSettingsSheet(): void {
     this.showSettingsSheet.update(v => !v);
