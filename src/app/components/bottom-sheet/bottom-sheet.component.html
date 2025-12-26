@@ -1,0 +1,21 @@
+@if (isOpen()) {
+<div class="sheet-overlay" [class.closing]="isClosing()" (click)="onBackdropClick($event)"
+    (touchend)="onBackdropTouch($event)">
+    <div class="sheet" #sheetEl [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
+        [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile"
+        [style.maxHeight]="maxHeight()" (click)="$event.stopPropagation()" (animationend)="onAnimationEnd($event)"
+        (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)">
+        <!-- Drag Handle - visible on mobile -->
+        @if (showDragHandle()) {
+        <div class="sheet-drag-handle">
+            <div class="sheet-drag-indicator"></div>
+        </div>
+        }
+
+        <!-- Content projection -->
+        <div class="sheet-content" #sheetContent>
+            <ng-content />
+        </div>
+    </div>
+</div>
+}

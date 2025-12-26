@@ -1,0 +1,243 @@
+.sheet-overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: var(--space-md);
+}
+
+/* Backdrop pseudo-element - fades independently of sheet */
+.sheet-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.25s ease-out forwards;
+}
+
+.sheet-overlay.closing::before {
+    animation: fadeOut 0.2s ease-in forwards;
+}
+
+/* Desktop: centered modal */
+.sheet {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 420px;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.sheet.closing {
+    animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+/* Drag-to-close: no CSS animation, uses inline transition */
+.sheet.drag-closing {
+    animation: none !important;
+}
+
+.sheet.dragging {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* After entry animation completes, disable it to prevent replay */
+.sheet.animated {
+    animation: none;
+}
+
+/* Snap-back transition when drag ends without dismiss */
+.sheet.animated:not(.dragging):not(.closing):not(.drag-closing) {
+    transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Drag handle */
+.sheet-drag-handle {
+    display: none;
+    padding: 12px 0 4px;
+    cursor: grab;
+    touch-action: none;
+}
+
+.sheet-drag-indicator {
+    width: 2.25rem;
+    height: var(--space-xs);
+    background: var(--border-color);
+    border-radius: 2px;
+    margin: 0 auto;
+    transition: background 0.2s;
+}
+
+.sheet-drag-handle:active .sheet-drag-indicator {
+    background: var(--text-muted);
+}
+
+.sheet-content {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar on desktop modals */
+.sheet.desktop-modal .sheet-content {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.sheet.desktop-modal .sheet-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Opera */
+}
+
+/* Mobile: bottom sheet style */
+@media (max-width: 768px) {
+    .sheet-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .sheet-overlay::before {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .sheet-overlay.closing::before {
+        animation: fadeOut 0.25s ease-in forwards;
+    }
+
+    .sheet {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        max-height: 85vh;
+        border-radius: var(--space-md) var(--space-md) 0 0;
+        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        touch-action: none;
+    }
+
+    .sheet.closing {
+        animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    }
+
+    .sheet-drag-handle {
+        display: block;
+    }
+
+    .sheet-content {
+        touch-action: pan-y;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+}
+
+/* Landscape phones: bottom sheet but with limited width for better UX */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sheet-overlay {
+        padding: 0;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .sheet-overlay::before {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .sheet-overlay.closing::before {
+        animation: fadeOut 0.25s ease-in forwards;
+    }
+
+    .sheet {
+        max-width: 600px;
+        width: 80%;
+        max-height: calc(100vh - 80px);
+        border-radius: var(--space-md) var(--space-md) 0 0;
+        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    }
+
+    .sheet.closing {
+        animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    }
+
+    .sheet-drag-handle {
+        display: block;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Desktop animations - scale effect */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+/* Mobile animations - slide from bottom */
+@keyframes mobileSlideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mobileSlideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}

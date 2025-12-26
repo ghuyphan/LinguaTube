@@ -340,7 +340,7 @@ export class TranscriptService {
       }
 
       return {
-        id: index,
+        id: crypto.randomUUID(),
         startTime: segment.start,
         endTime,
         text: segment.text.trim()

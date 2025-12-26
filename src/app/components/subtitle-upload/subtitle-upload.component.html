@@ -1,0 +1,31 @@
+<div class="subtitle-upload">
+    <input #fileInput type="file" accept=".srt,.vtt,.ass,.ssa" class="file-input" (change)="onFileSelected($event)" />
+
+    <div class="upload-zone" [class.upload-zone--dragover]="isDragover()"
+        [class.upload-zone--loaded]="subtitles.subtitles().length > 0" (click)="fileInput.click()"
+        (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+        @if (subtitles.subtitles().length > 0) {
+        <div class="upload-success">
+            <app-icon name="check" [size]="20" class="success-icon" />
+            <span class="success-text">{{ subtitles.subtitles().length }} subtitles loaded</span>
+            <button class="btn btn-sm btn-ghost" (click)="clear($event)">
+                <app-icon name="x" [size]="14" />
+                Clear
+            </button>
+        </div>
+        } @else {
+        <app-icon name="upload" [size]="24" class="upload-icon" />
+        <div class="upload-text">
+            <span class="upload-title">Upload subtitles</span>
+            <span class="upload-hint">.srt, .vtt, .ass files supported</span>
+        </div>
+        }
+    </div>
+
+    @if (error()) {
+    <div class="error-msg">
+        <app-icon name="alert-circle" [size]="14" />
+        {{ error() }}
+    </div>
+    }
+</div>

@@ -1,0 +1,118 @@
+<div class="dict-panel">
+    <div class="dict-header">
+        <h2>{{ i18n.t('dictionary.title') }}</h2>
+        <p class="dict-subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
+    </div>
+
+    <!-- Search / Filters -->
+    <div class="dict-filters">
+        <div class="search-box">
+            <app-icon name="search" [size]="16" class="search-icon" />
+            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
+                class="search-input" (keyup.enter)="search()" />
+            @if (searchQuery) {
+            <button class="clear-btn" (click)="clearSearch()">
+                <app-icon name="x" [size]="14" />
+            </button>
+            }
+        </div>
+        <button class="btn btn-primary search-btn" (click)="search()" [disabled]="!searchQuery.trim() || isLoading()">
+            @if (isLoading()) {
+            <app-icon name="loader" [size]="16" />
+            } @else {
+            {{ i18n.t('dictionary.search') }}
+            }
+        </button>
+    </div>
+
+    <!-- Results -->
+    <div class="dict-results">
+        @if (result()) {
+        <div class="result-content">
+            <div class="result-header">
+                <h3 class="result-word" [class]="'text-' + settings.settings().language">
+                    {{ result()!.word }}
+                </h3>
+                @if (result()!.reading) {
+                <span class="result-reading">{{ result()!.reading }}</span>
+                }
+                @if (result()!.pinyin) {
+                <span class="result-reading">{{ result()!.pinyin }}</span>
+                }
+                @if (result()!.romanization) {
+                <span class="result-reading">{{ result()!.romanization }}</span>
+                }
+            </div>
+
+            <div class="result-badges">
+                @if (result()!.jlptLevel) {
+                <span class="badge">{{ result()!.jlptLevel }}</span>
+                }
+                @if (result()!.hskLevel) {
+                <span class="badge">HSK {{ result()!.hskLevel }}</span>
+                }
+                @if (result()!.topikLevel) {
+                <span class="badge">TOPIK {{ result()!.topikLevel }}</span>
+                }
+            </div>
+
+            <div class="result-meanings">
+                @for (meaning of result()!.meanings; track $index) {
+                <div class="meaning-item">
+                    <span class="meaning-num">{{ $index + 1 }}</span>
+                    <div class="meaning-content">
+                        <span class="meaning-text">{{ meaning.definition }}</span>
+                        @if (meaning.tags && meaning.tags.length > 0) {
+                        <div class="meaning-tags">
+                            @for (tag of meaning.tags; track tag) {
+                            <span class="tag">{{ tag }}</span>
+                            }
+                        </div>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="result-actions">
+                @if (isSaved()) {
+                <button class="btn btn-secondary" disabled>
+                    <app-icon name="check" [size]="14" />
+                    {{ i18n.t('popup.saved') }}
+                </button>
+                } @else {
+                <button class="btn btn-primary" (click)="saveWord()">
+                    <app-icon name="plus" [size]="14" />
+                    {{ i18n.t('dictionary.saveToVocab') }}
+                </button>
+                }
+            </div>
+        </div>
+        } @else if (hasSearched() && !isLoading()) {
+        <div class="no-results">
+            <app-icon name="info" [size]="24" />
+            <p>{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
+            <p class="hint">{{ i18n.t('dictionary.tryDifferent') }}</p>
+        </div>
+        } @else if (!hasSearched()) {
+        <!-- Show recent searches here if no current search -->
+        @if (recentSearches().length > 0) {
+        <div class="dict-recent">
+            <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
+            <div class="recent-list">
+                @for (term of recentSearches(); track term) {
+                <button class="recent-item" (click)="searchRecent(term)">
+                    {{ term }}
+                </button>
+                }
+            </div>
+        </div>
+        } @else {
+        <div class="search-prompt">
+            <app-icon name="book-open" [size]="32" class="prompt-icon" />
+            <p>{{ i18n.t('dictionary.enterWordAbove') }}</p>
+        </div>
+        }
+        }
+    </div>
+</div>

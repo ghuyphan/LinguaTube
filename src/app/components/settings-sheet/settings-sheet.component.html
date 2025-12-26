@@ -1,0 +1,140 @@
+<app-bottom-sheet [isOpen]="isOpen()" (closed)="closed.emit()">
+    <div class="settings-sheet">
+        <div class="settings-header">
+            <h2>{{ i18n.t('settings.title') }}</h2>
+        </div>
+
+        <!-- User Section -->
+        <div class="settings-section">
+            @if (auth.isLoggedIn()) {
+            <div class="user-card">
+                <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+                <div class="user-info">
+                    <span class="user-name">{{ auth.user()?.name }}</span>
+                    <span class="user-email">{{ auth.user()?.email }}</span>
+                </div>
+                <div class="sync-badge" [class.syncing]="sync.syncStatus() === 'syncing'"
+                    [class.error]="sync.syncStatus() === 'error'">
+                    @if (sync.syncStatus() === 'syncing') {
+                    <app-icon name="loader" [size]="12" class="spin" />
+                    {{ i18n.t('settings.syncing') }}
+                    } @else if (sync.syncStatus() === 'error') {
+                    <app-icon name="alert-circle" [size]="12" />
+                    {{ i18n.t('settings.syncError') }}
+                    } @else {
+                    <app-icon name="check" [size]="12" />
+                    {{ i18n.t('settings.synced') }}
+                    }
+                </div>
+            </div>
+            <button class="settings-btn settings-btn--danger" (click)="showSignOutModal()">
+                <app-icon name="log-out" [size]="18" />
+                {{ i18n.t('header.signOut') }}
+            </button>
+            } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
+            <div class="google-btn-container" #googleBtnSettings></div>
+            <p class="google-signin-hint">{{ i18n.t('settings.syncVocab') }}</p>
+            }
+        </div>
+
+        <!-- Language Selection -->
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.learningLanguage') }}</h3>
+            <div class="lang-grid">
+                <button class="lang-option" [class.active]="settings.settings().language === 'ja'"
+                    (click)="setLanguage('ja')">
+                    <span class="lang-flag">🇯🇵</span>
+                    <span class="lang-name">日本語</span>
+                </button>
+                <button class="lang-option" [class.active]="settings.settings().language === 'zh'"
+                    (click)="setLanguage('zh')">
+                    <span class="lang-flag">🇨🇳</span>
+                    <span class="lang-name">中文</span>
+                </button>
+                <button class="lang-option" [class.active]="settings.settings().language === 'ko'"
+                    (click)="setLanguage('ko')">
+                    <span class="lang-flag">🇰🇷</span>
+                    <span class="lang-name">한국어</span>
+                </button>
+                <button class="lang-option" [class.active]="settings.settings().language === 'en'"
+                    (click)="setLanguage('en')">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- UI Language Selection -->
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
+            <div class="lang-grid lang-grid--3col">
+                @for (lang of i18n.availableLanguages; track lang.code) {
+                <button class="lang-option" [class.active]="i18n.currentLanguage() === lang.code"
+                    (click)="setUILanguage(lang.code)">
+                    <span class="lang-flag">{{ lang.flag }}</span>
+                    <span class="lang-name">{{ lang.nativeName }}</span>
+                </button>
+                }
+            </div>
+        </div>
+
+        <!-- Theme -->
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.appearance') }}</h3>
+            <button class="settings-btn" (click)="toggleTheme()">
+                @if (settings.getEffectiveTheme() === 'dark') {
+                <app-icon name="sun" [size]="18" />
+                {{ i18n.t('settings.switchToLightMode') }}
+                } @else {
+                <app-icon name="moon" [size]="18" />
+                {{ i18n.t('settings.switchToDarkMode') }}
+                }
+            </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.vocabStats') }}</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
+                    <span class="stat-label">{{ i18n.t('settings.totalWords') }}</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value stat-value--success">{{
+                        vocab.getStatsByLanguage(settings.settings().language).known }}</span>
+                    <span class="stat-label">{{ i18n.t('header.known') }}</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value stat-value--warning">{{
+                        vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
+                    <span class="stat-label">{{ i18n.t('vocab.learning') }}</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value stat-value--new">{{
+                        vocab.getStatsByLanguage(settings.settings().language).new }}</span>
+                    <span class="stat-label">{{ i18n.t('vocab.new') }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-bottom-sheet>
+
+<!-- Sign Out Confirmation Modal -->
+<app-bottom-sheet [isOpen]="showSignOutConfirm()" [showDragHandle]="false" (closed)="showSignOutConfirm.set(false)">
+    <div class="confirm-modal">
+        <div class="confirm-icon">
+            <app-icon name="log-out" [size]="32" />
+        </div>
+        <h3 class="confirm-title">{{ i18n.t('settings.signOutConfirmTitle') }}</h3>
+        <p class="confirm-message">{{ i18n.t('settings.signOutConfirmMessage') }}</p>
+        <div class="confirm-actions">
+            <button class="confirm-btn confirm-btn--cancel" (click)="showSignOutConfirm.set(false)">
+                {{ i18n.t('vocab.cancel') }}
+            </button>
+            <button class="confirm-btn confirm-btn--danger" (click)="confirmSignOut()">
+                {{ i18n.t('header.signOut') }}
+            </button>
+        </div>
+    </div>
+</app-bottom-sheet>

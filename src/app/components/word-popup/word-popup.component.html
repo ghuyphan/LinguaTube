@@ -1,0 +1,126 @@
+<app-bottom-sheet [isOpen]="isVisible()" [showDragHandle]="true" (closed)="onSheetClosed()">
+    <div class="popup-content">
+        <button class="popup-close" (click)="close()">
+            <app-icon name="x" [size]="18" />
+        </button>
+
+        <div class="popup-header">
+            <h2 class="popup-word" [class]="'text-' + settings.settings().language">
+                {{ selectedWord()?.surface }}
+            </h2>
+
+            <div class="header-meta">
+                @if (entry()?.reading) {
+                <span class="popup-reading">{{ entry()?.reading }}</span>
+                }
+                @if (entry()?.pinyin) {
+                <span class="popup-pinyin">{{ entry()?.pinyin }}</span>
+                }
+                @if (entry()?.romanization) {
+                <span class="popup-pinyin">{{ entry()?.romanization }}</span>
+                }
+            </div>
+
+            <!-- Language Target Selector (for translation) -->
+            <div class="translation-controls">
+                <label for="target-lang" class="sr-only">Translation Language</label>
+                <select id="target-lang" class="lang-select" [ngModel]="targetLang()"
+                    (ngModelChange)="targetLang.set($event)">
+                    @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
+                    <option [value]="lang.code">{{ lang.flag }} {{ lang.name }}</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="popup-body">
+            @if (dictionary.isLoading()) {
+            <div class="popup-loading">
+                <app-icon name="loader" [size]="20" />
+                <span>{{ i18n.t('popup.lookingUp') }}</span>
+            </div>
+            } @else if (entry()) {
+            <div class="popup-badges">
+                @if (entry()?.jlptLevel) {
+                <span class="badge">{{ entry()?.jlptLevel }}</span>
+                }
+                @if (entry()?.hskLevel) {
+                <span class="badge">HSK {{ entry()?.hskLevel }}</span>
+                }
+                @if (entry()?.topikLevel) {
+                <span class="badge">TOPIK {{ entry()?.topikLevel }}</span>
+                }
+            </div>
+
+            <div class="popup-meanings">
+                @for (meaning of entry()?.meanings; track $index) {
+                <div class="meaning-item">
+                    <span class="meaning-num">{{ $index + 1 }}</span>
+                    <div class="meaning-content">
+                        <div class="meaning-row">
+                            <span class="meaning-text">{{ meaning.definition }}</span>
+
+                            <!-- Translate Button -->
+                            <button class="translate-btn" (click)="translateDefinition($index, meaning.definition)"
+                                [disabled]="isTranslating($index)" title="Translate to {{ targetLang() }}">
+                                @if (isTranslating($index)) {
+                                <app-icon name="loader" [size]="14" />
+                                } @else {
+                                <app-icon name="languages" [size]="14" />
+                                }
+                            </button>
+                        </div>
+
+                        <!-- Translated Text -->
+                        @if (getTranslation($index); as translatedText) {
+                        <div class="translation-result">
+                            <span class="translation-flag">{{ getFlag(getTranslationLang($index)) }}</span>
+                            <span>{{ translatedText }}</span>
+                        </div>
+                        }
+
+                        @if (meaning.tags && meaning.tags.length > 0) {
+                        <div class="meaning-tags">
+                            @for (tag of meaning.tags; track tag) {
+                            <span class="tag">{{ tag }}</span>
+                            }
+                        </div>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+            } @else {
+            <div class="popup-empty">
+                <app-icon name="info" [size]="20" />
+                <p>{{ i18n.t('popup.noDictionaryEntry') }}</p>
+                <p class="popup-empty-hint">{{ i18n.t('popup.saveManually') }}</p>
+            </div>
+            }
+        </div>
+
+        <div class="popup-footer">
+            @if (isSaved()) {
+            <button class="btn btn-secondary saved-btn" disabled>
+                <app-icon name="check" [size]="14" />
+                {{ i18n.t('popup.saved') }}
+            </button>
+            <select class="level-select" [value]="vocab.getWordLevel(selectedWord()?.surface || '')"
+                (change)="updateLevel($event)">
+                <option value="new">{{ i18n.t('vocab.new') }}</option>
+                <option value="learning">{{ i18n.t('vocab.learning') }}</option>
+                <option value="known">{{ i18n.t('vocab.known') }}</option>
+                <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
+            </select>
+            } @else {
+            <button class="btn btn-primary" (click)="saveWord()">
+                <app-icon name="plus" [size]="14" />
+                {{ i18n.t('popup.saveWord') }}
+            </button>
+            }
+            <button class="btn btn-ghost" (click)="close()">
+                {{ i18n.t('popup.close') }}
+            </button>
+        </div>
+    </div>
+</app-bottom-sheet>

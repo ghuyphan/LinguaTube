@@ -1,0 +1,30 @@
+:host {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    flex-shrink: 0;
+}
+
+/* iOS/macOS-style activity indicator - rotating arc */
+.spinner-track {
+    stroke: currentColor;
+}
+
+.spinner-head {
+    stroke: currentColor;
+    transform-origin: 12px 12px;
+    animation: spinLoader 0.8s linear infinite;
+}
+
+@keyframes spinLoader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

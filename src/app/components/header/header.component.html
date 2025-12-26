@@ -1,0 +1,100 @@
+<header class="header">
+    <div class="header__brand">
+        <div class="header__logo">
+            <span class="logo-text">言</span>
+        </div>
+        <div class="header__title-group">
+            <h1 class="header__title">{{ i18n.t('app.title') }}</h1>
+            <span class="header__subtitle">{{ i18n.t('app.subtitle') }}</span>
+        </div>
+    </div>
+
+    <nav class="header__nav">
+        <button class="lang-btn" [class.active]="settings.settings().language === 'ja'" (click)="setLanguage('ja')">
+            日本語
+        </button>
+        <button class="lang-btn" [class.active]="settings.settings().language === 'zh'" (click)="setLanguage('zh')">
+            中文
+        </button>
+        <button class="lang-btn" [class.active]="settings.settings().language === 'ko'" (click)="setLanguage('ko')">
+            한국어
+        </button>
+        <button class="lang-btn" [class.active]="settings.settings().language === 'en'" (click)="setLanguage('en')">
+            EN
+        </button>
+    </nav>
+
+
+    <div class="header__stats">
+        <div class="stat-item">
+            <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
+            <span class="stat-label">{{ i18n.t('header.words') }}</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-value stat-value--success">{{ vocab.getStatsByLanguage(settings.settings().language).known
+                }}</span>
+            <span class="stat-label">{{ i18n.t('header.known') }}</span>
+        </div>
+    </div>
+
+    <div class="header__actions">
+        <!-- User Auth Section -->
+        @if (auth.isLoggedIn()) {
+        <div class="user-menu">
+            <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar"
+                (click)="showUserMenu = !showUserMenu" />
+            @if (showUserMenu) {
+            <div class="user-dropdown">
+                <div class="user-info">
+                    <span class="user-name">{{ auth.user()?.name }}</span>
+                    <span class="user-email">{{ auth.user()?.email }}</span>
+                </div>
+                <!-- Data Sync Status -->
+                <div class="sync-status">
+                    <app-icon name="check" [size]="14" class="sync-icon" />
+                    <span>{{ i18n.t('header.dataSynced') }}</span>
+                </div>
+                <button class="dropdown-btn" (click)="signOut()">{{ i18n.t('header.signOut') }}</button>
+            </div>
+            }
+        </div>
+        } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
+        <!-- Desktop google sign in -->
+        <div class="google-btn-container desktop-only" #googleBtnDesktop></div>
+        <!-- Mobile google sign in -->
+        <div class="google-btn-container mobile-only" #googleBtnMobile></div>
+        }
+
+        <!-- Desktop Language Switcher -->
+        <div class="lang-switcher">
+            <button class="btn btn-icon btn-ghost lang-switcher-btn" (click)="showLangMenu = !showLangMenu"
+                [attr.aria-label]="'Switch language'" title="Switch language">
+                <app-icon name="globe" [size]="18" />
+            </button>
+            @if (showLangMenu) {
+            <div class="lang-dropdown">
+                @for (lang of i18n.availableLanguages; track lang.code) {
+                <button class="lang-dropdown-item" [class.active]="i18n.currentLanguage() === lang.code"
+                    (click)="setUILanguage(lang.code)">
+                    <span class="lang-flag">{{ lang.flag }}</span>
+                    <span class="lang-name">{{ lang.nativeName }}</span>
+                    @if (i18n.currentLanguage() === lang.code) {
+                    <app-icon name="check" [size]="14" class="check-icon" />
+                    }
+                </button>
+                }
+            </div>
+            }
+        </div>
+
+        <button class="btn btn-icon btn-ghost theme-btn" (click)="toggleTheme()" [attr.aria-label]="'Toggle theme'"
+            [attr.title]="settings.getEffectiveTheme() === 'dark' ? i18n.t('header.switchToLight') : i18n.t('header.switchToDark')">
+            @if (settings.getEffectiveTheme() === 'dark') {
+            <app-icon name="sun" [size]="18" />
+            } @else {
+            <app-icon name="moon" [size]="18" />
+            }
+        </button>
+    </div>
+</header>

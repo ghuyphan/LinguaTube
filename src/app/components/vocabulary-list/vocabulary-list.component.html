@@ -1,0 +1,125 @@
+<div class="vocab-panel">
+    <div class="vocab-header">
+        <h2 class="vocab-title">{{ i18n.t('vocab.title') }}</h2>
+        <div class="vocab-badges">
+            <span class="badge badge--new">{{ vocab.getStatsByLanguage(settings.settings().language).new }} {{
+                i18n.t('vocab.new') }}</span>
+            <span class="badge badge--learning">{{ vocab.getStatsByLanguage(settings.settings().language).learning }} {{
+                i18n.t('vocab.learning') }}</span>
+            <span class="badge badge--known">{{ vocab.getStatsByLanguage(settings.settings().language).known }} {{
+                i18n.t('vocab.known') }}</span>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="vocab-filters">
+        <div class="search-wrapper">
+            <app-icon name="search" [size]="16" class="search-icon" />
+            <input type="text" class="search-input" [placeholder]="i18n.t('vocab.search')" [(ngModel)]="searchQuery" />
+            @if (searchQuery) {
+            <button class="search-clear-btn" (click)="clearSearch()">
+                <app-icon name="x" [size]="14" />
+            </button>
+            }
+        </div>
+        <select class="filter-select" [(ngModel)]="levelFilter">
+            <option value="all">{{ i18n.t('vocab.allLevels') }}</option>
+            <option value="new">{{ i18n.t('vocab.new') }}</option>
+            <option value="learning">{{ i18n.t('vocab.learning') }}</option>
+            <option value="known">{{ i18n.t('vocab.known') }}</option>
+            <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
+        </select>
+    </div>
+
+    <!-- Word list -->
+    <div class="word-list">
+        @if (filteredWords().length === 0) {
+        <div class="empty-state">
+            @if (vocab.vocabulary().length === 0) {
+            <app-icon name="book-open" [size]="32" class="empty-icon" />
+            <p class="empty-title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+            <p class="empty-hint">{{ i18n.t('vocab.clickWordsToSave') }}</p>
+            } @else {
+            <app-icon name="search" [size]="24" class="empty-icon" />
+            <p class="empty-title">{{ i18n.t('vocab.noMatchesFound') }}</p>
+            }
+        </div>
+        } @else {
+        @for (item of filteredWords(); track item.id) {
+        <div class="word-card" [class]="'word-card--' + item.level">
+            <div class="word-card-main">
+                <span class="word-text" [class]="'text-' + item.language">
+                    {{ item.word }}
+                </span>
+                @if (item.reading) {
+                <span class="word-reading">{{ item.reading }}</span>
+                }
+                @if (item.pinyin) {
+                <span class="word-reading">{{ item.pinyin }}</span>
+                }
+                @if (item.romanization) {
+                <span class="word-reading">{{ item.romanization }}</span>
+                }
+            </div>
+
+            <p class="word-meaning">{{ item.meaning || i18n.t('vocab.noDefinition') }}</p>
+
+            <div class="word-card-footer">
+                <select class="level-select-mini" [value]="item.level" (change)="updateLevel(item.id, $event)">
+                    <option value="new">New</option>
+                    <option value="learning">Learning</option>
+                    <option value="known">Known</option>
+                    <option value="ignored">Ignored</option>
+                </select>
+                <span class="word-date">{{ item.addedAt | date }}</span>
+                <button class="btn btn-icon btn-ghost delete-btn" (click)="deleteWord(item.id)" title="Delete">
+                    <app-icon name="trash-2" [size]="14" />
+                </button>
+            </div>
+        </div>
+        }
+        }
+    </div>
+
+    <!-- Actions -->
+    <div class="vocab-actions">
+        <button class="btn btn-sm btn-secondary" (click)="exportJSON()">
+            <app-icon name="download" [size]="14" />
+            {{ i18n.t('vocab.json') }}
+        </button>
+        <button class="btn btn-sm btn-secondary" (click)="exportAnki()">
+            <app-icon name="download" [size]="14" />
+            {{ i18n.t('vocab.anki') }}
+        </button>
+        <label class="btn btn-sm btn-ghost import-btn">
+            <app-icon name="upload" [size]="14" />
+            {{ i18n.t('vocab.import') }}
+            <input type="file" accept=".json" class="hidden-input" (change)="importJSON($event)" />
+        </label>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+@if (deleteModalVisible()) {
+<div class="modal-overlay" (click)="cancelDelete()">
+    <div class="modal" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <app-icon name="trash-2" [size]="24" class="modal-icon" />
+            <h3 class="modal-title">{{ i18n.t('vocab.deleteWord') }}</h3>
+        </div>
+        <p class="modal-message">{{ i18n.t('vocab.deleteConfirm') }}</p>
+        <div class="modal-actions">
+            <button class="btn btn-secondary" (click)="cancelDelete()">{{ i18n.t('vocab.cancel') }}</button>
+            <button class="btn btn-danger" (click)="confirmDelete()">{{ i18n.t('vocab.delete') }}</button>
+        </div>
+    </div>
+</div>
+}
+
+<!-- Toast Notification -->
+@if (toastMessage()) {
+<div class="toast" [class.toast--error]="toastType() === 'error'">
+    <app-icon [name]="toastType() === 'error' ? 'alert-circle' : 'check'" [size]="18" />
+    <span>{{ toastMessage() }}</span>
+</div>
+}

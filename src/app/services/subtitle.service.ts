@@ -119,6 +119,133 @@ export class SubtitleService {
     }
   }
 
+
+  /**
+   * Load subtitles from a file (SRT/VTT)
+   */
+  async loadFromFile(file: File): Promise<void> {
+    const text = await file.text();
+    const ext = file.name.split('.').pop()?.toLowerCase() || '';
+
+    let parsed: SubtitleCue[] = [];
+
+    if (ext === 'srt') {
+      parsed = this.parseSrt(text);
+    } else if (ext === 'vtt') {
+      parsed = this.parseVtt(text);
+    } else {
+      throw new Error('Unsupported file format');
+    }
+
+    this.subtitles.set(parsed);
+    this.currentCueIndex.set(-1);
+    this.tokenizeAllCues(this.currentLang);
+  }
+
+  private parseSrt(content: string): SubtitleCue[] {
+    const cues: SubtitleCue[] = [];
+    const blocks = content.trim().replace(/\r\n/g, '\n').split(/\n\n+/);
+
+    for (const block of blocks) {
+      const lines = block.split('\n');
+      if (lines.length < 3) continue;
+
+      // Index 0 might be ID, or timestamp if ID missing (rare)
+      let timeLineIdx = 1;
+      if (lines[0].includes('-->')) {
+        timeLineIdx = 0;
+      }
+
+      const timeLine = lines[timeLineIdx];
+      const match = timeLine.match(/(\d{2}:\d{2}:\d{2}[,.]\d{3}) --> (\d{2}:\d{2}:\d{2}[,.]\d{3})/);
+
+      if (match) {
+        const startTime = this.parseTimestamp(match[1]);
+        const endTime = this.parseTimestamp(match[2]);
+        const text = lines.slice(timeLineIdx + 1).join('\n').replace(/<\/?[^>]+(>|$)/g, ""); // Strip HTML tags
+
+        if (text.trim()) {
+          cues.push({
+            id: crypto.randomUUID(),
+            startTime,
+            endTime,
+            text
+          });
+        }
+      }
+    }
+    return cues;
+  }
+
+  private parseVtt(content: string): SubtitleCue[] {
+    const cues: SubtitleCue[] = [];
+    const lines = content.trim().replace(/\r\n/g, '\n').split('\n');
+    let i = 0;
+
+    // Skip header (WEBVTT)
+    if (lines[0].startsWith('WEBVTT')) i++;
+    while (i < lines.length && lines[i].trim() === '') i++;
+
+    while (i < lines.length) {
+      let line = lines[i].trim();
+
+      // Skip ID if present (digits only) or note
+      if (/^\d+$/.test(line)) {
+        i++;
+        line = lines[i]?.trim();
+      }
+
+      if (line?.includes('-->')) {
+        const match = line.match(/(\d{2}:)?\d{2}:\d{2}[,.]\d{3} --> (\d{2}:)?\d{2}:\d{2}[,.]\d{3}/);
+        if (match) {
+          const parts = line.split('-->');
+          const startTime = this.parseTimestamp(parts[0].trim());
+          const endTime = this.parseTimestamp(parts[1].trim().split(' ')[0]); // Remove settings
+
+          i++;
+          let text = '';
+          while (i < lines.length && lines[i].trim() !== '') {
+            text += (text ? '\n' : '') + lines[i];
+            i++;
+          }
+
+          text = text.replace(/<\/?[^>]+(>|$)/g, ""); // Strip tags
+          if (text) {
+            cues.push({
+              id: crypto.randomUUID(),
+              startTime,
+              endTime,
+              text
+            });
+          }
+        } else {
+          i++;
+        }
+      } else {
+        i++;
+      }
+    }
+    return cues;
+  }
+
+  private parseTimestamp(timestamp: string): number {
+    // 00:00:20,000 or 00:00:20.000 or 00:20.000
+    timestamp = timestamp.replace(',', '.');
+    const parts = timestamp.split(':');
+    let seconds = 0;
+
+    if (parts.length === 3) {
+      seconds += parseInt(parts[0], 10) * 3600;
+      seconds += parseInt(parts[1], 10) * 60;
+      seconds += parseFloat(parts[2]);
+    } else if (parts.length === 2) {
+      seconds += parseInt(parts[0], 10) * 60;
+      seconds += parseFloat(parts[1]);
+    }
+
+    return seconds;
+  }
+
   /**
    * Tokenize cues within a specific range [startIdx, endIdx]
    */

@@ -1,0 +1,45 @@
+<app-bottom-sheet [isOpen]="isOpen()" (closed)="closed.emit()">
+    <div class="quick-view">
+        <div class="quick-view-header">
+            <h2>{{ i18n.t('study.recentlyAdded') }}</h2>
+            <span class="count-badge">{{ recentWords().length }}</span>
+        </div>
+
+        @if (recentWords().length === 0) {
+        <div class="empty-state">
+            <app-icon name="bookmark" [size]="32" />
+            <p>{{ i18n.t('vocab.noWordsSaved') }}</p>
+            <p class="hint">{{ i18n.t('study.tapWordsHint') }}</p>
+        </div>
+        } @else {
+        <ul class="word-list">
+            @for (word of recentWords(); track word.id) {
+            <li class="word-item">
+                <div class="word-main">
+                    <span class="word-surface" [class]="'text-' + word.language">
+                        {{ word.word }}
+                    </span>
+                    @if (word.reading || word.pinyin || word.romanization) {
+                    <span class="word-reading">
+                        {{ word.reading || word.pinyin || word.romanization }}
+                    </span>
+                    }
+                </div>
+                <div class="word-meaning">{{ word.meaning }}</div>
+                <div class="word-meta">
+                    <span class="level-badge" [class]="'level--' + word.level">
+                        {{ word.level }}
+                    </span>
+                    <select class="level-select" [value]="word.level" (change)="updateLevel(word.id, $event)">
+                        <option value="new">{{ i18n.t('vocab.new') | titlecase }}</option>
+                        <option value="learning">{{ i18n.t('vocab.learning') | titlecase }}</option>
+                        <option value="known">{{ i18n.t('vocab.known') | titlecase }}</option>
+                        <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
+                    </select>
+                </div>
+            </li>
+            }
+        </ul>
+        }
+    </div>
+</app-bottom-sheet>

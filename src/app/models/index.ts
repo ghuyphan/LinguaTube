@@ -1,6 +1,6 @@
 // Subtitle models
 export interface SubtitleCue {
-  id: number;
+  id: string;
   startTime: number;
   endTime: number;
   text: string;
