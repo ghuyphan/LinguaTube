@@ -89,7 +89,7 @@
   --mobile-padding: 16px;
   --mobile-card-radius: 12px;
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
-  --bottom-nav-height: 64px;
+  --bottom-nav-height: 4rem;
 }
 
 /* Dark theme */
@@ -630,7 +630,7 @@ ruby rt {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 4rem;
   background: var(--bg-card);
   padding: var(--space-xs) 0;
   padding-bottom: env(safe-area-inset-bottom, var(--space-xs));
@@ -644,7 +644,7 @@ ruby rt {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  max-width: 500px;
+  max-width: 31.25rem;
   margin: 0 auto;
 }
 
@@ -654,7 +654,7 @@ ruby rt {
   align-items: center;
   justify-content: center;
   gap: 0;
-  padding: 4px;
+  padding: 0.25rem;
   margin: 0;
   background: none;
   border: none;
@@ -664,19 +664,19 @@ ruby rt {
   letter-spacing: normal;
   cursor: pointer;
   transition: all var(--transition-fast);
-  min-width: 64px;
+  min-width: 4rem;
   text-decoration: none;
   position: relative;
 }
 
 .bottom-nav__item app-icon {
-  width: 64px;
-  height: 32px;
-  border-radius: 16px;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
   transition: background-color 0.3s cubic-bezier(0.2, 0.0, 0, 1),
     transform 0.3s cubic-bezier(0.2, 0.0, 0, 1),
     color 0.3s ease;
@@ -713,7 +713,7 @@ ruby rt {
 
   /* Add bottom padding to body for nav */
   body {
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
   }
 }
 

@@ -159,8 +159,7 @@ export class VideoPlayerComponent implements OnDestroy {
   longPressActive = signal(false);
   private longPressSpeed: PlaybackSpeed = 1;
 
-  // Touch detection
-  isTouchDevice = false;
+
 
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -302,9 +301,6 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   constructor() {
-    if (typeof window !== 'undefined') {
-      this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    }
 
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
@@ -532,6 +528,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   onOverlayTouchEnd(event: TouchEvent) {
+
     // Cancel long press
     this.cancelLongPress();
     this.deactivateLongPress();
@@ -621,9 +618,8 @@ export class VideoPlayerComponent implements OnDestroy {
   private lastDesktopClickTime = 0;
 
   onOverlayClick(event: MouseEvent) {
-    // Only handle clicks on desktop
-    if (this.isTouchDevice) return;
-
+    // This handler is only attached to the desktop overlay (hover-only)
+    // so we don't need any touch detection guards
     const now = Date.now();
     const isDoubleClick = now - this.lastDesktopClickTime < DOUBLE_TAP_DELAY;
     this.lastDesktopClickTime = now;

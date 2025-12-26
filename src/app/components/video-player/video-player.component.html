@@ -47,10 +47,24 @@
       </div>
       }
 
-      <!-- Unified Interaction Overlay (50/50 left-right zones) -->
-      <div class="player-overlay" (touchstart)="onOverlayTouchStart($event)" (touchmove)="onOverlayTouchMove($event)"
-        (touchend)="onOverlayTouchEnd($event)" (touchcancel)="onOverlayTouchEnd($event)"
-        (click)="onOverlayClick($event)">
+      <!-- Seek Feedback - positioned on video sides (YouTube-style) -->
+      <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()">
+        <div class="seek-feedback-inner">
+          <app-icon name="rewind" [size]="24" />
+          <span class="seek-time">{{ seekAccumulator() }}</span>
+        </div>
+      </div>
+      <div class="seek-feedback seek-feedback--right" [class.animate]="forwardFeedback()">
+        <div class="seek-feedback-inner">
+          <app-icon name="fast-forward" [size]="24" />
+          <span class="seek-time">{{ seekAccumulator() }}</span>
+        </div>
+      </div>
+
+      <!-- Touch Overlay (mobile only) - handles touch gestures -->
+      <div class="player-overlay touch-only" (touchstart)="onOverlayTouchStart($event)"
+        (touchmove)="onOverlayTouchMove($event)" (touchend)="onOverlayTouchEnd($event)"
+        (touchcancel)="onOverlayTouchEnd($event)">
         <!-- Left Zone (50%) - Double tap to seek backward -->
         <div class="zone zone-left">
           @if (leftRipple()) {
@@ -66,24 +80,11 @@
         </div>
       </div>
 
+      <!-- Click Overlay (desktop only) - handles mouse clicks -->
+      <div class="player-overlay hover-only" (click)="onOverlayClick($event)" (mousemove)="onUserActivity()"></div>
+
       <!-- Center Controls (play/pause and other centered indicators) -->
       <div class="center-controls">
-
-        <!-- Seek Feedback - Left (Rewind) -->
-        <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()">
-          <div class="seek-feedback-inner">
-            <app-icon name="rewind" [size]="28" />
-            <span class="seek-time">{{ seekAccumulator() }}s</span>
-          </div>
-        </div>
-
-        <!-- Seek Feedback - Right (Forward) -->
-        <div class="seek-feedback seek-feedback--right" [class.animate]="forwardFeedback()">
-          <div class="seek-feedback-inner">
-            <app-icon name="fast-forward" [size]="28" />
-            <span class="seek-time">{{ seekAccumulator() }}s</span>
-          </div>
-        </div>
 
         <!-- Volume Feedback -->
         @if (volumeFeedback()) {
@@ -106,29 +107,30 @@
         </div>
         }
 
-        <!-- Mobile: Big Play/Pause Button (only visible when controls are shown) -->
-        @if (isTouchDevice && youtube.isReady() && !youtube.isEnded() && areControlsVisible()) {
+        <!-- Big Play/Pause Button - Mobile version (touch devices) -->
+        @if (youtube.isReady() && !youtube.isEnded() && areControlsVisible()) {
         @if (!youtube.isPlaying()) {
-        <button class="big-play-btn" aria-label="Play video" (touchstart)="$event.stopPropagation()"
+        <button class="big-play-btn touch-only" aria-label="Play video" (touchstart)="$event.stopPropagation()"
           (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
           <app-icon name="play" [size]="44" aria-hidden="true" />
         </button>
         } @else {
-        <button class="big-play-btn fade-in" aria-label="Pause video" (touchstart)="$event.stopPropagation()"
+        <button class="big-play-btn touch-only fade-in" aria-label="Pause video" (touchstart)="$event.stopPropagation()"
           (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
           <app-icon name="pause" [size]="44" aria-hidden="true" />
         </button>
         }
         }
 
-        <!-- Desktop: Big Play Button -->
-        @if (!isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
+        <!-- Big Play/Pause Button - Desktop version (hover devices) -->
+        @if (youtube.isReady() && !youtube.isEnded()) {
         @if (!youtube.isPlaying()) {
-        <button class="big-play-btn" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
+        <button class="big-play-btn hover-only" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
           <app-icon name="play" [size]="44" aria-hidden="true" />
         </button>
         } @else if (areControlsVisible()) {
-        <button class="big-play-btn fade-in" aria-label="Pause video" (click)="onPlayPauseButtonClick($event)">
+        <button class="big-play-btn hover-only fade-in" aria-label="Pause video"
+          (click)="onPlayPauseButtonClick($event)">
           <app-icon name="pause" [size]="44" aria-hidden="true" />
         </button>
         }
@@ -262,20 +264,19 @@
         <div class="controls-row">
           <!-- Left Controls -->
           <div class="controls-left">
-            <!-- Playback Controls Group -->
-            <div class="playback-controls">
-              <button class="control-btn play-btn" (click)="togglePlay()"
-                [attr.aria-label]="youtube.isPlaying() ? 'Pause' : 'Play'">
-                <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
-              </button>
+            <button class="control-btn play-btn" (click)="togglePlay()"
+              [attr.aria-label]="youtube.isPlaying() ? 'Pause' : 'Play'">
+              <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
+            </button>
 
-              <!-- Skip buttons - desktop only -->
-              <button class="control-btn skip-btn desktop-only"
-                (click)="seekRelative(-10); showSeekFeedback('left', 10)" aria-label="Rewind 10 seconds">
+            <!-- Skip buttons group - desktop only -->
+            <div class="seek-group desktop-only">
+              <button class="control-btn" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
+                aria-label="Rewind 10 seconds">
                 <app-icon name="rewind" [size]="18" aria-hidden="true" />
               </button>
-              <button class="control-btn skip-btn desktop-only"
-                (click)="seekRelative(10); showSeekFeedback('right', 10)" aria-label="Forward 10 seconds">
+              <button class="control-btn" (click)="seekRelative(10); showSeekFeedback('right', 10)"
+                aria-label="Forward 10 seconds">
                 <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
               </button>
             </div>
