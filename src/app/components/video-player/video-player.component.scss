@@ -913,6 +913,38 @@ $text-muted-fallback: #888;
   color: var(--text-muted);
 }
 
+/* Skeleton Loading */
+.skeleton-title {
+  height: 1.5rem;
+  width: 70%;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(to right, var(--bg-secondary) 8%, var(--bg-tertiary) 18%, var(--bg-secondary) 33%);
+  background-size: 800px 104px;
+}
+
+.skeleton-channel {
+  height: 1rem;
+  width: 40%;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(to right, var(--bg-secondary) 8%, var(--bg-tertiary) 18%, var(--bg-secondary) 33%);
+  background-size: 800px 104px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
 /* ============================================
    FULLSCREEN SUBTITLE OVERLAY
    ============================================ */
@@ -1454,6 +1486,21 @@ $text-muted-fallback: #888;
   .fs-subtitle-text {
     font-size: 1rem;
     line-height: 1.5;
+  }
+
+  .fullscreen-subtitle.fs-small .fs-subtitle-text {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .fullscreen-subtitle.fs-large .fs-subtitle-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .fullscreen-subtitle.fs-xlarge .fs-subtitle-text {
+    font-size: 1.5rem;
+    line-height: 1.75;
   }
 
   .fs-popup {

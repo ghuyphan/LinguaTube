@@ -349,9 +349,12 @@
   <!-- Video Info (outside fullscreen container) -->
   @if (!isFullscreen()) {
   <div class="video-info">
-    <h2 class="video-title">{{ youtube.currentVideo()?.title }}</h2>
-    @if (youtube.currentVideo()?.channel) {
-    <span class="video-channel">{{ youtube.currentVideo()?.channel }}</span>
+    @if (youtube.currentVideo(); as video) {
+    <h2 class="video-title">{{ video.title }}</h2>
+    <span class="video-channel">{{ video.channel }}</span>
+    } @else {
+    <div class="skeleton-title"></div>
+    <div class="skeleton-channel"></div>
     }
   </div>
   }

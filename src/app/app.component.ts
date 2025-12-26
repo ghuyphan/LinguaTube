@@ -49,7 +49,7 @@ import { YoutubeService, I18nService, SettingsService } from './services';
           <a
             class="bottom-nav__item"
             routerLink="/video"
-            routerLinkActive="active"
+            [class.active]="!anySheetOpen() && isRouteActive('/video')"
           >
             <app-icon name="play-circle" [size]="20" />
             <span>{{ i18n.t('nav.video') }}</span>
@@ -57,7 +57,7 @@ import { YoutubeService, I18nService, SettingsService } from './services';
           <a
             class="bottom-nav__item"
             routerLink="/dictionary"
-            routerLinkActive="active"
+            [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
           >
             <app-icon name="book-open" [size]="20" />
             <span>{{ i18n.t('nav.words') }}</span>
@@ -65,7 +65,7 @@ import { YoutubeService, I18nService, SettingsService } from './services';
           <a
             class="bottom-nav__item"
             routerLink="/study"
-            routerLinkActive="active"
+            [class.active]="!anySheetOpen() && isRouteActive('/study')"
           >
             <app-icon name="graduation-cap" [size]="20" />
             <span>{{ i18n.t('nav.study') }}</span>
@@ -227,6 +227,11 @@ export class AppComponent {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() => this.showSettingsSheet());
+
+  // Check if current route matches
+  isRouteActive(route: string): boolean {
+    return this.currentUrl()?.startsWith(route) ?? false;
+  }
 
   toggleSettingsSheet(): void {
     this.showSettingsSheet.update(v => !v);

@@ -1,6 +1,6 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, output, ViewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router, NavigationEnd } from '@angular/router';
+import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../icon/icon.component';
@@ -10,7 +10,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
   selector: 'app-sidebar',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterLink, IconComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent],
   template: `
     <aside class="sidebar" [class.collapsed]="isCollapsed()">
       <!-- Toggle Button (Floating) -->
