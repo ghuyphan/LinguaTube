@@ -403,6 +403,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   togglePlay() {
     this.youtube.togglePlay();
+    this.showPlayPauseFeedback();
     this.showControls();
   }
 

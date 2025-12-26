@@ -192,24 +192,24 @@ import { VocabularyItem, WordLevel } from '../../models';
 
     .search-icon {
       position: absolute;
-      left: 10px;
+      left: 0.625rem;
       color: var(--text-muted);
       pointer-events: none;
     }
 
     .search-input {
-      padding-left: 32px;
-      height: 40px;
+      padding-left: 2rem;
+      height: var(--btn-height-md);
       font-size: 0.875rem;
       background: var(--bg-card);
     }
 
     .filter-select {
       width: auto;
-      min-width: 100px;
-      height: 40px;
+      min-width: 6.25rem;
+      height: var(--btn-height-md);
       font-size: 0.875rem;
-      padding: 0 28px 0 10px;
+      padding: 0 1.75rem 0 0.625rem;
       flex-shrink: 0;
       background: var(--bg-card);
     }
@@ -315,11 +315,11 @@ import { VocabularyItem, WordLevel } from '../../models';
 
     .level-select-mini {
       font-size: 0.6875rem;
-      padding: 2px 20px 2px 6px;
-      height: 24px;
+      padding: 0.125rem 1.25rem 0.125rem 0.375rem;
+      height: 1.5rem;
       border-radius: 4px;
       background-position: right 4px center;
-      min-width: 70px;
+      min-width: 4.375rem;
     }
 
     .word-date {
@@ -329,8 +329,8 @@ import { VocabularyItem, WordLevel } from '../../models';
     }
 
     .delete-btn {
-      width: 28px;
-      height: 28px;
+      width: 1.75rem;
+      height: 1.75rem;
       opacity: 0.4;
     }
 
@@ -360,7 +360,7 @@ import { VocabularyItem, WordLevel } from '../../models';
 
     @media (max-width: 1024px) {
       .vocab-panel {
-        max-height: 400px;
+        max-height: 25rem;
       }
     }
 
@@ -455,13 +455,13 @@ import { VocabularyItem, WordLevel } from '../../models';
       }
 
       .level-select-mini {
-        min-height: 36px;
-        padding: 4px 24px 4px 8px;
+        min-height: 2.25rem;
+        padding: 0.25rem 1.5rem 0.25rem 0.5rem;
       }
 
       .delete-btn {
-        width: 36px;
-        height: 36px;
+        width: 2.25rem;
+        height: 2.25rem;
       }
 
       .vocab-actions {
@@ -509,7 +509,7 @@ import { VocabularyItem, WordLevel } from '../../models';
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow-lg);
       padding: var(--space-lg);
-      max-width: 360px;
+      max-width: 22.5rem;
       width: 100%;
       animation: slideUp 0.2s ease-out;
     }
@@ -545,7 +545,7 @@ import { VocabularyItem, WordLevel } from '../../models';
     }
 
     .modal-actions .btn {
-      min-width: 80px;
+      min-width: 5rem;
     }
 
     .btn-danger {
@@ -561,7 +561,7 @@ import { VocabularyItem, WordLevel } from '../../models';
     /* Toast Notification */
     .toast {
       position: fixed;
-      bottom: 100px;
+      bottom: 6.25rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;

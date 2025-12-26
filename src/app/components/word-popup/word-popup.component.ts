@@ -163,8 +163,8 @@ import { Token, DictionaryEntry } from '../../models';
       position: absolute;
       top: var(--space-sm);
       right: var(--space-sm);
-      width: 32px;
-      height: 32px;
+      width: 2rem;
+      height: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -186,7 +186,7 @@ import { Token, DictionaryEntry } from '../../models';
 
     .popup-header {
       padding: var(--space-lg);
-      padding-right: 48px;
+      padding-right: 3rem;
       border-bottom: 1px solid var(--border-color);
       text-align: center;
       display: flex;
@@ -222,7 +222,7 @@ import { Token, DictionaryEntry } from '../../models';
     .lang-select {
       padding: 4px 8px;
       font-size: 0.75rem;
-      border-radius: 12px;
+      border-radius: var(--border-radius-lg);
       border: 1px solid var(--border-color);
       background: var(--bg-secondary);
       color: var(--text-secondary);
@@ -276,8 +276,8 @@ import { Token, DictionaryEntry } from '../../models';
     }
 
     .meaning-num {
-      width: 20px;
-      height: 20px;
+      width: 1.25rem;
+      height: 1.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -411,8 +411,8 @@ import { Token, DictionaryEntry } from '../../models';
     @media (max-width: 768px) {
       .popup-header {
         padding: var(--space-sm) var(--space-md) var(--space-md);
-        padding-left: 48px;
-        padding-right: 48px;
+        padding-left: 3rem;
+        padding-right: 3rem;
       }
 
       .popup-word {

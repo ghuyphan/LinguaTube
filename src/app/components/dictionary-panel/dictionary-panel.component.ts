@@ -153,7 +153,7 @@ import { DictionaryEntry } from '../../models';
     }
 
     .dict-header h2 {
-      margin-bottom: 4px;
+      margin-bottom: var(--space-xs);
       font-size: 1rem;
       font-weight: 600;
     }
@@ -181,15 +181,15 @@ import { DictionaryEntry } from '../../models';
     
     .search-icon {
       position: absolute;
-      left: 10px;
+      left: 0.625rem;
       color: var(--text-muted);
       pointer-events: none;
     }
 
     .search-input {
       width: 100%;
-      padding-left: 32px;
-      height: 40px;
+      padding-left: var(--space-xl);
+      height: var(--btn-height-md);
       font-size: 0.875rem;
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
@@ -203,14 +203,14 @@ import { DictionaryEntry } from '../../models';
     }
 
     .search-btn {
-      height: 40px;
-      min-width: 80px;
+      height: var(--btn-height-md);
+      min-width: 5rem;
       font-size: 0.875rem;
     }
     
     .clear-btn {
       position: absolute;
-      right: 8px;
+      right: var(--space-sm);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -218,7 +218,7 @@ import { DictionaryEntry } from '../../models';
       background: transparent;
       color: var(--text-muted);
       cursor: pointer;
-      padding: 4px;
+      padding: 0.25rem;
     }
 
     .clear-btn:hover {
@@ -226,8 +226,8 @@ import { DictionaryEntry } from '../../models';
     }
 
     .search-btn {
-      height: 36px;
-      min-width: 70px; /* matched vocab filter-select rough width */
+      height: 2.25rem;
+      min-width: 4.375rem; /* matched vocab filter-select rough width */
       font-size: 0.8125rem;
     }
 
@@ -266,14 +266,14 @@ import { DictionaryEntry } from '../../models';
 
     .badge {
       display: inline-flex;
-      padding: 2px 8px;
+      padding: 0.125rem var(--space-sm);
       font-size: 0.6875rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       color: var(--accent-primary);
       background: rgba(199, 62, 58, 0.1);
-      border-radius: 4px;
+      border-radius: var(--space-xs);
     }
 
     .result-meanings {
@@ -291,8 +291,8 @@ import { DictionaryEntry } from '../../models';
     }
 
     .meaning-num {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -317,16 +317,16 @@ import { DictionaryEntry } from '../../models';
     .meaning-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: var(--space-xs);
       margin-top: var(--space-xs);
     }
 
     .tag {
       font-size: 0.625rem;
-      padding: 2px 6px;
+      padding: 0.125rem 0.375rem;
       background: var(--bg-secondary);
       color: var(--text-muted);
-      border-radius: 4px;
+      border-radius: var(--space-xs);
     }
 
     .result-actions {
@@ -396,7 +396,7 @@ import { DictionaryEntry } from '../../models';
     }
 
     .recent-item {
-      padding: 6px 12px;
+      padding: 0.375rem 0.75rem;
       font-size: 0.875rem;
       font-family: var(--font-jp);
       background: var(--bg-secondary); 

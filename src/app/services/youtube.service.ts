@@ -267,12 +267,16 @@ export class YoutubeService {
   }
 
   play(): void {
+    // Optimistic update
+    this.setPlaying(true);
     try {
       this.player?.playVideo();
     } catch (e) { }
   }
 
   pause(): void {
+    // Optimistic update
+    this.setPlaying(false);
     try {
       this.player?.pauseVideo();
     } catch (e) { }

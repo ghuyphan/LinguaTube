@@ -209,8 +209,8 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
     }
 
     .user-avatar {
-      width: 40px;
-      height: 40px;
+      width: var(--btn-height-md);
+      height: var(--btn-height-md);
       border-radius: 50%;
     }
 
@@ -235,7 +235,7 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
       display: flex;
       align-items: center;
       gap: 4px;
-      padding: 4px 8px;
+      padding: var(--space-xs) var(--space-sm);
       background: rgba(74, 124, 89, 0.1);
       color: var(--success);
       font-size: 0.6875rem;
@@ -391,8 +391,8 @@ import { SettingsService, VocabularyService, AuthService, YoutubeService, Subtit
     }
 
     .confirm-icon {
-      width: 64px;
-      height: 64px;
+      width: 4rem;
+      height: 4rem;
       margin: 0 auto var(--space-md);
       display: flex;
       align-items: center;

@@ -262,20 +262,23 @@
         <div class="controls-row">
           <!-- Left Controls -->
           <div class="controls-left">
-            <button class="control-btn play-btn" (click)="togglePlay()"
-              [attr.aria-label]="youtube.isPlaying() ? 'Pause' : 'Play'">
-              <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
-            </button>
+            <!-- Playback Controls Group -->
+            <div class="playback-controls">
+              <button class="control-btn play-btn" (click)="togglePlay()"
+                [attr.aria-label]="youtube.isPlaying() ? 'Pause' : 'Play'">
+                <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
+              </button>
 
-            <!-- Skip buttons - desktop only -->
-            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
-              aria-label="Rewind 10 seconds">
-              <app-icon name="rewind" [size]="18" aria-hidden="true" />
-            </button>
-            <button class="control-btn skip-btn desktop-only" (click)="seekRelative(10); showSeekFeedback('right', 10)"
-              aria-label="Forward 10 seconds">
-              <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
-            </button>
+              <!-- Skip buttons - desktop only -->
+              <button class="control-btn skip-btn desktop-only"
+                (click)="seekRelative(-10); showSeekFeedback('left', 10)" aria-label="Rewind 10 seconds">
+                <app-icon name="rewind" [size]="18" aria-hidden="true" />
+              </button>
+              <button class="control-btn skip-btn desktop-only"
+                (click)="seekRelative(10); showSeekFeedback('right', 10)" aria-label="Forward 10 seconds">
+                <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
+              </button>
+            </div>
 
             <!-- Volume - desktop only -->
             <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider()"

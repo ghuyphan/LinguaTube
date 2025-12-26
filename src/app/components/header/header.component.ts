@@ -156,7 +156,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       padding: var(--space-xs) var(--space-lg);
       background: var(--bg-card);
       border-bottom: 1px solid var(--border-color);
-      height: 48px;
+      height: var(--btn-height-lg);
     }
 
     .header__brand {
@@ -166,8 +166,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     }
 
     .header__logo {
-      width: 32px;
-      height: 32px;
+      width: 2rem;
+      height: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -277,7 +277,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
 
     .stat-divider {
       width: 1px;
-      height: 24px;
+      height: 1.5rem;
       background: var(--border-color);
     }
 
@@ -305,8 +305,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     }
     
     .theme-btn {
-      width: 40px;
-      height: 40px;
+      width: var(--btn-height-md);
+      height: var(--btn-height-md);
       border-radius: 50%;
     }
     
@@ -400,8 +400,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     }
 
     .lang-switcher-btn {
-      width: 40px;
-      height: 40px;
+      width: var(--btn-height-md);
+      height: var(--btn-height-md);
       border-radius: 50%;
     }
 
@@ -463,7 +463,7 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     @media (max-width: 768px) {
       .header {
         padding: 0 var(--mobile-padding);
-        height: 52px;
+        height: 3.25rem;
         gap: var(--space-sm);
       }
 
@@ -479,9 +479,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .lang-btn {
-        padding: 6px 12px;
+        padding: 0.375rem 0.75rem;
         font-size: 0.75rem;
-        min-height: 32px;
+        min-height: 2rem;
       }
       
       .header__actions {
@@ -501,8 +501,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
 
       .theme-btn {
-        width: 34px;
-        height: 34px;
+        width: 2.125rem;
+        height: 2.125rem;
         flex-shrink: 0;
         order: 1;
       }
@@ -512,8 +512,8 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .user-avatar {
-        width: 34px;
-        height: 34px;
+        width: 2.125rem;
+        height: 2.125rem;
         flex-shrink: 0;
         border-width: 0;
       }
@@ -522,14 +522,14 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
     /* Mobile: Phone */
     @media (max-width: 480px) {
       .header {
-        padding: 0 12px;
-        height: 48px;
-        gap: 6px;
+        padding: 0 0.75rem;
+        height: 3rem;
+        gap: 0.375rem;
       }
       
       .header__logo {
-        width: 28px;
-        height: 28px;
+        width: 1.75rem;
+        height: 1.75rem;
         flex-shrink: 0;
       }
       
@@ -548,9 +548,9 @@ import { SettingsService, VocabularyService, YoutubeService, SubtitleService, Au
       }
       
       .lang-btn {
-        padding: 6px 12px;
+        padding: 0.375rem 0.75rem;
         font-size: 0.75rem;
-        min-height: 32px;
+        min-height: 2rem;
       }
       
       .header__actions {

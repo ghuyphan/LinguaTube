@@ -183,7 +183,7 @@ import { SubtitleCue, Token } from '../../models';
 
     /* Current subtitle */
     .current-subtitle {
-      min-height: 100px;
+      min-height: 9.625rem; /* Accommodate ~3 lines to prevent shifts */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -201,7 +201,7 @@ import { SubtitleCue, Token } from '../../models';
       word-break: break-word;
       overflow-wrap: break-word;
       transition: box-shadow 0.3s ease, background 0.3s ease;
-      border-radius: 12px;
+      border-radius: var(--border-radius-lg);
       padding: 4px 12px;
       max-width: 100%;
     }
@@ -294,8 +294,8 @@ import { SubtitleCue, Token } from '../../models';
 
     .ai-spinner {
       position: relative;
-      width: 64px;
-      height: 64px;
+      width: 4rem;
+      height: 4rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -524,7 +524,7 @@ import { SubtitleCue, Token } from '../../models';
 
     /* Subtitle list */
     .subtitle-list {
-      max-height: 180px;
+      max-height: 11.25rem;
       overflow-y: auto;
       border-bottom: 1px solid var(--border-color);
       position: relative;
@@ -578,7 +578,7 @@ import { SubtitleCue, Token } from '../../models';
       font-family: var(--font-mono);
       font-size: 0.75rem;
       color: var(--text-muted);
-      min-width: 44px;
+      min-width: 2.75rem;
       flex-shrink: 0;
     }
 
@@ -602,7 +602,7 @@ import { SubtitleCue, Token } from '../../models';
       scrollbar-width: none;
       -ms-overflow-style: none;
       content-visibility: auto; /* Performance optimization for long lists */
-      contain-intrinsic-size: 56px; /* Approx height hint */
+      contain-intrinsic-size: 3.5rem; /* Approx height hint */
     }
     
     .subtitle-list::-webkit-scrollbar {
@@ -637,8 +637,8 @@ import { SubtitleCue, Token } from '../../models';
     }
 
     .font-btn {
-      width: 28px;
-      height: 28px;
+      width: 1.75rem;
+      height: 1.75rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -679,7 +679,7 @@ import { SubtitleCue, Token } from '../../models';
 
     @media (max-width: 640px) {
       .current-subtitle {
-        min-height: 120px;
+        min-height: 8.75rem;
         padding: var(--space-lg) var(--mobile-padding);
       }
 
@@ -700,7 +700,7 @@ import { SubtitleCue, Token } from '../../models';
       .word {
         padding: 6px 8px;
         border-radius: 8px;
-        min-height: 36px;
+        min-height: 2.25rem;
         line-height: 1.5;
         /* More visible background on mobile for tap clarity */
         background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08);
@@ -712,17 +712,17 @@ import { SubtitleCue, Token } from '../../models';
       }
 
       .subtitle-list {
-        max-height: 200px;
+        max-height: 12.5rem;
       }
 
       .cue-item {
         padding: var(--space-md) var(--mobile-padding);
-        min-height: 56px;
+        min-height: 3.5rem;
       }
 
       .cue-time {
         font-size: 0.75rem;
-        min-width: 48px;
+        min-width: 3rem;
       }
 
       .cue-text {
@@ -744,9 +744,9 @@ import { SubtitleCue, Token } from '../../models';
       }
 
       .toggle-btn {
-        min-height: 40px;
+        min-height: 2.5rem;
         padding: 0;
-        width: 40px;
+        width: 2.5rem;
         justify-content: center;
         font-size: 0.8125rem;
         flex-shrink: 0;
@@ -764,15 +764,15 @@ import { SubtitleCue, Token } from '../../models';
       }
 
       .font-btn {
-        width: 36px;
-        height: 36px;
+        width: 2.25rem;
+        height: 2.25rem;
         border-radius: 4px;
       }
     }
 
     @media (max-width: 480px) {
       .current-subtitle {
-        min-height: 100px;
+        min-height: 6.25rem;
         padding: var(--space-md);
       }
       

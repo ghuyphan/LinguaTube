@@ -337,7 +337,7 @@ interface StudyCard {
     .flashcard__inner {
       position: relative;
       width: 100%;
-      min-height: 300px;
+      min-height: 18.75rem;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
       display: grid;
@@ -528,7 +528,7 @@ interface StudyCard {
 
       .flashcard__front,
       .flashcard__back {
-        min-height: 250px;
+        min-height: 15.625rem;
         padding: var(--space-lg);
         box-shadow: none; /* Remove shadow on mobile for cleaner look */
       }
@@ -575,7 +575,7 @@ interface StudyCard {
 
       .flashcard__front,
       .flashcard__back {
-        min-height: 400px;
+        min-height: 25rem;
         padding: var(--space-2xl);
       }
 

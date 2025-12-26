@@ -5,6 +5,7 @@
   /* Washi paper inspired palette */
   --bg-primary: #faf8f5;
   --bg-secondary: #f3f0eb;
+  --bg-tertiary: #e6e4df;
   --bg-card: #ffffff;
   --bg-dark: #1a1a1a;
 
@@ -95,6 +96,7 @@
 [data-theme="dark"] {
   --bg-primary: #141414;
   --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2e2e2e;
   --bg-card: #262626;
   --border-color: rgba(255, 255, 255, 0.08);
   --text-primary: #f0ede8;
@@ -633,7 +635,8 @@ ruby rt {
   padding: var(--space-xs) 0;
   padding-bottom: env(safe-area-inset-bottom, var(--space-xs));
   z-index: 1000;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .bottom-nav__items {
@@ -649,56 +652,57 @@ ruby rt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: var(--space-xs) var(--space-md);
+  justify-content: center;
+  gap: 0;
+  padding: 4px;
+  margin: 0;
   background: none;
   border: none;
   color: var(--text-muted);
   font-size: 0.6875rem;
-  /* Standardized small text */
   font-weight: 500;
-  text-transform: none;
-  /* Removed uppercase for cleaner look */
   letter-spacing: normal;
   cursor: pointer;
   transition: all var(--transition-fast);
-  border-radius: var(--border-radius);
   min-width: 64px;
+  text-decoration: none;
+  position: relative;
 }
 
 .bottom-nav__item app-icon {
-  width: var(--icon-size-lg);
-  height: var(--icon-size-lg);
+  width: 64px;
+  height: 32px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  transition: background-color 0.3s cubic-bezier(0.2, 0.0, 0, 1),
+    transform 0.3s cubic-bezier(0.2, 0.0, 0, 1),
+    color 0.3s ease;
+  transform-origin: center center;
 }
 
 @media (hover: hover) {
   .bottom-nav__item:hover {
     color: var(--text-primary);
-    background: var(--bg-secondary);
   }
 }
 
+/* Active State */
 .bottom-nav__item.active {
   color: var(--accent-primary);
+  font-weight: 600;
+  background: transparent;
 }
 
-/* Active indicator bar */
-.bottom-nav__item.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-  height: 3px;
-  background: var(--accent-primary);
-  border-radius: 0 0 3px 3px;
+.bottom-nav__item.active app-icon {
+  background: var(--bg-secondary);
+  transform: scale(1.05);
 }
 
-/* Update item to relative for indicator positioning */
-.bottom-nav__item {
-  position: relative;
-  text-decoration: none;
+[data-theme="dark"] .bottom-nav__item.active app-icon {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px),

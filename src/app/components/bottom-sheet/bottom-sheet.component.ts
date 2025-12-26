@@ -131,8 +131,8 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
     }
 
     .sheet-drag-indicator {
-      width: 36px;
-      height: 4px;
+      width: 2.25rem;
+      height: var(--space-xs);
       background: var(--border-color);
       border-radius: 2px;
       margin: 0 auto;
@@ -180,7 +180,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
         width: 100%;
         margin: 0;
         max-height: 85vh;
-        border-radius: 16px 16px 0 0;
+        border-radius: var(--space-md) var(--space-md) 0 0;
         animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
         touch-action: none;
       }
@@ -219,7 +219,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
         max-width: 600px;
         width: 80%;
         max-height: calc(100vh - 80px);
-        border-radius: 16px 16px 0 0;
+        border-radius: var(--space-md) var(--space-md) 0 0;
         animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
       }
 

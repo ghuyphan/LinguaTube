@@ -12,9 +12,9 @@ $progress-handle-size: 0.875rem; // 14px
 $progress-handle-size-mobile: 1rem; // 16px
 $control-btn-size: 2.25rem; // 36px
 $control-btn-size-mobile: 2.75rem; // 44px
-$progress-bar-height: 0.25rem; // 4px
+$progress-bar-height: var(--space-xs); // 4px
 $progress-bar-height-hover: 0.375rem; // 6px
-$progress-bar-mobile: 0.25rem; // 4px
+$progress-bar-mobile: var(--space-xs); // 4px
 
 // === Z-INDEX LAYERS ===
 // Documented for easier maintenance and conflict resolution
@@ -468,7 +468,7 @@ $text-muted-fallback: #888;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.85);
-  padding: 0.5rem 1rem;
+  padding: var(--space-sm) var(--space-md);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -537,7 +537,7 @@ $text-muted-fallback: #888;
 
 .mini-progress__fill {
   height: 100%;
-  background: var(--accent-primary, #c73e3a);
+  background: var(--accent-primary);
   transition: width 0.1s linear;
 }
 
@@ -549,18 +549,24 @@ $text-muted-fallback: #888;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      transparent 100%);
-  padding: var(--space-lg) var(--space-md) var(--space-sm);
+  width: 100%;
+  background: none;
+  padding: 0 1rem 0.5rem;
+  /* Embedded: 0.5rem from bottom */
   z-index: 20;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.5rem;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   opacity: 1;
   visibility: visible;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.custom-controls>* {
+  pointer-events: auto;
+  /* Re-enable pointer on children */
 }
 
 .controls-hidden {
@@ -570,9 +576,10 @@ $text-muted-fallback: #888;
 }
 
 .is-fullscreen .custom-controls {
-  padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
-  padding-left: max(var(--space-md), env(safe-area-inset-left));
-  padding-right: max(var(--space-md), env(safe-area-inset-right));
+  /* Use safe area or 0.75rem, whichever is larger. minimized from 1rem */
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
 }
 
 /* ============================================
@@ -588,6 +595,7 @@ $text-muted-fallback: #888;
   transition: height 0.15s ease;
   // Allow touch interaction on progress bar
   touch-action: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
 }
 
 .progress-container:hover,
@@ -616,7 +624,7 @@ $text-muted-fallback: #888;
   top: 0;
   left: 0;
   height: 100%;
-  background: var(--accent-primary, #c73e3a);
+  background: var(--accent-primary);
   border-radius: 2px;
   pointer-events: none;
 }
@@ -627,7 +635,7 @@ $text-muted-fallback: #888;
   transform: translate(-50%, -50%) scale(0);
   width: 14px;
   height: 14px;
-  background: var(--accent-primary, #c73e3a);
+  background: var(--accent-primary);
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -678,8 +686,9 @@ $text-muted-fallback: #888;
   justify-content: center;
   border-radius: 4px;
   transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
-  min-width: 36px;
-  height: 36px;
+  min-width: 2.5rem;
+  /* Larger touch target base */
+  height: 2.5rem;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -696,8 +705,8 @@ $text-muted-fallback: #888;
 }
 
 .play-btn {
-  min-width: 40px;
-  height: 40px;
+  min-width: 2.5rem;
+  height: 2.5rem;
 }
 
 .desktop-only {
@@ -714,13 +723,60 @@ $text-muted-fallback: #888;
   font-variant-numeric: tabular-nums;
   color: rgba(255, 255, 255, 0.9);
   display: flex;
+  align-items: center;
   gap: 4px;
-  margin-left: var(--space-xs);
+  margin-left: 0;
   user-select: none;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1.25rem;
+  height: 2.5rem;
+  padding: 0 var(--space-md);
 }
 
 .time-separator {
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* Base styles for floating bubbles/pills */
+/* Grouped playback controls (Play + Skip) */
+.playback-controls {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1.5rem;
+  padding: 0.125rem;
+  display: flex;
+  align-items: center;
+}
+
+.playback-controls .control-btn {
+  background: transparent;
+  border-radius: 50%;
+  min-width: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: var(--space-sm);
+  margin: 0;
+}
+
+.playback-controls .control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.controls-right {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1.5rem;
+  padding: 0.125rem;
+  gap: 0;
+}
+
+.controls-right .control-btn {
+  background: transparent;
+  border-radius: 50%;
+}
+
+.controls-right .control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ============================================
@@ -743,9 +799,38 @@ $text-muted-fallback: #888;
 }
 
 .volume-slider-container.visible {
+  padding-left: 0.5rem;
   width: 5rem;
   opacity: 1;
-  padding-left: 0.5rem;
+}
+
+/* Volume control as expanding pill */
+.volume-control {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1.25rem;
+  padding: 0.125rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  /* Start collapsed */
+  overflow: hidden;
+  /* Hide slider initially */
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.volume-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  width: 8rem;
+  /* Expand to reveal slider */
+}
+
+.volume-control .control-btn {
+  background: transparent;
+  min-width: 2.25rem;
+  width: 2.25rem;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .volume-slider {
@@ -864,7 +949,7 @@ $text-muted-fallback: #888;
 }
 
 .speed-option.active {
-  color: var(--accent-primary, #c73e3a);
+  color: var(--accent-primary);
   font-weight: 500;
 }
 
@@ -1012,7 +1097,7 @@ $text-muted-fallback: #888;
   display: inline;
   font-size: 1.5rem;
   line-height: 2;
-  color: white;
+  color: var(--text-inverse);
   word-break: normal;
   overflow-wrap: break-word;
 }
@@ -1059,7 +1144,7 @@ $text-muted-fallback: #888;
 }
 
 .fs-word--saved {
-  border-bottom: 2px solid var(--accent-primary, #c73e3a);
+  border-bottom: 2px solid var(--accent-primary);
   background: rgba(199, 62, 58, 0.15);
 }
 
@@ -1208,7 +1293,7 @@ $text-muted-fallback: #888;
   font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--accent-primary, #c73e3a);
+  color: var(--accent-primary);
   background: rgba(199, 62, 58, 0.1);
   border-radius: 4px;
 }
@@ -1254,7 +1339,7 @@ $text-muted-fallback: #888;
 }
 
 .fs-popup-btn--save {
-  background: var(--accent-primary, #c73e3a);
+  background: var(--accent-primary);
   color: white;
 }
 
@@ -1311,11 +1396,73 @@ $text-muted-fallback: #888;
   }
 
   .custom-controls {
-    padding: var(--space-md) var(--space-sm) var(--space-xs);
+    background: none;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 0 0.75rem 0.5rem;
+    /* Mobile embedded: 0.5rem from bottom */
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .controls-row {
+    background: none;
+    padding: 0;
+    min-height: 2.5rem;
+    gap: 0;
+  }
+
+  .controls-left {
+    gap: 0.5rem;
+  }
+
+  /* Right controls grouped in a pill */
+  .controls-right {
+    gap: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1.5rem;
+    padding: 0.125rem;
+  }
+
+  /* Left buttons as individual bubbles */
+  .controls-left .control-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    min-width: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin: 0;
+  }
+
+  /* Right buttons transparent inside the group */
+  .controls-right .control-btn {
+    background: transparent;
+    min-width: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+  }
+
+  .time-display {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1.25rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 0.875rem;
+    /* Ensure readable size */
   }
 
   .progress-container {
     height: $progress-bar-mobile;
+    margin-bottom: 0;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+    border-radius: 2px;
   }
 
   .progress-handle {
@@ -1326,14 +1473,15 @@ $text-muted-fallback: #888;
   }
 
   .control-btn {
-    min-width: 2.75rem;
-    height: 2.75rem;
-    padding: 0.625rem;
+    min-width: 40px;
+    height: 40px;
+    padding: 8px;
+    width: 40px;
   }
 
   .play-btn {
-    min-width: 3rem;
-    height: 3rem;
+    min-width: 40px;
+    height: 40px;
   }
 
   .time-display {

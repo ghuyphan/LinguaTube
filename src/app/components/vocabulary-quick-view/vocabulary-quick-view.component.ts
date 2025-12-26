@@ -83,7 +83,7 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
     }
 
     .count-badge {
-      padding: 2px 8px;
+      padding: var(--space-xs) var(--space-sm);
       background: var(--accent-primary);
       color: white;
       font-size: 0.75rem;
@@ -154,7 +154,7 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      min-width: 100px;
+      min-width: 6.25rem;
     }
 
     .word-meta {
@@ -168,7 +168,7 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
     }
 
     .level-select {
-      padding: 4px 24px 4px 8px;
+      padding: 0.25rem 1.5rem 0.25rem 0.5rem;
       font-size: 0.75rem;
       height: auto;
       min-height: unset;

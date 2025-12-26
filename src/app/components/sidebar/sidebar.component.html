@@ -1,0 +1,127 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed()">
+    <!-- Toggle Button (Floating) -->
+    <button class="sidebar-toggle" (click)="toggleCollapse()"
+        [attr.aria-label]="isCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'">
+        <app-icon [name]="isCollapsed() ? 'chevron-right' : 'chevron-left'" [size]="16" />
+    </button>
+
+    <!-- Logo / Brand -->
+    <div class="sidebar__brand">
+        <div class="sidebar__logo">
+            <span class="logo-text">言</span>
+        </div>
+        @if (!isCollapsed()) {
+        <div class="sidebar__title-group">
+            <h1 class="sidebar__title">{{ i18n.t('app.title') }}</h1>
+            <span class="sidebar__subtitle">{{ i18n.t('app.subtitle') }}</span>
+        </div>
+        }
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar__nav">
+        <a class="nav-item" routerLink="/video" routerLinkActive="active">
+            <app-icon name="play-circle" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.video') }}</span>
+            }
+        </a>
+        <a class="nav-item" routerLink="/dictionary" routerLinkActive="active">
+            <app-icon name="book-open" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.words') }}</span>
+            }
+        </a>
+        <a class="nav-item" routerLink="/study" routerLinkActive="active">
+            <app-icon name="graduation-cap" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.study') }}</span>
+            }
+        </a>
+    </nav>
+
+    <!-- Language Selector -->
+    @if (!isCollapsed()) {
+    <div class="sidebar__section">
+        <h3 class="section-label">{{ i18n.t('settings.learningLanguage') }}</h3>
+        <div class="lang-selector">
+            <button class="lang-chip" [class.active]="settings.settings().language === 'ja'"
+                (click)="setLanguage('ja')">
+                🇯🇵 日本語
+            </button>
+            <button class="lang-chip" [class.active]="settings.settings().language === 'zh'"
+                (click)="setLanguage('zh')">
+                🇨🇳 中文
+            </button>
+            <button class="lang-chip" [class.active]="settings.settings().language === 'ko'"
+                (click)="setLanguage('ko')">
+                🇰🇷 한국어
+            </button>
+            <button class="lang-chip" [class.active]="settings.settings().language === 'en'"
+                (click)="setLanguage('en')">
+                🇬🇧 EN
+            </button>
+        </div>
+    </div>
+    }
+
+    <!-- Stats -->
+    @if (!isCollapsed()) {
+    <div class="sidebar__section">
+        <h3 class="section-label">{{ i18n.t('settings.vocabStats') }}</h3>
+        <div class="stats-compact">
+            <div class="stat-row">
+                <span class="stat-label">{{ i18n.t('settings.totalWords') }}</span>
+                <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">{{ i18n.t('header.known') }}</span>
+                <span class="stat-value stat-value--success">{{
+                    vocab.getStatsByLanguage(settings.settings().language).known }}</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">{{ i18n.t('vocab.learning') }}</span>
+                <span class="stat-value stat-value--warning">{{
+                    vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
+            </div>
+        </div>
+    </div>
+    }
+
+    <!-- Footer Actions -->
+    <div class="sidebar__footer">
+        @if (auth.isLoggedIn()) {
+        <button class="footer-btn" (click)="openSettings.emit()">
+            <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+            @if (!isCollapsed()) {
+            <span class="user-name">{{ auth.user()?.name }}</span>
+            }
+        </button>
+        } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
+        <div class="footer-btn-container">
+            <div class="google-btn-wrapper collapsed-only" #googleBtnCollapsed></div>
+            <div class="google-btn-wrapper expanded-only" #googleBtnExpanded></div>
+        </div>
+        }
+
+        <button class="footer-btn" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+            <app-icon name="settings" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.settings') }}</span>
+            }
+        </button>
+
+        <button class="footer-btn" (click)="toggleTheme()"
+            [attr.title]="settings.getEffectiveTheme() === 'dark' ? i18n.t('header.switchToLight') : i18n.t('header.switchToDark')">
+            @if (settings.getEffectiveTheme() === 'dark') {
+            <app-icon name="sun" [size]="20" />
+            } @else {
+            <app-icon name="moon" [size]="20" />
+            }
+            @if (!isCollapsed()) {
+            <span>{{ settings.getEffectiveTheme() === 'dark' ? i18n.t('settings.switchToLightMode') :
+                i18n.t('settings.switchToDarkMode') }}</span>
+            }
+        </button>
+    </div>
+</aside>
