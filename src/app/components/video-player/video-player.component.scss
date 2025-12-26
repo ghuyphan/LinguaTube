@@ -76,6 +76,9 @@
   position: relative;
   user-select: none;
   -webkit-user-select: none;
+  // Prevent pull-to-refresh and other browser gestures
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
 }
 
 .video-container.is-fullscreen {
@@ -141,6 +144,7 @@
   /* Transparent background ensures this layer captures ALL interactions */
   background: transparent;
   -webkit-tap-highlight-color: transparent;
+  // FIXED: Use pan-y to allow vertical scroll when needed but capture horizontal
   touch-action: manipulation;
   /* Ensure clicks are captured even without background */
   cursor: default;
@@ -155,6 +159,9 @@
   -webkit-tap-highlight-color: transparent;
   outline: none;
   overflow: hidden;
+  // Prevent text selection on zones
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .zone-left,
@@ -205,11 +212,12 @@
   pointer-events: auto;
 }
 
-/* Big Play Button */
+/* Big Play Button - FIXED: Use button element for better touch handling */
 .big-play-btn {
   width: 64px;
   height: 64px;
   background: rgba(0, 0, 0, 0.7);
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -217,6 +225,14 @@
   color: white;
   transition: transform 0.15s ease, opacity 0.15s ease;
   pointer-events: auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  // Ensure the button is properly clickable on iOS
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
 }
 
 .big-play-btn:active {
@@ -287,13 +303,26 @@
 /* YouTube-style Seek Feedback */
 .seek-feedback {
   position: absolute;
+  top: 0;
+  transform: scale(0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  transform: scale(0.7);
   will-change: opacity, transform;
+}
+
+/* Position left seek feedback to the left of center */
+.seek-feedback--left {
+  right: 100%;
+  margin-right: 24px;
+}
+
+/* Position right seek feedback to the right of center */
+.seek-feedback--right {
+  left: 100%;
+  margin-left: 24px;
 }
 
 .seek-feedback-inner {
@@ -525,6 +554,8 @@
   cursor: pointer;
   border-radius: 2px;
   transition: height 0.15s ease;
+  // Allow touch interaction on progress bar
+  touch-action: none;
 }
 
 .progress-container:hover,
@@ -617,6 +648,8 @@
   transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
   min-width: 36px;
   height: 36px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 @media (hover: hover) {
@@ -940,6 +973,7 @@
   border-radius: 4px;
   transition: background 0.15s ease;
   display: inline;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (hover: hover) {

@@ -49,15 +49,10 @@
 
       <!-- Unified Interaction Overlay -->
       <div class="player-overlay" (touchstart)="onOverlayTouchStart($event)" (touchmove)="onOverlayTouchMove($event)"
-        (touchend)="onOverlayTouchEnd($event)" (click)="onOverlayClick($event)">
-        <!-- Left Zone (tap detection + seek feedback + ripple) -->
+        (touchend)="onOverlayTouchEnd($event)" (touchcancel)="onOverlayTouchEnd($event)"
+        (click)="onOverlayClick($event)">
+        <!-- Left Zone (tap detection + ripple only) -->
         <div class="zone zone-left">
-          <div class="seek-feedback" [class.animate]="rewindFeedback()">
-            <div class="seek-feedback-inner">
-              <app-icon name="rewind" [size]="28" />
-              <span class="seek-time">{{ seekAccumulator() }}s</span>
-            </div>
-          </div>
           @if (leftRipple()) {
           <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
           }
@@ -66,14 +61,8 @@
         <!-- Center Zone (just for tap detection) -->
         <div class="zone zone-center"></div>
 
-        <!-- Right Zone (tap detection + seek feedback + ripple) -->
+        <!-- Right Zone (tap detection + ripple only) -->
         <div class="zone zone-right">
-          <div class="seek-feedback" [class.animate]="forwardFeedback()">
-            <div class="seek-feedback-inner">
-              <app-icon name="fast-forward" [size]="28" />
-              <span class="seek-time">{{ seekAccumulator() }}s</span>
-            </div>
-          </div>
           @if (rightRipple()) {
           <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
           }
@@ -82,6 +71,22 @@
 
       <!-- Center Controls (play/pause and other centered indicators) -->
       <div class="center-controls">
+
+        <!-- Seek Feedback - Left (Rewind) -->
+        <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()">
+          <div class="seek-feedback-inner">
+            <app-icon name="rewind" [size]="28" />
+            <span class="seek-time">{{ seekAccumulator() }}s</span>
+          </div>
+        </div>
+
+        <!-- Seek Feedback - Right (Forward) -->
+        <div class="seek-feedback seek-feedback--right" [class.animate]="forwardFeedback()">
+          <div class="seek-feedback-inner">
+            <app-icon name="fast-forward" [size]="28" />
+            <span class="seek-time">{{ seekAccumulator() }}s</span>
+          </div>
+        </div>
 
         <!-- Volume Feedback -->
         @if (volumeFeedback()) {
@@ -107,34 +112,37 @@
         <!-- Mobile: Big Play Button (when paused) -->
         @if (isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
         @if (!youtube.isPlaying()) {
-        <div class="big-play-btn" (touchend)="onPlayPauseButtonTouch($event)">
+        <button class="big-play-btn" (touchstart)="$event.stopPropagation()" (touchend)="onPlayPauseButtonTouch($event)"
+          (click)="$event.stopPropagation()">
           <app-icon name="play" [size]="44" />
-        </div>
+        </button>
         } @else if (areControlsVisible()) {
-        <div class="big-play-btn fade-in" (touchend)="onPlayPauseButtonTouch($event)">
+        <button class="big-play-btn fade-in" (touchstart)="$event.stopPropagation()"
+          (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
           <app-icon name="pause" [size]="44" />
-        </div>
+        </button>
         }
         }
 
         <!-- Desktop: Big Play Button -->
         @if (!isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
         @if (!youtube.isPlaying()) {
-        <div class="big-play-btn" (click)="onPlayPauseButtonClick($event)">
+        <button class="big-play-btn" (click)="onPlayPauseButtonClick($event)">
           <app-icon name="play" [size]="44" />
-        </div>
+        </button>
         } @else if (areControlsVisible()) {
-        <div class="big-play-btn fade-in" (click)="onPlayPauseButtonClick($event)">
+        <button class="big-play-btn fade-in" (click)="onPlayPauseButtonClick($event)">
           <app-icon name="pause" [size]="44" />
-        </div>
+        </button>
         }
         }
 
         <!-- Replay Button (when ended) -->
         @if (youtube.isEnded()) {
-        <div class="big-play-btn replay-btn" (click)="onReplayClick($event)" (touchend)="onReplayClick($event)">
+        <button class="big-play-btn replay-btn" (touchstart)="$event.stopPropagation()"
+          (touchend)="onReplayClick($event)" (click)="onReplayClick($event)">
           <app-icon name="rotate-ccw" [size]="44" />
-        </div>
+        </button>
         }
       </div>
 
@@ -169,8 +177,8 @@
 
       <!-- Fullscreen Word Popup -->
       @if (isFullscreen() && fsPopupVisible()) {
-      <div class="fs-popup-overlay" (click)="closeFsPopup()">
-        <div class="fs-popup" (click)="$event.stopPropagation()">
+      <div class="fs-popup-overlay" (click)="closeFsPopup()" (touchend)="closeFsPopup()">
+        <div class="fs-popup" (click)="$event.stopPropagation()" (touchend)="$event.stopPropagation()">
           <button class="fs-popup-close" (click)="closeFsPopup()">
             <app-icon name="x" [size]="18" />
           </button>
