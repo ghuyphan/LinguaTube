@@ -47,21 +47,18 @@
       </div>
       }
 
-      <!-- Unified Interaction Overlay -->
+      <!-- Unified Interaction Overlay (50/50 left-right zones) -->
       <div class="player-overlay" (touchstart)="onOverlayTouchStart($event)" (touchmove)="onOverlayTouchMove($event)"
         (touchend)="onOverlayTouchEnd($event)" (touchcancel)="onOverlayTouchEnd($event)"
         (click)="onOverlayClick($event)">
-        <!-- Left Zone (tap detection + ripple only) -->
+        <!-- Left Zone (50%) - Double tap to seek backward -->
         <div class="zone zone-left">
           @if (leftRipple()) {
           <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
           }
         </div>
 
-        <!-- Center Zone (just for tap detection) -->
-        <div class="zone zone-center"></div>
-
-        <!-- Right Zone (tap detection + ripple only) -->
+        <!-- Right Zone (50%) - Double tap to seek forward -->
         <div class="zone zone-right">
           @if (rightRipple()) {
           <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
@@ -91,7 +88,7 @@
         <!-- Volume Feedback -->
         @if (volumeFeedback()) {
         <div class="center-feedback volume-feedback animate">
-          <app-icon [name]="volumeFeedbackIcon()" [size]="44" />
+          <app-icon [name]="volumeFeedbackIcon()" [size]="44" aria-hidden="true" />
         </div>
         }
 
@@ -109,17 +106,17 @@
         </div>
         }
 
-        <!-- Mobile: Big Play Button (when paused) -->
-        @if (isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
+        <!-- Mobile: Big Play/Pause Button (only visible when controls are shown) -->
+        @if (isTouchDevice && youtube.isReady() && !youtube.isEnded() && areControlsVisible()) {
         @if (!youtube.isPlaying()) {
-        <button class="big-play-btn" (touchstart)="$event.stopPropagation()" (touchend)="onPlayPauseButtonTouch($event)"
-          (click)="$event.stopPropagation()">
-          <app-icon name="play" [size]="44" />
-        </button>
-        } @else if (areControlsVisible()) {
-        <button class="big-play-btn fade-in" (touchstart)="$event.stopPropagation()"
+        <button class="big-play-btn" aria-label="Play video" (touchstart)="$event.stopPropagation()"
           (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
-          <app-icon name="pause" [size]="44" />
+          <app-icon name="play" [size]="44" aria-hidden="true" />
+        </button>
+        } @else {
+        <button class="big-play-btn fade-in" aria-label="Pause video" (touchstart)="$event.stopPropagation()"
+          (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
+          <app-icon name="pause" [size]="44" aria-hidden="true" />
         </button>
         }
         }
@@ -127,21 +124,21 @@
         <!-- Desktop: Big Play Button -->
         @if (!isTouchDevice && youtube.isReady() && !youtube.isEnded()) {
         @if (!youtube.isPlaying()) {
-        <button class="big-play-btn" (click)="onPlayPauseButtonClick($event)">
-          <app-icon name="play" [size]="44" />
+        <button class="big-play-btn" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
+          <app-icon name="play" [size]="44" aria-hidden="true" />
         </button>
         } @else if (areControlsVisible()) {
-        <button class="big-play-btn fade-in" (click)="onPlayPauseButtonClick($event)">
-          <app-icon name="pause" [size]="44" />
+        <button class="big-play-btn fade-in" aria-label="Pause video" (click)="onPlayPauseButtonClick($event)">
+          <app-icon name="pause" [size]="44" aria-hidden="true" />
         </button>
         }
         }
 
         <!-- Replay Button (when ended) -->
         @if (youtube.isEnded()) {
-        <button class="big-play-btn replay-btn" (touchstart)="$event.stopPropagation()"
+        <button class="big-play-btn replay-btn" aria-label="Replay video" (touchstart)="$event.stopPropagation()"
           (touchend)="onReplayClick($event)" (click)="onReplayClick($event)">
-          <app-icon name="rotate-ccw" [size]="44" />
+          <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
         </button>
         }
       </div>
@@ -163,12 +160,12 @@
           <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
             @if (subtitles.isTokenizing()) {
             <span class="fs-word">{{ cue.text }}</span>
-            } @else { @for (token of getFullscreenTokens(cue); track $index) {<span class="fs-word"
-              [class.fs-word--saved]="vocab.hasWord(token.surface)"
+            } @else { @for (token of getFullscreenTokens(cue); track $index) {<button type="button" class="fs-word"
+              [class.fs-word--saved]="vocab.hasWord(token.surface)" [attr.aria-label]="'Look up ' + token.surface"
               (click)="onFullscreenWordClick(token, cue.text, $event)">@if (showFsReading() &&
               getFullscreenReading(token))
               {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>} @else {{{ token.surface
-              }}}</span>} }
+              }}}</button>} }
           </div>
         </div>
         }
@@ -177,10 +174,11 @@
 
       <!-- Fullscreen Word Popup -->
       @if (isFullscreen() && fsPopupVisible()) {
-      <div class="fs-popup-overlay" (click)="closeFsPopup()" (touchend)="closeFsPopup()">
+      <div class="fs-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="fs-popup-title"
+        (click)="closeFsPopup()" (touchend)="closeFsPopup()">
         <div class="fs-popup" (click)="$event.stopPropagation()" (touchend)="$event.stopPropagation()">
-          <button class="fs-popup-close" (click)="closeFsPopup()">
-            <app-icon name="x" [size]="18" />
+          <button class="fs-popup-close" aria-label="Close popup" (click)="closeFsPopup()">
+            <app-icon name="x" [size]="18" aria-hidden="true" />
           </button>
 
           <div class="fs-popup-header">
@@ -244,15 +242,18 @@
       <!-- Custom Controls -->
       <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.isPlaying()">
         <!-- Progress Bar -->
-        <div class="progress-container" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
+        <div class="progress-container" role="slider" [attr.aria-valuenow]="displayTime()" [attr.aria-valuemin]="0"
+          [attr.aria-valuemax]="youtube.duration()"
+          [attr.aria-valuetext]="formatTime(displayTime()) + ' of ' + formatTime(youtube.duration())"
+          aria-label="Video progress" tabindex="0" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
           (touchstart)="startSeeking($event)" (mousemove)="updateSeekPreview($event)" (mouseleave)="hideSeekPreview()"
           #progressBar>
-          <div class="progress-buffered" [style.width.%]="bufferedPercentage()"></div>
-          <div class="progress-fill" [style.width.%]="progressPercentage()"></div>
-          <div class="progress-handle" [style.left.%]="progressPercentage()"></div>
+          <div class="progress-buffered" [style.width.%]="bufferedPercentage()" aria-hidden="true"></div>
+          <div class="progress-fill" [style.width.%]="progressPercentage()" aria-hidden="true"></div>
+          <div class="progress-handle" [style.left.%]="progressPercentage()" aria-hidden="true"></div>
 
           @if (seekPreview().visible) {
-          <div class="seek-tooltip" [style.left.px]="seekPreview().position">
+          <div class="seek-tooltip" [style.left.px]="seekPreview().position" aria-hidden="true">
             {{ formatTime(seekPreview().time) }}
           </div>
           }
@@ -269,11 +270,11 @@
             <!-- Skip buttons - desktop only -->
             <button class="control-btn skip-btn desktop-only" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
               aria-label="Rewind 10 seconds">
-              <app-icon name="rewind" [size]="18" />
+              <app-icon name="rewind" [size]="18" aria-hidden="true" />
             </button>
             <button class="control-btn skip-btn desktop-only" (click)="seekRelative(10); showSeekFeedback('right', 10)"
               aria-label="Forward 10 seconds">
-              <app-icon name="fast-forward" [size]="18" />
+              <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
             </button>
 
             <!-- Volume - desktop only -->

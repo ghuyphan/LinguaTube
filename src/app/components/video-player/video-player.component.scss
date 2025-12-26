@@ -1,3 +1,41 @@
+// ============================================
+// SCSS VARIABLES
+// ============================================
+
+// === DIMENSIONS ===
+$big-play-btn-size: 64px;
+$big-play-btn-size-mobile: 56px;
+$big-play-btn-size-small: 52px;
+$center-feedback-size: 56px;
+$ripple-size: 80px;
+$progress-handle-size: 14px;
+$progress-handle-size-mobile: 16px;
+$control-btn-size: 36px;
+$control-btn-size-mobile: 44px;
+$progress-bar-height: 4px;
+$progress-bar-height-hover: 6px;
+$progress-bar-mobile: 6px;
+
+// === Z-INDEX LAYERS ===
+// Documented for easier maintenance and conflict resolution
+$z-youtube-player: 1; // Base video layer
+$z-player-overlay: 10; // Interaction capture layer
+$z-loading-overlay: 15; // Loading indicator
+$z-center-controls: 15; // Play/pause buttons
+$z-fullscreen-subtitle: 18; // Subtitle overlay in fullscreen
+$z-custom-controls: 20; // Bottom control bar
+$z-mini-progress: 25; // Thin progress bar when controls hidden
+$z-seek-tooltip: 30; // Seek preview tooltip
+$z-fs-popup: 50; // Fullscreen word popup
+$z-speed-menu: 100; // Playback speed dropdown
+$z-fullscreen: 9998; // Fullscreen container
+
+// === COLORS WITH FALLBACKS ===
+$accent-primary-fallback: #c73e3a;
+$bg-card-fallback: #1a1a1a;
+$border-color-fallback: #333;
+$text-muted-fallback: #888;
+
 .player-wrapper {
   width: 100%;
 }
@@ -166,12 +204,7 @@
 
 .zone-left,
 .zone-right {
-  width: 25%;
-  cursor: default; // Default cursor on desktop like YouTube
-}
-
-.zone-center {
-  width: 50%;
+  width: 50%; // 50/50 split for easier double-tap seeking
   cursor: default; // Default cursor on desktop like YouTube
 }
 
@@ -179,8 +212,7 @@
 @media (hover: none) and (pointer: coarse) {
 
   .zone-left,
-  .zone-right,
-  .zone-center {
+  .zone-right {
     cursor: pointer;
   }
 }
@@ -316,13 +348,13 @@
 /* Position left seek feedback to the left of center */
 .seek-feedback--left {
   right: 100%;
-  margin-right: 24px;
+  margin-right: 48px; // Increased from 24px for better spacing from play button
 }
 
 /* Position right seek feedback to the right of center */
 .seek-feedback--right {
   left: 100%;
-  margin-left: 24px;
+  margin-left: 48px; // Increased from 24px for better spacing from play button
 }
 
 .seek-feedback-inner {
@@ -968,6 +1000,13 @@
 }
 
 .fs-word {
+  // Button reset for accessibility (changed from span to button)
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  // Original styles
   cursor: pointer;
   padding: 2px 4px;
   border-radius: 4px;
@@ -1386,8 +1425,12 @@
   display: none;
 }
 
-.is-fullscreen .desktop-only {
-  display: flex;
+// Fix specificity: In fullscreen on desktop (above mobile breakpoint),
+// show desktop controls. On mobile, keep them hidden.
+@media (min-width: 641px) {
+  .is-fullscreen .desktop-only {
+    display: flex;
+  }
 }
 
 /* Landscape phone */
