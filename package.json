@@ -35,6 +35,7 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.6.0",
     "youtube-caption-extractor": "^1.9.1",
+    "youtube-transcript": "^1.2.1",
     "youtubei.js": "^16.0.1",
     "zone.js": "~0.15.0"
   },
