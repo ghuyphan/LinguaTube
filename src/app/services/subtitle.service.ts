@@ -14,7 +14,7 @@ const MAX_STORED_VIDEOS = 10;
 // Lazy tokenization
 const LAZY_THRESHOLD = 100; // Use lazy tokenization if > 100 cues
 const TOKENIZE_BUFFER = 30; // Cues before/after current to tokenize
-const TIME_UPDATE_THROTTLE_MS = 100; // Throttle currentTime updates (10/sec)
+const TOKENIZE_THROTTLE_MS = 500; // Throttle lazy tokenization checks
 
 // ============================================================================
 // Service
@@ -26,8 +26,8 @@ const TIME_UPDATE_THROTTLE_MS = 100; // Throttle currentTime updates (10/sec)
 export class SubtitleService {
   private youtube = inject(YoutubeService);
 
-  // Throttle tracking
-  private lastTimeUpdate = 0;
+  // Throttle tracking (only for expensive tokenization, not cue lookup)
+  private lastTokenizeCheck = 0;
   private lastTokenizedRange = { start: -1, end: -1 };
   private currentLang: 'ja' | 'zh' | 'ko' | 'en' = 'ja';
 
@@ -36,17 +36,17 @@ export class SubtitleService {
     this.loadTokensFromStorage();
 
     // Automatically update current cue based on video time
-    // Throttled to reduce unnecessary updates (10/sec is enough for subtitles)
+    // No throttle needed - binary search is O(log n) and YouTube API already rate-limits (~250ms)
     effect(() => {
       const time = this.youtube.currentTime();
+
+      // Update current cue immediately (fast binary search)
+      this.updateCurrentCue(time);
+
+      // Lazy tokenize nearby cues (throttled - this is the expensive async operation)
       const now = Date.now();
-
-      // Throttle updates to every 100ms
-      if (now - this.lastTimeUpdate >= TIME_UPDATE_THROTTLE_MS) {
-        this.lastTimeUpdate = now;
-        this.updateCurrentCue(time);
-
-        // Lazy tokenize nearby cues if needed
+      if (now - this.lastTokenizeCheck >= TOKENIZE_THROTTLE_MS) {
+        this.lastTokenizeCheck = now;
         this.tokenizeNearbyIfNeeded();
       }
     });
