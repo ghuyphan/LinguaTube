@@ -1,4 +1,4 @@
-/* LinguaTube - Global Styles */
+/* Voca - Global Styles */
 /* Japanese-inspired minimalist aesthetic with warm paper tones */
 
 :root {
@@ -630,12 +630,12 @@ ruby rt {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 4rem;
+  min-height: 4rem;
   background: var(--bg-card);
   padding: var(--space-xs) 0;
   padding-bottom: env(safe-area-inset-bottom, var(--space-xs));
   z-index: 1000;
-  border-top: 1px solid var(--border-color);
+  /* border-top: 1px solid var(--border-color); */
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
 }
 

@@ -208,12 +208,12 @@ export class VocabularyListComponent {
 
   exportJSON(): void {
     const json = this.vocab.exportToJSON();
-    this.downloadFile(json, 'linguatube-vocabulary.json', 'application/json');
+    this.downloadFile(json, 'voca-vocabulary.json', 'application/json');
   }
 
   exportAnki(): void {
     const tsv = this.vocab.exportToAnki();
-    this.downloadFile(tsv, 'linguatube-anki.tsv', 'text/tab-separated-values');
+    this.downloadFile(tsv, 'voca-anki.tsv', 'text/tab-separated-values');
   }
 
   importJSON(event: Event): void {
