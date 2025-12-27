@@ -270,11 +270,6 @@
       <div class="controls-row">
         <!-- Left Controls -->
         <div class="controls-left">
-          <button class="control-btn play-btn" (click)="togglePlay()"
-            [attr.aria-label]="youtube.isPlaying() ? 'Pause' : 'Play'">
-            <app-icon [name]="youtube.isPlaying() ? 'pause' : 'play'" [size]="22" />
-          </button>
-
           <!-- Skip buttons group - desktop only -->
           <div class="seek-group desktop-only">
             <button class="control-btn" (click)="seekRelative(-10); showSeekFeedback('left', 10)"

@@ -201,8 +201,8 @@ export class AppComponent implements OnDestroy {
 
   private destroy$ = new Subject<void>();
   private lastUpdateCheck = 0;
-  private readonly UPDATE_CHECK_INTERVAL = 30 * 60 * 1000; // 30 minutes
-  private readonly MIN_CHECK_INTERVAL = 5 * 60 * 1000; // 5 minutes minimum between checks
+  private readonly UPDATE_CHECK_INTERVAL = 60 * 60 * 1000; // 1 hour
+  private readonly MIN_CHECK_INTERVAL = 10 * 60 * 1000; // 10 minutes minimum between checks
 
   constructor() {
     this.initServiceWorkerUpdates();
@@ -221,11 +221,10 @@ export class AppComponent implements OnDestroy {
   }
 
   /**
-   * Initialize robust service worker update detection with multiple triggers:
-   * 1. Immediate check on app startup
-   * 2. Periodic polling every 30 minutes
-   * 3. Check when app regains focus (user switches back to the tab/app)
-   * 4. Check on navigation (useful for SPAs where users stay on the app for long periods)
+   * Initialize service worker update detection with sensible triggers:
+   * 1. Check on app startup
+   * 2. Check when app regains focus (user switches back to the tab/app)
+   * 3. Hourly fallback for long study sessions
    */
   private initServiceWorkerUpdates(): void {
     if (!this.swUpdate.isEnabled || !isPlatformBrowser(this.platformId)) {
@@ -246,15 +245,10 @@ export class AppComponent implements OnDestroy {
         });
       });
 
-    // 1. Check immediately on startup (with small delay to not block initial render)
-    setTimeout(() => this.checkForUpdate('startup'), 3000);
+    // 1. Check on startup (with delay to not block initial render)
+    setTimeout(() => this.checkForUpdate('startup'), 5000);
 
-    // 2. Periodic polling every 30 minutes
-    interval(this.UPDATE_CHECK_INTERVAL)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(() => this.checkForUpdate('interval'));
-
-    // 3. Check when app regains focus (visibility change)
+    // 2. Check when app regains focus (essential for study app - users switch tabs often)
     if (typeof document !== 'undefined') {
       this.document.addEventListener('visibilitychange', () => {
         if (this.document.visibilityState === 'visible') {
@@ -263,13 +257,10 @@ export class AppComponent implements OnDestroy {
       });
     }
 
-    // 4. Check on navigation (for long-running SPA sessions)
-    this.router.events
-      .pipe(
-        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-        takeUntil(this.destroy$)
-      )
-      .subscribe(() => this.checkForUpdate('navigation'));
+    // 3. Hourly fallback for long study sessions
+    interval(this.UPDATE_CHECK_INTERVAL)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.checkForUpdate('interval'));
   }
 
   /**
