@@ -53,6 +53,9 @@ export class SubtitleDisplayComponent {
   private loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
   private lastLoopTime = 0;
 
+  // Scroll state for top fade indicator
+  hasScrollTop = signal(false);
+
   // Keyboard shortcut for loop toggle
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
@@ -92,11 +95,15 @@ export class SubtitleDisplayComponent {
   // Called from template when user scrolls
   onCurrentSubtitleScroll(): void {
     this.lastUserScrollTime = Date.now();
+
+    // Update scroll position indicator for top fade
+    if (this.currentSubtitleInner?.nativeElement) {
+      const scrollTop = this.currentSubtitleInner.nativeElement.scrollTop;
+      this.hasScrollTop.set(scrollTop > 8);
+    }
   }
 
   constructor() {
-    // Sync logic moved to SubtitleService
-
     // Auto-scroll to active cue in the list
     effect(() => {
       if (this.isVideoFullscreen()) return;
@@ -119,6 +126,7 @@ export class SubtitleDisplayComponent {
         // Only auto-scroll if user hasn't scrolled recently
         if (timeSinceUserScroll > this.SCROLL_DEBOUNCE_MS) {
           this.currentSubtitleInner.nativeElement.scrollTop = 0;
+          this.hasScrollTop.set(false);
         }
       }
     });
@@ -132,15 +140,11 @@ export class SubtitleDisplayComponent {
       if (!this.isLoopEnabled() || !targetId) return;
 
       // If we don't have a current cue (e.g. gap between subtitles), do nothing yet
-      // unless we drifted too far.
       if (!currentCue) {
-        // Option: Check if we are past the target cue's end time significantly?
-        // For now, let's rely on cue presence or time check.
         return;
       }
 
       // 1. Detect if user manually seeked away or we drifted too far to a DIFFERENT, NON-ADJACENT cue
-      // We check if current cue is the target cue or the immediately following one
       const subtitles = this.subtitles.subtitles();
       const currentCueIndex = subtitles.findIndex(c => c.id === currentCue.id);
       const targetCueIndex = subtitles.findIndex(c => c.id === targetId);
@@ -182,7 +186,7 @@ export class SubtitleDisplayComponent {
               this.loopCount.update(c => c + 1);
               this.youtube.seekTo(targetCue.startTime);
               this.lastLoopTime = Date.now();
-              this.loopTimeoutId = null; // Reset timeout ref
+              this.loopTimeoutId = null;
             }, 300);
           }
         } else {
@@ -192,8 +196,6 @@ export class SubtitleDisplayComponent {
       }
     });
   }
-
-  // Removed ngAfterViewChecked as we use effect now
 
   private scrollToActiveCue(cueId: string): void {
     if (!this.subtitleList?.nativeElement) return;
@@ -231,7 +233,6 @@ export class SubtitleDisplayComponent {
 
   // Check if a string is punctuation (CJK + Western)
   isPunctuation(text: string): boolean {
-    // Regex covers: CJK punctuation, Western punctuation, brackets, whitespace
     const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–]+$/u;
     return punctuationRegex.test(text);
   }
@@ -251,7 +252,7 @@ export class SubtitleDisplayComponent {
     const lang = this.settings.settings().language;
     if (lang === 'ja') return token.reading;
     if (lang === 'zh') return token.pinyin;
-    return token.romanization || token.pinyin; // Fallback to pinyin if romanization missing (or if used interchangeably)
+    return token.romanization || token.pinyin;
   }
 
   toggleReading(): void {
@@ -259,7 +260,7 @@ export class SubtitleDisplayComponent {
     if (lang === 'ja') {
       this.settings.toggleFurigana();
     } else {
-      this.settings.togglePinyin(); // Reusing pinyin toggle for other langs for now
+      this.settings.togglePinyin();
     }
   }
 
