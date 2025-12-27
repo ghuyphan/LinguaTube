@@ -18,6 +18,8 @@ export class YoutubeService {
   private resolveApiReady!: () => void;
   private timeUpdateInterval: any = null;
 
+  private readonly STORAGE_KEY = 'lingua-tube-last-video';
+
   readonly currentVideo = signal<VideoInfo | null>(null);
   readonly isPlaying = signal(false);
   readonly currentTime = signal(0);
@@ -26,6 +28,39 @@ export class YoutubeService {
   readonly isEnded = signal(false);
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null);
+
+  /**
+   * Get the last video ID from localStorage (for restoring after page reload)
+   */
+  getLastVideoId(): string | null {
+    try {
+      return localStorage.getItem(this.STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Save video ID to localStorage
+   */
+  private saveLastVideoId(videoId: string): void {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, videoId);
+    } catch {
+      // localStorage might be unavailable
+    }
+  }
+
+  /**
+   * Clear the last video ID from localStorage
+   */
+  clearLastVideoId(): void {
+    try {
+      localStorage.removeItem(this.STORAGE_KEY);
+    } catch {
+      // localStorage might be unavailable
+    }
+  }
 
   private wasPausedOnLeave = false;
   private isSeeking = false;
@@ -196,6 +231,9 @@ export class YoutubeService {
                 duration: duration,
                 channel: metadata.channel
               });
+
+              // Persist video ID for page reload recovery
+              this.saveLastVideoId(videoId);
 
               this.isReady.set(true);
               this.startTimeTracking();
@@ -405,5 +443,6 @@ export class YoutubeService {
     this.currentTime.set(0);
     this.duration.set(0);
     this.pendingVideoId.set(null);
+    this.clearLastVideoId();
   }
 }

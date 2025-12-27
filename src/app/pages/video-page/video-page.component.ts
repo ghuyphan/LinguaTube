@@ -164,6 +164,16 @@ export class VideoPageComponent implements OnInit {
           this.lastLang = currentLang;
           this.fetchCaptions(videoId);
         }
+      } else {
+        // No video ID in URL - check localStorage for recovery
+        const savedVideoId = this.youtube.getLastVideoId();
+        if (savedVideoId) {
+          // Redirect to URL with query param to keep URL as source of truth
+          this.router.navigate(['/video'], {
+            queryParams: { id: savedVideoId },
+            replaceUrl: true  // Don't add to history
+          });
+        }
       }
     });
   }
