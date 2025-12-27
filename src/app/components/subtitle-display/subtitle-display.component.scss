@@ -689,4 +689,12 @@ ruby rt {
         font-size: 1rem;
         line-height: 1.8;
     }
+
+    .current-subtitle--small .subtitle-text {
+        font-size: 0.875rem;
+    }
+
+    .current-subtitle--large .subtitle-text {
+        font-size: 1.125rem;
+    }
 }
