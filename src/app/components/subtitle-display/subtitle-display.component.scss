@@ -33,10 +33,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    /* Center short content, scroll long content */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     /* Hide scrollbar but keep functionality */
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -58,6 +54,8 @@
     border-radius: var(--border-radius-lg);
     padding: 4px 12px;
     max-width: 100%;
+    /* Centers short content, collapses for long content */
+    margin: auto 0;
 }
 
 .subtitle-content {
