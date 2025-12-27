@@ -1,5 +1,5 @@
-// Dictionary Panel - Redesigned to match video page styling
-// Consistent with vocab-panel pattern
+// Dictionary Panel - Fresh Modern Redesign
+// Clean, airy, and easy to scan
 
 .dict-panel {
     background: var(--bg-card);
@@ -7,22 +7,20 @@
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    height: auto;
 }
 
 // ============================================
-// HEADER - Left-aligned, compact
+// HEADER - Clean and minimal
 // ============================================
 .dict-header {
-    padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-row {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    flex-wrap: wrap;
 }
 
 .dict-icon {
@@ -43,14 +41,13 @@
 }
 
 // ============================================
-// SEARCH FILTERS - Compact
+// SEARCH BAR - Modern pill style
 // ============================================
 .dict-filters {
     display: flex;
     gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
-    background: var(--bg-card);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-secondary);
 }
 
 .search-box {
@@ -61,32 +58,31 @@
     min-width: 0;
 }
 
-
-
 .search-btn {
     height: var(--btn-height-md);
-    min-width: 4.375rem;
-    font-size: 0.8125rem;
+    min-width: 5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
     flex-shrink: 0;
+    border-radius: var(--border-radius);
 }
 
-
-
 // ============================================
-// RESULTS - Left-aligned, compact
+// RESULTS AREA
 // ============================================
 .dict-results {
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-lg);
+    min-height: 10rem;
 }
 
 .result-content {
-    animation: fadeIn 0.25s ease;
+    animation: fadeSlideIn 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes fadeSlideIn {
     from {
         opacity: 0;
-        transform: translateY(4px);
+        transform: translateY(8px);
     }
 
     to {
@@ -95,71 +91,77 @@
     }
 }
 
+// ============================================
+// RESULT HEADER - Word display
+// ============================================
 .result-header {
-    margin-bottom: var(--space-md);
-    text-align: left;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .result-word {
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 1.2;
-    display: inline;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin: 0;
+    display: block;
 }
 
 .result-reading {
-    font-size: 1rem;
+    display: block;
+    font-size: 1.125rem;
     color: var(--text-secondary);
-    margin-left: var(--space-sm);
+    margin-top: var(--space-xs);
+    font-weight: 400;
 }
 
 .result-badges {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
 }
 
 .badge {
     display: inline-flex;
-    padding: 0.125rem var(--space-sm);
+    align-items: center;
+    padding: 0.25rem 0.625rem;
     font-size: 0.6875rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     color: var(--accent-primary);
-    background: rgba(199, 62, 58, 0.1);
-    border-radius: var(--space-xs);
+    background: rgba(199, 62, 58, 0.08);
+    border-radius: 100px;
 }
 
 // ============================================
-// MEANINGS - Clean list
+// MEANINGS - Clean numbered list
 // ============================================
 .result-meanings {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-md);
-    padding-top: var(--space-md);
-    // border-top: 1px solid var(--border-color);
+    gap: var(--space-md);
 }
 
 .meaning-item {
     display: flex;
-    gap: var(--space-sm);
+    gap: var(--space-md);
     align-items: flex-start;
 }
 
 .meaning-num {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-muted);
-    background: var(--bg-secondary);
+    color: white;
+    background: var(--accent-primary);
     border-radius: 50%;
     flex-shrink: 0;
     margin-top: 2px;
@@ -167,10 +169,11 @@
 
 .meaning-content {
     flex: 1;
+    min-width: 0;
 }
 
 .meaning-text {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--text-primary);
     line-height: 1.5;
 }
@@ -179,29 +182,74 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
-    margin-top: var(--space-xs);
+    margin-top: var(--space-sm);
 }
 
 .tag {
-    font-size: 0.625rem;
-    padding: 0.125rem 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    padding: 0.1875rem 0.5rem;
     background: var(--bg-secondary);
     color: var(--text-muted);
-    border-radius: var(--space-xs);
+    border-radius: 4px;
 }
 
 // ============================================
-// ACTIONS
+// SAVE ACTION
 // ============================================
 .result-actions {
-    padding-top: var(--space-md);
-    // border-top: 1px solid var(--border-color);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-color);
+
+    .btn {
+        width: 100%;
+        height: var(--btn-height-lg);
+        font-size: 0.9375rem;
+        font-weight: 500;
+        border-radius: var(--border-radius);
+        justify-content: center;
+    }
+
+    .btn-secondary {
+        background: var(--bg-secondary);
+        color: var(--text-muted);
+    }
 }
 
+// ============================================
+// EMPTY STATE
+// ============================================
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+    min-height: 8rem;
+}
 
+.empty-state__icon {
+    color: var(--text-muted);
+    opacity: 0.4;
+    margin-bottom: var(--space-md);
+}
+
+.empty-state__title {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.empty-state__hint {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
 
 // ============================================
-// RECENT SEARCHES - Chip style
+// RECENT SEARCHES
 // ============================================
 .dict-recent {
     padding: 0;
@@ -240,15 +288,6 @@
     transition: all var(--transition-fast);
 }
 
-/* Hover effect removed
-@media (hover: hover) {
-    .clear-all-btn:hover {
-        color: var(--accent-primary);
-        background: rgba(199, 62, 58, 0.1);
-    }
-}
-*/
-
 .recent-list {
     display: flex;
     flex-wrap: wrap;
@@ -259,27 +298,16 @@
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    padding: 0.375rem 0.5rem 0.375rem 0.75rem;
-    font-size: 0.875rem;
+    padding: 0.5rem 0.625rem 0.5rem 0.875rem;
+    font-size: 0.9375rem;
     font-family: var(--font-jp);
-    background: var(--bg-secondary);
+    background: var(--bg-card);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     border-radius: 100px;
     cursor: pointer;
     transition: all var(--transition-fast);
 }
-
-/* Hover effect removed
-@media (hover: hover) {
-    .recent-item:hover {
-        border-color: var(--accent-primary);
-        color: var(--accent-primary);
-        background: var(--bg-card);
-        transform: translateY(-1px);
-    }
-}
-*/
 
 .recent-term {
     line-height: 1;
@@ -289,8 +317,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.125rem;
-    height: 1.125rem;
+    width: 1.25rem;
+    height: 1.25rem;
     border-radius: 50%;
     background: transparent;
     color: var(--text-muted);
@@ -298,24 +326,40 @@
     flex-shrink: 0;
 }
 
-/* Hover effect removed
-@media (hover: hover) {
-    .recent-delete:hover {
-        background: rgba(199, 62, 58, 0.15);
-        color: var(--accent-primary);
-    }
-}
-*/
-
 // ============================================
-// MOBILE RESPONSIVE - Flat list style
+// TABLET RESPONSIVE
 // ============================================
 @media (max-width: 768px) {
-    .dict-panel {
-        border-radius: var(--border-radius-lg);
-        border: 1px solid var(--border-color);
+    .dict-header {
+        padding: var(--space-sm) var(--space-md);
+        border-bottom: none;
     }
 
+    .dict-filters {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .dict-results {
+        padding: var(--space-md);
+    }
+
+    .result-word {
+        font-size: 2rem;
+    }
+
+    .result-reading {
+        font-size: 1rem;
+    }
+
+    .meaning-text {
+        font-size: 0.9375rem;
+    }
+}
+
+// ============================================
+// MOBILE RESPONSIVE
+// ============================================
+@media (max-width: 480px) {
     .dict-header {
         padding: var(--space-sm) var(--space-md);
     }
@@ -324,35 +368,55 @@
         padding: var(--space-sm);
     }
 
-    .dict-results {
-        padding: var(--space-md);
-    }
-}
-
-@media (max-width: 480px) {
-    .dict-header {
-        padding: var(--space-sm) var(--space-md);
-    }
-
-
-
     .search-input {
         font-size: 16px; // Prevents zoom on iOS
     }
 
+    .dict-results {
+        padding: var(--space-md);
+    }
+
+    .result-header {
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
     .result-word {
-        font-size: 1.5rem;
-        display: block;
+        font-size: 1.75rem;
     }
 
     .result-reading {
-        display: block;
-        margin-left: 0;
-        margin-top: var(--space-xs);
+        font-size: 0.9375rem;
     }
 
-    .result-actions .btn {
-        width: 100%;
-        justify-content: center;
+    .result-badges {
+        margin-top: var(--space-sm);
+    }
+
+    .result-meanings {
+        gap: var(--space-sm);
+    }
+
+    .meaning-item {
+        gap: var(--space-sm);
+    }
+
+    .meaning-num {
+        width: 1.375rem;
+        height: 1.375rem;
+        font-size: 0.6875rem;
+    }
+
+    .meaning-text {
+        font-size: 0.875rem;
+    }
+
+    .result-actions {
+        margin-top: var(--space-lg);
+        padding-top: var(--space-md);
+    }
+
+    .empty-state {
+        padding: var(--space-xl) var(--space-md);
     }
 }
