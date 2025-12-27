@@ -7,7 +7,7 @@ import { YoutubeService } from './youtube.service';
 // ============================================================================
 
 const MAX_CACHE_SIZE = 500;
-const BATCH_SIZE = 50;
+
 const TOKEN_STORAGE_KEY = 'linguatube_tokens';
 const MAX_STORED_VIDEOS = 10;
 
@@ -389,14 +389,35 @@ export class SubtitleService {
 
   /**
    * Get tokens for a cue (pre-computed or fallback)
+   * Detects if API returned a suspiciously single token and falls back
    */
   getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko' | 'en'): Token[] {
+    // Check if we have tokens and they look valid
     if (cue.tokens?.length) {
+      // Detect bad tokenization: if we only have 1 token for a long text,
+      // the API likely failed to tokenize properly
+      if (cue.tokens.length === 1 && cue.text.length > 5) {
+        const singleToken = cue.tokens[0].surface;
+        // If the single token is basically the whole text, re-tokenize locally
+        if (singleToken.length > cue.text.length * 0.8) {
+          return this.fallbackTokenize(cue.text, lang);
+        }
+      }
       return cue.tokens;
     }
 
     const cacheKey = `${lang}:${cue.text}`;
-    return this.tokenCache.get(cacheKey) || this.fallbackTokenize(cue.text, lang);
+    const cached = this.tokenCache.get(cacheKey);
+
+    // Same check for cached tokens
+    if (cached?.length === 1 && cue.text.length > 5) {
+      const singleToken = cached[0].surface;
+      if (singleToken.length > cue.text.length * 0.8) {
+        return this.fallbackTokenize(cue.text, lang);
+      }
+    }
+
+    return cached || this.fallbackTokenize(cue.text, lang);
   }
 
   /**
@@ -445,7 +466,7 @@ export class SubtitleService {
   private async batchTokenize(texts: string[], lang: string, videoId?: string): Promise<Token[][]> {
     const signal = this.abortController?.signal;
 
-    // If we have a videoId, use the new batch endpoint (1 KV write)
+    // Try batch endpoint first (requires videoId)
     if (videoId) {
       try {
         const response = await fetch(`/api/tokenize-batch/${lang}`, {
@@ -463,52 +484,18 @@ export class SubtitleService {
         }
       } catch (error) {
         if ((error as Error).name === 'AbortError') throw error;
-        console.warn('[SubtitleService] Batch tokenize failed, falling back to individual');
+        console.warn('[SubtitleService] Batch tokenize failed, using local fallback');
       }
     }
 
-    // Fallback: individual tokenization (old approach)
-    const results: Token[][] = [];
-    for (let i = 0; i < texts.length; i += BATCH_SIZE) {
-      if (signal?.aborted) {
-        throw new DOMException('Aborted', 'AbortError');
-      }
-
-      const chunk = texts.slice(i, i + BATCH_SIZE);
-      const chunkResults = await Promise.all(
-        chunk.map(text => this.tokenizeSingle(text, lang, signal))
-      );
-      results.push(...chunkResults);
-    }
-
-    return results;
+    // Fallback: use local tokenization (no API calls = no rate limit issues)
+    // This is less accurate than server-side kuromoji for Japanese,
+    // but prevents exhausting user's rate limit
+    console.log('[SubtitleService] Using local fallback tokenization');
+    return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en'));
   }
 
-  private async tokenizeSingle(
-    text: string,
-    lang: string,
-    signal?: AbortSignal
-  ): Promise<Token[]> {
-    try {
-      const response = await fetch(`/api/tokenize/${lang}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text }),
-        signal
-      });
 
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const data = await response.json();
-      return data.tokens || [];
-
-    } catch (error) {
-      if ((error as Error).name === 'AbortError') throw error;
-      return this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko');
-    }
-  }
 
   private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko' | 'en'): Token[] {
     if (!text.trim()) return [];
