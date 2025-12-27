@@ -31,6 +31,7 @@ export class SubtitleDisplayComponent {
   i18n = inject(I18nService);
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
+  @ViewChild('currentSubtitleInner') currentSubtitleInner!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
 
@@ -84,10 +85,19 @@ export class SubtitleDisplayComponent {
     return this.subtitles.getTokens(cue, lang);
   });
 
+  // Track when user last scrolled the current subtitle display
+  private lastUserScrollTime = 0;
+  private readonly SCROLL_DEBOUNCE_MS = 1500; // 1.5 seconds
+
+  // Called from template when user scrolls
+  onCurrentSubtitleScroll(): void {
+    this.lastUserScrollTime = Date.now();
+  }
+
   constructor() {
     // Sync logic moved to SubtitleService
 
-    // Auto-scroll to active cue using effect for better reactivity
+    // Auto-scroll to active cue in the list
     effect(() => {
       if (this.isVideoFullscreen()) return;
       const currentCue = this.subtitles.currentCue();
@@ -95,6 +105,21 @@ export class SubtitleDisplayComponent {
       if (currentCue && this.subtitleList?.nativeElement) {
         // Use timeout to allow DOM update (class changes) before measuring
         setTimeout(() => this.scrollToActiveCue(currentCue.id), 0);
+      }
+    });
+
+    // Auto-scroll current subtitle display to top when cue changes
+    // But skip if user has scrolled recently (avoids fighting with user)
+    effect(() => {
+      if (this.isVideoFullscreen()) return;
+      const currentCue = this.subtitles.currentCue();
+      // When cue changes, scroll to top so user sees start of subtitle
+      if (currentCue && this.currentSubtitleInner?.nativeElement) {
+        const timeSinceUserScroll = Date.now() - this.lastUserScrollTime;
+        // Only auto-scroll if user hasn't scrolled recently
+        if (timeSinceUserScroll > this.SCROLL_DEBOUNCE_MS) {
+          this.currentSubtitleInner.nativeElement.scrollTop = 0;
+        }
       }
     });
 
