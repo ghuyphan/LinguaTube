@@ -100,7 +100,8 @@
         "tryDifferent": "다른 철자나 검색어를 시도해 보세요",
         "recentSearches": "최근 검색",
         "enterWordAbove": "위에 단어를 입력하여 의미를 찾아보세요",
-        "saveToVocab": "단어장에 저장"
+        "saveToVocab": "단어장에 저장",
+        "clearAll": "모두 삭제"
     },
     "settings": {
         "title": "설정",

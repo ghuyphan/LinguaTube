@@ -181,6 +181,10 @@ export class VideoPlayerComponent implements OnDestroy {
   @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
 
   // Keyboard controls
+  clearUrl() {
+    this.videoUrl = '';
+  }
+
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
     if (!this.youtube.currentVideo()) return;
@@ -516,7 +520,8 @@ export class VideoPlayerComponent implements OnDestroy {
       this.gestureSeekTime.set(newTime);
     }
 
-    // Handle vertical swipe on right side (volume)
+    // Handle vertical swipe on right side (volume) - DISABLED for mobile per user request
+    /*
     if (this.touchState.hasMoved && absY > absX && this.touchState.startX > window.innerWidth * VOLUME_GESTURE_ZONE) {
       event.preventDefault();
       const volumeDelta = -deltaY * 0.5;
@@ -525,6 +530,7 @@ export class VideoPlayerComponent implements OnDestroy {
       this.youtube.setVolume(Math.round(newVolume));
       this.showVolumeFeedback();
     }
+    */
   }
 
   onOverlayTouchEnd(event: TouchEvent) {
@@ -993,6 +999,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   startSeeking(event: MouseEvent | TouchEvent) {
     event.preventDefault();
+    this.showControls();
     this.isDragging.set(true);
     this.updateSeek(event);
 

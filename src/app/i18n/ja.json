@@ -100,7 +100,8 @@
         "tryDifferent": "別のスペルや検索語をお試しください",
         "recentSearches": "最近の検索",
         "enterWordAbove": "上に単語を入力して意味を調べる",
-        "saveToVocab": "単語帳に保存"
+        "saveToVocab": "単語帳に保存",
+        "clearAll": "すべて削除"
     },
     "settings": {
         "title": "設定",

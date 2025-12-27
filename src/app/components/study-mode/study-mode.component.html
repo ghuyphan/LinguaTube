@@ -1,56 +1,71 @@
 <div class="study-mode">
-    @if (!isStudying()) {
-    <!-- Study Start Screen -->
-    <div class="study-start card">
-        <div class="study-start__header">
-            <app-icon name="graduation-cap" [size]="48" class="study-icon" />
-            <h2>{{ i18n.t('study.title') }}</h2>
-            <p>{{ i18n.t('study.subtitle') }}</p>
+    @if (!isStudying() && !isComplete()) {
+    <!-- Study Start Screen - Redesigned to match vocab-panel -->
+    <div class="study-start">
+        <div class="study-header">
+            <div class="header-row">
+                <app-icon name="graduation-cap" [size]="24" class="study-icon" />
+                <h2>{{ i18n.t('study.title') }}</h2>
+            </div>
+            <p class="study-subtitle">{{ i18n.t('study.subtitle') }}</p>
         </div>
 
         <div class="study-stats">
-            <div class="stat-card">
+            <div class="stat-badge stat-badge--new">
                 <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).new }}</span>
                 <span class="stat-label">{{ i18n.t('study.new') }}</span>
             </div>
-            <div class="stat-card">
+            <div class="stat-badge stat-badge--learning">
                 <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
                 <span class="stat-label">{{ i18n.t('study.learning') }}</span>
             </div>
-            <div class="stat-card">
+            <div class="stat-badge stat-badge--known">
                 <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
                 <span class="stat-label">{{ i18n.t('study.known') }}</span>
             </div>
         </div>
 
         <div class="study-options">
-            <label class="option-item">
-                <input type="checkbox" [(checked)]="includeNew" />
-                <span>{{ i18n.t('study.includeNew') }}</span>
-            </label>
-            <label class="option-item">
-                <input type="checkbox" [(checked)]="includeLearning" />
-                <span>{{ i18n.t('study.includeLearning') }}</span>
-            </label>
-            <label class="option-item">
-                <input type="checkbox" [(checked)]="includeKnown" />
-                <span>{{ i18n.t('study.reviewKnown') }}</span>
-            </label>
+            <div class="option-item">
+                <span class="option-label">{{ i18n.t('study.includeNew') }}</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" [(checked)]="includeNew" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="option-item">
+                <span class="option-label">{{ i18n.t('study.includeLearning') }}</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" [(checked)]="includeLearning" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="option-item">
+                <span class="option-label">{{ i18n.t('study.reviewKnown') }}</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" [(checked)]="includeKnown" />
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
 
-        @if (availableCards() > 0) {
-        <button class="btn btn-primary btn-lg" (click)="startSession()">
-            <app-icon name="play" [size]="18" />
-            {{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})
-        </button>
-        } @else {
-        <div class="no-cards">
-            <app-icon name="info" [size]="20" />
-            <p>{{ i18n.t('study.noWords') }}</p>
+        <div class="study-action">
+            @if (availableCards() > 0) {
+            <button class="btn btn-primary start-btn" (click)="startSession()">
+                <app-icon name="play" [size]="16" />
+                {{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})
+            </button>
+            } @else {
+            <div class="no-cards">
+                <app-icon name="info" [size]="18" />
+                <span>{{ i18n.t('study.noWords') }}</span>
+            </div>
+            }
         </div>
-        }
     </div>
-    } @else {
+    }
+
+    @if (isStudying()) {
     <!-- Study Session -->
     <div class="study-session">
         <!-- Progress -->
@@ -110,19 +125,19 @@
         @if (currentCard()!.showAnswer) {
         <div class="answer-buttons">
             <button class="answer-btn answer-btn--wrong" (click)="markAnswer('wrong')">
-                <app-icon name="x" [size]="20" />
+                <app-icon name="x" [size]="18" />
                 <span>{{ i18n.t('study.again') }}</span>
             </button>
             <button class="answer-btn answer-btn--hard" (click)="markAnswer('hard')">
-                <app-icon name="rotate-ccw" [size]="20" />
+                <app-icon name="rotate-ccw" [size]="18" />
                 <span>{{ i18n.t('study.hard') }}</span>
             </button>
             <button class="answer-btn answer-btn--good" (click)="markAnswer('good')">
-                <app-icon name="check" [size]="20" />
+                <app-icon name="check" [size]="18" />
                 <span>{{ i18n.t('study.good') }}</span>
             </button>
             <button class="answer-btn answer-btn--easy" (click)="markAnswer('easy')">
-                <app-icon name="chevron-right" [size]="20" />
+                <app-icon name="chevron-right" [size]="18" />
                 <span>{{ i18n.t('study.easy') }}</span>
             </button>
         </div>
@@ -133,24 +148,28 @@
 
     <!-- Session Complete -->
     @if (isComplete()) {
-    <div class="session-complete card">
-        <app-icon name="check" [size]="48" class="complete-icon" />
-        <h2>{{ i18n.t('study.sessionComplete') }}</h2>
+    <div class="session-complete">
+        <div class="complete-header">
+            <app-icon name="check" [size]="32" class="complete-icon" />
+            <h2>{{ i18n.t('study.sessionComplete') }}</h2>
+        </div>
+
         <div class="complete-stats">
-            <div class="complete-stat">
+            <div class="stat-badge">
                 <span class="stat-value">{{ sessionStats().total }}</span>
                 <span class="stat-label">{{ i18n.t('study.cardsReviewed') }}</span>
             </div>
-            <div class="complete-stat">
-                <span class="stat-value stat-value--success">{{ sessionStats().correct }}</span>
+            <div class="stat-badge stat-badge--known">
+                <span class="stat-value">{{ sessionStats().correct }}</span>
                 <span class="stat-label">{{ i18n.t('study.correct') }}</span>
             </div>
-            <div class="complete-stat">
-                <span class="stat-value stat-value--error">{{ sessionStats().incorrect }}</span>
+            <div class="stat-badge stat-badge--new">
+                <span class="stat-value">{{ sessionStats().incorrect }}</span>
                 <span class="stat-label">{{ i18n.t('study.toReview') }}</span>
             </div>
         </div>
-        <button class="btn btn-primary" (click)="resetSession()">
+
+        <button class="btn btn-primary start-btn" (click)="resetSession()">
             <app-icon name="rotate-ccw" [size]="16" />
             {{ i18n.t('study.studyAgain') }}
         </button>

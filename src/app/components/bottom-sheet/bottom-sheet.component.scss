@@ -63,7 +63,31 @@
     transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-/* Drag handle */
+/* Close button - similar to word popup */
+.sheet-close-btn {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: 10;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.sheet-close-btn:hover {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Ensure drag handle doesn't conflict */
 .sheet-drag-handle {
     display: none;
     padding: 12px 0 4px;

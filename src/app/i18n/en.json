@@ -100,7 +100,8 @@
         "tryDifferent": "Try a different spelling or search term",
         "recentSearches": "Recent Searches",
         "enterWordAbove": "Enter a word above to look up its meaning",
-        "saveToVocab": "Save to Vocabulary"
+        "saveToVocab": "Save to Vocabulary",
+        "clearAll": "Clear All"
     },
     "settings": {
         "title": "Settings",

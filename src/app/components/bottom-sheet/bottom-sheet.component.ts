@@ -12,12 +12,13 @@ import {
   OnDestroy
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-bottom-sheet',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './bottom-sheet.component.html',
   styleUrl: './bottom-sheet.component.scss'
 })
@@ -34,6 +35,7 @@ export class BottomSheetComponent implements OnDestroy {
   maxHeight = input<string>('85vh');
   showDragHandle = input<boolean>(true);
   allowBackdropClose = input<boolean>(true);
+  showCloseButton = input<boolean>(false);
 
   // Outputs
   closed = output<void>();

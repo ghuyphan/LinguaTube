@@ -79,7 +79,7 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
 
     .layout {
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: 1fr 340px;
       gap: var(--space-lg);
       align-items: start;
       max-width: 1280px;
@@ -102,7 +102,7 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
-      padding: var(--space-lg);
+      padding: var(--space-md);
     }
 
     .sidebar-card h3 {

@@ -12,6 +12,13 @@
         </div>
         }
 
+        <!-- Close Button -->
+        @if (showCloseButton()) {
+        <button class="sheet-close-btn" (click)="close()" type="button" aria-label="Close">
+            <app-icon name="x" [size]="20" />
+        </button>
+        }
+
         <!-- Content projection -->
         <div class="sheet-content" #sheetContent>
             <ng-content />

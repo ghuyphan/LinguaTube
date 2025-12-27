@@ -1,8 +1,5 @@
-<app-bottom-sheet [isOpen]="isVisible()" [showDragHandle]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isVisible()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="popup-content">
-        <button class="popup-close" (click)="close()">
-            <app-icon name="x" [size]="18" />
-        </button>
 
         <div class="popup-header">
             <h2 class="popup-word" [class]="'text-' + settings.settings().language">

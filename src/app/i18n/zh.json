@@ -100,7 +100,8 @@
         "tryDifferent": "请尝试其他拼写或搜索词",
         "recentSearches": "最近搜索",
         "enterWordAbove": "在上方输入词汇查询释义",
-        "saveToVocab": "保存到词汇本"
+        "saveToVocab": "保存到词汇本",
+        "clearAll": "清除全部"
     },
     "settings": {
         "title": "设置",

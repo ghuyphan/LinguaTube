@@ -1,6 +1,9 @@
 <div class="vocab-panel">
     <div class="vocab-header">
-        <h2 class="vocab-title">{{ i18n.t('vocab.title') }}</h2>
+        <div class="header-row">
+            <app-icon name="book-open" [size]="20" class="vocab-icon" />
+            <h2 class="vocab-title">{{ i18n.t('vocab.title') }}</h2>
+        </div>
         <div class="vocab-badges">
             <span class="badge badge--new">{{ vocab.getStatsByLanguage(settings.settings().language).new }} {{
                 i18n.t('vocab.new') }}</span>

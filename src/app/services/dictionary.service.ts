@@ -10,6 +10,7 @@ export class DictionaryService {
   readonly isLoading = signal(false);
   readonly lastLookup = signal<DictionaryEntry | null>(null);
   readonly lastQuery = signal<string>(''); // Persistence for search term
+  readonly recentSearches = signal<string[]>([]); // Shared recent searches state
 
   // Use proxy to avoid CORS issues
   private readonly JOTOBA_API = '/proxy/jotoba/api/search/words';
@@ -19,9 +20,40 @@ export class DictionaryService {
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
+  private readonly RECENT_KEY = 'linguatube-recent-searches';
   private readonly MAX_CACHE_SIZE = 200;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    // Load recent searches from localStorage on init
+    this.loadRecentSearches();
+  }
+
+  private loadRecentSearches(): void {
+    try {
+      const saved = localStorage.getItem(this.RECENT_KEY);
+      if (saved) {
+        this.recentSearches.set(JSON.parse(saved));
+      }
+    } catch { }
+  }
+
+  addToRecentSearches(term: string): void {
+    const current = this.recentSearches();
+    const updated = [term, ...current.filter(t => t !== term)].slice(0, 10);
+    this.recentSearches.set(updated);
+    localStorage.setItem(this.RECENT_KEY, JSON.stringify(updated));
+  }
+
+  removeRecentSearch(term: string): void {
+    const updated = this.recentSearches().filter(t => t !== term);
+    this.recentSearches.set(updated);
+    localStorage.setItem(this.RECENT_KEY, JSON.stringify(updated));
+  }
+
+  clearAllRecentSearches(): void {
+    this.recentSearches.set([]);
+    localStorage.removeItem(this.RECENT_KEY);
+  }
 
   /**
    * Look up a Japanese word using Jotoba API

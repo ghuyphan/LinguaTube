@@ -27,7 +27,9 @@ export class DictionaryPanelComponent {
   isLoading = signal(false);
   hasSearched = signal(false);
   isSaved = signal(false);
-  recentSearches = signal<string[]>([]);
+
+  // Use shared service state for recent searches
+  recentSearches = this.dictionary.recentSearches;
 
   constructor() {
     // Init from service state (persistence)
@@ -38,14 +40,6 @@ export class DictionaryPanelComponent {
       this.hasSearched.set(true);
       this.lastQuery = this.searchQuery;
       this.isSaved.set(this.vocab.hasWord(this.result()!.word));
-    }
-
-    // Load recent searches from localStorage
-    const saved = localStorage.getItem('linguatube-recent-searches');
-    if (saved) {
-      try {
-        this.recentSearches.set(JSON.parse(saved));
-      } catch { }
     }
   }
 
@@ -101,9 +95,15 @@ export class DictionaryPanelComponent {
   }
 
   private addToRecent(term: string): void {
-    const current = this.recentSearches();
-    const updated = [term, ...current.filter(t => t !== term)].slice(0, 10);
-    this.recentSearches.set(updated);
-    localStorage.setItem('linguatube-recent-searches', JSON.stringify(updated));
+    this.dictionary.addToRecentSearches(term);
+  }
+
+  removeRecentSearch(term: string, event: Event): void {
+    event.stopPropagation(); // Prevent triggering the search
+    this.dictionary.removeRecentSearch(term);
+  }
+
+  clearAllRecentSearches(): void {
+    this.dictionary.clearAllRecentSearches();
   }
 }

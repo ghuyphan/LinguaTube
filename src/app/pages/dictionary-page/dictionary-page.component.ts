@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { DictionaryPanelComponent } from '../../components/dictionary-panel/dictionary-panel.component';
@@ -57,11 +57,19 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
 
         @if (recentSearches().length > 0) {
           <div class="sidebar-card">
-            <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
+            <div class="recent-header">
+              <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
+              <button class="clear-all-btn" (click)="clearAllRecentSearches()">
+                {{ i18n.t('dictionary.clearAll') }}
+              </button>
+            </div>
             <div class="recent-list">
               @for (term of recentSearches(); track term) {
                 <button class="recent-chip" (click)="searchTerm(term)">
-                  {{ term }}
+                  <span class="recent-term">{{ term }}</span>
+                  <span class="recent-delete" (click)="removeRecentSearch(term, $event)">
+                    <app-icon name="x" [size]="12" />
+                  </span>
                 </button>
               }
             </div>
@@ -82,7 +90,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
 
     .layout {
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: 1fr 340px;
       gap: var(--space-lg);
       align-items: start;
       max-width: 1280px;
@@ -105,7 +113,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
-      padding: var(--space-lg);
+      padding: var(--space-md);
     }
 
     .sidebar-card h3 {
@@ -114,13 +122,36 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       margin-bottom: var(--space-md);
     }
 
-    .sidebar-card h4 {
+    .recent-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-sm);
+    }
+
+    .recent-header h4 {
       font-size: 0.8125rem;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: var(--space-sm);
+      margin: 0;
+    }
+
+    .clear-all-btn {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--border-radius);
+      transition: all var(--transition-fast);
+    }
+
+    .clear-all-btn:hover {
+      color: var(--accent-primary);
+      background: rgba(199, 62, 58, 0.1);
     }
 
     .stats-grid {
@@ -176,7 +207,10 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     }
 
     .recent-chip {
-      padding: 6px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.5rem 0.375rem 0.75rem;
       font-size: 0.875rem;
       background: var(--bg-secondary);
       color: var(--text-primary);
@@ -186,10 +220,35 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       transition: all var(--transition-fast);
     }
 
-    .recent-chip:hover {
-      border-color: var(--accent-primary);
+    @media (hover: hover) {
+      .recent-chip:hover {
+        border-color: var(--accent-primary);
+        color: var(--accent-primary);
+        background: var(--bg-card);
+        transform: translateY(-1px);
+      }
+    }
+
+    .recent-term {
+      line-height: 1;
+    }
+
+    .recent-delete {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.125rem;
+      height: 1.125rem;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--text-muted);
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .recent-delete:hover {
+      background: rgba(199, 62, 58, 0.15);
       color: var(--accent-primary);
-      background: var(--bg-card);
     }
 
     .desktop-only {
@@ -210,7 +269,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     @media (max-width: 768px) {
       .layout {
         grid-template-columns: 1fr;
-        gap: var(--space-md);
+        gap: var(--space-xl);
       }
 
       .desktop-only {
@@ -248,22 +307,22 @@ export class DictionaryPageComponent {
     return this.vocab.getStatsByLanguage(this.settings.settings().language);
   });
 
-  recentSearches = computed(() => {
-    const saved = localStorage.getItem('linguatube-recent-searches');
-    if (saved) {
-      try {
-        return JSON.parse(saved).slice(0, 6) as string[];
-      } catch {
-        return [];
-      }
-    }
-    return [];
-  });
+  // Use shared service state for recent searches (sliced to 6 for sidebar display)
+  recentSearches = computed(() => this.dictionary.recentSearches().slice(0, 6));
 
   searchTerm(term: string): void {
     // Set the query in dictionary service, which the panel will pick up
     this.dictionary.lastQuery.set(term);
     // Trigger a re-render by updating localStorage timestamp
     localStorage.setItem('linguatube-search-trigger', Date.now().toString());
+  }
+
+  removeRecentSearch(term: string, event: Event): void {
+    event.stopPropagation();
+    this.dictionary.removeRecentSearch(term);
+  }
+
+  clearAllRecentSearches(): void {
+    this.dictionary.clearAllRecentSearches();
   }
 }

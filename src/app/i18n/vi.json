@@ -100,7 +100,8 @@
         "tryDifferent": "Thử cách viết hoặc từ khác",
         "recentSearches": "Tìm kiếm gần đây",
         "enterWordAbove": "Nhập từ ở trên để tra nghĩa",
-        "saveToVocab": "Lưu vào từ vựng"
+        "saveToVocab": "Lưu vào từ vựng",
+        "clearAll": "Xóa tất cả"
     },
     "settings": {
         "title": "Cài đặt",

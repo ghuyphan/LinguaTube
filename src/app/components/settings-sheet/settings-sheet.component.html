@@ -92,31 +92,7 @@
             </button>
         </div>
 
-        <!-- Stats -->
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.vocabStats') }}</h3>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
-                    <span class="stat-label">{{ i18n.t('settings.totalWords') }}</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value stat-value--success">{{
-                        vocab.getStatsByLanguage(settings.settings().language).known }}</span>
-                    <span class="stat-label">{{ i18n.t('header.known') }}</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value stat-value--warning">{{
-                        vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
-                    <span class="stat-label">{{ i18n.t('vocab.learning') }}</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value stat-value--new">{{
-                        vocab.getStatsByLanguage(settings.settings().language).new }}</span>
-                    <span class="stat-label">{{ i18n.t('vocab.new') }}</span>
-                </div>
-            </div>
-        </div>
+
     </div>
 </app-bottom-sheet>
 

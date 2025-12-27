@@ -1,6 +1,9 @@
 <div class="dict-panel">
     <div class="dict-header">
-        <h2>{{ i18n.t('dictionary.title') }}</h2>
+        <div class="header-row">
+            <app-icon name="book-open" [size]="20" class="dict-icon" />
+            <h2>{{ i18n.t('dictionary.title') }}</h2>
+        </div>
         <p class="dict-subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
     </div>
 
@@ -42,18 +45,18 @@
                 @if (result()!.romanization) {
                 <span class="result-reading">{{ result()!.romanization }}</span>
                 }
-            </div>
 
-            <div class="result-badges">
-                @if (result()!.jlptLevel) {
-                <span class="badge">{{ result()!.jlptLevel }}</span>
-                }
-                @if (result()!.hskLevel) {
-                <span class="badge">HSK {{ result()!.hskLevel }}</span>
-                }
-                @if (result()!.topikLevel) {
-                <span class="badge">TOPIK {{ result()!.topikLevel }}</span>
-                }
+                <div class="result-badges">
+                    @if (result()!.jlptLevel) {
+                    <span class="badge">{{ result()!.jlptLevel }}</span>
+                    }
+                    @if (result()!.hskLevel) {
+                    <span class="badge">HSK {{ result()!.hskLevel }}</span>
+                    }
+                    @if (result()!.topikLevel) {
+                    <span class="badge">TOPIK {{ result()!.topikLevel }}</span>
+                    }
+                </div>
             </div>
 
             <div class="result-meanings">
@@ -98,11 +101,19 @@
         <!-- Show recent searches here if no current search -->
         @if (recentSearches().length > 0) {
         <div class="dict-recent">
-            <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
+            <div class="recent-header">
+                <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
+                <button class="clear-all-btn" (click)="clearAllRecentSearches()">
+                    {{ i18n.t('dictionary.clearAll') }}
+                </button>
+            </div>
             <div class="recent-list">
                 @for (term of recentSearches(); track term) {
                 <button class="recent-item" (click)="searchRecent(term)">
-                    {{ term }}
+                    <span class="recent-term">{{ term }}</span>
+                    <span class="recent-delete" (click)="removeRecentSearch(term, $event)">
+                        <app-icon name="x" [size]="12" />
+                    </span>
                 </button>
                 }
             </div>

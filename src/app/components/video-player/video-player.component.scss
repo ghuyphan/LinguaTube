@@ -11,7 +11,7 @@ $ripple-size: 5rem; // 80px
 $progress-handle-size: 0.875rem; // 14px
 $progress-handle-size-mobile: 1rem; // 16px
 $control-btn-size: 2.25rem; // 36px
-$control-btn-size-mobile: 2.75rem; // 44px
+$control-btn-size-mobile: 2.25rem; // 36px
 $progress-bar-height: var(--space-xs); // 4px
 $progress-bar-height-hover: 0.375rem; // 6px
 $progress-bar-mobile: var(--space-xs); // 4px
@@ -43,10 +43,11 @@ $text-muted-fallback: #888;
 /* ============================================
    INPUT STATE
    ============================================ */
+// Match dict-panel container style if needed, or keep existing but refined
 .video-input {
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--border-color);
 }
 
@@ -57,27 +58,55 @@ $text-muted-fallback: #888;
 
 .input-wrapper {
   flex: 1;
-  position: relative;
   display: flex;
   align-items: center;
+  position: relative;
+  min-width: 0;
 }
 
 .input-icon {
   position: absolute;
-  left: 0.75rem;
+  left: 1.25rem;
   color: var(--text-muted);
   pointer-events: none;
 }
 
 .url-input {
-  padding-left: 2.5rem;
-  height: 2.75rem;
+  width: 100%;
+  padding-left: 3rem;
+  height: var(--btn-height-md);
+  font-size: 0.875rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-card);
+  transition: all var(--transition-fast);
+}
+
+.url-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
+}
+
+.clear-btn {
+  position: absolute;
+  right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color var(--transition-fast);
 }
 
 .load-btn {
-  height: 2.75rem;
-  padding: 0 1.25rem;
+  height: var(--btn-height-md);
+  min-width: 4.375rem;
+  font-size: 0.8125rem;
   flex-shrink: 0;
+  padding: 0 1.25rem;
 }
 
 .error-banner {
@@ -110,7 +139,6 @@ $text-muted-fallback: #888;
 .video-container {
   background: #000;
   border-radius: var(--border-radius-lg);
-  overflow: hidden;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
@@ -138,6 +166,7 @@ $text-muted-fallback: #888;
   padding-bottom: 56.25%;
   background: #000;
   overflow: hidden;
+  border-radius: inherit;
 }
 
 /* Modern browsers: remove padding-bottom when aspect-ratio is supported */
@@ -554,6 +583,17 @@ $text-muted-fallback: #888;
   transition: width 0.1s linear;
 }
 
+// Increase hit area for mini progress
+.mini-progress::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 20px;
+  z-index: 26;
+}
+
 /* ============================================
    CUSTOM CONTROLS
    ============================================ */
@@ -612,17 +652,36 @@ $text-muted-fallback: #888;
 }
 
 @media (hover: hover) {
-
-  .progress-container:hover,
-  .progress-container.seeking {
+  .progress-container:hover {
     height: 6px;
   }
 
-  .progress-container:hover .progress-handle,
-  .progress-container.seeking .progress-handle {
+  .progress-container:hover .progress-handle {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+.progress-container.seeking {
+  height: 6px;
+}
+
+.progress-container.seeking .progress-handle {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+// Increase hit area for touch
+.progress-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .progress-buffered {
@@ -1139,6 +1198,7 @@ $text-muted-fallback: #888;
 .video-channel {
   font-size: 0.8125rem;
   color: var(--text-muted);
+  display: block; // Ensure it takes a new line
 }
 
 /* Skeleton Loading */
@@ -1289,7 +1349,7 @@ $text-muted-fallback: #888;
 }
 
 .fs-word--saved {
-  border-bottom: 2px solid var(--accent-primary);
+  // border-bottom: 2px solid var(--accent-primary);
   background: rgba(199, 62, 58, 0.15);
 }
 
@@ -1401,7 +1461,7 @@ $text-muted-fallback: #888;
   padding: var(--space-md);
   padding-right: 3rem;
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
+  // border-bottom: 1px solid var(--border-color);
 }
 
 .fs-popup-word {
@@ -1528,8 +1588,8 @@ $text-muted-fallback: #888;
   }
 
   .big-play-btn {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .custom-controls {
@@ -1538,28 +1598,43 @@ $text-muted-fallback: #888;
     width: 100%;
     left: 0;
     right: 0;
-    padding: 0 0.75rem 0.5rem;
-    /* Mobile embedded: 0.5rem from bottom */
-    gap: 0.75rem;
+    padding: 0 0.75rem 0;
+    /* Remove bottom padding so progress bar can sit flush if needed */
+    gap: 0.5rem;
     align-items: stretch;
+    /* Ensure layout handles absolute positioning of child */
   }
 
+  /* Position progress bar at the very bottom on mobile */
+  .custom-controls .progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    z-index: 25;
+  }
+
+  /* Adjust controls row to be above the progress bar */
   .controls-row {
     background: none;
     padding: 0;
-    min-height: 2.5rem;
+    padding-bottom: 0.5rem;
+    /* Add space for progress bar */
+    min-height: 2rem;
     gap: 0;
     align-items: center;
-    /* Prevent buttons from stretching tall */
   }
 
   .controls-left {
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
 
   /* Right controls as individual bubbles (matching left) */
   .controls-right {
-    gap: 0.5rem;
+    gap: 0.25rem;
     background: none;
     padding: 0;
   }
@@ -1568,9 +1643,9 @@ $text-muted-fallback: #888;
   .controls-left .control-btn {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
-    min-width: 2.25rem;
-    width: 2.25rem;
-    height: 2.25rem;
+    min-width: 2rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     margin: 0;
     flex-shrink: 0;
@@ -1582,21 +1657,20 @@ $text-muted-fallback: #888;
     }
   }
 
-  /* Right controls as grouped pill on mobile */
+  /* Right controls as individual bubbles (matching left) */
   .controls-right {
-    background: rgba(0, 0, 0, 0.6);
-    /* border-radius = (button height + padding*2) / 2 = (2.5rem + 0.25rem) / 2 */
-    border-radius: calc((2.5rem + 0.125rem * 2) / 2);
-    padding: 0.125rem;
-    gap: 0;
+    gap: 0.75rem;
+    background: none;
+    padding: 0;
+    border-radius: 0;
   }
 
   .controls-right .control-btn {
-    background: transparent !important;
-    border-radius: 50% !important;
-    min-width: 2.5rem;
-    width: 2.5rem;
-    height: 2.5rem !important;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    min-width: 2rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     margin: 0;
     flex-shrink: 0;
@@ -1604,19 +1678,19 @@ $text-muted-fallback: #888;
     line-height: 1;
 
     &:active {
-      background: rgba(255, 255, 255, 0.2) !important;
+      background: rgba(255, 255, 255, 0.2);
     }
   }
 
   .time-display {
     background: rgba(0, 0, 0, 0.6);
-    border-radius: 1.25rem;
-    height: 2.5rem;
-    padding: 0 0.75rem;
+    border-radius: 1rem;
+    height: 2rem;
+    padding: 0 0.5rem;
     display: flex;
     align-items: center;
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     /* Ensure readable size */
   }
 
@@ -1635,10 +1709,10 @@ $text-muted-fallback: #888;
   }
 
   .control-btn {
-    min-width: 2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    min-height: 2.5rem;
+    min-width: 2rem;
+    width: 2rem;
+    height: 2rem;
+    min-height: 2rem;
     /* Override global 44px min-height for touch targets */
     padding: 0;
     box-sizing: border-box;
@@ -1646,10 +1720,10 @@ $text-muted-fallback: #888;
   }
 
   .play-btn {
-    min-width: 2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    min-height: 2.5rem;
+    min-width: 2rem;
+    width: 2rem;
+    height: 2rem;
+    min-height: 2rem;
     /* Override global 44px min-height for touch targets */
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.6);

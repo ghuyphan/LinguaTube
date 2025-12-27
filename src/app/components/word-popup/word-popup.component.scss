@@ -2,30 +2,7 @@
     position: relative;
 }
 
-.popup-close {
-    position: absolute;
-    top: var(--space-sm);
-    right: var(--space-sm);
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    transition: all var(--transition-fast);
-    z-index: 1;
-}
 
-@media (hover: hover) {
-    .popup-close:hover {
-        background: var(--bg-secondary);
-        color: var(--text-primary);
-    }
-}
 
 .popup-header {
     padding: var(--space-lg);
