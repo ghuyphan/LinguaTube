@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, computed, Injector, afterNextRender } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, computed, Injector, afterNextRender, OnDestroy } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, startWith } from 'rxjs';
+import { filter, map, startWith, interval, Subject, takeUntil } from 'rxjs';
 import { HeaderComponent } from './components/header/header.component';
 import { IconComponent } from './components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
@@ -189,26 +189,23 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     }
   `]
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private youtube = inject(YoutubeService);
   private router = inject(Router);
   private injector = inject(Injector);
+  private document = inject(DOCUMENT);
   i18n = inject(I18nService);
   settings = inject(SettingsService);
   private swUpdate = inject(SwUpdate);
 
+  private destroy$ = new Subject<void>();
+  private lastUpdateCheck = 0;
+  private readonly UPDATE_CHECK_INTERVAL = 30 * 60 * 1000; // 30 minutes
+  private readonly MIN_CHECK_INTERVAL = 5 * 60 * 1000; // 5 minutes minimum between checks
+
   constructor() {
-    // Auto-update the app when a new version is available
-    if (this.swUpdate.isEnabled) {
-      this.swUpdate.versionUpdates
-        .pipe(filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'))
-        .subscribe(() => {
-          this.swUpdate.activateUpdate().then(() => {
-            window.location.reload();
-          });
-        });
-    }
+    this.initServiceWorkerUpdates();
 
     // Lazy load SyncService after first render to reduce initial bundle size
     afterNextRender(() => {
@@ -216,6 +213,88 @@ export class AppComponent {
         this.injector.get(SyncService);
       });
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  /**
+   * Initialize robust service worker update detection with multiple triggers:
+   * 1. Immediate check on app startup
+   * 2. Periodic polling every 30 minutes
+   * 3. Check when app regains focus (user switches back to the tab/app)
+   * 4. Check on navigation (useful for SPAs where users stay on the app for long periods)
+   */
+  private initServiceWorkerUpdates(): void {
+    if (!this.swUpdate.isEnabled || !isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Subscribe to version updates - auto-reload when new version is ready
+    this.swUpdate.versionUpdates
+      .pipe(
+        filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        console.log('[SW] New version ready, activating...');
+        this.swUpdate.activateUpdate().then(() => {
+          console.log('[SW] Update activated, reloading...');
+          window.location.reload();
+        });
+      });
+
+    // 1. Check immediately on startup (with small delay to not block initial render)
+    setTimeout(() => this.checkForUpdate('startup'), 3000);
+
+    // 2. Periodic polling every 30 minutes
+    interval(this.UPDATE_CHECK_INTERVAL)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.checkForUpdate('interval'));
+
+    // 3. Check when app regains focus (visibility change)
+    if (typeof document !== 'undefined') {
+      this.document.addEventListener('visibilitychange', () => {
+        if (this.document.visibilityState === 'visible') {
+          this.checkForUpdate('visibility');
+        }
+      });
+    }
+
+    // 4. Check on navigation (for long-running SPA sessions)
+    this.router.events
+      .pipe(
+        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => this.checkForUpdate('navigation'));
+  }
+
+  /**
+   * Check for updates with rate limiting to prevent excessive checks
+   */
+  private checkForUpdate(trigger: string): void {
+    const now = Date.now();
+
+    // Rate limit: don't check more than once every 5 minutes
+    if (now - this.lastUpdateCheck < this.MIN_CHECK_INTERVAL) {
+      return;
+    }
+
+    this.lastUpdateCheck = now;
+    console.log(`[SW] Checking for updates (trigger: ${trigger})`);
+
+    this.swUpdate.checkForUpdate()
+      .then(hasUpdate => {
+        if (hasUpdate) {
+          console.log('[SW] Update found!');
+        }
+      })
+      .catch(err => {
+        console.warn('[SW] Update check failed:', err);
+      });
   }
 
   showSettingsSheet = signal(false);
