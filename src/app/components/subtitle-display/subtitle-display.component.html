@@ -6,7 +6,7 @@
         [class.is-generating]="transcript.isGeneratingAI()">
         <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()">
             @if (subtitles.currentCue(); as cue) {
-            <div class="subtitle-text" [class]="'text-' + settings.settings().language"
+            <div class="subtitle-text" [ngClass]="'text-' + settings.settings().language"
                 [class.is-looping]="isLoopEnabled()">
                 @if (subtitles.isTokenizing()) {
                 <!-- Show raw text while tokenizing -->
