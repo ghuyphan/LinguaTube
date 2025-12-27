@@ -1,12 +1,13 @@
 /**
- * YouTube Transcript Proxy (Cloudflare Function) - Simplified Version
+ * YouTube Transcript Proxy (Cloudflare Function) - Multi-Strategy Version
  * 
- * Uses two similar libraries with different internal methods for reliability:
+ * Uses multiple libraries with Supadata as final fallback:
  *   1. Cache (KV/D1)
  *   2. youtube-caption-extractor (primary - uses video page parsing)
  *   3. youtube-transcript (fallback - uses transcript API endpoint)
+ *   4. Supadata API (final fallback - managed service)
  *
- * @version 14.0.0 - Dual library approach for reliability
+ * @version 15.0.0 - Added Supadata as final fallback
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -25,12 +26,16 @@ const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 
 // Retry configuration - optimized for CF Workers
-const MAX_RETRIES = 2; // Reduced since we have a fallback library
+const MAX_RETRIES = 2;
 const INITIAL_RETRY_DELAY = 300; // ms
+const BACKOFF_MULTIPLIER = 1.5;
 
 // Rate limiting configuration
 const RATE_LIMIT_CONFIG = { max: 30, windowSeconds: 3600, keyPrefix: 'innertube' };
-const BACKOFF_MULTIPLIER = 1.5;
+
+// Supadata configuration
+const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
+const SUPADATA_TIMEOUT_MS = 10000;
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
@@ -45,10 +50,16 @@ export const onRequestOptions = () => handleOptions(['GET', 'POST', 'OPTIONS']);
  * Health check endpoint - GET /api/innertube
  */
 export async function onRequestGet(context) {
+    const { env } = context;
+
     return jsonResponse({
         status: 'ok',
-        strategies: ['youtube-caption-extractor', 'youtube-transcript'],
-        version: '14.0.0',
+        strategies: [
+            'youtube-caption-extractor',
+            'youtube-transcript',
+            env.SUPADATA_API_KEY ? 'supadata' : 'supadata (not configured)'
+        ],
+        version: '15.0.0',
         timestamp: new Date().toISOString()
     });
 }
@@ -107,6 +118,15 @@ export async function onRequestPost(context) {
             log('Primary failed, trying youtube-transcript fallback...');
             result = await tryYoutubeTranscript(videoId, targetLanguages);
             source = 'youtube-transcript';
+        }
+
+        // =====================================================================
+        // Step 4: Final fallback to Supadata API
+        // =====================================================================
+        if (!result && env.SUPADATA_API_KEY) {
+            log('Secondary failed, trying Supadata API fallback...');
+            result = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY);
+            source = 'supadata';
         }
 
         // =====================================================================
@@ -372,6 +392,86 @@ async function tryYoutubeTranscript(videoId, langs) {
             }
         } catch (e) {
             log(`youtube-transcript [${lang}] failed: ${e.message}`);
+        }
+    }
+
+    return null;
+}
+
+// ============================================================================
+// Strategy 3: Supadata API (Final Fallback)
+// Managed service with multiple internal fallbacks
+// Docs: https://docs.supadata.ai/youtube/get-transcript
+// ============================================================================
+
+async function trySupadata(videoId, langs, apiKey) {
+    if (!apiKey) {
+        log('Supadata: No API key configured, skipping');
+        return null;
+    }
+
+    for (const lang of langs) {
+        try {
+            const url = new URL(SUPADATA_API_URL);
+            url.searchParams.set('videoId', videoId);
+            url.searchParams.set('lang', lang);
+            url.searchParams.set('text', 'false'); // Get segments with timestamps
+
+            log(`Supadata: Fetching ${videoId} in ${lang}`);
+
+            const response = await fetch(url.toString(), {
+                method: 'GET',
+                headers: {
+                    'x-api-key': apiKey,
+                    'Accept': 'application/json'
+                },
+                signal: AbortSignal.timeout(SUPADATA_TIMEOUT_MS)
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text().catch(() => 'Unknown error');
+                log(`Supadata [${lang}] HTTP ${response.status}: ${errorText}`);
+
+                // Don't retry on 404 (no captions) or 402 (no credits)
+                if (response.status === 404 || response.status === 402) {
+                    continue;
+                }
+
+                throw new Error(`Supadata returned ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // Supadata returns: { content: [{text, offset, duration, lang}], lang, availableLangs }
+            if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
+                log(`Supadata [${lang}]: No content in response`);
+                continue;
+            }
+
+            const cues = data.content.map((segment, i) => ({
+                id: i,
+                start: segment.offset / 1000,      // Supadata returns ms, convert to seconds
+                duration: segment.duration / 1000, // Supadata returns ms, convert to seconds
+                text: (segment.text || '').trim()
+            })).filter(c => c.text);
+
+            if (!cues.length) {
+                log(`Supadata [${lang}]: Empty cues after filtering`);
+                continue;
+            }
+
+            const detectedLang = data.lang || lang;
+            log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
+
+            return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
+
+        } catch (e) {
+            log(`Supadata [${lang}] failed: ${e.message}`);
+
+            // If it's a timeout or network error, try next language
+            if (e.name === 'TimeoutError' || e.name === 'AbortError') {
+                continue;
+            }
         }
     }
 
