@@ -743,7 +743,8 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   toggleMute() {
-    if (this.youtube.isMuted() || this.volume() === 0) {
+    const wasMuted = this.youtube.isMuted() || this.volume() === 0;
+    if (wasMuted) {
       this.youtube.unmute();
       if (this.volume() === 0) {
         this.youtube.setVolume(50);
@@ -753,7 +754,8 @@ export class VideoPlayerComponent implements OnDestroy {
       this.youtube.mute();
     }
     this.showControls();
-    this.showVolumeFeedback();
+    // Pass the new mute state (inverted from before) to avoid race condition with YouTube API
+    this.showVolumeFeedback(!wasMuted);
   }
 
   getVolumeIcon(): 'volume-2' | 'volume-1' | 'volume-x' {
@@ -791,9 +793,11 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  private showVolumeFeedback() {
+  private showVolumeFeedback(isMuted?: boolean) {
     const vol = this.volume();
-    if (vol === 0 || this.youtube.isMuted()) {
+    // Use the provided mute state if available, otherwise poll the API
+    const muted = isMuted ?? this.youtube.isMuted();
+    if (vol === 0 || muted) {
       this.volumeFeedbackIcon.set('volume-x');
     } else if (vol < 50) {
       this.volumeFeedbackIcon.set('volume-1');
