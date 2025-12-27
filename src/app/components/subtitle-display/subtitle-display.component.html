@@ -65,58 +65,59 @@
             </div>
             }
         </div>
-
-        <!-- Subtitle list (scrollable) -->
-        @if (subtitles.subtitles().length > 0) {
-        <div class="subtitle-list" #subtitleList>
-            @for (cue of subtitles.subtitles(); track cue.id) {
-            <button class="cue-item" [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
-                [class.cue-item--past]="cue.endTime < youtube.currentTime()" [attr.data-cue-id]="cue.id"
-                (click)="seekToCue(cue)">
-                <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
-                <span class="cue-text">{{ cue.text }}</span>
-            </button>
-            }
-        </div>
-        }
-
-        <!-- Controls -->
-        <div class="subtitle-controls">
-            <!-- Loop Toggle -->
-            <button class="toggle-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
-                [title]="i18n.t('subtitle.loop') + ' (L)'">
-                <app-icon name="repeat" [size]="16" />
-                <span>{{ i18n.t('subtitle.loop') }}</span>
-                @if (isLoopEnabled() && loopCount() > 0) {
-                <span class="toggle-btn__badge">{{ loopCount() }}/{{ maxLoops() }}</span>
-                }
-            </button>
-
-            <!-- Reading Toggle -->
-            <button class="toggle-btn" [class.active]="showReading()" (click)="toggleReading()"
-                [title]="'Toggle ' + readingLabel()">
-                <app-icon name="type" [size]="16" />
-                <span>{{ readingLabel() }}</span>
-            </button>
-
-            <button class="toggle-btn added-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
-                <app-icon name="bookmark-plus" [size]="16" />
-                @if (recentCount() > 0) {
-                <span class="toggle-btn__badge">{{ recentCount() }}</span>
-                }
-            </button>
-
-            <div class="font-controls">
-                <button class="font-btn" [class.active]="settings.settings().fontSize === 'small'"
-                    (click)="settings.setFontSize('small')" [title]="i18n.t('subtitle.smallFont')">A</button>
-                <button class="font-btn font-btn--medium" [class.active]="settings.settings().fontSize === 'medium'"
-                    (click)="settings.setFontSize('medium')" [title]="i18n.t('subtitle.mediumFont')">A</button>
-                <button class="font-btn font-btn--large" [class.active]="settings.settings().fontSize === 'large'"
-                    (click)="settings.setFontSize('large')" [title]="i18n.t('subtitle.largeFont')">A</button>
-            </div>
-        </div>
-        }
     </div>
 
-    <!-- Vocabulary Quick View Sheet -->
-    <app-vocabulary-quick-view [isOpen]="showAddedSheet()" (closed)="showAddedSheet.set(false)" />
+    <!-- Subtitle list (scrollable) -->
+    @if (subtitles.subtitles().length > 0) {
+    <div class="subtitle-list" #subtitleList>
+        @for (cue of subtitles.subtitles(); track cue.id) {
+        <button class="cue-item" [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
+            [class.cue-item--past]="cue.endTime < youtube.currentTime()" [attr.data-cue-id]="cue.id"
+            (click)="seekToCue(cue)">
+            <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
+            <span class="cue-text">{{ cue.text }}</span>
+        </button>
+        }
+    </div>
+    }
+
+    <!-- Controls -->
+    <div class="subtitle-controls">
+        <!-- Loop Toggle -->
+        <button class="toggle-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
+            [title]="i18n.t('subtitle.loop') + ' (L)'">
+            <app-icon name="repeat" [size]="16" />
+            <span>{{ i18n.t('subtitle.loop') }}</span>
+            @if (isLoopEnabled() && loopCount() > 0) {
+            <span class="toggle-btn__badge">{{ loopCount() }}/{{ maxLoops() }}</span>
+            }
+        </button>
+
+        <!-- Reading Toggle -->
+        <button class="toggle-btn" [class.active]="showReading()" (click)="toggleReading()"
+            [title]="'Toggle ' + readingLabel()">
+            <app-icon name="type" [size]="16" />
+            <span>{{ readingLabel() }}</span>
+        </button>
+
+        <button class="toggle-btn added-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
+            <app-icon name="bookmark-plus" [size]="16" />
+            @if (recentCount() > 0) {
+            <span class="toggle-btn__badge">{{ recentCount() }}</span>
+            }
+        </button>
+
+        <div class="font-controls">
+            <button class="font-btn" [class.active]="settings.settings().fontSize === 'small'"
+                (click)="settings.setFontSize('small')" [title]="i18n.t('subtitle.smallFont')">A</button>
+            <button class="font-btn font-btn--medium" [class.active]="settings.settings().fontSize === 'medium'"
+                (click)="settings.setFontSize('medium')" [title]="i18n.t('subtitle.mediumFont')">A</button>
+            <button class="font-btn font-btn--large" [class.active]="settings.settings().fontSize === 'large'"
+                (click)="settings.setFontSize('large')" [title]="i18n.t('subtitle.largeFont')">A</button>
+        </div>
+    </div>
+    }
+</div>
+
+<!-- Vocabulary Quick View Sheet -->
+<app-vocabulary-quick-view [isOpen]="showAddedSheet()" (closed)="showAddedSheet.set(false)" />
