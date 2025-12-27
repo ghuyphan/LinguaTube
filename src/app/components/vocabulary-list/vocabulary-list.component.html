@@ -25,7 +25,7 @@
             </button>
             }
         </div>
-        <select class="filter-select" [(ngModel)]="levelFilter">
+        <select class="filter-select" [(ngModel)]="levelFilter" (ngModelChange)="onLevelFilterChange()">
             <option value="all">{{ i18n.t('vocab.allLevels') }}</option>
             <option value="new">{{ i18n.t('vocab.new') }}</option>
             <option value="learning">{{ i18n.t('vocab.learning') }}</option>
@@ -48,41 +48,62 @@
             }
         </div>
         } @else {
-        @for (item of filteredWords(); track item.id) {
-        <div class="word-card" [class]="'word-card--' + item.level">
-            <div class="word-card-main">
-                <span class="word-text" [class]="'text-' + item.language">
-                    {{ item.word }}
-                </span>
-                @if (item.reading) {
-                <span class="word-reading">{{ item.reading }}</span>
-                }
-                @if (item.pinyin) {
-                <span class="word-reading">{{ item.pinyin }}</span>
-                }
-                @if (item.romanization) {
-                <span class="word-reading">{{ item.romanization }}</span>
-                }
-            </div>
+        <div class="vocab-items">
+            @for (item of paginatedWords(); track item.id) {
+            <div class="vocab-item">
+                <div class="vocab-item__content">
+                    <div class="vocab-item__header">
+                        <span class="vocab-item__word" [class]="'text-' + item.language">
+                            {{ item.word }}
+                        </span>
+                        @if (item.reading || item.pinyin || item.romanization) {
+                        <span class="vocab-item__reading">
+                            {{ item.reading || item.pinyin || item.romanization }}
+                        </span>
+                        }
+                    </div>
+                    <p class="vocab-item__meaning">{{ item.meaning || i18n.t('vocab.noDefinition') }}</p>
+                </div>
 
-            <p class="word-meaning">{{ item.meaning || i18n.t('vocab.noDefinition') }}</p>
+                <div class="vocab-item__actions">
+                    <div class="level-badge" [class]="'level-badge--' + item.level" [title]="item.level"
+                        (click)="fileInput.click()">
+                        <!-- Hidden select for functionality -->
+                        <select #fileInput [value]="item.level" (change)="updateLevel(item.id, $event)"
+                            class="level-select-hidden">
+                            <option value="new">New</option>
+                            <option value="learning">Learning</option>
+                            <option value="known">Known</option>
+                            <option value="ignored">Ignored</option>
+                        </select>
+                        <span class="level-dot"></span>
+                        <span class="level-text">{{ item.level }}</span>
+                    </div>
 
-            <div class="word-card-footer">
-                <select class="level-select-mini" [value]="item.level" (change)="updateLevel(item.id, $event)">
-                    <option value="new">New</option>
-                    <option value="learning">Learning</option>
-                    <option value="known">Known</option>
-                    <option value="ignored">Ignored</option>
-                </select>
-                <span class="word-date">{{ item.addedAt | date }}</span>
-                <button class="btn btn-icon btn-ghost delete-btn" (click)="deleteWord(item.id)" title="Delete">
-                    <app-icon name="trash-2" [size]="14" />
-                </button>
+                    <button class="btn btn-icon btn-ghost delete-btn" (click)="deleteWord(item.id)" title="Delete">
+                        <app-icon name="trash-2" [size]="16" />
+                    </button>
+                </div>
             </div>
+            }
         </div>
         }
-        }
     </div>
+
+    <!-- Pagination -->
+    @if (totalPages() > 1) {
+    <div class="vocab-pagination">
+        <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === 1" (click)="prevPage()">
+            <app-icon name="chevron-left" [size]="16" />
+        </button>
+        <span class="pagination-info">
+            {{ currentPage() }} / {{ totalPages() }}
+        </span>
+        <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === totalPages()" (click)="nextPage()">
+            <app-icon name="chevron-right" [size]="16" />
+        </button>
+    </div>
+    }
 
     <!-- Actions -->
     <div class="vocab-actions">

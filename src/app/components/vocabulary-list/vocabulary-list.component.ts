@@ -25,6 +25,10 @@ export class VocabularyListComponent {
 
   levelFilter: WordLevel | 'all' = 'all';
 
+  onLevelFilterChange() {
+    this.currentPage.set(1);
+  }
+
   // Getter/setter for two-way binding with debounce
   get searchQuery(): string {
     return this.searchInput();
@@ -38,6 +42,7 @@ export class VocabularyListComponent {
     }
     this.searchTimeout = setTimeout(() => {
       this.debouncedSearch.set(value);
+      this.currentPage.set(1); // Reset page on search
     }, 300);
   }
 
@@ -53,6 +58,10 @@ export class VocabularyListComponent {
   toastMessage = signal<string | null>(null);
   toastType = signal<'success' | 'error'>('success');
   private toastTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  // Pagination state
+  currentPage = signal(1);
+  readonly pageSize = 20;
 
   // Track by function for better list performance
   trackByWordId(index: number, item: VocabularyItem): string {
@@ -86,6 +95,44 @@ export class VocabularyListComponent {
       new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime()
     );
   });
+
+  paginatedWords = computed(() => {
+    const words = this.filteredWords();
+    const startIndex = (this.currentPage() - 1) * this.pageSize;
+    return words.slice(startIndex, startIndex + this.pageSize);
+  });
+
+  totalPages = computed(() => {
+    return Math.ceil(this.filteredWords().length / this.pageSize);
+  });
+
+  nextPage(): void {
+    if (this.currentPage() < this.totalPages()) {
+      this.currentPage.update(p => p + 1);
+      this.scrollToTop();
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage() > 1) {
+      this.currentPage.update(p => p - 1);
+      this.scrollToTop();
+    }
+  }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages()) {
+      this.currentPage.set(page);
+      this.scrollToTop();
+    }
+  }
+
+  private scrollToTop(): void {
+    const listElement = document.querySelector('.word-list');
+    if (listElement) {
+      listElement.scrollTop = 0;
+    }
+  }
 
   updateLevel(id: string, event: Event): void {
     const select = event.target as HTMLSelectElement;
