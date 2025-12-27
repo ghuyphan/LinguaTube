@@ -6,7 +6,7 @@ import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { isDevMode } from '@angular/core';
 import { provideServiceWorker } from '@angular/service-worker';
-import { cacheInterceptor } from './app/interceptors';
+import { cacheInterceptor, timeoutInterceptor } from './app/interceptors';
 
 if (!isDevMode()) {
   console.log = () => { };
@@ -15,7 +15,7 @@ if (!isDevMode()) {
 bootstrapApplication(AppComponent, {
   providers: [
     provideAnimations(),
-    provideHttpClient(withInterceptors([cacheInterceptor])),
+    provideHttpClient(withInterceptors([timeoutInterceptor, cacheInterceptor])),
     provideRouter(routes, withPreloading(PreloadAllModules), withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),

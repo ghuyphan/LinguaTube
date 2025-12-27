@@ -203,8 +203,35 @@ export class AuthService {
 
     /**
      * Get the current auth token for API calls
+     * Returns null if token is expired or invalid
      */
     getToken(): string | null {
-        return this.token;
+        if (!this.token) return null;
+
+        // Check if token is expired
+        try {
+            const payload = this.decodeJwt(this.token);
+            const now = Math.floor(Date.now() / 1000);
+
+            // Token expired or will expire in next 60 seconds
+            if (payload.exp && payload.exp < now + 60) {
+                console.log('[Auth] Token expired, clearing');
+                this.signOut();
+                return null;
+            }
+
+            return this.token;
+        } catch {
+            // Invalid token
+            this.signOut();
+            return null;
+        }
+    }
+
+    /**
+     * Check if user is authenticated with a valid token
+     */
+    hasValidToken(): boolean {
+        return this.getToken() !== null;
     }
 }

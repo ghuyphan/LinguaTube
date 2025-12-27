@@ -20,7 +20,7 @@ import { YoutubeTranscript } from 'youtube-transcript';
 // Configuration
 // ============================================================================
 
-const DEBUG = true;
+const DEBUG = false;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 

@@ -17,7 +17,7 @@ interface CaptionTrack {
   content?: TranscriptSegment[] | null;
 }
 
-const DEBUG = true;
+const DEBUG = false;
 const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', ...args);
 
 interface InnertubeResponse {
@@ -91,7 +91,7 @@ export class TranscriptService {
    * Main entry point - fetch transcript for a video
    */
   fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
-    const cacheKey = `${videoId}:${lang} `;
+    const cacheKey = `${videoId}:${lang}`;
     if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
       log('Client cache hit:', { videoId, lang, cues: cached.length });
@@ -222,7 +222,7 @@ export class TranscriptService {
    * Generate subtitles using Whisper AI
    */
   generateWithWhisper(videoId: string, resultUrl?: string, lang: string = 'ja', duration?: number): Observable<SubtitleCue[]> {
-    const cacheKey = `whisper:${videoId}:${lang} `;
+    const cacheKey = `whisper:${videoId}:${lang}`;
 
     if (!resultUrl && this.transcriptCache.has(cacheKey)) {
       this.captionSource.set('ai');

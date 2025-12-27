@@ -1,15 +1,134 @@
 /**
  * Google JWT Authentication Module for Cloudflare Functions
- * Validates Google OAuth tokens for protected endpoints
+ * Validates Google OAuth tokens with proper cryptographic signature verification
  */
 
 // Google's public key endpoint
 const GOOGLE_CERTS_URL = 'https://www.googleapis.com/oauth2/v3/certs';
 
 // Cache for Google's public keys (in-memory per worker instance)
-let cachedCerts = null;
-let certsCacheTime = 0;
-const CERTS_CACHE_TTL = 60 * 60 * 1000; // 1 hour
+let cachedKeys = null;
+let keysCacheTime = 0;
+const KEYS_CACHE_TTL = 60 * 60 * 1000; // 1 hour
+
+/**
+ * Fetch and cache Google's JWK public keys
+ * @returns {Promise<Object>} Map of kid -> CryptoKey
+ */
+async function getGooglePublicKeys() {
+    const now = Date.now();
+
+    // Return cached keys if still valid
+    if (cachedKeys && (now - keysCacheTime) < KEYS_CACHE_TTL) {
+        return cachedKeys;
+    }
+
+    try {
+        const response = await fetch(GOOGLE_CERTS_URL, {
+            signal: AbortSignal.timeout(5000)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch Google certs: ${response.status}`);
+        }
+
+        const jwks = await response.json();
+        const keys = {};
+
+        // Convert each JWK to CryptoKey
+        for (const jwk of jwks.keys) {
+            try {
+                const cryptoKey = await crypto.subtle.importKey(
+                    'jwk',
+                    jwk,
+                    { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' },
+                    false,
+                    ['verify']
+                );
+                keys[jwk.kid] = cryptoKey;
+            } catch (e) {
+                console.warn('[Auth] Failed to import key:', jwk.kid);
+            }
+        }
+
+        cachedKeys = keys;
+        keysCacheTime = now;
+        return keys;
+
+    } catch (error) {
+        console.error('[Auth] Failed to fetch Google public keys:', error.message);
+        // Return cached keys even if expired, better than failing
+        if (cachedKeys) return cachedKeys;
+        throw error;
+    }
+}
+
+/**
+ * Base64URL decode
+ */
+function base64UrlDecode(str) {
+    // Add padding if needed
+    const padding = '='.repeat((4 - str.length % 4) % 4);
+    const base64 = (str + padding).replace(/-/g, '+').replace(/_/g, '/');
+    return atob(base64);
+}
+
+/**
+ * Verify JWT signature using Google's public keys
+ * @param {string} token - The JWT token
+ * @returns {Promise<{valid: boolean, payload?: Object, error?: string}>}
+ */
+async function verifyJwtSignature(token) {
+    const parts = token.split('.');
+    if (parts.length !== 3) {
+        return { valid: false, error: 'Invalid token format' };
+    }
+
+    try {
+        const header = JSON.parse(base64UrlDecode(parts[0]));
+        const payload = JSON.parse(base64UrlDecode(parts[1]));
+
+        // Get the key ID from header
+        const kid = header.kid;
+        if (!kid) {
+            return { valid: false, error: 'Token missing key ID' };
+        }
+
+        // Get Google's public keys
+        const keys = await getGooglePublicKeys();
+        const publicKey = keys[kid];
+
+        if (!publicKey) {
+            // Key not found - might be rotated, clear cache and retry once
+            cachedKeys = null;
+            const freshKeys = await getGooglePublicKeys();
+            if (!freshKeys[kid]) {
+                return { valid: false, error: 'Unknown signing key' };
+            }
+        }
+
+        // Verify signature
+        const signedData = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
+        const signature = Uint8Array.from(base64UrlDecode(parts[2]), c => c.charCodeAt(0));
+
+        const isValid = await crypto.subtle.verify(
+            'RSASSA-PKCS1-v1_5',
+            keys[kid],
+            signature,
+            signedData
+        );
+
+        if (!isValid) {
+            return { valid: false, error: 'Invalid signature' };
+        }
+
+        return { valid: true, payload };
+
+    } catch (error) {
+        console.error('[Auth] Signature verification error:', error.message);
+        return { valid: false, error: 'Signature verification failed' };
+    }
+}
 
 /**
  * Validate a Google JWT token from the Authorization header
@@ -27,16 +146,13 @@ export async function validateAuthToken(request, env) {
     const token = authHeader.substring(7); // Remove 'Bearer '
 
     try {
-        // Decode the JWT without verification first to get the header
-        const parts = token.split('.');
-        if (parts.length !== 3) {
-            return { valid: false, error: 'Invalid token format' };
+        // Verify signature first (this also decodes the payload)
+        const signatureResult = await verifyJwtSignature(token);
+        if (!signatureResult.valid) {
+            return signatureResult;
         }
 
-        const header = JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')));
-        const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
-
-        // Basic validation checks
+        const payload = signatureResult.payload;
         const now = Math.floor(Date.now() / 1000);
 
         // Check token expiration
@@ -64,10 +180,6 @@ export async function validateAuthToken(request, env) {
         if (!['accounts.google.com', 'https://accounts.google.com'].includes(payload.iss)) {
             return { valid: false, error: 'Invalid token issuer' };
         }
-
-        // For production, you should verify the signature using Google's public keys
-        // This is a simplified version that trusts the token structure
-        // In a high-security environment, implement full JWT signature verification
 
         // Extract user info
         return {

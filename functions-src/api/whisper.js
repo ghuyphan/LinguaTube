@@ -7,6 +7,7 @@
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, getPendingJob, savePendingJob, completePendingJob, cleanupStalePendingJobs } from '../_shared/transcript-db.js';
+import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -24,48 +25,8 @@ export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
 }
 
-// Rate limiting configuration
-const RATE_LIMIT_MAX = 10; // Max AI transcriptions per window
-const RATE_LIMIT_WINDOW = 60 * 60; // 1 hour window
-
-async function checkRateLimit(cache, clientIP) {
-    if (!cache || !clientIP) return true; // Allow if no cache or IP
-
-    const key = `ratelimit:whisper:${clientIP}`;
-    try {
-        const current = await cache.get(key, 'json') || { count: 0, reset: Date.now() + RATE_LIMIT_WINDOW * 1000 };
-
-        // Reset if window expired
-        if (Date.now() > current.reset) {
-            return true;
-        }
-
-        return current.count < RATE_LIMIT_MAX;
-    } catch {
-        return true; // Allow on error
-    }
-}
-
-async function incrementRateLimit(cache, clientIP) {
-    if (!cache || !clientIP) return;
-
-    const key = `ratelimit:whisper:${clientIP}`;
-    try {
-        const current = await cache.get(key, 'json') || { count: 0, reset: Date.now() + RATE_LIMIT_WINDOW * 1000 };
-
-        // Reset if window expired
-        if (Date.now() > current.reset) {
-            current.count = 1;
-            current.reset = Date.now() + RATE_LIMIT_WINDOW * 1000;
-        } else {
-            current.count++;
-        }
-
-        await cache.put(key, JSON.stringify(current), { expirationTtl: RATE_LIMIT_WINDOW });
-    } catch {
-        // Ignore rate limit errors
-    }
-}
+// Rate limiting configuration - 10 AI transcriptions per hour
+const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 3600, keyPrefix: 'whisper' };
 
 export async function onRequestPost(context) {
     const { request, env } = context;
@@ -146,16 +107,14 @@ export async function onRequestPost(context) {
                 }
 
                 // Rate limit check for new requests
-                const clientIP = request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For')?.split(',')[0];
-                if (!(await checkRateLimit(TRANSCRIPT_CACHE, clientIP))) {
-                    return jsonResponse({
-                        error: 'Rate limit exceeded. Please try again later.',
-                        retryAfter: 3600
-                    }, 429);
+                const clientIP = getClientIP(request);
+                const rateCheck = await checkRateLimit(TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+                if (!rateCheck.allowed) {
+                    return rateLimitResponse(rateCheck.resetAt);
                 }
 
                 // Increment rate limit counter
-                await incrementRateLimit(TRANSCRIPT_CACHE, clientIP);
+                await incrementRateLimit(TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
                 const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
