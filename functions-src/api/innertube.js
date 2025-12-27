@@ -7,7 +7,7 @@
  *   3. youtube-transcript (free)
  *   4. Supadata API (paid - only if free strategies fail)
  *
- * @version 16.1.0 - Supadata as last resort to preserve credits
+ * @version 16.3.0 - Supadata deduplication + no-caption tracking to save credits
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -130,7 +130,7 @@ export async function onRequestPost(context) {
         // =====================================================================
         if (!result && env.SUPADATA_API_KEY) {
             log('Free strategies failed, trying Supadata as last resort...');
-            result = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY);
+            result = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache);
             if (result) {
                 source = 'supadata';
             }
@@ -343,11 +343,102 @@ async function tryYoutubeTranscript(videoId, langs) {
 // Strategy 3: Supadata API (Paid - Last Resort)
 // ============================================================================
 
-async function trySupadata(videoId, langs, apiKey) {
+// Supadata deduplication: Lock TTL in seconds
+const SUPADATA_LOCK_TTL = 300; // 5 minutes
+const SUPADATA_NO_CAPTION_TTL = 3600; // 1 hour - short enough to retry, long enough to cover gap
+
+/**
+ * Check if there's an active Supadata request for this video
+ * Returns true if we should skip Supadata (already processing or recently failed)
+ */
+async function isSupadataLocked(cache, videoId) {
+    if (!cache) return false;
+    try {
+        const lock = await cache.get(`supadata:lock:${videoId}`);
+        return !!lock;
+    } catch {
+        return false;
+    }
+}
+
+/**
+ * Check if this video was recently confirmed to have no captions
+ * Prevents repeated Supadata calls for videos without captions (saves credits)
+ */
+async function hasNoCaption(cache, videoId) {
+    if (!cache) return false;
+    try {
+        const marker = await cache.get(`supadata:nocap:${videoId}`);
+        return !!marker;
+    } catch {
+        return false;
+    }
+}
+
+/**
+ * Mark a video as having no captions (all Supadata languages returned 404)
+ * Uses minimal storage: key + "1" value, 1-hour TTL
+ */
+async function markNoCaption(cache, videoId) {
+    if (!cache) return;
+    try {
+        await cache.put(`supadata:nocap:${videoId}`, '1', { expirationTtl: SUPADATA_NO_CAPTION_TTL });
+        log(`Supadata: Marked ${videoId} as no-caption (1h TTL)`);
+    } catch (e) {
+        log(`Supadata: Failed to mark no-caption: ${e.message}`);
+    }
+}
+
+/**
+ * Set a lock to prevent duplicate Supadata requests
+ */
+async function setSupadataLock(cache, videoId) {
+    if (!cache) return;
+    try {
+        await cache.put(`supadata:lock:${videoId}`, '1', { expirationTtl: SUPADATA_LOCK_TTL });
+        log(`Supadata: Lock set for ${videoId}`);
+    } catch (e) {
+        log(`Supadata: Failed to set lock: ${e.message}`);
+    }
+}
+
+/**
+ * Clear the Supadata lock after successful completion
+ */
+async function clearSupadataLock(cache, videoId) {
+    if (!cache) return;
+    try {
+        await cache.delete(`supadata:lock:${videoId}`);
+        log(`Supadata: Lock cleared for ${videoId}`);
+    } catch (e) {
+        log(`Supadata: Failed to clear lock: ${e.message}`);
+    }
+}
+
+async function trySupadata(videoId, langs, apiKey, cache) {
     if (!apiKey) {
         log('Supadata: No API key configured, skipping');
         return null;
     }
+
+    // Check if this video was recently confirmed to have no captions
+    const noCaptions = await hasNoCaption(cache, videoId);
+    if (noCaptions) {
+        log(`Supadata: Skipping ${videoId} - known no-caption video`);
+        return null;
+    }
+
+    // Check if there's already an in-flight Supadata request for this video
+    const isLocked = await isSupadataLocked(cache, videoId);
+    if (isLocked) {
+        log(`Supadata: Skipping ${videoId} - already processing (deduplication)`);
+        return null;
+    }
+
+    // Set lock before making the API call
+    await setSupadataLock(cache, videoId);
+
+    let all404 = true; // Track if ALL languages returned 404
 
     for (const lang of langs) {
         try {
@@ -371,10 +462,19 @@ async function trySupadata(videoId, langs, apiKey) {
                 const errorText = await response.text().catch(() => 'Unknown error');
                 log(`Supadata [${lang}] HTTP ${response.status}: ${errorText}`);
 
-                if (response.status === 404 || response.status === 402) {
+                if (response.status === 404) {
+                    // Still a 404 - continue to next language
                     continue;
                 }
 
+                if (response.status === 402) {
+                    // Credit issue - not a caption availability issue
+                    all404 = false;
+                    continue;
+                }
+
+                // Other error - not a 404
+                all404 = false;
                 throw new Error(`Supadata returned ${response.status}`);
             }
 
@@ -400,15 +500,29 @@ async function trySupadata(videoId, langs, apiKey) {
             const detectedLang = data.lang || lang;
             log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
 
+            // Success! Clear the lock since result will be cached
+            await clearSupadataLock(cache, videoId);
+
             return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
 
         } catch (e) {
             log(`Supadata [${lang}] failed: ${e.message}`);
+            all404 = false; // Error means we can't confirm it's a no-caption video
 
             if (e.name === 'TimeoutError' || e.name === 'AbortError') {
+                // Keep the lock on timeout - prevents retry storms
+                // Lock will auto-expire after SUPADATA_LOCK_TTL
                 continue;
             }
         }
+    }
+
+    // All languages failed
+    await clearSupadataLock(cache, videoId);
+
+    // If ALL languages returned 404, mark as no-caption video
+    if (all404) {
+        await markNoCaption(cache, videoId);
     }
 
     return null;
