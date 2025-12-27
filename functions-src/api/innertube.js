@@ -1,13 +1,13 @@
 /**
- * YouTube Transcript Proxy (Cloudflare Function) - Multi-Strategy Version
+ * YouTube Transcript Proxy (Cloudflare Function)
  * 
- * Uses multiple libraries with Supadata as final fallback:
+ * Sequential strategy with Supadata as last resort:
  *   1. Cache (KV/D1)
- *   2. youtube-caption-extractor (primary - uses video page parsing)
- *   3. youtube-transcript (fallback - uses transcript API endpoint)
- *   4. Supadata API (final fallback - managed service)
+ *   2. youtube-caption-extractor (free)
+ *   3. youtube-transcript (free)
+ *   4. Supadata API (paid - only if free strategies fail)
  *
- * @version 15.0.0 - Added Supadata as final fallback
+ * @version 16.1.0 - Supadata as last resort to preserve credits
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -25,17 +25,15 @@ const DEBUG = false;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 
-// Retry configuration - optimized for CF Workers
-const MAX_RETRIES = 2;
-const INITIAL_RETRY_DELAY = 300; // ms
-const BACKOFF_MULTIPLIER = 1.5;
+// Timeout configuration - fail fast to move to next strategy
+const STRATEGY_TIMEOUT_MS = 5000; // 5s max per free strategy
+const SUPADATA_TIMEOUT_MS = 10000; // 10s for Supadata
 
 // Rate limiting configuration
 const RATE_LIMIT_CONFIG = { max: 30, windowSeconds: 3600, keyPrefix: 'innertube' };
 
 // Supadata configuration
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
-const SUPADATA_TIMEOUT_MS = 10000;
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
@@ -54,12 +52,13 @@ export async function onRequestGet(context) {
 
     return jsonResponse({
         status: 'ok',
+        mode: 'sequential',
         strategies: [
             'youtube-caption-extractor',
             'youtube-transcript',
-            env.SUPADATA_API_KEY ? 'supadata' : 'supadata (not configured)'
+            env.SUPADATA_API_KEY ? 'supadata (last resort)' : 'supadata (not configured)'
         ],
-        version: '15.0.0',
+        version: '16.1.0',
         timestamp: new Date().toISOString()
     });
 }
@@ -105,28 +104,36 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // Step 2: Try primary strategy (youtube-caption-extractor)
+        // Step 2: Try free strategies first (sequential)
         // =====================================================================
-        log('Trying youtube-caption-extractor...');
-        let result = await tryCaptionExtractor(videoId, targetLanguages);
-        let source = 'caption-extractor';
+        let result = null;
+        let source = 'none';
 
-        // =====================================================================
-        // Step 3: Fallback to youtube-transcript if primary fails
-        // =====================================================================
+        // Strategy 1: youtube-caption-extractor (free)
+        log('Trying youtube-caption-extractor...');
+        result = await tryCaptionExtractor(videoId, targetLanguages);
+        if (result) {
+            source = 'caption-extractor';
+        }
+
+        // Strategy 2: youtube-transcript (free)
         if (!result) {
-            log('Primary failed, trying youtube-transcript fallback...');
+            log('Trying youtube-transcript...');
             result = await tryYoutubeTranscript(videoId, targetLanguages);
-            source = 'youtube-transcript';
+            if (result) {
+                source = 'youtube-transcript';
+            }
         }
 
         // =====================================================================
-        // Step 4: Final fallback to Supadata API
+        // Step 3: Supadata as LAST RESORT (preserves credits)
         // =====================================================================
         if (!result && env.SUPADATA_API_KEY) {
-            log('Secondary failed, trying Supadata API fallback...');
+            log('Free strategies failed, trying Supadata as last resort...');
             result = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY);
-            source = 'supadata';
+            if (result) {
+                source = 'supadata';
+            }
         }
 
         // =====================================================================
@@ -166,71 +173,6 @@ export async function onRequestPost(context) {
         console.error('[Innertube] Fatal:', error);
         return errorResponse(error.message);
     }
-}
-
-// ============================================================================
-// Retry Helper with Exponential Backoff
-// ============================================================================
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function withRetry(fn, options = {}) {
-    const {
-        maxRetries = MAX_RETRIES,
-        initialDelay = INITIAL_RETRY_DELAY,
-        backoffMultiplier = BACKOFF_MULTIPLIER
-    } = options;
-
-    let lastError;
-    let delay = initialDelay;
-
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-        try {
-            return await fn();
-        } catch (error) {
-            lastError = error;
-
-            const isTransient = isTransientError(error);
-            log(`Attempt ${attempt}/${maxRetries} failed: ${error.message} (transient: ${isTransient})`);
-
-            if (!isTransient) {
-                throw error;
-            }
-
-            if (attempt < maxRetries) {
-                log(`Retrying in ${Math.round(delay)}ms...`);
-                await sleep(delay);
-                delay *= backoffMultiplier;
-            }
-        }
-    }
-
-    throw lastError;
-}
-
-function isTransientError(error) {
-    const msg = error?.message?.toLowerCase() || '';
-
-    const permanentErrors = [
-        'video unavailable',
-        'private video',
-        'video is private',
-        'no captions',
-        'captions disabled',
-        'age-restricted',
-        'removed',
-        'deleted',
-        'copyright',
-        'unavailable',
-    ];
-
-    if (permanentErrors.some(e => msg.includes(e))) {
-        return false;
-    }
-
-    return true;
 }
 
 // ============================================================================
@@ -316,38 +258,38 @@ async function saveToCache(cache, db, videoId, lang, data, source) {
 }
 
 // ============================================================================
-// Strategy 1: youtube-caption-extractor (Primary)
-// Uses video page parsing with dual extraction methods
+// Strategy 1: youtube-caption-extractor (Free)
 // ============================================================================
 
 async function tryCaptionExtractor(videoId, langs) {
     for (const lang of langs) {
         try {
-            const result = await withRetry(async () => {
-                const subs = await getSubtitles({ videoID: videoId, lang });
+            const subs = await withTimeout(
+                getSubtitles({ videoID: videoId, lang }),
+                STRATEGY_TIMEOUT_MS,
+                `caption-extractor timeout for ${lang}`
+            );
 
-                if (!subs?.length) {
-                    throw new Error(`No subtitles found for lang: ${lang}`);
-                }
-
-                const cues = subs.map((s, i) => ({
-                    id: i,
-                    start: parseFloat(s.start),
-                    duration: parseFloat(s.dur),
-                    text: s.text.trim()
-                })).filter(c => c.text);
-
-                if (!cues.length) {
-                    throw new Error(`Empty cues after filtering for lang: ${lang}`);
-                }
-
-                return cues;
-            });
-
-            if (result) {
-                log(`caption-extractor: Got ${result.length} cues in ${lang}`);
-                return { data: buildResponse(videoId, lang, cleanTranscriptSegments(result)) };
+            if (!subs?.length) {
+                log(`caption-extractor [${lang}]: No subtitles found`);
+                continue;
             }
+
+            const cues = subs.map((s, i) => ({
+                id: i,
+                start: parseFloat(s.start),
+                duration: parseFloat(s.dur),
+                text: s.text.trim()
+            })).filter(c => c.text);
+
+            if (!cues.length) {
+                log(`caption-extractor [${lang}]: Empty cues after filtering`);
+                continue;
+            }
+
+            log(`caption-extractor: Got ${cues.length} cues in ${lang}`);
+            return { data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)) };
+
         } catch (e) {
             log(`caption-extractor [${lang}] failed: ${e.message}`);
         }
@@ -357,39 +299,38 @@ async function tryCaptionExtractor(videoId, langs) {
 }
 
 // ============================================================================
-// Strategy 2: youtube-transcript (Fallback)
-// Uses YouTube's transcript API endpoint directly
+// Strategy 2: youtube-transcript (Free)
 // ============================================================================
 
 async function tryYoutubeTranscript(videoId, langs) {
     for (const lang of langs) {
         try {
-            const result = await withRetry(async () => {
-                // youtube-transcript uses a different API endpoint
-                const transcript = await YoutubeTranscript.fetchTranscript(videoId, { lang });
+            const transcript = await withTimeout(
+                YoutubeTranscript.fetchTranscript(videoId, { lang }),
+                STRATEGY_TIMEOUT_MS,
+                `youtube-transcript timeout for ${lang}`
+            );
 
-                if (!transcript?.length) {
-                    throw new Error(`No transcript found for lang: ${lang}`);
-                }
-
-                const cues = transcript.map((item, i) => ({
-                    id: i,
-                    start: item.offset / 1000, // Convert ms to seconds
-                    duration: item.duration / 1000,
-                    text: item.text.trim()
-                })).filter(c => c.text);
-
-                if (!cues.length) {
-                    throw new Error(`Empty cues after filtering for lang: ${lang}`);
-                }
-
-                return cues;
-            });
-
-            if (result) {
-                log(`youtube-transcript: Got ${result.length} cues in ${lang}`);
-                return { data: buildResponse(videoId, lang, cleanTranscriptSegments(result)) };
+            if (!transcript?.length) {
+                log(`youtube-transcript [${lang}]: No transcript found`);
+                continue;
             }
+
+            const cues = transcript.map((item, i) => ({
+                id: i,
+                start: item.offset / 1000,
+                duration: item.duration / 1000,
+                text: item.text.trim()
+            })).filter(c => c.text);
+
+            if (!cues.length) {
+                log(`youtube-transcript [${lang}]: Empty cues after filtering`);
+                continue;
+            }
+
+            log(`youtube-transcript: Got ${cues.length} cues in ${lang}`);
+            return { data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)) };
+
         } catch (e) {
             log(`youtube-transcript [${lang}] failed: ${e.message}`);
         }
@@ -399,9 +340,7 @@ async function tryYoutubeTranscript(videoId, langs) {
 }
 
 // ============================================================================
-// Strategy 3: Supadata API (Final Fallback)
-// Managed service with multiple internal fallbacks
-// Docs: https://docs.supadata.ai/youtube/get-transcript
+// Strategy 3: Supadata API (Paid - Last Resort)
 // ============================================================================
 
 async function trySupadata(videoId, langs, apiKey) {
@@ -415,7 +354,7 @@ async function trySupadata(videoId, langs, apiKey) {
             const url = new URL(SUPADATA_API_URL);
             url.searchParams.set('videoId', videoId);
             url.searchParams.set('lang', lang);
-            url.searchParams.set('text', 'false'); // Get segments with timestamps
+            url.searchParams.set('text', 'false');
 
             log(`Supadata: Fetching ${videoId} in ${lang}`);
 
@@ -432,7 +371,6 @@ async function trySupadata(videoId, langs, apiKey) {
                 const errorText = await response.text().catch(() => 'Unknown error');
                 log(`Supadata [${lang}] HTTP ${response.status}: ${errorText}`);
 
-                // Don't retry on 404 (no captions) or 402 (no credits)
                 if (response.status === 404 || response.status === 402) {
                     continue;
                 }
@@ -442,7 +380,6 @@ async function trySupadata(videoId, langs, apiKey) {
 
             const data = await response.json();
 
-            // Supadata returns: { content: [{text, offset, duration, lang}], lang, availableLangs }
             if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
                 log(`Supadata [${lang}]: No content in response`);
                 continue;
@@ -450,8 +387,8 @@ async function trySupadata(videoId, langs, apiKey) {
 
             const cues = data.content.map((segment, i) => ({
                 id: i,
-                start: segment.offset / 1000,      // Supadata returns ms, convert to seconds
-                duration: segment.duration / 1000, // Supadata returns ms, convert to seconds
+                start: segment.offset / 1000,
+                duration: segment.duration / 1000,
                 text: (segment.text || '').trim()
             })).filter(c => c.text);
 
@@ -468,7 +405,6 @@ async function trySupadata(videoId, langs, apiKey) {
         } catch (e) {
             log(`Supadata [${lang}] failed: ${e.message}`);
 
-            // If it's a timeout or network error, try next language
             if (e.name === 'TimeoutError' || e.name === 'AbortError') {
                 continue;
             }
@@ -479,8 +415,17 @@ async function trySupadata(videoId, langs, apiKey) {
 }
 
 // ============================================================================
-// Response Builder
+// Utilities
 // ============================================================================
+
+function withTimeout(promise, ms, message) {
+    return Promise.race([
+        promise,
+        new Promise((_, reject) =>
+            setTimeout(() => reject(new Error(message || `Timeout after ${ms}ms`)), ms)
+        )
+    ]);
+}
 
 function buildResponse(videoId, lang, content) {
     return {
