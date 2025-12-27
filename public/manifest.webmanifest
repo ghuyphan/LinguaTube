@@ -1,6 +1,11 @@
 {
   "name": "LinguaTube",
   "short_name": "LinguaTube",
+  "id": "lingua-tube",
+  "categories": [
+    "education",
+    "utilities"
+  ],
   "description": "Learn Japanese, Chinese, and Korean from YouTube videos with interactive subtitles",
   "theme_color": "#6366f1",
   "background_color": "#0f172a",

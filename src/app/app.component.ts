@@ -8,6 +8,7 @@ import { IconComponent } from './components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -195,8 +196,20 @@ export class AppComponent {
   private injector = inject(Injector);
   i18n = inject(I18nService);
   settings = inject(SettingsService);
+  private swUpdate = inject(SwUpdate);
 
   constructor() {
+    // Auto-update the app when a new version is available
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.versionUpdates
+        .pipe(filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'))
+        .subscribe(() => {
+          this.swUpdate.activateUpdate().then(() => {
+            window.location.reload();
+          });
+        });
+    }
+
     // Lazy load SyncService after first render to reduce initial bundle size
     afterNextRender(() => {
       import('./services/sync.service').then(({ SyncService }) => {
