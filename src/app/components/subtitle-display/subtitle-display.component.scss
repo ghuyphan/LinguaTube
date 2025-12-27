@@ -5,18 +5,20 @@
     overflow: hidden;
 }
 
-/* Current subtitle */
+/* Current subtitle - Fixed height prevents layout shifts */
 .current-subtitle {
-    min-height: 9.625rem;
-    /* Accommodate ~3 lines to prevent shifts */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 9.625rem;
     padding: var(--space-lg);
     background: var(--bg-secondary);
-    // border-bottom: 1px solid var(--border-color);
-    overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .subtitle-text {
@@ -29,6 +31,13 @@
     border-radius: var(--border-radius-lg);
     padding: 4px 12px;
     max-width: 100%;
+    /* Center content when it doesn't fill the container */
+    min-height: calc(9.625rem - 2 * var(--space-lg));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .subtitle-content {
@@ -71,9 +80,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: var(--space-sm);
     text-align: center;
     padding: var(--space-md);
+    min-height: calc(9.625rem - 2 * var(--space-lg));
 }
 
 .empty-icon {
@@ -534,13 +545,14 @@ ruby rt {
 
 @media (max-width: 640px) {
     .current-subtitle {
-        min-height: 8.75rem;
+        height: 8.75rem;
         padding: var(--space-lg) var(--mobile-padding);
     }
 
     .subtitle-text {
         font-size: 1.25rem;
         line-height: 2;
+        min-height: calc(8.75rem - 2 * var(--space-lg));
     }
 
     .current-subtitle--small .subtitle-text {
@@ -623,16 +635,25 @@ ruby rt {
         height: 2.25rem;
         border-radius: 4px;
     }
+
+    .subtitle-empty {
+        min-height: calc(8.75rem - 2 * var(--space-lg));
+    }
 }
 
 @media (max-width: 480px) {
     .current-subtitle {
-        min-height: 6.25rem;
+        height: 6.25rem;
         padding: var(--space-md);
     }
 
     .subtitle-text {
         font-size: 1.125rem;
         line-height: 1.8;
+        min-height: calc(6.25rem - 2 * var(--space-md));
+    }
+
+    .subtitle-empty {
+        min-height: calc(6.25rem - 2 * var(--space-md));
     }
 }
