@@ -1,7 +1,11 @@
 {
     "app": {
         "title": "Voca",
-        "subtitle": "用YouTube学习"
+        "subtitle": "用YouTube学习",
+        "updateAvailable": "有新版本",
+        "updateMessage": "新版本已准备就绪。立即更新以获取最新功能和改进。",
+        "updateNow": "立即更新",
+        "updateLater": "稍后"
     },
     "nav": {
         "video": "视频",

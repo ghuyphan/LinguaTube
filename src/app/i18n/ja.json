@@ -1,7 +1,11 @@
 {
     "app": {
         "title": "Voca",
-        "subtitle": "YouTubeで学ぼう"
+        "subtitle": "YouTubeで学ぼう",
+        "updateAvailable": "アップデートがあります",
+        "updateMessage": "新しいバージョンが利用可能です。最新の機能と改善を入手するには今すぐアップデートしてください。",
+        "updateNow": "今すぐ更新",
+        "updateLater": "後で"
     },
     "nav": {
         "video": "動画",

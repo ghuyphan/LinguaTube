@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { IconComponent } from './components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
@@ -21,7 +22,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     HeaderComponent,
     IconComponent,
     SettingsSheetComponent,
-    SidebarComponent
+    SidebarComponent,
+    BottomSheetComponent
   ],
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
@@ -87,6 +89,30 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         [isOpen]="showSettingsSheet()" 
         (closed)="showSettingsSheet.set(false)" 
       />
+
+      <!-- Update Available Sheet -->
+      <app-bottom-sheet
+        [isOpen]="showUpdateSheet()"
+        [showCloseButton]="true"
+        [maxHeight]="'auto'"
+        (closed)="showUpdateSheet.set(false)"
+      >
+        <div class="update-sheet">
+          <div class="update-sheet__icon">
+            <app-icon name="rotate-ccw" [size]="32" />
+          </div>
+          <h3 class="update-sheet__title">{{ i18n.t('app.updateAvailable') }}</h3>
+          <p class="update-sheet__message">{{ i18n.t('app.updateMessage') }}</p>
+          <div class="update-sheet__actions">
+            <button class="update-sheet__btn update-sheet__btn--secondary" (click)="showUpdateSheet.set(false)">
+              {{ i18n.t('app.updateLater') }}
+            </button>
+            <button class="update-sheet__btn update-sheet__btn--primary" (click)="applyUpdate()">
+              {{ i18n.t('app.updateNow') }}
+            </button>
+          </div>
+        </div>
+      </app-bottom-sheet>
 
     </div>
   `,
@@ -187,6 +213,73 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         padding-top: 0;
       }
     }
+
+    /* Update Sheet Styles */
+    .update-sheet {
+      padding: var(--space-lg);
+      text-align: center;
+    }
+
+    .update-sheet__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      border-radius: var(--radius-full);
+      color: white;
+    }
+
+    .update-sheet__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 var(--space-sm);
+    }
+
+    .update-sheet__message {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0 0 var(--space-lg);
+      line-height: 1.5;
+    }
+
+    .update-sheet__actions {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+    }
+
+    .update-sheet__btn {
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .update-sheet__btn--secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+    }
+
+    .update-sheet__btn--secondary:hover {
+      background: var(--bg-hover);
+    }
+
+    .update-sheet__btn--primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      color: white;
+    }
+
+    .update-sheet__btn--primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
   `]
 })
 export class AppComponent implements OnDestroy {
@@ -231,18 +324,15 @@ export class AppComponent implements OnDestroy {
       return;
     }
 
-    // Subscribe to version updates - auto-reload when new version is ready
+    // Subscribe to version updates - show update sheet instead of auto-reloading
     this.swUpdate.versionUpdates
       .pipe(
         filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
         takeUntil(this.destroy$)
       )
       .subscribe(() => {
-        console.log('[SW] New version ready, activating...');
-        this.swUpdate.activateUpdate().then(() => {
-          console.log('[SW] Update activated, reloading...');
-          window.location.reload();
-        });
+        console.log('[SW] New version ready, showing update notification...');
+        this.showUpdateSheet.set(true);
       });
 
     // 1. Check on startup (with delay to not block initial render)
@@ -289,6 +379,7 @@ export class AppComponent implements OnDestroy {
   }
 
   showSettingsSheet = signal(false);
+  showUpdateSheet = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
 
@@ -318,5 +409,16 @@ export class AppComponent implements OnDestroy {
 
   toggleSettingsSheet(): void {
     this.showSettingsSheet.update(v => !v);
+  }
+
+  /**
+   * Apply the pending update and reload the app
+   */
+  applyUpdate(): void {
+    this.showUpdateSheet.set(false);
+    this.swUpdate.activateUpdate().then(() => {
+      console.log('[SW] Update activated, reloading...');
+      window.location.reload();
+    });
   }
 }

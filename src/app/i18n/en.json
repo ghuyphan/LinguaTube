@@ -1,7 +1,11 @@
 {
     "app": {
         "title": "Voca",
-        "subtitle": "Learn from YouTube"
+        "subtitle": "Learn from YouTube",
+        "updateAvailable": "Update Available",
+        "updateMessage": "A new version of the app is ready. Update now for the latest features and improvements.",
+        "updateNow": "Update Now",
+        "updateLater": "Later"
     },
     "nav": {
         "video": "Video",

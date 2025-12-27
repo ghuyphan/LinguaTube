@@ -1,7 +1,11 @@
 {
     "app": {
         "title": "Voca",
-        "subtitle": "Học từ YouTube"
+        "subtitle": "Học từ YouTube",
+        "updateAvailable": "Có bản cập nhật",
+        "updateMessage": "Phiên bản mới đã sẵn sàng. Cập nhật ngay để có các tính năng và cải tiến mới nhất.",
+        "updateNow": "Cập nhật ngay",
+        "updateLater": "Để sau"
     },
     "nav": {
         "video": "Video",

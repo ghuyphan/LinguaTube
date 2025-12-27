@@ -114,8 +114,14 @@
       }
 
       <!-- Big Play/Pause Button - Mobile version (touch devices) -->
-      @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.isPlaying())) {
-      @if (!youtube.isPlaying()) {
+      @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.isPlaying() ||
+      youtube.isBuffering())) {
+      @if (youtube.isBuffering()) {
+      <button class="big-play-btn touch-only buffering" aria-label="Loading video"
+        (touchstart)="$event.stopPropagation()" (click)="$event.stopPropagation()" disabled>
+        <app-icon name="loader" [size]="44" aria-hidden="true" />
+      </button>
+      } @else if (!youtube.isPlaying()) {
       <button class="big-play-btn touch-only" aria-label="Play video" (touchstart)="$event.stopPropagation()"
         (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
         <app-icon name="play" [size]="44" aria-hidden="true" />
@@ -130,7 +136,11 @@
 
       <!-- Big Play/Pause Button - Desktop version (hover devices) -->
       @if (youtube.isReady() && !youtube.isEnded()) {
-      @if (!youtube.isPlaying()) {
+      @if (youtube.isBuffering()) {
+      <button class="big-play-btn hover-only buffering" aria-label="Loading video" disabled>
+        <app-icon name="loader" [size]="44" aria-hidden="true" />
+      </button>
+      } @else if (!youtube.isPlaying()) {
       <button class="big-play-btn hover-only" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
         <app-icon name="play" [size]="44" aria-hidden="true" />
       </button>

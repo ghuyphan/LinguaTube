@@ -300,6 +300,25 @@ $text-muted-fallback: #888;
   animation: fadeIn 0.2s ease;
 }
 
+.big-play-btn.buffering {
+  cursor: default;
+  opacity: 0.9;
+
+  app-icon {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .replay-btn {
   background: rgba(0, 0, 0, 0.7);
 }
