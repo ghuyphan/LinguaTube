@@ -26,6 +26,7 @@ export class YoutubeService {
   readonly duration = signal(0);
   readonly isReady = signal(false);
   readonly isEnded = signal(false);
+  readonly isBuffering = signal(false);
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null);
 
@@ -242,15 +243,20 @@ export class YoutubeService {
             onStateChange: (event: any) => {
               const state = event.data;
               const isPlaying = state === window.YT.PlayerState.PLAYING;
+              const isBuffering = state === window.YT.PlayerState.BUFFERING;
 
-              if (isPlaying !== this.isPlaying()) {
-                if (isPlaying) {
-                  this.isPlaying.set(true);
-                  this.startTimeTracking();
-                } else {
-                  this.isPlaying.set(false);
-                  cancelAnimationFrame(this.timeUpdateInterval);
-                }
+              // Update buffering state
+              this.isBuffering.set(isBuffering);
+
+              // Only update isPlaying when transitioning to/from PLAYING state
+              // Don't set isPlaying to false when buffering (user pressed play, waiting for buffer)
+              if (isPlaying && !this.isPlaying()) {
+                this.isPlaying.set(true);
+                this.startTimeTracking();
+              } else if (!isPlaying && !isBuffering && this.isPlaying()) {
+                // Only set to false if we're not buffering (e.g., paused or ended)
+                this.isPlaying.set(false);
+                cancelAnimationFrame(this.timeUpdateInterval);
               }
 
               this.isEnded.set(state === window.YT.PlayerState.ENDED);
