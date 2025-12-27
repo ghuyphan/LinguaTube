@@ -31,6 +31,7 @@ export class SubtitleDisplayComponent {
   i18n = inject(I18nService);
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
+  @ViewChild('currentSubtitleInner') currentSubtitleInner!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
 
@@ -43,6 +44,10 @@ export class SubtitleDisplayComponent {
     const lang = this.settings.settings().language;
     return this.vocab.getByLanguage(lang).length;
   });
+
+  // Overflow indicators for current subtitle
+  hasOverflowTop = signal(false);
+  hasOverflowBottom = signal(false);
 
   // Loop feature state
   isLoopEnabled = signal(false);
@@ -85,16 +90,28 @@ export class SubtitleDisplayComponent {
   });
 
   constructor() {
-    // Sync logic moved to SubtitleService
-
-    // Auto-scroll to active cue using effect for better reactivity
+    // Auto-scroll to active cue in subtitle list
     effect(() => {
       if (this.isVideoFullscreen()) return;
       const currentCue = this.subtitles.currentCue();
-      // Ensure we have a cue and the list element is available
       if (currentCue && this.subtitleList?.nativeElement) {
-        // Use timeout to allow DOM update (class changes) before measuring
         setTimeout(() => this.scrollToActiveCue(currentCue.id), 0);
+      }
+    });
+
+    // Auto-center current subtitle content when it changes
+    effect(() => {
+      if (this.isVideoFullscreen()) return;
+      const currentCue = this.subtitles.currentCue();
+      const tokens = this.currentTokens(); // Track token changes too
+
+      if (currentCue && this.currentSubtitleInner?.nativeElement) {
+        // Wait for DOM to update with new content
+        setTimeout(() => this.centerAndCheckOverflow(), 50);
+      } else {
+        // Reset overflow indicators when no cue
+        this.hasOverflowTop.set(false);
+        this.hasOverflowBottom.set(false);
       }
     });
 
@@ -106,16 +123,8 @@ export class SubtitleDisplayComponent {
 
       if (!this.isLoopEnabled() || !targetId) return;
 
-      // If we don't have a current cue (e.g. gap between subtitles), do nothing yet
-      // unless we drifted too far.
-      if (!currentCue) {
-        // Option: Check if we are past the target cue's end time significantly?
-        // For now, let's rely on cue presence or time check.
-        return;
-      }
+      if (!currentCue) return;
 
-      // 1. Detect if user manually seeked away or we drifted too far to a DIFFERENT, NON-ADJACENT cue
-      // We check if current cue is the target cue or the immediately following one
       const subtitles = this.subtitles.subtitles();
       const currentCueIndex = subtitles.findIndex(c => c.id === currentCue.id);
       const targetCueIndex = subtitles.findIndex(c => c.id === targetId);
@@ -125,14 +134,11 @@ export class SubtitleDisplayComponent {
         return;
       }
 
-      // Allow being on the target cue or the immediate next one (natural playback progression)
       if (currentCueIndex !== targetCueIndex && currentCueIndex !== targetCueIndex + 1) {
-        // User likely clicked a different cue or seeked far away. Disable loop.
         this.disableLoop();
         return;
       }
 
-      // 2. Check overlap/end condition
       const targetCue = subtitles[targetCueIndex];
 
       let shouldLoop = false;
@@ -144,31 +150,70 @@ export class SubtitleDisplayComponent {
       }
 
       if (shouldLoop) {
-        // Prevent double-counting due to seek latency
         if (Date.now() - this.lastLoopTime < 1000) return;
 
         const maxLoopsValue = this.maxLoops();
         const currentLoopCount = this.loopCount();
 
         if (maxLoopsValue === 0 || currentLoopCount < maxLoopsValue) {
-          // Debounce the seek to avoid rapid firing
           if (!this.loopTimeoutId) {
             this.loopTimeoutId = setTimeout(() => {
               this.loopCount.update(c => c + 1);
               this.youtube.seekTo(targetCue.startTime);
               this.lastLoopTime = Date.now();
-              this.loopTimeoutId = null; // Reset timeout ref
+              this.loopTimeoutId = null;
             }, 300);
           }
         } else {
-          // Max loops reached
           this.disableLoop();
         }
       }
     });
   }
 
-  // Removed ngAfterViewChecked as we use effect now
+  /**
+   * Centers the scroll position and updates overflow indicators
+   */
+  private centerAndCheckOverflow(): void {
+    const container = this.currentSubtitleInner?.nativeElement;
+    if (!container) return;
+
+    const scrollHeight = container.scrollHeight;
+    const clientHeight = container.clientHeight;
+    const hasOverflow = scrollHeight > clientHeight;
+
+    if (hasOverflow) {
+      // Center the scroll position
+      const targetScroll = (scrollHeight - clientHeight) / 2;
+      container.scrollTop = targetScroll;
+
+      // Update overflow indicators based on scroll position
+      this.updateOverflowIndicators();
+
+      // Listen for user scroll to update indicators
+      container.addEventListener('scroll', this.onSubtitleScroll, { passive: true });
+    } else {
+      // No overflow - reset indicators
+      this.hasOverflowTop.set(false);
+      this.hasOverflowBottom.set(false);
+      container.removeEventListener('scroll', this.onSubtitleScroll);
+    }
+  }
+
+  private onSubtitleScroll = (): void => {
+    this.updateOverflowIndicators();
+  };
+
+  private updateOverflowIndicators(): void {
+    const container = this.currentSubtitleInner?.nativeElement;
+    if (!container) return;
+
+    const { scrollTop, scrollHeight, clientHeight } = container;
+    const threshold = 5; // Small threshold for edge detection
+
+    this.hasOverflowTop.set(scrollTop > threshold);
+    this.hasOverflowBottom.set(scrollTop + clientHeight < scrollHeight - threshold);
+  }
 
   private scrollToActiveCue(cueId: string): void {
     if (!this.subtitleList?.nativeElement) return;
@@ -181,7 +226,6 @@ export class SubtitleDisplayComponent {
       const elementTop = activeElement.offsetTop;
       const elementHeight = activeElement.offsetHeight;
 
-      // Center the element
       const targetScrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
 
       container.scrollTo({
@@ -204,14 +248,11 @@ export class SubtitleDisplayComponent {
     this.wordClicked.emit({ token, sentence });
   }
 
-  // Check if a string is punctuation (CJK + Western)
   isPunctuation(text: string): boolean {
-    // Regex covers: CJK punctuation, Western punctuation, brackets, whitespace
     const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–]+$/u;
     return punctuationRegex.test(text);
   }
 
-  // Computed reading label
   readingLabel = computed(() => {
     const lang = this.settings.settings().language;
     switch (lang) {
@@ -226,7 +267,7 @@ export class SubtitleDisplayComponent {
     const lang = this.settings.settings().language;
     if (lang === 'ja') return token.reading;
     if (lang === 'zh') return token.pinyin;
-    return token.romanization || token.pinyin; // Fallback to pinyin if romanization missing (or if used interchangeably)
+    return token.romanization || token.pinyin;
   }
 
   toggleReading(): void {
@@ -234,12 +275,11 @@ export class SubtitleDisplayComponent {
     if (lang === 'ja') {
       this.settings.toggleFurigana();
     } else {
-      this.settings.togglePinyin(); // Reusing pinyin toggle for other langs for now
+      this.settings.togglePinyin();
     }
   }
 
   seekToCue(cue: SubtitleCue): void {
-    // Disable loop when user manually selects a different cue
     if (this.isLoopEnabled()) {
       this.disableLoop();
     }
