@@ -83,30 +83,54 @@
 }
 
 .level-badge {
-    display: none;
-}
-
-.level-select {
-    padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 50px;
+    background: var(--bg-tertiary);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
     font-size: 0.75rem;
-    height: auto;
-    min-height: unset;
-    border-radius: 4px;
-}
+    font-weight: 500;
 
-.level--new {
-    background: var(--word-new);
-    color: var(--word-new-text);
-}
+    &:hover {
+        border-color: var(--border-color);
+        background: var(--bg-hover);
+    }
 
-.level--learning {
-    background: var(--word-learning);
-    color: var(--word-learning-text);
-}
+    .level-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+    }
 
-.level--known {
-    background: var(--word-known);
-    color: var(--word-known-text);
+    .level-text {
+        text-transform: capitalize;
+    }
+
+    // Level colors
+    &.level--new {
+        color: var(--word-new);
+        background: color-mix(in srgb, var(--word-new), transparent 92%);
+    }
+
+    &.level--learning {
+        color: var(--word-learning);
+        background: color-mix(in srgb, var(--word-learning), transparent 92%);
+    }
+
+    &.level--known {
+        color: var(--word-known);
+        background: color-mix(in srgb, var(--word-known), transparent 92%);
+    }
+
+    &.level--ignored {
+        color: var(--text-muted);
+        background: var(--bg-secondary);
+    }
 }
 
 /* Landscape phones: more compact layout */

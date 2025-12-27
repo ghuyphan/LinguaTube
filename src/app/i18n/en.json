@@ -79,7 +79,9 @@
         "deleteConfirm": "Are you sure you want to delete this word? This action cannot be undone.",
         "cancel": "Cancel",
         "importSuccess": "Vocabulary imported successfully!",
-        "importError": "Failed to import. Check file format."
+        "importError": "Failed to import. Check file format.",
+        "filterByLevel": "Filter by Level",
+        "changeLevel": "Change Level"
     },
     "popup": {
         "translationLang": "Translation Language",

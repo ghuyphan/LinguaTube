@@ -27,15 +27,10 @@
                 </div>
                 <div class="word-meaning">{{ word.meaning }}</div>
                 <div class="word-meta">
-                    <span class="level-badge" [class]="'level--' + word.level">
-                        {{ word.level }}
-                    </span>
-                    <select class="level-select" [value]="word.level" (change)="updateLevel(word.id, $event)">
-                        <option value="new">{{ i18n.t('vocab.new') | titlecase }}</option>
-                        <option value="learning">{{ i18n.t('vocab.learning') | titlecase }}</option>
-                        <option value="known">{{ i18n.t('vocab.known') | titlecase }}</option>
-                        <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
-                    </select>
+                    <button class="level-badge" [class]="'level--' + word.level" (click)="openLevelPicker(word.id)">
+                        <span class="level-dot"></span>
+                        <span class="level-text">{{ word.level }}</span>
+                    </button>
                 </div>
             </li>
             }
@@ -43,3 +38,8 @@
         }
     </div>
 </app-bottom-sheet>
+
+<!-- Level Picker -->
+<app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
+    [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
+    (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />

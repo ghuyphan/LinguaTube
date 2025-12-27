@@ -79,7 +79,9 @@
         "deleteConfirm": "이 단어를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
         "cancel": "취소",
         "importSuccess": "단어장을 성공적으로 가져왔습니다!",
-        "importError": "가져오기 실패. 파일 형식을 확인하세요."
+        "importError": "가져오기 실패. 파일 형식을 확인하세요.",
+        "filterByLevel": "레벨별 필터",
+        "changeLevel": "레벨 변경"
     },
     "popup": {
         "translationLang": "번역 언어",

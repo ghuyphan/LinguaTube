@@ -62,14 +62,30 @@
 
 
 
-.filter-select {
-    width: auto;
-    min-width: 6.25rem;
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
     height: var(--btn-height-md);
+    padding: 0 var(--space-sm) 0 var(--space-md);
     font-size: 0.875rem;
-    padding: 0 1.75rem 0 0.625rem;
-    flex-shrink: 0;
+    font-weight: 500;
+    color: var(--text-primary);
     background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+
+    &:hover {
+        background: var(--bg-secondary);
+        border-color: var(--accent);
+    }
+
+    app-icon {
+        color: var(--text-muted);
+    }
 }
 
 .word-list {
@@ -88,7 +104,7 @@
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--border-color);
+    // border-bottom: 1px solid var(--border-color);
     transition: background-color var(--transition-fast);
 
     &:last-child {
@@ -180,14 +196,6 @@
 
 .level-text {
     text-transform: capitalize;
-}
-
-.level-select-hidden {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-    width: 100%;
 }
 
 // Level colors

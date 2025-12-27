@@ -1,8 +1,9 @@
-import { Component, inject, input, output, signal, effect, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Component, inject, input, output, signal, effect, computed, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
+import { OptionPickerComponent, OptionItem } from '../option-picker/option-picker.component';
 import { DictionaryService, VocabularyService, SettingsService, TranslationService, I18nService } from '../../services';
 import { Token, DictionaryEntry } from '../../models';
 
@@ -10,7 +11,7 @@ import { Token, DictionaryEntry } from '../../models';
   selector: 'app-word-popup',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent],
+  imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent, OptionPickerComponent],
   templateUrl: './word-popup.component.html',
   styleUrl: './word-popup.component.scss'
 })
@@ -35,6 +36,32 @@ export class WordPopupComponent implements OnDestroy {
   targetLang = signal(this.getDefaultTargetLang());
   translatedDefinitions = signal<Map<number, { text: string; lang: string }>>(new Map());
   translatingIndices = signal<Set<number>>(new Set());
+
+  // Picker state
+  langPickerOpen = signal(false);
+  levelPickerOpen = signal(false);
+
+  // Computed options for pickers
+  langOptions = computed<OptionItem[]>(() =>
+    this.translation.getSupportedTargetLanguages().map(lang => ({
+      value: lang.code,
+      label: lang.name,
+      icon: lang.flag
+    }))
+  );
+
+  levelOptions = computed<OptionItem[]>(() => [
+    { value: 'new', label: this.i18n.t('vocab.new') },
+    { value: 'learning', label: this.i18n.t('vocab.learning') },
+    { value: 'known', label: this.i18n.t('vocab.known') },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') }
+  ]);
+
+  currentLevel = computed(() => {
+    const word = this.selectedWord();
+    if (!word) return 'new';
+    return this.vocab.getWordLevel(word.surface) || 'new';
+  });
 
   private getDefaultTargetLang(): string {
     const uiLang = this.i18n.currentLanguage();
@@ -100,6 +127,29 @@ export class WordPopupComponent implements OnDestroy {
     if (item) {
       this.vocab.updateLevel(item.id, level);
     }
+  }
+
+  onLangSelected(value: string): void {
+    this.targetLang.set(value);
+    this.langPickerOpen.set(false);
+  }
+
+  onLevelSelected(value: string): void {
+    const word = this.selectedWord();
+    if (!word) return;
+
+    const level = value as 'new' | 'learning' | 'known' | 'ignored';
+    const item = this.vocab.findWord(word.surface);
+
+    if (item) {
+      this.vocab.updateLevel(item.id, level);
+    }
+    this.levelPickerOpen.set(false);
+  }
+
+  getSelectedLangFlag(): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === this.targetLang());
+    return lang ? lang.flag : '🌐';
   }
 
   translateDefinition(index: number, text: string): void {

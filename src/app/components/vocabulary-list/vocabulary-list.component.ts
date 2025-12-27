@@ -2,6 +2,7 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@a
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
+import { OptionPickerComponent, OptionItem } from '../option-picker/option-picker.component';
 import { VocabularyService, SettingsService, I18nService } from '../../services';
 import { VocabularyItem, WordLevel } from '../../models';
 
@@ -9,7 +10,7 @@ import { VocabularyItem, WordLevel } from '../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -23,10 +24,57 @@ export class VocabularyListComponent {
   private debouncedSearch = signal('');
   private searchTimeout: ReturnType<typeof setTimeout> | null = null;
 
-  levelFilter: WordLevel | 'all' = 'all';
+  levelFilter = signal<WordLevel | 'all'>('all');
 
-  onLevelFilterChange() {
+  // Filter picker state
+  filterPickerOpen = signal(false);
+
+  // Level picker state (for individual items)
+  levelPickerOpen = signal(false);
+  editingItemId = signal<string | null>(null);
+
+  // Options for filter picker
+  filterOptions = computed<OptionItem[]>(() => [
+    { value: 'all', label: this.i18n.t('vocab.allLevels') },
+    { value: 'new', label: this.i18n.t('vocab.new') },
+    { value: 'learning', label: this.i18n.t('vocab.learning') },
+    { value: 'known', label: this.i18n.t('vocab.known') },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') }
+  ]);
+
+  // Options for level picker
+  levelOptions = computed<OptionItem[]>(() => [
+    { value: 'new', label: this.i18n.t('vocab.new') },
+    { value: 'learning', label: this.i18n.t('vocab.learning') },
+    { value: 'known', label: this.i18n.t('vocab.known') },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') }
+  ]);
+
+  onLevelFilterChange(value: string) {
+    this.levelFilter.set(value as WordLevel | 'all');
     this.currentPage.set(1);
+    this.filterPickerOpen.set(false);
+  }
+
+  openLevelPicker(itemId: string): void {
+    this.editingItemId.set(itemId);
+    this.levelPickerOpen.set(true);
+  }
+
+  onLevelChange(value: string): void {
+    const itemId = this.editingItemId();
+    if (itemId) {
+      this.vocab.updateLevel(itemId, value as WordLevel);
+    }
+    this.levelPickerOpen.set(false);
+    this.editingItemId.set(null);
+  }
+
+  getEditingItemLevel(): string {
+    const itemId = this.editingItemId();
+    if (!itemId) return 'new';
+    const item = this.vocab.vocabulary().find(w => w.id === itemId);
+    return item?.level || 'new';
   }
 
   // Getter/setter for two-way binding with debounce
@@ -87,8 +135,8 @@ export class VocabularyListComponent {
       );
     }
 
-    if (this.levelFilter !== 'all') {
-      items = items.filter(item => item.level === this.levelFilter);
+    if (this.levelFilter() !== 'all') {
+      items = items.filter(item => item.level === this.levelFilter());
     }
 
     return [...items].sort((a, b) =>

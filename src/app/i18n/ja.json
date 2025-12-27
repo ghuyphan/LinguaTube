@@ -79,7 +79,9 @@
         "deleteConfirm": "この単語を削除してもよろしいですか？この操作は取り消せません。",
         "cancel": "キャンセル",
         "importSuccess": "単語帳のインポートに成功しました！",
-        "importError": "インポートに失敗しました。ファイル形式を確認してください。"
+        "importError": "インポートに失敗しました。ファイル形式を確認してください。",
+        "filterByLevel": "レベルで絞り込む",
+        "changeLevel": "レベルを変更"
     },
     "popup": {
         "translationLang": "翻訳言語",

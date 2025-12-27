@@ -25,13 +25,10 @@
             </button>
             }
         </div>
-        <select class="filter-select" [(ngModel)]="levelFilter" (ngModelChange)="onLevelFilterChange()">
-            <option value="all">{{ i18n.t('vocab.allLevels') }}</option>
-            <option value="new">{{ i18n.t('vocab.new') }}</option>
-            <option value="learning">{{ i18n.t('vocab.learning') }}</option>
-            <option value="known">{{ i18n.t('vocab.known') }}</option>
-            <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
-        </select>
+        <button class="filter-btn" (click)="filterPickerOpen.set(true)">
+            <span>{{ levelFilter() === 'all' ? i18n.t('vocab.allLevels') : i18n.t('vocab.' + levelFilter()) }}</span>
+            <app-icon name="chevron-down" [size]="14" />
+        </button>
     </div>
 
     <!-- Word list -->
@@ -66,19 +63,11 @@
                 </div>
 
                 <div class="vocab-item__actions">
-                    <div class="level-badge" [class]="'level-badge--' + item.level" [title]="item.level"
-                        (click)="fileInput.click()">
-                        <!-- Hidden select for functionality -->
-                        <select #fileInput [value]="item.level" (change)="updateLevel(item.id, $event)"
-                            class="level-select-hidden">
-                            <option value="new">New</option>
-                            <option value="learning">Learning</option>
-                            <option value="known">Known</option>
-                            <option value="ignored">Ignored</option>
-                        </select>
+                    <button class="level-badge" [class]="'level-badge--' + item.level"
+                        (click)="openLevelPicker(item.id)">
                         <span class="level-dot"></span>
                         <span class="level-text">{{ item.level }}</span>
-                    </div>
+                    </button>
 
                     <button class="btn btn-icon btn-ghost delete-btn" (click)="deleteWord(item.id)" title="Delete">
                         <app-icon name="trash-2" [size]="16" />
@@ -147,3 +136,13 @@
     <span>{{ toastMessage() }}</span>
 </div>
 }
+
+<!-- Filter Picker -->
+<app-option-picker [options]="filterOptions()" [value]="levelFilter()" [isOpen]="filterPickerOpen()"
+    [title]="i18n.t('vocab.filterByLevel')" (selected)="onLevelFilterChange($event)"
+    (closed)="filterPickerOpen.set(false)" />
+
+<!-- Level Picker -->
+<app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
+    [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
+    (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />

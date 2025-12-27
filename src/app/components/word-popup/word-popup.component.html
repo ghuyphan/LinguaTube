@@ -20,13 +20,10 @@
 
             <!-- Language Target Selector (for translation) -->
             <div class="translation-controls">
-                <label for="target-lang" class="sr-only">Translation Language</label>
-                <select id="target-lang" class="lang-select" [ngModel]="targetLang()"
-                    (ngModelChange)="targetLang.set($event)">
-                    @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
-                    <option [value]="lang.code">{{ lang.flag }} {{ lang.name }}</option>
-                    }
-                </select>
+                <button class="lang-select-btn" (click)="langPickerOpen.set(true)">
+                    <span class="lang-flag">{{ getSelectedLangFlag() }}</span>
+                    <app-icon name="chevron-down" [size]="12" />
+                </button>
             </div>
         </div>
 
@@ -102,13 +99,11 @@
                 <app-icon name="check" [size]="14" />
                 {{ i18n.t('popup.saved') }}
             </button>
-            <select class="level-select" [value]="vocab.getWordLevel(selectedWord()?.surface || '')"
-                (change)="updateLevel($event)">
-                <option value="new">{{ i18n.t('vocab.new') }}</option>
-                <option value="learning">{{ i18n.t('vocab.learning') }}</option>
-                <option value="known">{{ i18n.t('vocab.known') }}</option>
-                <option value="ignored">{{ i18n.t('vocab.ignored') }}</option>
-            </select>
+            <button class="level-select-btn" [class]="'level--' + currentLevel()" (click)="levelPickerOpen.set(true)">
+                <span class="level-dot"></span>
+                <span class="level-text">{{ i18n.t('vocab.' + currentLevel()) }}</span>
+                <app-icon name="chevron-down" [size]="12" />
+            </button>
             } @else {
             <button class="btn btn-primary" (click)="saveWord()">
                 <app-icon name="plus" [size]="14" />
@@ -119,3 +114,12 @@
         </div>
     </div>
 </app-bottom-sheet>
+
+<!-- Language Picker -->
+<app-option-picker [options]="langOptions()" [value]="targetLang()" [isOpen]="langPickerOpen()"
+    [title]="i18n.t('popup.translationLang')" (selected)="onLangSelected($event)"
+    (closed)="langPickerOpen.set(false)" />
+
+<!-- Level Picker -->
+<app-option-picker [options]="levelOptions()" [value]="currentLevel()" [isOpen]="levelPickerOpen()"
+    [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelSelected($event)" (closed)="levelPickerOpen.set(false)" />

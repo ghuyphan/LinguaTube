@@ -79,7 +79,9 @@
         "deleteConfirm": "确定要删除这个词汇吗？此操作无法撤销。",
         "cancel": "取消",
         "importSuccess": "词汇导入成功！",
-        "importError": "导入失败。请检查文件格式。"
+        "importError": "导入失败。请检查文件格式。",
+        "filterByLevel": "按级别筛选",
+        "changeLevel": "更改级别"
     },
     "popup": {
         "translationLang": "翻译语言",

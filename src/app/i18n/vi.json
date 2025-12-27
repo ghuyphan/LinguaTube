@@ -79,7 +79,9 @@
         "deleteConfirm": "Bạn có chắc muốn xóa từ này? Không thể hoàn tác.",
         "cancel": "Hủy",
         "importSuccess": "Nhập từ vựng thành công!",
-        "importError": "Nhập thất bại. Kiểm tra định dạng file."
+        "importError": "Nhập thất bại. Kiểm tra định dạng file.",
+        "filterByLevel": "Lọc theo cấp độ",
+        "changeLevel": "Đổi cấp độ"
     },
     "popup": {
         "translationLang": "Ngôn ngữ dịch",
