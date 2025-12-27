@@ -19,7 +19,7 @@
                     [class.word--known]="getWordLevel(token.surface) === 'known'"
                     [class.word--saved]="vocab.hasWord(token.surface)" (click)="onWordClick(token, cue.text)">@if
                     (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt>
-                        </ruby>} @else {{{ token.surface }}}</span>}}
+                    </ruby>} @else {{{ token.surface }}}</span>}}
             </span>
             }
         </div>

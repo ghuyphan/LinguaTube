@@ -16,11 +16,11 @@
 
     <!-- Filters -->
     <div class="vocab-filters">
-        <div class="search-wrapper">
-            <app-icon name="search" [size]="16" class="search-icon" />
+        <div class="search-wrapper input-group--icon">
+            <app-icon name="search" [size]="16" class="input-icon" />
             <input type="text" class="search-input" [placeholder]="i18n.t('vocab.search')" [(ngModel)]="searchQuery" />
             @if (searchQuery) {
-            <button class="search-clear-btn" (click)="clearSearch()">
+            <button class="clear-btn" (click)="clearSearch()">
                 <app-icon name="x" [size]="14" />
             </button>
             }
@@ -39,12 +39,12 @@
         @if (filteredWords().length === 0) {
         <div class="empty-state">
             @if (vocab.vocabulary().length === 0) {
-            <app-icon name="book-open" [size]="32" class="empty-icon" />
-            <p class="empty-title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-            <p class="empty-hint">{{ i18n.t('vocab.clickWordsToSave') }}</p>
+            <app-icon name="book-open" [size]="32" class="empty-state__icon" />
+            <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+            <p class="empty-state__hint">{{ i18n.t('vocab.clickWordsToSave') }}</p>
             } @else {
-            <app-icon name="search" [size]="24" class="empty-icon" />
-            <p class="empty-title">{{ i18n.t('vocab.noMatchesFound') }}</p>
+            <app-icon name="search" [size]="24" class="empty-state__icon" />
+            <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
             }
         </div>
         } @else {

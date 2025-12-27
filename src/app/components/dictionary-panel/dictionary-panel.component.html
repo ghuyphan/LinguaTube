@@ -9,8 +9,8 @@
 
     <!-- Search / Filters -->
     <div class="dict-filters">
-        <div class="search-box">
-            <app-icon name="search" [size]="16" class="search-icon" />
+        <div class="search-box input-group--icon">
+            <app-icon name="search" [size]="16" class="input-icon" />
             <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
                 class="search-input" (keyup.enter)="search()" />
             @if (searchQuery) {
@@ -92,10 +92,10 @@
             </div>
         </div>
         } @else if (hasSearched() && !isLoading()) {
-        <div class="no-results">
-            <app-icon name="info" [size]="24" />
-            <p>{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
-            <p class="hint">{{ i18n.t('dictionary.tryDifferent') }}</p>
+        <div class="empty-state">
+            <app-icon name="info" [size]="24" class="empty-state__icon" />
+            <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
+            <p class="empty-state__hint">{{ i18n.t('dictionary.tryDifferent') }}</p>
         </div>
         } @else if (!hasSearched()) {
         <!-- Show recent searches here if no current search -->
@@ -119,9 +119,9 @@
             </div>
         </div>
         } @else {
-        <div class="search-prompt">
-            <app-icon name="book-open" [size]="32" class="prompt-icon" />
-            <p>{{ i18n.t('dictionary.enterWordAbove') }}</p>
+        <div class="empty-state">
+            <app-icon name="book-open" [size]="32" class="empty-state__icon" />
+            <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>
         </div>
         }
         }

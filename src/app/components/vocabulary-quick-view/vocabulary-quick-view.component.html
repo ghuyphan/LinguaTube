@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" (closed)="closed.emit()">
+<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" (closed)="closed.emit()">
     <div class="quick-view">
         <div class="quick-view-header">
             <h2>{{ i18n.t('study.recentlyAdded') }}</h2>
@@ -7,9 +7,9 @@
 
         @if (recentWords().length === 0) {
         <div class="empty-state">
-            <app-icon name="bookmark" [size]="32" />
-            <p>{{ i18n.t('vocab.noWordsSaved') }}</p>
-            <p class="hint">{{ i18n.t('study.tapWordsHint') }}</p>
+            <app-icon name="bookmark" [size]="32" class="empty-state__icon" />
+            <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+            <p class="empty-state__hint">{{ i18n.t('study.tapWordsHint') }}</p>
         </div>
         } @else {
         <ul class="word-list">

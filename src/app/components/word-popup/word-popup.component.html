@@ -88,10 +88,10 @@
                 }
             </div>
             } @else {
-            <div class="popup-empty">
-                <app-icon name="info" [size]="20" />
-                <p>{{ i18n.t('popup.noDictionaryEntry') }}</p>
-                <p class="popup-empty-hint">{{ i18n.t('popup.saveManually') }}</p>
+            <div class="empty-state">
+                <app-icon name="info" [size]="20" class="empty-state__icon" />
+                <p class="empty-state__title">{{ i18n.t('popup.noDictionaryEntry') }}</p>
+                <p class="empty-state__hint">{{ i18n.t('popup.saveManually') }}</p>
             </div>
             }
         </div>
@@ -115,9 +115,7 @@
                 {{ i18n.t('popup.saveWord') }}
             </button>
             }
-            <button class="btn btn-ghost" (click)="close()">
-                {{ i18n.t('popup.close') }}
-            </button>
+
         </div>
     </div>
 </app-bottom-sheet>

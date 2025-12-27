@@ -3,7 +3,7 @@
   <!-- URL Input State -->
   <div class="video-input">
     <div class="input-group">
-      <div class="input-wrapper">
+      <div class="input-wrapper input-group--icon">
         <app-icon name="search" [size]="16" class="input-icon" />
         <input type="text" [(ngModel)]="videoUrl" [placeholder]="i18n.t('player.pasteUrl')" class="url-input"
           (keyup.enter)="loadVideo()" />

@@ -56,9 +56,9 @@
                 {{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})
             </button>
             } @else {
-            <div class="no-cards">
-                <app-icon name="info" [size]="18" />
-                <span>{{ i18n.t('study.noWords') }}</span>
+            <div class="empty-state">
+                <app-icon name="info" [size]="18" class="empty-state__icon" />
+                <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
             </div>
             }
         </div>

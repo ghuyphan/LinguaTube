@@ -28,25 +28,7 @@
     border-radius: 100px;
 }
 
-.empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-xl);
-    text-align: center;
-    color: var(--text-muted);
-}
 
-.empty-state p {
-    margin: 0;
-    color: var(--text-secondary);
-}
-
-.empty-state .hint {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-}
 
 .word-list {
     list-style: none;

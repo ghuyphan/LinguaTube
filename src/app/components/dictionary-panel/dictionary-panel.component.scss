@@ -61,28 +61,7 @@
     min-width: 0;
 }
 
-.search-icon {
-    position: absolute;
-    left: 1.25rem;
-    color: var(--text-muted);
-    pointer-events: none;
-}
 
-.search-input {
-    width: 100%;
-    padding-left: 3rem;
-    height: var(--btn-height-md);
-    font-size: 0.875rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    background: var(--bg-card);
-    transition: all var(--transition-fast);
-}
-
-.search-input:focus {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
-}
 
 .search-btn {
     height: var(--btn-height-md);
@@ -91,27 +70,7 @@
     flex-shrink: 0;
 }
 
-.clear-btn {
-    position: absolute;
-    right: var(--space-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: transparent;
-    color: var(--text-muted);
-    cursor: pointer;
-    padding: 0.25rem;
-    transition: color var(--transition-fast);
-}
 
-/* Hover effect removed
-@media (hover: hover) {
-    .clear-btn:hover {
-        color: var(--text-primary);
-    }
-}
-*/
 
 // ============================================
 // RESULTS - Left-aligned, compact
@@ -182,7 +141,7 @@
     gap: var(--space-sm);
     margin-bottom: var(--space-md);
     padding-top: var(--space-md);
-    border-top: 1px solid var(--border-color);
+    // border-top: 1px solid var(--border-color);
 }
 
 .meaning-item {
@@ -236,48 +195,10 @@
 // ============================================
 .result-actions {
     padding-top: var(--space-md);
-    border-top: 1px solid var(--border-color);
+    // border-top: 1px solid var(--border-color);
 }
 
-// ============================================
-// EMPTY STATES
-// ============================================
-.no-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    padding: var(--space-xl) 0;
-    text-align: center;
-    color: var(--text-muted);
-}
 
-.no-results p {
-    color: var(--text-secondary);
-}
-
-.hint {
-    font-size: 0.8125rem;
-    color: var(--text-muted) !important;
-}
-
-.search-prompt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    padding: var(--space-xl) 0;
-    text-align: center;
-    color: var(--text-muted);
-    opacity: 0.7;
-}
-
-.prompt-icon {
-    color: var(--text-muted);
-    opacity: 0.5;
-}
 
 // ============================================
 // RECENT SEARCHES - Chip style
