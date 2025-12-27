@@ -7,7 +7,7 @@
 
 /* Current subtitle - Fixed height prevents layout shifts */
 .current-subtitle {
-    height: 9.625rem;
+    height: 12rem;
     padding: var(--space-lg);
     background: var(--bg-secondary);
     position: relative;
@@ -542,7 +542,7 @@ ruby rt {
 /* Mobile styles */
 @media (max-width: 640px) {
     .current-subtitle {
-        height: 8.75rem;
+        height: 10.5rem;
         padding: var(--space-lg) var(--mobile-padding);
     }
 
@@ -632,7 +632,7 @@ ruby rt {
 
 @media (max-width: 480px) {
     .current-subtitle {
-        height: 6.25rem;
+        height: 8rem;
         padding: var(--space-md);
     }
 
