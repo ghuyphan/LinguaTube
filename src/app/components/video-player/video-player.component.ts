@@ -9,7 +9,8 @@ import {
   ElementRef,
   HostListener,
   computed,
-  output
+  output,
+  untracked
 } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -28,25 +29,12 @@ import { Token, SubtitleCue, DictionaryEntry } from '../../models';
 import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
-  FONT_SIZES,
-  CONTROLS_AUTO_HIDE_DELAY,
-  CONTROLS_TAP_HIDE_DELAY,
-  CONTROLS_VISIBLE_MIN_TIME,
   DOUBLE_TAP_DELAY,
   LONG_PRESS_DELAY,
-  VOLUME_SLIDER_HIDE_DELAY,
   BUFFERED_TRACKING_INTERVAL,
-  FEEDBACK_DURATION,
   SEEK_STEP,
   SWIPE_THRESHOLD,
-  GESTURE_SEEK_SENSITIVITY,
-  ZONE_LEFT_WIDTH,
-  ZONE_RIGHT_WIDTH,
-  VOLUME_GESTURE_ZONE,
-  WAIT_ELEMENT_INTERVAL,
-  WAIT_ELEMENT_MAX_ATTEMPTS,
-  FullscreenDocument,
-  FullscreenElement
+  GESTURE_SEEK_SENSITIVITY
 } from './video-player.constants';
 
 interface SeekPreview {
@@ -107,6 +95,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // Playback speeds
   readonly playbackSpeeds = PLAYBACK_SPEEDS;
 
+  // Computed values
   displayTime = computed(() => {
     return this.isDragging() ? this.previewTime() : this.youtube.currentTime();
   });
@@ -118,7 +107,6 @@ export class VideoPlayerComponent implements OnDestroy {
     return (time / duration) * 100;
   });
 
-  // Fullscreen tokens (computed for performance)
   fullscreenTokens = computed(() => {
     const cue = this.subtitles.currentCue();
     if (!cue) return [];
@@ -126,7 +114,6 @@ export class VideoPlayerComponent implements OnDestroy {
     return this.subtitles.getTokens(cue, lang);
   });
 
-  // Fullscreen reading toggle
   showFsReading = computed(() => {
     const lang = this.settings.settings().language;
     return lang === 'ja'
@@ -151,7 +138,7 @@ export class VideoPlayerComponent implements OnDestroy {
   volumeFeedback = signal(false);
   volumeFeedbackIcon = signal<'volume-2' | 'volume-1' | 'volume-x'>('volume-2');
 
-  // Gesture seek feedback (for horizontal swipe)
+  // Gesture seek feedback
   gestureSeekActive = signal(false);
   gestureSeekTime = signal(0);
 
@@ -159,28 +146,124 @@ export class VideoPlayerComponent implements OnDestroy {
   longPressActive = signal(false);
   private longPressSpeed: PlaybackSpeed = 1;
 
+  // State transition animation tracking
+  stateTransition = signal<'none' | 'to-video' | 'to-input'>('none');
+  private hasInitialized = false;
+  private previousHasVideo: boolean | null = null;
 
-
+  // Timeouts and intervals
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
-
-  // Double-tap tracking for desktop
   private doubleTapTimeout: ReturnType<typeof setTimeout> | null = null;
   private seekFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
-
-  // Long press
   private longPressTimeout: ReturnType<typeof setTimeout> | null = null;
-
   private bufferedInterval: ReturnType<typeof setInterval> | null = null;
 
-  // Bound event handlers for seeking (to allow proper cleanup)
+  // Bound event handlers for seeking
   private readonly boundOnSeekMove = this.onSeekMove.bind(this);
   private readonly boundOnSeekUp = this.onSeekUp.bind(this);
+
+  // Touch state
+  private touchState = {
+    startX: 0,
+    startY: 0,
+    startTime: 0,
+    hasMoved: false,
+    initialVideoTime: 0,
+    initialVolume: 0
+  };
+
+  // Tap tracking for double-tap detection
+  private lastTapInfo: { zone: string; time: number } | null = null;
+  private lastDesktopClickTime = 0;
+  private lastControlsShowTime = 0;
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
   @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
 
-  // Keyboard controls
+  constructor() {
+    // Initialize player when video exists but player isn't ready
+    effect(() => {
+      const currentVideo = this.youtube.currentVideo();
+      if (currentVideo && !this.youtube.isReady() && !this.isLoading()) {
+        const savedTime = this.youtube.currentTime();
+        this.waitForElement('youtube-player').then(async () => {
+          await this.restorePlayer(currentVideo.id);
+          if (savedTime > 0) {
+            this.youtube.seekTo(savedTime);
+          }
+        });
+      }
+    });
+
+    // Sync volume and speed when player is ready
+    effect(() => {
+      if (this.youtube.isReady()) {
+        this.volume.set(this.youtube.getVolume());
+        this.currentSpeed.set(this.youtube.getPlaybackRate() as PlaybackSpeed);
+        this.startBufferedTracking();
+      }
+    });
+
+    // Clear URL when video is cleared
+    effect(() => {
+      if (!this.youtube.currentVideo()) {
+        this.videoUrl = '';
+      }
+    });
+
+    // Handle play/pause state changes
+    // Using untracked to read areControlsVisible to avoid re-running
+    // this effect when controls visibility changes (prevents toggle conflicts)
+    effect(() => {
+      const isPlaying = this.youtube.isPlaying();
+      if (isPlaying) {
+        this.startBufferedTracking();
+        // Read without creating dependency
+        if (untracked(() => this.areControlsVisible())) {
+          this.hideControlsAfterDelay(3000);
+        }
+      } else {
+        this.areControlsVisible.set(true);
+        this.lastControlsShowTime = Date.now();
+        this.clearControlsTimeout();
+        this.stopBufferedTracking();
+      }
+    });
+
+    // Track state transitions for animations - FIXED: Only animate on actual state changes
+    effect(() => {
+      const hasVideo = !!this.youtube.currentVideo() || !!this.youtube.pendingVideoId();
+
+      // Skip if state hasn't actually changed (prevents tab-switch animations)
+      if (this.previousHasVideo === hasVideo) {
+        return;
+      }
+
+      const isFirstRun = this.previousHasVideo === null;
+      this.previousHasVideo = hasVideo;
+
+      // Don't animate on first run
+      if (isFirstRun || !this.hasInitialized) {
+        this.hasInitialized = true;
+        return;
+      }
+
+      // Don't animate if tab is hidden
+      if (document.visibilityState === 'hidden') {
+        return;
+      }
+
+      // Trigger appropriate transition animation
+      this.stateTransition.set(hasVideo ? 'to-video' : 'to-input');
+      setTimeout(() => this.stateTransition.set('none'), 350);
+    });
+  }
+
+  // ============================================
+  // KEYBOARD CONTROLS
+  // ============================================
+
   clearUrl() {
     this.videoUrl = '';
   }
@@ -194,7 +277,6 @@ export class VideoPlayerComponent implements OnDestroy {
       return;
     }
 
-    // Close fullscreen popup on Escape
     if (event.code === 'Escape') {
       if (this.fsPopupVisible()) {
         this.closeFsPopup();
@@ -283,7 +365,6 @@ export class VideoPlayerComponent implements OnDestroy {
       this.isSpeedMenuOpen.set(false);
     }
 
-    // Hide controls when clicking outside the video player
     if (this.youtube.currentVideo() && this.areControlsVisible()) {
       const videoContainer = this.videoContainerRef?.nativeElement;
       if (videoContainer && !videoContainer.contains(target)) {
@@ -296,7 +377,8 @@ export class VideoPlayerComponent implements OnDestroy {
   @HostListener('document:fullscreenchange')
   @HostListener('document:webkitfullscreenchange')
   onFullscreenChange() {
-    const isFs = !!(this.document.fullscreenElement || (this.document as any).webkitFullscreenElement);
+    const doc = this.document as any;
+    const isFs = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
     this.isFullscreen.set(isFs);
     this.fullscreenChanged.emit(isFs);
     if (!isFs && this.fsPopupVisible()) {
@@ -304,65 +386,16 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  constructor() {
-
-    effect(() => {
-      const currentVideo = this.youtube.currentVideo();
-      if (currentVideo && !this.youtube.isReady() && !this.isLoading()) {
-        const savedTime = this.youtube.currentTime();
-        this.waitForElement('youtube-player').then(async () => {
-          await this.restorePlayer(currentVideo.id);
-          if (savedTime > 0) {
-            this.youtube.seekTo(savedTime);
-          }
-        });
-      }
-    });
-
-    effect(() => {
-      if (this.youtube.isReady()) {
-        this.volume.set(this.youtube.getVolume());
-        this.currentSpeed.set(this.youtube.getPlaybackRate() as PlaybackSpeed);
-        this.startBufferedTracking();
-      }
-    });
-
-    effect(() => {
-      if (!this.youtube.currentVideo()) {
-        this.videoUrl = '';
-      }
-    });
-
-    effect(() => {
-      const isPlaying = this.youtube.isPlaying();
-      if (isPlaying) {
-        // When video starts playing, start auto-hide countdown
-        // but don't immediately hide or show controls
-        this.startBufferedTracking();
-        // Only start auto-hide if controls are currently visible
-        if (this.areControlsVisible()) {
-          this.hideControlsAfterDelay(3000);
-        }
-      } else {
-        // When video pauses, show controls and stop auto-hide
-        this.areControlsVisible.set(true);
-        this.lastControlsShowTime = Date.now();
-        this.clearControlsTimeout();
-        this.stopBufferedTracking();
-      }
-    });
-  }
-
   // ============================================
   // CONTROLS VISIBILITY
   // ============================================
 
   onUserActivity() {
+    // Desktop only - mobile uses touch overlay with tap-to-toggle
     this.showControls();
   }
 
   onMouseLeave() {
-    // Hide controls immediately when mouse leaves (like YouTube)
     if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
       this.clearControlsTimeout();
@@ -371,6 +404,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private showControls() {
     this.areControlsVisible.set(true);
+    this.lastControlsShowTime = Date.now();
     this.clearControlsTimeout();
     this.startControlsAutoHide();
   }
@@ -419,7 +453,6 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   showSeekFeedback(direction: 'left' | 'right', seconds: number) {
-    // If same direction, accumulate
     if (this.seekDirection() === direction && this.seekFeedbackTimeout) {
       this.seekAccumulator.update(v => v + seconds);
     } else {
@@ -427,12 +460,10 @@ export class VideoPlayerComponent implements OnDestroy {
       this.seekDirection.set(direction);
     }
 
-    // Clear existing timeout
     if (this.seekFeedbackTimeout) {
       clearTimeout(this.seekFeedbackTimeout);
     }
 
-    // Show feedback
     if (direction === 'left') {
       this.rewindFeedback.set(false);
       requestAnimationFrame(() => this.rewindFeedback.set(true));
@@ -441,7 +472,6 @@ export class VideoPlayerComponent implements OnDestroy {
       requestAnimationFrame(() => this.forwardFeedback.set(true));
     }
 
-    // Reset after animation
     this.seekFeedbackTimeout = setTimeout(() => {
       this.rewindFeedback.set(false);
       this.forwardFeedback.set(false);
@@ -452,28 +482,8 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   // ============================================
-  // UNIFIED MOBILE TOUCH HANDLING
-  // Works the same in fullscreen and non-fullscreen
-  // YouTube-like behavior:
-  //   - Single tap: toggle controls
-  //   - Double tap left/right: seek ±10s
-  //   - Horizontal swipe: scrub through video
-  //   - Vertical swipe (right side): volume
-  //   - Long press: 2x speed
+  // MOBILE TOUCH HANDLING
   // ============================================
-
-  private touchState = {
-    startX: 0,
-    startY: 0,
-    startTime: 0,
-    hasMoved: false,
-    initialVideoTime: 0,
-    initialVolume: 0
-  };
-
-  // Track last tap time per zone for double-tap detection
-  private lastTapInfo: { zone: string; time: number } | null = null;
-  private tapTimeout: ReturnType<typeof setTimeout> | null = null;
 
   onOverlayTouchStart(event: TouchEvent) {
     if (event.touches.length !== 1) return;
@@ -488,7 +498,6 @@ export class VideoPlayerComponent implements OnDestroy {
       initialVolume: this.volume()
     };
 
-    // Start long press timer
     this.cancelLongPress();
     this.longPressTimeout = setTimeout(() => {
       this.activateLongPress();
@@ -504,14 +513,12 @@ export class VideoPlayerComponent implements OnDestroy {
     const absX = Math.abs(deltaX);
     const absY = Math.abs(deltaY);
 
-    // Mark as moved if past threshold
     if (absX > SWIPE_THRESHOLD || absY > SWIPE_THRESHOLD) {
       this.touchState.hasMoved = true;
-      // Cancel long press if user starts moving
       this.cancelLongPress();
     }
 
-    // Handle horizontal swipe (seek scrub)
+    // Horizontal swipe = seek scrub
     if (this.touchState.hasMoved && absX > absY) {
       event.preventDefault();
       const seekDelta = deltaX * GESTURE_SEEK_SENSITIVITY;
@@ -519,39 +526,22 @@ export class VideoPlayerComponent implements OnDestroy {
       this.gestureSeekActive.set(true);
       this.gestureSeekTime.set(newTime);
     }
-
-    // Handle vertical swipe on right side (volume) - DISABLED for mobile per user request
-    /*
-    if (this.touchState.hasMoved && absY > absX && this.touchState.startX > window.innerWidth * VOLUME_GESTURE_ZONE) {
-      event.preventDefault();
-      const volumeDelta = -deltaY * 0.5;
-      const newVolume = Math.max(0, Math.min(100, this.touchState.initialVolume + volumeDelta));
-      this.volume.set(Math.round(newVolume));
-      this.youtube.setVolume(Math.round(newVolume));
-      this.showVolumeFeedback();
-    }
-    */
   }
 
   onOverlayTouchEnd(event: TouchEvent) {
-
-    // Cancel long press
     this.cancelLongPress();
     this.deactivateLongPress();
 
-    // Handle gesture seek completion
     if (this.gestureSeekActive()) {
       this.youtube.seekTo(this.gestureSeekTime());
       this.gestureSeekActive.set(false);
       return;
     }
 
-    // If user moved, it was a swipe - don't handle as tap
     if (this.touchState.hasMoved) {
       return;
     }
 
-    // Handle tap
     const touch = event.changedTouches[0];
     this.handleTap(touch.clientX, touch.clientY);
   }
@@ -565,80 +555,56 @@ export class VideoPlayerComponent implements OnDestroy {
     const relativeY = clientY - rect.top;
     const width = rect.width;
 
-    // Simple 50/50 split: left half = seek backward, right half = seek forward
     const zone: 'left' | 'right' = relativeX < width * 0.5 ? 'left' : 'right';
-
     const now = Date.now();
 
-    // Check for double-tap (same zone, within time threshold)
-    if (this.lastTapInfo &&
-      this.lastTapInfo.zone === zone &&
-      now - this.lastTapInfo.time < DOUBLE_TAP_DELAY) {
-
-      // Double-tap detected - cancel pending single tap
-      if (this.tapTimeout) {
-        clearTimeout(this.tapTimeout);
-        this.tapTimeout = null;
-      }
+    // Check for double-tap
+    if (this.lastTapInfo && this.lastTapInfo.zone === zone && now - this.lastTapInfo.time < DOUBLE_TAP_DELAY) {
+      // Double-tap detected - SEEK
       this.lastTapInfo = null;
 
-      // Execute double-tap action: seek in the tapped direction
+      // Calculate zone-relative coordinates for ripple
+      const zoneRelativeX = zone === 'left' ? relativeX : relativeX - width / 2;
+
       if (zone === 'left') {
         this.seekRelative(-SEEK_STEP);
         this.showSeekFeedback('left', SEEK_STEP);
-        this.triggerRipple(relativeX, relativeY, 'left');
+        this.triggerRipple(zoneRelativeX, relativeY, 'left');
       } else {
         this.seekRelative(SEEK_STEP);
         this.showSeekFeedback('right', SEEK_STEP);
-        this.triggerRipple(relativeX, relativeY, 'right');
+        this.triggerRipple(zoneRelativeX, relativeY, 'right');
       }
 
+      // After seeking, make sure controls are visible briefly
+      this.areControlsVisible.set(true);
+      this.lastControlsShowTime = now;
+      this.clearControlsTimeout();
+      this.hideControlsAfterDelay(1500);
     } else {
-      // First tap - store info and wait to see if double-tap follows
+      // Single tap - TOGGLE CONTROLS IMMEDIATELY (no delay!)
       this.lastTapInfo = { zone, time: now };
-
-      // Cancel any existing timeout
-      if (this.tapTimeout) {
-        clearTimeout(this.tapTimeout);
-      }
-
-      // Set timeout for single-tap action
-      this.tapTimeout = setTimeout(() => {
-        this.tapTimeout = null;
-        this.lastTapInfo = null;
-        // Single tap anywhere = toggle controls
-        this.toggleControlsVisibility();
-      }, DOUBLE_TAP_DELAY);
+      this.toggleControlsVisibility();
     }
   }
 
   private cancelPendingSingleTap() {
-    if (this.tapTimeout) {
-      clearTimeout(this.tapTimeout);
-      this.tapTimeout = null;
-    }
+    // No longer using delayed single tap, but keep method for compatibility
     this.lastTapInfo = null;
   }
 
-  // Desktop double-click tracking
-  private lastDesktopClickTime = 0;
-
   onOverlayClick(event: MouseEvent) {
-    // This handler is only attached to the desktop overlay (hover-only)
-    // so we don't need any touch detection guards
     const now = Date.now();
     const isDoubleClick = now - this.lastDesktopClickTime < DOUBLE_TAP_DELAY;
     this.lastDesktopClickTime = now;
 
     if (isDoubleClick) {
-      // Double-click anywhere = fullscreen
       if (this.doubleTapTimeout) {
         clearTimeout(this.doubleTapTimeout);
         this.doubleTapTimeout = null;
       }
       this.toggleFullscreen();
     } else {
-      // Single click - wait briefly to check for double-click
       this.doubleTapTimeout = setTimeout(() => {
         this.togglePlay();
         this.showPlayPauseFeedback();
@@ -664,17 +630,29 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  private lastControlsShowTime = 0;
+  // Toggle controls visibility - called immediately on single tap
+  private lastToggleTime = 0;
 
   private toggleControlsVisibility() {
-    // Single tap: just show controls (they auto-hide after delay when playing)
-    this.areControlsVisible.set(true);
-    this.lastControlsShowTime = Date.now();
-    this.clearControlsTimeout();
+    const now = Date.now();
+    this.lastToggleTime = now;
 
-    // Start auto-hide if video is playing
     if (this.youtube.isPlaying()) {
-      this.hideControlsAfterDelay(3000);
+      // Toggle when playing
+      const newValue = !this.areControlsVisible();
+      this.areControlsVisible.set(newValue);
+      this.lastControlsShowTime = now;
+      this.clearControlsTimeout();
+
+      if (newValue) {
+        // Controls shown - start auto-hide timer
+        this.hideControlsAfterDelay(3000);
+      }
+    } else {
+      // Always show when paused
+      this.areControlsVisible.set(true);
+      this.lastControlsShowTime = now;
+      this.clearControlsTimeout();
     }
   }
 
@@ -700,24 +678,19 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  // FIXED: Touch on play/pause button - prevent event propagation properly
   onPlayPauseButtonTouch(event: Event) {
     event.stopPropagation();
     event.preventDefault();
-    // Cancel any pending tap actions
     this.cancelPendingSingleTap();
     this.togglePlay();
-    // Keep controls visible for a bit after tapping play button
     this.lastControlsShowTime = Date.now();
     this.clearControlsTimeout();
     this.hideControlsAfterDelay(3000);
   }
 
-  // Click on play/pause button (desktop)
   onPlayPauseButtonClick(event: Event) {
     event.stopPropagation();
     event.preventDefault();
-    // Cancel any pending double-tap check
     if (this.doubleTapTimeout) {
       clearTimeout(this.doubleTapTimeout);
       this.doubleTapTimeout = null;
@@ -725,7 +698,6 @@ export class VideoPlayerComponent implements OnDestroy {
     this.togglePlay();
   }
 
-  // FIXED: Replay button - prevent event propagation
   onReplayClick(event: Event) {
     event.stopPropagation();
     event.preventDefault();
@@ -754,7 +726,6 @@ export class VideoPlayerComponent implements OnDestroy {
       this.youtube.mute();
     }
     this.showControls();
-    // Pass the new mute state (inverted from before) to avoid race condition with YouTube API
     this.showVolumeFeedback(!wasMuted);
   }
 
@@ -795,7 +766,6 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private showVolumeFeedback(isMuted?: boolean) {
     const vol = this.volume();
-    // Use the provided mute state if available, otherwise poll the API
     const muted = isMuted ?? this.youtube.isMuted();
     if (vol === 0 || muted) {
       this.volumeFeedbackIcon.set('volume-x');
@@ -848,13 +818,10 @@ export class VideoPlayerComponent implements OnDestroy {
 
     const doc = this.document as any;
     const elem = container as any;
-
-    // Check if we're currently in fullscreen (cross-browser)
     const isCurrentlyFullscreen = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
 
     try {
       if (isCurrentlyFullscreen) {
-        // Exit fullscreen (cross-browser)
         if (doc.exitFullscreen) {
           await doc.exitFullscreen();
         } else if (doc.webkitExitFullscreen) {
@@ -862,7 +829,6 @@ export class VideoPlayerComponent implements OnDestroy {
         }
         try { (screen.orientation as any)?.unlock?.(); } catch { }
       } else {
-        // Enter fullscreen (cross-browser)
         if (elem.requestFullscreen) {
           await elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) {
@@ -870,8 +836,7 @@ export class VideoPlayerComponent implements OnDestroy {
         }
         try { await (screen.orientation as any)?.lock?.('landscape'); } catch { }
       }
-    } catch (err) {
-      // Fallback for iOS Safari which doesn't support standard fullscreen
+    } catch {
       const newState = !this.isFullscreen();
       this.isFullscreen.set(newState);
       this.fullscreenChanged.emit(newState);
@@ -899,8 +864,8 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsPopupVisible.set(true);
     this.fsWordSaved.set(this.vocab.hasWord(token.surface));
     this.fsEntry.set(null);
-
     this.fsLookupLoading.set(true);
+
     const lang = this.settings.settings().language;
     this.dictionary.lookup(token.surface, lang).subscribe({
       next: (entry) => {
@@ -952,17 +917,6 @@ export class VideoPlayerComponent implements OnDestroy {
     const currentIndex = this.fontSizes.indexOf(current);
     const nextIndex = (currentIndex + 1) % this.fontSizes.length;
     this.settings.setFontSize(this.fontSizes[nextIndex]);
-  }
-
-  getFontSizeIcon(): string {
-    const size = this.settings.settings().fontSize;
-    switch (size) {
-      case 'small': return 'type';
-      case 'medium': return 'type';
-      case 'large': return 'type';
-      case 'xlarge': return 'type';
-      default: return 'type';
-    }
   }
 
   getFontSizeLabel(): string {
@@ -1036,7 +990,6 @@ export class VideoPlayerComponent implements OnDestroy {
 
     this.previewTime.set(percentage * this.youtube.duration());
 
-    // Update preview tooltip
     this.seekPreview.set({
       visible: true,
       time: this.previewTime(),
@@ -1057,7 +1010,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   private startBufferedTracking() {
-    if (this.bufferedInterval) return; // Already tracking
+    if (this.bufferedInterval) return;
 
     this.bufferedInterval = setInterval(() => {
       const loadedFraction = this.getLoadedFraction();
@@ -1141,13 +1094,8 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   // ============================================
-  // FULLSCREEN SUBTITLE
+  // FULLSCREEN SUBTITLE HELPERS
   // ============================================
-
-  getFullscreenTokens(cue: SubtitleCue): Token[] {
-    const lang = this.settings.settings().language;
-    return this.subtitles.getTokens(cue, lang);
-  }
 
   getFullscreenReading(token: Token): string | undefined {
     const lang = this.settings.settings().language;
@@ -1168,14 +1116,26 @@ export class VideoPlayerComponent implements OnDestroy {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   }
 
+  // ============================================
+  // CLEANUP
+  // ============================================
+
   ngOnDestroy(): void {
     this.clearControlsTimeout();
     this.cancelLongPress();
     this.cancelPendingSingleTap();
+
     if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
     if (this.bufferedInterval) clearInterval(this.bufferedInterval);
     if (this.seekFeedbackTimeout) clearTimeout(this.seekFeedbackTimeout);
     if (this.doubleTapTimeout) clearTimeout(this.doubleTapTimeout);
+
+    // Clean up document event listeners
+    document.removeEventListener('mousemove', this.boundOnSeekMove);
+    document.removeEventListener('touchmove', this.boundOnSeekMove);
+    document.removeEventListener('mouseup', this.boundOnSeekUp);
+    document.removeEventListener('touchend', this.boundOnSeekUp);
+
     this.youtube.destroy();
   }
 }

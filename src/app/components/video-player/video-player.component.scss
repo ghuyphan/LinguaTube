@@ -3,38 +3,41 @@
 // ============================================
 
 // === DIMENSIONS ===
-$big-play-btn-size: 4rem; // 64px
-$big-play-btn-size-mobile: 3.5rem; // 56px
-$big-play-btn-size-small: 3.25rem; // 52px
-$center-feedback-size: 3.5rem; // 56px
-$ripple-size: 5rem; // 80px
-$progress-handle-size: 0.875rem; // 14px
-$progress-handle-size-mobile: 1rem; // 16px
-$control-btn-size: 2.25rem; // 36px
-$control-btn-size-mobile: 2.25rem; // 36px
-$progress-bar-height: var(--space-xs); // 4px
-$progress-bar-height-hover: 0.375rem; // 6px
-$progress-bar-mobile: var(--space-xs); // 4px
+$big-play-btn-size: 4rem;
+$big-play-btn-size-mobile: 3.5rem;
+$big-play-btn-size-small: 3.25rem;
+$center-feedback-size: 3.5rem;
+$ripple-size: 5rem;
+$progress-handle-size: 0.875rem;
+$progress-handle-size-mobile: 1rem;
+$control-btn-size: 2.25rem;
+$control-btn-size-mobile: 2.25rem;
+$progress-bar-height: var(--space-xs);
+$progress-bar-height-hover: 0.375rem;
+$progress-bar-mobile: var(--space-xs);
 
 // === Z-INDEX LAYERS ===
-// Documented for easier maintenance and conflict resolution
-$z-youtube-player: 1; // Base video layer
-$z-player-overlay: 10; // Interaction capture layer
-$z-loading-overlay: 15; // Loading indicator
-$z-center-controls: 15; // Play/pause buttons
-$z-fullscreen-subtitle: 18; // Subtitle overlay in fullscreen
-$z-custom-controls: 20; // Bottom control bar
-$z-mini-progress: 25; // Thin progress bar when controls hidden
-$z-seek-tooltip: 30; // Seek preview tooltip
-$z-fs-popup: 50; // Fullscreen word popup
-$z-speed-menu: 100; // Playback speed dropdown
-$z-fullscreen: 9998; // Fullscreen container
+$z-youtube-player: 1;
+$z-player-overlay: 10;
+$z-loading-overlay: 15;
+$z-center-controls: 15;
+$z-fullscreen-subtitle: 18;
+$z-custom-controls: 20;
+$z-mini-progress: 25;
+$z-seek-tooltip: 30;
+$z-fs-popup: 50;
+$z-speed-menu: 100;
+$z-fullscreen: 9998;
 
 // === COLORS WITH FALLBACKS ===
 $accent-primary-fallback: #c73e3a;
 $bg-card-fallback: #1a1a1a;
 $border-color-fallback: #333;
 $text-muted-fallback: #888;
+
+// === SKELETON SHIMMER COLORS ===
+$skeleton-base: rgba(255, 255, 255, 0.06);
+$skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 .player-wrapper {
   width: 100%;
@@ -43,7 +46,6 @@ $text-muted-fallback: #888;
 /* ============================================
    INPUT STATE
    ============================================ */
-// Match dict-panel container style if needed, or keep existing but refined
 .video-input {
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);
@@ -64,11 +66,8 @@ $text-muted-fallback: #888;
   min-width: 0;
 }
 
-
-
 .url-input {
   width: 100%;
-
   height: var(--btn-height-md);
   font-size: 0.875rem;
   border: 1px solid var(--border-color);
@@ -81,8 +80,6 @@ $text-muted-fallback: #888;
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
 }
-
-
 
 .load-btn {
   height: var(--btn-height-md);
@@ -125,7 +122,6 @@ $text-muted-fallback: #888;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
-  // Prevent pull-to-refresh and other browser gestures
   touch-action: manipulation;
   -webkit-touch-callout: none;
   container-type: inline-size;
@@ -145,16 +141,13 @@ $text-muted-fallback: #888;
 .video-embed-ratio {
   position: relative;
   width: 100%;
-  /* Use aspect-ratio for modern browsers to prevent CLS */
   aspect-ratio: 16 / 9;
-  /* Fallback for older browsers */
   padding-bottom: 56.25%;
   background: #000;
   overflow: hidden;
   border-radius: inherit;
 }
 
-/* Modern browsers: remove padding-bottom when aspect-ratio is supported */
 @supports (aspect-ratio: 16 / 9) {
   .video-embed-ratio {
     padding-bottom: 0;
@@ -204,12 +197,9 @@ $text-muted-fallback: #888;
   inset: 0;
   z-index: 10;
   display: flex;
-  /* Transparent background ensures this layer captures ALL interactions */
   background: transparent;
   -webkit-tap-highlight-color: transparent;
-  // FIXED: Use pan-y to allow vertical scroll when needed but capture horizontal
   touch-action: manipulation;
-  /* Ensure clicks are captured even without background */
   cursor: default;
 }
 
@@ -221,19 +211,18 @@ $text-muted-fallback: #888;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  overflow: hidden;
-  // Prevent text selection on zones
+  // FIXED: Remove overflow:hidden to prevent clipping seek feedback animation
+  overflow: visible;
   user-select: none;
   -webkit-user-select: none;
 }
 
 .zone-left,
 .zone-right {
-  width: 50%; // 50/50 split for easier double-tap seeking
-  cursor: default; // Default cursor on desktop like YouTube
+  width: 50%;
+  cursor: default;
 }
 
-// Show pointer cursor only on touch devices
 @media (hover: none) and (pointer: coarse) {
 
   .zone-left,
@@ -243,7 +232,7 @@ $text-muted-fallback: #888;
 }
 
 /* ============================================
-   CENTER CONTROLS (separate from bottom controls)
+   CENTER CONTROLS
    ============================================ */
 .center-controls {
   position: absolute;
@@ -269,7 +258,6 @@ $text-muted-fallback: #888;
   pointer-events: auto;
 }
 
-/* Big Play Button - FIXED: Use button element for better touch handling */
 .big-play-btn {
   width: $big-play-btn-size;
   height: $big-play-btn-size;
@@ -285,7 +273,6 @@ $text-muted-fallback: #888;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  // Ensure the button is properly clickable on iOS
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -323,7 +310,7 @@ $text-muted-fallback: #888;
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* Center Feedback (Play/Pause) */
+/* Center Feedback */
 .center-feedback {
   position: absolute;
   width: $center-feedback-size;
@@ -376,11 +363,14 @@ $text-muted-fallback: #888;
   }
 }
 
-/* YouTube-style Seek Feedback */
+/* ============================================
+   SEEK FEEDBACK - FIXED ALIGNMENT
+   ============================================ */
 .seek-feedback {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) scale(0.7);
+  left: 50%; // FIXED: Center horizontally within zone
+  transform: translate(-50%, -50%); // FIXED: Center both axes
   display: flex;
   align-items: center;
   justify-content: center;
@@ -390,14 +380,14 @@ $text-muted-fallback: #888;
   z-index: 25;
 }
 
-/* Position left seek feedback on the left side of video */
+// FIXED: Override left positioning for left zone feedback
 .seek-feedback--left {
-  left: 15%;
+  left: 50%; // Center within left zone
 }
 
-/* Position right seek feedback on the right side of video */
+// FIXED: Override for right zone feedback
 .seek-feedback--right {
-  right: 15%;
+  left: 50%; // Center within right zone
 }
 
 .seek-feedback-inner {
@@ -421,6 +411,7 @@ $text-muted-fallback: #888;
   white-space: nowrap;
 }
 
+// FIXED: Animation preserves centering transform
 .seek-feedback.animate {
   animation: seekPop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -428,26 +419,26 @@ $text-muted-fallback: #888;
 @keyframes seekPop {
   0% {
     opacity: 0;
-    transform: translateY(-50%) scale(0.6);
+    transform: translate(-50%, -50%) scale(0.6);
   }
 
   20% {
     opacity: 1;
-    transform: translateY(-50%) scale(1.05);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 
   35% {
-    transform: translateY(-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   75% {
     opacity: 1;
-    transform: translateY(-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-50%) scale(0.95);
+    transform: translate(-50%, -50%) scale(0.95);
   }
 }
 
@@ -507,7 +498,7 @@ $text-muted-fallback: #888;
   }
 }
 
-/* Speed Indicator (Long Press) */
+/* Speed Indicator */
 .speed-indicator {
   position: absolute;
   top: var(--space-lg);
@@ -587,7 +578,6 @@ $text-muted-fallback: #888;
   transition: width 0.1s linear;
 }
 
-// Increase hit area for mini progress
 .mini-progress::after {
   content: '';
   position: absolute;
@@ -609,7 +599,6 @@ $text-muted-fallback: #888;
   width: 100%;
   background: none;
   padding: 0 1rem 0.5rem;
-  /* Embedded: 0.5rem from bottom */
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -623,7 +612,6 @@ $text-muted-fallback: #888;
 
 .custom-controls>* {
   pointer-events: auto;
-  /* Re-enable pointer on children */
 }
 
 .controls-hidden {
@@ -633,7 +621,6 @@ $text-muted-fallback: #888;
 }
 
 .is-fullscreen .custom-controls {
-  /* Use safe area or 0.75rem, whichever is larger. minimized from 1rem */
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
   padding-left: max(1.5rem, env(safe-area-inset-left));
   padding-right: max(1.5rem, env(safe-area-inset-right));
@@ -650,9 +637,8 @@ $text-muted-fallback: #888;
   cursor: pointer;
   border-radius: 2px;
   transition: height 0.15s ease;
-  // Allow touch interaction on progress bar
   touch-action: none;
-  // filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+  overflow: visible;
 }
 
 @media (hover: hover) {
@@ -675,7 +661,6 @@ $text-muted-fallback: #888;
   transform: translate(-50%, -50%) scale(1);
 }
 
-// Increase hit area for touch
 .progress-container::after {
   content: '';
   position: absolute;
@@ -766,7 +751,6 @@ $text-muted-fallback: #888;
   border-radius: 4px;
   transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
   min-width: 2.5rem;
-  /* Larger touch target base */
   height: 2.5rem;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -789,29 +773,24 @@ $text-muted-fallback: #888;
 }
 
 /* ============================================
-   DEVICE-BASED VISIBILITY (pointer/hover)
+   DEVICE-BASED VISIBILITY
    ============================================ */
-/* Desktop-only: visible on devices with hover + precise pointer */
 .desktop-only {
   display: flex;
 }
 
-/* Mobile-only: hidden by default, shown on touch devices */
 .mobile-only {
   display: none;
 }
 
-/* Hover-only: visible on devices with hover (mouse/trackpad) */
 .hover-only {
   display: flex;
 }
 
-/* Touch-only: hidden by default, shown on touch devices */
 .touch-only {
   display: none;
 }
 
-/* Touch devices (no hover + coarse pointer) */
 @media (hover: none) and (pointer: coarse) {
   .desktop-only {
     display: none !important;
@@ -829,7 +808,6 @@ $text-muted-fallback: #888;
     display: flex !important;
   }
 
-  /* Ensure mobile-only buttons get bubble background on all touch devices */
   .controls-left>.control-btn.mobile-only {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
@@ -843,7 +821,6 @@ $text-muted-fallback: #888;
     }
   }
 
-  /* Fullscreen subtitle positioning for touch devices */
   .fullscreen-subtitle {
     bottom: 0.75rem;
   }
@@ -873,8 +850,6 @@ $text-muted-fallback: #888;
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Base styles for floating bubbles/pills */
-/* Play button as individual bubble */
 .play-btn {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
@@ -898,7 +873,6 @@ $text-muted-fallback: #888;
   display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.6);
-  /* border-radius = (button height + padding*2) / 2 = (2.5rem + 0.25rem) / 2 */
   border-radius: calc((2.5rem + 0.125rem * 2) / 2);
   padding: 0.125rem;
   gap: 0;
@@ -920,11 +894,8 @@ $text-muted-fallback: #888;
   }
 }
 
-
-
 .controls-right {
   background: rgba(0, 0, 0, 0.6);
-  /* border-radius = (button height + padding*2) / 2 = (2.5rem + 0.25rem) / 2 */
   border-radius: calc((2.5rem + 0.125rem * 2) / 2);
   padding: 0.125rem;
   gap: 0;
@@ -966,7 +937,6 @@ $text-muted-fallback: #888;
   opacity: 1;
 }
 
-/* Volume control as expanding pill */
 .volume-control {
   display: flex;
   align-items: center;
@@ -975,9 +945,7 @@ $text-muted-fallback: #888;
   padding: 0.125rem;
   height: 2.5rem;
   width: 2.5rem;
-  /* Start collapsed */
   overflow: hidden;
-  /* Hide slider initially */
   transition: width 0.2s ease, background 0.2s ease;
 }
 
@@ -985,7 +953,6 @@ $text-muted-fallback: #888;
   .volume-control:hover {
     background: rgba(0, 0, 0, 0.8);
     width: 8rem;
-    /* Expand to reveal slider */
   }
 }
 
@@ -1107,8 +1074,6 @@ $text-muted-fallback: #888;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
   z-index: 100;
   animation: menuSlideUp 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* Hide scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
 
@@ -1177,11 +1142,11 @@ $text-muted-fallback: #888;
 }
 
 /* ============================================
-   VIDEO INFO
+   VIDEO INFO & SKELETON LOADING
    ============================================ */
 .video-info {
   padding: var(--space-md) 0;
-  min-height: 4rem; // Reserve space for title + channel to prevent CLS
+  min-height: 4rem;
 }
 
 .video-title {
@@ -1202,40 +1167,54 @@ $text-muted-fallback: #888;
 .video-channel {
   font-size: 0.8125rem;
   color: var(--text-muted);
-  display: block; // Ensure it takes a new line
+  display: block;
 }
 
-/* Skeleton Loading */
-.skeleton-title {
-  height: 1.5rem;
-  width: 70%;
-  background: var(--bg-secondary);
+/* IMPROVED: Skeleton Loading with better shimmer effect */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary, $skeleton-base);
   border-radius: 4px;
+
+  // Shimmer pseudo-element
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 20%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.08) 80%,
+        transparent 100%);
+    transform: translateX(-100%);
+    animation: shimmer 1.8s infinite ease-in-out;
+  }
+}
+
+.skeleton-title {
+  height: 1.25rem;
+  width: 70%;
   margin-bottom: 0.5rem;
-  animation: shimmer 1.5s infinite linear;
-  background: linear-gradient(to right, var(--bg-secondary) 8%, var(--bg-tertiary) 18%, var(--bg-secondary) 33%);
-  background-size: 800px 104px;
 }
 
 .skeleton-channel {
-  height: 1rem;
+  height: 0.875rem;
   width: 40%;
-  background: var(--bg-secondary);
-  border-radius: 4px;
-  animation: shimmer 1.5s infinite linear;
-  background: linear-gradient(to right, var(--bg-secondary) 8%, var(--bg-tertiary) 18%, var(--bg-secondary) 33%);
-  background-size: 800px 104px;
-  /* Hide on desktop - only show on mobile */
-  display: none;
 }
 
+// Improved shimmer animation
 @keyframes shimmer {
   0% {
-    background-position: -468px 0;
+    transform: translateX(-100%);
   }
 
   100% {
-    background-position: 468px 0;
+    transform: translateX(100%);
   }
 }
 
@@ -1327,13 +1306,11 @@ $text-muted-fallback: #888;
 }
 
 .fs-word {
-  // Button reset for accessibility (changed from span to button)
   background: none;
   border: none;
   font: inherit;
   color: inherit;
   text-align: inherit;
-  // Original styles
   cursor: pointer;
   padding: 0.125rem 0.25rem;
   border-radius: 4px;
@@ -1353,7 +1330,6 @@ $text-muted-fallback: #888;
 }
 
 .fs-word--saved {
-  // border-bottom: 2px solid var(--accent-primary);
   background: rgba(199, 62, 58, 0.15);
 }
 
@@ -1465,7 +1441,6 @@ $text-muted-fallback: #888;
   padding: var(--space-md);
   padding-right: 3rem;
   text-align: center;
-  // border-bottom: 1px solid var(--border-color);
 }
 
 .fs-popup-word {
@@ -1525,7 +1500,6 @@ $text-muted-fallback: #888;
   display: flex;
   gap: var(--space-sm);
   padding: var(--space-md);
-  // border-top: 1px solid var(--border-color);
 }
 
 .fs-popup-btn {
@@ -1572,7 +1546,7 @@ $text-muted-fallback: #888;
 }
 
 /* ============================================
-   MOBILE RESPONSIVE (Layout adjustments only)
+   MOBILE RESPONSIVE
    ============================================ */
 @media (max-width: 640px) {
   .video-container {
@@ -1603,13 +1577,12 @@ $text-muted-fallback: #888;
     left: 0;
     right: 0;
     padding: 0 0.75rem 0;
-    /* Remove bottom padding so progress bar can sit flush if needed */
     gap: 0.5rem;
     align-items: stretch;
-    /* Ensure layout handles absolute positioning of child */
+    overflow: visible;
   }
 
-  /* Position progress bar at the very bottom on mobile */
+  /* Progress bar - FULL WIDTH, overflow visible */
   .custom-controls .progress-container {
     position: absolute;
     bottom: 0;
@@ -1619,14 +1592,13 @@ $text-muted-fallback: #888;
     margin: 0;
     border-radius: 0;
     z-index: 25;
+    overflow: visible;
   }
 
-  /* Adjust controls row to be above the progress bar */
   .controls-row {
     background: none;
     padding: 0;
     padding-bottom: 0.5rem;
-    /* Add space for progress bar */
     min-height: 2rem;
     gap: 0;
     align-items: center;
@@ -1636,14 +1608,12 @@ $text-muted-fallback: #888;
     gap: 0.25rem;
   }
 
-  /* Right controls as individual bubbles (matching left) */
   .controls-right {
     gap: 0.25rem;
     background: none;
     padding: 0;
   }
 
-  /* Left buttons as individual bubbles */
   .controls-left .control-btn {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
@@ -1661,7 +1631,6 @@ $text-muted-fallback: #888;
     }
   }
 
-  /* Right controls as individual bubbles (matching left) */
   .controls-right {
     gap: 0.75rem;
     background: none;
@@ -1695,7 +1664,6 @@ $text-muted-fallback: #888;
     align-items: center;
     margin: 0;
     font-size: 0.75rem;
-    /* Ensure readable size */
   }
 
   .progress-container {
@@ -1717,7 +1685,6 @@ $text-muted-fallback: #888;
     width: 2rem;
     height: 2rem;
     min-height: 2rem;
-    /* Override global 44px min-height for touch targets */
     padding: 0;
     box-sizing: border-box;
     line-height: 0;
@@ -1728,7 +1695,6 @@ $text-muted-fallback: #888;
     width: 2rem;
     height: 2rem;
     min-height: 2rem;
-    /* Override global 44px min-height for touch targets */
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.6);
     padding: 0;
@@ -1769,7 +1735,6 @@ $text-muted-fallback: #888;
 
   .video-title {
     font-size: 0.9375rem;
-    /* Allow 2 lines on mobile */
     white-space: normal;
     line-clamp: 2;
     -webkit-line-clamp: 2;
@@ -1866,8 +1831,6 @@ $text-muted-fallback: #888;
   display: none;
 }
 
-// Fix specificity: In fullscreen on desktop (above mobile breakpoint),
-// show desktop controls. On mobile, keep them hidden.
 @media (min-width: 641px) {
   .is-fullscreen .desktop-only {
     display: flex;
@@ -1879,7 +1842,6 @@ $text-muted-fallback: #888;
     display: none;
   }
 
-  // Make buttons slightly more compact
   .control-btn {
     padding: 0.25rem;
     min-width: 2rem;
@@ -1902,7 +1864,6 @@ $text-muted-fallback: #888;
     font-size: 0.75rem;
   }
 
-  // Even more compact
   .control-btn {
     padding: 0.125rem;
   }

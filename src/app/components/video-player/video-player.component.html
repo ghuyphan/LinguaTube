@@ -1,7 +1,7 @@
 <div class="player-wrapper">
   @if (!youtube.currentVideo() && !isLoading() && !youtube.pendingVideoId()) {
   <!-- URL Input State -->
-  <div class="video-input">
+  <div class="video-input" [class.animate-enter]="stateTransition() === 'to-input'">
     <div class="input-group">
       <div class="input-wrapper input-group--icon">
         <app-icon name="search" [size]="16" class="input-icon" />
@@ -38,8 +38,8 @@
   </div>
   } @else {
   <!-- Video Loaded State -->
-  <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()" (mousemove)="onUserActivity()"
-    (mouseleave)="onMouseLeave()">
+  <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
+    [class.animate-enter]="stateTransition() === 'to-video'">
     <div class="video-embed-ratio">
       <div id="youtube-player"></div>
     </div>
@@ -53,7 +53,7 @@
     </div>
     }
 
-    <!-- Seek Feedback - positioned on video sides (YouTube-style) -->
+    <!-- Seek Feedback - positioned at container level -->
     <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()">
       <div class="seek-feedback-inner">
         <app-icon name="rewind" [size]="24" />
@@ -67,18 +67,15 @@
       </div>
     </div>
 
-    <!-- Touch Overlay (mobile only) - handles touch gestures -->
+    <!-- Touch Overlay (mobile only) -->
     <div class="player-overlay touch-only" (touchstart)="onOverlayTouchStart($event)"
       (touchmove)="onOverlayTouchMove($event)" (touchend)="onOverlayTouchEnd($event)"
       (touchcancel)="onOverlayTouchEnd($event)">
-      <!-- Left Zone (50%) - Double tap to seek backward -->
       <div class="zone zone-left">
         @if (leftRipple()) {
         <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
         }
       </div>
-
-      <!-- Right Zone (50%) - Double tap to seek forward -->
       <div class="zone zone-right">
         @if (rightRipple()) {
         <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
@@ -86,12 +83,12 @@
       </div>
     </div>
 
-    <!-- Click Overlay (desktop only) - handles mouse clicks -->
-    <div class="player-overlay hover-only" (click)="onOverlayClick($event)" (mousemove)="onUserActivity()"></div>
+    <!-- Click Overlay (desktop only) -->
+    <div class="player-overlay hover-only" (click)="onOverlayClick($event)" (mousemove)="onUserActivity()"
+      (mouseleave)="onMouseLeave()"></div>
 
-    <!-- Center Controls (play/pause and other centered indicators) -->
+    <!-- Center Controls -->
     <div class="center-controls">
-
       <!-- Volume Feedback -->
       @if (volumeFeedback()) {
       <div class="center-feedback volume-feedback animate">
@@ -113,7 +110,7 @@
       </div>
       }
 
-      <!-- Big Play/Pause Button - Mobile version (touch devices) -->
+      <!-- Big Play/Pause Button - Mobile -->
       @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.isPlaying() ||
       youtube.isBuffering())) {
       @if (youtube.isBuffering()) {
@@ -134,7 +131,7 @@
       }
       }
 
-      <!-- Big Play/Pause Button - Desktop version (hover devices) -->
+      <!-- Big Play/Pause Button - Desktop -->
       @if (youtube.isReady() && !youtube.isEnded()) {
       @if (youtube.isBuffering()) {
       <button class="big-play-btn hover-only buffering" aria-label="Loading video" disabled>
@@ -151,7 +148,7 @@
       }
       }
 
-      <!-- Replay Button (when ended) -->
+      <!-- Replay Button -->
       @if (youtube.isEnded()) {
       <button class="big-play-btn replay-btn" aria-label="Replay video" (touchstart)="$event.stopPropagation()"
         (touchend)="onReplayClick($event)" (click)="onReplayClick($event)">
@@ -160,7 +157,7 @@
       }
     </div>
 
-    <!-- Mini Progress Bar (visible when controls hidden) -->
+    <!-- Mini Progress Bar -->
     <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.isPlaying()"
       (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
       <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
@@ -280,7 +277,7 @@
       <div class="controls-row">
         <!-- Left Controls -->
         <div class="controls-left">
-          <!-- Skip buttons group - desktop only -->
+          <!-- Seek buttons - desktop only -->
           <div class="seek-group desktop-only">
             <button class="control-btn" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
               aria-label="Rewind 10 seconds">
@@ -359,15 +356,16 @@
     </div>
   </div>
 
-  <!-- Video Info (outside fullscreen container) -->
+  <!-- Video Info -->
   @if (!isFullscreen()) {
   <div class="video-info">
     @if (youtube.currentVideo(); as video) {
     <h2 class="video-title">{{ video.title }}</h2>
     <span class="video-channel">{{ video.channel }}</span>
     } @else {
-    <div class="skeleton-title"></div>
-    <div class="skeleton-channel"></div>
+    <!-- Skeleton loading with shimmer effect -->
+    <div class="skeleton skeleton-title"></div>
+    <div class="skeleton skeleton-channel"></div>
     }
   </div>
   }

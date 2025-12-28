@@ -13,8 +13,8 @@
 // HEADER - Clean and minimal
 // ============================================
 .dict-header {
-    padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-sm) var(--space-md);
+    // border-bottom: 1px solid var(--border-color);
 }
 
 .header-row {
@@ -46,7 +46,7 @@
 .dict-filters {
     display: flex;
     gap: var(--space-sm);
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     // background: var(--bg-secondary);
 }
 
