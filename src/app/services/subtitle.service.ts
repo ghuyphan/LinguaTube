@@ -257,10 +257,13 @@ export class SubtitleService {
     startIdx = Math.max(0, startIdx);
     endIdx = Math.min(cues.length - 1, endIdx);
 
-    // Skip if already in this range AND all cues have tokens
-    if (this.lastTokenizedRange.start <= startIdx && this.lastTokenizedRange.end >= endIdx) {
-      const rangeHasTokens = cues.slice(startIdx, endIdx + 1).every(c => (c.tokens?.length ?? 0) > 0);
-      if (rangeHasTokens) return;
+    // Skip if ALL cues in the requested range already have tokens
+    // This check is independent of lastTokenizedRange to catch cues that failed tokenization
+    const rangeHasAllTokens = cues.slice(startIdx, endIdx + 1).every(c => (c.tokens?.length ?? 0) > 0);
+    if (rangeHasAllTokens) {
+      // Update range tracking even if we skip (range is confirmed tokenized)
+      this.updateTokenizedRange(startIdx, endIdx);
+      return;
     }
 
     this.cancelTokenization();
@@ -360,18 +363,28 @@ export class SubtitleService {
 
     if (currentIdx < 0 || cues.length <= LAZY_THRESHOLD) return;
 
-    // Calculate needed range
+    // Calculate needed range around current position
     const neededStart = Math.max(0, currentIdx - TOKENIZE_BUFFER);
     const neededEnd = Math.min(cues.length - 1, currentIdx + TOKENIZE_BUFFER);
 
-    // Check if we need to tokenize more
-    const needsMore = neededStart < this.lastTokenizedRange.start ||
+    // Check if we need to tokenize:
+    // 1. Range extends beyond what we've tracked, OR
+    // 2. Any cues in the needed range are missing tokens (handles failed tokenization)
+    const rangeExtended = neededStart < this.lastTokenizedRange.start ||
       neededEnd > this.lastTokenizedRange.end;
 
-    if (needsMore && !this.isTokenizing()) {
-      // Expand range to include what we need
-      const expandedStart = Math.min(neededStart, this.lastTokenizedRange.start);
-      const expandedEnd = Math.max(neededEnd, this.lastTokenizedRange.end);
+    // Quick check for missing tokens in needed range
+    const hasMissingTokens = cues.slice(neededStart, neededEnd + 1)
+      .some(c => !c.tokens || c.tokens.length === 0);
+
+    if ((rangeExtended || hasMissingTokens) && !this.isTokenizing()) {
+      // Expand range to include what we need plus what we've already done
+      const expandedStart = this.lastTokenizedRange.start === -1
+        ? neededStart
+        : Math.min(neededStart, this.lastTokenizedRange.start);
+      const expandedEnd = this.lastTokenizedRange.end === -1
+        ? neededEnd
+        : Math.max(neededEnd, this.lastTokenizedRange.end);
 
       // Tokenize in background (don't await)
       this.tokenizeRange(expandedStart, expandedEnd, this.currentLang);
