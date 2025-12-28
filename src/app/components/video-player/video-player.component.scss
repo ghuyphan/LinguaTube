@@ -1751,9 +1751,9 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
   .video-title {
     font-size: 0.9375rem;
-    white-space: normal;
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
+    white-space: nowrap;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
   }
 
   .skeleton-channel {

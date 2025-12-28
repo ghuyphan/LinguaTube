@@ -38,9 +38,9 @@
   </div>
   } @else {
   <!-- Video Loaded State -->
+  <!-- FIXED: Removed mousemove/mouseleave - now on hover-only overlay only -->
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
-    [class.animate-enter]="stateTransition() === 'to-video'" (mousemove)="onUserActivity()"
-    (mouseleave)="onMouseLeave()">
+    [class.animate-enter]="stateTransition() === 'to-video'">
 
     <div class="video-embed-ratio">
       <div id="youtube-player"></div>
@@ -86,8 +86,9 @@
       </div>
     </div>
 
-    <!-- Click Overlay (desktop only) -->
-    <div class="player-overlay hover-only" (click)="onOverlayClick($event)"></div>
+    <!-- Click Overlay (desktop only) - FIXED: Mouse handlers here, not on container -->
+    <div class="player-overlay hover-only" (click)="onOverlayClick($event)" (mousemove)="onUserActivity()"
+      (mouseleave)="onMouseLeave()"></div>
 
 
     <!-- Center Controls -->
