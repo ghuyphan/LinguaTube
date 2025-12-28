@@ -1,0 +1,255 @@
+/**
+ * Unified Dictionary Parsers (Cloudflare Function)
+ * Parser functions for various dictionary API sources
+ * All parsers return a standardized format: { word, reading, definitions, partOfSpeech, ... }
+ */
+
+/**
+ * Standardized dictionary entry format
+ * @typedef {Object} DictEntry
+ * @property {string} word - The word being defined
+ * @property {string} [reading] - Reading/pronunciation (kana, pinyin, romanization)
+ * @property {string[]} definitions - Array of definitions
+ * @property {string} [partOfSpeech] - Part of speech
+ * @property {number} [level] - Proficiency level (JLPT, HSK, TOPIK)
+ */
+
+/**
+ * Parse Naver Korean dictionary API response
+ * Used for: ko-en, ko-vi, ko-ja, ko-zh, ko-ko
+ * @param {Object} data - Raw API response
+ * @returns {DictEntry[]}
+ */
+export function parseNaver(data) {
+    const wordResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
+
+    return wordResults.slice(0, 5).map(item => {
+        // Extract word (handle HTML entities)
+        const word = (item.expEntry || '').replace(/<[^>]+>/g, '');
+
+        // Extract romanization/pronunciation
+        const reading = (item.expEntrySuperscript || item.phoneticSigns?.[0]?.sign || '').replace(/<[^>]+>/g, '');
+
+        // Extract definitions from meansCollector
+        const definitions = [];
+        if (item.meansCollector) {
+            item.meansCollector.forEach(collector => {
+                if (collector.means) {
+                    collector.means.forEach(mean => {
+                        const def = (mean.value || '').replace(/<[^>]+>/g, '').trim();
+                        if (def) definitions.push(def);
+                    });
+                }
+            });
+        }
+
+        // Extract part of speech
+        const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
+
+        return { word, reading, definitions, partOfSpeech };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse Jotoba Japanese dictionary API response
+ * Used for: ja-en
+ * @param {Object} data - Raw API response from Jotoba
+ * @returns {DictEntry[]}
+ */
+export function parseJotoba(data) {
+    if (!data.words || data.words.length === 0) {
+        return [];
+    }
+
+    return data.words.slice(0, 5).map(entry => {
+        const word = entry.reading?.kanji || entry.reading?.kana || '';
+        const reading = entry.reading?.kana || '';
+
+        const definitions = [];
+        entry.senses?.forEach(sense => {
+            if (sense.glosses) {
+                definitions.push(sense.glosses.join(', '));
+            }
+        });
+
+        const partOfSpeech = entry.senses?.[0]?.pos
+            ?.map(p => (typeof p === 'string' ? p : p.Pretty || p.Short || ''))
+            .filter(Boolean)
+            .join(', ') || '';
+
+        const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
+
+        return { word, reading, definitions, partOfSpeech, level };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse Mazii Japanese-Vietnamese dictionary API response
+ * Used for: ja-vi
+ * API: POST https://mazii.net/api/search with { dict: 'javi', type: 'word', query: word, page: 1 }
+ * @param {Object} data - Raw API response from Mazii
+ * @returns {DictEntry[]}
+ */
+export function parseMazii(data) {
+    if (!data.results || data.results.length === 0) {
+        return [];
+    }
+
+    return data.results.slice(0, 5).map(entry => {
+        const word = entry.word || '';
+        const reading = entry.phonetic || entry.reading || '';
+
+        // Mazii returns 'mean' as the Vietnamese definition
+        const definitions = [];
+        if (entry.mean) {
+            // Split by newlines or semicolons if multiple meanings
+            const means = entry.mean.split(/[;\n]/).map(m => m.trim()).filter(Boolean);
+            definitions.push(...means);
+        }
+
+        const partOfSpeech = entry.type || '';
+        const level = entry.level ? parseInt(entry.level.replace('N', '')) : null;
+
+        return { word, reading, definitions, partOfSpeech, level };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse Free Dictionary API response (English)
+ * Used for: en-en
+ * @param {Array} data - Raw API response array
+ * @returns {DictEntry[]}
+ */
+export function parseFreeDictionary(data) {
+    if (!Array.isArray(data) || data.length === 0) {
+        return [];
+    }
+
+    return data.slice(0, 3).map(entry => {
+        const word = entry.word || '';
+        const reading = entry.phonetics?.find(p => p.text)?.text || '';
+
+        const definitions = [];
+        const posList = [];
+
+        entry.meanings?.forEach(meaning => {
+            if (meaning.partOfSpeech && !posList.includes(meaning.partOfSpeech)) {
+                posList.push(meaning.partOfSpeech);
+            }
+            meaning.definitions?.forEach(def => {
+                if (def.definition) definitions.push(def.definition);
+            });
+        });
+
+        return {
+            word,
+            reading,
+            definitions: definitions.slice(0, 5),
+            partOfSpeech: posList.join(', ')
+        };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse MDBG Chinese dictionary HTML response using HTMLRewriter
+ * Used for: zh-en
+ * Note: This returns a transformer, call with response object
+ * @param {Response} response - Fetch response from MDBG
+ * @returns {Promise<DictEntry[]>}
+ */
+export async function parseMdbg(response) {
+    const entries = [];
+    let currentEntry = null;
+    let captureText = null;
+
+    const rewriter = new HTMLRewriter()
+        .on('tr.row', {
+            element() {
+                currentEntry = { word: '', reading: '', definitions: [], level: null };
+                entries.push(currentEntry);
+            }
+        })
+        .on('tr.row .hanzi span', {
+            text(text) {
+                if (currentEntry && !currentEntry.word) {
+                    if (text.text.trim()) currentEntry.word += text.text;
+                }
+            }
+        })
+        .on('tr.row .pinyin span', {
+            text(text) {
+                if (currentEntry) {
+                    if (text.text.trim()) currentEntry.reading += text.text;
+                }
+            }
+        })
+        .on('tr.row .defs', {
+            element() { captureText = 'defs'; },
+            text(text) {
+                if (currentEntry && captureText === 'defs') {
+                    if (!currentEntry._rawDefs) currentEntry._rawDefs = '';
+                    currentEntry._rawDefs += text.text;
+                }
+            }
+        })
+        .on('tr.row .hsk', {
+            text(text) {
+                if (currentEntry && text.text.includes('HSK')) {
+                    const match = text.text.match(/HSK\s*(\d+)/);
+                    if (match) currentEntry.level = parseInt(match[1]);
+                }
+            }
+        });
+
+    await rewriter.transform(response).arrayBuffer();
+
+    return entries.map(e => {
+        const definitions = e._rawDefs
+            ? e._rawDefs.split('/').map(d => d.trim()).filter(d => d)
+            : [];
+
+        return {
+            word: e.word.trim(),
+            reading: e.reading.trim(),
+            definitions,
+            partOfSpeech: '',
+            level: e.level
+        };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse Hanzii Chinese-Vietnamese dictionary HTML response
+ * Used for: zh-vi
+ * @param {string} html - Raw HTML response
+ * @returns {DictEntry[]}
+ */
+export function parseHanzii(html) {
+    const entries = [];
+
+    // Hanzii structure: Look for word entries with Vietnamese definitions
+    // Pattern: <div class="word-detail">...<div class="meaning">...</div>
+    const wordMatches = html.match(/<div[^>]*class="[^"]*word[^"]*"[^>]*>[\s\S]*?<\/div>/gi) || [];
+
+    for (const match of wordMatches.slice(0, 5)) {
+        // Extract word (Chinese characters)
+        const wordMatch = match.match(/>([一-龥]+)</);
+        const word = wordMatch ? wordMatch[1] : '';
+
+        // Extract pinyin
+        const pinyinMatch = match.match(/pinyin[^>]*>([^<]+)</i);
+        const reading = pinyinMatch ? pinyinMatch[1].trim() : '';
+
+        // Extract Vietnamese definition
+        const meaningMatch = match.match(/meaning[^>]*>([\s\S]+?)<\//i);
+        const definitions = meaningMatch
+            ? [meaningMatch[1].replace(/<[^>]+>/g, '').trim()]
+            : [];
+
+        if (word && definitions.length > 0) {
+            entries.push({ word, reading, definitions, partOfSpeech: '' });
+        }
+    }
+
+    return entries;
+}

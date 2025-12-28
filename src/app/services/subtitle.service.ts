@@ -257,9 +257,10 @@ export class SubtitleService {
     startIdx = Math.max(0, startIdx);
     endIdx = Math.min(cues.length - 1, endIdx);
 
-    // Skip if already in this range
+    // Skip if already in this range AND all cues have tokens
     if (this.lastTokenizedRange.start <= startIdx && this.lastTokenizedRange.end >= endIdx) {
-      return;
+      const rangeHasTokens = cues.slice(startIdx, endIdx + 1).every(c => (c.tokens?.length ?? 0) > 0);
+      if (rangeHasTokens) return;
     }
 
     this.cancelTokenization();
@@ -329,9 +330,8 @@ export class SubtitleService {
       }
 
       console.error('[SubtitleService] Tokenization failed:', error);
-      // Apply fallback only for the range
-      const cueSubset = cues.slice(startIdx, endIdx + 1);
-      this.applyFallbackTokens(cueSubset, lang);
+      // Apply fallback only for the range (without replacing all subtitles)
+      this.applyFallbackTokens(startIdx, endIdx, lang);
 
     } finally {
       this.isTokenizing.set(false);
@@ -538,13 +538,15 @@ export class SubtitleService {
     return tokens;
   }
 
-  private applyFallbackTokens(cues: SubtitleCue[], lang: 'ja' | 'zh' | 'ko' | 'en'): void {
-    cues.forEach(cue => {
-      if (!cue.tokens) {
-        cue.tokens = this.fallbackTokenize(cue.text, lang);
+  private applyFallbackTokens(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en'): void {
+    const cues = this.subtitles();
+    const updatedCues = cues.map((cue, idx) => {
+      if (idx >= startIdx && idx <= endIdx && !cue.tokens) {
+        return { ...cue, tokens: this.fallbackTokenize(cue.text, lang) };
       }
+      return cue;
     });
-    this.subtitles.set([...cues]);
+    this.subtitles.set(updatedCues);
   }
 
   // ============================================================================

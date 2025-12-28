@@ -318,6 +318,13 @@ async function trySingleCaptionExtractor(videoId, lang) {
             return null;
         }
 
+        // Verify language matches expected (detect silent fallback to wrong language)
+        const sampleText = cues.slice(0, 5).map(c => c.text).join(' ');
+        if (!verifyLanguage(sampleText, lang)) {
+            log(`caption-extractor [${lang}]: Language mismatch detected, skipping`);
+            return null;
+        }
+
         log(`caption-extractor: Got ${cues.length} cues in ${lang}`);
         return {
             data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)),
@@ -355,6 +362,13 @@ async function trySingleYoutubeTranscript(videoId, lang) {
 
         if (!cues.length) {
             log(`youtube-transcript [${lang}]: Empty cues after filtering`);
+            return null;
+        }
+
+        // Verify language matches expected (detect silent fallback to wrong language)
+        const sampleText = cues.slice(0, 5).map(c => c.text).join(' ');
+        if (!verifyLanguage(sampleText, lang)) {
+            log(`youtube-transcript [${lang}]: Language mismatch detected, skipping`);
             return null;
         }
 
@@ -558,6 +572,38 @@ async function trySupadata(videoId, langs, apiKey, cache) {
 // ============================================================================
 // Utilities
 // ============================================================================
+
+/**
+ * Verify that the returned content matches the expected language
+ * Uses Unicode script detection to catch silent fallback to wrong language
+ * @param {string} text - Sample text to verify
+ * @param {string} expectedLang - Expected language code
+ * @returns {boolean} - True if language appears correct
+ */
+function verifyLanguage(text, expectedLang) {
+    if (!text || text.length < 10) return true; // Too short to verify
+
+    const sample = text.substring(0, 200);
+
+    switch (expectedLang) {
+        case 'ja':
+            // Japanese: must contain hiragana, katakana, or kanji
+            return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(sample);
+        case 'ko':
+            // Korean: must contain Hangul
+            return /[\uAC00-\uD7AF\u1100-\u11FF]/.test(sample);
+        case 'zh':
+            // Chinese: CJK characters but NO Japanese kana (to distinguish from Japanese)
+            return /[\u4E00-\u9FFF]/.test(sample) &&
+                !/[\u3040-\u309F\u30A0-\u30FF]/.test(sample);
+        case 'en':
+            // English: mostly ASCII letters
+            const asciiRatio = (sample.match(/[a-zA-Z\s]/g) || []).length / sample.length;
+            return asciiRatio > 0.7;
+        default:
+            return true; // Unknown language, assume OK
+    }
+}
 
 function withTimeout(promise, ms, message) {
     return Promise.race([
