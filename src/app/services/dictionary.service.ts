@@ -1,7 +1,8 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../models';
 import { Observable, of, catchError, map, tap } from 'rxjs';
+import { I18nService, UILanguage } from './i18n.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,10 @@ export class DictionaryService {
   private readonly MDBG_API = '/api/mdbg';
   private readonly KRDICT_API = '/api/krdict';
   private readonly ENDICT_API = '/api/endict';
+  private readonly UNIFIED_DICT_API = '/api/dict'; // New unified endpoint
+
+  // Inject I18nService to get user's UI language
+  private readonly i18n = inject(I18nService);
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
@@ -235,21 +240,123 @@ export class DictionaryService {
   }
 
   /**
-   * Auto-detect language and look up
+   * Auto-detect language and look up using unified endpoint
+   * Definitions will be returned in user's UI language
    */
   lookup(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry | null> {
-    const detectedLang = language || this.detectLanguage(word);
+    const fromLang = language || this.detectLanguage(word);
+    const toLang = this.i18n.currentLanguage();
 
-    if (detectedLang === 'zh') {
-      return this.lookupChinese(word);
+    return this.lookupUnified(word, fromLang, toLang);
+  }
+
+  /**
+   * Unified dictionary lookup - definitions in user's UI language
+   */
+  private lookupUnified(
+    word: string,
+    from: 'ja' | 'zh' | 'ko' | 'en',
+    to: UILanguage
+  ): Observable<DictionaryEntry | null> {
+    if (!word.trim()) return of(null);
+
+    // Check cache with language pair
+    const cacheKey = `${from}:${to}:${word}`;
+    const cached = this.getFromCacheWithKey(cacheKey);
+    if (cached) {
+      this.lastLookup.set(cached);
+      return of(cached);
     }
-    if (detectedLang === 'ko') {
-      return this.lookupKorean(word);
+
+    this.isLoading.set(true);
+
+    const url = `${this.UNIFIED_DICT_API}?word=${encodeURIComponent(word)}&from=${from}&to=${to}`;
+
+    return this.http.get<any>(url).pipe(
+      map(response => {
+        this.isLoading.set(false);
+
+        if (!response.entries || response.entries.length === 0) {
+          // Fallback to language-specific local lookup
+          return this.getLocalFallback(word, from);
+        }
+
+        const entry = response.entries[0];
+        const result: DictionaryEntry = {
+          word: entry.word || word,
+          reading: entry.reading || '',
+          pinyin: entry.reading || '', // For Chinese
+          romanization: entry.reading || '', // For Korean
+          meanings: entry.definitions?.map((def: string) => ({
+            definition: def,
+            examples: []
+          })) || [],
+          partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : [],
+          jlptLevel: entry.level ? `N${entry.level}` : undefined,
+          hskLevel: entry.level,
+          topikLevel: entry.level
+        };
+
+        this.lastLookup.set(result);
+        this.saveToCacheWithKey(cacheKey, result);
+        return result;
+      }),
+      catchError(err => {
+        this.isLoading.set(false);
+        console.log(`Unified dict lookup failed (${from}->${to}):`, err.message);
+        const result = this.getLocalFallback(word, from);
+        if (result) this.lastLookup.set(result);
+        return of(result);
+      })
+    );
+  }
+
+  /**
+   * Get local fallback based on source language
+   */
+  private getLocalFallback(word: string, lang: string): DictionaryEntry | null {
+    switch (lang) {
+      case 'ja': return this.localJapaneseLookup(word);
+      case 'zh': return this.localChineseLookup(word);
+      case 'ko': return this.localKoreanLookup(word);
+      case 'en': return this.localEnglishLookup(word);
+      default: return null;
     }
-    if (detectedLang === 'en') {
-      return this.lookupEnglish(word);
+  }
+
+  /**
+   * Cache helpers with custom key
+   */
+  private getFromCacheWithKey(key: string): DictionaryEntry | null {
+    try {
+      const cache = this.loadCache();
+      const entry = cache[key];
+      if (entry) {
+        entry.accessTime = Date.now();
+        this.saveCache(cache);
+        return entry.data;
+      }
+    } catch (e) {
+      console.warn('[Dictionary] Cache read error:', e);
     }
-    return this.lookupJapanese(word);
+    return null;
+  }
+
+  private saveToCacheWithKey(key: string, data: DictionaryEntry): void {
+    try {
+      const cache = this.loadCache();
+      cache[key] = { data, accessTime: Date.now() };
+
+      const keys = Object.keys(cache);
+      if (keys.length > this.MAX_CACHE_SIZE) {
+        const sorted = keys.sort((a, b) => cache[a].accessTime - cache[b].accessTime);
+        sorted.slice(0, keys.length - this.MAX_CACHE_SIZE).forEach(k => delete cache[k]);
+      }
+
+      this.saveCache(cache);
+    } catch (e) {
+      console.warn('[Dictionary] Cache write error:', e);
+    }
   }
 
   /**
