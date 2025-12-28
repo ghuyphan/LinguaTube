@@ -263,8 +263,9 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   height: $big-play-btn-size;
   background: rgba(0, 0, 0, 0.7);
   border: none;
-  border-radius: 50%;
+  border-radius: var(--border-radius-round);
   display: flex;
+
   align-items: center;
   justify-content: center;
   color: white;
@@ -296,15 +297,8 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
+/* Spin animation removed - using global */
 
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .replay-btn {
   background: rgba(0, 0, 0, 0.7);
@@ -316,8 +310,9 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   width: $center-feedback-size;
   height: $center-feedback-size;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
+  border-radius: var(--border-radius-round);
   display: flex;
+
   align-items: center;
   justify-content: center;
   color: white;
@@ -475,16 +470,21 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 /* Ripple Effect */
 .ripple-effect {
+  --x: 50%;
+  --y: 50%;
   position: absolute;
   width: $ripple-size;
   height: $ripple-size;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
+  left: var(--x);
+  top: var(--y);
   transform: translate(-50%, -50%) scale(0);
   animation: ripple 0.6s cubic-bezier(0, 0, 0.2, 1) forwards;
   pointer-events: none;
   will-change: transform, opacity;
 }
+
 
 @keyframes ripple {
   0% {
@@ -557,6 +557,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
    MINI PROGRESS BAR
    ============================================ */
 .mini-progress {
+  --progress: 0;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -574,9 +575,11 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 .mini-progress__fill {
   height: 100%;
+  width: calc(var(--progress) * 1%);
   background: var(--accent-primary);
   transition: width 0.1s linear;
 }
+
 
 .mini-progress::after {
   content: '';
@@ -630,6 +633,11 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
    PROGRESS BAR
    ============================================ */
 .progress-container {
+  // Default values
+  --progress: 0;
+  --buffered: 0;
+  --seek-pos: 0px;
+
   width: 100%;
   height: 4px;
   background: rgba(255, 255, 255, 0.2);
@@ -678,6 +686,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   top: 0;
   left: 0;
   height: 100%;
+  width: calc(var(--buffered) * 1%);
   background: rgba(255, 255, 255, 0.35);
   border-radius: 2px;
   pointer-events: none;
@@ -688,6 +697,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   top: 0;
   left: 0;
   height: 100%;
+  width: calc(var(--progress) * 1%);
   background: var(--accent-primary);
   border-radius: 2px;
   pointer-events: none;
@@ -696,6 +706,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 .progress-handle {
   position: absolute;
   top: 50%;
+  left: calc(var(--progress) * 1%);
   transform: translate(-50%, -50%) scale(0);
   width: 14px;
   height: 14px;
@@ -709,6 +720,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 .seek-tooltip {
   position: absolute;
   bottom: 18px;
+  left: var(--seek-pos);
   transform: translateX(-50%);
   padding: 5px 10px;
   background: rgba(0, 0, 0, 0.9);
@@ -721,6 +733,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   pointer-events: none;
   z-index: 30;
 }
+
 
 /* ============================================
    CONTROLS ROW
@@ -746,12 +759,14 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
-  min-width: 2.5rem;
-  height: 2.5rem;
+  min-width: var(--btn-height-md);
+  height: var(--btn-height-md);
+
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -768,9 +783,10 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 }
 
 .play-btn {
-  min-width: 2.5rem;
-  height: 2.5rem;
+  min-width: var(--btn-height-md);
+  height: var(--btn-height-md);
 }
+
 
 /* ============================================
    DEVICE-BASED VISIBILITY

@@ -4,8 +4,8 @@
 
 .option-picker__header {
     padding: var(--space-sm) var(--space-lg);
-    // border-bottom: 1px solid var(--border-color);
     margin-bottom: var(--space-xs);
+
 
     h3 {
         margin: 0;
@@ -64,10 +64,10 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .option-picker__item {
-
-        min-height: 48px;
+        min-height: var(--btn-height-lg);
         /* Touch-friendly */
     }
+
 
     .option-picker__label {
         font-size: 1rem;

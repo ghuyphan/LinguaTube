@@ -29,8 +29,9 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--accent-primary), #e85a56);
-    border-radius: 6px;
+    border-radius: var(--border-radius);
 }
+
 
 .logo-text {
     font-family: var(--font-jp);
@@ -73,8 +74,9 @@
     font-size: 0.8125rem;
     font-weight: 500;
     border: none;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
     line-height: normal;
+
     /* Reset line-height */
     background: transparent;
     color: var(--text-secondary);
@@ -165,7 +167,7 @@
 .theme-btn {
     width: var(--btn-height-md);
     height: var(--btn-height-md);
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
 }
 
 .user-menu {
@@ -175,8 +177,9 @@
 .user-avatar {
     width: 28px;
     height: 28px;
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
     cursor: pointer;
+
     border: 2px solid transparent;
     transition: border-color var(--transition-fast);
 }
@@ -260,8 +263,9 @@
 .lang-switcher-btn {
     width: var(--btn-height-md);
     height: var(--btn-height-md);
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
 }
+
 
 .lang-dropdown {
     position: absolute;
@@ -324,6 +328,7 @@
         height: 3.25rem;
         gap: var(--space-sm);
     }
+
 
     .header__title-group,
     .header__stats,

@@ -8,3 +8,5 @@ export * from './translation.service';
 export * from './auth.service';
 export * from './sync.service';
 export * from './i18n.service';
+export * from './body-scroll.service';
+

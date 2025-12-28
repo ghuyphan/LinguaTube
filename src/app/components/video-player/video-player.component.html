@@ -39,7 +39,9 @@
   } @else {
   <!-- Video Loaded State -->
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
-    [class.animate-enter]="stateTransition() === 'to-video'">
+    [class.animate-enter]="stateTransition() === 'to-video'" (mousemove)="onUserActivity()"
+    (mouseleave)="onMouseLeave()">
+
     <div class="video-embed-ratio">
       <div id="youtube-player"></div>
     </div>
@@ -73,19 +75,20 @@
       (touchcancel)="onOverlayTouchEnd($event)">
       <div class="zone zone-left">
         @if (leftRipple()) {
-        <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+        <div class="ripple-effect" [style.--x]="ripplePos().x + 'px'" [style.--y]="ripplePos().y + 'px'"></div>
         }
       </div>
       <div class="zone zone-right">
         @if (rightRipple()) {
-        <div class="ripple-effect" [style.left.px]="ripplePos().x" [style.top.px]="ripplePos().y"></div>
+        <div class="ripple-effect" [style.--x]="ripplePos().x + 'px'" [style.--y]="ripplePos().y + 'px'"></div>
         }
+
       </div>
     </div>
 
     <!-- Click Overlay (desktop only) -->
-    <div class="player-overlay hover-only" (click)="onOverlayClick($event)" (mousemove)="onUserActivity()"
-      (mouseleave)="onMouseLeave()"></div>
+    <div class="player-overlay hover-only" (click)="onOverlayClick($event)"></div>
+
 
     <!-- Center Controls -->
     <div class="center-controls">
@@ -159,9 +162,10 @@
 
     <!-- Mini Progress Bar -->
     <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.isPlaying()"
-      (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
-      <div class="mini-progress__fill" [style.width.%]="progressPercentage()"></div>
+      [style.--progress]="progressPercentage()" (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
+      <div class="mini-progress__fill"></div>
     </div>
+
 
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
@@ -262,17 +266,19 @@
         [attr.aria-valuetext]="formatTime(displayTime()) + ' of ' + formatTime(youtube.duration())"
         aria-label="Video progress" tabindex="0" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
         (touchstart)="startSeeking($event)" (mousemove)="updateSeekPreview($event)" (mouseleave)="hideSeekPreview()"
-        #progressBar>
-        <div class="progress-buffered" [style.width.%]="bufferedPercentage()" aria-hidden="true"></div>
-        <div class="progress-fill" [style.width.%]="progressPercentage()" aria-hidden="true"></div>
-        <div class="progress-handle" [style.left.%]="progressPercentage()" aria-hidden="true"></div>
+        [style.--progress]="progressPercentage()" [style.--buffered]="bufferedPercentage()"
+        [style.--seek-pos]="seekPreview().position + 'px'" #progressBar>
+        <div class="progress-buffered" aria-hidden="true"></div>
+        <div class="progress-fill" aria-hidden="true"></div>
+        <div class="progress-handle" aria-hidden="true"></div>
 
         @if (seekPreview().visible) {
-        <div class="seek-tooltip" [style.left.px]="seekPreview().position" aria-hidden="true">
+        <div class="seek-tooltip" aria-hidden="true">
           {{ formatTime(seekPreview().time) }}
         </div>
         }
       </div>
+
 
       <div class="controls-row">
         <!-- Left Controls -->

@@ -127,15 +127,16 @@
 .badge {
     display: inline-flex;
     align-items: center;
-    padding: 0.25rem 0.625rem;
+    padding: var(--space-xs) 0.625rem;
     font-size: 0.6875rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--accent-primary);
     background: rgba(199, 62, 58, 0.08);
-    border-radius: 100px;
+    border-radius: var(--border-radius-pill);
 }
+
 
 // ============================================
 // MEANINGS - Clean numbered list
@@ -220,33 +221,8 @@
 // ============================================
 // EMPTY STATE
 // ============================================
-.empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: var(--space-2xl) var(--space-lg);
-    min-height: 8rem;
-}
+// Uses global .empty-state class from styles.css
 
-.empty-state__icon {
-    color: var(--text-muted);
-    opacity: 0.4;
-    margin-bottom: var(--space-md);
-}
-
-.empty-state__title {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-.empty-state__hint {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-    margin-top: var(--space-xs);
-}
 
 // ============================================
 // RECENT SEARCHES
@@ -304,8 +280,9 @@
     background: var(--bg-card);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
-    border-radius: 100px;
+    border-radius: var(--border-radius-pill);
     cursor: pointer;
+
     transition: all var(--transition-fast);
 }
 

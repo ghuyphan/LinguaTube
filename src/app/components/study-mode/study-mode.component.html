@@ -71,7 +71,8 @@
         <!-- Progress -->
         <div class="study-progress">
             <div class="progress-bar">
-                <div class="progress-fill" [style.width.%]="(currentIndex() + 1) / studyCards().length * 100"></div>
+                <div class="progress-fill" [style.--progress]="(currentIndex() + 1) / studyCards().length * 100"></div>
+
             </div>
             <span class="progress-text">
                 {{ currentIndex() + 1 }} / {{ studyCards().length }}

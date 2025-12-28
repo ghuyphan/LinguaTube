@@ -29,7 +29,16 @@
     box-shadow: var(--shadow-lg);
     width: 100%;
     max-width: 420px;
-    max-height: 80vh;
+
+    // CSS Custom Property defaults
+    --drag-offset: 0px;
+    --max-height: 85vh;
+
+    max-height: var(--max-height);
+
+    // Apply drag offset transform
+    transform: translateY(var(--drag-offset));
+
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -43,14 +52,16 @@
     animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
-/* Drag-to-close: no CSS animation, uses inline transition */
-.sheet.drag-closing {
+// No transition during active drag for 60fps
+.sheet.dragging {
+    transition: none !important;
     animation: none !important;
 }
 
-.sheet.dragging {
+// Drag-to-close uses CSS transition
+.sheet.drag-closing {
     animation: none !important;
-    transition: none !important;
+    transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* After entry animation completes, disable it to prevent replay */
@@ -63,6 +74,7 @@
     transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+
 /* Close button - similar to word popup */
 .sheet-close-btn {
     position: absolute;
@@ -74,9 +86,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
     background: transparent;
     border: none;
+
     color: var(--text-muted);
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -200,15 +213,8 @@
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+/* fadeIn animation is now global */
 
-    to {
-        opacity: 1;
-    }
-}
 
 @keyframes fadeOut {
     from {

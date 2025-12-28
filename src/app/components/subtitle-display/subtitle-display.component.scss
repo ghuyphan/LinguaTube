@@ -86,9 +86,10 @@
     overflow-wrap: break-word;
     transition: box-shadow 0.3s ease, background 0.3s ease;
     border-radius: var(--border-radius-lg);
-    padding: 8px 16px;
+    padding: var(--space-sm) var(--space-md);
     max-width: 100%;
 }
+
 
 .subtitle-content {
     display: inline;
@@ -204,15 +205,6 @@
     animation: spin 1.5s linear infinite;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 .ai-wand {
     color: #8b5cf6;
@@ -543,9 +535,12 @@ ruby rt {
     background: none;
     color: var(--text-muted);
     cursor: pointer;
-    border-radius: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
     transition: all var(--transition-fast);
 }
+
 
 .font-btn--medium {
     font-size: 0.8125rem;
@@ -567,17 +562,6 @@ ruby rt {
     box-shadow: none;
 }
 
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
 
 /* ============================================
    MOBILE STYLES

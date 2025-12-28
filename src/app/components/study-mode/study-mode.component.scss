@@ -16,22 +16,10 @@
     border: 1px solid var(--border-color);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(4px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .study-header {
     padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
 }
+
 
 .header-row {
     display: flex;
@@ -63,8 +51,8 @@
     display: flex;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
 }
+
 
 .stat-badge {
     display: flex;
@@ -127,33 +115,13 @@
 .option-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
     cursor: pointer;
     transition: background var(--transition-fast);
-    // border-bottom: 1px solid var(--border-color);
-
-    &:last-child {
-        border-bottom: none;
-    }
 }
 
-/* Hover effect removed
-@media (hover: hover) {
-    .option-item:hover {
-        background: var(--bg-secondary);
-    }
-}
-*/
-
-.option-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    transition: background var(--transition-fast);
-}
 
 .option-label {
     font-size: 0.875rem;
@@ -253,9 +221,12 @@ input:checked+.slider:before {
 
 .progress-fill {
     height: 100%;
+    width: calc(var(--progress) * 1%);
     background: var(--accent-primary);
     transition: width 0.3s ease;
+    --progress: 0;
 }
+
 
 .progress-text {
     font-size: 0.875rem;

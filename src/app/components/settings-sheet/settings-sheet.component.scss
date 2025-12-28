@@ -18,8 +18,8 @@
 .settings-section {
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-lg);
-    // border-bottom: 1px solid var(--border-color);
 }
+
 
 .settings-section:last-child {
     border-bottom: none;
@@ -51,8 +51,9 @@
 .user-avatar {
     width: var(--btn-height-md);
     height: var(--btn-height-md);
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
 }
+
 
 .user-info {
     flex: 1;
@@ -80,7 +81,7 @@
     color: var(--success);
     font-size: 0.6875rem;
     font-weight: 600;
-    border-radius: 100px;
+    border-radius: var(--border-radius-pill);
 }
 
 .sync-badge.syncing {
@@ -97,15 +98,6 @@
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 /* Unified Language Grid (for both Learning and UI languages) */
 .lang-grid {
@@ -166,8 +158,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    min-height: 44px;
+    min-height: var(--touch-target-min);
 }
+
 
 .google-signin-hint {
     margin: var(--space-sm) 0 0;
@@ -218,9 +211,10 @@
     align-items: center;
     justify-content: center;
     background: rgba(239, 68, 68, 0.1);
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
     color: var(--error);
 }
+
 
 .confirm-title {
     font-size: 1.125rem;

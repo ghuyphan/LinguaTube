@@ -96,8 +96,9 @@
     letter-spacing: 0.3px;
     color: var(--accent-primary);
     background: rgba(199, 62, 58, 0.1);
-    border-radius: 4px;
+    border-radius: var(--border-radius-sm);
 }
+
 
 .popup-meanings {
     display: flex;
@@ -120,8 +121,9 @@
     font-weight: 600;
     color: var(--text-muted);
     background: var(--bg-secondary);
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
     flex-shrink: 0;
+
 }
 
 .meaning-content {
@@ -221,8 +223,9 @@
     align-items: center;
     gap: 6px;
     padding: 8px 12px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-pill);
     background: var(--bg-secondary);
+
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.2s;
@@ -273,15 +276,8 @@
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+/* fadeIn animation is now global */
 
-    to {
-        opacity: 1;
-    }
-}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {

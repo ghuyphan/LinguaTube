@@ -1,13 +1,12 @@
 /**
  * YouTube Transcript Proxy (Cloudflare Function)
  * 
- * Sequential strategy with Supadata as last resort:
+ * Optimized parallel strategy with Supadata as last resort:
  *   1. Cache (KV/D1)
- *   2. youtube-caption-extractor (free)
- *   3. youtube-transcript (free)
- *   4. Supadata API (paid - only if free strategies fail)
+ *   2. Race: youtube-caption-extractor + youtube-transcript (parallel per language)
+ *   3. Supadata API (paid - only if free strategies fail)
  *
- * @version 16.3.0 - Supadata deduplication + no-caption tracking to save credits
+ * @version 17.0.0 - Parallel strategy racing for faster response times
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -35,6 +34,10 @@ const RATE_LIMIT_CONFIG = { max: 30, windowSeconds: 3600, keyPrefix: 'innertube'
 // Supadata configuration
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
 
+// Supadata deduplication: Lock TTL in seconds
+const SUPADATA_LOCK_TTL = 300; // 5 minutes
+const SUPADATA_NO_CAPTION_TTL = 3600; // 1 hour
+
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
 
@@ -52,13 +55,13 @@ export async function onRequestGet(context) {
 
     return jsonResponse({
         status: 'ok',
-        mode: 'sequential',
+        mode: 'parallel-race',
         strategies: [
-            'youtube-caption-extractor',
-            'youtube-transcript',
+            'youtube-caption-extractor (parallel)',
+            'youtube-transcript (parallel)',
             env.SUPADATA_API_KEY ? 'supadata (last resort)' : 'supadata (not configured)'
         ],
-        version: '16.1.0',
+        version: '17.0.0',
         timestamp: new Date().toISOString()
     });
 }
@@ -104,25 +107,16 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // Step 2: Try free strategies first (sequential)
+        // Step 2: Try free strategies (parallel race per language)
         // =====================================================================
         let result = null;
         let source = 'none';
 
-        // Strategy 1: youtube-caption-extractor (free)
-        log('Trying youtube-caption-extractor...');
-        result = await tryCaptionExtractor(videoId, targetLanguages);
-        if (result) {
-            source = 'caption-extractor';
-        }
-
-        // Strategy 2: youtube-transcript (free)
-        if (!result) {
-            log('Trying youtube-transcript...');
-            result = await tryYoutubeTranscript(videoId, targetLanguages);
-            if (result) {
-                source = 'youtube-transcript';
-            }
+        log('Racing free strategies in parallel...');
+        const freeResult = await tryFreeStrategies(videoId, targetLanguages);
+        if (freeResult) {
+            result = freeResult;
+            source = freeResult.source;
         }
 
         // =====================================================================
@@ -130,8 +124,9 @@ export async function onRequestPost(context) {
         // =====================================================================
         if (!result && env.SUPADATA_API_KEY) {
             log('Free strategies failed, trying Supadata as last resort...');
-            result = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache);
-            if (result) {
+            const supadataResult = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache);
+            if (supadataResult) {
+                result = supadataResult;
                 source = 'supadata';
             }
         }
@@ -258,94 +253,126 @@ async function saveToCache(cache, db, videoId, lang, data, source) {
 }
 
 // ============================================================================
-// Strategy 1: youtube-caption-extractor (Free)
+// Parallel Strategy Racing (Free Strategies)
 // ============================================================================
 
-async function tryCaptionExtractor(videoId, langs) {
-    for (const lang of langs) {
-        try {
-            const subs = await withTimeout(
-                getSubtitles({ videoID: videoId, lang }),
-                STRATEGY_TIMEOUT_MS,
-                `caption-extractor timeout for ${lang}`
-            );
-
-            if (!subs?.length) {
-                log(`caption-extractor [${lang}]: No subtitles found`);
-                continue;
-            }
-
-            const cues = subs.map((s, i) => ({
-                id: i,
-                start: parseFloat(s.start),
-                duration: parseFloat(s.dur),
-                text: s.text.trim()
-            })).filter(c => c.text);
-
-            if (!cues.length) {
-                log(`caption-extractor [${lang}]: Empty cues after filtering`);
-                continue;
-            }
-
-            log(`caption-extractor: Got ${cues.length} cues in ${lang}`);
-            return { data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)) };
-
-        } catch (e) {
-            log(`caption-extractor [${lang}] failed: ${e.message}`);
+/**
+ * Try all free strategies - parallel race per language, sequential across languages
+ * Stops on first success (prioritizes earlier languages in the list)
+ */
+async function tryFreeStrategies(videoId, targetLanguages) {
+    for (const lang of targetLanguages) {
+        log(`Racing strategies for ${lang}...`);
+        const result = await raceStrategiesForLang(videoId, lang);
+        if (result) {
+            return result; // Stop on first success!
         }
     }
-
     return null;
 }
 
-// ============================================================================
-// Strategy 2: youtube-transcript (Free)
-// ============================================================================
+/**
+ * Race both free strategies in parallel for a single language
+ * Returns first successful result, null if both fail
+ */
+async function raceStrategiesForLang(videoId, lang) {
+    const results = await Promise.allSettled([
+        trySingleCaptionExtractor(videoId, lang),
+        trySingleYoutubeTranscript(videoId, lang)
+    ]);
 
-async function tryYoutubeTranscript(videoId, langs) {
-    for (const lang of langs) {
-        try {
-            const transcript = await withTimeout(
-                YoutubeTranscript.fetchTranscript(videoId, { lang }),
-                STRATEGY_TIMEOUT_MS,
-                `youtube-transcript timeout for ${lang}`
-            );
-
-            if (!transcript?.length) {
-                log(`youtube-transcript [${lang}]: No transcript found`);
-                continue;
-            }
-
-            const cues = transcript.map((item, i) => ({
-                id: i,
-                start: item.offset / 1000,
-                duration: item.duration / 1000,
-                text: item.text.trim()
-            })).filter(c => c.text);
-
-            if (!cues.length) {
-                log(`youtube-transcript [${lang}]: Empty cues after filtering`);
-                continue;
-            }
-
-            log(`youtube-transcript: Got ${cues.length} cues in ${lang}`);
-            return { data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)) };
-
-        } catch (e) {
-            log(`youtube-transcript [${lang}] failed: ${e.message}`);
+    // Return first successful result (caption-extractor has priority if both succeed)
+    for (const result of results) {
+        if (result.status === 'fulfilled' && result.value) {
+            return result.value;
         }
     }
-
     return null;
+}
+
+/**
+ * Single language caption extractor attempt
+ */
+async function trySingleCaptionExtractor(videoId, lang) {
+    try {
+        const subs = await withTimeout(
+            getSubtitles({ videoID: videoId, lang }),
+            STRATEGY_TIMEOUT_MS,
+            `caption-extractor timeout for ${lang}`
+        );
+
+        if (!subs?.length) {
+            log(`caption-extractor [${lang}]: No subtitles found`);
+            return null;
+        }
+
+        const cues = subs.map((s, i) => ({
+            id: i,
+            start: parseFloat(s.start),
+            duration: parseFloat(s.dur),
+            text: s.text.trim()
+        })).filter(c => c.text);
+
+        if (!cues.length) {
+            log(`caption-extractor [${lang}]: Empty cues after filtering`);
+            return null;
+        }
+
+        log(`caption-extractor: Got ${cues.length} cues in ${lang}`);
+        return {
+            data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)),
+            source: 'caption-extractor'
+        };
+
+    } catch (e) {
+        log(`caption-extractor [${lang}] failed: ${e.message}`);
+        return null;
+    }
+}
+
+/**
+ * Single language youtube-transcript attempt
+ */
+async function trySingleYoutubeTranscript(videoId, lang) {
+    try {
+        const transcript = await withTimeout(
+            YoutubeTranscript.fetchTranscript(videoId, { lang }),
+            STRATEGY_TIMEOUT_MS,
+            `youtube-transcript timeout for ${lang}`
+        );
+
+        if (!transcript?.length) {
+            log(`youtube-transcript [${lang}]: No transcript found`);
+            return null;
+        }
+
+        const cues = transcript.map((item, i) => ({
+            id: i,
+            start: item.offset / 1000,
+            duration: item.duration / 1000,
+            text: item.text.trim()
+        })).filter(c => c.text);
+
+        if (!cues.length) {
+            log(`youtube-transcript [${lang}]: Empty cues after filtering`);
+            return null;
+        }
+
+        log(`youtube-transcript: Got ${cues.length} cues in ${lang}`);
+        return {
+            data: buildResponse(videoId, lang, cleanTranscriptSegments(cues)),
+            source: 'youtube-transcript'
+        };
+
+    } catch (e) {
+        log(`youtube-transcript [${lang}] failed: ${e.message}`);
+        return null;
+    }
 }
 
 // ============================================================================
 // Strategy 3: Supadata API (Paid - Last Resort)
 // ============================================================================
-
-// Supadata deduplication: Lock TTL in seconds
-const SUPADATA_LOCK_TTL = 300; // 5 minutes
-const SUPADATA_NO_CAPTION_TTL = 3600; // 1 hour - short enough to retry, long enough to cover gap
 
 /**
  * Check if there's an active Supadata request for this video

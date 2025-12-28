@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../option-picker/option-picker.component';
-import { VocabularyService, SettingsService, I18nService } from '../../services';
+import { VocabularyService, SettingsService, I18nService, BodyScrollService } from '../../services';
+
 import { VocabularyItem, WordLevel } from '../../models';
 
 @Component({
@@ -18,6 +19,8 @@ export class VocabularyListComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+  bodyScroll = inject(BodyScrollService);
+
 
   // Search with debounce (300ms)
   private searchInput = signal('');
@@ -191,7 +194,9 @@ export class VocabularyListComponent {
   deleteWord(id: string): void {
     this.pendingDeleteId = id;
     this.deleteModalVisible.set(true);
+    this.bodyScroll.lock();
   }
+
 
   confirmDelete(): void {
     if (this.pendingDeleteId) {
@@ -199,12 +204,16 @@ export class VocabularyListComponent {
       this.pendingDeleteId = null;
     }
     this.deleteModalVisible.set(false);
+    this.bodyScroll.unlock();
   }
+
 
   cancelDelete(): void {
     this.pendingDeleteId = null;
     this.deleteModalVisible.set(false);
+    this.bodyScroll.unlock();
   }
+
 
   exportJSON(): void {
     const json = this.vocab.exportToJSON();

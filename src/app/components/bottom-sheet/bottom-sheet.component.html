@@ -3,8 +3,10 @@
     (touchend)="onBackdropTouch($event)">
     <div class="sheet" #sheetEl [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
         [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile"
-        [style.maxHeight]="maxHeight()" (click)="$event.stopPropagation()" (animationend)="onAnimationEnd($event)"
-        (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)">
+        [style.--drag-offset]="dragOffset() + 'px'" [style.--max-height]="maxHeight()"
+        (click)="$event.stopPropagation()" (animationend)="onAnimationEnd($event)" (touchstart)="onTouchStart($event)"
+        (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)">
+
         <!-- Drag Handle - visible on mobile -->
         @if (showDragHandle()) {
         <div class="sheet-drag-handle">
