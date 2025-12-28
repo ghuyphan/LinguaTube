@@ -94,6 +94,11 @@
   --mobile-card-radius: 12px;
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
   --bottom-nav-height: 4rem;
+
+  /* AI/Generation colors */
+  --ai-purple: #8b5cf6;
+  --ai-pink: #ec4899;
+  --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-pink));
 }
 
 /* Dark theme */

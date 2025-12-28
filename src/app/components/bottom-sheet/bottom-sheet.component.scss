@@ -103,7 +103,7 @@
 /* Ensure drag handle doesn't conflict */
 .sheet-drag-handle {
     display: none;
-    padding: 12px 0 4px;
+    padding: calc(var(--space-sm) + var(--space-xs)) 0 var(--space-xs);
     cursor: grab;
     touch-action: none;
 }

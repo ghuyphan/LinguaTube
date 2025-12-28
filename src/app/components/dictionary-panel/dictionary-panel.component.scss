@@ -14,7 +14,6 @@
 // ============================================
 .dict-header {
     padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
 }
 
 .header-row {
@@ -47,7 +46,6 @@
     display: flex;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    // background: var(--bg-secondary);
 }
 
 .search-box {
@@ -56,6 +54,11 @@
     align-items: center;
     position: relative;
     min-width: 0;
+}
+
+.search-input {
+    height: var(--btn-height-md);
+    font-size: 0.875rem;
 }
 
 .search-btn {
@@ -192,7 +195,7 @@
     padding: 0.1875rem 0.5rem;
     background: var(--bg-secondary);
     color: var(--text-muted);
-    border-radius: 4px;
+    border-radius: var(--border-radius-sm);
 }
 
 // ============================================

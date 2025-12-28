@@ -10,7 +10,6 @@
 
 .vocab-header {
     padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
 }
 
 .header-row {
@@ -40,7 +39,6 @@
     display: flex;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
 }
 
 .search-wrapper {
@@ -104,7 +102,6 @@
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-sm) var(--space-md);
-    // border-bottom: 1px solid var(--border-color);
     transition: background-color var(--transition-fast);
 
     &:last-child {
@@ -265,7 +262,6 @@
     display: flex;
     gap: var(--space-xs);
     padding: var(--space-sm) var(--space-md);
-    // border-top: 1px solid var(--border-color);
 }
 
 .vocab-actions .btn {
@@ -305,7 +301,6 @@
     .vocab-header {
         /* Remove extra bottom margin on header */
         margin-bottom: 0;
-        // border-bottom: 1px solid var(--border-color);
         border-top-left-radius: var(--border-radius-lg);
         border-top-right-radius: var(--border-radius-lg);
     }
@@ -316,7 +311,6 @@
         border-radius: 0;
         margin-bottom: 0;
         border: none;
-        // border-bottom: 1px solid var(--border-color);
     }
 
     .word-list {
