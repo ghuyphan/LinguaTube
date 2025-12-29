@@ -1,3 +1,11 @@
+// ============================================
+// BOTTOM SHEET COMPONENT
+// Responsive: Modal on desktop, slide-up sheet on mobile
+// ============================================
+
+// ============================================
+// OVERLAY & BACKDROP
+// ============================================
 .sheet-overlay {
     position: fixed;
     inset: 0;
@@ -9,7 +17,7 @@
     padding: var(--space-md);
 }
 
-/* Backdrop pseudo-element - fades independently of sheet */
+// Backdrop pseudo-element - fades independently of sheet
 .sheet-overlay::before {
     content: '';
     position: absolute;
@@ -22,7 +30,9 @@
     animation: fadeOut 0.2s ease-in forwards;
 }
 
-/* Desktop: centered modal */
+// ============================================
+// SHEET CONTAINER
+// ============================================
 .sheet {
     background: var(--bg-card);
     border-radius: var(--border-radius-lg);
@@ -44,38 +54,47 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
+
+    // Entry animation (desktop)
     animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
     will-change: transform, opacity;
 }
 
+// ============================================
+// SHEET STATES
+// ============================================
+
+// Close animation (non-drag)
 .sheet.closing {
     animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
-// No transition during active drag for 60fps
+// No transition during active drag for 60fps performance
 .sheet.dragging {
     transition: none !important;
     animation: none !important;
 }
 
-// Drag-to-close uses CSS transition
+// Drag-to-close uses CSS transition instead of animation
 .sheet.drag-closing {
     animation: none !important;
     transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-/* After entry animation completes, disable it to prevent replay */
-.sheet.animated {
+// After entry animation completes, disable it to prevent replay
+// IMPORTANT: Exclude closing states so close animation can play
+.sheet.animated:not(.closing):not(.drag-closing) {
     animation: none;
 }
 
-/* Snap-back transition when drag ends without dismiss */
+// Snap-back transition when drag ends without dismiss
 .sheet.animated:not(.dragging):not(.closing):not(.drag-closing) {
     transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-
-/* Close button - similar to word popup */
+// ============================================
+// CLOSE BUTTON
+// ============================================
 .sheet-close-btn {
     position: absolute;
     top: var(--space-md);
@@ -89,7 +108,6 @@
     border-radius: var(--border-radius-round);
     background: transparent;
     border: none;
-
     color: var(--text-muted);
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -100,7 +118,9 @@
     color: var(--text-primary);
 }
 
-/* Ensure drag handle doesn't conflict */
+// ============================================
+// DRAG HANDLE (Mobile only)
+// ============================================
 .sheet-drag-handle {
     display: none;
     padding: calc(var(--space-sm) + var(--space-xs)) 0 var(--space-xs);
@@ -121,6 +141,9 @@
     background: var(--text-muted);
 }
 
+// ============================================
+// CONTENT AREA
+// ============================================
 .sheet-content {
     flex: 1;
     overflow-y: auto;
@@ -128,20 +151,19 @@
     -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar on desktop modals */
+// Hide scrollbar on desktop modals
 .sheet.desktop-modal .sheet-content {
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE/Edge */
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+        display: none; // Chrome/Safari/Opera
+    }
 }
 
-.sheet.desktop-modal .sheet-content::-webkit-scrollbar {
-    display: none;
-    /* Chrome/Safari/Opera */
-}
-
-/* Mobile: bottom sheet style */
+// ============================================
+// MOBILE STYLES (Bottom sheet behavior)
+// ============================================
 @media (max-width: 768px) {
     .sheet-overlay {
         padding: 0;
@@ -180,7 +202,10 @@
     }
 }
 
-/* Landscape phones: bottom sheet but with limited width for better UX */
+// ============================================
+// LANDSCAPE PHONES
+// Bottom sheet with limited width for better UX
+// ============================================
 @media (max-height: 500px) and (orientation: landscape) {
     .sheet-overlay {
         padding: 0;
@@ -213,9 +238,11 @@
     }
 }
 
-/* fadeIn animation is now global */
+// ============================================
+// KEYFRAME ANIMATIONS
+// ============================================
 
-
+// Backdrop fade
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -226,7 +253,7 @@
     }
 }
 
-/* Desktop animations - scale effect */
+// Desktop animations - scale effect
 @keyframes scaleIn {
     from {
         opacity: 0;
@@ -251,7 +278,7 @@
     }
 }
 
-/* Mobile animations - slide from bottom */
+// Mobile animations - slide from bottom
 @keyframes mobileSlideUp {
     from {
         transform: translateY(100%);
