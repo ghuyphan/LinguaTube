@@ -1,4 +1,4 @@
-import { Component, inject, signal, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +26,12 @@ export class DictionaryPanelComponent {
   result = signal<DictionaryEntry | null>(null);
   isLoading = signal(false);
   hasSearched = signal(false);
-  isSaved = signal(false);
+
+  // Reactive check against vocabulary service
+  isSaved = computed(() => {
+    const entry = this.result();
+    return entry ? this.vocab.hasWord(entry.word) : false;
+  });
 
   // Use shared service state for recent searches
   recentSearches = this.dictionary.recentSearches;
@@ -39,7 +44,6 @@ export class DictionaryPanelComponent {
     if (this.searchQuery && this.result()) {
       this.hasSearched.set(true);
       this.lastQuery = this.searchQuery;
-      this.isSaved.set(this.vocab.hasWord(this.result()!.word));
     }
   }
 
@@ -61,7 +65,6 @@ export class DictionaryPanelComponent {
         next: (entry) => {
           this.result.set(entry);
           this.isLoading.set(false);
-          this.isSaved.set(entry ? this.vocab.hasWord(entry.word) : false);
           this.addToRecent(query);
         },
         error: () => {
@@ -91,7 +94,6 @@ export class DictionaryPanelComponent {
 
     const lang = this.settings.settings().language;
     this.vocab.addFromDictionary(entry, lang);
-    this.isSaved.set(true);
   }
 
   private addToRecent(term: string): void {

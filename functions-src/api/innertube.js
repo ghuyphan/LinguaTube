@@ -6,7 +6,7 @@
  *   2. Race: youtube-caption-extractor + youtube-transcript (parallel per language)
  *   3. Supadata API (paid - only if free strategies fail)
  *
- * @version 17.0.0 - Parallel strategy racing for faster response times
+ * @version 17.3.0 - Only fetch primary language (no fallback to other languages)
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
@@ -55,13 +55,13 @@ export async function onRequestGet(context) {
 
     return jsonResponse({
         status: 'ok',
-        mode: 'parallel-race',
+        mode: 'primary-language-only',
         strategies: [
-            'youtube-caption-extractor (parallel)',
-            'youtube-transcript (parallel)',
-            env.SUPADATA_API_KEY ? 'supadata (last resort)' : 'supadata (not configured)'
+            'youtube-caption-extractor (primary lang only)',
+            'youtube-transcript (primary lang only)',
+            env.SUPADATA_API_KEY ? 'supadata (primary lang only, native mode)' : 'supadata (not configured)'
         ],
-        version: '17.0.0',
+        version: '17.3.0',
         timestamp: new Date().toISOString()
     });
 }
@@ -258,22 +258,20 @@ async function saveToCache(cache, db, videoId, lang, data, source) {
 }
 
 // ============================================================================
-// Parallel Strategy Racing (Free Strategies)
+// Free Strategies (Primary Language Only)
 // ============================================================================
 
 /**
- * Try all free strategies - parallel race per language, sequential across languages
- * Stops on first success (prioritizes earlier languages in the list)
+ * Try free strategies for the PRIMARY language only
+ * If it fails, return null - don't fall back to other languages
+ * User can trigger AI transcription if needed
  */
 async function tryFreeStrategies(videoId, targetLanguages) {
-    for (const lang of targetLanguages) {
-        log(`Racing strategies for ${lang}...`);
-        const result = await raceStrategiesForLang(videoId, lang);
-        if (result) {
-            return result; // Stop on first success!
-        }
-    }
-    return null;
+    const primaryLang = targetLanguages[0];
+    log(`Trying free strategies for primary language: ${primaryLang}`);
+
+    const result = await raceStrategiesForLang(videoId, primaryLang);
+    return result; // null if primary language not found
 }
 
 /**
@@ -390,7 +388,7 @@ async function trySingleYoutubeTranscript(videoId, lang) {
 }
 
 // ============================================================================
-// Strategy 3: Supadata API (Paid - Last Resort)
+// Strategy 3: Supadata API (Paid - Last Resort, Native Only)
 // ============================================================================
 
 /**
@@ -467,10 +465,14 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         return null;
     }
 
-    // Check if this video was recently confirmed to have no captions
-    const noCaptions = await hasNoCaption(cache, videoId);
+    // Only fetch the PRIMARY language user requested (saves credits)
+    const lang = langs[0];
+    const cacheKeyNoCap = `${videoId}:${lang}`;
+
+    // Check if this video+lang was recently confirmed to have no captions
+    const noCaptions = await hasNoCaption(cache, cacheKeyNoCap);
     if (noCaptions) {
-        log(`Supadata: Skipping ${videoId} - known no-caption video`);
+        log(`Supadata: Skipping ${videoId}:${lang} - known no-caption`);
         return null;
     }
 
@@ -484,94 +486,84 @@ async function trySupadata(videoId, langs, apiKey, cache) {
     // Set lock before making the API call
     await setSupadataLock(cache, videoId);
 
-    let all404 = true; // Track if ALL languages returned 404
+    try {
+        const url = new URL(SUPADATA_API_URL);
+        url.searchParams.set('videoId', videoId);
+        url.searchParams.set('lang', lang);
+        url.searchParams.set('text', 'false');
+        // IMPORTANT: Use native mode to only fetch existing captions
+        // This avoids AI generation costs - we use Gladia for AI transcription instead
+        url.searchParams.set('mode', 'native');
 
-    for (const lang of langs) {
-        try {
-            const url = new URL(SUPADATA_API_URL);
-            url.searchParams.set('videoId', videoId);
-            url.searchParams.set('lang', lang);
-            url.searchParams.set('text', 'false');
+        log(`Supadata: Fetching ${videoId} in ${lang} (native mode, 1 request only)`);
 
-            log(`Supadata: Fetching ${videoId} in ${lang}`);
+        const response = await fetch(url.toString(), {
+            method: 'GET',
+            headers: {
+                'x-api-key': apiKey,
+                'Accept': 'application/json'
+            },
+            signal: AbortSignal.timeout(SUPADATA_TIMEOUT_MS)
+        });
 
-            const response = await fetch(url.toString(), {
-                method: 'GET',
-                headers: {
-                    'x-api-key': apiKey,
-                    'Accept': 'application/json'
-                },
-                signal: AbortSignal.timeout(SUPADATA_TIMEOUT_MS)
-            });
+        if (!response.ok) {
+            const errorText = await response.text().catch(() => 'Unknown error');
+            log(`Supadata [${lang}] HTTP ${response.status}: ${errorText}`);
 
-            if (!response.ok) {
-                const errorText = await response.text().catch(() => 'Unknown error');
-                log(`Supadata [${lang}] HTTP ${response.status}: ${errorText}`);
-
-                if (response.status === 404) {
-                    // Still a 404 - continue to next language
-                    continue;
-                }
-
-                if (response.status === 402) {
-                    // Credit issue - not a caption availability issue
-                    all404 = false;
-                    continue;
-                }
-
-                // Other error - not a 404
-                all404 = false;
-                throw new Error(`Supadata returned ${response.status}`);
-            }
-
-            const data = await response.json();
-
-            if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
-                log(`Supadata [${lang}]: No content in response`);
-                continue;
-            }
-
-            const cues = data.content.map((segment, i) => ({
-                id: i,
-                start: segment.offset / 1000,
-                duration: segment.duration / 1000,
-                text: (segment.text || '').trim()
-            })).filter(c => c.text);
-
-            if (!cues.length) {
-                log(`Supadata [${lang}]: Empty cues after filtering`);
-                continue;
-            }
-
-            const detectedLang = data.lang || lang;
-            log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
-
-            // Success! Clear the lock since result will be cached
             await clearSupadataLock(cache, videoId);
 
-            return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
-
-        } catch (e) {
-            log(`Supadata [${lang}] failed: ${e.message}`);
-            all404 = false; // Error means we can't confirm it's a no-caption video
-
-            if (e.name === 'TimeoutError' || e.name === 'AbortError') {
-                // Keep the lock on timeout - prevents retry storms
-                // Lock will auto-expire after SUPADATA_LOCK_TTL
-                continue;
+            if (response.status === 404) {
+                // No native captions - mark so we don't retry
+                await markNoCaption(cache, cacheKeyNoCap);
+                return null;
             }
+
+            // Other errors (402 credit issue, etc)
+            return null;
         }
+
+        const data = await response.json();
+
+        if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
+            log(`Supadata [${lang}]: No content in response`);
+            await clearSupadataLock(cache, videoId);
+            await markNoCaption(cache, cacheKeyNoCap);
+            return null;
+        }
+
+        const cues = data.content.map((segment, i) => ({
+            id: i,
+            start: segment.offset / 1000,
+            duration: segment.duration / 1000,
+            text: (segment.text || '').trim()
+        })).filter(c => c.text);
+
+        if (!cues.length) {
+            log(`Supadata [${lang}]: Empty cues after filtering`);
+            await clearSupadataLock(cache, videoId);
+            return null;
+        }
+
+        const detectedLang = data.lang || lang;
+        log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
+
+        // Success! Clear the lock since result will be cached
+        await clearSupadataLock(cache, videoId);
+
+        return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
+
+    } catch (e) {
+        log(`Supadata [${lang}] failed: ${e.message}`);
+
+        if (e.name === 'TimeoutError' || e.name === 'AbortError') {
+            // Keep the lock on timeout - prevents retry storms
+            // Lock will auto-expire after SUPADATA_LOCK_TTL
+        } else {
+            await clearSupadataLock(cache, videoId);
+        }
+
+        return null;
     }
-
-    // All languages failed
-    await clearSupadataLock(cache, videoId);
-
-    // If ALL languages returned 404, mark as no-caption video
-    if (all404) {
-        await markNoCaption(cache, videoId);
-    }
-
-    return null;
 }
 
 // ============================================================================
