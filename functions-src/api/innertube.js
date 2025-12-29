@@ -189,7 +189,7 @@ export async function onRequestPost(context) {
 // ============================================================================
 
 async function checkCache(cache, db, videoId, lang) {
-    const cacheKey = `captions:v9:${videoId}:${lang}`;
+    const cacheKey = `captions:v10:${videoId}:${lang}`;
 
     const [kvResult, d1Result] = await Promise.allSettled([
         cache ? checkKVCache(cache, cacheKey) : Promise.resolve(null),
@@ -239,7 +239,7 @@ async function checkD1Cache(db, videoId, lang) {
 }
 
 async function saveToCache(cache, db, videoId, lang, data, source) {
-    const cacheKey = `captions:v9:${videoId}:${lang}`;
+    const cacheKey = `captions:v10:${videoId}:${lang}`;
     const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
     const track = tracks?.find(t => t.languageCode === lang) || tracks?.[0];
 
