@@ -12,7 +12,7 @@
    - Long content: scrolls naturally from top
    ============================================ */
 .current-subtitle {
-    height: 12rem;
+    height: 9rem;
     background: var(--bg-secondary);
     position: relative;
     overflow: hidden;
@@ -634,7 +634,7 @@ ruby rt {
    ============================================ */
 @media (max-width: 640px) {
     .current-subtitle {
-        height: 10.5rem;
+        height: 8.5rem;
     }
 
     .current-subtitle__inner {
@@ -742,7 +742,7 @@ ruby rt {
 
 @media (max-width: 480px) {
     .current-subtitle {
-        height: 8rem;
+        height: 7.5rem;
     }
 
     .current-subtitle__inner {
