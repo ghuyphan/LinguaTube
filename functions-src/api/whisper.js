@@ -38,6 +38,9 @@ export async function onRequestPost(context) {
         const body = await request.json();
         const { videoId, result_url: providedResultUrl } = body;
 
+        // Extract lang early - needed for both new requests and D1 cache lookups
+        const lang = body.lang || body.targetLanguage || 'ja';
+
         const gladiaKey = env.GLADIA_API_KEY;
         if (!gladiaKey) {
             return errorResponse('GLADIA_API_KEY not set');
@@ -53,8 +56,7 @@ export async function onRequestPost(context) {
             }
 
             // Early validation - reject unsupported languages and long videos
-            const lang = body.lang || body.targetLanguage;
-            const validation = await validateVideoRequest(videoId, lang || 'ja', body.duration, 'whisper');
+            const validation = await validateVideoRequest(videoId, lang, body.duration, 'whisper');
             if (validation) {
                 log(`Validation failed: ${validation.error}`);
                 return jsonResponse(validation, 400);
@@ -73,8 +75,10 @@ export async function onRequestPost(context) {
                 }
             }
 
-            // 2. Check D1 database for completed transcript
-            const d1Result = await getTranscript(db, videoId, 'ai');
+            // 2. Check D1 database for completed AI transcript
+            // Look for transcript saved with the actual language code (not 'ai')
+            // AI transcripts are saved with source='ai' and the detected language
+            const d1Result = await getTranscript(db, videoId, lang, 'ai');
             if (d1Result?.segments?.length > 0) {
                 log('D1 hit for AI transcript:', videoId);
                 const response = {

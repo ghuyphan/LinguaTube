@@ -160,34 +160,28 @@
     color: var(--text-muted);
 }
 
-/* AI Generation Indicator */
+/* AI Generation Indicator - Compact horizontal layout */
 .ai-generating {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: var(--space-md);
-    padding: var(--space-xl);
+    padding: var(--space-md);
     width: 100%;
+    height: 100%;
 }
 
 .ai-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
-    padding: 4px 12px;
-    background: var(--ai-gradient);
-    color: white;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 100px;
+    display: none;
+    /* Hide on compact view, shown via inline spinner */
 }
 
 .ai-spinner {
     position: relative;
-    width: 4rem;
-    height: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +191,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     border-top-color: var(--ai-purple);
     border-right-color: var(--ai-pink);
     border-radius: 50%;
@@ -207,6 +201,8 @@
 .ai-wand {
     color: var(--ai-purple);
     animation: wandPulse 1s ease-in-out infinite;
+    width: 18px !important;
+    height: 18px !important;
 }
 
 @keyframes wandPulse {
@@ -224,15 +220,33 @@
 }
 
 .ai-title {
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    margin: 0;
 }
 
 .ai-hint {
     font-size: 0.8125rem;
     color: var(--text-muted);
-    text-align: center;
+    margin: 0;
+
+    /* Show as inline with title */
+    &::before {
+        content: '·';
+        margin: 0 var(--space-xs);
+        color: var(--text-muted);
+        opacity: 0.5;
+    }
+}
+
+/* Text wrapper for title and hint */
+.ai-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
 }
 
 .loading-indicator {
@@ -738,6 +752,25 @@ ruby rt {
         height: 2.25rem;
         border-radius: var(--border-radius-sm);
     }
+
+    /* AI generating - slightly smaller on mobile */
+    .ai-generating {
+        gap: var(--space-sm);
+        padding: var(--space-sm);
+    }
+
+    .ai-spinner {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .ai-title {
+        font-size: 0.875rem;
+    }
+
+    .ai-hint {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -780,5 +813,35 @@ ruby rt {
     .text-en .word {
         padding: 0.3125rem 0.4375rem;
         margin: 2px;
+    }
+
+    /* AI generating - even more compact on small mobile */
+    .ai-generating {
+        flex-direction: column;
+        gap: var(--space-xs);
+        padding: var(--space-xs);
+    }
+
+    .ai-text {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .ai-spinner {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .ai-wand {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .ai-title {
+        font-size: 0.8125rem;
+    }
+
+    .ai-hint {
+        font-size: 0.6875rem;
     }
 }

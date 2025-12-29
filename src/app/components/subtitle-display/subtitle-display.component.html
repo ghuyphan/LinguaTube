@@ -38,18 +38,17 @@
             <div class="subtitle-empty">
                 @if (youtube.currentVideo() && transcript.isGeneratingAI()) {
                 <div class="ai-generating">
-                    <div class="ai-badge">
-                        <app-icon name="sparkles" [size]="16" />
-                        <span>{{ i18n.t('subtitle.aiPowered') }}</span>
-                    </div>
                     <div class="ai-spinner">
                         <div class="ai-spinner-ring"></div>
-                        <app-icon name="wand" [size]="28" class="ai-wand" />
+                        <app-icon name="wand" [size]="18" class="ai-wand" />
                     </div>
-                    <p class="ai-title">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingTranscript') :
-                        i18n.t('subtitle.generatingTranscript') }}</p>
-                    <p class="ai-hint">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingHint') :
-                        i18n.t('subtitle.usingWhisperAI') }}</p>
+                    <div class="ai-text">
+                        <span class="ai-title">{{ transcript.isResumingPendingJob() ?
+                            i18n.t('subtitle.resumingTranscript') :
+                            i18n.t('subtitle.generatingTranscript') }}</span>
+                        <span class="ai-hint">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingHint') :
+                            i18n.t('subtitle.usingWhisperAI') }}</span>
+                    </div>
                 </div>
                 } @else if (youtube.currentVideo() && transcript.isLoading()) {
                 <div class="loading-indicator">

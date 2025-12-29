@@ -9,19 +9,29 @@ const log = (...args) => DEBUG && console.log('[D1 Transcripts]', ...args);
 
 /**
  * Get completed transcript from D1 database
+ * @param {D1Database} db
+ * @param {string} videoId
+ * @param {string} language
+ * @param {string} [source] - Optional: filter by source (e.g., 'ai', 'youtube')
  * @returns {Promise<{segments: Array, source: string, language: string} | null>}
  */
-export async function getTranscript(db, videoId, language) {
+export async function getTranscript(db, videoId, language, source = null) {
     if (!db) return null;
 
     try {
-        // Only get completed transcripts
-        const result = await db.prepare(
-            "SELECT segments, source, language FROM transcripts WHERE video_id = ? AND language = ? AND status = 'complete'"
-        ).bind(videoId, language).first();
+        // Build query with optional source filter
+        let query = "SELECT segments, source, language FROM transcripts WHERE video_id = ? AND language = ? AND status = 'complete'";
+        const params = [videoId, language];
+
+        if (source) {
+            query += " AND source = ?";
+            params.push(source);
+        }
+
+        const result = await db.prepare(query).bind(...params).first();
 
         if (result?.segments) {
-            log('D1 hit:', videoId, language);
+            log('D1 hit:', videoId, language, source ? `(source=${source})` : '');
             return {
                 segments: JSON.parse(result.segments),
                 source: result.source,

@@ -246,6 +246,7 @@ export class TranscriptService {
 
     const request$ = this.http.post<any>('/api/whisper', {
       videoId,
+      lang, // Include lang for D1 cache lookup
       ...(resultUrl && { result_url: resultUrl }),
       ...(duration && { duration }) // Send duration for validation
     }).pipe(
