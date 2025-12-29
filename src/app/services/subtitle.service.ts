@@ -711,7 +711,14 @@ export class SubtitleService {
 
       if (entry?.tokens) {
         Object.entries(entry.tokens).forEach(([key, tokens]) => {
-          this.tokenCache.set(key, tokens as Token[]);
+          // Patch legacy tokens that don't have isPunctuation flag
+          const patchedTokens = (tokens as Token[]).map(t => {
+            if (t.isPunctuation === undefined) {
+              return { ...t, isPunctuation: this.isPunctuation(t.surface) };
+            }
+            return t;
+          });
+          this.tokenCache.set(key, patchedTokens);
         });
         console.log(`[SubtitleService] Loaded tokens for ${videoId}:${lang} from localStorage`);
         return true;

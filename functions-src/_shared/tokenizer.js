@@ -14,6 +14,16 @@ export function hasKanji(text) {
     return KANJI_REGEX.test(text);
 }
 
+/**
+ * Check if string is punctuation/whitespace (CJK + Western)
+ * Matches the client-side logic in SubtitleService
+ */
+const PUNCTUATION_REGEX = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
+
+export function isPunctuation(text) {
+    return PUNCTUATION_REGEX.test(text);
+}
+
 // ============================================================================
 // Kuromoji Tokenizer (Japanese) - Singleton
 // ============================================================================
@@ -65,8 +75,15 @@ export async function tokenizeJapanese(text) {
     return kuromojiTokens.map(t => {
         const token = { surface: t.surface_form };
 
-        // Only add reading for tokens containing kanji
-        if (t.reading && hasKanji(t.surface_form)) {
+        // Check for punctuation using kuromoji POS or regex
+        // Kuromoji marks punctuation as 記号 (symbol) or with pos_detail_1 containing punctuation types
+        const isPunc = t.pos === '記号' || t.pos === '空白' || isPunctuation(t.surface_form);
+        if (isPunc) {
+            token.isPunctuation = true;
+        }
+
+        // Only add reading for tokens containing kanji (skip punctuation)
+        if (!isPunc && t.reading && hasKanji(t.surface_form)) {
             token.reading = katakanaToHiragana(t.reading);
         }
 
@@ -97,6 +114,12 @@ export function tokenizeKoreanChinese(text, lang) {
         .map(seg => {
             const token = { surface: seg.segment };
 
+            // Check for punctuation
+            if (isPunctuation(seg.segment)) {
+                token.isPunctuation = true;
+                return token; // Skip pronunciation for punctuation
+            }
+
             // Add Chinese Pinyin
             if (lang === 'zh') {
                 try {
@@ -126,12 +149,16 @@ export function tokenizeEnglish(text) {
     const segmenter = new Intl.Segmenter('en', { granularity: 'word' });
     const segments = [...segmenter.segment(text)];
 
-    // Only return actual words, not punctuation or whitespace
+    // Return all segments, marking non-words as punctuation
     return segments
-        .filter(seg => seg.isWordLike)
-        .map(seg => ({
-            surface: seg.segment
-        }));
+        .filter(seg => seg.isWordLike || seg.segment.trim())
+        .map(seg => {
+            const token = { surface: seg.segment };
+            if (!seg.isWordLike) {
+                token.isPunctuation = true;
+            }
+            return token;
+        });
 }
 
 /**
@@ -152,3 +179,4 @@ export async function tokenize(text, lang) {
 
     return tokenizeKoreanChinese(text, lang);
 }
+

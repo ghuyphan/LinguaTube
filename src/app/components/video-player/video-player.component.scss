@@ -1349,6 +1349,11 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   background: rgba(199, 62, 58, 0.15);
 }
 
+.fs-word--punctuation {
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Fullscreen ruby styling */
 .fs-subtitle-text ruby {
   display: ruby;

@@ -1,4 +1,5 @@
 import { Component, inject, input, output, signal, effect, computed, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
@@ -40,6 +41,9 @@ export class WordPopupComponent implements OnDestroy {
   // Picker state
   langPickerOpen = signal(false);
   levelPickerOpen = signal(false);
+
+  // Track active API call for cancellation
+  private lookupSubscription: Subscription | null = null;
 
   // Computed options for pickers
   langOptions = computed<OptionItem[]>(() =>
@@ -93,8 +97,11 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   lookupWord(word: string): void {
+    // Cancel any in-flight lookup
+    this.lookupSubscription?.unsubscribe();
+
     const lang = this.settings.settings().language;
-    this.dictionary.lookup(word, lang).subscribe(result => {
+    this.lookupSubscription = this.dictionary.lookup(word, lang).subscribe(result => {
       this.entry.set(result);
     });
   }
@@ -199,6 +206,10 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   onSheetClosed(): void {
+    // Cancel in-flight API request if popup closes while fetching
+    this.lookupSubscription?.unsubscribe();
+    this.lookupSubscription = null;
+
     this.isVisible.set(false);
     this.entry.set(null);
     this.closed.emit();
