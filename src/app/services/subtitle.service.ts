@@ -755,7 +755,7 @@ export class SubtitleService {
    * Moved from SubtitleDisplayComponent for pre-computation
    */
   private isPunctuation(text: string): boolean {
-    const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–]+$/u;
+    const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
     return punctuationRegex.test(text);
   }
 }
