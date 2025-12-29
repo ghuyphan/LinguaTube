@@ -16,6 +16,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
+import { GrammarPopupComponent } from '../grammar-popup/grammar-popup.component';
 import {
   YoutubeService,
   SubtitleService,
@@ -23,9 +24,10 @@ import {
   TranscriptService,
   VocabularyService,
   DictionaryService,
-  I18nService
+  I18nService,
+  GrammarService
 } from '../../services';
-import { Token, SubtitleCue, DictionaryEntry } from '../../models';
+import { Token, SubtitleCue, DictionaryEntry, GrammarPattern, GrammarMatch } from '../../models';
 import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
@@ -47,7 +49,7 @@ interface SeekPreview {
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
@@ -61,6 +63,7 @@ export class VideoPlayerComponent implements OnDestroy {
   vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
   i18n = inject(I18nService);
+  grammar = inject(GrammarService);
 
   // Outputs
   fullscreenWordClicked = output<{ token: Token; sentence: string }>();
@@ -129,6 +132,30 @@ export class VideoPlayerComponent implements OnDestroy {
       ? this.settings.settings().showFurigana
       : this.settings.settings().showPinyin;
   });
+
+  // Grammar detection for fullscreen
+  fsGrammarMatches = computed(() => {
+    const tokens = this.fullscreenTokens();
+    if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
+    const lang = this.settings.settings().language;
+    if (lang === 'en') return [];
+    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
+  });
+
+  fsGrammarTokenIndices = computed(() => {
+    const matches = this.fsGrammarMatches();
+    const indices = new Set<number>();
+    for (const match of matches) {
+      for (const idx of match.tokenIndices) {
+        indices.add(idx);
+      }
+    }
+    return indices;
+  });
+
+  // Fullscreen grammar popup state
+  fsGrammarPopupVisible = signal(false);
+  fsSelectedGrammarPattern = signal<GrammarPattern | null>(null);
 
   // Feedback animations
   rewindFeedback = signal(false);
@@ -404,7 +431,20 @@ export class VideoPlayerComponent implements OnDestroy {
     this.showControls();
   }
 
-  onMouseLeave() {
+  onMouseLeave(event: MouseEvent) {
+    // Skip on touch-only devices
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
+    }
+
+    const relatedTarget = event.relatedTarget as HTMLElement;
+    const container = this.videoContainerRef?.nativeElement;
+
+    // Don't hide if mouse moved to another element inside the container
+    if (container && relatedTarget && container.contains(relatedTarget)) {
+      return;
+    }
+
     if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
       this.clearControlsTimeout();
@@ -886,6 +926,33 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsPopupVisible.set(false);
     this.fsSelectedWord.set(null);
     this.fsEntry.set(null);
+  }
+
+  // Grammar methods for fullscreen
+  isFsGrammarToken(index: number): boolean {
+    return this.fsGrammarTokenIndices().has(index);
+  }
+
+  getFsGrammarMatchForToken(index: number): GrammarMatch | undefined {
+    return this.fsGrammarMatches().find(m => m.tokenIndices.includes(index));
+  }
+
+  onFsGrammarClick(index: number, event: Event): void {
+    event.stopPropagation();
+    const match = this.getFsGrammarMatchForToken(index);
+    if (match) {
+      if (this.youtube.isPlaying()) {
+        this.youtube.pause();
+      }
+      this.fsSelectedGrammarPattern.set(match.pattern);
+      this.fsGrammarPopupVisible.set(true);
+      this.showControls();
+    }
+  }
+
+  closeFsGrammarPopup(): void {
+    this.fsGrammarPopupVisible.set(false);
+    this.fsSelectedGrammarPattern.set(null);
   }
 
   saveFsWord(): void {

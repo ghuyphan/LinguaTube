@@ -1354,6 +1354,14 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   pointer-events: none;
 }
 
+.fs-word--grammar {
+  text-decoration: underline;
+  text-decoration-color: var(--ai-purple, #8b5cf6);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
 /* Fullscreen ruby styling */
 .fs-subtitle-text ruby {
   display: ruby;

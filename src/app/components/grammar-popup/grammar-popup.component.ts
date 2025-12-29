@@ -1,6 +1,5 @@
 import { Component, inject, input, output, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { GrammarPattern } from '../../models/grammar.model';
 import { I18nService } from '../../services/i18n.service';
@@ -9,7 +8,7 @@ import { I18nService } from '../../services/i18n.service';
     selector: 'app-grammar-popup',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, BottomSheetComponent],
+    imports: [CommonModule, BottomSheetComponent],
     templateUrl: './grammar-popup.component.html',
     styleUrl: './grammar-popup.component.scss'
 })
