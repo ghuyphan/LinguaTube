@@ -525,11 +525,13 @@ export class SubtitleService {
           isPunctuation: this.isPunctuation(word)
         }));
       case 'en':
-        // Match words only (letters, numbers, apostrophes, hyphens), exclude punctuation
-        return text.match(/[\w'-]+/g)?.map(word => ({
-          surface: word,
-          isPunctuation: false // Words matched by regex are not punctuation
-        })) || [];
+        // Match words (letters, numbers, apostrophes, hyphens) OR non-word sequences
+        // allowing us to preserve punctuation/spaces
+        return (text.match(/[\w'-]+|[^\w'-]+/g) || []).map(str => ({
+          surface: str,
+          // Consider it punctuation if it doesn't contain any letters/numbers
+          isPunctuation: !/[a-zA-Z0-9]/.test(str)
+        }));
       case 'ja':
       default:
         return this.tokenizeByCharType(text);
@@ -741,11 +743,10 @@ export class SubtitleService {
   private getCharType(char: string): string {
     const code = char.charCodeAt(0);
 
-    if (code >= 0x3040 && code <= 0x309F) return 'hiragana';
-    if (code >= 0x30A0 && code <= 0x30FF) return 'katakana';
-    if (code >= 0x4E00 && code <= 0x9FFF) return 'kanji';
-    if (code >= 0x0020 && code <= 0x007F) return 'ascii';
-    if (/[。、！？「」『』（）・]/.test(char)) return 'punctuation';
+    if (/[\u3040-\u309F]/.test(char)) return 'hiragana';
+    if (/[\u30A0-\u30FF]/.test(char)) return 'katakana';
+
+    if (this.isPunctuation(char)) return 'punctuation';
 
     return 'other';
   }
