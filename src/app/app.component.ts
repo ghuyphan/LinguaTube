@@ -221,27 +221,27 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     }
 
     .update-sheet__icon {
-      width: 64px;
-      height: 64px;
+      width: 4rem;
+      height: 4rem;
       margin: 0 auto var(--space-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-      border-radius: var(--radius-full);
-      color: white;
+      background: rgba(74, 111, 165, 0.1);
+      border-radius: var(--border-radius-round);
+      color: var(--info);
     }
 
     .update-sheet__title {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin: 0 0 var(--space-sm);
+      margin: 0 0 var(--space-xs);
     }
 
     .update-sheet__message {
       font-size: 0.875rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       margin: 0 0 var(--space-lg);
       line-height: 1.5;
     }
@@ -249,13 +249,13 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     .update-sheet__actions {
       display: flex;
       gap: var(--space-sm);
-      justify-content: center;
     }
 
     .update-sheet__btn {
-      padding: var(--space-sm) var(--space-lg);
-      border-radius: var(--radius-md);
-      font-size: 0.875rem;
+      flex: 1;
+      padding: var(--space-md);
+      border-radius: var(--border-radius);
+      font-size: 0.9375rem;
       font-weight: 500;
       border: none;
       cursor: pointer;
@@ -263,22 +263,23 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     }
 
     .update-sheet__btn--secondary {
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-    }
-
-    .update-sheet__btn--secondary:hover {
-      background: var(--bg-hover);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
     }
 
     .update-sheet__btn--primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      background: var(--accent-primary);
       color: white;
     }
 
-    .update-sheet__btn--primary:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
+    @media (hover: hover) {
+      .update-sheet__btn--secondary:hover {
+        background: var(--bg-card);
+      }
+
+      .update-sheet__btn--primary:hover {
+        opacity: 0.9;
+      }
     }
   `]
 })
