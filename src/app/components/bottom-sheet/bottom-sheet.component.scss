@@ -65,7 +65,8 @@
 }
 
 /* After entry animation completes, disable it to prevent replay */
-.sheet.animated {
+/* After entry animation completes, disable it to prevent replay */
+.sheet.animated:not(.closing) {
     animation: none;
 }
 
