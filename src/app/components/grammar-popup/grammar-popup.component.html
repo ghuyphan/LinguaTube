@@ -1,0 +1,55 @@
+<app-bottom-sheet [isOpen]="isOpen()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
+    <div class="grammar-popup">
+        @if (pattern(); as p) {
+        <!-- Header -->
+        <div class="grammar-header">
+            <h2 class="grammar-title">{{ p.pattern }}</h2>
+            <span class="grammar-level" [ngClass]="levelClass()">{{ p.level }}</span>
+        </div>
+
+        <!-- Formation -->
+        @if (p.formation) {
+        <div class="grammar-section">
+            <h3 class="section-label">
+                <app-icon name="layers" [size]="14" />
+                {{ i18n.t('grammar.formation') }}
+            </h3>
+            <p class="grammar-formation">{{ p.formation }}</p>
+        </div>
+        }
+
+        <!-- Explanation -->
+        <div class="grammar-section">
+            <h3 class="section-label">
+                <app-icon name="info" [size]="14" />
+                {{ i18n.t('grammar.explanation') }}
+            </h3>
+            <p class="grammar-explanation">{{ p.shortExplanation }}</p>
+            @if (p.longExplanation && p.longExplanation !== p.shortExplanation) {
+            <p class="grammar-long-explanation">{{ p.longExplanation }}</p>
+            }
+        </div>
+
+        <!-- Examples -->
+        @if (p.examples && p.examples.length > 0) {
+        <div class="grammar-section">
+            <h3 class="section-label">
+                <app-icon name="book-open" [size]="14" />
+                {{ i18n.t('grammar.examples') }}
+            </h3>
+            <ul class="grammar-examples">
+                @for (example of p.examples.slice(0, 3); track $index) {
+                <li class="example-item">
+                    <span class="example-sentence">{{ example.sentence }}</span>
+                    @if (example.romanization) {
+                    <span class="example-romanization">{{ example.romanization }}</span>
+                    }
+                    <span class="example-translation">{{ example.translation }}</span>
+                </li>
+                }
+            </ul>
+        </div>
+        }
+        }
+    </div>
+</app-bottom-sheet>

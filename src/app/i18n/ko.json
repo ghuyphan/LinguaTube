@@ -100,6 +100,13 @@
         "close": "닫기",
         "translateTo": "번역 대상"
     },
+    "grammar": {
+        "mode": "문법",
+        "formation": "구조",
+        "explanation": "설명",
+        "examples": "예문",
+        "level": "레벨"
+    },
     "dictionary": {
         "title": "사전",
         "subtitle": "동영상 없이 단어 검색",

@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../icon/icon.component';
 import { VocabularyQuickViewComponent } from '../vocabulary-quick-view/vocabulary-quick-view.component';
-import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService } from '../../services';
-import { SubtitleCue, Token } from '../../models';
+import { GrammarPopupComponent } from '../grammar-popup/grammar-popup.component';
+import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService, GrammarService } from '../../services';
+import { SubtitleCue, Token, GrammarMatch, GrammarPattern } from '../../models';
 
 @Component({
   selector: 'app-subtitle-display',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent],
+  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent, GrammarPopupComponent],
   animations: [
     trigger('subtitleFade', [
       transition(':enter', [
@@ -29,6 +30,7 @@ export class SubtitleDisplayComponent {
   settings = inject(SettingsService);
   transcript = inject(TranscriptService);
   i18n = inject(I18nService);
+  grammar = inject(GrammarService);
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
   @ViewChild('currentSubtitleInner') currentSubtitleInner!: ElementRef<HTMLDivElement>;
@@ -97,6 +99,31 @@ export class SubtitleDisplayComponent {
       return newToken;
     });
   });
+
+  // Grammar detection
+  grammarMatches = computed(() => {
+    const tokens = this.currentTokens();
+    if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
+    const lang = this.settings.settings().language;
+    if (lang === 'en') return []; // No grammar for English
+    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
+  });
+
+  // Track which token indices are part of grammar patterns
+  grammarTokenIndices = computed(() => {
+    const matches = this.grammarMatches();
+    const indices = new Set<number>();
+    for (const match of matches) {
+      for (const idx of match.tokenIndices) {
+        indices.add(idx);
+      }
+    }
+    return indices;
+  });
+
+  // Currently selected grammar pattern
+  selectedGrammarPattern = signal<GrammarPattern | null>(null);
+  grammarPopupOpen = signal(false);
 
   // Track when user last scrolled the current subtitle display
   private lastUserScrollTime = 0;
@@ -314,5 +341,32 @@ export class SubtitleDisplayComponent {
 
   trackByCue(index: number, cue: SubtitleCue): string {
     return cue.id.toString();
+  }
+
+  // Grammar methods
+  isGrammarToken(index: number): boolean {
+    return this.grammarTokenIndices().has(index);
+  }
+
+  getGrammarMatchForToken(index: number): GrammarMatch | undefined {
+    return this.grammarMatches().find(m => m.tokenIndices.includes(index));
+  }
+
+  onGrammarClick(index: number, event: Event): void {
+    event.stopPropagation();
+    const match = this.getGrammarMatchForToken(index);
+    if (match) {
+      this.selectedGrammarPattern.set(match.pattern);
+      this.grammarPopupOpen.set(true);
+    }
+  }
+
+  closeGrammarPopup(): void {
+    this.grammarPopupOpen.set(false);
+    this.selectedGrammarPattern.set(null);
+  }
+
+  toggleGrammarMode(): void {
+    this.grammar.toggleGrammarMode();
   }
 }

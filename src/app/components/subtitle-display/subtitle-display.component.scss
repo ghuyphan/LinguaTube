@@ -394,6 +394,20 @@
     background: var(--word-known-text, #166534);
 }
 
+/* Grammar pattern highlighting */
+.word--grammar {
+    text-decoration: underline;
+    text-decoration-color: var(--color-grammar, #8b5cf6);
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+}
+
+.word--grammar::after {
+    background: var(--color-grammar, #8b5cf6);
+    opacity: 0.3;
+}
+
 /* Ruby styling */
 ruby {
     display: ruby;

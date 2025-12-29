@@ -100,6 +100,13 @@
         "close": "关闭",
         "translateTo": "翻译为"
     },
+    "grammar": {
+        "mode": "语法",
+        "formation": "构成",
+        "explanation": "解释",
+        "examples": "例句",
+        "level": "等级"
+    },
     "dictionary": {
         "title": "词典",
         "subtitle": "无需视频即可查词",

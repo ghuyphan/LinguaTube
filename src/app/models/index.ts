@@ -1,4 +1,6 @@
 // Subtitle models
+export * from './grammar.model';
+
 export interface SubtitleCue {
   id: string;
   startTime: number;

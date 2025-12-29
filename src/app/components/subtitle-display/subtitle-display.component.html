@@ -25,7 +25,8 @@
                             [class.word--learning]="token.level === 'learning'"
                             [class.word--known]="token.level === 'known'"
                             [class.word--saved]="vocab.hasWord(token.surface)"
-                            (click)="onWordClick(token, cue.text)">@if
+                            [class.word--grammar]="isGrammarToken($index)"
+                            (click)="isGrammarToken($index) ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">@if
                             (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}
                                 </rt>
                             </ruby>} @else {{{ token.surface }}}</span>}}
@@ -116,6 +117,13 @@
             }
         </button>
 
+        <!-- Grammar Mode Toggle -->
+        <button class="toggle-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
+            [title]="i18n.t('grammar.mode')">
+            <app-icon name="book-open" [size]="16" />
+            <span>{{ i18n.t('grammar.mode') }}</span>
+        </button>
+
         <div class="font-controls">
             <button class="font-btn" [class.active]="settings.settings().fontSize === 'small'"
                 (click)="settings.setFontSize('small')" [title]="i18n.t('subtitle.smallFont')">A</button>
@@ -130,3 +138,6 @@
 
 <!-- Vocabulary Quick View Sheet -->
 <app-vocabulary-quick-view [isOpen]="showAddedSheet()" (closed)="showAddedSheet.set(false)" />
+
+<!-- Grammar Popup -->
+<app-grammar-popup [pattern]="selectedGrammarPattern()" [isOpen]="grammarPopupOpen()" (closed)="closeGrammarPopup()" />

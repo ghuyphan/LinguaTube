@@ -100,6 +100,13 @@
         "close": "Close",
         "translateTo": "Translate to"
     },
+    "grammar": {
+        "mode": "Grammar",
+        "formation": "Formation",
+        "explanation": "Explanation",
+        "examples": "Examples",
+        "level": "Level"
+    },
     "dictionary": {
         "title": "Dictionary",
         "subtitle": "Look up any word without a video",
