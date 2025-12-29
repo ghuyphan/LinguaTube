@@ -16,14 +16,11 @@
                 <div class="sync-badge" [class.syncing]="sync.syncStatus() === 'syncing'"
                     [class.error]="sync.syncStatus() === 'error'">
                     @if (sync.syncStatus() === 'syncing') {
-                    <app-icon name="loader" [size]="12" class="spin" />
-                    {{ i18n.t('settings.syncing') }}
+                    <app-icon name="loader" [size]="14" class="spin" />
                     } @else if (sync.syncStatus() === 'error') {
-                    <app-icon name="alert-circle" [size]="12" />
-                    {{ i18n.t('settings.syncError') }}
+                    <app-icon name="alert-circle" [size]="14" />
                     } @else {
-                    <app-icon name="check" [size]="12" />
-                    {{ i18n.t('settings.synced') }}
+                    <app-icon name="cloud-check" [size]="14" />
                     }
                 </div>
             </div>
