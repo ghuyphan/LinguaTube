@@ -338,6 +338,7 @@
     opacity: 0.15;
     border-radius: 1px;
     transition: opacity 0.2s ease, width 0.2s ease;
+    pointer-events: none;
 }
 
 @media (hover: hover) {
