@@ -282,19 +282,21 @@ export class DictionaryService {
         }
 
         const entry = response.entries[0];
+
+        // Set pronunciation field based on source language to avoid triple display
         const result: DictionaryEntry = {
           word: entry.word || word,
-          reading: entry.reading || '',
-          pinyin: entry.reading || '', // For Chinese
-          romanization: entry.reading || '', // For Korean
+          reading: from === 'ja' || from === 'en' ? (entry.reading || '') : undefined,
+          pinyin: from === 'zh' ? (entry.reading || '') : undefined,
+          romanization: from === 'ko' ? (entry.reading || '') : undefined,
           meanings: entry.definitions?.map((def: string) => ({
             definition: def,
             examples: []
           })) || [],
           partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : [],
-          jlptLevel: entry.level ? `N${entry.level}` : undefined,
-          hskLevel: entry.level,
-          topikLevel: entry.level
+          jlptLevel: from === 'ja' && entry.level ? `N${entry.level}` : undefined,
+          hskLevel: from === 'zh' ? entry.level : undefined,
+          topikLevel: from === 'ko' ? entry.level : undefined
         };
 
         this.lastLookup.set(result);
