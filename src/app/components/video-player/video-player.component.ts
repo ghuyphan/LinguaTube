@@ -156,6 +156,12 @@ export class VideoPlayerComponent implements OnDestroy {
   fsGrammarPopupVisible = signal(false);
   fsSelectedGrammarPattern = signal<GrammarPattern | null>(null);
 
+  // Popup overlay touch tracking (to distinguish tap vs scroll)
+  private popupTouchState = {
+    startY: 0,
+    hasMoved: false
+  };
+
   // Feedback animations
   rewindFeedback = signal(false);
   forwardFeedback = signal(false);
@@ -929,6 +935,40 @@ export class VideoPlayerComponent implements OnDestroy {
   closeFsGrammarPopup(): void {
     this.fsGrammarPopupVisible.set(false);
     this.fsSelectedGrammarPattern.set(null);
+  }
+
+  // Popup overlay touch handlers - distinguish tap from scroll
+  onPopupOverlayTouchStart(event: TouchEvent): void {
+    this.popupTouchState = {
+      startY: event.touches[0].clientY,
+      hasMoved: false
+    };
+  }
+
+  onPopupOverlayTouchMove(event: TouchEvent): void {
+    const deltaY = Math.abs(event.touches[0].clientY - this.popupTouchState.startY);
+    // Consider it a scroll if moved more than 10px
+    if (deltaY > 10) {
+      this.popupTouchState.hasMoved = true;
+    }
+  }
+
+  onWordPopupOverlayTouchEnd(event: TouchEvent): void {
+    // Only close if this was a tap (no scroll movement) and touch is on overlay (not popup)
+    if (!this.popupTouchState.hasMoved && event.target === event.currentTarget) {
+      event.preventDefault();
+      this.closeFsPopup();
+    }
+    this.popupTouchState = { startY: 0, hasMoved: false };
+  }
+
+  onGrammarPopupOverlayTouchEnd(event: TouchEvent): void {
+    // Only close if this was a tap (no scroll movement) and touch is on overlay (not popup)
+    if (!this.popupTouchState.hasMoved && event.target === event.currentTarget) {
+      event.preventDefault();
+      this.closeFsGrammarPopup();
+    }
+    this.popupTouchState = { startY: 0, hasMoved: false };
   }
 
   saveFsWord(): void {

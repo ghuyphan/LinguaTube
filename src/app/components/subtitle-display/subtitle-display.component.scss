@@ -90,7 +90,6 @@
     max-width: 100%;
 }
 
-
 .subtitle-content {
     display: inline;
 }
@@ -204,7 +203,6 @@
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
 }
-
 
 .ai-wand {
     color: var(--ai-purple);
@@ -435,6 +433,8 @@ ruby rt {
 .text-ja .word {
     padding: 4px 4px;
     margin: 1px 1px;
+    vertical-align: top;
+    /* Align all words at top for consistent ruby spacing */
 }
 
 .text-ja ruby rt {
@@ -452,6 +452,8 @@ ruby rt {
 .text-zh .word {
     padding: 4px 5px;
     margin: 1px 2px;
+    vertical-align: top;
+    /* Align all words at top for consistent pinyin spacing */
 }
 
 .text-zh ruby rt {
@@ -467,6 +469,8 @@ ruby rt {
 .text-ko .word {
     padding: 4px 6px;
     margin: 1px 3px;
+    vertical-align: top;
+    /* Align all words at top for consistent romanization spacing */
 }
 
 .text-ko ruby rt {
@@ -601,12 +605,9 @@ ruby rt {
     background: none;
     color: var(--text-muted);
     cursor: pointer;
-    color: var(--text-muted);
-    cursor: pointer;
     border-radius: var(--border-radius-sm);
     transition: all var(--transition-fast);
 }
-
 
 .font-btn--medium {
     font-size: 0.8125rem;
@@ -628,7 +629,6 @@ ruby rt {
     box-shadow: none;
 }
 
-
 /* ============================================
    MOBILE STYLES
    ============================================ */
@@ -643,8 +643,8 @@ ruby rt {
 
     .subtitle-text {
         font-size: 1.125rem;
-        line-height: 1.9;
-        padding: 6px 12px;
+        line-height: 2;
+        padding: var(--space-xs) var(--space-sm);
     }
 
     .current-subtitle--small .subtitle-text {
@@ -655,12 +655,26 @@ ruby rt {
         font-size: 1.25rem;
     }
 
+    /* Consistent word styling on mobile */
     .word {
-        padding: 6px 8px;
-        border-radius: 8px;
-        min-height: 2.25rem;
-        line-height: 1.5;
+        padding: 0.375rem 0.5rem;
+        margin: 2px;
+        border-radius: 6px;
         background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08);
+    }
+
+    /* For CJK languages: use vertical-align top for consistent alignment with ruby */
+    .text-ja .word,
+    .text-zh .word,
+    .text-ko .word {
+        padding: 0.375rem 0.5rem;
+        margin: 2px;
+        vertical-align: top;
+    }
+
+    .text-en .word {
+        padding: 0.375rem 0.5rem;
+        margin: 2px;
     }
 
     .word::after {
@@ -737,7 +751,7 @@ ruby rt {
 
     .subtitle-text {
         font-size: 1rem;
-        line-height: 1.8;
+        line-height: 1.9;
     }
 
     .current-subtitle--small .subtitle-text {
@@ -746,5 +760,25 @@ ruby rt {
 
     .current-subtitle--large .subtitle-text {
         font-size: 1.125rem;
+    }
+
+    /* Maintain consistent word styling on small mobile */
+    .word {
+        padding: 0.3125rem 0.4375rem;
+        margin: 2px;
+    }
+
+    /* CJK languages: maintain vertical-align top */
+    .text-ja .word,
+    .text-zh .word,
+    .text-ko .word {
+        padding: 0.3125rem 0.4375rem;
+        margin: 2px;
+        vertical-align: top;
+    }
+
+    .text-en .word {
+        padding: 0.3125rem 0.4375rem;
+        margin: 2px;
     }
 }

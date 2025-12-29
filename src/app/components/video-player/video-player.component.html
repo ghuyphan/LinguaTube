@@ -197,8 +197,9 @@
     <!-- Fullscreen Word Popup -->
     @if (isFullscreen() && fsPopupVisible()) {
     <div class="fs-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="fs-popup-title"
-      (click)="closeFsPopup()" (touchend)="closeFsPopup()">
-      <div class="fs-popup" (click)="$event.stopPropagation()" (touchend)="$event.stopPropagation()">
+      (click)="closeFsPopup()" (touchstart)="onPopupOverlayTouchStart($event)"
+      (touchmove)="onPopupOverlayTouchMove($event)" (touchend)="onWordPopupOverlayTouchEnd($event)">
+      <div class="fs-popup" (click)="$event.stopPropagation()">
         <button class="fs-popup-close" aria-label="Close popup" (click)="closeFsPopup()">
           <app-icon name="x" [size]="18" aria-hidden="true" />
         </button>
@@ -264,7 +265,8 @@
     <!-- Fullscreen Grammar Popup -->
     @if (isFullscreen() && fsGrammarPopupVisible()) {
     <div class="fs-popup-overlay" role="dialog" aria-modal="true" (click)="closeFsGrammarPopup()"
-      (touchend)="closeFsGrammarPopup()">
+      (touchstart)="onPopupOverlayTouchStart($event)" (touchmove)="onPopupOverlayTouchMove($event)"
+      (touchend)="onGrammarPopupOverlayTouchEnd($event)">
       <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="true" (closed)="closeFsGrammarPopup()" />
     </div>
     }
