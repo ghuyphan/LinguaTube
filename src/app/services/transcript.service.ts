@@ -379,6 +379,8 @@ export class TranscriptService {
   private normalizeErrorCode(message: string): string {
     const errorMap: [RegExp | string, string][] = [
       ['video_too_long', 'VIDEO_TOO_LONG'],
+      ['unsupported_language', 'UNSUPPORTED_LANGUAGE'],
+      ['unsupported_video_language', 'UNSUPPORTED_VIDEO_LANGUAGE'],
       [/rate.?limit/i, 'RATE_LIMITED'],
       [/timeout/i, 'TIMEOUT'],
       [/gladia.*failed/i, 'AI_SERVICE_ERROR'],

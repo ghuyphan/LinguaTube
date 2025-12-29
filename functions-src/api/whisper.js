@@ -8,6 +8,7 @@ import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, getPendingJob, savePendingJob, completePendingJob, cleanupStalePendingJobs } from '../_shared/transcript-db.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
+import { validateVideoRequest } from '../_shared/video-validator.js';
 
 const DEBUG = true;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -49,6 +50,14 @@ export async function onRequestPost(context) {
             // Validate video ID only for new requests
             if (!validateVideoId(videoId)) {
                 return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
+            }
+
+            // Early validation - reject unsupported languages and long videos
+            const lang = body.lang || body.targetLanguage;
+            const validation = await validateVideoRequest(videoId, lang || 'ja', body.duration, 'whisper');
+            if (validation) {
+                log(`Validation failed: ${validation.error}`);
+                return jsonResponse(validation, 400);
             }
 
             // 1. Check KV cache for completed transcripts
@@ -96,16 +105,6 @@ export async function onRequestPost(context) {
 
             // Only submit new job if we didn't find a pending one
             if (!resultUrl) {
-                // Check video duration limit (client must provide duration)
-                const duration = body.duration;
-                if (duration && duration > MAX_VIDEO_DURATION_SECONDS) {
-                    return jsonResponse({
-                        error: 'video_too_long',
-                        message: `Video exceeds maximum duration of 60 minutes for AI transcription.`,
-                        maxDuration: MAX_VIDEO_DURATION_SECONDS
-                    }, 400);
-                }
-
                 // Rate limit check for new requests
                 const clientIP = getClientIP(request);
                 const rateCheck = await checkRateLimit(TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);

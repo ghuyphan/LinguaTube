@@ -64,7 +64,9 @@
         "videoTooLongHint": "AI文字起こしは60分以内の動画に制限されています。",
         "languageMismatch": "字幕が別の言語です",
         "languageMismatchMessage": "{{requested}}の字幕はこの動画にありません。代わりに{{detected}}を使用しています。",
-        "gotIt": "OK"
+        "gotIt": "OK",
+        "unsupportedLanguageTitle": "対応していない言語",
+        "unsupportedLanguageHint": "日本語・中国語・韓国語・英語の動画のみ対応しています。"
     },
     "vocab": {
         "title": "単語帳",

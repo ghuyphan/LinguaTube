@@ -16,7 +16,7 @@
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
-import { parseNaver, parseJotoba, parseMazii, parseFreeDictionary, parseMdbg, parseGlosbe } from '../_shared/dict-parsers.js';
+import { parseNaver, parseJotoba, parseJotobaJapanese, parseMazii, parseFreeDictionary, parseMdbg, parseGlosbe } from '../_shared/dict-parsers.js';
 
 // ============================================================================
 // Configuration
@@ -77,11 +77,11 @@ const DICT_SOURCES = {
         referer: 'https://jotoba.de/'
     },
     'ja-vi': {
-        url: 'https://mazii.net/api/search',
-        method: 'POST',
-        parser: 'mazii',
-        contentType: 'application/json',
-        referer: 'https://mazii.net/'
+        // Glosbe Japanese-Vietnamese (Mazii blocks CF worker requests)
+        url: 'https://glosbe.com/ja/vi/',
+        method: 'GET',
+        parser: 'glosbe',
+        referer: 'https://glosbe.com/'
     },
     'ja-ko': {
         // Naver Japanese-Korean dictionary
@@ -131,6 +131,33 @@ const DICT_SOURCES = {
         url: 'https://api.dictionaryapi.dev/api/v2/entries/en/',
         method: 'GET',
         parser: 'freedict'
+    },
+    'en-vi': {
+        url: 'https://glosbe.com/en/vi/',
+        method: 'GET',
+        parser: 'glosbe',
+        referer: 'https://glosbe.com/'
+    },
+    'en-ja': {
+        url: 'https://glosbe.com/en/ja/',
+        method: 'GET',
+        parser: 'glosbe',
+        referer: 'https://glosbe.com/'
+    },
+    'en-ko': {
+        url: 'https://glosbe.com/en/ko/',
+        method: 'GET',
+        parser: 'glosbe',
+        referer: 'https://glosbe.com/'
+    },
+
+    // Japanese monolingual (Jotoba with Japanese output)
+    'ja-ja': {
+        url: 'https://jotoba.de/api/search/words',
+        method: 'POST',
+        parser: 'jotoba-ja',
+        contentType: 'application/json',
+        referer: 'https://jotoba.de/'
     }
 };
 
@@ -199,7 +226,9 @@ export async function onRequest(context) {
 
         // Try direct dictionary source
         if (dictSource) {
+            console.log(`[Dict] Trying direct source: ${dictSource.parser} for ${pairKey}`);
             entries = await fetchDictionary(dictSource, word);
+            console.log(`[Dict] Direct source ${dictSource.parser} returned: ${entries ? entries.length : 'null'} entries`);
             source = dictSource.parser;
         }
 
@@ -282,6 +311,14 @@ async function fetchDictionary(source, word) {
                 });
                 break;
 
+            case 'jotoba-ja':
+                body = JSON.stringify({
+                    query: word,
+                    language: 'Japanese',
+                    no_english: true
+                });
+                break;
+
             case 'mazii':
                 body = JSON.stringify({
                     dict: 'javi',
@@ -326,8 +363,14 @@ async function fetchDictionary(source, word) {
             case 'jotoba':
                 return parseJotoba(await response.json());
 
-            case 'mazii':
-                return parseMazii(await response.json());
+            case 'jotoba-ja':
+                return parseJotobaJapanese(await response.json());
+
+            case 'mazii': {
+                const json = await response.json();
+                console.log(`[Dict] Mazii raw response keys: ${Object.keys(json)}, hasData: ${!!json.data}, hasResults: ${!!json.results}`);
+                return parseMazii(json);
+            }
 
             case 'freedict':
                 return parseFreeDictionary(await response.json());
@@ -335,8 +378,10 @@ async function fetchDictionary(source, word) {
             case 'mdbg':
                 return await parseMdbg(response);
 
-            case 'glosbe':
+            case 'glosbe': {
+                console.log(`[Dict] Glosbe response status: ${response.status}, contentType: ${response.headers.get('content-type')}`);
                 return await parseGlosbe(response);
+            }
 
             default:
                 return [];

@@ -13,6 +13,7 @@ import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript, getAvailableLangs, addAvailableLang } from '../_shared/transcript-db.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
+import { validateVideoRequest, isLanguageSupported } from '../_shared/video-validator.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
 
@@ -92,6 +93,13 @@ export async function onRequestPost(context) {
         const cache = env.TRANSCRIPT_CACHE;
         const db = env.VOCAB_DB;
         const primaryLang = targetLanguages[0];
+
+        // Early validation - reject unsupported languages before any API calls
+        const validation = await validateVideoRequest(videoId, primaryLang, body.duration, 'innertube');
+        if (validation) {
+            log(`Validation failed: ${validation.error}`);
+            return jsonResponse(validation, 400);
+        }
 
         log(`Request: ${videoId}, langs: ${targetLanguages.join(',')}`);
 

@@ -61,6 +61,10 @@
                 @if (transcript.error() === 'VIDEO_TOO_LONG') {
                 <p class="empty-title">{{ i18n.t('subtitle.videoTooLongTitle') }}</p>
                 <p class="empty-hint">{{ i18n.t('subtitle.videoTooLongHint') }}</p>
+                } @else if (transcript.error() === 'UNSUPPORTED_LANGUAGE' || transcript.error() ===
+                'UNSUPPORTED_VIDEO_LANGUAGE') {
+                <p class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</p>
+                <p class="empty-hint">{{ i18n.t('subtitle.unsupportedLanguageHint') }}</p>
                 } @else {
                 <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</p>
                 <p class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</p>

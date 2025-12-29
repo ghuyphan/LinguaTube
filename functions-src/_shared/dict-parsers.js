@@ -84,31 +84,86 @@ export function parseJotoba(data) {
 }
 
 /**
- * Parse Mazii Japanese-Vietnamese dictionary API response
- * Used for: ja-vi
- * API: POST https://mazii.net/api/search with { dict: 'javi', type: 'word', query: word, page: 1 }
- * @param {Object} data - Raw API response from Mazii
+ * Parse Jotoba Japanese dictionary API response for Japanese monolingual output
+ * Used for: ja-ja (Japanese definitions for Japanese words)
+ * Jotoba with language: 'Japanese' returns Japanese glosses
+ * @param {Object} data - Raw API response from Jotoba
  * @returns {DictEntry[]}
  */
-export function parseMazii(data) {
-    if (!data.results || data.results.length === 0) {
+export function parseJotobaJapanese(data) {
+    if (!data.words || data.words.length === 0) {
         return [];
     }
 
-    return data.results.slice(0, 5).map(entry => {
+    return data.words.slice(0, 5).map(entry => {
+        const word = entry.reading?.kanji || entry.reading?.kana || '';
+        const reading = entry.reading?.kana || '';
+
+        const definitions = [];
+        entry.senses?.forEach(sense => {
+            if (sense.glosses) {
+                definitions.push(sense.glosses.join('、'));
+            }
+        });
+
+        const partOfSpeech = entry.senses?.[0]?.pos
+            ?.map(p => (typeof p === 'string' ? p : p.Pretty || p.Short || ''))
+            .filter(Boolean)
+            .join(', ') || '';
+
+        const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
+
+        return { word, reading, definitions, partOfSpeech, level };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse Mazii Japanese-Vietnamese dictionary API response
+ * Used for: ja-vi
+ * API: POST https://mazii.net/api/search with { dict: 'javi', type: 'word', query: word, page: 1 }
+ * Response structure: { status, found, data: [{ word, phonetic, short_mean, means: [{ mean, kind, examples }] }] }
+ * @param {Object} response - Raw API response from Mazii
+ * @returns {DictEntry[]}
+ */
+export function parseMazii(response) {
+    // Mazii returns data in 'data' field, not 'results'
+    const results = response.data || response.results || [];
+    if (!results || results.length === 0) {
+        return [];
+    }
+
+    return results.slice(0, 5).map(entry => {
         const word = entry.word || '';
         const reading = entry.phonetic || entry.reading || '';
 
-        // Mazii returns 'mean' as the Vietnamese definition
+        // Extract definitions from means array or short_mean
         const definitions = [];
-        if (entry.mean) {
-            // Split by newlines or semicolons if multiple meanings
+
+        // Primary: means array with nested mean field
+        if (entry.means && Array.isArray(entry.means)) {
+            entry.means.forEach(m => {
+                if (m.mean) {
+                    // Clean up HTML and split by semicolons/newlines
+                    const cleanMean = m.mean.replace(/<[^>]+>/g, '').trim();
+                    if (cleanMean) definitions.push(cleanMean);
+                }
+            });
+        }
+
+        // Fallback: short_mean field
+        if (definitions.length === 0 && entry.short_mean) {
+            definitions.push(entry.short_mean);
+        }
+
+        // Legacy fallback: entry.mean (old format)
+        if (definitions.length === 0 && entry.mean) {
             const means = entry.mean.split(/[;\n]/).map(m => m.trim()).filter(Boolean);
             definitions.push(...means);
         }
 
-        const partOfSpeech = entry.type || '';
-        const level = entry.level ? parseInt(entry.level.replace('N', '')) : null;
+        // Extract part of speech from means[0].kind or entry.type
+        const partOfSpeech = entry.means?.[0]?.kind || entry.type || '';
+        const level = entry.level ? parseInt(String(entry.level).replace('N', '')) : null;
 
         return { word, reading, definitions, partOfSpeech, level };
     }).filter(e => e.word && e.definitions.length > 0);
