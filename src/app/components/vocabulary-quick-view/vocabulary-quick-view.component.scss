@@ -83,57 +83,7 @@
     gap: var(--space-xs);
 }
 
-.level-badge {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 8px;
-    border-radius: var(--border-radius-pill);
-    background: var(--bg-tertiary);
-
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: 0.75rem;
-    font-weight: 500;
-
-    &:hover {
-        border-color: var(--border-color);
-        background: var(--bg-hover);
-    }
-
-    .level-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: currentColor;
-    }
-
-    .level-text {
-        text-transform: capitalize;
-    }
-
-    // Level colors
-    &.level--new {
-        color: var(--word-new);
-        background: color-mix(in srgb, var(--word-new), transparent 92%);
-    }
-
-    &.level--learning {
-        color: var(--word-learning);
-        background: color-mix(in srgb, var(--word-learning), transparent 92%);
-    }
-
-    &.level--known {
-        color: var(--word-known);
-        background: color-mix(in srgb, var(--word-known), transparent 92%);
-    }
-
-    &.level--ignored {
-        color: var(--text-muted);
-        background: var(--bg-secondary);
-    }
-}
+// Level badge styles removed - using global styles
 
 /* Landscape phones: more compact layout */
 @media (max-height: 500px) and (orientation: landscape) {

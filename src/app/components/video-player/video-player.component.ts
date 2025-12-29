@@ -96,8 +96,17 @@ export class VideoPlayerComponent implements OnDestroy {
   readonly playbackSpeeds = PLAYBACK_SPEEDS;
 
   // Computed values
+  // Computed values
   displayTime = computed(() => {
     return this.isDragging() ? this.previewTime() : this.youtube.currentTime();
+  });
+
+  formattedCurrentTime = computed(() => this.formatTime(this.displayTime()));
+  formattedDuration = computed(() => this.formatTime(this.youtube.duration()));
+
+  fontSizeClass = computed(() => {
+    const size = this.settings.settings().fontSize;
+    return `fs-${size}`; // fs-small, fs-large, fs-xlarge
   });
 
   progressPercentage = computed(() => {
@@ -453,15 +462,11 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   showSeekFeedback(direction: 'left' | 'right', seconds: number) {
-    if (this.seekDirection() === direction && this.seekFeedbackTimeout) {
+    if (this.seekDirection() === direction) {
       this.seekAccumulator.update(v => v + seconds);
     } else {
       this.seekAccumulator.set(seconds);
       this.seekDirection.set(direction);
-    }
-
-    if (this.seekFeedbackTimeout) {
-      clearTimeout(this.seekFeedbackTimeout);
     }
 
     if (direction === 'left') {
@@ -471,14 +476,13 @@ export class VideoPlayerComponent implements OnDestroy {
       this.forwardFeedback.set(false);
       requestAnimationFrame(() => this.forwardFeedback.set(true));
     }
+  }
 
-    this.seekFeedbackTimeout = setTimeout(() => {
-      this.rewindFeedback.set(false);
-      this.forwardFeedback.set(false);
-      this.seekAccumulator.set(0);
-      this.seekDirection.set(null);
-      this.seekFeedbackTimeout = null;
-    }, 800);
+  onSeekAnimationEnd() {
+    this.rewindFeedback.set(false);
+    this.forwardFeedback.set(false);
+    this.seekAccumulator.set(0);
+    this.seekDirection.set(null);
   }
 
   // ============================================

@@ -56,13 +56,15 @@
     }
 
     <!-- Seek Feedback - positioned at container level -->
-    <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()">
+    <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()"
+      (animationend)="onSeekAnimationEnd()">
       <div class="seek-feedback-inner">
         <app-icon name="rewind" [size]="24" />
         <span class="seek-time">{{ seekAccumulator() }}</span>
       </div>
     </div>
-    <div class="seek-feedback seek-feedback--right" [class.animate]="forwardFeedback()">
+    <div class="seek-feedback seek-feedback--right" [class.animate]="forwardFeedback()"
+      (animationend)="onSeekAnimationEnd()">
       <div class="seek-feedback-inner">
         <app-icon name="fast-forward" [size]="24" />
         <span class="seek-time">{{ seekAccumulator() }}</span>
@@ -170,11 +172,10 @@
 
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
-    <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()"
-      [class.fs-small]="settings.settings().fontSize === 'small'"
-      [class.fs-large]="settings.settings().fontSize === 'large'"
-      [class.fs-xlarge]="settings.settings().fontSize === 'xlarge'" [class.popup-open]="fsPopupVisible()"
-      [class.has-content]="!!subtitles.currentCue()">
+    <!-- Fullscreen Subtitle Overlay -->
+    @if (isFullscreen()) {
+    <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()" [ngClass]="fontSizeClass()"
+      [class.popup-open]="fsPopupVisible()" [class.has-content]="!!subtitles.currentCue()">
       @if (subtitles.currentCue(); as cue) {
       <div class="fs-subtitle-inner">
         <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
@@ -264,8 +265,8 @@
       <!-- Progress Bar -->
       <div class="progress-container" role="slider" [attr.aria-valuenow]="displayTime()" [attr.aria-valuemin]="0"
         [attr.aria-valuemax]="youtube.duration()"
-        [attr.aria-valuetext]="formatTime(displayTime()) + ' of ' + formatTime(youtube.duration())"
-        aria-label="Video progress" tabindex="0" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
+        [attr.aria-valuetext]="formattedCurrentTime() + ' of ' + formattedDuration()" aria-label="Video progress"
+        tabindex="0" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
         (touchstart)="startSeeking($event)" (mousemove)="updateSeekPreview($event)" (mouseleave)="hideSeekPreview()"
         [style.--progress]="progressPercentage()" [style.--buffered]="bufferedPercentage()"
         [style.--seek-pos]="seekPreview().position + 'px'" #progressBar>
@@ -310,9 +311,9 @@
 
           <!-- Time Display -->
           <div class="time-display">
-            <span class="time-current">{{ formatTime(displayTime()) }}</span>
+            <span class="time-current">{{ formattedCurrentTime() }}</span>
             <span class="time-separator">/</span>
-            <span class="time-total">{{ formatTime(youtube.duration()) }}</span>
+            <span class="time-total">{{ formattedDuration() }}</span>
           </div>
 
           <!-- Mute button - mobile only -->

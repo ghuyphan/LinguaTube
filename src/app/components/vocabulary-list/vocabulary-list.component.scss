@@ -161,61 +161,8 @@
     flex-shrink: 0;
 }
 
-// Cleaner level badge/selector
-.level-badge {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: var(--border-radius-pill); // Pill shape
-    background: var(--bg-secondary);
+// Cleaner level badge/selector - Uses global styles
 
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: 0.75rem;
-    font-weight: 500;
-    min-width: 80px;
-    justify-content: center;
-
-    &:hover {
-        border-color: var(--border-color);
-        background: var(--bg-hover);
-    }
-}
-
-.level-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-}
-
-.level-text {
-    text-transform: capitalize;
-}
-
-// Level colors
-.level-badge--new {
-    color: var(--word-new);
-    background: color-mix(in srgb, var(--word-new), transparent 92%);
-}
-
-.level-badge--learning {
-    color: var(--word-learning);
-    background: color-mix(in srgb, var(--word-learning), transparent 92%);
-}
-
-.level-badge--known {
-    color: var(--word-known);
-    background: color-mix(in srgb, var(--word-known), transparent 92%);
-}
-
-.level-badge--ignored {
-    color: var(--text-muted);
-    background: var(--bg-secondary);
-}
 
 .delete-btn {
     width: var(--btn-height-sm);
@@ -429,37 +376,6 @@
         background: #b32d29;
     }
 
-    /* Toast Notification */
-    .toast {
-        position: fixed;
-        bottom: 6.25rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        gap: var(--space-sm);
-        padding: var(--space-sm) var(--space-md);
-        background: var(--success);
-        color: white;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow-lg);
-        z-index: 1001;
-        animation: toastIn 0.3s ease-out;
-    }
+    // Toast styles removed - using global .toast
 
-    .toast--error {
-        background: var(--error);
-    }
-
-    @keyframes toastIn {
-        from {
-            opacity: 0;
-            transform: translateX(-50%) translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-    }
 }

@@ -13,17 +13,17 @@
                     @if (currentTokens().length === 0) {
                     <!-- Shimmer skeleton while tokens load -->
                     <span class="token-loading">
-                        @for (width of getShimmerWidths(cue.text); track $index) {
-                        <span class="token-shimmer" [style.width.px]="width"></span>
+                        @for (i of [1,2,3,4,5]; track $index) {
+                        <span class="token-shimmer"></span>
                         }
                     </span>
                     } @else {
                     <span class="subtitle-content" @subtitleFade>
-                        @for (token of currentTokens(); track $index) {@if (isPunctuation(token.surface)) {<span
+                        @for (token of currentTokens(); track $index) {@if (token.isPunctuation) {<span
                             class="punctuation">{{ token.surface }}</span>} @else {<span class="word"
-                            [class.word--new]="getWordLevel(token.surface) === 'new'"
-                            [class.word--learning]="getWordLevel(token.surface) === 'learning'"
-                            [class.word--known]="getWordLevel(token.surface) === 'known'"
+                            [class.word--new]="token.level === 'new'"
+                            [class.word--learning]="token.level === 'learning'"
+                            [class.word--known]="token.level === 'known'"
                             [class.word--saved]="vocab.hasWord(token.surface)"
                             (click)="onWordClick(token, cue.text)">@if
                             (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}

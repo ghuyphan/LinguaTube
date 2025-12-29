@@ -1164,3 +1164,168 @@ body::-webkit-scrollbar {
   background: rgba(0, 0, 0, 0.05);
   color: var(--text-primary);
 }
+
+/* ============================================
+   GLOBAL UTILITIES & PATTERNS (EXTRACTED)
+   ============================================ */
+
+/* Level Badge/Selector Pattern */
+.level-badge,
+.level-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  background: var(--bg-secondary);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.75rem;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.level-select-btn {
+  padding: 8px 12px;
+  font-size: 0.8125rem;
+  flex: 1;
+}
+
+@media (hover: hover) {
+
+  .level-badge:hover,
+  .level-select-btn:hover {
+    border-color: var(--border-color);
+    background: var(--bg-card);
+  }
+}
+
+.level-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.level-text {
+  text-transform: capitalize;
+}
+
+/* Level color variants */
+.level-badge.level--new,
+.level-badge--new,
+.level-select-btn.level--new,
+.level-select-btn--new {
+  color: var(--word-new-text);
+  background: var(--word-new);
+}
+
+
+.level-badge.level--learning,
+.level-badge--learning,
+.level-select-btn.level--learning,
+.level-select-btn--learning {
+  color: var(--word-learning-text);
+  background: var(--word-learning);
+}
+
+.level-badge.level--known,
+.level-badge--known,
+.level-select-btn.level--known,
+.level-select-btn--known {
+  color: var(--word-known-text);
+  background: var(--word-known);
+}
+
+.level-badge.level--ignored,
+.level-badge--ignored,
+.level-select-btn.level--ignored,
+.level-select-btn--ignored {
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+}
+
+/* Toggle Switch Pattern */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-color);
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked+.slider {
+  background-color: var(--accent-primary);
+}
+
+.toggle-switch input:focus+.slider {
+  box-shadow: 0 0 1px var(--accent-primary);
+}
+
+.toggle-switch input:checked+.slider:before {
+  transform: translateX(16px);
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 6.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--success);
+  color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 1001;
+  animation: toastIn 0.3s ease-out;
+}
+
+.toast--error {
+  background: var(--error);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

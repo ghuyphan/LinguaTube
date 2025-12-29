@@ -515,12 +515,21 @@ export class SubtitleService {
 
     switch (lang) {
       case 'zh':
-        return text.split('').map(char => ({ surface: char }));
+        return text.split('').map(char => ({
+          surface: char,
+          isPunctuation: this.isPunctuation(char)
+        }));
       case 'ko':
-        return text.split(/\s+/).filter(Boolean).map(word => ({ surface: word }));
+        return text.split(/\s+/).filter(Boolean).map(word => ({
+          surface: word,
+          isPunctuation: this.isPunctuation(word)
+        }));
       case 'en':
         // Match words only (letters, numbers, apostrophes, hyphens), exclude punctuation
-        return text.match(/[\w'-]+/g)?.map(word => ({ surface: word })) || [];
+        return text.match(/[\w'-]+/g)?.map(word => ({
+          surface: word,
+          isPunctuation: false // Words matched by regex are not punctuation
+        })) || [];
       case 'ja':
       default:
         return this.tokenizeByCharType(text);
@@ -536,7 +545,10 @@ export class SubtitleService {
       const type = this.getCharType(char);
 
       if (type !== currentType && current) {
-        tokens.push({ surface: current });
+        tokens.push({
+          surface: current,
+          isPunctuation: this.isPunctuation(current)
+        });
         current = '';
       }
 
@@ -545,7 +557,10 @@ export class SubtitleService {
     }
 
     if (current) {
-      tokens.push({ surface: current });
+      tokens.push({
+        surface: current,
+        isPunctuation: this.isPunctuation(current)
+      });
     }
 
     return tokens;
@@ -733,5 +748,14 @@ export class SubtitleService {
     if (/[。、！？「」『』（）・]/.test(char)) return 'punctuation';
 
     return 'other';
+  }
+
+  /**
+   * Check if string is punctuation/whitespace (CJK + Western)
+   * Moved from SubtitleDisplayComponent for pre-computation
+   */
+  private isPunctuation(text: string): boolean {
+    const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–]+$/u;
+    return punctuationRegex.test(text);
   }
 }

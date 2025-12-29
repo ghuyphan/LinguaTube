@@ -533,7 +533,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   position: absolute;
   background: rgba(0, 0, 0, 0.9);
   padding: 0.75rem 1.25rem;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1082,7 +1082,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   right: 0;
   margin-bottom: 0.5rem;
   background: rgba(20, 20, 20, 0.98);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 0.375rem 0;
   min-width: 7.5rem;
   max-height: 12.5rem;
@@ -1262,7 +1262,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 .fs-subtitle-inner {
   background: rgba(0, 0, 0, 0.85);
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   padding: 0.75rem 1.25rem;
   max-height: 35vh;
   overflow-y: auto;
@@ -1735,13 +1735,13 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   .url-input {
     height: 48px;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
   }
 
   .load-btn {
     width: 100%;
     height: 48px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     font-size: 1rem;
   }
 
@@ -1775,7 +1775,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   .fs-subtitle-inner {
     padding: 0.625rem 1rem;
     max-height: 40vh;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
   }
 
   .fs-subtitle-text {

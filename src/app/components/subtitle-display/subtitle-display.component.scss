@@ -272,6 +272,25 @@
             var(--bg-secondary) 100%);
     background-size: 200% 100%;
     animation: shimmer 1.5s ease-in-out infinite;
+
+    /* Randomized widths via CSS */
+    width: 60px;
+
+    &:nth-child(2n) {
+        width: 80px;
+    }
+
+    &:nth-child(3n) {
+        width: 50px;
+    }
+
+    &:nth-child(5n) {
+        width: 90px;
+    }
+
+    &:nth-child(7n) {
+        width: 40px;
+    }
 }
 
 @keyframes shimmer {

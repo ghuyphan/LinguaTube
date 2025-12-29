@@ -15,6 +15,8 @@ export interface Token {
   baseForm?: string;      // Dictionary form
   partOfSpeech?: string;  // Noun, verb, etc.
   hasKanji?: boolean;     // Whether token contains kanji (Japanese)
+  isPunctuation?: boolean; // Whether token is punctuation/whitespace
+  level?: WordLevel;      // User's vocabulary level for this token
 }
 
 // Vocabulary models
