@@ -1,6 +1,7 @@
 // ============================================
 // BOTTOM SHEET COMPONENT
 // Responsive: Modal on desktop, slide-up sheet on mobile
+// Uses .desktop-modal class for explicit animation control
 // ============================================
 
 // ============================================
@@ -23,15 +24,15 @@
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.25s ease-out forwards;
+    animation: fadeIn 0.3s ease-out forwards;
 }
 
 .sheet-overlay.closing::before {
-    animation: fadeOut 0.2s ease-in forwards;
+    animation: fadeOut 0.25s ease-in forwards;
 }
 
 // ============================================
-// SHEET CONTAINER
+// SHEET CONTAINER - BASE STYLES
 // ============================================
 .sheet {
     background: var(--bg-card);
@@ -54,20 +55,40 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-
-    // Entry animation (desktop)
-    animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
     will-change: transform, opacity;
 }
 
 // ============================================
-// SHEET STATES
+// DESKTOP MODAL ANIMATIONS
+// Explicit class-based control (not media query dependent)
 // ============================================
+.sheet.desktop-modal {
+    animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
 
-// Close animation (non-drag)
-.sheet.closing {
+.sheet.desktop-modal.closing {
     animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
+
+// ============================================
+// MOBILE SHEET ANIMATIONS
+// Uses :not(.desktop-modal) for explicit control
+// ============================================
+.sheet:not(.desktop-modal) {
+    max-width: 100%;
+    margin: 0;
+    border-radius: var(--space-md) var(--space-md) 0 0;
+    animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    touch-action: none;
+}
+
+.sheet:not(.desktop-modal).closing {
+    animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+// ============================================
+// DRAG STATES (applies to both desktop & mobile)
+// ============================================
 
 // No transition during active drag for 60fps performance
 .sheet.dragging {
@@ -119,7 +140,7 @@
 }
 
 // ============================================
-// DRAG HANDLE (Mobile only)
+// DRAG HANDLE
 // ============================================
 .sheet-drag-handle {
     display: none;
@@ -139,6 +160,11 @@
 
 .sheet-drag-handle:active .sheet-drag-indicator {
     background: var(--text-muted);
+}
+
+// Show drag handle on mobile sheets
+.sheet:not(.desktop-modal) .sheet-drag-handle {
+    display: block;
 }
 
 // ============================================
@@ -161,51 +187,24 @@
     }
 }
 
+// Safe area padding for mobile
+.sheet:not(.desktop-modal) .sheet-content {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 // ============================================
-// MOBILE STYLES (Bottom sheet behavior)
+// LAYOUT ADJUSTMENTS
 // ============================================
+
+// Mobile: align to bottom
 @media (max-width: 768px) {
     .sheet-overlay {
         padding: 0;
         align-items: flex-end;
     }
-
-    .sheet-overlay::before {
-        animation: fadeIn 0.3s ease-out forwards;
-    }
-
-    .sheet-overlay.closing::before {
-        animation: fadeOut 0.25s ease-in forwards;
-    }
-
-    .sheet {
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
-        max-height: 85vh;
-        border-radius: var(--space-md) var(--space-md) 0 0;
-        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-        touch-action: none;
-    }
-
-    .sheet.closing {
-        animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-    }
-
-    .sheet-drag-handle {
-        display: block;
-    }
-
-    .sheet-content {
-        touch-action: pan-y;
-        padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
 }
 
-// ============================================
-// LANDSCAPE PHONES
-// Bottom sheet with limited width for better UX
-// ============================================
+// Landscape phones: bottom sheet with limited width
 @media (max-height: 500px) and (orientation: landscape) {
     .sheet-overlay {
         padding: 0;
@@ -213,28 +212,10 @@
         justify-content: center;
     }
 
-    .sheet-overlay::before {
-        animation: fadeIn 0.3s ease-out forwards;
-    }
-
-    .sheet-overlay.closing::before {
-        animation: fadeOut 0.25s ease-in forwards;
-    }
-
-    .sheet {
+    .sheet:not(.desktop-modal) {
         max-width: 600px;
         width: 80%;
         max-height: calc(100vh - 80px);
-        border-radius: var(--space-md) var(--space-md) 0 0;
-        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-    }
-
-    .sheet.closing {
-        animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-    }
-
-    .sheet-drag-handle {
-        display: block;
     }
 }
 
@@ -243,6 +224,16 @@
 // ============================================
 
 // Backdrop fade
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes fadeOut {
     from {
         opacity: 1;
