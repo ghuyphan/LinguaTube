@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: var(--space-sm);
 }
 
 .popup-word {
@@ -19,11 +19,6 @@
     color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
-}
-
-.popup-reading {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
 }
 
 .popup-body {
@@ -49,30 +44,30 @@
     border-radius: var(--border-radius-pill);
 }
 
-/* Level-specific badge colors */
+/* Level-specific badge colors - using global CSS variables */
 .level-beginner {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
+    background: var(--level-beginner);
+    color: var(--level-beginner-text);
 }
 
 .level-elementary {
-    background: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
+    background: var(--level-elementary);
+    color: var(--level-elementary-text);
 }
 
 .level-intermediate {
-    background: rgba(234, 179, 8, 0.15);
-    color: #ca8a04;
+    background: var(--level-intermediate);
+    color: var(--level-intermediate-text);
 }
 
 .level-upper-intermediate {
-    background: rgba(249, 115, 22, 0.15);
-    color: #f97316;
+    background: var(--level-upper);
+    color: var(--level-upper-text);
 }
 
 .level-advanced {
-    background: rgba(239, 68, 68, 0.15);
-    color: #ef4444;
+    background: var(--level-advanced);
+    color: var(--level-advanced-text);
 }
 
 .level-default {

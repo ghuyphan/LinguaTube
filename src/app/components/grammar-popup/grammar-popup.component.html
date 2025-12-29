@@ -4,18 +4,11 @@
         <!-- Header -->
         <div class="popup-header">
             <h2 class="popup-word">{{ p.pattern }}</h2>
-            @if (p.title !== p.pattern) {
-            <span class="popup-reading">{{ p.title }}</span>
-            }
+            <span class="badge" [ngClass]="levelClass()">{{ p.level }}</span>
         </div>
 
         <!-- Body -->
         <div class="popup-body">
-            <!-- Level Badge -->
-            <div class="popup-badges">
-                <span class="badge" [ngClass]="levelClass()">{{ p.level }}</span>
-            </div>
-
             <!-- Formation -->
             @if (p.formation) {
             <div class="popup-section">
