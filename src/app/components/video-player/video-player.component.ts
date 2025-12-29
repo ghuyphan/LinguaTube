@@ -99,7 +99,6 @@ export class VideoPlayerComponent implements OnDestroy {
   readonly playbackSpeeds = PLAYBACK_SPEEDS;
 
   // Computed values
-  // Computed values
   displayTime = computed(() => {
     return this.isDragging() ? this.previewTime() : this.youtube.currentTime();
   });
@@ -109,7 +108,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   fontSizeClass = computed(() => {
     const size = this.settings.settings().fontSize;
-    return `fs-${size}`; // fs-small, fs-large, fs-xlarge
+    return `fs-${size}`;
   });
 
   progressPercentage = computed(() => {
@@ -249,13 +248,10 @@ export class VideoPlayerComponent implements OnDestroy {
     });
 
     // Handle play/pause state changes
-    // Using untracked to read areControlsVisible to avoid re-running
-    // this effect when controls visibility changes (prevents toggle conflicts)
     effect(() => {
       const isPlaying = this.youtube.isPlaying();
       if (isPlaying) {
         this.startBufferedTracking();
-        // Read without creating dependency
         if (untracked(() => this.areControlsVisible())) {
           this.hideControlsAfterDelay(3000);
         }
@@ -267,11 +263,10 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Track state transitions for animations - FIXED: Only animate on actual state changes
+    // Track state transitions for animations
     effect(() => {
       const hasVideo = !!this.youtube.currentVideo() || !!this.youtube.pendingVideoId();
 
-      // Skip if state hasn't actually changed (prevents tab-switch animations)
       if (this.previousHasVideo === hasVideo) {
         return;
       }
@@ -279,18 +274,15 @@ export class VideoPlayerComponent implements OnDestroy {
       const isFirstRun = this.previousHasVideo === null;
       this.previousHasVideo = hasVideo;
 
-      // Don't animate on first run
       if (isFirstRun || !this.hasInitialized) {
         this.hasInitialized = true;
         return;
       }
 
-      // Don't animate if tab is hidden
       if (document.visibilityState === 'hidden') {
         return;
       }
 
-      // Trigger appropriate transition animation
       this.stateTransition.set(hasVideo ? 'to-video' : 'to-input');
       setTimeout(() => this.stateTransition.set('none'), 350);
     });
@@ -431,20 +423,8 @@ export class VideoPlayerComponent implements OnDestroy {
     this.showControls();
   }
 
-  onMouseLeave(event: MouseEvent) {
-    // Skip on touch-only devices
-    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-      return;
-    }
-
-    const relatedTarget = event.relatedTarget as HTMLElement;
-    const container = this.videoContainerRef?.nativeElement;
-
-    // Don't hide if mouse moved to another element inside the container
-    if (container && relatedTarget && container.contains(relatedTarget)) {
-      return;
-    }
-
+  onMouseLeave() {
+    // Simple version - CSS handles desktop vs mobile via pointer-events
     if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
       this.clearControlsTimeout();
@@ -607,7 +587,6 @@ export class VideoPlayerComponent implements OnDestroy {
       // Double-tap detected - SEEK
       this.lastTapInfo = null;
 
-      // Calculate zone-relative coordinates for ripple
       const zoneRelativeX = zone === 'left' ? relativeX : relativeX - width / 2;
 
       if (zone === 'left') {
@@ -620,20 +599,18 @@ export class VideoPlayerComponent implements OnDestroy {
         this.triggerRipple(zoneRelativeX, relativeY, 'right');
       }
 
-      // After seeking, make sure controls are visible briefly
       this.areControlsVisible.set(true);
       this.lastControlsShowTime = now;
       this.clearControlsTimeout();
       this.hideControlsAfterDelay(1500);
     } else {
-      // Single tap - TOGGLE CONTROLS IMMEDIATELY (no delay!)
+      // Single tap - TOGGLE CONTROLS IMMEDIATELY
       this.lastTapInfo = { zone, time: now };
       this.toggleControlsVisibility();
     }
   }
 
   private cancelPendingSingleTap() {
-    // No longer using delayed single tap, but keep method for compatibility
     this.lastTapInfo = null;
   }
 
@@ -674,7 +651,6 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  // Toggle controls visibility - called immediately on single tap
   private lastToggleTime = 0;
 
   private toggleControlsVisibility() {
@@ -682,25 +658,21 @@ export class VideoPlayerComponent implements OnDestroy {
     this.lastToggleTime = now;
 
     if (this.youtube.isPlaying()) {
-      // Toggle when playing
       const newValue = !this.areControlsVisible();
       this.areControlsVisible.set(newValue);
       this.lastControlsShowTime = now;
       this.clearControlsTimeout();
 
       if (newValue) {
-        // Controls shown - start auto-hide timer
         this.hideControlsAfterDelay(3000);
       }
     } else {
-      // Always show when paused
       this.areControlsVisible.set(true);
       this.lastControlsShowTime = now;
       this.clearControlsTimeout();
     }
   }
 
-  // Long press for 2x speed
   private activateLongPress() {
     if (!this.youtube.isPlaying()) return;
     this.longPressSpeed = this.currentSpeed();
@@ -1201,7 +1173,6 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.seekFeedbackTimeout) clearTimeout(this.seekFeedbackTimeout);
     if (this.doubleTapTimeout) clearTimeout(this.doubleTapTimeout);
 
-    // Clean up document event listeners
     document.removeEventListener('mousemove', this.boundOnSeekMove);
     document.removeEventListener('touchmove', this.boundOnSeekMove);
     document.removeEventListener('mouseup', this.boundOnSeekUp);

@@ -41,7 +41,7 @@
   <!-- Mouse handlers on container level so controls stay visible when hovering on them -->
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
     [class.animate-enter]="stateTransition() === 'to-video'" (mousemove)="onUserActivity()"
-    (mouseleave)="onMouseLeave($event)">
+    (mouseleave)="onMouseLeave()">
 
     <div class="video-embed-ratio">
       <div id="youtube-player"></div>

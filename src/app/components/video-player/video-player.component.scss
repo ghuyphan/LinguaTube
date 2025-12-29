@@ -211,7 +211,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  // FIXED: Remove overflow:hidden to prevent clipping seek feedback animation
   overflow: visible;
   user-select: none;
   -webkit-user-select: none;
@@ -265,7 +264,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   border: none;
   border-radius: var(--border-radius-round);
   display: flex;
-
   align-items: center;
   justify-content: center;
   color: white;
@@ -297,9 +295,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   }
 }
 
-/* Spin animation removed - using global */
-
-
 .replay-btn {
   background: rgba(0, 0, 0, 0.7);
 }
@@ -312,7 +307,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   background: rgba(0, 0, 0, 0.7);
   border-radius: var(--border-radius-round);
   display: flex;
-
   align-items: center;
   justify-content: center;
   color: white;
@@ -359,13 +353,13 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 }
 
 /* ============================================
-   SEEK FEEDBACK - FIXED ALIGNMENT
+   SEEK FEEDBACK
    ============================================ */
 .seek-feedback {
   position: absolute;
   top: 50%;
-  left: 50%; // FIXED: Center horizontally within zone
-  transform: translate(-50%, -50%); // FIXED: Center both axes
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,14 +369,12 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   z-index: 25;
 }
 
-// FIXED: Override left positioning for left zone feedback
 .seek-feedback--left {
-  left: 50%; // Center within left zone
+  left: 50%;
 }
 
-// FIXED: Override for right zone feedback
 .seek-feedback--right {
-  left: 50%; // Center within right zone
+  left: 50%;
 }
 
 .seek-feedback-inner {
@@ -406,7 +398,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   white-space: nowrap;
 }
 
-// FIXED: Animation preserves centering transform
 .seek-feedback.animate {
   animation: seekPop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -484,7 +475,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   pointer-events: none;
   will-change: transform, opacity;
 }
-
 
 @keyframes ripple {
   0% {
@@ -580,7 +570,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   transition: width 0.1s linear;
 }
 
-
 .mini-progress::after {
   content: '';
   position: absolute;
@@ -609,13 +598,11 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   transition: opacity 0.25s ease, visibility 0.25s ease;
   opacity: 1;
   visibility: visible;
-  // FIX: Changed from pointer-events: none to auto
-  // This prevents mouseleave from firing when hovering over controls
-  pointer-events: auto;
+  // Default: pointer-events none (mobile needs taps to pass through)
+  pointer-events: none;
   box-sizing: border-box;
 }
 
-// No longer needed but kept for safety
 .custom-controls>* {
   pointer-events: auto;
 }
@@ -624,6 +611,14 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+// FIX: Desktop only - enable pointer-events when controls are visible
+// This keeps mouse "inside" container when hovering over controls
+@media (hover: hover) and (pointer: fine) {
+  .custom-controls:not(.controls-hidden) {
+    pointer-events: auto;
+  }
 }
 
 .is-fullscreen .custom-controls {
@@ -636,7 +631,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
    PROGRESS BAR
    ============================================ */
 .progress-container {
-  // Default values
   --progress: 0;
   --buffered: 0;
   --seek-pos: 0px;
@@ -737,7 +731,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   z-index: 30;
 }
 
-
 /* ============================================
    CONTROLS ROW
    ============================================ */
@@ -762,14 +755,12 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
-  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-sm);
   transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
   min-width: var(--btn-height-md);
   height: var(--btn-height-md);
-
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -789,7 +780,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   min-width: var(--btn-height-md);
   height: var(--btn-height-md);
 }
-
 
 /* ============================================
    DEVICE-BASED VISIBILITY
@@ -1189,14 +1179,12 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   display: block;
 }
 
-/* IMPROVED: Skeleton Loading with better shimmer effect */
 .skeleton {
   position: relative;
   overflow: hidden;
   background: var(--bg-secondary, $skeleton-base);
   border-radius: 4px;
 
-  // Shimmer pseudo-element
   &::after {
     content: '';
     position: absolute;
@@ -1226,7 +1214,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   width: 40%;
 }
 
-// Improved shimmer animation
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -1365,7 +1352,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   text-decoration-thickness: 2px;
 }
 
-/* Fullscreen ruby styling */
 .fs-subtitle-text ruby {
   display: ruby;
   ruby-align: center;
@@ -1471,7 +1457,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 .fs-popup-header {
   padding: var(--space-md);
-  // padding-right: 3rem;
   text-align: center;
 }
 
@@ -1614,7 +1599,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
     overflow: visible;
   }
 
-  /* Progress bar - FULL WIDTH, overflow visible */
   .custom-controls .progress-container {
     position: absolute;
     bottom: 0;
@@ -1776,7 +1760,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
     display: block;
   }
 
-  /* Fullscreen subtitle mobile */
   .fullscreen-subtitle {
     bottom: 0.75rem;
     max-width: 94%;
@@ -1858,7 +1841,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   }
 }
 
-/* Fullscreen specific */
 .is-fullscreen .video-info {
   display: none;
 }
@@ -1901,7 +1883,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   }
 }
 
-/* Landscape phone */
 @media (max-height: 500px) and (orientation: landscape) {
   .fullscreen-subtitle {
     bottom: 0.5rem;
@@ -1947,7 +1928,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   }
 }
 
-/* Portrait phone fullscreen */
 @media (max-width: 480px) and (orientation: portrait) {
   .is-fullscreen .fullscreen-subtitle {
     bottom: 0.75rem;
@@ -1987,7 +1967,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   }
 }
 
-/* High contrast / reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
   *,
