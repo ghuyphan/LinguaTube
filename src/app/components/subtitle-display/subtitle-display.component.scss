@@ -493,8 +493,6 @@ ruby rt {
     position: relative;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    content-visibility: auto;
-    contain-intrinsic-size: 3.5rem;
 }
 
 .subtitle-list::-webkit-scrollbar {
