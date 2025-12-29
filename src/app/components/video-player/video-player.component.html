@@ -172,8 +172,6 @@
 
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
-    <!-- Fullscreen Subtitle Overlay -->
-    @if (isFullscreen()) {
     <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()" [ngClass]="fontSizeClass()"
       [class.popup-open]="fsPopupVisible()" [class.has-content]="!!subtitles.currentCue()">
       @if (subtitles.currentCue(); as cue) {
