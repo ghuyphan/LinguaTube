@@ -290,10 +290,8 @@ export class TranscriptService {
       catchError(err => {
         let message = err.error?.error || err.message || 'AI transcription failed';
 
-        // Normalize error code for UI
-        if (message === 'video_too_long') {
-          message = 'VIDEO_TOO_LONG';
-        }
+        // Normalize error codes for consistent UI handling
+        message = this.normalizeErrorCode(message);
 
         this.error.set(message);
         this.status.set('error');
@@ -369,5 +367,30 @@ export class TranscriptService {
       size: this.transcriptCache.size,
       keys: Array.from(this.transcriptCache.keys())
     };
+  }
+
+  // ============================================================================
+  // Error Normalization
+  // ============================================================================
+
+  /**
+   * Normalize error messages to consistent codes for UI handling
+   */
+  private normalizeErrorCode(message: string): string {
+    const errorMap: [RegExp | string, string][] = [
+      ['video_too_long', 'VIDEO_TOO_LONG'],
+      [/rate.?limit/i, 'RATE_LIMITED'],
+      [/timeout/i, 'TIMEOUT'],
+      [/gladia.*failed/i, 'AI_SERVICE_ERROR'],
+      [/not.?set/i, 'SERVICE_UNAVAILABLE'],
+      [/fetch.*failed/i, 'NETWORK_ERROR'],
+    ];
+
+    for (const [pattern, code] of errorMap) {
+      if (typeof pattern === 'string' ? message === pattern : pattern.test(message)) {
+        return code;
+      }
+    }
+    return message;
   }
 }

@@ -20,7 +20,7 @@ import { YoutubeTranscript } from 'youtube-transcript';
 // Configuration
 // ============================================================================
 
-const DEBUG = false;
+const DEBUG = true;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 
@@ -492,6 +492,15 @@ async function trySupadata(videoId, langs, apiKey, cache) {
     }
 
     // Check if there's already an in-flight Supadata request for this video
+    // NOTE: Race Condition Limitation
+    // The lock check and set operations are not atomic in Cloudflare KV.
+    // Occasional duplicate Supadata calls are possible under high concurrency.
+    // This is an acceptable trade-off given:
+    // 1. Low probability (requires simultaneous requests for same video)
+    // 2. Results are cached, so duplicates only cost one extra API credit
+    // 3. Proper atomic locking would require Durable Objects (higher cost)
+    // Mitigation: Random jitter reduces collision probability
+    await new Promise(r => setTimeout(r, Math.random() * 100));
     const isLocked = await isSupadataLocked(cache, videoId);
     if (isLocked) {
         log(`Supadata: Skipping ${videoId} - already processing (deduplication)`);

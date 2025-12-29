@@ -219,37 +219,62 @@ export async function parseMdbg(response) {
 }
 
 /**
- * Parse Hanzii Chinese-Vietnamese dictionary HTML response
- * Used for: zh-vi
- * @param {string} html - Raw HTML response
- * @returns {DictEntry[]}
+ * Parse Glosbe dictionary HTML response using HTMLRewriter
+ * Used for: zh-vi (replaces broken Hanzii parser - Hanzii is SPA, content unavailable via HTML)
+ * @param {Response} response - Fetch response from Glosbe
+ * @returns {Promise<DictEntry[]>}
  */
-export function parseHanzii(html) {
+export async function parseGlosbe(response) {
     const entries = [];
+    let summaryText = '';
 
-    // Hanzii structure: Look for word entries with Vietnamese definitions
-    // Pattern: <div class="word-detail">...<div class="meaning">...</div>
-    const wordMatches = html.match(/<div[^>]*class="[^"]*word[^"]*"[^>]*>[\s\S]*?<\/div>/gi) || [];
+    const rewriter = new HTMLRewriter()
+        // Get summary translations from <strong> in content-summary
+        .on('#content-summary strong', {
+            text(text) {
+                summaryText += text.text;
+            }
+        })
+        // Get individual translations from li[data-element="translation"] h3
+        .on('li[data-element="translation"] h3.translation__item__pharse', {
+            text(text) {
+                const t = text.text.trim();
+                if (t && !entries.some(e => e.definitions.includes(t))) {
+                    entries.push({
+                        word: '',
+                        reading: '',
+                        definitions: [t],
+                        partOfSpeech: ''
+                    });
+                }
+            }
+        });
 
-    for (const match of wordMatches.slice(0, 5)) {
-        // Extract word (Chinese characters)
-        const wordMatch = match.match(/>([一-龥]+)</);
-        const word = wordMatch ? wordMatch[1] : '';
+    await rewriter.transform(response).arrayBuffer();
 
-        // Extract pinyin
-        const pinyinMatch = match.match(/pinyin[^>]*>([^<]+)</i);
-        const reading = pinyinMatch ? pinyinMatch[1].trim() : '';
-
-        // Extract Vietnamese definition
-        const meaningMatch = match.match(/meaning[^>]*>([\s\S]+?)<\//i);
-        const definitions = meaningMatch
-            ? [meaningMatch[1].replace(/<[^>]+>/g, '').trim()]
-            : [];
-
-        if (word && definitions.length > 0) {
-            entries.push({ word, reading, definitions, partOfSpeech: '' });
+    // If no individual entries, parse summary (fallback)
+    if (entries.length === 0 && summaryText) {
+        // Decode HTML entities and split by comma
+        const decoded = summaryText
+            .replace(/&agrave;/g, 'à')
+            .replace(/&aacute;/g, 'á')
+            .replace(/&egrave;/g, 'è')
+            .replace(/&eacute;/g, 'é')
+            .replace(/&ograve;/g, 'ò')
+            .replace(/&oacute;/g, 'ó')
+            .replace(/&ugrave;/g, 'ù')
+            .replace(/&uacute;/g, 'ú')
+            .replace(/&amp;/g, '&');
+        const defs = decoded.split(',').map(d => d.trim()).filter(Boolean);
+        if (defs.length > 0) {
+            entries.push({
+                word: '',
+                reading: '',
+                definitions: defs.slice(0, 5),
+                partOfSpeech: ''
+            });
         }
     }
 
-    return entries;
+    return entries.slice(0, 5);
 }

@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, inject, effect } from '@angular/core';
+import { Injectable, signal, computed, inject, effect, OnDestroy } from '@angular/core';
 import { SubtitleCue, Token } from '../models';
 import { YoutubeService } from './youtube.service';
 
@@ -23,7 +23,7 @@ const TOKENIZE_THROTTLE_MS = 500; // Throttle lazy tokenization checks
 @Injectable({
   providedIn: 'root'
 })
-export class SubtitleService {
+export class SubtitleService implements OnDestroy {
   private youtube = inject(YoutubeService);
 
   // Throttle tracking (only for expensive tokenization, not cue lookup)
@@ -50,6 +50,13 @@ export class SubtitleService {
         this.tokenizeNearbyIfNeeded();
       }
     });
+  }
+
+  /**
+   * Cleanup on service destruction
+   */
+  ngOnDestroy(): void {
+    this.cancelTokenization();
   }
 
   // State

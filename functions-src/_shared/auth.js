@@ -95,14 +95,15 @@ async function verifyJwtSignature(token) {
         }
 
         // Get Google's public keys
-        const keys = await getGooglePublicKeys();
-        const publicKey = keys[kid];
+        let keys = await getGooglePublicKeys();
+        let publicKey = keys[kid];
 
         if (!publicKey) {
             // Key not found - might be rotated, clear cache and retry once
             cachedKeys = null;
-            const freshKeys = await getGooglePublicKeys();
-            if (!freshKeys[kid]) {
+            keys = await getGooglePublicKeys();
+            publicKey = keys[kid];
+            if (!publicKey) {
                 return { valid: false, error: 'Unknown signing key' };
             }
         }
@@ -113,7 +114,7 @@ async function verifyJwtSignature(token) {
 
         const isValid = await crypto.subtle.verify(
             'RSASSA-PKCS1-v1_5',
-            keys[kid],
+            publicKey,
             signature,
             signedData
         );

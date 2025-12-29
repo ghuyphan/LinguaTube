@@ -4,7 +4,7 @@
  * Includes pending state management for long-running AI jobs
  */
 
-const DEBUG = false;
+const DEBUG = true;
 const log = (...args) => DEBUG && console.log('[D1 Transcripts]', ...args);
 
 /**

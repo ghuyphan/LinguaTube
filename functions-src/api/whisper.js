@@ -9,7 +9,7 @@ import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, getPendingJob, savePendingJob, completePendingJob, cleanupStalePendingJobs } from '../_shared/transcript-db.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 
-const DEBUG = false;
+const DEBUG = true;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
 const INITIAL_DELAY_MS = 1000;
 const MAX_DELAY_MS = 5000;

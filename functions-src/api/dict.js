@@ -16,7 +16,7 @@
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
-import { parseNaver, parseJotoba, parseMazii, parseFreeDictionary, parseMdbg, parseHanzii } from '../_shared/dict-parsers.js';
+import { parseNaver, parseJotoba, parseMazii, parseFreeDictionary, parseMdbg, parseGlosbe } from '../_shared/dict-parsers.js';
 
 // ============================================================================
 // Configuration
@@ -106,10 +106,10 @@ const DICT_SOURCES = {
         referer: 'https://www.mdbg.net/'
     },
     'zh-vi': {
-        url: 'https://hanzii.net/search/word/',
+        url: 'https://glosbe.com/zh/vi/',
         method: 'GET',
-        parser: 'hanzii',
-        referer: 'https://hanzii.net/'
+        parser: 'glosbe',
+        referer: 'https://glosbe.com/'
     },
     'zh-ko': {
         // Naver Chinese-Korean dictionary
@@ -295,7 +295,7 @@ async function fetchDictionary(source, word) {
                 url = `${source.url}?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0&wdqtm=0&wdqcham=1`;
                 break;
 
-            case 'hanzii':
+            case 'glosbe':
                 url = `${source.url}${encodeURIComponent(word)}`;
                 break;
 
@@ -335,8 +335,8 @@ async function fetchDictionary(source, word) {
             case 'mdbg':
                 return await parseMdbg(response);
 
-            case 'hanzii':
-                return parseHanzii(await response.text());
+            case 'glosbe':
+                return await parseGlosbe(response);
 
             default:
                 return [];
