@@ -420,6 +420,10 @@ export class VideoPlayerComponent implements OnDestroy {
 
   onUserActivity() {
     // Desktop only - mobile uses touch overlay with tap-to-toggle
+    // Guard against synthetic mouse events from touch devices
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
+    }
     this.showControls();
   }
 
