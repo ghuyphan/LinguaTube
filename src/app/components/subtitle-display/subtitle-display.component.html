@@ -10,9 +10,13 @@
             <div class="subtitle-center-wrapper">
                 <div class="subtitle-text" [ngClass]="'text-' + settings.settings().language"
                     [class.is-looping]="isLoopEnabled()">
-                    @if (subtitles.isTokenizing()) {
-                    <!-- Show raw text while tokenizing -->
-                    <span class="word">{{ cue.text }}</span>
+                    @if (currentTokens().length === 0) {
+                    <!-- Shimmer skeleton while tokens load -->
+                    <span class="token-loading">
+                        @for (width of getShimmerWidths(cue.text); track $index) {
+                        <span class="token-shimmer" [style.width.px]="width"></span>
+                        }
+                    </span>
                     } @else {
                     <span class="subtitle-content" @subtitleFade>
                         @for (token of currentTokens(); track $index) {@if (isPunctuation(token.surface)) {<span

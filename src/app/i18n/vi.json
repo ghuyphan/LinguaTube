@@ -61,7 +61,10 @@
         "resumingTranscript": "Đang tiếp tục tạo phụ đề...",
         "resumingHint": "Tiếp tục từ phiên trước",
         "videoTooLongTitle": "Video quá dài",
-        "videoTooLongHint": "Tạo phụ đề AI chỉ hỗ trợ video dưới 60 phút."
+        "videoTooLongHint": "Tạo phụ đề AI chỉ hỗ trợ video dưới 60 phút.",
+        "languageMismatch": "Phụ đề khác ngôn ngữ",
+        "languageMismatchMessage": "Phụ đề {{requested}} không có cho video này. Đang dùng {{detected}} thay thế.",
+        "gotIt": "Đã hiểu"
     },
     "vocab": {
         "title": "Từ vựng",

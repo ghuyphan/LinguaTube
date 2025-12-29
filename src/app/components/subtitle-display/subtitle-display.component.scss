@@ -250,6 +250,40 @@
     animation: pulse 2s ease-in-out infinite;
 }
 
+/* ============================================
+   TOKEN LOADING SHIMMER
+   ============================================ */
+.token-loading {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.token-shimmer {
+    display: inline-block;
+    height: 1.5em;
+    border-radius: 6px;
+    background: linear-gradient(90deg,
+            var(--bg-secondary) 0%,
+            rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08) 20%,
+            rgba(var(--accent-primary-rgb, 199, 62, 58), 0.15) 50%,
+            rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08) 80%,
+            var(--bg-secondary) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 /* Punctuation - no interactive styling */
 .punctuation {
     display: inline;

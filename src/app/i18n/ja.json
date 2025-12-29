@@ -61,7 +61,10 @@
         "resumingTranscript": "文字起こしを再開中...",
         "resumingHint": "前回のセッションから続行",
         "videoTooLongTitle": "動画が長すぎます",
-        "videoTooLongHint": "AI文字起こしは60分以内の動画に制限されています。"
+        "videoTooLongHint": "AI文字起こしは60分以内の動画に制限されています。",
+        "languageMismatch": "字幕が別の言語です",
+        "languageMismatchMessage": "{{requested}}の字幕はこの動画にありません。代わりに{{detected}}を使用しています。",
+        "gotIt": "OK"
     },
     "vocab": {
         "title": "単語帳",

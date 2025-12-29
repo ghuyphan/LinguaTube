@@ -61,7 +61,10 @@
         "resumingTranscript": "正在恢复转录...",
         "resumingHint": "继续上次的进度",
         "videoTooLongTitle": "视频太长",
-        "videoTooLongHint": "AI转录仅限于60分钟以内的视频。"
+        "videoTooLongHint": "AI转录仅限于60分钟以内的视频。",
+        "languageMismatch": "字幕语言不同",
+        "languageMismatchMessage": "此视频没有{{requested}}字幕。正在使用{{detected}}代替。",
+        "gotIt": "知道了"
     },
     "vocab": {
         "title": "词汇本",

@@ -140,8 +140,13 @@ export async function onRequestPost(context) {
             // Increment rate limit (only for non-cached responses)
             await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
+            // Get actual language from result (not requested language)
+            // This prevents caching EN captions under a JA key
+            const tracks = result.data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+            const actualLang = tracks?.[0]?.languageCode || primaryLang;
+
             // Use waitUntil for non-blocking cache save
-            const cachePromise = saveToCache(cache, db, videoId, primaryLang, result.data, source);
+            const cachePromise = saveToCache(cache, db, videoId, actualLang, result.data, source);
 
             if (waitUntil) {
                 waitUntil(cachePromise);

@@ -231,6 +231,39 @@ export class SubtitleDisplayComponent {
     this.wordClicked.emit({ token, sentence });
   }
 
+  /**
+   * Generate shimmer skeleton widths based on text length
+   * Creates a natural-looking loading pattern
+   */
+  getShimmerWidths(text: string): number[] {
+    if (!text) return [60, 80, 50];
+
+    // Estimate number of tokens based on text length and language
+    const lang = this.settings.settings().language;
+    let estimatedTokens: number;
+
+    if (lang === 'zh') {
+      // Chinese: roughly 1 character = 1 token
+      estimatedTokens = Math.min(Math.max(text.length / 2, 3), 10);
+    } else if (lang === 'ja') {
+      // Japanese: roughly 2-3 characters = 1 token
+      estimatedTokens = Math.min(Math.max(text.length / 3, 3), 10);
+    } else {
+      // Korean/English: split by spaces roughly
+      estimatedTokens = Math.min(Math.max(text.split(/\s+/).length, 3), 8);
+    }
+
+    // Generate varied widths for natural look
+    const widths: number[] = [];
+    for (let i = 0; i < estimatedTokens; i++) {
+      // Vary width between 40-100px based on position
+      const base = 40 + (i % 3) * 20 + Math.floor(i / 3) * 10;
+      widths.push(Math.min(base, 100));
+    }
+
+    return widths;
+  }
+
   // Check if a string is punctuation (CJK + Western)
   isPunctuation(text: string): boolean {
     const punctuationRegex = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–]+$/u;

@@ -5,7 +5,9 @@ import { VideoPlayerComponent } from '../../components/video-player/video-player
 import { SubtitleDisplayComponent } from '../../components/subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../components/vocabulary-list/vocabulary-list.component';
 import { WordPopupComponent } from '../../components/word-popup/word-popup.component';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService } from '../../services';
+import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet.component';
+import { IconComponent } from '../../components/icon/icon.component';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../services';
 import { Token } from '../../models';
 
 @Component({
@@ -17,7 +19,9 @@ import { Token } from '../../models';
     VideoPlayerComponent,
     SubtitleDisplayComponent,
     VocabularyListComponent,
-    WordPopupComponent
+    WordPopupComponent,
+    BottomSheetComponent,
+    IconComponent
   ],
   template: `
     <div class="layout">
@@ -46,6 +50,27 @@ import { Token } from '../../models';
         (closed)="selectedWord.set(null)"
       />
     }
+
+    <!-- Language Mismatch Sheet -->
+    <app-bottom-sheet
+      [isOpen]="showLangMismatchSheet()"
+      [showCloseButton]="true"
+      [maxHeight]="'auto'"
+      (closed)="showLangMismatchSheet.set(false)"
+    >
+      <div class="lang-mismatch-sheet">
+        <div class="lang-mismatch-sheet__icon">
+          <app-icon name="languages" [size]="32" />
+        </div>
+        <h3 class="lang-mismatch-sheet__title">{{ i18n.t('subtitle.languageMismatch') }}</h3>
+        <p class="lang-mismatch-sheet__message">
+          {{ getLangMismatchMessage() }}
+        </p>
+        <button class="lang-mismatch-sheet__btn" (click)="showLangMismatchSheet.set(false)">
+          {{ i18n.t('subtitle.gotIt') }}
+        </button>
+      </div>
+    </app-bottom-sheet>
   `,
   styles: [`
     :host {
@@ -106,6 +131,55 @@ import { Token } from '../../models';
         gap: var(--space-md);
       }
     }
+
+    /* Language Mismatch Sheet Styles */
+    .lang-mismatch-sheet {
+      padding: var(--space-lg);
+      text-align: center;
+    }
+
+    .lang-mismatch-sheet__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--warning) 0%, var(--warning-hover) 100%);
+      border-radius: var(--radius-full);
+      color: white;
+    }
+
+    .lang-mismatch-sheet__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 var(--space-sm);
+    }
+
+    .lang-mismatch-sheet__message {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0 0 var(--space-lg);
+      line-height: 1.5;
+    }
+
+    .lang-mismatch-sheet__btn {
+      padding: var(--space-sm) var(--space-xl);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      color: white;
+      transition: all var(--transition-fast);
+    }
+
+    .lang-mismatch-sheet__btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
   `]
 })
 export class VideoPageComponent implements OnInit {
@@ -115,12 +189,24 @@ export class VideoPageComponent implements OnInit {
   private subtitles = inject(SubtitleService);
   private transcript = inject(TranscriptService);
   private settings = inject(SettingsService);
+  i18n = inject(I18nService);
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
   isVideoFullscreen = signal(false);
+  showLangMismatchSheet = signal(false);
+  mismatchRequestedLang = signal('');
+  mismatchDetectedLang = signal('');
 
   private lastLang = '';
+
+  // Language name mapping for user-friendly display
+  private readonly langNames: Record<string, string> = {
+    ja: 'Japanese',
+    zh: 'Chinese',
+    ko: 'Korean',
+    en: 'English'
+  };
 
   constructor() {
     // Watch for language changes and refetch captions when language changes
@@ -224,15 +310,21 @@ export class VideoPageComponent implements OnInit {
           this.subtitles.currentCueIndex.set(-1);
           this.subtitles.subtitles.set(cues);
 
-          // Auto-detect language mismatch
+          // Detect actual language returned by backend
           const detectedFull = this.transcript.detectedLanguage();
           const detected = detectedFull?.split('-')[0]?.toLowerCase(); // Handle en-US, ja-JP
           const validLangs = ['ja', 'zh', 'ko', 'en'];
 
+          // Use detected language for tokenization, but DON'T change user's global setting
+          // User's preference stays the same for future videos
           if (detected && detected !== lang && validLangs.includes(detected)) {
-            console.log(`[VideoPage] Auto-switching language from ${lang} to ${detected}`);
-            this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
+            console.log(`[VideoPage] Using ${detected} captions for tokenization (requested: ${lang})`);
             this.subtitles.tokenizeAllCues(detected as 'ja' | 'zh' | 'ko' | 'en');
+
+            // Show language mismatch notification
+            this.mismatchRequestedLang.set(lang);
+            this.mismatchDetectedLang.set(detected);
+            this.showLangMismatchSheet.set(true);
           } else {
             this.subtitles.tokenizeAllCues(lang);
           }
@@ -240,6 +332,14 @@ export class VideoPageComponent implements OnInit {
       },
       error: (err) => console.log('Auto-caption fetch failed:', err)
     });
+  }
+
+  getLangMismatchMessage(): string {
+    const requested = this.i18n.t(`settings.${this.langNames[this.mismatchRequestedLang()]?.toLowerCase() || 'english'}`);
+    const detected = this.i18n.t(`settings.${this.langNames[this.mismatchDetectedLang()]?.toLowerCase() || 'english'}`);
+    return this.i18n.t('subtitle.languageMismatchMessage')
+      .replace('{{requested}}', requested)
+      .replace('{{detected}}', detected);
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {

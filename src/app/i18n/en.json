@@ -61,7 +61,10 @@
         "resumingTranscript": "Resuming transcription...",
         "resumingHint": "Continuing from a previous session",
         "videoTooLongTitle": "Video is too long",
-        "videoTooLongHint": "AI transcription is limited to 60 minutes."
+        "videoTooLongHint": "AI transcription is limited to 60 minutes.",
+        "languageMismatch": "Captions in Different Language",
+        "languageMismatchMessage": "{{requested}} captions aren't available for this video. Using {{detected}} instead.",
+        "gotIt": "Got It"
     },
     "vocab": {
         "title": "Vocabulary",
