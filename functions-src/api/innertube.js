@@ -11,7 +11,7 @@
 
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
-import { getTranscript, saveTranscript } from '../_shared/transcript-db.js';
+import { getTranscript, saveTranscript, getAvailableLangs, addAvailableLang } from '../_shared/transcript-db.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
@@ -123,11 +123,20 @@ export async function onRequestPost(context) {
         // Step 3: Supadata as LAST RESORT (preserves credits)
         // =====================================================================
         if (!result && env.SUPADATA_API_KEY) {
-            log('Free strategies failed, trying Supadata as last resort...');
-            const supadataResult = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache);
-            if (supadataResult) {
-                result = supadataResult;
-                source = 'supadata';
+            // Check if we know which languages are available for this video
+            const availableLangs = await getAvailableLangs(db, videoId);
+
+            if (availableLangs && !availableLangs.includes(primaryLang)) {
+                // We KNOW this language doesn't exist - skip Supadata to save credits
+                log(`Supadata: Skipping ${videoId}:${primaryLang} - known unavailable (available: ${availableLangs.join(',')})`);
+            } else {
+                // Either first time (no metadata) or language IS available - try Supadata
+                log('Free strategies failed, trying Supadata as last resort...');
+                const supadataResult = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache);
+                if (supadataResult) {
+                    result = supadataResult;
+                    source = 'supadata';
+                }
             }
         }
 
@@ -251,6 +260,12 @@ async function saveToCache(cache, db, videoId, lang, data, source) {
             saveTranscript(db, videoId, track.languageCode, track.content, source)
                 .then(() => log(`D1 save success: ${videoId} ${track.languageCode}`))
                 .catch(e => console.error(`D1 save error: ${e.message}`))
+        );
+
+        // Track this language as available for future requests
+        savePromises.push(
+            addAvailableLang(db, videoId, track.languageCode)
+                .catch(e => log(`addAvailableLang error: ${e.message}`))
         );
     }
 

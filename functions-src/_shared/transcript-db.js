@@ -167,3 +167,65 @@ export async function hasTranscript(db, videoId, language) {
         return false;
     }
 }
+
+// ============================================================================
+// Video Meta (Available Languages)
+// ============================================================================
+
+/**
+ * Get available languages for a video
+ * @returns {Promise<string[] | null>} Array of language codes or null if not known
+ */
+export async function getAvailableLangs(db, videoId) {
+    if (!db) return null;
+
+    try {
+        const result = await db.prepare(
+            "SELECT available_langs FROM video_meta WHERE video_id = ?"
+        ).bind(videoId).first();
+
+        if (result?.available_langs) {
+            return result.available_langs.split(',').map(l => l.trim()).filter(Boolean);
+        }
+        return null;
+    } catch (err) {
+        log('getAvailableLangs error:', err.message);
+        return null;
+    }
+}
+
+/**
+ * Save available languages for a video
+ * @param {string[]} langs - Array of language codes
+ */
+export async function saveAvailableLangs(db, videoId, langs) {
+    if (!db || !videoId || !langs?.length) return;
+
+    try {
+        const langsStr = [...new Set(langs)].join(','); // Dedupe and join
+        await db.prepare(`
+            INSERT OR REPLACE INTO video_meta (video_id, available_langs, created_at)
+            VALUES (?, ?, strftime('%s', 'now'))
+        `).bind(videoId, langsStr).run();
+
+        log('Saved available langs:', videoId, langsStr);
+    } catch (err) {
+        console.error('[D1 Transcripts] saveAvailableLangs error:', err.message);
+    }
+}
+
+/**
+ * Add a language to the available languages list
+ * Used when we successfully fetch a new language
+ */
+export async function addAvailableLang(db, videoId, lang) {
+    if (!db || !videoId || !lang) return;
+
+    try {
+        const existing = await getAvailableLangs(db, videoId);
+        const langs = existing ? [...new Set([...existing, lang])] : [lang];
+        await saveAvailableLangs(db, videoId, langs);
+    } catch (err) {
+        console.error('[D1 Transcripts] addAvailableLang error:', err.message);
+    }
+}
