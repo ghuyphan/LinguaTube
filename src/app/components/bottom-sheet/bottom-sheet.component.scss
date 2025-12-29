@@ -132,6 +132,8 @@
     color: var(--text-muted);
     cursor: pointer;
     transition: all var(--transition-fast);
+    padding: 0;
+    margin: 0;
 }
 
 .sheet-close-btn:hover {
