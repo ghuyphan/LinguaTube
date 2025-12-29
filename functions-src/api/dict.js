@@ -134,7 +134,7 @@ const DICT_SOURCES = {
     }
 };
 
-// Lingva translation instances for fallback
+// Lingva translation instances for fallback (distributed load)
 const LINGVA_INSTANCES = [
     'https://lingva.ml',
     'https://lingva.lunar.icu',
@@ -356,37 +356,64 @@ async function fetchDictionary(source, word) {
 
 // ============================================================================
 // Translation Fallback
+// - Parallelized: all requests at once instead of sequential
+// - Distributed: round-robin across Lingva instances to avoid rate limits
+// - Reduced: 2 entries × 2 definitions = 4 requests max (was 9)
 // ============================================================================
 
 async function translateEntries(entries, targetLang) {
     if (!entries?.length) return [];
 
-    // Only translate definitions, keep other metadata
-    const translatedEntries = [];
+    // Reduced: 2 entries × 2 definitions = 4 requests max
+    const limitedEntries = entries.slice(0, 2);
+    const allDefs = [];
 
-    for (const entry of entries.slice(0, 3)) {
-        const translatedDefs = [];
+    // Build flat list of { entryIndex, def } for parallel translation
+    limitedEntries.forEach((entry, entryIndex) => {
+        entry.definitions.slice(0, 2).forEach(def => {
+            allDefs.push({ entryIndex, def });
+        });
+    });
 
-        for (const def of entry.definitions.slice(0, 3)) {
-            const translated = await translateText(def, 'en', targetLang);
-            if (translated) {
-                translatedDefs.push(translated);
-            }
+    if (allDefs.length === 0) return [];
+
+    // Parallel + distributed across instances (round-robin)
+    // 4 requests across 3 instances = ~1-2 requests per instance
+    const translations = await Promise.all(
+        allDefs.map(({ def }, i) => {
+            const instance = LINGVA_INSTANCES[i % LINGVA_INSTANCES.length];
+            return translateTextWithInstance(def, 'en', targetLang, instance);
+        })
+    );
+
+    // Reassemble entries with translated definitions
+    const translatedEntries = limitedEntries.map(entry => ({
+        ...entry,
+        definitions: []
+    }));
+
+    allDefs.forEach(({ entryIndex }, i) => {
+        if (translations[i]) {
+            translatedEntries[entryIndex].definitions.push(translations[i]);
         }
+    });
 
-        if (translatedDefs.length > 0) {
-            translatedEntries.push({
-                ...entry,
-                definitions: translatedDefs
-            });
-        }
-    }
-
-    return translatedEntries;
+    // Filter out entries with no successful translations
+    return translatedEntries.filter(e => e.definitions.length > 0);
 }
 
-async function translateText(text, sourceLang, targetLang) {
-    for (const instance of LINGVA_INSTANCES) {
+/**
+ * Translate text using a specific Lingva instance
+ * Falls back to other instances if the specified one fails
+ */
+async function translateTextWithInstance(text, sourceLang, targetLang, preferredInstance) {
+    // Try preferred instance first
+    const instances = [
+        preferredInstance,
+        ...LINGVA_INSTANCES.filter(i => i !== preferredInstance)
+    ];
+
+    for (const instance of instances) {
         try {
             const url = `${instance}/api/v1/${sourceLang}/${targetLang}/${encodeURIComponent(text)}`;
             const response = await fetch(url, {
