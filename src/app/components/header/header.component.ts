@@ -59,7 +59,6 @@ export class HeaderComponent {
 
   setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
     if (this.settings.settings().language === lang) return;
-    this.youtube.reset();
     this.subtitles.clear();
     this.transcript.reset();
     this.settings.setLanguage(lang);
