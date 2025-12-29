@@ -29,20 +29,8 @@ export async function getTranscript(db, videoId, language) {
             };
         }
 
-        // Fallback: Check for AI transcript with any language
-        const aiResult = await db.prepare(
-            "SELECT segments, source, language FROM transcripts WHERE video_id = ? AND source = 'ai' AND status = 'complete'"
-        ).bind(videoId).first();
-
-        if (aiResult?.segments) {
-            log('D1 AI fallback hit:', videoId);
-            return {
-                segments: JSON.parse(aiResult.segments),
-                source: aiResult.source,
-                language: aiResult.language
-            };
-        }
-
+        // No fallback to other languages - let caller try YouTube
+        // This ensures we don't return English when Japanese was requested
         return null;
     } catch (err) {
         console.error('[D1 Transcripts] Read error:', err.message);
