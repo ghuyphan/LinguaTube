@@ -142,30 +142,34 @@ export class BottomSheetComponent implements OnDestroy {
 
 
   // Touch gesture handlers for drag-to-dismiss
+  private dragStartedInHandle = false;
+
   onTouchStart(event: TouchEvent): void {
     if (!this.isMobile) return;
 
-    const sheetContent = this.sheetContent()?.nativeElement;
-    const isAtTop = !sheetContent || sheetContent.scrollTop <= 0;
     const touch = event.touches[0];
-
     const sheetEl = this.sheetEl()?.nativeElement;
-    if (sheetEl) {
-      const rect = sheetEl.getBoundingClientRect();
-      const touchRelativeY = touch.clientY - rect.top;
+    if (!sheetEl) return;
 
-      // Start drag if in handle area (top 50px) or at scroll top
-      if (touchRelativeY < 50 || isAtTop) {
-        this.touchStartY = touch.clientY;
-        this.touchCurrentY = touch.clientY;
-        this.touchStartTime = Date.now();
-        this.isDragGesture = false;
-      }
+    const rect = sheetEl.getBoundingClientRect();
+    const touchRelativeY = touch.clientY - rect.top;
+
+    // Only start drag tracking from the drag handle area (top 50px)
+    // This prevents scroll-down gestures from triggering dismiss
+    if (touchRelativeY < 50) {
+      this.dragStartedInHandle = true;
+      this.touchStartY = touch.clientY;
+      this.touchCurrentY = touch.clientY;
+      this.touchStartTime = Date.now();
+      this.isDragGesture = false;
+    } else {
+      this.dragStartedInHandle = false;
     }
   }
 
   onTouchMove(event: TouchEvent): void {
-    if (this.touchStartY === 0) return;
+    // Only allow drag if it started from the handle area
+    if (!this.dragStartedInHandle || this.touchStartY === 0) return;
 
     const touch = event.touches[0];
     const deltaY = touch.clientY - this.touchStartY;
@@ -183,7 +187,6 @@ export class BottomSheetComponent implements OnDestroy {
 
       // Update offset for CSS variable
       this.dragOffset.set(deltaY);
-
 
       // Prevent scroll while dragging
       event.preventDefault();
@@ -223,6 +226,7 @@ export class BottomSheetComponent implements OnDestroy {
     this.touchCurrentY = 0;
     this.touchStartTime = 0;
     this.isDragGesture = false;
+    this.dragStartedInHandle = false;
   }
 
   /**

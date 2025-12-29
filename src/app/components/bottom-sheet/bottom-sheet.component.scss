@@ -144,7 +144,7 @@
 // ============================================
 .sheet-drag-handle {
     display: none;
-    padding: calc(var(--space-sm) + var(--space-xs)) 0 var(--space-xs);
+    padding: var(--space-sm) 0 var(--space-xs);
     cursor: grab;
     touch-action: none;
 }

@@ -5,8 +5,7 @@
 
 
 .popup-header {
-    padding: var(--space-lg);
-    // padding-right: 3rem;
+    padding: var(--space-md);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -224,9 +223,7 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .popup-header {
-        padding: var(--space-sm) var(--space-md) var(--space-md);
-        // padding-left: 3rem;
-        // padding-right: 3rem;
+        padding: var(--space-xs) var(--space-md) var(--space-sm);
     }
 
     .popup-word {
