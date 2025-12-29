@@ -609,10 +609,13 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   transition: opacity 0.25s ease, visibility 0.25s ease;
   opacity: 1;
   visibility: visible;
-  pointer-events: none;
+  // FIX: Changed from pointer-events: none to auto
+  // This prevents mouseleave from firing when hovering over controls
+  pointer-events: auto;
   box-sizing: border-box;
 }
 
+// No longer needed but kept for safety
 .custom-controls>* {
   pointer-events: auto;
 }
