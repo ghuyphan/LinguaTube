@@ -44,6 +44,44 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 }
 
 /* ============================================
+   STATE TRANSITION ANIMATIONS
+   ============================================ */
+
+// Input state enter animation
+.video-input.animate-enter {
+  animation: inputFadeIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes inputFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Video container enter animation
+.video-container.animate-enter {
+  animation: videoFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes videoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
    INPUT STATE
    ============================================ */
 .video-input {
@@ -99,6 +137,19 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   color: var(--error);
   border-radius: var(--border-radius);
   font-size: 0.875rem;
+  animation: errorSlideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes errorSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hints {
@@ -349,6 +400,16 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
