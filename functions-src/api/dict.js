@@ -16,7 +16,7 @@
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
-import { parseNaver, parseJotoba, parseJotobaJapanese, parseMazii, parseFreeDictionary, parseMdbg, parseGlosbe } from '../_shared/dict-parsers.js';
+import { parseNaver, parseJotoba, parseJotobaJapanese, parseMazii, parseFreeDictionary, parseMdbg, parseGlosbe, parseJisho, parseKrdict } from '../_shared/dict-parsers.js';
 
 // ============================================================================
 // Configuration
@@ -28,10 +28,16 @@ const FETCH_TIMEOUT_MS = 8000;
 
 // Browser-like headers to avoid blocks
 const BROWSER_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'application/json, text/html, */*',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Cache-Control': 'no-cache'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'Accept-Language': 'en-US,en;q=0.9,ja;q=0.8,ko;q=0.7,vi;q=0.6,zh;q=0.5',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1'
 };
 
 // Dictionary source configuration
@@ -44,10 +50,11 @@ const DICT_SOURCES = {
         referer: 'https://en.dict.naver.com/'
     },
     'ko-vi': {
-        url: 'https://vi.dict.naver.com/api3/kovi/search',
+        // KRDICT - Official Korean govt dictionary with Vietnamese translations
+        url: 'https://krdict.korean.go.kr/vie/dicMarinerSearch/search',
         method: 'GET',
-        parser: 'naver',
-        referer: 'https://vi.dict.naver.com/'
+        parser: 'krdict',
+        referer: 'https://krdict.korean.go.kr/'
     },
     'ko-ja': {
         url: 'https://ja.dict.naver.com/api3/koja/search',
@@ -77,11 +84,12 @@ const DICT_SOURCES = {
         referer: 'https://jotoba.de/'
     },
     'ja-vi': {
-        // Glosbe Japanese-Vietnamese (Mazii blocks CF worker requests)
-        url: 'https://glosbe.com/ja/vi/',
+        // Jisho.org API - get English definitions, then translate to Vietnamese
+        url: 'https://jisho.org/api/v1/search/words',
         method: 'GET',
-        parser: 'glosbe',
-        referer: 'https://glosbe.com/'
+        parser: 'jisho',
+        referer: 'https://jisho.org/',
+        translateTo: 'vi'  // Flag to translate definitions
     },
     'ja-ko': {
         // Naver Japanese-Korean dictionary
@@ -139,10 +147,11 @@ const DICT_SOURCES = {
         referer: 'https://glosbe.com/'
     },
     'en-ja': {
-        url: 'https://glosbe.com/en/ja/',
+        // Jisho.org API - supports English to Japanese lookup
+        url: 'https://jisho.org/api/v1/search/words',
         method: 'GET',
-        parser: 'glosbe',
-        referer: 'https://glosbe.com/'
+        parser: 'jisho',
+        referer: 'https://jisho.org/'
     },
     'en-ko': {
         url: 'https://glosbe.com/en/ko/',
@@ -151,13 +160,12 @@ const DICT_SOURCES = {
         referer: 'https://glosbe.com/'
     },
 
-    // Japanese monolingual (Jotoba with Japanese output)
+    // Japanese monolingual (Jisho API - returns readings, kanji, JLPT level)
     'ja-ja': {
-        url: 'https://jotoba.de/api/search/words',
-        method: 'POST',
-        parser: 'jotoba-ja',
-        contentType: 'application/json',
-        referer: 'https://jotoba.de/'
+        url: 'https://jisho.org/api/v1/search/words',
+        method: 'GET',
+        parser: 'jisho',
+        referer: 'https://jisho.org/'
     }
 };
 
@@ -339,6 +347,14 @@ async function fetchDictionary(source, word) {
             case 'freedict':
                 url = `${source.url}${encodeURIComponent(word)}`;
                 break;
+
+            case 'jisho':
+                url = `${source.url}?keyword=${encodeURIComponent(word)}`;
+                break;
+
+            case 'krdict':
+                url = `${source.url}?nation=vie&nationCode=10&mainSearchWord=${encodeURIComponent(word)}`;
+                break;
         }
 
         const response = await fetch(url, {
@@ -382,6 +398,12 @@ async function fetchDictionary(source, word) {
                 console.log(`[Dict] Glosbe response status: ${response.status}, contentType: ${response.headers.get('content-type')}`);
                 return await parseGlosbe(response);
             }
+
+            case 'jisho':
+                return parseJisho(await response.json());
+
+            case 'krdict':
+                return await parseKrdict(response);
 
             default:
                 return [];

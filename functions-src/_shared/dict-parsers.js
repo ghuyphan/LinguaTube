@@ -333,3 +333,135 @@ export async function parseGlosbe(response) {
 
     return entries.slice(0, 5);
 }
+
+/**
+ * Parse Jisho.org API response
+ * Used for: ja-en (backup), en-ja, ja-ja
+ * API: GET https://jisho.org/api/v1/search/words?keyword={word}
+ * @param {Object} data - Raw API response from Jisho
+ * @returns {DictEntry[]}
+ */
+export function parseJisho(data) {
+    if (!data?.data || data.data.length === 0) {
+        return [];
+    }
+
+    return data.data.slice(0, 5).map(entry => {
+        // Get word and reading from japanese array
+        const japanese = entry.japanese?.[0] || {};
+        const word = japanese.word || japanese.reading || '';
+        const reading = japanese.reading || '';
+
+        // Get definitions from senses
+        const definitions = [];
+        const partsOfSpeech = [];
+
+        entry.senses?.forEach(sense => {
+            if (sense.english_definitions) {
+                definitions.push(sense.english_definitions.join(', '));
+            }
+            if (sense.parts_of_speech) {
+                partsOfSpeech.push(...sense.parts_of_speech);
+            }
+        });
+
+        const partOfSpeech = [...new Set(partsOfSpeech)].slice(0, 2).join(', ');
+
+        // Extract JLPT level if available
+        const jlptTag = entry.jlpt?.find(t => t.startsWith('jlpt-n'));
+        const level = jlptTag ? parseInt(jlptTag.replace('jlpt-n', '')) : null;
+
+        return { word, reading, definitions: definitions.slice(0, 5), partOfSpeech, level };
+    }).filter(e => e.word && e.definitions.length > 0);
+}
+
+/**
+ * Parse KRDICT (Korean Learners Dictionary) web page
+ * Used for: ko-vi (official Korean government dictionary with Vietnamese translations)
+ * URL: https://krdict.korean.go.kr/vie/dicMarinerSearch/search?nation=vie&nationCode=10&mainSearchWord={word}
+ * @param {Response} response - Fetch response from KRDICT
+ * @returns {Promise<DictEntry[]>}
+ */
+export async function parseKrdict(response) {
+    const entries = [];
+    let currentWord = '';
+    let currentReading = '';
+    let currentDefs = [];
+    let currentPos = '';
+
+    // Parse HTML using HTMLRewriter
+    const rewriter = new HTMLRewriter()
+        // Get the word headword
+        .on('.word_head .origin_word', {
+            text(text) {
+                currentWord += text.text.trim();
+            }
+        })
+        // Get pronunciation (romanization)
+        .on('.word_head .sound_speaker', {
+            element(element) {
+                // Reading is sometimes in title attribute
+                const title = element.getAttribute('title');
+                if (title) currentReading = title;
+            }
+        })
+        // Get Vietnamese definitions
+        .on('.word_mean_vie', {
+            text(text) {
+                const def = text.text.trim();
+                if (def && def.length > 1) {
+                    currentDefs.push(def);
+                }
+            }
+        })
+        // Alternative: meaning text
+        .on('.mean_tran', {
+            text(text) {
+                const def = text.text.trim();
+                if (def && def.length > 1 && !currentDefs.includes(def)) {
+                    currentDefs.push(def);
+                }
+            }
+        })
+        // Get part of speech
+        .on('.word_att_view .att_val', {
+            text(text) {
+                const pos = text.text.trim();
+                if (pos && !currentPos) {
+                    currentPos = pos;
+                }
+            }
+        })
+        // End of word entry - save and reset
+        .on('.word_cont', {
+            element(element) {
+                if (currentWord && currentDefs.length > 0) {
+                    entries.push({
+                        word: currentWord,
+                        reading: currentReading,
+                        definitions: currentDefs.slice(0, 5),
+                        partOfSpeech: currentPos
+                    });
+                }
+                // Reset for next entry
+                currentWord = '';
+                currentReading = '';
+                currentDefs = [];
+                currentPos = '';
+            }
+        });
+
+    await rewriter.transform(response).arrayBuffer();
+
+    // Push last entry if exists
+    if (currentWord && currentDefs.length > 0) {
+        entries.push({
+            word: currentWord,
+            reading: currentReading,
+            definitions: currentDefs.slice(0, 5),
+            partOfSpeech: currentPos
+        });
+    }
+
+    return entries.slice(0, 5);
+}
