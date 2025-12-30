@@ -30,7 +30,7 @@ $z-speed-menu: 100;
 $z-fullscreen: 9998;
 
 // === COLORS WITH FALLBACKS ===
-$accent-primary-fallback: #c73e3a;
+$accent-primary-fallback: #FF6B6B;
 $bg-card-fallback: #1a1a1a;
 $border-color-fallback: #333;
 $text-muted-fallback: #888;
@@ -78,7 +78,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 .url-input:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
+  box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1);
 }
 
 .load-btn {
@@ -979,8 +979,8 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   width: 100%;
   height: 0.25rem;
   background: linear-gradient(to right,
-      var(--accent-primary, #c73e3a) 0%,
-      var(--accent-primary, #c73e3a) var(--volume-percent, 100%),
+      var(--accent-primary, #FF6B6B) 0%,
+      var(--accent-primary, #FF6B6B) var(--volume-percent, 100%),
       rgba(255, 255, 255, 0.3) var(--volume-percent, 100%),
       rgba(255, 255, 255, 0.3) 100%);
   border-radius: 0.125rem;
@@ -1048,7 +1048,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 }
 
 .volume-slider::-moz-range-progress {
-  background: var(--accent-primary, #c73e3a);
+  background: var(--accent-primary, #FF6B6B);
   height: 0.25rem;
   border-radius: 0.125rem;
 }
@@ -1336,7 +1336,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 }
 
 .fs-word--saved {
-  background: rgba(199, 62, 58, 0.15);
+  background: rgba(var(--accent-primary-rgb), 0.15);
 }
 
 .fs-word--punctuation {
@@ -1502,7 +1502,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   font-weight: 600;
   text-transform: uppercase;
   color: var(--accent-primary);
-  background: rgba(199, 62, 58, 0.1);
+  background: rgba(var(--accent-primary-rgb), 0.1);
   border-radius: 4px;
 }
 

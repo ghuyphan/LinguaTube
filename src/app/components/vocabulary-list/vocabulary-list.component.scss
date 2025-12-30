@@ -76,9 +76,11 @@
     transition: all var(--transition-fast);
     flex-shrink: 0;
 
-    &:hover {
-        background: var(--bg-secondary);
-        border-color: var(--accent);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
+        }
     }
 
     app-icon {

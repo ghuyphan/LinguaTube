@@ -26,7 +26,7 @@
 .upload-zone--dragover {
     border-color: var(--accent-primary);
     border-style: solid;
-    background: rgba(199, 62, 58, 0.05);
+    background: rgba(var(--accent-primary-rgb), 0.05);
 }
 
 .upload-zone--loaded {

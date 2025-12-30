@@ -50,9 +50,11 @@
     cursor: pointer;
     transition: all var(--transition-fast);
 
-    &:hover {
-        border-color: var(--accent);
-        background: var(--bg-hover);
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
+        }
     }
 
     .lang-flag {
@@ -93,7 +95,7 @@
     text-transform: uppercase;
     letter-spacing: 0.3px;
     color: var(--accent-primary);
-    background: rgba(199, 62, 58, 0.1);
+    background: rgba(var(--accent-primary-rgb), 0.1);
     border-radius: var(--border-radius-sm);
 }
 

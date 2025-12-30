@@ -2,26 +2,27 @@
 /* Japanese-inspired minimalist aesthetic with warm paper tones */
 
 :root {
-  /* Washi paper inspired palette */
-  --bg-primary: #faf8f5;
-  --bg-secondary: #f3f0eb;
-  --bg-tertiary: #e6e4df;
-  --bg-card: #ffffff;
-  --bg-dark: #1a1a1a;
+  /* Clean near-white palette */
+  --bg-primary: #FDFDFD;
+  --bg-secondary: #F8F8F8;
+  --bg-tertiary: #F0F0F0;
+  --bg-card: #FFFFFF;
+  --bg-dark: #18181B;
 
-  /* Traditional Japanese colors */
-  --accent-primary: #c73e3a;
-  /* Aka (赤) - vermillion red */
-  --accent-secondary: #2d5a27;
-  /* Matcha green */
-  --accent-tertiary: #d4a574;
-  /* Kitsune (狐) - fox tan */
+  /* Fun accent colors */
+  --accent-primary: #FF6B6B;
+  --accent-primary-rgb: 255, 107, 107;
+  /* Coral pink - warm & playful */
+  --accent-secondary: #14B8A6;
+  /* Teal - fresh contrast */
+  --accent-tertiary: #FFE4B5;
+  /* Warm peach */
 
-  /* Text colors */
-  --text-primary: #2c2c2c;
-  --text-secondary: #5a5a5a;
-  --text-muted: #8a8a8a;
-  --text-inverse: #faf8f5;
+  /* Text colors - modern contrast */
+  --text-primary: #18181B;
+  --text-secondary: #52525B;
+  --text-muted: #A1A1AA;
+  --text-inverse: #FAFAFA;
 
   /* Semantic colors */
   --success: #4a7c59;
@@ -29,14 +30,14 @@
   --error: #c73e3a;
   --info: #4a6fa5;
 
-  /* Word levels */
-  --word-new: #ffebe9;
-  --word-new-text: #a83232;
-  --word-learning: #fff3cd;
-  --word-learning-text: #856404;
-  --word-known: #d4edda;
-  --word-known-text: #2d5a27;
-  --word-ignored: #e9ecef;
+  /* Word levels - vibrant & modern */
+  --word-new: #FEE2E2;
+  --word-new-text: #DC2626;
+  --word-learning: #FEF3C7;
+  --word-learning-text: #D97706;
+  --word-known: #D1FAE5;
+  --word-known-text: #059669;
+  --word-ignored: #F4F4F5;
 
   /* Grammar levels (JLPT/HSK/TOPIK) */
   --level-beginner: rgba(34, 197, 94, 0.15);
@@ -65,16 +66,16 @@
   --font-ko: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Borders & Shadows */
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-radius-sm: 4px;
-  --border-radius: 8px;
-  --border-radius-lg: 12px;
+  /* Borders & Shadows - modern subtle */
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-radius-sm: 6px;
+  --border-radius: 10px;
+  --border-radius-lg: 14px;
   --border-radius-pill: 100px;
   --border-radius-round: 50%;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
 
   /* Icon Sizes */
   --icon-size-sm: 16px;
@@ -98,7 +99,7 @@
   --input-height-md: 40px;
 
   /* Focus ring */
-  --focus-ring: 0 0 0 3px rgba(199, 62, 58, 0.15);
+  --focus-ring: 0 0 0 3px rgba(255, 107, 107, 0.15);
 
   /* Mobile-specific sizing */
   --touch-target-min: 44px;
@@ -113,19 +114,19 @@
   --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-pink));
 }
 
-/* Dark theme */
+/* Dark theme - Modern Zinc */
 [data-theme="dark"] {
-  --bg-primary: #141414;
-  --bg-secondary: #1e1e1e;
-  --bg-tertiary: #2e2e2e;
-  --bg-card: #262626;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --text-primary: #f0ede8;
-  --text-secondary: #a8a4a0;
-  --text-muted: #6a6a6a;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --bg-primary: #09090B;
+  --bg-secondary: #18181B;
+  --bg-tertiary: #27272A;
+  --bg-card: #18181B;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 
 /* Reset & Base */
@@ -344,7 +345,7 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1);
+  box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1);
 }
 
 input::placeholder {
@@ -552,6 +553,117 @@ select {
   }
 }
 
+/* ============================================
+   FUN ANIMATIONS - Subtle & Performant
+   Uses animation-fill-mode: both to prevent
+   re-animation when switching tabs
+   ============================================ */
+
+/* Subtle pop with scale bounce */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade in with slight upward movement */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gentle floating effect for icons */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Subtle wiggle for interactive hints */
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Animation utility classes - fill-mode: both prevents re-animation */
+.animate-pop {
+  animation: popIn 0.25s ease-out both;
+}
+
+.animate-fade-slide {
+  animation: fadeSlideIn 0.3s ease-out both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Staggered animation delay helpers */
+.stagger-1 {
+  animation-delay: 0.05s;
+}
+
+.stagger-2 {
+  animation-delay: 0.1s;
+}
+
+.stagger-3 {
+  animation-delay: 0.15s;
+}
+
+.stagger-4 {
+  animation-delay: 0.2s;
+}
+
+.stagger-5 {
+  animation-delay: 0.25s;
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-pop,
+  .animate-fade-slide,
+  .animate-float,
+  .animate-fade-in,
+  .animate-slide-up {
+    animation: none;
+  }
+}
 
 /* Furigana support */
 ruby {
@@ -655,20 +767,19 @@ ruby rt {
    @media (hover: none) and (pointer: coarse)
    ============================================ */
 
-/* Bottom Navigation for Mobile */
+/* Bottom Navigation for Mobile - Material Design 3 Style */
 .bottom-nav {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  min-height: 4rem;
+  min-height: 5rem;
   background: var(--bg-card);
   padding: var(--space-xs) 0;
   padding-bottom: env(safe-area-inset-bottom, var(--space-xs));
   z-index: 1000;
-  /* border-top: 1px solid var(--border-color); */
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 -1px 0 var(--border-color);
 }
 
 .bottom-nav__items {
@@ -685,59 +796,64 @@ ruby rt {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
-  padding: 0.25rem;
+  gap: 4px;
+  padding: 0.5rem 0.75rem;
   margin: 0;
   background: none;
   border: none;
-  color: var(--text-muted);
-  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: normal;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: color 0.2s ease;
   min-width: 4rem;
   text-decoration: none;
   position: relative;
 }
 
+/* Icon container with pill indicator */
 .bottom-nav__item app-icon {
-  width: 3.5rem;
-  /* was 4rem */
-  height: 1.75rem;
-  /* was 2rem */
-  border-radius: 0.875rem;
-  /* half of height */
+  position: relative;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.25rem;
-  transition: background-color 0.3s cubic-bezier(0.2, 0.0, 0, 1),
-    transform 0.3s cubic-bezier(0.2, 0.0, 0, 1),
-    color 0.3s ease;
-  transform-origin: center center;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
 
-@media (hover: hover) {
-  .bottom-nav__item:hover {
-    color: var(--text-primary);
-  }
+/* Pill indicator behind icon */
+.bottom-nav__item app-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--accent-primary-rgb), 0.15);
+  border-radius: 1rem;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
+    opacity 0.2s ease;
 }
 
-/* Active State */
+/* Active State - Material 3 style */
 .bottom-nav__item.active {
   color: var(--accent-primary);
   font-weight: 600;
-  background: transparent;
 }
 
 .bottom-nav__item.active app-icon {
-  background: var(--bg-secondary);
-  /* transform: scale(1.05); */
+  transform: translateY(-2px);
 }
 
-[data-theme="dark"] .bottom-nav__item.active app-icon {
-  background: rgba(255, 255, 255, 0.1);
+.bottom-nav__item.active app-icon::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .bottom-nav__item.active app-icon::before {
+  background: rgba(var(--accent-primary-rgb), 0.25);
 }
 
 @media (max-width: 768px),
@@ -1040,7 +1156,7 @@ body::-webkit-scrollbar {
 
 /* Badge Extensions */
 .badge--accent {
-  background: rgba(199, 62, 58, 0.1);
+  background: rgba(var(--accent-primary-rgb), 0.1);
   color: var(--accent-primary);
 }
 

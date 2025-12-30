@@ -86,15 +86,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--accent-primary), #ff6b6b);
+    background: var(--accent-primary);
     border-radius: 0.625rem;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px -2px rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 12px -2px rgba(var(--accent-primary-rgb), 0.3);
     transition: transform 0.2s ease;
 
-    &:hover {
-        transform: scale(1.05);
-        /* Subtle scale only, no rotation */
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -203,9 +204,11 @@
     min-height: var(--btn-height-md);
 
 
-    &:hover {
-        background: var(--bg-hover);
-        color: var(--text-primary);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
     }
 
     &.active {
@@ -260,10 +263,12 @@
     cursor: pointer;
     transition: all 0.2s ease;
 
-    &:hover {
-        background: var(--bg-hover);
-        color: var(--text-primary);
-        border-color: var(--text-secondary);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
     }
 
     &.active {
@@ -338,9 +343,11 @@
     min-height: var(--btn-height-md);
 
 
-    &:hover {
-        background: var(--bg-hover);
-        color: var(--text-primary);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
     }
 
     span {

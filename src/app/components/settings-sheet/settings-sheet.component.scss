@@ -137,7 +137,7 @@
 .lang-option.active {
     background: var(--bg-card);
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(199, 62, 58, 0.1), var(--shadow-sm);
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1), var(--shadow-sm);
 }
 
 .lang-flag {
@@ -192,7 +192,7 @@
 
 .settings-btn--danger {
     color: var(--error);
-    border-color: rgba(199, 62, 58, 0.2);
+    border-color: rgba(var(--accent-primary-rgb), 0.2);
 }
 
 /* Sign Out Confirmation Modal */

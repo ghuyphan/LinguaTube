@@ -95,8 +95,8 @@
 }
 
 .subtitle-text.is-looping {
-    box-shadow: 0 0 0 2px var(--accent-primary), 0 0 16px rgba(199, 62, 58, 0.35);
-    background: rgba(199, 62, 58, 0.06);
+    box-shadow: 0 0 0 2px var(--accent-primary), 0 0 16px rgba(var(--accent-primary-rgb), 0.35);
+    background: rgba(var(--accent-primary-rgb), 0.06);
 }
 
 .current-subtitle.is-generating {

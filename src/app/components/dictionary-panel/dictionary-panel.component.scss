@@ -122,7 +122,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--accent-primary);
-    background: rgba(199, 62, 58, 0.08);
+    background: rgba(var(--accent-primary-rgb), 0.08);
     border-radius: var(--border-radius-pill);
 }
 
