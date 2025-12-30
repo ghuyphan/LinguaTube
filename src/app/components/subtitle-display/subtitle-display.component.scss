@@ -7,9 +7,6 @@
 
 /* ============================================
    CURRENT SUBTITLE - Centered & Scrollable
-   Uses min-height trick for proper behavior:
-   - Short content: centered vertically & horizontally
-   - Long content: scrolls naturally from top
    ============================================ */
 .current-subtitle {
     height: 9rem;
@@ -17,7 +14,6 @@
     position: relative;
     overflow: hidden;
 
-    /* Top fade - appears when scrolled down */
     &::before {
         content: '';
         position: absolute;
@@ -32,7 +28,6 @@
         transition: opacity 0.2s ease;
     }
 
-    /* Bottom fade - always visible hint for scrollable content */
     &::after {
         content: '';
         position: absolute;
@@ -45,13 +40,11 @@
         z-index: 2;
     }
 
-    /* Show top fade when content is scrolled */
     &.has-scroll-top::before {
         opacity: 1;
     }
 }
 
-/* Inner scrollable container */
 .current-subtitle__inner {
     height: 100%;
     overflow-y: auto;
@@ -67,9 +60,6 @@
     }
 }
 
-/* Centering wrapper - the magic sauce
-   min-height: 100% makes flexbox center when content is small,
-   but allows natural overflow scrolling when content is large */
 .subtitle-center-wrapper {
     min-height: 100%;
     display: flex;
@@ -101,19 +91,6 @@
 
 .current-subtitle.is-generating {
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
-    animation: containerPulse 2s ease-in-out infinite;
-}
-
-@keyframes containerPulse {
-
-    0%,
-    100% {
-        box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.05);
-    }
-
-    50% {
-        box-shadow: inset 0 0 40px rgba(139, 92, 246, 0.15);
-    }
 }
 
 .current-subtitle--small .subtitle-text {
@@ -127,54 +104,52 @@
 }
 
 /* ============================================
-   EMPTY / LOADING STATES
+   EMPTY / LOADING STATES - CSS Transitions
    ============================================ */
 .subtitle-empty {
     min-height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
-    text-align: center;
     padding: var(--space-md);
 }
 
-.empty-icon {
-    color: var(--text-muted);
-    opacity: 0.5;
+.state-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 3rem;
 }
 
-.error-icon {
-    color: var(--text-muted);
-    opacity: 0.6;
-}
-
-.empty-title {
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
-.empty-hint {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-}
-
-/* AI Generation Indicator - Compact horizontal layout */
-.ai-generating {
+.state-item {
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    padding: var(--space-md);
-    width: 100%;
-    height: 100%;
+    gap: var(--space-lg);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 200ms ease, transform 200ms ease;
+    pointer-events: none;
 }
 
-.ai-badge {
-    display: none;
-    /* Hide on compact view, shown via inline spinner */
+/* Show active states */
+.state--generating .state-generating,
+.state--loading .state-loading,
+.state--error .state-error,
+.state--empty .state-empty,
+.state--waiting .state-waiting {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    position: relative;
+}
+
+/* AI Generating */
+.state-generating {
+    animation: containerPulse 2s ease-in-out infinite;
 }
 
 .ai-spinner {
@@ -219,47 +194,124 @@
     }
 }
 
+@keyframes containerPulse {
+
+    0%,
+    100% {
+        box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.05);
+    }
+
+    50% {
+        box-shadow: inset 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+}
+
+.ai-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 .ai-title {
     font-weight: 500;
     color: var(--text-primary);
     font-size: 0.9375rem;
-    margin: 0;
 }
 
 .ai-hint {
     font-size: 0.8125rem;
     color: var(--text-muted);
-    margin: 0;
-
-    /* Show as inline with title */
-    &::before {
-        content: '·';
-        margin: 0 var(--space-xs);
-        color: var(--text-muted);
-        opacity: 0.5;
-    }
 }
 
-/* Text wrapper for title and hint */
-.ai-text {
-    display: flex;
-    flex-wrap: wrap;
+/* Loading */
+.state-loading {
     align-items: center;
-    justify-content: center;
-    gap: 0;
 }
 
-.loading-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
+.loading-icon {
+    animation: spin 1s linear infinite;
+    flex-shrink: 0;
     color: var(--text-muted);
 }
 
+.loading-text {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+}
+
+/* Error */
+.state-error {
+    align-items: flex-start;
+}
+
+.error-icon {
+    color: var(--text-muted);
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.error-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Empty */
+.state-empty {
+    align-items: flex-start;
+}
+
+.empty-icon {
+    color: var(--text-muted);
+    opacity: 0.5;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.empty-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.empty-title {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+}
+
+.empty-hint {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+/* Waiting */
 .subtitle-waiting {
     color: var(--text-muted);
     animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 /* ============================================
@@ -284,8 +336,6 @@
             var(--bg-secondary) 100%);
     background-size: 200% 100%;
     animation: shimmer 1.5s ease-in-out infinite;
-
-    /* Randomized widths via CSS */
     width: 60px;
 
     &:nth-child(2n) {
@@ -315,7 +365,7 @@
     }
 }
 
-/* Punctuation - no interactive styling */
+/* Punctuation */
 .punctuation {
     display: inline;
     cursor: default;
@@ -407,7 +457,6 @@
     background: var(--word-known-text, #166534);
 }
 
-/* Grammar pattern highlighting */
 .word--grammar {
     text-decoration: underline;
     text-decoration-color: var(--color-grammar, #8b5cf6);
@@ -448,7 +497,6 @@ ruby rt {
     padding: 4px 4px;
     margin: 1px 1px;
     vertical-align: top;
-    /* Align all words at top for consistent ruby spacing */
 }
 
 .text-ja ruby rt {
@@ -467,7 +515,6 @@ ruby rt {
     padding: 4px 5px;
     margin: 1px 2px;
     vertical-align: top;
-    /* Align all words at top for consistent pinyin spacing */
 }
 
 .text-zh ruby rt {
@@ -484,7 +531,6 @@ ruby rt {
     padding: 4px 6px;
     margin: 1px 3px;
     vertical-align: top;
-    /* Align all words at top for consistent romanization spacing */
 }
 
 .text-ko ruby rt {
@@ -602,9 +648,10 @@ ruby rt {
     display: flex;
     gap: 2px;
     background: var(--bg-secondary);
-    padding: 2px;
+    padding: 3px;
     border-radius: var(--border-radius-sm);
     margin-left: auto;
+    border: 1px solid var(--border-color);
 }
 
 .font-btn {
@@ -634,13 +681,14 @@ ruby rt {
 @media (hover: hover) {
     .font-btn:hover {
         color: var(--text-primary);
+        background: var(--bg-tertiary);
     }
 }
 
 .font-btn.active {
     background: var(--bg-card);
     color: var(--accent-primary);
-    box-shadow: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
@@ -669,7 +717,6 @@ ruby rt {
         font-size: 1.25rem;
     }
 
-    /* Consistent word styling on mobile */
     .word {
         padding: 0.375rem 0.5rem;
         margin: 2px;
@@ -677,7 +724,6 @@ ruby rt {
         background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08);
     }
 
-    /* For CJK languages: use vertical-align top for consistent alignment with ruby */
     .text-ja .word,
     .text-zh .word,
     .text-ko .word {
@@ -753,10 +799,9 @@ ruby rt {
         border-radius: var(--border-radius-sm);
     }
 
-    /* AI generating - slightly smaller on mobile */
-    .ai-generating {
-        gap: var(--space-sm);
-        padding: var(--space-sm);
+    /* State indicators on mobile */
+    .state-item {
+        gap: var(--space-md);
     }
 
     .ai-spinner {
@@ -764,11 +809,19 @@ ruby rt {
         height: 2rem;
     }
 
-    .ai-title {
+    .ai-wand {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .ai-title,
+    .empty-title,
+    .loading-text {
         font-size: 0.875rem;
     }
 
-    .ai-hint {
+    .ai-hint,
+    .empty-hint {
         font-size: 0.75rem;
     }
 }
@@ -795,13 +848,11 @@ ruby rt {
         font-size: 1.125rem;
     }
 
-    /* Maintain consistent word styling on small mobile */
     .word {
         padding: 0.3125rem 0.4375rem;
         margin: 2px;
     }
 
-    /* CJK languages: maintain vertical-align top */
     .text-ja .word,
     .text-zh .word,
     .text-ko .word {
@@ -815,16 +866,9 @@ ruby rt {
         margin: 2px;
     }
 
-    /* AI generating - even more compact on small mobile */
-    .ai-generating {
-        flex-direction: column;
-        gap: var(--space-xs);
-        padding: var(--space-xs);
-    }
-
-    .ai-text {
-        flex-direction: row;
-        gap: 0;
+    /* State indicators on small mobile */
+    .state-item {
+        gap: var(--space-sm);
     }
 
     .ai-spinner {
@@ -833,15 +877,18 @@ ruby rt {
     }
 
     .ai-wand {
-        width: 14px !important;
-        height: 14px !important;
+        width: 12px !important;
+        height: 12px !important;
     }
 
-    .ai-title {
+    .ai-title,
+    .empty-title,
+    .loading-text {
         font-size: 0.8125rem;
     }
 
-    .ai-hint {
+    .ai-hint,
+    .empty-hint {
         font-size: 0.6875rem;
     }
 }

@@ -36,45 +36,67 @@
             </div>
             } @else {
             <div class="subtitle-empty">
-                @if (youtube.currentVideo() && transcript.isGeneratingAI()) {
-                <div class="ai-generating">
-                    <div class="ai-spinner">
-                        <div class="ai-spinner-ring"></div>
-                        <app-icon name="wand" [size]="18" class="ai-wand" />
+                <div class="state-container"
+                    [class.state--generating]="youtube.currentVideo() && transcript.isGeneratingAI()"
+                    [class.state--loading]="youtube.currentVideo() && transcript.isLoading() && !transcript.isGeneratingAI()"
+                    [class.state--error]="transcript.error() && subtitles.subtitles().length === 0 && !transcript.isLoading() && !transcript.isGeneratingAI()"
+                    [class.state--empty]="!youtube.currentVideo() && subtitles.subtitles().length === 0"
+                    [class.state--waiting]="youtube.currentVideo() && !transcript.isLoading() && !transcript.isGeneratingAI() && !transcript.error() && subtitles.subtitles().length > 0">
+
+                    <!-- AI Generating -->
+                    <div class="state-item state-generating">
+                        <div class="ai-spinner">
+                            <div class="ai-spinner-ring"></div>
+                            <app-icon name="wand" [size]="18" class="ai-wand" />
+                        </div>
+                        <div class="ai-text">
+                            <span class="ai-title">{{ transcript.isResumingPendingJob() ?
+                                i18n.t('subtitle.resumingTranscript') :
+                                i18n.t('subtitle.generatingTranscript') }}</span>
+                            <span class="ai-hint">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingHint')
+                                :
+                                i18n.t('subtitle.usingWhisperAI') }}</span>
+                        </div>
                     </div>
-                    <div class="ai-text">
-                        <span class="ai-title">{{ transcript.isResumingPendingJob() ?
-                            i18n.t('subtitle.resumingTranscript') :
-                            i18n.t('subtitle.generatingTranscript') }}</span>
-                        <span class="ai-hint">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingHint') :
-                            i18n.t('subtitle.usingWhisperAI') }}</span>
+
+                    <!-- Loading -->
+                    <div class="state-item state-loading">
+                        <app-icon name="loader" [size]="24" class="loading-icon" />
+                        <span class="loading-text">{{ i18n.t('subtitle.fetchingCaptions') }}</span>
+                    </div>
+
+                    <!-- Error -->
+                    <div class="state-item state-error">
+                        <app-icon name="alert-circle" [size]="24" class="error-icon" />
+                        <div class="error-text">
+                            @if (transcript.error() === 'VIDEO_TOO_LONG') {
+                            <span class="empty-title">{{ i18n.t('subtitle.videoTooLongTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.videoTooLongHint') }}</span>
+                            } @else if (transcript.error() === 'UNSUPPORTED_LANGUAGE' || transcript.error() ===
+                            'UNSUPPORTED_VIDEO_LANGUAGE') {
+                            <span class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.unsupportedLanguageHint') }}</span>
+                            } @else {
+                            <span class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</span>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Empty (no video) -->
+                    <div class="state-item state-empty">
+                        <app-icon name="subtitles" [size]="24" class="empty-icon" />
+                        <div class="empty-text">
+                            <span class="empty-title">{{ i18n.t('subtitle.noSubtitlesLoaded') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.tryVideoWithCaptions') }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Waiting -->
+                    <div class="state-item state-waiting">
+                        <span class="subtitle-waiting">{{ i18n.t('subtitle.waitingForSubtitles') }}</span>
                     </div>
                 </div>
-                } @else if (youtube.currentVideo() && transcript.isLoading()) {
-                <div class="loading-indicator">
-                    <app-icon name="loader" [size]="24" />
-                    <p>{{ i18n.t('subtitle.fetchingCaptions') }}</p>
-                </div>
-                } @else if (transcript.error() && subtitles.subtitles().length === 0) {
-                <app-icon name="alert-circle" [size]="32" class="error-icon" />
-                @if (transcript.error() === 'VIDEO_TOO_LONG') {
-                <p class="empty-title">{{ i18n.t('subtitle.videoTooLongTitle') }}</p>
-                <p class="empty-hint">{{ i18n.t('subtitle.videoTooLongHint') }}</p>
-                } @else if (transcript.error() === 'UNSUPPORTED_LANGUAGE' || transcript.error() ===
-                'UNSUPPORTED_VIDEO_LANGUAGE') {
-                <p class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</p>
-                <p class="empty-hint">{{ i18n.t('subtitle.unsupportedLanguageHint') }}</p>
-                } @else {
-                <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</p>
-                <p class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</p>
-                }
-                } @else if (subtitles.subtitles().length === 0) {
-                <app-icon name="subtitles" [size]="32" class="empty-icon" />
-                <p class="empty-title">{{ i18n.t('subtitle.noSubtitlesLoaded') }}</p>
-                <p class="empty-hint">{{ i18n.t('subtitle.tryVideoWithCaptions') }}</p>
-                } @else {
-                <p class="subtitle-waiting">{{ i18n.t('subtitle.waitingForSubtitles') }}</p>
-                }
             </div>
             }
         </div>
