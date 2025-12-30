@@ -86,19 +86,29 @@ export class YoutubeService {
 
       if (document.visibilityState === 'visible' && this.player) {
         try {
-          const time = this.player.getCurrentTime();
-          if (time != null && time >= 0) {
-            this.currentTime.set(time);
-          }
           const state = this.player.getPlayerState();
           if (state != null) {
             const isPlaying = state === window.YT?.PlayerState?.PLAYING;
+
+            // If the player is playing but we recorded it as paused when leaving, pause it
+            if (isPlaying && this.wasPausedOnLeave) {
+              this.pause();
+              this.wasPausedOnLeave = false;
+              return;
+            }
+
+            // Sync signals with actual player state
             if (isPlaying !== this.isPlaying()) {
               this.isPlaying.set(isPlaying);
             }
             if (isPlaying) {
               this.startTimeTracking();
             }
+          }
+
+          const time = this.player.getCurrentTime();
+          if (time != null && time >= 0) {
+            this.currentTime.set(time);
           }
         } catch (e) {
           // Player might not be ready
