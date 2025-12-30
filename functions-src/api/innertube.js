@@ -12,6 +12,7 @@
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript, getAvailableLangs, addAvailableLang } from '../_shared/transcript-db.js';
+import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 import { validateVideoRequest, isLanguageSupported } from '../_shared/video-validator.js';
 import { getSubtitles } from 'youtube-caption-extractor';
@@ -90,7 +91,8 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid videoId' }, 400);
         }
 
-        const cache = env.TRANSCRIPT_CACHE;
+        const r2 = env.TRANSCRIPT_STORAGE;
+        const cache = env.TRANSCRIPT_CACHE; // KV still used for rate limiting
         const db = env.VOCAB_DB;
         const primaryLang = targetLanguages[0];
 
@@ -104,10 +106,10 @@ export async function onRequestPost(context) {
         log(`Request: ${videoId}, langs: ${targetLanguages.join(',')}`);
 
         // =====================================================================
-        // Step 1: Check Cache (parallel KV + D1 for speed)
+        // Step 1: Check Cache (R2 primary, D1 backup)
         // =====================================================================
         if (!forceRefresh) {
-            const cached = await checkCache(cache, db, videoId, primaryLang);
+            const cached = await checkCache(r2, db, videoId, primaryLang);
             if (cached) {
                 log(`Cache hit (${elapsed()}ms)`);
                 return jsonResponse({ ...cached, timing: elapsed() });
@@ -163,7 +165,7 @@ export async function onRequestPost(context) {
             const actualLang = tracks?.[0]?.languageCode || primaryLang;
 
             // Use waitUntil for non-blocking cache save
-            const cachePromise = saveToCache(cache, db, videoId, actualLang, result.data, source);
+            const cachePromise = saveToCache(r2, db, videoId, actualLang, result.data, source);
 
             if (waitUntil) {
                 waitUntil(cachePromise);
@@ -196,22 +198,40 @@ export async function onRequestPost(context) {
 // Cache
 // ============================================================================
 
-async function checkCache(cache, db, videoId, lang) {
-    const cacheKey = `captions:v10:${videoId}:${lang}`;
-
-    const [kvResult, d1Result] = await Promise.allSettled([
-        cache ? checkKVCache(cache, cacheKey) : Promise.resolve(null),
+async function checkCache(r2, db, videoId, lang) {
+    // Check R2 first (primary storage), then D1 (backup/legacy)
+    const [r2Result, d1Result] = await Promise.allSettled([
+        r2 ? checkR2Cache(r2, videoId, lang) : Promise.resolve(null),
         db ? checkD1Cache(db, videoId, lang) : Promise.resolve(null)
     ]);
 
-    if (kvResult.status === 'fulfilled' && kvResult.value) {
-        return kvResult.value;
+    if (r2Result.status === 'fulfilled' && r2Result.value) {
+        return r2Result.value;
     }
 
     if (d1Result.status === 'fulfilled' && d1Result.value) {
         return d1Result.value;
     }
 
+    return null;
+}
+
+async function checkR2Cache(r2, videoId, lang) {
+    try {
+        const result = await getTranscriptFromR2(r2, videoId, lang);
+        if (result?.segments?.length) {
+            return {
+                captions: {
+                    playerCaptionsTracklistRenderer: {
+                        captionTracks: [{ languageCode: result.language, content: result.segments }]
+                    }
+                },
+                source: `cache:r2:${result.source}`
+            };
+        }
+    } catch (e) {
+        log(`R2 cache error: ${e.message}`);
+    }
     return null;
 }
 
@@ -246,23 +266,24 @@ async function checkD1Cache(db, videoId, lang) {
     return null;
 }
 
-async function saveToCache(cache, db, videoId, lang, data, source) {
-    const cacheKey = `captions:v10:${videoId}:${lang}`;
+async function saveToCache(r2, db, videoId, lang, data, source) {
     const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
     const track = tracks?.find(t => t.languageCode === lang) || tracks?.[0];
 
-    log(`saveToCache: db=${!!db}, tracks=${tracks?.length}, content=${track?.content?.length}`);
+    log(`saveToCache: r2=${!!r2}, db=${!!db}, tracks=${tracks?.length}, content=${track?.content?.length}`);
 
     const savePromises = [];
 
-    if (cache) {
+    // Primary storage: R2 (unlimited, cheap)
+    if (r2 && track?.content?.length) {
         savePromises.push(
-            cache.put(cacheKey, JSON.stringify(data), { expirationTtl: CACHE_TTL })
-                .then(() => log('KV save success'))
-                .catch(e => log(`KV save error: ${e.message}`))
+            saveTranscriptToR2(r2, videoId, track.languageCode, track.content, source)
+                .then(() => log(`R2 save success: ${videoId} ${track.languageCode}`))
+                .catch(e => log(`R2 save error: ${e.message}`))
         );
     }
 
+    // Backup storage: D1 (for structured queries, video_meta)
     if (track?.content?.length && db) {
         savePromises.push(
             saveTranscript(db, videoId, track.languageCode, track.content, source)

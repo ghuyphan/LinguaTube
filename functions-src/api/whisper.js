@@ -7,6 +7,7 @@
 import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, getPendingJob, savePendingJob, completePendingJob, cleanupStalePendingJobs } from '../_shared/transcript-db.js';
+import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
 import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
 import { validateVideoRequest } from '../_shared/video-validator.js';
 
@@ -31,8 +32,9 @@ const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 3600, keyPrefix: 'whisper' }
 
 export async function onRequestPost(context) {
     const { request, env } = context;
-    const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE;
-    const db = env.VOCAB_DB; // D1 for persistent storage
+    const r2 = env.TRANSCRIPT_STORAGE;
+    const TRANSCRIPT_CACHE = env.TRANSCRIPT_CACHE; // KV for rate limiting
+    const db = env.VOCAB_DB; // D1 for pending jobs
 
     try {
         const body = await request.json();
@@ -62,20 +64,18 @@ export async function onRequestPost(context) {
                 return jsonResponse(validation, 400);
             }
 
-            // 1. Check KV cache for completed transcripts
-            if (TRANSCRIPT_CACHE) {
-                try {
-                    const cached = await TRANSCRIPT_CACHE.get(`transcript:v4:${videoId}`, 'json');
-                    if (cached) {
-                        log('KV cache hit for', videoId);
-                        return jsonResponse(cached);
-                    }
-                } catch (e) {
-                    // Cache read failed, continue
-                }
+            // 1. Check R2 first for completed AI transcripts (primary storage)
+            const r2Result = await getTranscriptFromR2(r2, videoId, lang);
+            if (r2Result?.segments?.length > 0 && r2Result.source === 'ai') {
+                log('R2 hit for AI transcript:', videoId);
+                return jsonResponse({
+                    success: true,
+                    language: r2Result.language || 'unknown',
+                    segments: r2Result.segments
+                });
             }
 
-            // 2. Check D1 database for completed AI transcript
+            // 2. Check D1 database for completed AI transcript (backup/legacy)
             // Look for transcript saved with the actual language code (not 'ai')
             // AI transcripts are saved with source='ai' and the detected language
             const d1Result = await getTranscript(db, videoId, lang, 'ai');
@@ -86,14 +86,8 @@ export async function onRequestPost(context) {
                     language: d1Result.language || 'unknown',
                     segments: d1Result.segments
                 };
-                // Warm KV cache (non-blocking)
-                if (TRANSCRIPT_CACHE) {
-                    TRANSCRIPT_CACHE.put(
-                        `transcript:v4:${videoId}`,
-                        JSON.stringify(response),
-                        { expirationTtl: 60 * 60 * 24 * 30 }
-                    ).catch(() => { });
-                }
+                // Warm R2 cache (non-blocking)
+                saveTranscriptToR2(r2, videoId, d1Result.language, d1Result.segments, 'ai').catch(() => { });
                 return jsonResponse(response);
             }
 
@@ -197,17 +191,9 @@ export async function onRequestPost(context) {
                         segments
                     };
 
-                    // Cache the result (expire in 30 days) - ONLY if we have videoId
-                    if (TRANSCRIPT_CACHE && videoId) {
-                        try {
-                            await TRANSCRIPT_CACHE.put(
-                                `transcript:v4:${videoId}`,
-                                JSON.stringify(response),
-                                { expirationTtl: 60 * 60 * 24 * 30 }
-                            );
-                        } catch (e) {
-                            // Cache write failed, continue
-                        }
+                    // Save to R2 (primary storage)
+                    if (r2 && videoId && segments.length > 0) {
+                        saveTranscriptToR2(r2, videoId, response.language || lang, segments, 'ai').catch(() => { });
                     }
 
                     // Complete the pending job in D1 (updates status and clears result_url)

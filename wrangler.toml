@@ -21,6 +21,12 @@ binding = "VOCAB_DB"
 database_name = "linguatube-vocab"
 database_id = "35b6faad-cba0-4ad0-8033-f55799d061aa"
 
+# R2 Bucket for transcript storage
+# Create with: wrangler r2 bucket create linguatube-transcripts
+[[r2_buckets]]
+binding = "TRANSCRIPT_STORAGE"
+bucket_name = "linguatube-transcripts"
+
 [vars]
 # GLADIA_API_KEY and GOOGLE_CLIENT_ID should be set in Cloudflare Dashboard
 
