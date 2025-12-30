@@ -60,10 +60,16 @@
             }
         </div>
         } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
-        <!-- Desktop google sign in -->
-        <div class="google-btn-container desktop-only" #googleBtnDesktop></div>
-        <!-- Mobile google sign in -->
-        <div class="google-btn-container mobile-only" #googleBtnMobile></div>
+        <!-- Desktop login button -->
+        <button class="btn btn-outline login-btn desktop-only" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
+            <app-icon name="google" [size]="18" />
+            <span>{{ i18n.t('header.signIn') }}</span>
+        </button>
+        <!-- Mobile login button (icon only) -->
+        <button class="btn btn-icon btn-ghost mobile-only" (click)="loginWithGoogle()" [disabled]="isLoggingIn"
+            [attr.aria-label]="i18n.t('header.signIn')">
+            <app-icon name="user" [size]="20" />
+        </button>
         }
 
         <!-- Desktop Language Switcher -->

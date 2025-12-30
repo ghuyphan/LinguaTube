@@ -25,35 +25,24 @@ export class HeaderComponent {
 
   showUserMenu = false;
   showLangMenu = false;
+  isLoggingIn = false;
 
   constructor() {
-    effect(() => {
-      // Re-render buttons when auth initializes or settings change if needed
-      if (this.auth.isInitialized() && this.auth.isAuthEnabled() && !this.auth.isLoggedIn()) {
-        // Allow time for view to update with new divs
-        setTimeout(() => this.renderGoogleButtons(), 0);
-      }
-    });
+    // No longer need to render Google buttons - using custom buttons with PocketBase
   }
 
-  renderGoogleButtons() {
-    if (this.googleBtnDesktop?.nativeElement) {
-      this.auth.renderButton(this.googleBtnDesktop.nativeElement, {
-        type: 'standard',
-        shape: 'pill',
-        theme: 'outline',
-        size: 'large',
-        text: 'signin_with'
-      });
-    }
-
-    if (this.googleBtnMobile?.nativeElement) {
-      this.auth.renderButton(this.googleBtnMobile.nativeElement, {
-        type: 'icon',
-        shape: 'circle',
-        theme: 'outline',
-        size: 'large'
-      });
+  /**
+   * Login with Google via PocketBase OAuth
+   */
+  async loginWithGoogle(): Promise<void> {
+    if (this.isLoggingIn) return;
+    this.isLoggingIn = true;
+    try {
+      await this.auth.loginWithGoogle();
+    } catch (error) {
+      console.error('[Header] Google login failed:', error);
+    } finally {
+      this.isLoggingIn = false;
     }
   }
 

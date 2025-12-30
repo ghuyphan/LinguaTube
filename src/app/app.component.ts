@@ -85,10 +85,12 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       </nav>
 
       <!-- Bottom Sheets -->
-      <app-settings-sheet 
-        [isOpen]="showSettingsSheet()" 
-        (closed)="showSettingsSheet.set(false)" 
-      />
+      @defer (when showSettingsSheet()) {
+        <app-settings-sheet 
+          [isOpen]="showSettingsSheet()" 
+          (closed)="showSettingsSheet.set(false)" 
+        />
+      }
 
       <!-- Update Available Sheet -->
       <app-bottom-sheet

@@ -13,7 +13,8 @@ export type IconName =
   | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
   | 'chevron-left' | 'chevron-right' | 'layers'
   | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
-  | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe';
+  | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'
+  | 'user' | 'google' | 'log-in';
 
 @Component({
   selector: 'app-icon',

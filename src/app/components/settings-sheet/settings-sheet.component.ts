@@ -1,4 +1,4 @@
-import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef, effect } from '@angular/core';
+import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
@@ -28,30 +28,21 @@ export class SettingsSheetComponent {
   closed = output<void>();
 
   showSignOutConfirm = signal(false);
-  private buttonRendered = false;
+  isLoggingIn = false;
 
-  constructor() {
-    effect(() => {
-      // Only render the button once to prevent flicker from "Sign in with Google" -> "Sign in as..."
-      if (this.isOpen() && this.auth.isInitialized() && this.auth.isAuthEnabled() && !this.auth.isLoggedIn() && !this.buttonRendered) {
-        setTimeout(() => {
-          this.renderGoogleButton();
-          this.buttonRendered = true;
-        }, 0);
-      }
-    });
-  }
-
-  renderGoogleButton() {
-    if (this.googleBtnSettings?.nativeElement) {
-      this.auth.renderButton(this.googleBtnSettings.nativeElement, {
-        type: 'standard',
-        shape: 'pill',
-        theme: 'outline',
-        size: 'large',
-        text: 'signin_with',
-        width: 240
-      });
+  /**
+   * Login with Google via PocketBase OAuth
+   */
+  async loginWithGoogle(): Promise<void> {
+    if (this.isLoggingIn) return;
+    this.isLoggingIn = true;
+    try {
+      await this.auth.loginWithGoogle();
+      this.closed.emit(); // Close sheet after successful login
+    } catch (error) {
+      console.error('[Settings] Google login failed:', error);
+    } finally {
+      this.isLoggingIn = false;
     }
   }
 

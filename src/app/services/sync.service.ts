@@ -1,11 +1,13 @@
 import { Injectable, inject, effect, untracked, signal } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { VocabularyService } from './vocabulary.service';
+import { PocketBaseService } from './pocketbase.service';
+import type { RecordModel } from 'pocketbase';
 
 export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
 
 interface SyncItem {
+    id?: string; // PocketBase record ID
     word: string;
     reading?: string;
     pinyin?: string;
@@ -14,17 +16,17 @@ interface SyncItem {
     language: string;
     level: string;
     examples: string[];
-    addedAt: number;
-    updatedAt: number;
+    created?: string;
+    updated?: string;
 }
 
 @Injectable({
     providedIn: 'root'
 })
 export class SyncService {
-    private http = inject(HttpClient);
     private auth = inject(AuthService);
     private vocab = inject(VocabularyService);
+    private pb = inject(PocketBaseService);
 
     private isSyncing = false;
     private pushTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -40,20 +42,24 @@ export class SyncService {
     }
 
     /**
-     * Set up automatic sync triggers:
-     * 1. On login event (new login via Google)
-     * 2. On app startup when user is restored from localStorage
-     * 3. On vocabulary changes (debounced push)
+     * Sanitize values for PocketBase filter strings to prevent injection
+     */
+    private sanitizeFilterValue(value: string): string {
+        // Escape backslashes first, then double quotes
+        return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    }
+
+    /**
+     * Set up automatic sync triggers
      */
     private setupAutoSync(): void {
-        // Sync when user logs in via Google credential
+        // Sync when user logs in
         this.auth.loginEvent.subscribe((profile) => {
             console.log('[Sync] User logged in:', profile.email);
             this.sync();
         });
 
         // Sync when user is restored from localStorage (app startup)
-        // Use effect to react to user signal changes
         effect(() => {
             const user = this.auth.user();
             if (user && !this.hasInitialSynced) {
@@ -70,14 +76,11 @@ export class SyncService {
             const items = this.vocab.vocabulary();
             const userId = untracked(() => this.auth.getUserId());
 
-            // Skip if not logged in or no items
             if (!userId || items.length === 0) return;
 
-            // Calculate a simple hash to detect actual changes
             const hash = this.calculateHash(items);
 
             untracked(() => {
-                // Only push if content actually changed
                 if (hash !== this.lastPushedHash) {
                     this.debouncedPush();
                 }
@@ -85,16 +88,10 @@ export class SyncService {
         });
     }
 
-    /**
-     * Calculate a simple hash of vocabulary items for change detection
-     */
     private calculateHash(items: any[]): string {
         return items.map(i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`).join('|');
     }
 
-    /**
-     * Debounced push to server (2 second delay to batch rapid changes)
-     */
     private debouncedPush(): void {
         if (this.pushTimeout) {
             clearTimeout(this.pushTimeout);
@@ -105,7 +102,7 @@ export class SyncService {
     }
 
     /**
-     * Push local vocabulary to server without fetching remote
+     * Push local vocabulary to PocketBase
      */
     private async pushToServerOnly(): Promise<void> {
         const userId = this.auth.getUserId();
@@ -115,11 +112,11 @@ export class SyncService {
 
         try {
             this.syncStatus.set('syncing');
-            await this.pushToServer(userId, items);
+            await this.pushToPocketBase(items);
             this.lastPushedHash = this.calculateHash(this.vocab.getAllItems());
             this.syncStatus.set('synced');
             this.lastSyncTime.set(new Date());
-            console.log('[Sync] Pushed', items.length, 'items to server');
+            console.log('[Sync] Pushed', items.length, 'items to PocketBase');
         } catch (error) {
             console.error('[Sync] Push failed:', error);
             this.syncStatus.set('error');
@@ -127,7 +124,7 @@ export class SyncService {
     }
 
     /**
-     * Full bidirectional sync: fetch remote, merge, push merged back
+     * Full bidirectional sync with PocketBase
      */
     async sync(): Promise<void> {
         const userId = this.auth.getUserId();
@@ -135,23 +132,23 @@ export class SyncService {
 
         this.isSyncing = true;
         this.syncStatus.set('syncing');
-        console.log('[Sync] Starting full sync for user:', userId);
+        console.log('[Sync] Starting full sync with PocketBase for user:', userId);
 
         try {
-            // Fetch remote vocabulary
-            const remote = await this.fetchRemote(userId);
-            console.log('[Sync] Fetched', remote.length, 'items from server');
+            // Fetch remote vocabulary from PocketBase
+            const remote = await this.fetchFromPocketBase();
+            console.log('[Sync] Fetched', remote.length, 'items from PocketBase');
 
-            // Get local vocabulary and convert to sync format
+            // Get local vocabulary
             const local = this.convertToSyncItems(this.vocab.getAllItems());
             console.log('[Sync] Local has', local.length, 'items');
 
-            // Merge (prefer newer based on updatedAt)
+            // Merge (prefer newer based on updated timestamp)
             const merged = this.mergeItems(local, remote);
             console.log('[Sync] Merged result:', merged.length, 'items');
 
-            // Push merged to server
-            await this.pushToServer(userId, merged);
+            // Push merged to PocketBase
+            await this.pushToPocketBase(merged);
 
             // Import merged items back to local vocabulary
             this.importToLocal(merged);
@@ -170,9 +167,6 @@ export class SyncService {
         }
     }
 
-    /**
-     * Convert VocabularyItem[] to SyncItem[]
-     */
     private convertToSyncItems(items: any[]): SyncItem[] {
         return items.map(item => ({
             word: item.word,
@@ -182,79 +176,138 @@ export class SyncService {
             meaning: item.meaning,
             language: item.language,
             level: item.level,
-            examples: item.examples,
-            addedAt: new Date(item.addedAt).getTime(),
-            updatedAt: item.updatedAt ? new Date(item.updatedAt).getTime() : new Date(item.addedAt).getTime()
+            examples: item.examples || [],
+            // Preserve timestamps for merge comparison
+            updated: item.updatedAt ? new Date(item.updatedAt).toISOString() : undefined,
+            created: item.addedAt ? new Date(item.addedAt).toISOString() : undefined
         }));
     }
 
     /**
-     * Get HTTP headers with auth token
+     * Fetch vocabulary from PocketBase
      */
-    private getAuthHeaders(): HttpHeaders {
-        const token = this.auth.getToken();
-        return new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': token ? `Bearer ${token}` : ''
-        });
+    private async fetchFromPocketBase(): Promise<SyncItem[]> {
+        try {
+            const client = await this.pb.getClient();
+            const userId = client.authStore.model?.id;
+
+            if (!userId) {
+                console.log('[Sync] No authenticated user');
+                return [];
+            }
+
+            const records = await client.collection('vocabulary').getFullList({
+                filter: `user = "${userId}"`,
+                sort: '-updated'
+            });
+
+            return records.map((record: RecordModel) => ({
+                id: record.id,
+                word: record['word'] || '',
+                reading: record['reading'],
+                pinyin: record['pinyin'],
+                romanization: record['romanization'],
+                meaning: record['meaning'] || '',
+                language: record['language'] || 'ja',
+                level: record['level'] || 'new',
+                examples: record['examples'] || [],
+                created: record['created'],
+                updated: record['updated']
+            }));
+        } catch (error) {
+            console.error('[Sync] Fetch from PocketBase failed:', error);
+            return [];
+        }
     }
 
     /**
-     * Fetch vocabulary from server
+     * Push vocabulary to PocketBase with batch operations and retry
      */
-    private fetchRemote(userId: string): Promise<SyncItem[]> {
-        return new Promise((resolve) => {
-            this.http.get<{ success: boolean; items: any[] }>('/api/sync', {
-                headers: this.getAuthHeaders()
-            }).subscribe({
-                next: (res) => {
-                    if (res.success && res.items) {
-                        resolve(res.items.map(item => ({
-                            word: item.word,
-                            reading: item.reading,
-                            pinyin: item.pinyin,
-                            romanization: item.romanization,
-                            meaning: item.meaning,
-                            language: item.language,
-                            level: item.level || 'new',
-                            examples: JSON.parse(item.examples || '[]'),
-                            addedAt: item.added_at || Date.now(),
-                            updatedAt: item.updated_at || item.added_at || Date.now()
-                        })));
-                    } else {
-                        resolve([]);
-                    }
-                },
-                error: (err) => {
-                    console.error('[Sync] Fetch failed:', err);
-                    resolve([]);
+    private async pushToPocketBase(items: SyncItem[]): Promise<void> {
+        const client = await this.pb.getClient();
+        const userId = client.authStore.model?.id;
+
+        if (!userId) {
+            throw new Error('Not authenticated');
+        }
+
+        // Get existing records to know which to update vs create
+        const existingRecords = await client.collection('vocabulary').getFullList({
+            filter: `user = "${userId}"`
+        });
+
+        const existingMap = new Map<string, RecordModel>();
+        for (const record of existingRecords) {
+            const key = `${record['word']}-${record['language']}`;
+            existingMap.set(key, record);
+        }
+
+        // Prepare batch operations
+        const operations: Array<{ item: SyncItem; existing: RecordModel | undefined }> = [];
+        for (const item of items) {
+            const key = `${item.word}-${item.language}`;
+            operations.push({ item, existing: existingMap.get(key) });
+        }
+
+        // Process in parallel batches of 10
+        const BATCH_SIZE = 10;
+        for (let i = 0; i < operations.length; i += BATCH_SIZE) {
+            const batch = operations.slice(i, i + BATCH_SIZE);
+            await Promise.all(batch.map(({ item, existing }) =>
+                this.syncItemWithRetry(client, userId, item, existing)
+            ));
+        }
+    }
+
+    /**
+     * Sync a single item with retry logic (exponential backoff)
+     */
+    private async syncItemWithRetry(
+        client: Awaited<ReturnType<typeof this.pb.getClient>>,
+        userId: string,
+        item: SyncItem,
+        existing: RecordModel | undefined,
+        retries = 3
+    ): Promise<void> {
+        const data = {
+            word: item.word,
+            reading: item.reading || '',
+            pinyin: item.pinyin || '',
+            romanization: item.romanization || '',
+            meaning: item.meaning,
+            language: item.language,
+            level: item.level,
+            examples: item.examples,
+            user: userId
+        };
+
+        for (let attempt = 0; attempt < retries; attempt++) {
+            try {
+                if (existing) {
+                    await client.collection('vocabulary').update(existing.id, data);
+                } else {
+                    await client.collection('vocabulary').create(data);
                 }
-            });
-        });
+                return; // Success
+            } catch (error: any) {
+                const isLastAttempt = attempt === retries - 1;
+                const isNetworkError = error?.message?.includes('fetch') || error?.status === 0;
+
+                if (isLastAttempt || !isNetworkError) {
+                    console.error('[Sync] Failed to sync item after retries:', item.word, error);
+                    return; // Give up
+                }
+
+                // Exponential backoff: 1s, 2s, 4s
+                const delay = Math.pow(2, attempt) * 1000;
+                console.warn(`[Sync] Retry ${attempt + 1}/${retries} for ${item.word} in ${delay}ms`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
     }
 
     /**
-     * Push vocabulary to server
-     */
-    private pushToServer(userId: string, items: SyncItem[]): Promise<void> {
-        return new Promise((resolve, reject) => {
-            this.http.post<{ success: boolean }>('/api/sync', { items }, {
-                headers: this.getAuthHeaders()
-            }).subscribe({
-                next: (res) => {
-                    if (res.success) {
-                        resolve();
-                    } else {
-                        reject(new Error('Push failed'));
-                    }
-                },
-                error: (err) => reject(err)
-            });
-        });
-    }
-
-    /**
-     * Merge local and remote items - prefer newer based on updatedAt
+     * Merge local and remote items - prefer newer based on updated timestamp
      */
     private mergeItems(local: SyncItem[], remote: SyncItem[]): SyncItem[] {
         const merged = new Map<string, SyncItem>();
@@ -264,21 +317,24 @@ export class SyncService {
             merged.set(`${item.word}-${item.language}`, item);
         }
 
-        // Merge remote items, preferring newer versions
+        // Merge remote items, preferring newer versions based on timestamp comparison
         for (const item of remote) {
             const key = `${item.word}-${item.language}`;
             const existing = merged.get(key);
 
             if (!existing) {
-                // New item from remote
+                // Remote item doesn't exist locally - add it
                 merged.set(key, item);
             } else {
-                // Compare timestamps and keep the newer one
-                const existingTime = existing.updatedAt || existing.addedAt;
-                const remoteTime = item.updatedAt || item.addedAt;
-                if (remoteTime > existingTime) {
+                // Both exist - compare timestamps to determine which is newer
+                const remoteTime = item.updated ? new Date(item.updated).getTime() : 0;
+                const localTime = existing.updated ? new Date(existing.updated).getTime() : 0;
+
+                if (remoteTime > localTime) {
+                    // Remote is newer - use remote version
                     merged.set(key, item);
                 }
+                // Otherwise keep existing (local) version
             }
         }
 
@@ -299,8 +355,8 @@ export class SyncService {
             language: item.language as 'ja' | 'zh' | 'ko',
             level: item.level as 'new' | 'learning' | 'known' | 'ignored',
             examples: item.examples,
-            addedAt: new Date(item.addedAt),
-            updatedAt: new Date(item.updatedAt),
+            addedAt: item.created ? new Date(item.created) : new Date(),
+            updatedAt: item.updated ? new Date(item.updated) : new Date(),
             reviewCount: 0,
             easeFactor: 2.5,
             interval: 0,
@@ -311,19 +367,28 @@ export class SyncService {
     }
 
     /**
-     * Delete item from server
+     * Delete item from PocketBase
      */
-    deleteFromServer(word: string, language: string): void {
-        const userId = this.auth.getUserId();
-        if (!userId) return;
+    async deleteFromServer(word: string, language: string): Promise<void> {
+        try {
+            const client = await this.pb.getClient();
+            const userId = client.authStore.model?.id;
 
-        this.http.delete('/api/sync', {
-            headers: this.getAuthHeaders(),
-            body: { word, language }
-        }).subscribe({
-            next: () => console.log('[Sync] Deleted from server:', word),
-            error: (err) => console.error('[Sync] Delete failed:', err)
-        });
+            if (!userId) return;
+
+            // Find the record
+            const records = await client.collection('vocabulary').getFullList({
+                filter: `user = "${userId}" && word = "${this.sanitizeFilterValue(word)}" && language = "${this.sanitizeFilterValue(language)}"`
+            });
+
+            // Delete if found
+            for (const record of records) {
+                await client.collection('vocabulary').delete(record.id);
+                console.log('[Sync] Deleted from PocketBase:', word);
+            }
+        } catch (error) {
+            console.error('[Sync] Delete failed:', error);
+        }
     }
 
     /**

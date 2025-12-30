@@ -98,10 +98,12 @@
             }
         </button>
         } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
-        <div class="footer-btn-container">
-            <div class="google-btn-wrapper collapsed-only" #googleBtnCollapsed></div>
-            <div class="google-btn-wrapper expanded-only" #googleBtnExpanded></div>
-        </div>
+        <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
+            <app-icon name="user" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('header.signIn') }}</span>
+            }
+        </button>
         }
 
         <button class="footer-btn" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">

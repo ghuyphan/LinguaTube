@@ -29,4 +29,6 @@ bucket_name = "linguatube-transcripts"
 
 [vars]
 # GLADIA_API_KEY and GOOGLE_CLIENT_ID should be set in Cloudflare Dashboard
+# PocketHost URL for auth token verification
+POCKETHOST_URL = "https://voca.pockethost.io"
 

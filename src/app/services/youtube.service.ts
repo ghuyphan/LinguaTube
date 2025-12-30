@@ -79,6 +79,11 @@ export class YoutubeService {
     if (typeof document === 'undefined') return;
 
     document.addEventListener('visibilitychange', () => {
+      // Track play state when leaving the page to restore it when coming back
+      if (document.visibilityState === 'hidden' && this.player) {
+        this.wasPausedOnLeave = !this.isPlaying();
+      }
+
       if (document.visibilityState === 'visible' && this.player) {
         try {
           const time = this.player.getCurrentTime();
@@ -437,7 +442,6 @@ export class YoutubeService {
     } catch (e) { }
 
     this.player = null;
-    this.wasPausedOnLeave = !this.isPlaying();
     this.isPlaying.set(false);
     this.isReady.set(false);
     this.error.set(null);

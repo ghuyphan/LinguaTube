@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, output, ViewChild, ElementRef, effect } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, output, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -49,35 +49,20 @@ export class SidebarComponent {
   @ViewChild('googleBtnCollapsed') googleBtnCollapsed!: ElementRef;
   @ViewChild('googleBtnExpanded') googleBtnExpanded!: ElementRef;
 
-  constructor() {
-    effect(() => {
-      if (this.auth.isInitialized() && this.auth.isAuthEnabled() && !this.auth.isLoggedIn()) {
-        setTimeout(() => this.renderGoogleButtons(), 0);
-      }
-    });
-  }
+  isLoggingIn = false;
 
-  renderGoogleButtons() {
-    if (this.googleBtnCollapsed?.nativeElement) {
-      this.auth.renderButton(this.googleBtnCollapsed.nativeElement, {
-        type: 'icon',
-        shape: 'circle',
-        theme: 'outline',
-        size: 'medium'
-      });
-    }
-
-    if (this.googleBtnExpanded?.nativeElement) {
-      this.auth.renderButton(this.googleBtnExpanded.nativeElement, {
-        type: 'standard',
-        shape: 'rectangular',
-        theme: 'outline',
-        size: 'medium',
-        width: '225', // Fill available width (260 - 32 padding = 228)
-        text: 'signin_with'
-      });
+  /**
+   * Login with Google via PocketBase OAuth
+   */
+  async loginWithGoogle(): Promise<void> {
+    if (this.isLoggingIn) return;
+    this.isLoggingIn = true;
+    try {
+      await this.auth.loginWithGoogle();
+    } catch (error) {
+      console.error('[Sidebar] Google login failed:', error);
+    } finally {
+      this.isLoggingIn = false;
     }
   }
-
-
 }

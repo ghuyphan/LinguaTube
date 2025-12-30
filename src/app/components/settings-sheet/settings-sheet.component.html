@@ -29,7 +29,10 @@
                 {{ i18n.t('header.signOut') }}
             </button>
             } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
-            <div class="google-btn-container" #googleBtnSettings></div>
+            <button class="settings-btn settings-btn--primary" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
+                <app-icon name="user" [size]="18" />
+                {{ i18n.t('header.signIn') }}
+            </button>
             <p class="google-signin-hint">{{ i18n.t('settings.syncVocab') }}</p>
             }
         </div>
