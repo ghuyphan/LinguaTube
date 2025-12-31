@@ -75,9 +75,17 @@ export class SubtitleDisplayComponent {
     }
   }
 
+  // Compute effective language (prioritize detected video language over user setting)
+  effectiveLanguage = computed(() => {
+    const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
+    const userLang = this.settings.settings().language;
+    const validLangs = ['ja', 'zh', 'ko', 'en'];
+    return (detected && validLangs.includes(detected)) ? detected : userLang;
+  });
+
   // Computed signal for reading display
   showReading = computed(() => {
-    const lang = this.settings.settings().language;
+    const lang = this.effectiveLanguage();
     return lang === 'ja'
       ? this.settings.settings().showFurigana
       : this.settings.settings().showPinyin;
@@ -87,12 +95,8 @@ export class SubtitleDisplayComponent {
     const cue = this.subtitles.currentCue();
     if (!cue) return [];
 
-    // Prioritize detected language over user setting (fixes tokenization mismatch)
-    const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
-    const userLang = this.settings.settings().language;
-    const validLangs = ['ja', 'zh', 'ko', 'en'];
-    const lang = (detected && validLangs.includes(detected)) ? detected : userLang;
-
+    // Use effective language for tokenization
+    const lang = this.effectiveLanguage();
     const tokens = this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
 
     // Pre-compute levels for template
@@ -111,12 +115,9 @@ export class SubtitleDisplayComponent {
     const tokens = this.currentTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
 
-    const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
-    const userLang = this.settings.settings().language;
-    const validLangs = ['ja', 'zh', 'ko'];
-    const lang = (detected && validLangs.includes(detected)) ? detected : userLang;
-
+    const lang = this.effectiveLanguage();
     if (lang === 'en') return []; // No grammar for English
+
     return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
   });
 
@@ -267,8 +268,8 @@ export class SubtitleDisplayComponent {
   }
 
   getTokens(cue: SubtitleCue): Token[] {
-    const lang = this.settings.settings().language;
-    return this.subtitles.getTokens(cue, lang);
+    const lang = this.effectiveLanguage();
+    return this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
   }
 
   // getWordLevel removed - pre-computed in currentTokens
@@ -283,7 +284,7 @@ export class SubtitleDisplayComponent {
 
   // Computed reading label
   readingLabel = computed(() => {
-    const lang = this.settings.settings().language;
+    const lang = this.effectiveLanguage();
     switch (lang) {
       case 'ja': return 'Furigana';
       case 'zh': return 'Pinyin';
@@ -293,14 +294,14 @@ export class SubtitleDisplayComponent {
   });
 
   getReading(token: Token): string | undefined {
-    const lang = this.settings.settings().language;
+    const lang = this.effectiveLanguage();
     if (lang === 'ja') return token.reading;
     if (lang === 'zh') return token.pinyin;
     return token.romanization || token.pinyin;
   }
 
   toggleReading(): void {
-    const lang = this.settings.settings().language;
+    const lang = this.effectiveLanguage();
     if (lang === 'ja') {
       this.settings.toggleFurigana();
     } else {
