@@ -17,6 +17,7 @@ import {
     sanitizeVideoId,
     validateBatchSize
 } from '../../_shared/utils.js';
+import { tokenize } from '../../_shared/tokenizer.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };

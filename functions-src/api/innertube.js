@@ -212,11 +212,15 @@ export async function onRequestPost(context) {
 
 async function checkCache(r2, db, videoId, lang) {
     // Check R2 first (primary storage), then D1 (backup/legacy)
-    const [r2Result, d1Result] = await Promise.allSettled([
+    // Check for both YouTube and AI transcripts
+    const [r2Result, d1Result, r2AiResult, d1AiResult] = await Promise.allSettled([
         r2 ? checkR2Cache(r2, videoId, lang) : Promise.resolve(null),
-        db ? checkD1Cache(db, videoId, lang) : Promise.resolve(null)
+        db ? checkD1Cache(db, videoId, lang) : Promise.resolve(null),
+        r2 ? checkR2Cache(r2, videoId, lang, 'ai') : Promise.resolve(null),
+        db ? checkD1Cache(db, videoId, lang, 'ai') : Promise.resolve(null)
     ]);
 
+    // Prefer YouTube transcripts over AI transcripts
     if (r2Result.status === 'fulfilled' && r2Result.value) {
         return r2Result.value;
     }
@@ -225,13 +229,28 @@ async function checkCache(r2, db, videoId, lang) {
         return d1Result.value;
     }
 
+    // Fallback to AI transcripts if no YouTube transcripts found
+    if (r2AiResult.status === 'fulfilled' && r2AiResult.value) {
+        log('Found cached AI transcript in R2');
+        return r2AiResult.value;
+    }
+
+    if (d1AiResult.status === 'fulfilled' && d1AiResult.value) {
+        log('Found cached AI transcript in D1');
+        return d1AiResult.value;
+    }
+
     return null;
 }
 
-async function checkR2Cache(r2, videoId, lang) {
+async function checkR2Cache(r2, videoId, lang, source = null) {
     try {
         const result = await getTranscriptFromR2(r2, videoId, lang);
+        // If source filter is specified, check if it matches
         if (result?.segments?.length) {
+            if (source && result.source !== source) {
+                return null; // Source doesn't match filter
+            }
             return {
                 captions: {
                     playerCaptionsTracklistRenderer: {
@@ -259,9 +278,10 @@ async function checkKVCache(cache, cacheKey) {
     return null;
 }
 
-async function checkD1Cache(db, videoId, lang) {
+async function checkD1Cache(db, videoId, lang, source = null) {
     try {
-        const d1 = await getTranscript(db, videoId, lang);
+        // Pass source filter to D1 query
+        const d1 = await getTranscript(db, videoId, lang, source);
         if (d1?.segments?.length) {
             return {
                 captions: {
