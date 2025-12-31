@@ -126,7 +126,7 @@ type FilterType = 'all' | 'favorites';
         </div>
 
         <!-- Sync hint for guests - shown below main panel on mobile -->
-        @if (!auth.isLoggedIn()) {
+        @if (auth.isInitialized() && !auth.isLoggedIn()) {
           <div class="sync-hint-mobile mobile-only">
             <app-icon name="cloud" [size]="16" />
             <span>{{ i18n.t('history.syncHint') }}</span>
@@ -150,7 +150,7 @@ type FilterType = 'all' | 'favorites';
             </div>
           </div>
 
-          @if (!auth.isLoggedIn()) {
+          @if (auth.isInitialized() && !auth.isLoggedIn()) {
             <div class="sync-hint">
               <app-icon name="cloud" [size]="16" />
               <span>{{ i18n.t('history.syncHint') }}</span>

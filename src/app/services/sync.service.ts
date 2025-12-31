@@ -150,30 +150,26 @@ export class SyncService {
         console.log('[Sync] Starting full sync with PocketBase for user:', userId);
 
         try {
-            // Fetch remote vocabulary from PocketBase
+            // Sync vocabulary
             const remote = await this.fetchFromPocketBase();
-            console.log('[Sync] Fetched', remote.length, 'items from PocketBase');
+            console.log('[Sync] Fetched', remote.length, 'vocab items from PocketBase');
 
-            // Get local vocabulary
             const local = this.convertToSyncItems(this.vocab.getAllItems());
-            console.log('[Sync] Local has', local.length, 'items');
+            console.log('[Sync] Local has', local.length, 'vocab items');
 
-            // Merge (prefer newer based on updated timestamp)
             const merged = this.mergeItems(local, remote);
-            console.log('[Sync] Merged result:', merged.length, 'items');
+            console.log('[Sync] Merged vocab result:', merged.length, 'items');
 
-            // Push merged to PocketBase
             await this.pushToPocketBase(merged);
-
-            // Import merged items back to local vocabulary
             this.importToLocal(merged);
-
-            // Update hash to prevent immediate re-push
             this.lastPushedHash = this.calculateHash(this.vocab.getAllItems());
+
+            // Sync history
+            await this.syncHistory();
 
             this.syncStatus.set('synced');
             this.lastSyncTime.set(new Date());
-            console.log('[Sync] Sync complete!');
+            console.log('[Sync] Full sync complete!');
         } catch (error) {
             console.error('[Sync] Failed:', error);
             this.syncStatus.set('error');
