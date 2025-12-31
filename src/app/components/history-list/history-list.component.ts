@@ -1,4 +1,16 @@
-import { Component, ChangeDetectionStrategy, inject, signal, input, output, OnInit, PLATFORM_ID, effect } from '@angular/core';
+import {
+    Component,
+    ChangeDetectionStrategy,
+    inject,
+    signal,
+    input,
+    output,
+    OnInit,
+    PLATFORM_ID,
+    effect,
+    computed,
+    HostListener,
+} from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
@@ -8,11 +20,13 @@ import { HistoryItem } from '../../models';
 interface SwipeState {
     itemId: string | null;
     startX: number;
+    startY: number;
     currentX: number;
-    swiping: boolean;
+    startTime: number;
+    isHorizontalSwipe: boolean | null;
+    velocity: number;
 }
 
-// Track if initial animation has played this session
 const ANIMATION_KEY = 'history-list-animated';
 
 @Component({
@@ -20,394 +34,8 @@ const ANIMATION_KEY = 'history-list-animated';
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, IconComponent],
-    template: `
-    @if (items().length === 0) {
-      <div class="empty-state" [class.animate]="shouldAnimate()">
-        <app-icon name="play-circle" [size]="32" class="empty-state__icon" />
-        <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
-        <p class="empty-state__hint">{{ i18n.t('history.noHistoryHint') }}</p>
-      </div>
-    } @else {
-      <div class="history-items" [class.filter-animate]="filterAnimating()">
-        @for (item of items(); track item.id; let i = $index) {
-          <div 
-            class="history-item-wrapper"
-            [class.animate]="shouldAnimate()"
-            [style.--animation-delay]="i * 50 + 'ms'"
-          >
-            <!-- Delete action background (revealed on swipe) -->
-            <div class="swipe-action swipe-action--delete">
-              <app-icon name="trash-2" [size]="20" />
-            </div>
-
-            <!-- Main item (swipeable) -->
-            <div 
-              class="history-item"
-              [class.swiping]="swipeState().itemId === item.id && swipeState().swiping"
-              [style.transform]="getSwipeTransform(item.id)"
-              (touchstart)="onTouchStart($event, item)"
-              (touchmove)="onTouchMove($event, item)"
-              (touchend)="onTouchEnd($event, item)"
-              (click)="onPlayVideo(item)"
-            >
-              <!-- Thumbnail -->
-              <div class="history-item__thumb">
-                <img 
-                  [src]="item.thumbnail || getThumbnail(item.video_id)" 
-                  [alt]="item.title"
-                  loading="lazy"
-                />
-                @if (item.progress > 0) {
-                  <div class="progress-bar">
-                    <div class="progress-fill" [style.width.%]="item.progress"></div>
-                  </div>
-                }
-              </div>
-
-              <!-- Content -->
-              <div class="history-item__content">
-                <span class="history-item__title">{{ item.title }}</span>
-                <div class="history-item__meta">
-                  <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
-                  <span class="channel-name">{{ item.channel }}</span>
-                  <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
-                </div>
-              </div>
-
-              <!-- Actions (desktop) -->
-              <div class="history-item__actions desktop-only">
-                <button 
-                  class="action-btn favorite-btn" 
-                  [class.active]="item.is_favorite"
-                  (click)="onToggleFavorite(item, $event)"
-                  [attr.aria-label]="i18n.t('history.favorites')">
-                  <app-icon name="heart" [size]="18" />
-                </button>
-                <button 
-                  class="action-btn delete-btn"
-                  (click)="onRemoveItem(item, $event)"
-                  [attr.aria-label]="i18n.t('history.removeFromHistory')">
-                  <app-icon name="x" [size]="18" />
-                </button>
-              </div>
-
-              <!-- Favorite button only on mobile (delete via swipe) -->
-              <div class="history-item__actions mobile-only">
-                <button 
-                  class="action-btn favorite-btn" 
-                  [class.active]="item.is_favorite"
-                  (click)="onToggleFavorite(item, $event)"
-                  [attr.aria-label]="i18n.t('history.favorites')">
-                  <app-icon name="heart" [size]="18" />
-                </button>
-              </div>
-            </div>
-          </div>
-        }
-      </div>
-    }
-  `,
-    styles: [`
-    :host {
-      display: block;
-    }
-
-    .empty-state {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: var(--space-2xl);
-      color: var(--text-muted);
-    }
-
-    .empty-state.animate {
-      animation: fadeSlideIn 0.3s ease-out;
-    }
-
-    .empty-state__icon {
-      margin-bottom: var(--space-md);
-      opacity: 0.5;
-    }
-
-    .empty-state__title {
-      font-size: 1rem;
-      color: var(--text-primary);
-      margin: 0 0 var(--space-xs);
-    }
-
-    .empty-state__hint {
-      margin: 0;
-      font-size: 0.875rem;
-    }
-
-    .history-items {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Subtle filter switch animation */
-    .history-items.filter-animate {
-      animation: filterFade 0.25s ease-out;
-    }
-
-    @keyframes filterFade {
-      from {
-        opacity: 0.5;
-        transform: translateY(4px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .history-item-wrapper {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .history-item-wrapper.animate {
-      animation: fadeSlideIn 0.3s ease-out backwards;
-      animation-delay: var(--animation-delay, 0ms);
-    }
-
-    /* Swipe action background */
-    .swipe-action {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-    }
-
-    .swipe-action--delete {
-      background: var(--error);
-    }
-
-    .history-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-sm) var(--space-md);
-      background: var(--bg-card);
-      cursor: pointer;
-      transition: background-color var(--transition-fast);
-      will-change: transform;
-    }
-
-    .history-item.swiping {
-      transition: none;
-    }
-
-    @media (hover: hover) {
-      .history-item:hover {
-        background-color: var(--bg-secondary);
-      }
-
-      .history-item:hover .delete-btn {
-        opacity: 1;
-      }
-    }
-
-    .history-item__thumb {
-      position: relative;
-      width: 100px;
-      height: 56px;
-      flex-shrink: 0;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      background: var(--bg-tertiary);
-    }
-
-    .history-item__thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .progress-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--accent-primary);
-    }
-
-    .history-item__content {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .history-item__title {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      line-height: 1.3;
-    }
-
-    .history-item__meta {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-    }
-
-    .lang-badge {
-      padding: 1px 5px;
-      font-size: 0.625rem;
-      font-weight: 600;
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      border-radius: var(--border-radius-sm);
-    }
-
-    .channel-name {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 120px;
-    }
-
-    .time-ago {
-      color: var(--text-muted);
-    }
-
-    .history-item__actions {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      flex-shrink: 0;
-    }
-
-    .action-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-
-    .favorite-btn.active {
-      color: var(--accent-primary);
-    }
-
-    .delete-btn {
-      opacity: 0;
-    }
-
-    @media (hover: hover) {
-      .action-btn:hover {
-        background: var(--bg-tertiary);
-      }
-
-      .favorite-btn:hover {
-        color: var(--accent-primary);
-      }
-
-      .delete-btn:hover {
-        color: var(--error);
-      }
-    }
-
-    .desktop-only {
-      display: flex;
-    }
-
-    .mobile-only {
-      display: none;
-    }
-
-    /* Mobile optimizations */
-    @media (max-width: 768px) {
-      .desktop-only {
-        display: none !important;
-      }
-
-      .mobile-only {
-        display: flex;
-      }
-
-      .history-item {
-        gap: var(--space-sm);
-        padding: var(--space-sm);
-        touch-action: pan-y pinch-zoom;
-      }
-
-      .history-item__thumb {
-        width: 72px;
-        height: 40px;
-      }
-
-      .history-item__title {
-        font-size: 0.8125rem;
-      }
-
-      .history-item__meta {
-        font-size: 0.6875rem;
-        gap: var(--space-xs);
-      }
-
-      .channel-name {
-        display: none;
-      }
-
-      .action-btn {
-        width: 36px;
-        height: 36px;
-      }
-    }
-
-    /* Entry animation keyframe (uses global) */
-    @keyframes fadeSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Delete animation */
-    @keyframes slideOutLeft {
-      to {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-    }
-
-    .history-item-wrapper.deleting {
-      animation: slideOutLeft 0.25s ease-out forwards;
-    }
-  `]
+    templateUrl: './history-list.component.html',
+    styleUrl: './history-list.component.scss',
 })
 export class HistoryListComponent implements OnInit {
     private historyService = inject(HistoryService);
@@ -425,30 +53,46 @@ export class HistoryListComponent implements OnInit {
     // Outputs
     itemRemoved = output<HistoryItem>();
 
-    // Animation state - only first render per session
+    // Animation state
     shouldAnimate = signal(false);
-
-    // Filter change animation
     filterAnimating = signal(false);
     private lastFilter = '';
+
+    // Swipe configuration
+    private readonly REVEAL_WIDTH = 72; // Width of revealed delete button
+    private readonly DELETE_THRESHOLD = 160; // Swipe distance to trigger immediate delete
+    private readonly DIRECTION_LOCK_THRESHOLD = 10;
+    private readonly VELOCITY_THRESHOLD = 0.5; // px/ms for quick full-swipe delete
 
     // Swipe state
     swipeState = signal<SwipeState>({
         itemId: null,
         startX: 0,
+        startY: 0,
         currentX: 0,
-        swiping: false
+        startTime: 0,
+        isHorizontalSwipe: null,
+        velocity: 0,
     });
 
-    private readonly SWIPE_THRESHOLD = 80;
-    private readonly MAX_SWIPE = 100;
+    // Item with revealed delete button (snapped open)
+    revealedItemId = signal<string | null>(null);
+
+    // Track items being deleted for animation
+    deletingItems = signal<Set<string>>(new Set());
+
+    // Computed: is swiping past delete threshold?
+    isPastDeleteThreshold = computed(() => {
+        const state = this.swipeState();
+        if (!state.itemId || !state.isHorizontalSwipe) return false;
+        const offset = Math.abs(state.currentX - state.startX);
+        return offset >= this.DELETE_THRESHOLD;
+    });
 
     constructor() {
-        // Track filter changes for animation
         effect(() => {
             const currentFilter = this.filter();
             if (this.lastFilter && this.lastFilter !== currentFilter) {
-                // Filter changed - trigger animation
                 this.filterAnimating.set(true);
                 setTimeout(() => this.filterAnimating.set(false), 300);
             }
@@ -457,13 +101,26 @@ export class HistoryListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // Only animate on first render per session
         if (isPlatformBrowser(this.platformId)) {
             const hasAnimated = sessionStorage.getItem(ANIMATION_KEY);
             if (!hasAnimated) {
                 this.shouldAnimate.set(true);
                 sessionStorage.setItem(ANIMATION_KEY, 'true');
             }
+        }
+    }
+
+    // Close revealed item when clicking outside
+    @HostListener('document:touchstart', ['$event'])
+    onDocumentTouch(event: TouchEvent): void {
+        if (!this.revealedItemId()) return;
+
+        const target = event.target as HTMLElement;
+        const wrapper = target.closest('.history-item-wrapper');
+
+        // If clicking outside any history item, or on a different item, close revealed
+        if (!wrapper) {
+            this.revealedItemId.set(null);
         }
     }
 
@@ -478,104 +135,276 @@ export class HistoryListComponent implements OnInit {
         const hours = Math.floor(diff / 3600000);
         const days = Math.floor(diff / 86400000);
 
+        if (minutes < 1) return this.i18n.t('history.justNow') || 'now';
         if (minutes < 60) return `${minutes}m`;
         if (hours < 24) return `${hours}h`;
         if (days < 7) return `${days}d`;
         return new Date(date).toLocaleDateString();
     }
 
-    getSwipeTransform(itemId: string): string {
+    // Get current swipe offset for an item
+    getSwipeOffset(itemId: string): number {
         const state = this.swipeState();
-        if (state.itemId !== itemId) return 'translateX(0)';
 
-        const offset = Math.max(-this.MAX_SWIPE, Math.min(0, state.currentX - state.startX));
-        return `translateX(${offset}px)`;
+        // If this item is being actively swiped
+        if (state.itemId === itemId && state.isHorizontalSwipe) {
+            const offset = state.currentX - state.startX;
+            const absOffset = Math.abs(offset);
+            const isRevealed = this.revealedItemId() === itemId;
+
+            // Check if this is a "full swipe" gesture (fast or already past threshold)
+            const isFullSwipe = state.velocity > this.VELOCITY_THRESHOLD ||
+                absOffset >= this.DELETE_THRESHOLD ||
+                (isRevealed && absOffset >= (this.DELETE_THRESHOLD - this.REVEAL_WIDTH));
+
+            if (isRevealed) {
+                // Starting from revealed position
+                if (isFullSwipe) {
+                    // Full swipe - follow finger off screen
+                    return Math.min(0, offset - this.REVEAL_WIDTH);
+                } else {
+                    // Partial swipe - clamp at reveal position or allow closing
+                    const newOffset = offset - this.REVEAL_WIDTH;
+                    return Math.max(-this.REVEAL_WIDTH, Math.min(0, newOffset));
+                }
+            } else {
+                // Starting from closed position
+                if (isFullSwipe) {
+                    // Full swipe - follow finger off screen
+                    return Math.min(0, offset);
+                } else {
+                    // Partial swipe - clamp at reveal width
+                    return Math.max(-this.REVEAL_WIDTH, Math.min(0, offset));
+                }
+            }
+        }
+
+        // If this item is revealed (snapped open)
+        if (this.revealedItemId() === itemId) {
+            return -this.REVEAL_WIDTH;
+        }
+
+        return 0;
+    }
+
+    // Check if item is being actively swiped
+    isSwiping(itemId: string): boolean {
+        const state = this.swipeState();
+        return state.itemId === itemId && state.isHorizontalSwipe === true;
+    }
+
+    // Check if item has delete button revealed
+    isRevealed(itemId: string): boolean {
+        return this.revealedItemId() === itemId;
+    }
+
+    // Check if item is being deleted
+    isDeleting(itemId: string): boolean {
+        return this.deletingItems().has(itemId);
+    }
+
+    // Check if swipe is past delete threshold (for visual feedback)
+    isSwipePastThreshold(itemId: string): boolean {
+        const state = this.swipeState();
+        if (state.itemId !== itemId || !state.isHorizontalSwipe) return false;
+
+        const absOffset = Math.abs(state.currentX - state.startX);
+        const isRevealed = this.revealedItemId() === itemId;
+        const totalOffset = isRevealed ? absOffset + this.REVEAL_WIDTH : absOffset;
+
+        // Only show "past threshold" if actually doing a full swipe
+        const isFullSwipe = state.velocity > this.VELOCITY_THRESHOLD || totalOffset >= this.DELETE_THRESHOLD;
+        return isFullSwipe && totalOffset >= this.DELETE_THRESHOLD;
+    }
+
+    // Get swipe progress for visual feedback (0 to 1)
+    getSwipeProgress(itemId: string): number {
+        const state = this.swipeState();
+        if (state.itemId !== itemId || !state.isHorizontalSwipe) {
+            // If revealed but not swiping, show partial progress
+            if (this.revealedItemId() === itemId) {
+                return this.REVEAL_WIDTH / this.DELETE_THRESHOLD;
+            }
+            return 0;
+        }
+
+        const absOffset = Math.abs(state.currentX - state.startX);
+        const isRevealed = this.revealedItemId() === itemId;
+        const totalOffset = isRevealed ? absOffset + this.REVEAL_WIDTH : absOffset;
+
+        return Math.min(1, totalOffset / this.DELETE_THRESHOLD);
     }
 
     onTouchStart(event: TouchEvent, item: HistoryItem): void {
-        // Only enable swipe on mobile
         if (window.innerWidth > 768) return;
+
+        // If another item is revealed, close it first
+        if (this.revealedItemId() && this.revealedItemId() !== item.id) {
+            this.revealedItemId.set(null);
+        }
 
         const touch = event.touches[0];
         this.swipeState.set({
             itemId: item.id,
             startX: touch.clientX,
+            startY: touch.clientY,
             currentX: touch.clientX,
-            swiping: true
+            startTime: Date.now(),
+            isHorizontalSwipe: null,
+            velocity: 0,
         });
     }
 
     onTouchMove(event: TouchEvent, item: HistoryItem): void {
         const state = this.swipeState();
-        if (!state.swiping || state.itemId !== item.id) return;
+        if (state.itemId !== item.id) return;
 
         const touch = event.touches[0];
         const deltaX = touch.clientX - state.startX;
+        const deltaY = touch.clientY - state.startY;
 
-        // Only allow left swipe (negative deltaX)
-        if (deltaX < -10) {
-            event.preventDefault(); // Prevent scroll when swiping
+        // Determine swipe direction if not yet locked
+        if (state.isHorizontalSwipe === null) {
+            const absX = Math.abs(deltaX);
+            const absY = Math.abs(deltaY);
+
+            if (absX > this.DIRECTION_LOCK_THRESHOLD || absY > this.DIRECTION_LOCK_THRESHOLD) {
+                // Only allow left swipe (or right swipe if already revealed)
+                const isRevealed = this.revealedItemId() === item.id;
+                const isHorizontal = absX > absY && (deltaX < 0 || isRevealed);
+
+                this.swipeState.update((s) => ({ ...s, isHorizontalSwipe: isHorizontal }));
+
+                if (!isHorizontal) {
+                    this.resetSwipe();
+                    return;
+                }
+            } else {
+                return;
+            }
         }
 
-        this.swipeState.update(s => ({
+        if (!state.isHorizontalSwipe) return;
+
+        event.preventDefault();
+
+        const elapsed = Date.now() - state.startTime;
+        const velocity = elapsed > 0 ? Math.abs(deltaX) / elapsed : 0;
+
+        this.swipeState.update((s) => ({
             ...s,
-            currentX: touch.clientX
+            currentX: touch.clientX,
+            velocity,
         }));
+
+        // Haptic when crossing delete threshold
+        if (this.isSwipePastThreshold(item.id)) {
+            this.triggerHaptic();
+        }
     }
 
     onTouchEnd(event: TouchEvent, item: HistoryItem): void {
         const state = this.swipeState();
-        if (!state.swiping || state.itemId !== item.id) return;
+        if (state.itemId !== item.id) return;
 
-        const offset = state.currentX - state.startX;
-
-        // If swiped past threshold, delete
-        if (offset < -this.SWIPE_THRESHOLD) {
-            this.animateAndDelete(item, event);
-        } else {
-            // Reset swipe
-            this.swipeState.set({
-                itemId: null,
-                startX: 0,
-                currentX: 0,
-                swiping: false
-            });
+        // If not horizontal swipe, just reset
+        if (!state.isHorizontalSwipe) {
+            this.resetSwipe();
+            return;
         }
+
+        const rawOffset = state.currentX - state.startX;
+        const absOffset = Math.abs(rawOffset);
+        const isRevealed = this.revealedItemId() === item.id;
+
+        // Calculate total offset from closed position
+        const totalOffset = isRevealed ? absOffset + this.REVEAL_WIDTH : absOffset;
+
+        // Check for full swipe delete (fast velocity OR past threshold)
+        const isQuickSwipe = state.velocity > this.VELOCITY_THRESHOLD && absOffset > 40;
+        const isPastThreshold = totalOffset >= this.DELETE_THRESHOLD;
+
+        // Case 1: Full swipe delete
+        if ((isQuickSwipe || isPastThreshold) && rawOffset < 0) {
+            this.deleteItem(item);
+            return;
+        }
+
+        // Case 2: Swiping left (opening)
+        if (rawOffset < -20) {
+            this.revealedItemId.set(item.id);
+            this.resetSwipe();
+            return;
+        }
+
+        // Case 3: Swiping right while revealed (closing)
+        if (isRevealed && rawOffset > 20) {
+            this.revealedItemId.set(null);
+            this.resetSwipe();
+            return;
+        }
+
+        // Case 4: Small movement - keep current state
+        this.resetSwipe();
     }
 
-    private animateAndDelete(item: HistoryItem, event: Event): void {
+    // Handle tap on delete button
+    onDeleteButtonClick(event: Event, item: HistoryItem): void {
         event.stopPropagation();
+        this.deleteItem(item);
+    }
 
-        // Find wrapper and add delete animation class
-        const wrapper = (event.target as HTMLElement).closest('.history-item-wrapper');
-        if (wrapper) {
-            wrapper.classList.add('deleting');
-
-            // Wait for animation, then delete
-            setTimeout(() => {
-                this.historyService.removeFromHistory(item.id);
-
-                if (this.auth.isLoggedIn()) {
-                    this.syncService.deleteHistoryFromServer(item.video_id);
-                }
-
-                this.itemRemoved.emit(item);
-            }, 250);
-        }
-
-        // Reset swipe state
+    private resetSwipe(): void {
         this.swipeState.set({
             itemId: null,
             startX: 0,
+            startY: 0,
             currentX: 0,
-            swiping: false
+            startTime: 0,
+            isHorizontalSwipe: null,
+            velocity: 0,
         });
     }
 
+    private triggerHaptic(): void {
+        if ('vibrate' in navigator) {
+            navigator.vibrate(10);
+        }
+    }
+
+    private deleteItem(item: HistoryItem): void {
+        this.deletingItems.update((set) => new Set(set).add(item.id));
+        this.revealedItemId.set(null);
+        this.resetSwipe();
+
+        setTimeout(() => {
+            this.historyService.removeFromHistory(item.id);
+
+            if (this.auth.isLoggedIn()) {
+                this.syncService.deleteHistoryFromServer(item.video_id);
+            }
+
+            this.itemRemoved.emit(item);
+
+            this.deletingItems.update((set) => {
+                const newSet = new Set(set);
+                newSet.delete(item.id);
+                return newSet;
+            });
+        }, 280);
+    }
+
     onPlayVideo(item: HistoryItem): void {
-        // Don't navigate if swiping
         const state = this.swipeState();
-        if (state.swiping && Math.abs(state.currentX - state.startX) > 10) {
+
+        // Don't navigate if was swiping
+        if (state.itemId === item.id && state.isHorizontalSwipe) {
+            return;
+        }
+
+        // Don't navigate if item is revealed (user should tap elsewhere to close)
+        if (this.revealedItemId() === item.id) {
+            this.revealedItemId.set(null);
             return;
         }
 
@@ -589,12 +418,10 @@ export class HistoryListComponent implements OnInit {
 
     onRemoveItem(item: HistoryItem, event: Event): void {
         event.stopPropagation();
-        this.historyService.removeFromHistory(item.id);
+        this.deleteItem(item);
+    }
 
-        if (this.auth.isLoggedIn()) {
-            this.syncService.deleteHistoryFromServer(item.video_id);
-        }
-
-        this.itemRemoved.emit(item);
+    trackByItemId(index: number, item: HistoryItem): string {
+        return item.id;
     }
 }

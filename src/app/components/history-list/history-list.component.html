@@ -1,0 +1,71 @@
+@if (items().length === 0) {
+<div class="empty-state" [class.animate]="shouldAnimate()">
+    <app-icon name="play-circle" [size]="32" class="empty-state__icon" />
+    <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
+    <p class="empty-state__hint">{{ i18n.t('history.noHistoryHint') }}</p>
+</div>
+} @else {
+<div class="history-items" [class.filter-animate]="filterAnimating()">
+    @for (item of items(); track trackByItemId($index, item); let i = $index) {
+    <div class="history-item-wrapper" [class.animate]="shouldAnimate()" [class.deleting]="isDeleting(item.id)"
+        [style.--animation-delay]="i * 50 + 'ms'">
+        <!-- Delete action background (revealed on swipe) -->
+        <button type="button" class="swipe-action" [class.active]="isSwipePastThreshold(item.id)"
+            [class.revealed]="isRevealed(item.id)" [style.--swipe-progress]="getSwipeProgress(item.id)"
+            (click)="onDeleteButtonClick($event, item)" [attr.aria-label]="i18n.t('history.delete') || 'Delete'">
+            <app-icon name="trash-2" [size]="22" class="swipe-action__icon" />
+        </button>
+
+        <!-- Main item (swipeable) -->
+        <div class="history-item" [class.swiping]="isSwiping(item.id)"
+            [style.transform]="'translateX(' + getSwipeOffset(item.id) + 'px)'"
+            (touchstart)="onTouchStart($event, item)" (touchmove)="onTouchMove($event, item)"
+            (touchend)="onTouchEnd($event, item)" (click)="onPlayVideo(item)">
+            <!-- Thumbnail -->
+            <div class="history-item__thumb">
+                <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy"
+                    decoding="async" />
+                @if (item.progress > 0) {
+                <div class="progress-bar">
+                    <div class="progress-fill" [style.width.%]="item.progress"></div>
+                </div>
+                }
+            </div>
+
+            <!-- Content -->
+            <div class="history-item__content">
+                <span class="history-item__title">{{ item.title }}</span>
+                <div class="history-item__meta">
+                    <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
+                    <span class="channel-name">{{ item.channel }}</span>
+                    <span class="separator">•</span>
+                    <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
+                </div>
+            </div>
+
+            <!-- Actions (desktop) -->
+            <div class="history-item__actions history-item__actions--desktop">
+                <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
+                    (click)="onToggleFavorite(item, $event)" [attr.aria-label]="i18n.t('history.favorites')"
+                    [attr.aria-pressed]="item.is_favorite">
+                    <app-icon name="heart" [size]="18" />
+                </button>
+                <button type="button" class="action-btn action-btn--delete" (click)="onRemoveItem(item, $event)"
+                    [attr.aria-label]="i18n.t('history.removeFromHistory')">
+                    <app-icon name="x" [size]="18" />
+                </button>
+            </div>
+
+            <!-- Actions (mobile - favorite only, delete via swipe) -->
+            <div class="history-item__actions history-item__actions--mobile">
+                <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
+                    (click)="onToggleFavorite(item, $event)" [attr.aria-label]="i18n.t('history.favorites')"
+                    [attr.aria-pressed]="item.is_favorite">
+                    <app-icon name="heart" [size]="18" />
+                </button>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+}
