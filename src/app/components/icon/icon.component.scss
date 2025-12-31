@@ -6,36 +6,26 @@
 
 .icon {
     flex-shrink: 0;
-    // Softer, cuter look
-    stroke-width: 1.75;
-    transition: transform 0.2s ease, color 0.2s ease;
+    // Softer, friendlier stroke
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
-    // Filled icons get special treatment
+    // Filled icons
     &.icon--heart-filled,
     &.icon--star-filled,
-    &.icon--fire {
-        fill: currentColor;
-        stroke: none;
-    }
-
-    // Partial fill for these
+    &.icon--fire,
     &.icon--bookmark-filled {
         fill: currentColor;
     }
-}
 
-// Cute hover bounce (only on hover-capable devices)
-@media (hover: hover) {
-    :host:hover .icon {
-        transform: scale(1.1);
-    }
-
-    :host:active .icon {
-        transform: scale(0.95);
+    &.icon--heart-filled,
+    &.icon--star-filled {
+        stroke: none;
     }
 }
 
-/* iOS/macOS-style activity indicator - rotating arc */
+/* Loader spinner - functional animation */
 .spinner-track {
     stroke: currentColor;
 }
@@ -43,7 +33,7 @@
 .spinner-head {
     stroke: currentColor;
     transform-origin: 12px 12px;
-    animation: spin 0.8s linear infinite;
+    animation: spin 0.75s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 @keyframes spin {
@@ -56,26 +46,9 @@
     }
 }
 
-// Cute pulse animation for special icons
-@keyframes pulse-heart {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-}
-
-.icon--heart-filled {
-    &.animate {
-        animation: pulse-heart 0.6s ease;
-    }
-}
-
-// Fire animations for hover state
+/* ============================================
+   Fire / Streak - Wiggle & glow animation
+   ============================================ */
 @keyframes wiggle-fire {
 
     0%,
@@ -83,16 +56,20 @@
         transform: scale(1) rotate(0deg);
     }
 
-    25% {
-        transform: scale(1.1) rotate(-3deg);
+    20% {
+        transform: scale(1.05) rotate(-2deg);
     }
 
-    50% {
-        transform: scale(1.15) rotate(3deg);
+    40% {
+        transform: scale(1.1) rotate(2deg);
     }
 
-    75% {
-        transform: scale(1.1) rotate(-1deg);
+    60% {
+        transform: scale(1.08) rotate(-1deg);
+    }
+
+    80% {
+        transform: scale(1.05) rotate(1deg);
     }
 }
 
@@ -100,34 +77,26 @@
 
     0%,
     100% {
-        opacity: 0.8;
-        rx: 2px;
+        opacity: 1;
+        filter: drop-shadow(0 0 2px rgba(255, 150, 0, 0.5));
     }
 
     50% {
-        opacity: 0.4;
-        rx: 1.5px;
+        opacity: 0.9;
+        filter: drop-shadow(0 0 6px rgba(255, 150, 0, 0.8));
     }
 }
 
 .icon--fire {
     .fire-flame {
         transform-origin: center bottom;
-        transition: transform 0.3s ease;
     }
 
-    .fire-glow {
-        transition: opacity 0.3s ease;
-    }
-
-    // Class to trigger animation (applied on parent hover)
     &.animate {
+        animation: glow-pulse 0.8s ease-in-out infinite;
+
         .fire-flame {
             animation: wiggle-fire 0.6s ease-in-out infinite;
-        }
-
-        .fire-glow {
-            animation: glow-pulse 0.6s ease-in-out infinite;
         }
     }
 }
