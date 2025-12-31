@@ -38,6 +38,12 @@
             <span>{{ i18n.t('nav.study') }}</span>
             }
         </a>
+        <a class="nav-item" routerLink="/history" routerLinkActive="active">
+            <app-icon name="clock" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('history.title') }}</span>
+            }
+        </a>
     </nav>
 
     <!-- Language Selector -->

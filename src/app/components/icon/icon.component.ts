@@ -14,7 +14,8 @@ export type IconName =
     | 'chevron-left' | 'chevron-right' | 'layers'
     | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'
-    | 'user' | 'google' | 'log-in';
+    | 'user' | 'google' | 'log-in'
+    | 'clock' | 'heart' | 'cloud';
 
 @Component({
     selector: 'app-icon',

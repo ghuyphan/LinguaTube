@@ -169,6 +169,21 @@
         "recentlyAdded": "最近追加した単語",
         "tapWordsHint": "字幕の単語をタップして保存"
     },
+    "history": {
+        "title": "履歴",
+        "subtitle": "前回の続きから再生",
+        "noHistory": "まだ動画を見ていません",
+        "noHistoryHint": "視聴した動画がここに表示されます",
+        "clearAll": "すべて削除",
+        "clearConfirm": "履歴をすべて削除しますか？",
+        "favorites": "お気に入り",
+        "all": "すべて",
+        "progress": "進捗",
+        "watchedAgo": "視聴",
+        "continueWatching": "続きを見る",
+        "removeFromHistory": "削除",
+        "syncHint": "ログインして履歴をデバイス間で同期"
+    },
     "common": {
         "loading": "読み込み中...",
         "error": "エラー",

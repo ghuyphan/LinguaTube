@@ -1,4 +1,5 @@
 import { Injectable, signal } from '@angular/core';
+import { Subject } from 'rxjs';
 import { VideoInfo } from '../models';
 
 declare global {
@@ -30,6 +31,9 @@ export class YoutubeService {
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null);
   readonly intendedPlayingState = signal(false);
+
+  /** Emits when a video is successfully loaded (for history tracking) */
+  readonly videoLoaded = new Subject<VideoInfo>();
 
   /**
    * Get the last video ID from localStorage (for restoring after page reload)
@@ -244,6 +248,14 @@ export class YoutubeService {
 
               this.isReady.set(true);
               this.startTimeTracking();
+
+              // Emit event for history tracking
+              this.videoLoaded.next({
+                id: videoId,
+                title: metadata.title,
+                duration: duration,
+                channel: metadata.channel
+              });
 
               // Restore playing state if intended
               if (this.intendedPlayingState()) {

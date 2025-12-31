@@ -169,6 +169,21 @@
         "recentlyAdded": "最近添加",
         "tapWordsHint": "点击字幕中的词汇进行保存"
     },
+    "history": {
+        "title": "历史",
+        "subtitle": "从上次离开的地方继续",
+        "noHistory": "还没有观看过视频",
+        "noHistoryHint": "您观看的视频将显示在这里",
+        "clearAll": "清除全部",
+        "clearConfirm": "清除所有历史记录？",
+        "favorites": "收藏",
+        "all": "全部",
+        "progress": "进度",
+        "watchedAgo": "观看于",
+        "continueWatching": "继续观看",
+        "removeFromHistory": "移除",
+        "syncHint": "登录以在设备间同步历史记录"
+    },
     "common": {
         "loading": "加载中...",
         "error": "错误",

@@ -169,6 +169,21 @@
         "recentlyAdded": "Recently Added",
         "tapWordsHint": "Tap on words in subtitles to save them"
     },
+    "history": {
+        "title": "History",
+        "subtitle": "Continue where you left off",
+        "noHistory": "No videos watched yet",
+        "noHistoryHint": "Videos you watch will appear here",
+        "clearAll": "Clear All",
+        "clearConfirm": "Clear all history?",
+        "favorites": "Favorites",
+        "all": "All",
+        "progress": "Progress",
+        "watchedAgo": "Watched",
+        "continueWatching": "Continue",
+        "removeFromHistory": "Remove",
+        "syncHint": "Sign in to sync history across devices"
+    },
     "common": {
         "loading": "Loading...",
         "error": "Error",

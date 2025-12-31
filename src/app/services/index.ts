@@ -10,4 +10,5 @@ export * from './sync.service';
 export * from './i18n.service';
 export * from './body-scroll.service';
 export * from './grammar.service';
+export * from './history.service';
 

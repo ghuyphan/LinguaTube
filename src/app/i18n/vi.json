@@ -169,6 +169,21 @@
         "recentlyAdded": "Thêm gần đây",
         "tapWordsHint": "Chạm vào từ trong phụ đề để lưu"
     },
+    "history": {
+        "title": "Lịch sử",
+        "subtitle": "Tiếp tục từ lần xem trước",
+        "noHistory": "Chưa xem video nào",
+        "noHistoryHint": "Video bạn xem sẽ xuất hiện ở đây",
+        "clearAll": "Xóa tất cả",
+        "clearConfirm": "Xóa tất cả lịch sử?",
+        "favorites": "Yêu thích",
+        "all": "Tất cả",
+        "progress": "Tiến độ",
+        "watchedAgo": "Đã xem",
+        "continueWatching": "Tiếp tục xem",
+        "removeFromHistory": "Xóa",
+        "syncHint": "Đăng nhập để đồng bộ lịch sử giữa các thiết bị"
+    },
     "common": {
         "loading": "Đang tải...",
         "error": "Lỗi",

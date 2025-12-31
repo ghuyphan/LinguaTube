@@ -1,5 +1,6 @@
 // Subtitle models
 export * from './grammar.model';
+export * from './history.model';
 
 export interface SubtitleCue {
   id: string;

@@ -73,6 +73,14 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             <app-icon name="graduation-cap" [size]="20" />
             <span>{{ i18n.t('nav.study') }}</span>
           </a>
+          <a
+            class="bottom-nav__item"
+            routerLink="/history"
+            [class.active]="!anySheetOpen() && isRouteActive('/history')"
+          >
+            <app-icon name="clock" [size]="20" />
+            <span>{{ i18n.t('history.title') }}</span>
+          </a>
           <button
             class="bottom-nav__item"
             [class.active]="showSettingsSheet()"

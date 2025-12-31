@@ -169,6 +169,21 @@
         "recentlyAdded": "최근 추가됨",
         "tapWordsHint": "자막의 단어를 탭하여 저장"
     },
+    "history": {
+        "title": "기록",
+        "subtitle": "이전에 보던 곳에서 계속",
+        "noHistory": "아직 시청한 동영상이 없습니다",
+        "noHistoryHint": "시청한 동영상이 여기에 표시됩니다",
+        "clearAll": "모두 삭제",
+        "clearConfirm": "모든 기록을 삭제하시겠습니까?",
+        "favorites": "즐겨찾기",
+        "all": "전체",
+        "progress": "진행률",
+        "watchedAgo": "시청",
+        "continueWatching": "계속 보기",
+        "removeFromHistory": "삭제",
+        "syncHint": "로그인하여 기기 간 기록 동기화"
+    },
     "common": {
         "loading": "로딩 중...",
         "error": "오류",

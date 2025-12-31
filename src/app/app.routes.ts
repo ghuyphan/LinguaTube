@@ -17,5 +17,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/study-page/study-page.component')
             .then(m => m.StudyPageComponent)
     },
+    {
+        path: 'history',
+        loadComponent: () => import('./pages/history-page/history-page.component')
+            .then(m => m.HistoryPageComponent)
+    },
     { path: '**', redirectTo: 'video' }
 ];

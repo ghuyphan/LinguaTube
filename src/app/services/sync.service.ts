@@ -1,6 +1,7 @@
 import { Injectable, inject, effect, untracked, signal } from '@angular/core';
 import { AuthService } from './auth.service';
 import { VocabularyService } from './vocabulary.service';
+import { HistoryService } from './history.service';
 import { PocketBaseService } from './pocketbase.service';
 import type { RecordModel } from 'pocketbase';
 
@@ -20,12 +21,26 @@ interface SyncItem {
     updated?: string;
 }
 
+interface HistorySyncItem {
+    id: string;
+    video_id: string;
+    title: string;
+    thumbnail?: string;
+    channel?: string;
+    duration?: number;
+    language: string;
+    watched_at: string;
+    progress: number;
+    is_favorite: boolean;
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export class SyncService {
     private auth = inject(AuthService);
     private vocab = inject(VocabularyService);
+    private historyService = inject(HistoryService);
     private pb = inject(PocketBaseService);
 
     private isSyncing = false;
@@ -406,5 +421,205 @@ export class SyncService {
         this.hasInitialSynced = false;
         this.lastPushedHash = '';
         this.sync();
+    }
+
+    // ==================== History Sync ====================
+
+    /**
+     * Sync history with PocketBase
+     */
+    async syncHistory(): Promise<void> {
+        const userId = this.auth.getUserId();
+        if (!userId || this.isSyncing) return;
+
+        console.log('[Sync] Starting history sync...');
+
+        try {
+            // Fetch remote history
+            const remote = await this.fetchHistoryFromPocketBase();
+            console.log('[Sync] Fetched', remote.length, 'history items from PocketBase');
+
+            // Get local history
+            const local = this.convertToHistorySyncItems(this.historyService.getAllItems());
+            console.log('[Sync] Local has', local.length, 'history items');
+
+            // Merge (prefer newer based on watched_at)
+            const merged = this.mergeHistoryItems(local, remote);
+            console.log('[Sync] Merged history result:', merged.length, 'items');
+
+            // Push merged to PocketBase
+            await this.pushHistoryToPocketBase(merged);
+
+            // Import merged items back to local
+            this.importHistoryToLocal(merged);
+
+            console.log('[Sync] History sync complete!');
+        } catch (error) {
+            console.error('[Sync] History sync failed:', error);
+        }
+    }
+
+    private convertToHistorySyncItems(items: any[]): HistorySyncItem[] {
+        return items.map(item => ({
+            id: item.id,
+            video_id: item.video_id,
+            title: item.title,
+            thumbnail: item.thumbnail,
+            channel: item.channel,
+            duration: item.duration,
+            language: item.language,
+            watched_at: item.watched_at instanceof Date
+                ? item.watched_at.toISOString()
+                : item.watched_at,
+            progress: item.progress,
+            is_favorite: item.is_favorite
+        }));
+    }
+
+    private async fetchHistoryFromPocketBase(): Promise<HistorySyncItem[]> {
+        try {
+            const client = await this.pb.getClient();
+            const userId = client.authStore.model?.id;
+
+            if (!userId) return [];
+
+            const records = await client.collection('history').getFullList({
+                filter: `user = "${userId}"`,
+                sort: '-watched_at'
+            });
+
+            return records.map((record: RecordModel) => ({
+                id: record.id,
+                video_id: record['video_id'] || '',
+                title: record['title'] || '',
+                thumbnail: record['thumbnail'],
+                channel: record['channel'],
+                duration: record['duration'],
+                language: record['language'] || 'en',
+                watched_at: record['watched_at'],
+                progress: record['progress'] || 0,
+                is_favorite: record['is_favorite'] || false
+            }));
+        } catch (error) {
+            console.error('[Sync] Fetch history from PocketBase failed:', error);
+            return [];
+        }
+    }
+
+    private async pushHistoryToPocketBase(items: HistorySyncItem[]): Promise<void> {
+        const client = await this.pb.getClient();
+        const userId = client.authStore.model?.id;
+
+        if (!userId) {
+            throw new Error('Not authenticated');
+        }
+
+        // Get existing records
+        const existingRecords = await client.collection('history').getFullList({
+            filter: `user = "${userId}"`
+        });
+
+        const existingByVideoId = new Map<string, RecordModel>();
+        for (const record of existingRecords) {
+            existingByVideoId.set(record['video_id'], record);
+        }
+
+        // Process items
+        const BATCH_SIZE = 10;
+        for (let i = 0; i < items.length; i += BATCH_SIZE) {
+            const batch = items.slice(i, i + BATCH_SIZE);
+            await Promise.all(batch.map(async (item) => {
+                const existing = existingByVideoId.get(item.video_id);
+                const data = {
+                    video_id: item.video_id,
+                    title: item.title,
+                    thumbnail: item.thumbnail || '',
+                    channel: item.channel || '',
+                    duration: item.duration || 0,
+                    language: item.language,
+                    watched_at: item.watched_at,
+                    progress: item.progress,
+                    is_favorite: item.is_favorite,
+                    user: userId
+                };
+
+                try {
+                    if (existing) {
+                        await client.collection('history').update(existing.id, data);
+                    } else {
+                        await client.collection('history').create(data);
+                    }
+                } catch (error) {
+                    console.error('[Sync] Failed to sync history item:', item.video_id, error);
+                }
+            }));
+        }
+    }
+
+    private mergeHistoryItems(local: HistorySyncItem[], remote: HistorySyncItem[]): HistorySyncItem[] {
+        const merged = new Map<string, HistorySyncItem>();
+
+        // Add all local items
+        for (const item of local) {
+            merged.set(item.video_id, item);
+        }
+
+        // Merge remote items, prefer newer watched_at
+        for (const item of remote) {
+            const existing = merged.get(item.video_id);
+
+            if (!existing) {
+                merged.set(item.video_id, item);
+            } else {
+                const remoteTime = new Date(item.watched_at).getTime();
+                const localTime = new Date(existing.watched_at).getTime();
+
+                if (remoteTime > localTime) {
+                    merged.set(item.video_id, item);
+                }
+            }
+        }
+
+        return Array.from(merged.values());
+    }
+
+    private importHistoryToLocal(items: HistorySyncItem[]): void {
+        const historyItems = items.map(item => ({
+            id: item.id,
+            video_id: item.video_id,
+            title: item.title,
+            thumbnail: item.thumbnail,
+            channel: item.channel,
+            duration: item.duration,
+            language: item.language as 'ja' | 'zh' | 'ko' | 'en',
+            watched_at: new Date(item.watched_at),
+            progress: item.progress,
+            is_favorite: item.is_favorite
+        }));
+
+        this.historyService.importItems(historyItems);
+    }
+
+    /**
+     * Delete history item from PocketBase
+     */
+    async deleteHistoryFromServer(videoId: string): Promise<void> {
+        try {
+            const client = await this.pb.getClient();
+            const userId = client.authStore.model?.id;
+
+            if (!userId) return;
+
+            const records = await client.collection('history').getFullList({
+                filter: `user = "${userId}" && video_id = "${this.sanitizeFilterValue(videoId)}"`
+            });
+
+            for (const record of records) {
+                await client.collection('history').delete(record.id);
+                console.log('[Sync] Deleted history from PocketBase:', videoId);
+            }
+        } catch (error) {
+            console.error('[Sync] Delete history failed:', error);
+        }
     }
 }
