@@ -1,4 +1,4 @@
-<div class="subtitle-panel">
+<div class="subtitle-panel" [class.is-ai-mode]="transcript.isGeneratingAI()">
     @if (!isVideoFullscreen()) {
     <!-- Current subtitle -->
     <div class="current-subtitle" [class.current-subtitle--small]="settings.settings().fontSize === 'small'"

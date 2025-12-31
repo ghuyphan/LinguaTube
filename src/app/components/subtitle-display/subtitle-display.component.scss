@@ -3,6 +3,36 @@
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
     overflow: hidden;
+    position: relative;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* AI Mode Glow - Applied to entire panel */
+.subtitle-panel.is-ai-mode {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow:
+        0 0 0 1px rgba(139, 92, 246, 0.2),
+        0 0 20px rgba(139, 92, 246, 0.15),
+        0 0 40px rgba(236, 72, 153, 0.1);
+    animation: aiGlowPulse 3s ease-in-out infinite;
+}
+
+@keyframes aiGlowPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 1px rgba(139, 92, 246, 0.2),
+            0 0 20px rgba(139, 92, 246, 0.15),
+            0 0 40px rgba(236, 72, 153, 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 1px rgba(139, 92, 246, 0.35),
+            0 0 30px rgba(139, 92, 246, 0.25),
+            0 0 60px rgba(236, 72, 153, 0.15);
+    }
 }
 
 /* ============================================
@@ -90,7 +120,24 @@
 }
 
 .current-subtitle.is-generating {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+    background: linear-gradient(135deg,
+            rgba(139, 92, 246, 0.06) 0%,
+            rgba(236, 72, 153, 0.04) 50%,
+            rgba(139, 92, 246, 0.06) 100%);
+    background-size: 200% 200%;
+    animation: aiBackgroundShift 4s ease-in-out infinite;
+}
+
+@keyframes aiBackgroundShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .current-subtitle--small .subtitle-text {
@@ -581,6 +628,23 @@ ruby rt {
     height: auto;
     padding-left: calc(var(--space-md) - 3px);
     border-left: 3px solid transparent;
+    position: relative;
+}
+
+/* Hover background via pseudo-element to cover entire button including gaps */
+.cue-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    transition: background var(--transition-fast);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cue-item>* {
+    position: relative;
+    z-index: 1;
 }
 
 .cue-item:last-child {
@@ -588,19 +652,22 @@ ruby rt {
 }
 
 @media (hover: hover) {
-    .cue-item:hover {
+    .cue-item:hover::before {
         background: var(--bg-secondary);
     }
 }
 
-.cue-item--active {
+.cue-item--active::before {
     background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.1);
+}
+
+.cue-item--active {
     color: var(--accent-primary);
     font-weight: 500;
 }
 
 @media (hover: hover) {
-    .cue-item--active:hover {
+    .cue-item--active:hover::before {
         background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.15);
     }
 }
