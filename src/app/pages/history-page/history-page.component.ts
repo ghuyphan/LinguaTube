@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy, inject, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../components/icon/icon.component';
 import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet.component';
-import { HistoryService, SettingsService, I18nService, AuthService, SyncService } from '../../services';
-import { HistoryItem } from '../../models';
+import { HistoryListComponent } from '../../components/history-list/history-list.component';
+import { HistoryService, SettingsService, I18nService, AuthService } from '../../services';
 
 type FilterType = 'all' | 'favorites';
 
@@ -16,12 +16,13 @@ type FilterType = 'all' | 'favorites';
     CommonModule,
     RouterLink,
     IconComponent,
-    BottomSheetComponent
+    BottomSheetComponent,
+    HistoryListComponent
   ],
   template: `
     <div class="layout">
       <div class="layout-main">
-        <!-- Main History Panel - styled like vocab-panel -->
+        <!-- Main History Panel -->
         <div class="history-panel">
           <div class="history-header">
             <div class="header-row">
@@ -60,9 +61,17 @@ type FilterType = 'all' | 'favorites';
             }
           </div>
 
-          <!-- History list - styled like vocab-items -->
+          <!-- History list component -->
           <div class="history-list">
-            @if (filteredItems().length === 0) {
+            @if (filteredItems().length === 0 && historyItems().length > 0) {
+              <!-- No favorites -->
+              <div class="empty-state animate-in">
+                <app-icon name="heart" [size]="32" class="empty-state__icon" />
+                <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
+                <p class="empty-state__hint">{{ i18n.t('history.noFavoritesHint') }}</p>
+              </div>
+            } @else if (historyItems().length === 0) {
+              <!-- No history at all -->
               <div class="empty-state">
                 <app-icon name="play-circle" [size]="32" class="empty-state__icon" />
                 <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
@@ -73,59 +82,12 @@ type FilterType = 'all' | 'favorites';
                 </a>
               </div>
             } @else {
-              <div class="history-items">
-                @for (item of filteredItems(); track item.id) {
-                  <div class="history-item" (click)="playVideo(item)">
-                    <!-- Thumbnail -->
-                    <div class="history-item__thumb">
-                      <img 
-                        [src]="item.thumbnail || getThumbnail(item.video_id)" 
-                        [alt]="item.title"
-                        loading="lazy"
-                      />
-                      @if (item.progress > 0) {
-                        <div class="progress-bar">
-                          <div class="progress-fill" [style.width.%]="item.progress"></div>
-                        </div>
-                      }
-                    </div>
-
-                    <!-- Content -->
-                    <div class="history-item__content">
-                      <div class="history-item__header">
-                        <span class="history-item__title">{{ item.title }}</span>
-                      </div>
-                      <div class="history-item__meta">
-                        <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
-                        <span class="channel-name">{{ item.channel }}</span>
-                        <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
-                      </div>
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="history-item__actions">
-                      <button 
-                        class="btn btn-icon btn-ghost favorite-btn" 
-                        [class.active]="item.is_favorite"
-                        (click)="toggleFavorite(item, $event)"
-                        [title]="i18n.t('history.favorites')">
-                        <app-icon name="heart" [size]="16" />
-                      </button>
-                      <button 
-                        class="btn btn-icon btn-ghost delete-btn"
-                        (click)="removeItem(item, $event)"
-                        [title]="i18n.t('history.removeFromHistory')">
-                        <app-icon name="x" [size]="16" />
-                      </button>
-                    </div>
-                  </div>
-                }
-              </div>
+              <app-history-list [items]="filteredItems()" [filter]="filter()" />
             }
           </div>
         </div>
 
-        <!-- Sync hint for guests - shown below main panel on mobile -->
+        <!-- Sync hint for guests -->
         @if (auth.isInitialized() && !auth.isLoggedIn()) {
           <div class="sync-hint-mobile mobile-only">
             <app-icon name="cloud" [size]="16" />
@@ -209,7 +171,7 @@ type FilterType = 'all' | 'favorites';
       gap: var(--space-md);
     }
 
-    /* History panel - matches vocab-panel style */
+    /* History panel */
     .history-panel {
       background: var(--bg-card);
       border-radius: var(--border-radius-lg);
@@ -284,149 +246,9 @@ type FilterType = 'all' | 'favorites';
       flex: 1;
     }
 
-    /* History list */
     .history-list {
       flex: 1;
       overflow-y: auto;
-    }
-
-    .history-items {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .history-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-sm) var(--space-md);
-      cursor: pointer;
-      transition: background-color var(--transition-fast);
-    }
-
-    @media (hover: hover) {
-      .history-item:hover {
-        background-color: var(--bg-secondary);
-      }
-
-      .history-item:hover .delete-btn {
-        opacity: 0.6;
-      }
-    }
-
-    .history-item__thumb {
-      position: relative;
-      width: 120px;
-      height: 68px;
-      flex-shrink: 0;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      background: var(--bg-tertiary);
-    }
-
-    .history-item__thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .progress-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--accent-primary);
-    }
-
-    .history-item__content {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .history-item__header {
-      display: flex;
-      align-items: baseline;
-      gap: var(--space-sm);
-    }
-
-    .history-item__title {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .history-item__meta {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-    }
-
-    .lang-badge {
-      padding: 1px 6px;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      border-radius: var(--border-radius-sm);
-    }
-
-    .channel-name {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 150px;
-    }
-
-    .time-ago {
-      color: var(--text-muted);
-    }
-
-    .history-item__actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      flex-shrink: 0;
-    }
-
-    .favorite-btn {
-      color: var(--text-muted);
-    }
-
-    .favorite-btn.active {
-      color: var(--accent-primary);
-    }
-
-    .delete-btn {
-      opacity: 0;
-      color: var(--text-muted);
-      transition: all var(--transition-fast);
-    }
-
-    .delete-btn:hover {
-      color: var(--error);
-      opacity: 1;
-    }
-
-    @media (hover: none) {
-      .delete-btn {
-        opacity: 1;
-      }
     }
 
     /* Empty state */
@@ -453,6 +275,22 @@ type FilterType = 'all' | 'favorites';
     .empty-state__hint {
       margin: 0 0 var(--space-md);
       font-size: 0.875rem;
+    }
+
+    /* Animation for favorites empty state */
+    .empty-state.animate-in {
+      animation: fadeSlideIn 0.25s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Sidebar */
@@ -527,7 +365,7 @@ type FilterType = 'all' | 'favorites';
       border-radius: var(--border-radius);
     }
 
-    /* Confirm sheet styles (matching app.component update sheet) */
+    /* Confirm sheet */
     .confirm-sheet {
       padding: var(--space-lg);
       text-align: center;
@@ -600,11 +438,6 @@ type FilterType = 'all' | 'favorites';
       .layout {
         grid-template-columns: 1fr 280px;
       }
-
-      .history-item__thumb {
-        width: 100px;
-        height: 56px;
-      }
     }
 
     @media (max-width: 768px) {
@@ -618,28 +451,6 @@ type FilterType = 'all' | 'favorites';
 
       .mobile-only {
         display: flex;
-      }
-
-      .history-panel {
-        border-radius: var(--border-radius-lg);
-      }
-
-      .history-item__thumb {
-        width: 80px;
-        height: 45px;
-      }
-
-      .history-item__title {
-        font-size: 0.875rem;
-        -webkit-line-clamp: 1;
-      }
-
-      .channel-name {
-        display: none;
-      }
-
-      .delete-btn {
-        opacity: 1;
       }
     }
 
@@ -656,8 +467,6 @@ type FilterType = 'all' | 'favorites';
 })
 export class HistoryPageComponent {
   private historyService = inject(HistoryService);
-  private router = inject(Router);
-  private syncService = inject(SyncService);
 
   settings = inject(SettingsService);
   i18n = inject(I18nService);
@@ -676,41 +485,6 @@ export class HistoryPageComponent {
     }
     return items;
   });
-
-  getThumbnail(videoId: string): string {
-    return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
-  }
-
-  getRelativeTime(date: Date): string {
-    const now = new Date();
-    const diff = now.getTime() - new Date(date).getTime();
-    const minutes = Math.floor(diff / 60000);
-    const hours = Math.floor(diff / 3600000);
-    const days = Math.floor(diff / 86400000);
-
-    if (minutes < 60) return `${minutes}m`;
-    if (hours < 24) return `${hours}h`;
-    if (days < 7) return `${days}d`;
-    return new Date(date).toLocaleDateString();
-  }
-
-  playVideo(item: HistoryItem): void {
-    this.router.navigate(['/video'], { queryParams: { v: item.video_id } });
-  }
-
-  toggleFavorite(item: HistoryItem, event: Event): void {
-    event.stopPropagation();
-    this.historyService.toggleFavorite(item.id);
-  }
-
-  removeItem(item: HistoryItem, event: Event): void {
-    event.stopPropagation();
-    this.historyService.removeFromHistory(item.id);
-
-    if (this.auth.isLoggedIn()) {
-      this.syncService.deleteHistoryFromServer(item.video_id);
-    }
-  }
 
   confirmClear(): void {
     this.showClearConfirm.set(true);

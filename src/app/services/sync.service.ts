@@ -423,10 +423,11 @@ export class SyncService {
 
     /**
      * Sync history with PocketBase
+     * Note: This is called from within sync() which already sets isSyncing
      */
     async syncHistory(): Promise<void> {
         const userId = this.auth.getUserId();
-        if (!userId || this.isSyncing) return;
+        if (!userId) return;
 
         console.log('[Sync] Starting history sync...');
 

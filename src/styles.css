@@ -1163,6 +1163,11 @@ body::-webkit-scrollbar {
 }
 
 /* Badge Extensions */
+.badge--primary {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
 .badge--accent {
   background: rgba(var(--accent-primary-rgb), 0.1);
   color: var(--accent-primary);
