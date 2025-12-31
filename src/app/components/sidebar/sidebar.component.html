@@ -86,7 +86,7 @@
                 <span class="streak-count">{{ streak.currentStreak() }}</span>
                 <span class="streak-label">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
             </div>
-            @if (streak.freezesRemaining() > 0) {
+            @if (streak.freezesRemaining() > 0 && streak.currentStreak() > 0) {
             <div class="streak-freezes" [attr.title]="i18n.t('streak.freezesRemaining')">
                 <app-icon name="snowflake" [size]="14" />
                 <span>{{ streak.freezesRemaining() }}</span>

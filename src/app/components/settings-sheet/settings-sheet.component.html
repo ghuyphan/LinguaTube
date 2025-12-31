@@ -51,7 +51,7 @@
                     <div class="streak-sub">
                         <span class="streak-longest">{{ i18n.t('streak.longestStreak') }}: {{ streak.longestStreak()
                             }}</span>
-                        @if (streak.freezesRemaining() > 0) {
+                        @if (streak.freezesRemaining() > 0 && streak.currentStreak() > 0) {
                         <span class="streak-freezes-badge">
                             <app-icon name="snowflake" [size]="12" />
                             {{ streak.freezesRemaining() }}
