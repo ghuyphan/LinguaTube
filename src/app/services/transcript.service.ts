@@ -65,7 +65,7 @@ export class TranscriptService {
   readonly isLoading = computed(() => this.status() === 'loading');
 
   // Cache
-  private readonly transcriptCache = new Map<string, SubtitleCue[]>();
+  private readonly transcriptCache = new Map<string, { cues: SubtitleCue[], language: string | null }>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
 
   // Cancellation
@@ -94,11 +94,12 @@ export class TranscriptService {
     const cacheKey = `${videoId}:${lang}`;
     if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
-      log('Client cache hit:', { videoId, lang, cues: cached.length });
-      this.captionSource.set('youtube');
+      log('Client cache hit:', { videoId, lang, cues: cached.cues.length });
+      this.captionSource.set('youtube'); // Or restore from cache if we tracked source
       this.availableLanguages.set([lang]);
+      this.detectedLanguage.set(cached.language); // Restore detected language
       this.status.set('complete');
-      return of(cached);
+      return of(cached.cues);
     }
 
     this.status.set('loading');
@@ -139,7 +140,10 @@ export class TranscriptService {
 
           // Only cache 'youtube' source here. 'ai' source is cached in generateWithWhisper
           if (this.captionSource() === 'youtube') {
-            this.transcriptCache.set(cacheKey, cues);
+            this.transcriptCache.set(cacheKey, {
+              cues,
+              language: this.detectedLanguage()
+            });
           }
         } else {
           // If we got here with empty cues and no error thrown yet
@@ -227,7 +231,9 @@ export class TranscriptService {
     if (!resultUrl && this.transcriptCache.has(cacheKey)) {
       this.captionSource.set('ai');
       this.status.set('complete');
-      return of(this.transcriptCache.get(cacheKey)!);
+      const cached = this.transcriptCache.get(cacheKey)!;
+      this.detectedLanguage.set(cached.language); // Restore detected language (AI)
+      return of(cached.cues);
     }
 
     // If we're polling (resultUrl exists), we shouldn't use the pending request cache
@@ -274,7 +280,10 @@ export class TranscriptService {
           this.detectedLanguage.set(response.language);
         }
 
-        this.transcriptCache.set(cacheKey, cues);
+        this.transcriptCache.set(cacheKey, {
+          cues,
+          language: this.detectedLanguage()
+        });
         return of(cues);
       }),
       tap({
