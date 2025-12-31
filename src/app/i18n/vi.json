@@ -185,7 +185,8 @@
         "watchedAgo": "Đã xem",
         "continueWatching": "Tiếp tục xem",
         "removeFromHistory": "Xóa",
-        "syncHint": "Đăng nhập để đồng bộ lịch sử giữa các thiết bị"
+        "syncHint": "Đăng nhập để đồng bộ lịch sử giữa các thiết bị",
+        "justNow": "Vừa xong"
     },
     "common": {
         "loading": "Đang tải...",

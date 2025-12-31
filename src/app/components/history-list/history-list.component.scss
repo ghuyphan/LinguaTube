@@ -1,9 +1,9 @@
 // History List Component Styles
 // =============================
+// iOS Mail-style swipe-to-delete
 
 :host {
     display: block;
-    overflow-x: hidden; // Prevent horizontal scroll from swipe transforms
 }
 
 // -------------------------
@@ -14,7 +14,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    // padding: var(--space-2xl);
     color: var(--text-muted);
 
     &.animate {
@@ -44,7 +43,6 @@
 .history-items {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; // Prevent horizontal scrollbar flash from swipe animations
 
     &.filter-animate {
         animation: filterFade 0.25s ease-out;
@@ -52,12 +50,11 @@
 }
 
 // -------------------------
-// Item Wrapper (handles swipe overflow)
+// Item Wrapper
 // -------------------------
 .history-item-wrapper {
     position: relative;
     overflow: hidden;
-    contain: layout; // Performance optimization
 
     &.animate {
         animation: fadeSlideIn 0.3s ease-out backwards;
@@ -65,70 +62,65 @@
     }
 
     &.deleting {
-        animation: slideOutDelete 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation: collapseOut 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 }
 
 // -------------------------
-// Swipe Action (Delete Button)
+// Swipe Action Container (behind card)
 // -------------------------
-.swipe-action {
+.swipe-action-container {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 72px;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: none;
+    justify-content: flex-end;
     background: var(--error);
-    color: white;
-    cursor: pointer;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.15s ease, width 0.15s ease;
+    transition: opacity 0.15s ease;
 
-    // Show when item is being swiped
-    .history-item-wrapper:has(.history-item.swiping) & {
-        opacity: 1;
-        // Expand to fill revealed area during full swipe
-        width: 100%;
-    }
-
-    // Show and make tappable when revealed (snapped open)
     &.revealed {
         opacity: 1;
         pointer-events: auto;
-        width: 72px; // Fixed width when revealed
     }
 
-    &__icon {
-        transform: scale(calc(0.85 + var(--swipe-progress, 0) * 0.15));
-        opacity: calc(0.7 + var(--swipe-progress, 0) * 0.3);
-        transition: transform 0.1s ease, opacity 0.1s ease;
-    }
-
-    // When past full-swipe threshold
-    &.active &__icon {
-        transform: scale(1.2);
-        opacity: 1;
-        animation: iconPop 0.2s ease;
-    }
-
-    // Tap feedback
-    &:active {
+    &.past-threshold {
         background: var(--error-dark, #c0392b);
 
-        .swipe-action__icon {
-            transform: scale(0.9);
+        .swipe-action {
+            width: 100%;
         }
+    }
+
+    // Hide on desktop
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
+
+.swipe-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: width 0.2s ease;
+
+    &:active {
+        opacity: 0.8;
     }
 }
 
 // -------------------------
-// History Item (main swipeable card)
+// History Item (main card)
 // -------------------------
 .history-item {
     position: relative;
@@ -138,17 +130,16 @@
     padding: var(--space-sm) var(--space-md);
     background: var(--bg-card);
     cursor: pointer;
-    // Smooth snap animation when releasing swipe
-    transition:
-        background-color var(--transition-fast),
-        transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
     user-select: none;
     -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    will-change: transform;
+    // Smooth snap-back animation
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    // Disable transition during active swipe for responsiveness
+    // Disable transition during active swipe
     &.swiping {
-        transition: background-color var(--transition-fast);
+        transition: none;
     }
 
     @media (hover: hover) {
@@ -165,11 +156,15 @@
         }
     }
 
-    // Touch feedback
     @media (hover: none) {
         &:active:not(.swiping) {
             background-color: var(--bg-secondary);
         }
+    }
+
+    // Mobile: enable swipe gesture
+    @media (max-width: 768px) {
+        touch-action: pan-y pinch-zoom;
     }
 }
 
@@ -284,6 +279,7 @@
 }
 
 .action-btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -295,6 +291,7 @@
     color: var(--text-muted);
     border-radius: var(--border-radius);
     cursor: pointer;
+    overflow: hidden;
     transition:
         background-color var(--transition-fast),
         color var(--transition-fast),
@@ -304,9 +301,28 @@
         &.active {
             color: var(--accent-primary);
 
-            // Fill the heart when active
             app-icon ::ng-deep svg {
                 fill: currentColor;
+                filter: drop-shadow(0 0 6px var(--accent-primary));
+            }
+        }
+
+        // Animation on favorite
+        &.animating {
+            app-icon ::ng-deep svg {
+                animation: heartPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            // Burst effect
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 4px;
+                border-radius: 50%;
+                background: var(--accent-primary);
+                opacity: 0;
+                animation: heartBurst 0.4s ease-out;
+                pointer-events: none;
             }
         }
     }
@@ -352,8 +368,6 @@
     .history-item {
         gap: var(--space-sm);
         padding: var(--space-sm);
-        // Allow horizontal touch actions, but let vertical scroll through
-        touch-action: pan-y pinch-zoom;
     }
 
     .history-item__thumb {
@@ -376,19 +390,14 @@
     .action-btn {
         width: 40px;
         height: 40px;
-        // Larger touch target on mobile
 
         &--favorite.active {
-
-            // Filled heart is more visible on mobile
             app-icon ::ng-deep svg {
                 fill: currentColor;
-                filter: drop-shadow(0 0 4px var(--accent-primary));
             }
         }
     }
 
-    // Hide separator on mobile to save space
     .separator {
         display: none;
     }
@@ -436,40 +445,54 @@
     }
 }
 
-@keyframes slideOutDelete {
+@keyframes collapseOut {
     0% {
-        transform: translateX(0);
         opacity: 1;
         max-height: 100px;
     }
 
-    50% {
-        transform: translateX(-100%);
-        opacity: 0.5;
-    }
-
     100% {
-        transform: translateX(-100%);
         opacity: 0;
         max-height: 0;
         padding-top: 0;
         padding-bottom: 0;
         margin-top: 0;
         margin-bottom: 0;
+        overflow: hidden;
     }
 }
 
-@keyframes iconPop {
+@keyframes heartPop {
     0% {
         transform: scale(1);
     }
 
-    50% {
+    25% {
         transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
     }
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes heartBurst {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
     }
 }
 
@@ -485,7 +508,7 @@
     }
 
     .history-item-wrapper.deleting {
-        animation: fadeOut 0.2s ease forwards;
+        animation: fadeOut 0.15s ease forwards;
     }
 
     @keyframes fadeOut {
@@ -494,8 +517,7 @@
         }
     }
 
-    .swipe-action__icon {
-        transition: none;
-        animation: none !important;
+    .history-item {
+        transition: none !important;
     }
 }

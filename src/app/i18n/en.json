@@ -185,7 +185,8 @@
         "watchedAgo": "Watched",
         "continueWatching": "Continue",
         "removeFromHistory": "Remove",
-        "syncHint": "Sign in to sync history across devices"
+        "syncHint": "Sign in to sync history across devices",
+        "justNow": "Just now"
     },
     "common": {
         "loading": "Loading...",

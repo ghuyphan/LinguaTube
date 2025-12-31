@@ -241,6 +241,7 @@ export class VideoPageComponent implements OnInit {
         // Load if no video OR if the video ID changed
         if (!currentVideo || currentVideo.id !== videoId) {
           // Clear old state before loading new video
+          this.youtube.currentVideo.set(null);
           this.subtitles.clear();
           this.transcript.reset();
           this.lastLang = currentLang;

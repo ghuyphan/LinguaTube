@@ -185,7 +185,8 @@
         "watchedAgo": "观看于",
         "continueWatching": "继续观看",
         "removeFromHistory": "移除",
-        "syncHint": "登录以在设备间同步历史记录"
+        "syncHint": "登录以在设备间同步历史记录",
+        "justNow": "刚刚"
     },
     "common": {
         "loading": "加载中...",

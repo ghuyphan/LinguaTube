@@ -185,7 +185,8 @@
         "watchedAgo": "시청",
         "continueWatching": "계속 보기",
         "removeFromHistory": "삭제",
-        "syncHint": "로그인하여 기기 간 기록 동기화"
+        "syncHint": "로그인하여 기기 간 기록 동기화",
+        "justNow": "방금"
     },
     "common": {
         "loading": "로딩 중...",

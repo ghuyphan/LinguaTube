@@ -185,7 +185,8 @@
         "watchedAgo": "視聴",
         "continueWatching": "続きを見る",
         "removeFromHistory": "削除",
-        "syncHint": "ログインして履歴をデバイス間で同期"
+        "syncHint": "ログインして履歴をデバイス間で同期",
+        "justNow": "たった今"
     },
     "common": {
         "loading": "読み込み中...",

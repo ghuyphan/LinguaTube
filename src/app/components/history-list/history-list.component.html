@@ -9,18 +9,21 @@
     @for (item of items(); track trackByItemId($index, item); let i = $index) {
     <div class="history-item-wrapper" [class.animate]="shouldAnimate()" [class.deleting]="isDeleting(item.id)"
         [style.--animation-delay]="i * 50 + 'ms'">
-        <!-- Delete action background (revealed on swipe) -->
-        <button type="button" class="swipe-action" [class.active]="isSwipePastThreshold(item.id)"
-            [class.revealed]="isRevealed(item.id)" [style.--swipe-progress]="getSwipeProgress(item.id)"
-            (click)="onDeleteButtonClick($event, item)" [attr.aria-label]="i18n.t('history.delete') || 'Delete'">
-            <app-icon name="trash-2" [size]="22" class="swipe-action__icon" />
-        </button>
 
-        <!-- Main item (swipeable) -->
-        <div class="history-item" [class.swiping]="isSwiping(item.id)"
-            [style.transform]="'translateX(' + getSwipeOffset(item.id) + 'px)'"
+        <!-- Delete action (behind card) -->
+        <div class="swipe-action-container" [class.revealed]="isRevealed(item.id) || isSwiping(item.id)"
+            [class.past-threshold]="isPastThreshold(item.id)">
+            <button type="button" class="swipe-action" (click)="onRemoveItem(item, $event)"
+                [attr.aria-label]="i18n.t('history.delete') || 'Delete'">
+                <app-icon name="trash-2" [size]="22" />
+            </button>
+        </div>
+
+        <!-- Main card (swipeable) -->
+        <div class="history-item" [class.swiping]="isSwiping(item.id)" [style.transform]="getSwipeTransform(item.id)"
             (touchstart)="onTouchStart($event, item)" (touchmove)="onTouchMove($event, item)"
             (touchend)="onTouchEnd($event, item)" (click)="onPlayVideo(item)">
+
             <!-- Thumbnail -->
             <div class="history-item__thumb">
                 <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy"
@@ -46,8 +49,8 @@
             <!-- Actions (desktop) -->
             <div class="history-item__actions history-item__actions--desktop">
                 <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
-                    (click)="onToggleFavorite(item, $event)" [attr.aria-label]="i18n.t('history.favorites')"
-                    [attr.aria-pressed]="item.is_favorite">
+                    [class.animating]="isAnimatingFavorite(item.id)" (click)="onToggleFavorite(item, $event)"
+                    [attr.aria-label]="i18n.t('history.favorites')" [attr.aria-pressed]="item.is_favorite">
                     <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
                 </button>
                 <button type="button" class="action-btn action-btn--delete" (click)="onRemoveItem(item, $event)"
@@ -56,11 +59,11 @@
                 </button>
             </div>
 
-            <!-- Actions (mobile - favorite only, delete via swipe) -->
+            <!-- Actions (mobile - favorite only) -->
             <div class="history-item__actions history-item__actions--mobile">
                 <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
-                    (click)="onToggleFavorite(item, $event)" [attr.aria-label]="i18n.t('history.favorites')"
-                    [attr.aria-pressed]="item.is_favorite">
+                    [class.animating]="isAnimatingFavorite(item.id)" (click)="onToggleFavorite(item, $event)"
+                    [attr.aria-label]="i18n.t('history.favorites')" [attr.aria-pressed]="item.is_favorite">
                     <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
                 </button>
             </div>
