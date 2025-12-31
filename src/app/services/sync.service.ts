@@ -7,7 +7,7 @@ import type { RecordModel } from 'pocketbase';
 export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
 
 interface SyncItem {
-    id?: string; // PocketBase record ID
+    id: string; // Deterministic ID
     word: string;
     reading?: string;
     pinyin?: string;
@@ -169,6 +169,7 @@ export class SyncService {
 
     private convertToSyncItems(items: any[]): SyncItem[] {
         return items.map(item => ({
+            id: item.id,
             word: item.word,
             reading: item.reading,
             pinyin: item.pinyin,
@@ -238,15 +239,21 @@ export class SyncService {
 
         const existingMap = new Map<string, RecordModel>();
         for (const record of existingRecords) {
+            // First try by ID (new deterministic way)
+            existingMap.set(record.id, record);
+            // Also keep word-lang mapping for legacy records
             const key = `${record['word']}-${record['language']}`;
-            existingMap.set(key, record);
+            if (!existingMap.has(key)) {
+                existingMap.set(key, record);
+            }
         }
 
         // Prepare batch operations
         const operations: Array<{ item: SyncItem; existing: RecordModel | undefined }> = [];
         for (const item of items) {
-            const key = `${item.word}-${item.language}`;
-            operations.push({ item, existing: existingMap.get(key) });
+            // Check by ID first, then by word-lang key
+            const existing = existingMap.get(item.id) || existingMap.get(`${item.word}-${item.language}`);
+            operations.push({ item, existing });
         }
 
         // Process in parallel batches of 10
@@ -286,7 +293,8 @@ export class SyncService {
                 if (existing) {
                     await client.collection('vocabulary').update(existing.id, data);
                 } else {
-                    await client.collection('vocabulary').create(data);
+                    // Use deterministic ID for creation
+                    await client.collection('vocabulary').create({ ...data, id: item.id });
                 }
                 return; // Success
             } catch (error: any) {
@@ -346,7 +354,7 @@ export class SyncService {
      */
     private importToLocal(items: SyncItem[]): void {
         const vocabItems = items.map(item => ({
-            id: `${item.word}-${item.language}`,
+            id: item.id || `${item.word}-${item.language}`,
             word: item.word,
             reading: item.reading,
             pinyin: item.pinyin,

@@ -14,8 +14,19 @@
  */
 
 
-import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
+import {
+    jsonResponse,
+    handleOptions,
+    errorResponse,
+    sanitizeWord,
+    sanitizeLanguage
+} from '../_shared/utils.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../_shared/rate-limiter.js';
 import { parseNaver, parseJotoba, parseJotobaJapanese, parseMazii, parseFreeDictionary, parseMdbg, parseGlosbe, parseJisho, parseKrdict } from '../_shared/dict-parsers.js';
 
 // ============================================================================
@@ -188,24 +199,24 @@ export async function onRequest(context) {
     }
 
     const url = new URL(request.url);
-    const word = url.searchParams.get('word')?.trim();
-    const from = url.searchParams.get('from')?.toLowerCase();
-    const to = url.searchParams.get('to')?.toLowerCase();
+    const word = sanitizeWord(url.searchParams.get('word'));
+    const from = sanitizeLanguage(url.searchParams.get('from'), ['ja', 'zh', 'ko', 'en']);
+    const to = sanitizeLanguage(url.searchParams.get('to'), ['ja', 'zh', 'ko', 'en', 'vi']);
 
     // Validate parameters
     if (!word) {
-        return jsonResponse({ error: 'Missing query parameter: word' }, 400);
+        return jsonResponse({ error: 'Missing or invalid query parameter: word' }, 400);
     }
-    if (!from || !['ja', 'zh', 'ko', 'en'].includes(from)) {
+    if (!from) {
         return jsonResponse({ error: 'Invalid or missing "from" parameter. Use: ja, zh, ko, en' }, 400);
     }
-    if (!to || !['ja', 'zh', 'ko', 'en', 'vi'].includes(to)) {
+    if (!to) {
         return jsonResponse({ error: 'Invalid or missing "to" parameter. Use: ja, zh, ko, en, vi' }, 400);
     }
 
-    // Rate limiting
+    // Rate limiting (Atomic check and consume)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -256,8 +267,6 @@ export async function onRequest(context) {
             }
         }
 
-        // Increment rate limit for successful lookup
-        await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
         const result = {
             word,
@@ -276,7 +285,10 @@ export async function onRequest(context) {
             }
         }
 
-        return jsonResponse(result, 200, { 'X-Cache': 'MISS' });
+        return jsonResponse(result, 200, {
+            'X-Cache': 'MISS',
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+        });
 
     } catch (error) {
         console.error('[Dict] Error:', error);
@@ -459,9 +471,12 @@ async function translateEntries(entries, targetLang) {
         definitions: []
     }));
 
-    allDefs.forEach(({ entryIndex }, i) => {
+    allDefs.forEach(({ entryIndex, def }, i) => {
         if (translations[i]) {
             translatedEntries[entryIndex].definitions.push(translations[i]);
+        } else {
+            // Fallback: show original English with tag if translation failed
+            translatedEntries[entryIndex].definitions.push(`[EN] ${def}`);
         }
     });
 

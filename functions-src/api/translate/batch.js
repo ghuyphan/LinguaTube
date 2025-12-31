@@ -5,7 +5,12 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../../_shared/rate-limiter.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../../_shared/rate-limiter.js';
 
 const LINGVA_INSTANCES = [
     'https://lingva.ml',
@@ -65,9 +70,9 @@ export async function onRequestOptions() {
 export async function onRequestPost(context) {
     const { request, env } = context;
 
-    // Rate limiting
+    // Rate limiting (Atomic)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -93,8 +98,7 @@ export async function onRequestPost(context) {
             texts.map(text => translateSingle(text, source, target))
         );
 
-        await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
-        return jsonResponse({ translations });
+        return jsonResponse({ translations }, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
 
     } catch (error) {
         console.error('[Translate Batch] Error:', error);

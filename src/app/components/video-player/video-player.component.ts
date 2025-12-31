@@ -233,6 +233,10 @@ export class VideoPlayerComponent implements OnDestroy {
           if (savedTime > 0) {
             this.youtube.seekTo(savedTime);
           }
+          // Enforce intended state after seek, as seek can sometimes trigger autoplay
+          if (!this.youtube.intendedPlayingState()) {
+            this.youtube.pause();
+          }
         });
       }
     });

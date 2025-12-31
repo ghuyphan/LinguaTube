@@ -29,6 +29,7 @@ export class YoutubeService {
   readonly isBuffering = signal(false);
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null);
+  readonly intendedPlayingState = signal(false);
 
   /**
    * Get the last video ID from localStorage (for restoring after page reload)
@@ -86,29 +87,19 @@ export class YoutubeService {
 
       if (document.visibilityState === 'visible' && this.player) {
         try {
+          const time = this.player.getCurrentTime();
+          if (time != null && time >= 0) {
+            this.currentTime.set(time);
+          }
           const state = this.player.getPlayerState();
           if (state != null) {
             const isPlaying = state === window.YT?.PlayerState?.PLAYING;
-
-            // If the player is playing but we recorded it as paused when leaving, pause it
-            if (isPlaying && this.wasPausedOnLeave) {
-              this.pause();
-              this.wasPausedOnLeave = false;
-              return;
-            }
-
-            // Sync signals with actual player state
             if (isPlaying !== this.isPlaying()) {
               this.isPlaying.set(isPlaying);
             }
             if (isPlaying) {
               this.startTimeTracking();
             }
-          }
-
-          const time = this.player.getCurrentTime();
-          if (time != null && time >= 0) {
-            this.currentTime.set(time);
           }
         } catch (e) {
           // Player might not be ready
@@ -253,6 +244,14 @@ export class YoutubeService {
 
               this.isReady.set(true);
               this.startTimeTracking();
+
+              // Restore playing state if intended
+              if (this.intendedPlayingState()) {
+                this.play();
+              } else {
+                this.pause();
+              }
+
               resolve();
             },
             onStateChange: (event: any) => {
@@ -267,10 +266,12 @@ export class YoutubeService {
               // Don't set isPlaying to false when buffering (user pressed play, waiting for buffer)
               if (isPlaying && !this.isPlaying()) {
                 this.isPlaying.set(true);
+                this.intendedPlayingState.set(true);
                 this.startTimeTracking();
               } else if (!isPlaying && !isBuffering && this.isPlaying()) {
                 // Only set to false if we're not buffering (e.g., paused or ended)
                 this.isPlaying.set(false);
+                this.intendedPlayingState.set(false);
                 cancelAnimationFrame(this.timeUpdateInterval);
               }
 
@@ -340,6 +341,7 @@ export class YoutubeService {
   }
 
   play(): void {
+    this.intendedPlayingState.set(true);
     this.setPlaying(true);
     try {
       this.player?.playVideo();
@@ -347,6 +349,7 @@ export class YoutubeService {
   }
 
   pause(): void {
+    this.intendedPlayingState.set(false);
     this.setPlaying(false);
     try {
       this.player?.pauseVideo();
@@ -354,6 +357,7 @@ export class YoutubeService {
   }
 
   pauseVideo(): void {
+    this.intendedPlayingState.set(false);
     try {
       this.player?.pauseVideo();
     } catch (e) {
@@ -463,6 +467,7 @@ export class YoutubeService {
     this.currentTime.set(0);
     this.duration.set(0);
     this.pendingVideoId.set(null);
+    this.intendedPlayingState.set(false);
     this.clearLastVideoId();
   }
 }

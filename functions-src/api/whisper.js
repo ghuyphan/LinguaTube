@@ -4,11 +4,22 @@
  * Features: D1 persistent pending state, KV caching, exponential backoff
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
+import {
+    jsonResponse,
+    handleOptions,
+    errorResponse,
+    sanitizeVideoId,
+    sanitizeLanguage
+} from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, getPendingJob, savePendingJob, completePendingJob, cleanupStalePendingJobs } from '../_shared/transcript-db.js';
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../_shared/rate-limiter.js';
 import { validateVideoRequest } from '../_shared/video-validator.js';
 
 const DEBUG = true;
@@ -38,10 +49,9 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, result_url: providedResultUrl } = body;
-
-        // Extract lang early - needed for both new requests and D1 cache lookups
-        const lang = body.lang || body.targetLanguage || 'ja';
+        const videoId = sanitizeVideoId(body.videoId);
+        const lang = sanitizeLanguage(body.lang || body.targetLanguage || 'ja');
+        const { result_url: providedResultUrl } = body;
 
         const gladiaKey = env.GLADIA_API_KEY;
         if (!gladiaKey) {
@@ -53,7 +63,7 @@ export async function onRequestPost(context) {
         // Step 1: Submit transcription request (Only if not polling existing job)
         if (!resultUrl) {
             // Validate video ID only for new requests
-            if (!validateVideoId(videoId)) {
+            if (!videoId) {
                 return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
             }
 
@@ -103,15 +113,13 @@ export async function onRequestPost(context) {
 
             // Only submit new job if we didn't find a pending one
             if (!resultUrl) {
-                // Rate limit check for new requests
+                // Rate limit (Atomic check and consume)
                 const clientIP = getClientIP(request);
-                const rateCheck = await checkRateLimit(TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+                const rateCheck = await consumeRateLimit(TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
                 if (!rateCheck.allowed) {
                     return rateLimitResponse(rateCheck.resetAt);
                 }
 
-                // Increment rate limit counter
-                await incrementRateLimit(TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
                 const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
@@ -148,8 +156,8 @@ export async function onRequestPost(context) {
         // Poll as long as we have time left in this function execution
         while (Date.now() - startTime < MAX_DURATION_MS) {
 
-            // Check if we are running out of time
-            if (Date.now() - startTime > 20000) { // If > 20s passed, return processing status
+            // Check if we are running out of time (5s buffer)
+            if (Date.now() - startTime > MAX_DURATION_MS - 5000) {
                 return jsonResponse({
                     status: 'processing',
                     result_url: resultUrl

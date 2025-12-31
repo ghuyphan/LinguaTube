@@ -4,9 +4,19 @@
  * - Reduces KV writes from ~200 to 1 per video
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateVideoId, validateBatchSize } from '../../_shared/utils.js';
-import { tokenize } from '../../_shared/tokenizer.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../../_shared/rate-limiter.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../../_shared/rate-limiter.js';
+import {
+    jsonResponse,
+    handleOptions,
+    errorResponse,
+    sanitizeVideoId,
+    validateBatchSize
+} from '../../_shared/utils.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
@@ -37,9 +47,9 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
-    // Rate limiting
+    // Rate limiting (Atomic)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -57,7 +67,8 @@ export async function onRequest(context) {
 
     try {
         const body = await request.json();
-        const { texts, videoId } = body;
+        const videoId = sanitizeVideoId(body.videoId);
+        const texts = body.texts;
 
         // Validate batch size
         const batchValidation = validateBatchSize(texts, MAX_BATCH_SIZE);
@@ -65,7 +76,7 @@ export async function onRequest(context) {
             return jsonResponse({ error: batchValidation.error }, 400);
         }
 
-        if (!videoId || !validateVideoId(videoId)) {
+        if (!videoId) {
             return jsonResponse({ error: 'Missing or invalid "videoId"' }, 400);
         }
 
@@ -78,7 +89,7 @@ export async function onRequest(context) {
                 // Validate: cached tokens count must match requested texts count
                 if (cached && cached.tokens && cached.tokens.length === texts.length) {
                     console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
-                    return jsonResponse(cached);
+                    return jsonResponse(cached, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
                 } else if (cached) {
                     console.log(`[Tokenize Batch] Cache mismatch for ${videoId} (expected ${texts.length}, got ${cached.tokens?.length})`);
                 }
@@ -96,8 +107,6 @@ export async function onRequest(context) {
 
         const result = { tokens: allTokens };
 
-        // Increment rate limit (only for non-cached responses)
-        await incrementRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
         // Cache as ONE write for entire video (30 day TTL)
         if (TOKEN_CACHE) {
@@ -111,7 +120,7 @@ export async function onRequest(context) {
             }
         }
 
-        return jsonResponse(result);
+        return jsonResponse(result, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
 
     } catch (error) {
         console.error(`[Tokenize Batch ${lang.toUpperCase()}] Error:`, error);

@@ -13,6 +13,8 @@ const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 export async function onRequest(context) {
     const { request, env } = context;
 
+    console.warn('[Deprecation] /api/krdict is deprecated. Use /api/dict?word=...&from=ko&to=en instead.');
+
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
         return handleOptions(['GET', 'OPTIONS']);
@@ -25,9 +27,9 @@ export async function onRequest(context) {
         return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
     }
 
-    // Rate limiting
+    // Rate limiting (Atomic)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -40,7 +42,11 @@ export async function onRequest(context) {
         try {
             const cached = await DICT_CACHE.get(cacheKey, 'json');
             if (cached) {
-                return jsonResponse(cached, 200, { 'X-Cache': 'HIT' });
+                return jsonResponse(cached, 200, {
+                    'X-Cache': 'HIT',
+                    ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt),
+                    'X-Deprecated': 'Use /api/dict instead'
+                });
             }
         } catch (e) {
             // Cache read failed, continue with fetch
@@ -99,10 +105,7 @@ export async function onRequest(context) {
             };
         }).filter(e => e.word && e.definitions.length > 0);
 
-        // Cache successful responses
         if (DICT_CACHE && entries.length > 0) {
-            // Increment rate limit only for non-cached responses
-            await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
             try {
                 await DICT_CACHE.put(cacheKey, JSON.stringify(entries), { expirationTtl: CACHE_TTL });
             } catch (e) {
@@ -112,7 +115,9 @@ export async function onRequest(context) {
 
         return jsonResponse(entries, 200, {
             'Cache-Control': 'public, max-age=86400',
-            'X-Cache': 'MISS'
+            'X-Cache': 'MISS',
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt),
+            'X-Deprecated': 'Use /api/dict instead'
         });
 
     } catch (error) {

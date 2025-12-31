@@ -5,13 +5,20 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../_shared/rate-limiter.js';
 
 const CACHE_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 
 export async function onRequest(context) {
     const { request, env } = context;
+
+    console.warn('[Deprecation] /api/mdbg is deprecated. Use /api/dict?word=...&from=zh&to=en instead.');
 
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
@@ -25,9 +32,9 @@ export async function onRequest(context) {
         return jsonResponse({ error: 'Missing query parameter "q"' }, 400);
     }
 
-    // Rate limiting
+    // Rate limiting (Atomic)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -40,7 +47,11 @@ export async function onRequest(context) {
         try {
             const cached = await DICT_CACHE.get(cacheKey, 'json');
             if (cached) {
-                return jsonResponse(cached, 200, { 'X-Cache': 'HIT' });
+                return jsonResponse(cached, 200, {
+                    'X-Cache': 'HIT',
+                    ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt),
+                    'X-Deprecated': 'Use /api/dict instead'
+                });
             }
         } catch (e) {
             // Cache read failed, continue with fetch
@@ -120,8 +131,6 @@ export async function onRequest(context) {
 
         // Cache successful responses
         if (DICT_CACHE && cleanEntries.length > 0) {
-            // Increment rate limit only for non-cached responses
-            await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
             try {
                 await DICT_CACHE.put(cacheKey, JSON.stringify(cleanEntries), { expirationTtl: CACHE_TTL });
             } catch (e) {
@@ -129,7 +138,11 @@ export async function onRequest(context) {
             }
         }
 
-        return jsonResponse(cleanEntries, 200, { 'X-Cache': 'MISS' });
+        return jsonResponse(cleanEntries, 200, {
+            'X-Cache': 'MISS',
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt),
+            'X-Deprecated': 'Use /api/dict instead'
+        });
 
     } catch (error) {
         console.error('[MDBG] Error:', error);

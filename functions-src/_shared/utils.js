@@ -24,6 +24,8 @@ export function jsonResponse(data, status = 200, extraHeaders = {}) {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
             ...extraHeaders
         }
     });
@@ -55,13 +57,61 @@ export function validateVideoId(id) {
 }
 
 /**
- * Create an error response
- * @param {string} message - Error message
- * @param {number} status - HTTP status code (default: 500)
- * @returns {Response}
+ * Standard error response
  */
 export function errorResponse(message, status = 500) {
     return jsonResponse({ error: message }, status);
+}
+
+/**
+ * Sanitize word input for dictionary lookups
+ * Prevents injection and limits length
+ * @param {string} word - Raw word input
+ * @returns {string|null} - Sanitized word or null if invalid
+ */
+export function sanitizeWord(word) {
+    if (!word || typeof word !== 'string') return null;
+
+    return word
+        .replace(/[\x00-\x1F\x7F]/g, '') // Remove control characters
+        .replace(/[<>\"\'\\]/g, '')       // Remove potential injection chars
+        .trim()
+        .slice(0, 100); // Limit length
+}
+
+/**
+ * Sanitize video ID
+ * @param {string} id - Raw video ID
+ * @returns {string|null} - Sanitized ID or null if invalid
+ */
+export function sanitizeVideoId(id) {
+    if (!id || typeof id !== 'string') return null;
+    // YouTube IDs are exactly 11 chars: alphanumeric, dash, underscore
+    const cleaned = id.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 11);
+    return cleaned.length === 11 ? cleaned : null;
+}
+
+/**
+ * Validate and sanitize language code
+ * @param {string} lang - Language code
+ * @param {string[]} allowed - Allowed language codes
+ * @returns {string|null} - Valid language or null
+ */
+export function sanitizeLanguage(lang, allowed = ['ja', 'zh', 'ko', 'en', 'vi']) {
+    if (!lang || typeof lang !== 'string') return null;
+    const cleaned = lang.toLowerCase().trim().slice(0, 5);
+    return allowed.includes(cleaned) ? cleaned : null;
+}
+
+/**
+ * Add consistent CORS headers for all responses
+ */
+export function addCorsHeaders(response) {
+    const headers = new Headers(response.headers);
+    headers.set('Access-Control-Allow-Origin', '*');
+    headers.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+    headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return new Response(response.body, { ...response, headers });
 }
 
 /**

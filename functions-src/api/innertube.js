@@ -9,11 +9,22 @@
  * @version 17.3.0 - Only fetch primary language (no fallback to other languages)
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateVideoId } from '../_shared/utils.js';
+import {
+    jsonResponse,
+    handleOptions,
+    errorResponse,
+    sanitizeVideoId,
+    sanitizeLanguage
+} from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript, getAvailableLangs, addAvailableLang } from '../_shared/transcript-db.js';
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../_shared/rate-limiter.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../_shared/rate-limiter.js';
 import { validateVideoRequest, isLanguageSupported } from '../_shared/video-validator.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
@@ -53,18 +64,10 @@ export const onRequestOptions = () => handleOptions(['GET', 'POST', 'OPTIONS']);
  * Health check endpoint - GET /api/innertube
  */
 export async function onRequestGet(context) {
-    const { env } = context;
-
     return jsonResponse({
         status: 'ok',
-        mode: 'primary-language-only',
-        strategies: [
-            'youtube-caption-extractor (primary lang only)',
-            'youtube-transcript (primary lang only)',
-            env.SUPADATA_API_KEY ? 'supadata (primary lang only, native mode)' : 'supadata (not configured)'
-        ],
-        version: '17.3.0',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        service: 'innertube-proxy'
     });
 }
 
@@ -75,9 +78,9 @@ export async function onRequestPost(context) {
     const { request, env, waitUntil } = context;
     const elapsed = timer();
 
-    // Rate limiting
+    // Rate limiting (Atomic check and consume)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         log(`Rate limited: ${clientIP}`);
         return rateLimitResponse(rateCheck.resetAt);
@@ -85,22 +88,27 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, forceRefresh = false, targetLanguages = DEFAULT_LANGS } = body;
+        const videoId = sanitizeVideoId(body.videoId);
+        const primaryLang = sanitizeLanguage(body.targetLanguages?.[0]);
+        const forceRefresh = !!body.forceRefresh;
+        const targetLanguages = body.targetLanguages || DEFAULT_LANGS;
 
-        if (!validateVideoId(videoId)) {
-            return jsonResponse({ error: 'Invalid videoId' }, 400);
+        if (!videoId) {
+            return jsonResponse({ error: 'Invalid or missing videoId' }, 400);
+        }
+        if (!primaryLang) {
+            return jsonResponse({ error: 'Invalid or missing primary language' }, 400);
         }
 
         const r2 = env.TRANSCRIPT_STORAGE;
         const cache = env.TRANSCRIPT_CACHE; // KV still used for rate limiting
         const db = env.VOCAB_DB;
-        const primaryLang = targetLanguages[0];
 
         // Early validation - reject unsupported languages before any API calls
         const validation = await validateVideoRequest(videoId, primaryLang, body.duration, 'innertube');
         if (validation) {
             log(`Validation failed: ${validation.error}`);
-            return jsonResponse(validation, 400);
+            return jsonResponse(validation, 400, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
         }
 
         log(`Request: ${videoId}, langs: ${targetLanguages.join(',')}`);
@@ -112,7 +120,10 @@ export async function onRequestPost(context) {
             const cached = await checkCache(r2, db, videoId, primaryLang);
             if (cached) {
                 log(`Cache hit (${elapsed()}ms)`);
-                return jsonResponse({ ...cached, timing: elapsed() });
+                return jsonResponse({ ...cached, timing: elapsed() }, 200, {
+                    'X-Cache': 'HIT',
+                    ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+                });
             }
         }
 
@@ -156,8 +167,6 @@ export async function onRequestPost(context) {
         if (result) {
             log(`${source} succeeded (${elapsed()}ms)`);
 
-            // Increment rate limit (only for non-cached responses)
-            await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
             // Get actual language from result (not requested language)
             // This prevents caching EN captions under a JA key
@@ -173,7 +182,10 @@ export async function onRequestPost(context) {
                 await cachePromise;
             }
 
-            return jsonResponse({ ...result.data, source, timing: elapsed() });
+            return jsonResponse({ ...result.data, source, timing: elapsed() }, 200, {
+                'X-Cache': 'MISS',
+                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+            });
         }
 
         // =====================================================================
@@ -630,29 +642,38 @@ async function trySupadata(videoId, langs, apiKey, cache) {
  * @param {string} expectedLang - Expected language code
  * @returns {boolean} - True if language appears correct
  */
-function verifyLanguage(text, expectedLang) {
-    if (!text || text.length < 10) return true; // Too short to verify
+function verifyLanguage(text, lang) {
+    if (!text || text.length < 50) return true; // Too short to verify reliably
 
-    const sample = text.substring(0, 200);
+    const sample = text.slice(0, 1000);
 
-    switch (expectedLang) {
-        case 'ja':
-            // Japanese: must contain hiragana, katakana, or kanji
-            return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(sample);
-        case 'ko':
-            // Korean: must contain Hangul
-            return /[\uAC00-\uD7AF\u1100-\u11FF]/.test(sample);
-        case 'zh':
-            // Chinese: CJK characters but NO Japanese kana (to distinguish from Japanese)
-            return /[\u4E00-\u9FFF]/.test(sample) &&
-                !/[\u3040-\u309F\u30A0-\u30FF]/.test(sample);
-        case 'en':
-            // English: mostly ASCII letters
-            const asciiRatio = (sample.match(/[a-zA-Z\s]/g) || []).length / sample.length;
-            return asciiRatio > 0.7;
-        default:
-            return true; // Unknown language, assume OK
+    // Japanese: Hiragana/Katakana presence
+    if (lang === 'ja') {
+        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
+        // Even a little bit of kana is usually enough to confirm Japanese
+        return kanaCount > 5;
     }
+
+    // Korean: Hangul presence
+    if (lang === 'ko') {
+        const hangulCount = (sample.match(/[\uAC00-\uD7AF]/g) || []).length;
+        // Rejects if clearly dominated by another language (e.g. Japanese when Korean expected)
+        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
+        if (kanaCount > hangulCount * 2) return false;
+        return hangulCount > 5;
+    }
+
+    // Chinese: CJK Unified Ideographs but NO Hiragana/Katakana/Hangul
+    if (lang === 'zh') {
+        const hanziCount = (sample.match(/[\u4E00-\u9FFF]/g) || []).length;
+        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
+        const hangulCount = (sample.match(/[\uAC00-\uD7AF]/g) || []).length;
+
+        // If it's pure Hanzi or Hanzi far outnumbers Kana/Hangul
+        return hanziCount > 10 && kanaCount < 5 && hangulCount < 5;
+    }
+
+    return true; // Default to pass for other languages or short text
 }
 
 function withTimeout(promise, ms, message) {

@@ -213,64 +213,70 @@ export function parseFreeDictionary(data) {
  * @returns {Promise<DictEntry[]>}
  */
 export async function parseMdbg(response) {
-    const entries = [];
-    let currentEntry = null;
-    let captureText = null;
+    try {
+        const entries = [];
+        let currentEntry = null;
+        let captureText = null;
 
-    const rewriter = new HTMLRewriter()
-        .on('tr.row', {
-            element() {
-                currentEntry = { word: '', reading: '', definitions: [], level: null };
-                entries.push(currentEntry);
-            }
-        })
-        .on('tr.row .hanzi span', {
-            text(text) {
-                if (currentEntry && !currentEntry.word) {
-                    if (text.text.trim()) currentEntry.word += text.text;
+        const rewriter = new HTMLRewriter()
+            .on('tr.row', {
+                element() {
+                    currentEntry = { word: '', reading: '', definitions: [], level: null };
+                    entries.push(currentEntry);
                 }
-            }
-        })
-        .on('tr.row .pinyin span', {
-            text(text) {
-                if (currentEntry) {
-                    if (text.text.trim()) currentEntry.reading += text.text;
+            })
+            .on('tr.row .hanzi span', {
+                text(text) {
+                    if (currentEntry && !currentEntry.word) {
+                        if (text.text.trim()) currentEntry.word += text.text;
+                    }
                 }
-            }
-        })
-        .on('tr.row .defs', {
-            element() { captureText = 'defs'; },
-            text(text) {
-                if (currentEntry && captureText === 'defs') {
-                    if (!currentEntry._rawDefs) currentEntry._rawDefs = '';
-                    currentEntry._rawDefs += text.text;
+            })
+            .on('tr.row .pinyin span', {
+                text(text) {
+                    if (currentEntry) {
+                        if (text.text.trim()) currentEntry.reading += text.text;
+                    }
                 }
-            }
-        })
-        .on('tr.row .hsk', {
-            text(text) {
-                if (currentEntry && text.text.includes('HSK')) {
-                    const match = text.text.match(/HSK\s*(\d+)/);
-                    if (match) currentEntry.level = parseInt(match[1]);
+            })
+            .on('tr.row .defs', {
+                element() { captureText = 'defs'; },
+                text(text) {
+                    if (currentEntry && captureText === 'defs') {
+                        if (!currentEntry._rawDefs) currentEntry._rawDefs = '';
+                        currentEntry._rawDefs += text.text;
+                    }
                 }
-            }
-        });
+            })
+            .on('tr.row .hsk', {
+                text(text) {
+                    if (currentEntry && text.text.includes('HSK')) {
+                        const match = text.text.match(/HSK\s*(\d+)/);
+                        if (match) currentEntry.level = parseInt(match[1]);
+                    }
+                }
+            });
 
-    await rewriter.transform(response).arrayBuffer();
+        await rewriter.transform(response).arrayBuffer();
 
-    return entries.map(e => {
-        const definitions = e._rawDefs
-            ? e._rawDefs.split('/').map(d => d.trim()).filter(d => d)
-            : [];
+        return entries.map(e => {
+            const definitions = e._rawDefs
+                ? e._rawDefs.split('/').map(d => d.trim()).filter(d => d)
+                : [];
 
-        return {
-            word: e.word.trim(),
-            reading: e.reading.trim(),
-            definitions,
-            partOfSpeech: '',
-            level: e.level
-        };
-    }).filter(e => e.word && e.definitions.length > 0);
+            return {
+                word: e.word.trim(),
+                reading: e.reading.trim(),
+                definitions,
+                partOfSpeech: '',
+                level: e.level
+            };
+        }).filter(e => e.word && e.definitions.length > 0);
+
+    } catch (err) {
+        console.error('[parseMdbg] HTMLRewriter error:', err.message);
+        return [];
+    }
 }
 
 /**
@@ -280,58 +286,64 @@ export async function parseMdbg(response) {
  * @returns {Promise<DictEntry[]>}
  */
 export async function parseGlosbe(response) {
-    const entries = [];
-    let summaryText = '';
+    try {
+        const entries = [];
+        let summaryText = '';
 
-    const rewriter = new HTMLRewriter()
-        // Get summary translations from <strong> in content-summary
-        .on('#content-summary strong', {
-            text(text) {
-                summaryText += text.text;
-            }
-        })
-        // Get individual translations from li[data-element="translation"] h3
-        .on('li[data-element="translation"] h3.translation__item__pharse', {
-            text(text) {
-                const t = text.text.trim();
-                if (t && !entries.some(e => e.definitions.includes(t))) {
-                    entries.push({
-                        word: '',
-                        reading: '',
-                        definitions: [t],
-                        partOfSpeech: ''
-                    });
+        const rewriter = new HTMLRewriter()
+            // Get summary translations from <strong> in content-summary
+            .on('#content-summary strong', {
+                text(text) {
+                    summaryText += text.text;
                 }
-            }
-        });
-
-    await rewriter.transform(response).arrayBuffer();
-
-    // If no individual entries, parse summary (fallback)
-    if (entries.length === 0 && summaryText) {
-        // Decode HTML entities and split by comma
-        const decoded = summaryText
-            .replace(/&agrave;/g, 'à')
-            .replace(/&aacute;/g, 'á')
-            .replace(/&egrave;/g, 'è')
-            .replace(/&eacute;/g, 'é')
-            .replace(/&ograve;/g, 'ò')
-            .replace(/&oacute;/g, 'ó')
-            .replace(/&ugrave;/g, 'ù')
-            .replace(/&uacute;/g, 'ú')
-            .replace(/&amp;/g, '&');
-        const defs = decoded.split(',').map(d => d.trim()).filter(Boolean);
-        if (defs.length > 0) {
-            entries.push({
-                word: '',
-                reading: '',
-                definitions: defs.slice(0, 5),
-                partOfSpeech: ''
+            })
+            // Get individual translations from li[data-element="translation"] h3
+            .on('li[data-element="translation"] h3.translation__item__pharse', {
+                text(text) {
+                    const t = text.text.trim();
+                    if (t && !entries.some(e => e.definitions.includes(t))) {
+                        entries.push({
+                            word: '',
+                            reading: '',
+                            definitions: [t],
+                            partOfSpeech: ''
+                        });
+                    }
+                }
             });
-        }
-    }
 
-    return entries.slice(0, 5);
+        await rewriter.transform(response).arrayBuffer();
+
+        // If no individual entries, parse summary (fallback)
+        if (entries.length === 0 && summaryText) {
+            // Decode HTML entities and split by comma
+            const decoded = summaryText
+                .replace(/&agrave;/g, 'à')
+                .replace(/&aacute;/g, 'á')
+                .replace(/&egrave;/g, 'è')
+                .replace(/&eacute;/g, 'é')
+                .replace(/&ograve;/g, 'ò')
+                .replace(/&oacute;/g, 'ó')
+                .replace(/&ugrave;/g, 'ù')
+                .replace(/&uacute;/g, 'ú')
+                .replace(/&amp;/g, '&');
+            const defs = decoded.split(',').map(d => d.trim()).filter(Boolean);
+            if (defs.length > 0) {
+                entries.push({
+                    word: '',
+                    reading: '',
+                    definitions: defs.slice(0, 5),
+                    partOfSpeech: ''
+                });
+            }
+        }
+
+        return entries.slice(0, 5);
+
+    } catch (err) {
+        console.error('[parseGlosbe] HTMLRewriter error:', err.message);
+        return [];
+    }
 }
 
 /**
@@ -383,85 +395,91 @@ export function parseJisho(data) {
  * @returns {Promise<DictEntry[]>}
  */
 export async function parseKrdict(response) {
-    const entries = [];
-    let currentWord = '';
-    let currentReading = '';
-    let currentDefs = [];
-    let currentPos = '';
+    try {
+        const entries = [];
+        let currentWord = '';
+        let currentReading = '';
+        let currentDefs = [];
+        let currentPos = '';
 
-    // Parse HTML using HTMLRewriter
-    const rewriter = new HTMLRewriter()
-        // Get the word headword
-        .on('.word_head .origin_word', {
-            text(text) {
-                currentWord += text.text.trim();
-            }
-        })
-        // Get pronunciation (romanization)
-        .on('.word_head .sound_speaker', {
-            element(element) {
-                // Reading is sometimes in title attribute
-                const title = element.getAttribute('title');
-                if (title) currentReading = title;
-            }
-        })
-        // Get Vietnamese definitions
-        .on('.word_mean_vie', {
-            text(text) {
-                const def = text.text.trim();
-                if (def && def.length > 1) {
-                    currentDefs.push(def);
+        // Parse HTML using HTMLRewriter
+        const rewriter = new HTMLRewriter()
+            // Get the word headword
+            .on('.word_head .origin_word', {
+                text(text) {
+                    currentWord += text.text.trim();
                 }
-            }
-        })
-        // Alternative: meaning text
-        .on('.mean_tran', {
-            text(text) {
-                const def = text.text.trim();
-                if (def && def.length > 1 && !currentDefs.includes(def)) {
-                    currentDefs.push(def);
+            })
+            // Get pronunciation (romanization)
+            .on('.word_head .sound_speaker', {
+                element(element) {
+                    // Reading is sometimes in title attribute
+                    const title = element.getAttribute('title');
+                    if (title) currentReading = title;
                 }
-            }
-        })
-        // Get part of speech
-        .on('.word_att_view .att_val', {
-            text(text) {
-                const pos = text.text.trim();
-                if (pos && !currentPos) {
-                    currentPos = pos;
+            })
+            // Get Vietnamese definitions
+            .on('.word_mean_vie', {
+                text(text) {
+                    const def = text.text.trim();
+                    if (def && def.length > 1) {
+                        currentDefs.push(def);
+                    }
                 }
-            }
-        })
-        // End of word entry - save and reset
-        .on('.word_cont', {
-            element(element) {
-                if (currentWord && currentDefs.length > 0) {
-                    entries.push({
-                        word: currentWord,
-                        reading: currentReading,
-                        definitions: currentDefs.slice(0, 5),
-                        partOfSpeech: currentPos
-                    });
+            })
+            // Alternative: meaning text
+            .on('.mean_tran', {
+                text(text) {
+                    const def = text.text.trim();
+                    if (def && def.length > 1 && !currentDefs.includes(def)) {
+                        currentDefs.push(def);
+                    }
                 }
-                // Reset for next entry
-                currentWord = '';
-                currentReading = '';
-                currentDefs = [];
-                currentPos = '';
-            }
-        });
+            })
+            // Get part of speech
+            .on('.word_att_view .att_val', {
+                text(text) {
+                    const pos = text.text.trim();
+                    if (pos && !currentPos) {
+                        currentPos = pos;
+                    }
+                }
+            })
+            // End of word entry - save and reset
+            .on('.word_cont', {
+                element(element) {
+                    if (currentWord && currentDefs.length > 0) {
+                        entries.push({
+                            word: currentWord,
+                            reading: currentReading,
+                            definitions: currentDefs.slice(0, 5),
+                            partOfSpeech: currentPos
+                        });
+                    }
+                    // Reset for next entry
+                    currentWord = '';
+                    currentReading = '';
+                    currentDefs = [];
+                    currentPos = '';
+                }
+            });
 
-    await rewriter.transform(response).arrayBuffer();
+        await rewriter.transform(response).arrayBuffer();
 
-    // Push last entry if exists
-    if (currentWord && currentDefs.length > 0) {
-        entries.push({
-            word: currentWord,
-            reading: currentReading,
-            definitions: currentDefs.slice(0, 5),
-            partOfSpeech: currentPos
-        });
+        // Push last entry if exists
+        if (currentWord && currentDefs.length > 0) {
+            entries.push({
+                word: currentWord,
+                reading: currentReading,
+                definitions: currentDefs.slice(0, 5),
+                partOfSpeech: currentPos
+            });
+        }
+
+        return entries.slice(0, 5);
+
+    } catch (err) {
+        console.error('[parseKrdict] HTMLRewriter error:', err.message);
+        return [];
     }
-
-    return entries.slice(0, 5);
 }

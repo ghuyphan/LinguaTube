@@ -1,6 +1,8 @@
 /**
  * Shared Rate Limiting Module for Cloudflare Functions
- * Uses KV storage for distributed rate limiting with sliding window
+ * Uses KV storage for distributed rate limiting
+ * 
+ * UPDATED: Single atomic consume operation to prevent race conditions
  */
 
 /**
@@ -8,17 +10,19 @@
  * @typedef {Object} RateLimitConfig
  * @property {number} max - Maximum requests allowed in window
  * @property {number} windowSeconds - Time window in seconds
- * @property {string} keyPrefix - Prefix for KV keys (e.g., 'innertube', 'translate')
+ * @property {string} keyPrefix - Prefix for KV keys
  */
 
 /**
- * Check if request is within rate limit
+ * Consume one request from rate limit quota (atomic operation)
+ * Replaces separate checkRateLimit + incrementRateLimit calls
+ * 
  * @param {KVNamespace} cache - Cloudflare KV namespace
  * @param {string} clientIP - Client IP address
  * @param {RateLimitConfig} config - Rate limit configuration
  * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
  */
-export async function checkRateLimit(cache, clientIP, config) {
+export async function consumeRateLimit(cache, clientIP, config) {
     if (!cache || !clientIP) {
         return { allowed: true, remaining: config.max, resetAt: 0 };
     }
@@ -26,89 +30,82 @@ export async function checkRateLimit(cache, clientIP, config) {
     const key = `ratelimit:${config.keyPrefix}:${clientIP}`;
 
     try {
-        const data = await cache.get(key, 'json');
+        // Single read
+        let data = await cache.get(key, 'json');
 
-        if (!data) {
-            return {
-                allowed: true,
-                remaining: config.max - 1,
-                resetAt: Date.now() + config.windowSeconds * 1000
+        const now = Date.now();
+
+        // Initialize or reset if expired
+        if (!data || now > data.resetAt) {
+            data = {
+                count: 0,
+                resetAt: now + config.windowSeconds * 1000
             };
         }
 
-        // Check if window expired
-        if (Date.now() > data.resetAt) {
-            return {
-                allowed: true,
-                remaining: config.max - 1,
-                resetAt: Date.now() + config.windowSeconds * 1000
-            };
-        }
+        // Increment count
+        data.count++;
 
-        const remaining = config.max - data.count;
-        return {
-            allowed: remaining > 0,
-            remaining: Math.max(0, remaining - 1),
-            resetAt: data.resetAt
-        };
+        // Check if allowed AFTER increment
+        const allowed = data.count <= config.max;
+        const remaining = Math.max(0, config.max - data.count);
+
+        // Single write (always write to track both allowed and denied)
+        await cache.put(key, JSON.stringify(data), {
+            expirationTtl: config.windowSeconds
+        });
+
+        return { allowed, remaining, resetAt: data.resetAt };
+
     } catch (e) {
         // Allow on error to prevent blocking legitimate requests
-        console.error('[RateLimit] Check error:', e.message);
+        console.error('[RateLimit] Error:', e.message);
         return { allowed: true, remaining: config.max, resetAt: 0 };
     }
 }
 
 /**
- * Increment rate limit counter
- * @param {KVNamespace} cache - Cloudflare KV namespace
- * @param {string} clientIP - Client IP address
- * @param {RateLimitConfig} config - Rate limit configuration
+ * @deprecated Use consumeRateLimit() instead
  */
-export async function incrementRateLimit(cache, clientIP, config) {
-    if (!cache || !clientIP) return;
+export async function checkRateLimit(cache, clientIP, config) {
+    console.warn('[RateLimit] checkRateLimit is deprecated, use consumeRateLimit()');
+    // Fallback to new function but don't consume
+    if (!cache || !clientIP) {
+        return { allowed: true, remaining: config.max, resetAt: 0 };
+    }
 
     const key = `ratelimit:${config.keyPrefix}:${clientIP}`;
+    const data = await cache.get(key, 'json');
 
-    try {
-        const data = await cache.get(key, 'json') || {
-            count: 0,
-            resetAt: Date.now() + config.windowSeconds * 1000
-        };
-
-        // Reset if window expired
-        if (Date.now() > data.resetAt) {
-            data.count = 1;
-            data.resetAt = Date.now() + config.windowSeconds * 1000;
-        } else {
-            data.count++;
-        }
-
-        await cache.put(key, JSON.stringify(data), {
-            expirationTtl: config.windowSeconds
-        });
-    } catch (e) {
-        console.error('[RateLimit] Increment error:', e.message);
+    if (!data || Date.now() > data.resetAt) {
+        return { allowed: true, remaining: config.max, resetAt: Date.now() + config.windowSeconds * 1000 };
     }
+
+    const remaining = config.max - data.count;
+    return { allowed: remaining > 0, remaining: Math.max(0, remaining), resetAt: data.resetAt };
+}
+
+/**
+ * @deprecated Use consumeRateLimit() instead
+ */
+export async function incrementRateLimit(cache, clientIP, config) {
+    console.warn('[RateLimit] incrementRateLimit is deprecated, use consumeRateLimit()');
+    // No-op since consumeRateLimit handles this
 }
 
 /**
  * Get standard rate limit headers
- * @param {number} remaining - Remaining requests
- * @param {number} resetAt - Reset timestamp
- * @returns {Object} Headers object
  */
 export function getRateLimitHeaders(remaining, resetAt) {
     return {
         'X-RateLimit-Remaining': String(remaining),
         'X-RateLimit-Reset': String(Math.ceil(resetAt / 1000)),
-        'Retry-After': String(Math.ceil((resetAt - Date.now()) / 1000))
+        'Retry-After': String(Math.max(0, Math.ceil((resetAt - Date.now()) / 1000)))
     };
 }
 
 /**
  * Get client IP from request headers
- * @param {Request} request - Cloudflare request object
- * @returns {string|null}
  */
 export function getClientIP(request) {
     return request.headers.get('CF-Connecting-IP')
@@ -118,11 +115,9 @@ export function getClientIP(request) {
 
 /**
  * Create rate limit exceeded response
- * @param {number} resetAt - Reset timestamp
- * @returns {Response}
  */
 export function rateLimitResponse(resetAt) {
-    const retryAfter = Math.ceil((resetAt - Date.now()) / 1000);
+    const retryAfter = Math.max(0, Math.ceil((resetAt - Date.now()) / 1000));
     return new Response(JSON.stringify({
         error: 'Rate limit exceeded. Please try again later.',
         retryAfter

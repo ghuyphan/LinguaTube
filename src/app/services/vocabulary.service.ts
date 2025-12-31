@@ -1,5 +1,6 @@
-import { Injectable, signal, computed, effect, untracked } from '@angular/core';
+import { Injectable, signal, computed, effect, untracked, inject } from '@angular/core';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../models';
+import { AuthService } from './auth.service';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
 const SAVE_DEBOUNCE_MS = 300;
@@ -9,6 +10,7 @@ const SAVE_DEBOUNCE_MS = 300;
 })
 export class VocabularyService {
     readonly vocabulary = signal<VocabularyItem[]>([]);
+    private authService = inject(AuthService);
 
     // Debounce timer for localStorage writes
     private saveTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -104,13 +106,16 @@ export class VocabularyService {
      * Add a word from dictionary entry
      */
     addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string): VocabularyItem {
-        const existing = this.findWord(entry.word);
+        const userId = this.authService.user()?.id || 'local';
+        const id = this.generateVocabId(userId, entry.word, language);
+
+        const existing = this.vocabulary().find(v => v.id === id);
         if (existing) {
             return existing;
         }
 
         const item: VocabularyItem = {
-            id: this.generateId(),
+            id,
             word: entry.word,
             reading: entry.reading,
             pinyin: entry.pinyin,
@@ -145,13 +150,16 @@ export class VocabularyService {
         romanization?: string,
         sourceSentence?: string
     ): VocabularyItem {
-        const existing = this.findWord(word);
+        const userId = this.authService.user()?.id || 'local';
+        const id = this.generateVocabId(userId, word, language);
+
+        const existing = this.vocabulary().find(v => v.id === id);
         if (existing) {
             return existing;
         }
 
         const item: VocabularyItem = {
-            id: this.generateId(),
+            id,
             word,
             reading,
             pinyin,
@@ -466,6 +474,25 @@ export class VocabularyService {
         }
     }
 
+    private generateVocabId(userId: string, word: string, language: string): string {
+        // Create a consistent hash from the unique combination
+        const raw = `${userId}|${word}|${language}`;
+        // Simple base64 encoding, cleaned for PocketBase ID compatibility
+        try {
+            const encoded = btoa(unescape(encodeURIComponent(raw)))
+                .replace(/[^a-zA-Z0-9]/g, '')
+                .toLowerCase()
+                .slice(0, 15);
+            return encoded;
+        } catch (e) {
+            // Fallback for non-browser environments or weird characters
+            return Date.now().toString(36) + Math.random().toString(36).substring(2, 10);
+        }
+    }
+
+    /**
+     * @deprecated Use generateVocabId instead
+     */
     private generateId(): string {
         return Date.now().toString(36) + Math.random().toString(36).substring(2);
     }

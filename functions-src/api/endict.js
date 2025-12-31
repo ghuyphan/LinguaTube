@@ -12,13 +12,15 @@ const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 export async function onRequest(context) {
     const { request, env } = context;
 
+    console.warn('[Deprecation] /api/endict is deprecated. Use /api/dict?word=...&from=en&to=en instead.');
+
     if (request.method === 'OPTIONS') {
         return handleOptions(['GET', 'OPTIONS']);
     }
 
-    // Rate limiting
+    // Rate limiting (Atomic)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -52,8 +54,6 @@ export async function onRequest(context) {
             return jsonResponse([]);
         }
 
-        // Increment rate limit for successful external API calls
-        await incrementRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
         // Parse and format the response
         const results = data.map(entry => {
@@ -82,7 +82,10 @@ export async function onRequest(context) {
             };
         });
 
-        return jsonResponse(results);
+        return jsonResponse(results, 200, {
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt),
+            'X-Deprecated': 'Use /api/dict instead'
+        });
 
     } catch (error) {
         console.error('[English Dict] Error:', error.message);

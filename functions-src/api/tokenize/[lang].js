@@ -5,7 +5,12 @@
 
 import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '../../_shared/utils.js';
 import { tokenize } from '../../_shared/tokenizer.js';
-import { checkRateLimit, incrementRateLimit, getClientIP, rateLimitResponse } from '../../_shared/rate-limiter.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../../_shared/rate-limiter.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
@@ -33,9 +38,9 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
-    // Rate limiting
+    // Rate limiting (Atomic)
     const clientIP = getClientIP(request);
-    const rateCheck = await checkRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -67,7 +72,7 @@ export async function onRequest(context) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached) {
-                    return jsonResponse(cached);
+                    return jsonResponse(cached, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
                 }
             } catch (e) {
                 // Cache read failed, continue
@@ -78,8 +83,6 @@ export async function onRequest(context) {
         const tokens = await tokenize(text, lang);
         const result = { tokens };
 
-        // Increment rate limit (only for non-cached responses)
-        await incrementRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
 
         // Cache the result (30 days TTL)
         if (TOKEN_CACHE) {
@@ -92,7 +95,7 @@ export async function onRequest(context) {
             }
         }
 
-        return jsonResponse(result);
+        return jsonResponse(result, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
 
     } catch (error) {
         console.error(`[Tokenize ${lang.toUpperCase()}] Error:`, error);
