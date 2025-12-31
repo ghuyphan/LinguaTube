@@ -346,6 +346,10 @@ export class VideoPageComponent implements OnInit {
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {
+    // Pause video on mobile when looking up a word for better UX
+    if (window.innerWidth <= 768) {
+      this.youtube.pause();
+    }
     this.selectedWord.set(event.token);
     this.currentSentence.set(event.sentence);
   }

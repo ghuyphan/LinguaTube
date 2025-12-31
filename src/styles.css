@@ -1471,6 +1471,51 @@ body::-webkit-scrollbar {
   }
 }
 
+/* ============================================
+   HOVER DEATH SPOT FIX
+   ============================================
+   Apply to parent elements where hover state should be
+   maintained even when cursor moves over child elements.
+   
+   Usage: Add class "hover-fix" to the hoverable parent.
+   This makes all children transparent to pointer events,
+   preventing "holes" where hover state is lost.
+   
+   For children that need to remain interactive (buttons, links),
+   add class "hover-fix-interactive" to restore pointer events.
+   ============================================ */
+
+.hover-fix {
+  /* Ensure the element itself receives all pointer events */
+  pointer-events: auto;
+}
+
+.hover-fix>* {
+  /* Make all direct children transparent to pointer events */
+  pointer-events: none;
+}
+
+.hover-fix>.hover-fix-interactive,
+.hover-fix>* .hover-fix-interactive,
+.hover-fix button,
+.hover-fix a,
+.hover-fix input,
+.hover-fix select,
+.hover-fix [role="button"],
+.hover-fix label {
+  /* Restore pointer events for interactive elements */
+  pointer-events: auto;
+}
+
+/* Alternative: Use on parents where only specific areas should trigger hover */
+.hover-passthrough {
+  pointer-events: none;
+}
+
+.hover-passthrough-target {
+  pointer-events: auto;
+}
+
 /* Circular Flag Images */
 .circle-flag {
   width: 1.25em;

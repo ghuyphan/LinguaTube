@@ -222,7 +222,7 @@
         &:hover {
             background: var(--bg-hover);
             color: var(--text-primary);
-            transform: translateX(4px);
+            padding-left: 1rem;
         }
     }
 
@@ -282,15 +282,15 @@
     border-radius: var(--border-radius);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-    will-change: transform;
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    /* removed will-change: transform to prevent flickering */
 
     @media (hover: hover) {
         &:hover {
             background: var(--bg-hover);
             color: var(--text-primary);
             border-color: var(--text-secondary);
-            transform: translateY(-2px);
+            /* removed transform: translateY(-2px) */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
     }
@@ -316,12 +316,12 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease;
 
     @media (hover: hover) {
         &:hover {
             background: var(--bg-hover);
-            transform: translateY(-1px);
+            /* removed transform: translateY(-1px) */
         }
     }
 }
@@ -524,7 +524,7 @@
         &:hover {
             background: var(--bg-hover);
             color: var(--text-primary);
-            transform: translateX(4px);
+            padding-left: 1rem;
         }
     }
 

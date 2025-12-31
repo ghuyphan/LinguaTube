@@ -257,7 +257,6 @@ type FilterType = 'all' | 'favorites';
       flex-direction: column;
       align-items: center;
       text-align: center;
-      // padding: var(--space-2xl);
       color: var(--text-muted);
     }
 

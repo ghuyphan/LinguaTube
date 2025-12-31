@@ -2,7 +2,8 @@ import { Component, inject, input, output, ChangeDetectionStrategy, signal, View
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService, StreakService } from '../../services';
+import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
+import { StreakService } from '../../services/streak.service';
 
 @Component({
   selector: 'app-settings-sheet',

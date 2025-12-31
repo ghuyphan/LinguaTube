@@ -84,7 +84,7 @@
                     {{ i18n.t('popup.saved') }}
                 </button>
                 } @else {
-                <button class="btn btn-primary" (click)="saveWord()">
+                <button class="btn btn-primary" (click)="saveWord()" [disabled]="isLoading()">
                     <app-icon name="plus" [size]="14" />
                     {{ i18n.t('dictionary.saveToVocab') }}
                 </button>

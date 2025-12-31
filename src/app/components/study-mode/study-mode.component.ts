@@ -1,7 +1,8 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { VocabularyService, SettingsService, I18nService, StreakService } from '../../services';
+import { VocabularyService, SettingsService, I18nService } from '../../services';
+import { StreakService } from '../../services/streak.service';
 import { VocabularyItem } from '../../models';
 
 interface StudyCard {

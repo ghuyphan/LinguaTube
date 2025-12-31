@@ -99,6 +99,11 @@
 /* Streak Display (Mobile) */
 .streak-section {
     border-bottom: 1px solid var(--border-color);
+
+    /* Hide on desktop since it's already in the sidebar */
+    @media (min-width: 769px) {
+        display: none;
+    }
 }
 
 .streak-display {

@@ -4,7 +4,8 @@ import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/ro
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService, StreakService } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
+import { StreakService } from '../../services/streak.service';
 
 @Component({
     selector: 'app-sidebar',
