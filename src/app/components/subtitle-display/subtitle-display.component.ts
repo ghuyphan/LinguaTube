@@ -86,8 +86,14 @@ export class SubtitleDisplayComponent {
   currentTokens = computed(() => {
     const cue = this.subtitles.currentCue();
     if (!cue) return [];
-    const lang = this.settings.settings().language;
-    const tokens = this.subtitles.getTokens(cue, lang);
+
+    // Prioritize detected language over user setting (fixes tokenization mismatch)
+    const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
+    const userLang = this.settings.settings().language;
+    const validLangs = ['ja', 'zh', 'ko', 'en'];
+    const lang = (detected && validLangs.includes(detected)) ? detected : userLang;
+
+    const tokens = this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
 
     // Pre-compute levels for template
     return tokens.map(token => {
@@ -104,7 +110,12 @@ export class SubtitleDisplayComponent {
   grammarMatches = computed(() => {
     const tokens = this.currentTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
-    const lang = this.settings.settings().language;
+
+    const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
+    const userLang = this.settings.settings().language;
+    const validLangs = ['ja', 'zh', 'ko'];
+    const lang = (detected && validLangs.includes(detected)) ? detected : userLang;
+
     if (lang === 'en') return []; // No grammar for English
     return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
   });
@@ -357,6 +368,12 @@ export class SubtitleDisplayComponent {
     const match = this.getGrammarMatchForToken(index);
     if (match) {
       this.selectedGrammarPattern.set(match.pattern);
+
+      // Pause video on mobile (like word lookup)
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        this.youtube.pause();
+      }
+
       this.grammarPopupOpen.set(true);
     }
   }

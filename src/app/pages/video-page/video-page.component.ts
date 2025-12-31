@@ -53,6 +53,7 @@ import { Token } from '../../models';
 
     <!-- Language Mismatch Sheet -->
     <app-bottom-sheet
+      #mismatchSheet
       [isOpen]="showLangMismatchSheet()"
       [showCloseButton]="true"
       [maxHeight]="'auto'"
@@ -66,7 +67,7 @@ import { Token } from '../../models';
         <p class="lang-mismatch-sheet__message">
           {{ getLangMismatchMessage() }}
         </p>
-        <button class="lang-mismatch-sheet__btn" (click)="showLangMismatchSheet.set(false)">
+        <button class="lang-mismatch-sheet__btn" (click)="mismatchSheet.close()">
           {{ i18n.t('subtitle.gotIt') }}
         </button>
       </div>
