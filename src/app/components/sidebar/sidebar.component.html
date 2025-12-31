@@ -78,14 +78,20 @@
     <!-- Streak Goal (Motivation) -->
     @if (!isCollapsed()) {
     <div class="sidebar__section">
-        <div class="streak-card">
+        <div class="streak-card" [attr.title]="i18n.t('streak.longestStreak') + ': ' + streak.longestStreak()">
             <div class="streak-icon-wrapper">
                 <app-icon name="fire" [size]="20" class="streak-icon" />
             </div>
             <div class="streak-info">
-                <span class="streak-count">5</span>
-                <span class="streak-label">{{ i18n.t('study.dayStreak') || 'Day Streak' }}</span>
+                <span class="streak-count">{{ streak.currentStreak() }}</span>
+                <span class="streak-label">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
             </div>
+            @if (streak.freezesRemaining() > 0) {
+            <div class="streak-freezes" [attr.title]="i18n.t('streak.freezesRemaining')">
+                <app-icon name="snowflake" [size]="14" />
+                <span>{{ streak.freezesRemaining() }}</span>
+            </div>
+            }
         </div>
     </div>
     }
@@ -94,9 +100,9 @@
     <div class="sidebar__footer">
         <!-- Collapsed Streak Indicator -->
         @if (isCollapsed()) {
-        <div class="collapsed-streak" [attr.title]="i18n.t('study.dayStreak')">
+        <div class="collapsed-streak" [attr.title]="i18n.t('streak.dayStreak')">
             <app-icon name="fire" [size]="18" />
-            <span class="collapsed-streak-count">5</span>
+            <span class="collapsed-streak-count">{{ streak.currentStreak() }}</span>
         </div>
         }
 

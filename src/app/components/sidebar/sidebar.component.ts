@@ -4,7 +4,7 @@ import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/ro
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../icon/icon.component';
-import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
+import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService, StreakService } from '../../services';
 
 @Component({
     selector: 'app-sidebar',
@@ -23,6 +23,7 @@ export class SidebarComponent {
     auth = inject(AuthService);
     i18n = inject(I18nService);
     transcript = inject(TranscriptService);
+    streak = inject(StreakService);
 
     isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
     openSettings = output<void>();

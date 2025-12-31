@@ -1,7 +1,7 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { VocabularyService, SettingsService, I18nService } from '../../services';
+import { VocabularyService, SettingsService, I18nService, StreakService } from '../../services';
 import { VocabularyItem } from '../../models';
 
 interface StudyCard {
@@ -21,6 +21,7 @@ export class StudyModeComponent {
     vocab = inject(VocabularyService);
     settings = inject(SettingsService);
     i18n = inject(I18nService);
+    streak = inject(StreakService);
 
     // Options
     includeNew = true;
@@ -123,6 +124,8 @@ export class StudyModeComponent {
         } else {
             this.isStudying.set(false);
             this.isComplete.set(true);
+            // Record activity for streak tracking
+            this.streak.recordActivity();
         }
     }
 

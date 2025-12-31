@@ -167,8 +167,21 @@
         "toReview": "復習が必要",
         "studyAgain": "もう一度学習",
         "recentlyAdded": "最近追加した単語",
-        "tapWordsHint": "字幕の単語をタップして保存",
-        "dayStreak": "連続学習日数"
+        "tapWordsHint": "字幕の単語をタップして保存"
+    },
+    "streak": {
+        "dayStreak": "連続学習日数",
+        "longestStreak": "最長記録",
+        "freezesRemaining": "ストリークフリーズ",
+        "freezeUsed": "フリーズを使用しました！",
+        "streakLost": "連続記録がリセットされました",
+        "milestone7": "1週間達成！🎉",
+        "milestone30": "30日達成！🔥",
+        "milestone100": "100日達成！🏆",
+        "milestone365": "1年達成！👑",
+        "keepItUp": "この調子で頑張ろう！",
+        "practiceToday": "今日も学習して記録を伸ばそう",
+        "newRecord": "新記録！"
     },
     "history": {
         "title": "履歴",

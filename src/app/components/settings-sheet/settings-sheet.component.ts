@@ -2,7 +2,7 @@ import { Component, inject, input, output, ChangeDetectionStrategy, signal, View
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
+import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService, StreakService } from '../../services';
 
 @Component({
   selector: 'app-settings-sheet',
@@ -21,6 +21,7 @@ export class SettingsSheetComponent {
   i18n = inject(I18nService);
   sync = inject(SyncService);
   transcript = inject(TranscriptService);
+  streak = inject(StreakService);
 
   @ViewChild('googleBtnSettings') googleBtnSettings!: ElementRef;
 

@@ -37,6 +37,31 @@
             }
         </div>
 
+        <!-- Streak Section -->
+        <div class="settings-section streak-section">
+            <div class="streak-display">
+                <div class="streak-icon-wrapper">
+                    <app-icon name="fire" [size]="24" class="streak-icon" />
+                </div>
+                <div class="streak-details">
+                    <div class="streak-main">
+                        <span class="streak-number">{{ streak.currentStreak() }}</span>
+                        <span class="streak-text">{{ i18n.t('streak.dayStreak') }}</span>
+                    </div>
+                    <div class="streak-sub">
+                        <span class="streak-longest">{{ i18n.t('streak.longestStreak') }}: {{ streak.longestStreak()
+                            }}</span>
+                        @if (streak.freezesRemaining() > 0) {
+                        <span class="streak-freezes-badge">
+                            <app-icon name="snowflake" [size]="12" />
+                            {{ streak.freezesRemaining() }}
+                        </span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Language Selection -->
         <div class="settings-section">
             <h3 class="section-title">{{ i18n.t('settings.learningLanguage') }}</h3>

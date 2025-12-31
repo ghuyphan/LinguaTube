@@ -167,8 +167,21 @@
         "toReview": "To Review",
         "studyAgain": "Study Again",
         "recentlyAdded": "Recently Added",
-        "tapWordsHint": "Tap on words in subtitles to save them",
-        "dayStreak": "Day Streak"
+        "tapWordsHint": "Tap on words in subtitles to save them"
+    },
+    "streak": {
+        "dayStreak": "Day Streak",
+        "longestStreak": "Longest Streak",
+        "freezesRemaining": "Streak Freezes",
+        "freezeUsed": "Streak Freeze Used!",
+        "streakLost": "Streak Lost",
+        "milestone7": "1 Week Streak! 🎉",
+        "milestone30": "30 Day Streak! 🔥",
+        "milestone100": "100 Day Streak! 🏆",
+        "milestone365": "1 Year Streak! 👑",
+        "keepItUp": "Keep it up!",
+        "practiceToday": "Practice today to extend your streak",
+        "newRecord": "New Record!"
     },
     "history": {
         "title": "History",

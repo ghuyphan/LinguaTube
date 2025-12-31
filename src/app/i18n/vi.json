@@ -167,8 +167,21 @@
         "toReview": "Cần ôn lại",
         "studyAgain": "Học lại",
         "recentlyAdded": "Thêm gần đây",
-        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu",
-        "dayStreak": "Chuỗi ngày học"
+        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu"
+    },
+    "streak": {
+        "dayStreak": "Chuỗi ngày học",
+        "longestStreak": "Kỷ lục dài nhất",
+        "freezesRemaining": "Bảo vệ chuỗi",
+        "freezeUsed": "Đã dùng bảo vệ chuỗi!",
+        "streakLost": "Chuỗi đã bị đặt lại",
+        "milestone7": "1 tuần liên tiếp! 🎉",
+        "milestone30": "30 ngày liên tiếp! 🔥",
+        "milestone100": "100 ngày liên tiếp! 🏆",
+        "milestone365": "1 năm liên tiếp! 👑",
+        "keepItUp": "Tiếp tục phát huy!",
+        "practiceToday": "Học hôm nay để kéo dài chuỗi",
+        "newRecord": "Kỷ lục mới!"
     },
     "history": {
         "title": "Lịch sử",
