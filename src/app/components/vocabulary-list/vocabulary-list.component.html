@@ -112,22 +112,22 @@
     </div>
 </div>
 
-<!-- Delete Confirmation Modal -->
-@if (deleteModalVisible()) {
-<div class="modal-overlay" (click)="cancelDelete()">
-    <div class="modal" (click)="$event.stopPropagation()">
-        <div class="modal-header">
-            <app-icon name="trash-2" [size]="24" class="modal-icon" />
-            <h3 class="modal-title">{{ i18n.t('vocab.deleteWord') }}</h3>
+<!-- Delete Confirmation Sheet -->
+<app-bottom-sheet [isOpen]="deleteModalVisible()" [showCloseButton]="false" (closed)="cancelDelete()">
+    <div class="delete-sheet">
+        <div class="delete-sheet__header">
+            <div class="delete-sheet__icon">
+                <app-icon name="trash-2" [size]="24" />
+            </div>
+            <h3 class="delete-sheet__title">{{ i18n.t('vocab.deleteWord') }}</h3>
         </div>
-        <p class="modal-message">{{ i18n.t('vocab.deleteConfirm') }}</p>
-        <div class="modal-actions">
+        <p class="delete-sheet__message">{{ i18n.t('vocab.deleteConfirm') }}</p>
+        <div class="delete-sheet__actions">
             <button class="btn btn-secondary" (click)="cancelDelete()">{{ i18n.t('vocab.cancel') }}</button>
             <button class="btn btn-danger" (click)="confirmDelete()">{{ i18n.t('vocab.delete') }}</button>
         </div>
     </div>
-</div>
-}
+</app-bottom-sheet>
 
 <!-- Toast Notification -->
 @if (toastMessage()) {

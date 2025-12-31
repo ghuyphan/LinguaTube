@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../option-picker/option-picker.component';
+import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { VocabularyService, SettingsService, I18nService, BodyScrollService } from '../../services';
 
 import { VocabularyItem, WordLevel } from '../../models';
@@ -11,7 +12,7 @@ import { VocabularyItem, WordLevel } from '../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })

@@ -225,6 +225,66 @@
     display: none;
 }
 
+
+/* Delete Sheet Styles - Global for component */
+.delete-sheet {
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.delete-sheet__header {
+    margin-bottom: var(--space-md);
+}
+
+.delete-sheet__icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: var(--border-radius-round);
+    color: var(--error);
+}
+
+.delete-sheet__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.delete-sheet__message {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 var(--space-xl);
+}
+
+.delete-sheet__actions {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.delete-sheet__actions .btn {
+    flex: 1;
+    height: var(--btn-height-lg);
+    font-size: 1rem;
+}
+
+.btn-danger {
+    background: var(--error);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+    background: #b32d29;
+}
+
 @media (max-width: 1024px) {
     .vocab-panel {
         max-height: 25rem;
@@ -331,52 +391,7 @@
 
 
 
-    /* Modal styles removed - using global .modal-overlay and .modal */
 
-
-    .modal-header {
-        display: flex;
-        align-items: center;
-        gap: var(--space-sm);
-        margin-bottom: var(--space-sm);
-    }
-
-    .modal-icon {
-        color: var(--error);
-    }
-
-    .modal-title {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: var(--text-primary);
-    }
-
-    .modal-message {
-        font-size: 0.875rem;
-        color: var(--text-secondary);
-        line-height: 1.5;
-        margin-bottom: var(--space-lg);
-    }
-
-    .modal-actions {
-        display: flex;
-        gap: var(--space-sm);
-        justify-content: flex-end;
-    }
-
-    .modal-actions .btn {
-        min-width: 5rem;
-    }
-
-    .btn-danger {
-        background: var(--error);
-        color: white;
-        border: none;
-    }
-
-    .btn-danger:hover {
-        background: #b32d29;
-    }
 
     // Toast styles removed - using global .toast
 
