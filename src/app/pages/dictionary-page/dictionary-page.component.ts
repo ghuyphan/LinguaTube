@@ -102,8 +102,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     }
 
     .layout-sidebar {
-      position: sticky;
-      top: var(--space-lg);
+      align-self: start;
       display: flex;
       flex-direction: column;
       gap: var(--space-md);

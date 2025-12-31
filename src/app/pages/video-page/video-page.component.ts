@@ -94,8 +94,7 @@ import { Token } from '../../models';
     }
 
     .layout-sidebar {
-      position: sticky;
-      top: var(--space-lg);
+      align-self: start;
     }
 
     .desktop-only {

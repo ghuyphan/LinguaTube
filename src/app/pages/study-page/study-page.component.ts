@@ -91,8 +91,7 @@ import { VocabularyService, SettingsService, I18nService } from '../../services'
     }
 
     .layout-sidebar {
-      position: sticky;
-      top: var(--space-lg);
+      align-self: start;
       display: flex;
       flex-direction: column;
       gap: var(--space-md);
