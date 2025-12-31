@@ -14,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: var(--space-2xl);
+    // padding: var(--space-2xl);
     color: var(--text-muted);
 
     &.animate {
@@ -362,7 +362,7 @@
 
     .history-item__title {
         font-size: 0.8125rem;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
     }
 
     .history-item__meta {
