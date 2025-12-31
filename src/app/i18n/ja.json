@@ -167,7 +167,8 @@
         "toReview": "復習が必要",
         "studyAgain": "もう一度学習",
         "recentlyAdded": "最近追加した単語",
-        "tapWordsHint": "字幕の単語をタップして保存"
+        "tapWordsHint": "字幕の単語をタップして保存",
+        "dayStreak": "連続学習日数"
     },
     "history": {
         "title": "履歴",

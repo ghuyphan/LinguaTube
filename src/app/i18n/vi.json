@@ -167,7 +167,8 @@
         "toReview": "Cần ôn lại",
         "studyAgain": "Học lại",
         "recentlyAdded": "Thêm gần đây",
-        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu"
+        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu",
+        "dayStreak": "Chuỗi ngày học"
     },
     "history": {
         "title": "Lịch sử",

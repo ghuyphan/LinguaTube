@@ -278,41 +278,161 @@
     }
 }
 
-/* Stats */
-.stats-compact {
+/* Streak Card */
+.streak-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--bg-surface);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.streak-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff3e0;
+    border-radius: 50%;
+    color: #f59e0b;
+}
+
+.streak-info {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    background: var(--bg-surface);
-    padding: var(--space-md);
-    border-radius: 0.75rem;
-    border: none;
 }
 
-.stat-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.stat-label {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.stat-value {
-    font-size: 0.875rem;
-    font-weight: 700;
+.streak-count {
+    font-size: 1.125rem;
+    font-weight: 800;
     color: var(--text-primary);
+    line-height: 1.1;
 }
 
-.stat-value--success {
-    color: var(--success);
+.streak-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
-.stat-value--warning {
-    color: var(--warning);
+
+
+// 1. Idle Animation (Slow, subtle breathing)
+@keyframes breathe-fire {
+
+    0%,
+    100% {
+        transform: scale(0.98) translateY(1px);
+    }
+
+    50% {
+        transform: scale(1.02) translateY(0);
+    }
+}
+
+@keyframes breathe-glow {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+// 2. Hover Animation (Energetic wiggle)
+@keyframes wiggle-fire {
+
+    0%,
+    100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.2) rotate(-3deg);
+    }
+
+    50% {
+        transform: scale(1.25) rotate(3deg);
+    }
+
+    75% {
+        transform: scale(1.2) rotate(-1deg);
+    }
+}
+
+@keyframes glow-fast {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        rx: 2px;
+    }
+
+    50% {
+        opacity: 0.4;
+        rx: 1.5px;
+    }
+}
+
+/* Base Styles (Applies to both Expanded and Collapsed) */
+.streak-icon,
+.collapsed-streak {
+    ::ng-deep .fire-flame {
+        transform-origin: center bottom;
+        // Default: Slow breathing
+        animation: breathe-fire 3s ease-in-out infinite;
+        transition: all 0.3s ease;
+    }
+
+    ::ng-deep .fire-glow {
+        transform-origin: center center;
+        // Default: Slow pulsing
+        animation: breathe-glow 3s ease-in-out infinite;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Hover Effects (Switch to Fast Animation) */
+.streak-card:hover,
+.collapsed-streak:hover {
+    ::ng-deep .fire-flame {
+        animation: wiggle-fire 0.6s ease-in-out infinite;
+    }
+
+    ::ng-deep .fire-glow {
+        animation: glow-fast 0.6s ease-in-out infinite;
+    }
+}
+
+.collapsed-streak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    color: #f59e0b;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--bg-hover);
+    }
+
+    .collapsed-streak-count {
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1;
+    }
 }
 
 /* Footer */

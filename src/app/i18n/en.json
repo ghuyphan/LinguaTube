@@ -167,7 +167,8 @@
         "toReview": "To Review",
         "studyAgain": "Study Again",
         "recentlyAdded": "Recently Added",
-        "tapWordsHint": "Tap on words in subtitles to save them"
+        "tapWordsHint": "Tap on words in subtitles to save them",
+        "dayStreak": "Day Streak"
     },
     "history": {
         "title": "History",

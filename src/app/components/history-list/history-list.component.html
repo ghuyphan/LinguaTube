@@ -48,7 +48,7 @@
                 <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
                     (click)="onToggleFavorite(item, $event)" [attr.aria-label]="i18n.t('history.favorites')"
                     [attr.aria-pressed]="item.is_favorite">
-                    <app-icon name="heart" [size]="18" />
+                    <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
                 </button>
                 <button type="button" class="action-btn action-btn--delete" (click)="onRemoveItem(item, $event)"
                     [attr.aria-label]="i18n.t('history.removeFromHistory')">
@@ -61,7 +61,7 @@
                 <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
                     (click)="onToggleFavorite(item, $event)" [attr.aria-label]="i18n.t('history.favorites')"
                     [attr.aria-pressed]="item.is_favorite">
-                    <app-icon name="heart" [size]="18" />
+                    <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
                 </button>
             </div>
         </div>

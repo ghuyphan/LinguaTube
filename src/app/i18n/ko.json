@@ -167,7 +167,8 @@
         "toReview": "복습 필요",
         "studyAgain": "다시 학습",
         "recentlyAdded": "최근 추가됨",
-        "tapWordsHint": "자막의 단어를 탭하여 저장"
+        "tapWordsHint": "자막의 단어를 탭하여 저장",
+        "dayStreak": "연속 학습일"
     },
     "history": {
         "title": "기록",

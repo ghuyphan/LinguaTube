@@ -36,11 +36,11 @@ export class I18nService {
 
     // Available languages with display info
     readonly availableLanguages: { code: UILanguage; name: string; nativeName: string; flag: string }[] = [
-        { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
-        { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳' },
-        { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
-        { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
-        { code: 'zh', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' }
+        { code: 'en', name: 'English', nativeName: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/us.svg' },
+        { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' },
+        { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
+        { code: 'ko', name: 'Korean', nativeName: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+        { code: 'zh', name: 'Chinese', nativeName: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' }
     ];
 
     // Current translations

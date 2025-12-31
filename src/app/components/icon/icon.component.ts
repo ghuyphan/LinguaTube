@@ -8,14 +8,17 @@ export type IconName =
     | 'search' | 'plus' | 'check' | 'x' | 'trash-2'
     | 'upload' | 'download' | 'file-text' | 'book-open'
     | 'settings' | 'chevron-down' | 'external-link'
-    | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus'
+    | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus' | 'bookmark-filled'
     | 'repeat' | 'languages' | 'subtitles' | 'captions'
     | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
     | 'chevron-left' | 'chevron-right' | 'layers'
     | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'
     | 'user' | 'google' | 'log-in'
-    | 'clock' | 'heart' | 'cloud';
+    | 'clock' | 'heart' | 'heart-filled' | 'cloud'
+    // Gamification & cute icons
+    | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift'
+    | 'party-popper' | 'smile' | 'target' | 'zap';
 
 @Component({
     selector: 'app-icon',

@@ -274,5 +274,85 @@
     @case ('cloud') {
     <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
     }
+    @case ('heart-filled') {
+    <path fill="currentColor" stroke="none"
+        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+    </path>
+    }
+    @case ('star') {
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+    </polygon>
+    }
+    @case ('star-filled') {
+    <polygon fill="currentColor" stroke="none"
+        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+    </polygon>
+    }
+    @case ('fire') {
+    <defs>
+        <linearGradient id="fireGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#FF6B35" />
+            <stop offset="50%" stop-color="#F7931E" />
+            <stop offset="100%" stop-color="#FFCC00" />
+        </linearGradient>
+    </defs>
+    <path class="fire-flame" fill="url(#fireGradient)" stroke="none"
+        d="M12 2c0 4-3.5 6-3.5 10 0 1.5.5 2.5 1.5 3.5-1-1-1.5-2.5-1.5-4 0-3 2-5 3.5-7.5C13.5 6 16 8.5 16 12c0 2-1 3.5-2.5 4.5 1.5-1 2.5-2.5 2.5-4.5 0-2.5-1.5-4.5-3-6 2.5 2 5 5 5 8.5 0 3.5-3 6.5-6 6.5s-6-3-6-6.5C6 10 8.5 7 12 2z">
+    </path>
+    <ellipse class="fire-glow" cx="12" cy="18" rx="2" ry="1.5" fill="#FFEE88" opacity="0.8" stroke="none">
+    </ellipse>
+    }
+    @case ('trophy') {
+    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+    <path d="M4 22h16"></path>
+    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+    }
+    @case ('medal') {
+    <path
+        d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15">
+    </path>
+    <path d="M11 12 5.12 2.2"></path>
+    <path d="m13 12 5.88-9.8"></path>
+    <path d="M8 7h8"></path>
+    <circle cx="12" cy="17" r="5"></circle>
+    <path d="M12 18v-2h-.5"></path>
+    }
+    @case ('gift') {
+    <rect x="3" y="8" width="18" height="4" rx="1"></rect>
+    <path d="M12 8v13"></path>
+    <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
+    <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
+    }
+    @case ('party-popper') {
+    <path d="M5.8 11.3 2 22l10.7-3.79"></path>
+    <path d="M4 3h.01"></path>
+    <path d="M22 8h.01"></path>
+    <path d="M15 2h.01"></path>
+    <path d="M22 20h.01"></path>
+    <path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12v0c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"></path>
+    <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11v0c-.11.7-.72 1.22-1.43 1.22H17"></path>
+    <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98v0C9.52 4.91 9 5.52 9 6.23V7"></path>
+    <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"></path>
+    }
+    @case ('smile') {
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+    }
+    @case ('target') {
+    <circle cx="12" cy="12" r="10"></circle>
+    <circle cx="12" cy="12" r="6"></circle>
+    <circle cx="12" cy="12" r="2"></circle>
+    }
+    @case ('zap') {
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    }
+    @case ('bookmark-filled') {
+    <path fill="currentColor" d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+    }
     }
 </svg>

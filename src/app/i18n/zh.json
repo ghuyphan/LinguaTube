@@ -167,7 +167,8 @@
         "toReview": "待复习",
         "studyAgain": "再次学习",
         "recentlyAdded": "最近添加",
-        "tapWordsHint": "点击字幕中的词汇进行保存"
+        "tapWordsHint": "点击字幕中的词汇进行保存",
+        "dayStreak": "连续学习天数"
     },
     "history": {
         "title": "历史",

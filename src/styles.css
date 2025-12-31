@@ -1470,3 +1470,27 @@ body::-webkit-scrollbar {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+/* Circular Flag Images */
+.circle-flag {
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  /* Subtle border */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Adjustments for specific contexts */
+.lang-chip .circle-flag {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.lang-option .circle-flag {
+  width: 20px;
+  height: 20px;
+}

@@ -43,22 +43,22 @@
             <div class="lang-grid">
                 <button class="lang-option" [class.active]="settings.settings().language === 'ja'"
                     (click)="setLanguage('ja')">
-                    <span class="lang-flag">🇯🇵</span>
+                    <img src="https://hatscripts.github.io/circle-flags/flags/jp.svg" class="circle-flag" alt="Japan" />
                     <span class="lang-name">日本語</span>
                 </button>
                 <button class="lang-option" [class.active]="settings.settings().language === 'zh'"
                     (click)="setLanguage('zh')">
-                    <span class="lang-flag">🇨🇳</span>
+                    <img src="https://hatscripts.github.io/circle-flags/flags/cn.svg" class="circle-flag" alt="China" />
                     <span class="lang-name">中文</span>
                 </button>
                 <button class="lang-option" [class.active]="settings.settings().language === 'ko'"
                     (click)="setLanguage('ko')">
-                    <span class="lang-flag">🇰🇷</span>
+                    <img src="https://hatscripts.github.io/circle-flags/flags/kr.svg" class="circle-flag" alt="Korea" />
                     <span class="lang-name">한국어</span>
                 </button>
                 <button class="lang-option" [class.active]="settings.settings().language === 'en'"
                     (click)="setLanguage('en')">
-                    <span class="lang-flag">🇬🇧</span>
+                    <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="circle-flag" alt="UK" />
                     <span class="lang-name">English</span>
                 </button>
             </div>
@@ -71,7 +71,7 @@
                 @for (lang of i18n.availableLanguages; track lang.code) {
                 <button class="lang-option" [class.active]="i18n.currentLanguage() === lang.code"
                     (click)="setUILanguage(lang.code)">
-                    <span class="lang-flag">{{ lang.flag }}</span>
+                    <img [src]="lang.flag" class="circle-flag" [alt]="lang.name" />
                     <span class="lang-name">{{ lang.nativeName }}</span>
                 </button>
                 }
