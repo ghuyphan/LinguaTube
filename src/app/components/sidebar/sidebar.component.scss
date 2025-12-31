@@ -24,6 +24,20 @@
         width: 4.5rem;
         /* Reduced collapsed width */
 
+        /* Override hover effects for collapsed state */
+        .nav-item,
+        .footer-btn {
+            @media (hover: hover) {
+                &:hover {
+                    transform: scale(1.1) !important;
+                }
+            }
+
+            &:active {
+                transform: scale(0.95) !important;
+            }
+        }
+
         /* Force centering of logo in collapsed state */
         .sidebar__brand {
             justify-content: center;
@@ -90,7 +104,7 @@
     border-radius: 0.625rem;
     flex-shrink: 0;
     box-shadow: 0 4px 12px -2px rgba(var(--accent-primary-rgb), 0.3);
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-normal);
 
     @media (hover: hover) {
         &:hover {
@@ -197,7 +211,7 @@
     text-decoration: none;
     border-radius: var(--border-radius);
     /* Slightly tighter radius */
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
     position: relative;
     overflow: hidden;
     white-space: nowrap;
@@ -208,7 +222,12 @@
         &:hover {
             background: var(--bg-hover);
             color: var(--text-primary);
+            transform: translateX(4px);
         }
+    }
+
+    &:active {
+        transform: scale(0.96);
     }
 
     &.active {
@@ -229,6 +248,8 @@
 .sidebar__section {
     padding: 1.25rem var(--space-md);
     /* Reduced padding */
+    min-width: 15.625rem;
+    /* Prevent reflow during expansion */
 
     .sidebar.collapsed & {
         display: none;
@@ -261,14 +282,21 @@
     border-radius: var(--border-radius);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    will-change: transform;
 
     @media (hover: hover) {
         &:hover {
             background: var(--bg-hover);
             color: var(--text-primary);
             border-color: var(--text-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 
     &.active {
@@ -456,7 +484,7 @@
     color: var(--text-secondary);
 
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
     text-align: left;
     width: 100%;
     white-space: nowrap;
@@ -467,7 +495,12 @@
         &:hover {
             background: var(--bg-hover);
             color: var(--text-primary);
+            transform: translateX(4px);
         }
+    }
+
+    &:active {
+        transform: scale(0.96);
     }
 
     span {
