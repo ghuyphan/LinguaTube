@@ -64,34 +64,7 @@ export async function consumeRateLimit(cache, clientIP, config) {
     }
 }
 
-/**
- * @deprecated Use consumeRateLimit() instead
- */
-export async function checkRateLimit(cache, clientIP, config) {
-    console.warn('[RateLimit] checkRateLimit is deprecated, use consumeRateLimit()');
-    // Fallback to new function but don't consume
-    if (!cache || !clientIP) {
-        return { allowed: true, remaining: config.max, resetAt: 0 };
-    }
-
-    const key = `ratelimit:${config.keyPrefix}:${clientIP}`;
-    const data = await cache.get(key, 'json');
-
-    if (!data || Date.now() > data.resetAt) {
-        return { allowed: true, remaining: config.max, resetAt: Date.now() + config.windowSeconds * 1000 };
-    }
-
-    const remaining = config.max - data.count;
-    return { allowed: remaining > 0, remaining: Math.max(0, remaining), resetAt: data.resetAt };
-}
-
-/**
- * @deprecated Use consumeRateLimit() instead
- */
-export async function incrementRateLimit(cache, clientIP, config) {
-    console.warn('[RateLimit] incrementRateLimit is deprecated, use consumeRateLimit()');
-    // No-op since consumeRateLimit handles this
-}
+// Deprecated functions removed - use consumeRateLimit() for all rate limiting
 
 /**
  * Get standard rate limit headers

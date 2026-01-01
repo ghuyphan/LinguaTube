@@ -2,11 +2,11 @@
  * YouTube Transcript Proxy (Cloudflare Function)
  * 
  * Optimized parallel strategy with Supadata as last resort:
- *   1. Cache (KV/D1)
+ *   1. Cache (R2 only - D1 is metadata only)
  *   2. Race: youtube-caption-extractor + youtube-transcript (parallel per language)
  *   3. Supadata API (paid - only if free strategies fail)
  *
- * @version 17.3.0 - Only fetch primary language (no fallback to other languages)
+ * @version 18.0.0 - R2 for content, D1 for metadata only
  */
 
 import {
@@ -18,7 +18,7 @@ import {
     verifyLanguage
 } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
-import { getTranscript, saveTranscript, getAvailableLangs, addAvailableLang } from '../_shared/transcript-db.js';
+import { recordTranscript, getAvailableLanguages } from '../_shared/transcript-db.js';
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
 import {
     consumeRateLimit,
@@ -26,7 +26,7 @@ import {
     rateLimitResponse,
     getRateLimitHeaders
 } from '../_shared/rate-limiter.js';
-import { validateVideoRequest, isLanguageSupported } from '../_shared/video-validator.js';
+import { validateVideoRequest } from '../_shared/video-validator.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
 
@@ -34,7 +34,7 @@ import { YoutubeTranscript } from 'youtube-transcript';
 // Configuration
 // ============================================================================
 
-const DEBUG = true;
+const DEBUG = false;
 const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 
@@ -102,7 +102,7 @@ export async function onRequestPost(context) {
         }
 
         const r2 = env.TRANSCRIPT_STORAGE;
-        const cache = env.TRANSCRIPT_CACHE; // KV still used for rate limiting
+        const cache = env.TRANSCRIPT_CACHE;
         const db = env.VOCAB_DB;
 
         // Early validation - reject unsupported languages before any API calls
@@ -115,10 +115,10 @@ export async function onRequestPost(context) {
         log(`Request: ${videoId}, langs: ${targetLanguages.join(',')}`);
 
         // =====================================================================
-        // Step 1: Check Cache (R2 primary, D1 backup)
+        // Step 1: Check R2 Cache (single source of truth for content)
         // =====================================================================
         if (!forceRefresh) {
-            const cached = await checkCache(r2, db, videoId, primaryLang);
+            const cached = await checkCache(r2, videoId, primaryLang);
             if (cached) {
                 log(`Cache hit (${elapsed()}ms)`);
                 return jsonResponse({ ...cached, timing: elapsed() }, 200, {
@@ -145,12 +145,13 @@ export async function onRequestPost(context) {
         // Step 3: Supadata as LAST RESORT (preserves credits)
         // =====================================================================
         if (!result && env.SUPADATA_API_KEY) {
-            // Check if we know which languages are available for this video
-            const availableLangs = await getAvailableLangs(db, videoId);
+            // Check D1 metadata for known available languages
+            const availableLangs = await getAvailableLanguages(db, videoId);
+            const knownLangs = availableLangs?.map(l => l.language) || [];
 
-            if (availableLangs && !availableLangs.includes(primaryLang)) {
+            if (knownLangs.length > 0 && !knownLangs.includes(primaryLang)) {
                 // We KNOW this language doesn't exist - skip Supadata to save credits
-                log(`Supadata: Skipping ${videoId}:${primaryLang} - known unavailable (available: ${availableLangs.join(',')})`);
+                log(`Supadata: Skipping ${videoId}:${primaryLang} - known unavailable (available: ${knownLangs.join(',')})`);
             } else {
                 // Either first time (no metadata) or language IS available - try Supadata
                 log('Free strategies failed, trying Supadata as last resort...');
@@ -168,9 +169,7 @@ export async function onRequestPost(context) {
         if (result) {
             log(`${source} succeeded (${elapsed()}ms)`);
 
-
             // Get actual language from result (not requested language)
-            // This prevents caching EN captions under a JA key
             const tracks = result.data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
             const actualLang = tracks?.[0]?.languageCode || primaryLang;
 
@@ -208,50 +207,40 @@ export async function onRequestPost(context) {
 }
 
 // ============================================================================
-// Cache
+// Cache - R2 Only (D1 is metadata only)
 // ============================================================================
 
-async function checkCache(r2, db, videoId, lang) {
-    // Check R2 first (primary storage), then D1 (backup/legacy)
-    // Check for both YouTube and AI transcripts
-    const [r2Result, d1Result, r2AiResult, d1AiResult] = await Promise.allSettled([
-        r2 ? checkR2Cache(r2, videoId, lang) : Promise.resolve(null),
-        db ? checkD1Cache(db, videoId, lang) : Promise.resolve(null),
-        r2 ? checkR2Cache(r2, videoId, lang, 'ai') : Promise.resolve(null),
-        db ? checkD1Cache(db, videoId, lang, 'ai') : Promise.resolve(null)
-    ]);
+/**
+ * Check R2 cache for transcript content
+ * Checks both YouTube and AI transcripts, preferring YouTube
+ */
+async function checkCache(r2, videoId, lang) {
+    if (!r2) return null;
 
-    // Prefer YouTube transcripts over AI transcripts
-    if (r2Result.status === 'fulfilled' && r2Result.value) {
-        return r2Result.value;
-    }
+    // Check for YouTube transcript first
+    const youtubeResult = await checkR2Cache(r2, videoId, lang);
+    if (youtubeResult) return youtubeResult;
 
-    if (d1Result.status === 'fulfilled' && d1Result.value) {
-        return d1Result.value;
-    }
-
-    // Fallback to AI transcripts if no YouTube transcripts found
-    if (r2AiResult.status === 'fulfilled' && r2AiResult.value) {
+    // Fallback to AI transcript
+    const aiResult = await checkR2Cache(r2, videoId, lang, 'ai');
+    if (aiResult) {
         log('Found cached AI transcript in R2');
-        return r2AiResult.value;
-    }
-
-    if (d1AiResult.status === 'fulfilled' && d1AiResult.value) {
-        log('Found cached AI transcript in D1');
-        return d1AiResult.value;
+        return aiResult;
     }
 
     return null;
 }
 
-async function checkR2Cache(r2, videoId, lang, source = null) {
+async function checkR2Cache(r2, videoId, lang, sourceFilter = null) {
     try {
         const result = await getTranscriptFromR2(r2, videoId, lang);
-        // If source filter is specified, check if it matches
+
         if (result?.segments?.length) {
-            if (source && result.source !== source) {
-                return null; // Source doesn't match filter
+            // If source filter specified, check if it matches
+            if (sourceFilter && result.source !== sourceFilter) {
+                return null;
             }
+
             return {
                 captions: {
                     playerCaptionsTracklistRenderer: {
@@ -267,71 +256,32 @@ async function checkR2Cache(r2, videoId, lang, source = null) {
     return null;
 }
 
-async function checkKVCache(cache, cacheKey) {
-    try {
-        const cached = await cache.get(cacheKey, 'json');
-        if (cached?.captions?.playerCaptionsTracklistRenderer?.captionTracks?.some(t => t.content?.length)) {
-            return { ...cached, source: 'cache:kv' };
-        }
-    } catch (e) {
-        log(`KV cache error: ${e.message}`);
-    }
-    return null;
-}
-
-async function checkD1Cache(db, videoId, lang, source = null) {
-    try {
-        // Pass source filter to D1 query
-        const d1 = await getTranscript(db, videoId, lang, source);
-        if (d1?.segments?.length) {
-            return {
-                captions: {
-                    playerCaptionsTracklistRenderer: {
-                        captionTracks: [{ languageCode: d1.language, content: d1.segments }]
-                    }
-                },
-                source: `cache:d1:${d1.source}`
-            };
-        }
-    } catch (e) {
-        log(`D1 cache error: ${e.message}`);
-    }
-    return null;
-}
-
+/**
+ * Save transcript: content to R2, metadata to D1
+ */
 async function saveToCache(r2, db, videoId, lang, data, source) {
     const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
     const track = tracks?.find(t => t.languageCode === lang) || tracks?.[0];
 
-    log(`saveToCache: r2=${!!r2}, db=${!!db}, tracks=${tracks?.length}, content=${track?.content?.length}`);
+    if (!track?.content?.length) return;
 
-    const savePromises = [];
+    const actualLang = track.languageCode;
 
-    // Primary storage: R2 (unlimited, cheap)
-    if (r2 && track?.content?.length) {
-        savePromises.push(
-            saveTranscriptToR2(r2, videoId, track.languageCode, track.content, source)
-                .then(() => log(`R2 save success: ${videoId} ${track.languageCode}`))
-                .catch(e => log(`R2 save error: ${e.message}`))
-        );
-    }
+    log(`saveToCache: r2=${!!r2}, db=${!!db}, lang=${actualLang}, segments=${track.content.length}`);
 
-    // Backup storage: D1 (for structured queries, video_meta)
-    if (track?.content?.length && db) {
-        savePromises.push(
-            saveTranscript(db, videoId, track.languageCode, track.content, source)
-                .then(() => log(`D1 save success: ${videoId} ${track.languageCode}`))
-                .catch(e => console.error(`D1 save error: ${e.message}`))
-        );
+    await Promise.allSettled([
+        // Content to R2 (primary storage)
+        r2 ? saveTranscriptToR2(r2, videoId, actualLang, track.content, source)
+            .then(() => log(`R2 save success: ${videoId} ${actualLang}`))
+            .catch(e => log(`R2 save error: ${e.message}`))
+            : Promise.resolve(),
 
-        // Track this language as available for future requests
-        savePromises.push(
-            addAvailableLang(db, videoId, track.languageCode)
-                .catch(e => log(`addAvailableLang error: ${e.message}`))
-        );
-    }
-
-    await Promise.allSettled(savePromises);
+        // Metadata to D1 (for queries/analytics)
+        db ? recordTranscript(db, videoId, actualLang, source)
+            .then(() => log(`D1 metadata recorded: ${videoId} ${actualLang}`))
+            .catch(e => log(`D1 metadata error: ${e.message}`))
+            : Promise.resolve()
+    ]);
 }
 
 // ============================================================================
@@ -340,20 +290,17 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
 
 /**
  * Try free strategies for the PRIMARY language only
- * If it fails, return null - don't fall back to other languages
- * User can trigger AI transcription if needed
  */
 async function tryFreeStrategies(videoId, targetLanguages) {
     const primaryLang = targetLanguages[0];
     log(`Trying free strategies for primary language: ${primaryLang}`);
 
     const result = await raceStrategiesForLang(videoId, primaryLang);
-    return result; // null if primary language not found
+    return result;
 }
 
 /**
  * Race both free strategies in parallel for a single language
- * Returns first successful result, null if both fail
  */
 async function raceStrategiesForLang(videoId, lang) {
     const results = await Promise.allSettled([
@@ -361,7 +308,7 @@ async function raceStrategiesForLang(videoId, lang) {
         trySingleYoutubeTranscript(videoId, lang)
     ]);
 
-    // Return first successful result (caption-extractor has priority if both succeed)
+    // Return first successful result
     for (const result of results) {
         if (result.status === 'fulfilled' && result.value) {
             return result.value;
@@ -393,12 +340,9 @@ async function trySingleCaptionExtractor(videoId, lang) {
             text: s.text.trim()
         })).filter(c => c.text);
 
-        if (!cues.length) {
-            log(`caption-extractor [${lang}]: Empty cues after filtering`);
-            return null;
-        }
+        if (!cues.length) return null;
 
-        // Verify language matches expected (detect silent fallback to wrong language)
+        // Verify language matches expected
         const sampleText = cues.slice(0, 5).map(c => c.text).join(' ');
         if (!verifyLanguage(sampleText, lang)) {
             log(`caption-extractor [${lang}]: Language mismatch detected, skipping`);
@@ -428,10 +372,7 @@ async function trySingleYoutubeTranscript(videoId, lang) {
             `youtube-transcript timeout for ${lang}`
         );
 
-        if (!transcript?.length) {
-            log(`youtube-transcript [${lang}]: No transcript found`);
-            return null;
-        }
+        if (!transcript?.length) return null;
 
         const cues = transcript.map((item, i) => ({
             id: i,
@@ -440,12 +381,9 @@ async function trySingleYoutubeTranscript(videoId, lang) {
             text: item.text.trim()
         })).filter(c => c.text);
 
-        if (!cues.length) {
-            log(`youtube-transcript [${lang}]: Empty cues after filtering`);
-            return null;
-        }
+        if (!cues.length) return null;
 
-        // Verify language matches expected (detect silent fallback to wrong language)
+        // Verify language matches expected
         const sampleText = cues.slice(0, 5).map(c => c.text).join(' ');
         if (!verifyLanguage(sampleText, lang)) {
             log(`youtube-transcript [${lang}]: Language mismatch detected, skipping`);
@@ -468,10 +406,6 @@ async function trySingleYoutubeTranscript(videoId, lang) {
 // Strategy 3: Supadata API (Paid - Last Resort, Native Only)
 // ============================================================================
 
-/**
- * Check if there's an active Supadata request for this video
- * Returns true if we should skip Supadata (already processing or recently failed)
- */
 async function isSupadataLocked(cache, videoId) {
     if (!cache) return false;
     try {
@@ -482,10 +416,6 @@ async function isSupadataLocked(cache, videoId) {
     }
 }
 
-/**
- * Check if this video was recently confirmed to have no captions
- * Prevents repeated Supadata calls for videos without captions (saves credits)
- */
 async function hasNoCaption(cache, videoId) {
     if (!cache) return false;
     try {
@@ -496,10 +426,6 @@ async function hasNoCaption(cache, videoId) {
     }
 }
 
-/**
- * Mark a video as having no captions (all Supadata languages returned 404)
- * Uses minimal storage: key + "1" value, 1-hour TTL
- */
 async function markNoCaption(cache, videoId) {
     if (!cache) return;
     try {
@@ -510,9 +436,6 @@ async function markNoCaption(cache, videoId) {
     }
 }
 
-/**
- * Set a lock to prevent duplicate Supadata requests
- */
 async function setSupadataLock(cache, videoId) {
     if (!cache) return;
     try {
@@ -523,9 +446,6 @@ async function setSupadataLock(cache, videoId) {
     }
 }
 
-/**
- * Clear the Supadata lock after successful completion
- */
 async function clearSupadataLock(cache, videoId) {
     if (!cache) return;
     try {
@@ -542,34 +462,22 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         return null;
     }
 
-    // Only fetch the PRIMARY language user requested (saves credits)
     const lang = langs[0];
     const cacheKeyNoCap = `${videoId}:${lang}`;
 
     // Check if this video+lang was recently confirmed to have no captions
-    const noCaptions = await hasNoCaption(cache, cacheKeyNoCap);
-    if (noCaptions) {
+    if (await hasNoCaption(cache, cacheKeyNoCap)) {
         log(`Supadata: Skipping ${videoId}:${lang} - known no-caption`);
         return null;
     }
 
-    // Check if there's already an in-flight Supadata request for this video
-    // NOTE: Race Condition Limitation
-    // The lock check and set operations are not atomic in Cloudflare KV.
-    // Occasional duplicate Supadata calls are possible under high concurrency.
-    // This is an acceptable trade-off given:
-    // 1. Low probability (requires simultaneous requests for same video)
-    // 2. Results are cached, so duplicates only cost one extra API credit
-    // 3. Proper atomic locking would require Durable Objects (higher cost)
-    // Mitigation: Random jitter reduces collision probability
+    // Check for in-flight request
     await new Promise(r => setTimeout(r, Math.random() * 100));
-    const isLocked = await isSupadataLocked(cache, videoId);
-    if (isLocked) {
-        log(`Supadata: Skipping ${videoId} - already processing (deduplication)`);
+    if (await isSupadataLocked(cache, videoId)) {
+        log(`Supadata: Skipping ${videoId} - already processing`);
         return null;
     }
 
-    // Set lock before making the API call
     await setSupadataLock(cache, videoId);
 
     try {
@@ -577,11 +485,9 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         url.searchParams.set('videoId', videoId);
         url.searchParams.set('lang', lang);
         url.searchParams.set('text', 'false');
-        // IMPORTANT: Use native mode to only fetch existing captions
-        // This avoids AI generation costs - we use Gladia for AI transcription instead
         url.searchParams.set('mode', 'native');
 
-        log(`Supadata: Fetching ${videoId} in ${lang} (native mode, 1 request only)`);
+        log(`Supadata: Fetching ${videoId} in ${lang} (native mode)`);
 
         const response = await fetch(url.toString(), {
             method: 'GET',
@@ -593,25 +499,17 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         });
 
         if (!response.ok) {
-            const errorText = await response.text().catch(() => 'Unknown error');
-            log(`Supadata [${lang}] HTTP ${response.status}: ${errorText}`);
-
             await clearSupadataLock(cache, videoId);
-
             if (response.status === 404) {
-                // No native captions - mark so we don't retry
                 await markNoCaption(cache, cacheKeyNoCap);
-                return null;
             }
-
-            // Other errors (402 credit issue, etc)
             return null;
         }
 
         const data = await response.json();
 
         if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
-            log(`Supadata [${lang}]: No content in response`);
+            log(`Supadata [${lang}]: No content`);
             await clearSupadataLock(cache, videoId);
             await markNoCaption(cache, cacheKeyNoCap);
             return null;
@@ -625,7 +523,6 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         })).filter(c => c.text);
 
         if (!cues.length) {
-            log(`Supadata [${lang}]: Empty cues after filtering`);
             await clearSupadataLock(cache, videoId);
             return null;
         }
@@ -633,21 +530,15 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         const detectedLang = data.lang || lang;
         log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
 
-        // Success! Clear the lock since result will be cached
         await clearSupadataLock(cache, videoId);
 
         return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
 
     } catch (e) {
         log(`Supadata [${lang}] failed: ${e.message}`);
-
-        if (e.name === 'TimeoutError' || e.name === 'AbortError') {
-            // Keep the lock on timeout - prevents retry storms
-            // Lock will auto-expire after SUPADATA_LOCK_TTL
-        } else {
+        if (e.name !== 'TimeoutError' && e.name !== 'AbortError') {
             await clearSupadataLock(cache, videoId);
         }
-
         return null;
     }
 }
@@ -655,9 +546,6 @@ async function trySupadata(videoId, langs, apiKey, cache) {
 // ============================================================================
 // Utilities
 // ============================================================================
-
-// verifyLanguage is now imported from ../\_shared/utils.js
-
 
 function withTimeout(promise, ms, message) {
     return Promise.race([

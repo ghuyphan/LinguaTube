@@ -61,16 +61,9 @@ async function verifyPocketBaseToken(token, env) {
             }
         };
     } catch (error) {
-        // Fallback: local token validation
-        const payload = decodeJwtPayload(token);
-        if (payload && payload.exp && payload.exp > Math.floor(Date.now() / 1000)) {
-            return {
-                valid: true,
-                userId: payload.id,
-                user: { id: payload.id }
-            };
-        }
-        return { valid: false, error: 'Token validation failed' };
+        // FAIL CLOSED - do not trust unverified tokens
+        console.error('[Auth] PocketBase verification failed:', error.message);
+        return { valid: false, error: 'Authentication service unavailable' };
     }
 }
 

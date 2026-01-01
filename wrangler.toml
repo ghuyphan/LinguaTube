@@ -8,10 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 binding = "TRANSCRIPT_CACHE"
 id = "e4ccbf86e2654f31be92af593b912eb8"
 
-# KV Namespace for caching dictionary lookups (krdict, mdbg)
-[[kv_namespaces]]
-binding = "DICT_CACHE"
-id = "0ecedc49f49e4e6f9724e8ca96d18524"
+# Removed DICT_CACHE - now using TRANSCRIPT_CACHE with dict: prefix
 
 # D1 Database for vocabulary sync
 # Create with: wrangler d1 create linguatube-vocab

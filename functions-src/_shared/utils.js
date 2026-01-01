@@ -57,10 +57,31 @@ export function validateVideoId(id) {
 }
 
 /**
- * Standard error response
+ * Standard error response - sanitizes messages in production
  */
 export function errorResponse(message, status = 500) {
-    return jsonResponse({ error: message }, status);
+    // Log full error for debugging
+    console.error(`[Error ${status}]`, message);
+
+    // Don't leak internal details for server errors
+    const safeMessage = status >= 500
+        ? 'Internal server error'
+        : sanitizeMessage(message);
+
+    return jsonResponse({ error: safeMessage }, status);
+}
+
+/**
+ * Remove sensitive info from error messages
+ */
+function sanitizeMessage(message) {
+    if (typeof message !== 'string') return 'Unknown error';
+
+    return message
+        .replace(/\/[^\s]*\.(js|ts)/g, '[file]')  // Remove file paths
+        .replace(/at\s+.+\(.+\)/g, '')             // Remove stack traces
+        .replace(/Bearer\s+[^\s]+/g, 'Bearer [redacted]')
+        .slice(0, 200);
 }
 
 /**

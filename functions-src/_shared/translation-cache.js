@@ -5,7 +5,7 @@
  * Object key format: translations/{videoId}/{sourceLang}-{targetLang}.json
  */
 
-const DEBUG = true;
+const DEBUG = false;
 const log = (...args) => DEBUG && console.log('[R2 Translations]', ...args);
 
 /**

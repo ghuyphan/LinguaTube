@@ -221,13 +221,14 @@ export async function onRequest(context) {
         return rateLimitResponse(rateCheck.resetAt);
     }
 
-    const DICT_CACHE = env.DICT_CACHE;
+    // Use TRANSCRIPT_CACHE with dict: prefix (consolidating KV namespaces)
+    const cache = env.TRANSCRIPT_CACHE;
     const cacheKey = `dict:v2:${from}:${to}:${word}`;
 
     // Check cache
-    if (DICT_CACHE) {
+    if (cache) {
         try {
-            const cached = await DICT_CACHE.get(cacheKey, 'json');
+            const cached = await cache.get(cacheKey, 'json');
             if (cached) {
                 return jsonResponse(cached, 200, { 'X-Cache': 'HIT' });
             }
@@ -277,9 +278,9 @@ export async function onRequest(context) {
         };
 
         // Cache result
-        if (DICT_CACHE && entries?.length > 0) {
+        if (cache && entries?.length > 0) {
             try {
-                await DICT_CACHE.put(cacheKey, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+                await cache.put(cacheKey, JSON.stringify(result), { expirationTtl: CACHE_TTL });
             } catch (e) {
                 // Cache write failed
             }
