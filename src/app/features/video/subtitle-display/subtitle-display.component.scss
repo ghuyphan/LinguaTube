@@ -827,6 +827,7 @@ ruby rt {
 .ctrl-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     padding: 0 12px;
     height: 36px;
@@ -835,11 +836,12 @@ ruby rt {
     font-weight: 500;
     white-space: nowrap;
     flex-shrink: 0;
-    border: 1px solid transparent;
+    border: 1px solid var(--border-color);
     cursor: pointer;
     transition: all 0.15s ease;
-    background: rgba(var(--text-primary-rgb, 255, 255, 255), 0.05);
+    background: var(--bg-secondary);
     color: var(--text-muted);
+    position: relative;
 
     &.active {
         background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.15);
@@ -850,8 +852,9 @@ ruby rt {
 
 @media (hover: hover) {
     .ctrl-btn:hover:not(.active) {
-        background: rgba(var(--text-primary-rgb, 255, 255, 255), 0.1);
+        background: var(--bg-tertiary);
         color: var(--text-primary);
+        border-color: var(--border-color-hover, var(--border-color));
     }
 }
 
@@ -867,6 +870,11 @@ ruby rt {
     .expand-icon.rotated {
         transform: rotate(90deg);
     }
+
+    // No badge on expand button
+    .ctrl-badge {
+        display: none;
+    }
 }
 
 .ctrl-label {
@@ -874,13 +882,19 @@ ruby rt {
 }
 
 .ctrl-badge {
-    padding: 2px 6px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
     font-size: 0.6875rem;
-    border-radius: 10px;
+    border-radius: 9px;
     background: var(--accent-primary);
     color: white;
     font-weight: 600;
-    line-height: 1;
+    line-height: 18px;
+    text-align: center;
 }
 
 /* Expandable section */
@@ -918,9 +932,9 @@ ruby rt {
 .font-controls {
     display: flex;
     gap: 2px;
-    background: rgba(var(--text-primary-rgb, 255, 255, 255), 0.05);
+    background: var(--bg-secondary);
     padding: 3px;
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--border-radius-md, 8px);
     border: 1px solid var(--border-color);
     flex-shrink: 0;
 }
@@ -941,9 +955,8 @@ ruby rt {
     transition: all var(--transition-fast);
 
     &.active {
-        background: var(--bg-card);
+        background: var(--bg-tertiary);
         color: var(--accent-primary);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -958,7 +971,7 @@ ruby rt {
 @media (hover: hover) {
     .font-btn:hover:not(.active) {
         color: var(--text-primary);
-        background: rgba(var(--text-primary-rgb, 255, 255, 255), 0.1);
+        background: var(--bg-tertiary);
     }
 }
 
@@ -1050,6 +1063,7 @@ ruby rt {
         padding: 0;
         width: 40px;
         justify-content: center;
+        position: relative;
     }
 
     .ctrl-label {
@@ -1058,6 +1072,11 @@ ruby rt {
 
     .ctrl-btn--expand {
         width: 40px;
+    }
+
+    .ctrl-badge {
+        top: -6px;
+        right: -6px;
     }
 
     .controls-expand.expanded {
