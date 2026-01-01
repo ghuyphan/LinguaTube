@@ -65,21 +65,29 @@ type FilterType = 'all' | 'favorites';
           <div class="history-list">
             @if (filteredItems().length === 0 && historyItems().length > 0) {
               <!-- No favorites -->
-              <div class="empty-state animate-in">
-                <app-icon name="heart" [size]="32" class="empty-state__icon" />
-                <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
-                <p class="empty-state__hint">{{ i18n.t('history.noFavoritesHint') }}</p>
+              <div class="empty-state empty-state--animate">
+                <div class="empty-state__icon-box">
+                  <app-icon name="heart" [size]="20" />
+                </div>
+                <div class="empty-state__text">
+                  <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
+                  <p class="empty-state__description">{{ i18n.t('history.noFavoritesHint') }}</p>
+                </div>
               </div>
             } @else if (historyItems().length === 0) {
               <!-- No history at all -->
               <div class="empty-state">
-                <app-icon name="play-circle" [size]="32" class="empty-state__icon" />
-                <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
-                <p class="empty-state__hint">{{ i18n.t('history.noHistoryHint') }}</p>
-                <a routerLink="/video" class="btn btn-primary btn-sm">
-                  <app-icon name="play" [size]="14" />
-                  {{ i18n.t('nav.video') }}
-                </a>
+                <div class="empty-state__icon-box">
+                  <app-icon name="play-circle" [size]="20" />
+                </div>
+                <div class="empty-state__text">
+                  <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
+                  <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') }}</p>
+                  <a routerLink="/video" class="btn btn-primary btn-sm empty-state__action">
+                    <app-icon name="play" [size]="14" />
+                    {{ i18n.t('nav.video') }}
+                  </a>
+                </div>
               </div>
             } @else {
               <app-history-list [items]="filteredItems()" [filter]="filter()" />
@@ -250,46 +258,6 @@ type FilterType = 'all' | 'favorites';
       overflow-y: auto;
     }
 
-    /* Empty state */
-    .empty-state {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      color: var(--text-muted);
-    }
-
-    .empty-state__icon {
-      margin-bottom: var(--space-md);
-      opacity: 0.5;
-    }
-
-    .empty-state__title {
-      font-size: 1rem;
-      color: var(--text-primary);
-      margin: 0 0 var(--space-xs);
-    }
-
-    .empty-state__hint {
-      margin: 0 0 var(--space-md);
-      font-size: 0.875rem;
-    }
-
-    /* Animation for favorites empty state */
-    .empty-state.animate-in {
-      animation: fadeSlideIn 0.25s ease-out;
-    }
-
-    @keyframes fadeSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
 
     /* Sidebar */
     .sidebar-card {

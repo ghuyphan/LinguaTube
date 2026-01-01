@@ -93,9 +93,14 @@
         </div>
         } @else if (hasSearched() && !isLoading()) {
         <div class="empty-state">
-            <app-icon name="info" [size]="24" class="empty-state__icon" />
-            <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
-            <p class="empty-state__hint">{{ i18n.t('dictionary.tryDifferent') }}</p>
+            <div class="empty-state__icon-box">
+                <app-icon name="info" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"
+                </p>
+                <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
+            </div>
         </div>
         } @else if (!hasSearched()) {
         <!-- Show recent searches here if no current search -->
@@ -120,8 +125,13 @@
         </div>
         } @else {
         <div class="empty-state">
-            <app-icon name="book-open" [size]="32" class="empty-state__icon" />
-            <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>
+            <div class="empty-state__icon-box">
+                <app-icon name="book-open" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>
+                <p class="empty-state__description">{{ i18n.t('dictionary.enterWordHint') }}</p>
+            </div>
         </div>
         }
         }

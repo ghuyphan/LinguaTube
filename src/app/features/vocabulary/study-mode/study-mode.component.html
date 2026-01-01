@@ -57,8 +57,13 @@
             </button>
             } @else {
             <div class="empty-state">
-                <app-icon name="info" [size]="18" class="empty-state__icon" />
-                <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
+                <div class="empty-state__icon-box">
+                    <app-icon name="info" [size]="18" />
+                </div>
+                <div class="empty-state__text">
+                    <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
+                    <span class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</span>
+                </div>
             </div>
             }
         </div>

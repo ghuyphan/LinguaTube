@@ -36,12 +36,21 @@
         @if (filteredWords().length === 0) {
         <div class="empty-state">
             @if (vocab.vocabulary().length === 0) {
-            <app-icon name="book-open" [size]="32" class="empty-state__icon" />
-            <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-            <p class="empty-state__hint">{{ i18n.t('vocab.clickWordsToSave') }}</p>
+            <div class="empty-state__icon-box">
+                <app-icon name="book-open" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+                <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
+            </div>
             } @else {
-            <app-icon name="search" [size]="24" class="empty-state__icon" />
-            <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
+            <div class="empty-state__icon-box">
+                <app-icon name="search" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
+                <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
+            </div>
             }
         </div>
         } @else {

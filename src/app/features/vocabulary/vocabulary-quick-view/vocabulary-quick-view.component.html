@@ -7,9 +7,13 @@
 
         @if (recentWords().length === 0) {
         <div class="empty-state">
-            <app-icon name="bookmark" [size]="32" class="empty-state__icon" />
-            <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-            <p class="empty-state__hint">{{ i18n.t('study.tapWordsHint') }}</p>
+            <div class="empty-state__icon-box">
+                <app-icon name="bookmark" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+                <p class="empty-state__description">{{ i18n.t('study.tapWordsHint') }}</p>
+            </div>
         </div>
         } @else {
         <ul class="word-list">
