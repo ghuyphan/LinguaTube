@@ -35,6 +35,7 @@ export class SubtitleDisplayComponent {
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
   @ViewChild('currentSubtitleInner') currentSubtitleInner!: ElementRef<HTMLDivElement>;
+  @ViewChild('subtitleControls') subtitleControls!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
 
@@ -47,6 +48,9 @@ export class SubtitleDisplayComponent {
     const lang = this.settings.settings().language;
     return this.vocab.getByLanguage(lang).length;
   });
+
+  // Controls expanded state
+  isControlsExpanded = signal(false);
 
   // Loop feature state
   isLoopEnabled = signal(false);
@@ -138,8 +142,8 @@ export class SubtitleDisplayComponent {
   selectedGrammarPattern = signal<GrammarPattern | null>(null);
   grammarPopupOpen = signal(false);
 
-  // Dual subtitles state
-  cueTranslations = signal<Map<string, string>>(new Map());
+  // Dual subtitles state - now managed by SubtitleService
+  cueTranslations = this.subtitles.cueTranslations;
 
   // Track when user last scrolled the current subtitle display
   private lastUserScrollTime = 0;
@@ -317,15 +321,9 @@ export class SubtitleDisplayComponent {
     return this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
   }
 
-  // getWordLevel removed - pre-computed in currentTokens
-
   onWordClick(token: Token, sentence: string): void {
     this.wordClicked.emit({ token, sentence });
   }
-
-  // getShimmerWidths removed - replaced by pure CSS widths
-
-  // isPunctuation removed - pre-computed in SubtitleService
 
   // Computed reading label
   readingLabel = computed(() => {
@@ -394,6 +392,20 @@ export class SubtitleDisplayComponent {
 
   toggleAddedSheet(): void {
     this.showAddedSheet.update(v => !v);
+  }
+
+  toggleControlsExpanded(): void {
+    this.isControlsExpanded.update(v => !v);
+
+    // Auto-scroll to show expanded content
+    if (this.isControlsExpanded() && this.subtitleControls?.nativeElement) {
+      setTimeout(() => {
+        this.subtitleControls.nativeElement.scrollTo({
+          left: this.subtitleControls.nativeElement.scrollWidth,
+          behavior: 'smooth'
+        });
+      }, 50); // Small delay to let the expand animation start
+    }
   }
 
   trackByCue(index: number, cue: SubtitleCue): string {

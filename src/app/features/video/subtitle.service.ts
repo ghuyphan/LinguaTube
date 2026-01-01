@@ -63,6 +63,8 @@ export class SubtitleService implements OnDestroy {
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal(-1);
   readonly isTokenizing = signal(false);
+  // Dual subtitle translations (mapped by cue ID)
+  readonly cueTranslations = signal<Map<string, string>>(new Map());
 
   // Computed
   readonly currentCue = computed(() => {
@@ -470,6 +472,7 @@ export class SubtitleService implements OnDestroy {
     this.subtitles.set([]);
     this.currentCueIndex.set(-1);
     this.tokenCache.clear(); // Clear old tokens to prevent stale data
+    this.cueTranslations.set(new Map());
   }
 
   /**

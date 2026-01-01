@@ -3,7 +3,8 @@
     <!-- Current subtitle -->
     <div class="current-subtitle" [class.current-subtitle--small]="settings.settings().fontSize === 'small'"
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
-        [class.is-generating]="transcript.isGeneratingAI()" [class.has-scroll-top]="hasScrollTop()">
+        [class.is-generating]="transcript.isGeneratingAI()" [class.has-scroll-top]="hasScrollTop()"
+        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && effectiveLanguage() === 'ja'">
         <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()">
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->
@@ -68,13 +69,18 @@
 
                     <!-- Loading -->
                     <div class="state-item state-loading">
-                        <app-icon name="loader" [size]="24" class="loading-icon" />
+                        <div class="loading-spinner">
+                            <div class="loading-spinner-ring"></div>
+                            <app-icon name="subtitles" [size]="14" class="loading-icon" />
+                        </div>
                         <span class="loading-text">{{ i18n.t('subtitle.fetchingCaptions') }}</span>
                     </div>
 
                     <!-- Error -->
                     <div class="state-item state-error">
-                        <app-icon name="alert-circle" [size]="24" class="error-icon" />
+                        <div class="error-icon-box">
+                            <app-icon name="alert-circle" [size]="20" class="error-icon" />
+                        </div>
                         <div class="error-text">
                             @if (transcript.error() === 'VIDEO_TOO_LONG') {
                             <span class="empty-title">{{ i18n.t('subtitle.videoTooLongTitle') }}</span>
@@ -92,7 +98,9 @@
 
                     <!-- Empty (no video) -->
                     <div class="state-item state-empty">
-                        <app-icon name="subtitles" [size]="24" class="empty-icon" />
+                        <div class="empty-icon-box">
+                            <app-icon name="subtitles" [size]="20" class="empty-icon" />
+                        </div>
                         <div class="empty-text">
                             <span class="empty-title">{{ i18n.t('subtitle.noSubtitlesLoaded') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.tryVideoWithCaptions') }}</span>
@@ -101,6 +109,11 @@
 
                     <!-- Waiting -->
                     <div class="state-item state-waiting">
+                        <div class="waiting-dots">
+                            <span class="waiting-dot"></span>
+                            <span class="waiting-dot"></span>
+                            <span class="waiting-dot"></span>
+                        </div>
                         <span class="subtitle-waiting">{{ i18n.t('subtitle.waitingForSubtitles') }}</span>
                     </div>
                 </div>
@@ -124,54 +137,63 @@
     }
 
     <!-- Controls -->
-    <div class="subtitle-controls">
-        <!-- Loop Toggle -->
-        <button class="toggle-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
+    <div class="subtitle-controls" #subtitleControls>
+        <!-- Primary controls - always visible -->
+        <button class="ctrl-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
             [title]="i18n.t('subtitle.loop') + ' (L)'">
             <app-icon name="repeat" [size]="16" />
-            <span>{{ i18n.t('subtitle.loop') }}</span>
+            <span class="ctrl-label">{{ i18n.t('subtitle.loop') }}</span>
             @if (isLoopEnabled() && loopCount() > 0) {
-            <span class="toggle-btn__badge">{{ loopCount() }}/{{ maxLoops() }}</span>
+            <span class="ctrl-badge">{{ loopCount() }}/{{ maxLoops() }}</span>
             }
         </button>
 
-        <!-- Dual Subtitles Toggle (Experimental) -->
-        @if (effectiveLanguage() === 'ja') {
-        <button class="toggle-btn" [class.active]="settings.settings().showDualSubtitles"
-            (click)="settings.toggleDualSubtitles()" [title]="'Dual Subtitles (Experimental)'">
-            <app-icon name="languages" [size]="16" />
-            <span>EN</span>
-        </button>
-        }
-
-        <!-- Reading Toggle -->
-        <button class="toggle-btn" [class.active]="showReading()" (click)="toggleReading()"
+        <button class="ctrl-btn" [class.active]="showReading()" (click)="toggleReading()"
             [title]="'Toggle ' + readingLabel()">
             <app-icon name="type" [size]="16" />
-            <span>{{ readingLabel() }}</span>
+            <span class="ctrl-label">{{ readingLabel() }}</span>
         </button>
 
-        <button class="toggle-btn added-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
+        <button class="ctrl-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
             <app-icon name="bookmark-plus" [size]="16" />
             @if (recentCount() > 0) {
-            <span class="toggle-btn__badge">{{ recentCount() }}</span>
+            <span class="ctrl-badge">{{ recentCount() }}</span>
             }
         </button>
 
-        <!-- Grammar Mode Toggle -->
-        <button class="toggle-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
-            [title]="i18n.t('grammar.mode')">
-            <app-icon name="book-open" [size]="16" />
-            <span>{{ i18n.t('grammar.mode') }}</span>
+        <!-- Expand toggle button -->
+        <button class="ctrl-btn ctrl-btn--expand" [class.active]="isControlsExpanded()"
+            (click)="toggleControlsExpanded()" [title]="i18n.t('subtitle.moreOptions')">
+            <app-icon name="more-horizontal" [size]="16" class="expand-icon" [class.rotated]="isControlsExpanded()" />
         </button>
 
-        <div class="font-controls">
-            <button class="font-btn" [class.active]="settings.settings().fontSize === 'small'"
-                (click)="settings.setFontSize('small')" [title]="i18n.t('subtitle.smallFont')">A</button>
-            <button class="font-btn font-btn--medium" [class.active]="settings.settings().fontSize === 'medium'"
-                (click)="settings.setFontSize('medium')" [title]="i18n.t('subtitle.mediumFont')">A</button>
-            <button class="font-btn font-btn--large" [class.active]="settings.settings().fontSize === 'large'"
-                (click)="settings.setFontSize('large')" [title]="i18n.t('subtitle.largeFont')">A</button>
+        <!-- Expandable section -->
+        <div class="controls-expand" [class.expanded]="isControlsExpanded()">
+            <!-- Dual Subtitles Toggle -->
+            @if (effectiveLanguage() === 'ja') {
+            <button class="ctrl-btn" [class.active]="settings.settings().showDualSubtitles"
+                (click)="settings.toggleDualSubtitles()" [title]="'Dual Subtitles'">
+                <app-icon name="languages" [size]="16" />
+                <span class="ctrl-label">EN</span>
+            </button>
+            }
+
+            <!-- Grammar Mode Toggle -->
+            <button class="ctrl-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
+                [title]="i18n.t('grammar.mode')">
+                <app-icon name="book-open" [size]="16" />
+                <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
+            </button>
+
+            <!-- Font size controls -->
+            <div class="font-controls">
+                <button class="font-btn" [class.active]="settings.settings().fontSize === 'small'"
+                    (click)="settings.setFontSize('small')" [title]="i18n.t('subtitle.smallFont')">A</button>
+                <button class="font-btn font-btn--medium" [class.active]="settings.settings().fontSize === 'medium'"
+                    (click)="settings.setFontSize('medium')" [title]="i18n.t('subtitle.mediumFont')">A</button>
+                <button class="font-btn font-btn--large" [class.active]="settings.settings().fontSize === 'large'"
+                    (click)="settings.setFontSize('large')" [title]="i18n.t('subtitle.largeFont')">A</button>
+            </div>
         </div>
     </div>
     }

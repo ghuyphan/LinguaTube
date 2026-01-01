@@ -132,6 +132,13 @@ export class VideoPlayerComponent implements OnDestroy {
       : this.settings.settings().showPinyin;
   });
 
+  // Current translation for fullscreen
+  currentTranslation = computed(() => {
+    const cue = this.subtitles.currentCue();
+    if (!cue) return null;
+    return this.subtitles.cueTranslations().get(cue.id) || null;
+  });
+
   // Grammar detection for fullscreen
   fsGrammarMatches = computed(() => {
     const tokens = this.fullscreenTokens();
