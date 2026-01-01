@@ -15,7 +15,8 @@ import { translateBatch } from '../_shared/lingva.js';
 import { getTranslation, saveTranslation } from '../_shared/translation-cache.js';
 
 const RATE_LIMIT_CONFIG = { max: 20, windowSeconds: 3600, keyPrefix: 'dual-subs' };
-const BATCH_SIZE = 20; // Lingva batch limit
+// Reduced batch size to avoid hitting 429s on Lingva instances
+const BATCH_SIZE = 5;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
 
 export async function onRequestOptions() {

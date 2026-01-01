@@ -82,6 +82,8 @@ export async function translateText(text, source, target) {
                 recordSuccess(instance);
                 return data.translation || '';
             } else {
+                // consume body to avoid deadlock/socket starvation
+                try { await response.text(); } catch { }
                 recordFailure(instance);
             }
         } catch {

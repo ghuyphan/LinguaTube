@@ -249,38 +249,40 @@ export class SubtitleDisplayComponent {
       }
     });
 
-    // Effect to fetch dual subtitles
+    // Video page effect to fetch dual subtitles
     effect(() => {
       const showDual = this.settings.settings().showDualSubtitles;
       const lang = this.effectiveLanguage();
       const videoId = this.youtube.currentVideo()?.id;
       const cues = this.subtitles.subtitles();
 
-      // Only for Japanese currently as per requirement
-      // And we need cues to be loaded
       if (showDual && lang === 'ja' && videoId && cues.length > 0) {
-        // Debounce slightly to avoid rapid refetches or use a tracker
-        // But getDualSubtitles handles caching so it's fine.
-
-        // Check if we already have translations for this video/lang combo to avoid spam
-        // We use a simple check: if cues match and we have translations, skip.
-        // But here we rely on the service to handle it.
+        console.log('[SubtitleDisplay] Fetching dual subtitles for:', videoId);
 
         this.translation.getDualSubtitles(videoId, lang, 'en', cues)
-          .subscribe(translatedSegments => {
-            // Create a map of ID -> Translation
-            if (translatedSegments && translatedSegments.length) {
-              const newMap = new Map<string, string>();
-              translatedSegments.forEach((seg: any) => {
-                if (seg.translation) {
-                  newMap.set(seg.id, seg.translation);
-                }
-              });
-              this.cueTranslations.set(newMap);
+          .subscribe({
+            next: (translatedSegments) => {
+              console.log('[SubtitleDisplay] Received translations:', translatedSegments?.length);
+
+              if (translatedSegments && translatedSegments.length) {
+                const newMap = new Map<string, string>();
+                translatedSegments.forEach((seg: any) => {
+                  if (seg.translation) {
+                    // Ensure ID is string for consistent map lookup
+                    newMap.set(String(seg.id), seg.translation);
+                  }
+                });
+                this.cueTranslations.set(newMap);
+                console.log('[SubtitleDisplay] Applied translations:', newMap.size);
+              } else {
+                console.warn('[SubtitleDisplay] No translations returned');
+              }
+            },
+            error: (err) => {
+              console.error('[SubtitleDisplay] API error:', err);
             }
           });
       } else {
-        // If toggled off or language changes, clear translations
         if (this.cueTranslations().size > 0) {
           this.cueTranslations.set(new Map());
         }

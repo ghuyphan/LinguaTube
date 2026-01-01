@@ -35,7 +35,7 @@
 
                 </div>
 
-                @if (cueTranslations().get(cue.id); as translation) {
+                @if (cueTranslations().get(cue.id.toString()); as translation) {
                 <div class="subtitle-translation" @subtitleFade>
                     {{ translation }}
                 </div>
