@@ -35,13 +35,9 @@
 
                 </div>
 
-                @if (cueTranslations().get(cue.id.toString().trim()); as translation) {
+                @if (cueTranslations().get(cue.id); as translation) {
                 <div class="subtitle-translation" @subtitleFade>
                     {{ translation }}
-                </div>
-                } @else if (settings.settings().showDualSubtitles && effectiveLanguage() === 'ja') {
-                <div class="subtitle-translation" style="color: red; font-size: 0.8em;">
-                    (No TL for ID: {{cue.id}})
                 </div>
                 }
             </div>

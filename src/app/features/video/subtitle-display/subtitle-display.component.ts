@@ -265,11 +265,12 @@ export class SubtitleDisplayComponent {
               console.log('[SubtitleDisplay] Received translations:', translatedSegments?.length);
 
               if (translatedSegments && translatedSegments.length) {
+                // Map by INDEX since cue IDs are unstable (random UUIDs)
                 const newMap = new Map<string, string>();
-                translatedSegments.forEach((seg: any) => {
-                  if (seg.translation) {
-                    // Ensure ID is string for consistent map lookup
-                    newMap.set(String(seg.id), seg.translation);
+                translatedSegments.forEach((seg: any, index: number) => {
+                  if (index < cues.length && seg.translation) {
+                    // Access current cue ID by index
+                    newMap.set(cues[index].id, seg.translation);
                   }
                 });
                 this.cueTranslations.set(newMap);
