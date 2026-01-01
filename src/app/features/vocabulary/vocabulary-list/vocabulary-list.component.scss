@@ -197,7 +197,7 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-sm);
-    border-top: 1px solid var(--border-color);
+    // border-top: 1px solid var(--border-color);
     gap: var(--space-md);
 }
 
@@ -325,10 +325,6 @@
     .word-list {
         max-height: none;
         overflow: visible;
-    }
-
-    .vocab-items {
-        border-top: 1px solid var(--border-color);
     }
 }
 

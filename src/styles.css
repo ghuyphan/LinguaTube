@@ -935,11 +935,6 @@ ruby rt {
   .bottom-nav {
     display: block;
   }
-
-  /* Add bottom padding to body for nav */
-  body {
-    /* padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); */
-  }
 }
 
 /* Slide-up drawer/panel */
