@@ -189,6 +189,12 @@
             {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>} @else {{{ token.surface
             }}}</button>}} }
         </div>
+
+        @if (settings.settings().showDualSubtitles && currentTranslation()) {
+        <div class="fs-subtitle-translation">
+          {{ currentTranslation() }}
+        </div>
+        }
       </div>
       }
     </div>

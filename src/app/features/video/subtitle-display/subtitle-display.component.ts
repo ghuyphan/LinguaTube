@@ -421,6 +421,8 @@ export class SubtitleDisplayComponent {
     return this.grammarMatches().find(m => m.tokenIndices.includes(index));
   }
 
+  private wasPlayingBeforeGrammarLookup = false;
+
   onGrammarClick(index: number, event: Event): void {
     event.stopPropagation();
     const match = this.getGrammarMatchForToken(index);
@@ -429,7 +431,10 @@ export class SubtitleDisplayComponent {
 
       // Pause video on mobile (like word lookup)
       if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-        this.youtube.pause();
+        this.wasPlayingBeforeGrammarLookup = this.youtube.isPlaying();
+        if (this.wasPlayingBeforeGrammarLookup) {
+          this.youtube.pause();
+        }
       }
 
       this.grammarPopupOpen.set(true);
@@ -439,6 +444,12 @@ export class SubtitleDisplayComponent {
   closeGrammarPopup(): void {
     this.grammarPopupOpen.set(false);
     this.selectedGrammarPattern.set(null);
+
+    // Resume video if it was playing before lookup
+    if (typeof window !== 'undefined' && window.innerWidth <= 768 && this.wasPlayingBeforeGrammarLookup) {
+      this.youtube.play();
+      this.wasPlayingBeforeGrammarLookup = false;
+    }
   }
 
   toggleGrammarMode(): void {

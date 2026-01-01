@@ -47,7 +47,7 @@ import { Token } from '../../../models';
       <app-word-popup 
         [selectedWord]="selectedWord()"
         [currentSentence]="currentSentence()"
-        (closed)="selectedWord.set(null)"
+        (closed)="onWordPopupClosed()"
       />
     }
 
@@ -210,6 +210,8 @@ export class VideoPageComponent implements OnInit {
     en: 'English'
   };
 
+  private wasPlayingBeforeWordLookup = false;
+
   constructor() {
     // Watch for language changes and refetch captions when language changes
     effect(() => {
@@ -348,9 +350,22 @@ export class VideoPageComponent implements OnInit {
   onWordClicked(event: { token: Token; sentence: string }): void {
     // Pause video on mobile when looking up a word for better UX
     if (window.innerWidth <= 768) {
-      this.youtube.pause();
+      this.wasPlayingBeforeWordLookup = this.youtube.isPlaying();
+      if (this.wasPlayingBeforeWordLookup) {
+        this.youtube.pause();
+      }
     }
     this.selectedWord.set(event.token);
     this.currentSentence.set(event.sentence);
+  }
+
+  onWordPopupClosed(): void {
+    this.selectedWord.set(null);
+
+    // Resume video if it was playing before lookup
+    if (window.innerWidth <= 768 && this.wasPlayingBeforeWordLookup) {
+      this.youtube.play();
+      this.wasPlayingBeforeWordLookup = false;
+    }
   }
 }
