@@ -1,0 +1,67 @@
+{
+    "中国": {
+        "word": "中国",
+        "pinyin": "zhōng guó",
+        "meanings": [
+            {
+                "definition": "China"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "hskLevel": 1
+    },
+    "学习": {
+        "word": "学习",
+        "pinyin": "xué xí",
+        "meanings": [
+            {
+                "definition": "to study, to learn"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "hskLevel": 1
+    },
+    "吃": {
+        "word": "吃",
+        "pinyin": "chī",
+        "meanings": [
+            {
+                "definition": "to eat"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "hskLevel": 1
+    },
+    "看": {
+        "word": "看",
+        "pinyin": "kàn",
+        "meanings": [
+            {
+                "definition": "to see, to look, to watch"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "hskLevel": 1
+    },
+    "听": {
+        "word": "听",
+        "pinyin": "tīng",
+        "meanings": [
+            {
+                "definition": "to hear, to listen"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "hskLevel": 1
+    }
+}

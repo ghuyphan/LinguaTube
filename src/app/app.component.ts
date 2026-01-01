@@ -4,10 +4,10 @@ import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith, interval, Subject, takeUntil } from 'rxjs';
 import { HeaderComponent } from './components/header/header.component';
-import { IconComponent } from './components/icon/icon.component';
+import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { BottomSheetComponent } from './shared/components/bottom-sheet/bottom-sheet.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 

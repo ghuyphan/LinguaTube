@@ -1,13 +1,8 @@
-export * from './bottom-sheet/bottom-sheet.component';
-export * from './icon/icon.component';
+// Remaining components in this folder
 export * from './header/header.component';
-export * from './video-player/video-player.component';
-export * from './subtitle-display/subtitle-display.component';
-export * from './subtitle-upload/subtitle-upload.component';
-export * from './word-popup/word-popup.component';
-export * from './vocabulary-list/vocabulary-list.component';
-export * from './dictionary-panel/dictionary-panel.component';
-export * from './study-mode/study-mode.component';
 export * from './settings-sheet/settings-sheet.component';
-export * from './vocabulary-quick-view/vocabulary-quick-view.component';
 export * from './sidebar/sidebar.component';
+
+// Re-export from shared for backward compatibility
+export * from '../shared/components/bottom-sheet/bottom-sheet.component';
+export * from '../shared/components/icon/icon.component';

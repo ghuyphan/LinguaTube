@@ -1,0 +1,107 @@
+{
+    "日本": {
+        "word": "日本",
+        "reading": "にほん",
+        "meanings": [
+            {
+                "definition": "Japan"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "jlptLevel": "N5"
+    },
+    "勉強": {
+        "word": "勉強",
+        "reading": "べんきょう",
+        "meanings": [
+            {
+                "definition": "study, diligence"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun",
+            "Suru verb"
+        ],
+        "jlptLevel": "N5"
+    },
+    "食べる": {
+        "word": "食べる",
+        "reading": "たべる",
+        "meanings": [
+            {
+                "definition": "to eat"
+            }
+        ],
+        "partOfSpeech": [
+            "Ichidan verb"
+        ],
+        "jlptLevel": "N5"
+    },
+    "見る": {
+        "word": "見る",
+        "reading": "みる",
+        "meanings": [
+            {
+                "definition": "to see, to look, to watch"
+            }
+        ],
+        "partOfSpeech": [
+            "Ichidan verb"
+        ],
+        "jlptLevel": "N5"
+    },
+    "聞く": {
+        "word": "聞く",
+        "reading": "きく",
+        "meanings": [
+            {
+                "definition": "to hear, to listen, to ask"
+            }
+        ],
+        "partOfSpeech": [
+            "Godan verb"
+        ],
+        "jlptLevel": "N5"
+    },
+    "今日": {
+        "word": "今日",
+        "reading": "きょう",
+        "meanings": [
+            {
+                "definition": "today, this day"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "jlptLevel": "N5"
+    },
+    "カード": {
+        "word": "カード",
+        "reading": "カード",
+        "meanings": [
+            {
+                "definition": "card"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "jlptLevel": "N4"
+    },
+    "ゲーム": {
+        "word": "ゲーム",
+        "reading": "ゲーム",
+        "meanings": [
+            {
+                "definition": "game"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "jlptLevel": "N4"
+    }
+}

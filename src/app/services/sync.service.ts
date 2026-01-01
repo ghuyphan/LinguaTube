@@ -1,8 +1,7 @@
 import { Injectable, inject, effect, untracked, signal } from '@angular/core';
-import { AuthService } from './auth.service';
-import { VocabularyService } from './vocabulary.service';
-import { HistoryService } from './history.service';
-import { PocketBaseService } from './pocketbase.service';
+import { AuthService, PocketBaseService } from '../core/services';
+import { VocabularyService } from '../features/vocabulary';
+import { HistoryService } from '../features/history';
 import type { RecordModel } from 'pocketbase';
 
 export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';

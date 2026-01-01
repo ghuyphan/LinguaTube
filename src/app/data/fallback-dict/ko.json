@@ -1,0 +1,132 @@
+{
+    "한국": {
+        "word": "한국",
+        "romanization": "hanguk",
+        "meanings": [
+            {
+                "definition": "Korea, South Korea"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "topikLevel": 1
+    },
+    "안녕하세요": {
+        "word": "안녕하세요",
+        "romanization": "annyeonghaseyo",
+        "meanings": [
+            {
+                "definition": "hello (formal)"
+            }
+        ],
+        "partOfSpeech": [
+            "Interjection"
+        ],
+        "topikLevel": 1
+    },
+    "감사합니다": {
+        "word": "감사합니다",
+        "romanization": "gamsahamnida",
+        "meanings": [
+            {
+                "definition": "thank you (formal)"
+            }
+        ],
+        "partOfSpeech": [
+            "Expression"
+        ],
+        "topikLevel": 1
+    },
+    "사랑": {
+        "word": "사랑",
+        "romanization": "sarang",
+        "meanings": [
+            {
+                "definition": "love"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "topikLevel": 1
+    },
+    "먹다": {
+        "word": "먹다",
+        "romanization": "meokda",
+        "meanings": [
+            {
+                "definition": "to eat"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "topikLevel": 1
+    },
+    "보다": {
+        "word": "보다",
+        "romanization": "boda",
+        "meanings": [
+            {
+                "definition": "to see, to watch, to look"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "topikLevel": 1
+    },
+    "듣다": {
+        "word": "듣다",
+        "romanization": "deutda",
+        "meanings": [
+            {
+                "definition": "to hear, to listen"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ],
+        "topikLevel": 1
+    },
+    "오늘": {
+        "word": "오늘",
+        "romanization": "oneul",
+        "meanings": [
+            {
+                "definition": "today"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "topikLevel": 1
+    },
+    "친구": {
+        "word": "친구",
+        "romanization": "chingu",
+        "meanings": [
+            {
+                "definition": "friend"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "topikLevel": 1
+    },
+    "학교": {
+        "word": "학교",
+        "romanization": "hakgyo",
+        "meanings": [
+            {
+                "definition": "school"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ],
+        "topikLevel": 1
+    }
+}

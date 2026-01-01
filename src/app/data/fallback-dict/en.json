@@ -1,0 +1,64 @@
+{
+    "hello": {
+        "word": "hello",
+        "reading": "/həˈloʊ/",
+        "meanings": [
+            {
+                "definition": "used as a greeting or to begin a phone conversation"
+            }
+        ],
+        "partOfSpeech": [
+            "Exclamation",
+            "Noun"
+        ]
+    },
+    "world": {
+        "word": "world",
+        "reading": "/wɜːrld/",
+        "meanings": [
+            {
+                "definition": "the earth, together with all of its countries and peoples"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ]
+    },
+    "learn": {
+        "word": "learn",
+        "reading": "/lɜːrn/",
+        "meanings": [
+            {
+                "definition": "gain or acquire knowledge of or skill in something"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb"
+        ]
+    },
+    "study": {
+        "word": "study",
+        "reading": "/ˈstʌdi/",
+        "meanings": [
+            {
+                "definition": "devote time and attention to acquiring knowledge"
+            }
+        ],
+        "partOfSpeech": [
+            "Verb",
+            "Noun"
+        ]
+    },
+    "language": {
+        "word": "language",
+        "reading": "/ˈlæŋɡwɪdʒ/",
+        "meanings": [
+            {
+                "definition": "a system of communication used by a particular country or community"
+            }
+        ],
+        "partOfSpeech": [
+            "Noun"
+        ]
+    }
+}

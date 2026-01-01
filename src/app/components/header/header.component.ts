@@ -1,6 +1,6 @@
 import { Component, inject, ChangeDetectionStrategy, HostListener, ViewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../icon/icon.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, UILanguage, TranscriptService } from '../../services';
 
 @Component({

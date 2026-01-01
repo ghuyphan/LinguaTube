@@ -14,7 +14,8 @@ import {
     handleOptions,
     errorResponse,
     sanitizeVideoId,
-    sanitizeLanguage
+    sanitizeLanguage,
+    verifyLanguage
 } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscript, saveTranscript, getAvailableLangs, addAvailableLang } from '../_shared/transcript-db.js';
@@ -655,46 +656,8 @@ async function trySupadata(videoId, langs, apiKey, cache) {
 // Utilities
 // ============================================================================
 
-/**
- * Verify that the returned content matches the expected language
- * Uses Unicode script detection to catch silent fallback to wrong language
- * @param {string} text - Sample text to verify
- * @param {string} expectedLang - Expected language code
- * @returns {boolean} - True if language appears correct
- */
-function verifyLanguage(text, lang) {
-    if (!text || text.length < 50) return true; // Too short to verify reliably
+// verifyLanguage is now imported from ../\_shared/utils.js
 
-    const sample = text.slice(0, 1000);
-
-    // Japanese: Hiragana/Katakana presence
-    if (lang === 'ja') {
-        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
-        // Even a little bit of kana is usually enough to confirm Japanese
-        return kanaCount > 5;
-    }
-
-    // Korean: Hangul presence
-    if (lang === 'ko') {
-        const hangulCount = (sample.match(/[\uAC00-\uD7AF]/g) || []).length;
-        // Rejects if clearly dominated by another language (e.g. Japanese when Korean expected)
-        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
-        if (kanaCount > hangulCount * 2) return false;
-        return hangulCount > 5;
-    }
-
-    // Chinese: CJK Unified Ideographs but NO Hiragana/Katakana/Hangul
-    if (lang === 'zh') {
-        const hanziCount = (sample.match(/[\u4E00-\u9FFF]/g) || []).length;
-        const kanaCount = (sample.match(/[\u3040-\u309F\u30A0-\u30FF]/g) || []).length;
-        const hangulCount = (sample.match(/[\uAC00-\uD7AF]/g) || []).length;
-
-        // If it's pure Hanzi or Hanzi far outnumbers Kana/Hangul
-        return hanziCount > 10 && kanaCount < 5 && hangulCount < 5;
-    }
-
-    return true; // Default to pass for other languages or short text
-}
 
 function withTimeout(promise, ms, message) {
     return Promise.race([

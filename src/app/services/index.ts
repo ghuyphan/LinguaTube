@@ -1,15 +1,17 @@
-export * from './youtube.service';
-export * from './subtitle.service';
-export * from './transcript.service';
-export * from './dictionary.service';
-export * from './vocabulary.service';
-export * from './settings.service';
-export * from './translation.service';
-export * from './auth.service';
+// Re-export all services from their new locations for backward compatibility
+
+// Core services (app-wide singletons)
+export * from '../core/services';
+
+// Feature services
+export * from '../features/video';
+export * from '../features/dictionary';
+export * from '../features/vocabulary';
+export * from '../features/history';
+
+// Remaining services still in this folder
 export * from './sync.service';
-export * from './i18n.service';
-export * from './body-scroll.service';
+export * from './translation.service';
 export * from './grammar.service';
-export * from './history.service';
-
-
+export * from './body-scroll.service';
+export * from './streak.service';

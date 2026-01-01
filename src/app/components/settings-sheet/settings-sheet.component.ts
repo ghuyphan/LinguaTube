@@ -1,7 +1,7 @@
 import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../icon/icon.component';
-import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
+import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 

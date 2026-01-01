@@ -1,6 +1,5 @@
 import { Injectable, inject, signal, computed } from '@angular/core';
-import { PocketBaseService } from './pocketbase.service';
-import { AuthService } from './auth.service';
+import { PocketBaseService, AuthService } from '../core/services';
 
 const STORAGE_KEY = 'linguatube_streak';
 
