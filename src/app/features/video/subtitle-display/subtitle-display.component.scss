@@ -93,9 +93,11 @@
 .subtitle-center-wrapper {
     min-height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: var(--space-xs) 0;
+    gap: var(--space-sm);
 }
 
 .subtitle-text {
@@ -112,6 +114,15 @@
 
 .subtitle-content {
     display: inline;
+}
+
+.subtitle-translation {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 90%;
+    padding: 0 var(--space-sm);
 }
 
 .subtitle-text.is-looping {

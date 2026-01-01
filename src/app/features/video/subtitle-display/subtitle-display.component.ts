@@ -4,7 +4,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyQuickViewComponent } from '../../vocabulary/vocabulary-quick-view/vocabulary-quick-view.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
-import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService, GrammarService } from '../../../services';
+import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService, GrammarService, TranslationService } from '../../../services';
 import { SubtitleCue, Token, GrammarMatch, GrammarPattern } from '../../../models';
 
 @Component({
@@ -31,6 +31,7 @@ export class SubtitleDisplayComponent {
   transcript = inject(TranscriptService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
+  translation = inject(TranslationService);
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
   @ViewChild('currentSubtitleInner') currentSubtitleInner!: ElementRef<HTMLDivElement>;
@@ -137,6 +138,9 @@ export class SubtitleDisplayComponent {
   selectedGrammarPattern = signal<GrammarPattern | null>(null);
   grammarPopupOpen = signal(false);
 
+  // Dual subtitles state
+  cueTranslations = signal<Map<string, string>>(new Map());
+
   // Track when user last scrolled the current subtitle display
   private lastUserScrollTime = 0;
   private readonly SCROLL_DEBOUNCE_MS = 1500; // 1.5 seconds
@@ -241,6 +245,44 @@ export class SubtitleDisplayComponent {
         } else {
           // Max loops reached
           this.disableLoop();
+        }
+      }
+    });
+
+    // Effect to fetch dual subtitles
+    effect(() => {
+      const showDual = this.settings.settings().showDualSubtitles;
+      const lang = this.effectiveLanguage();
+      const videoId = this.youtube.currentVideo()?.id;
+      const cues = this.subtitles.subtitles();
+
+      // Only for Japanese currently as per requirement
+      // And we need cues to be loaded
+      if (showDual && lang === 'ja' && videoId && cues.length > 0) {
+        // Debounce slightly to avoid rapid refetches or use a tracker
+        // But getDualSubtitles handles caching so it's fine.
+
+        // Check if we already have translations for this video/lang combo to avoid spam
+        // We use a simple check: if cues match and we have translations, skip.
+        // But here we rely on the service to handle it.
+
+        this.translation.getDualSubtitles(videoId, lang, 'en', cues)
+          .subscribe(translatedSegments => {
+            // Create a map of ID -> Translation
+            if (translatedSegments && translatedSegments.length) {
+              const newMap = new Map<string, string>();
+              translatedSegments.forEach((seg: any) => {
+                if (seg.translation) {
+                  newMap.set(seg.id, seg.translation);
+                }
+              });
+              this.cueTranslations.set(newMap);
+            }
+          });
+      } else {
+        // If toggled off or language changes, clear translations
+        if (this.cueTranslations().size > 0) {
+          this.cueTranslations.set(new Map());
         }
       }
     });

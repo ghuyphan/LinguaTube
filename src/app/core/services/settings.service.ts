@@ -11,7 +11,8 @@ const DEFAULT_SETTINGS: UserSettings = {
   autoAdvance: false,
   fontSize: 'medium',
   playbackSpeed: 1,
-  sidebarCollapsed: false
+  sidebarCollapsed: false,
+  showDualSubtitles: false
 };
 
 @Injectable({
@@ -80,6 +81,10 @@ export class SettingsService implements OnDestroy {
 
   setSidebarCollapsed(collapsed: boolean): void {
     this.updateSettings({ sidebarCollapsed: collapsed });
+  }
+
+  toggleDualSubtitles(): void {
+    this.updateSettings({ showDualSubtitles: !this.settings().showDualSubtitles });
   }
 
   resetToDefaults(): void {

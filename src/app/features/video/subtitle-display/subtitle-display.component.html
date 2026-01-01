@@ -32,7 +32,14 @@
                             </ruby>} @else {{{ token.surface }}}</span>}}
                     </span>
                     }
+
                 </div>
+
+                @if (cueTranslations().get(cue.id); as translation) {
+                <div class="subtitle-translation" @subtitleFade>
+                    {{ translation }}
+                </div>
+                }
             </div>
             } @else {
             <div class="subtitle-empty">
@@ -127,6 +134,15 @@
             <span class="toggle-btn__badge">{{ loopCount() }}/{{ maxLoops() }}</span>
             }
         </button>
+
+        <!-- Dual Subtitles Toggle (Experimental) -->
+        @if (effectiveLanguage() === 'ja') {
+        <button class="toggle-btn" [class.active]="settings.settings().showDualSubtitles"
+            (click)="settings.toggleDualSubtitles()" [title]="'Dual Subtitles (Experimental)'">
+            <app-icon name="languages" [size]="16" />
+            <span>EN</span>
+        </button>
+        }
 
         <!-- Reading Toggle -->
         <button class="toggle-btn" [class.active]="showReading()" (click)="toggleReading()"

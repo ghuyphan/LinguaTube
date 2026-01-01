@@ -8,6 +8,7 @@ export interface SubtitleCue {
   endTime: number;
   text: string;
   tokens?: Token[];
+  translation?: string;
 }
 
 export interface Token {
@@ -100,4 +101,5 @@ export interface UserSettings {
   fontSize: 'small' | 'medium' | 'large' | 'xlarge';
   playbackSpeed: number;
   sidebarCollapsed: boolean;
+  showDualSubtitles: boolean;
 }

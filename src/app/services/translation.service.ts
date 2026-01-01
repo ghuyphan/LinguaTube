@@ -144,6 +144,26 @@ export class TranslationService {
     }
 
     /**
+     * Get dual subtitles for a video
+     * Handles caching and API calls
+     */
+    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: any[]): Observable<any[]> {
+        const url = '/api/dual-subtitles';
+        return this.http.post<any>(url, {
+            videoId,
+            sourceLang,
+            targetLang,
+            segments
+        }).pipe(
+            map(response => response.segments || []),
+            catchError(err => {
+                console.error('Dual subtitles failed:', err);
+                return of([]);
+            })
+        );
+    }
+
+    /**
      * Add to cache with LRU eviction and persist to localStorage
      */
     private addToCache(key: string, translation: string): void {
