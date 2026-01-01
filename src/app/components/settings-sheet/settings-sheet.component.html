@@ -11,6 +11,10 @@
                 <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
                 <div class="user-info">
                     <span class="user-name">{{ auth.user()?.name }}</span>
+                    <span class="badge" [class]="'badge--' + auth.getSubscriptionTier()"
+                        style="align-self: flex-start; margin-bottom: 2px;">
+                        {{ auth.getSubscriptionTier() | uppercase }}
+                    </span>
                     <span class="user-email">{{ auth.user()?.email }}</span>
                 </div>
                 <div class="sync-badge" [class.syncing]="sync.syncStatus() === 'syncing'"

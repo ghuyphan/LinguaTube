@@ -111,6 +111,10 @@
             <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
             @if (!isCollapsed()) {
             <span class="user-name">{{ auth.user()?.name }}</span>
+            <span class="badge" [class]="'badge--' + auth.getSubscriptionTier()"
+                style="margin-left: auto; font-size: 0.65rem; padding: 1px 6px;">
+                {{ auth.getSubscriptionTier() | uppercase }}
+            </span>
             }
         </button>
         } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
