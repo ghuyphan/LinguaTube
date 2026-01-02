@@ -127,11 +127,20 @@ export class BottomSheetComponent implements OnDestroy {
 
   /**
    * Handle browser back button/gesture
+   * Note: event.state is the NEW state after back navigation, NOT the state that was popped.
+   * So if event.state.sheetId !== this.sheetId, it means OUR state was just popped.
    */
   private onPopState(event: PopStateEvent): void {
-    // Only handle popstate for this specific sheet instance
-    // This prevents nested sheets from closing parent sheets
-    if (this.isOpen() && this.isMobile && this.historyPushed) {
+    if (!this.isOpen() || !this.isMobile || !this.historyPushed) return;
+
+    // When back is pressed, the current history entry is popped.
+    // event.state becomes the PREVIOUS state in the stack.
+    // If event.state has a different sheetId (or no state), our entry was just removed.
+    const newStateSheetId = event.state?.sheetId;
+
+    // If the new state's sheetId is NOT ours, then our state was the one that got popped
+    // This correctly handles nested sheets: only the topmost sheet closes
+    if (newStateSheetId !== this.sheetId) {
       this.historyPushed = false; // Mark as not pushed since history already popped
       // Prevent default close and do our animated close
       this.animatedClose(false); // Don't manipulate history again
