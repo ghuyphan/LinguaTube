@@ -103,7 +103,17 @@
             </div>
         </div>
         } @else if (!hasSearched()) {
-        <!-- Show recent searches here if no current search -->
+        <!-- Empty state - always visible -->
+        <div class="empty-state">
+            <div class="empty-state__icon-box">
+                <app-icon name="book-open" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>
+                <p class="empty-state__description">{{ i18n.t('dictionary.enterWordHint') }}</p>
+            </div>
+        </div>
+        <!-- Recent searches - mobile only -->
         @if (recentSearches().length > 0) {
         <div class="dict-recent">
             <div class="recent-header">
@@ -121,16 +131,6 @@
                     </span>
                 </button>
                 }
-            </div>
-        </div>
-        } @else {
-        <div class="empty-state">
-            <div class="empty-state__icon-box">
-                <app-icon name="book-open" [size]="20" />
-            </div>
-            <div class="empty-state__text">
-                <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>
-                <p class="empty-state__description">{{ i18n.t('dictionary.enterWordHint') }}</p>
             </div>
         </div>
         }

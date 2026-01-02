@@ -756,7 +756,7 @@ ruby rt {
 }
 
 .cue-item--active::before {
-    background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.1);
+    background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.15);
 }
 
 .cue-item--active {
@@ -766,7 +766,18 @@ ruby rt {
 
 @media (hover: hover) {
     .cue-item--active:hover::before {
-        background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.15);
+        background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.2);
+    }
+}
+
+/* Dark mode - increase accent opacity for better visibility */
+:host-context([data-theme="dark"]) .cue-item--active::before {
+    background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.2);
+}
+
+@media (hover: hover) {
+    :host-context([data-theme="dark"]) .cue-item--active:hover::before {
+        background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.25);
     }
 }
 
