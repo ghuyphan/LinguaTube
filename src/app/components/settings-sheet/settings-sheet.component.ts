@@ -1,4 +1,4 @@
-import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef } from '@angular/core';
+import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
@@ -30,7 +30,32 @@ export class SettingsSheetComponent {
   closed = output<void>();
 
   showSignOutConfirm = signal(false);
+  showLearningLangPicker = signal(false);
+  showUILangPicker = signal(false);
   isLoggingIn = false;
+
+  // Learning language options with display info
+  readonly learningLanguages = [
+    { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
+    { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
+    { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+    { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
+  ];
+
+  // Computed for current learning language display
+  currentLearningLang = computed(() => {
+    const code = this.settings.settings().language;
+    return this.learningLanguages.find(l => l.code === code) || this.learningLanguages[0];
+  });
+
+  // Computed for current UI language display
+  currentUILang = computed(() => {
+    const code = this.i18n.currentLanguage();
+    return this.i18n.availableLanguages.find(l => l.code === code) || this.i18n.availableLanguages[0];
+  });
+
+  // Check if dark mode is active
+  isDarkMode = computed(() => this.settings.getEffectiveTheme() === 'dark');
 
   /**
    * Login with Google via PocketBase OAuth

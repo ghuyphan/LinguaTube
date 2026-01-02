@@ -41,87 +41,106 @@
             }
         </div>
 
-        <!-- Streak Section -->
+        <!-- Streak Section (Mobile Only) -->
         <div class="settings-section streak-section">
-            <div class="streak-display">
+            <div class="setting-row streak-row">
                 <div class="streak-icon-wrapper">
-                    <app-icon name="fire" [size]="24" class="streak-icon" />
+                    <app-icon name="fire" [size]="20" class="streak-icon" />
                 </div>
-                <div class="streak-details">
-                    <div class="streak-main">
-                        <span class="streak-number">{{ streak.currentStreak() }}</span>
-                        <span class="streak-text">{{ i18n.t('streak.dayStreak') }}</span>
-                    </div>
-                    <div class="streak-sub">
-                        <span class="streak-longest">{{ i18n.t('streak.longestStreak') }}: {{ streak.longestStreak()
-                            }}</span>
-                        @if (streak.freezesRemaining() > 0 && streak.currentStreak() > 0) {
-                        <span class="streak-freezes-badge">
-                            <app-icon name="snowflake" [size]="12" />
-                            {{ streak.freezesRemaining() }}
-                        </span>
-                        }
-                    </div>
+                <div class="streak-info">
+                    <span class="streak-count">{{ streak.currentStreak() }}</span>
+                    <span class="streak-label">{{ i18n.t('streak.dayStreak') }}</span>
+                </div>
+                <div class="streak-meta">
+                    <span class="streak-longest">{{ i18n.t('streak.longestStreak') }}: {{ streak.longestStreak()
+                        }}</span>
+                    @if (streak.freezesRemaining() > 0 && streak.currentStreak() > 0) {
+                    <span class="streak-freezes-badge">
+                        <app-icon name="snowflake" [size]="12" />
+                        {{ streak.freezesRemaining() }}
+                    </span>
+                    }
                 </div>
             </div>
         </div>
 
-        <!-- Language Selection -->
+        <!-- Language Settings -->
         <div class="settings-section">
             <h3 class="section-title">{{ i18n.t('settings.learningLanguage') }}</h3>
-            <div class="lang-grid">
-                <button class="lang-option" [class.active]="settings.settings().language === 'ja'"
-                    (click)="setLanguage('ja')">
-                    <img src="https://hatscripts.github.io/circle-flags/flags/jp.svg" class="circle-flag" alt="Japan" />
-                    <span class="lang-name">日本語</span>
-                </button>
-                <button class="lang-option" [class.active]="settings.settings().language === 'zh'"
-                    (click)="setLanguage('zh')">
-                    <img src="https://hatscripts.github.io/circle-flags/flags/cn.svg" class="circle-flag" alt="China" />
-                    <span class="lang-name">中文</span>
-                </button>
-                <button class="lang-option" [class.active]="settings.settings().language === 'ko'"
-                    (click)="setLanguage('ko')">
-                    <img src="https://hatscripts.github.io/circle-flags/flags/kr.svg" class="circle-flag" alt="Korea" />
-                    <span class="lang-name">한국어</span>
-                </button>
-                <button class="lang-option" [class.active]="settings.settings().language === 'en'"
-                    (click)="setLanguage('en')">
-                    <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="circle-flag" alt="UK" />
-                    <span class="lang-name">English</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- UI Language Selection -->
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
-            <div class="lang-grid lang-grid--3col">
-                @for (lang of i18n.availableLanguages; track lang.code) {
-                <button class="lang-option" [class.active]="i18n.currentLanguage() === lang.code"
-                    (click)="setUILanguage(lang.code)">
-                    <img [src]="lang.flag" class="circle-flag" [alt]="lang.name" />
-                    <span class="lang-name">{{ lang.nativeName }}</span>
-                </button>
-                }
-            </div>
-        </div>
-
-        <!-- Theme -->
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.appearance') }}</h3>
-            <button class="settings-btn" (click)="toggleTheme()">
-                @if (settings.getEffectiveTheme() === 'dark') {
-                <app-icon name="sun" [size]="18" />
-                {{ i18n.t('settings.switchToLightMode') }}
-                } @else {
-                <app-icon name="moon" [size]="18" />
-                {{ i18n.t('settings.switchToDarkMode') }}
-                }
+            <button class="setting-row setting-row--clickable" (click)="showLearningLangPicker.set(true)">
+                <div class="setting-row__content">
+                    <img [src]="currentLearningLang().flag" class="setting-row__flag" alt="" />
+                    <span class="setting-row__value">{{ currentLearningLang().name }}</span>
+                </div>
+                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
             </button>
         </div>
 
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
+            <button class="setting-row setting-row--clickable" (click)="showUILangPicker.set(true)">
+                <div class="setting-row__content">
+                    <img [src]="currentUILang().flag" class="setting-row__flag" alt="" />
+                    <span class="setting-row__value">{{ currentUILang().nativeName }}</span>
+                </div>
+                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
+            </button>
+        </div>
 
+        <!-- Theme Toggle -->
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.appearance') }}</h3>
+            <div class="setting-row">
+                <div class="setting-row__content">
+                    <app-icon [name]="isDarkMode() ? 'sun' : 'moon'" [size]="20" class="setting-row__icon" />
+                    <span class="setting-row__label">
+                        {{ isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode') }}
+                    </span>
+                </div>
+                <button class="toggle-switch" [class.active]="isDarkMode()" (click)="toggleTheme()" type="button">
+                    <span class="toggle-knob"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</app-bottom-sheet>
+
+<!-- Learning Language Picker -->
+<app-bottom-sheet [isOpen]="showLearningLangPicker()" [showCloseButton]="true"
+    (closed)="showLearningLangPicker.set(false)">
+    <div class="picker-sheet">
+        <h3 class="picker-title">{{ i18n.t('settings.learningLanguage') }}</h3>
+        <div class="picker-options">
+            @for (lang of learningLanguages; track lang.code) {
+            <button class="picker-option" [class.active]="settings.settings().language === lang.code"
+                (click)="setLanguage(lang.code); showLearningLangPicker.set(false)">
+                <img [src]="lang.flag" class="picker-option__flag" alt="" />
+                <span class="picker-option__name">{{ lang.name }}</span>
+                @if (settings.settings().language === lang.code) {
+                <app-icon name="check" [size]="18" class="picker-option__check" />
+                }
+            </button>
+            }
+        </div>
+    </div>
+</app-bottom-sheet>
+
+<!-- UI Language Picker -->
+<app-bottom-sheet [isOpen]="showUILangPicker()" [showCloseButton]="true" (closed)="showUILangPicker.set(false)">
+    <div class="picker-sheet">
+        <h3 class="picker-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
+        <div class="picker-options">
+            @for (lang of i18n.availableLanguages; track lang.code) {
+            <button class="picker-option" [class.active]="i18n.currentLanguage() === lang.code"
+                (click)="setUILanguage(lang.code); showUILangPicker.set(false)">
+                <img [src]="lang.flag" class="picker-option__flag" alt="" />
+                <span class="picker-option__name">{{ lang.nativeName }}</span>
+                @if (i18n.currentLanguage() === lang.code) {
+                <app-icon name="check" [size]="18" class="picker-option__check" />
+                }
+            </button>
+            }
+        </div>
     </div>
 </app-bottom-sheet>
 

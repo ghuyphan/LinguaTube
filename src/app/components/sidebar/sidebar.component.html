@@ -48,30 +48,20 @@
 
     <!-- Language Selector -->
     @if (!isCollapsed()) {
-    <div class="sidebar__section">
+    <div class="sidebar__section lang-section">
         <h3 class="section-label">{{ i18n.t('settings.learningLanguage') }}</h3>
-        <div class="lang-selector">
-            <button class="lang-chip" [class.active]="settings.settings().language === 'ja'"
-                (click)="setLanguage('ja')">
-                <img src="https://hatscripts.github.io/circle-flags/flags/jp.svg" class="circle-flag" alt="Japan" />
-                日本語
-            </button>
-            <button class="lang-chip" [class.active]="settings.settings().language === 'zh'"
-                (click)="setLanguage('zh')">
-                <img src="https://hatscripts.github.io/circle-flags/flags/cn.svg" class="circle-flag" alt="China" />
-                中文
-            </button>
-            <button class="lang-chip" [class.active]="settings.settings().language === 'ko'"
-                (click)="setLanguage('ko')">
-                <img src="https://hatscripts.github.io/circle-flags/flags/kr.svg" class="circle-flag" alt="Korea" />
-                한국어
-            </button>
-            <button class="lang-chip" [class.active]="settings.settings().language === 'en'"
-                (click)="setLanguage('en')">
-                <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="circle-flag" alt="UK" />
-                EN
-            </button>
-        </div>
+        <button class="lang-row" (click)="showLangPicker.set(true)">
+            <img [src]="currentLang().flag" class="lang-row__flag" alt="" />
+            <span class="lang-row__name">{{ currentLang().name }}</span>
+            <app-icon name="chevron-right" [size]="16" class="lang-row__chevron" />
+        </button>
+    </div>
+    } @else {
+    <!-- Collapsed: Just show flag icon -->
+    <div class="sidebar__section lang-section-collapsed">
+        <button class="lang-flag-btn" (click)="showLangPicker.set(true)" [attr.title]="currentLang().name">
+            <img [src]="currentLang().flag" class="lang-flag-btn__flag" alt="" />
+        </button>
     </div>
     }
 
@@ -147,3 +137,22 @@
         </button>
     </div>
 </aside>
+
+<!-- Learning Language Picker -->
+<app-bottom-sheet [isOpen]="showLangPicker()" [showCloseButton]="true" (closed)="showLangPicker.set(false)">
+    <div class="picker-sheet">
+        <h3 class="picker-title">{{ i18n.t('settings.learningLanguage') }}</h3>
+        <div class="picker-options">
+            @for (lang of learningLanguages; track lang.code) {
+            <button class="picker-option" [class.active]="settings.settings().language === lang.code"
+                (click)="setLanguage(lang.code)">
+                <img [src]="lang.flag" class="picker-option__flag" alt="" />
+                <span class="picker-option__name">{{ lang.name }}</span>
+                @if (settings.settings().language === lang.code) {
+                <app-icon name="check" [size]="18" class="picker-option__check" />
+                }
+            </button>
+            }
+        </div>
+    </div>
+</app-bottom-sheet>

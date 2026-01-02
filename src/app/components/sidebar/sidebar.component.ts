@@ -1,9 +1,8 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, output, ViewChild, ElementRef } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, output, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, startWith } from 'rxjs';
+import { RouterLink, Router, RouterLinkActive } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
+import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
@@ -11,7 +10,7 @@ import { StreakService } from '../../services/streak.service';
     selector: 'app-sidebar',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent],
+    imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent, BottomSheetComponent],
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
@@ -28,8 +27,21 @@ export class SidebarComponent {
 
     isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
     openSettings = output<void>();
+    showLangPicker = signal(false);
 
+    // Learning language options with display info
+    readonly learningLanguages = [
+        { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
+        { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
+        { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+        { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
+    ];
 
+    // Computed for current learning language display
+    currentLang = computed(() => {
+        const code = this.settings.settings().language;
+        return this.learningLanguages.find(l => l.code === code) || this.learningLanguages[0];
+    });
 
     toggleCollapse(): void {
         this.settings.setSidebarCollapsed(!this.isCollapsed());
@@ -40,6 +52,7 @@ export class SidebarComponent {
         this.subtitles.clear();
         this.transcript.reset();
         this.settings.setLanguage(lang);
+        this.showLangPicker.set(false);
     }
 
     toggleTheme(): void {

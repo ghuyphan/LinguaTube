@@ -16,15 +16,11 @@
 }
 
 .settings-section {
-    margin-bottom: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
-
 .settings-section:last-child {
-    border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 .section-title {
@@ -33,10 +29,12 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-muted);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
 }
 
-/* User Card */
+/* ============================================
+   USER CARD
+   ============================================ */
 .user-card {
     display: flex;
     align-items: center;
@@ -53,7 +51,6 @@
     height: var(--btn-height-md);
     border-radius: var(--border-radius-round);
 }
-
 
 .user-info {
     flex: 1;
@@ -96,29 +93,93 @@
     animation: spin 1s linear infinite;
 }
 
-/* Streak Display (Mobile) */
-.streak-section {
-    border-bottom: 1px solid var(--border-color);
+/* ============================================
+   SETTING ROWS - Consistent row pattern
+   ============================================ */
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--touch-target-min);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: default;
+}
 
-    /* Hide on desktop since it's already in the sidebar */
+.setting-row--clickable {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+    }
+
+    // Prevent inner elements from interfering with hover
+    * {
+        pointer-events: none;
+    }
+}
+
+.setting-row__content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.setting-row__flag {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius-round);
+}
+
+.setting-row__value {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.setting-row__label {
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+}
+
+.setting-row__icon {
+    color: var(--text-muted);
+}
+
+.setting-row__chevron {
+    color: var(--text-muted);
+}
+
+/* ============================================
+   STREAK ROW (Mobile Only)
+   ============================================ */
+.streak-section {
     @media (min-width: 769px) {
         display: none;
     }
 }
 
-.streak-display {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md);
+.streak-row {
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(247, 147, 30, 0.08) 100%);
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    border-radius: var(--border-radius);
+    border-color: rgba(255, 107, 53, 0.2);
+    gap: var(--space-sm);
 }
 
-.streak-display .streak-icon-wrapper {
-    width: 48px;
-    height: 48px;
+.streak-row .streak-icon-wrapper {
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,40 +189,32 @@
     flex-shrink: 0;
 }
 
-.streak-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.streak-main {
+.streak-row .streak-info {
     display: flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: var(--space-xs);
+    flex: 1;
 }
 
-.streak-number {
-    font-size: 1.5rem;
+.streak-row .streak-count {
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-primary);
     line-height: 1;
 }
 
-.streak-text {
+.streak-row .streak-label {
     font-size: 0.875rem;
-    font-weight: 500;
     color: var(--text-secondary);
 }
 
-.streak-sub {
+.streak-row .streak-meta {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    gap: var(--space-sm);
 }
 
-.streak-longest {
+.streak-row .streak-longest {
     font-size: 0.75rem;
     color: var(--text-muted);
 }
@@ -178,78 +231,109 @@
     font-weight: 600;
 }
 
-
-/* Unified Language Grid (for both Learning and UI languages) */
-.lang-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
+/* ============================================
+   TOGGLE SWITCH
+   ============================================ */
+.toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    flex-shrink: 0;
 }
 
-.lang-grid--3col {
-    grid-template-columns: repeat(3, 1fr);
+.toggle-switch.active {
+    background: var(--accent-primary);
 }
 
-@media (max-width: 400px) {
-    .lang-grid--3col {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-fast);
 }
 
-.lang-option {
+.toggle-switch.active .toggle-knob {
+    transform: translateX(20px);
+}
+
+/* ============================================
+   PICKER SHEETS
+   ============================================ */
+.picker-sheet {
+    padding: var(--space-md);
+    padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+}
+
+.picker-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.picker-options {
     display: flex;
     flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.picker-option {
+    display: flex;
     align-items: center;
-    gap: 4px;
-    padding: var(--space-sm) var(--space-xs);
+    gap: var(--space-md);
+    padding: var(--space-md);
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: all var(--transition-fast);
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-align: left;
 }
 
-@media (hover: hover) {
-    .lang-option:hover {
-        box-shadow: var(--shadow-sm);
-        transform: translateY(-1px);
-    }
+.picker-option:hover {
+    background: var(--bg-secondary);
 }
 
-.lang-option.active {
-    background: var(--bg-card);
+.picker-option.active {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1), var(--shadow-sm);
+    background: rgba(var(--accent-primary-rgb), 0.05);
 }
 
-.lang-flag {
-    font-size: 1.5rem;
+.picker-option__flag {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-round);
 }
 
-.lang-name {
-    font-size: 0.8125rem;
+.picker-option__name {
+    flex: 1;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
-    text-align: center;
 }
 
-/* Google Sign-in Button Container */
-.google-btn-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: var(--touch-target-min);
+.picker-option__check {
+    color: var(--accent-primary);
 }
 
-
-.google-signin-hint {
-    margin: var(--space-sm) 0 0;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-align: center;
-}
-
-/* Settings Buttons */
+/* ============================================
+   SETTINGS BUTTONS
+   ============================================ */
 .settings-btn {
     width: 100%;
     display: flex;
@@ -277,7 +361,22 @@
     border-color: rgba(var(--accent-primary-rgb), 0.2);
 }
 
-/* Sign Out Confirmation Modal */
+.settings-btn--primary {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.google-signin-hint {
+    margin: var(--space-sm) 0 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ============================================
+   CONFIRM MODAL
+   ============================================ */
 .confirm-modal {
     padding: var(--space-lg);
     text-align: center;
@@ -294,7 +393,6 @@
     border-radius: var(--border-radius-round);
     color: var(--error);
 }
-
 
 .confirm-title {
     font-size: 1.125rem;
@@ -342,5 +440,16 @@
 
     .confirm-btn--danger:hover {
         opacity: 0.9;
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+    .streak-row .streak-meta {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
     }
 }
