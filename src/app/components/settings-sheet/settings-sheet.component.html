@@ -97,9 +97,10 @@
                         {{ isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode') }}
                     </span>
                 </div>
-                <button class="toggle-switch" [class.active]="isDarkMode()" (click)="toggleTheme()" type="button">
-                    <span class="toggle-knob"></span>
-                </button>
+                <label class="toggle-switch">
+                    <input type="checkbox" [checked]="isDarkMode()" (change)="toggleTheme()" />
+                    <span class="slider"></span>
+                </label>
             </div>
         </div>
     </div>
