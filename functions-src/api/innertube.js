@@ -359,7 +359,12 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
 
     const actualLang = track.languageCode;
 
-    log(`saveToCache: r2=${!!r2}, db=${!!db}, lang=${actualLang}, segments=${track.content.length}`);
+    // Extract ALL available languages from tracks (not just the one we fetched)
+    const allAvailableLangs = tracks
+        ?.filter(t => t.languageCode)
+        ?.map(t => t.languageCode) || [actualLang];
+
+    log(`saveToCache: r2=${!!r2}, db=${!!db}, lang=${actualLang}, allLangs=[${allAvailableLangs}], segments=${track.content.length}`);
 
     await Promise.allSettled([
         // Content to R2 (primary storage)
@@ -374,33 +379,35 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
             .catch(e => log(`D1 metadata error: ${e.message}`))
             : Promise.resolve(),
 
-        // Update video_languages with the found language
-        db ? updateVideoLanguages(db, videoId, actualLang)
-            .then(() => log(`video_languages updated: ${videoId} +${actualLang}`))
+        // Update video_languages with ALL available languages (not just fetched one)
+        db ? updateVideoLanguagesFromTracks(db, videoId, allAvailableLangs)
+            .then(() => log(`video_languages updated: ${videoId} langs=[${allAvailableLangs}]`))
             .catch(e => log(`video_languages error: ${e.message}`))
             : Promise.resolve()
     ]);
 }
 
 /**
- * Add a language to the video_languages available list
- * Preserves existing languages and adds new one if not present
+ * Save ALL available languages from YouTube tracks at once
+ * Merges with any existing languages (e.g., from Whisper AI)
  */
-async function updateVideoLanguages(db, videoId, lang) {
-    if (!db || !videoId || !lang) return;
+async function updateVideoLanguagesFromTracks(db, videoId, trackLangs) {
+    if (!db || !videoId || !trackLangs?.length) return;
 
     try {
-        // Get existing languages
+        // Get existing languages (may include AI-generated ones)
         const existing = await getVideoLanguages(db, videoId);
-        const languages = existing?.availableLanguages || [];
+        const existingLangs = existing?.availableLanguages || [];
 
-        // Add new language if not already present
-        if (!languages.includes(lang)) {
-            languages.push(lang);
-            await saveVideoLanguages(db, videoId, languages);
+        // Merge: keep existing + add new from tracks
+        const merged = [...new Set([...existingLangs, ...trackLangs])];
+
+        // Only update if we have new languages
+        if (merged.length > existingLangs.length) {
+            await saveVideoLanguages(db, videoId, merged);
         }
     } catch (err) {
-        log(`updateVideoLanguages error: ${err.message}`);
+        log(`updateVideoLanguagesFromTracks error: ${err.message}`);
     }
 }
 
