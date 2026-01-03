@@ -35,6 +35,11 @@ interface InnertubeResponse {
   source?: string;
   error?: string;
   warning?: string;
+  // Fallback response fields
+  requestedLanguage?: string;
+  fallbackLanguage?: string;
+  availableLanguages?: string[];
+  whisperAvailable?: boolean;
 }
 
 // Minimum duration for a cue (in seconds)
@@ -64,6 +69,11 @@ export class TranscriptService {
   readonly isGeneratingAI = computed(() => this.status() === 'generating_ai');
   readonly isLoading = computed(() => this.status() === 'loading');
 
+  // Fallback state - when server returns a different language than requested
+  readonly isFallback = signal(false);
+  readonly fallbackLanguage = signal<string | null>(null);
+  readonly whisperAvailable = signal(false);
+
   // Cache
   private readonly transcriptCache = new Map<string, { cues: SubtitleCue[], language: string | null }>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
@@ -83,6 +93,9 @@ export class TranscriptService {
     this.captionSource.set(null);
     this.detectedLanguage.set(null);
     this.availableLanguages.set([]);
+    this.isFallback.set(false);
+    this.fallbackLanguage.set(null);
+    this.whisperAvailable.set(false);
     this.isResumingPendingJob.set(false);
     this.pendingRequests.clear();
   }
@@ -105,6 +118,9 @@ export class TranscriptService {
     this.status.set('loading');
     this.error.set(null);
     this.captionSource.set(null);
+    this.isFallback.set(false);
+    this.fallbackLanguage.set(null);
+    this.whisperAvailable.set(false);
 
     return this.fetchFromBackend(videoId, lang, false).pipe(
       takeUntil(this.cancelSubject), // Allow cancellation
@@ -189,6 +205,19 @@ export class TranscriptService {
         const tracks = response.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
         const validResponse = !!(response.videoDetails || tracks.length > 0);
 
+        // Check for fallback response (server returned different language)
+        const isFallback = response.source === 'fallback';
+        if (isFallback) {
+          log('Fallback response:', {
+            requested: response.requestedLanguage,
+            fallback: response.fallbackLanguage,
+            whisperAvailable: response.whisperAvailable
+          });
+          this.isFallback.set(true);
+          this.fallbackLanguage.set(response.fallbackLanguage || null);
+          this.whisperAvailable.set(response.whisperAvailable || false);
+        }
+
         log('API response:', {
           source: response.source,
           tracks: tracks.length,
@@ -197,7 +226,9 @@ export class TranscriptService {
         });
 
         if (tracks.length > 0) {
-          this.availableLanguages.set(tracks.map((t: any) => t.languageCode));
+          // Use response.availableLanguages if provided, otherwise extract from tracks
+          const availableLangs = response.availableLanguages || tracks.map((t: any) => t.languageCode);
+          this.availableLanguages.set(availableLangs);
 
           const track = tracks.find((t: any) => t.languageCode === lang)
             || tracks.find((t: any) => t.languageCode?.startsWith(lang))

@@ -64,6 +64,8 @@
         "videoTooLongHint": "Tạo phụ đề AI chỉ hỗ trợ video dưới 60 phút.",
         "languageMismatch": "Phụ đề khác ngôn ngữ",
         "languageMismatchMessage": "Phụ đề {{requested}} không có cho video này. Đang dùng {{detected}} thay thế.",
+        "transcribeWithAI": "Phiên âm bằng AI",
+        "fallbackAvailable": "Có thể phiên âm AI",
         "gotIt": "Đã hiểu",
         "unsupportedLanguageTitle": "Ngôn ngữ không được hỗ trợ",
         "unsupportedLanguageHint": "Chỉ hỗ trợ video tiếng Nhật, Trung, Hàn và Anh."

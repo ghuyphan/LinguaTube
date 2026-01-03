@@ -64,6 +64,8 @@
         "videoTooLongHint": "AI转录仅限于60分钟以内的视频。",
         "languageMismatch": "字幕语言不同",
         "languageMismatchMessage": "此视频没有{{requested}}字幕。正在使用{{detected}}代替。",
+        "transcribeWithAI": "AI转录",
+        "fallbackAvailable": "可用AI转录",
         "gotIt": "知道了",
         "unsupportedLanguageTitle": "不支持的语言",
         "unsupportedLanguageHint": "仅支持日语、中文、韩语和英语视频。"

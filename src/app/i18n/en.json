@@ -64,6 +64,8 @@
         "videoTooLongHint": "AI transcription is limited to 60 minutes.",
         "languageMismatch": "Captions in Different Language",
         "languageMismatchMessage": "{{requested}} captions aren't available for this video. Using {{detected}} instead.",
+        "transcribeWithAI": "Transcribe with AI",
+        "fallbackAvailable": "AI transcription available",
         "gotIt": "Got It",
         "unsupportedLanguageTitle": "Language not supported",
         "unsupportedLanguageHint": "Only Japanese, Chinese, Korean, and English videos are supported."

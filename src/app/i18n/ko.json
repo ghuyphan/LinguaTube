@@ -64,6 +64,8 @@
         "videoTooLongHint": "AI 자막 생성은 60분 미만의 동영상만 가능합니다.",
         "languageMismatch": "다른 언어 자막",
         "languageMismatchMessage": "이 동영상에는 {{requested}} 자막이 없습니다. 대신 {{detected}}을(를) 사용합니다.",
+        "transcribeWithAI": "AI로 전사",
+        "fallbackAvailable": "AI 전사 가능",
         "gotIt": "확인",
         "unsupportedLanguageTitle": "지원되지 않는 언어",
         "unsupportedLanguageHint": "일본어, 중국어, 한국어, 영어 동영상만 지원됩니다."

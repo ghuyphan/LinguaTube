@@ -171,6 +171,52 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
+        // Step 1.5: Smart Fallback - Skip APIs if we know languages (optimization)
+        // =====================================================================
+        // If we already know what languages are available for this video,
+        // and the requested language ISN'T one of them, return a cached
+        // transcript in an available language instead of hitting YouTube/Supadata.
+        // Client can still choose to try Whisper AI for the requested language.
+        const knownLanguages = await getVideoLanguages(db, videoId);
+        if (knownLanguages?.availableLanguages?.length > 0) {
+            const available = knownLanguages.availableLanguages;
+
+            if (!available.includes(primaryLang)) {
+                log(`Smart fallback: ${primaryLang} not in known languages [${available.join(',')}]`);
+
+                // Try to return cached transcript in first available language
+                for (const fallbackLang of available) {
+                    const fallbackCached = await checkCache(r2, videoId, fallbackLang);
+                    if (fallbackCached) {
+                        log(`Returning cached ${fallbackLang} instead of ${primaryLang} (${elapsed()}ms)`);
+                        return jsonResponse({
+                            ...fallbackCached,
+                            // Original request info (for client decision-making)
+                            requestedLanguage: primaryLang,
+                            fallbackLanguage: fallbackLang,
+                            availableLanguages: available,
+                            // Flag: client can try Whisper AI for the requested language
+                            whisperAvailable: true,
+                            // Human-readable message
+                            warning: `Requested language '${primaryLang}' not available. Using '${fallbackLang}'. AI transcription available.`,
+                            source: 'fallback',
+                            timing: elapsed()
+                        }, 200, {
+                            'X-Cache': 'HIT:FALLBACK',
+                            'X-Requested-Language': primaryLang,
+                            'X-Fallback-Language': fallbackLang,
+                            'X-Available-Languages': available.join(','),
+                            'X-Whisper-Available': 'true',
+                            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+                        });
+                    }
+                }
+                // If no cached fallback found, continue to APIs (video_languages might be stale)
+                log(`No cached fallback found, continuing to APIs`);
+            }
+        }
+
+        // =====================================================================
         // Step 2: Try free strategies (parallel race per language)
         // =====================================================================
         let result = null;
