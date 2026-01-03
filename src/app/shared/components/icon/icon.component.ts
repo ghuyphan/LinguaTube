@@ -10,7 +10,7 @@ export type IconName =
     | 'settings' | 'chevron-down' | 'external-link'
     | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus' | 'bookmark-filled'
     | 'repeat' | 'languages' | 'subtitles' | 'captions'
-    | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle'
+    | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle' | 'refresh-cw'
     | 'chevron-left' | 'chevron-right' | 'layers'
     | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'

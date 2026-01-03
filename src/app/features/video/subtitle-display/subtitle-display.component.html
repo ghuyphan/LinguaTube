@@ -185,18 +185,24 @@
                 <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
             </button>
 
-            <button class="font-btn font-btn--large" [class.active]="settings.settings().fontSize === 'large'"
-                (click)="settings.setFontSize('large')" [title]="i18n.t('subtitle.largeFont')">A</button>
-        </div>
+            <!-- Font size controls -->
+            <div class="font-controls">
+                <button class="font-btn" [class.active]="settings.settings().fontSize === 'small'"
+                    (click)="settings.setFontSize('small')" [title]="i18n.t('subtitle.smallFont')">A</button>
+                <button class="font-btn font-btn--medium" [class.active]="settings.settings().fontSize === 'medium'"
+                    (click)="settings.setFontSize('medium')" [title]="i18n.t('subtitle.mediumFont')">A</button>
+                <button class="font-btn font-btn--large" [class.active]="settings.settings().fontSize === 'large'"
+                    (click)="settings.setFontSize('large')" [title]="i18n.t('subtitle.largeFont')">A</button>
+            </div>
 
-        <!-- Force Refresh Button -->
-        <button class="ctrl-btn" (click)="refreshRequested.emit()" [title]="i18n.t('subtitle.refreshCaptions')">
-            <app-icon name="refresh-cw" [size]="16" />
-            <span class="ctrl-label">{{ i18n.t('subtitle.refreshCaptions') }}</span>
-        </button>
+            <!-- Force Refresh Button -->
+            <button class="ctrl-btn" (click)="refreshRequested.emit()" [title]="i18n.t('subtitle.refreshCaptions')">
+                <app-icon name="refresh-cw" [size]="16" />
+                <span class="ctrl-label">{{ i18n.t('subtitle.refreshCaptions') }}</span>
+            </button>
+        </div>
     </div>
-</div>
-}
+    }
 </div>
 
 <!-- Vocabulary Quick View Sheet -->

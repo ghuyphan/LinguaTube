@@ -66,7 +66,7 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const videoId = sanitizeVideoId(body.videoId);
+        let videoId = sanitizeVideoId(body.videoId);
         const lang = sanitizeLanguage(body.lang || body.targetLanguage || 'ja');
         const { result_url: providedResultUrl } = body;
 
