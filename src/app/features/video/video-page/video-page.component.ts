@@ -48,6 +48,7 @@ import { Token } from '../../../models';
       [message]="languageMismatchMessage()"
       [confirmText]="i18n.t('subtitle.switchLanguage').replace('{{language}}', i18n.t('settings.chinese'))"
       [cancelText]="i18n.t('subtitle.dismiss')" 
+      [navPadding]="true"
       variant="default" 
       icon="alert-circle" 
       (confirmed)="onMismatchConfirm()"

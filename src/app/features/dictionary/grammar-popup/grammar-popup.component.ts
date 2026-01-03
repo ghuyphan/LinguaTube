@@ -17,6 +17,7 @@ export class GrammarPopupComponent {
 
     pattern = input<GrammarPattern | null>(null);
     isOpen = input<boolean>(false);
+    navPadding = input<boolean>(true);
     closed = output<void>();
 
     // Get level badge class
