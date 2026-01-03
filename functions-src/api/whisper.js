@@ -167,13 +167,27 @@ export async function onRequestPost(context) {
                 }
 
                 // Save pending job to D1 (persistent across refreshes)
-                savePendingJob(db, videoId, lang, resultUrl).catch(() => { });
+                // AND save temporary mapping to KV for stateless polling
+                await Promise.all([
+                    savePendingJob(db, videoId, lang, resultUrl).catch(() => { }),
+                    cache.put(`job_map:${resultUrl}`, videoId, { expirationTtl: 3600 })
+                ]);
             }
         }
 
         // Step 2: Poll for results with exponential backoff
         const startTime = Date.now();
         let delay = INITIAL_DELAY_MS;
+
+        // If videoId is missing (stateless polling), try to recover it from KV
+        if (!videoId && resultUrl) {
+            try {
+                videoId = await cache.get(`job_map:${resultUrl}`);
+                if (videoId) log(`Recovered videoId from KV: ${videoId}`);
+            } catch (e) {
+                log(`Failed to recover videoId from KV: ${e.message}`);
+            }
+        }
 
         while (Date.now() - startTime < MAX_DURATION_MS) {
 
@@ -229,7 +243,16 @@ export async function onRequestPost(context) {
                             addVideoLanguage(db, videoId, detectedLang),
                             // Clear pending job
                             deletePendingJob(db, videoId)
-                        ]).catch(() => { });
+                        ]).then(results => {
+                            results.forEach((result, i) => {
+                                const ops = ['R2 save', 'D1 addVideoLanguage', 'deletePendingJob'];
+                                if (result.status === 'rejected') {
+                                    console.error(`[Whisper] ${ops[i]} failed:`, result.reason);
+                                }
+                            });
+                        });
+                    } else if (!videoId) {
+                        console.error('[Whisper] CRITICAL: Completed job but missing videoId - cannot save!');
                     }
 
                     return jsonResponse(response);

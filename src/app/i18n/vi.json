@@ -68,7 +68,8 @@
         "fallbackAvailable": "Có thể phiên âm AI",
         "gotIt": "Đã hiểu",
         "unsupportedLanguageTitle": "Ngôn ngữ không được hỗ trợ",
-        "unsupportedLanguageHint": "Chỉ hỗ trợ video tiếng Nhật, Trung, Hàn và Anh."
+        "unsupportedLanguageHint": "Chỉ hỗ trợ video tiếng Nhật, Trung, Hàn và Anh.",
+        "refreshCaptions": "Làm mới phụ đề"
     },
     "vocab": {
         "title": "Từ vựng",

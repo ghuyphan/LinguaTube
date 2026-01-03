@@ -68,7 +68,8 @@
         "fallbackAvailable": "AI文字起こし可能",
         "gotIt": "了解",
         "unsupportedLanguageTitle": "対応していない言語",
-        "unsupportedLanguageHint": "日本語・中国語・韓国語・英語の動画のみ対応しています。"
+        "unsupportedLanguageHint": "日本語・中国語・韓国語・英語の動画のみ対応しています。",
+        "refreshCaptions": "字幕を更新"
     },
     "vocab": {
         "title": "単語帳",

@@ -68,7 +68,8 @@
         "fallbackAvailable": "AI 전사 가능",
         "gotIt": "확인",
         "unsupportedLanguageTitle": "지원되지 않는 언어",
-        "unsupportedLanguageHint": "일본어, 중국어, 한국어, 영어 동영상만 지원됩니다."
+        "unsupportedLanguageHint": "일본어, 중국어, 한국어, 영어 동영상만 지원됩니다.",
+        "refreshCaptions": "자막 새로고침"
     },
     "vocab": {
         "title": "단어장",

@@ -33,6 +33,7 @@ import { Token } from '../../../models';
         <app-subtitle-display 
           [isVideoFullscreen]="isVideoFullscreen()" 
           (wordClicked)="onWordClicked($event)" 
+          (refreshRequested)="onRefreshCaptions()"
         />
       </div>
 
@@ -321,9 +322,9 @@ export class VideoPageComponent implements OnInit {
     });
   }
 
-  private fetchCaptions(videoId: string): void {
+  private fetchCaptions(videoId: string, forceRefresh = false): void {
     const lang = this.settings.settings().language;
-    this.transcript.fetchTranscript(videoId, lang).subscribe({
+    this.transcript.fetchTranscript(videoId, lang, forceRefresh).subscribe({
       next: (cues) => {
         if (cues.length > 0) {
           // Reset index first to prevent showing old cue during transition
@@ -384,6 +385,16 @@ export class VideoPageComponent implements OnInit {
     if (window.innerWidth <= 768 && this.wasPlayingBeforeWordLookup) {
       this.youtube.play();
       this.wasPlayingBeforeWordLookup = false;
+    }
+  }
+
+  onRefreshCaptions(): void {
+    const currentVideo = this.youtube.currentVideo();
+    if (currentVideo) {
+      console.log('[VideoPage] Forcing caption refresh');
+      this.subtitles.clear();
+      this.transcript.reset();
+      this.fetchCaptions(currentVideo.id, true);
     }
   }
 }

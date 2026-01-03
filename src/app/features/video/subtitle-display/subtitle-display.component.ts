@@ -38,6 +38,7 @@ export class SubtitleDisplayComponent {
   @ViewChild('subtitleControls') subtitleControls!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
+  refreshRequested = output<void>();
 
   // Input to skip heavy processing when video is in fullscreen
   isVideoFullscreen = input(false);

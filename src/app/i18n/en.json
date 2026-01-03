@@ -68,7 +68,8 @@
         "fallbackAvailable": "AI transcription available",
         "gotIt": "Got It",
         "unsupportedLanguageTitle": "Language not supported",
-        "unsupportedLanguageHint": "Only Japanese, Chinese, Korean, and English videos are supported."
+        "unsupportedLanguageHint": "Only Japanese, Chinese, Korean, and English videos are supported.",
+        "refreshCaptions": "Refresh Captions"
     },
     "vocab": {
         "title": "Vocabulary",

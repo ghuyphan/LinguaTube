@@ -185,7 +185,7 @@ export async function onRequestPost(context) {
         // transcript in an available language instead of hitting YouTube/Supadata.
         // Client can still choose to try Whisper AI for the requested language.
         const knownLanguages = await getVideoLanguages(db, videoId);
-        if (knownLanguages?.availableLanguages?.length > 0) {
+        if (!forceRefresh && knownLanguages?.availableLanguages?.length > 0) {
             const available = knownLanguages.availableLanguages;
 
             if (!available.includes(primaryLang)) {

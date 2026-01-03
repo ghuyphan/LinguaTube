@@ -103,9 +103,9 @@ export class TranscriptService {
   /**
    * Main entry point - fetch transcript for a video
    */
-  fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
+  fetchTranscript(videoId: string, lang: string = 'ja', forceRefresh = false): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
-    if (this.transcriptCache.has(cacheKey)) {
+    if (!forceRefresh && this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
       log('Client cache hit:', { videoId, lang, cues: cached.cues.length });
       this.captionSource.set('youtube'); // Or restore from cache if we tracked source
@@ -122,7 +122,7 @@ export class TranscriptService {
     this.fallbackLanguage.set(null);
     this.whisperAvailable.set(false);
 
-    return this.fetchFromBackend(videoId, lang, false).pipe(
+    return this.fetchFromBackend(videoId, lang, forceRefresh).pipe(
       takeUntil(this.cancelSubject), // Allow cancellation
       tap(() => log('Fetching from backend:', { videoId, lang })),
       switchMap(result => {

@@ -68,7 +68,8 @@
         "fallbackAvailable": "可用AI转录",
         "gotIt": "知道了",
         "unsupportedLanguageTitle": "不支持的语言",
-        "unsupportedLanguageHint": "仅支持日语、中文、韩语和英语视频。"
+        "unsupportedLanguageHint": "仅支持日语、中文、韩语和英语视频。",
+        "refreshCaptions": "刷新字幕"
     },
     "vocab": {
         "title": "词汇本",
