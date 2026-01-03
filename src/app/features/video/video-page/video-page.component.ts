@@ -33,7 +33,7 @@ import { Token } from '../../../models';
         <app-subtitle-display 
           [isVideoFullscreen]="isVideoFullscreen()" 
           (wordClicked)="onWordClicked($event)" 
-          (refreshRequested)="onRefreshCaptions()"
+          (manualAITrigger)="onManualAITrigger()"
         />
       </div>
 
@@ -322,40 +322,67 @@ export class VideoPageComponent implements OnInit {
     });
   }
 
-  private fetchCaptions(videoId: string, forceRefresh = false): void {
+  onManualAITrigger(): void {
+    const currentVideo = this.youtube.currentVideo();
     const lang = this.settings.settings().language;
-    this.transcript.fetchTranscript(videoId, lang, forceRefresh).subscribe({
+
+    if (currentVideo) {
+      console.log(`[VideoPage] Manually triggering AI generation for ${currentVideo.id} (${lang})`);
+      // Access private player safely with type assertion for now
+      const duration = (this.youtube as any).player?.()?.getDuration() || 0;
+
+      this.transcript.generateWithWhisper(currentVideo.id, undefined, lang, duration)
+        .subscribe({
+          next: (cues) => {
+            if (cues.length > 0) {
+              this.handleCaptionsSuccess(cues, lang, lang); // Assume AI gives us what we asked for (or detected)
+            }
+          },
+          error: (err) => console.error('[VideoPage] Manual AI error:', err)
+        });
+    }
+  }
+
+  private fetchCaptions(videoId: string): void {
+    const lang = this.settings.settings().language;
+    // No forceRefresh anymore
+    this.transcript.fetchTranscript(videoId, lang).subscribe({
       next: (cues) => {
         if (cues.length > 0) {
-          // Reset index first to prevent showing old cue during transition
-          this.subtitles.currentCueIndex.set(-1);
-          this.subtitles.subtitles.set(cues);
-
-          // Detect actual language returned by backend
-          const detectedFull = this.transcript.detectedLanguage();
-          const detected = detectedFull?.split('-')[0]?.toLowerCase(); // Handle en-US, ja-JP
-          const validLangs = ['ja', 'zh', 'ko', 'en'];
-
-          // Use detected language for tokenization, but DON'T change user's global setting
-          // User's preference stays the same for future videos
-          if (detected && detected !== lang && validLangs.includes(detected)) {
-            console.log(`[VideoPage] Using ${detected} captions for tokenization (requested: ${lang})`);
-            const targetLang = detected as 'ja' | 'zh' | 'ko' | 'en';
-            this.subtitles.setLanguageState(targetLang, lang);
-            this.subtitles.tokenizeAllCues(targetLang);
-
-            // Show language mismatch notification
-            this.mismatchRequestedLang.set(lang);
-            this.mismatchDetectedLang.set(detected);
-            this.showLangMismatchSheet.set(true);
-          } else {
-            this.subtitles.setLanguageState(lang, lang);
-            this.subtitles.tokenizeAllCues(lang);
-          }
+          this.handleCaptionsSuccess(cues, lang);
         }
       },
       error: (err) => console.log('Auto-caption fetch failed:', err)
     });
+  }
+
+  private handleCaptionsSuccess(cues: any[], requestedLang: string, forcedDetected?: string) {
+    // Reset index first to prevent showing old cue during transition
+    this.subtitles.currentCueIndex.set(-1);
+    this.subtitles.subtitles.set(cues);
+
+    // Detect actual language returned by backend (or forced if AI)
+    const detectedFull = forcedDetected || this.transcript.detectedLanguage();
+    const detected = detectedFull?.split('-')[0]?.toLowerCase(); // Handle en-US, ja-JP
+    const validLangs = ['ja', 'zh', 'ko', 'en'];
+
+    // Use detected language for tokenization
+    if (detected && detected !== requestedLang && validLangs.includes(detected)) {
+      console.log(`[VideoPage] Using ${detected} captions for tokenization (requested: ${requestedLang})`);
+      const targetLang = detected as 'ja' | 'zh' | 'ko' | 'en';
+      this.subtitles.setLanguageState(targetLang, requestedLang as 'ja' | 'zh' | 'ko' | 'en');
+      this.subtitles.tokenizeAllCues(targetLang);
+
+      if (!forcedDetected) {
+        this.mismatchRequestedLang.set(requestedLang);
+        this.mismatchDetectedLang.set(detected);
+        this.showLangMismatchSheet.set(true);
+      }
+    } else {
+      const lang = requestedLang as 'ja' | 'zh' | 'ko' | 'en';
+      this.subtitles.setLanguageState(lang, lang);
+      this.subtitles.tokenizeAllCues(lang);
+    }
   }
 
   getLangMismatchMessage(): string {
@@ -385,16 +412,6 @@ export class VideoPageComponent implements OnInit {
     if (window.innerWidth <= 768 && this.wasPlayingBeforeWordLookup) {
       this.youtube.play();
       this.wasPlayingBeforeWordLookup = false;
-    }
-  }
-
-  onRefreshCaptions(): void {
-    const currentVideo = this.youtube.currentVideo();
-    if (currentVideo) {
-      console.log('[VideoPage] Forcing caption refresh');
-      this.subtitles.clear();
-      this.transcript.reset();
-      this.fetchCaptions(currentVideo.id, true);
     }
   }
 }

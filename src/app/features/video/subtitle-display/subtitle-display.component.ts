@@ -33,12 +33,19 @@ export class SubtitleDisplayComponent {
   grammar = inject(GrammarService);
   translation = inject(TranslationService);
 
+  readonly whisperAvailable = this.transcript.whisperAvailable;
+  readonly isGeneratingAI = this.transcript.isGeneratingAI;
+
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
   @ViewChild('currentSubtitleInner') currentSubtitleInner!: ElementRef<HTMLDivElement>;
   @ViewChild('subtitleControls') subtitleControls!: ElementRef<HTMLDivElement>;
 
   wordClicked = output<{ token: Token; sentence: string }>();
-  refreshRequested = output<void>();
+  manualAITrigger = output<void>();
+
+  triggerManualAI(): void {
+    this.manualAITrigger.emit();
+  }
 
   // Input to skip heavy processing when video is in fullscreen
   isVideoFullscreen = input(false);

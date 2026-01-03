@@ -75,42 +75,26 @@ export class TranscriptService {
   readonly whisperAvailable = signal(false);
 
   // Cache
-  private readonly transcriptCache = new Map<string, { cues: SubtitleCue[], language: string | null }>();
+  private readonly transcriptCache = new Map<string, { cues: SubtitleCue[], language: string | null, source?: string }>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
 
   // Cancellation
   private cancelSubject = new Subject<void>();
 
-  constructor() { }
-
-  /**
-   * Reset all state and cancel in-flight requests
-   */
-  reset(): void {
-    this.cancelSubject.next(); // Cancel in-flight requests
-    this.status.set('idle');
-    this.error.set(null);
-    this.captionSource.set(null);
-    this.detectedLanguage.set(null);
-    this.availableLanguages.set([]);
-    this.isFallback.set(false);
-    this.fallbackLanguage.set(null);
-    this.whisperAvailable.set(false);
-    this.isResumingPendingJob.set(false);
-    this.pendingRequests.clear();
-  }
-
   /**
    * Main entry point - fetch transcript for a video
    */
-  fetchTranscript(videoId: string, lang: string = 'ja', forceRefresh = false): Observable<SubtitleCue[]> {
+  fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
-    if (!forceRefresh && this.transcriptCache.has(cacheKey)) {
+
+    // 1. Check client-side memory cache first
+    //    We do NOT have "force refresh" anymore, so we aggressively use cache.
+    if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
       log('Client cache hit:', { videoId, lang, cues: cached.cues.length });
-      this.captionSource.set('youtube'); // Or restore from cache if we tracked source
+      this.captionSource.set(cached.source === 'ai' ? 'ai' : 'youtube');
       this.availableLanguages.set([lang]);
-      this.detectedLanguage.set(cached.language); // Restore detected language
+      this.detectedLanguage.set(cached.language);
       this.status.set('complete');
       return of(cached.cues);
     }
@@ -122,62 +106,86 @@ export class TranscriptService {
     this.fallbackLanguage.set(null);
     this.whisperAvailable.set(false);
 
-    return this.fetchFromBackend(videoId, lang, forceRefresh).pipe(
-      takeUntil(this.cancelSubject), // Allow cancellation
+    // 2. Fetch from Backend (InnertubeProxy -> Supadata/Cache)
+    return this.fetchFromBackend(videoId, lang).pipe(
+      takeUntil(this.cancelSubject),
       tap(() => log('Fetching from backend:', { videoId, lang })),
       switchMap(result => {
-        log('Backend result:', { cues: result.cues.length, validResponse: result.validResponse });
-        // Case 1: Success from YouTube
+        log('Backend result:', {
+          cues: result.cues.length,
+          validResponse: result.validResponse,
+          source: result.source
+        });
+
+        // Case A: Success (Native/Supadata or Cache)
         if (result.cues.length > 0) {
+          // Case A.1: Real Fallback (Server gave us different language than requested)
+          // e.g. Requested JA, got EN. 
+          // We should use this but let the user know they can try AI.
+          if (result.requestedLanguage && result.requestedLanguage !== result.language) {
+            log('Fallback detected:', result.language, 'wanted:', result.requestedLanguage);
+            this.isFallback.set(true);
+            this.fallbackLanguage.set(result.language || null);
+            this.whisperAvailable.set(result.whisperAvailable || false);
+          }
           return of(result.cues);
         }
 
-        // Case 2: Invalid/Empty response -> Retry once with forceRefresh
-        if (!result.validResponse) {
-          return this.fetchFromBackend(videoId, lang, true).pipe(
-            takeUntil(this.cancelSubject),
-            switchMap(retry => {
-              if (retry.cues.length > 0) return of(retry.cues);
-              // Fallback to AI
-              const duration = this.youtube.duration();
-              return this.generateWithWhisper(videoId, undefined, lang, duration);
-            })
-          );
+        // Case B: No Transcript Found (Supadata said NO, or D1 said NO)
+        // If the server explicitly told us AI is available, we mark it.
+        // The UI will then show the "Try AI" button.
+        if (result.whisperAvailable) {
+          this.whisperAvailable.set(true);
+
+          // Check for "Mismatch" scenario based on metadata
+          // If we know other languages exist, we populate them so UI can show
+          // "Japanese not found, but English is available"
+          if (result.availableLangs && result.availableLangs.length > 0) {
+            this.availableLanguages.set(result.availableLangs);
+          }
         }
 
-        // Case 3: Valid response but no captions -> Fallback to AI directly
-        const duration = this.youtube.duration();
-        return this.generateWithWhisper(videoId, undefined, lang, duration);
+        // Return empty to trigger specific empty/error states in UI
+        return of([]);
       }),
       tap(cues => {
         if (cues.length > 0) {
-          this.error.set(null); // Clear any previous errors
+          this.error.set(null);
           this.status.set('complete');
 
-          // Only cache 'youtube' source here. 'ai' source is cached in generateWithWhisper
-          if (this.captionSource() === 'youtube') {
-            this.transcriptCache.set(cacheKey, {
-              cues,
-              language: this.detectedLanguage()
-            });
-          }
+          // Cache success result
+          const source = this.captionSource() || 'youtube';
+          this.transcriptCache.set(cacheKey, {
+            cues,
+            language: this.detectedLanguage(),
+            source
+          });
         } else {
-          // If we got here with empty cues and no error thrown yet
-          if (this.status() !== 'error') {
-            this.error.set('No subtitles found');
+          // If empty, we check if it's a "Wait for User Action" state (Whisper Available)
+          // or a hard error.
+          if (this.whisperAvailable()) {
+            // Not an error, just "Waiting for AI Trigger" state
+            // We'll treat it as 'error' state with specific flag for now so UI shows empty state
+            // but the UI will see `whisperAvailable()` is true and show the button.
+            this.error.set(null); // Clear generic error
+            this.status.set('idle'); // Back to idle? Or specific state?
+            // Actually, simpler to leave it as 'complete' (but empty) or specific error?
+            // Let's use 'error' with specific code 'NO_NATIVE_SUBTITLES'
+            this.error.set('NO_NATIVE_SUBTITLES');
             this.status.set('error');
+          } else {
+            // Genuine hard failure
+            if (this.status() !== 'error') {
+              this.error.set('No subtitles found');
+              this.status.set('error');
+            }
           }
         }
       }),
       catchError(err => {
         console.error('[TranscriptService] Error:', err.message);
-        // Try AI as last resort if not already tried? 
-        // Or just let generateWithWhisper handle its own errors?
-        // If we are here, it means fetchFromBackend failed completely or generateWithWhisper failed.
-        // If generateWithWhisper failed, it already set error state? No, it returns empty array/error.
-
-        // Let's rely on generateWithWhisper to propagate error or empty list.
         this.status.set('error');
+        this.error.set(this.normalizeErrorCode(err.message));
         return of([]);
       })
     );
@@ -188,13 +196,20 @@ export class TranscriptService {
    */
   private fetchFromBackend(
     videoId: string,
-    lang: string,
-    forceRefresh: boolean
-  ): Observable<{ cues: SubtitleCue[]; validResponse: boolean }> {
+    lang: string
+  ): Observable<{
+    cues: SubtitleCue[];
+    validResponse: boolean;
+    language?: string;
+    requestedLanguage?: string;
+    availableLangs?: string[];
+    source?: string;
+    whisperAvailable?: boolean;
+  }> {
     return this.http.post<InnertubeResponse>('/api/innertube', {
       videoId,
-      targetLanguages: [lang, 'en'],
-      forceRefresh
+      targetLanguages: [lang],
+      // No forceRefresh anymore
     }).pipe(
       map((response: any) => {
         if (response.error) {
@@ -205,46 +220,40 @@ export class TranscriptService {
         const tracks = response.captions?.playerCaptionsTracklistRenderer?.captionTracks || [];
         const validResponse = !!(response.videoDetails || tracks.length > 0);
 
-        // Check for fallback response (server returned different language)
-        const isFallback = response.source === 'fallback';
-        if (isFallback) {
-          log('Fallback response:', {
-            requested: response.requestedLanguage,
-            fallback: response.fallbackLanguage,
-            whisperAvailable: response.whisperAvailable
-          });
-          this.isFallback.set(true);
-          this.fallbackLanguage.set(response.fallbackLanguage || null);
-          this.whisperAvailable.set(response.whisperAvailable || false);
-        }
+        // Capture metadata even if no tracks (e.g. negative cache / fallback warning)
+        const availableLangs = response.availableLanguages || tracks.map((t: any) => t.languageCode);
+        this.availableLanguages.set(availableLangs);
 
-        log('API response:', {
-          source: response.source,
-          tracks: tracks.length,
-          trackLangs: tracks.map((t: any) => t.languageCode),
-          hasContent: tracks.map((t: any) => ({ lang: t.languageCode, segments: t.content?.length || 0 })),
-        });
+        // Capture fallback info
+        const isFallback = response.source === 'fallback';
+        const whisperAvailable = response.whisperAvailable || response.source === 'none';
 
         if (tracks.length > 0) {
-          // Use response.availableLanguages if provided, otherwise extract from tracks
-          const availableLangs = response.availableLanguages || tracks.map((t: any) => t.languageCode);
-          this.availableLanguages.set(availableLangs);
-
           const track = tracks.find((t: any) => t.languageCode === lang)
-            || tracks.find((t: any) => t.languageCode?.startsWith(lang))
-            || tracks[0];
+            || tracks[0]; // If we got a track, it's either the one we wanted OR the fallback returned by strict mode
 
           if (track?.content?.length) {
             this.captionSource.set('youtube');
             this.detectedLanguage.set(track.languageCode);
 
-            // Server already cleans segments, just convert to SubtitleCues
             const cues = this.convertToSubtitleCues(track.content);
-            return { cues, validResponse: true };
+            return {
+              cues,
+              validResponse: true,
+              language: track.languageCode,
+              requestedLanguage: lang,
+              source: response.source,
+              whisperAvailable
+            };
           }
         }
 
-        return { cues: [], validResponse };
+        return {
+          cues: [],
+          validResponse,
+          availableLangs,
+          whisperAvailable
+        };
       }),
       catchError(err => {
         console.error('[TranscriptService] Backend error:', err);
@@ -257,16 +266,20 @@ export class TranscriptService {
    * Generate subtitles using Whisper AI
    */
   generateWithWhisper(videoId: string, resultUrl?: string, lang: string = 'ja', duration?: number): Observable<SubtitleCue[]> {
-    const cacheKey = `whisper:${videoId}:${lang}`;
+    const cacheKey = `${videoId}:${lang}`; // Use same cache key format
 
     if (!resultUrl && this.transcriptCache.has(cacheKey)) {
-      this.captionSource.set('ai');
-      this.status.set('complete');
+      // ... (existing cache logic)
       const cached = this.transcriptCache.get(cacheKey)!;
-      this.detectedLanguage.set(cached.language); // Restore detected language (AI)
-      return of(cached.cues);
+      if (cached.source === 'ai') {
+        this.captionSource.set('ai');
+        this.status.set('complete');
+        this.detectedLanguage.set(cached.language);
+        return of(cached.cues);
+      }
     }
 
+    // ... (rest of function largely same, just verify cache key consistency)
     // If we're polling (resultUrl exists), we shouldn't use the pending request cache
     if (!resultUrl && this.pendingRequests.has(videoId)) {
       return this.pendingRequests.get(videoId)!;
@@ -313,7 +326,8 @@ export class TranscriptService {
 
         this.transcriptCache.set(cacheKey, {
           cues,
-          language: this.detectedLanguage()
+          language: this.detectedLanguage(),
+          source: 'ai'
         });
         return of(cues);
       }),
@@ -330,8 +344,6 @@ export class TranscriptService {
       }),
       catchError(err => {
         let message = err.error?.error || err.message || 'AI transcription failed';
-
-        // Normalize error codes for consistent UI handling
         message = this.normalizeErrorCode(message);
 
         this.error.set(message);
@@ -339,7 +351,6 @@ export class TranscriptService {
         console.error('[TranscriptService] Whisper error:', message);
         return of([]);
       }),
-      // Remove finalize as we control status explicitly in tap/catchError
       shareReplay(1)
     );
 
@@ -350,6 +361,29 @@ export class TranscriptService {
 
     return request$;
   }
+
+  // Constructor at line 368 can stay or be merged if needed.
+  // Actually, I'll remove the entire block of duplicates.
+  constructor() { }
+
+  /**
+   * Reset all state and cancel in-flight requests
+   */
+  reset(): void {
+    this.cancelSubject.next(); // Cancel in-flight requests
+    this.status.set('idle');
+    this.error.set(null);
+    this.captionSource.set(null);
+    this.detectedLanguage.set(null);
+    this.availableLanguages.set([]);
+    this.isFallback.set(false);
+    this.fallbackLanguage.set(null);
+    this.whisperAvailable.set(false);
+    this.isResumingPendingJob.set(false);
+    this.pendingRequests.clear();
+  }
+
+  // ... duplicates removed ...
 
   // ============================================================================
   // Conversion

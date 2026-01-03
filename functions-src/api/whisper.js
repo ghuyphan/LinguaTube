@@ -28,12 +28,11 @@ import {
     consumeRateLimit,
     getClientIP,
     rateLimitResponse,
-    getRateLimitHeaders,
     getTieredConfig
 } from '../_shared/rate-limiter.js';
 import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
-import { validateVideoRequest, getVideoMetadata } from '../_shared/video-validator.js';
-import { getVideoDuration, saveVideoLanguages, addVideoLanguage } from '../_shared/video-info-db.js';
+import { validateVideoRequest } from '../_shared/video-validator.js';
+import { getVideoDuration, addVideoLanguage } from '../_shared/video-info-db.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -226,31 +225,34 @@ export async function onRequestPost(context) {
                     // Clean segments for deduplication and timing fixes
                     const segments = cleanTranscriptSegments(rawSegments);
                     const detectedLang = resultData.result?.transcription?.languages?.[0] || lang;
+                    const duration = resultData.result?.metadata?.audio_duration || 0;
 
                     const response = {
                         success: true,
                         language: detectedLang,
-                        duration: resultData.result?.metadata?.audio_duration || 0,
+                        duration,
                         segments
                     };
 
                     // Save content to R2, metadata to D1 (non-blocking)
                     if (videoId && segments.length > 0) {
-                        Promise.allSettled([
+                        const operations = [
                             // Content to R2
                             saveTranscriptToR2(r2, videoId, detectedLang, segments, 'ai'),
-                            // Update video_languages in D1 (rePLACES recordTranscript)
+                            // Update video_languages in D1 (Verified Source of Truth)
+                            // This signals to Innertube that this language EXISTS now.
                             addVideoLanguage(db, videoId, detectedLang),
                             // Clear pending job
                             deletePendingJob(db, videoId)
-                        ]).then(results => {
-                            results.forEach((result, i) => {
-                                const ops = ['R2 save', 'D1 addVideoLanguage', 'deletePendingJob'];
-                                if (result.status === 'rejected') {
-                                    console.error(`[Whisper] ${ops[i]} failed:`, result.reason);
-                                }
-                            });
-                        });
+                        ];
+
+                        context.waitUntil(Promise.allSettled(operations).then(results => {
+                            if (DEBUG) {
+                                results.forEach((r, i) => {
+                                    if (r.status === 'rejected') console.error(`[Whisper] Op ${i} failed:`, r.reason);
+                                });
+                            }
+                        }));
                     } else if (!videoId) {
                         console.error('[Whisper] CRITICAL: Completed job but missing videoId - cannot save!');
                     }
