@@ -106,7 +106,7 @@
   --mobile-padding: 16px;
   --mobile-card-radius: 12px;
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
-  --bottom-nav-height: 4 rem;
+  --bottom-nav-height: 4rem;
 
   /* AI/Generation colors */
   --ai-purple: #8b5cf6;
@@ -119,7 +119,7 @@
   --bg-primary: #09090B;
   --bg-secondary: #18181B;
   --bg-tertiary: #27272A;
-  --bg-card: #18181B;
+  --bg-card: #1C1C1F;
   --border-color: rgba(255, 255, 255, 0.1);
   --text-primary: #FAFAFA;
   --text-secondary: #A1A1AA;
@@ -127,6 +127,18 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+  /* Word levels - darker, desaturated for dark mode */
+  --word-new: rgba(220, 38, 38, 0.15);
+  --word-new-text: #FCA5A5;
+  --word-learning: rgba(217, 119, 6, 0.15);
+  --word-learning-text: #FCD34D;
+  --word-known: rgba(5, 150, 105, 0.15);
+  --word-known-text: #6EE7B7;
+  --word-ignored: #27272A;
+
+  /* Accent tertiary - softer for dark mode hover states */
+  --accent-tertiary: rgba(255, 228, 181, 0.1);
 }
 
 /* Reset & Base */

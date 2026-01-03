@@ -18,7 +18,7 @@ export type IconName =
     | 'clock' | 'heart' | 'heart-filled' | 'cloud'
     // Gamification & cute icons
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift'
-    | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal';
+    | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical';
 
 @Component({
     selector: 'app-icon',

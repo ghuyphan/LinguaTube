@@ -70,6 +70,7 @@
     },
     "vocab": {
         "title": "単語帳",
+        "words": "語",
         "new": "新規",
         "learning": "学習中",
         "known": "既知",
@@ -81,6 +82,9 @@
         "noMatchesFound": "一致するものが見つかりません",
         "noDefinition": "（定義なし）",
         "delete": "削除",
+        "options": "オプション",
+        "exportJson": "JSONとして書き出し",
+        "exportAnki": "Anki用に書き出し",
         "json": "JSON",
         "anki": "Anki",
         "import": "インポート",

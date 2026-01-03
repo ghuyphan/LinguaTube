@@ -1,5 +1,5 @@
 @if (isOpen()) {
-<div class="sheet-overlay" [class.closing]="isClosing()" (click)="onBackdropClick($event)"
+<div class="sheet-overlay" [class.closing]="isClosing()" [style.z-index]="zIndex()" (click)="onBackdropClick($event)"
     (touchend)="onBackdropTouch($event)">
     <div class="sheet" #sheetEl [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
         [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile"

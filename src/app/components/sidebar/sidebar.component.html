@@ -139,20 +139,6 @@
 </aside>
 
 <!-- Learning Language Picker -->
-<app-bottom-sheet [isOpen]="showLangPicker()" [showCloseButton]="true" (closed)="showLangPicker.set(false)">
-    <div class="picker-sheet">
-        <h3 class="picker-title">{{ i18n.t('settings.learningLanguage') }}</h3>
-        <div class="picker-options">
-            @for (lang of learningLanguages; track lang.code) {
-            <button class="picker-option" [class.active]="settings.settings().language === lang.code"
-                (click)="setLanguage(lang.code)">
-                <img [src]="lang.flag" class="picker-option__flag" alt="" />
-                <span class="picker-option__name">{{ lang.name }}</span>
-                @if (settings.settings().language === lang.code) {
-                <app-icon name="check" [size]="18" class="picker-option__check" />
-                }
-            </button>
-            }
-        </div>
-    </div>
-</app-bottom-sheet>
+<app-option-picker [options]="learningLangOptions()" [value]="settings.settings().language" [isOpen]="showLangPicker()"
+    [title]="i18n.t('settings.learningLanguage')" (selected)="onLangSelected($event)"
+    (closed)="showLangPicker.set(false)" />

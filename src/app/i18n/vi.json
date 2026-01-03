@@ -70,6 +70,7 @@
     },
     "vocab": {
         "title": "Từ vựng",
+        "words": "từ",
         "new": "mới",
         "learning": "đang học",
         "known": "đã biết",
@@ -81,6 +82,9 @@
         "noMatchesFound": "Không tìm thấy",
         "noDefinition": "(không có định nghĩa)",
         "delete": "Xóa",
+        "options": "Tùy chọn",
+        "exportJson": "Xuất dạng JSON",
+        "exportAnki": "Xuất cho Anki",
         "json": "JSON",
         "anki": "Anki",
         "import": "Nhập",

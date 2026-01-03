@@ -70,6 +70,7 @@
     },
     "vocab": {
         "title": "Vocabulary",
+        "words": "words",
         "new": "new",
         "learning": "learning",
         "known": "known",
@@ -81,6 +82,9 @@
         "noMatchesFound": "No matches found",
         "noDefinition": "(no definition)",
         "delete": "Delete",
+        "options": "Options",
+        "exportJson": "Export as JSON",
+        "exportAnki": "Export for Anki",
         "json": "JSON",
         "anki": "Anki",
         "import": "Import",

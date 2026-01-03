@@ -6,7 +6,8 @@ import { IconComponent } from '../icon/icon.component';
 export interface OptionItem {
     value: string;
     label: string;
-    icon?: string;
+    icon?: string;      // Emoji or icon name
+    iconUrl?: string;   // Image URL (for flags)
 }
 
 @Component({

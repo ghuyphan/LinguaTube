@@ -2,6 +2,8 @@ import { Component, inject, input, output, ChangeDetectionStrategy, signal, View
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
+import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
+import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
@@ -9,7 +11,7 @@ import { StreakService } from '../../services/streak.service';
   selector: 'app-settings-sheet',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent],
+  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent, ConfirmDialogComponent],
   templateUrl: './settings-sheet.component.html',
   styleUrl: './settings-sheet.component.scss'
 })
@@ -57,6 +59,23 @@ export class SettingsSheetComponent {
   // Check if dark mode is active
   isDarkMode = computed(() => this.settings.getEffectiveTheme() === 'dark');
 
+  // Computed options for OptionPicker
+  learningLangOptions = computed<OptionItem[]>(() =>
+    this.learningLanguages.map(l => ({
+      value: l.code,
+      label: l.name,
+      iconUrl: l.flag
+    }))
+  );
+
+  uiLangOptions = computed<OptionItem[]>(() =>
+    this.i18n.availableLanguages.map(l => ({
+      value: l.code,
+      label: l.nativeName,
+      iconUrl: l.flag
+    }))
+  );
+
   /**
    * Login with Google via PocketBase OAuth
    */
@@ -80,8 +99,18 @@ export class SettingsSheetComponent {
     this.settings.setLanguage(lang);
   }
 
+  onLearningLangSelected(value: string): void {
+    this.setLanguage(value as 'ja' | 'zh' | 'ko' | 'en');
+    this.showLearningLangPicker.set(false);
+  }
+
   setUILanguage(lang: UILanguage): void {
     this.i18n.setLanguage(lang);
+  }
+
+  onUILangSelected(value: string): void {
+    this.setUILanguage(value as UILanguage);
+    this.showUILangPicker.set(false);
   }
 
   toggleTheme(): void {

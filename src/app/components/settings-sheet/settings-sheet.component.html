@@ -107,59 +107,17 @@
 </app-bottom-sheet>
 
 <!-- Learning Language Picker -->
-<app-bottom-sheet [isOpen]="showLearningLangPicker()" [showCloseButton]="true"
-    (closed)="showLearningLangPicker.set(false)">
-    <div class="picker-sheet">
-        <h3 class="picker-title">{{ i18n.t('settings.learningLanguage') }}</h3>
-        <div class="picker-options">
-            @for (lang of learningLanguages; track lang.code) {
-            <button class="picker-option" [class.active]="settings.settings().language === lang.code"
-                (click)="setLanguage(lang.code); showLearningLangPicker.set(false)">
-                <img [src]="lang.flag" class="picker-option__flag" alt="" />
-                <span class="picker-option__name">{{ lang.name }}</span>
-                @if (settings.settings().language === lang.code) {
-                <app-icon name="check" [size]="18" class="picker-option__check" />
-                }
-            </button>
-            }
-        </div>
-    </div>
-</app-bottom-sheet>
+<app-option-picker [options]="learningLangOptions()" [value]="settings.settings().language"
+    [isOpen]="showLearningLangPicker()" [title]="i18n.t('settings.learningLanguage')"
+    (selected)="onLearningLangSelected($event)" (closed)="showLearningLangPicker.set(false)" />
 
 <!-- UI Language Picker -->
-<app-bottom-sheet [isOpen]="showUILangPicker()" [showCloseButton]="true" (closed)="showUILangPicker.set(false)">
-    <div class="picker-sheet">
-        <h3 class="picker-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
-        <div class="picker-options">
-            @for (lang of i18n.availableLanguages; track lang.code) {
-            <button class="picker-option" [class.active]="i18n.currentLanguage() === lang.code"
-                (click)="setUILanguage(lang.code); showUILangPicker.set(false)">
-                <img [src]="lang.flag" class="picker-option__flag" alt="" />
-                <span class="picker-option__name">{{ lang.nativeName }}</span>
-                @if (i18n.currentLanguage() === lang.code) {
-                <app-icon name="check" [size]="18" class="picker-option__check" />
-                }
-            </button>
-            }
-        </div>
-    </div>
-</app-bottom-sheet>
+<app-option-picker [options]="uiLangOptions()" [value]="i18n.currentLanguage()" [isOpen]="showUILangPicker()"
+    [title]="i18n.t('settings.interfaceLanguage')" (selected)="onUILangSelected($event)"
+    (closed)="showUILangPicker.set(false)" />
 
-<!-- Sign Out Confirmation Modal -->
-<app-bottom-sheet [isOpen]="showSignOutConfirm()" [showDragHandle]="false" (closed)="showSignOutConfirm.set(false)">
-    <div class="confirm-modal">
-        <div class="confirm-icon">
-            <app-icon name="log-out" [size]="32" />
-        </div>
-        <h3 class="confirm-title">{{ i18n.t('settings.signOutConfirmTitle') }}</h3>
-        <p class="confirm-message">{{ i18n.t('settings.signOutConfirmMessage') }}</p>
-        <div class="confirm-actions">
-            <button class="confirm-btn confirm-btn--cancel" (click)="showSignOutConfirm.set(false)">
-                {{ i18n.t('vocab.cancel') }}
-            </button>
-            <button class="confirm-btn confirm-btn--danger" (click)="confirmSignOut()">
-                {{ i18n.t('header.signOut') }}
-            </button>
-        </div>
-    </div>
-</app-bottom-sheet>
+<!-- Sign Out Confirmation -->
+<app-confirm-dialog [isOpen]="showSignOutConfirm()" [title]="i18n.t('settings.signOutConfirmTitle')"
+    [message]="i18n.t('settings.signOutConfirmMessage')" [confirmText]="i18n.t('header.signOut')"
+    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="log-out" (confirmed)="confirmSignOut()"
+    (cancelled)="showSignOutConfirm.set(false)" />

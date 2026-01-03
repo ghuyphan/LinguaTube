@@ -187,9 +187,9 @@
     }
 }
 
-// Safe area padding for mobile
+// Safe area padding for mobile - sheet overlays nav bar (z-index 1100 > 1000)
 .sheet:not(.desktop-modal) .sheet-content {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
 }
 
 // ============================================

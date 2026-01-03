@@ -9,11 +9,12 @@ import {
   ElementRef,
   viewChild,
   PLATFORM_ID,
-  OnDestroy
+  OnDestroy,
+  computed
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { BodyScrollService } from '../../../services/body-scroll.service';
+import { BottomSheetService } from '../../../services/bottom-sheet.service';
 
 
 @Component({
@@ -25,7 +26,7 @@ import { BodyScrollService } from '../../../services/body-scroll.service';
   styleUrl: './bottom-sheet.component.scss'
 })
 export class BottomSheetComponent implements OnDestroy {
-  private bodyScroll = inject(BodyScrollService);
+  private sheetService = inject(BottomSheetService);
   private platformId = inject(PLATFORM_ID);
 
 
@@ -55,18 +56,20 @@ export class BottomSheetComponent implements OnDestroy {
   private touchCurrentY = 0;
   private touchStartTime = 0;
   private isDragGesture = false;
-  private historyPushed = false;
 
   // Thresholds
   private readonly DISMISS_THRESHOLD = 80;
   private readonly VELOCITY_THRESHOLD = 0.5; // pixels per ms
   private readonly ANIMATION_DURATION = 250;
 
-  // Unique ID for this sheet instance (for nested sheet history state management)
+  // Unique ID for this sheet instance
   private readonly sheetId = Math.random().toString(36).substring(2, 9);
 
-  // Bound handler for popstate
-  private boundPopStateHandler = this.onPopState.bind(this);
+  // Unregister function from service (called when sheet closes)
+  private unregisterFn: (() => void) | null = null;
+
+  // Computed z-index based on stack position
+  zIndex = computed(() => this.sheetService.getZIndex(this.sheetId));
 
   // Check if mobile
   get isMobile(): boolean {
@@ -77,28 +80,37 @@ export class BottomSheetComponent implements OnDestroy {
   constructor() {
     effect(() => {
       if (this.isOpen()) {
-        // Only lock scroll on mobile - desktop modals don't need it
-        // Lock scroll globally (desktop and mobile)
-        this.bodyScroll.lock();
-
-        if (this.isMobile) {
-          this.pushHistoryState();
-        }
+        // Register with service - it handles scroll locking and history
+        this.unregisterFn = this.sheetService.register({
+          id: this.sheetId,
+          close: () => this.onServiceClose()
+        });
 
         this.isClosing.set(false);
         this.isDragClosing.set(false);
         // Reset hasAnimated when sheet opens (animation will play)
         this.hasAnimated.set(false);
-      } else {
-        // Clean up history state when closed externally
-        if (this.historyPushed) {
-          this.historyPushed = false;
-        }
-        // Reset animation state when closed
-        this.hasAnimated.set(false);
-        this.isDragClosing.set(false);
+      } else if (this.unregisterFn) {
+        // If closed externally (not by service), unregister
+        // This is handled in animatedClose, but this catches external close
       }
     });
+  }
+
+  /**
+   * Called by the BottomSheetService when back button is pressed
+   * This should NOT manipulate history (service handles that)
+   */
+  private onServiceClose(): void {
+    // Trigger the closing animation and emit
+    this.isClosing.set(true);
+    this.isDragging.set(false);
+    this.dragOffset.set(0);
+
+    setTimeout(() => {
+      this.isClosing.set(false);
+      this.closed.emit();
+    }, this.ANIMATION_DURATION);
   }
 
   /**
@@ -110,45 +122,6 @@ export class BottomSheetComponent implements OnDestroy {
       this.hasAnimated.set(true);
     }
   }
-
-  /**
-   * Push history state for back button support on mobile
-   */
-  private pushHistoryState(): void {
-    if (!isPlatformBrowser(this.platformId) || this.historyPushed) return;
-
-    // Push a new history entry with unique sheet ID so nested sheets don't conflict
-    history.pushState({ bottomSheet: true, sheetId: this.sheetId }, '');
-    this.historyPushed = true;
-
-    // Listen for popstate (back button/gesture)
-    window.addEventListener('popstate', this.boundPopStateHandler);
-  }
-
-  /**
-   * Handle browser back button/gesture
-   * Note: event.state is the NEW state after back navigation, NOT the state that was popped.
-   * So if event.state.sheetId !== this.sheetId, it means OUR state was just popped.
-   */
-  private onPopState(event: PopStateEvent): void {
-    if (!this.isOpen() || !this.isMobile || !this.historyPushed) return;
-
-    // When back is pressed, the current history entry is popped.
-    // event.state becomes the PREVIOUS state in the stack.
-    // If event.state has a different sheetId (or no state), our entry was just removed.
-    const newStateSheetId = event.state?.sheetId;
-
-    // If the new state's sheetId is NOT ours, then our state was the one that got popped
-    // This correctly handles nested sheets: only the topmost sheet closes
-    if (newStateSheetId !== this.sheetId) {
-      this.historyPushed = false; // Mark as not pushed since history already popped
-      // Prevent default close and do our animated close
-      this.animatedClose(false); // Don't manipulate history again
-    }
-  }
-
-  // No local lockBodyScroll needed anymore
-
 
   // Touch gesture handlers for drag-to-dismiss
   private dragStartedInHandle = false;
@@ -263,25 +236,19 @@ export class BottomSheetComponent implements OnDestroy {
     this.animatedClose();
   }
 
-  private animatedClose(popHistory: boolean = true): void {
+  private animatedClose(): void {
     this.isClosing.set(true);
     this.isDragging.set(false);
     this.dragOffset.set(0);
 
-    // Remove popstate listener
-    window.removeEventListener('popstate', this.boundPopStateHandler);
-
-    // Pop history state if we pushed one
-    if (popHistory && this.historyPushed) {
-      this.historyPushed = false;
-      history.back();
+    // Unregister from service (this also handles history and scroll unlock)
+    if (this.unregisterFn) {
+      this.unregisterFn();
+      this.unregisterFn = null;
     }
 
     setTimeout(() => {
       this.isClosing.set(false);
-      // Only unlock scroll on mobile
-      this.bodyScroll.unlock();
-
       this.closed.emit();
     }, this.ANIMATION_DURATION);
   }
@@ -290,21 +257,17 @@ export class BottomSheetComponent implements OnDestroy {
    * Close animation specifically for drag-to-dismiss
    * Sheet animates via inline styles, we just handle backdrop and cleanup
    */
-  private animatedCloseFromDrag(popHistory: boolean = true): void {
+  private animatedCloseFromDrag(): void {
     // Set drag closing to use inline transition instead of CSS animation
     this.isDragClosing.set(true);
     this.isClosing.set(true);
     this.isDragging.set(false);
     // don't reset dragOffset to 0 here, it should be set to dismiss value by caller
 
-
-    // Remove popstate listener
-    window.removeEventListener('popstate', this.boundPopStateHandler);
-
-    // Pop history state if we pushed one
-    if (popHistory && this.historyPushed) {
-      this.historyPushed = false;
-      history.back();
+    // Unregister from service
+    if (this.unregisterFn) {
+      this.unregisterFn();
+      this.unregisterFn = null;
     }
 
     // Clean up after animation
@@ -312,23 +275,15 @@ export class BottomSheetComponent implements OnDestroy {
       this.isClosing.set(false);
       this.isDragClosing.set(false);
       this.dragOffset.set(0);
-      // Only unlock scroll on mobile
-      this.bodyScroll.unlock();
-
-
       this.closed.emit();
     }, this.ANIMATION_DURATION);
   }
 
   ngOnDestroy(): void {
-    // Clean up
-    window.removeEventListener('popstate', this.boundPopStateHandler);
-    this.bodyScroll.unlock();
-
-    // Pop history if still pushed
-    if (this.historyPushed) {
-      this.historyPushed = false;
-      history.back();
+    // Clean up - unregister if still open
+    if (this.unregisterFn) {
+      this.unregisterFn();
+      this.unregisterFn = null;
     }
   }
 }

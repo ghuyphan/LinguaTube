@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { VocabularyService, SettingsService, I18nService, BodyScrollService } from '../../../services';
 
 import { VocabularyItem, WordLevel } from '../../../models';
@@ -12,7 +13,7 @@ import { VocabularyItem, WordLevel } from '../../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent, ConfirmDialogComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -36,6 +37,9 @@ export class VocabularyListComponent {
   // Level picker state (for individual items)
   levelPickerOpen = signal(false);
   editingItemId = signal<string | null>(null);
+
+  // Menu sheet state (export/import)
+  menuOpen = signal(false);
 
   // Options for filter picker
   filterOptions = computed<OptionItem[]>(() => [

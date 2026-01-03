@@ -2,7 +2,7 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy, output, V
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
+import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
@@ -10,7 +10,7 @@ import { StreakService } from '../../services/streak.service';
     selector: 'app-sidebar',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent, BottomSheetComponent],
+    imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent, OptionPickerComponent],
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
@@ -43,6 +43,15 @@ export class SidebarComponent {
         return this.learningLanguages.find(l => l.code === code) || this.learningLanguages[0];
     });
 
+    // Computed options for OptionPicker
+    learningLangOptions = computed<OptionItem[]>(() =>
+        this.learningLanguages.map(l => ({
+            value: l.code,
+            label: l.name,
+            iconUrl: l.flag
+        }))
+    );
+
     toggleCollapse(): void {
         this.settings.setSidebarCollapsed(!this.isCollapsed());
     }
@@ -53,6 +62,10 @@ export class SidebarComponent {
         this.transcript.reset();
         this.settings.setLanguage(lang);
         this.showLangPicker.set(false);
+    }
+
+    onLangSelected(value: string): void {
+        this.setLanguage(value as 'ja' | 'zh' | 'ko' | 'en');
     }
 
     toggleTheme(): void {

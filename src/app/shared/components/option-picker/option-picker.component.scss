@@ -1,11 +1,14 @@
 .option-picker {
     padding: var(--space-sm) 0;
+    // Add bottom padding for bottom nav on mobile
+    padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom, 0));
 }
 
 .option-picker__header {
     padding: var(--space-sm) var(--space-lg);
+    padding-right: calc(var(--space-lg) + 2.5rem); // Space for close button
     margin-bottom: var(--space-xs);
-
+    text-align: center;
 
     h3 {
         margin: 0;
@@ -49,6 +52,14 @@
 .option-picker__icon {
     font-size: 1.25rem;
     flex-shrink: 0;
+}
+
+.option-picker__flag {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
 }
 
 .option-picker__label {

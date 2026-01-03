@@ -70,6 +70,7 @@
     },
     "vocab": {
         "title": "词汇本",
+        "words": "词",
         "new": "新词",
         "learning": "学习中",
         "known": "已掌握",
@@ -81,6 +82,9 @@
         "noMatchesFound": "未找到匹配项",
         "noDefinition": "（无释义）",
         "delete": "删除",
+        "options": "选项",
+        "exportJson": "导出为JSON",
+        "exportAnki": "导出至Anki",
         "json": "JSON",
         "anki": "Anki",
         "import": "导入",

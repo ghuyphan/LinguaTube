@@ -70,6 +70,7 @@
     },
     "vocab": {
         "title": "단어장",
+        "words": "단어",
         "new": "새 단어",
         "learning": "학습 중",
         "known": "암기완료",
@@ -81,6 +82,9 @@
         "noMatchesFound": "일치하는 항목이 없습니다",
         "noDefinition": "(정의 없음)",
         "delete": "삭제",
+        "options": "옵션",
+        "exportJson": "JSON으로 내보내기",
+        "exportAnki": "Anki로 내보내기",
         "json": "JSON",
         "anki": "Anki",
         "import": "가져오기",
