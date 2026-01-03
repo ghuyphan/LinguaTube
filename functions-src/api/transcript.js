@@ -432,6 +432,51 @@ export async function onRequestPost(context) {
 
             log(`Marked negative cache: ${videoId}:${lang} - no native captions`);
 
+            // BEFORE returning NO_NATIVE error, check if we have ANY existing AI transcript in another language
+            // This prevents asking the user to pay for AI when we already have a valid transcript (e.g. they requested 'ja' but we have 'zh-CN' AI)
+
+            // Re-fetch known languages to be sure (since we might have just updated metadata? No, native failed)
+            // But we might have AI languages associated with this video from previous runs
+            const currentInfo = await getVideoLanguages(db, videoId);
+            const knownAiLangs = currentInfo?.availableLanguages.filter(l => availableLanguages.ai.includes(l)) || [];
+
+            // We can also check R2 if we suspect there might be something (or rely on what we know)
+            // Ideally we should have populated availableLanguages.ai earlier if possible, but let's check known native/ai overlap
+            // Since D1 stores mixed list, we check if there are ANY languages available that we haven't tried or that might be AI
+
+            // Simplest approach: Check if we have *any* other language available in our known list, and if so, try to fetch it if it's AI
+            // However, our D1 'availableLanguages' list mixes native and AI.
+            // If we are here, it means 'lang' was NOT in nativeLanguages (or it was but failed).
+
+            // Better approach: Opportunistically check R2 for other common languages if we are about to fail
+            // or use the known nativeLanguages list even if it failed for 'lang' (maybe it was mislabeled?)
+
+            // Let's rely on the fact that if a user previously paid for AI, it SHOULD be in R2.
+            // We can check the languages in `nativeLanguages` (from earlier) - if any of them exist in R2 with source='ai', return that.
+
+            for (const existingLang of nativeLanguages) {
+                if (existingLang === lang) continue; // We already tried this and failed (or it's the requested one)
+
+                const fallbackCached = await getTranscriptFromR2(r2, videoId, existingLang);
+                if (fallbackCached?.segments?.length > 0 && fallbackCached.source === 'ai') {
+                    log(`Found existing AI transcript in ${existingLang}, returning as fallback for ${lang}`);
+                    return jsonResponse({
+                        success: true,
+                        videoId,
+                        language: existingLang,
+                        requestedLanguage: lang,
+                        segments: fallbackCached.segments,
+                        source: 'cache',
+                        sourceDetail: `fallback:ai:${fallbackCached.source}`,
+                        availableLanguages,
+                        whisperAvailable: true, // It is available (we have one)
+                        ...diamondInfo, // Don't charge
+                        warning: `Requested '${lang}' not available natively. Found existing AI transcript in '${existingLang}'.`,
+                        timing: elapsed()
+                    }, 200, { 'X-Cache': 'HIT:FALLBACK_AI' });
+                }
+            }
+
             return jsonResponse({
                 success: false,
                 videoId,

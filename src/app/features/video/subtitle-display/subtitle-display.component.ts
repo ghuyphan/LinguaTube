@@ -33,7 +33,19 @@ export class SubtitleDisplayComponent {
   grammar = inject(GrammarService);
   translation = inject(TranslationService);
 
-  readonly whisperAvailable = this.transcript.whisperAvailable;
+  readonly whisperAvailable = computed(() => {
+    const error = this.transcript.error();
+    const availableAI = this.transcript.availableLanguages().ai;
+
+    // If we have a NO_NATIVE error but we know there are AI transcripts available (in other languages),
+    // hide the button to prevent users from accidentally spending diamonds when they could switch languages.
+    if (error === 'NO_NATIVE' && availableAI.length > 0) {
+      return false;
+    }
+
+    return this.transcript.whisperAvailable();
+  });
+
   readonly isGeneratingAI = this.transcript.isGeneratingAI;
 
   @ViewChild('subtitleList') subtitleList!: ElementRef<HTMLDivElement>;
@@ -90,10 +102,21 @@ export class SubtitleDisplayComponent {
 
   // Compute effective language (prioritize detected video language over user setting)
   effectiveLanguage = computed(() => {
+    // 1. If subtitles are actively loaded, trust that language first
+    const loadedLang = this.subtitles.loadedLanguage();
+    if (loadedLang) {
+      return loadedLang;
+    }
+
+    // 2. Fallback to transcript detected language (from API response)
     const detected = this.transcript.detectedLanguage()?.split('-')[0]?.toLowerCase();
+
+    // 3. Last resort: user setting
     const userLang = this.settings.settings().language;
     const validLangs = ['ja', 'zh', 'ko', 'en'];
-    return (detected && validLangs.includes(detected)) ? detected : userLang;
+
+    if (detected && validLangs.includes(detected)) return detected;
+    return userLang;
   });
 
   // Computed signal for reading display

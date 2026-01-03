@@ -124,12 +124,12 @@ export class VideoPlayerComponent implements OnDestroy {
   fullscreenTokens = computed(() => {
     const cue = this.subtitles.currentCue();
     if (!cue) return [];
-    const lang = this.settings.settings().language;
+    const lang = this.subtitles.loadedLanguage();
     return this.subtitles.getTokens(cue, lang);
   });
 
   showFsReading = computed(() => {
-    const lang = this.settings.settings().language;
+    const lang = this.subtitles.loadedLanguage();
     return lang === 'ja'
       ? this.settings.settings().showFurigana
       : this.settings.settings().showPinyin;
@@ -146,7 +146,7 @@ export class VideoPlayerComponent implements OnDestroy {
   fsGrammarMatches = computed(() => {
     const tokens = this.fullscreenTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
-    const lang = this.settings.settings().language;
+    const lang = this.subtitles.loadedLanguage();
     if (lang === 'en') return [];
     return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
   });
