@@ -79,6 +79,9 @@ export class VideoPlayerComponent implements OnDestroy {
   isVolumeSliderVisible = signal(false);
   isSpeedMenuOpen = signal(false);
   volume = signal(100);
+  volumePercent = computed(() => {
+    return this.youtube.isMuted() ? 0 : this.volume();
+  });
   currentSpeed = signal<PlaybackSpeed>(1);
 
   // Seeking State

@@ -31,6 +31,7 @@ export class YoutubeService {
   readonly error = signal<string | null>(null);
   readonly pendingVideoId = signal<string | null>(null);
   readonly intendedPlayingState = signal(false);
+  readonly isMuted = signal(false);
 
   /** Emits when a video is successfully loaded (for history tracking) */
   readonly videoLoaded = new Subject<VideoInfo>();
@@ -264,6 +265,9 @@ export class YoutubeService {
                 this.pause();
               }
 
+              // Update initial mute state
+              this.isMuted.set(this.player?.isMuted() || false);
+
               resolve();
             },
             onStateChange: (event: any) => {
@@ -426,6 +430,9 @@ export class YoutubeService {
   setVolume(volume: number): void {
     try {
       this.player?.setVolume(Math.max(0, Math.min(100, volume)));
+      if (volume > 0 && this.isMuted()) {
+        this.unmute();
+      }
     } catch (e) { }
   }
 
@@ -440,22 +447,18 @@ export class YoutubeService {
   mute(): void {
     try {
       this.player?.mute();
+      this.isMuted.set(true);
     } catch (e) { }
   }
 
   unmute(): void {
     try {
       this.player?.unMute();
+      this.isMuted.set(false);
     } catch (e) { }
   }
 
-  isMuted(): boolean {
-    try {
-      return this.player?.isMuted() || false;
-    } catch (e) {
-      return false;
-    }
-  }
+
 
   destroy(): void {
     if (this.timeUpdateInterval) {
