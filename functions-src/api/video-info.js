@@ -46,8 +46,12 @@ export async function onRequestGet(context) {
         }
 
         // Step 2: Check D1 (persistent storage)
+        // Step 2: Check D1 (persistent storage)
         const d1Result = await getVideoLanguages(db, videoId);
-        if (d1Result) {
+
+        // Only return if we have valid metadata (title). 
+        // If innertube.js created the row first, title might be NULL.
+        if (d1Result && d1Result.title) {
             const result = {
                 videoId,
                 title: d1Result.title,
@@ -85,10 +89,14 @@ export async function onRequestGet(context) {
         };
 
         // Save to both D1 and KV
-        // Note: We save empty languages [] initially. Actual languages are added incrementally 
-        // by innertube.js as they are discovered/fetched.
+        // Note: We save empty languages [] initially OR preserve existing ones.
+        // Actual languages are added incrementally by innertube.js as they are discovered/fetched.
+
+        // PRESERVE existing languages if the row already exists (but had missing metadata)
+        const existingLangs = d1Result?.availableLanguages || [];
+
         await Promise.allSettled([
-            saveVideoLanguages(db, videoId, [], null, metadata.title, metadata.author_name, false),
+            saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false),
             saveVideoInfoToKV(kv, videoId, result)
         ]);
 
