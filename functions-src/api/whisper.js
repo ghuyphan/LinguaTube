@@ -21,7 +21,6 @@ import {
     savePendingJob,
     getPendingJob,
     deletePendingJob,
-    recordTranscript,
     cleanupStaleJobs
 } from '../_shared/transcript-db.js';
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
@@ -34,7 +33,7 @@ import {
 } from '../_shared/rate-limiter.js';
 import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
 import { validateVideoRequest, getVideoMetadata } from '../_shared/video-validator.js';
-import { getVideoDuration, saveVideoLanguages } from '../_shared/video-info-db.js';
+import { getVideoDuration, saveVideoLanguages, addVideoLanguage } from '../_shared/video-info-db.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -106,10 +105,11 @@ export async function onRequestPost(context) {
                 return jsonResponse(validation, 400);
             }
 
-            // 1. Check R2 for completed AI transcript (single source of truth for content)
+            // 1. Check R2 for ANY existing transcript (YouTube, Supadata, or AI)
+            // If we already have a transcript, don't waste money on Gladia
             const r2Result = await getTranscriptFromR2(r2, videoId, lang);
-            if (r2Result?.segments?.length > 0 && r2Result.source === 'ai') {
-                log('R2 hit for AI transcript:', videoId);
+            if (r2Result?.segments?.length > 0) {
+                log('R2 hit for transcript (skipping AI generation):', videoId);
                 return jsonResponse({
                     success: true,
                     language: r2Result.language || 'unknown',
@@ -225,8 +225,8 @@ export async function onRequestPost(context) {
                         Promise.allSettled([
                             // Content to R2
                             saveTranscriptToR2(r2, videoId, detectedLang, segments, 'ai'),
-                            // Metadata to D1
-                            recordTranscript(db, videoId, detectedLang, 'ai'),
+                            // Update video_languages in D1 (rePLACES recordTranscript)
+                            addVideoLanguage(db, videoId, detectedLang),
                             // Clear pending job
                             deletePendingJob(db, videoId)
                         ]).catch(() => { });

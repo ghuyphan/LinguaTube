@@ -80,6 +80,49 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
 }
 
 /**
+ * Add a single language to available languages (incremental)
+ * @param {D1Database} db
+ * @param {string} videoId
+ * @param {string} lang
+ */
+export async function addVideoLanguage(db, videoId, lang) {
+    return addVideoLanguages(db, videoId, [lang]);
+}
+
+/**
+ * Add multiple languages to available languages (merge)
+ * @param {D1Database} db
+ * @param {string} videoId
+ * @param {string[]} languages
+ */
+export async function addVideoLanguages(db, videoId, languages) {
+    if (!db || !videoId || !languages?.length) return;
+
+    try {
+        const existing = await getVideoLanguages(db, videoId);
+        const existingLangs = existing?.availableLanguages || [];
+
+        // Merge and deduplicate
+        const merged = [...new Set([...existingLangs, ...languages])];
+
+        // Only save if we actually added something
+        if (merged.length > existingLangs.length) {
+            await saveVideoLanguages(
+                db,
+                videoId,
+                merged,
+                existing?.durationSeconds,
+                existing?.title,
+                existing?.channel,
+                existing?.hasAutoCaptions
+            );
+        }
+    } catch (err) {
+        console.error('[VideoInfoDB] addVideoLanguages error:', err.message);
+    }
+}
+
+/**
  * Get video duration from D1 (for server-side validation)
  * @param {D1Database} db
  * @param {string} videoId

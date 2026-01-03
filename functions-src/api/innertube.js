@@ -18,7 +18,6 @@ import {
     verifyLanguage
 } from '../_shared/utils.js';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
-import { recordTranscript, getAvailableLanguages } from '../_shared/transcript-db.js';
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
 import {
     consumeRateLimit,
@@ -34,6 +33,8 @@ import {
     markNoTranscript,
     saveVideoLanguages,
     getVideoLanguages,
+    addVideoLanguage,
+    addVideoLanguages,
     cleanupOldNoTranscriptEntries
 } from '../_shared/video-info-db.js';
 import { getSubtitles } from 'youtube-caption-extractor';
@@ -240,8 +241,9 @@ export async function onRequestPost(context) {
         // =====================================================================
         if (!result && env.SUPADATA_API_KEY) {
             // Check D1 metadata for known available languages
-            const availableLangs = await getAvailableLanguages(db, videoId);
-            const knownLangs = availableLangs?.map(l => l.language) || [];
+            // Note: We use getVideoLanguages (video_languages table) which is the source of truth
+            const d1Result = await getVideoLanguages(db, videoId);
+            const knownLangs = d1Result?.availableLanguages || [];
 
             if (knownLangs.length > 0 && !knownLangs.includes(primaryLang)) {
                 // We KNOW this language doesn't exist - skip Supadata to save credits
@@ -382,78 +384,17 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
             .catch(e => log(`R2 save error: ${e.message}`))
             : Promise.resolve(),
 
-        // Metadata to D1 (for queries/analytics)
-        db ? recordTranscript(db, videoId, actualLang, source)
-            .then(() => log(`D1 metadata recorded: ${videoId} ${actualLang}`))
-            .catch(e => log(`D1 metadata error: ${e.message}`))
-            : Promise.resolve(),
+        // Note: recordTranscript (video_meta) is removed as it used a broken table schema
+        // and addKnownLanguage (video_languages) handles the tracking requirements.
 
         // Add this language to known languages (incremental)
-        db ? addKnownLanguage(db, videoId, actualLang)
+        db ? addVideoLanguage(db, videoId, actualLang)
             .then(() => log(`Known language added: ${videoId} ${actualLang}`))
-            .catch(e => log(`addKnownLanguage error: ${e.message}`))
+            .catch(e => log(`addVideoLanguage error: ${e.message}`))
             : Promise.resolve()
     ]);
 }
 
-/**
- * Add a single language to known languages (incremental)
- * Called when a transcript is successfully fetched
- */
-async function addKnownLanguage(db, videoId, lang) {
-    if (!db || !videoId || !lang) return;
-
-    try {
-        const existing = await getVideoLanguages(db, videoId);
-        const existingLangs = existing?.availableLanguages || [];
-
-        if (!existingLangs.includes(lang)) {
-            const merged = [...existingLangs, lang];
-            await saveVideoLanguages(
-                db,
-                videoId,
-                merged,
-                existing?.durationSeconds,
-                existing?.title,
-                existing?.channel,
-                existing?.hasAutoCaptions
-            );
-            log(`addKnownLanguage: ${videoId} now has [${merged.join(',')}]`);
-        }
-    } catch (err) {
-        log(`addKnownLanguage error: ${err.message}`);
-    }
-}
-
-/**
- * Save all available languages at once (for Supadata which returns full list)
- */
-async function saveAllKnownLanguages(db, videoId, languages) {
-    if (!db || !videoId || !languages?.length) return;
-
-    try {
-        const existing = await getVideoLanguages(db, videoId);
-        const existingLangs = existing?.availableLanguages || [];
-
-        // Merge existing with new languages
-        const merged = [...new Set([...existingLangs, ...languages])];
-
-        if (merged.length > existingLangs.length) {
-            await saveVideoLanguages(
-                db,
-                videoId,
-                merged,
-                existing?.durationSeconds,
-                existing?.title,
-                existing?.channel,
-                existing?.hasAutoCaptions
-            );
-            log(`saveAllKnownLanguages: ${videoId} now has [${merged.join(',')}]`);
-        }
-    } catch (err) {
-        log(`saveAllKnownLanguages error: ${err.message}`);
-    }
-}
 
 // ============================================================================
 // Free Strategies (Primary Language Only)
@@ -741,7 +682,7 @@ async function trySupadata(videoId, langs, apiKey, cache, db) {
         // Save all available languages from Supadata response (non-blocking)
         if (data.availableLangs?.length > 0) {
             log(`Supadata: Found ${data.availableLangs.length} available languages: ${data.availableLangs.join(',')}`);
-            saveAllKnownLanguages(db, videoId, data.availableLangs).catch(() => { });
+            addVideoLanguages(db, videoId, data.availableLangs).catch(() => { });
         }
 
         await clearSupadataLock(cache, videoId, requestId);
