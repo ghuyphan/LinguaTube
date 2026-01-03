@@ -1,6 +1,5 @@
 .quick-view {
     padding: var(--space-md);
-    padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
     max-height: 60vh;
 }
 

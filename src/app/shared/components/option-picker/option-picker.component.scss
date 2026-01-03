@@ -1,12 +1,9 @@
 .option-picker {
     padding: var(--space-sm) 0;
-    // Add bottom padding for bottom nav on mobile
-    padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom, 0));
 }
 
 .option-picker__header {
-    padding: var(--space-sm) var(--space-lg);
-    padding-right: calc(var(--space-lg) + 2.5rem); // Space for close button
+    padding: var(--space-sm) calc(var(--space-lg) + 2.5rem); // Equal padding for centered title
     margin-bottom: var(--space-xs);
     text-align: center;
 

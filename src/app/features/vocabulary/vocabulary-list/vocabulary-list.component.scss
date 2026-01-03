@@ -251,7 +251,6 @@
 // ============================================
 .menu-sheet {
     padding: var(--space-md);
-    padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
 }
 
 .menu-sheet__title {

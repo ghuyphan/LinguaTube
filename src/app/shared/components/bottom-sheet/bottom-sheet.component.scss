@@ -80,6 +80,8 @@
     border-radius: var(--space-md) var(--space-md) 0 0;
     animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
     touch-action: none;
+    // Extend sheet into nav bar area so it covers the nav when open
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
 }
 
 .sheet:not(.desktop-modal).closing {
@@ -187,9 +189,9 @@
     }
 }
 
-// Safe area padding for mobile - sheet overlays nav bar (z-index 1100 > 1000)
+// Safe area padding for mobile - minimal base padding, components add more as needed
 .sheet:not(.desktop-modal) .sheet-content {
-    padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 // ============================================
