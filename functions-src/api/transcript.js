@@ -5,8 +5,9 @@
  * - Native caption fetching (via Supadata or free scraper)
  * - AI transcription (via Gladia)
  * - Caching (R2 content + D1 metadata with source tracking)
+ * - Negative caching to prevent repeated failures
  * 
- * @version 1.0.0 - Unified endpoint replacing innertube.js and whisper.js
+ * @version 1.1.0 - Added negative caching for native caption failures
  */
 
 import {
@@ -20,7 +21,14 @@ import {
 import { getValidSubtitles } from 'youtube-caption-extractor';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../_shared/transcript-r2.js';
-import { savePendingJob, getPendingJob, deletePendingJob, cleanupStaleJobs, recordTranscript, getAvailableLanguages } from '../_shared/transcript-db.js';
+import {
+    savePendingJob,
+    getPendingJob,
+    deletePendingJob,
+    cleanupStaleJobs,
+    recordTranscript,
+    getAvailableLanguages
+} from '../_shared/transcript-db.js';
 import {
     consumeRateLimit,
     getClientIP,
@@ -35,6 +43,8 @@ import {
     addVideoLanguage,
     addVideoLanguages,
     getVideoDuration,
+    isNoTranscript,
+    markNoTranscript,
 } from '../_shared/video-info-db.js';
 
 // ============================================================================
@@ -306,7 +316,26 @@ export async function onRequestPost(context) {
         // Step 2: Try Native Captions (unless preferAI)
         // =====================================================================
         if (!preferAI) {
-            // Check if we KNOW this language doesn't exist natively
+            // Check negative cache first - skip scraping if we already know there's no native caption
+            const knownNoNative = await isNoTranscript(db, cache, videoId, lang, 'native');
+            if (knownNoNative) {
+                log(`Negative cache hit: ${videoId}:${lang} - known no native captions`);
+                return jsonResponse({
+                    success: false,
+                    videoId,
+                    requestedLanguage: lang,
+                    segments: [],
+                    source: 'none',
+                    availableLanguages,
+                    whisperAvailable: diamondStatus.diamonds > 0,
+                    ...diamondInfo,
+                    errorCode: 'NO_NATIVE',
+                    error: 'No native captions found. AI transcription available.',
+                    timing: elapsed()
+                }, 200, { 'X-Cache': 'NEG' });
+            }
+
+            // Check if we KNOW this language doesn't exist natively (from D1 metadata)
             const hasKnownMetadata = nativeLanguages.length > 0;
             const langAvailableNatively = nativeLanguages.includes(lang);
 
@@ -393,22 +422,29 @@ export async function onRequestPost(context) {
                 }, 200, { 'X-Cache': 'MISS' });
             }
 
-            // Native failed, suggest AI
-            if (!preferAI) {
-                return jsonResponse({
-                    success: false,
-                    videoId,
-                    requestedLanguage: lang,
-                    segments: [],
-                    source: 'none',
-                    availableLanguages,
-                    whisperAvailable: diamondStatus.diamonds > 0,
-                    ...diamondInfo,
-                    errorCode: 'NO_NATIVE',
-                    error: 'No native captions found. AI transcription available.',
-                    timing: elapsed()
-                });
+            // Native failed - cache the failure to prevent repeated scraping attempts
+            const markNegativeCache = markNoTranscript(db, cache, videoId, lang, 'native');
+            if (waitUntil) {
+                waitUntil(markNegativeCache);
+            } else {
+                await markNegativeCache;
             }
+
+            log(`Marked negative cache: ${videoId}:${lang} - no native captions`);
+
+            return jsonResponse({
+                success: false,
+                videoId,
+                requestedLanguage: lang,
+                segments: [],
+                source: 'none',
+                availableLanguages,
+                whisperAvailable: diamondStatus.diamonds > 0,
+                ...diamondInfo,
+                errorCode: 'NO_NATIVE',
+                error: 'No native captions found. AI transcription available.',
+                timing: elapsed()
+            });
         }
 
         // =====================================================================
@@ -435,7 +471,6 @@ export async function onRequestPost(context) {
         return await startGladiaJob(context, {
             videoId, lang, r2, db, cache, body, authResult, clientId, tier, elapsed, availableLanguages, diamondInfo
         });
-
 
     } catch (error) {
         console.error('[Transcript] Fatal:', error);
@@ -670,7 +705,7 @@ async function startGladiaJob(context, { videoId, lang, r2, db, cache, body, aut
             source: 'cache',
             sourceDetail: 'ai',
             availableLanguages,
-            whisperAvailable: diamondInfo.diamonds > 0,
+            whisperAvailable: true,
             ...diamondInfo,
             timing: elapsed()
         }, 200, { 'X-Cache': 'HIT:AI' });
@@ -873,6 +908,7 @@ async function pollGladiaJob(context, { videoId, lang, resultUrl, r2, db, cache,
         resultUrl,
         availableLanguages,
         whisperAvailable: true,
+        ...diamondInfo,
         timing: elapsed()
     });
 }
