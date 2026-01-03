@@ -359,12 +359,10 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
 
     const actualLang = track.languageCode;
 
-    // Extract ALL available languages from tracks (not just the one we fetched)
-    const allAvailableLangs = tracks
-        ?.filter(t => t.languageCode)
-        ?.map(t => t.languageCode) || [actualLang];
+    log(`saveToCache: r2=${!!r2}, db=${!!db}, lang=${actualLang}, segments=${track.content.length}`);
 
-    log(`saveToCache: r2=${!!r2}, db=${!!db}, lang=${actualLang}, allLangs=[${allAvailableLangs}], segments=${track.content.length}`);
+    // Try to get all available languages from video (async, non-blocking)
+    const allLanguagesPromise = getAllAvailableLanguages(videoId, actualLang);
 
     await Promise.allSettled([
         // Content to R2 (primary storage)
@@ -379,12 +377,47 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
             .catch(e => log(`D1 metadata error: ${e.message}`))
             : Promise.resolve(),
 
-        // Update video_languages with ALL available languages (not just fetched one)
-        db ? updateVideoLanguagesFromTracks(db, videoId, allAvailableLangs)
-            .then(() => log(`video_languages updated: ${videoId} langs=[${allAvailableLangs}]`))
+        // Update video_languages with all available languages
+        db ? allLanguagesPromise
+            .then(langs => updateVideoLanguagesFromTracks(db, videoId, langs))
+            .then(() => log(`video_languages updated for ${videoId}`))
             .catch(e => log(`video_languages error: ${e.message}`))
             : Promise.resolve()
     ]);
+}
+
+/**
+ * Get all available caption languages for a video
+ * Uses youtube-caption-extractor's getSubtitles with empty lang to get list
+ */
+async function getAllAvailableLanguages(videoId, knownLang) {
+    try {
+        // Try to get video info with caption list
+        // youtube-caption-extractor can return available languages
+        const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`);
+        if (!response.ok) return [knownLang];
+
+        const html = await response.text();
+
+        // Extract captionTracks from ytInitialPlayerResponse
+        const match = html.match(/"captionTracks":\s*(\[[^\]]+\])/);
+        if (!match) return [knownLang];
+
+        const captionTracks = JSON.parse(match[1]);
+        const languages = captionTracks
+            .map(t => t.languageCode)
+            .filter(Boolean);
+
+        if (languages.length > 0) {
+            log(`Found ${languages.length} available languages: ${languages.join(',')}`);
+            return languages;
+        }
+    } catch (e) {
+        log(`getAllAvailableLanguages failed: ${e.message}`);
+    }
+
+    // Fallback to just the known language
+    return [knownLang];
 }
 
 /**
