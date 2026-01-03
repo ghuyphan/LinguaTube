@@ -8,8 +8,10 @@ import {
     consumeRateLimit,
     getClientIP,
     rateLimitResponse,
-    getRateLimitHeaders
+    getRateLimitHeaders,
+    getTieredConfig
 } from '../../_shared/rate-limiter.js';
+import { validateAuthToken, hasPremiumAccess } from '../../_shared/auth.js';
 import {
     jsonResponse,
     handleOptions,
@@ -20,7 +22,12 @@ import {
 import { tokenize } from '../../_shared/tokenizer.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
-const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
+// Tiered rate limiting - anonymous: 50/hr, free: 100/hr, premium: 1000/hr (effectively unlimited)
+const RATE_LIMIT_CONFIG = {
+    max: { anonymous: 50, free: 100, pro: 1000, premium: 1000 },
+    windowSeconds: 3600,
+    keyPrefix: 'tokenize'
+};
 const MAX_BATCH_SIZE = 500;
 
 /**
@@ -49,8 +56,15 @@ export async function onRequest(context) {
     }
 
     // Rate limiting (Atomic)
+    // Get user tier for rate limiting (optional auth)
+    const authResult = await validateAuthToken(request, env);
+    const tier = authResult.valid
+        ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+        : 'anonymous';
+    const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
     const clientIP = getClientIP(request);
-    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientIP, rateLimitConfig);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }

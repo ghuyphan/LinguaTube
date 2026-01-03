@@ -126,7 +126,7 @@ export class AuthService {
     async register(email: string, password: string, name?: string): Promise<UserProfile> {
         try {
             const client = await this.pb.getClient();
-            // Create the user with premium subscription tier by default
+            // Create the user (subscription tier defaults to 'premium' in PocketBase)
             await client.collection('users').create({
                 email,
                 password,

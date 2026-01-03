@@ -29,8 +29,10 @@ import {
     consumeRateLimit,
     getClientIP,
     rateLimitResponse,
-    getRateLimitHeaders
+    getRateLimitHeaders,
+    getTieredConfig
 } from '../_shared/rate-limiter.js';
+import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
 import { validateVideoRequest } from '../_shared/video-validator.js';
 
 const DEBUG = false;
@@ -49,8 +51,12 @@ export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
 }
 
-// Rate limiting configuration - 10 AI transcriptions per hour
-const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 3600, keyPrefix: 'whisper' };
+// Tiered rate limiting - anonymous: 2/hr, free: 5/hr, premium: 30/hr
+const RATE_LIMIT_CONFIG = {
+    max: { anonymous: 2, free: 5, pro: 30, premium: 30 },
+    windowSeconds: 3600,
+    keyPrefix: 'whisper'
+};
 
 export async function onRequestPost(context) {
     const { request, env } = context;
@@ -108,9 +114,16 @@ export async function onRequestPost(context) {
 
             // Only submit new job if we didn't find a pending one
             if (!resultUrl) {
+                // Get user tier for rate limiting (optional auth)
+                const authResult = await validateAuthToken(request, env);
+                const tier = authResult.valid
+                    ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+                    : 'anonymous';
+                const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
                 // Rate limit (Atomic check and consume)
                 const clientIP = getClientIP(request);
-                const rateCheck = await consumeRateLimit(cache, clientIP, RATE_LIMIT_CONFIG);
+                const rateCheck = await consumeRateLimit(cache, clientIP, rateLimitConfig);
                 if (!rateCheck.allowed) {
                     return rateLimitResponse(rateCheck.resetAt);
                 }

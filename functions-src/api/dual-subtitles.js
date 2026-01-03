@@ -9,12 +9,19 @@ import {
     consumeRateLimit,
     getClientIP,
     rateLimitResponse,
-    getRateLimitHeaders
+    getRateLimitHeaders,
+    getTieredConfig
 } from '../_shared/rate-limiter.js';
+import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
 import { translateBatch } from '../_shared/lingva.js';
 import { getTranslation, saveTranslation } from '../_shared/translation-cache.js';
 
-const RATE_LIMIT_CONFIG = { max: 20, windowSeconds: 3600, keyPrefix: 'dual-subs' };
+// Tiered rate limiting - anonymous: 5/hr, free: 10/hr, premium: 50/hr
+const RATE_LIMIT_CONFIG = {
+    max: { anonymous: 5, free: 10, pro: 50, premium: 50 },
+    windowSeconds: 3600,
+    keyPrefix: 'dual-subs'
+};
 // Reduced batch size to avoid hitting 429s on Lingva instances
 const BATCH_SIZE = 5;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
@@ -50,8 +57,15 @@ export async function onRequestPost(context) {
         }
 
         // 2. Rate Limit (only on cache miss - actual translation work)
+        // Get user tier for rate limiting (optional auth)
+        const authResult = await validateAuthToken(request, env);
+        const tier = authResult.valid
+            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+            : 'anonymous';
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
         const clientIP = getClientIP(request);
-        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, rateLimitConfig);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

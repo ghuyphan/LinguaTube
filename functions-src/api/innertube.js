@@ -24,8 +24,10 @@ import {
     consumeRateLimit,
     getClientIP,
     rateLimitResponse,
-    getRateLimitHeaders
+    getRateLimitHeaders,
+    getTieredConfig
 } from '../_shared/rate-limiter.js';
+import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
 import { validateVideoRequest } from '../_shared/video-validator.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
@@ -42,8 +44,12 @@ const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 const STRATEGY_TIMEOUT_MS = 5000; // 5s max per free strategy
 const SUPADATA_TIMEOUT_MS = 10000; // 10s for Supadata
 
-// Rate limiting configuration
-const RATE_LIMIT_CONFIG = { max: 30, windowSeconds: 3600, keyPrefix: 'innertube' };
+// Rate limiting configuration - anonymous: 20/hr, free: 30/hr, premium: 60/hr
+const RATE_LIMIT_CONFIG = {
+    max: { anonymous: 20, free: 30, pro: 60, premium: 60 },
+    windowSeconds: 3600,
+    keyPrefix: 'innertube'
+};
 
 // Supadata configuration
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
@@ -80,8 +86,15 @@ export async function onRequestPost(context) {
     const elapsed = timer();
 
     // Rate limiting (Atomic check and consume)
+    // Get user tier for rate limiting (optional auth)
+    const authResult = await validateAuthToken(request, env);
+    const tier = authResult.valid
+        ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+        : 'anonymous';
+    const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
     const clientIP = getClientIP(request);
-    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, rateLimitConfig);
     if (!rateCheck.allowed) {
         log(`Rate limited: ${clientIP}`);
         return rateLimitResponse(rateCheck.resetAt);

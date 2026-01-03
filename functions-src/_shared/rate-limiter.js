@@ -78,6 +78,28 @@ export function getRateLimitHeaders(remaining, resetAt) {
 }
 
 /**
+ * Get rate limit config based on user subscription tier
+ * Supports tiered rate limits where max is an object with tier keys
+ * 
+ * @param {Object} baseConfig - Rate limit config with max as object of tier limits
+ * @param {string|null} tier - User subscription tier ('free', 'pro', 'premium', or null for anonymous)
+ * @returns {RateLimitConfig} Config with max as a number for the given tier
+ */
+export function getTieredConfig(baseConfig, tier) {
+    // If max is already a number, return as-is (backwards compatible)
+    if (typeof baseConfig.max === 'number') {
+        return baseConfig;
+    }
+
+    // Get tier-specific limit, fallback to anonymous, then to 10
+    const tierMax = baseConfig.max[tier] || baseConfig.max.anonymous || 10;
+    return {
+        ...baseConfig,
+        max: tierMax
+    };
+}
+
+/**
  * Get client IP from request headers
  */
 export function getClientIP(request) {
