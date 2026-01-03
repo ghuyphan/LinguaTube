@@ -221,7 +221,7 @@ type FilterType = 'all' | 'favorites';
       align-items: center;
       gap: var(--space-sm);
       padding: var(--space-sm) var(--space-md);
-      border-bottom: 1px solid var(--border-color);
+      // border-bottom: 1px solid var(--border-color);
     }
 
     .filter-chip {
