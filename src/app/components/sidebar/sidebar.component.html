@@ -83,6 +83,17 @@
             </div>
             }
         </div>
+
+        <!-- Diamond Credits Card -->
+        <div class="diamond-card" [attr.title]="i18n.t('subtitle.diamondsRegenerate')">
+            <div class="diamond-icon-wrapper">
+                <app-icon name="diamond" [size]="18" class="diamond-icon" />
+            </div>
+            <div class="diamond-info">
+                <span class="diamond-count">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
+                <span class="diamond-label">AI Credits</span>
+            </div>
+        </div>
     </div>
     }
 

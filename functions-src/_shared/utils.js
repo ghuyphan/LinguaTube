@@ -113,12 +113,13 @@ export function sanitizeVideoId(id) {
 }
 
 /**
- * Validate and sanitize language code
+ * Validate and sanitize language code for learning
+ * Only Japanese, Chinese, Korean, and English are supported for learning
  * @param {string} lang - Language code
- * @param {string[]} allowed - Allowed language codes
+ * @param {string[]} allowed - Allowed language codes (default: learning languages only)
  * @returns {string|null} - Valid language or null
  */
-export function sanitizeLanguage(lang, allowed = ['ja', 'zh', 'ko', 'en', 'vi']) {
+export function sanitizeLanguage(lang, allowed = ['ja', 'zh', 'ko', 'en']) {
     if (!lang || typeof lang !== 'string') return null;
     const cleaned = lang.toLowerCase().trim().slice(0, 5);
     return allowed.includes(cleaned) ? cleaned : null;

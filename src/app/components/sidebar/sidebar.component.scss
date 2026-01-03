@@ -485,6 +485,55 @@
     color: var(--text-muted);
 }
 
+/* Diamond Card */
+.diamond-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-surface);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-top: var(--space-sm);
+    cursor: default;
+    transition: background-color 0.2s ease;
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+        }
+    }
+}
+
+.diamond-icon-wrapper {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(96, 165, 250, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.diamond-info {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.diamond-count {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.diamond-label {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+}
+
 
 
 // 1. Idle Animation (Slow, subtle breathing)

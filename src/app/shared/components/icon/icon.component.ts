@@ -17,7 +17,7 @@ export type IconName =
     | 'user' | 'google' | 'log-in'
     | 'clock' | 'heart' | 'heart-filled' | 'cloud'
     // Gamification & cute icons
-    | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift'
+    | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical';
 
 @Component({

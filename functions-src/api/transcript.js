@@ -220,6 +220,15 @@ export async function onRequestPost(context) {
             }, 400);
         }
 
+        // Only Japanese, Chinese, Korean, and English are supported for learning
+        if (!lang) {
+            return jsonResponse({
+                success: false,
+                error: 'Unsupported language. Only Japanese, Chinese, Korean, and English are supported.',
+                errorCode: 'UNSUPPORTED_LANGUAGE'
+            }, 400);
+        }
+
         const r2 = env.TRANSCRIPT_STORAGE;
         const cache = env.TRANSCRIPT_CACHE;
         const db = env.VOCAB_DB;
