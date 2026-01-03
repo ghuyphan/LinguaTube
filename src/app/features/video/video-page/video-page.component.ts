@@ -1,10 +1,11 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
 import { SubtitleDisplayComponent } from '../subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
+import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../../services';
 import { Token } from '../../../models';
 
@@ -18,6 +19,7 @@ import { Token } from '../../../models';
     SubtitleDisplayComponent,
     VocabularyListComponent,
     WordPopupComponent,
+    ConfirmDialogComponent,
   ],
   template: `
     <div class="layout">
@@ -38,6 +40,19 @@ import { Token } from '../../../models';
         <app-vocabulary-list />
       </aside>
     </div>
+
+    <!-- Language Mismatch Alert -->
+    <app-confirm-dialog
+      [isOpen]="showLanguageMismatchDialog()" 
+      [title]="i18n.t('subtitle.languageMismatch')"
+      [message]="languageMismatchMessage()"
+      [confirmText]="i18n.t('subtitle.switchLanguage').replace('{{language}}', i18n.t('settings.chinese'))"
+      [cancelText]="i18n.t('subtitle.dismiss')" 
+      variant="default" 
+      icon="alert-circle" 
+      (confirmed)="onMismatchConfirm()"
+      (cancelled)="onMismatchCancel()">
+    </app-confirm-dialog>
 
     <!-- Word popup -->
     @defer (when selectedWord()) {
@@ -120,6 +135,15 @@ export class VideoPageComponent implements OnInit {
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
   isVideoFullscreen = signal(false);
+
+  // Language Mismatch Alert
+  readonly showLanguageMismatchDialog = signal(false);
+
+  readonly languageMismatchMessage = computed(() => {
+    return this.i18n.t('subtitle.languageMismatchMessage')
+      .replace('{{requested}}', this.i18n.t('settings.japanese'))
+      .replace('{{detected}}', this.i18n.t('settings.chinese'));
+  });
 
   private lastLang = '';
   private wasPlayingBeforeWordLookup = false;
@@ -272,11 +296,27 @@ export class VideoPageComponent implements OnInit {
       const targetLang = detected as 'ja' | 'zh' | 'ko' | 'en';
       this.subtitles.setLanguageState(targetLang, requestedLang as 'ja' | 'zh' | 'ko' | 'en');
       this.subtitles.tokenizeAllCues(targetLang);
+
+      // Check for mismatch: Japanese requested but Chinese detected
+      // Show dialog to offer switch
+      if (requestedLang === 'ja' && targetLang === 'zh') {
+        this.showLanguageMismatchDialog.set(true);
+      }
     } else {
       const lang = requestedLang as 'ja' | 'zh' | 'ko' | 'en';
       this.subtitles.setLanguageState(lang, lang);
       this.subtitles.tokenizeAllCues(lang);
     }
+  }
+
+  onMismatchConfirm() {
+    // Switch to Chinese
+    this.settings.setLanguage('zh');
+    this.showLanguageMismatchDialog.set(false);
+  }
+
+  onMismatchCancel() {
+    this.showLanguageMismatchDialog.set(false);
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {

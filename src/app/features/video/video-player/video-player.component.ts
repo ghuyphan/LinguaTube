@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
-import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
+
 import {
   YoutubeService,
   SubtitleService,
@@ -50,7 +50,7 @@ interface SeekPreview {
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, ConfirmDialogComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
@@ -99,17 +99,7 @@ export class VideoPlayerComponent implements OnDestroy {
   fsLookupLoading = signal(false);
   fsWordSaved = signal(false);
 
-  // Language Mismatch Alert
-  readonly showLanguageMismatch = signal(false);
-  private lastCheckedVideoId = signal<string | null>(null);
 
-  readonly showLanguageMismatchDialog = computed(() => this.showLanguageMismatch());
-
-  readonly languageMismatchMessage = computed(() => {
-    return this.i18n.t('subtitle.languageMismatchMessage')
-      .replace('{{requested}}', this.i18n.t('settings.japanese'))
-      .replace('{{detected}}', this.i18n.t('settings.chinese'));
-  });
 
   // Playback speeds
 
@@ -322,40 +312,7 @@ export class VideoPlayerComponent implements OnDestroy {
       setTimeout(() => this.stateTransition.set('none'), 350);
     });
 
-    // Language Mismatch Detection
-    effect(() => {
-      const video = this.youtube.currentVideo();
-      const learningLang = this.settings.settings().language;
-      const videoLang = this.subtitles.loadedLanguage();
 
-      if (!video) {
-        // Reset when video cleared
-        this.lastCheckedVideoId.set(null);
-        this.showLanguageMismatch.set(false);
-        return;
-      }
-
-      // Only run if we haven't checked this video yet
-      if (this.lastCheckedVideoId() === video.id) {
-        return;
-      }
-
-      // Check for specific mismatch: Japanese learning language but Chinese video
-      // This allows the user to switch their learning language to Chinese
-      if (learningLang === 'ja' && videoLang === 'zh') {
-        // Use untracked to avoid triggering effect loops
-        untracked(() => {
-          this.showLanguageMismatch.set(true);
-          this.lastCheckedVideoId.set(video.id);
-        });
-      } else if (learningLang === videoLang) {
-        // If languages match (e.g. user updated setting), ensure alert is closed
-        untracked(() => {
-          this.showLanguageMismatch.set(false);
-          this.lastCheckedVideoId.set(video.id);
-        });
-      }
-    });
   }
 
   // ============================================
@@ -534,19 +491,7 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  // ============================================
-  // LANGUAGE MISMATCH HANDLING
-  // ============================================
 
-  onMismatchConfirm() {
-    // Switch to Chinese
-    this.settings.setLanguage('zh');
-    this.showLanguageMismatch.set(false);
-  }
-
-  onMismatchCancel() {
-    this.showLanguageMismatch.set(false);
-  }
 
   // ============================================
   // PLAYBACK CONTROLS

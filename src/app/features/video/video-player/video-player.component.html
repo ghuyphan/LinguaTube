@@ -269,13 +269,7 @@
     }
 
 
-    <!-- Language Mismatch Alert -->
-    <app-confirm-dialog [isOpen]="showLanguageMismatchDialog()" [title]="i18n.t('subtitle.languageMismatch')"
-      [message]="languageMismatchMessage()"
-      [confirmText]="i18n.t('subtitle.switchLanguage').replace('{{language}}', i18n.t('settings.chinese'))"
-      [cancelText]="i18n.t('subtitle.dismiss')" variant="default" icon="alert-circle" (confirmed)="onMismatchConfirm()"
-      (cancelled)="onMismatchCancel()">
-    </app-confirm-dialog>
+
 
     <!-- Fullscreen Grammar Popup -->
     @if (isFullscreen() && fsGrammarPopupVisible()) {
