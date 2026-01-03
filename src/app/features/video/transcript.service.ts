@@ -1,5 +1,5 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, Subject, catchError, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
 import { SubtitleCue } from '../../models';
 
@@ -40,6 +40,11 @@ interface TranscriptResponse {
   timing: number;
 }
 
+interface RateLimitErrorResponse {
+  error: string;
+  retryAfter?: number;
+}
+
 /**
  * Transcript state machine - single source of truth for UI
  */
@@ -48,7 +53,7 @@ export type TranscriptState =
   | { status: 'loading' }
   | { status: 'generating_ai'; resultUrl?: string; isResuming?: boolean }
   | { status: 'complete'; language: string; source: 'native' | 'ai'; cues: SubtitleCue[] }
-  | { status: 'error'; code: string; whisperAvailable: boolean };
+  | { status: 'error'; code: string; whisperAvailable: boolean; retryAfter?: number };
 
 const DEBUG = false;
 const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', ...args);
@@ -113,6 +118,11 @@ export class TranscriptService {
     return s.status === 'error' ? s.code : null;
   });
 
+  readonly retryAfter = computed(() => {
+    const s = this.state();
+    return s.status === 'error' ? s.retryAfter : undefined;
+  });
+
   readonly whisperAvailable = computed(() => {
     const s = this.state();
     return s.status === 'error' ? s.whisperAvailable : true;
@@ -158,11 +168,7 @@ export class TranscriptService {
           this.transcriptCache.set(cacheKey, cues);
         }
       }),
-      catchError(err => {
-        console.error('[TranscriptService] Error:', err);
-        this.state.set({ status: 'error', code: 'NETWORK_ERROR', whisperAvailable: true });
-        return of([]);
-      })
+      catchError(err => this.handleHttpError(err))
     );
   }
 
@@ -187,11 +193,7 @@ export class TranscriptService {
           this.transcriptCache.set(cacheKey, cues);
         }
       }),
-      catchError(err => {
-        console.error('[TranscriptService] AI Error:', err);
-        this.state.set({ status: 'error', code: 'AI_SERVICE_ERROR', whisperAvailable: false });
-        return of([]);
-      })
+      catchError(err => this.handleHttpError(err, false))
     );
   }
 
@@ -231,6 +233,72 @@ export class TranscriptService {
   // ============================================================================
   // Private Methods
   // ============================================================================
+
+  /**
+   * Handle HTTP errors with specific handling for rate limits
+   */
+  private handleHttpError(err: unknown, whisperAvailable = true): Observable<SubtitleCue[]> {
+    console.error('[TranscriptService] Error:', err);
+
+    if (err instanceof HttpErrorResponse) {
+      // Handle rate limiting (429)
+      if (err.status === 429) {
+        const body = err.error as RateLimitErrorResponse;
+        const retryAfter = body?.retryAfter ?? this.extractRetryAfter(err);
+
+        log('Rate limited, retry after:', retryAfter);
+
+        this.state.set({
+          status: 'error',
+          code: 'RATE_LIMITED',
+          whisperAvailable: false, // Don't show AI button if rate limited
+          retryAfter
+        });
+        return of([]);
+      }
+
+      // Handle server errors
+      if (err.status >= 500) {
+        this.state.set({
+          status: 'error',
+          code: 'SERVER_ERROR',
+          whisperAvailable
+        });
+        return of([]);
+      }
+
+      // Handle client errors (400-499)
+      if (err.status >= 400) {
+        const errorCode = err.error?.errorCode || 'REQUEST_ERROR';
+        this.state.set({
+          status: 'error',
+          code: errorCode,
+          whisperAvailable: err.error?.whisperAvailable ?? whisperAvailable
+        });
+        return of([]);
+      }
+    }
+
+    // Generic network error
+    this.state.set({
+      status: 'error',
+      code: 'NETWORK_ERROR',
+      whisperAvailable
+    });
+    return of([]);
+  }
+
+  /**
+   * Extract retry-after from response headers
+   */
+  private extractRetryAfter(err: HttpErrorResponse): number | undefined {
+    const retryHeader = err.headers?.get('Retry-After');
+    if (retryHeader) {
+      const seconds = parseInt(retryHeader, 10);
+      if (!isNaN(seconds)) return seconds;
+    }
+    return undefined;
+  }
 
   /**
    * Call the unified transcript API

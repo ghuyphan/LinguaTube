@@ -8,6 +8,7 @@ import { jsonResponse, handleOptions, errorResponse } from '../_shared/utils.js'
 import {
     consumeRateLimit,
     getClientIP,
+    getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders,
     getTieredConfig
@@ -64,8 +65,8 @@ export async function onRequestPost(context) {
             : 'anonymous';
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
 
-        const clientIP = getClientIP(request);
-        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, rateLimitConfig);
+        const clientId = getClientIdentifier(request, authResult);
+        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

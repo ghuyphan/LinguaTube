@@ -4,10 +4,12 @@
  * Route: POST /api/translate/batch
  */
 
+import { validateAuthToken } from '../../_shared/auth.js';
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIP,
+    getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders
 } from '../../_shared/rate-limiter.js';
@@ -43,7 +45,9 @@ export async function onRequestPost(context) {
         }
 
         // Rate limit by number of texts (not requests)
-        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG, texts.length);
+        const authResult = await validateAuthToken(request, env);
+        const clientId = getClientIdentifier(request, authResult);
+        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, texts.length);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

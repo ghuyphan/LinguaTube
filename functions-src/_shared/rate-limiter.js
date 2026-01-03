@@ -175,6 +175,22 @@ export function getClientIP(request) {
 }
 
 /**
+ * Get client identifier for rate limiting
+ * Uses user ID when authenticated (separate bucket per user),
+ * falls back to IP for anonymous users.
+ * 
+ * @param {Request} request - The incoming request
+ * @param {Object|null} authResult - Result from validateAuthToken, or null
+ * @returns {string} - User ID prefixed identifier or IP address
+ */
+export function getClientIdentifier(request, authResult = null) {
+    if (authResult?.valid && authResult?.userId) {
+        return `user:${authResult.userId}`;
+    }
+    return getClientIP(request) || 'unknown';
+}
+
+/**
  * Create rate limit exceeded response
  */
 export function rateLimitResponse(resetAt) {

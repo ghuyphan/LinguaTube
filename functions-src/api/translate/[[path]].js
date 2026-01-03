@@ -4,10 +4,12 @@
  * Route: /api/translate/[[path]]
  */
 
+import { validateAuthToken } from '../../_shared/auth.js';
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
 import {
     consumeRateLimit,
     getClientIP,
+    getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders
 } from '../../_shared/rate-limiter.js';
@@ -34,8 +36,9 @@ export async function onRequestGet(context) {
     const { request, env, params } = context;
 
     // Rate limiting (Atomic)
-    const clientIP = getClientIP(request);
-    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    const authResult = await validateAuthToken(request, env);
+    const clientId = getClientIdentifier(request, authResult);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }

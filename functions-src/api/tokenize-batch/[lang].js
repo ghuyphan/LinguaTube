@@ -7,6 +7,7 @@
 import {
     consumeRateLimit,
     getClientIP,
+    getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders,
     getTieredConfig
@@ -63,8 +64,8 @@ export async function onRequest(context) {
         : 'anonymous';
     const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
 
-    const clientIP = getClientIP(request);
-    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientIP, rateLimitConfig);
+    const clientId = getClientIdentifier(request, authResult);
+    const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
