@@ -1,4 +1,5 @@
-<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" [navPadding]="navPadding()" (closed)="onClose()">
+<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" [title]="title()" [navPadding]="navPadding()"
+    [zIndex]="zIndex()" (closed)="onSheetClosed()">
     <div class="option-picker">
         @if (title()) {
         <div class="option-picker__header">

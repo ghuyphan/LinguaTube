@@ -1,4 +1,5 @@
-<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" [navPadding]="true" (closed)="closed.emit()">
+<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" [navPadding]="true" [zIndex]="950"
+    (closed)="closed.emit()">
     <div class="quick-view">
         <div class="quick-view-header">
             <h2>{{ i18n.t('study.recentlyAdded') }}</h2>
@@ -44,6 +45,7 @@
 </app-bottom-sheet>
 
 <!-- Level Picker -->
-<app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
-    [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
-    (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />
+<app-option-picker #levelPicker [isOpen]="levelPickerOpen()" [title]="i18n.t('vocab.changeLevel')"
+    [options]="levelOptions()" [value]="getEditingItemLevel()" [navPadding]="true" [zIndex]="960"
+    (selected)="onLevelChange($event)"
+    (closed)="levelPickerOpen.set(false); editingItemId.set(null)"></app-option-picker>

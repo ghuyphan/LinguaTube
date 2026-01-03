@@ -1,4 +1,4 @@
-import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../icon/icon.component';
@@ -14,7 +14,7 @@ import { IconComponent } from '../icon/icon.component';
             [showDragHandle]="false" 
             [showCloseButton]="false"
             [navPadding]="navPadding()"
-            (closed)="onCancel()">
+            (closed)="onSheetClosed()">
             <div class="confirm-dialog">
                 @if (icon()) {
                 <div class="confirm-dialog__icon" [class]="'confirm-dialog__icon--' + variant()">
@@ -145,11 +145,28 @@ export class ConfirmDialogComponent {
     confirmed = output<void>();
     cancelled = output<void>();
 
+    @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
+
+    // Track which action triggered the close
+    private closingAction: 'confirm' | 'cancel' | null = null;
+
     onConfirm(): void {
-        this.confirmed.emit();
+        this.closingAction = 'confirm';
+        this.sheet.close();
     }
 
     onCancel(): void {
-        this.cancelled.emit();
+        this.closingAction = 'cancel';
+        this.sheet.close();
+    }
+
+    onSheetClosed(): void {
+        if (this.closingAction === 'confirm') {
+            this.confirmed.emit();
+        } else {
+            this.cancelled.emit();
+        }
+        // Reset for next opening
+        this.closingAction = null;
     }
 }

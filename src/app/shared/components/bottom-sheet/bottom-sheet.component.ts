@@ -42,6 +42,8 @@ export class BottomSheetComponent implements OnDestroy {
   showCloseButton = input<boolean>(false);
   // Optional padding for bottom navigation bar (for partial sheets)
   navPadding = input<boolean>(false);
+  // Optional manual z-index override
+  zIndex = input<number | undefined>(undefined);
 
   // Outputs
   closed = output<void>();
@@ -70,8 +72,8 @@ export class BottomSheetComponent implements OnDestroy {
   // Unregister function from service (called when sheet closes)
   private unregisterFn: (() => void) | null = null;
 
-  // Computed z-index based on stack position
-  zIndex = computed(() => this.sheetService.getZIndex(this.sheetId));
+  // Computed z-index based on stack position (or manual override)
+  computedZIndex = computed(() => this.zIndex() ?? this.sheetService.getZIndex(this.sheetId));
 
   // Check if mobile
   get isMobile(): boolean {
@@ -93,8 +95,11 @@ export class BottomSheetComponent implements OnDestroy {
         // Reset hasAnimated when sheet opens (animation will play)
         this.hasAnimated.set(false);
       } else if (this.unregisterFn) {
-        // If closed externally (not by service), unregister
-        // This is handled in animatedClose, but this catches external close
+        // If closed externally (not by service), ensure unregister is called
+        // This is critical for cleaning up scroll locks if the parent component
+        // sets isOpen = false directly without calling close()
+        this.unregisterFn();
+        this.unregisterFn = null;
       }
     });
   }

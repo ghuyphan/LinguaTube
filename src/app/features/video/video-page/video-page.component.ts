@@ -249,12 +249,26 @@ export class VideoPageComponent implements OnInit {
           this.transcript.reset();
           this.lastLang = currentLang;
           this.loadVideoFromUrl(videoId);
-        } else if (this.subtitles.subtitles().length === 0 || this.lastLang !== currentLang) {
-          // Same video but no subtitles OR language changed - refetch
-          this.subtitles.clear();
-          this.transcript.reset();
           this.lastLang = currentLang;
-          this.fetchCaptions(videoId);
+          this.loadVideoFromUrl(videoId);
+        } else {
+          // Check if we need to refetch:
+          // 1. No subtitles loaded
+          // 2. Language changed AND neither requested nor loaded language matches current preference
+          //    (allows sticking with mismatched language if that's what we found for this requested lang)
+          const needsRefetch = this.subtitles.subtitles().length === 0 ||
+            (this.subtitles.requestedLanguage() !== currentLang &&
+              this.subtitles.loadedLanguage() !== currentLang);
+
+          if (needsRefetch) {
+            this.subtitles.clear();
+            this.transcript.reset();
+            this.lastLang = currentLang;
+            this.fetchCaptions(videoId);
+          } else {
+            // Restore lastLang from service state to prevent effect loop
+            this.lastLang = currentLang;
+          }
         }
       } else {
         // No video ID in URL - check localStorage for recovery
@@ -325,13 +339,16 @@ export class VideoPageComponent implements OnInit {
           // User's preference stays the same for future videos
           if (detected && detected !== lang && validLangs.includes(detected)) {
             console.log(`[VideoPage] Using ${detected} captions for tokenization (requested: ${lang})`);
-            this.subtitles.tokenizeAllCues(detected as 'ja' | 'zh' | 'ko' | 'en');
+            const targetLang = detected as 'ja' | 'zh' | 'ko' | 'en';
+            this.subtitles.setLanguageState(targetLang, lang);
+            this.subtitles.tokenizeAllCues(targetLang);
 
             // Show language mismatch notification
             this.mismatchRequestedLang.set(lang);
             this.mismatchDetectedLang.set(detected);
             this.showLangMismatchSheet.set(true);
           } else {
+            this.subtitles.setLanguageState(lang, lang);
             this.subtitles.tokenizeAllCues(lang);
           }
         }

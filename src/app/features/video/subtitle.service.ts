@@ -29,7 +29,6 @@ export class SubtitleService implements OnDestroy {
   // Throttle tracking (only for expensive tokenization, not cue lookup)
   private lastTokenizeCheck = 0;
   private lastTokenizedRange = { start: -1, end: -1 };
-  private currentLang: 'ja' | 'zh' | 'ko' | 'en' = 'ja';
 
   constructor() {
     // Load cached tokens from localStorage
@@ -66,6 +65,10 @@ export class SubtitleService implements OnDestroy {
   // Dual subtitle translations (mapped by cue ID)
   readonly cueTranslations = signal<Map<string, string>>(new Map());
 
+  // Language state tracking
+  readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en'>('ja');
+  readonly requestedLanguage = signal<string | null>(null);
+
   // Computed
   readonly currentCue = computed(() => {
     const index = this.currentCueIndex();
@@ -86,6 +89,15 @@ export class SubtitleService implements OnDestroy {
   // ============================================================================
 
   /**
+   * Update the language state (loaded vs requested)
+   * This helps track if we have a mismatch and avoid refetching on navigation
+   */
+  setLanguageState(loaded: 'ja' | 'zh' | 'ko' | 'en', requested: string): void {
+    this.loadedLanguage.set(loaded);
+    this.requestedLanguage.set(requested);
+  }
+
+  /**
    * Batch tokenize subtitle cues.
    * For videos with > LAZY_THRESHOLD cues, only tokenizes initial range and continues lazily.
    */
@@ -94,7 +106,7 @@ export class SubtitleService implements OnDestroy {
     if (cues.length === 0) return;
 
     // Track language for lazy tokenization
-    this.currentLang = lang;
+    this.loadedLanguage.set(lang);
     this.lastTokenizedRange = { start: -1, end: -1 };
 
     // Skip if already tokenized (all cues have tokens)
@@ -148,7 +160,7 @@ export class SubtitleService implements OnDestroy {
 
     this.subtitles.set(parsed);
     this.currentCueIndex.set(-1);
-    this.tokenizeAllCues(this.currentLang);
+    this.tokenizeAllCues(this.loadedLanguage());
   }
 
   private parseSrt(content: string): SubtitleCue[] {
@@ -396,7 +408,7 @@ export class SubtitleService implements OnDestroy {
         : Math.max(neededEnd, this.lastTokenizedRange.end);
 
       // Tokenize in background (don't await)
-      this.tokenizeRange(expandedStart, expandedEnd, this.currentLang);
+      this.tokenizeRange(expandedStart, expandedEnd, this.loadedLanguage());
     }
   }
 
@@ -473,6 +485,7 @@ export class SubtitleService implements OnDestroy {
     this.currentCueIndex.set(-1);
     this.tokenCache.clear(); // Clear old tokens to prevent stale data
     this.cueTranslations.set(new Map());
+    this.requestedLanguage.set(null);
   }
 
   /**

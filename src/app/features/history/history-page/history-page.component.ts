@@ -132,6 +132,7 @@ type FilterType = 'all' | 'favorites';
 
     <!-- Clear confirmation bottom sheet -->
     <app-bottom-sheet
+      #confirmSheet
       [isOpen]="showClearConfirm()"
       [showCloseButton]="true"
       [maxHeight]="'auto'"
@@ -144,10 +145,10 @@ type FilterType = 'all' | 'favorites';
         </div>
         <h3 class="confirm-sheet__title">{{ i18n.t('history.clearConfirm') }}</h3>
         <div class="confirm-sheet__actions">
-          <button class="confirm-sheet__btn confirm-sheet__btn--secondary" (click)="showClearConfirm.set(false)">
+          <button class="confirm-sheet__btn confirm-sheet__btn--secondary" (click)="confirmSheet.close()">
             {{ i18n.t('vocab.cancel') }}
           </button>
-          <button class="confirm-sheet__btn confirm-sheet__btn--danger" (click)="clearAll()">
+          <button class="confirm-sheet__btn confirm-sheet__btn--danger" (click)="clearAll(); confirmSheet.close()">
             {{ i18n.t('history.clearAll') }}
           </button>
         </div>
@@ -459,6 +460,6 @@ export class HistoryPageComponent {
 
   clearAll(): void {
     this.historyService.clearHistory();
-    this.showClearConfirm.set(false);
+    // Sheet is closed via template interaction
   }
 }

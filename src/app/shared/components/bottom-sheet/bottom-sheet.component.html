@@ -1,6 +1,6 @@
 @if (isOpen()) {
-<div class="sheet-overlay" [class.closing]="isClosing()" [style.z-index]="zIndex()" (click)="onBackdropClick($event)"
-    (touchend)="onBackdropTouch($event)">
+<div class="sheet-overlay" [class.closing]="isClosing()" [style.z-index]="computedZIndex()"
+    (click)="onBackdropClick($event)" (touchend)="onBackdropTouch($event)">
     <div class="sheet" #sheetEl [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
         [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile"
         [class.with-nav-padding]="navPadding()" [style.--drag-offset]="dragOffset() + 'px'"

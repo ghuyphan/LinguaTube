@@ -1,4 +1,4 @@
-import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../icon/icon.component';
@@ -23,17 +23,34 @@ export class OptionPickerComponent {
     value = input<string>('');
     isOpen = input<boolean>(false);
     title = input<string>('');
+    // Optional manual z-index
+    zIndex = input<number | undefined>(undefined);
+    // Optional nav padding
     navPadding = input<boolean>(false);
 
     closed = output<void>();
     selected = output<string>();
 
+    @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
+
+    // Internal state to track selection until animation completes
+    private selectedValue: string | null = null;
+
     selectOption(value: string): void {
-        this.selected.emit(value);
+        this.selectedValue = value;
+        this.sheet.close();
+    }
+
+    onSheetClosed(): void {
+        if (this.selectedValue) {
+            this.selected.emit(this.selectedValue);
+            this.selectedValue = null;
+        }
         this.closed.emit();
     }
 
     onClose(): void {
-        this.closed.emit();
+        // Triggered by back button or close button or background click
+        this.sheet.close();
     }
 }

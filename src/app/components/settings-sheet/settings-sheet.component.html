@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" (closed)="closed.emit()">
+<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="settings-sheet">
         <div class="settings-header">
             <h2>{{ i18n.t('settings.title') }}</h2>

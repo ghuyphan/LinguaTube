@@ -5,7 +5,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
-import { VocabularyService, SettingsService, I18nService, BodyScrollService } from '../../../services';
+import { VocabularyService, SettingsService, I18nService } from '../../../services';
 
 import { VocabularyItem, WordLevel } from '../../../models';
 
@@ -21,7 +21,7 @@ export class VocabularyListComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
-  bodyScroll = inject(BodyScrollService);
+
 
 
   // Search with debounce (300ms)
@@ -199,7 +199,6 @@ export class VocabularyListComponent {
   deleteWord(id: string): void {
     this.pendingDeleteId = id;
     this.deleteModalVisible.set(true);
-    this.bodyScroll.lock();
   }
 
 
@@ -209,14 +208,12 @@ export class VocabularyListComponent {
       this.pendingDeleteId = null;
     }
     this.deleteModalVisible.set(false);
-    this.bodyScroll.unlock();
   }
 
 
   cancelDelete(): void {
     this.pendingDeleteId = null;
     this.deleteModalVisible.set(false);
-    this.bodyScroll.unlock();
   }
 
 

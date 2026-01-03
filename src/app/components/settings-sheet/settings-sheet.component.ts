@@ -27,6 +27,7 @@ export class SettingsSheetComponent {
   streak = inject(StreakService);
 
   @ViewChild('googleBtnSettings') googleBtnSettings!: ElementRef;
+  @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
 
   isOpen = input<boolean>(false);
   closed = output<void>();
@@ -84,7 +85,7 @@ export class SettingsSheetComponent {
     this.isLoggingIn = true;
     try {
       await this.auth.loginWithGoogle();
-      this.closed.emit(); // Close sheet after successful login
+      this.sheet.close(); // Close sheet after successful login
     } catch (error) {
       console.error('[Settings] Google login failed:', error);
     } finally {
@@ -126,6 +127,10 @@ export class SettingsSheetComponent {
   confirmSignOut(): void {
     this.showSignOutConfirm.set(false);
     this.auth.signOut();
+    this.sheet.close();
+  }
+
+  onSheetClosed(): void {
     this.closed.emit();
   }
 }
