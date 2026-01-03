@@ -15,6 +15,7 @@ import {
     errorResponse,
     sanitizeVideoId,
     sanitizeLanguage,
+    verifyLanguage,
 } from '../_shared/utils.js';
 import { getValidSubtitles } from 'youtube-caption-extractor';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
@@ -464,12 +465,18 @@ async function tryNativeCaptions(videoId, lang, env, cache) {
             })).filter(s => s.text);
 
             if (segments.length > 0) {
-                log(`Free scraper success: ${segments.length} segments`);
-                return {
-                    segments: cleanTranscriptSegments(segments),
-                    source: 'scrape',
-                    availableLangs: [lang] // Scraper doesn't tell us other languages
-                };
+                // Verify the language actually matches using text analysis
+                const sampleText = segments.slice(0, 10).map(s => s.text).join(' ');
+                if (!verifyLanguage(sampleText, lang)) {
+                    log(`Free scraper: Language verification failed for ${lang}. Rejecting captions.`);
+                } else {
+                    log(`Free scraper success: ${segments.length} segments (verified ${lang})`);
+                    return {
+                        segments: cleanTranscriptSegments(segments),
+                        source: 'scrape',
+                        availableLangs: [lang] // Scraper doesn't tell us other languages
+                    };
+                }
             }
         }
     } catch (e) {
@@ -481,6 +488,11 @@ async function tryNativeCaptions(videoId, lang, env, cache) {
         try {
             log('Trying Supadata...');
             const result = await trySupadata(videoId, lang, env.SUPADATA_API_KEY, cache);
+            // Check for language mismatch (Supadata returned wrong language)
+            if (result && result.languageMismatch) {
+                log('Supadata returned wrong language, rejecting');
+                return null;
+            }
             if (result) return result;
         } catch (e) {
             log('Supadata failed:', e.message);
@@ -561,7 +573,21 @@ async function trySupadata(videoId, lang, apiKey, cache) {
         if (!segments.length) return null;
 
         const detectedLang = data.lang || lang;
-        log(`Supadata: Got ${segments.length} cues in ${detectedLang}`);
+        log(`Supadata: Got ${segments.length} cues in ${detectedLang} (requested: ${lang})`);
+
+        // IMPORTANT: Verify the returned language matches the requested language
+        // Supadata sometimes returns a different language than requested
+        if (detectedLang !== lang) {
+            log(`Supadata: Language mismatch! Requested ${lang} but got ${detectedLang}. Rejecting.`);
+            // Cache the available languages for future reference
+            return {
+                segments: [],
+                source: 'supadata',
+                availableLangs: data.availableLangs || [detectedLang],
+                detectedLang,
+                languageMismatch: true
+            };
+        }
 
         return {
             segments: cleanTranscriptSegments(segments),
