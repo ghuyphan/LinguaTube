@@ -30,6 +30,21 @@ function decodeJwtPayload(token) {
 
 /**
  * Verify PocketBase token by calling PocketHost API
+ * 
+ * NOTE: Token Refresh Side Effect
+ * ===============================
+ * This function calls /auth-refresh which EXTENDS the token lifetime on every validation.
+ * This is intentional behavior to keep active users logged in without requiring re-authentication.
+ * 
+ * If you need read-only verification without refresh:
+ * 1. Decode the JWT payload locally
+ * 2. Check the `exp` claim against current time
+ * 3. Optionally call a non-refreshing endpoint like /api/collections/users/auth/get-current
+ * 
+ * We keep the refresh behavior because:
+ * - It provides seamless user experience for active users
+ * - Token lifetime extension is capped by PocketBase server settings
+ * - Inactive users' tokens still expire naturally
  */
 async function verifyPocketBaseToken(token, env) {
     const pocketbaseUrl = env.POCKETHOST_URL || 'https://voca.pockethost.io';

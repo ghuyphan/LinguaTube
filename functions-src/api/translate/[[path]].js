@@ -19,7 +19,11 @@ const LINGVA_INSTANCES = [
 ];
 
 const INSTANCE_TIMEOUT_MS = 5000;
-const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'translate' };
+
+// Rate limit by texts translated, not requests
+// Single endpoint counts as 1 text, batch counts as texts.length
+// Shared key: 'translate-texts' so single and batch share the same quota
+const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'translate-texts' };
 
 // Handle preflight requests
 export async function onRequestOptions() {

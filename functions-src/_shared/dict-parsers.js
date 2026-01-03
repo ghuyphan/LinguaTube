@@ -391,23 +391,35 @@ export function parseJisho(data) {
  * Parse KRDICT (Korean Learners Dictionary) web page
  * Used for: ko-vi (official Korean government dictionary with Vietnamese translations)
  * URL: https://krdict.korean.go.kr/vie/dicMarinerSearch/search?nation=vie&nationCode=10&mainSearchWord={word}
+ * 
+ * NOTE: HTMLRewriter Timing
+ * =========================
+ * Text handlers may fire multiple times for chunked content.
+ * We accumulate text in temporary objects and finalize entries
+ * AFTER rewriter.transform() completes, using the final accumulated state.
+ * 
  * @param {Response} response - Fetch response from KRDICT
  * @returns {Promise<DictEntry[]>}
  */
 export async function parseKrdict(response) {
     try {
-        const entries = [];
-        let currentWord = '';
-        let currentReading = '';
-        let currentDefs = [];
-        let currentPos = '';
+        // Accumulate data during parsing
+        const collectedData = {
+            entries: [],
+            current: {
+                word: '',
+                reading: '',
+                defs: [],
+                pos: ''
+            }
+        };
 
         // Parse HTML using HTMLRewriter
         const rewriter = new HTMLRewriter()
             // Get the word headword
             .on('.word_head .origin_word', {
                 text(text) {
-                    currentWord += text.text.trim();
+                    collectedData.current.word += text.text.trim();
                 }
             })
             // Get pronunciation (romanization)
@@ -415,7 +427,7 @@ export async function parseKrdict(response) {
                 element(element) {
                     // Reading is sometimes in title attribute
                     const title = element.getAttribute('title');
-                    if (title) currentReading = title;
+                    if (title) collectedData.current.reading = title;
                 }
             })
             // Get Vietnamese definitions
@@ -423,7 +435,7 @@ export async function parseKrdict(response) {
                 text(text) {
                     const def = text.text.trim();
                     if (def && def.length > 1) {
-                        currentDefs.push(def);
+                        collectedData.current.defs.push(def);
                     }
                 }
             })
@@ -431,8 +443,8 @@ export async function parseKrdict(response) {
             .on('.mean_tran', {
                 text(text) {
                     const def = text.text.trim();
-                    if (def && def.length > 1 && !currentDefs.includes(def)) {
-                        currentDefs.push(def);
+                    if (def && def.length > 1 && !collectedData.current.defs.includes(def)) {
+                        collectedData.current.defs.push(def);
                     }
                 }
             })
@@ -440,46 +452,48 @@ export async function parseKrdict(response) {
             .on('.word_att_view .att_val', {
                 text(text) {
                     const pos = text.text.trim();
-                    if (pos && !currentPos) {
-                        currentPos = pos;
+                    if (pos && !collectedData.current.pos) {
+                        collectedData.current.pos = pos;
                     }
                 }
             })
-            // End of word entry - save and reset
+            // End of word entry (START of next .word_cont) - save current and reset
             .on('.word_cont', {
-                element(element) {
-                    if (currentWord && currentDefs.length > 0) {
-                        entries.push({
-                            word: currentWord,
-                            reading: currentReading,
-                            definitions: currentDefs.slice(0, 5),
-                            partOfSpeech: currentPos
+                element() {
+                    // Save previous entry if it has content
+                    const curr = collectedData.current;
+                    if (curr.word && curr.defs.length > 0) {
+                        collectedData.entries.push({
+                            word: curr.word,
+                            reading: curr.reading,
+                            definitions: curr.defs.slice(0, 5),
+                            partOfSpeech: curr.pos
                         });
                     }
                     // Reset for next entry
-                    currentWord = '';
-                    currentReading = '';
-                    currentDefs = [];
-                    currentPos = '';
+                    collectedData.current = { word: '', reading: '', defs: [], pos: '' };
                 }
             });
 
+        // Run the rewriter to completion
         await rewriter.transform(response).arrayBuffer();
 
-        // Push last entry if exists
-        if (currentWord && currentDefs.length > 0) {
-            entries.push({
-                word: currentWord,
-                reading: currentReading,
-                definitions: currentDefs.slice(0, 5),
-                partOfSpeech: currentPos
+        // Push last entry if exists (not caught by boundary element)
+        const last = collectedData.current;
+        if (last.word && last.defs.length > 0) {
+            collectedData.entries.push({
+                word: last.word,
+                reading: last.reading,
+                definitions: last.defs.slice(0, 5),
+                partOfSpeech: last.pos
             });
         }
 
-        return entries.slice(0, 5);
+        return collectedData.entries.slice(0, 5);
 
     } catch (err) {
         console.error('[parseKrdict] HTMLRewriter error:', err.message);
         return [];
     }
 }
+

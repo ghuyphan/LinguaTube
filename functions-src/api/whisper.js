@@ -33,7 +33,8 @@ import {
     getTieredConfig
 } from '../_shared/rate-limiter.js';
 import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
-import { validateVideoRequest } from '../_shared/video-validator.js';
+import { validateVideoRequest, getVideoMetadata } from '../_shared/video-validator.js';
+import { getVideoDuration, saveVideoLanguages } from '../_shared/video-info-db.js';
 
 const DEBUG = false;
 const MAX_DURATION_MS = 25000; // 25s max to stay within CF 30s limit
@@ -85,7 +86,21 @@ export async function onRequestPost(context) {
             }
 
             // Early validation - reject unsupported languages and long videos
-            const validation = await validateVideoRequest(videoId, lang, body.duration, 'whisper');
+            // Use server-side duration if available, fallback to client-provided
+            let serverDuration = await getVideoDuration(db, videoId);
+            let duration = serverDuration || body.duration;
+
+            // Enforce MAX_VIDEO_DURATION_SECONDS (60 minutes for AI transcription)
+            if (duration && duration > MAX_VIDEO_DURATION_SECONDS) {
+                return jsonResponse({
+                    error: 'video_too_long',
+                    duration,
+                    maxDuration: MAX_VIDEO_DURATION_SECONDS,
+                    maxDurationMinutes: MAX_VIDEO_DURATION_SECONDS / 60
+                }, 400);
+            }
+
+            const validation = await validateVideoRequest(videoId, lang, duration, 'whisper');
             if (validation) {
                 log(`Validation failed: ${validation.error}`);
                 return jsonResponse(validation, 400);

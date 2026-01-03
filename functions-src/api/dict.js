@@ -95,12 +95,12 @@ const DICT_SOURCES = {
         referer: 'https://jotoba.de/'
     },
     'ja-vi': {
-        // Jisho.org API - get English definitions, then translate to Vietnamese
+        // Jisho.org API - get English definitions, then use fallback translation to Vietnamese
+        // NOTE: Direct ja-vi dictionary Mazii is an SPA and not scrapable, so we use english fallback
         url: 'https://jisho.org/api/v1/search/words',
         method: 'GET',
         parser: 'jisho',
-        referer: 'https://jisho.org/',
-        translateTo: 'vi'  // Flag to translate definitions
+        referer: 'https://jisho.org/'
     },
     'ja-ko': {
         // Naver Japanese-Korean dictionary

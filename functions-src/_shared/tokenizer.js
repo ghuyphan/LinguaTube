@@ -43,14 +43,22 @@ const cdnLoader = {
 };
 
 /**
- * Get or create the kuromoji tokenizer (singleton)
+ * Get or create the kuromoji tokenizer (singleton with failure recovery)
+ * 
+ * NOTE: If initialization fails (e.g., network error fetching dictionary),
+ * the promise is reset so subsequent calls can retry. This prevents a
+ * permanent failure state from a single transient error.
  */
 export async function getKuromojiTokenizer() {
     if (!tokenizerPromise) {
         console.log('[Tokenizer] Initializing kuromoji tokenizer...');
         tokenizerPromise = new kuromoji.TokenizerBuilder({
             loader: cdnLoader
-        }).build();
+        }).build().catch(err => {
+            console.error('[Tokenizer] Initialization failed:', err.message);
+            tokenizerPromise = null; // Reset on failure to allow retry
+            throw err;
+        });
     }
     return tokenizerPromise;
 }

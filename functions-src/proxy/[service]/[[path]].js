@@ -5,6 +5,15 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+import {
+    consumeRateLimit,
+    getClientIP,
+    rateLimitResponse,
+    getRateLimitHeaders
+} from '../../_shared/rate-limiter.js';
+
+// Rate limiting: 100 requests per hour per IP
+const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'proxy' };
 
 // Service configuration map
 const SERVICE_CONFIG = {
@@ -45,9 +54,16 @@ export async function onRequestOptions(context) {
 }
 
 export async function onRequest(context) {
-    const { request, params } = context;
+    const { request, params, env } = context;
     const service = params.service;
     const pathSegments = params.path || [];
+
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
+    if (!rateCheck.allowed) {
+        return rateLimitResponse(rateCheck.resetAt);
+    }
 
     // Validate service
     const config = SERVICE_CONFIG[service];
@@ -101,7 +117,8 @@ export async function onRequest(context) {
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': config.methods.join(', ') + ', OPTIONS',
                 'Access-Control-Allow-Headers': 'Content-Type',
-                'X-Proxied-Service': service
+                'X-Proxied-Service': service,
+                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
             }
         });
 

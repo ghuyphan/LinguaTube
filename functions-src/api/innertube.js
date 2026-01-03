@@ -29,6 +29,12 @@ import {
 } from '../_shared/rate-limiter.js';
 import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
 import { validateVideoRequest } from '../_shared/video-validator.js';
+import {
+    isNoTranscript,
+    markNoTranscript,
+    saveVideoLanguages,
+    cleanupOldNoTranscriptEntries
+} from '../_shared/video-info-db.js';
 import { getSubtitles } from 'youtube-caption-extractor';
 import { YoutubeTranscript } from 'youtube-transcript';
 
@@ -37,7 +43,6 @@ import { YoutubeTranscript } from 'youtube-transcript';
 // ============================================================================
 
 const DEBUG = false;
-const CACHE_TTL = 60 * 60 * 24 * 30; // 30 days
 const DEFAULT_LANGS = ['ja', 'zh', 'ko', 'en'];
 
 // Timeout configuration - fail fast to move to next strategy
@@ -60,6 +65,9 @@ const SUPADATA_NO_CAPTION_TTL = 3600; // 1 hour
 
 const log = (...args) => DEBUG && console.log('[Innertube]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
+
+// Generate unique request ID for optimistic locking
+const generateRequestId = () => crypto.randomUUID();
 
 // ============================================================================
 // Request Handlers
@@ -126,6 +134,26 @@ export async function onRequestPost(context) {
         }
 
         log(`Request: ${videoId}, langs: ${targetLanguages.join(',')}`);
+
+        // =====================================================================
+        // Step 0: Check negative cache (skip known-unavailable languages)
+        // =====================================================================
+        if (await isNoTranscript(db, cache, videoId, primaryLang, 'youtube')) {
+            log(`Negative cache hit: ${videoId}:${primaryLang} - known no transcript`);
+            return jsonResponse({
+                videoDetails: { videoId },
+                captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } },
+                source: 'none',
+                warning: 'No captions available (cached result)',
+                timing: elapsed()
+            }, 200, {
+                'X-Cache': 'HIT:NEGATIVE',
+                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+            });
+        }
+
+        // Opportunistic cleanup of old no_transcript entries
+        cleanupOldNoTranscriptEntries(db).catch(() => { });
 
         // =====================================================================
         // Step 1: Check R2 Cache (single source of truth for content)
@@ -202,9 +230,13 @@ export async function onRequestPost(context) {
         }
 
         // =====================================================================
-        // All strategies failed
+        // All strategies failed - save to negative cache
         // =====================================================================
         log(`All strategies failed (${elapsed()}ms)`);
+
+        // Save to negative cache to avoid repeated API calls
+        markNoTranscript(db, cache, videoId, primaryLang, 'youtube').catch(() => { });
+
         return jsonResponse({
             videoDetails: { videoId },
             captions: { playerCaptionsTracklistRenderer: { captionTracks: [] } },
@@ -419,13 +451,45 @@ async function trySingleYoutubeTranscript(videoId, lang) {
 // Strategy 3: Supadata API (Paid - Last Resort, Native Only)
 // ============================================================================
 
-async function isSupadataLocked(cache, videoId) {
-    if (!cache) return false;
+/**
+ * Get or acquire Supadata lock with optimistic locking
+ * Returns requestId if we acquired the lock, null if locked by another request
+ * 
+ * NOTE: KV is eventually consistent, so there's still a small race window.
+ * For true atomicity, Durable Objects would be needed.
+ */
+async function acquireSupadataLock(cache, videoId) {
+    if (!cache) return generateRequestId(); // No cache = always proceed
+
+    const lockKey = `supadata:lock:${videoId}`;
+
     try {
-        const lock = await cache.get(`supadata:lock:${videoId}`);
-        return !!lock;
-    } catch {
-        return false;
+        // Check for existing lock
+        const existingLock = await cache.get(lockKey);
+        if (existingLock) {
+            log(`Supadata: Lock exists for ${videoId} (owner: ${existingLock.slice(0, 8)}...)`);
+            return null; // Someone else has the lock
+        }
+
+        // Try to acquire with our unique ID
+        const requestId = generateRequestId();
+        await cache.put(lockKey, requestId, { expirationTtl: SUPADATA_LOCK_TTL });
+
+        // Small delay to let race condition manifest
+        await new Promise(r => setTimeout(r, 50));
+
+        // Verify we still own the lock (optimistic check)
+        const currentLock = await cache.get(lockKey);
+        if (currentLock !== requestId) {
+            log(`Supadata: Lock stolen for ${videoId} (ours: ${requestId.slice(0, 8)}, current: ${currentLock?.slice(0, 8)})`);
+            return null; // Another request stole our lock
+        }
+
+        log(`Supadata: Lock acquired for ${videoId} (id: ${requestId.slice(0, 8)}...)`);
+        return requestId;
+    } catch (e) {
+        log(`Supadata: Lock acquisition error: ${e.message}`);
+        return generateRequestId(); // On error, proceed cautiously
     }
 }
 
@@ -449,21 +513,17 @@ async function markNoCaption(cache, videoId) {
     }
 }
 
-async function setSupadataLock(cache, videoId) {
+async function clearSupadataLock(cache, videoId, requestId) {
     if (!cache) return;
     try {
-        await cache.put(`supadata:lock:${videoId}`, '1', { expirationTtl: SUPADATA_LOCK_TTL });
-        log(`Supadata: Lock set for ${videoId}`);
-    } catch (e) {
-        log(`Supadata: Failed to set lock: ${e.message}`);
-    }
-}
-
-async function clearSupadataLock(cache, videoId) {
-    if (!cache) return;
-    try {
-        await cache.delete(`supadata:lock:${videoId}`);
-        log(`Supadata: Lock cleared for ${videoId}`);
+        // Only clear if we still own the lock
+        const currentLock = await cache.get(`supadata:lock:${videoId}`);
+        if (currentLock === requestId) {
+            await cache.delete(`supadata:lock:${videoId}`);
+            log(`Supadata: Lock cleared for ${videoId}`);
+        } else {
+            log(`Supadata: Not clearing lock - we don't own it`);
+        }
     } catch (e) {
         log(`Supadata: Failed to clear lock: ${e.message}`);
     }
@@ -484,14 +544,12 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         return null;
     }
 
-    // Check for in-flight request
-    await new Promise(r => setTimeout(r, Math.random() * 100));
-    if (await isSupadataLocked(cache, videoId)) {
-        log(`Supadata: Skipping ${videoId} - already processing`);
+    // Acquire lock with optimistic locking (returns requestId if acquired, null if blocked)
+    const requestId = await acquireSupadataLock(cache, videoId);
+    if (!requestId) {
+        log(`Supadata: Skipping ${videoId} - already processing by another request`);
         return null;
     }
-
-    await setSupadataLock(cache, videoId);
 
     try {
         const url = new URL(SUPADATA_API_URL);
@@ -512,7 +570,7 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         });
 
         if (!response.ok) {
-            await clearSupadataLock(cache, videoId);
+            await clearSupadataLock(cache, videoId, requestId);
             if (response.status === 404) {
                 await markNoCaption(cache, cacheKeyNoCap);
             }
@@ -523,7 +581,7 @@ async function trySupadata(videoId, langs, apiKey, cache) {
 
         if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
             log(`Supadata [${lang}]: No content`);
-            await clearSupadataLock(cache, videoId);
+            await clearSupadataLock(cache, videoId, requestId);
             await markNoCaption(cache, cacheKeyNoCap);
             return null;
         }
@@ -536,21 +594,21 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         })).filter(c => c.text);
 
         if (!cues.length) {
-            await clearSupadataLock(cache, videoId);
+            await clearSupadataLock(cache, videoId, requestId);
             return null;
         }
 
         const detectedLang = data.lang || lang;
         log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
 
-        await clearSupadataLock(cache, videoId);
+        await clearSupadataLock(cache, videoId, requestId);
 
         return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
 
     } catch (e) {
         log(`Supadata [${lang}] failed: ${e.message}`);
         if (e.name !== 'TimeoutError' && e.name !== 'AbortError') {
-            await clearSupadataLock(cache, videoId);
+            await clearSupadataLock(cache, videoId, requestId);
         }
         return null;
     }

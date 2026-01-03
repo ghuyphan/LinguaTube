@@ -96,63 +96,8 @@ function mergeGroups(groups) {
     return result;
 }
 
-/**
- * Check if two segments should be merged
- * Only merge if texts are nearly identical (true duplicates)
- */
-/**
- * Check if two segments should be merged
- * Only merge if texts are nearly identical (true duplicates)
- */
-function shouldMerge(prev, curr) {
-    const prevEnd = prev.start + prev.duration;
-    const gap = curr.start - prevEnd;
-
-    // Only consider merging if there's overlap or very small gap
-    if (gap > 0.1) return false;
-
-    // Only merge if one text contains the other exactly
-    const prevText = prev.text?.trim() || '';
-    const currText = curr.text?.trim() || '';
-
-    // Skip if either is empty
-    if (!prevText || !currText) return false;
-
-    // Strict equality or clean containment
-    if (prevText === currText) return true;
-
-    // Check if one is a substring of the other (likely progressive captioning)
-    return prevText.includes(currText) || currText.includes(prevText);
-}
-
-/**
- * Merge two text strings - use the longer one
- */
-function mergeText(a, b) {
-    const textA = a?.trim() || '';
-    const textB = b?.trim() || '';
-
-    if (!textA) return textB;
-    if (!textB) return textA;
-
-    // Use the longer one (likely more complete)
-    return textA.length >= textB.length ? textA : textB;
-}
-
-/**
- * Simple text similarity (Jaccard on characters)
- */
-function textSimilarity(a, b) {
-    if (!a || !b) return 0;
-
-    const setA = new Set(a);
-    const setB = new Set(b);
-
-    const intersection = new Set([...setA].filter(x => setB.has(x)));
-    const union = new Set([...setA, ...setB]);
-
-    return intersection.size / union.size;
-}
+// NOTE: shouldMerge, mergeText, textSimilarity were removed as dead code
+// They were not called by any function after the refactoring to group-based deduplication
 
 /**
  * Apply sticky timing with duration caps
