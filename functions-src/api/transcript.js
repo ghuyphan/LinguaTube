@@ -762,7 +762,7 @@ async function startGladiaJob(context, { videoId, lang, r2, db, cache, body, aut
 /**
  * Poll an existing Gladia job for results
  */
-async function pollGladiaJob(context, { videoId, lang, resultUrl, r2, db, cache, elapsed, availableLanguages }) {
+async function pollGladiaJob(context, { videoId, lang, resultUrl, r2, db, cache, elapsed, availableLanguages, diamondInfo }) {
     const { env, waitUntil } = context;
     const gladiaKey = env.GLADIA_API_KEY;
     const startTime = Date.now();
@@ -786,6 +786,7 @@ async function pollGladiaJob(context, { videoId, lang, resultUrl, r2, db, cache,
                 resultUrl,
                 availableLanguages,
                 whisperAvailable: true,
+                ...diamondInfo,
                 timing: elapsed()
             });
         }
@@ -845,6 +846,7 @@ async function pollGladiaJob(context, { videoId, lang, resultUrl, r2, db, cache,
                     sourceDetail: 'gladia',
                     availableLanguages,
                     whisperAvailable: true,
+                    ...diamondInfo,
                     timing: elapsed()
                 });
             }
