@@ -101,8 +101,8 @@
 <!-- Delete Confirmation -->
 <app-confirm-dialog [isOpen]="deleteModalVisible()" [title]="i18n.t('vocab.deleteWord')"
     [message]="i18n.t('vocab.deleteConfirm')" [confirmText]="i18n.t('vocab.delete')"
-    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" (confirmed)="confirmDelete()"
-    (cancelled)="cancelDelete()" />
+    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" [navPadding]="true"
+    (confirmed)="confirmDelete()" (cancelled)="cancelDelete()" />
 
 <!-- Toast Notification -->
 @if (toastMessage()) {

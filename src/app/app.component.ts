@@ -105,6 +105,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         [isOpen]="showUpdateSheet()"
         [showCloseButton]="true"
         [maxHeight]="'auto'"
+        [navPadding]="true"
         (closed)="showUpdateSheet.set(false)"
       >
         <div class="update-sheet">

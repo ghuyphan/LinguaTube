@@ -13,6 +13,7 @@ import { IconComponent } from '../icon/icon.component';
             [isOpen]="isOpen()" 
             [showDragHandle]="false" 
             [showCloseButton]="false"
+            [navPadding]="navPadding()"
             (closed)="onCancel()">
             <div class="confirm-dialog">
                 @if (icon()) {
@@ -138,6 +139,7 @@ export class ConfirmDialogComponent {
     cancelText = input<string>('Cancel');
     variant = input<'danger' | 'default'>('default');
     icon = input<string>('');
+    navPadding = input<boolean>(false);
 
     // Outputs
     confirmed = output<void>();

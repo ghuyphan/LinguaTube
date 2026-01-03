@@ -191,15 +191,15 @@
     }
 
     &.level--new {
-        background: var(--word-new-text);
+        background: var(--word-new);
     }
 
     &.level--learning {
-        background: var(--word-learning-text);
+        background: var(--word-learning);
     }
 
     &.level--known {
-        background: var(--word-known-text);
+        background: var(--word-known);
     }
 
     &.level--ignored {
