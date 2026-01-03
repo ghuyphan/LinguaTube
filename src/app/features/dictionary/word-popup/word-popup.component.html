@@ -1,4 +1,5 @@
-<app-bottom-sheet [isOpen]="isVisible()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isVisible()" [showDragHandle]="true" [showCloseButton]="true" [navPadding]="true"
+    (closed)="onSheetClosed()">
     <div class="popup-content">
 
         <div class="popup-header">
@@ -121,9 +122,10 @@
 
 <!-- Language Picker -->
 <app-option-picker [options]="langOptions()" [value]="targetLang()" [isOpen]="langPickerOpen()"
-    [title]="i18n.t('popup.translationLang')" (selected)="onLangSelected($event)"
+    [title]="i18n.t('popup.translationLang')" [navPadding]="true" (selected)="onLangSelected($event)"
     (closed)="langPickerOpen.set(false)" />
 
 <!-- Level Picker -->
 <app-option-picker [options]="levelOptions()" [value]="currentLevel()" [isOpen]="levelPickerOpen()"
-    [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelSelected($event)" (closed)="levelPickerOpen.set(false)" />
+    [title]="i18n.t('vocab.changeLevel')" [navPadding]="true" (selected)="onLevelSelected($event)"
+    (closed)="levelPickerOpen.set(false)" />

@@ -57,6 +57,7 @@ import { Token } from '../../../models';
       [isOpen]="showLangMismatchSheet()"
       [showCloseButton]="true"
       [maxHeight]="'auto'"
+      [navPadding]="true"
       (closed)="showLangMismatchSheet.set(false)"
     >
       <div class="lang-mismatch-sheet">
