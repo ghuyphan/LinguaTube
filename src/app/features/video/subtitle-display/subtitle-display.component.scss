@@ -380,6 +380,40 @@
     color: var(--text-muted);
 }
 
+.try-ai-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md, 8px);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+    }
+
+    .diamond-count {
+        opacity: 0.8;
+        font-size: 0.75rem;
+        margin-left: 0.125rem;
+    }
+}
+
 /* ============================================
    WAITING STATE - Dot animation
    ============================================ */

@@ -89,6 +89,18 @@
                             'UNSUPPORTED_VIDEO_LANGUAGE') {
                             <span class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.unsupportedLanguageHint') }}</span>
+                            } @else if (transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) {
+                            <!-- No native captions but AI available -->
+                            <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
+                            <button class="try-ai-btn" (click)="manualAITrigger.emit()">
+                                <app-icon name="diamond" [size]="16" />
+                                <span>{{ i18n.t('subtitle.useAITranscription') }}</span>
+                                <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds()
+                                    }})</span>
+                            </button>
+                            } @else if (transcript.error() === 'NO_DIAMONDS') {
+                            <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.noDiamondsLeft') }}</span>
                             } @else {
                             <span class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</span>
