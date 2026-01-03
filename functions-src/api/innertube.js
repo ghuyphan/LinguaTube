@@ -33,6 +33,7 @@ import {
     isNoTranscript,
     markNoTranscript,
     saveVideoLanguages,
+    getVideoLanguages,
     cleanupOldNoTranscriptEntries
 } from '../_shared/video-info-db.js';
 import { getSubtitles } from 'youtube-caption-extractor';
@@ -302,7 +303,7 @@ async function checkR2Cache(r2, videoId, lang, sourceFilter = null) {
 }
 
 /**
- * Save transcript: content to R2, metadata to D1
+ * Save transcript: content to R2, metadata to D1, and update video_languages
  */
 async function saveToCache(r2, db, videoId, lang, data, source) {
     const tracks = data?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
@@ -325,8 +326,36 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
         db ? recordTranscript(db, videoId, actualLang, source)
             .then(() => log(`D1 metadata recorded: ${videoId} ${actualLang}`))
             .catch(e => log(`D1 metadata error: ${e.message}`))
+            : Promise.resolve(),
+
+        // Update video_languages with the found language
+        db ? updateVideoLanguages(db, videoId, actualLang)
+            .then(() => log(`video_languages updated: ${videoId} +${actualLang}`))
+            .catch(e => log(`video_languages error: ${e.message}`))
             : Promise.resolve()
     ]);
+}
+
+/**
+ * Add a language to the video_languages available list
+ * Preserves existing languages and adds new one if not present
+ */
+async function updateVideoLanguages(db, videoId, lang) {
+    if (!db || !videoId || !lang) return;
+
+    try {
+        // Get existing languages
+        const existing = await getVideoLanguages(db, videoId);
+        const languages = existing?.availableLanguages || [];
+
+        // Add new language if not already present
+        if (!languages.includes(lang)) {
+            languages.push(lang);
+            await saveVideoLanguages(db, videoId, languages);
+        }
+    } catch (err) {
+        log(`updateVideoLanguages error: ${err.message}`);
+    }
 }
 
 // ============================================================================
@@ -493,6 +522,17 @@ async function acquireSupadataLock(cache, videoId) {
     }
 }
 
+/**
+ * Supadata-specific "no caption" cache (KV only, 1hr TTL)
+ * 
+ * NOTE: This is SEPARATE from the general no_transcript_cache (D1 + KV) because:
+ * 1. Supadata is checked AFTER free strategies fail
+ * 2. A Supadata 404 means "Supadata specifically doesn't have captions"
+ * 3. This is a short-term optimization to prevent repeated Supadata API calls
+ * 
+ * The general negative cache (markNoTranscript) is saved AFTER ALL strategies fail,
+ * meaning we've confirmed the video truly has no captions from any source.
+ */
 async function hasNoCaption(cache, videoId) {
     if (!cache) return false;
     try {
