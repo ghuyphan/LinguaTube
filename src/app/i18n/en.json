@@ -69,7 +69,13 @@
         "gotIt": "Got It",
         "unsupportedLanguageTitle": "Language not supported",
         "unsupportedLanguageHint": "Only Japanese, Chinese, Korean, and English videos are supported.",
-        "refreshCaptions": "Refresh Captions"
+        "refreshCaptions": "Refresh Captions",
+        "noCaptionsAvailable": "No captions available for this video",
+        "useAITranscription": "Use AI Transcription",
+        "diamondsRemaining": "{{count}} diamond{{plural}} remaining",
+        "noDiamondsLeft": "No diamonds left",
+        "diamondsRegenerate": "Diamonds regenerate over time",
+        "nextDiamondIn": "Next diamond in {{time}}"
     },
     "vocab": {
         "title": "Vocabulary",

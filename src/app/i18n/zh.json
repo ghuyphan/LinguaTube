@@ -69,7 +69,13 @@
         "gotIt": "知道了",
         "unsupportedLanguageTitle": "不支持的语言",
         "unsupportedLanguageHint": "仅支持日语、中文、韩语和英语视频。",
-        "refreshCaptions": "刷新字幕"
+        "refreshCaptions": "刷新字幕",
+        "noCaptionsAvailable": "此视频没有字幕",
+        "useAITranscription": "使用AI转录",
+        "diamondsRemaining": "剩余{{count}}个钻石",
+        "noDiamondsLeft": "没有钻石了",
+        "diamondsRegenerate": "钻石会随时间恢复",
+        "nextDiamondIn": "下一颗钻石{{time}}后"
     },
     "vocab": {
         "title": "词汇本",

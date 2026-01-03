@@ -69,7 +69,13 @@
         "gotIt": "Đã hiểu",
         "unsupportedLanguageTitle": "Ngôn ngữ không được hỗ trợ",
         "unsupportedLanguageHint": "Chỉ hỗ trợ video tiếng Nhật, Trung, Hàn và Anh.",
-        "refreshCaptions": "Làm mới phụ đề"
+        "refreshCaptions": "Làm mới phụ đề",
+        "noCaptionsAvailable": "Video này không có phụ đề",
+        "useAITranscription": "Sử dụng AI chuyển ngữ",
+        "diamondsRemaining": "Còn {{count}} kim cương",
+        "noDiamondsLeft": "Hết kim cương",
+        "diamondsRegenerate": "Kim cương sẽ tự phục hồi theo thời gian",
+        "nextDiamondIn": "Kim cương tiếp theo sau {{time}}"
     },
     "vocab": {
         "title": "Từ vựng",

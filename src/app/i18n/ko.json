@@ -69,7 +69,13 @@
         "gotIt": "확인",
         "unsupportedLanguageTitle": "지원되지 않는 언어",
         "unsupportedLanguageHint": "일본어, 중국어, 한국어, 영어 동영상만 지원됩니다.",
-        "refreshCaptions": "자막 새로고침"
+        "refreshCaptions": "자막 새로고침",
+        "noCaptionsAvailable": "이 동영상에 자막이 없습니다",
+        "useAITranscription": "AI 전사 사용",
+        "diamondsRemaining": "다이아몬드 {{count}}개 남음",
+        "noDiamondsLeft": "다이아몬드가 없습니다",
+        "diamondsRegenerate": "다이아몬드는 시간이 지나면 복구됩니다",
+        "nextDiamondIn": "다음 다이아몬드까지 {{time}}"
     },
     "vocab": {
         "title": "단어장",

@@ -69,7 +69,13 @@
         "gotIt": "了解",
         "unsupportedLanguageTitle": "対応していない言語",
         "unsupportedLanguageHint": "日本語・中国語・韓国語・英語の動画のみ対応しています。",
-        "refreshCaptions": "字幕を更新"
+        "refreshCaptions": "字幕を更新",
+        "noCaptionsAvailable": "この動画に字幕がありません",
+        "useAITranscription": "AI文字起こしを使用",
+        "diamondsRemaining": "残り{{count}}個のダイヤモンド",
+        "noDiamondsLeft": "ダイヤモンドがありません",
+        "diamondsRegenerate": "ダイヤモンドは時間とともに回復します",
+        "nextDiamondIn": "次のダイヤモンドまで{{time}}"
     },
     "vocab": {
         "title": "単語帳",
