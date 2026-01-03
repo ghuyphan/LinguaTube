@@ -84,11 +84,9 @@ export async function onRequestGet(context) {
             channel: metadata.author_name
         };
 
-        // Save to both D1 and KV
-        await Promise.allSettled([
-            saveVideoLanguages(db, videoId, [], null, metadata.title, metadata.author_name, false),
-            saveVideoInfoToKV(kv, videoId, result)
-        ]);
+        // Only save to KV cache - languages will be populated when transcripts are fetched
+        // Don't save empty languages to D1 as it interferes with language detection
+        await saveVideoInfoToKV(kv, videoId, result);
 
         return jsonResponse({ ...result, source: 'youtube' }, 200, { 'X-Cache': 'MISS' });
 

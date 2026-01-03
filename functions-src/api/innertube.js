@@ -162,8 +162,14 @@ export async function onRequestPost(context) {
         if (!forceRefresh) {
             const cached = await checkCache(r2, videoId, primaryLang);
             if (cached) {
+                // Include known languages in cache hit response
+                const knownLangs = await getVideoLanguages(db, videoId);
                 log(`Cache hit (${elapsed()}ms)`);
-                return jsonResponse({ ...cached, timing: elapsed() }, 200, {
+                return jsonResponse({
+                    ...cached,
+                    availableLanguages: knownLangs?.availableLanguages || [],
+                    timing: elapsed()
+                }, 200, {
                     'X-Cache': 'HIT',
                     ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
                 });
@@ -243,7 +249,7 @@ export async function onRequestPost(context) {
             } else {
                 // Either first time (no metadata) or language IS available - try Supadata
                 log('Free strategies failed, trying Supadata as last resort...');
-                const supadataResult = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache);
+                const supadataResult = await trySupadata(videoId, targetLanguages, env.SUPADATA_API_KEY, cache, db);
                 if (supadataResult) {
                     result = supadataResult;
                     source = 'supadata';
@@ -270,7 +276,15 @@ export async function onRequestPost(context) {
                 await cachePromise;
             }
 
-            return jsonResponse({ ...result.data, source, timing: elapsed() }, 200, {
+            // Get known languages to include in response
+            const knownLangs = await getVideoLanguages(db, videoId);
+
+            return jsonResponse({
+                ...result.data,
+                source,
+                availableLanguages: knownLangs?.availableLanguages || [actualLang],
+                timing: elapsed()
+            }, 200, {
                 'X-Cache': 'MISS',
                 ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
             });
@@ -361,9 +375,6 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
 
     log(`saveToCache: r2=${!!r2}, db=${!!db}, lang=${actualLang}, segments=${track.content.length}`);
 
-    // Try to get all available languages from video (async, non-blocking)
-    const allLanguagesPromise = getAllAvailableLanguages(videoId, actualLang);
-
     await Promise.allSettled([
         // Content to R2 (primary storage)
         r2 ? saveTranscriptToR2(r2, videoId, actualLang, track.content, source)
@@ -377,70 +388,70 @@ async function saveToCache(r2, db, videoId, lang, data, source) {
             .catch(e => log(`D1 metadata error: ${e.message}`))
             : Promise.resolve(),
 
-        // Update video_languages with all available languages
-        db ? allLanguagesPromise
-            .then(langs => updateVideoLanguagesFromTracks(db, videoId, langs))
-            .then(() => log(`video_languages updated for ${videoId}`))
-            .catch(e => log(`video_languages error: ${e.message}`))
+        // Add this language to known languages (incremental)
+        db ? addKnownLanguage(db, videoId, actualLang)
+            .then(() => log(`Known language added: ${videoId} ${actualLang}`))
+            .catch(e => log(`addKnownLanguage error: ${e.message}`))
             : Promise.resolve()
     ]);
 }
 
 /**
- * Get all available caption languages for a video
- * Uses youtube-caption-extractor's getSubtitles with empty lang to get list
+ * Add a single language to known languages (incremental)
+ * Called when a transcript is successfully fetched
  */
-async function getAllAvailableLanguages(videoId, knownLang) {
-    try {
-        // Try to get video info with caption list
-        // youtube-caption-extractor can return available languages
-        const response = await fetch(`https://www.youtube.com/watch?v=${videoId}`);
-        if (!response.ok) return [knownLang];
-
-        const html = await response.text();
-
-        // Extract captionTracks from ytInitialPlayerResponse
-        const match = html.match(/"captionTracks":\s*(\[[^\]]+\])/);
-        if (!match) return [knownLang];
-
-        const captionTracks = JSON.parse(match[1]);
-        const languages = captionTracks
-            .map(t => t.languageCode)
-            .filter(Boolean);
-
-        if (languages.length > 0) {
-            log(`Found ${languages.length} available languages: ${languages.join(',')}`);
-            return languages;
-        }
-    } catch (e) {
-        log(`getAllAvailableLanguages failed: ${e.message}`);
-    }
-
-    // Fallback to just the known language
-    return [knownLang];
-}
-
-/**
- * Save ALL available languages from YouTube tracks at once
- * Merges with any existing languages (e.g., from Whisper AI)
- */
-async function updateVideoLanguagesFromTracks(db, videoId, trackLangs) {
-    if (!db || !videoId || !trackLangs?.length) return;
+async function addKnownLanguage(db, videoId, lang) {
+    if (!db || !videoId || !lang) return;
 
     try {
-        // Get existing languages (may include AI-generated ones)
         const existing = await getVideoLanguages(db, videoId);
         const existingLangs = existing?.availableLanguages || [];
 
-        // Merge: keep existing + add new from tracks
-        const merged = [...new Set([...existingLangs, ...trackLangs])];
-
-        // Only update if we have new languages
-        if (merged.length > existingLangs.length) {
-            await saveVideoLanguages(db, videoId, merged);
+        if (!existingLangs.includes(lang)) {
+            const merged = [...existingLangs, lang];
+            await saveVideoLanguages(
+                db,
+                videoId,
+                merged,
+                existing?.durationSeconds,
+                existing?.title,
+                existing?.channel,
+                existing?.hasAutoCaptions
+            );
+            log(`addKnownLanguage: ${videoId} now has [${merged.join(',')}]`);
         }
     } catch (err) {
-        log(`updateVideoLanguagesFromTracks error: ${err.message}`);
+        log(`addKnownLanguage error: ${err.message}`);
+    }
+}
+
+/**
+ * Save all available languages at once (for Supadata which returns full list)
+ */
+async function saveAllKnownLanguages(db, videoId, languages) {
+    if (!db || !videoId || !languages?.length) return;
+
+    try {
+        const existing = await getVideoLanguages(db, videoId);
+        const existingLangs = existing?.availableLanguages || [];
+
+        // Merge existing with new languages
+        const merged = [...new Set([...existingLangs, ...languages])];
+
+        if (merged.length > existingLangs.length) {
+            await saveVideoLanguages(
+                db,
+                videoId,
+                merged,
+                existing?.durationSeconds,
+                existing?.title,
+                existing?.channel,
+                existing?.hasAutoCaptions
+            );
+            log(`saveAllKnownLanguages: ${videoId} now has [${merged.join(',')}]`);
+        }
+    } catch (err) {
+        log(`saveAllKnownLanguages error: ${err.message}`);
     }
 }
 
@@ -655,7 +666,7 @@ async function clearSupadataLock(cache, videoId, requestId) {
     }
 }
 
-async function trySupadata(videoId, langs, apiKey, cache) {
+async function trySupadata(videoId, langs, apiKey, cache, db) {
     if (!apiKey) {
         log('Supadata: No API key configured, skipping');
         return null;
@@ -727,9 +738,18 @@ async function trySupadata(videoId, langs, apiKey, cache) {
         const detectedLang = data.lang || lang;
         log(`Supadata: Got ${cues.length} cues in ${detectedLang}`);
 
+        // Save all available languages from Supadata response (non-blocking)
+        if (data.availableLangs?.length > 0) {
+            log(`Supadata: Found ${data.availableLangs.length} available languages: ${data.availableLangs.join(',')}`);
+            saveAllKnownLanguages(db, videoId, data.availableLangs).catch(() => { });
+        }
+
         await clearSupadataLock(cache, videoId, requestId);
 
-        return { data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)) };
+        return {
+            data: buildResponse(videoId, detectedLang, cleanTranscriptSegments(cues)),
+            availableLangs: data.availableLangs || [detectedLang]
+        };
 
     } catch (e) {
         log(`Supadata [${lang}] failed: ${e.message}`);
