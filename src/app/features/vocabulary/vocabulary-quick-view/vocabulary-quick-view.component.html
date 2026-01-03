@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" (closed)="closed.emit()">
+<app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" [navPadding]="true" (closed)="closed.emit()">
     <div class="quick-view">
         <div class="quick-view-header">
             <h2>{{ i18n.t('study.recentlyAdded') }}</h2>

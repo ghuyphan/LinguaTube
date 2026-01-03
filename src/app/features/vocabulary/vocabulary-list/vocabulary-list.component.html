@@ -114,16 +114,16 @@
 
 <!-- Filter Picker -->
 <app-option-picker [options]="filterOptions()" [value]="levelFilter()" [isOpen]="filterPickerOpen()"
-    [title]="i18n.t('vocab.filterByLevel')" (selected)="onLevelFilterChange($event)"
+    [title]="i18n.t('vocab.filterByLevel')" [navPadding]="true" (selected)="onLevelFilterChange($event)"
     (closed)="filterPickerOpen.set(false)" />
 
 <!-- Level Picker -->
 <app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
-    [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
+    [title]="i18n.t('vocab.changeLevel')" [navPadding]="true" (selected)="onLevelChange($event)"
     (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />
 
 <!-- Menu Sheet (Export/Import) -->
-<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" (closed)="menuOpen.set(false)">
+<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" [navPadding]="true" (closed)="menuOpen.set(false)">
     <div class="menu-sheet">
         <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
         <div class="menu-sheet__options">

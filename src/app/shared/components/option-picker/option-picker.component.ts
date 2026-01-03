@@ -23,6 +23,7 @@ export class OptionPickerComponent {
     value = input<string>('');
     isOpen = input<boolean>(false);
     title = input<string>('');
+    navPadding = input<boolean>(false);
 
     closed = output<void>();
     selected = output<string>();

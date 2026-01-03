@@ -40,6 +40,8 @@ export class BottomSheetComponent implements OnDestroy {
   showDragHandle = input<boolean>(true);
   allowBackdropClose = input<boolean>(true);
   showCloseButton = input<boolean>(false);
+  // Optional padding for bottom navigation bar (for partial sheets)
+  navPadding = input<boolean>(false);
 
   // Outputs
   closed = output<void>();

@@ -2,39 +2,36 @@
 // STREAK MANAGEMENT HOOKS
 // ============================================
 
-// Helper: Get start of day in UTC
-function startOfDayUTC(date) {
-    const d = new Date(date);
-    d.setUTCHours(0, 0, 0, 0);
-    return d;
-}
-
-// Helper: Check if two dates are the same day (UTC)
-function isSameDay(date1, date2) {
-    return startOfDayUTC(date1).getTime() === startOfDayUTC(date2).getTime();
-}
-
-// Helper: Check if date1 is exactly one day after date2
-function isNextDay(date1, date2) {
-    const day1 = startOfDayUTC(date1).getTime();
-    const day2 = startOfDayUTC(date2).getTime();
-    const oneDay = 24 * 60 * 60 * 1000;
-    return day1 - day2 === oneDay;
-}
-
-// Helper: Get days between two dates
-function daysBetween(date1, date2) {
-    const day1 = startOfDayUTC(date1).getTime();
-    const day2 = startOfDayUTC(date2).getTime();
-    const oneDay = 24 * 60 * 60 * 1000;
-    return Math.floor((day1 - day2) / oneDay);
-}
-
 // ============================================
 // API: Record Activity (called by client)
 // POST /api/streaks/record-activity
 // ============================================
 routerAdd('POST', '/api/streaks/record-activity', (e) => {
+    // Helper functions
+    function startOfDayUTC(date) {
+        const d = new Date(date);
+        d.setUTCHours(0, 0, 0, 0);
+        return d;
+    }
+
+    function isSameDay(date1, date2) {
+        return startOfDayUTC(date1).getTime() === startOfDayUTC(date2).getTime();
+    }
+
+    function isNextDay(date1, date2) {
+        const day1 = startOfDayUTC(date1).getTime();
+        const day2 = startOfDayUTC(date2).getTime();
+        const oneDay = 24 * 60 * 60 * 1000;
+        return day1 - day2 === oneDay;
+    }
+
+    function daysBetween(date1, date2) {
+        const day1 = startOfDayUTC(date1).getTime();
+        const day2 = startOfDayUTC(date2).getTime();
+        const oneDay = 24 * 60 * 60 * 1000;
+        return Math.floor((day1 - day2) / oneDay);
+    }
+
     const authRecord = e.auth;
 
     if (!authRecord) {
@@ -53,9 +50,9 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
             const records = $app.findRecordsByFilter(
                 'streaks',
                 `user = "${userId}"`,
-                '', // sort
-                1,  // limit
-                0   // offset
+                '',
+                1,
+                0
             );
             if (records && records.length > 0) {
                 streakRecord = records[0];
@@ -71,7 +68,7 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
                 current_streak: 1,
                 longest_streak: 1,
                 last_activity: now.toISOString(),
-                freezes_remaining: 2, // Start with 2 freezes
+                freezes_remaining: 2,
                 last_freeze_used: null
             });
             $app.save(streakRecord);
@@ -166,6 +163,17 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
 // GET /api/streaks/me
 // ============================================
 routerAdd('GET', '/api/streaks/me', (e) => {
+    // Helper functions
+    function startOfDayUTC(date) {
+        const d = new Date(date);
+        d.setUTCHours(0, 0, 0, 0);
+        return d;
+    }
+
+    function isSameDay(date1, date2) {
+        return startOfDayUTC(date1).getTime() === startOfDayUTC(date2).getTime();
+    }
+
     const authRecord = e.auth;
 
     if (!authRecord) {
@@ -225,62 +233,112 @@ routerAdd('GET', '/api/streaks/me', (e) => {
 // GET /api/streaks/daily-maintenance
 // ============================================
 routerAdd('GET', '/api/streaks/daily-maintenance', (e) => {
-    // Optional: Add a secret token for security
-    // const token = e.request.url.query().get('token');
-    // if (token !== 'YOUR_SECRET_TOKEN') {
-    //     return e.json(401, { error: 'Unauthorized' });
-    // }
+    // Helper functions (must be inside handler for PocketBase scoping)
+    function startOfDayUTC(date) {
+        const d = new Date(date);
+        d.setUTCHours(0, 0, 0, 0);
+        return d;
+    }
+
+    function isSameDay(date1, date2) {
+        return startOfDayUTC(date1).getTime() === startOfDayUTC(date2).getTime();
+    }
+
+    function isNextDay(date1, date2) {
+        const day1 = startOfDayUTC(date1).getTime();
+        const day2 = startOfDayUTC(date2).getTime();
+        const oneDay = 24 * 60 * 60 * 1000;
+        return day1 - day2 === oneDay;
+    }
+
+    function daysBetween(date1, date2) {
+        const day1 = startOfDayUTC(date1).getTime();
+        const day2 = startOfDayUTC(date2).getTime();
+        const oneDay = 24 * 60 * 60 * 1000;
+        return Math.floor((day1 - day2) / oneDay);
+    }
 
     console.log(`[Streak Maintenance] Starting at ${new Date().toISOString()}`);
 
     const now = new Date();
-    const yesterday = new Date(now);
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
 
     let processed = 0;
     let freezesApplied = 0;
     let streaksReset = 0;
+    let errors = [];
 
     try {
-        // Find all streak records
-        const records = $app.findRecordsByFilter(
-            'streaks',
-            'current_streak > 0', // Only active streaks
-            '',
-            1000, // Process up to 1000 users
-            0
-        );
+        // Use findAllRecords which bypasses API rules
+        let records = [];
 
-        for (const record of records) {
-            const lastActivity = record.get('last_activity')
-                ? new Date(record.get('last_activity'))
-                : null;
+        try {
+            records = $app.findAllRecords('streaks');
+            console.log(`[Streak Maintenance] Found ${records.length} total streak records`);
+        } catch (findError) {
+            console.error('[Streak Maintenance] Error finding records:', findError);
+            return e.json(500, {
+                error: 'Failed to fetch streak records',
+                details: String(findError)
+            });
+        }
 
-            if (!lastActivity) continue;
+        // Filter to only active streaks
+        const activeRecords = records.filter(r => r.get('current_streak') > 0);
+        console.log(`[Streak Maintenance] ${activeRecords.length} active streaks to process`);
 
-            // Check if they practiced today or yesterday
-            if (isSameDay(now, lastActivity) || isNextDay(now, lastActivity)) {
-                // They're fine, streak is current
-                continue;
+        if (activeRecords.length === 0) {
+            return e.json(200, {
+                status: 'success',
+                message: 'No active streaks to process',
+                processed: 0,
+                freezes_applied: 0,
+                streaks_reset: 0,
+                timestamp: now.toISOString()
+            });
+        }
+
+        for (const record of activeRecords) {
+            try {
+                const lastActivity = record.get('last_activity')
+                    ? new Date(record.get('last_activity'))
+                    : null;
+
+                if (!lastActivity) {
+                    continue;
+                }
+
+                // Check if they practiced today or yesterday
+                if (isSameDay(now, lastActivity) || isNextDay(now, lastActivity)) {
+                    // They're fine, streak is current
+                    continue;
+                }
+
+                // They missed at least one day
+                const missed = daysBetween(now, lastActivity) - 1;
+                const freezesRemaining = record.get('freezes_remaining') || 0;
+
+                console.log(`[Streak Maintenance] User ${record.get('user')}: missed ${missed} day(s), freezes: ${freezesRemaining}`);
+
+                if (missed === 1 && freezesRemaining > 0) {
+                    // Apply freeze automatically
+                    record.set('freezes_remaining', freezesRemaining - 1);
+                    record.set('last_freeze_used', now.toISOString());
+                    $app.save(record);
+                    freezesApplied++;
+                    console.log(`[Streak Maintenance] Applied freeze for user ${record.get('user')}`);
+                } else if (missed > 1 || freezesRemaining === 0) {
+                    // Reset streak (they missed too many days or no freeze)
+                    record.set('current_streak', 0);
+                    $app.save(record);
+                    streaksReset++;
+                    console.log(`[Streak Maintenance] Reset streak for user ${record.get('user')}`);
+                }
+
+                processed++;
+            } catch (recordError) {
+                console.error(`[Streak Maintenance] Error processing record ${record.id}:`, recordError);
+                errors.push({ id: record.id, error: String(recordError) });
             }
-
-            // They missed at least one day
-            const missed = daysBetween(now, lastActivity) - 1;
-
-            if (missed === 1 && record.get('freezes_remaining') > 0) {
-                // Apply freeze automatically
-                record.set('freezes_remaining', record.get('freezes_remaining') - 1);
-                record.set('last_freeze_used', now.toISOString());
-                $app.save(record);
-                freezesApplied++;
-            } else if (missed > 1 || record.get('freezes_remaining') === 0) {
-                // Reset streak (they missed too many days or no freeze)
-                record.set('current_streak', 0);
-                $app.save(record);
-                streaksReset++;
-            }
-
-            processed++;
         }
 
         console.log(`[Streak Maintenance] Completed: ${processed} processed, ${freezesApplied} freezes applied, ${streaksReset} streaks reset`);
@@ -290,12 +348,16 @@ routerAdd('GET', '/api/streaks/daily-maintenance', (e) => {
             processed: processed,
             freezes_applied: freezesApplied,
             streaks_reset: streaksReset,
+            errors: errors.length > 0 ? errors : undefined,
             timestamp: now.toISOString()
         });
 
     } catch (error) {
-        console.error('[Streak Maintenance] Error:', error);
-        return e.json(500, { error: 'Internal server error' });
+        console.error('[Streak Maintenance] Fatal error:', error);
+        return e.json(500, {
+            error: 'Internal server error',
+            details: String(error)
+        });
     }
 });
 

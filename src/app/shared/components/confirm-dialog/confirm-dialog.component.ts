@@ -68,8 +68,8 @@ import { IconComponent } from '../icon/icon.component';
         }
 
         .confirm-dialog__icon--danger {
-            background: rgba(231, 111, 81, 0.1);
-            color: var(--danger);
+            background: rgba(199, 62, 58, 0.1);
+            color: var(--error);
         }
 
         .confirm-dialog__title {
@@ -113,7 +113,7 @@ import { IconComponent } from '../icon/icon.component';
         }
 
         .confirm-dialog__btn--danger {
-            background: var(--danger);
+            background: var(--error);
             color: white;
         }
 
