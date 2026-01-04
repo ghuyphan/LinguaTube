@@ -325,14 +325,7 @@ export async function onRequestPost(context) {
         const user = authResult.valid ? authResult.user : null;
         const diamondStatus = await getDiamonds(cache, clientId, user);
 
-        // Rate limit native caption requests only
-        if (!preferAI && !resultUrl) {
-            const rateLimitConfig = getTieredConfig(NATIVE_RATE_LIMIT, tier);
-            const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig);
-            if (!rateCheck.allowed) {
-                return rateLimitResponse(rateCheck.resetAt);
-            }
-        }
+
 
         log(`Request: ${videoId}, lang: ${lang}, preferAI: ${preferAI}, diamonds: ${diamondStatus.diamonds}`);
 
@@ -380,6 +373,15 @@ export async function onRequestPost(context) {
                     ...diamondInfo,
                     timing: elapsed()
                 }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
+            }
+        }
+
+        // Rate limit native caption requests only (if not cached)
+        if (!preferAI && !resultUrl) {
+            const rateLimitConfig = getTieredConfig(NATIVE_RATE_LIMIT, tier);
+            const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig);
+            if (!rateCheck.allowed) {
+                return rateLimitResponse(rateCheck.resetAt);
             }
         }
 
