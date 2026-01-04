@@ -191,7 +191,18 @@
         "toReview": "Cần ôn lại",
         "studyAgain": "Học lại",
         "recentlyAdded": "Thêm gần đây",
-        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu"
+        "tapWordsHint": "Chạm vào từ trong phụ đề để lưu",
+        "dueToday": "Cần ôn hôm nay",
+        "overdue": "Quá hạn",
+        "reverseMode": "Chế độ ngược",
+        "meaningFirst": "Hiện nghĩa trước",
+        "dailyGoal": "Mục tiêu hàng ngày",
+        "goalProgress": "{{done}}/{{goal}}",
+        "goalComplete": "Hoàn thành mục tiêu!",
+        "swipeHint": "Vuốt trái/phải để trả lời",
+        "sessionTime": "Thời gian học",
+        "pressSpace": "Nhấn Space để lật",
+        "keyboardHint": "Dùng phím 1-4 để trả lời"
     },
     "streak": {
         "dayStreak": "Chuỗi",

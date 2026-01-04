@@ -191,7 +191,18 @@
         "toReview": "復習が必要",
         "studyAgain": "もう一度学習",
         "recentlyAdded": "最近追加した単語",
-        "tapWordsHint": "字幕の単語をタップして保存"
+        "tapWordsHint": "字幕の単語をタップして保存",
+        "dueToday": "今日の復習",
+        "overdue": "期限切れ",
+        "reverseMode": "逆モード",
+        "meaningFirst": "意味を先に表示",
+        "dailyGoal": "今日の目標",
+        "goalProgress": "{{done}}/{{goal}}",
+        "goalComplete": "目標達成！",
+        "swipeHint": "左右にスワイプで回答",
+        "sessionTime": "学習時間",
+        "pressSpace": "Spaceで反転",
+        "keyboardHint": "1-4キーで回答"
     },
     "streak": {
         "dayStreak": "連続学習日数",

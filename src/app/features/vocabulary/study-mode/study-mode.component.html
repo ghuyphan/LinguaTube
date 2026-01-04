@@ -1,6 +1,6 @@
 <div class="study-mode">
     @if (!isStudying() && !isComplete()) {
-    <!-- Study Start Screen - Redesigned to match vocab-panel -->
+    <!-- Study Start Screen -->
     <div class="study-start">
         <div class="study-header">
             <div class="header-row">
@@ -25,6 +25,28 @@
             </div>
         </div>
 
+        <!-- Due Today Badge (mobile only - sidebar shows on desktop) -->
+        @if (dueToday() > 0) {
+        <div class="due-today-banner mobile-only">
+            <app-icon name="clock" [size]="16" />
+            <span>{{ i18n.t('study.dueToday') }}: <strong>{{ dueToday() }}</strong></span>
+        </div>
+        }
+
+        <!-- Daily Goal Progress (mobile only - sidebar shows on desktop) -->
+        <div class="daily-goal mobile-only">
+            <div class="goal-header">
+                <span class="goal-label">{{ i18n.t('study.dailyGoal') }}</span>
+                <span class="goal-count">{{ cardsCompletedToday() }}/{{ dailyGoal() }}</span>
+            </div>
+            <div class="goal-bar">
+                <div class="goal-fill" [style.width.%]="goalProgress()"></div>
+            </div>
+            @if (cardsCompletedToday() >= dailyGoal()) {
+            <span class="goal-complete">{{ i18n.t('study.goalComplete') }} 🎉</span>
+            }
+        </div>
+
         <div class="study-options">
             <div class="option-item">
                 <span class="option-label">{{ i18n.t('study.includeNew') }}</span>
@@ -47,6 +69,16 @@
                     <span class="slider"></span>
                 </label>
             </div>
+            <div class="option-item option-item--highlight">
+                <div class="option-label-group">
+                    <span class="option-label">{{ i18n.t('study.reverseMode') }}</span>
+                    <span class="option-hint">{{ i18n.t('study.meaningFirst') }}</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" [(checked)]="reverseMode" />
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
 
         <div class="study-action">
@@ -55,6 +87,8 @@
                 <app-icon name="play" [size]="16" />
                 {{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})
             </button>
+            <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}
+            </p>
             } @else {
             <div class="empty-state">
                 <div class="empty-state__icon-box">
@@ -77,10 +111,13 @@
         <div class="study-progress">
             <div class="progress-bar">
                 <div class="progress-fill" [style.--progress]="(currentIndex() + 1) / studyCards().length * 100"></div>
-
             </div>
             <span class="progress-text">
                 {{ currentIndex() + 1 }} / {{ studyCards().length }}
+            </span>
+            <span class="session-timer">
+                <app-icon name="clock" [size]="14" />
+                {{ formatTime(elapsedSeconds()) }}
             </span>
             <button class="btn btn-ghost btn-sm" (click)="endSession()">
                 <app-icon name="x" [size]="16" />
@@ -88,12 +125,24 @@
             </button>
         </div>
 
-        <!-- Flashcard -->
+        <!-- Flashcard with swipe support -->
         @if (currentCard()) {
-        <div class="flashcard" [class.flipped]="currentCard()!.showAnswer" (click)="flipCard()">
+        <div class="flashcard" [class.flipped]="currentCard()!.showAnswer" [class.swiping]="isSwiping()"
+            [style.--swipe-offset.px]="swipeOffset()" (click)="flipCard()" (touchstart)="onTouchStart($event)"
+            (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd()">
+
+            <!-- Swipe indicators -->
+            <div class="swipe-indicator swipe-indicator--left" [class.active]="swipeOffset() < -40">
+                <app-icon name="x" [size]="24" />
+            </div>
+            <div class="swipe-indicator swipe-indicator--right" [class.active]="swipeOffset() > 40">
+                <app-icon name="check" [size]="24" />
+            </div>
+
             <div class="flashcard__inner">
-                <!-- Front (Word) -->
+                <!-- Front (Word or Meaning based on reverseMode) -->
                 <div class="flashcard__front">
+                    @if (!reverseMode) {
                     <span class="card-word" [class]="'text-' + currentCard()!.item.language">
                         {{ currentCard()!.item.word }}
                     </span>
@@ -106,17 +155,37 @@
                     @if (currentCard()!.item.romanization) {
                     <span class="card-reading">{{ currentCard()!.item.romanization }}</span>
                     }
+                    } @else {
+                    <div class="card-meaning-front">
+                        {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
+                    </div>
+                    }
                     <p class="tap-hint">{{ i18n.t('study.tapToReveal') }}</p>
                 </div>
 
-                <!-- Back (Meaning) -->
+                <!-- Back (Meaning or Word based on reverseMode) -->
                 <div class="flashcard__back">
+                    @if (!reverseMode) {
                     <span class="card-word" [class]="'text-' + currentCard()!.item.language">
                         {{ currentCard()!.item.word }}
                     </span>
                     <div class="card-meaning">
                         {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
+                    } @else {
+                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                        {{ currentCard()!.item.word }}
+                    </span>
+                    @if (currentCard()!.item.reading) {
+                    <span class="card-reading">{{ currentCard()!.item.reading }}</span>
+                    }
+                    @if (currentCard()!.item.pinyin) {
+                    <span class="card-reading">{{ currentCard()!.item.pinyin }}</span>
+                    }
+                    @if (currentCard()!.item.romanization) {
+                    <span class="card-reading">{{ currentCard()!.item.romanization }}</span>
+                    }
+                    }
                     @if (currentCard()!.item.sourceSentence) {
                     <div class="card-sentence">
                         <span class="sentence-label">{{ i18n.t('study.example') }}</span>
@@ -133,20 +202,27 @@
             <button class="answer-btn answer-btn--wrong" (click)="markAnswer('wrong')">
                 <app-icon name="x" [size]="18" />
                 <span>{{ i18n.t('study.again') }}</span>
+                <span class="answer-key">1</span>
             </button>
             <button class="answer-btn answer-btn--hard" (click)="markAnswer('hard')">
                 <app-icon name="rotate-ccw" [size]="18" />
                 <span>{{ i18n.t('study.hard') }}</span>
+                <span class="answer-key">2</span>
             </button>
             <button class="answer-btn answer-btn--good" (click)="markAnswer('good')">
                 <app-icon name="check" [size]="18" />
                 <span>{{ i18n.t('study.good') }}</span>
+                <span class="answer-key">3</span>
             </button>
             <button class="answer-btn answer-btn--easy" (click)="markAnswer('easy')">
                 <app-icon name="chevron-right" [size]="18" />
                 <span>{{ i18n.t('study.easy') }}</span>
+                <span class="answer-key">4</span>
             </button>
         </div>
+
+        <!-- Mobile swipe hint -->
+        <p class="swipe-hint mobile-only">{{ i18n.t('study.swipeHint') }}</p>
         }
         }
     </div>
@@ -154,7 +230,16 @@
 
     <!-- Session Complete -->
     @if (isComplete()) {
-    <div class="session-complete">
+    <div class="session-complete" [class.with-confetti]="showConfetti()">
+        <!-- Confetti -->
+        @if (showConfetti()) {
+        <div class="confetti-container">
+            @for (i of [1,2,3,4,5,6,7,8,9,10,11,12]; track i) {
+            <div class="confetti confetti--{{ i }}"></div>
+            }
+        </div>
+        }
+
         <div class="complete-header">
             <app-icon name="check" [size]="32" class="complete-icon" />
             <h2>{{ i18n.t('study.sessionComplete') }}</h2>
@@ -175,10 +260,22 @@
             </div>
         </div>
 
+        <div class="session-time">
+            <app-icon name="clock" [size]="16" />
+            <span>{{ i18n.t('study.sessionTime') }}: {{ formatTime(elapsedSeconds()) }}</span>
+        </div>
+
+        @if (cardsCompletedToday() >= dailyGoal()) {
+        <div class="goal-achieved">
+            <span>{{ i18n.t('study.goalComplete') }} 🎉</span>
+        </div>
+        }
+
         <button class="btn btn-primary start-btn" (click)="resetSession()">
             <app-icon name="rotate-ccw" [size]="16" />
             {{ i18n.t('study.studyAgain') }}
         </button>
     </div>
     }
+
 </div>

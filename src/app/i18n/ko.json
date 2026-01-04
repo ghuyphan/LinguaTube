@@ -191,7 +191,18 @@
         "toReview": "복습 필요",
         "studyAgain": "다시 학습",
         "recentlyAdded": "최근 추가됨",
-        "tapWordsHint": "자막의 단어를 탭하여 저장"
+        "tapWordsHint": "자막의 단어를 탭하여 저장",
+        "dueToday": "오늘 복습할 카드",
+        "overdue": "기한 초과",
+        "reverseMode": "역방향 모드",
+        "meaningFirst": "뜻 먼저 보기",
+        "dailyGoal": "오늘의 목표",
+        "goalProgress": "{{done}}/{{goal}}",
+        "goalComplete": "목표 달성!",
+        "swipeHint": "좌우로 밀어서 응답",
+        "sessionTime": "학습 시간",
+        "pressSpace": "Space로 뒤집기",
+        "keyboardHint": "1-4 키로 응답"
     },
     "streak": {
         "dayStreak": "연속 학습일",

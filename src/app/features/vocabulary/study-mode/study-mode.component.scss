@@ -1,4 +1,4 @@
-// Study Mode - Redesigned to match video page styling
+// Study Mode - Redesigned with new features
 // Consistent with vocab-panel and dict-panel patterns
 
 .study-mode {
@@ -103,6 +103,75 @@
 }
 
 // ============================================
+// DUE TODAY BANNER
+// ============================================
+.due-today-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    margin: 0 var(--space-md);
+    background: rgba(var(--accent-primary-rgb), 0.08);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    color: var(--accent-primary);
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+// ============================================
+// DAILY GOAL PROGRESS
+// ============================================
+.daily-goal {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+}
+
+.goal-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.goal-count {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.goal-bar {
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.goal-fill {
+    height: 100%;
+    background: var(--accent-primary);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.goal-complete {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--success);
+    text-align: center;
+    margin-top: var(--space-xs);
+}
+
+// ============================================
 // OPTIONS - Minimal checkbox style
 // ============================================
 .study-options {
@@ -121,13 +190,28 @@
     transition: background var(--transition-fast);
 }
 
+.option-item--highlight {
+    background: var(--bg-secondary);
+    margin: var(--space-xs) var(--space-md);
+    border-radius: var(--border-radius);
+    padding: var(--space-sm);
+}
+
+.option-label-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
 .option-label {
     font-size: 0.875rem;
     color: var(--text-secondary);
 }
 
-// Toggle switch styles removed - using global styles
+.option-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
 
 // ============================================
 // ACTION BUTTON
@@ -143,7 +227,30 @@
     font-size: 0.9375rem;
 }
 
+.keyboard-hint {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--space-sm);
+}
 
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media (min-width: 769px) {
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+}
 
 // ============================================
 // STUDY SESSION
@@ -186,6 +293,15 @@
     font-variant-numeric: tabular-nums;
 }
 
+.session-timer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
 // ============================================
 // FLASHCARD
 // ============================================
@@ -193,6 +309,14 @@
     perspective: 1000px;
     cursor: pointer;
     margin-bottom: var(--space-md);
+    position: relative;
+
+    &.swiping {
+        .flashcard__inner {
+            transform: translateX(var(--swipe-offset, 0px));
+            transition: none;
+        }
+    }
 }
 
 .flashcard__inner {
@@ -207,6 +331,10 @@
 
 .flashcard.flipped .flashcard__inner {
     transform: rotateY(180deg);
+}
+
+.flashcard.flipped.swiping .flashcard__inner {
+    transform: rotateY(180deg) translateX(calc(var(--swipe-offset, 0px) * -1));
 }
 
 .flashcard__front,
@@ -248,12 +376,19 @@
     color: var(--text-muted);
 }
 
-.card-meaning {
+.card-meaning,
+.card-meaning-front {
     font-size: 1rem;
     color: var(--text-secondary);
     text-align: center;
     margin-top: var(--space-md);
     line-height: 1.6;
+}
+
+.card-meaning-front {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-top: 0;
 }
 
 .card-sentence {
@@ -278,7 +413,42 @@
 }
 
 // ============================================
-// ANSWER BUTTONS - Pill style
+// SWIPE INDICATORS
+// ============================================
+.swipe-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+
+    &--left {
+        left: var(--space-md);
+        background: var(--word-new);
+        color: var(--error);
+    }
+
+    &--right {
+        right: var(--space-md);
+        background: var(--word-known);
+        color: var(--success);
+    }
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+// ============================================
+// ANSWER BUTTONS - Pill style with keyboard hints
 // ============================================
 .answer-buttons {
     display: grid;
@@ -301,6 +471,22 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.3px;
+    position: relative;
+}
+
+.answer-key {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 0.5rem;
+    opacity: 0.5;
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .answer-key {
+        display: block;
+    }
 }
 
 .answer-btn--wrong {
@@ -323,17 +509,21 @@
     color: var(--text-primary);
 }
 
-/* Hover effect removed
 @media (hover: hover) {
     .answer-btn:hover {
-        transform: translateY(-2px);
         filter: brightness(0.95);
     }
 }
-*/
 
 .answer-btn:active {
     transform: scale(0.98);
+}
+
+.swipe-hint {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--space-sm);
 }
 
 // ============================================
@@ -346,6 +536,20 @@
     padding: var(--space-lg);
     text-align: center;
     animation: fadeIn 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .complete-header {
@@ -366,7 +570,159 @@
     display: flex;
     justify-content: center;
     gap: var(--space-sm);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.session-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.goal-achieved {
+    background: var(--word-known);
+    color: var(--success);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    display: inline-block;
+}
+
+// ============================================
+// CONFETTI ANIMATION
+// ============================================
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confetti-fall 3s ease-out forwards;
+}
+
+// Static confetti classes to avoid Sass random() deprecation
+.confetti--1 {
+    left: 8%;
+    background: var(--accent-primary);
+    animation-delay: 0.1s;
+    transform: rotate(45deg);
+    border-radius: 0;
+}
+
+.confetti--2 {
+    left: 16%;
+    background: var(--success);
+    animation-delay: 0.2s;
+    transform: rotate(120deg);
+    border-radius: 50%;
+}
+
+.confetti--3 {
+    left: 25%;
+    background: var(--warning);
+    animation-delay: 0.05s;
+    transform: rotate(200deg);
+    border-radius: 0;
+}
+
+.confetti--4 {
+    left: 33%;
+    background: var(--info);
+    animation-delay: 0.3s;
+    transform: rotate(80deg);
+    border-radius: 50%;
+}
+
+.confetti--5 {
+    left: 42%;
+    background: #ffd700;
+    animation-delay: 0.15s;
+    transform: rotate(300deg);
+    border-radius: 0;
+}
+
+.confetti--6 {
+    left: 50%;
+    background: #ff69b4;
+    animation-delay: 0.25s;
+    transform: rotate(160deg);
+    border-radius: 50%;
+}
+
+.confetti--7 {
+    left: 58%;
+    background: var(--accent-primary);
+    animation-delay: 0.35s;
+    transform: rotate(240deg);
+    border-radius: 0;
+}
+
+.confetti--8 {
+    left: 67%;
+    background: var(--success);
+    animation-delay: 0.08s;
+    transform: rotate(30deg);
+    border-radius: 50%;
+}
+
+.confetti--9 {
+    left: 75%;
+    background: var(--warning);
+    animation-delay: 0.22s;
+    transform: rotate(180deg);
+    border-radius: 0;
+}
+
+.confetti--10 {
+    left: 83%;
+    background: var(--info);
+    animation-delay: 0.12s;
+    transform: rotate(270deg);
+    border-radius: 50%;
+}
+
+.confetti--11 {
+    left: 92%;
+    background: #ffd700;
+    animation-delay: 0.28s;
+    transform: rotate(60deg);
+    border-radius: 0;
+}
+
+.confetti--12 {
+    left: 97%;
+    background: #ff69b4;
+    animation-delay: 0.18s;
+    transform: rotate(330deg);
+    border-radius: 50%;
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        top: -10px;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        top: 100%;
+        transform: translateY(0) rotate(720deg);
+    }
 }
 
 // ============================================
@@ -421,6 +777,10 @@
         gap: var(--space-xs);
         padding: var(--space-md);
     }
+
+    .answer-key {
+        display: none !important;
+    }
 }
 
 // ============================================
@@ -443,5 +803,9 @@
 
     .card-meaning {
         font-size: 1.125rem;
+    }
+
+    .swipe-indicator {
+        display: none;
     }
 }

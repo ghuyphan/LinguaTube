@@ -1,9 +1,12 @@
-import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { StudyModeComponent } from '../study-mode/study-mode.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService, SettingsService, I18nService } from '../../../services';
+
+const DAILY_GOAL_KEY = 'linguatube_daily_goal';
+const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
 @Component({
   selector: 'app-study-page',
@@ -23,6 +26,32 @@ import { VocabularyService, SettingsService, I18nService } from '../../../servic
 
       <!-- Desktop sidebar with study stats -->
       <aside class="layout-sidebar desktop-only">
+        <!-- Due Today Card -->
+        @if (dueToday() > 0) {
+        <div class="sidebar-card due-card">
+          <div class="due-header">
+            <app-icon name="clock" [size]="18" />
+            <span>{{ i18n.t('study.dueToday') }}</span>
+          </div>
+          <span class="due-count">{{ dueToday() }}</span>
+        </div>
+        }
+
+        <!-- Daily Goal Card -->
+        <div class="sidebar-card goal-card">
+          <div class="goal-header">
+            <span class="goal-label">{{ i18n.t('study.dailyGoal') }}</span>
+            <span class="goal-count">{{ cardsCompletedToday() }}/{{ dailyGoal() }}</span>
+          </div>
+          <div class="goal-bar">
+            <div class="goal-fill" [style.width.%]="goalProgress()"></div>
+          </div>
+          @if (cardsCompletedToday() >= dailyGoal()) {
+          <span class="goal-complete">{{ i18n.t('study.goalComplete') }} 🎉</span>
+          }
+        </div>
+
+        <!-- Progress Ring Card -->
         <div class="sidebar-card">
           <h3>{{ i18n.t('study.title') }}</h3>
           
@@ -124,6 +153,76 @@ import { VocabularyService, SettingsService, I18nService } from '../../../servic
       font-size: 0.8125rem;
       color: var(--text-muted);
       margin-bottom: var(--space-md);
+    }
+
+    /* Due Today Card */
+    .due-card {
+      background: rgba(var(--accent-primary-rgb), 0.08);
+      border-color: rgba(var(--accent-primary-rgb), 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .due-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--accent-primary);
+      font-weight: 500;
+    }
+
+    .due-count {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+    }
+
+    /* Daily Goal Card */
+    .goal-card {
+      padding: var(--space-sm) var(--space-md);
+    }
+
+    .goal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-xs);
+    }
+
+    .goal-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .goal-count {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .goal-bar {
+      height: 6px;
+      background: var(--bg-secondary);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .goal-fill {
+      height: 100%;
+      background: var(--accent-primary);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .goal-complete {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--success);
+      text-align: center;
+      margin-top: var(--space-xs);
     }
 
     /* Progress Ring */
@@ -260,12 +359,38 @@ import { VocabularyService, SettingsService, I18nService } from '../../../servic
   `]
 })
 export class StudyPageComponent {
+  private platformId = inject(PLATFORM_ID);
   private vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
 
   // Circle circumference: 2 * PI * radius (42)
   circumference = 2 * Math.PI * 42;
+
+  // Daily goal state
+  dailyGoal = signal(10);
+  cardsCompletedToday = signal(0);
+
+  // Due today count
+  dueToday = computed(() => {
+    const currentLang = this.settings.settings().language;
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+
+    return this.vocab.vocabulary().filter(item => {
+      if (item.language !== currentLang) return false;
+      if (item.level === 'ignored') return false;
+      if (!item.nextReviewDate) return true; // New items are always due
+      return new Date(item.nextReviewDate) <= today;
+    }).length;
+  });
+
+  // Goal progress percentage
+  goalProgress = computed(() => {
+    const done = this.cardsCompletedToday();
+    const goal = this.dailyGoal();
+    return Math.min(100, Math.round((done / goal) * 100));
+  });
 
   stats = computed(() => {
     return this.vocab.getStatsByLanguage(this.settings.settings().language);
@@ -282,4 +407,29 @@ export class StudyPageComponent {
     const percent = this.progressPercent();
     return this.circumference - (percent / 100) * this.circumference;
   });
+
+  constructor() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadDailyProgress();
+    }
+  }
+
+  private loadDailyProgress(): void {
+    const today = new Date().toDateString();
+    const stored = localStorage.getItem(DAILY_PROGRESS_KEY);
+
+    if (stored) {
+      const data = JSON.parse(stored);
+      if (data.date === today) {
+        this.cardsCompletedToday.set(data.count);
+      } else {
+        this.cardsCompletedToday.set(0);
+      }
+    }
+
+    const goalStored = localStorage.getItem(DAILY_GOAL_KEY);
+    if (goalStored) {
+      this.dailyGoal.set(parseInt(goalStored, 10));
+    }
+  }
 }

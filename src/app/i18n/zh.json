@@ -191,7 +191,18 @@
         "toReview": "待复习",
         "studyAgain": "再次学习",
         "recentlyAdded": "最近添加",
-        "tapWordsHint": "点击字幕中的词汇进行保存"
+        "tapWordsHint": "点击字幕中的词汇进行保存",
+        "dueToday": "今日待复习",
+        "overdue": "已过期",
+        "reverseMode": "反向模式",
+        "meaningFirst": "先显示释义",
+        "dailyGoal": "每日目标",
+        "goalProgress": "{{done}}/{{goal}}",
+        "goalComplete": "目标完成！",
+        "swipeHint": "左右滑动作答",
+        "sessionTime": "学习时长",
+        "pressSpace": "按空格翻转",
+        "keyboardHint": "按1-4键作答"
     },
     "streak": {
         "dayStreak": "连续学习天数",

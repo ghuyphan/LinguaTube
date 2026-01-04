@@ -191,7 +191,18 @@
         "toReview": "To Review",
         "studyAgain": "Study Again",
         "recentlyAdded": "Recently Added",
-        "tapWordsHint": "Tap on words in subtitles to save them"
+        "tapWordsHint": "Tap on words in subtitles to save them",
+        "dueToday": "Due Today",
+        "overdue": "Overdue",
+        "reverseMode": "Reverse Mode",
+        "meaningFirst": "Show meaning first",
+        "dailyGoal": "Daily Goal",
+        "goalProgress": "{{done}}/{{goal}}",
+        "goalComplete": "Goal Complete!",
+        "swipeHint": "Swipe left/right to answer",
+        "sessionTime": "Session Time",
+        "pressSpace": "Press Space to flip",
+        "keyboardHint": "Use 1-4 keys to answer"
     },
     "streak": {
         "dayStreak": "Day Streak",
