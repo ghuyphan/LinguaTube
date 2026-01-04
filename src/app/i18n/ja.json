@@ -77,7 +77,14 @@
         "diamondsRemaining": "残り{{count}}個のダイヤモンド",
         "noDiamondsLeft": "ダイヤモンドがありません",
         "diamondsRegenerate": "ダイヤモンドは時間とともに回復します",
-        "nextDiamondIn": "次のダイヤモンドまで{{time}}"
+        "nextDiamondIn": "次のダイヤモンドまで{{time}}",
+        "rateLimitedTitle": "リクエストが多すぎます",
+        "rateLimitedHint": "しばらくしてからもう一度お試しください",
+        "networkErrorTitle": "接続に失敗しました",
+        "networkErrorHint": "インターネット接続を確認して再試行してください",
+        "serverErrorTitle": "問題が発生しました",
+        "serverErrorHint": "サーバーに問題があります。後でもう一度お試しください",
+        "moreOptions": "その他のオプション"
     },
     "vocab": {
         "title": "単語帳",

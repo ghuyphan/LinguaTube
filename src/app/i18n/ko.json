@@ -77,7 +77,14 @@
         "diamondsRemaining": "다이아몬드 {{count}}개 남음",
         "noDiamondsLeft": "다이아몬드가 없습니다",
         "diamondsRegenerate": "다이아몬드는 시간이 지나면 복구됩니다",
-        "nextDiamondIn": "다음 다이아몬드까지 {{time}}"
+        "nextDiamondIn": "다음 다이아몬드까지 {{time}}",
+        "rateLimitedTitle": "요청이 너무 많습니다",
+        "rateLimitedHint": "잠시 후 다시 시도해 주세요",
+        "networkErrorTitle": "연결 실패",
+        "networkErrorHint": "인터넷 연결을 확인하고 다시 시도해 주세요",
+        "serverErrorTitle": "문제가 발생했습니다",
+        "serverErrorHint": "서버에 문제가 있습니다. 나중에 다시 시도해 주세요",
+        "moreOptions": "더 많은 옵션"
     },
     "vocab": {
         "title": "단어장",

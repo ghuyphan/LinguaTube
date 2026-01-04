@@ -77,7 +77,14 @@
         "diamondsRemaining": "剩余{{count}}个钻石",
         "noDiamondsLeft": "没有钻石了",
         "diamondsRegenerate": "钻石会随时间恢复",
-        "nextDiamondIn": "下一颗钻石{{time}}后"
+        "nextDiamondIn": "下一颗钻石{{time}}后",
+        "rateLimitedTitle": "请求过于频繁",
+        "rateLimitedHint": "请稍后再试",
+        "networkErrorTitle": "连接失败",
+        "networkErrorHint": "请检查网络连接后重试",
+        "serverErrorTitle": "出了点问题",
+        "serverErrorHint": "服务器出现问题，请稍后再试",
+        "moreOptions": "更多选项"
     },
     "vocab": {
         "title": "词汇本",

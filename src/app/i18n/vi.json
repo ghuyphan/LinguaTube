@@ -77,7 +77,14 @@
         "diamondsRemaining": "Còn {{count}} kim cương",
         "noDiamondsLeft": "Hết kim cương",
         "diamondsRegenerate": "Kim cương sẽ tự phục hồi theo thời gian",
-        "nextDiamondIn": "Kim cương tiếp theo sau {{time}}"
+        "nextDiamondIn": "Kim cương tiếp theo sau {{time}}",
+        "rateLimitedTitle": "Quá nhiều yêu cầu",
+        "rateLimitedHint": "Vui lòng đợi một lát rồi thử lại",
+        "networkErrorTitle": "Kết nối thất bại",
+        "networkErrorHint": "Kiểm tra kết nối internet và thử lại",
+        "serverErrorTitle": "Đã xảy ra lỗi",
+        "serverErrorHint": "Máy chủ đang gặp sự cố. Vui lòng thử lại sau",
+        "moreOptions": "Thêm tùy chọn"
     },
     "vocab": {
         "title": "Từ vựng",

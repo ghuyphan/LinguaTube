@@ -89,6 +89,15 @@
                             'UNSUPPORTED_VIDEO_LANGUAGE') {
                             <span class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.unsupportedLanguageHint') }}</span>
+                            } @else if (transcript.error() === 'RATE_LIMITED') {
+                            <span class="empty-title">{{ i18n.t('subtitle.rateLimitedTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.rateLimitedHint') }}</span>
+                            } @else if (transcript.error() === 'NETWORK_ERROR') {
+                            <span class="empty-title">{{ i18n.t('subtitle.networkErrorTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.networkErrorHint') }}</span>
+                            } @else if (transcript.error() === 'SERVER_ERROR') {
+                            <span class="empty-title">{{ i18n.t('subtitle.serverErrorTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.serverErrorHint') }}</span>
                             } @else if (transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) {
                             <!-- No native captions but AI available -->
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>

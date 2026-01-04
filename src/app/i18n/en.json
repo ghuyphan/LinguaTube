@@ -77,7 +77,14 @@
         "diamondsRemaining": "{{count}} diamond{{plural}} remaining",
         "noDiamondsLeft": "No diamonds left",
         "diamondsRegenerate": "Diamonds regenerate over time",
-        "nextDiamondIn": "Next diamond in {{time}}"
+        "nextDiamondIn": "Next diamond in {{time}}",
+        "rateLimitedTitle": "Too many requests",
+        "rateLimitedHint": "Please wait a moment before trying again",
+        "networkErrorTitle": "Connection failed",
+        "networkErrorHint": "Check your internet connection and try again",
+        "serverErrorTitle": "Something went wrong",
+        "serverErrorHint": "Our servers are having issues. Please try again later",
+        "moreOptions": "More options"
     },
     "vocab": {
         "title": "Vocabulary",

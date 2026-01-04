@@ -83,6 +83,14 @@ const MAX_DELAY_MS = 5000;
 const FETCH_TIMEOUT_MS = 10000;
 const MAX_VIDEO_DURATION_SECONDS = 60 * 60; // 60 minutes max for AI
 
+// HTTP Cache-Control settings (in seconds)
+const CACHE_CONTROL = {
+    R2_HIT: 'public, max-age=86400, stale-while-revalidate=3600',      // 24h + 1h SWR
+    NATIVE: 'public, max-age=3600, stale-while-revalidate=600',        // 1h + 10min SWR
+    AI: 'public, max-age=604800, stale-while-revalidate=86400',        // 7 days + 1 day SWR
+    NO_CACHE: 'no-store'                                               // Don't cache errors
+};
+
 // ============================================================================
 // Diamond Credit System
 // ============================================================================
@@ -308,7 +316,7 @@ export async function onRequestPost(context) {
                     whisperAvailable: diamondStatus.diamonds > 0,
                     ...diamondInfo,
                     timing: elapsed()
-                }, 200, { 'X-Cache': 'HIT' });
+                }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
             }
         }
 
@@ -359,7 +367,7 @@ export async function onRequestPost(context) {
                             ...diamondInfo,
                             warning: `Requested '${lang}' not available natively. Returned '${fallbackLang}'.`,
                             timing: elapsed()
-                        }, 200, { 'X-Cache': 'HIT:FALLBACK' });
+                        }, 200, { 'X-Cache': 'HIT:FALLBACK', 'Cache-Control': CACHE_CONTROL.R2_HIT });
                     }
                 }
 
@@ -419,7 +427,7 @@ export async function onRequestPost(context) {
                     whisperAvailable: diamondStatus.diamonds > 0,
                     ...diamondInfo,
                     timing: elapsed()
-                }, 200, { 'X-Cache': 'MISS' });
+                }, 200, { 'X-Cache': 'MISS', 'Cache-Control': CACHE_CONTROL.NATIVE });
             }
 
             // Native failed - cache the failure to prevent repeated scraping attempts
@@ -473,7 +481,7 @@ export async function onRequestPost(context) {
                         ...diamondInfo, // Don't charge
                         warning: `Requested '${lang}' not available natively. Found existing AI transcript in '${existingLang}'.`,
                         timing: elapsed()
-                    }, 200, { 'X-Cache': 'HIT:FALLBACK_AI' });
+                    }, 200, { 'X-Cache': 'HIT:FALLBACK_AI', 'Cache-Control': CACHE_CONTROL.AI });
                 }
             }
 
@@ -753,7 +761,7 @@ async function startGladiaJob(context, { videoId, lang, r2, db, cache, body, aut
             whisperAvailable: true,
             ...diamondInfo,
             timing: elapsed()
-        }, 200, { 'X-Cache': 'HIT:AI' });
+        }, 200, { 'X-Cache': 'HIT:AI', 'Cache-Control': CACHE_CONTROL.AI });
     }
 
     // Consume a diamond for new job
@@ -928,7 +936,7 @@ async function pollGladiaJob(context, { videoId, lang, resultUrl, r2, db, cache,
                     whisperAvailable: true,
                     ...diamondInfo,
                     timing: elapsed()
-                });
+                }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
             }
 
             if (resultData.status === 'error') {

@@ -1,7 +1,8 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of, Subject, catchError, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
+import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
 import { SubtitleCue } from '../../models';
+import { TranscriptCacheService } from '../../services/transcript-cache.service';
 
 // ============================================================================
 // Types
@@ -67,6 +68,7 @@ const MAX_CUE_DURATION = 10;
 })
 export class TranscriptService {
   private http = inject(HttpClient);
+  private persistentCache = inject(TranscriptCacheService);
 
   // ============================================================================
   // State (Simplified - single state signal)
@@ -145,30 +147,58 @@ export class TranscriptService {
   /**
    * Fetch transcript for a video - main entry point
    * Uses the unified /api/transcript endpoint
+   * 
+   * Cache strategy:
+   * 1. Check in-memory cache (current session)
+   * 2. Check IndexedDB (persistent across sessions)
+   * 3. Fetch from API (network)
    */
   fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
-    // Check client-side memory cache first
+    // 1. Check client-side memory cache first (fastest)
     if (this.transcriptCache.has(cacheKey)) {
       const cached = this.transcriptCache.get(cacheKey)!;
-      log('Client cache hit:', { videoId, lang, cues: cached.length });
+      log('Memory cache hit:', { videoId, lang, cues: cached.length });
       this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
       return of(cached);
     }
 
-    // Clear previous state
-    this.state.set({ status: 'loading' });
-    this.fallbackInfo.set(null);
-
-    return this.callTranscriptAPI(videoId, lang, false).pipe(
-      takeUntil(this.cancelSubject),
-      tap(cues => {
-        if (cues.length > 0) {
-          this.transcriptCache.set(cacheKey, cues);
+    // 2. Check IndexedDB persistent cache
+    return from(this.persistentCache.get(videoId, lang)).pipe(
+      switchMap(cachedData => {
+        if (cachedData) {
+          log('IndexedDB cache hit:', { videoId, lang, cues: cachedData.cues.length });
+          // Populate memory cache too
+          this.transcriptCache.set(cacheKey, cachedData.cues);
+          this.state.set({
+            status: 'complete',
+            language: cachedData.language,
+            source: cachedData.source,
+            cues: cachedData.cues
+          });
+          return of(cachedData.cues);
         }
-      }),
-      catchError(err => this.handleHttpError(err))
+
+        // 3. Fetch from API
+        log('Cache miss, fetching from API:', { videoId, lang });
+        this.state.set({ status: 'loading' });
+        this.fallbackInfo.set(null);
+
+        return this.callTranscriptAPI(videoId, lang, false).pipe(
+          takeUntil(this.cancelSubject),
+          tap(cues => {
+            if (cues.length > 0) {
+              // Save to memory cache
+              this.transcriptCache.set(cacheKey, cues);
+              // Save to IndexedDB (fire-and-forget)
+              const source = this.captionSource() || 'native';
+              this.persistentCache.set(videoId, lang, cues, source).catch(() => { });
+            }
+          }),
+          catchError(err => this.handleHttpError(err))
+        );
+      })
     );
   }
 
@@ -190,7 +220,10 @@ export class TranscriptService {
       takeUntil(this.cancelSubject),
       tap(cues => {
         if (cues.length > 0) {
+          // Save to memory cache
           this.transcriptCache.set(cacheKey, cues);
+          // Save to IndexedDB with AI source (7 day TTL)
+          this.persistentCache.set(videoId, lang, cues, 'ai').catch(() => { });
         }
       }),
       catchError(err => this.handleHttpError(err, false))
@@ -209,7 +242,7 @@ export class TranscriptService {
   }
 
   /**
-   * Clear transcript cache
+   * Clear transcript cache (both memory and IndexedDB)
    */
   clearCache(videoId?: string): void {
     if (videoId) {
@@ -218,8 +251,11 @@ export class TranscriptService {
           this.transcriptCache.delete(key);
         }
       }
+      // Also clear from IndexedDB
+      this.persistentCache.clearVideo(videoId).catch(() => { });
     } else {
       this.transcriptCache.clear();
+      // Note: Don't clear all IndexedDB here - use pruneExpired() for maintenance
     }
   }
 
