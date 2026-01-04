@@ -107,7 +107,15 @@
         </div>
         }
 
-        @if (auth.isLoggedIn()) {
+        @if (!auth.isInitialized()) {
+        <!-- Placeholder while auth initializes -->
+        <div class="footer-placeholder">
+            <div class="footer-placeholder__avatar"></div>
+            @if (!isCollapsed()) {
+            <div class="footer-placeholder__text"></div>
+            }
+        </div>
+        } @else if (auth.isLoggedIn()) {
         <button class="footer-btn user-settings-row" (click)="openSettings.emit()">
             <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
             @if (!isCollapsed()) {
@@ -120,7 +128,7 @@
             }
             <app-icon name="settings" [size]="18" class="settings-icon" />
         </button>
-        } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
+        } @else if (auth.isAuthEnabled()) {
         <div class="footer-guest-row" [class.collapsed]="isCollapsed()">
             <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
                 <app-icon name="user" [size]="20" />
