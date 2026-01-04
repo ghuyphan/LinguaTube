@@ -189,11 +189,13 @@ export class TranscriptService {
           takeUntil(this.cancelSubject),
           tap(cues => {
             if (cues.length > 0) {
-              // Save to memory cache
-              this.transcriptCache.set(cacheKey, cues);
-              // Save to IndexedDB (fire-and-forget)
+              // Save to memory cache (using detected language, not requested)
+              const detectedLang = this.detectedLanguage() || lang;
+              const actualCacheKey = `${videoId}:${detectedLang}`;
+              this.transcriptCache.set(actualCacheKey, cues);
+              // Save to IndexedDB with actual detected language (fire-and-forget)
               const source = this.captionSource() || 'native';
-              this.persistentCache.set(videoId, lang, cues, source).catch(() => { });
+              this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
             }
           }),
           catchError(err => this.handleHttpError(err))

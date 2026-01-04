@@ -4,17 +4,17 @@
             <h2>{{ i18n.t('settings.title') }}</h2>
         </div>
 
-        <!-- User Section -->
         <div class="settings-section">
             @if (auth.isLoggedIn()) {
             <div class="user-card">
                 <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
                 <div class="user-info">
-                    <span class="user-name">{{ auth.user()?.name }}</span>
-                    <span class="badge" [class]="'badge--' + auth.getSubscriptionTier()"
-                        style="align-self: flex-start; margin-bottom: 2px;">
-                        {{ auth.getSubscriptionTier() | uppercase }}
-                    </span>
+                    <div class="user-name-row">
+                        <span class="user-name">{{ auth.user()?.name }}</span>
+                        <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
+                            {{ auth.getSubscriptionTier() | uppercase }}
+                        </span>
+                    </div>
                     <span class="user-email">{{ auth.user()?.email }}</span>
                 </div>
                 <div class="sync-badge" [class.syncing]="sync.syncStatus() === 'syncing'"

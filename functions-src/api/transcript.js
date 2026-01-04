@@ -391,6 +391,30 @@ export async function onRequestPost(context) {
             const knownNoNative = await isNoTranscript(db, cache, videoId, lang, 'native');
             if (knownNoNative) {
                 log(`Negative cache hit: ${videoId}:${lang} - known no native captions`);
+
+                // Check for existing AI transcript in R2 before returning error
+                const aiLangs = ['ja', 'zh', 'ko', 'en'];
+                for (const aiLang of aiLangs) {
+                    const aiCached = await getTranscriptFromR2(r2, videoId, aiLang);
+                    if (aiCached?.segments?.length > 0) {
+                        log(`AI fallback found in negative cache path: ${aiLang}`);
+                        return jsonResponse({
+                            success: true,
+                            videoId,
+                            language: aiLang,
+                            requestedLanguage: lang,
+                            segments: aiCached.segments,
+                            source: 'cache',
+                            sourceDetail: aiCached.source === 'ai' ? 'ai-fallback' : 'native-fallback',
+                            availableLanguages: { native: [], ai: aiCached.source === 'ai' ? [aiLang] : [] },
+                            whisperAvailable: diamondStatus.diamonds > 0,
+                            ...diamondInfo,
+                            warning: `No native '${lang}' captions. Returned '${aiLang}'.`,
+                            timing: elapsed()
+                        }, 200, { 'X-Cache': 'HIT:FALLBACK', 'Cache-Control': CACHE_CONTROL.R2_HIT });
+                    }
+                }
+
                 return jsonResponse({
                     success: false,
                     videoId,
@@ -434,7 +458,32 @@ export async function onRequestPost(context) {
                     }
                 }
 
-                // No fallback available, suggest AI
+                // Check for existing AI transcript in R2 (any language) before suggesting diamonds
+                // This handles cases where user already paid for AI transcription in another language
+                const aiLangs = ['ja', 'zh', 'ko', 'en'];
+                for (const aiLang of aiLangs) {
+                    if (aiLang === lang) continue; // Already checked exact match in Step 1
+                    const aiCached = await getTranscriptFromR2(r2, videoId, aiLang);
+                    if (aiCached?.segments?.length > 0 && aiCached.source === 'ai') {
+                        log(`AI fallback found: ${aiLang} for requested ${lang}`);
+                        return jsonResponse({
+                            success: true,
+                            videoId,
+                            language: aiLang,
+                            requestedLanguage: lang,
+                            segments: aiCached.segments,
+                            source: 'cache',
+                            sourceDetail: 'ai-fallback',
+                            availableLanguages: { native: nativeLanguages, ai: [aiLang] },
+                            whisperAvailable: diamondStatus.diamonds > 0,
+                            ...diamondInfo,
+                            warning: `Requested '${lang}' not available. Returned AI '${aiLang}'.`,
+                            timing: elapsed()
+                        }, 200, { 'X-Cache': 'HIT:AI-FALLBACK', 'Cache-Control': CACHE_CONTROL.AI });
+                    }
+                }
+
+                // No native or AI fallback available, suggest AI transcription
                 return jsonResponse({
                     success: false,
                     videoId,

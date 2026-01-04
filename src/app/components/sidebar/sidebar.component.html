@@ -108,15 +108,17 @@
         }
 
         @if (auth.isLoggedIn()) {
-        <button class="footer-btn" (click)="openSettings.emit()">
+        <button class="footer-btn user-settings-row" (click)="openSettings.emit()">
             <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
             @if (!isCollapsed()) {
-            <span class="user-name">{{ auth.user()?.name }}</span>
-            <span class="badge" [class]="'badge--' + auth.getSubscriptionTier()"
-                style="margin-left: auto; font-size: 0.65rem; padding: 1px 6px;">
-                {{ auth.getSubscriptionTier() | uppercase }}
-            </span>
+            <div class="user-info-stack">
+                <span class="user-name">{{ auth.user()?.name }}</span>
+                <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
+                    {{ auth.getSubscriptionTier() | uppercase }}
+                </span>
+            </div>
             }
+            <app-icon name="settings" [size]="18" class="settings-icon" />
         </button>
         } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
         <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
@@ -125,27 +127,10 @@
             <span>{{ i18n.t('header.signIn') }}</span>
             }
         </button>
-        }
-
-        <button class="footer-btn" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+        <button class="footer-btn settings-only" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
             <app-icon name="settings" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.settings') }}</span>
-            }
         </button>
-
-        <button class="footer-btn" (click)="toggleTheme()"
-            [attr.title]="settings.getEffectiveTheme() === 'dark' ? i18n.t('header.switchToLight') : i18n.t('header.switchToDark')">
-            @if (settings.getEffectiveTheme() === 'dark') {
-            <app-icon name="sun" [size]="20" />
-            } @else {
-            <app-icon name="moon" [size]="20" />
-            }
-            @if (!isCollapsed()) {
-            <span>{{ settings.getEffectiveTheme() === 'dark' ? i18n.t('settings.switchToLightMode') :
-                i18n.t('settings.switchToDarkMode') }}</span>
-            }
-        </button>
+        }
     </div>
 </aside>
 

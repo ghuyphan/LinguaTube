@@ -427,6 +427,15 @@ export class AppComponent implements OnDestroy {
    */
   applyUpdate(): void {
     this.showUpdateSheet.set(false);
+
+    // Clear IndexedDB cache to ensure fresh data with new version
+    try {
+      indexedDB.deleteDatabase('lingua-tube-cache');
+      console.log('[SW] Cleared IndexedDB cache');
+    } catch (e) {
+      console.warn('[SW] Failed to clear IndexedDB:', e);
+    }
+
     this.swUpdate.activateUpdate().then(() => {
       console.log('[SW] Update activated, reloading...');
       window.location.reload();

@@ -730,6 +730,53 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* User + Settings Combined Row */
+.user-settings-row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+
+    .user-info-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+
+        .user-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+    }
+
+    .settings-icon {
+        color: var(--text-muted);
+        flex-shrink: 0;
+        margin-left: auto;
+        transition: color var(--transition-fast);
+    }
+
+    @media (hover: hover) {
+        &:hover .settings-icon {
+            color: var(--text-primary);
+        }
+    }
+}
+
+/* Settings-only button for logged out state */
+.settings-only {
+    justify-content: center;
+}
+
 /* Hide on mobile */
 @media (max-width: 768px) {
     :host {
