@@ -49,6 +49,8 @@ import { Token } from '../../../models';
       [message]="languageMismatchMessage()"
       [confirmText]="switchLanguageButtonText()"
       [navPadding]="true"
+      [showCancel]="false"
+      [allowBackdropClose]="false"
       variant="default" 
       icon="alert-circle" 
       (confirmed)="onMismatchConfirm()">
