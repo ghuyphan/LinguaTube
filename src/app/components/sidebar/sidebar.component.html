@@ -67,7 +67,7 @@
 
     <!-- Streak Goal (Motivation) -->
     @if (!isCollapsed()) {
-    <div class="sidebar__section">
+    <div class="sidebar__section sidebar__section--stats">
         <div class="streak-card" [attr.title]="i18n.t('streak.longestStreak') + ': ' + streak.longestStreak()">
             <div class="streak-icon-wrapper">
                 <app-icon name="fire" [size]="20" class="streak-icon" />
@@ -121,15 +121,17 @@
             <app-icon name="settings" [size]="18" class="settings-icon" />
         </button>
         } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
-        <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
-            <app-icon name="user" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('header.signIn') }}</span>
-            }
-        </button>
-        <button class="footer-btn settings-only" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
-            <app-icon name="settings" [size]="20" />
-        </button>
+        <div class="footer-guest-row" [class.collapsed]="isCollapsed()">
+            <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
+                <app-icon name="user" [size]="20" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('header.signIn') }}</span>
+                }
+            </button>
+            <button class="footer-btn-icon" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+                <app-icon name="settings" [size]="18" />
+            </button>
+        </div>
         }
     </div>
 </aside>

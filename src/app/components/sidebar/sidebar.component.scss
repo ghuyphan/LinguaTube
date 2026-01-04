@@ -256,6 +256,12 @@
     }
 }
 
+/* Stats section with fixed height to prevent layout shift */
+.sidebar__section--stats {
+    min-height: 7.5rem;
+    /* Reserve space for streak + diamond cards */
+}
+
 .section-label {
     font-size: 0.7rem;
     font-weight: 700;
@@ -695,6 +701,72 @@
     span {
         font-size: 0.9375rem;
         font-weight: 500;
+    }
+}
+
+/* Guest row - Sign in + Settings in one row */
+.footer-guest-row {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    .login-btn {
+        flex: 1;
+    }
+
+    /* Collapsed state - stack vertically and center */
+    &.collapsed {
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .login-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 0.625rem;
+
+            @media (hover: hover) {
+                &:hover {
+                    padding-left: 0.625rem;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .footer-btn-icon {
+            @media (hover: hover) {
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+/* Small icon-only button for settings */
+.footer-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
+        transform: scale(0.92);
     }
 }
 
