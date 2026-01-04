@@ -8,6 +8,7 @@ import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSheetComponent } from './shared/components/bottom-sheet/bottom-sheet.component';
+import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
@@ -23,10 +24,17 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     IconComponent,
     SettingsSheetComponent,
     SidebarComponent,
-    BottomSheetComponent
+    SidebarComponent,
+    BottomSheetComponent,
+    OnboardingComponent
   ],
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
+      
+      @if (!settings.settings().hasCompletedOnboarding) {
+        <app-onboarding />
+      }
+
       <!-- Desktop Sidebar (lazy loaded) -->
       @defer (on idle) {
         <app-sidebar 

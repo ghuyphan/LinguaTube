@@ -229,5 +229,20 @@
         "loading": "Loading...",
         "error": "Error",
         "success": "Success"
+    },
+    "onboarding": {
+        "welcomeTitle": "Welcome to Voca",
+        "welcomeSubtitle": "Master languages with immersive video learning",
+        "getStarted": "Get Started",
+        "uiLanguageTitle": "Choose your display language",
+        "uiLanguageSubtitle": "You can change this anytime in settings",
+        "learningLanguageTitle": "I want to learn...",
+        "learningLanguageSubtitle": "Choose your target language to get started",
+        "startLearning": "Start Learning",
+        "features": {
+            "subtitles": "Dual subtitles for better understanding",
+            "dict": "Click any word to translate instantly",
+            "srs": "Smart SRS vocabulary review system"
+        }
     }
 }

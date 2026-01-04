@@ -12,7 +12,8 @@ const DEFAULT_SETTINGS: UserSettings = {
   fontSize: 'medium',
   playbackSpeed: 1,
   sidebarCollapsed: false,
-  showDualSubtitles: false
+  showDualSubtitles: false,
+  hasCompletedOnboarding: false
 };
 
 @Injectable({
@@ -85,6 +86,10 @@ export class SettingsService implements OnDestroy {
 
   toggleDualSubtitles(): void {
     this.updateSettings({ showDualSubtitles: !this.settings().showDualSubtitles });
+  }
+
+  completeOnboarding(): void {
+    this.updateSettings({ hasCompletedOnboarding: true });
   }
 
   resetToDefaults(): void {

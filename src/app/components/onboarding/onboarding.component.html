@@ -1,0 +1,89 @@
+<div class="onboarding" [class.exiting]="isExiting()">
+    <!-- Step 0: UI Language Selection -->
+    @if (step() === 0) {
+    <div class="step step--language fade-in">
+        <div class="logo-container pulse">
+            <img src="assets/icon.svg" alt="LinguaTube Logo" class="logo" />
+        </div>
+
+        <h1 class="title">Welcome to Voca</h1>
+        <p class="subtitle">Choose your display language</p>
+
+        <div class="language-grid">
+            @for (lang of uiLanguages; track lang.code) {
+            <button class="language-card" [class.selected]="selectedUILang() === lang.code"
+                (click)="selectUILanguage(lang.code)">
+                <img [src]="lang.flag" [alt]="lang.name" class="flag" />
+                <div class="lang-info">
+                    <span class="lang-name">{{ lang.name }}</span>
+                    <span class="lang-native">{{ lang.nativeName }}</span>
+                </div>
+                @if (selectedUILang() === lang.code) {
+                <div class="check-mark">
+                    <app-icon name="check" [size]="20" />
+                </div>
+                }
+            </button>
+            }
+        </div>
+    </div>
+    }
+
+    <!-- Step 1: Welcome -->
+    @if (step() === 1) {
+    <div class="step step--welcome fade-in">
+        <div class="logo-container pulse">
+            <img src="assets/icon.svg" alt="LinguaTube Logo" class="logo" />
+        </div>
+
+        <h1 class="title">{{ i18n.t('onboarding.welcomeTitle') }}</h1>
+        <p class="subtitle">{{ i18n.t('onboarding.welcomeSubtitle') }}</p>
+
+        <div class="features">
+            @for (feature of features(); track feature.text) {
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <app-icon [name]="feature.icon" [size]="24" />
+                </div>
+                <span class="feature-text">{{ feature.text }}</span>
+            </div>
+            }
+        </div>
+
+        <button class="btn btn-primary btn-lg action-btn" (click)="nextStep()">
+            {{ i18n.t('onboarding.getStarted') }}
+            <app-icon name="chevron-right" [size]="20" />
+        </button>
+    </div>
+    }
+
+    <!-- Step 2: Learning Language Selection -->
+    @if (step() === 2) {
+    <div class="step step--language fade-in-up">
+        <h2 class="title">{{ i18n.t('onboarding.learningLanguageTitle') }}</h2>
+        <p class="subtitle">{{ i18n.t('onboarding.learningLanguageSubtitle') }}</p>
+
+        <div class="language-grid">
+            @for (lang of learningLanguages; track lang.code) {
+            <button class="language-card" [class.selected]="selectedLang() === lang.code"
+                (click)="selectLanguage(lang.code)">
+                <img [src]="lang.flag" [alt]="lang.name" class="flag" />
+                <div class="lang-info">
+                    <span class="lang-name">{{ lang.name }}</span>
+                    <span class="lang-native">{{ lang.nativeName }}</span>
+                </div>
+                @if (selectedLang() === lang.code) {
+                <div class="check-mark">
+                    <app-icon name="check" [size]="20" />
+                </div>
+                }
+            </button>
+            }
+        </div>
+
+        <button class="btn btn-primary btn-lg action-btn" [disabled]="!selectedLang()" (click)="startLearning()">
+            {{ i18n.t('onboarding.startLearning') }}
+        </button>
+    </div>
+    }
+</div>

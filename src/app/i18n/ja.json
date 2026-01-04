@@ -229,5 +229,20 @@
         "loading": "読み込み中...",
         "error": "エラー",
         "success": "成功"
+    },
+    "onboarding": {
+        "welcomeTitle": "Vocaへようこそ",
+        "welcomeSubtitle": "動画で没入型の言語学習を",
+        "getStarted": "始める",
+        "uiLanguageTitle": "表示言語を選択",
+        "uiLanguageSubtitle": "設定でいつでも変更できます",
+        "learningLanguageTitle": "学習したい言語は...",
+        "learningLanguageSubtitle": "学習ターゲットを選択してください",
+        "startLearning": "学習を開始",
+        "features": {
+            "subtitles": "理解を深める二言語字幕",
+            "dict": "クリックで瞬時に単語検索",
+            "srs": "スマートSRS単語復習システム"
+        }
     }
 }

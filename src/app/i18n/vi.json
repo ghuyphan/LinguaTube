@@ -229,5 +229,20 @@
         "loading": "Đang tải...",
         "error": "Lỗi",
         "success": "Thành công"
+    },
+    "onboarding": {
+        "welcomeTitle": "Chào mừng đến với Voca",
+        "welcomeSubtitle": "Làm chủ ngôn ngữ qua video sống động",
+        "getStarted": "Bắt đầu ngay",
+        "uiLanguageTitle": "Chọn ngôn ngữ hiển thị",
+        "uiLanguageSubtitle": "Bạn có thể thay đổi sau trong cài đặt",
+        "learningLanguageTitle": "Tôi muốn học...",
+        "learningLanguageSubtitle": "Chọn ngôn ngữ mục tiêu để bắt đầu",
+        "startLearning": "Bắt đầu học",
+        "features": {
+            "subtitles": "Phụ đề song ngữ giúp hiểu rõ hơn",
+            "dict": "Tra từ nhanh bằng cách nhấp chuột",
+            "srs": "Hệ thống ôn tập từ vựng thông minh (SRS)"
+        }
     }
 }

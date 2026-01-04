@@ -229,5 +229,20 @@
         "loading": "加载中...",
         "error": "错误",
         "success": "成功"
+    },
+    "onboarding": {
+        "welcomeTitle": "欢迎使用 Voca",
+        "welcomeSubtitle": "通过沉浸式视频学习掌握语言",
+        "getStarted": "开始使用",
+        "uiLanguageTitle": "选择显示语言",
+        "uiLanguageSubtitle": "您可以在设置中随时更改",
+        "learningLanguageTitle": "我想学习...",
+        "learningLanguageSubtitle": "选择您的目标语言以开始",
+        "startLearning": "开始学习",
+        "features": {
+            "subtitles": "双语字幕助您更好理解",
+            "dict": "点击任意单词即可即时翻译",
+            "srs": "智能 SRS 词汇复习系统"
+        }
     }
 }
