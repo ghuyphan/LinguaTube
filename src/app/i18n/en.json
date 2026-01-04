@@ -84,7 +84,11 @@
         "networkErrorHint": "Check your internet connection and try again",
         "serverErrorTitle": "Something went wrong",
         "serverErrorHint": "Our servers are having issues. Please try again later",
-        "moreOptions": "More options"
+        "moreOptions": "More options",
+        "noCaptionsInLanguage": "No {language} captions",
+        "transcriptAvailableIn": "This video has {language} captions available",
+        "switchTo": "Switch to {language}",
+        "orUseAI": "Or use AI"
     },
     "vocab": {
         "title": "Vocabulary",

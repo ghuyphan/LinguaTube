@@ -84,7 +84,11 @@
         "networkErrorHint": "Kiểm tra kết nối internet và thử lại",
         "serverErrorTitle": "Đã xảy ra lỗi",
         "serverErrorHint": "Máy chủ đang gặp sự cố. Vui lòng thử lại sau",
-        "moreOptions": "Thêm tùy chọn"
+        "moreOptions": "Thêm tùy chọn",
+        "noCaptionsInLanguage": "Không có phụ đề {language}",
+        "transcriptAvailableIn": "Video này có phụ đề {language}",
+        "switchTo": "Chuyển sang {language}",
+        "orUseAI": "Hoặc dùng AI"
     },
     "vocab": {
         "title": "Từ vựng",

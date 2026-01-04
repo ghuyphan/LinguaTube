@@ -84,7 +84,11 @@
         "networkErrorHint": "インターネット接続を確認して再試行してください",
         "serverErrorTitle": "問題が発生しました",
         "serverErrorHint": "サーバーに問題があります。後でもう一度お試しください",
-        "moreOptions": "その他のオプション"
+        "moreOptions": "その他のオプション",
+        "noCaptionsInLanguage": "{language}の字幕がありません",
+        "transcriptAvailableIn": "この動画には{language}字幕があります",
+        "switchTo": "{language}に切り替え",
+        "orUseAI": "またはAIを使用"
     },
     "vocab": {
         "title": "単語帳",

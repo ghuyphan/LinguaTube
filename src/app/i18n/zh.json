@@ -84,7 +84,11 @@
         "networkErrorHint": "请检查网络连接后重试",
         "serverErrorTitle": "出了点问题",
         "serverErrorHint": "服务器出现问题，请稍后再试",
-        "moreOptions": "更多选项"
+        "moreOptions": "更多选项",
+        "noCaptionsInLanguage": "没有{language}字幕",
+        "transcriptAvailableIn": "此视频有{language}字幕可用",
+        "switchTo": "切换到{language}",
+        "orUseAI": "或使用AI"
     },
     "vocab": {
         "title": "词汇本",

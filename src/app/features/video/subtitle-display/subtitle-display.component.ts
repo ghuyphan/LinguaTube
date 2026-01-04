@@ -54,9 +54,44 @@ export class SubtitleDisplayComponent {
 
   wordClicked = output<{ token: Token; sentence: string }>();
   manualAITrigger = output<void>();
+  switchLanguage = output<string>();
 
   triggerManualAI(): void {
     this.manualAITrigger.emit();
+  }
+
+  // Detect if native transcripts exist in other languages (for NO_NATIVE error case)
+  readonly hasNativeInOtherLanguage = computed(() => {
+    const nativeLangs = this.transcript.availableLanguages().native;
+    const requestedLang = this.settings.settings().language;
+    return nativeLangs.length > 0 && !nativeLangs.includes(requestedLang);
+  });
+
+  readonly firstAvailableNativeLanguage = computed(() => {
+    const nativeLangs = this.transcript.availableLanguages().native;
+    // Prefer common learning languages
+    const preferred = ['ja', 'zh', 'ko', 'en'];
+    for (const lang of preferred) {
+      if (nativeLangs.includes(lang)) return lang;
+    }
+    return nativeLangs[0] || null;
+  });
+
+  getLanguageDisplayName(lang: string): string {
+    switch (lang) {
+      case 'ja': return this.i18n.t('settings.japanese');
+      case 'zh': return this.i18n.t('settings.chinese');
+      case 'ko': return this.i18n.t('settings.korean');
+      case 'en': return this.i18n.t('settings.english');
+      default: return lang.toUpperCase();
+    }
+  }
+
+  onSwitchLanguage(): void {
+    const lang = this.firstAvailableNativeLanguage();
+    if (lang) {
+      this.switchLanguage.emit(lang);
+    }
   }
 
   // Input to skip heavy processing when video is in fullscreen

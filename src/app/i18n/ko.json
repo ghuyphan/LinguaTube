@@ -84,7 +84,11 @@
         "networkErrorHint": "인터넷 연결을 확인하고 다시 시도해 주세요",
         "serverErrorTitle": "문제가 발생했습니다",
         "serverErrorHint": "서버에 문제가 있습니다. 나중에 다시 시도해 주세요",
-        "moreOptions": "더 많은 옵션"
+        "moreOptions": "더 많은 옵션",
+        "noCaptionsInLanguage": "{language} 자막이 없습니다",
+        "transcriptAvailableIn": "이 동영상에는 {language} 자막이 있습니다",
+        "switchTo": "{language}로 전환",
+        "orUseAI": "또는 AI 사용"
     },
     "vocab": {
         "title": "단어장",

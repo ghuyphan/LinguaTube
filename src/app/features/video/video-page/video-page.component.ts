@@ -32,6 +32,7 @@ import { Token } from '../../../models';
           [isVideoFullscreen]="isVideoFullscreen()" 
           (wordClicked)="onWordClicked($event)" 
           (manualAITrigger)="onManualAITrigger()"
+          (switchLanguage)="onSwitchLanguage($event)"
         />
       </div>
 
@@ -340,6 +341,12 @@ export class VideoPageComponent implements OnInit {
     }
     this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);
+  }
+
+  onSwitchLanguage(lang: string): void {
+    // Switch learning language to the available one
+    this.settings.setLanguage(lang as 'ja' | 'zh' | 'ko' | 'en');
+    // The effect watching language changes will handle refetching
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {
