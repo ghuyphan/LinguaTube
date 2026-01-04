@@ -711,21 +711,6 @@
         letter-spacing: 0.03em;
         line-height: 1;
     }
-
-    .badge--free {
-        background: var(--bg-hover);
-        color: var(--text-muted);
-    }
-
-    .badge--pro {
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
-        color: white;
-    }
-
-    .badge--premium {
-        background: linear-gradient(135deg, #f59e0b, #ef4444);
-        color: white;
-    }
 }
 
 /* Guest row - Sign in + Settings in one row */

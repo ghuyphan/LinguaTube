@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, DestroyRef, effect } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -45,6 +45,15 @@ export class DictionaryPanelComponent {
       this.hasSearched.set(true);
       this.lastQuery = this.searchQuery;
     }
+
+    // Effect to handle external search triggers (e.g. from sidebar)
+    effect(() => {
+      const externalQuery = this.dictionary.lastQuery();
+      if (externalQuery && externalQuery !== this.lastQuery) {
+        this.searchQuery = externalQuery;
+        this.search();
+      }
+    });
   }
 
   search(): void {

@@ -30,7 +30,11 @@
 
     <!-- Results -->
     <div class="dict-results">
-        @if (result()) {
+        @if (isLoading()) {
+        <div class="loading-state">
+            <app-icon name="loader" [size]="32" class="loading-spinner" />
+        </div>
+        } @else if (result()) {
         <div class="result-content">
             <div class="result-header">
                 <h3 class="result-word" [class]="'text-' + settings.settings().language">
