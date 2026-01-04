@@ -32,7 +32,6 @@ import { Token } from '../../../models';
           [isVideoFullscreen]="isVideoFullscreen()" 
           (wordClicked)="onWordClicked($event)" 
           (manualAITrigger)="onManualAITrigger()"
-          (switchLanguage)="onSwitchLanguage($event)"
         />
       </div>
 
@@ -170,6 +169,7 @@ export class VideoPageComponent implements OnInit {
 
   private lastLang = '';
   private wasPlayingBeforeWordLookup = false;
+  private skipNextMismatchDialog = false;
 
   constructor() {
     // Watch for language changes and refetch captions when language changes
@@ -184,6 +184,14 @@ export class VideoPageComponent implements OnInit {
       if (currentVideo && this.lastLang && this.lastLang !== currentLang) {
         console.log(`[VideoPage] Language changed from ${this.lastLang} to ${currentLang}, refetching captions`);
         this.lastLang = currentLang;
+
+        // User intentionally changed language, don't show mismatch dialog on next fetch
+        this.skipNextMismatchDialog = true;
+
+        // Close any open mismatch dialog
+        this.showLanguageMismatchDialog.set(false);
+        this.mismatchDetectedLang.set(null);
+
         this.subtitles.clear();
         this.transcript.reset();
         this.fetchCaptions(currentVideo.id);
@@ -300,7 +308,40 @@ export class VideoPageComponent implements OnInit {
           this.handleCaptionsSuccess(cues, lang);
         }
       },
-      error: (err) => console.log('Auto-caption fetch failed:', err)
+      error: (err) => {
+        console.log('Auto-caption fetch failed:', err);
+
+        // Handle NO_NATIVE case where other languages might be available
+        if (this.transcript.error() === 'NO_NATIVE' && !this.skipNextMismatchDialog) {
+          const availableNative = this.transcript.availableLanguages().native;
+
+          if (availableNative && availableNative.length > 0) {
+            // Find a preferred language to suggest
+            const preferred = ['ja', 'zh', 'ko', 'en'];
+            const requested = this.settings.settings().language;
+
+            // normalize function to match simpler codes
+            const normalize = (l: string) => l.split('-')[0].toLowerCase();
+
+            let suggestion = availableNative.find(l => preferred.includes(normalize(l)));
+            if (!suggestion) suggestion = availableNative[0]; // fallback to first available
+
+            if (suggestion) {
+              const suggestionSimple = normalize(suggestion);
+
+              // Only show if it's different from what we asked for
+              if (normalize(requested) !== suggestionSimple) {
+                console.log(`[VideoPage] No native for ${requested}, but found ${suggestion}. Showing mismatch dialog.`);
+                this.mismatchDetectedLang.set(suggestionSimple);
+                this.showLanguageMismatchDialog.set(true);
+              }
+            }
+          }
+        }
+
+        // Always reset the skip flag after an attempt
+        this.skipNextMismatchDialog = false;
+      }
     });
   }
 
@@ -321,15 +362,19 @@ export class VideoPageComponent implements OnInit {
       this.subtitles.tokenizeAllCues(targetLang);
 
       // Check for mismatch: requested language differs from detected
-      // Show dialog to offer switch to detected language
-      if (requestedLang !== targetLang) {
+      // Only show dialog if this is NOT from a user-initiated language switch
+      if (requestedLang !== targetLang && !this.skipNextMismatchDialog) {
         this.mismatchDetectedLang.set(targetLang);
         this.showLanguageMismatchDialog.set(true);
       }
+
+      // Reset the skip flag after processing
+      this.skipNextMismatchDialog = false;
     } else {
       const lang = requestedLang as 'ja' | 'zh' | 'ko' | 'en';
       this.subtitles.setLanguageState(lang, lang);
       this.subtitles.tokenizeAllCues(lang);
+      this.skipNextMismatchDialog = false;
     }
   }
 
@@ -337,16 +382,12 @@ export class VideoPageComponent implements OnInit {
     // Switch to detected language
     const detected = this.mismatchDetectedLang();
     if (detected) {
+      // Skip the dialog for the upcoming refetch triggered by language change
+      this.skipNextMismatchDialog = true;
       this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
     }
     this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);
-  }
-
-  onSwitchLanguage(lang: string): void {
-    // Switch learning language to the available one
-    this.settings.setLanguage(lang as 'ja' | 'zh' | 'ko' | 'en');
-    // The effect watching language changes will handle refetching
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {

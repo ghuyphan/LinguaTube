@@ -98,31 +98,8 @@
                             } @else if (transcript.error() === 'SERVER_ERROR') {
                             <span class="empty-title">{{ i18n.t('subtitle.serverErrorTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.serverErrorHint') }}</span>
-                            } @else if (transcript.error() === 'NO_NATIVE') {
-                            <!-- No native captions in requested language -->
-                            @if (hasNativeInOtherLanguage() && firstAvailableNativeLanguage(); as availableLang) {
-                            <!-- Native exists in another language - offer switch -->
-                            <span class="empty-title">{{ i18n.t('subtitle.noCaptionsInLanguage').replace('{language}',
-                                getLanguageDisplayName(settings.settings().language)) }}</span>
-                            <span class="empty-hint">{{ i18n.t('subtitle.transcriptAvailableIn').replace('{language}',
-                                getLanguageDisplayName(availableLang)) }}</span>
-                            <div class="action-buttons">
-                                <button class="switch-lang-btn" (click)="onSwitchLanguage()">
-                                    <app-icon name="languages" [size]="16" />
-                                    <span>{{ i18n.t('subtitle.switchTo').replace('{language}',
-                                        getLanguageDisplayName(availableLang)) }}</span>
-                                </button>
-                                @if (transcript.diamonds() > 0) {
-                                <button class="try-ai-btn try-ai-btn--secondary" (click)="manualAITrigger.emit()">
-                                    <app-icon name="diamond" [size]="16" />
-                                    <span>{{ i18n.t('subtitle.orUseAI') }}</span>
-                                    <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds()
-                                        }})</span>
-                                </button>
-                                }
-                            </div>
-                            } @else if (transcript.diamonds() > 0) {
-                            <!-- No native anywhere, but AI available -->
+                            } @else if (transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) {
+                            <!-- No native captions but AI available -->
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <button class="try-ai-btn" (click)="manualAITrigger.emit()">
                                 <app-icon name="diamond" [size]="16" />
@@ -130,11 +107,6 @@
                                 <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds()
                                     }})</span>
                             </button>
-                            } @else {
-                            <!-- No native, no diamonds -->
-                            <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
-                            <span class="empty-hint">{{ i18n.t('subtitle.noDiamondsLeft') }}</span>
-                            }
                             } @else if (transcript.error() === 'NO_DIAMONDS') {
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.noDiamondsLeft') }}</span>
