@@ -72,7 +72,10 @@ async function verifyPocketBaseToken(token, env) {
                 email: data.record?.email,
                 name: data.record?.name,
                 subscriptionTier: data.record?.subscription_tier || 'free',
-                subscriptionExpires: data.record?.subscription_expires
+                subscriptionExpires: data.record?.subscription_expires,
+                // Diamond system fields
+                diamonds: data.record?.diamonds,
+                diamondsUpdatedAt: data.record?.diamonds_updated_at
             }
         };
     } catch (error) {

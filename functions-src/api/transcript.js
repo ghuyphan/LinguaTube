@@ -96,11 +96,43 @@ const CACHE_CONTROL = {
 // ============================================================================
 
 /**
- * Get current diamond count for a user (based on IP or user ID)
- * Diamonds regenerate over time: 1 hour = 3 diamonds
+ * Get current diamond count for a user
+ * - Authenticated users: Read from PocketBase user record
+ * - Anonymous users: Read from KV (regenerates over time)
+ * 
+ * Diamonds regenerate over time: 1 hour = 3 diamonds (20 min per diamond)
  * @returns {{ diamonds: number, nextRegenAt: number | null }}
  */
-async function getDiamonds(cache, clientId) {
+async function getDiamonds(cache, clientId, user = null) {
+    // For authenticated users with PocketBase data
+    if (user && user.id) {
+        const storedDiamonds = user.diamonds;
+        const lastUpdated = user.diamondsUpdatedAt;
+
+        // If no diamond data yet, user has full diamonds
+        if (storedDiamonds === null || storedDiamonds === undefined) {
+            return { diamonds: DIAMOND_CONFIG.maxDiamonds, nextRegenAt: null };
+        }
+
+        // Calculate regeneration
+        const now = Date.now();
+        const lastUsedAt = lastUpdated ? new Date(lastUpdated).getTime() : now;
+        const timeSinceLastUse = now - lastUsedAt;
+        const regenPerDiamond = DIAMOND_CONFIG.regenTimeMs / DIAMOND_CONFIG.maxDiamonds;
+        const regenerated = Math.floor(timeSinceLastUse / regenPerDiamond);
+        const currentDiamonds = Math.min(DIAMOND_CONFIG.maxDiamonds, storedDiamonds + regenerated);
+
+        // Calculate next regen time
+        let nextRegenAt = null;
+        if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
+            const timeToNextRegen = regenPerDiamond - (timeSinceLastUse % regenPerDiamond);
+            nextRegenAt = now + timeToNextRegen;
+        }
+
+        return { diamonds: currentDiamonds, nextRegenAt };
+    }
+
+    // Fallback for anonymous users: Use KV cache
     if (!cache) return { diamonds: DIAMOND_CONFIG.maxDiamonds, nextRegenAt: null };
 
     const key = `${DIAMOND_CONFIG.keyPrefix}:${clientId}`;
@@ -136,38 +168,68 @@ async function getDiamonds(cache, clientId) {
 
 /**
  * Consume a diamond for AI transcription
+ * - Authenticated users: Update PocketBase user record
+ * - Anonymous users: Update KV cache
+ * 
  * @returns {{ success: boolean, diamonds: number, nextRegenAt: number | null }}
  */
-async function consumeDiamond(cache, clientId) {
-    if (!cache) return { success: true, diamonds: DIAMOND_CONFIG.maxDiamonds - 1, nextRegenAt: null };
-
-    const { diamonds } = await getDiamonds(cache, clientId);
+async function consumeDiamond(cache, clientId, user = null, env = null) {
+    // Get current diamonds (handles regeneration)
+    const { diamonds } = await getDiamonds(cache, clientId, user);
 
     if (diamonds <= 0) {
-        const { nextRegenAt } = await getDiamonds(cache, clientId);
+        const { nextRegenAt } = await getDiamonds(cache, clientId, user);
         return { success: false, diamonds: 0, nextRegenAt };
     }
 
-    const key = `${DIAMOND_CONFIG.keyPrefix}:${clientId}`;
     const now = Date.now();
     const newDiamonds = diamonds - 1;
+    const regenPerDiamond = DIAMOND_CONFIG.regenTimeMs / DIAMOND_CONFIG.maxDiamonds;
+    const nextRegenAt = now + regenPerDiamond;
+
+    // For authenticated users: Update PocketBase
+    if (user && user.id && env) {
+        try {
+            const pocketbaseUrl = env.POCKETHOST_URL || 'https://voca.pockethost.io';
+            const response = await fetch(`${pocketbaseUrl}/api/collections/users/records/${user.id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    diamonds: newDiamonds,
+                    diamonds_updated_at: new Date().toISOString()
+                }),
+                signal: AbortSignal.timeout(5000)
+            });
+
+            if (!response.ok) {
+                log('Failed to update PocketBase diamonds:', response.status);
+                // Fall through to success - don't block user on PB write failure
+            }
+
+            return { success: true, diamonds: newDiamonds, nextRegenAt };
+        } catch (e) {
+            log('consumeDiamond PB error:', e.message);
+            return { success: true, diamonds: newDiamonds, nextRegenAt };
+        }
+    }
+
+    // Fallback for anonymous users: Use KV cache
+    if (!cache) return { success: true, diamonds: newDiamonds, nextRegenAt: null };
+
+    const key = `${DIAMOND_CONFIG.keyPrefix}:${clientId}`;
 
     try {
         await cache.put(key, JSON.stringify({
             diamonds: newDiamonds,
             lastUsedAt: now
         }), {
-            // Keep for 2 hours to allow regeneration tracking
-            expirationTtl: 7200
+            // Keep for 24 hours (increased from 2 hours)
+            expirationTtl: 86400
         });
-
-        // Calculate next regen
-        const regenPerDiamond = DIAMOND_CONFIG.regenTimeMs / DIAMOND_CONFIG.maxDiamonds;
-        const nextRegenAt = now + regenPerDiamond;
 
         return { success: true, diamonds: newDiamonds, nextRegenAt };
     } catch (e) {
-        log('consumeDiamond error:', e.message);
+        log('consumeDiamond KV error:', e.message);
         return { success: true, diamonds: newDiamonds, nextRegenAt: null };
     }
 }
@@ -259,8 +321,9 @@ export async function onRequestPost(context) {
             ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
             : 'anonymous';
 
-        // Get diamond status
-        const diamondStatus = await getDiamonds(cache, clientId);
+        // Get diamond status (use PocketBase for authenticated users)
+        const user = authResult.valid ? authResult.user : null;
+        const diamondStatus = await getDiamonds(cache, clientId, user);
 
         // Rate limit native caption requests only
         if (!preferAI && !resultUrl) {
@@ -707,6 +770,9 @@ async function startGladiaJob(context, { videoId, lang, r2, db, cache, body, aut
     const { env, waitUntil } = context;
     const gladiaKey = env.GLADIA_API_KEY;
 
+    // Extract user for PocketBase diamond storage
+    const user = authResult.valid ? authResult.user : null;
+
     if (!gladiaKey) {
         return jsonResponse({
             success: false,
@@ -764,8 +830,8 @@ async function startGladiaJob(context, { videoId, lang, r2, db, cache, body, aut
         }, 200, { 'X-Cache': 'HIT:AI', 'Cache-Control': CACHE_CONTROL.AI });
     }
 
-    // Consume a diamond for new job
-    const consumeResult = await consumeDiamond(cache, clientId);
+    // Consume a diamond for new job (use PocketBase for authenticated users)
+    const consumeResult = await consumeDiamond(cache, clientId, user, env);
     if (!consumeResult.success) {
         return jsonResponse({
             success: false,

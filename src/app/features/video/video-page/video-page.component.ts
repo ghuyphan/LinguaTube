@@ -42,18 +42,18 @@ import { Token } from '../../../models';
     </div>
 
     <!-- Language Mismatch Alert -->
+    @if (showLanguageMismatchDialog()) {
     <app-confirm-dialog
-      [isOpen]="showLanguageMismatchDialog()" 
+      [isOpen]="true" 
       [title]="i18n.t('subtitle.languageMismatch')"
       [message]="languageMismatchMessage()"
-      [confirmText]="i18n.t('subtitle.switchLanguage').replace('{{language}}', i18n.t('settings.chinese'))"
-      [cancelText]="i18n.t('subtitle.dismiss')" 
+      [confirmText]="switchLanguageButtonText()"
       [navPadding]="true"
       variant="default" 
       icon="alert-circle" 
-      (confirmed)="onMismatchConfirm()"
-      (cancelled)="onMismatchCancel()">
+      (confirmed)="onMismatchConfirm()">
     </app-confirm-dialog>
+    }
 
     <!-- Word popup -->
     @defer (when selectedWord()) {
@@ -139,12 +139,31 @@ export class VideoPageComponent implements OnInit {
 
   // Language Mismatch Alert
   readonly showLanguageMismatchDialog = signal(false);
+  private mismatchDetectedLang = signal<string | null>(null);
 
   readonly languageMismatchMessage = computed(() => {
+    const requested = this.settings.settings().language;
+    const detected = this.mismatchDetectedLang() || 'en';
     return this.i18n.t('subtitle.languageMismatchMessage')
-      .replace('{{requested}}', this.i18n.t('settings.japanese'))
-      .replace('{{detected}}', this.i18n.t('settings.chinese'));
+      .replace('{{requested}}', this.getLanguageName(requested))
+      .replace('{{detected}}', this.getLanguageName(detected));
   });
+
+  readonly switchLanguageButtonText = computed(() => {
+    const detected = this.mismatchDetectedLang() || 'en';
+    return this.i18n.t('subtitle.switchLanguage')
+      .replace('{{language}}', this.getLanguageName(detected));
+  });
+
+  private getLanguageName(lang: string): string {
+    switch (lang) {
+      case 'ja': return this.i18n.t('settings.japanese');
+      case 'zh': return this.i18n.t('settings.chinese');
+      case 'ko': return this.i18n.t('settings.korean');
+      case 'en': return this.i18n.t('settings.english');
+      default: return lang;
+    }
+  }
 
   private lastLang = '';
   private wasPlayingBeforeWordLookup = false;
@@ -298,9 +317,10 @@ export class VideoPageComponent implements OnInit {
       this.subtitles.setLanguageState(targetLang, requestedLang as 'ja' | 'zh' | 'ko' | 'en');
       this.subtitles.tokenizeAllCues(targetLang);
 
-      // Check for mismatch: Japanese requested but Chinese detected
-      // Show dialog to offer switch
-      if (requestedLang === 'ja' && targetLang === 'zh') {
+      // Check for mismatch: requested language differs from detected
+      // Show dialog to offer switch to detected language
+      if (requestedLang !== targetLang) {
+        this.mismatchDetectedLang.set(targetLang);
         this.showLanguageMismatchDialog.set(true);
       }
     } else {
@@ -311,13 +331,13 @@ export class VideoPageComponent implements OnInit {
   }
 
   onMismatchConfirm() {
-    // Switch to Chinese
-    this.settings.setLanguage('zh');
+    // Switch to detected language
+    const detected = this.mismatchDetectedLang();
+    if (detected) {
+      this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
+    }
     this.showLanguageMismatchDialog.set(false);
-  }
-
-  onMismatchCancel() {
-    this.showLanguageMismatchDialog.set(false);
+    this.mismatchDetectedLang.set(null);
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {
