@@ -698,9 +698,33 @@
         transform: scale(0.96);
     }
 
-    span {
+    span:not(.badge) {
         font-size: 0.9375rem;
         font-weight: 500;
+    }
+
+    .badge {
+        font-size: 0.5625rem;
+        padding: 0.125rem 0.375rem;
+        border-radius: 0.25rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        line-height: 1;
+    }
+
+    .badge--free {
+        background: var(--bg-hover);
+        color: var(--text-muted);
+    }
+
+    .badge--pro {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+    }
+
+    .badge--premium {
+        background: linear-gradient(135deg, #f59e0b, #ef4444);
+        color: white;
     }
 }
 
