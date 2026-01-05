@@ -45,7 +45,9 @@ export class SyncService {
 
     private isSyncing = false;
     private pushTimeout: ReturnType<typeof setTimeout> | null = null;
+    private historyPushTimeout: ReturnType<typeof setTimeout> | null = null;
     private lastPushedHash = '';
+    private lastHistoryHash = '';
     private hasInitialSynced = false;
 
     // Public sync status signals
@@ -112,6 +114,39 @@ export class SyncService {
                 }
             });
         });
+
+        // Watch history changes and push to server (debounced, 5s delay)
+        effect(() => {
+            const items = this.historyService.history();
+            const userId = untracked(() => this.auth.getUserId());
+
+            if (!userId || items.length === 0) return;
+
+            const hash = this.calculateHistoryHash(items);
+
+            untracked(() => {
+                if (hash !== this.lastHistoryHash) {
+                    this.debouncedHistoryPush();
+                }
+            });
+        });
+
+        // Sync when user leaves tab (visibility change)
+        if (typeof document !== 'undefined') {
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    const userId = this.auth.getUserId();
+                    if (userId && !this.isSyncing) {
+                        // Cancel pending debounced syncs and sync immediately
+                        if (this.historyPushTimeout) {
+                            clearTimeout(this.historyPushTimeout);
+                            this.historyPushTimeout = null;
+                            this.pushHistoryOnly();
+                        }
+                    }
+                }
+            });
+        }
     }
 
     private calculateHash(items: any[]): string {
@@ -125,6 +160,40 @@ export class SyncService {
         this.pushTimeout = setTimeout(() => {
             this.pushToServerOnly();
         }, 2000);
+    }
+
+    private calculateHistoryHash(items: any[]): string {
+        return items.map(i => `${i.video_id}:${i.watched_at}:${i.progress}:${i.languages?.join(',') || i.language}`).join('|');
+    }
+
+    private debouncedHistoryPush(): void {
+        if (this.historyPushTimeout) {
+            clearTimeout(this.historyPushTimeout);
+        }
+        this.historyPushTimeout = setTimeout(() => {
+            this.pushHistoryOnly();
+        }, 5000); // 5 second delay for history (less urgent than vocab)
+    }
+
+    /**
+     * Push local history to PocketBase (without full sync)
+     */
+    private async pushHistoryOnly(): Promise<void> {
+        const userId = this.auth.getUserId();
+        if (!userId || this.isSyncing) return;
+
+        const items = this.convertToHistorySyncItems(this.historyService.getAllItems());
+
+        try {
+            this.historySyncing.set(true);
+            await this.pushHistoryToPocketBase(items);
+            this.lastHistoryHash = this.calculateHistoryHash(this.historyService.getAllItems());
+            console.log('[Sync] Pushed', items.length, 'history items to PocketBase');
+        } catch (error) {
+            console.error('[Sync] History push failed:', error);
+        } finally {
+            this.historySyncing.set(false);
+        }
     }
 
     /**
