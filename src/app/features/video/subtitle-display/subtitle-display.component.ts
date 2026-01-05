@@ -210,6 +210,7 @@ export class SubtitleDisplayComponent {
 
   // Dual subtitles state - now managed by SubtitleService
   cueTranslations = this.subtitles.cueTranslations;
+  isTranslatingDual = signal(false);
 
   // Track when user last scrolled the current subtitle display
   private lastUserScrollTime = 0;
@@ -330,11 +331,13 @@ export class SubtitleDisplayComponent {
       const supportsDual = ['ja', 'zh', 'ko'].includes(lang);
       if (showDual && supportsDual && videoId && cues.length > 0) {
         console.log('[SubtitleDisplay] Fetching dual subtitles for:', videoId);
+        this.isTranslatingDual.set(true);
 
         this.translation.getDualSubtitles(videoId, lang, 'en', cues)
           .subscribe({
             next: (translatedSegments) => {
               console.log('[SubtitleDisplay] Received translations:', translatedSegments?.length);
+              this.isTranslatingDual.set(false);
 
               if (translatedSegments && translatedSegments.length) {
                 // Map by INDEX since cue IDs are unstable (random UUIDs)
@@ -353,6 +356,7 @@ export class SubtitleDisplayComponent {
             },
             error: (err) => {
               console.error('[SubtitleDisplay] API error:', err);
+              this.isTranslatingDual.set(false);
             }
           });
       } else {
