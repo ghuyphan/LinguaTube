@@ -99,7 +99,10 @@ export async function onRequest(context) {
             }
         }
 
-        return jsonResponse(result, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
+        return jsonResponse(result, 200, {
+            'Cache-Control': 'public, max-age=604800',  // 7 day cache for tokenization
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+        });
 
     } catch (error) {
         console.error(`[Tokenize ${lang.toUpperCase()}] Error:`, error);

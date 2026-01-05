@@ -18,7 +18,8 @@ import {
     handleOptions,
     errorResponse,
     sanitizeVideoId,
-    validateBatchSize
+    validateBatchSize,
+    validateBody
 } from '../../_shared/utils.js';
 import { tokenize } from '../../_shared/tokenizer.js';
 
@@ -83,6 +84,16 @@ export async function onRequest(context) {
 
     try {
         const body = await request.json();
+
+        // Schema-based validation for security
+        const validation = validateBody(body, {
+            videoId: { type: 'string', required: true, maxLength: 20 },
+            texts: { type: 'array', required: true, maxLength: MAX_BATCH_SIZE }
+        });
+        if (!validation.valid) {
+            return jsonResponse({ error: 'Invalid request', details: validation.errors }, 400);
+        }
+
         const videoId = sanitizeVideoId(body.videoId);
         const texts = body.texts;
 
@@ -136,7 +147,10 @@ export async function onRequest(context) {
             }
         }
 
-        return jsonResponse(result, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
+        return jsonResponse(result, 200, {
+            'Cache-Control': 'public, max-age=604800',  // 7 day cache for tokenization
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+        });
 
     } catch (error) {
         console.error(`[Tokenize Batch ${lang.toUpperCase()}] Error:`, error);

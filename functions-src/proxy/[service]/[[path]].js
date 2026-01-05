@@ -15,6 +15,40 @@ import {
 // Rate limiting: 100 requests per hour per IP
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'proxy' };
 
+// ============================================================================
+// Security: SSRF Protection
+// ============================================================================
+
+/**
+ * Sanitize path segments to prevent path traversal attacks
+ * Filters out ".." and segments starting with "."
+ */
+function sanitizePath(segments) {
+    return segments.filter(seg => {
+        if (!seg) return false;
+        // Block ".." (parent traversal) and hidden files/dirs starting with "."
+        if (seg === '..' || seg.startsWith('.')) return false;
+        return true;
+    });
+}
+
+/**
+ * Check if hostname resolves to internal/private IP ranges
+ * Blocks: 127.x, 10.x, 192.168.x, 172.16-31.x, localhost, 0.0.0.0
+ */
+function isInternalHost(hostname) {
+    const patterns = [
+        /^127\./,                           // Loopback: 127.x.x.x
+        /^10\./,                            // Private: 10.x.x.x
+        /^192\.168\./,                      // Private: 192.168.x.x
+        /^172\.(1[6-9]|2[0-9]|3[01])\./,    // Private: 172.16-31.x.x
+        /^localhost$/i,                     // Localhost hostname
+        /^0\.0\.0\.0$/,                     // All interfaces
+        /^\[::1\]$/,                        // IPv6 loopback
+    ];
+    return patterns.some(p => p.test(hostname));
+}
+
 // Service configuration map
 const SERVICE_CONFIG = {
     invidious1: {
@@ -84,8 +118,27 @@ export async function onRequest(context) {
 
     try {
         const url = new URL(request.url);
-        const targetPath = '/' + pathSegments.join('/');
+
+        // Security: Sanitize path segments to prevent traversal attacks
+        const sanitizedSegments = sanitizePath(pathSegments);
+        if (sanitizedSegments.length !== pathSegments.length) {
+            return jsonResponse(
+                { error: 'Invalid path: path traversal detected' },
+                400
+            );
+        }
+
+        const targetPath = '/' + sanitizedSegments.join('/');
         const targetUrl = `${config.baseUrl}${targetPath}${url.search}`;
+
+        // Security: Validate target URL doesn't resolve to internal/private IPs
+        const targetUrlObj = new URL(targetUrl);
+        if (isInternalHost(targetUrlObj.hostname)) {
+            return jsonResponse(
+                { error: 'Invalid target: internal hosts not allowed' },
+                400
+            );
+        }
 
         console.log(`[Proxy ${service}] ${request.method} ${targetUrl}`);
 

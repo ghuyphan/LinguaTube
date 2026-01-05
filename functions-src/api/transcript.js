@@ -17,6 +17,7 @@ import {
     sanitizeVideoId,
     sanitizeLanguage,
     verifyLanguage,
+    logError,
 } from '../_shared/utils.js';
 import { getValidSubtitles } from 'youtube-caption-extractor';
 import { cleanTranscriptSegments } from '../_shared/transcript-utils.js';
@@ -640,7 +641,7 @@ export async function onRequestPost(context) {
         });
 
     } catch (error) {
-        console.error('[Transcript] Fatal:', error);
+        logError('Transcript', error, { endpoint: 'onRequestPost' });
         return errorResponse(error.message);
     }
 }

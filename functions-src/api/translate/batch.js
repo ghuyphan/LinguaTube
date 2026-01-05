@@ -5,7 +5,7 @@
  */
 
 import { validateAuthToken } from '../../_shared/auth.js';
-import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody } from '../../_shared/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIP,
@@ -30,15 +30,18 @@ export async function onRequestPost(context) {
     const clientIP = getClientIP(request);
     try {
         const body = await request.json();
+
+        // Schema-based validation for security
+        const validation = validateBody(body, {
+            texts: { type: 'array', required: true, maxLength: MAX_BATCH_SIZE },
+            source: { type: 'string', required: true, maxLength: 5 },
+            target: { type: 'string', required: true, maxLength: 5 }
+        });
+        if (!validation.valid) {
+            return jsonResponse({ error: 'Invalid request', details: validation.errors }, 400);
+        }
+
         const { texts, source, target } = body;
-
-        if (!Array.isArray(texts) || texts.length === 0) {
-            return jsonResponse({ error: 'Missing or invalid "texts" array' }, 400);
-        }
-
-        if (!source || !target) {
-            return jsonResponse({ error: 'Missing "source" or "target" language' }, 400);
-        }
 
         if (texts.length > MAX_BATCH_SIZE) {
             return jsonResponse({ error: `Max batch size is ${MAX_BATCH_SIZE}` }, 400);

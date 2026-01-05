@@ -64,11 +64,18 @@ async function verifyPocketBaseToken(token, env) {
         }
 
         const data = await response.json();
+
+        // Defensive validation: ensure response structure is valid
+        if (!data.record?.id || typeof data.record.id !== 'string') {
+            console.error('[Auth] Invalid response structure: missing or invalid record.id');
+            return { valid: false, error: 'Invalid authentication response' };
+        }
+
         return {
             valid: true,
-            userId: data.record?.id,
+            userId: data.record.id,
             user: {
-                id: data.record?.id,
+                id: data.record.id,
                 email: data.record?.email,
                 name: data.record?.name,
                 subscriptionTier: data.record?.subscription_tier || 'free',

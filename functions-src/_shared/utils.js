@@ -207,3 +207,85 @@ export function verifyLanguage(text, expectedLang) {
 
     return true; // Default to pass for other languages
 }
+
+// ============================================================================
+// Input Validation
+// ============================================================================
+
+/**
+ * Validate request body against a schema
+ * @param {object} body - Request body to validate
+ * @param {object} schema - Schema definition
+ *   Format: { fieldName: { type: 'string'|'array'|'number', required: boolean, maxLength?: number, pattern?: RegExp } }
+ * @returns {{ valid: true } | { valid: false, errors: string[] }}
+ */
+export function validateBody(body, schema) {
+    const errors = [];
+
+    for (const [field, rules] of Object.entries(schema)) {
+        const value = body?.[field];
+
+        // Check required fields
+        if (rules.required && (value === undefined || value === null)) {
+            errors.push(`Missing required field: ${field}`);
+            continue;
+        }
+
+        // Skip optional fields that are not present
+        if (value === undefined || value === null) continue;
+
+        // Type validation
+        if (rules.type === 'string' && typeof value !== 'string') {
+            errors.push(`Field '${field}' must be a string`);
+        } else if (rules.type === 'array' && !Array.isArray(value)) {
+            errors.push(`Field '${field}' must be an array`);
+        } else if (rules.type === 'number' && typeof value !== 'number') {
+            errors.push(`Field '${field}' must be a number`);
+        }
+
+        // String-specific validations
+        if (rules.type === 'string' && typeof value === 'string') {
+            if (rules.maxLength && value.length > rules.maxLength) {
+                errors.push(`Field '${field}' exceeds max length of ${rules.maxLength}`);
+            }
+            if (rules.pattern && !rules.pattern.test(value)) {
+                errors.push(`Field '${field}' has invalid format`);
+            }
+        }
+
+        // Array-specific validations
+        if (rules.type === 'array' && Array.isArray(value)) {
+            if (value.length === 0 && rules.required) {
+                errors.push(`Field '${field}' cannot be empty`);
+            }
+            if (rules.maxLength && value.length > rules.maxLength) {
+                errors.push(`Field '${field}' exceeds max length of ${rules.maxLength}`);
+            }
+        }
+    }
+
+    return errors.length === 0 ? { valid: true } : { valid: false, errors };
+}
+
+// ============================================================================
+// Structured Error Logging
+// ============================================================================
+
+/**
+ * Log error with structured JSON format for better observability
+ * @param {string} context - Error context (e.g. 'Transcript', 'Dict')
+ * @param {Error} error - Error object
+ * @param {object} metadata - Additional metadata to include
+ */
+export function logError(context, error, metadata = {}) {
+    const stackLines = error.stack?.split('\n').slice(0, 3).join('\n') || '';
+    console.error(JSON.stringify({
+        timestamp: new Date().toISOString(),
+        level: 'error',
+        context,
+        message: error.message || String(error),
+        stack: stackLines,
+        ...metadata
+    }));
+}
+

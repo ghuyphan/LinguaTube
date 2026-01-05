@@ -21,7 +21,8 @@ import {
     handleOptions,
     errorResponse,
     sanitizeWord,
-    sanitizeLanguage
+    sanitizeLanguage,
+    logError
 } from '../_shared/utils.js';
 import {
     consumeRateLimit,
@@ -292,11 +293,12 @@ export async function onRequest(context) {
 
         return jsonResponse(result, 200, {
             'X-Cache': 'MISS',
+            'Cache-Control': 'public, max-age=86400',  // 24 hour cache for successful lookups
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
     } catch (error) {
-        console.error('[Dict] Error:', error);
+        logError('Dict', error, { word, from, to });
         return errorResponse(error.message);
     }
 }
