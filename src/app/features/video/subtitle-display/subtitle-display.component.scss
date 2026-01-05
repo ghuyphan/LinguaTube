@@ -131,8 +131,13 @@
     color: var(--text-secondary);
     text-align: center;
     max-width: 95%;
-    padding: 0 var(--space-sm);
-    opacity: 0.8;
+    padding: 4px var(--space-sm);
+    opacity: 0.85;
+    position: relative;
+    z-index: 3;
+    /* Above the ::after fade (z-index: 2) */
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-sm);
 }
 
 .subtitle-text.is-looping {
