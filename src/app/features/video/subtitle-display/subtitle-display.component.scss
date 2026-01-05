@@ -153,9 +153,27 @@
     }
 }
 
+.subtitle-translation--loading {
+    animation: none;
+    opacity: 0.7;
+}
+
 .subtitle-text.is-looping {
     box-shadow: 0 0 0 2px var(--accent-primary), 0 0 16px rgba(var(--accent-primary-rgb), 0.35);
     background: rgba(var(--accent-primary-rgb), 0.06);
+    animation: loopBreath 2s ease-in-out infinite;
+}
+
+@keyframes loopBreath {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px var(--accent-primary), 0 0 16px rgba(var(--accent-primary-rgb), 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 0 2px var(--accent-primary), 0 0 28px rgba(var(--accent-primary-rgb), 0.45);
+    }
 }
 
 .current-subtitle--small .subtitle-text {
@@ -574,14 +592,13 @@
     display: inline-block;
     height: 1.5em;
     border-radius: 6px;
+    // Use global skeleton animation for consistency
     background: linear-gradient(90deg,
-            var(--bg-secondary) 0%,
-            rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08) 20%,
-            rgba(var(--accent-primary-rgb, 199, 62, 58), 0.15) 50%,
-            rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08) 80%,
-            var(--bg-secondary) 100%);
+            var(--bg-secondary) 25%,
+            var(--bg-card) 50%,
+            var(--bg-secondary) 75%);
     background-size: 200% 100%;
-    animation: shimmer 1.5s ease-in-out infinite;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
     width: 60px;
 
     &:nth-child(2n) {
@@ -598,16 +615,6 @@
 
     &:nth-child(7n) {
         width: 40px;
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: 200% 0;
-    }
-
-    100% {
-        background-position: -200% 0;
     }
 }
 
@@ -960,7 +967,7 @@ ruby rt {
     flex-shrink: 0;
     border: 1px solid var(--border-color);
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     background: var(--bg-secondary);
     color: var(--text-muted);
     position: relative;
@@ -970,6 +977,10 @@ ruby rt {
         color: var(--accent-primary);
         border-color: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.3);
     }
+
+    &:active {
+        transform: scale(0.94);
+    }
 }
 
 @media (hover: hover) {
@@ -977,6 +988,11 @@ ruby rt {
         background: var(--bg-tertiary);
         color: var(--text-primary);
         border-color: var(--border-color-hover, var(--border-color));
+        transform: translateY(-1px);
+    }
+
+    .ctrl-btn:hover.active {
+        transform: translateY(-1px);
     }
 }
 
@@ -1023,7 +1039,7 @@ ruby rt {
     align-items: center;
     gap: var(--space-sm);
     overflow: hidden;
-    transition: max-width 0.3s ease, opacity 0.2s ease, padding 0.3s ease, border-color 0.3s ease;
+    transition: max-width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease, padding 0.3s ease, border-color 0.3s ease;
 
     // Collapsed state
     max-width: 0;
@@ -1031,6 +1047,13 @@ ruby rt {
     padding-left: 0;
     border-left: 1px solid transparent;
     margin-left: 0;
+
+    // Child buttons hidden initially
+    .ctrl-btn {
+        opacity: 0;
+        transform: translateX(-10px) scale(0.9);
+        transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
     // Expanded state
     &.expanded {
@@ -1040,6 +1063,28 @@ ruby rt {
         border-left-color: var(--border-color);
         margin-left: 4px;
         overflow: visible; // Allow content to be fully visible when expanded
+
+        // Staggered reveal of children
+        .ctrl-btn {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .ctrl-btn:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .ctrl-btn:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .ctrl-btn:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+
+        .ctrl-btn:nth-child(4) {
+            transition-delay: 0.2s;
+        }
     }
 
     // Prevent items from shrinking
