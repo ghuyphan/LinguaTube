@@ -651,42 +651,16 @@ export async function onRequestPost(context) {
 // ============================================================================
 
 /**
- * Try to get native captions from free scraper, then Supadata
+ * Try to get native captions from Supadata API
+ * Note: Free scraper disabled - it caused false negative cache entries
  */
 async function tryNativeCaptions(videoId, lang, env, cache) {
-    // Strategy 1: Free scraper (youtube-caption-extractor)
-    try {
-        log('Trying free scraper...');
-        const subtitles = await getValidSubtitles({ videoID: videoId, lang });
+    // Strategy 1: Free scraper - DISABLED
+    // The free scraper was causing issues: when it failed and Supadata API key 
+    // wasn't configured, videos would be incorrectly marked as "no native captions"
+    // even though Supadata was never tried.
 
-        if (subtitles?.length > 0) {
-            const segments = subtitles.map((s, i) => ({
-                id: i,
-                text: s.text?.trim() || '',
-                start: parseFloat(s.start) || 0,
-                duration: parseFloat(s.dur) || 0
-            })).filter(s => s.text);
-
-            if (segments.length > 0) {
-                // Verify the language actually matches using text analysis
-                const sampleText = segments.slice(0, 10).map(s => s.text).join(' ');
-                if (!verifyLanguage(sampleText, lang)) {
-                    log(`Free scraper: Language verification failed for ${lang}. Rejecting captions.`);
-                } else {
-                    log(`Free scraper success: ${segments.length} segments (verified ${lang})`);
-                    return {
-                        segments: cleanTranscriptSegments(segments),
-                        source: 'scrape',
-                        availableLangs: [lang] // Scraper doesn't tell us other languages
-                    };
-                }
-            }
-        }
-    } catch (e) {
-        log('Free scraper failed:', e.message);
-    }
-
-    // Strategy 2: Supadata API
+    // Strategy 2: Supadata API (now primary)
     if (env.SUPADATA_API_KEY) {
         try {
             log('Trying Supadata...');
