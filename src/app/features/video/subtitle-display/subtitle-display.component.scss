@@ -110,8 +110,8 @@
 }
 
 .subtitle-text {
-    font-size: 1.25rem;
-    line-height: 2;
+    font-size: 1.375rem;
+    line-height: 2.1;
     text-align: center;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -126,13 +126,13 @@
 }
 
 .subtitle-translation {
-    font-size: 0.875rem;
-    line-height: 1.4;
+    font-size: 0.9375rem;
+    line-height: 1.5;
     color: var(--text-secondary);
     text-align: center;
     max-width: 95%;
-    padding: 4px var(--space-sm);
-    opacity: 0.85;
+    padding: 6px var(--space-sm);
+    opacity: 0.9;
     position: relative;
     z-index: 3;
     /* Above the ::after fade (z-index: 2) */
@@ -146,13 +146,21 @@
 }
 
 .current-subtitle--small .subtitle-text {
-    font-size: 1.0625rem;
-    line-height: 1.9;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.current-subtitle--small .subtitle-translation {
+    font-size: 0.8125rem;
 }
 
 .current-subtitle--large .subtitle-text {
-    font-size: 1.4375rem;
-    line-height: 2.1;
+    font-size: 1.625rem;
+    line-height: 2.2;
+}
+
+.current-subtitle--large .subtitle-translation {
+    font-size: 1rem;
 }
 
 /* ============================================
@@ -973,9 +981,7 @@ ruby rt {
     }
 }
 
-.ctrl-label {
-    // Will be hidden on mobile
-}
+// ctrl-label styles are inherited from base, hidden on mobile via media query
 
 .ctrl-badge {
     position: absolute;
@@ -1024,51 +1030,12 @@ ruby rt {
     }
 }
 
-/* Font size controls */
-.font-controls {
-    display: flex;
-    gap: 2px;
-    background: var(--bg-secondary);
-    padding: 3px;
-    border-radius: var(--border-radius-md, 8px);
-    border: 1px solid var(--border-color);
-    flex-shrink: 0;
-}
-
-.font-btn {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    border: none;
-    background: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    border-radius: var(--border-radius-sm);
-    transition: all var(--transition-fast);
-
-    &.active {
-        background: var(--bg-tertiary);
-        color: var(--accent-primary);
-    }
-}
-
-.font-btn--medium {
+/* Font size label (cycling button) */
+.font-size-label {
     font-size: 0.8125rem;
-}
-
-.font-btn--large {
-    font-size: 0.9375rem;
-}
-
-@media (hover: hover) {
-    .font-btn:hover:not(.active) {
-        color: var(--text-primary);
-        background: var(--bg-tertiary);
-    }
+    font-weight: 600;
+    min-width: 1em;
+    text-align: center;
 }
 
 /* ============================================
@@ -1089,17 +1056,29 @@ ruby rt {
     }
 
     .subtitle-text {
-        font-size: 1.125rem;
-        line-height: 2;
+        font-size: 1.25rem;
+        line-height: 2.1;
         padding: var(--space-xs) var(--space-sm);
     }
 
+    .subtitle-translation {
+        font-size: 0.875rem;
+    }
+
     .current-subtitle--small .subtitle-text {
-        font-size: 1rem;
+        font-size: 1.0625rem;
+    }
+
+    .current-subtitle--small .subtitle-translation {
+        font-size: 0.75rem;
     }
 
     .current-subtitle--large .subtitle-text {
-        font-size: 1.25rem;
+        font-size: 1.4375rem;
+    }
+
+    .current-subtitle--large .subtitle-translation {
+        font-size: 0.9375rem;
     }
 
     .word {
@@ -1179,16 +1158,6 @@ ruby rt {
         max-width: 400px;
     }
 
-    .font-controls {
-        padding: 2px;
-        gap: 2px;
-    }
-
-    .font-btn {
-        width: 32px;
-        height: 32px;
-    }
-
     /* State indicators on mobile */
     .state-item {
         gap: var(--space-md);
@@ -1262,16 +1231,28 @@ ruby rt {
     }
 
     .subtitle-text {
-        font-size: 1rem;
-        line-height: 1.9;
+        font-size: 1.125rem;
+        line-height: 2;
+    }
+
+    .subtitle-translation {
+        font-size: 0.8125rem;
     }
 
     .current-subtitle--small .subtitle-text {
-        font-size: 0.875rem;
+        font-size: 0.9375rem;
+    }
+
+    .current-subtitle--small .subtitle-translation {
+        font-size: 0.6875rem;
     }
 
     .current-subtitle--large .subtitle-text {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
+    }
+
+    .current-subtitle--large .subtitle-translation {
+        font-size: 0.875rem;
     }
 
     .word {

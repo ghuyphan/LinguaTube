@@ -49,6 +49,7 @@
         "smallFont": "Chữ nhỏ",
         "mediumFont": "Chữ vừa",
         "largeFont": "Chữ lớn",
+        "fontSize": "Cỡ chữ",
         "waitingForSubtitles": "Đang chờ phụ đề...",
         "noSubtitlesLoaded": "Chưa có phụ đề",
         "tryVideoWithCaptions": "Thử video có phụ đề",
@@ -88,7 +89,8 @@
         "noCaptionsInLanguage": "Không có phụ đề {language}",
         "transcriptAvailableIn": "Video này có phụ đề {language}",
         "switchTo": "Chuyển sang {language}",
-        "orUseAI": "Hoặc dùng AI"
+        "orUseAI": "Hoặc dùng AI",
+        "dualSubs": "Phụ đề đôi"
     },
     "vocab": {
         "title": "Từ vựng",

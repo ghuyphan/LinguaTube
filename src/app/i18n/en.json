@@ -49,6 +49,7 @@
         "smallFont": "Small font",
         "mediumFont": "Medium font",
         "largeFont": "Large font",
+        "fontSize": "Font size",
         "waitingForSubtitles": "Waiting for subtitles...",
         "noSubtitlesLoaded": "No subtitles loaded",
         "tryVideoWithCaptions": "Try a video with captions enabled",
@@ -88,7 +89,8 @@
         "noCaptionsInLanguage": "No {language} captions",
         "transcriptAvailableIn": "This video has {language} captions available",
         "switchTo": "Switch to {language}",
-        "orUseAI": "Or use AI"
+        "orUseAI": "Or use AI",
+        "dualSubs": "Dual Subtitles"
     },
     "vocab": {
         "title": "Vocabulary",

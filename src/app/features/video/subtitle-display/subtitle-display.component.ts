@@ -326,7 +326,9 @@ export class SubtitleDisplayComponent {
       const videoId = this.youtube.currentVideo()?.id;
       const cues = this.subtitles.subtitles();
 
-      if (showDual && lang === 'ja' && videoId && cues.length > 0) {
+      // Enable dual subtitles for all CJK languages
+      const supportsDual = ['ja', 'zh', 'ko'].includes(lang);
+      if (showDual && supportsDual && videoId && cues.length > 0) {
         console.log('[SubtitleDisplay] Fetching dual subtitles for:', videoId);
 
         this.translation.getDualSubtitles(videoId, lang, 'en', cues)
@@ -415,6 +417,26 @@ export class SubtitleDisplayComponent {
       this.settings.toggleFurigana();
     } else {
       this.settings.togglePinyin();
+    }
+  }
+
+  // Font size cycling (like fullscreen mode)
+  private readonly fontSizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
+
+  cycleFontSize(): void {
+    const current = this.settings.settings().fontSize;
+    const currentIndex = this.fontSizes.indexOf(current as 'small' | 'medium' | 'large');
+    const nextIndex = (currentIndex + 1) % this.fontSizes.length;
+    this.settings.setFontSize(this.fontSizes[nextIndex]);
+  }
+
+  getFontSizeLabel(): string {
+    const size = this.settings.settings().fontSize;
+    switch (size) {
+      case 'small': return 'S';
+      case 'medium': return 'M';
+      case 'large': return 'L';
+      default: return 'M';
     }
   }
 
