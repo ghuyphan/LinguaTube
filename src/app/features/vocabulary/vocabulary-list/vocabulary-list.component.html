@@ -30,7 +30,25 @@
 
     <!-- Word list -->
     <div class="word-list">
-        @if (filteredWords().length === 0) {
+        @if (sync.isInitialSyncing() && auth.isLoggedIn() && vocab.vocabulary().length === 0) {
+        <!-- Skeleton loading state during initial sync -->
+        <div class="vocab-items skeleton-container">
+            @for (i of [1, 2, 3, 4, 5]; track i) {
+            <div class="vocab-item vocab-item--skeleton">
+                <div class="vocab-item__content">
+                    <div class="vocab-item__header">
+                        <div class="skeleton-line skeleton-line--word"></div>
+                        <div class="skeleton-line skeleton-line--reading"></div>
+                    </div>
+                    <div class="skeleton-line skeleton-line--meaning"></div>
+                </div>
+                <div class="vocab-item__actions">
+                    <div class="skeleton-dot"></div>
+                </div>
+            </div>
+            }
+        </div>
+        } @else if (filteredWords().length === 0) {
         <div class="empty-state">
             @if (vocab.vocabulary().length === 0) {
             <div class="empty-state__icon-box">

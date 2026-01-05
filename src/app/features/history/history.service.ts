@@ -27,7 +27,7 @@ export class HistoryService {
     /** Computed: history for current language */
     readonly historyByLanguage = computed(() => {
         const lang = this.settings.settings().language;
-        return this.history().filter(item => item.language === lang);
+        return this.history().filter(item => item.languages?.includes(lang) ?? item.language === lang);
     });
 
     /** Computed: count of history items */
@@ -42,20 +42,20 @@ export class HistoryService {
             untracked(() => this.saveToStorage(items));
         });
 
-        // Auto-track when videos are loaded
-        this.youtube.videoLoaded.subscribe(video => {
-            const language = this.settings.settings().language;
-            this.addToHistory(video, language);
-        });
+        // NOTE: Auto-tracking removed - history is now tracked from VideoPageComponent
+        // after transcript loads, using actual available languages
     }
 
     /**
      * Add or update a video in history
-     * If the video already exists, updates watched_at and progress
+     * If the video already exists, updates watched_at, progress, and languages
+     * @param availableLanguages - raw language codes from transcript API (will be filtered)
      */
-    addToHistory(video: VideoInfo, language: 'ja' | 'zh' | 'ko' | 'en', progress: number = 0): void {
+    addToHistory(video: VideoInfo, availableLanguages: string[], progress: number = 0): void {
         const items = [...this.history()];
         const existingIndex = items.findIndex(item => item.video_id === video.id);
+        const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
+        const primaryLang = filteredLanguages[0] || 'en';
 
         const historyItem: HistoryItem = {
             id: existingIndex >= 0 ? items[existingIndex].id : this.generateId(),
@@ -64,7 +64,8 @@ export class HistoryService {
             thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`,
             channel: video.channel,
             duration: video.duration,
-            language,
+            language: primaryLang,  // Keep for backward compatibility
+            languages: filteredLanguages,
             watched_at: new Date(),
             progress: existingIndex >= 0 ? Math.max(items[existingIndex].progress, progress) : progress,
             is_favorite: existingIndex >= 0 ? items[existingIndex].is_favorite : false
@@ -187,6 +188,19 @@ export class HistoryService {
         } catch (e) {
             console.warn('[History] Failed to save to storage:', e);
         }
+    }
+
+    /**
+     * Filter and normalize language codes to only supported languages (CJK + EN)
+     * e.g., 'zh-TW' → 'zh', 'ja-JP' → 'ja'
+     */
+    private filterSupportedLanguages(langs: string[]): ('ja' | 'zh' | 'ko' | 'en')[] {
+        const supported = ['ja', 'zh', 'ko', 'en'];
+        const normalized = langs
+            .map(l => l.split('-')[0].toLowerCase())
+            .filter(l => supported.includes(l));
+        // Return unique values only
+        return [...new Set(normalized)] as ('ja' | 'zh' | 'ko' | 'en')[];
     }
 
     private generateId(): string {

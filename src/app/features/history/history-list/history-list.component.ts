@@ -43,8 +43,8 @@ const VELOCITY_THRESHOLD = 0.5;
 export class HistoryListComponent implements OnInit {
     private historyService = inject(HistoryService);
     private router = inject(Router);
-    private syncService = inject(SyncService);
-    private auth = inject(AuthService);
+    readonly sync = inject(SyncService);
+    readonly auth = inject(AuthService);
     private platformId = inject(PLATFORM_ID);
 
     i18n = inject(I18nService);
@@ -272,7 +272,7 @@ export class HistoryListComponent implements OnInit {
         this.historyService.removeFromHistory(item.id);
 
         if (this.auth.isLoggedIn()) {
-            this.syncService.deleteHistoryFromServer(item.video_id);
+            this.sync.deleteHistoryFromServer(item.video_id);
         }
 
         this.itemRemoved.emit(item);

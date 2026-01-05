@@ -103,6 +103,68 @@
     padding: 0;
 }
 
+// ============================================
+// SKELETON LOADING STATE
+// ============================================
+.skeleton-container {
+    animation: skeletonFadeIn 0.3s ease-out;
+}
+
+.vocab-item--skeleton {
+    pointer-events: none;
+}
+
+.skeleton-line {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-sm);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+
+    &--word {
+        height: 1rem;
+        width: 60px;
+    }
+
+    &--reading {
+        height: 0.875rem;
+        width: 40px;
+    }
+
+    &--meaning {
+        height: 0.875rem;
+        width: 140px;
+    }
+}
+
+.skeleton-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes skeletonFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .vocab-items {
     display: flex;
     flex-direction: column;

@@ -7,6 +7,7 @@ import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabu
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../../services';
+import { HistoryService } from '../../history/history.service';
 import { Token } from '../../../models';
 
 @Component({
@@ -133,6 +134,7 @@ export class VideoPageComponent implements OnInit {
   private subtitles = inject(SubtitleService);
   private transcript = inject(TranscriptService);
   private settings = inject(SettingsService);
+  private historyService = inject(HistoryService);
   i18n = inject(I18nService);
 
   selectedWord = signal<Token | null>(null);
@@ -349,6 +351,13 @@ export class VideoPageComponent implements OnInit {
     // Reset index first to prevent showing old cue during transition
     this.subtitles.currentCueIndex.set(-1);
     this.subtitles.subtitles.set(cues);
+
+    // Track in history with actual available languages
+    const currentVideo = this.youtube.currentVideo();
+    if (currentVideo) {
+      const availableLangs = this.transcript.availableLanguages().native;
+      this.historyService.addToHistory(currentVideo, availableLangs);
+    }
 
     // Detect actual language returned by backend
     const detectedFull = this.transcript.detectedLanguage();

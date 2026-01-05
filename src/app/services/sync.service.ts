@@ -28,6 +28,7 @@ interface HistorySyncItem {
     channel?: string;
     duration?: number;
     language: string;
+    languages?: string[];  // Available transcript languages (CJK + EN only)
     watched_at: string;
     progress: number;
     is_favorite: boolean;
@@ -50,6 +51,17 @@ export class SyncService {
     // Public sync status signals
     readonly syncStatus = signal<SyncStatus>('idle');
     readonly lastSyncTime = signal<Date | null>(null);
+
+    /**
+     * True during initial sync when local data may be empty.
+     * Components can use this to show skeleton loading states.
+     * This is true only for the FIRST sync after login/restore, not for background syncs.
+     */
+    readonly isInitialSyncing = signal(false);
+    /** True while vocabulary is being synced */
+    readonly vocabSyncing = signal(false);
+    /** True while history is being synced */
+    readonly historySyncing = signal(false);
 
     constructor() {
         this.setupAutoSync();
@@ -146,10 +158,18 @@ export class SyncService {
 
         this.isSyncing = true;
         this.syncStatus.set('syncing');
-        console.log('[Sync] Starting full sync with PocketBase for user:', userId);
+
+        // Set initial syncing flag if this is the first sync
+        const isInitial = !this.hasInitialSynced;
+        if (isInitial) {
+            this.isInitialSyncing.set(true);
+        }
+
+        console.log('[Sync] Starting full sync with PocketBase for user:', userId, isInitial ? '(initial)' : '');
 
         try {
             // Sync vocabulary
+            this.vocabSyncing.set(true);
             const remote = await this.fetchFromPocketBase();
             console.log('[Sync] Fetched', remote.length, 'vocab items from PocketBase');
 
@@ -162,6 +182,7 @@ export class SyncService {
             await this.pushToPocketBase(merged);
             this.importToLocal(merged);
             this.lastPushedHash = this.calculateHash(this.vocab.getAllItems());
+            this.vocabSyncing.set(false);
 
             // Sync history
             await this.syncHistory();
@@ -172,8 +193,10 @@ export class SyncService {
         } catch (error) {
             console.error('[Sync] Failed:', error);
             this.syncStatus.set('error');
+            this.vocabSyncing.set(false);
         } finally {
             this.isSyncing = false;
+            this.isInitialSyncing.set(false);
         }
     }
 
@@ -428,6 +451,7 @@ export class SyncService {
         const userId = this.auth.getUserId();
         if (!userId) return;
 
+        this.historySyncing.set(true);
         console.log('[Sync] Starting history sync...');
 
         try {
@@ -452,6 +476,8 @@ export class SyncService {
             console.log('[Sync] History sync complete!');
         } catch (error) {
             console.error('[Sync] History sync failed:', error);
+        } finally {
+            this.historySyncing.set(false);
         }
     }
 
@@ -464,6 +490,7 @@ export class SyncService {
             channel: item.channel,
             duration: item.duration,
             language: item.language,
+            languages: item.languages,
             watched_at: item.watched_at instanceof Date
                 ? item.watched_at.toISOString()
                 : item.watched_at,
@@ -492,6 +519,7 @@ export class SyncService {
                 channel: record['channel'],
                 duration: record['duration'],
                 language: record['language'] || 'en',
+                languages: record['languages'] || [],
                 watched_at: record['watched_at'],
                 progress: record['progress'] || 0,
                 is_favorite: record['is_favorite'] || false
@@ -533,6 +561,7 @@ export class SyncService {
                     channel: item.channel || '',
                     duration: item.duration || 0,
                     language: item.language,
+                    languages: item.languages || [],
                     watched_at: item.watched_at,
                     progress: item.progress,
                     is_favorite: item.is_favorite,
@@ -588,6 +617,7 @@ export class SyncService {
             channel: item.channel,
             duration: item.duration,
             language: item.language as 'ja' | 'zh' | 'ko' | 'en',
+            languages: (item.languages || []) as ('ja' | 'zh' | 'ko' | 'en')[],
             watched_at: new Date(item.watched_at),
             progress: item.progress,
             is_favorite: item.is_favorite

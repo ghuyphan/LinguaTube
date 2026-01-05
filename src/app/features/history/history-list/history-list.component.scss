@@ -38,6 +38,81 @@
 }
 
 // -------------------------
+// Skeleton Loading State
+// -------------------------
+.skeleton-container {
+    animation: skeletonFadeIn 0.3s ease-out;
+}
+
+.history-item--skeleton {
+    pointer-events: none;
+}
+
+.skeleton-box {
+    background: var(--bg-tertiary);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-sm);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+
+    &--title {
+        height: 1rem;
+        width: 80%;
+        margin-bottom: 4px;
+    }
+
+    &--badge {
+        height: 1rem;
+        width: 28px;
+        border-radius: var(--border-radius-sm);
+    }
+
+    &--meta {
+        height: 0.75rem;
+        width: 100px;
+    }
+}
+
+@keyframes skeletonShimmer {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes skeletonFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// Mobile skeleton adjustments
+@media (max-width: 768px) {
+    .skeleton-line {
+        &--title {
+            height: 0.875rem;
+        }
+
+        &--meta {
+            height: 0.6875rem;
+            width: 80px;
+        }
+    }
+}
+
+// -------------------------
 // History Items Container
 // -------------------------
 .history-items {

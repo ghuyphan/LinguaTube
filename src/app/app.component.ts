@@ -31,84 +31,84 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
       
-      @defer (when !settings.settings().hasCompletedOnboarding) {
+      @if (!settings.settings().hasCompletedOnboarding) {
         <app-onboarding />
-      }
+      } @else {
+        <!-- Desktop Sidebar (lazy loaded) -->
+        @defer (on idle) {
+          <app-sidebar 
+            class="desktop-sidebar"
+            (openSettings)="showSettingsSheet.set(true)"
+          />
+        }
 
-      <!-- Desktop Sidebar (lazy loaded) -->
-      @defer (on idle) {
-        <app-sidebar 
-          class="desktop-sidebar"
-          (openSettings)="showSettingsSheet.set(true)"
-        />
-      }
+        <div class="app__content">
+          <!-- Desktop only header (hidden when sidebar is visible) -->
+          <app-header class="desktop-header" />
 
-      <div class="app__content">
-        <!-- Desktop only header (hidden when sidebar is visible) -->
-        <app-header class="desktop-header" />
-
-        <main class="main" [class.video-active]="hasVideo()">
-          <div class="container">
-            <router-outlet />
-          </div>
-        </main>
-      </div>
-
-      <!-- Mobile Bottom Navigation -->
-      <nav class="bottom-nav">
-        <div class="bottom-nav__items">
-          <a
-            class="bottom-nav__item"
-            routerLink="/video"
-            [class.active]="!anySheetOpen() && isRouteActive('/video')"
-          >
-            <app-icon name="play-circle" [size]="20" />
-            <span>{{ i18n.t('nav.video') }}</span>
-          </a>
-          <a
-            class="bottom-nav__item"
-            routerLink="/dictionary"
-            [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
-          >
-            <app-icon name="book-open" [size]="20" />
-            <span>{{ i18n.t('nav.words') }}</span>
-          </a>
-          <a
-            class="bottom-nav__item"
-            routerLink="/study"
-            [class.active]="!anySheetOpen() && isRouteActive('/study')"
-          >
-            <app-icon name="graduation-cap" [size]="20" />
-            <span>{{ i18n.t('nav.study') }}</span>
-          </a>
-          <a
-            class="bottom-nav__item"
-            routerLink="/history"
-            [class.active]="!anySheetOpen() && isRouteActive('/history')"
-          >
-            <app-icon name="clock" [size]="20" />
-            <span>{{ i18n.t('history.title') }}</span>
-          </a>
-          <button
-            class="bottom-nav__item"
-            [class.active]="showSettingsSheet()"
-            (click)="toggleSettingsSheet()"
-          >
-            <app-icon name="settings" [size]="20" />
-            <span>{{ i18n.t('nav.settings') }}</span>
-          </button>
+          <main class="main" [class.video-active]="hasVideo()">
+            <div class="container">
+              <router-outlet />
+            </div>
+          </main>
         </div>
-      </nav>
 
-      <!-- Bottom Sheets -->
-      @defer (when showSettingsSheet()) {
-        <app-settings-sheet 
-          [isOpen]="showSettingsSheet()" 
-          (closed)="showSettingsSheet.set(false)" 
-        />
+        <!-- Mobile Bottom Navigation -->
+        <nav class="bottom-nav">
+          <div class="bottom-nav__items">
+            <a
+              class="bottom-nav__item"
+              routerLink="/video"
+              [class.active]="!anySheetOpen() && isRouteActive('/video')"
+            >
+              <app-icon name="play-circle" [size]="20" />
+              <span>{{ i18n.t('nav.video') }}</span>
+            </a>
+            <a
+              class="bottom-nav__item"
+              routerLink="/dictionary"
+              [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
+            >
+              <app-icon name="book-open" [size]="20" />
+              <span>{{ i18n.t('nav.words') }}</span>
+            </a>
+            <a
+              class="bottom-nav__item"
+              routerLink="/study"
+              [class.active]="!anySheetOpen() && isRouteActive('/study')"
+            >
+              <app-icon name="graduation-cap" [size]="20" />
+              <span>{{ i18n.t('nav.study') }}</span>
+            </a>
+            <a
+              class="bottom-nav__item"
+              routerLink="/history"
+              [class.active]="!anySheetOpen() && isRouteActive('/history')"
+            >
+              <app-icon name="clock" [size]="20" />
+              <span>{{ i18n.t('history.title') }}</span>
+            </a>
+            <button
+              class="bottom-nav__item"
+              [class.active]="showSettingsSheet()"
+              (click)="toggleSettingsSheet()"
+            >
+              <app-icon name="settings" [size]="20" />
+              <span>{{ i18n.t('nav.settings') }}</span>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Bottom Sheets -->
+        @defer (when showSettingsSheet()) {
+          <app-settings-sheet 
+            [isOpen]="showSettingsSheet()" 
+            (closed)="showSettingsSheet.set(false)" 
+          />
+        }
       }
 
-      <!-- Update Available Sheet -->
+      <!-- Update Available Sheet (always available, even during onboarding) -->
       <app-bottom-sheet
         [isOpen]="showUpdateSheet()"
         [showCloseButton]="true"
