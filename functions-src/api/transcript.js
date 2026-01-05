@@ -52,7 +52,7 @@ import {
 // Configuration
 // ============================================================================
 
-const DEBUG = false;
+const DEBUG = true;
 const log = (...args) => DEBUG && console.log('[Transcript]', ...args);
 const timer = () => { const s = Date.now(); return () => Date.now() - s; };
 
