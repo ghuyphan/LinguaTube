@@ -108,11 +108,14 @@
         }
 
         @if (!auth.isInitialized()) {
-        <!-- Placeholder while auth initializes -->
+        <!-- Placeholder while auth initializes - matches user-settings-row structure -->
         <div class="footer-placeholder">
             <div class="footer-placeholder__avatar"></div>
             @if (!isCollapsed()) {
-            <div class="footer-placeholder__text"></div>
+            <div class="footer-placeholder__text">
+                <div class="footer-placeholder__name"></div>
+                <div class="footer-placeholder__badge"></div>
+            </div>
             }
         </div>
         } @else if (auth.isLoggedIn()) {

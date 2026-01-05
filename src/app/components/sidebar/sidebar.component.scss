@@ -666,8 +666,6 @@
     flex-direction: column;
     gap: 0.25rem;
     background: transparent;
-    min-height: 4.5rem;
-    /* Reserve space to prevent layout shift */
 }
 
 .footer-btn {
@@ -855,13 +853,13 @@
     justify-content: center;
 }
 
-/* Footer loading placeholder */
+/* Footer loading placeholder - matches exact dimensions of final content */
 .footer-placeholder {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-    padding: 0.625rem 0.75rem;
-    min-height: 2.75rem;
+    gap: 0.625rem; // Match user-settings-row gap
+    padding: 0.625rem 0.75rem; // Match footer-btn padding
+    min-height: 2.75rem; // Match user-settings-row height
 
     .sidebar.collapsed & {
         justify-content: center;
@@ -870,9 +868,9 @@
 }
 
 .footer-placeholder__avatar {
-    width: 1.75rem;
+    width: 1.75rem; // Match user-avatar
     height: 1.75rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius); // Match user-avatar
     background: var(--bg-tertiary);
     flex-shrink: 0;
     animation: skeleton-fade 1.5s ease-in-out infinite;
@@ -880,7 +878,22 @@
 
 .footer-placeholder__text {
     flex: 1;
-    height: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; // Match user-info-stack gap (2px) + some buffer
+}
+
+.footer-placeholder__name {
+    height: 0.875rem; // Match user-name font-size
+    width: 70%;
+    border-radius: 4px;
+    background: var(--bg-tertiary);
+    animation: skeleton-fade 1.5s ease-in-out infinite;
+}
+
+.footer-placeholder__badge {
+    height: 0.75rem; // Match badge height
+    width: 2.5rem;
     border-radius: 4px;
     background: var(--bg-tertiary);
     animation: skeleton-fade 1.5s ease-in-out infinite;

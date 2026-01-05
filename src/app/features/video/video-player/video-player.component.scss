@@ -1238,6 +1238,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   font-size: 0.8125rem;
   color: var(--text-muted);
   display: block;
+  line-height: 1.6;
 }
 
 .skeleton {
@@ -1265,13 +1266,13 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 }
 
 .skeleton-title {
-  height: 1.25rem;
+  height: 1.4rem; // Matches .video-title: 1rem font × 1.4 line-height
   width: 70%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem; // Matches .video-title margin
 }
 
 .skeleton-channel {
-  height: 0.875rem;
+  height: 1.3rem; // Matches .video-channel: 0.8125rem font × 1.6 line-height
   width: 40%;
 }
 
