@@ -254,10 +254,35 @@
         "learningLanguageTitle": "Tôi muốn học...",
         "learningLanguageSubtitle": "Chọn ngôn ngữ mục tiêu để bắt đầu",
         "startLearning": "Bắt đầu học",
+        "tapToTry": "Nhấn vào bất kỳ từ nào để thử!",
         "features": {
             "subtitles": "Phụ đề song ngữ giúp hiểu rõ hơn",
             "dict": "Tra từ nhanh bằng cách nhấp chuột",
             "srs": "Hệ thống ôn tập từ vựng thông minh (SRS)"
+        },
+        "demo": {
+            "ja": {
+                "japanese": "Tiếng Nhật",
+                "particle": "(trợ từ)",
+                "study": "học",
+                "letsDo": "hãy cùng làm"
+            },
+            "zh": {
+                "together": "cùng nhau",
+                "learn": "học",
+                "chinese": "Tiếng Trung",
+                "suggestion": "(gợi ý)"
+            },
+            "ko": {
+                "korean": "Tiếng Hàn",
+                "particle": "(trợ từ)",
+                "letsLearn": "hãy cùng học"
+            },
+            "en": {
+                "lets": "Hãy",
+                "learn": "học",
+                "together": "cùng nhau"
+            }
         }
     }
 }

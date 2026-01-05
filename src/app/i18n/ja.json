@@ -254,10 +254,35 @@
         "learningLanguageTitle": "学習したい言語は...",
         "learningLanguageSubtitle": "学習ターゲットを選択してください",
         "startLearning": "学習を開始",
+        "tapToTry": "単語をタップしてみよう！",
         "features": {
             "subtitles": "理解を深める二言語字幕",
             "dict": "クリックで瞬時に単語検索",
             "srs": "スマートSRS単語復習システム"
+        },
+        "demo": {
+            "ja": {
+                "japanese": "日本語",
+                "particle": "(助詞)",
+                "study": "勉強する",
+                "letsDo": "しましょう"
+            },
+            "zh": {
+                "together": "一緒に",
+                "learn": "学ぶ",
+                "chinese": "中国語",
+                "suggestion": "(提案)"
+            },
+            "ko": {
+                "korean": "韓国語",
+                "particle": "(助詞)",
+                "letsLearn": "学びましょう"
+            },
+            "en": {
+                "lets": "〜しましょう",
+                "learn": "学ぶ",
+                "together": "一緒に"
+            }
         }
     }
 }

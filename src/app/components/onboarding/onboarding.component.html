@@ -1,87 +1,103 @@
-<div class="onboarding" [class.exiting]="isExiting()">
+<div class="onboarding" [class.exiting]="isExiting()" (click)="dismissPopup()">
     <!-- Step 0: UI Language Selection -->
     @if (step() === 0) {
     <div class="step step--language fade-in">
-        <div class="logo-container pulse">
-            <img src="assets/icon.svg" alt="LinguaTube Logo" class="logo" />
-        </div>
-
-        <h1 class="title">Welcome to Voca</h1>
-        <p class="subtitle">Choose your display language</p>
-
-        <div class="language-grid">
-            @for (lang of uiLanguages; track lang.code) {
-            <button class="language-card" [class.selected]="selectedUILang() === lang.code"
-                (click)="selectUILanguage(lang.code)">
-                <img [src]="lang.flag" [alt]="lang.name" class="flag" />
-                <div class="lang-info">
-                    <span class="lang-name">{{ lang.name }}</span>
-                    <span class="lang-native">{{ lang.nativeName }}</span>
-                </div>
-                @if (selectedUILang() === lang.code) {
-                <div class="check-mark">
-                    <app-icon name="check" [size]="20" />
-                </div>
-                }
-            </button>
-            }
-        </div>
-    </div>
-    }
-
-    <!-- Step 1: Welcome -->
-    @if (step() === 1) {
-    <div class="step step--welcome fade-in">
-        <div class="logo-container pulse">
-            <img src="assets/icon.svg" alt="LinguaTube Logo" class="logo" />
-        </div>
-
-        <h1 class="title">{{ i18n.t('onboarding.welcomeTitle') }}</h1>
-        <p class="subtitle">{{ i18n.t('onboarding.welcomeSubtitle') }}</p>
-
-        <div class="features">
-            @for (feature of features(); track feature.text) {
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <app-icon [name]="feature.icon" [size]="24" />
-                </div>
-                <span class="feature-text">{{ feature.text }}</span>
+        <div class="step-content">
+            <div class="logo-container pulse">
+                <img src="assets/icon.svg" alt="Voca" class="logo" />
             </div>
-            }
+
+            <h1 class="title">{{ i18n.t('onboarding.uiLanguageTitle') }}</h1>
+            <p class="subtitle">{{ i18n.t('onboarding.uiLanguageSubtitle') }}</p>
+
+            <div class="language-grid">
+                @for (lang of uiLanguages; track lang.code) {
+                <button class="language-card" [class.selected]="selectedUILang() === lang.code"
+                    (click)="selectUILanguage(lang.code); $event.stopPropagation()">
+                    <img [src]="lang.flag" [alt]="lang.name" class="flag" />
+                    <div class="lang-info">
+                        <span class="lang-name">{{ lang.name }}</span>
+                        <span class="lang-native">{{ lang.nativeName }}</span>
+                    </div>
+                    @if (selectedUILang() === lang.code) {
+                    <div class="check-mark">
+                        <app-icon name="check" [size]="20" />
+                    </div>
+                    }
+                </button>
+                }
+            </div>
         </div>
 
-        <button class="btn btn-primary btn-lg action-btn" (click)="nextStep()">
+        <button class="btn btn-primary btn-lg action-btn" (click)="nextStep(); $event.stopPropagation()">
             {{ i18n.t('onboarding.getStarted') }}
-            <app-icon name="chevron-right" [size]="20" />
         </button>
     </div>
     }
 
-    <!-- Step 2: Learning Language Selection -->
-    @if (step() === 2) {
-    <div class="step step--language fade-in-up">
-        <h2 class="title">{{ i18n.t('onboarding.learningLanguageTitle') }}</h2>
-        <p class="subtitle">{{ i18n.t('onboarding.learningLanguageSubtitle') }}</p>
+    <!-- Step 1: Learning Language & Interactive Demo -->
+    @if (step() === 1) {
+    <div class="step step--learning fade-in-up">
+        <div class="step-content">
+            <div class="logo-container">
+                <img src="assets/icon.svg" alt="Voca" class="logo" />
+            </div>
 
-        <div class="language-grid">
-            @for (lang of learningLanguages; track lang.code) {
-            <button class="language-card" [class.selected]="selectedLang() === lang.code"
-                (click)="selectLanguage(lang.code)">
-                <img [src]="lang.flag" [alt]="lang.name" class="flag" />
-                <div class="lang-info">
-                    <span class="lang-name">{{ lang.name }}</span>
-                    <span class="lang-native">{{ lang.nativeName }}</span>
-                </div>
-                @if (selectedLang() === lang.code) {
-                <div class="check-mark">
-                    <app-icon name="check" [size]="20" />
-                </div>
+            <h1 class="title">{{ i18n.t('onboarding.learningLanguageTitle') }}</h1>
+            <p class="subtitle">{{ i18n.t('onboarding.learningLanguageSubtitle') }}</p>
+
+            <div class="language-grid">
+                @for (lang of learningLanguages; track lang.code) {
+                <button class="language-card" [class.selected]="selectedLang() === lang.code"
+                    (click)="selectLanguage(lang.code); $event.stopPropagation()">
+                    <img [src]="lang.flag" [alt]="lang.name" class="flag" />
+                    <div class="lang-info">
+                        <span class="lang-name">{{ lang.name }}</span>
+                        <span class="lang-native">{{ lang.nativeName }}</span>
+                    </div>
+                    @if (selectedLang() === lang.code) {
+                    <div class="check-mark">
+                        <app-icon name="check" [size]="20" />
+                    </div>
+                    }
+                </button>
                 }
-            </button>
+            </div>
+
+            <!-- Interactive Demo Section -->
+            @if (selectedLang()) {
+            <div class="demo-container fade-in-up">
+                <p class="demo-hint">{{ i18n.t('onboarding.tapToTry') }}</p>
+
+                <div class="demo-display">
+                    <div class="demo-sentence" [ngClass]="'text-' + selectedLang()">
+                        @for (word of demoSentences[selectedLang()!]; track $index) {
+                        <span class="demo-word" [class.demo-word--highlight]="word.highlight"
+                            [class.demo-word--active]="selectedWord() === word" (click)="onDemoWordClick(word, $event)">
+                            {{ word.surface }}
+                        </span>
+                        }
+                    </div>
+
+                    <!-- Mini Popup -->
+                    @if (selectedWord()) {
+                    <div class="demo-popup float-in">
+                        <div class="popup-content">
+                            @if (selectedWord()!.reading) {
+                            <span class="popup-reading">{{ selectedWord()!.reading }}</span>
+                            }
+                            <span class="popup-meaning">{{ i18n.t(selectedWord()!.meaning) }}</span>
+                        </div>
+                        <div class="popup-arrow"></div>
+                    </div>
+                    }
+                </div>
+            </div>
             }
         </div>
 
-        <button class="btn btn-primary btn-lg action-btn" [disabled]="!selectedLang()" (click)="startLearning()">
+        <button class="btn btn-primary btn-lg action-btn" [disabled]="!selectedLang()"
+            (click)="startLearning(); $event.stopPropagation()">
             {{ i18n.t('onboarding.startLearning') }}
         </button>
     </div>

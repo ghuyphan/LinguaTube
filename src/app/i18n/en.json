@@ -254,10 +254,35 @@
         "learningLanguageTitle": "I want to learn...",
         "learningLanguageSubtitle": "Choose your target language to get started",
         "startLearning": "Start Learning",
+        "tapToTry": "Tap any word to try it out!",
         "features": {
             "subtitles": "Dual subtitles for better understanding",
             "dict": "Click any word to translate instantly",
             "srs": "Smart SRS vocabulary review system"
+        },
+        "demo": {
+            "ja": {
+                "japanese": "Japanese",
+                "particle": "(object marker)",
+                "study": "study",
+                "letsDo": "let's do"
+            },
+            "zh": {
+                "together": "together",
+                "learn": "learn",
+                "chinese": "Chinese",
+                "suggestion": "(suggestion)"
+            },
+            "ko": {
+                "korean": "Korean",
+                "particle": "(object marker)",
+                "letsLearn": "let's learn"
+            },
+            "en": {
+                "lets": "Let's",
+                "learn": "learn",
+                "together": "together"
+            }
         }
     }
 }
