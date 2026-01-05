@@ -125,8 +125,8 @@
                     {{ auth.getSubscriptionTier() | uppercase }}
                 </span>
             </div>
-            }
             <app-icon name="settings" [size]="18" class="settings-icon" />
+            }
         </button>
         } @else if (auth.isAuthEnabled()) {
         <div class="footer-guest-row" [class.collapsed]="isCollapsed()">
