@@ -26,5 +26,42 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-transcripts",
+      "urls": [
+        "/api/transcript"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 50,
+        "maxAge": "7d",
+        "timeout": "10s"
+      }
+    },
+    {
+      "name": "api-dictionary",
+      "urls": [
+        "/api/dictionary"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 200,
+        "maxAge": "30d"
+      }
+    },
+    {
+      "name": "api-video-info",
+      "urls": [
+        "/api/video-info",
+        "/api/innertube"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "1d"
+      }
+    }
   ]
 }

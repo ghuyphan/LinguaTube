@@ -225,5 +225,7 @@
 <!-- Vocabulary Quick View Sheet -->
 <app-vocabulary-quick-view [isOpen]="showAddedSheet()" (closed)="showAddedSheet.set(false)" />
 
-<!-- Grammar Popup -->
+<!-- Grammar Popup (lazy loaded) -->
+@defer (when grammarPopupOpen()) {
 <app-grammar-popup [pattern]="selectedGrammarPattern()" [isOpen]="grammarPopupOpen()" (closed)="closeGrammarPopup()" />
+}

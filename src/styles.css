@@ -2289,4 +2289,10 @@ select {
     width: var(--touch-target-min);
     height: var(--touch-target-min);
   }
+
+  /* Reduce placeholder font size on mobile while keeping input size 16px to prevent zoom */
+  input::placeholder,
+  textarea::placeholder {
+    font-size: var(--text-sm);
+  }
 }

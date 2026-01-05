@@ -31,7 +31,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
       
-      @if (!settings.settings().hasCompletedOnboarding) {
+      @defer (when !settings.settings().hasCompletedOnboarding) {
         <app-onboarding />
       }
 
