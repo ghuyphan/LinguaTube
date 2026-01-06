@@ -1,0 +1,52 @@
+<app-bottom-sheet [isOpen]="isOpen()" [navPadding]="true" [allowBackdropClose]="true" (closed)="onSheetClosed()">
+    <div class="dialog-content">
+        <div class="dialog-header">
+            <h2>Save to playlist</h2>
+            <button class="close-btn" (click)="closed.emit()">
+                <app-icon name="x" [size]="20"></app-icon>
+            </button>
+        </div>
+
+        <div class="playlists-list">
+            @for (playlist of playlists(); track playlist.id) {
+            <label class="playlist-item" [class.selected]="isInPlaylist(playlist)">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" [checked]="isInPlaylist(playlist)"
+                        (change)="onTogglePlaylist(playlist, $event)">
+                    <div class="checkmark">
+                        <app-icon name="check" [size]="14"></app-icon>
+                    </div>
+                </div>
+                <div class="playlist-info">
+                    <span class="playlist-name">{{ playlist.title }}</span>
+                    <span class="playlist-meta">
+                        <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'" [size]="12"></app-icon>
+                        {{ playlist.visibility | titlecase }}
+                    </span>
+                </div>
+            </label>
+            } @empty {
+            <div class="empty-state">
+                <div class="empty-state__icon-box">
+                    <app-icon name="list" [size]="24"></app-icon>
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
+                    <p class="empty-state__hint">{{ i18n.t('playlist.empty.myHint') }}</p>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="dialog-footer">
+            <button class="btn btn-text create-btn" (click)="openCreateDialog()">
+                <app-icon name="plus" [size]="18"></app-icon>
+                Create new playlist
+            </button>
+        </div>
+    </div>
+</app-bottom-sheet>
+
+<app-create-playlist-dialog [isOpen]="showCreateDialog()" (closed)="onCreateDialogClosed()"
+    (created)="onCreateDialogClosed()">
+</app-create-playlist-dialog>

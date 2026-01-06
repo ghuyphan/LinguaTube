@@ -1,0 +1,77 @@
+<app-bottom-sheet [isOpen]="isOpen()" [navPadding]="true" [allowBackdropClose]="true" (closed)="onSheetClosed()">
+
+    <div class="dialog-content">
+        <div class="dialog-header">
+            <h2>Create Playlist</h2>
+        </div>
+
+        <form (submit)="onSubmit()">
+            <!-- Title -->
+            <div class="form-group">
+                <label for="pl-title">Title</label>
+                <input type="text" id="pl-title" [ngModel]="title()" (ngModelChange)="title.set($event)" name="title"
+                    required placeholder="Enter playlist title" autocomplete="off">
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="pl-desc">Description (Optional)</label>
+                <textarea id="pl-desc" [ngModel]="description()" (ngModelChange)="description.set($event)"
+                    name="description" placeholder="Add a description...">
+                </textarea>
+            </div>
+
+            <!-- Language -->
+            <div class="form-group">
+                <label for="pl-lang">Language</label>
+                <select id="pl-lang" [ngModel]="language()" (ngModelChange)="language.set($event)" name="language">
+                    @for (lang of LANGUAGES; track lang.value) {
+                    <option [value]="lang.value">{{ lang.label }}</option>
+                    }
+                </select>
+            </div>
+
+            <!-- Visibility -->
+            <div class="form-group">
+                <label>Visibility</label>
+                <div class="visibility-options">
+                    @for (opt of VISIBILITY_OPTIONS; track opt.value) {
+                    <div class="visibility-option" [class.selected]="visibility() === opt.value"
+                        (click)="visibility.set($any(opt.value))">
+                        <div class="option-icon">
+                            <app-icon [name]="$any(opt.icon)" [size]="20"></app-icon>
+                        </div>
+                        <div class="option-info">
+                            <span class="option-label">{{ opt.label }}</span>
+                            <span class="option-desc">{{ opt.desc }}</span>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="form-group">
+                <label>Tags (Max 5)</label>
+                <div class="tags-container">
+                    @for (tag of TAGS; track tag) {
+                    <button type="button" class="tag-chip" [class.selected]="selectedTags().includes(tag)"
+                        (click)="toggleTag(tag)">
+                        {{ tag }}
+                    </button>
+                    }
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="dialog-actions">
+                <button type="button" class="btn-cancel" (click)="sheet.close()">
+                    Cancel
+                </button>
+                <button type="submit" class="btn-submit" [disabled]="!title() || isSubmitting()">
+                    {{ isSubmitting() ? 'Creating...' : 'Create' }}
+                </button>
+            </div>
+        </form>
+    </div>
+</app-bottom-sheet>

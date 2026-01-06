@@ -1,0 +1,137 @@
+<div class="layout">
+    <div class="layout-main">
+        <!-- Main Playlist Panel -->
+        <div class="playlist-panel">
+            <div class="panel-header">
+                <div class="header-row">
+                    <app-icon name="list" [size]="20" class="panel-icon" />
+                    <h2 class="panel-title">{{ i18n.t('playlist.title') }}</h2>
+                </div>
+                <div class="panel-badges">
+                    <span class="badge badge--primary">{{ playlists().length }} {{ i18n.t('playlist.myPlaylists')
+                        }}</span>
+                    @if (communityPlaylists().length > 0) {
+                    <span class="badge badge--accent">{{ communityPlaylists().length }} {{ i18n.t('playlist.community')
+                        }}</span>
+                    }
+                </div>
+            </div>
+
+            <!-- Filters & Actions -->
+            <div class="panel-filters">
+                <button class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')">
+                    <app-icon name="user" [size]="14" />
+                    {{ i18n.t('playlist.myPlaylists') }}
+                </button>
+                <button class="filter-chip" [class.active]="view() === 'community'" (click)="setView('community')">
+                    <app-icon name="globe" [size]="14" />
+                    {{ i18n.t('playlist.community') }}
+                </button>
+                <div class="filter-spacer"></div>
+                <button class="btn btn-sm btn-primary" (click)="showCreateDialog.set(true)">
+                    <app-icon name="plus" [size]="14" />
+                    {{ i18n.t('playlist.newPlaylist') }}
+                </button>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="panel-content">
+                <div class="grid">
+                    @if (view() === 'my') {
+                    @for (playlist of playlists(); track playlist.id) {
+                    <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
+                        <div class="card-thumbnail">
+                            @if (playlist.thumbnail) {
+                            <img [src]="playlist.thumbnail" [alt]="playlist.title">
+                            } @else {
+                            <app-icon name="list" [size]="48" class="placeholder-icon"></app-icon>
+                            }
+                            <div class="video-count">
+                                <app-icon name="list" [size]="12"></app-icon>
+                                {{ playlist.videoIds.length }}
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">{{ playlist.title }}</h3>
+                            <div class="card-meta">
+                                <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'"
+                                    [size]="12"></app-icon>
+                                <span>{{ playlist.visibility | titlecase }}</span>
+                                <span>•</span>
+                                <span>{{ playlist.updatedAt | date:'mediumDate' }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    } @empty {
+                    <div class="empty-state">
+                        <div class="empty-state__icon-box">
+                            <app-icon name="list" [size]="24" />
+                        </div>
+                        <div class="empty-state__text">
+                            <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
+                            <p class="empty-state__hint">{{ i18n.t('playlist.empty.myHint') }}</p>
+                        </div>
+                    </div>
+                    }
+                    } @else {
+                    <!-- Community View -->
+                    @for (playlist of communityPlaylists(); track playlist.id) {
+                    <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
+                        <div class="card-thumbnail">
+                            @if (playlist.thumbnail) {
+                            <img [src]="playlist.thumbnail" [alt]="playlist.title">
+                            } @else {
+                            <app-icon name="list" [size]="48" class="placeholder-icon"></app-icon>
+                            }
+                            <div class="video-count">
+                                <app-icon name="list" [size]="12"></app-icon>
+                                {{ playlist.videoIds.length }}
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">{{ playlist.title }}</h3>
+                            <div class="card-meta">
+                                <span>{{ getCreatorLabel(playlist.userId) }}</span>
+                                <span>•</span>
+                                <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    } @empty {
+                    <div class="empty-state">
+                        <div class="empty-state__icon-box">
+                            <app-icon name="globe" [size]="24" />
+                        </div>
+                        <div class="empty-state__text">
+                            <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
+                            <p class="empty-state__hint">{{ i18n.t('playlist.empty.communityHint') }}</p>
+                        </div>
+                    </div>
+                    }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Sidebar -->
+    <aside class="layout-sidebar desktop-only">
+        <div class="sidebar-card">
+            <h3>{{ i18n.t('playlist.title') }}</h3>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value">{{ playlists().length }}</span>
+                    <span class="stat-label">{{ i18n.t('playlist.myPlaylists') }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ communityPlaylists().length }}</span>
+                    <span class="stat-label">{{ i18n.t('playlist.community') }}</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<app-create-playlist-dialog [isOpen]="showCreateDialog()" (closed)="showCreateDialog.set(false)">
+</app-create-playlist-dialog>

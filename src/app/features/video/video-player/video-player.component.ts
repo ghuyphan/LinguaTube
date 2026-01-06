@@ -1193,15 +1193,7 @@ export class VideoPlayerComponent implements OnDestroy {
     });
   }
 
-  closeVideo(): void {
-    this.subtitles.cancelTokenization();
-    this.youtube.reset();
-    this.subtitles.clear();
-    this.transcript.reset();
-    this.videoUrl = '';
-    this.error.set(null);
-    this.router.navigate(['/video'], { replaceUrl: true });
-  }
+
 
   // ============================================
   // FULLSCREEN SUBTITLE HELPERS

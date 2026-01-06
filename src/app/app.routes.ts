@@ -22,5 +22,10 @@ export const routes: Routes = [
         loadComponent: () => import('./features/history/history-page/history-page.component')
             .then(m => m.HistoryPageComponent)
     },
+    {
+        path: 'playlists',
+        loadComponent: () => import('./features/playlist/playlist-page/playlist-page.component')
+            .then(m => m.PlaylistPageComponent)
+    },
     { path: '**', redirectTo: 'video' }
 ];

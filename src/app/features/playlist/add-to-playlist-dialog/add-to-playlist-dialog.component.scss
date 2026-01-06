@@ -1,0 +1,144 @@
+.dialog-content {
+    padding: var(--space-lg);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border-color);
+
+    h2 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+    }
+
+    .close-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: var(--space-xs);
+        border-radius: var(--border-radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--transition-fast);
+
+        &:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+    }
+}
+
+.playlists-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    max-height: 50vh;
+    overflow-y: auto;
+    margin-bottom: var(--space-lg);
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    user-select: none;
+
+    &:hover {
+        background: var(--bg-secondary);
+    }
+
+    &.selected {
+        background: var(--bg-hover);
+    }
+}
+
+/* Custom Checkbox */
+.checkbox-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked~.checkmark {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 2px solid var(--text-muted);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: transparent;
+        transition: all var(--transition-fast);
+    }
+}
+
+.playlist-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .playlist-name {
+        font-size: 0.9375rem;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    .playlist-meta {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.create-btn {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-md);
+    border: 1px dashed var(--border-color);
+
+    &:hover {
+        border-color: var(--primary-color);
+        background: var(--bg-hover);
+        color: var(--primary-color);
+    }
+}

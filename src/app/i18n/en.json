@@ -13,7 +13,8 @@
         "words": "Words",
         "study": "Study",
         "settings": "Settings",
-        "newVideo": "New Video"
+        "newVideo": "New Video",
+        "playlists": "Playlists"
     },
     "commandPalette": {
         "placeholder": "Paste YouTube URL or video ID...",
@@ -248,6 +249,27 @@
         "removeFromHistory": "Remove",
         "syncHint": "Sign in to sync history across devices",
         "justNow": "Just now"
+    },
+    "playlist": {
+        "title": "Playlists",
+        "myPlaylists": "My Playlists",
+        "community": "Community",
+        "newPlaylist": "New Playlist",
+        "videoCount": "{{count}} video{{plural}}",
+        "visibility": {
+            "public": "Public",
+            "private": "Private"
+        },
+        "updated": "Updated {{date}}",
+        "empty": {
+            "myTitle": "No playlists yet",
+            "myHint": "Create one to get started!",
+            "communityTitle": "No community playlists",
+            "communityHint": "Check back later for shared playlists"
+        },
+        "create": "Create",
+        "cancel": "Cancel",
+        "by": "by {{author}}"
     },
     "common": {
         "loading": "Loading...",

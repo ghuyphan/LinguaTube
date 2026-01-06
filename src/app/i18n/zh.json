@@ -13,7 +13,8 @@
         "words": "词汇",
         "study": "学习",
         "settings": "设置",
-        "newVideo": "新视频"
+        "newVideo": "新视频",
+        "playlists": "播放列表"
     },
     "commandPalette": {
         "placeholder": "粘贴YouTube链接或视频ID...",
@@ -246,6 +247,27 @@
         "removeFromHistory": "移除",
         "syncHint": "登录以在设备间同步历史记录",
         "justNow": "刚刚"
+    },
+    "playlist": {
+        "title": "播放列表",
+        "myPlaylists": "我的播放列表",
+        "community": "社区",
+        "newPlaylist": "新建播放列表",
+        "videoCount": "{{count}} video{{plural}}",
+        "visibility": {
+            "public": "Public",
+            "private": "Private"
+        },
+        "updated": "Updated {{date}}",
+        "empty": {
+            "myTitle": "暂无播放列表",
+            "myHint": "Create one to get started!",
+            "communityTitle": "No community playlists",
+            "communityHint": "Check back later for shared playlists"
+        },
+        "create": "创建",
+        "cancel": "取消",
+        "by": "by {{author}}"
     },
     "common": {
         "loading": "加载中...",

@@ -45,6 +45,12 @@
             <span>{{ i18n.t('nav.study') }}</span>
             }
         </a>
+        <a class="nav-item" routerLink="/playlists" routerLinkActive="active">
+            <app-icon name="list" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.playlists') || 'Playlists' }}</span>
+            }
+        </a>
         <a class="nav-item" routerLink="/history" routerLinkActive="active">
             <app-icon name="clock" [size]="20" />
             @if (!isCollapsed()) {

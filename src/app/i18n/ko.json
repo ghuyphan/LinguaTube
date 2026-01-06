@@ -13,7 +13,8 @@
         "words": "단어",
         "study": "학습",
         "settings": "설정",
-        "newVideo": "새 동영상"
+        "newVideo": "새 동영상",
+        "playlists": "재생목록"
     },
     "commandPalette": {
         "placeholder": "YouTube URL 또는 동영상 ID 붙여넣기...",
@@ -246,6 +247,27 @@
         "removeFromHistory": "삭제",
         "syncHint": "로그인하여 기기 간 기록 동기화",
         "justNow": "방금"
+    },
+    "playlist": {
+        "title": "재생목록",
+        "myPlaylists": "내 재생목록",
+        "community": "커뮤니티",
+        "newPlaylist": "새 재생목록",
+        "videoCount": "{{count}} video{{plural}}",
+        "visibility": {
+            "public": "Public",
+            "private": "Private"
+        },
+        "updated": "Updated {{date}}",
+        "empty": {
+            "myTitle": "재생목록이 없습니다",
+            "myHint": "Create one to get started!",
+            "communityTitle": "No community playlists",
+            "communityHint": "Check back later for shared playlists"
+        },
+        "create": "만들기",
+        "cancel": "취소",
+        "by": "by {{author}}"
     },
     "common": {
         "loading": "로딩 중...",

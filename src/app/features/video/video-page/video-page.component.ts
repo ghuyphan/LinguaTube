@@ -4,10 +4,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
 import { SubtitleDisplayComponent } from '../subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
+import { PlaylistPanelComponent } from '../../playlist/playlist-panel/playlist-panel.component';
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../../services';
 import { HistoryService } from '../../history/history.service';
+import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
+import { PlaylistService } from '../../playlist/playlist.service';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { Token } from '../../../models';
 
 @Component({
@@ -19,8 +23,11 @@ import { Token } from '../../../models';
     VideoPlayerComponent,
     SubtitleDisplayComponent,
     VocabularyListComponent,
+    PlaylistPanelComponent,
+    AddToPlaylistDialogComponent,
     WordPopupComponent,
     ConfirmDialogComponent,
+    IconComponent
   ],
   template: `
     <div class="layout">
@@ -28,7 +35,22 @@ import { Token } from '../../../models';
         <app-video-player 
           (fullscreenWordClicked)="onWordClicked($event)" 
           (fullscreenChanged)="isVideoFullscreen.set($event)"
+          (videoEnded)="onVideoEnded()"
         />
+
+        <!-- Video Metadata & Actions -->
+        @if (youtube.currentVideo(); as video) {
+        <div class="video-meta">
+            <h1 class="video-title">{{ video.title }}</h1>
+            <div class="video-actions">
+                <button class="action-btn" (click)="openAddToPlaylist()">
+                    <app-icon name="list" [size]="20"></app-icon>
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+        }
+
         <app-subtitle-display 
           [isVideoFullscreen]="isVideoFullscreen()" 
           (wordClicked)="onWordClicked($event)" 
@@ -36,11 +58,27 @@ import { Token } from '../../../models';
         />
       </div>
 
-      <!-- Desktop sidebar -->
+      <!-- Desktop sidebar: Show Playlist Panel if active, otherwise Vocabulary List -->
       <aside class="layout-sidebar desktop-only">
-        <app-vocabulary-list />
+        @if (playlistService.currentPlaylist()) {
+          <app-playlist-panel 
+            (close)="closePlaylist()" 
+            (videoSelect)="onPlaylistVideoSelect($event)"
+          />
+        } @else {
+          <app-vocabulary-list />
+        }
       </aside>
     </div>
+
+    <!-- Add to Playlist Dialog -->
+    @if (showAddToPlaylistDialog() && youtube.currentVideo(); as video) {
+        <app-add-to-playlist-dialog
+            [isOpen]="showAddToPlaylistDialog()"
+            [videoId]="video.id"
+            (closed)="showAddToPlaylistDialog.set(false)">
+        </app-add-to-playlist-dialog>
+    }
 
     <!-- Language Mismatch Alert -->
     @if (showLanguageMismatchDialog()) {
@@ -90,6 +128,10 @@ import { Token } from '../../../models';
 
     .layout-sidebar {
       align-self: start;
+      position: sticky;
+      top: var(--space-md);
+      height: calc(100vh - 100px); /* Adjust based on header height */
+      overflow: hidden;
     }
 
     .desktop-only {
@@ -103,6 +145,7 @@ import { Token } from '../../../models';
 
       .layout-sidebar {
         position: static;
+        height: auto;
       }
     }
 
@@ -125,21 +168,67 @@ import { Token } from '../../../models';
         gap: var(--space-md);
       }
     }
+
+    .video-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--space-md);
+        padding: 0 var(--space-xs);
+    }
+
+    .video-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin: 0;
+        color: var(--text-primary);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .video-actions {
+        flex-shrink: 0;
+    }
+
+    .action-btn {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
+        background: var(--surface-hover);
+        border: 1px solid var(--border-color);
+        border-radius: 18px;
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            background: var(--border-color);
+        }
+    }
   `]
 })
 export class VideoPageComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-  private youtube = inject(YoutubeService);
+  protected youtube = inject(YoutubeService);
   private subtitles = inject(SubtitleService);
   private transcript = inject(TranscriptService);
   private settings = inject(SettingsService);
   private historyService = inject(HistoryService);
+  protected playlistService = inject(PlaylistService);
   i18n = inject(I18nService);
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
   isVideoFullscreen = signal(false);
+
+  showAddToPlaylistDialog = signal(false);
 
   // Language Mismatch Alert
   readonly showLanguageMismatchDialog = signal(false);
@@ -199,19 +288,54 @@ export class VideoPageComponent implements OnInit {
         this.fetchCaptions(currentVideo.id);
       }
     });
+
+    // Effect to sync video changes from playlist
+    effect(() => {
+      const playlistVideo = this.playlistService.currentVideo();
+      const currentVideo = this.youtube.currentVideo();
+
+      if (playlistVideo && (!currentVideo || currentVideo.id !== playlistVideo.videoId)) {
+        // Navigate to the video URL to keep URL in sync
+        this.router.navigate([], {
+          relativeTo: this.route,
+          queryParams: {
+            id: playlistVideo.videoId,
+            playlist: this.playlistService.currentPlaylist()?.id
+          },
+          queryParamsHandling: 'merge'
+        });
+      }
+    });
   }
 
   ngOnInit(): void {
-    // Read video ID from URL query parameter
+    // Read params
     this.route.queryParamMap.subscribe(params => {
       const videoId = params.get('id');
+      const playlistId = params.get('playlist');
       const currentLang = this.settings.settings().language;
 
+      // Load playlist if present and different
+      if (playlistId && this.playlistService.currentPlaylist()?.id !== playlistId) {
+        this.playlistService.loadPlaylist(playlistId).catch(err => {
+          console.error('Failed to load playlist:', err);
+          // Remove invalid playlist param
+          this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: { playlist: null },
+            queryParamsHandling: 'merge'
+          });
+        });
+      } else if (!playlistId) {
+        this.playlistService.clearCurrentPlaylist();
+      }
+
+      // Load Video Logic
       if (videoId) {
         const currentVideo = this.youtube.currentVideo();
-        // Load if no video OR if the video ID changed
+
+        // If coming from playlist, we might already have the video set, check ID
         if (!currentVideo || currentVideo.id !== videoId) {
-          // Clear old state before loading new video
           this.youtube.currentVideo.set(null);
           this.subtitles.clear();
           this.transcript.reset();
@@ -225,18 +349,16 @@ export class VideoPageComponent implements OnInit {
             this.lastLang = currentLang;
             this.fetchCaptions(videoId);
           } else {
-            // Restore lastLang from service state to prevent effect loop
             this.lastLang = currentLang;
           }
         }
       } else {
-        // No video ID in URL - check localStorage for recovery
+        // No video ID - check localStorage for recovery
         const savedVideoId = this.youtube.getLastVideoId();
         if (savedVideoId) {
-          // Redirect to URL with query param to keep URL as source of truth
           this.router.navigate(['/video'], {
             queryParams: { id: savedVideoId },
-            replaceUrl: true  // Don't add to history
+            replaceUrl: true
           });
         }
       }
@@ -245,16 +367,13 @@ export class VideoPageComponent implements OnInit {
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {
     try {
-      // Set pending video ID so the player container shows up
       this.youtube.pendingVideoId.set(videoId);
-      // Wait for DOM element to exist
       await this.waitForElement('youtube-player');
       await this.youtube.initPlayer('youtube-player', videoId);
       this.fetchCaptions(videoId);
     } catch (err) {
       console.error('Failed to load video from URL:', err);
     } finally {
-      // Clear pending state regardless of success/failure
       this.youtube.pendingVideoId.set(null);
     }
   }
@@ -419,5 +538,36 @@ export class VideoPageComponent implements OnInit {
       this.youtube.play();
       this.wasPlayingBeforeWordLookup = false;
     }
+  }
+
+  // Playlist Methods
+
+  closePlaylist(): void {
+    this.playlistService.clearCurrentPlaylist();
+    // Remove query param
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { playlist: null },
+      queryParamsHandling: 'merge'
+    });
+  }
+
+  onPlaylistVideoSelect(videoId: string): void {
+    // Navigation is handled by effect() reacting to service state change
+    // so we don't need to do anything here other than what the panel component already did (update service)
+  }
+
+  onVideoEnded(): void {
+    // Auto-advance playlist
+    if (this.playlistService.currentPlaylist()) {
+      const nextId = this.playlistService.playNext();
+      if (nextId) {
+        console.log('[VideoPage] Auto-advancing to next video:', nextId);
+      }
+    }
+  }
+
+  openAddToPlaylist(): void {
+    this.showAddToPlaylistDialog.set(true);
   }
 }

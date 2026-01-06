@@ -1,0 +1,53 @@
+@if (playlistService.currentPlaylist(); as playlist) {
+<div class="playlist-header">
+    <div class="header-top">
+        <h2>{{ playlist.title }}</h2>
+        <button class="close-btn" (click)="close.emit()" title="Close playlist">
+            <app-icon name="x" [size]="20"></app-icon>
+        </button>
+    </div>
+
+    <div class="playlist-meta">
+        <span class="publisher">{{ playlist.userId === 'local' ? 'You' : 'Curated' }}</span>
+        <span class="video-count">
+            {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
+        </span>
+    </div>
+
+    <div class="playlist-controls">
+        <button class="control-btn" (click)="onShare()" title="Share playlist">
+            <app-icon name="share" [size]="20"></app-icon>
+        </button>
+        <button class="control-btn" [class.active]="playlistService.isLooping()" (click)="playlistService.toggleLoop()"
+            title="Loop playlist">
+            <app-icon name="repeat" [size]="20"></app-icon>
+        </button>
+        <button class="control-btn" [class.active]="playlistService.isShuffled()"
+            (click)="playlistService.toggleShuffle()" title="Shuffle playlist">
+            <app-icon name="shuffle" [size]="20"></app-icon>
+        </button>
+    </div>
+</div>
+
+<div class="playlist-items">
+    @for (video of playlist.videos; track video.videoId; let i = $index) {
+    <div class="playlist-item" [class.active]="i === playlistService.currentIndex()"
+        (click)="onVideoClick(video.videoId, i)">
+
+        <div class="item-left">
+            <span class="item-index">{{ i + 1 }}</span>
+            <app-icon class="play-icon" name="play" [size]="16"></app-icon>
+        </div>
+
+        <div class="item-thumbnail">
+            <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
+        </div>
+
+        <div class="item-info">
+            <div class="item-title" [title]="video.title">{{ video.title }}</div>
+            <div class="item-channel">{{ video.channel }}</div>
+        </div>
+    </div>
+    }
+</div>
+}

@@ -153,7 +153,7 @@ export class YoutubeService {
   /**
    * Fetch video metadata via YouTube oEmbed API (no API key required)
    */
-  private async fetchVideoMetadata(videoId: string): Promise<{ title: string; channel: string }> {
+  async fetchVideoMetadata(videoId: string): Promise<{ title: string; channel: string }> {
     const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`;
 
     try {

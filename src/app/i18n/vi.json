@@ -13,7 +13,8 @@
         "words": "Từ vựng",
         "study": "Học",
         "settings": "Cài đặt",
-        "newVideo": "Video mới"
+        "newVideo": "Video mới",
+        "playlists": "Danh sách phát"
     },
     "commandPalette": {
         "placeholder": "Dán URL YouTube hoặc ID video...",
@@ -248,6 +249,27 @@
         "removeFromHistory": "Xóa",
         "syncHint": "Đăng nhập để đồng bộ lịch sử giữa các thiết bị",
         "justNow": "Vừa xong"
+    },
+    "playlist": {
+        "title": "Danh sách phát",
+        "myPlaylists": "Danh sách của tôi",
+        "community": "Cộng đồng",
+        "newPlaylist": "Tạo danh sách mới",
+        "videoCount": "{{count}} video{{plural}}",
+        "visibility": {
+            "public": "Public",
+            "private": "Private"
+        },
+        "updated": "Updated {{date}}",
+        "empty": {
+            "myTitle": "Chưa có danh sách phát nào",
+            "myHint": "Create one to get started!",
+            "communityTitle": "No community playlists",
+            "communityHint": "Check back later for shared playlists"
+        },
+        "create": "Tạo",
+        "cancel": "Hủy",
+        "by": "by {{author}}"
     },
     "common": {
         "loading": "Đang tải...",
