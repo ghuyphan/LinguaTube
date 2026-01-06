@@ -14,7 +14,8 @@
         "study": "Study",
         "settings": "Settings",
         "newVideo": "New Video",
-        "playlists": "Playlists"
+        "playlists": "Playlists",
+        "quickLinks": "Quick Links"
     },
     "commandPalette": {
         "placeholder": "Paste YouTube URL or video ID...",
@@ -255,11 +256,10 @@
         "myPlaylists": "My Playlists",
         "community": "Community",
         "newPlaylist": "New Playlist",
+        "saveToPlaylist": "Save to playlist",
+        "createNew": "Create new playlist",
+        "save": "Save",
         "videoCount": "{{count}} video{{plural}}",
-        "visibility": {
-            "public": "Public",
-            "private": "Private"
-        },
         "updated": "Updated {{date}}",
         "empty": {
             "myTitle": "No playlists yet",
@@ -269,7 +269,30 @@
         },
         "create": "Create",
         "cancel": "Cancel",
-        "by": "by {{author}}"
+        "creating": "Creating...",
+        "by": "by {{author}}",
+        "createPlaylist": "Create Playlist",
+        "titleLabel": "Title",
+        "titlePlaceholder": "Enter playlist title",
+        "descriptionLabel": "Description (Optional)",
+        "descriptionPlaceholder": "Add a description...",
+        "languageLabel": "Language",
+        "visibilityLabel": "Visibility",
+        "tagsLabel": "Tags (Max 5)",
+        "closePlaylist": "Close playlist",
+        "you": "You",
+        "curated": "Curated",
+        "sharePlaylist": "Share playlist",
+        "loopPlaylist": "Loop playlist",
+        "shufflePlaylist": "Shuffle playlist",
+        "visibility": {
+            "public": "Public",
+            "publicDesc": "Anyone can view",
+            "unlisted": "Unlisted",
+            "unlistedDesc": "Anyone with the link",
+            "private": "Private",
+            "privateDesc": "Only you can view"
+        }
     },
     "common": {
         "loading": "Loading...",

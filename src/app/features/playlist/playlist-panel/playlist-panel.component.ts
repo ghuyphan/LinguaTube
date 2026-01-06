@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VideoInfo } from '../../../models';
+import { I18nService } from '../../../services';
 
 @Component({
     selector: 'app-playlist-panel',
@@ -14,6 +15,7 @@ import { VideoInfo } from '../../../models';
 })
 export class PlaylistPanelComponent {
     playlistService = inject(PlaylistService);
+    i18n = inject(I18nService);
 
     close = output<void>();
     videoSelect = output<string>();

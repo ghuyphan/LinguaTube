@@ -1,5 +1,6 @@
 import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
@@ -16,6 +17,7 @@ import { StreakService } from '../../services/streak.service';
   styleUrl: './settings-sheet.component.scss'
 })
 export class SettingsSheetComponent {
+  private router = inject(Router);
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
   auth = inject(AuthService);
@@ -128,6 +130,11 @@ export class SettingsSheetComponent {
     this.showSignOutConfirm.set(false);
     this.auth.signOut();
     this.sheet.close();
+  }
+
+  goToHistory(): void {
+    this.sheet.close();
+    this.router.navigate(['/history']);
   }
 
   onSheetClosed(): void {

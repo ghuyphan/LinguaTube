@@ -1,11 +1,7 @@
-<app-bottom-sheet [isOpen]="isOpen()" [navPadding]="true" [allowBackdropClose]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isOpen()" [navPadding]="true" [allowBackdropClose]="true" [showCloseButton]="true"
+    (closed)="onSheetClosed()">
     <div class="dialog-content">
-        <div class="dialog-header">
-            <h2>Save to playlist</h2>
-            <button class="close-btn" (click)="closed.emit()">
-                <app-icon name="x" [size]="20"></app-icon>
-            </button>
-        </div>
+        <h2 class="dialog-title">{{ i18n.t('playlist.saveToPlaylist') }}</h2>
 
         <div class="playlists-list">
             @for (playlist of playlists(); track playlist.id) {
@@ -28,11 +24,11 @@
             } @empty {
             <div class="empty-state">
                 <div class="empty-state__icon-box">
-                    <app-icon name="list" [size]="24"></app-icon>
+                    <app-icon name="list-video" [size]="24"></app-icon>
                 </div>
                 <div class="empty-state__text">
                     <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
-                    <p class="empty-state__hint">{{ i18n.t('playlist.empty.myHint') }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.empty.myHint') }}</p>
                 </div>
             </div>
             }
@@ -41,7 +37,7 @@
         <div class="dialog-footer">
             <button class="btn btn-text create-btn" (click)="openCreateDialog()">
                 <app-icon name="plus" [size]="18"></app-icon>
-                Create new playlist
+                {{ i18n.t('playlist.createNew') }}
             </button>
         </div>
     </div>

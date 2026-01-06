@@ -14,7 +14,8 @@
         "study": "学习",
         "settings": "设置",
         "newVideo": "新视频",
-        "playlists": "播放列表"
+        "playlists": "播放列表",
+        "quickLinks": "快速链接"
     },
     "commandPalette": {
         "placeholder": "粘贴YouTube链接或视频ID...",
@@ -253,21 +254,43 @@
         "myPlaylists": "我的播放列表",
         "community": "社区",
         "newPlaylist": "新建播放列表",
-        "videoCount": "{{count}} video{{plural}}",
-        "visibility": {
-            "public": "Public",
-            "private": "Private"
-        },
-        "updated": "Updated {{date}}",
+        "saveToPlaylist": "保存到播放列表",
+        "createNew": "创建新播放列表",
+        "save": "保存",
+        "videoCount": "{{count}} 个视频",
+        "updated": "更新于 {{date}}",
         "empty": {
             "myTitle": "暂无播放列表",
-            "myHint": "Create one to get started!",
-            "communityTitle": "No community playlists",
-            "communityHint": "Check back later for shared playlists"
+            "myHint": "创建一个开始使用吧！",
+            "communityTitle": "暂无社区播放列表",
+            "communityHint": "稍后再来查看共享的播放列表"
         },
         "create": "创建",
         "cancel": "取消",
-        "by": "by {{author}}"
+        "creating": "创建中...",
+        "by": "来自 {{author}}",
+        "createPlaylist": "创建播放列表",
+        "titleLabel": "标题",
+        "titlePlaceholder": "输入播放列表标题",
+        "descriptionLabel": "描述（可选）",
+        "descriptionPlaceholder": "添加描述...",
+        "languageLabel": "语言",
+        "visibilityLabel": "可见性",
+        "tagsLabel": "标签（最多5个）",
+        "closePlaylist": "关闭播放列表",
+        "you": "你",
+        "curated": "精选",
+        "sharePlaylist": "分享播放列表",
+        "loopPlaylist": "循环播放列表",
+        "shufflePlaylist": "随机播放",
+        "visibility": {
+            "public": "公开",
+            "publicDesc": "所有人可见",
+            "unlisted": "不公开",
+            "unlistedDesc": "仅限有链接的人",
+            "private": "私密",
+            "privateDesc": "仅自己可见"
+        }
     },
     "common": {
         "loading": "加载中...",

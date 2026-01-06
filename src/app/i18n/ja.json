@@ -14,7 +14,8 @@
         "study": "学習",
         "settings": "設定",
         "newVideo": "新しい動画",
-        "playlists": "プレイリスト"
+        "playlists": "プレイリスト",
+        "quickLinks": "クイックリンク"
     },
     "commandPalette": {
         "placeholder": "YouTube URLまたは動画IDを貼り付け...",
@@ -253,21 +254,43 @@
         "myPlaylists": "マイプレイリスト",
         "community": "コミュニティ",
         "newPlaylist": "新しいプレイリスト",
-        "videoCount": "{{count}} video{{plural}}",
-        "visibility": {
-            "public": "Public",
-            "private": "Private"
-        },
-        "updated": "Updated {{date}}",
+        "saveToPlaylist": "プレイリストに保存",
+        "createNew": "新しいプレイリストを作成",
+        "save": "保存",
+        "videoCount": "{{count}} 本の動画",
+        "updated": "{{date}} に更新",
         "empty": {
             "myTitle": "プレイリストはまだありません",
-            "myHint": "Create one to get started!",
-            "communityTitle": "No community playlists",
-            "communityHint": "Check back later for shared playlists"
+            "myHint": "作成して始めましょう！",
+            "communityTitle": "コミュニティのプレイリストはありません",
+            "communityHint": "共有されたプレイリストを後でチェックしてください"
         },
         "create": "作成",
         "cancel": "キャンセル",
-        "by": "by {{author}}"
+        "creating": "作成中...",
+        "by": "{{author}} 作成",
+        "createPlaylist": "プレイリストを作成",
+        "titleLabel": "タイトル",
+        "titlePlaceholder": "プレイリストのタイトルを入力",
+        "descriptionLabel": "説明（任意）",
+        "descriptionPlaceholder": "説明を追加...",
+        "languageLabel": "言語",
+        "visibilityLabel": "公開設定",
+        "tagsLabel": "タグ（最大5つ）",
+        "closePlaylist": "プレイリストを閉じる",
+        "you": "あなた",
+        "curated": "キュレーション",
+        "sharePlaylist": "プレイリストを共有",
+        "loopPlaylist": "プレイリストをループ",
+        "shufflePlaylist": "シャッフル再生",
+        "visibility": {
+            "public": "公開",
+            "publicDesc": "誰でも閲覧可能",
+            "unlisted": "限定公開",
+            "unlistedDesc": "リンクを知っている人のみ",
+            "private": "非公開",
+            "privateDesc": "自分のみ閲覧可能"
+        }
     },
     "common": {
         "loading": "読み込み中...",

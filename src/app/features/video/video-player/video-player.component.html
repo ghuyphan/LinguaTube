@@ -383,12 +383,19 @@
   @if (!isFullscreen()) {
   <div class="video-info">
     @if (youtube.currentVideo(); as video) {
-    <h2 class="video-title">{{ video.title }}</h2>
-    <span class="video-channel">{{ video.channel }}</span>
+    <div class="video-text">
+      <h2 class="video-title">{{ video.title }}</h2>
+      <span class="video-channel">{{ video.channel }}</span>
+    </div>
+    <button class="btn btn-ghost btn-icon" (click)="onSaveClick()" [attr.aria-label]="i18n.t('playlist.save')">
+      <app-icon name="list-video" [size]="18" />
+    </button>
     } @else {
     <!-- Skeleton loading with shimmer effect -->
-    <div class="skeleton skeleton-title"></div>
-    <div class="skeleton skeleton-channel"></div>
+    <div class="video-text">
+      <div class="skeleton skeleton-title"></div>
+      <div class="skeleton skeleton-channel"></div>
+    </div>
     }
   </div>
   }

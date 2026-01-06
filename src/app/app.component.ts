@@ -84,11 +84,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             </a>
             <a
               class="bottom-nav__item"
-              routerLink="/history"
-              [class.active]="!anySheetOpen() && isRouteActive('/history')"
+              routerLink="/playlists"
+              [class.active]="!anySheetOpen() && isRouteActive('/playlists')"
             >
-              <app-icon name="clock" [size]="20" />
-              <span>{{ i18n.t('history.title') }}</span>
+              <app-icon name="list-video" [size]="20" />
+              <span>{{ i18n.t('nav.playlists') }}</span>
             </a>
             <button
               class="bottom-nav__item"

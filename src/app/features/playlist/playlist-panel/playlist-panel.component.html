@@ -2,28 +2,29 @@
 <div class="playlist-header">
     <div class="header-top">
         <h2>{{ playlist.title }}</h2>
-        <button class="close-btn" (click)="close.emit()" title="Close playlist">
+        <button class="close-btn" (click)="close.emit()" [title]="i18n.t('playlist.closePlaylist')">
             <app-icon name="x" [size]="20"></app-icon>
         </button>
     </div>
 
     <div class="playlist-meta">
-        <span class="publisher">{{ playlist.userId === 'local' ? 'You' : 'Curated' }}</span>
+        <span class="publisher">{{ playlist.userId === 'local' ? i18n.t('playlist.you') : i18n.t('playlist.curated')
+            }}</span>
         <span class="video-count">
             {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
         </span>
     </div>
 
     <div class="playlist-controls">
-        <button class="control-btn" (click)="onShare()" title="Share playlist">
+        <button class="control-btn" (click)="onShare()" [title]="i18n.t('playlist.sharePlaylist')">
             <app-icon name="share" [size]="20"></app-icon>
         </button>
         <button class="control-btn" [class.active]="playlistService.isLooping()" (click)="playlistService.toggleLoop()"
-            title="Loop playlist">
+            [title]="i18n.t('playlist.loopPlaylist')">
             <app-icon name="repeat" [size]="20"></app-icon>
         </button>
         <button class="control-btn" [class.active]="playlistService.isShuffled()"
-            (click)="playlistService.toggleShuffle()" title="Shuffle playlist">
+            (click)="playlistService.toggleShuffle()" [title]="i18n.t('playlist.shufflePlaylist')">
             <app-icon name="shuffle" [size]="20"></app-icon>
         </button>
     </div>

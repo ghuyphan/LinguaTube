@@ -1,41 +1,40 @@
-<app-bottom-sheet [isOpen]="isOpen()" [navPadding]="true" [allowBackdropClose]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
 
     <div class="dialog-content">
         <div class="dialog-header">
-            <h2>Create Playlist</h2>
+            <h2>{{ i18n.t('playlist.createPlaylist') }}</h2>
         </div>
 
         <form (submit)="onSubmit()">
             <!-- Title -->
             <div class="form-group">
-                <label for="pl-title">Title</label>
+                <label for="pl-title">{{ i18n.t('playlist.titleLabel') }}</label>
                 <input type="text" id="pl-title" [ngModel]="title()" (ngModelChange)="title.set($event)" name="title"
-                    required placeholder="Enter playlist title" autocomplete="off">
+                    required [placeholder]="i18n.t('playlist.titlePlaceholder')" autocomplete="off">
             </div>
 
             <!-- Description -->
             <div class="form-group">
-                <label for="pl-desc">Description (Optional)</label>
+                <label for="pl-desc">{{ i18n.t('playlist.descriptionLabel') }}</label>
                 <textarea id="pl-desc" [ngModel]="description()" (ngModelChange)="description.set($event)"
-                    name="description" placeholder="Add a description...">
+                    name="description" [placeholder]="i18n.t('playlist.descriptionPlaceholder')">
                 </textarea>
             </div>
 
             <!-- Language -->
             <div class="form-group">
-                <label for="pl-lang">Language</label>
-                <select id="pl-lang" [ngModel]="language()" (ngModelChange)="language.set($event)" name="language">
-                    @for (lang of LANGUAGES; track lang.value) {
-                    <option [value]="lang.value">{{ lang.label }}</option>
-                    }
-                </select>
+                <label>{{ i18n.t('playlist.languageLabel') }}</label>
+                <button type="button" class="language-selector" (click)="showLanguagePicker.set(true)">
+                    <span>{{ currentLanguageLabel() }}</span>
+                    <app-icon name="chevron-down" [size]="16"></app-icon>
+                </button>
             </div>
 
             <!-- Visibility -->
             <div class="form-group">
-                <label>Visibility</label>
+                <label>{{ i18n.t('playlist.visibilityLabel') }}</label>
                 <div class="visibility-options">
-                    @for (opt of VISIBILITY_OPTIONS; track opt.value) {
+                    @for (opt of visibilityOptions(); track opt.value) {
                     <div class="visibility-option" [class.selected]="visibility() === opt.value"
                         (click)="visibility.set($any(opt.value))">
                         <div class="option-icon">
@@ -52,7 +51,7 @@
 
             <!-- Tags -->
             <div class="form-group">
-                <label>Tags (Max 5)</label>
+                <label>{{ i18n.t('playlist.tagsLabel') }}</label>
                 <div class="tags-container">
                     @for (tag of TAGS; track tag) {
                     <button type="button" class="tag-chip" [class.selected]="selectedTags().includes(tag)"
@@ -65,13 +64,18 @@
 
             <!-- Actions -->
             <div class="dialog-actions">
-                <button type="button" class="btn-cancel" (click)="sheet.close()">
-                    Cancel
+                <button type="button" class="btn btn-secondary" (click)="sheet.close()">
+                    {{ i18n.t('playlist.cancel') }}
                 </button>
-                <button type="submit" class="btn-submit" [disabled]="!title() || isSubmitting()">
-                    {{ isSubmitting() ? 'Creating...' : 'Create' }}
+                <button type="submit" class="btn btn-primary" [disabled]="!title() || isSubmitting()">
+                    {{ isSubmitting() ? i18n.t('playlist.creating') : i18n.t('playlist.create') }}
                 </button>
             </div>
         </form>
     </div>
 </app-bottom-sheet>
+
+<!-- Language Picker -->
+<app-option-picker [isOpen]="showLanguagePicker()" [options]="LANGUAGE_OPTIONS" [value]="language()"
+    [title]="i18n.t('playlist.languageLabel')" [zIndex]="1200" (selected)="language.set($any($event))"
+    (closed)="showLanguagePicker.set(false)" />

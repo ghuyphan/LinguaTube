@@ -14,7 +14,8 @@
         "study": "Học",
         "settings": "Cài đặt",
         "newVideo": "Video mới",
-        "playlists": "Danh sách phát"
+        "playlists": "Danh sách phát",
+        "quickLinks": "Truy cập nhanh"
     },
     "commandPalette": {
         "placeholder": "Dán URL YouTube hoặc ID video...",
@@ -255,21 +256,43 @@
         "myPlaylists": "Danh sách của tôi",
         "community": "Cộng đồng",
         "newPlaylist": "Tạo danh sách mới",
-        "videoCount": "{{count}} video{{plural}}",
-        "visibility": {
-            "public": "Public",
-            "private": "Private"
-        },
-        "updated": "Updated {{date}}",
+        "saveToPlaylist": "Lưu vào danh sách phát",
+        "createNew": "Tạo danh sách mới",
+        "save": "Lưu",
+        "videoCount": "{{count}} video",
+        "updated": "Cập nhật {{date}}",
         "empty": {
             "myTitle": "Chưa có danh sách phát nào",
-            "myHint": "Create one to get started!",
-            "communityTitle": "No community playlists",
-            "communityHint": "Check back later for shared playlists"
+            "myHint": "Tạo một danh sách để bắt đầu!",
+            "communityTitle": "Chưa có danh sách cộng đồng",
+            "communityHint": "Quay lại sau để xem danh sách được chia sẻ"
         },
         "create": "Tạo",
         "cancel": "Hủy",
-        "by": "by {{author}}"
+        "creating": "Đang tạo...",
+        "by": "bởi {{author}}",
+        "createPlaylist": "Tạo danh sách phát",
+        "titleLabel": "Tiêu đề",
+        "titlePlaceholder": "Nhập tiêu đề danh sách phát",
+        "descriptionLabel": "Mô tả (Tùy chọn)",
+        "descriptionPlaceholder": "Thêm mô tả...",
+        "languageLabel": "Ngôn ngữ",
+        "visibilityLabel": "Hiển thị",
+        "tagsLabel": "Thẻ (Tối đa 5)",
+        "closePlaylist": "Đóng danh sách phát",
+        "you": "Bạn",
+        "curated": "Tuyển chọn",
+        "sharePlaylist": "Chia sẻ danh sách phát",
+        "loopPlaylist": "Lặp lại danh sách phát",
+        "shufflePlaylist": "Phát ngẫu nhiên",
+        "visibility": {
+            "public": "Công khai",
+            "publicDesc": "Mọi người đều có thể xem",
+            "unlisted": "Không công khai",
+            "unlistedDesc": "Chỉ những người có link",
+            "private": "Riêng tư",
+            "privateDesc": "Chỉ bạn có thể xem"
+        }
     },
     "common": {
         "loading": "Đang tải...",

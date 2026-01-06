@@ -76,6 +76,18 @@
             </div>
         </div>
 
+        <!-- Quick Navigation (Mobile Only) -->
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('nav.quickLinks') || 'Quick Links' }}</h3>
+            <button class="setting-row setting-row--clickable" (click)="goToHistory()">
+                <div class="setting-row__content">
+                    <app-icon name="clock" [size]="20" class="setting-row__icon" />
+                    <span class="setting-row__label">{{ i18n.t('history.title') }}</span>
+                </div>
+                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
+            </button>
+        </div>
+
         <!-- Language Settings -->
         <div class="settings-section">
             <h3 class="section-title">{{ i18n.t('settings.learningLanguage') }}</h3>

@@ -1215,8 +1215,17 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
    VIDEO INFO & SKELETON LOADING
    ============================================ */
 .video-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
   padding: var(--space-md) 0;
   min-height: 4rem;
+}
+
+.video-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .video-title {
@@ -1240,6 +1249,8 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   display: block;
   line-height: 1.6;
 }
+
+
 
 .skeleton {
   position: relative;

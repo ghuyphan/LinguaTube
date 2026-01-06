@@ -69,6 +69,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // Outputs
   fullscreenWordClicked = output<{ token: Token; sentence: string }>();
   fullscreenChanged = output<boolean>();
+  saveClicked = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -1014,6 +1015,10 @@ export class VideoPlayerComponent implements OnDestroy {
   resumeAndClose(): void {
     this.closeFsPopup();
     this.youtube.play();
+  }
+
+  onSaveClick(): void {
+    this.saveClicked.emit();
   }
 
   // ============================================

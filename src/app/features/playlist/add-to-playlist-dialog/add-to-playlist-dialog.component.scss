@@ -1,41 +1,18 @@
+// Add-to-Playlist Dialog Styles
+// ==============================
+
 .dialog-content {
     padding: var(--space-lg);
     max-width: 400px;
     margin: 0 auto;
 }
 
-.dialog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-lg);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--border-color);
-
-    h2 {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin: 0;
-    }
-
-    .close-btn {
-        background: transparent;
-        border: none;
-        color: var(--text-muted);
-        cursor: pointer;
-        padding: var(--space-xs);
-        border-radius: var(--border-radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all var(--transition-fast);
-
-        &:hover {
-            color: var(--text-primary);
-            background: var(--bg-tertiary);
-        }
-    }
+.dialog-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-lg);
+    text-align: center;
 }
 
 .playlists-list {
@@ -57,8 +34,10 @@
     transition: background-color var(--transition-fast);
     user-select: none;
 
-    &:hover {
-        background: var(--bg-secondary);
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-secondary);
+        }
     }
 
     &.selected {
@@ -66,7 +45,9 @@
     }
 }
 
-/* Custom Checkbox */
+// -------------------------
+// Custom Checkbox
+// -------------------------
 .checkbox-wrapper {
     position: relative;
     width: 20px;
@@ -81,8 +62,8 @@
         width: 0;
 
         &:checked~.checkmark {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            background-color: var(--accent-primary);
+            border-color: var(--accent-primary);
             color: white;
         }
     }
@@ -111,13 +92,13 @@
     gap: 2px;
 
     .playlist-name {
-        font-size: 0.9375rem;
+        font-size: var(--text-base);
         color: var(--text-primary);
         font-weight: 500;
     }
 
     .playlist-meta {
-        font-size: 0.75rem;
+        font-size: var(--text-xs);
         color: var(--text-muted);
         display: flex;
         align-items: center;
@@ -136,9 +117,11 @@
     padding: var(--space-md);
     border: 1px dashed var(--border-color);
 
-    &:hover {
-        border-color: var(--primary-color);
-        background: var(--bg-hover);
-        color: var(--primary-color);
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+            color: var(--accent-primary);
+        }
     }
 }

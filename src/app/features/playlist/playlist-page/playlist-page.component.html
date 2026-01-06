@@ -1,10 +1,10 @@
-<div class="layout">
-    <div class="layout-main">
+<div class="page-layout">
+    <div class="page-layout__main">
         <!-- Main Playlist Panel -->
         <div class="playlist-panel">
             <div class="panel-header">
                 <div class="header-row">
-                    <app-icon name="list" [size]="20" class="panel-icon" />
+                    <app-icon name="list-video" [size]="20" class="panel-icon" />
                     <h2 class="panel-title">{{ i18n.t('playlist.title') }}</h2>
                 </div>
                 <div class="panel-badges">
@@ -18,7 +18,7 @@
             </div>
 
             <!-- Filters & Actions -->
-            <div class="panel-filters">
+            <div class="filter-chips">
                 <button class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')">
                     <app-icon name="user" [size]="14" />
                     {{ i18n.t('playlist.myPlaylists') }}
@@ -27,7 +27,7 @@
                     <app-icon name="globe" [size]="14" />
                     {{ i18n.t('playlist.community') }}
                 </button>
-                <div class="filter-spacer"></div>
+                <div class="filter-chips__spacer"></div>
                 <button class="btn btn-sm btn-primary" (click)="showCreateDialog.set(true)">
                     <app-icon name="plus" [size]="14" />
                     {{ i18n.t('playlist.newPlaylist') }}
@@ -44,10 +44,10 @@
                             @if (playlist.thumbnail) {
                             <img [src]="playlist.thumbnail" [alt]="playlist.title">
                             } @else {
-                            <app-icon name="list" [size]="48" class="placeholder-icon"></app-icon>
+                            <app-icon name="list-video" [size]="48" class="placeholder-icon"></app-icon>
                             }
                             <div class="video-count">
-                                <app-icon name="list" [size]="12"></app-icon>
+                                <app-icon name="list-video" [size]="12"></app-icon>
                                 {{ playlist.videoIds.length }}
                             </div>
                         </div>
@@ -65,11 +65,11 @@
                     } @empty {
                     <div class="empty-state">
                         <div class="empty-state__icon-box">
-                            <app-icon name="list" [size]="24" />
+                            <app-icon name="list-video" [size]="20" />
                         </div>
                         <div class="empty-state__text">
-                            <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
-                            <p class="empty-state__hint">{{ i18n.t('playlist.empty.myHint') }}</p>
+                            <span class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</span>
+                            <span class="empty-state__description">{{ i18n.t('playlist.empty.myHint') }}</span>
                         </div>
                     </div>
                     }
@@ -81,10 +81,10 @@
                             @if (playlist.thumbnail) {
                             <img [src]="playlist.thumbnail" [alt]="playlist.title">
                             } @else {
-                            <app-icon name="list" [size]="48" class="placeholder-icon"></app-icon>
+                            <app-icon name="list-video" [size]="48" class="placeholder-icon"></app-icon>
                             }
                             <div class="video-count">
-                                <app-icon name="list" [size]="12"></app-icon>
+                                <app-icon name="list-video" [size]="12"></app-icon>
                                 {{ playlist.videoIds.length }}
                             </div>
                         </div>
@@ -100,11 +100,11 @@
                     } @empty {
                     <div class="empty-state">
                         <div class="empty-state__icon-box">
-                            <app-icon name="globe" [size]="24" />
+                            <app-icon name="globe" [size]="20" />
                         </div>
                         <div class="empty-state__text">
-                            <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
-                            <p class="empty-state__hint">{{ i18n.t('playlist.empty.communityHint') }}</p>
+                            <span class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</span>
+                            <span class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</span>
                         </div>
                     </div>
                     }
@@ -115,18 +115,18 @@
     </div>
 
     <!-- Desktop Sidebar -->
-    <aside class="layout-sidebar desktop-only">
+    <aside class="page-layout__sidebar desktop-only">
         <div class="sidebar-card">
-            <h3>{{ i18n.t('playlist.title') }}</h3>
+            <h3 class="sidebar-card__title">{{ i18n.t('playlist.title') }}</h3>
 
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-value">{{ playlists().length }}</span>
-                    <span class="stat-label">{{ i18n.t('playlist.myPlaylists') }}</span>
+                    <span class="stat-item__value">{{ playlists().length }}</span>
+                    <span class="stat-item__label">{{ i18n.t('playlist.myPlaylists') }}</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">{{ communityPlaylists().length }}</span>
-                    <span class="stat-label">{{ i18n.t('playlist.community') }}</span>
+                    <span class="stat-item__value">{{ communityPlaylists().length }}</span>
+                    <span class="stat-item__label">{{ i18n.t('playlist.community') }}</span>
                 </div>
             </div>
         </div>

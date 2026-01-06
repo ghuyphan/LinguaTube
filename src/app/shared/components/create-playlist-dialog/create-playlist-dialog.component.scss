@@ -1,3 +1,7 @@
+// Create Playlist Dialog Styles
+// ==============================
+// Matches styling patterns from confirm-dialog and add-to-playlist-dialog
+
 .dialog-content {
     padding: var(--space-lg);
     max-width: 500px;
@@ -9,7 +13,7 @@
     text-align: center;
 
     h2 {
-        font-size: 1.25rem;
+        font-size: var(--text-lg);
         font-weight: 600;
         color: var(--text-primary);
         margin: 0;
@@ -21,12 +25,13 @@
 
     label {
         display: block;
-        font-size: 0.875rem;
+        font-size: var(--text-sm);
         font-weight: 500;
         color: var(--text-secondary);
         margin-bottom: var(--space-xs);
     }
 
+    // Standard inputs follow global input styles
     input[type="text"],
     textarea,
     select {
@@ -34,15 +39,20 @@
         padding: var(--space-md);
         border: 1px solid var(--border-color);
         border-radius: var(--border-radius);
-        background: var(--surface-card);
+        background: var(--bg-card);
         color: var(--text-primary);
         font-family: inherit;
-        font-size: 0.9375rem;
-        transition: border-color 0.2s;
+        font-size: var(--text-base);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+        &::placeholder {
+            color: var(--text-muted);
+        }
 
         &:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: var(--accent-primary);
+            box-shadow: var(--focus-ring);
         }
     }
 
@@ -52,6 +62,44 @@
     }
 }
 
+// -------------------------
+// Language Selector Button
+// -------------------------
+.language-selector {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: var(--text-base);
+    cursor: pointer;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--text-muted);
+        }
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent-primary);
+        box-shadow: var(--focus-ring);
+    }
+
+    app-icon {
+        color: var(--text-muted);
+    }
+}
+
+// -------------------------
+// Visibility Options
+// -------------------------
 .visibility-options {
     display: flex;
     flex-direction: column;
@@ -66,48 +114,55 @@
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast);
 
-    &:hover {
-        background: var(--surface-hover);
+    @media (hover: hover) {
+        &:hover:not(.selected) {
+            background: var(--bg-secondary);
+        }
     }
 
     &.selected {
-        background: var(--primary-light);
-        border-color: var(--primary-color);
+        background: rgba(var(--accent-primary-rgb), 0.08);
+        border-color: var(--accent-primary);
 
         .option-icon {
-            color: var(--primary-color);
+            color: var(--accent-primary);
         }
     }
 
     input[type="radio"] {
-        display: none; // Hide actual radio button, style container
+        display: none;
     }
 
     .option-icon {
-        color: var(--text-secondary);
+        color: var(--text-muted);
         display: flex;
+        flex-shrink: 0;
     }
 
     .option-info {
         flex: 1;
+        min-width: 0;
 
         .option-label {
             display: block;
             font-weight: 500;
             color: var(--text-primary);
-            font-size: 0.9375rem;
+            font-size: var(--text-base);
         }
 
         .option-desc {
             display: block;
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
         }
     }
 }
 
+// -------------------------
+// Tags
+// -------------------------
 .tags-container {
     display: flex;
     flex-wrap: wrap;
@@ -115,53 +170,39 @@
 }
 
 .tag-chip {
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    background: var(--surface-hover);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius-pill);
+    background: var(--bg-secondary);
     color: var(--text-secondary);
-    font-size: 0.8125rem;
+    font-size: var(--text-sm);
+    font-weight: 500;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast);
 
-    &:hover {
-        background: var(--border-color);
+    @media (hover: hover) {
+        &:hover:not(.selected) {
+            background: var(--bg-tertiary);
+        }
     }
 
     &.selected {
-        background: var(--primary-color);
+        background: var(--accent-primary);
         color: white;
+        border-color: var(--accent-primary);
     }
 }
 
+// -------------------------
+// Dialog Actions (uses global .btn classes)
+// -------------------------
 .dialog-actions {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     margin-top: var(--space-xl);
 
-    button {
+    .btn {
         flex: 1;
-        padding: var(--space-md);
-        border-radius: var(--border-radius);
-        font-weight: 500;
-        cursor: pointer;
-        border: none;
-        font-size: 0.9375rem;
-        transition: opacity 0.2s;
-
-        &.btn-cancel {
-            background: var(--surface-hover);
-            color: var(--text-primary);
-        }
-
-        &.btn-submit {
-            background: var(--primary-color);
-            color: white;
-
-            &:disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
-            }
-        }
+        justify-content: center;
     }
 }

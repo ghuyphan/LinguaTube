@@ -1,16 +1,18 @@
-import { Component, ChangeDetectionStrategy, input, output, inject, signal, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, inject, signal, ViewChild, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../icon/icon.component';
+import { OptionPickerComponent, OptionItem } from '../option-picker/option-picker.component';
 import { PlaylistService } from '../../../features/playlist/playlist.service';
 import { PlaylistVisibility, PlaylistLanguage, PLAYLIST_TAGS } from '../../../models';
 import { AuthService } from '../../../core/services/auth.service';
+import { I18nService } from '../../../services';
 
 @Component({
     selector: 'app-create-playlist-dialog',
     standalone: true,
-    imports: [CommonModule, FormsModule, BottomSheetComponent, IconComponent],
+    imports: [CommonModule, FormsModule, BottomSheetComponent, IconComponent, OptionPickerComponent],
     templateUrl: './create-playlist-dialog.component.html',
     styleUrls: ['./create-playlist-dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -18,6 +20,7 @@ import { AuthService } from '../../../core/services/auth.service';
 export class CreatePlaylistDialogComponent {
     private playlistService = inject(PlaylistService);
     private auth = inject(AuthService);
+    i18n = inject(I18nService);
 
     // Inputs
     isOpen = input<boolean>(false);
@@ -35,21 +38,28 @@ export class CreatePlaylistDialogComponent {
     language = signal<PlaylistLanguage>('en');
     selectedTags = signal<string[]>([]);
     isSubmitting = signal(false);
+    showLanguagePicker = signal(false);
 
     // Constants
     readonly TAGS = PLAYLIST_TAGS;
-    readonly VISIBILITY_OPTIONS = [
-        { value: 'private', label: 'Private', icon: 'lock', desc: 'Only you can view' },
-        { value: 'unlisted', label: 'Unlisted', icon: 'link', desc: 'Anyone with the link' },
-        { value: 'published', label: 'Published', icon: 'globe', desc: 'Visible to everyone' }
+
+    visibilityOptions = computed(() => [
+        { value: 'private', label: this.i18n.t('playlist.visibility.private'), icon: 'lock', desc: this.i18n.t('playlist.visibility.privateDesc') },
+        { value: 'unlisted', label: this.i18n.t('playlist.visibility.unlisted'), icon: 'link', desc: this.i18n.t('playlist.visibility.unlistedDesc') },
+        { value: 'published', label: this.i18n.t('playlist.visibility.public'), icon: 'globe', desc: this.i18n.t('playlist.visibility.publicDesc') }
+    ]);
+
+    // Use native language names to avoid font/display issues
+    readonly LANGUAGE_OPTIONS: OptionItem[] = [
+        { value: 'en', label: 'English' },
+        { value: 'ja', label: '日本語' },
+        { value: 'zh', label: '中文' },
+        { value: 'ko', label: '한국어' }
     ];
 
-    readonly LANGUAGES = [
-        { value: 'en', label: 'English' },
-        { value: 'ja', label: 'Japanese' },
-        { value: 'zh', label: 'Chinese' },
-        { value: 'ko', label: 'Korean' }
-    ];
+    currentLanguageLabel = computed(() =>
+        this.LANGUAGE_OPTIONS.find(opt => opt.value === this.language())?.label ?? 'English'
+    );
 
     constructor() {
         // Set default language based on user settings would be nice, but for now default to EN or first available

@@ -36,20 +36,8 @@ import { Token } from '../../../models';
           (fullscreenWordClicked)="onWordClicked($event)" 
           (fullscreenChanged)="isVideoFullscreen.set($event)"
           (videoEnded)="onVideoEnded()"
+          (saveClicked)="openAddToPlaylist()"
         />
-
-        <!-- Video Metadata & Actions -->
-        @if (youtube.currentVideo(); as video) {
-        <div class="video-meta">
-            <h1 class="video-title">{{ video.title }}</h1>
-            <div class="video-actions">
-                <button class="action-btn" (click)="openAddToPlaylist()">
-                    <app-icon name="list" [size]="20"></app-icon>
-                    <span>Save</span>
-                </button>
-            </div>
-        </div>
-        }
 
         <app-subtitle-display 
           [isVideoFullscreen]="isVideoFullscreen()" 
@@ -167,49 +155,6 @@ import { Token } from '../../../models';
       .layout-main {
         gap: var(--space-md);
       }
-    }
-
-    .video-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: var(--space-md);
-        padding: 0 var(--space-xs);
-    }
-
-    .video-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        line-height: 1.4;
-        margin: 0;
-        color: var(--text-primary);
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .video-actions {
-        flex-shrink: 0;
-    }
-
-    .action-btn {
-        display: flex;
-        align-items: center;
-        gap: var(--space-sm);
-        padding: var(--space-sm) var(--space-md);
-        background: var(--surface-hover);
-        border: 1px solid var(--border-color);
-        border-radius: 18px;
-        color: var(--text-primary);
-        font-weight: 500;
-        font-size: 0.875rem;
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:hover {
-            background: var(--border-color);
-        }
     }
   `]
 })

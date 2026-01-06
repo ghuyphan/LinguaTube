@@ -19,7 +19,7 @@ export type IconName =
     // Gamification & cute icons
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical'
-    | 'list' | 'share' | 'link' | 'lock';
+    | 'list' | 'list-video' | 'share' | 'link' | 'lock';
 
 @Component({
     selector: 'app-icon',

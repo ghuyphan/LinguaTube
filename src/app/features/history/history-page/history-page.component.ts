@@ -20,8 +20,8 @@ type FilterType = 'all' | 'favorites';
     HistoryListComponent
   ],
   template: `
-    <div class="layout">
-      <div class="layout-main">
+    <div class="page-layout">
+      <div class="page-layout__main">
         <!-- Main History Panel -->
         <div class="history-panel">
           <div class="history-header">
@@ -38,7 +38,7 @@ type FilterType = 'all' | 'favorites';
           </div>
 
           <!-- Filters -->
-          <div class="history-filters">
+          <div class="filter-chips">
             <button 
               class="filter-chip" 
               [class.active]="filter() === 'all'"
@@ -52,7 +52,7 @@ type FilterType = 'all' | 'favorites';
               <app-icon name="heart" [size]="14" />
               {{ i18n.t('history.favorites') }}
             </button>
-            <div class="filter-spacer"></div>
+            <div class="filter-chips__spacer"></div>
             @if (historyItems().length > 0) {
               <button class="btn btn-sm btn-ghost" (click)="confirmClear()">
                 <app-icon name="trash-2" [size]="14" />
@@ -105,18 +105,18 @@ type FilterType = 'all' | 'favorites';
       </div>
 
       <!-- Desktop sidebar -->
-      <aside class="layout-sidebar desktop-only">
+      <aside class="page-layout__sidebar desktop-only">
         <div class="sidebar-card">
           <h3>{{ i18n.t('history.title') }}</h3>
           
           <div class="stats-grid">
             <div class="stat-item">
-              <span class="stat-value">{{ historyItems().length }}</span>
-              <span class="stat-label">{{ i18n.t('history.all') }}</span>
+              <span class="stat-item__value">{{ historyItems().length }}</span>
+              <span class="stat-item__label">{{ i18n.t('history.all') }}</span>
             </div>
             <div class="stat-item">
-              <span class="stat-value stat-favorite">{{ favorites().length }}</span>
-              <span class="stat-label">{{ i18n.t('history.favorites') }}</span>
+              <span class="stat-item__value stat-item__value--favorite">{{ favorites().length }}</span>
+              <span class="stat-item__label">{{ i18n.t('history.favorites') }}</span>
             </div>
           </div>
 
@@ -160,27 +160,7 @@ type FilterType = 'all' | 'favorites';
       display: block;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: var(--space-lg);
-      align-items: start;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .layout-main {
-      min-width: 0;
-    }
-
-    .layout-sidebar {
-      align-self: start;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-
-    /* History panel */
+    /* History panel - component specific */
     .history-panel {
       background: var(--bg-card);
       border-radius: var(--border-radius-lg);
@@ -216,95 +196,16 @@ type FilterType = 'all' | 'favorites';
       margin-top: var(--space-xs);
     }
 
-    .history-filters {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      padding: var(--space-sm) var(--space-md);
-    }
-
-    .filter-chip {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      padding: var(--space-xs) var(--space-sm);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      border: 1px solid transparent;
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-
-    .filter-chip.active {
-      background: var(--bg-card);
-      color: var(--accent-primary);
-      border-color: var(--accent-primary);
-    }
-
-    @media (hover: hover) {
-      .filter-chip:hover:not(.active) {
-        background: var(--bg-tertiary);
-      }
-    }
-
-    .filter-spacer {
-      flex: 1;
-    }
-
     .history-list {
       flex: 1;
       overflow-y: auto;
     }
 
-
-    /* Sidebar */
-    .sidebar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: var(--space-md);
-    }
-
+    /* Sidebar - uses global .sidebar-card, .stats-grid, .stat-item */
     .sidebar-card h3 {
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: var(--space-md);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-sm);
-      margin-bottom: var(--space-md);
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: var(--space-sm);
-      background: var(--bg-secondary);
-      border-radius: var(--border-radius);
-    }
-
-    .stat-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .stat-favorite {
-      color: var(--accent-primary);
-    }
-
-    .stat-label {
-      font-size: 0.6875rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
     }
 
     .sync-hint {

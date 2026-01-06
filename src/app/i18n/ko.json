@@ -14,7 +14,8 @@
         "study": "학습",
         "settings": "설정",
         "newVideo": "새 동영상",
-        "playlists": "재생목록"
+        "playlists": "재생목록",
+        "quickLinks": "빠른 링크"
     },
     "commandPalette": {
         "placeholder": "YouTube URL 또는 동영상 ID 붙여넣기...",
@@ -253,21 +254,43 @@
         "myPlaylists": "내 재생목록",
         "community": "커뮤니티",
         "newPlaylist": "새 재생목록",
-        "videoCount": "{{count}} video{{plural}}",
-        "visibility": {
-            "public": "Public",
-            "private": "Private"
-        },
-        "updated": "Updated {{date}}",
+        "saveToPlaylist": "재생목록에 저장",
+        "createNew": "새 재생목록 만들기",
+        "save": "저장",
+        "videoCount": "동영상 {{count}}개",
+        "updated": "{{date}}에 업데이트됨",
         "empty": {
             "myTitle": "재생목록이 없습니다",
-            "myHint": "Create one to get started!",
-            "communityTitle": "No community playlists",
-            "communityHint": "Check back later for shared playlists"
+            "myHint": "하나 만들어 시작하세요!",
+            "communityTitle": "커뮤니티 재생목록이 없습니다",
+            "communityHint": "나중에 공유된 재생목록을 확인하세요"
         },
         "create": "만들기",
         "cancel": "취소",
-        "by": "by {{author}}"
+        "creating": "만드는 중...",
+        "by": "{{author}} 제작",
+        "createPlaylist": "재생목록 만들기",
+        "titleLabel": "제목",
+        "titlePlaceholder": "재생목록 제목 입력",
+        "descriptionLabel": "설명 (선택사항)",
+        "descriptionPlaceholder": "설명 추가...",
+        "languageLabel": "언어",
+        "visibilityLabel": "공개 설정",
+        "tagsLabel": "태그 (최대 5개)",
+        "closePlaylist": "재생목록 닫기",
+        "you": "나",
+        "curated": "큐레이션",
+        "sharePlaylist": "재생목록 공유",
+        "loopPlaylist": "재생목록 반복",
+        "shufflePlaylist": "셔플 재생",
+        "visibility": {
+            "public": "공개",
+            "publicDesc": "모든 사람이 볼 수 있음",
+            "unlisted": "일부 공개",
+            "unlistedDesc": "링크가 있는 사람만",
+            "private": "비공개",
+            "privateDesc": "나만 볼 수 있음"
+        }
     },
     "common": {
         "loading": "로딩 중...",

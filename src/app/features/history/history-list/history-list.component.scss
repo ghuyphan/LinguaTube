@@ -6,36 +6,7 @@
     display: block;
 }
 
-// -------------------------
-// Empty State
-// -------------------------
-.empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: var(--text-muted);
-
-    &.animate {
-        animation: fadeSlideIn 0.3s ease-out;
-    }
-
-    &__icon {
-        margin-bottom: var(--space-md);
-        opacity: 0.5;
-    }
-
-    &__title {
-        font-size: 1rem;
-        color: var(--text-primary);
-        margin: 0 0 var(--space-xs);
-    }
-
-    &__hint {
-        margin: 0;
-        font-size: 0.875rem;
-    }
-}
+// Note: Empty states use global .empty-state classes from styles.css
 
 // -------------------------
 // Skeleton Loading State
