@@ -12,7 +12,14 @@
         "added": "Added",
         "words": "Words",
         "study": "Study",
-        "settings": "Settings"
+        "settings": "Settings",
+        "newVideo": "New Video"
+    },
+    "commandPalette": {
+        "placeholder": "Paste YouTube URL or video ID...",
+        "invalid": "Please enter a valid YouTube URL",
+        "toLoad": "to load",
+        "toClose": "to close"
     },
     "header": {
         "words": "Words",

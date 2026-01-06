@@ -12,7 +12,14 @@
         "added": "추가됨",
         "words": "단어",
         "study": "학습",
-        "settings": "설정"
+        "settings": "설정",
+        "newVideo": "새 동영상"
+    },
+    "commandPalette": {
+        "placeholder": "YouTube URL 또는 동영상 ID 붙여넣기...",
+        "invalid": "유효한 YouTube URL을 입력하세요",
+        "toLoad": "로드",
+        "toClose": "닫기"
     },
     "header": {
         "words": "단어",

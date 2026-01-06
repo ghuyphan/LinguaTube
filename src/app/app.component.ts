@@ -9,6 +9,7 @@ import { SettingsSheetComponent } from './components/settings-sheet/settings-she
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSheetComponent } from './shared/components/bottom-sheet/bottom-sheet.component';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
+import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
@@ -24,9 +25,9 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     IconComponent,
     SettingsSheetComponent,
     SidebarComponent,
-    SidebarComponent,
     BottomSheetComponent,
-    OnboardingComponent
+    OnboardingComponent,
+    CommandPaletteComponent
   ],
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
@@ -39,6 +40,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <app-sidebar 
             class="desktop-sidebar"
             (openSettings)="showSettingsSheet.set(true)"
+            (openCommandPalette)="showCommandPalette.set(true)"
           />
         }
 
@@ -99,6 +101,18 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           </div>
         </nav>
 
+        <!-- Mobile FAB for new video -->
+        @if (isRouteActive('/video')) {
+        <button 
+          class="fab-new-video"
+          (click)="showCommandPalette.set(true)"
+          [attr.title]="i18n.t('nav.newVideo')"
+          [attr.aria-label]="i18n.t('nav.newVideo')"
+        >
+          <app-icon name="plus" [size]="24" />
+        </button>
+        }
+
         <!-- Bottom Sheets -->
         @defer (when showSettingsSheet()) {
           <app-settings-sheet 
@@ -106,6 +120,12 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (closed)="showSettingsSheet.set(false)" 
           />
         }
+
+        <!-- Command Palette -->
+        <app-command-palette
+          [isOpen]="showCommandPalette()"
+          (closed)="showCommandPalette.set(false)"
+        />
       }
 
       <!-- Update Available Sheet (always available, even during onboarding) -->
@@ -299,6 +319,49 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         opacity: 0.9;
       }
     }
+
+    /* Mobile FAB for new video */
+    .fab-new-video {
+      display: none;
+      position: fixed;
+      bottom: calc(var(--bottom-nav-height) + var(--space-md) + env(safe-area-inset-bottom, 0px));
+      right: var(--space-md);
+      width: 56px;
+      height: 56px;
+      border-radius: var(--border-radius-round);
+      background: var(--accent-primary);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 16px rgba(var(--accent-primary-rgb), 0.4);
+      cursor: pointer;
+      z-index: var(--z-fixed);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .fab-new-video {
+        display: flex;
+      }
+    }
+
+    @media (max-height: 500px) and (orientation: landscape) {
+      .fab-new-video {
+        display: flex;
+      }
+    }
+
+    .fab-new-video:active {
+      transform: scale(0.92);
+    }
+
+    @media (hover: hover) {
+      .fab-new-video:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(var(--accent-primary-rgb), 0.5);
+      }
+    }
   `]
 })
 export class AppComponent implements OnDestroy {
@@ -318,6 +381,7 @@ export class AppComponent implements OnDestroy {
 
   constructor() {
     this.initServiceWorkerUpdates();
+    this.initKeyboardShortcuts();
 
     // Lazy load SyncService after first render to reduce initial bundle size
     afterNextRender(() => {
@@ -399,6 +463,7 @@ export class AppComponent implements OnDestroy {
 
   showSettingsSheet = signal(false);
   showUpdateSheet = signal(false);
+  showCommandPalette = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
 
@@ -424,6 +489,21 @@ export class AppComponent implements OnDestroy {
   // Check if current route matches
   isRouteActive(route: string): boolean {
     return this.currentUrl()?.startsWith(route) ?? false;
+  }
+
+  /**
+   * Initialize keyboard shortcuts (Cmd/Ctrl + K for command palette)
+   */
+  private initKeyboardShortcuts(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.document.addEventListener('keydown', (event: KeyboardEvent) => {
+      // Cmd/Ctrl + K to open command palette
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault();
+        this.showCommandPalette.set(true);
+      }
+    });
   }
 
   toggleSettingsSheet(): void {

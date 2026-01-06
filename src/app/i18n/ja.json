@@ -12,7 +12,14 @@
         "added": "追加済み",
         "words": "単語",
         "study": "学習",
-        "settings": "設定"
+        "settings": "設定",
+        "newVideo": "新しい動画"
+    },
+    "commandPalette": {
+        "placeholder": "YouTube URLまたは動画IDを貼り付け...",
+        "invalid": "有効なYouTube URLを入力してください",
+        "toLoad": "で読み込み",
+        "toClose": "で閉じる"
     },
     "header": {
         "words": "単語",

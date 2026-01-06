@@ -12,7 +12,14 @@
         "added": "已添加",
         "words": "词汇",
         "study": "学习",
-        "settings": "设置"
+        "settings": "设置",
+        "newVideo": "新视频"
+    },
+    "commandPalette": {
+        "placeholder": "粘贴YouTube链接或视频ID...",
+        "invalid": "请输入有效的YouTube链接",
+        "toLoad": "加载",
+        "toClose": "关闭"
     },
     "header": {
         "words": "词汇",

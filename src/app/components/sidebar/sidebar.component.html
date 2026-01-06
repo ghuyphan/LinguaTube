@@ -20,6 +20,13 @@
 
     <!-- Navigation -->
     <nav class="sidebar__nav">
+        <button class="nav-item nav-item--new" (click)="openCommandPalette.emit()"
+            [attr.title]="i18n.t('nav.newVideo')">
+            <app-icon name="plus" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.newVideo') }}</span>
+            }
+        </button>
         <a class="nav-item" routerLink="/video" routerLinkActive="active">
             <app-icon name="play-circle" [size]="20" />
             @if (!isCollapsed()) {

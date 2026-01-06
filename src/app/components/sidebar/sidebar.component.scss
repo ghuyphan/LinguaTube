@@ -244,6 +244,30 @@
     }
 }
 
+// New Video button - accent styling
+.nav-item--new {
+    background: rgba(var(--accent-primary-rgb), 0.08);
+    color: var(--accent-primary);
+    border: 1px dashed rgba(var(--accent-primary-rgb), 0.3);
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: var(--space-sm);
+
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(var(--accent-primary-rgb), 0.15);
+            border-color: var(--accent-primary);
+            padding-left: 1rem;
+        }
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+}
+
 /* Sections */
 .sidebar__section {
     padding: 1.25rem var(--space-md);

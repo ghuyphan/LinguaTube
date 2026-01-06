@@ -391,6 +391,7 @@ export async function onRequestPost(context) {
         // =====================================================================
         if (!preferAI) {
             // Check negative cache first - skip scraping if we already know there's no native caption
+            // Note: Only trust negative cache if forceRefresh is not set
             const knownNoNative = await isNoTranscript(db, cache, videoId, lang, 'native');
             if (knownNoNative) {
                 log(`Negative cache hit: ${videoId}:${lang} - known no native captions`);
@@ -545,15 +546,19 @@ export async function onRequestPost(context) {
                 }, 200, { 'X-Cache': 'MISS', 'Cache-Control': CACHE_CONTROL.NATIVE });
             }
 
-            // Native failed - cache the failure to prevent repeated scraping attempts
-            const markNegativeCache = markNoTranscript(db, cache, videoId, lang, 'native');
-            if (waitUntil) {
-                waitUntil(markNegativeCache);
+            // Native failed - only cache the failure if Supadata was actually tried
+            // This prevents false negatives when SUPADATA_API_KEY is not configured
+            if (env.SUPADATA_API_KEY) {
+                const markNegativeCache = markNoTranscript(db, cache, videoId, lang, 'native');
+                if (waitUntil) {
+                    waitUntil(markNegativeCache);
+                } else {
+                    await markNegativeCache;
+                }
+                log(`Marked negative cache: ${videoId}:${lang} - no native captions`);
             } else {
-                await markNegativeCache;
+                log(`Skipped negative cache (no SUPADATA_API_KEY): ${videoId}:${lang}`);
             }
-
-            log(`Marked negative cache: ${videoId}:${lang} - no native captions`);
 
             // BEFORE returning NO_NATIVE error, check if we have ANY existing AI transcript in another language
             // This prevents asking the user to pay for AI when we already have a valid transcript (e.g. they requested 'ja' but we have 'zh-CN' AI)
@@ -713,7 +718,7 @@ async function trySupadata(videoId, lang, apiKey, cache) {
         url.searchParams.set('videoId', videoId);
         url.searchParams.set('lang', lang);
         url.searchParams.set('text', 'false');
-        url.searchParams.set('mode', 'native');
+        url.searchParams.set('mode', 'native'); // native = existing transcripts only, no AI generation
 
         const response = await fetch(url.toString(), {
             method: 'GET',

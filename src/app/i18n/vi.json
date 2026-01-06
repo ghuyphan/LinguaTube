@@ -12,7 +12,14 @@
         "added": "Đã thêm",
         "words": "Từ vựng",
         "study": "Học",
-        "settings": "Cài đặt"
+        "settings": "Cài đặt",
+        "newVideo": "Video mới"
+    },
+    "commandPalette": {
+        "placeholder": "Dán URL YouTube hoặc ID video...",
+        "invalid": "Vui lòng nhập URL YouTube hợp lệ",
+        "toLoad": "để tải",
+        "toClose": "để đóng"
     },
     "header": {
         "words": "Từ",
