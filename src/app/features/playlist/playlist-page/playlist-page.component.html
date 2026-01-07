@@ -76,7 +76,7 @@
                                     <span>•</span>
                                     <span>{{ playlist.updatedAt | date:'mediumDate' }}</span>
                                     } @else {
-                                    <span>{{ getCreatorLabel(playlist.userId) }}</span>
+                                    <span>{{ getCreatorLabel(playlist) }}</span>
                                     <span>•</span>
                                     <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
                                     }

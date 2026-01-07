@@ -719,10 +719,11 @@ export class PlaylistService {
         try {
             const client = await this.pb.getClient();
 
-            // Load published playlists
+            // Load published playlists with user name expanded
             const result = await client.collection('playlists').getList(1, 50, {
                 filter: 'visibility="published"',
-                sort: '-updated'
+                sort: '-updated',
+                expand: 'user'
             });
 
             this.communityPlaylists.set(result.items.map(r => this.recordToPlaylist(r)));
@@ -736,9 +737,13 @@ export class PlaylistService {
     // ==================== Private Helpers ====================
 
     private recordToPlaylist(record: any): Playlist {
+        // Extract user name from expanded relation if available
+        const userName = record.expand?.user?.name || record.expand?.user?.username;
+
         return {
             id: record.id,
             userId: record.user,
+            userName: userName,
             title: record.title,
             description: record.description,
             visibility: record.visibility,

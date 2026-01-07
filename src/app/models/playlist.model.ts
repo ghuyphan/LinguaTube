@@ -12,6 +12,7 @@ export type PlaylistLanguage = 'ja' | 'zh' | 'ko' | 'en';
 export interface Playlist {
     id: string;
     userId: string;
+    userName?: string;  // Creator's display name (expanded from user relation)
     title: string;
     description?: string;
     visibility: PlaylistVisibility;

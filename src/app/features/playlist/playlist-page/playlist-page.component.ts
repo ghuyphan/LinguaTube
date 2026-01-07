@@ -143,9 +143,11 @@ export class PlaylistPageComponent {
         });
     }
 
-    getCreatorLabel(userId: string): string {
+    getCreatorLabel(playlist: Playlist): string {
         const template = this.i18n.t('playlist.by') || 'by {{author}}';
-        return template.replace('{{author}}', userId);
+        // Use userName if available, otherwise show truncated userId
+        const author = playlist.userName || playlist.userId.slice(0, 8) + '...';
+        return template.replace('{{author}}', author);
     }
 
     getVideoCountLabel(count: number): string {
