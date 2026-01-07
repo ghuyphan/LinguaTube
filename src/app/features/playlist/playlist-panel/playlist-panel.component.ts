@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -13,96 +13,112 @@ import { I18nService } from '../../../services';
     styleUrls: ['./playlist-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlaylistPanelComponent {
-    playlistService = inject(PlaylistService);
-    i18n = inject(I18nService);
+export class PlaylistPanelComponent implements AfterViewInit {
+    private _playlistService = inject(PlaylistService);
+    private _i18n = inject(I18nService);
+
+    // Public getters for template binding
+    get playlistService() { return this._playlistService; }
+    get i18n() { return this._i18n; }
 
     isMobile = input<boolean>(false);
     close = output<void>();
     videoSelect = output<string>();
+
+    // ViewChildren for scroll management
+    @ViewChildren('playlistItem') playlistItems!: QueryList<ElementRef<HTMLDivElement>>;
 
     // Menu state
     menuOpen = signal(false);
     selectedVideoIndex = signal<number>(-1);
     selectedVideoId = signal<string>('');
 
-    // Auto-scroll effect
-    constructor() {
-        effect(() => {
-            const index = this.playlistService.currentIndex();
-            const playlist = this.playlistService.currentPlaylist();
+    private scrollPending = false;
 
-            // Wait for render (short microtask) then scroll
+    constructor() {
+        // Track when scroll is needed
+        effect(() => {
+            const index = this._playlistService.currentIndex();
+            const playlist = this._playlistService.currentPlaylist();
+
             if (playlist && index >= 0) {
-                setTimeout(() => {
-                    this.scrollToIndex(index);
-                }, 100);
+                this.scrollPending = true;
+                // Defer scroll to after view update
+                queueMicrotask(() => this.scrollToCurrentIndex());
             }
         });
     }
 
-    private scrollToIndex(index: number): void {
-        const element = document.getElementById(`playlist-item-${index}`);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    ngAfterViewInit(): void {
+        // Subscribe to changes in the list
+        this.playlistItems.changes.subscribe(() => {
+            if (this.scrollPending) {
+                this.scrollToCurrentIndex();
+            }
+        });
+    }
+
+    private scrollToCurrentIndex(): void {
+        if (!this.scrollPending) return;
+
+        const index = this._playlistService.currentIndex();
+        const items = this.playlistItems?.toArray();
+
+        if (items && items[index]) {
+            items[index].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            this.scrollPending = false;
         }
     }
 
-
     onVideoClick(videoId: string, index: number): void {
-        this.playlistService.setCurrentIndex(index);
+        this._playlistService.setCurrentIndex(index);
         this.videoSelect.emit(videoId);
     }
 
     async onShare(): Promise<void> {
-        const playlist = this.playlistService.currentPlaylist();
+        const playlist = this._playlistService.currentPlaylist();
         if (playlist) {
-            await this.playlistService.copyShareLink(playlist.id);
-            // TODO: Show toast "Link copied"
+            await this._playlistService.copyShareLink(playlist.id);
         }
     }
 
-    // Open video menu (3-dot)
     openVideoMenu(index: number, videoId: string, event: Event): void {
-        event.stopPropagation(); // Prevent triggering video click
+        event.stopPropagation();
         this.selectedVideoIndex.set(index);
         this.selectedVideoId.set(videoId);
         this.menuOpen.set(true);
     }
 
-    // Move video up in playlist
     async moveVideoUp(): Promise<void> {
-        const playlist = this.playlistService.currentPlaylist();
+        const playlist = this._playlistService.currentPlaylist();
         const index = this.selectedVideoIndex();
         if (!playlist || index <= 0) return;
 
         const videoIds = [...playlist.videoIds];
         [videoIds[index - 1], videoIds[index]] = [videoIds[index], videoIds[index - 1]];
 
-        await this.playlistService.reorderVideos(playlist.id, videoIds);
+        await this._playlistService.reorderVideos(playlist.id, videoIds);
         this.menuOpen.set(false);
     }
 
-    // Move video down in playlist
     async moveVideoDown(): Promise<void> {
-        const playlist = this.playlistService.currentPlaylist();
+        const playlist = this._playlistService.currentPlaylist();
         const index = this.selectedVideoIndex();
         if (!playlist || index >= playlist.videos.length - 1) return;
 
         const videoIds = [...playlist.videoIds];
         [videoIds[index], videoIds[index + 1]] = [videoIds[index + 1], videoIds[index]];
 
-        await this.playlistService.reorderVideos(playlist.id, videoIds);
+        await this._playlistService.reorderVideos(playlist.id, videoIds);
         this.menuOpen.set(false);
     }
 
-    // Remove video from playlist
     async removeVideo(): Promise<void> {
-        const playlist = this.playlistService.currentPlaylist();
+        const playlist = this._playlistService.currentPlaylist();
         const videoId = this.selectedVideoId();
         if (!playlist || !videoId) return;
 
-        await this.playlistService.removeVideo(playlist.id, videoId);
+        await this._playlistService.removeVideo(playlist.id, videoId);
         this.menuOpen.set(false);
     }
 }

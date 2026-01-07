@@ -65,6 +65,9 @@ export class PlaylistPageComponent {
         return this.columns() === 1 ? 100 : 320;
     });
 
+    // Use regular list on mobile for shrink-to-fit, virtual scroll on desktop for performance
+    isMobile = computed(() => this.screenWidth() < 768);
+
     currentList = computed(() => this.view() === 'my' ? this.playlists() : this.communityPlaylists());
 
     virtualRows = computed(() => {

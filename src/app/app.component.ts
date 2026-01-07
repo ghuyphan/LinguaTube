@@ -182,14 +182,13 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .app.has-sidebar .app__content {
-        margin-left: 260px; /* Sidebar width */
-        width: calc(100% - 260px);
-        transition: margin-left var(--transition-normal), width var(--transition-normal);
+        /* Use exact sidebar width - content adjusts smoothly when sidebar toggles */
+        padding-left: 15.625rem; /* Match .sidebar width exactly */
+        transition: padding-left 0.3s cubic-bezier(0.2, 0, 0, 1);
       }
 
       .app.has-sidebar.sidebar-collapsed .app__content {
-        margin-left: 68px; /* Collapsed sidebar width */
-        width: calc(100% - 68px);
+        padding-left: 4.5rem; /* Match .sidebar.collapsed width exactly */
       }
 
       /* Hide old header when sidebar is visible */
@@ -199,10 +198,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
       .bottom-nav {
         display: none !important;
-      }
-
-      .main {
-        padding: var(--space-lg) var(--space-xl);
       }
     }
 

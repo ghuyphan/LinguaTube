@@ -28,6 +28,9 @@ export class PlaylistService {
 
     // ==================== State ====================
 
+    // UI State for mobile bar animation
+    hasShownMobileBar = false;
+
     /** User's own playlists */
     readonly myPlaylists = signal<Playlist[]>([]);
 

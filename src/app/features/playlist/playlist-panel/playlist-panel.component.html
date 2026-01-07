@@ -62,14 +62,14 @@
                 <app-icon name="list-video" [size]="20"></app-icon>
             </div>
             <div class="empty-state__text">
-                <span class="empty-state__title">{{ i18n.t('playlist.empty.noVideosTitle') }}</span>
-                <span class="empty-state__description">{{ i18n.t('playlist.empty.noVideosHint') }}</span>
+                <p class="empty-state__title">{{ i18n.t('playlist.empty.noVideosTitle') }}</p>
+                <p class="empty-state__description">{{ i18n.t('playlist.empty.noVideosHint') }}</p>
             </div>
         </div>
         } @else {
         @for (video of playlist.videos; track video.videoId; let i = $index) {
-        <div class="playlist-item" [class.active]="i === playlistService.currentIndex()" [id]="'playlist-item-' + i"
-            (click)="onVideoClick(video.videoId, i)">
+        <div #playlistItem class="playlist-item" [class.active]="i === playlistService.currentIndex()"
+            [id]="'playlist-item-' + i" (click)="onVideoClick(video.videoId, i)">
 
             <div class="item-left">
                 <span class="item-index">{{ i + 1 }}</span>
@@ -83,7 +83,9 @@
 
             <div class="item-thumbnail">
                 <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
-                <div class="playing-overlay" *ngIf="i === playlistService.currentIndex()"></div>
+                @if (i === playlistService.currentIndex()) {
+                <div class="playing-overlay"></div>
+                }
             </div>
 
             <div class="item-info">
@@ -93,7 +95,7 @@
 
             @if (playlist.isOwner) {
             <button class="item-menu-btn" (click)="openVideoMenu(i, video.videoId, $event)"
-                [title]="i18n.t('playlist.videoOptions')">
+                [attr.aria-label]="i18n.t('playlist.videoOptions')">
                 <app-icon name="more-vertical" [size]="18"></app-icon>
             </button>
             }

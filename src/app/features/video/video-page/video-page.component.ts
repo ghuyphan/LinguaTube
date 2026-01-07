@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -8,6 +8,7 @@ import { PlaylistPanelComponent } from '../../playlist/playlist-panel/playlist-p
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../../services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
@@ -61,12 +62,11 @@ import { Token } from '../../../models';
         }
       </aside>
 
-      <!-- Mobile playlist Bar - only shows when viewing a playlist -->
-      @if (playlistService.currentPlaylist(); as playlist) {
-      <div 
-        class="playlist-bar mobile-only" 
-        (click)="showMobilePlaylistSheet.set(true)"
-      >
+      <!-- Mobile Playlist Bar (Mini Player Style) -->
+    @if (playlistService.currentPlaylist(); as playlist) {
+      <div class="playlist-bar desktop-none" 
+           [class.animate-entry]="shouldAnimateEntry()"
+           (click)="showMobilePlaylistSheet.set(true)">
         <div class="playlist-bar-content">
           <!-- Thumbnail -->
           <div class="playlist-thumb">
@@ -168,9 +168,16 @@ import { Token } from '../../../models';
       align-self: start;
       position: sticky;
       top: var(--space-md);
-      height: calc(100vh - 100px); /* Adjust based on header height */
+      /* 
+       * Match video player height:
+       * Video is 16:9 aspect ratio in the main column
+       * Main column = 100% - 340px sidebar - gap
+       * Video height = (container width - 340px - 32px) * 9/16
+       * Simplified: use calc with approximate values
+       */
+      max-height: calc((100vw - 340px - 48px) * 0.5625);
       overflow: hidden;
-      z-index: 50; /* Ensure it's above video player content */
+      z-index: 50;
       
       /* Grid Overlay Strategy */
       display: grid;
@@ -186,7 +193,7 @@ import { Token } from '../../../models';
 
 .layout-sidebar > app-vocabulary-list,
 .layout-sidebar > app-playlist-panel {
-  height: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -214,8 +221,13 @@ import { Token } from '../../../models';
         z-index: var(--z-fixed);
         cursor: pointer;
         overflow: hidden;
-        animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        /* Animation is now controlled by .animate-entry class */
         transition: transform var(--transition-fast), background-color var(--transition-fast);
+      }
+
+      .playlist-bar.animate-entry {
+        animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
     .playlist-bar:active {
@@ -300,6 +312,10 @@ import { Token } from '../../../models';
         display: block;
       }
 
+      .desktop-none { /* New class for playlist bar */
+        display: block;
+      }
+
       .layout {
         gap: var(--space-md);
       }
@@ -373,6 +389,7 @@ export class VideoPageComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private platformId = inject(PLATFORM_ID);
+  private destroyRef = inject(DestroyRef);
   protected youtube = inject(YoutubeService);
   private subtitles = inject(SubtitleService);
   private transcript = inject(TranscriptService);
@@ -425,6 +442,9 @@ export class VideoPageComponent implements OnInit {
   private lastLang = '';
   private wasPlayingBeforeWordLookup = false;
   private skipNextMismatchDialog = false;
+
+  // Animation control
+  shouldAnimateEntry = signal(false);
 
   constructor() {
     // Watch for language changes and refetch captions when language changes
@@ -486,76 +506,83 @@ export class VideoPageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    // Read params
-    this.route.queryParamMap.subscribe(params => {
-      const videoId = params.get('id');
-      const playlistId = params.get('playlist');
-      const currentLang = this.settings.settings().language;
+  ngOnInit() {
+    // Only animate the playlist bar entry if it hasn't been shown yet in this session
+    if (!this.playlistService.hasShownMobileBar) {
+      this.shouldAnimateEntry.set(true);
+      this.playlistService.hasShownMobileBar = true;
+    }
 
-      // Load playlist if present and different
-      if (playlistId && this.playlistService.currentPlaylist()?.id !== playlistId) {
-        this.playlistService.loadPlaylist(playlistId).catch(err => {
-          console.error('Failed to load playlist:', err);
-          // Remove invalid playlist param
-          this.router.navigate([], {
-            relativeTo: this.route,
-            queryParams: { playlist: null },
-            queryParamsHandling: 'merge'
-          });
-        });
-      } else if (!playlistId) {
-        // Smart Recovery: If we have an active playlist and it contains this video,
-        // don't clear it. Instead, restore the URL param.
-        const currentPlaylist = this.playlistService.currentPlaylist();
-        const currentVideoId = videoId || this.youtube.currentVideo()?.id;
+    if (isPlatformBrowser(this.platformId)) {
+      this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
+        const videoId = params.get('id');
+        const playlistId = params.get('playlist');
+        const currentLang = this.settings.settings().language;
 
-        if (currentPlaylist && currentVideoId && currentPlaylist.videoIds.includes(currentVideoId)) {
-          console.log('[VideoPage] Restoring playlist context for video:', currentVideoId);
-          this.router.navigate([], {
-            relativeTo: this.route,
-            queryParams: { playlist: currentPlaylist.id },
-            queryParamsHandling: 'merge',
-            replaceUrl: true // Don't create a new history entry for this fix
+        // Load playlist if present and different
+        if (playlistId && this.playlistService.currentPlaylist()?.id !== playlistId) {
+          this.playlistService.loadPlaylist(playlistId).catch(err => {
+            console.error('Failed to load playlist:', err);
+            // Remove invalid playlist param
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: { playlist: null },
+              queryParamsHandling: 'merge'
+            });
           });
-        } else {
-          this.playlistService.clearCurrentPlaylist();
+        } else if (!playlistId) {
+          // Smart Recovery: If we have an active playlist and it contains this video,
+          // don't clear it. Instead, restore the URL param.
+          const currentPlaylist = this.playlistService.currentPlaylist();
+          const currentVideoId = videoId || this.youtube.currentVideo()?.id;
+
+          if (currentPlaylist && currentVideoId && currentPlaylist.videoIds.includes(currentVideoId)) {
+            console.log('[VideoPage] Restoring playlist context for video:', currentVideoId);
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: { playlist: currentPlaylist.id },
+              queryParamsHandling: 'merge',
+              replaceUrl: true // Don't create a new history entry for this fix
+            });
+          } else {
+            this.playlistService.clearCurrentPlaylist();
+          }
         }
-      }
 
-      // Load Video Logic
-      if (videoId) {
-        const currentVideo = this.youtube.currentVideo();
+        // Load Video Logic
+        if (videoId) {
+          const currentVideo = this.youtube.currentVideo();
 
-        // If coming from playlist, we might already have the video set, check ID
-        if (!currentVideo || currentVideo.id !== videoId) {
-          this.youtube.currentVideo.set(null);
-          this.subtitles.clear();
-          this.transcript.reset();
-          this.lastLang = currentLang;
-          this.loadVideoFromUrl(videoId);
-        } else {
-          // Check if we need to refetch (no subtitles loaded)
-          if (this.subtitles.subtitles().length === 0) {
+          // If coming from playlist, we might already have the video set, check ID
+          if (!currentVideo || currentVideo.id !== videoId) {
+            this.youtube.currentVideo.set(null);
             this.subtitles.clear();
             this.transcript.reset();
             this.lastLang = currentLang;
-            this.fetchCaptions(videoId);
+            this.loadVideoFromUrl(videoId);
           } else {
-            this.lastLang = currentLang;
+            // Check if we need to refetch (no subtitles loaded)
+            if (this.subtitles.subtitles().length === 0) {
+              this.subtitles.clear();
+              this.transcript.reset();
+              this.lastLang = currentLang;
+              this.fetchCaptions(videoId);
+            } else {
+              this.lastLang = currentLang;
+            }
+          }
+        } else {
+          // No video ID - check localStorage for recovery
+          const savedVideoId = this.youtube.getLastVideoId();
+          if (savedVideoId) {
+            this.router.navigate(['/video'], {
+              queryParams: { id: savedVideoId },
+              replaceUrl: true
+            });
           }
         }
-      } else {
-        // No video ID - check localStorage for recovery
-        const savedVideoId = this.youtube.getLastVideoId();
-        if (savedVideoId) {
-          this.router.navigate(['/video'], {
-            queryParams: { id: savedVideoId },
-            replaceUrl: true
-          });
-        }
-      }
-    });
+      });
+    }
   }
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {

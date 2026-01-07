@@ -38,70 +38,76 @@
             <div class="panel-content">
                 @if (playlistService.isLoading()) {
                 <!-- Skeleton Loading State -->
-                <div class="grid skeleton-container">
-                    @for (_ of [1,2,3,4,5,6]; track $index) {
+                <div class="grid skeleton-container" [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
+                    @for (_ of [1,2,3,4,5,6,7,8]; track $index) {
                     <div class="card playlist-card playlist-card--skeleton">
-                        <div class="card-thumbnail skeleton-box"></div>
+                        <div class="card-thumbnail skeleton-box">
+                            <!-- Skeleton for video count badge -->
+                            <div class="skeleton-badge"></div>
+                        </div>
                         <div class="card-content">
                             <div class="skeleton-line skeleton-line--title"></div>
-                            <div class="skeleton-line skeleton-line--meta"></div>
+                            <div class="skeleton-line skeleton-line--title-short"></div>
+                            <div class="skeleton-meta-row">
+                                <div class="skeleton-line skeleton-line--meta"></div>
+                                <div class="skeleton-line skeleton-line--dot"></div>
+                                <div class="skeleton-line skeleton-line--date"></div>
+                            </div>
                         </div>
                     </div>
                     }
                 </div>
-                } @else if (virtualRows().length > 0) {
-                <cdk-virtual-scroll-viewport [itemSize]="itemHeight()" class="virtual-viewport">
-                    <div *cdkVirtualFor="let row of virtualRows()" class="grid-row"
-                        [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
-                        @for (playlist of row; track playlist.id) {
-                        <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
-                            <div class="card-thumbnail">
-                                @if (playlist.thumbnail) {
-                                <img [src]="playlist.thumbnail" [alt]="playlist.title">
-                                } @else {
-                                <app-icon name="list-video" [size]="48" class="placeholder-icon"></app-icon>
-                                }
-                                <div class="video-count">
-                                    <app-icon name="list-video" [size]="12"></app-icon>
-                                    {{ playlist.videoIds.length }}
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">{{ playlist.title }}</h3>
-                                <div class="card-meta">
-                                    @if (view() === 'my') {
-                                    <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'"
-                                        [size]="12"></app-icon>
-                                    <span>{{ playlist.visibility | titlecase }}</span>
-                                    <span>•</span>
-                                    <span>{{ playlist.updatedAt | date:'mediumDate' }}</span>
-                                    } @else {
-                                    <span>{{ getCreatorLabel(playlist.userId) }}</span>
-                                    <span>•</span>
-                                    <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
-                                    }
-                                </div>
-
-                                @if (view() === 'my') {
-                                <button class="btn-icon menu-btn" (click)="openMenu(playlist, $event)">
-                                    <app-icon name="more-vertical" [size]="20"></app-icon>
-                                </button>
-                                }
+                } @else if (currentList().length > 0) {
+                <!-- Simple grid with CSS content-visibility for performance -->
+                <div class="grid" [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
+                    @for (playlist of currentList(); track playlist.id) {
+                    <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
+                        <div class="card-thumbnail">
+                            @if (playlist.thumbnail) {
+                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy">
+                            } @else {
+                            <app-icon name="list-video" [size]="48" class="placeholder-icon"></app-icon>
+                            }
+                            <div class="video-count">
+                                <app-icon name="list-video" [size]="12"></app-icon>
+                                {{ playlist.videoIds.length }}
                             </div>
                         </div>
-                        }
+                        <div class="card-content">
+                            <h3 class="card-title">{{ playlist.title }}</h3>
+                            <div class="card-meta">
+                                @if (view() === 'my') {
+                                <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'"
+                                    [size]="12"></app-icon>
+                                <span>{{ playlist.visibility | titlecase }}</span>
+                                <span>•</span>
+                                <span>{{ playlist.updatedAt | date:'mediumDate' }}</span>
+                                } @else {
+                                <span>{{ getCreatorLabel(playlist.userId) }}</span>
+                                <span>•</span>
+                                <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
+                                }
+                            </div>
+
+                            @if (view() === 'my') {
+                            <button class="btn-icon menu-btn" (click)="openMenu(playlist, $event)">
+                                <app-icon name="more-vertical" [size]="20"></app-icon>
+                            </button>
+                            }
+                        </div>
                     </div>
-                </cdk-virtual-scroll-viewport>
+                    }
+                </div>
                 } @else {
                 <div class="empty-state">
                     <div class="empty-state__icon-box">
                         <app-icon [name]="view() === 'my' ? 'list-video' : 'globe'" [size]="20" />
                     </div>
                     <div class="empty-state__text">
-                        <span class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') :
-                            i18n.t('playlist.empty.communityTitle') }}</span>
-                        <span class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') :
-                            i18n.t('playlist.empty.communityHint') }}</span>
+                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') :
+                            i18n.t('playlist.empty.communityTitle') }}</p>
+                        <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') :
+                            i18n.t('playlist.empty.communityHint') }}</p>
                     </div>
                 </div>
                 }
@@ -143,11 +149,11 @@
         <div class="menu-items">
             <button class="menu-item" (click)="onEditPlaylist()">
                 <app-icon name="settings" [size]="20"></app-icon>
-                <span>{{ i18n.t('playlist.edit') || 'Edit Playlist' }}</span>
+                <span>{{ i18n.t('playlist.edit') }}</span>
             </button>
             <button class="menu-item destructive" (click)="onDeletePlaylist()">
                 <app-icon name="trash-2" [size]="20"></app-icon>
-                <span>{{ i18n.t('playlist.delete') || 'Delete Playlist' }}</span>
+                <span>{{ i18n.t('playlist.delete') }}</span>
             </button>
         </div>
         }
@@ -161,17 +167,16 @@
         <div class="confirm-sheet__icon">
             <app-icon name="trash-2" [size]="32"></app-icon>
         </div>
-        <h3 class="confirm-sheet__title">{{ i18n.t('playlist.deleteConfirmTitle') || 'Delete Playlist?' }}</h3>
+        <h3 class="confirm-sheet__title">{{ i18n.t('playlist.deleteConfirmTitle') }}</h3>
         <p class="confirm-sheet__description">
-            {{ i18n.t('playlist.deleteConfirmBody') || 'Are you sure you want to delete this playlist? This action
-            cannot be undone.' }}
+            {{ i18n.t('playlist.deleteConfirmBody') }}
         </p>
         <div class="confirm-sheet__actions">
             <button class="confirm-sheet__btn confirm-sheet__btn--secondary" (click)="cancelDelete()">
-                {{ i18n.t('playlist.cancel') || 'Cancel' }}
+                {{ i18n.t('playlist.cancel') }}
             </button>
             <button class="confirm-sheet__btn confirm-sheet__btn--danger" (click)="confirmDelete()">
-                {{ i18n.t('playlist.delete') || 'Delete' }}
+                {{ i18n.t('playlist.delete') }}
             </button>
         </div>
     </div>
