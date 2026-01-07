@@ -12,7 +12,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   fontSize: 'medium',
   playbackSpeed: 1,
   sidebarCollapsed: false,
-  showDualSubtitles: false,
+  showDualSubtitles: true,
   hasCompletedOnboarding: false
 };
 

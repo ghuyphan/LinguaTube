@@ -40,6 +40,7 @@ export class BottomSheetComponent implements OnDestroy {
   showDragHandle = input<boolean>(true);
   allowBackdropClose = input<boolean>(true);
   showCloseButton = input<boolean>(false);
+  squareCorners = input<boolean>(false);
 
   // Optional manual z-index override
   zIndex = input<number | undefined>(undefined);

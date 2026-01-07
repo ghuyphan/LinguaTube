@@ -325,7 +325,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       display: none;
       position: fixed;
       bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px));
-      right: var(--space-sm);
+      right: var(--space-md);
       width: 44px;
       height: 44px;
       border-radius: var(--border-radius-round);

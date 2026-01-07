@@ -1,7 +1,7 @@
 <div class="page-layout">
     <div class="page-layout__main">
         <!-- Main Playlist Panel -->
-        <div class="playlist-panel">
+        <div class="playlist-panel" [class.panel-filled]="playlistService.isLoading() || virtualRows().length > 0">
             <div class="panel-header">
                 <div class="header-row">
                     <app-icon name="list-video" [size]="20" class="panel-icon" />
@@ -76,7 +76,7 @@
                                     <span>•</span>
                                     <span>{{ playlist.updatedAt | date:'mediumDate' }}</span>
                                     } @else {
-                                    <span>{{ getCreatorLabel(playlist) }}</span>
+                                    <span>{{ getCreatorLabel(playlist.userId) }}</span>
                                     <span>•</span>
                                     <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
                                     }

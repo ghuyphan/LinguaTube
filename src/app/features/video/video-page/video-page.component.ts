@@ -1,14 +1,15 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import { trigger, transition, style, animate } from '@angular/animations'; // Import animations
 import { VideoPlayerComponent } from '../video-player/video-player.component';
 import { SubtitleDisplayComponent } from '../subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
 import { PlaylistPanelComponent } from '../../playlist/playlist-panel/playlist-panel.component';
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
+import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../../services';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
@@ -27,17 +28,8 @@ import { Token } from '../../../models';
     AddToPlaylistDialogComponent,
     WordPopupComponent,
     ConfirmDialogComponent,
-  ],
-  animations: [
-    trigger('sidebarSwitch', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'scale(0.98)' }),
-        animate('150ms ease-out', style({ opacity: 1, transform: 'scale(1)' }))
-      ]),
-      transition(':leave', [
-        animate('100ms ease-in', style({ opacity: 0 }))
-      ])
-    ])
+    IconComponent,
+    BottomSheetComponent,
   ],
   template: `
     <div class="layout">
@@ -57,18 +49,45 @@ import { Token } from '../../../models';
       </div>
 
       <!-- Desktop sidebar: Show Playlist Panel if active, otherwise Vocabulary List -->
-      <aside class="layout-sidebar desktop-only">
+      <aside class="layout-sidebar desktop-only" [class.swapping]="sidebarSwapping()">
         @if (playlistService.currentPlaylist()) {
           <app-playlist-panel 
-            @sidebarSwitch
+            [class.slide-in-right]="sidebarSwapping()"
             (close)="closePlaylist()" 
             (videoSelect)="onPlaylistVideoSelect($event)"
           />
         } @else {
-          <app-vocabulary-list @sidebarSwitch />
+          <app-vocabulary-list [class.slide-in-left]="sidebarSwapping()" />
         }
       </aside>
+
+      <!-- Mobile playlist FAB - only shows when viewing a playlist -->
+      @if (playlistService.currentPlaylist()) {
+      <button 
+        class="fab-playlist mobile-only" 
+        (click)="showMobilePlaylistSheet.set(true)"
+        [attr.aria-label]="i18n.t('nav.playlists')"
+      >
+        <app-icon name="list-video" [size]="20" />
+      </button>
+      }
     </div>
+
+    <!-- Mobile Playlist Bottom Sheet -->
+    @if (playlistService.currentPlaylist()) {
+    <app-bottom-sheet
+      [isOpen]="showMobilePlaylistSheet()"
+      [showCloseButton]="true"
+      [maxHeight]="'70vh'"
+      (closed)="showMobilePlaylistSheet.set(false)"
+    >
+      <app-playlist-panel 
+        [isMobile]="true"
+        (close)="showMobilePlaylistSheet.set(false); closePlaylist()" 
+        (videoSelect)="onPlaylistVideoSelect($event); showMobilePlaylistSheet.set(false)"
+      />
+    </app-bottom-sheet>
+    }
 
     <!-- Add to Playlist Dialog -->
     @if (showAddToPlaylistDialog() && youtube.currentVideo(); as video) {
@@ -185,11 +204,84 @@ import { Token } from '../../../models';
         gap: var(--space-md);
       }
     }
+
+    /* Swap animations */
+    .layout-sidebar.swapping > *,
+    .panel-content.swapping > * {
+      animation-duration: 250ms;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      animation-fill-mode: forwards;
+    }
+
+    .slide-in-left {
+      animation-name: slideInLeft;
+    }
+
+    .slide-in-right {
+      animation-name: slideInRight;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Mobile playlist FAB */
+    .fab-playlist {
+      display: none;
+      position: fixed;
+      bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px));
+      right: calc(var(--space-md) + 44px + var(--space-sm)); /* Position left of new-video FAB */
+      width: 44px;
+      height: 44px;
+      border-radius: var(--border-radius-round);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      z-index: var(--z-fixed);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
+      .mobile-only {
+        display: block;
+      }
+
+      .fab-playlist {
+        display: flex;
+      }
+    }
+
+    .fab-playlist:active {
+      transform: scale(0.92);
+    }
   `]
 })
 export class VideoPageComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
+  private platformId = inject(PLATFORM_ID);
   protected youtube = inject(YoutubeService);
   private subtitles = inject(SubtitleService);
   private transcript = inject(TranscriptService);
@@ -197,6 +289,13 @@ export class VideoPageComponent implements OnInit {
   private historyService = inject(HistoryService);
   protected playlistService = inject(PlaylistService);
   i18n = inject(I18nService);
+
+  // Sidebar swap tracking
+  private previousSidebarView = signal<'vocab' | 'playlist' | null>(null);
+  sidebarSwapping = signal(false);
+
+  // Mobile playlist sheet state
+  showMobilePlaylistSheet = signal(false);
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
@@ -280,6 +379,20 @@ export class VideoPageComponent implements OnInit {
         });
       }
     });
+
+    // Sidebar swap detection - only animate when actually switching between views
+    effect(() => {
+      const currentView = this.playlistService.currentPlaylist() ? 'playlist' : 'vocab';
+      const previous = this.previousSidebarView();
+
+      // Only animate if BOTH previous and current are valid views (actual swap)
+      if (previous !== null && previous !== currentView) {
+        this.sidebarSwapping.set(true);
+        setTimeout(() => this.sidebarSwapping.set(false), 300);
+      }
+
+      this.previousSidebarView.set(currentView);
+    });
   }
 
   ngOnInit(): void {
@@ -301,7 +414,22 @@ export class VideoPageComponent implements OnInit {
           });
         });
       } else if (!playlistId) {
-        this.playlistService.clearCurrentPlaylist();
+        // Smart Recovery: If we have an active playlist and it contains this video,
+        // don't clear it. Instead, restore the URL param.
+        const currentPlaylist = this.playlistService.currentPlaylist();
+        const currentVideoId = videoId || this.youtube.currentVideo()?.id;
+
+        if (currentPlaylist && currentVideoId && currentPlaylist.videoIds.includes(currentVideoId)) {
+          console.log('[VideoPage] Restoring playlist context for video:', currentVideoId);
+          this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: { playlist: currentPlaylist.id },
+            queryParamsHandling: 'merge',
+            replaceUrl: true // Don't create a new history entry for this fix
+          });
+        } else {
+          this.playlistService.clearCurrentPlaylist();
+        }
       }
 
       // Load Video Logic

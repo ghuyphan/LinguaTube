@@ -147,13 +147,14 @@ export class TranslationService {
      * Get dual subtitles for a video
      * Handles caching and API calls
      */
-    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: any[]): Observable<any[]> {
+    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: any[], onlyCache = false): Observable<any[]> {
         const url = '/api/dual-subtitles';
         return this.http.post<any>(url, {
             videoId,
             sourceLang,
             targetLang,
-            segments
+            segments,
+            onlyCache
         }).pipe(
             map(response => response.segments || []),
             catchError(err => {

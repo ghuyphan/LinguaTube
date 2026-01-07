@@ -51,13 +51,14 @@ export async function onRequestPost(context) {
             sourceLang: { type: 'string', required: true, maxLength: 5 },
             targetLang: { type: 'string', required: true, maxLength: 5 },
             segments: { type: 'array', required: true, maxLength: 1000 },
-            forceRefresh: { type: 'boolean', required: false }
+            forceRefresh: { type: 'boolean', required: false },
+            onlyCache: { type: 'boolean', required: false }
         });
         if (!validation.valid) {
             return jsonResponse({ error: 'Invalid request', details: validation.errors }, 400);
         }
 
-        const { videoId, sourceLang, targetLang, segments, forceRefresh } = body;
+        const { videoId, sourceLang, targetLang, segments, forceRefresh, onlyCache } = body;
 
         const r2 = env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
@@ -76,6 +77,17 @@ export async function onRequestPost(context) {
                     timestamp: cached.timestamp
                 }, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
             }
+        }
+
+        // 1.5. If onlyCache is requested and no cache found, return early
+        if (onlyCache) {
+            return jsonResponse({
+                videoId,
+                sourceLang,
+                targetLang,
+                segments: [],
+                cached: false
+            }, 200, { 'Cache-Control': 'no-store' });
         }
 
         // 2. Rate Limit (only on cache miss - actual translation work)

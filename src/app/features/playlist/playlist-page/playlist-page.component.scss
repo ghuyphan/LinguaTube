@@ -88,10 +88,16 @@
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
 
-    height: calc(100vh - 140px); // Explicit height required for virtual scroll
+    // Default: Fit content (compact empty state)
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    // Filled state: Take full height for virtual scrolling
+    &.panel-filled {
+        height: calc(100vh - 140px);
+    }
 }
 
 .panel-header {
@@ -245,7 +251,11 @@
 // -------------------------
 @media (max-width: 768px) {
     .playlist-panel {
-        min-height: auto;
+
+        // Ensure it doesn't overflow improperly on mobile
+        &.panel-filled {
+            height: calc(100vh - 180px); // Slightly more space for bottom nav
+        }
     }
 
     .grid {

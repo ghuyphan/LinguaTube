@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, output, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -17,6 +17,7 @@ export class PlaylistPanelComponent {
     playlistService = inject(PlaylistService);
     i18n = inject(I18nService);
 
+    isMobile = input<boolean>(false);
     close = output<void>();
     videoSelect = output<string>();
 
@@ -24,6 +25,29 @@ export class PlaylistPanelComponent {
     menuOpen = signal(false);
     selectedVideoIndex = signal<number>(-1);
     selectedVideoId = signal<string>('');
+
+    // Auto-scroll effect
+    constructor() {
+        effect(() => {
+            const index = this.playlistService.currentIndex();
+            const playlist = this.playlistService.currentPlaylist();
+
+            // Wait for render (short microtask) then scroll
+            if (playlist && index >= 0) {
+                setTimeout(() => {
+                    this.scrollToIndex(index);
+                }, 100);
+            }
+        });
+    }
+
+    private scrollToIndex(index: number): void {
+        const element = document.getElementById(`playlist-item-${index}`);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
 
     onVideoClick(videoId: string, index: number): void {
         this.playlistService.setCurrentIndex(index);

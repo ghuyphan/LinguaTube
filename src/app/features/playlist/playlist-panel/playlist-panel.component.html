@@ -1,38 +1,44 @@
 @if (playlistService.currentPlaylist(); as playlist) {
-<div class="playlist-content-wrapper">
+<div class="playlist-content-wrapper" [class.mobile-mode]="isMobile()">
+    <!-- Header Section -->
     <div class="playlist-header">
-        <div class="header-top">
-            <h2>{{ playlist.title }}</h2>
-            <button class="close-btn" (click)="close.emit()" [title]="i18n.t('playlist.closePlaylist')">
+        <div class="header-main">
+            <div class="header-info">
+                <h2>{{ playlist.title }}</h2>
+                <div class="header-subtitle">
+                    <span class="publisher">{{ playlist.userId === 'local' ? i18n.t('playlist.you') :
+                        i18n.t('playlist.curated') }}</span>
+                    <span class="separator">•</span>
+                    <span class="video-count">
+                        {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Desktop Close Button (Mobile uses bottom sheet handle/behavior) -->
+            <button class="close-btn desktop-only" (click)="close.emit()" [title]="i18n.t('playlist.closePlaylist')">
                 <app-icon name="x" [size]="20"></app-icon>
             </button>
         </div>
 
-        <div class="playlist-meta">
-            <span class="publisher">{{ playlist.userId === 'local' ? i18n.t('playlist.you') :
-                i18n.t('playlist.curated')
-                }}</span>
-            <span class="video-count">
-                {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
-            </span>
-        </div>
-
+        <!-- Controls Row -->
         <div class="playlist-controls">
             <button class="control-btn" (click)="onShare()" [title]="i18n.t('playlist.sharePlaylist')">
-                <app-icon name="share" [size]="20"></app-icon>
+                <app-icon name="share" [size]="18"></app-icon>
             </button>
             <button class="control-btn" [class.active]="playlistService.isLooping()"
                 (click)="playlistService.toggleLoop()" [title]="i18n.t('playlist.loopPlaylist')">
-                <app-icon name="repeat" [size]="20"></app-icon>
+                <app-icon name="repeat" [size]="18"></app-icon>
             </button>
             <button class="control-btn" [class.active]="playlistService.isShuffled()"
                 (click)="playlistService.toggleShuffle()" [title]="i18n.t('playlist.shufflePlaylist')">
-                <app-icon name="shuffle" [size]="20"></app-icon>
+                <app-icon name="shuffle" [size]="18"></app-icon>
             </button>
         </div>
     </div>
 
-    <div class="playlist-items">
+    <!-- Playlist Items -->
+    <div class="playlist-items" #scrollContainer>
         @if (playlistService.isLoading()) {
         <!-- Skeleton Loading State -->
         <div class="skeleton-container">
@@ -62,16 +68,22 @@
         </div>
         } @else {
         @for (video of playlist.videos; track video.videoId; let i = $index) {
-        <div class="playlist-item" [class.active]="i === playlistService.currentIndex()"
+        <div class="playlist-item" [class.active]="i === playlistService.currentIndex()" [id]="'playlist-item-' + i"
             (click)="onVideoClick(video.videoId, i)">
 
             <div class="item-left">
                 <span class="item-index">{{ i + 1 }}</span>
                 <app-icon class="play-icon" name="play" [size]="16"></app-icon>
+                <div class="now-playing-indicator">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                </div>
             </div>
 
             <div class="item-thumbnail">
                 <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
+                <div class="playing-overlay" *ngIf="i === playlistService.currentIndex()"></div>
             </div>
 
             <div class="item-info">

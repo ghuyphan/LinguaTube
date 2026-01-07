@@ -4,22 +4,30 @@
  * Route: POST /api/translate/batch
  */
 
-import { validateAuthToken } from '../../_shared/auth.js';
 import { jsonResponse, handleOptions, errorResponse, validateBody } from '../../_shared/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIP,
     getClientIdentifier,
     rateLimitResponse,
-    getRateLimitHeaders
+    getRateLimitHeaders,
+    getTieredConfig
 } from '../../_shared/rate-limiter.js';
 import { translateBatch } from '../../_shared/lingva.js';
+import { validateAuthToken, hasPremiumAccess } from '../../_shared/auth.js';
 
 const MAX_BATCH_SIZE = 20;
 
-// Rate limit by texts translated, not requests
-// Batch endpoint counts as texts.length (shared with single endpoint)
-const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'translate-texts' };
+// Rate limit by texts translated. Increased limits to support lazy subtitle loading.
+// Average video = 200-500 lines.
+// Anonymous: ~1 short video
+// Free: ~3-4 videos
+// Pro: Heavy usage
+const RATE_LIMIT_CONFIG = {
+    max: { anonymous: 100, free: 500, pro: 2000, premium: 5000 },
+    windowSeconds: 3600,
+    keyPrefix: 'translate-texts'
+};
 
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
@@ -27,7 +35,6 @@ export async function onRequestOptions() {
 
 export async function onRequestPost(context) {
     const { request, env } = context;
-    const clientIP = getClientIP(request);
     try {
         const body = await request.json();
 
@@ -47,10 +54,16 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: `Max batch size is ${MAX_BATCH_SIZE}` }, 400);
         }
 
-        // Rate limit by number of texts (not requests)
+        // Rate limit by number of texts
         const authResult = await validateAuthToken(request, env);
+        const tier = authResult.valid
+            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+            : 'anonymous';
+
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
         const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, texts.length);
+
+        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, texts.length);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

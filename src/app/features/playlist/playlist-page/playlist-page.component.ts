@@ -143,11 +143,9 @@ export class PlaylistPageComponent {
         });
     }
 
-    getCreatorLabel(playlist: Playlist): string {
+    getCreatorLabel(userId: string): string {
         const template = this.i18n.t('playlist.by') || 'by {{author}}';
-        // Use userName if available, otherwise show truncated userId
-        const author = playlist.userName || playlist.userId.slice(0, 8) + '...';
-        return template.replace('{{author}}', author);
+        return template.replace('{{author}}', userId);
     }
 
     getVideoCountLabel(count: number): string {
