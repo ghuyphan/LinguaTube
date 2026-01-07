@@ -1,54 +1,86 @@
 @if (playlistService.currentPlaylist(); as playlist) {
-<div class="playlist-header">
-    <div class="header-top">
-        <h2>{{ playlist.title }}</h2>
-        <button class="close-btn" (click)="close.emit()" [title]="i18n.t('playlist.closePlaylist')">
-            <app-icon name="x" [size]="20"></app-icon>
-        </button>
+<div class="playlist-content-wrapper">
+    <div class="playlist-header">
+        <div class="header-top">
+            <h2>{{ playlist.title }}</h2>
+            <button class="close-btn" (click)="close.emit()" [title]="i18n.t('playlist.closePlaylist')">
+                <app-icon name="x" [size]="20"></app-icon>
+            </button>
+        </div>
+
+        <div class="playlist-meta">
+            <span class="publisher">{{ playlist.userId === 'local' ? i18n.t('playlist.you') :
+                i18n.t('playlist.curated')
+                }}</span>
+            <span class="video-count">
+                {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
+            </span>
+        </div>
+
+        <div class="playlist-controls">
+            <button class="control-btn" (click)="onShare()" [title]="i18n.t('playlist.sharePlaylist')">
+                <app-icon name="share" [size]="20"></app-icon>
+            </button>
+            <button class="control-btn" [class.active]="playlistService.isLooping()"
+                (click)="playlistService.toggleLoop()" [title]="i18n.t('playlist.loopPlaylist')">
+                <app-icon name="repeat" [size]="20"></app-icon>
+            </button>
+            <button class="control-btn" [class.active]="playlistService.isShuffled()"
+                (click)="playlistService.toggleShuffle()" [title]="i18n.t('playlist.shufflePlaylist')">
+                <app-icon name="shuffle" [size]="20"></app-icon>
+            </button>
+        </div>
     </div>
 
-    <div class="playlist-meta">
-        <span class="publisher">{{ playlist.userId === 'local' ? i18n.t('playlist.you') : i18n.t('playlist.curated')
-            }}</span>
-        <span class="video-count">
-            {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
-        </span>
-    </div>
+    <div class="playlist-items">
+        @for (video of playlist.videos; track video.videoId; let i = $index) {
+        <div class="playlist-item" [class.active]="i === playlistService.currentIndex()"
+            (click)="onVideoClick(video.videoId, i)">
 
-    <div class="playlist-controls">
-        <button class="control-btn" (click)="onShare()" [title]="i18n.t('playlist.sharePlaylist')">
-            <app-icon name="share" [size]="20"></app-icon>
-        </button>
-        <button class="control-btn" [class.active]="playlistService.isLooping()" (click)="playlistService.toggleLoop()"
-            [title]="i18n.t('playlist.loopPlaylist')">
-            <app-icon name="repeat" [size]="20"></app-icon>
-        </button>
-        <button class="control-btn" [class.active]="playlistService.isShuffled()"
-            (click)="playlistService.toggleShuffle()" [title]="i18n.t('playlist.shufflePlaylist')">
-            <app-icon name="shuffle" [size]="20"></app-icon>
-        </button>
+            <div class="item-left">
+                <span class="item-index">{{ i + 1 }}</span>
+                <app-icon class="play-icon" name="play" [size]="16"></app-icon>
+            </div>
+
+            <div class="item-thumbnail">
+                <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
+            </div>
+
+            <div class="item-info">
+                <div class="item-title" [title]="video.title">{{ video.title }}</div>
+                <div class="item-channel">{{ video.channel }}</div>
+            </div>
+
+            @if (playlist.isOwner) {
+            <button class="item-menu-btn" (click)="openVideoMenu(i, video.videoId, $event)"
+                [title]="i18n.t('playlist.videoOptions')">
+                <app-icon name="more-vertical" [size]="18"></app-icon>
+            </button>
+            }
+        </div>
+        }
     </div>
 </div>
 
-<div class="playlist-items">
-    @for (video of playlist.videos; track video.videoId; let i = $index) {
-    <div class="playlist-item" [class.active]="i === playlistService.currentIndex()"
-        (click)="onVideoClick(video.videoId, i)">
-
-        <div class="item-left">
-            <span class="item-index">{{ i + 1 }}</span>
-            <app-icon class="play-icon" name="play" [size]="16"></app-icon>
-        </div>
-
-        <div class="item-thumbnail">
-            <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
-        </div>
-
-        <div class="item-info">
-            <div class="item-title" [title]="video.title">{{ video.title }}</div>
-            <div class="item-channel">{{ video.channel }}</div>
+<!-- Video Options Menu -->
+<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" [zIndex]="9999" (closed)="menuOpen.set(false)">
+    <div class="menu-sheet">
+        <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
+        <div class="menu-sheet__options">
+            <button class="menu-option" [disabled]="selectedVideoIndex() === 0" (click)="moveVideoUp()">
+                <app-icon name="chevron-up" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.moveUp') }}</span>
+            </button>
+            <button class="menu-option" [disabled]="selectedVideoIndex() >= playlist.videos.length - 1"
+                (click)="moveVideoDown()">
+                <app-icon name="chevron-down" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.moveDown') }}</span>
+            </button>
+            <button class="menu-option menu-option--danger" (click)="removeVideo()">
+                <app-icon name="trash-2" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.removeFromPlaylist') }}</span>
+            </button>
         </div>
     </div>
-    }
-</div>
+</app-bottom-sheet>
 }

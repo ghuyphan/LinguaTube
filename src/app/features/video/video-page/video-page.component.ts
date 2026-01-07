@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations'; // Import animations
 import { VideoPlayerComponent } from '../video-player/video-player.component';
 import { SubtitleDisplayComponent } from '../subtitle-display/subtitle-display.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
@@ -27,6 +28,18 @@ import { Token } from '../../../models';
     WordPopupComponent,
     ConfirmDialogComponent,
   ],
+  animations: [
+    trigger('sidebarSwitch', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(10px)', zIndex: 2 }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1, zIndex: 1 }),
+        animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))
+      ])
+    ])
+  ],
   template: `
     <div class="layout">
       <div class="layout-main">
@@ -48,11 +61,12 @@ import { Token } from '../../../models';
       <aside class="layout-sidebar desktop-only">
         @if (playlistService.currentPlaylist()) {
           <app-playlist-panel 
+            @sidebarSwitch
             (close)="closePlaylist()" 
             (videoSelect)="onPlaylistVideoSelect($event)"
           />
         } @else {
-          <app-vocabulary-list />
+          <app-vocabulary-list @sidebarSwitch />
         }
       </aside>
     </div>
@@ -116,7 +130,23 @@ import { Token } from '../../../models';
       position: sticky;
       top: var(--space-md);
       height: calc(100vh - 100px); /* Adjust based on header height */
-      overflow: hidden;
+      // overflow: hidden; /* Removed to allow popups to escape */
+      z-index: 50; /* Ensure it's above video player content */
+      
+      /* Grid Overlay Strategy */
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr;
+    }
+    
+    .layout-sidebar > * {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+    }
+
+    .layout-sidebar > app-vocabulary-list {
+      align-self: start;
     }
 
     .desktop-only {

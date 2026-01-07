@@ -1,7 +1,8 @@
 <app-bottom-sheet [isOpen]="isOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="dialog-content">
         <div class="dialog-header">
-            <h2>{{ i18n.t('playlist.createPlaylist') }}</h2>
+            <h2>{{ isEditing() ? (i18n.t('playlist.edit') || 'Edit Playlist') : i18n.t('playlist.createPlaylist') }}
+            </h2>
         </div>
 
         <form (submit)="onSubmit()">
@@ -53,7 +54,11 @@
                     {{ i18n.t('playlist.cancel') }}
                 </button>
                 <button type="submit" class="btn btn-primary" [disabled]="!title() || isSubmitting()">
-                    {{ isSubmitting() ? i18n.t('playlist.creating') : i18n.t('playlist.create') }}
+                    @if (isSubmitting()) {
+                    {{ isEditing() ? (i18n.t('playlist.saving') || 'Saving...') : i18n.t('playlist.creating') }}
+                    } @else {
+                    {{ isEditing() ? (i18n.t('playlist.save') || 'Save') : i18n.t('playlist.create') }}
+                    }
                 </button>
             </div>
         </form>

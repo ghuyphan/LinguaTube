@@ -109,7 +109,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           [attr.title]="i18n.t('nav.newVideo')"
           [attr.aria-label]="i18n.t('nav.newVideo')"
         >
-          <app-icon name="plus" [size]="24" />
+          <app-icon name="plus" [size]="20" />
         </button>
         }
 
@@ -324,15 +324,15 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     .fab-new-video {
       display: none;
       position: fixed;
-      bottom: calc(var(--bottom-nav-height) + var(--space-md) + env(safe-area-inset-bottom, 0px));
-      right: var(--space-md);
-      width: 56px;
-      height: 56px;
+      bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px));
+      right: var(--space-sm);
+      width: 44px;
+      height: 44px;
       border-radius: var(--border-radius-round);
       background: var(--accent-primary);
       color: white;
       border: none;
-      box-shadow: 0 4px 16px rgba(var(--accent-primary-rgb), 0.4);
+      box-shadow: 0 3px 12px rgba(var(--accent-primary-rgb), 0.35);
       cursor: pointer;
       z-index: var(--z-fixed);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast);

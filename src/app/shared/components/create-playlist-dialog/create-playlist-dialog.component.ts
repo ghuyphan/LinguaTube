@@ -1,10 +1,11 @@
-import { Component, ChangeDetectionStrategy, input, output, inject, signal, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, inject, signal, ViewChild, computed, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { PlaylistService } from '../../../features/playlist/playlist.service';
 import { I18nService } from '../../../services';
 import { IconComponent } from '../icon/icon.component';
+import { Playlist } from '../../../models';
 
 const LANGUAGES = [
     { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
@@ -27,10 +28,12 @@ export class CreatePlaylistDialogComponent {
 
     // Inputs
     isOpen = input<boolean>(false);
+    playlist = input<Playlist | null>(null);
 
     // Outputs
     closed = output<void>();
     created = output<void>();
+    updated = output<void>();
 
     @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
 
@@ -40,8 +43,25 @@ export class CreatePlaylistDialogComponent {
     language = signal<'ja' | 'zh' | 'ko' | 'en'>('ja');
     isSubmitting = signal(false);
 
+    // Computed
+    isEditing = computed(() => !!this.playlist());
+
     // Language options
     readonly languages = LANGUAGES;
+
+    constructor() {
+        // Pre-fill form when editing
+        effect(() => {
+            const p = this.playlist();
+            if (p) {
+                this.title.set(p.title);
+                this.visibility.set(p.visibility);
+                this.language.set(p.language);
+            } else {
+                this.resetForm();
+            }
+        });
+    }
 
     async onSubmit() {
         if (!this.title() || this.isSubmitting()) return;
@@ -49,16 +69,25 @@ export class CreatePlaylistDialogComponent {
         this.isSubmitting.set(true);
 
         try {
-            await this.playlistService.createPlaylist({
-                title: this.title(),
-                visibility: this.visibility(),
-                language: this.language()
-            });
+            if (this.isEditing()) {
+                await this.playlistService.updatePlaylist(this.playlist()!.id, {
+                    title: this.title(),
+                    visibility: this.visibility(),
+                    language: this.language()
+                });
+                this.updated.emit();
+            } else {
+                await this.playlistService.createPlaylist({
+                    title: this.title(),
+                    visibility: this.visibility(),
+                    language: this.language()
+                });
+                this.created.emit();
+            }
 
-            this.created.emit();
             this.sheet.close();
         } catch (error) {
-            console.error('Failed to create playlist:', error);
+            console.error('Failed to save playlist:', error);
         } finally {
             this.isSubmitting.set(false);
         }

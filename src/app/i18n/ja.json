@@ -283,6 +283,10 @@
         "sharePlaylist": "プレイリストを共有",
         "loopPlaylist": "プレイリストをループ",
         "shufflePlaylist": "シャッフル再生",
+        "moveUp": "上に移動",
+        "moveDown": "下に移動",
+        "removeFromPlaylist": "プレイリストから削除",
+        "videoOptions": "動画オプション",
         "visibility": {
             "public": "公開",
             "publicDesc": "誰でも閲覧可能",
@@ -290,7 +294,13 @@
             "unlistedDesc": "リンクを知っている人のみ",
             "private": "非公開",
             "privateDesc": "自分のみ閲覧可能"
-        }
+        },
+        "edit": "編集",
+        "editPlaylist": "プレイリストを編集",
+        "delete": "削除",
+        "deleteConfirmTitle": "削除しますか？",
+        "deleteConfirmBody": "このプレイリストを削除しますか？この操作は取り消せません。",
+        "saving": "保存中..."
     },
     "common": {
         "loading": "読み込み中...",

@@ -285,6 +285,10 @@
         "sharePlaylist": "Chia sẻ danh sách phát",
         "loopPlaylist": "Lặp lại danh sách phát",
         "shufflePlaylist": "Phát ngẫu nhiên",
+        "moveUp": "Di chuyển lên",
+        "moveDown": "Di chuyển xuống",
+        "removeFromPlaylist": "Xóa khỏi danh sách phát",
+        "videoOptions": "Tùy chọn video",
         "visibility": {
             "public": "Công khai",
             "publicDesc": "Mọi người đều có thể xem",
@@ -292,7 +296,13 @@
             "unlistedDesc": "Chỉ những người có link",
             "private": "Riêng tư",
             "privateDesc": "Chỉ bạn có thể xem"
-        }
+        },
+        "edit": "Chỉnh sửa",
+        "editPlaylist": "Chỉnh sửa danh sách",
+        "delete": "Xóa",
+        "deleteConfirmTitle": "Xóa danh sách?",
+        "deleteConfirmBody": "Bạn có chắc muốn xóa danh sách này không? Hành động này không thể hoàn tác.",
+        "saving": "Đang lưu..."
     },
     "common": {
         "loading": "Đang tải...",

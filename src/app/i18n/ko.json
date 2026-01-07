@@ -283,6 +283,10 @@
         "sharePlaylist": "재생목록 공유",
         "loopPlaylist": "재생목록 반복",
         "shufflePlaylist": "셔플 재생",
+        "moveUp": "위로 이동",
+        "moveDown": "아래로 이동",
+        "removeFromPlaylist": "재생목록에서 삭제",
+        "videoOptions": "동영상 옵션",
         "visibility": {
             "public": "공개",
             "publicDesc": "모든 사람이 볼 수 있음",
@@ -290,7 +294,13 @@
             "unlistedDesc": "링크가 있는 사람만",
             "private": "비공개",
             "privateDesc": "나만 볼 수 있음"
-        }
+        },
+        "edit": "편집",
+        "editPlaylist": "플레이리스트 편집",
+        "delete": "삭제",
+        "deleteConfirmTitle": "삭제하시겠습니까?",
+        "deleteConfirmBody": "이 플레이리스트를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+        "saving": "저장 중..."
     },
     "common": {
         "loading": "로딩 중...",

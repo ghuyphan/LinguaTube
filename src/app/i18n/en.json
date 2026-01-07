@@ -285,6 +285,10 @@
         "sharePlaylist": "Share playlist",
         "loopPlaylist": "Loop playlist",
         "shufflePlaylist": "Shuffle playlist",
+        "moveUp": "Move up",
+        "moveDown": "Move down",
+        "removeFromPlaylist": "Remove from playlist",
+        "videoOptions": "Video Options",
         "visibility": {
             "public": "Public",
             "publicDesc": "Anyone can view",
@@ -292,7 +296,13 @@
             "unlistedDesc": "Anyone with the link",
             "private": "Private",
             "privateDesc": "Only you can view"
-        }
+        },
+        "edit": "Edit",
+        "editPlaylist": "Edit Playlist",
+        "delete": "Delete",
+        "deleteConfirmTitle": "Delete Playlist?",
+        "deleteConfirmBody": "Are you sure you want to delete this playlist? This action cannot be undone.",
+        "saving": "Saving..."
     },
     "common": {
         "loading": "Loading...",

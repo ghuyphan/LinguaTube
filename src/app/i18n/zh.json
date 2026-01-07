@@ -283,6 +283,10 @@
         "sharePlaylist": "分享播放列表",
         "loopPlaylist": "循环播放列表",
         "shufflePlaylist": "随机播放",
+        "moveUp": "上移",
+        "moveDown": "下移",
+        "removeFromPlaylist": "从播放列表中移除",
+        "videoOptions": "视频选项",
         "visibility": {
             "public": "公开",
             "publicDesc": "所有人可见",
@@ -290,7 +294,13 @@
             "unlistedDesc": "仅限有链接的人",
             "private": "私密",
             "privateDesc": "仅自己可见"
-        }
+        },
+        "edit": "编辑",
+        "editPlaylist": "编辑播放列表",
+        "delete": "删除",
+        "deleteConfirmTitle": "删除播放列表？",
+        "deleteConfirmBody": "确定要删除此播放列表吗？此操作无法撤销。",
+        "saving": "保存中..."
     },
     "common": {
         "loading": "加载中...",

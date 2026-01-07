@@ -178,7 +178,9 @@ export class PlaylistService {
     }
 
     /**
-     * Update an existing playlist
+     * Update an existing playlist with optimistic updates.
+     * Local state is updated immediately for instant UI feedback,
+     * while API sync happens in the background.
      */
     async updatePlaylist(id: string, updates: Partial<Playlist>): Promise<void> {
         console.debug('[Playlist] Updating playlist:', id, 'updates:', updates, 'isLoggedIn:', this.auth.isLoggedIn());
@@ -197,30 +199,43 @@ export class PlaylistService {
             updatedAt: new Date()
         };
 
-        if (this.auth.isLoggedIn()) {
-            try {
-                const client = await this.pb.getClient();
-                await client.collection('playlists').update(id, {
-                    title: updated.title,
-                    description: updated.description || '',
-                    visibility: updated.visibility,
-                    language: updated.language,
-                    tags: updated.tags,
-                    video_ids: updated.videoIds,
-                    video_count: updated.videoCount,
-                    thumbnail: updated.thumbnail || ''
-                });
-                console.debug('[Playlist] Updated in PocketBase successfully');
-            } catch (error) {
-                console.error('[Playlist] Failed to update in PocketBase:', error);
-                throw error;
-            }
-        }
-
+        // Optimistic update: Update local state immediately
         const newPlaylists = [...playlists];
         newPlaylists[index] = updated;
         this.myPlaylists.set(newPlaylists);
-        console.debug('[Playlist] Local state updated');
+        console.debug('[Playlist] Local state updated optimistically');
+
+        // Sync to API in background (don't await)
+        if (this.auth.isLoggedIn()) {
+            this.syncPlaylistToApi(id, updated).catch(error => {
+                console.error('[Playlist] Background sync failed:', error);
+                // Note: We don't rollback the optimistic update here.
+                // The next loadUserPlaylists() will reconcile the state.
+            });
+        }
+    }
+
+    /**
+     * Sync playlist updates to PocketBase API (background operation)
+     */
+    private async syncPlaylistToApi(id: string, updated: Playlist): Promise<void> {
+        try {
+            const client = await this.pb.getClient();
+            await client.collection('playlists').update(id, {
+                title: updated.title,
+                description: updated.description || '',
+                visibility: updated.visibility,
+                language: updated.language,
+                tags: updated.tags,
+                video_ids: updated.videoIds,
+                video_count: updated.videoCount,
+                thumbnail: updated.thumbnail || ''
+            });
+            console.debug('[Playlist] Synced to PocketBase successfully');
+        } catch (error) {
+            console.error('[Playlist] Failed to sync to PocketBase:', error);
+            throw error;
+        }
     }
 
     /**
