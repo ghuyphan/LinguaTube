@@ -63,7 +63,7 @@
 </div>
 
 <!-- Video Options Menu -->
-<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" [zIndex]="9999" (closed)="menuOpen.set(false)">
+<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" (closed)="menuOpen.set(false)">
     <div class="menu-sheet">
         <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
         <div class="menu-sheet__options">

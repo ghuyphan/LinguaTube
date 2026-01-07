@@ -10,11 +10,10 @@
 // Main Panel
 // -------------------------
 .playlist-panel {
-    background: transparent;
-    border: none;
-    // border-radius: var(--border-radius-lg); // N/A
-    // padding: var(--space-xl); // Reduce padding if needed, but let's keep or adjust
-    padding: var(--space-md) 0; // Adjust padding
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+
     height: calc(100vh - 140px); // Explicit height required for virtual scroll
     display: flex;
     flex-direction: column;
@@ -316,5 +315,75 @@
                 background: var(--bg-secondary);
             }
         }
+    }
+}
+
+// -------------------------
+// Confirmation Sheet (Local)
+// -------------------------
+.confirm-sheet {
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.confirm-sheet__icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--error-rgb), 0.1);
+    border-radius: var(--border-radius-round);
+    color: var(--error);
+}
+
+.confirm-sheet__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-sm); // Reduced margin to fit description
+}
+
+.confirm-sheet__description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-lg);
+    line-height: 1.5;
+}
+
+.confirm-sheet__actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.confirm-sheet__btn {
+    flex: 1;
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.confirm-sheet__btn--secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.confirm-sheet__btn--danger {
+    background: var(--error);
+    color: white;
+}
+
+@media (hover: hover) {
+    .confirm-sheet__btn--secondary:hover {
+        background: var(--bg-card);
+    }
+
+    .confirm-sheet__btn--danger:hover {
+        opacity: 0.9;
     }
 }

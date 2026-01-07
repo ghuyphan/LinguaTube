@@ -173,7 +173,6 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
     }
 
     .due-count {
-      font-size: 1.5rem;
       font-weight: 700;
       color: var(--accent-primary);
     }

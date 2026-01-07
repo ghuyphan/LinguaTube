@@ -288,6 +288,25 @@ export class PlaylistService {
         const thumbnail = playlist.thumbnail ||
             (metadata?.thumbnail || `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
 
+        // Optimistic update for current playlist
+        const current = this.currentPlaylist();
+        if (current && current.id === playlistId) {
+            const newVideo: PlaylistVideo = {
+                videoId,
+                title: metadata?.title || 'Unknown Video',
+                thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+                channel: metadata?.channel,
+                position: current.videos.length
+            };
+
+            this.currentPlaylist.set({
+                ...current,
+                videos: [...current.videos, newVideo],
+                videoIds: updatedVideoIds,
+                videoCount: updatedVideoIds.length
+            });
+        }
+
         await this.updatePlaylist(playlistId, {
             videoIds: updatedVideoIds,
             videoCount: updatedVideoIds.length,
@@ -312,6 +331,26 @@ export class PlaylistService {
             ? `https://i.ytimg.com/vi/${updatedVideoIds[0]}/mqdefault.jpg`
             : undefined;
 
+        // Optimistic update for current playlist
+        const current = this.currentPlaylist();
+        if (current && current.id === playlistId) {
+            const updatedVideos = current.videos
+                .filter(v => v.videoId !== videoId)
+                .map((v, index) => ({ ...v, position: index }));
+
+            this.currentPlaylist.set({
+                ...current,
+                videos: updatedVideos,
+                videoIds: updatedVideoIds,
+                videoCount: updatedVideoIds.length
+            });
+
+            // Adjust current index if needed
+            if (this.currentIndex() >= updatedVideos.length) {
+                this.currentIndex.set(Math.max(0, updatedVideos.length - 1));
+            }
+        }
+
         await this.updatePlaylist(playlistId, {
             videoIds: updatedVideoIds,
             videoCount: updatedVideoIds.length,
@@ -323,6 +362,20 @@ export class PlaylistService {
      * Reorder videos in a playlist
      */
     async reorderVideos(playlistId: string, videoIds: string[]): Promise<void> {
+        // Optimistic update for current playlist
+        const current = this.currentPlaylist();
+        if (current && current.id === playlistId) {
+            const reorderedVideos = videoIds
+                .map(id => current.videos.find(v => v.videoId === id))
+                .filter((v): v is PlaylistVideo => !!v)
+                .map((v, index) => ({ ...v, position: index }));
+
+            this.currentPlaylist.set({
+                ...current,
+                videos: reorderedVideos
+            });
+        }
+
         await this.updatePlaylist(playlistId, {
             videoIds
         });

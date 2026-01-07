@@ -31,12 +31,11 @@ import { Token } from '../../../models';
   animations: [
     trigger('sidebarSwitch', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(10px)', zIndex: 2 }),
-        animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+        style({ opacity: 0, transform: 'scale(0.98)' }),
+        animate('150ms ease-out', style({ opacity: 1, transform: 'scale(1)' }))
       ]),
       transition(':leave', [
-        style({ opacity: 1, zIndex: 1 }),
-        animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))
+        animate('100ms ease-in', style({ opacity: 0 }))
       ])
     ])
   ],
@@ -130,7 +129,7 @@ import { Token } from '../../../models';
       position: sticky;
       top: var(--space-md);
       height: calc(100vh - 100px); /* Adjust based on header height */
-      // overflow: hidden; /* Removed to allow popups to escape */
+      overflow: hidden;
       z-index: 50; /* Ensure it's above video player content */
       
       /* Grid Overlay Strategy */
@@ -145,9 +144,12 @@ import { Token } from '../../../models';
       width: 100%;
     }
 
-    .layout-sidebar > app-vocabulary-list {
-      align-self: start;
-    }
+.layout-sidebar > app-vocabulary-list,
+.layout-sidebar > app-playlist-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
     .desktop-only {
       display: block;

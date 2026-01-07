@@ -56,7 +56,6 @@ export class PlaylistPanelComponent {
         [videoIds[index - 1], videoIds[index]] = [videoIds[index], videoIds[index - 1]];
 
         await this.playlistService.reorderVideos(playlist.id, videoIds);
-        await this.playlistService.loadPlaylist(playlist.id); // Refresh
         this.menuOpen.set(false);
     }
 
@@ -70,7 +69,6 @@ export class PlaylistPanelComponent {
         [videoIds[index], videoIds[index + 1]] = [videoIds[index + 1], videoIds[index]];
 
         await this.playlistService.reorderVideos(playlist.id, videoIds);
-        await this.playlistService.loadPlaylist(playlist.id); // Refresh
         this.menuOpen.set(false);
     }
 
@@ -81,7 +79,6 @@ export class PlaylistPanelComponent {
         if (!playlist || !videoId) return;
 
         await this.playlistService.removeVideo(playlist.id, videoId);
-        await this.playlistService.loadPlaylist(playlist.id); // Refresh
         this.menuOpen.set(false);
     }
 }
