@@ -33,7 +33,7 @@ import { Token } from '../../../models';
   ],
   template: `
     <div class="layout">
-      <div class="layout-main">
+      <div class="layout-main" [class.has-playlist-bar]="!!playlistService.currentPlaylist()">
         <app-video-player 
           (fullscreenWordClicked)="onWordClicked($event)" 
           (fullscreenChanged)="isVideoFullscreen.set($event)"
@@ -61,15 +61,36 @@ import { Token } from '../../../models';
         }
       </aside>
 
-      <!-- Mobile playlist FAB - only shows when viewing a playlist -->
-      @if (playlistService.currentPlaylist()) {
-      <button 
-        class="fab-playlist mobile-only" 
+      <!-- Mobile playlist Bar - only shows when viewing a playlist -->
+      @if (playlistService.currentPlaylist(); as playlist) {
+      <div 
+        class="playlist-bar mobile-only" 
         (click)="showMobilePlaylistSheet.set(true)"
-        [attr.aria-label]="i18n.t('nav.playlists')"
       >
-        <app-icon name="list-video" [size]="20" />
-      </button>
+        <div class="playlist-bar-content">
+          <!-- Thumbnail -->
+          <div class="playlist-thumb">
+            @if (playlistService.currentVideo()?.thumbnail; as thumb) {
+              <img [src]="thumb" alt="Thumbnail">
+            }
+          </div>
+
+          <!-- Info -->
+          <div class="playlist-info">
+             <div class="playlist-meta">
+               {{ i18n.t('nav.playlists') }} • {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
+             </div>
+             <div class="playlist-title">
+               {{ playlistService.currentVideo()?.title || 'Unknown Title' }}
+             </div>
+          </div>
+
+          <!-- Icon -->
+          <div class="playlist-icon">
+            <app-icon name="chevron-up" [size]="20" />
+          </div>
+        </div>
+      </div>
       }
     </div>
 
@@ -174,6 +195,91 @@ import { Token } from '../../../models';
       display: block;
     }
 
+      .layout-main.has-playlist-bar {
+         /* Padding when playlist bar is visible (side-by-side with FAB) */
+         padding-bottom: 120px;
+      }
+
+      .playlist-bar {
+        display: none;
+        position: fixed;
+        left: var(--space-md);
+        right: calc(var(--space-md) + 44px + var(--space-sm)); /* Leave room for FAB */
+        bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px)); /* Sits at same level as FAB */
+        height: 56px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        z-index: var(--z-fixed);
+        cursor: pointer;
+        overflow: hidden;
+        animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform var(--transition-fast), background-color var(--transition-fast);
+      }
+
+    .playlist-bar:active {
+      transform: scale(0.98);
+      background-color: var(--bg-secondary);
+    }
+
+    .playlist-bar-content {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 var(--space-sm);
+      gap: var(--space-sm);
+    }
+
+    .playlist-thumb {
+      width: 48px;
+      height: 36px;
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--bg-secondary);
+    }
+    
+    .playlist-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .playlist-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .playlist-meta {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .playlist-title {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .playlist-icon {
+      color: var(--text-secondary);
+      padding: var(--space-xs);
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 1024px) {
       .layout {
         grid-template-columns: 1fr;
@@ -190,12 +296,31 @@ import { Token } from '../../../models';
         display: none;
       }
       
+      .mobile-only {
+        display: block;
+      }
+
       .layout {
         gap: var(--space-md);
       }
       
       .layout-main {
         gap: var(--space-md);
+        /* Default padding for FAB */
+        padding-bottom: 100px;
+      }
+      
+      .layout-main.has-playlist-bar {
+         /* Padding when playlist bar is visible (side-by-side with FAB) */
+         padding-bottom: 120px;
+      }
+
+      .fab-playlist {
+        display: none; /* Hide old FAB if it still exists in other contexts, but we replaced the class */
+      }
+      
+      .playlist-bar {
+        display: block;
       }
     }
 
@@ -241,40 +366,6 @@ import { Token } from '../../../models';
         opacity: 1;
         transform: translateX(0);
       }
-    }
-
-    /* Mobile playlist FAB */
-    .fab-playlist {
-      display: none;
-      position: fixed;
-      bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px));
-      right: calc(var(--space-md) + 44px + var(--space-sm)); /* Position left of new-video FAB */
-      width: 44px;
-      height: 44px;
-      border-radius: var(--border-radius-round);
-      background: var(--bg-card);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-      z-index: var(--z-fixed);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
-      .mobile-only {
-        display: block;
-      }
-
-      .fab-playlist {
-        display: flex;
-      }
-    }
-
-    .fab-playlist:active {
-      transform: scale(0.92);
     }
   `]
 })

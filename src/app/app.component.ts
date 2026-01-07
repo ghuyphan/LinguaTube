@@ -11,6 +11,7 @@ import { BottomSheetComponent } from './shared/components/bottom-sheet/bottom-sh
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
+import { PlaylistService } from './features/playlist/playlist.service';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
 @Component({
@@ -108,6 +109,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           (click)="showCommandPalette.set(true)"
           [attr.title]="i18n.t('nav.newVideo')"
           [attr.aria-label]="i18n.t('nav.newVideo')"
+          [class.fab-centered-with-playlist]="!!playlistService.currentPlaylist()"
         >
           <app-icon name="plus" [size]="20" />
         </button>
@@ -362,6 +364,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         box-shadow: 0 6px 20px rgba(var(--accent-primary-rgb), 0.5);
       }
     }
+
+    /* Centering adjustment when next to playlist bar (56px vs 44px = 12px diff / 2 = 6px offset) */
+    .fab-new-video.fab-centered-with-playlist {
+      bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px) + 6px);
+    }
   `]
 })
 export class AppComponent implements OnDestroy {
@@ -372,6 +379,7 @@ export class AppComponent implements OnDestroy {
   private document = inject(DOCUMENT);
   i18n = inject(I18nService);
   settings = inject(SettingsService);
+  protected playlistService = inject(PlaylistService);
   private swUpdate = inject(SwUpdate);
 
   private destroy$ = new Subject<void>();
