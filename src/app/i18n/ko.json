@@ -263,7 +263,9 @@
             "myTitle": "재생목록이 없습니다",
             "myHint": "하나 만들어 시작하세요!",
             "communityTitle": "커뮤니티 재생목록이 없습니다",
-            "communityHint": "나중에 공유된 재생목록을 확인하세요"
+            "communityHint": "나중에 공유된 재생목록을 확인하세요",
+            "noVideosTitle": "동영상이 없습니다",
+            "noVideosHint": "저장 버튼으로 동영상을 추가하세요"
         },
         "create": "만들기",
         "cancel": "취소",

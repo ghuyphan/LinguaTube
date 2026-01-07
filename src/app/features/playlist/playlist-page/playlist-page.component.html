@@ -36,7 +36,20 @@
 
             <!-- Content Grid -->
             <div class="panel-content">
-                @if (virtualRows().length > 0) {
+                @if (playlistService.isLoading()) {
+                <!-- Skeleton Loading State -->
+                <div class="grid skeleton-container">
+                    @for (_ of [1,2,3,4,5,6]; track $index) {
+                    <div class="card playlist-card playlist-card--skeleton">
+                        <div class="card-thumbnail skeleton-box"></div>
+                        <div class="card-content">
+                            <div class="skeleton-line skeleton-line--title"></div>
+                            <div class="skeleton-line skeleton-line--meta"></div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                } @else if (virtualRows().length > 0) {
                 <cdk-virtual-scroll-viewport [itemSize]="itemHeight()" class="virtual-viewport">
                     <div *cdkVirtualFor="let row of virtualRows()" class="grid-row"
                         [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">

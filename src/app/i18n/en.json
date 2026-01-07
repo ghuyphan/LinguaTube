@@ -265,7 +265,9 @@
             "myTitle": "No playlists yet",
             "myHint": "Create one to get started!",
             "communityTitle": "No community playlists",
-            "communityHint": "Check back later for shared playlists"
+            "communityHint": "Check back later for shared playlists",
+            "noVideosTitle": "No videos yet",
+            "noVideosHint": "Add videos using the save button"
         },
         "create": "Create",
         "cancel": "Cancel",

@@ -263,7 +263,9 @@
             "myTitle": "プレイリストはまだありません",
             "myHint": "作成して始めましょう！",
             "communityTitle": "コミュニティのプレイリストはありません",
-            "communityHint": "共有されたプレイリストを後でチェックしてください"
+            "communityHint": "共有されたプレイリストを後でチェックしてください",
+            "noVideosTitle": "動画がありません",
+            "noVideosHint": "保存ボタンで動画を追加"
         },
         "create": "作成",
         "cancel": "キャンセル",

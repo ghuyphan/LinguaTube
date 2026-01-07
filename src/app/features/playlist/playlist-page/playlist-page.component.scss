@@ -7,6 +7,80 @@
 }
 
 // -------------------------
+// Skeleton Loading State
+// -------------------------
+.skeleton-container {
+    animation: skeletonFadeIn 0.3s ease-out;
+}
+
+.playlist-card--skeleton {
+    pointer-events: none;
+}
+
+.skeleton-box {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-sm);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+
+    &--title {
+        height: 1rem;
+        width: 75%;
+        margin-bottom: 8px;
+    }
+
+    &--meta {
+        height: 0.75rem;
+        width: 50%;
+    }
+}
+
+// Content fade-in when replacing skeleton
+.grid,
+.virtual-viewport {
+    animation: contentFadeIn 0.25s ease-out;
+}
+
+@keyframes skeletonShimmer {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes skeletonFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// -------------------------
 // Main Panel
 // -------------------------
 .playlist-panel {

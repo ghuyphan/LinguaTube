@@ -33,6 +33,34 @@
     </div>
 
     <div class="playlist-items">
+        @if (playlistService.isLoading()) {
+        <!-- Skeleton Loading State -->
+        <div class="skeleton-container">
+            @for (_ of [1,2,3,4,5]; track $index) {
+            <div class="playlist-item playlist-item--skeleton">
+                <div class="item-left">
+                    <span class="item-index">{{ $index + 1 }}</span>
+                </div>
+                <div class="item-thumbnail skeleton-box"></div>
+                <div class="item-info">
+                    <div class="skeleton-line skeleton-line--title"></div>
+                    <div class="skeleton-line skeleton-line--channel"></div>
+                </div>
+            </div>
+            }
+        </div>
+        } @else if (playlist.videos.length === 0) {
+        <!-- Empty State -->
+        <div class="empty-state">
+            <div class="empty-state__icon-box">
+                <app-icon name="list-video" [size]="20"></app-icon>
+            </div>
+            <div class="empty-state__text">
+                <span class="empty-state__title">{{ i18n.t('playlist.empty.noVideosTitle') }}</span>
+                <span class="empty-state__description">{{ i18n.t('playlist.empty.noVideosHint') }}</span>
+            </div>
+        </div>
+        } @else {
         @for (video of playlist.videos; track video.videoId; let i = $index) {
         <div class="playlist-item" [class.active]="i === playlistService.currentIndex()"
             (click)="onVideoClick(video.videoId, i)">
@@ -58,6 +86,7 @@
             </button>
             }
         </div>
+        }
         }
     </div>
 </div>

@@ -265,7 +265,9 @@
             "myTitle": "Chưa có danh sách phát nào",
             "myHint": "Tạo một danh sách để bắt đầu!",
             "communityTitle": "Chưa có danh sách cộng đồng",
-            "communityHint": "Quay lại sau để xem danh sách được chia sẻ"
+            "communityHint": "Quay lại sau để xem danh sách được chia sẻ",
+            "noVideosTitle": "Chưa có video",
+            "noVideosHint": "Thêm video bằng nút lưu"
         },
         "create": "Tạo",
         "cancel": "Hủy",

@@ -263,7 +263,9 @@
             "myTitle": "暂无播放列表",
             "myHint": "创建一个开始使用吧！",
             "communityTitle": "暂无社区播放列表",
-            "communityHint": "稍后再来查看共享的播放列表"
+            "communityHint": "稍后再来查看共享的播放列表",
+            "noVideosTitle": "暂无视频",
+            "noVideosHint": "使用保存按钮添加视频"
         },
         "create": "创建",
         "cancel": "取消",

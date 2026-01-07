@@ -8,6 +8,79 @@
     position: relative;
 }
 
+// -------------------------
+// Skeleton Loading State
+// -------------------------
+.skeleton-container {
+    animation: skeletonFadeIn 0.3s ease-out;
+}
+
+.playlist-item--skeleton {
+    pointer-events: none;
+}
+
+.skeleton-box {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-sm);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+
+    &--title {
+        height: 0.875rem;
+        width: 85%;
+        margin-bottom: 6px;
+    }
+
+    &--channel {
+        height: 0.75rem;
+        width: 60%;
+    }
+}
+
+@keyframes skeletonShimmer {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes skeletonFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Apply fade-in to content when it replaces skeleton
+.playlist-item:not(.playlist-item--skeleton) {
+    animation: contentFadeIn 0.25s ease-out;
+}
+
 .playlist-content-wrapper {
     max-height: 100%;
     background: var(--bg-card);

@@ -1495,13 +1495,13 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
    FULLSCREEN POPUP
    ============================================ */
 .fs-popup-overlay {
-  position: absolute;
+  position: fixed; // Change from 'absolute'
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 50;
+  z-index: 500; // Change from 50, higher than sidebar's 200
   animation: fadeIn 0.2s ease;
   padding: var(--space-md);
 }
