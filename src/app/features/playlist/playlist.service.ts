@@ -87,13 +87,38 @@ export class PlaylistService {
     });
 
     constructor() {
-        this.loadFromStorage();
+        // Initialize playlists based on auth state
+        this.initializePlaylists();
 
-        // Persist changes to localStorage
+        // Persist changes to localStorage (for guest users only)
         effect(() => {
             const playlists = this.myPlaylists();
             untracked(() => this.saveToStorage(playlists));
         });
+
+        // Load playlists from PocketBase when user logs in
+        this.auth.loginEvent.subscribe(() => {
+            console.debug('[Playlist] User logged in, loading from PocketBase');
+            this.loadUserPlaylists();
+        });
+    }
+
+    /**
+     * Initialize playlists on service startup
+     */
+    private async initializePlaylists(): Promise<void> {
+        // Always try to load from localStorage first (for guest users or as fallback)
+        this.loadFromStorage();
+        console.debug('[Playlist] Loaded from localStorage:', this.myPlaylists().length, 'playlists');
+
+        // If user is already logged in, load from PocketBase
+        // Wait a bit for auth to initialize
+        setTimeout(async () => {
+            if (this.auth.isLoggedIn()) {
+                console.debug('[Playlist] User already logged in, loading from PocketBase');
+                await this.loadUserPlaylists();
+            }
+        }, 500);
     }
 
     // ==================== CRUD Operations ====================
@@ -102,13 +127,15 @@ export class PlaylistService {
      * Create a new playlist
      */
     async createPlaylist(input: CreatePlaylistInput): Promise<Playlist> {
+        console.debug('[Playlist] Creating playlist:', input.title, 'isLoggedIn:', this.auth.isLoggedIn());
+
         const playlist: Playlist = {
             id: this.generateId(),
             userId: this.auth.getUserId() || 'local',
             title: input.title,
             description: input.description,
             visibility: input.visibility || 'unlisted',
-            language: input.language,
+            language: input.language || 'en',
             tags: input.tags || [],
             videoIds: [],
             videoCount: 0,
@@ -137,6 +164,7 @@ export class PlaylistService {
                     is_featured: false
                 });
                 playlist.id = record.id;
+                console.debug('[Playlist] Created in PocketBase with ID:', record.id);
             } catch (error) {
                 console.error('[Playlist] Failed to create in PocketBase:', error);
                 throw error;
@@ -145,6 +173,7 @@ export class PlaylistService {
 
         // Update local state
         this.myPlaylists.set([playlist, ...this.myPlaylists()]);
+        console.debug('[Playlist] Created playlist:', playlist.id, 'Total playlists:', this.myPlaylists().length);
         return playlist;
     }
 
@@ -152,10 +181,13 @@ export class PlaylistService {
      * Update an existing playlist
      */
     async updatePlaylist(id: string, updates: Partial<Playlist>): Promise<void> {
+        console.debug('[Playlist] Updating playlist:', id, 'updates:', updates, 'isLoggedIn:', this.auth.isLoggedIn());
+
         const playlists = this.myPlaylists();
         const index = playlists.findIndex(p => p.id === id);
 
         if (index < 0) {
+            console.error('[Playlist] Playlist not found for update:', id);
             throw new Error('Playlist not found');
         }
 
@@ -178,6 +210,7 @@ export class PlaylistService {
                     video_count: updated.videoCount,
                     thumbnail: updated.thumbnail || ''
                 });
+                console.debug('[Playlist] Updated in PocketBase successfully');
             } catch (error) {
                 console.error('[Playlist] Failed to update in PocketBase:', error);
                 throw error;
@@ -187,6 +220,7 @@ export class PlaylistService {
         const newPlaylists = [...playlists];
         newPlaylists[index] = updated;
         this.myPlaylists.set(newPlaylists);
+        console.debug('[Playlist] Local state updated');
     }
 
     /**
@@ -217,15 +251,21 @@ export class PlaylistService {
      * Add a video to a playlist
      */
     async addVideo(playlistId: string, videoId: string, metadata?: VideoInfo): Promise<void> {
+        console.debug('[Playlist] Adding video:', videoId, 'to playlist:', playlistId);
+
         const playlists = this.myPlaylists();
+        console.debug('[Playlist] Available playlists:', playlists.map(p => ({ id: p.id, title: p.title })));
+
         const playlist = playlists.find(p => p.id === playlistId);
 
         if (!playlist) {
+            console.error('[Playlist] Playlist not found:', playlistId);
             throw new Error('Playlist not found');
         }
 
         // Don't add duplicates
         if (playlist.videoIds.includes(videoId)) {
+            console.debug('[Playlist] Video already in playlist, skipping');
             return;
         }
 
@@ -238,6 +278,7 @@ export class PlaylistService {
             videoCount: updatedVideoIds.length,
             thumbnail
         });
+        console.debug('[Playlist] Video added successfully, new count:', updatedVideoIds.length);
     }
 
     /**
@@ -451,7 +492,7 @@ export class PlaylistService {
         const base = window.location.origin;
         let url = `${base}/video?playlist=${playlistId}`;
         if (videoId) {
-            url += `&v=${videoId}`;
+            url += `&id=${videoId}`;
         }
         return url;
     }
@@ -569,21 +610,31 @@ export class PlaylistService {
                 sort: '-updated'
             });
 
-            this.myPlaylists.set(owned.items.map(r => this.recordToPlaylist(r)));
+            const playlists = owned.items.map(r => this.recordToPlaylist(r));
+            this.myPlaylists.set(playlists);
 
-            // Load saved playlists
-            const saves = await client.collection('playlist_saves').getList(1, 50, {
-                filter: `user="${this.auth.getUserId()}"`,
-                expand: 'playlist',
-                sort: '-saved_at'
-            });
+            // Cache to localStorage for faster next load
+            this.saveToStorage(playlists, true);
+            console.debug('[Playlist] Loaded', playlists.length, 'playlists from PocketBase');
 
-            const savedPlaylists = saves.items
-                .map(s => s.expand?.['playlist'])
-                .filter(Boolean)
-                .map((r: any) => this.recordToPlaylist(r));
+            // Load saved playlists (playlists you've bookmarked from other users)
+            try {
+                const saves = await client.collection('playlist_saves').getList(1, 50, {
+                    filter: `user="${this.auth.getUserId()}"`,
+                    expand: 'playlist',
+                    sort: '-saved_at'
+                });
 
-            this.savedPlaylists.set(savedPlaylists);
+                const savedPlaylists = saves.items
+                    .map(s => s.expand?.['playlist'])
+                    .filter(Boolean)
+                    .map((r: any) => this.recordToPlaylist(r));
+
+                this.savedPlaylists.set(savedPlaylists);
+            } catch (e) {
+                // If collection doesn't exist or other error, just set empty
+                this.savedPlaylists.set([]);
+            }
         } catch (error) {
             console.error('[Playlist] Failed to load playlists:', error);
         } finally {
@@ -680,9 +731,12 @@ export class PlaylistService {
         }
     }
 
-    private saveToStorage(playlists: Playlist[]): void {
-        // Only save local playlists (for guest users)
-        if (this.auth.isLoggedIn()) return;
+    private saveToStorage(playlists: Playlist[], force = false): void {
+        // Skip auto-save for logged-in users (they sync via PocketBase)
+        // But allow forced saves for caching PocketBase data
+        if (!force && this.auth.isLoggedIn()) {
+            return;
+        }
 
         try {
             const data = {
@@ -690,6 +744,7 @@ export class PlaylistService {
                 updatedAt: new Date().toISOString()
             };
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            console.debug('[Playlist] Cached to localStorage:', playlists.length, 'playlists');
         } catch (e) {
             console.warn('[Playlist] Failed to save to storage:', e);
         }

@@ -11,7 +11,6 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I1
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { Token } from '../../../models';
 
 @Component({
@@ -27,7 +26,6 @@ import { Token } from '../../../models';
     AddToPlaylistDialogComponent,
     WordPopupComponent,
     ConfirmDialogComponent,
-    IconComponent
   ],
   template: `
     <div class="layout">
@@ -75,7 +73,6 @@ import { Token } from '../../../models';
       [title]="i18n.t('subtitle.languageMismatch')"
       [message]="languageMismatchMessage()"
       [confirmText]="switchLanguageButtonText()"
-      [navPadding]="true"
       [showCancel]="false"
       [allowBackdropClose]="false"
       variant="default" 

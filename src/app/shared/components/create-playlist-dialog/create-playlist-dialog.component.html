@@ -1,5 +1,4 @@
 <app-bottom-sheet [isOpen]="isOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
-
     <div class="dialog-content">
         <div class="dialog-header">
             <h2>{{ i18n.t('playlist.createPlaylist') }}</h2>
@@ -13,50 +12,36 @@
                     required [placeholder]="i18n.t('playlist.titlePlaceholder')" autocomplete="off">
             </div>
 
-            <!-- Description -->
+            <!-- Visibility -->
             <div class="form-group">
-                <label for="pl-desc">{{ i18n.t('playlist.descriptionLabel') }}</label>
-                <textarea id="pl-desc" [ngModel]="description()" (ngModelChange)="description.set($event)"
-                    name="description" [placeholder]="i18n.t('playlist.descriptionPlaceholder')">
-                </textarea>
+                <label>{{ i18n.t('playlist.visibilityLabel') }}</label>
+                <div class="visibility-options">
+                    <button type="button" class="visibility-option" [class.selected]="visibility() === 'private'"
+                        (click)="visibility.set('private')">
+                        <app-icon name="lock" [size]="18" />
+                        <span>{{ i18n.t('playlist.visibility.private') }}</span>
+                    </button>
+                    <button type="button" class="visibility-option" [class.selected]="visibility() === 'unlisted'"
+                        (click)="visibility.set('unlisted')">
+                        <app-icon name="link" [size]="18" />
+                        <span>{{ i18n.t('playlist.visibility.unlisted') }}</span>
+                    </button>
+                    <button type="button" class="visibility-option" [class.selected]="visibility() === 'published'"
+                        (click)="visibility.set('published')">
+                        <app-icon name="globe" [size]="18" />
+                        <span>{{ i18n.t('playlist.visibility.public') }}</span>
+                    </button>
+                </div>
             </div>
 
             <!-- Language -->
             <div class="form-group">
                 <label>{{ i18n.t('playlist.languageLabel') }}</label>
-                <button type="button" class="language-selector" (click)="showLanguagePicker.set(true)">
-                    <span>{{ currentLanguageLabel() }}</span>
-                    <app-icon name="chevron-down" [size]="16"></app-icon>
-                </button>
-            </div>
-
-            <!-- Visibility -->
-            <div class="form-group">
-                <label>{{ i18n.t('playlist.visibilityLabel') }}</label>
-                <div class="visibility-options">
-                    @for (opt of visibilityOptions(); track opt.value) {
-                    <div class="visibility-option" [class.selected]="visibility() === opt.value"
-                        (click)="visibility.set($any(opt.value))">
-                        <div class="option-icon">
-                            <app-icon [name]="$any(opt.icon)" [size]="20"></app-icon>
-                        </div>
-                        <div class="option-info">
-                            <span class="option-label">{{ opt.label }}</span>
-                            <span class="option-desc">{{ opt.desc }}</span>
-                        </div>
-                    </div>
-                    }
-                </div>
-            </div>
-
-            <!-- Tags -->
-            <div class="form-group">
-                <label>{{ i18n.t('playlist.tagsLabel') }}</label>
-                <div class="tags-container">
-                    @for (tag of TAGS; track tag) {
-                    <button type="button" class="tag-chip" [class.selected]="selectedTags().includes(tag)"
-                        (click)="toggleTag(tag)">
-                        {{ tag }}
+                <div class="language-options">
+                    @for (lang of languages; track lang.code) {
+                    <button type="button" class="language-option" [class.selected]="language() === lang.code"
+                        (click)="language.set(lang.code)">
+                        <img [src]="lang.flag" [alt]="lang.name" class="flag-icon">
                     </button>
                     }
                 </div>
@@ -74,8 +59,3 @@
         </form>
     </div>
 </app-bottom-sheet>
-
-<!-- Language Picker -->
-<app-option-picker [isOpen]="showLanguagePicker()" [options]="LANGUAGE_OPTIONS" [value]="language()"
-    [title]="i18n.t('playlist.languageLabel')" [zIndex]="1200" (selected)="language.set($any($event))"
-    (closed)="showLanguagePicker.set(false)" />

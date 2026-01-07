@@ -54,7 +54,7 @@ export interface CreatePlaylistInput {
     title: string;
     description?: string;
     visibility?: PlaylistVisibility;
-    language: PlaylistLanguage;
+    language?: PlaylistLanguage;
     tags?: string[];
 }
 

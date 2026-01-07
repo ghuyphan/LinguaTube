@@ -25,8 +25,6 @@ export class OptionPickerComponent {
     title = input<string>('');
     // Optional manual z-index
     zIndex = input<number | undefined>(undefined);
-    // Optional nav padding
-    navPadding = input<boolean>(false);
 
     closed = output<void>();
     selected = output<string>();

@@ -560,11 +560,11 @@ export class SyncService {
                     thumbnail: item.thumbnail || '',
                     channel: item.channel || '',
                     duration: item.duration || 0,
-                    language: item.language,
+                    language: item.language || 'en',
                     languages: item.languages || [],
                     watched_at: item.watched_at,
-                    progress: item.progress,
-                    is_favorite: item.is_favorite,
+                    progress: item.progress || 1,
+                    is_favorite: item.is_favorite || false,
                     user: userId
                 };
 

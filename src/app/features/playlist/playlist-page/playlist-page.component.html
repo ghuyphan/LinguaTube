@@ -21,16 +21,16 @@
             <div class="filter-chips">
                 <button class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')">
                     <app-icon name="user" [size]="14" />
-                    {{ i18n.t('playlist.myPlaylists') }}
+                    <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
                 </button>
                 <button class="filter-chip" [class.active]="view() === 'community'" (click)="setView('community')">
                     <app-icon name="globe" [size]="14" />
-                    {{ i18n.t('playlist.community') }}
+                    <span class="chip-text">{{ i18n.t('playlist.community') }}</span>
                 </button>
                 <div class="filter-chips__spacer"></div>
                 <button class="btn btn-sm btn-primary" (click)="showCreateDialog.set(true)">
                     <app-icon name="plus" [size]="14" />
-                    {{ i18n.t('playlist.newPlaylist') }}
+                    <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
                 </button>
             </div>
 

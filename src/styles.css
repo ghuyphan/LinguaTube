@@ -1212,6 +1212,32 @@ select {
   flex: 1;
 }
 
+@media (max-width: 600px) {
+
+  /* Hide text on mobile for compact view */
+  .filter-chips .chip-text,
+  .filter-chips .btn .btn-text {
+    display: none;
+  }
+
+  /* Adjust padding for icon-only look */
+  .filter-chips .filter-chip,
+  .filter-chips .btn {
+    padding: var(--space-xs);
+    aspect-ratio: 1;
+    justify-content: center;
+  }
+
+  .filter-chips {
+    gap: var(--space-xs);
+  }
+
+  /* Hide spacer to allow buttons to sit together */
+  .filter-chips__spacer {
+    display: none;
+  }
+}
+
 /* ============================================
    TOGGLE COMPONENTS
    ============================================ */

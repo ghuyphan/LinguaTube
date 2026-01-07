@@ -1,5 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [showDragHandle]="true" [showCloseButton]="true" [navPadding]="navPadding()"
-    (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isOpen()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="popup-content">
         @if (pattern(); as p) {
         <!-- Header -->

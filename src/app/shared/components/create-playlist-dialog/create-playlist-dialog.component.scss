@@ -1,10 +1,9 @@
 // Create Playlist Dialog Styles
 // ==============================
-// Matches styling patterns from confirm-dialog and add-to-playlist-dialog
 
 .dialog-content {
     padding: var(--space-lg);
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -31,10 +30,7 @@
         margin-bottom: var(--space-xs);
     }
 
-    // Standard inputs follow global input styles
-    input[type="text"],
-    textarea,
-    select {
+    input[type="text"] {
         width: 100%;
         padding: var(--space-md);
         border: 1px solid var(--border-color);
@@ -55,46 +51,6 @@
             box-shadow: var(--focus-ring);
         }
     }
-
-    textarea {
-        resize: vertical;
-        min-height: 80px;
-    }
-}
-
-// -------------------------
-// Language Selector Button
-// -------------------------
-.language-selector {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-md);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: var(--text-base);
-    cursor: pointer;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-
-    @media (hover: hover) {
-        &:hover {
-            border-color: var(--text-muted);
-        }
-    }
-
-    &:focus {
-        outline: none;
-        border-color: var(--accent-primary);
-        box-shadow: var(--focus-ring);
-    }
-
-    app-icon {
-        color: var(--text-muted);
-    }
 }
 
 // -------------------------
@@ -102,99 +58,81 @@
 // -------------------------
 .visibility-options {
     display: flex;
-    flex-direction: column;
     gap: var(--space-xs);
 }
 
 .visibility-option {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md);
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-xs);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
+    background: var(--bg-card);
+    color: var(--text-secondary);
     cursor: pointer;
     transition: all var(--transition-fast);
+    font-size: var(--text-xs);
 
-    @media (hover: hover) {
-        &:hover:not(.selected) {
-            background: var(--bg-secondary);
-        }
+    &:hover {
+        border-color: var(--text-muted);
     }
 
     &.selected {
-        background: rgba(var(--accent-primary-rgb), 0.08);
         border-color: var(--accent-primary);
-
-        .option-icon {
-            color: var(--accent-primary);
-        }
+        background: var(--accent-primary-soft);
+        color: var(--accent-primary);
     }
 
-    input[type="radio"] {
-        display: none;
+    app-icon {
+        opacity: 0.7;
     }
 
-    .option-icon {
-        color: var(--text-muted);
-        display: flex;
-        flex-shrink: 0;
-    }
-
-    .option-info {
-        flex: 1;
-        min-width: 0;
-
-        .option-label {
-            display: block;
-            font-weight: 500;
-            color: var(--text-primary);
-            font-size: var(--text-base);
-        }
-
-        .option-desc {
-            display: block;
-            font-size: var(--text-sm);
-            color: var(--text-muted);
-        }
+    &.selected app-icon {
+        opacity: 1;
     }
 }
 
 // -------------------------
-// Tags
+// Language Options (circle flags)
 // -------------------------
-.tags-container {
+.language-options {
     display: flex;
-    flex-wrap: wrap;
     gap: var(--space-xs);
 }
 
-.tag-chip {
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--border-radius-pill);
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    border: 1px solid transparent;
+.language-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-card);
     cursor: pointer;
     transition: all var(--transition-fast);
 
-    @media (hover: hover) {
-        &:hover:not(.selected) {
-            background: var(--bg-tertiary);
-        }
+    &:hover {
+        border-color: var(--text-muted);
     }
 
     &.selected {
-        background: var(--accent-primary);
-        color: white;
         border-color: var(--accent-primary);
+        background: var(--accent-primary-soft);
+    }
+
+    .flag-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
     }
 }
 
 // -------------------------
-// Dialog Actions (uses global .btn classes)
+// Dialog Actions
 // -------------------------
 .dialog-actions {
     display: flex;

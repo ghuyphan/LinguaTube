@@ -24,65 +24,61 @@
     margin-bottom: var(--space-lg);
 }
 
+// -------------------------
+// Playlist Item (Tappable Row)
+// -------------------------
 .playlist-item {
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-md);
     border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
     cursor: pointer;
-    transition: background-color var(--transition-fast);
+    transition: all var(--transition-fast);
     user-select: none;
+    text-align: left;
+    width: 100%;
 
     @media (hover: hover) {
         &:hover {
+            border-color: var(--text-muted);
             background: var(--bg-secondary);
         }
     }
 
-    &.selected {
-        background: var(--bg-hover);
+    &:active {
+        transform: scale(0.98);
+    }
+
+    // Saved state - video is in this playlist
+    &.saved {
+        border-color: var(--accent-primary);
+        background: rgba(var(--accent-primary-rgb), 0.08);
+
+        .playlist-icon {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .playlist-name {
+            color: var(--accent-primary);
+        }
     }
 }
 
-// -------------------------
-// Custom Checkbox
-// -------------------------
-.checkbox-wrapper {
-    position: relative;
-    width: 20px;
-    height: 20px;
+.playlist-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-
-    input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-
-        &:checked~.checkmark {
-            background-color: var(--accent-primary);
-            border-color: var(--accent-primary);
-            color: white;
-        }
-    }
-
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: transparent;
-        border: 2px solid var(--text-muted);
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: transparent;
-        transition: all var(--transition-fast);
-    }
+    transition: all var(--transition-fast);
 }
 
 .playlist-info {
@@ -90,22 +86,27 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-width: 0;
 
     .playlist-name {
         font-size: var(--text-base);
         color: var(--text-primary);
         font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: color var(--transition-fast);
     }
 
     .playlist-meta {
         font-size: var(--text-xs);
         color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 4px;
     }
 }
 
+// -------------------------
+// Footer
+// -------------------------
 .dialog-footer {
     display: flex;
     justify-content: center;

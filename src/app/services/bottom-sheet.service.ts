@@ -168,6 +168,6 @@ export class BottomSheetService {
     getZIndex(sheetId: string): number {
         const stack = this.sheetStack();
         const index = stack.findIndex(s => s.id === sheetId);
-        return 1000 + (index >= 0 ? index * 10 : 0);
+        return 2000 + (index >= 0 ? index * 10 : 0);
     }
 }

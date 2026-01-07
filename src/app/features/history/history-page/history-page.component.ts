@@ -136,7 +136,6 @@ type FilterType = 'all' | 'favorites';
       [isOpen]="showClearConfirm()"
       [showCloseButton]="true"
       [maxHeight]="'auto'"
-      [navPadding]="true"
       (closed)="showClearConfirm.set(false)"
     >
       <div class="confirm-sheet">

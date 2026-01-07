@@ -1,26 +1,23 @@
-<app-bottom-sheet [isOpen]="isOpen()" [navPadding]="true" [allowBackdropClose]="true" [showCloseButton]="true"
-    (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="dialog-content">
         <h2 class="dialog-title">{{ i18n.t('playlist.saveToPlaylist') }}</h2>
 
         <div class="playlists-list">
             @for (playlist of playlists(); track playlist.id) {
-            <label class="playlist-item" [class.selected]="isInPlaylist(playlist)">
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" [checked]="isInPlaylist(playlist)"
-                        (change)="onTogglePlaylist(playlist, $event)">
-                    <div class="checkmark">
-                        <app-icon name="check" [size]="14"></app-icon>
-                    </div>
+            <button type="button" class="playlist-item" [class.saved]="isInPlaylist(playlist)"
+                (click)="onTogglePlaylist(playlist)">
+                <div class="playlist-icon">
+                    @if (isInPlaylist(playlist)) {
+                    <app-icon name="check" [size]="18"></app-icon>
+                    } @else {
+                    <app-icon name="plus" [size]="18"></app-icon>
+                    }
                 </div>
                 <div class="playlist-info">
                     <span class="playlist-name">{{ playlist.title }}</span>
-                    <span class="playlist-meta">
-                        <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'" [size]="12"></app-icon>
-                        {{ playlist.visibility | titlecase }}
-                    </span>
+                    <span class="playlist-meta">{{ playlist.videoIds.length }} videos</span>
                 </div>
-            </label>
+            </button>
             } @empty {
             <div class="empty-state">
                 <div class="empty-state__icon-box">
