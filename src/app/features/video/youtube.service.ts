@@ -510,7 +510,8 @@ export class YoutubeService {
       id: videoId,
       title: metadata.title,
       duration: duration,
-      channel: metadata.channel
+      channel: metadata.channel,
+      thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
     });
 
     // Persist video ID for page reload recovery
@@ -528,7 +529,8 @@ export class YoutubeService {
       id: videoId,
       title: metadata.title,
       duration: duration,
-      channel: metadata.channel
+      channel: metadata.channel,
+      thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
     });
   }
 }

@@ -32,6 +32,9 @@ import { I18nService } from '../../../services';
       <div class="palette" [class.closing]="isClosing()" (click)="$event.stopPropagation()">
         <div class="palette__header">
           <div class="palette__input-wrapper">
+            <button class="palette__back-btn" (click)="close()" type="button">
+              <app-icon name="chevron-left" [size]="24" />
+            </button>
             <app-icon name="play-circle" [size]="20" class="palette__icon" />
             <input
               #urlInput
@@ -47,6 +50,9 @@ import { I18nService } from '../../../services';
             @if (url()) {
             <button class="palette__clear" (click)="clearInput()" type="button">
               <app-icon name="x" [size]="16" />
+            </button>
+            <button class="palette__submit-btn" (click)="submit()" type="button">
+              <app-icon name="arrow-right" [size]="24" />
             </button>
             }
           </div>
@@ -81,7 +87,7 @@ import { I18nService } from '../../../services';
       padding-top: 15vh;
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(4px);
-      animation: fadeIn 0.15s ease-out forwards;
+      animation: fadeIn 0.2s ease-out forwards;
     }
 
     .palette-overlay.closing {
@@ -163,6 +169,45 @@ import { I18nService } from '../../../services';
       flex-shrink: 0;
     }
 
+    .palette__back-btn,
+    .palette__submit-btn {
+      display: none; /* Hidden on desktop */
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: transparent;
+      color: var(--text-primary);
+      cursor: pointer;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: background-color 0.2s;
+    }
+
+    .palette__submit-btn {
+      color: var(--primary-color);
+      background: rgba(var(--primary-rgb), 0.1);
+    }
+
+    .palette__clear {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      min-height: 28px;
+      padding: 0;
+      border: none;
+      background: var(--bg-tertiary);
+      border-radius: 50%;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+    }
+
     @media (hover: hover) {
       .palette__clear:hover {
         background: var(--bg-card);
@@ -217,16 +262,56 @@ import { I18nService } from '../../../services';
     /* Mobile adjustments */
     @media (max-width: 768px) {
       .palette-overlay {
-        padding: var(--space-md);
-        padding-top: 10vh;
+        padding: 0;
+        padding-top: 0;
+        background: var(--bg-body);
+        backdrop-filter: none;
+        align-items: stretch; /* Full height */
       }
 
       .palette {
         max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        animation: slideUpMobile 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .palette.closing {
+        animation: slideDownMobile 0.2s ease-in forwards;
+      }
+
+      .palette__input-wrapper {
+        height: 64px;
+        padding: 0 var(--space-sm);
+        gap: var(--space-xs);
+      }
+
+      .palette__icon {
+        display: none; /* Hide play circle on mobile */
+      }
+
+      .palette__back-btn,
+      .palette__submit-btn {
+        display: flex;
+      }
+
+      .palette__back-btn:active,
+      .palette__submit-btn:active {
+        background: var(--bg-secondary);
       }
 
       .palette__footer {
         display: none;
+      }
+      
+      .palette__clear {
+        display: none; /* Hide clear button if we have submit, or keep it? Plan didn't specify hiding clear, but submit is key. Let's keep clear if space permits, but typically mobile search has clear. I'll keep it but maybe adjust visibility. User said "use all button as icon button". */
+        /* Actually, let's keep clear button visible but maybe smaller or different? */
+        /* For now let's just make sure it doesn't conflict. */
+        margin-right: var(--space-xs);
       }
     }
 
@@ -244,7 +329,7 @@ import { I18nService } from '../../../services';
     @keyframes slideDown {
       from {
         opacity: 0;
-        transform: translateY(-20px) scale(0.98);
+        transform: translateY(-10px) scale(0.98);
       }
       to {
         opacity: 1;
@@ -259,7 +344,30 @@ import { I18nService } from '../../../services';
       }
       to {
         opacity: 0;
-        transform: translateY(-20px) scale(0.98);
+        transform: translateY(-10px) scale(0.98);
+      }
+    }
+
+    /* Mobile specific animations */
+    @keyframes slideUpMobile {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDownMobile {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(20px);
       }
     }
   `]

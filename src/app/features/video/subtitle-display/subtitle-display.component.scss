@@ -838,7 +838,7 @@ ruby rt {
     padding: var(--space-sm) var(--space-md);
     background: none;
     border: none;
-    border-left: 3px solid transparent;
+    // border-left: 3px solid transparent;
     text-align: left;
     cursor: pointer;
     transition:
@@ -870,7 +870,7 @@ ruby rt {
 /* Active cue - highlighted with left border accent */
 .cue-item--active {
     background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08);
-    border-left-color: var(--accent-primary);
+    // border-left-color: var(--accent-primary);
     color: var(--accent-primary);
     font-weight: 500;
     opacity: 1;
@@ -1035,7 +1035,7 @@ ruby rt {
     max-width: 0;
     opacity: 0;
     padding-left: 0;
-    border-left: 1px solid transparent;
+    // border-left: 1px solid transparent;
     margin-left: 0;
 
     .ctrl-btn {
@@ -1048,7 +1048,7 @@ ruby rt {
         max-width: 500px;
         opacity: 1;
         padding-left: var(--space-sm);
-        border-left-color: var(--border-color);
+        // border-left-color: var(--border-color);
         margin-left: 4px;
         overflow: visible;
 

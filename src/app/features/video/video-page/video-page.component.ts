@@ -70,6 +70,7 @@ import { Token } from '../../../models';
       <div class="mobile-video-bar desktop-none" 
            [class.hidden]="!youtube.currentVideo() && !playlistService.currentPlaylist()"
            [class.has-playlist]="!!playlistService.currentPlaylist()"
+           [class.single-video-mode]="!playlistService.currentPlaylist()"
            (click)="onMobileBarClick()">
         
         <!-- Playlist Thumbnail (only when in playlist) -->
@@ -83,7 +84,7 @@ import { Token } from '../../../models';
         }
 
         <!-- Title & Meta Wrapper -->
-        <div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; overflow: hidden;">
+        <div class="bar-content-wrapper">
           @for (video of [playlistService.currentVideo() || youtube.currentVideo()]; track ($any(video)?.videoId || $any(video)?.id)) {
             <div class="bar-title">{{ video?.title || '' }}</div>
             
@@ -93,6 +94,7 @@ import { Token } from '../../../models';
             }
           }
         </div>
+
         
         <!-- Search button (circle) -->
         <button class="bar-search-btn" 
@@ -240,9 +242,14 @@ import { Token } from '../../../models';
         cursor: pointer;
         overflow: hidden;
         /* Smooth Scale/position transitions */
-        transition: transform var(--transition-normal) cubic-bezier(0.2, 0.8, 0.2, 1), 
-                    background-color var(--transition-fast),
-                    opacity var(--transition-normal);
+        transition: 
+          left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          right 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          background-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          border-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          padding 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         align-items: center;
         padding: 0 var(--space-xs) 0 var(--space-xs);
         gap: var(--space-xs);
@@ -251,62 +258,63 @@ import { Token } from '../../../models';
         animation: barSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
       }
 
-      @keyframes barSlideUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px) scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
+      /* ... (keyframes unchanged) ... */
 
-      .mobile-video-bar:active {
-        transform: scale(0.98);
-        background-color: var(--bg-secondary);
-      }
-
-      .mobile-video-bar.hidden {
-        display: none !important;
-      }
-
-      /* Bar buttons */
-      .bar-btn {
-        width: 32px;
-        height: 32px;
-        border: none;
-        border-radius: var(--border-radius-round);
+      /* Single Video Mode: Floating Search Button Morphing */
+      .mobile-video-bar.single-video-mode {
+        /* Morph into a small circle at the right */
+        left: calc(100% - var(--space-md) - 44px); /* Position at right with dynamic spacing */
+        right: var(--space-md);          /* Keep anchored right */
+        
+        /* Transparent container */
         background: transparent;
-        color: var(--text-secondary);
+        border-color: transparent;
+        box-shadow: none;
+        
+        /* Remove padding to tighten the circle */
+        padding: 0;
+        
+        /* Allow button shadow to be visible */
+        overflow: visible;
+        
+        pointer-events: none; /* Let clicks pass through the empty area context */
+      }
+
+      /* Title Wrapper Transition */
+      .bar-content-wrapper {
+        flex: 1;
+        min-width: 0;
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        cursor: pointer;
-        transition: all var(--transition-fast);
+        gap: 8px;
+        overflow: hidden;
+        /* Smoothly collapse content */
+        transition: 
+          opacity 0.2s ease-in-out,
+          flex-grow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        opacity: 1;
       }
 
-      .bar-btn:disabled {
-        opacity: 0.3;
-        cursor: default;
+      .mobile-video-bar.single-video-mode .bar-content-wrapper {
+        opacity: 0;
+        flex-grow: 0.0001; /* Shrink to almost 0 but keep layout valid for transition */
+        pointer-events: none;
       }
 
-      .bar-btn--primary {
-        background: var(--accent-primary);
-        color: white;
+      /* Search Button Transition */
+      .mobile-video-bar.single-video-mode .bar-search-btn {
+        display: flex;
+        pointer-events: auto; /* Restore clicks */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        
+        /* Ensure it stays the right size and overrides base value constraints */
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
+        max-height: 44px;
+        border-radius: 50%;
       }
-
-      @media (hover: hover) {
-        .bar-btn:not(:disabled):hover {
-          background: var(--bg-secondary);
-        }
-        .bar-btn--primary:hover {
-          opacity: 0.9;
-          background: var(--accent-primary);
-        }
-      }
-
+      
       /* Playlist thumbnail */
       .bar-thumb {
         width: 36px;
@@ -317,6 +325,12 @@ import { Token } from '../../../models';
         background: var(--bg-secondary); /* Placeholder color always visible */
         margin-left: -4px;
         position: relative; /* Context for absolute img */
+        
+        transition: 
+          width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 0.2s ease-in-out,
+          margin 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        opacity: 1;
       }
       
       .bar-thumb img {
@@ -331,15 +345,10 @@ import { Token } from '../../../models';
         to { opacity: 1; }
       }
 
-      .bar-thumb.skeleton {
-        background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
-        background-size: 200% 100%;
-        animation: skeleton-shimmer 1.5s infinite;
-      }
-
-      @keyframes skeleton-shimmer {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+      .mobile-video-bar.single-video-mode .bar-thumb {
+        width: 0;
+        opacity: 0;
+        margin: 0;
       }
 
       /* Bar title */
@@ -398,11 +407,6 @@ import { Token } from '../../../models';
           opacity: 0.9;
         }
       }
-
-    @keyframes slideUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
 
     @media (max-width: 1024px) {
       .layout {
