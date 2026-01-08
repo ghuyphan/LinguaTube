@@ -595,8 +595,15 @@ export class VideoPageComponent implements OnInit {
     effect(() => {
       const playlistVideo = this.playlistService.currentVideo();
       const currentVideo = this.youtube.currentVideo();
+      const isLoading = this.playlistService.isLoading();
 
-      if (playlistVideo && (!currentVideo || currentVideo.id !== playlistVideo.videoId)) {
+      // console.log('[VideoPage] Effect check:', { 
+      //   playlistVideo: playlistVideo?.videoId, 
+      //   currentVideo: currentVideo?.id, 
+      //   isLoading 
+      // });
+
+      if (playlistVideo && (!currentVideo || currentVideo.id !== playlistVideo.videoId) && !isLoading) {
         // Navigate to the video URL to keep URL in sync
         this.router.navigate([], {
           relativeTo: this.route,
@@ -641,15 +648,41 @@ export class VideoPageComponent implements OnInit {
 
         // Load playlist if present and different
         if (playlistId && this.playlistService.currentPlaylist()?.id !== playlistId) {
-          this.playlistService.loadPlaylist(playlistId).catch(err => {
-            console.error('Failed to load playlist:', err);
-            // Remove invalid playlist param
-            this.router.navigate([], {
-              relativeTo: this.route,
-              queryParams: { playlist: null },
-              queryParamsHandling: 'merge'
+          this.playlistService.loadPlaylist(playlistId)
+            .then(playlist => {
+              // Check if the requested video (or persistent URL param) is in this playlist
+              const index = videoId ? playlist.videos.findIndex(v => v.videoId === videoId) : -1;
+
+              if (index >= 0) {
+                // Video is part of this playlist - sync the internal index
+                this.playlistService.setCurrentIndex(index);
+
+                // Safeguard: Ensure video is loaded if it matches the requested ID to prevent sync issues
+                // This handles race conditions where the outer video load might have been skipped or lost
+                if (videoId && this.youtube.currentVideo()?.id !== videoId && this.youtube.pendingVideoId() !== videoId) {
+                  this.subtitles.clear();
+                  this.transcript.reset();
+                  this.loadVideoFromUrl(videoId);
+                }
+              } else if (playlist.videos.length > 0) {
+                // Video not in playlist (or no ID provided) - Start playlist from beginning
+                this.router.navigate([], {
+                  relativeTo: this.route,
+                  queryParams: { id: playlist.videos[0].videoId },
+                  queryParamsHandling: 'merge',
+                  replaceUrl: true
+                });
+              }
+            })
+            .catch(err => {
+              console.error('Failed to load playlist:', err);
+              // Remove invalid playlist param
+              this.router.navigate([], {
+                relativeTo: this.route,
+                queryParams: { playlist: null },
+                queryParamsHandling: 'merge'
+              });
             });
-          });
         } else if (!playlistId) {
           // Smart Recovery: If we have an active playlist and it contains this video,
           // don't clear it. Instead, restore the URL param.
@@ -694,7 +727,7 @@ export class VideoPageComponent implements OnInit {
         } else {
           // No video ID - check localStorage for recovery
           const savedVideoId = this.youtube.getLastVideoId();
-          if (savedVideoId) {
+          if (savedVideoId && !playlistId) {
             this.router.navigate(['/video'], {
               queryParams: { id: savedVideoId },
               replaceUrl: true

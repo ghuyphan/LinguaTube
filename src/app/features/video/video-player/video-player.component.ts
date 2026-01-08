@@ -258,7 +258,8 @@ export class VideoPlayerComponent implements OnDestroy {
     // Initialize player when video exists but player isn't ready
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
-      if (currentVideo && !this.youtube.isReady() && !this.isLoading()) {
+      // Only restore if we have a current video, player is NOT ready, and we are NOT in the middle of loading a new one
+      if (currentVideo && !this.youtube.isReady() && !this.isLoading() && !this.youtube.pendingVideoId()) {
         const savedTime = this.youtube.currentTime();
         this.waitForElement('youtube-player').then(async () => {
           await this.restorePlayer(currentVideo.id);

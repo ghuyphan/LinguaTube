@@ -191,9 +191,46 @@ export class YoutubeService {
 
   async initPlayer(elementId: string, videoId: string): Promise<void> {
     this.error.set(null);
-    this.isReady.set(false);
+    // Don't set isReady to false yet if we are potentially reusing the player
 
     await this.apiReadyPromise;
+
+    // REUSE PLAYER if possible
+    let canReuse = false;
+    if (this.player && typeof this.player.loadVideoById === 'function') {
+      try {
+        const iframe = this.player.getIframe();
+        if (iframe && iframe.isConnected) {
+          canReuse = true;
+        } else {
+          console.warn('[YoutubeService] Player instance exists but iframe is disconnected. Recreating.');
+        }
+      } catch (e) {
+        console.warn('[YoutubeService] Error checking player iframe:', e);
+      }
+    }
+
+    if (canReuse) {
+      try {
+        const metadataPromise = this.fetchVideoMetadata(videoId);
+
+        // Load the new video
+        this.player.loadVideoById(videoId);
+
+        // Fetch fresh metadata
+        const metadata = await metadataPromise;
+        const duration = this.player.getDuration() || 0; // Might be 0 initially, updated by onStateChange/metadata
+
+        // Update application state
+        this.updateVideoState(videoId, metadata, duration);
+        return;
+      } catch (e) {
+        console.warn('Failed to reuse player, falling back to recreation', e);
+        // Fall through to recreation
+      }
+    }
+
+    this.isReady.set(false);
 
     if (this.player) {
       this.destroy();
@@ -232,31 +269,12 @@ export class YoutubeService {
           events: {
             onReady: async (event: any) => {
               const duration = event.target.getDuration() || 0;
-              this.duration.set(duration);
-
-              // Get reliable metadata from oEmbed
               const metadata = await metadataPromise;
 
-              this.currentVideo.set({
-                id: videoId,
-                title: metadata.title,
-                duration: duration,
-                channel: metadata.channel
-              });
+              // Use the unified state update method
+              this.updateVideoState(videoId, metadata, duration);
 
-              // Persist video ID for page reload recovery
-              this.saveLastVideoId(videoId);
-
-              this.isReady.set(true);
-              this.startTimeTracking();
-
-              // Emit event for history tracking
-              this.videoLoaded.next({
-                id: videoId,
-                title: metadata.title,
-                duration: duration,
-                channel: metadata.channel
-              });
+              this.isReady.set(true); // Explicitly set ready here for new players
 
               // Restore playing state if intended
               if (this.intendedPlayingState()) {
@@ -264,9 +282,6 @@ export class YoutubeService {
               } else {
                 this.pause();
               }
-
-              // Update initial mute state
-              this.isMuted.set(this.player?.isMuted() || false);
 
               resolve();
             },
@@ -484,5 +499,36 @@ export class YoutubeService {
     this.pendingVideoId.set(null);
     this.intendedPlayingState.set(false);
     this.clearLastVideoId();
+  }
+  /**
+ * Update internal state when video is loaded (reused or new)
+ */
+  private updateVideoState(videoId: string, metadata: { title: string; channel: string }, duration: number): void {
+    this.duration.set(duration);
+
+    this.currentVideo.set({
+      id: videoId,
+      title: metadata.title,
+      duration: duration,
+      channel: metadata.channel
+    });
+
+    // Persist video ID for page reload recovery
+    this.saveLastVideoId(videoId);
+
+    // Initial mute state check (safe to check on existing player or new player event target)
+    if (this.player && typeof this.player.isMuted === 'function') {
+      this.isMuted.set(this.player.isMuted());
+    }
+
+    this.startTimeTracking();
+
+    // Emit event for history tracking
+    this.videoLoaded.next({
+      id: videoId,
+      title: metadata.title,
+      duration: duration,
+      channel: metadata.channel
+    });
   }
 }
