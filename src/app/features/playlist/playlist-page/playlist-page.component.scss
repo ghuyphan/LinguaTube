@@ -126,8 +126,9 @@
     min-width: 0;
 
     &.panel-filled {
-        // Desktop: fixed height for scrolling
-        height: calc(100vh - 140px);
+        // Desktop: max height for large lists, but wrap content if small
+        max-height: calc(100vh - 140px);
+        height: auto;
     }
 }
 

@@ -83,7 +83,7 @@
 }
 
 .playlist-content-wrapper {
-    height: auto; // Shrink to fit content
+    height: 100%; // Fill available height
     max-height: 100%; // But respect container constraint
     background: var(--bg-card);
     border: 1px solid var(--border-color);

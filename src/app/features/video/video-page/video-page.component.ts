@@ -192,7 +192,7 @@ import { Token } from '../../../models';
        * Video height = (container width - 340px - 32px) * 9/16
        * Simplified: use calc with approximate values
        */
-      max-height: calc((100vw - 340px - 48px) * 0.5625);
+      max-height: calc((min(100vw, 1280px) - 340px - 48px) * 0.5625);
       overflow: hidden;
       z-index: 50;
       
