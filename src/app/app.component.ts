@@ -102,19 +102,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           </div>
         </nav>
 
-        <!-- Mobile FAB for new video -->
-        @if (isRouteActive('/video')) {
-        <button 
-          class="fab-new-video"
-          (click)="showCommandPalette.set(true)"
-          [attr.title]="i18n.t('nav.newVideo')"
-          [attr.aria-label]="i18n.t('nav.newVideo')"
-          [class.fab-centered-with-playlist]="!!playlistService.currentPlaylist()"
-        >
-          <app-icon name="plus" [size]="20" />
-        </button>
-        }
-
         <!-- Bottom Sheets -->
         @defer (when showSettingsSheet()) {
           <app-settings-sheet 
@@ -315,54 +302,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       .update-sheet__btn--primary:hover {
         opacity: 0.9;
       }
-    }
-
-    /* Mobile FAB for new video */
-    .fab-new-video {
-      display: none;
-      position: fixed;
-      bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px));
-      right: var(--space-md);
-      width: 44px;
-      height: 44px;
-      border-radius: var(--border-radius-round);
-      background: var(--accent-primary);
-      color: white;
-      border: none;
-      box-shadow: 0 3px 12px rgba(var(--accent-primary-rgb), 0.35);
-      cursor: pointer;
-      z-index: var(--z-fixed);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media (max-width: 768px) {
-      .fab-new-video {
-        display: flex;
-      }
-    }
-
-    @media (max-height: 500px) and (orientation: landscape) {
-      .fab-new-video {
-        display: flex;
-      }
-    }
-
-    .fab-new-video:active {
-      transform: scale(0.92);
-    }
-
-    @media (hover: hover) {
-      .fab-new-video:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(var(--accent-primary-rgb), 0.5);
-      }
-    }
-
-    /* Centering adjustment when next to playlist bar (56px vs 44px = 12px diff / 2 = 6px offset) */
-    .fab-new-video.fab-centered-with-playlist {
-      bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px) + 6px);
     }
   `]
 })

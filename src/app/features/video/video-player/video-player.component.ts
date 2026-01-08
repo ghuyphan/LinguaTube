@@ -28,6 +28,7 @@ import {
   I18nService,
   GrammarService
 } from '../../../services';
+import { PlaylistService } from '../../playlist/playlist.service';
 import { Token, SubtitleCue, DictionaryEntry, GrammarPattern, GrammarMatch } from '../../../models';
 import {
   PlaybackSpeed,
@@ -65,11 +66,26 @@ export class VideoPlayerComponent implements OnDestroy {
   private dictionary = inject(DictionaryService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
+  private playlistService = inject(PlaylistService);
+
+  // Playlist navigation
+  hasPlaylist = computed(() => !!this.playlistService.currentPlaylist());
+  canPlayPrev = computed(() => {
+    if (!this.hasPlaylist()) return false;
+    return this.playlistService.currentIndex() > 0 || this.playlistService.isLooping();
+  });
+  canPlayNext = computed(() => {
+    const playlist = this.playlistService.currentPlaylist();
+    if (!playlist) return false;
+    return this.playlistService.currentIndex() < playlist.videos.length - 1 || this.playlistService.isLooping();
+  });
 
   // Outputs
   fullscreenWordClicked = output<{ token: Token; sentence: string }>();
   fullscreenChanged = output<boolean>();
   saveClicked = output<void>();
+  playlistNext = output<void>();
+  playlistPrev = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);

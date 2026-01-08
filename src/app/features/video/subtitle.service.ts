@@ -457,11 +457,14 @@ export class SubtitleService implements OnDestroy {
   /**
    * Update current cue based on video time (sticky subtitles)
    */
+  /**
+   * Update current cue based on video time (sticky subtitles)
+   */
   updateCurrentCue(currentTime: number): void {
     const subs = this.subtitles();
-
-    if (subs.length === 0) {
-      this.currentCueIndex.set(-1);
+    // CRITICAL: Don't update cue if we are switching videos (pending ID exists)
+    // or if the player is in an invalid state (time 0 usually means reset).
+    if (subs.length === 0 || this.youtube.pendingVideoId()) {
       return;
     }
 
@@ -469,11 +472,16 @@ export class SubtitleService implements OnDestroy {
     let index = this.findActiveCue(subs, currentTime);
 
     // Sticky: show last ended cue if no active one
+    // Added 0.2s tolerance to findStickyCue to prevent flickering at boundaries
     if (index === -1 && currentTime > 0) {
-      index = this.findStickyCue(subs, currentTime);
+      index = this.findStickyCue(subs, currentTime + 0.1);
     }
 
-    this.currentCueIndex.set(index);
+    // Only update if we found a valid index or if we genuinely want to clear it (index -1)
+    // AND we are not in a "transition" state where time might be 0 momentarily.
+    if (index !== -1 || currentTime > 0.5) {
+      this.currentCueIndex.set(index);
+    }
   }
 
   /**

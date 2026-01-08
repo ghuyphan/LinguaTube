@@ -91,12 +91,6 @@
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
     padding: var(--space-sm) var(--space-md);
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 }
 
 .subtitle-center-wrapper {
@@ -815,12 +809,6 @@ ruby rt {
     max-height: 11.25rem;
     overflow-y: auto;
     position: relative;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.subtitle-list::-webkit-scrollbar {
-    display: none;
 }
 
 .cue-item {
@@ -937,13 +925,7 @@ ruby rt {
     padding: var(--space-sm) var(--space-md);
     overflow-x: auto;
     overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     scroll-behavior: smooth;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 
     // Auto-scroll hint gradient on right edge when more content
     &.has-overflow {

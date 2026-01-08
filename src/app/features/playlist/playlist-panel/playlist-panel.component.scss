@@ -233,25 +233,6 @@
     overflow-y: auto;
     background: var(--bg-card);
     scroll-behavior: smooth;
-
-    // Custom scrollbar (matches global pattern)
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--text-muted);
-        border-radius: 4px;
-        border: 2px solid var(--bg-card);
-
-        &:hover {
-            background-color: var(--text-secondary);
-        }
-    }
 }
 
 .playlist-item {

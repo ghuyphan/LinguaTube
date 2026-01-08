@@ -181,16 +181,6 @@
     -webkit-overflow-scrolling: touch;
 }
 
-// Hide scrollbar on desktop modals
-.sheet.desktop-modal .sheet-content {
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // IE/Edge
-
-    &::-webkit-scrollbar {
-        display: none; // Chrome/Safari/Opera
-    }
-}
-
 // Safe area padding for mobile - minimal base padding, components add more as needed
 .sheet:not(.desktop-modal) .sheet-content {
     padding-bottom: env(safe-area-inset-bottom, 0px);

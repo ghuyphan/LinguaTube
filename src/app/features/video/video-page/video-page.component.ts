@@ -8,6 +8,7 @@ import { PlaylistPanelComponent } from '../../playlist/playlist-panel/playlist-p
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { CommandPaletteComponent } from '../../../shared/components/command-palette/command-palette.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService } from '../../../services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -31,15 +32,18 @@ import { Token } from '../../../models';
     ConfirmDialogComponent,
     IconComponent,
     BottomSheetComponent,
+    CommandPaletteComponent,
   ],
   template: `
     <div class="layout">
-      <div class="layout-main" [class.has-playlist-bar]="!!playlistService.currentPlaylist()">
+      <div class="layout-main" [class.has-video-bar]="!!youtube.currentVideo()">
         <app-video-player 
           (fullscreenWordClicked)="onWordClicked($event)" 
           (fullscreenChanged)="isVideoFullscreen.set($event)"
           (videoEnded)="onVideoEnded()"
           (saveClicked)="openAddToPlaylist()"
+          (playlistNext)="onPlaylistNext()"
+          (playlistPrev)="onPlaylistPrev()"
         />
 
         <app-subtitle-display 
@@ -62,36 +66,40 @@ import { Token } from '../../../models';
         }
       </aside>
 
-      <!-- Mobile Playlist Bar (Mini Player Style) -->
-    @if (playlistService.currentPlaylist(); as playlist) {
-      <div class="playlist-bar desktop-none" 
-           [class.animate-entry]="shouldAnimateEntry()"
-           (click)="showMobilePlaylistSheet.set(true)">
-        <div class="playlist-bar-content">
-          <!-- Thumbnail -->
-          <div class="playlist-thumb">
+      <!-- Unified Mobile Video Bar -->
+      <div class="mobile-video-bar desktop-none" 
+           [class.hidden]="!youtube.currentVideo() && !playlistService.currentPlaylist()"
+           [class.has-playlist]="!!playlistService.currentPlaylist()"
+           (click)="onMobileBarClick()">
+        
+        <!-- Playlist Thumbnail (only when in playlist) -->
+        @if (playlistService.currentPlaylist()) {
+          <div class="bar-thumb" [class.skeleton]="!playlistService.currentVideo()?.thumbnail">
             @if (playlistService.currentVideo()?.thumbnail; as thumb) {
-              <img [src]="thumb" alt="Thumbnail">
+              <img [src]="thumb" alt="">
             }
           </div>
+        }
 
-          <!-- Info -->
-          <div class="playlist-info">
-             <div class="playlist-meta">
-               {{ i18n.t('nav.playlists') }} • {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
-             </div>
-             <div class="playlist-title">
-               {{ playlistService.currentVideo()?.title || 'Unknown Title' }}
-             </div>
-          </div>
-
-          <!-- Icon -->
-          <div class="playlist-icon">
-            <app-icon name="chevron-up" [size]="20" />
-          </div>
+        <!-- Title & Meta Wrapper -->
+        <div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; overflow: hidden;">
+          @for (video of [playlistService.currentVideo() || youtube.currentVideo()]; track ($any(video)?.videoId || $any(video)?.id)) {
+            <div class="bar-title">{{ video?.title || '' }}</div>
+            
+            <!-- Playlist position indicator -->
+            @if (playlistService.currentPlaylist(); as playlist) {
+              <span class="bar-meta">{{ playlistService.currentIndex() + 1 }}/{{ playlist.videos.length }}</span>
+            }
+          }
         </div>
+        
+        <!-- Search button (circle) -->
+        <button class="bar-search-btn" 
+          (click)="openCommandPalette(); $event.stopPropagation()"
+          aria-label="Search new video">
+          <app-icon name="search" [size]="18" />
+        </button>
       </div>
-      }
     </div>
 
     <!-- Mobile Playlist Bottom Sheet -->
@@ -105,7 +113,7 @@ import { Token } from '../../../models';
       <app-playlist-panel 
         [isMobile]="true"
         (close)="showMobilePlaylistSheet.set(false); closePlaylist()" 
-        (videoSelect)="onPlaylistVideoSelect($event); showMobilePlaylistSheet.set(false)"
+        (videoSelect)="onPlaylistVideoSelect($event)"
       />
     </app-bottom-sheet>
     }
@@ -118,6 +126,12 @@ import { Token } from '../../../models';
             (closed)="showAddToPlaylistDialog.set(false)">
         </app-add-to-playlist-dialog>
     }
+
+    <!-- Command Palette -->
+    <app-command-palette
+      [isOpen]="showCommandPalette()"
+      (closed)="showCommandPalette.set(false)"
+    />
 
     <!-- Language Mismatch Alert -->
     @if (showLanguageMismatchDialog()) {
@@ -202,90 +216,187 @@ import { Token } from '../../../models';
       display: block;
     }
 
-      .layout-main.has-playlist-bar {
-         /* Padding when playlist bar is visible (side-by-side with FAB) */
-         padding-bottom: 120px;
+      .layout-main.has-video-bar {
+         /* Padding when video bar is visible */
+         padding-bottom: 72px;
       }
 
-      .playlist-bar {
+      /* ============================================
+         MOBILE VIDEO BAR - Pill Style
+         ============================================ */
+      .mobile-video-bar {
         display: none;
         position: fixed;
         left: var(--space-md);
-        right: calc(var(--space-md) + 44px + var(--space-sm)); /* Leave room for FAB */
-        bottom: calc(var(--bottom-nav-height) + var(--space-sm) + env(safe-area-inset-bottom, 0px)); /* Sits at same level as FAB */
-        height: 56px;
+        right: var(--space-md);
+        bottom: calc(var(--bottom-nav-height) + var(--space-xs));
+        height: 44px;
         background: var(--bg-card);
         border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-lg);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         z-index: var(--z-fixed);
         cursor: pointer;
         overflow: hidden;
+        /* Smooth Scale/position transitions */
+        transition: transform var(--transition-normal) cubic-bezier(0.2, 0.8, 0.2, 1), 
+                    background-color var(--transition-fast),
+                    opacity var(--transition-normal);
+        align-items: center;
+        padding: 0 var(--space-xs) 0 var(--space-xs);
+        gap: var(--space-xs);
+        
+        /* Entry Animation default state */
+        animation: barSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+      }
+
+      @keyframes barSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .mobile-video-bar:active {
+        transform: scale(0.98);
+        background-color: var(--bg-secondary);
+      }
+
+      .mobile-video-bar.hidden {
+        display: none !important;
+      }
+
+      /* Bar buttons */
+      .bar-btn {
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: var(--border-radius-round);
+        background: transparent;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+      }
+
+      .bar-btn:disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+
+      .bar-btn--primary {
+        background: var(--accent-primary);
+        color: white;
+      }
+
+      @media (hover: hover) {
+        .bar-btn:not(:disabled):hover {
+          background: var(--bg-secondary);
+        }
+        .bar-btn--primary:hover {
+          opacity: 0.9;
+          background: var(--accent-primary);
+        }
+      }
+
+      /* Playlist thumbnail */
+      .bar-thumb {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
         overflow: hidden;
-        /* Animation is now controlled by .animate-entry class */
-        transition: transform var(--transition-fast), background-color var(--transition-fast);
+        flex-shrink: 0;
+        background: var(--bg-secondary); /* Placeholder color always visible */
+        margin-left: -4px;
+        position: relative; /* Context for absolute img */
+      }
+      
+      .bar-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards; /* Smooth fade in when loaded */
       }
 
-      .playlist-bar.animate-entry {
-        animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      @keyframes fadeIn {
+        to { opacity: 1; }
       }
 
-    .playlist-bar:active {
-      transform: scale(0.98);
-      background-color: var(--bg-secondary);
-    }
+      .bar-thumb.skeleton {
+        background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+        background-size: 200% 100%;
+        animation: skeleton-shimmer 1.5s infinite;
+      }
 
-    .playlist-bar-content {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 var(--space-sm);
-      gap: var(--space-sm);
-    }
+      @keyframes skeleton-shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
 
-    .playlist-thumb {
-      width: 48px;
-      height: 36px;
-      border-radius: var(--border-radius-sm);
-      overflow: hidden;
-      flex-shrink: 0;
-      background: var(--bg-secondary);
-    }
-    
-    .playlist-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+      /* Bar title */
+      .bar-title {
+        font-size: 0.8125rem;
+        color: var(--text-primary);
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+        min-width: 0;
+        animation: textSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+      }
 
-    .playlist-info {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 2px;
-    }
+      .bar-meta {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        flex-shrink: 0;
+        animation: textSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+        /* Add a small staggering delay */
+        animation-delay: 0.05s;
+      }
+      
+      @keyframes textSlideUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
 
-    .playlist-meta {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
+      /* Circular search button */
+      .bar-search-btn {
+        width: 36px;
+        height: 36px;
+        min-height: 36px;
+        max-height: 36px;
+        border: none;
+        border-radius: 50%;
+        background: var(--accent-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        align-self: center;
+        cursor: pointer;
+        transition: transform var(--transition-fast), opacity var(--transition-fast);
+      }
 
-    .playlist-title {
-      font-size: 0.875rem;
-      color: var(--text-primary);
-      font-weight: 500;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+      .bar-search-btn:active {
+        transform: scale(0.92);
+      }
 
-    .playlist-icon {
-      color: var(--text-secondary);
-      padding: var(--space-xs);
-    }
+      @media (hover: hover) {
+        .bar-search-btn:hover {
+          opacity: 0.9;
+        }
+      }
 
     @keyframes slideUp {
         from { opacity: 0; transform: translateY(20px); }
@@ -312,8 +423,8 @@ import { Token } from '../../../models';
         display: block;
       }
 
-      .desktop-none { /* New class for playlist bar */
-        display: block;
+      .desktop-none {
+        display: flex;
       }
 
       .layout {
@@ -322,21 +433,16 @@ import { Token } from '../../../models';
       
       .layout-main {
         gap: var(--space-md);
-        /* Default padding for FAB */
-        padding-bottom: 100px;
+        padding-bottom: 16px;
       }
       
-      .layout-main.has-playlist-bar {
-         /* Padding when playlist bar is visible (side-by-side with FAB) */
-         padding-bottom: 120px;
+      .layout-main.has-video-bar {
+         /* Padding when video bar is visible */
+         padding-bottom: 72px;
       }
 
-      .fab-playlist {
-        display: none; /* Hide old FAB if it still exists in other contexts, but we replaced the class */
-      }
-      
-      .playlist-bar {
-        display: block;
+      .mobile-video-bar {
+        display: flex;
       }
     }
 
@@ -404,6 +510,18 @@ export class VideoPageComponent implements OnInit {
 
   // Mobile playlist sheet state
   showMobilePlaylistSheet = signal(false);
+  showCommandPalette = signal(false);
+
+  // Playlist navigation helpers
+  canPlayPrev = computed(() => {
+    if (!this.playlistService.currentPlaylist()) return false;
+    return this.playlistService.currentIndex() > 0 || this.playlistService.isLooping();
+  });
+  canPlayNext = computed(() => {
+    const playlist = this.playlistService.currentPlaylist();
+    if (!playlist) return false;
+    return this.playlistService.currentIndex() < playlist.videos.length - 1 || this.playlistService.isLooping();
+  });
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
@@ -507,10 +625,12 @@ export class VideoPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Only animate the playlist bar entry if it hasn't been shown yet in this session
+    // Only animate the video bar entry if it hasn't been shown yet in this session
     if (!this.playlistService.hasShownMobileBar) {
       this.shouldAnimateEntry.set(true);
       this.playlistService.hasShownMobileBar = true;
+      // Reset after animation completes to prevent re-animation on video changes
+      setTimeout(() => this.shouldAnimateEntry.set(false), 350);
     }
 
     if (isPlatformBrowser(this.platformId)) {
@@ -555,7 +675,7 @@ export class VideoPageComponent implements OnInit {
 
           // If coming from playlist, we might already have the video set, check ID
           if (!currentVideo || currentVideo.id !== videoId) {
-            this.youtube.currentVideo.set(null);
+            // this.youtube.currentVideo.set(null); // Removed to prevent UI flicker
             this.subtitles.clear();
             this.transcript.reset();
             this.lastLang = currentLang;
@@ -777,6 +897,14 @@ export class VideoPageComponent implements OnInit {
     // so we don't need to do anything here other than what the panel component already did (update service)
   }
 
+  onPlaylistNext(): void {
+    this.playlistService.playNext();
+  }
+
+  onPlaylistPrev(): void {
+    this.playlistService.playPrevious();
+  }
+
   onVideoEnded(): void {
     // Auto-advance playlist
     if (this.playlistService.currentPlaylist()) {
@@ -789,5 +917,20 @@ export class VideoPageComponent implements OnInit {
 
   openAddToPlaylist(): void {
     this.showAddToPlaylistDialog.set(true);
+  }
+
+  // Mobile video bar methods
+  onMobileBarClick(): void {
+    if (this.playlistService.currentPlaylist()) {
+      this.showMobilePlaylistSheet.set(true);
+    }
+  }
+
+  toggleShuffle(): void {
+    this.playlistService.toggleShuffle();
+  }
+
+  openCommandPalette(): void {
+    this.showCommandPalette.set(true);
   }
 }

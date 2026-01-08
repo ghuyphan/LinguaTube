@@ -45,17 +45,6 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: var(--space-md);
-
-    /* Hide scrollbar but keep scrolling */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-
-    /* IE/Edge */
-    &::-webkit-scrollbar {
-        display: none;
-        /* Chrome/Safari */
-    }
 }
 
 /* Animations */

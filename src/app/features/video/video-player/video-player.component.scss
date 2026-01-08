@@ -308,6 +308,67 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   pointer-events: auto;
 }
 
+/* Button group for prev/play/next */
+.center-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  pointer-events: auto;
+}
+
+/* Playlist navigation buttons */
+.center-nav-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: var(--border-radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  pointer-events: auto;
+
+  app-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Larger on desktop */
+@media (hover: hover) and (pointer: fine) {
+  .center-nav-btn {
+    width: 48px;
+    height: 48px;
+
+    app-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.center-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.center-nav-btn:not(:disabled):active {
+  transform: scale(0.92);
+}
+
+@media (hover: hover) {
+  .center-nav-btn:not(:disabled):hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+  }
+}
+
 .big-play-btn {
   width: $big-play-btn-size;
   height: $big-play-btn-size;
@@ -1144,12 +1205,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
   z-index: 100;
   animation: menuSlideUp 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 @keyframes menuSlideUp {
@@ -1331,21 +1386,6 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   overflow-y: auto;
   overflow-x: hidden;
   animation: subtitleFadeIn 0.2s ease-out;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-}
-
-.fs-subtitle-inner::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-.fs-subtitle-inner::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.fs-subtitle-inner::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
 }
 
 @keyframes subtitleFadeIn {

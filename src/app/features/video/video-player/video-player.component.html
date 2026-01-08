@@ -94,7 +94,7 @@
 
 
     <!-- Center Controls -->
-    <div class="center-controls">
+    <div class="center-controls" [class.has-playlist]="hasPlaylist()">
       <!-- Volume Feedback -->
       @if (volumeFeedback()) {
       <div class="center-feedback volume-feedback animate">
@@ -116,50 +116,128 @@
       </div>
       }
 
-      <!-- Big Play/Pause Button - Mobile -->
+      <!-- Playlist Navigation + Play Button Container - Mobile -->
       @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.isPlaying() ||
       youtube.isBuffering())) {
-      @if (youtube.isBuffering()) {
-      <button class="big-play-btn touch-only buffering" aria-label="Loading video"
-        (touchstart)="$event.stopPropagation()" (click)="$event.stopPropagation()" disabled>
-        <app-icon name="loader" [size]="44" aria-hidden="true" />
-      </button>
-      } @else if (!youtube.isPlaying()) {
-      <button class="big-play-btn touch-only" aria-label="Play video" (touchstart)="$event.stopPropagation()"
-        (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
-        <app-icon name="play" [size]="44" aria-hidden="true" />
-      </button>
-      } @else {
-      <button class="big-play-btn touch-only fade-in" aria-label="Pause video" (touchstart)="$event.stopPropagation()"
-        (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
-        <app-icon name="pause" [size]="44" aria-hidden="true" />
-      </button>
-      }
+      <div class="center-button-group touch-only">
+        <!-- Previous Button (Playlist only) -->
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
+          (click)="playlistPrev.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
+          aria-label="Previous video">
+          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
+        </button>
+        }
+
+        <!-- Big Play/Pause Button - Mobile -->
+        @if (youtube.isBuffering()) {
+        <button class="big-play-btn touch-only buffering" aria-label="Loading video"
+          (touchstart)="$event.stopPropagation()" (click)="$event.stopPropagation()" disabled>
+          <app-icon name="loader" [size]="44" aria-hidden="true" />
+        </button>
+        } @else if (!youtube.isPlaying()) {
+        <button class="big-play-btn touch-only" aria-label="Play video" (touchstart)="$event.stopPropagation()"
+          (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
+          <app-icon name="play" [size]="44" aria-hidden="true" />
+        </button>
+        } @else {
+        <button class="big-play-btn touch-only fade-in" aria-label="Pause video" (touchstart)="$event.stopPropagation()"
+          (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
+          <app-icon name="pause" [size]="44" aria-hidden="true" />
+        </button>
+        }
+
+        <!-- Next Button (Playlist only) -->
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayNext()"
+          (click)="playlistNext.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
+          aria-label="Next video">
+          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
+        </button>
+        }
+      </div>
       }
 
-      <!-- Big Play/Pause Button - Desktop -->
+      <!-- Big Play/Pause Button - Desktop (separate for hover logic) -->
       @if (youtube.isReady() && !youtube.isEnded()) {
-      @if (youtube.isBuffering()) {
-      <button class="big-play-btn hover-only buffering" aria-label="Loading video" disabled>
-        <app-icon name="loader" [size]="44" aria-hidden="true" />
-      </button>
-      } @else if (!youtube.isPlaying()) {
-      <button class="big-play-btn hover-only" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
-        <app-icon name="play" [size]="44" aria-hidden="true" />
-      </button>
-      } @else if (areControlsVisible()) {
-      <button class="big-play-btn hover-only fade-in" aria-label="Pause video" (click)="onPlayPauseButtonClick($event)">
-        <app-icon name="pause" [size]="44" aria-hidden="true" />
-      </button>
-      }
+      <div class="center-button-group hover-only">
+        @if (youtube.isBuffering()) {
+        <!-- Previous Button (Playlist only) -->
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
+          (click)="playlistPrev.emit(); $event.stopPropagation()" aria-label="Previous video">
+          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        <button class="big-play-btn buffering" aria-label="Loading video" disabled>
+          <app-icon name="loader" [size]="44" aria-hidden="true" />
+        </button>
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayNext()"
+          (click)="playlistNext.emit(); $event.stopPropagation()" aria-label="Next video">
+          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        } @else if (!youtube.isPlaying()) {
+        <!-- Previous Button (Playlist only) -->
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
+          (click)="playlistPrev.emit(); $event.stopPropagation()" aria-label="Previous video">
+          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        <button class="big-play-btn" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
+          <app-icon name="play" [size]="44" aria-hidden="true" />
+        </button>
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayNext()"
+          (click)="playlistNext.emit(); $event.stopPropagation()" aria-label="Next video">
+          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        } @else if (areControlsVisible()) {
+        <!-- Previous Button (Playlist only) -->
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
+          (click)="playlistPrev.emit(); $event.stopPropagation()" aria-label="Previous video">
+          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        <button class="big-play-btn fade-in" aria-label="Pause video" (click)="onPlayPauseButtonClick($event)">
+          <app-icon name="pause" [size]="44" aria-hidden="true" />
+        </button>
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayNext()"
+          (click)="playlistNext.emit(); $event.stopPropagation()" aria-label="Next video">
+          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        }
+      </div>
       }
 
       <!-- Replay Button -->
       @if (youtube.isEnded()) {
-      <button class="big-play-btn replay-btn" aria-label="Replay video" (touchstart)="$event.stopPropagation()"
-        (touchend)="onReplayClick($event)" (click)="onReplayClick($event)">
-        <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
-      </button>
+      <div class="center-button-group">
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
+          (click)="playlistPrev.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
+          aria-label="Previous video">
+          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
+        </button>
+        }
+        <button class="big-play-btn replay-btn" aria-label="Replay video" (touchstart)="$event.stopPropagation()"
+          (touchend)="onReplayClick($event)" (click)="onReplayClick($event)">
+          <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
+        </button>
+        @if (hasPlaylist()) {
+        <button class="center-nav-btn" [disabled]="!canPlayNext()"
+          (click)="playlistNext.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
+          aria-label="Next video">
+          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
+        </button>
+        }
+      </div>
       }
     </div>
 

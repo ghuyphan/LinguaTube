@@ -247,7 +247,64 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide scrollbars globally but allow scrolling */
+/* ============================================
+   GLOBAL OVERLAY SCROLLBAR
+   Thin, overlay-style scrollbars that don't affect layout
+   ============================================ */
+
+/* Firefox - thin overlay scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover,
+*:focus-within {
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+[data-theme="dark"] *:hover,
+[data-theme="dark"] *:focus-within {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* WebKit (Chrome, Safari, Edge) - overlay scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+/* Show scrollbar thumb on hover/scroll */
+*:hover::-webkit-scrollbar-thumb,
+*:focus-within::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] *:hover::-webkit-scrollbar-thumb,
+[data-theme="dark"] *:focus-within::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] *:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Hide scrollbar on html/body to avoid double scrollbars */
 html,
 body {
   scrollbar-width: none;
