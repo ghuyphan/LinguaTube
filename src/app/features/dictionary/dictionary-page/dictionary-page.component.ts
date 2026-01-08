@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { DictionaryPanelComponent } from '../dictionary-panel/dictionary-panel.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { VocabularyService, SettingsService, I18nService, DictionaryService } from '../../../services';
 
 @Component({
@@ -15,7 +17,10 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     RouterLink,
     DictionaryPanelComponent,
     VocabularyListComponent,
-    IconComponent
+    VocabularyListComponent,
+    IconComponent,
+    BottomSheetComponent,
+    ConfirmDialogComponent
   ],
   template: `
     <div class="layout">
@@ -79,8 +84,39 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
 
       <!-- Mobile: vocabulary list below dictionary -->
       <div class="vocab-section mobile-only">
-        <app-vocabulary-list />
+        <app-vocabulary-list 
+          (deleteRequest)="onVocabDeleteRequest($event)"
+          (menuRequest)="vocabMenuOpen.set(true)"
+        />
       </div>
+
+    <!-- Vocab Delete Confirmation -->
+    <app-confirm-dialog [isOpen]="vocabDeleteOpen()" [title]="i18n.t('vocab.deleteWord')"
+      [message]="i18n.t('vocab.deleteConfirm')" [confirmText]="i18n.t('vocab.delete')"
+      [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" (confirmed)="confirmVocabDelete()"
+      (cancelled)="vocabDeleteOpen.set(false)" />
+
+    <!-- Vocab Menu Sheet -->
+    <app-bottom-sheet [isOpen]="vocabMenuOpen()" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
+      <div class="menu-sheet">
+        <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
+        <div class="menu-sheet__options">
+          <button class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
+            <app-icon name="download" [size]="18" />
+            <span>{{ i18n.t('vocab.exportJson') }}</span>
+          </button>
+          <button class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
+            <app-icon name="download" [size]="18" />
+            <span>{{ i18n.t('vocab.exportAnki') }}</span>
+          </button>
+          <label class="menu-option">
+            <app-icon name="upload" [size]="18" />
+            <span>{{ i18n.t('vocab.import') }}</span>
+            <input type="file" accept=".json" class="hidden-input" (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
+          </label>
+        </div>
+      </div>
+    </app-bottom-sheet>
     </div>
   `,
   styles: [`
@@ -294,6 +330,54 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
         display: block;
       }
     }
+
+    /* Hidden file input for import */
+    .hidden-input {
+        display: none;
+    }
+
+    /* Menu Sheet Styles */
+    .menu-sheet {
+        padding: var(--space-md);
+    }
+
+    .menu-sheet__title {
+        font-size: var(--text-md);
+        font-weight: 600;
+        color: var(--text-primary);
+        text-align: center;
+        margin: 0 0 var(--space-md);
+    }
+
+    .menu-sheet__options {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    .menu-option {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        padding: var(--space-md);
+        background: transparent;
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: var(--text-base);
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: background var(--transition-fast);
+    }
+
+    @media (hover: hover) {
+        .menu-option:hover:not(:disabled) {
+            background: var(--bg-secondary);
+        }
+    }
+
+    .menu-option app-icon {
+        color: var(--text-secondary);
+    }
   `]
 })
 export class DictionaryPageComponent {
@@ -323,5 +407,63 @@ export class DictionaryPageComponent {
 
   clearAllRecentSearches(): void {
     this.dictionary.clearAllRecentSearches();
+  }
+
+  // Vocab State
+  vocabDeleteOpen = signal(false);
+  vocabDeleteId = signal<string | null>(null);
+  vocabMenuOpen = signal(false);
+
+  // Vocab Actions
+  onVocabDeleteRequest(id: string): void {
+    this.vocabDeleteId.set(id);
+    this.vocabDeleteOpen.set(true);
+  }
+
+  confirmVocabDelete(): void {
+    const id = this.vocabDeleteId();
+    if (id) {
+      this.vocab.deleteWord(id);
+    }
+    this.vocabDeleteOpen.set(false);
+    this.vocabDeleteId.set(null);
+  }
+
+  exportVocabJSON(): void {
+    const json = this.vocab.exportToJSON();
+    this.downloadFile(json, 'voca-vocabulary.json', 'application/json');
+  }
+
+  exportVocabAnki(): void {
+    const tsv = this.vocab.exportToAnki();
+    this.downloadFile(tsv, 'voca-anki.tsv', 'text/tab-separated-values');
+  }
+
+  importVocabJSON(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target?.result as string;
+      try {
+        this.vocab.importFromJSON(content);
+      } catch (err) {
+        console.error('Import failed', err);
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
+  }
+
+  private downloadFile(content: string, filename: string, type: string): void {
+    const blob = new Blob([content], { type });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
   }
 }

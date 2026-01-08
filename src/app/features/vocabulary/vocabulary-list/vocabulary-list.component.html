@@ -23,7 +23,7 @@
             <span>{{ levelFilter() === 'all' ? i18n.t('vocab.allLevels') : i18n.t('vocab.' + levelFilter()) }}</span>
             <app-icon name="chevron-down" [size]="14" />
         </button>
-        <button class="btn btn-icon btn-ghost menu-btn" (click)="menuOpen.set(true)">
+        <button class="btn btn-icon btn-ghost menu-btn" (click)="menuRequest.emit()">
             <app-icon name="more-vertical" [size]="18" />
         </button>
     </div>
@@ -116,11 +116,7 @@
     }
 </div>
 
-<!-- Delete Confirmation -->
-<app-confirm-dialog [isOpen]="deleteModalVisible()" [title]="i18n.t('vocab.deleteWord')"
-    [message]="i18n.t('vocab.deleteConfirm')" [confirmText]="i18n.t('vocab.delete')"
-    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" (confirmed)="confirmDelete()"
-    (cancelled)="cancelDelete()" />
+
 
 <!-- Toast Notification -->
 @if (toastMessage()) {
@@ -139,26 +135,3 @@
 <app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
     [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
     (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />
-
-<!-- Menu Sheet (Export/Import) -->
-<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" (closed)="menuOpen.set(false)">
-    <div class="menu-sheet">
-        <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
-        <div class="menu-sheet__options">
-            <button class="menu-option" (click)="exportJSON(); menuOpen.set(false)">
-                <app-icon name="download" [size]="18" />
-                <span>{{ i18n.t('vocab.exportJson') }}</span>
-            </button>
-            <button class="menu-option" (click)="exportAnki(); menuOpen.set(false)">
-                <app-icon name="download" [size]="18" />
-                <span>{{ i18n.t('vocab.exportAnki') }}</span>
-            </button>
-            <label class="menu-option">
-                <app-icon name="upload" [size]="18" />
-                <span>{{ i18n.t('vocab.import') }}</span>
-                <input type="file" accept=".json" class="hidden-input"
-                    (change)="importJSON($event); menuOpen.set(false)" />
-            </label>
-        </div>
-    </div>
-</app-bottom-sheet>

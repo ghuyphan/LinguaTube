@@ -1,10 +1,9 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
-import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
-import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
+
 import { VocabularyService, SettingsService, I18nService, SyncService, AuthService } from '../../../services';
 
 import { VocabularyItem, WordLevel } from '../../../models';
@@ -13,7 +12,7 @@ import { VocabularyItem, WordLevel } from '../../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent, ConfirmDialogComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -23,6 +22,10 @@ export class VocabularyListComponent {
   i18n = inject(I18nService);
   readonly sync = inject(SyncService);
   readonly auth = inject(AuthService);
+
+  // New Outputs to lift state up
+  deleteRequest = output<string>();
+  menuRequest = output<void>();
 
 
 
@@ -39,9 +42,6 @@ export class VocabularyListComponent {
   // Level picker state (for individual items)
   levelPickerOpen = signal(false);
   editingItemId = signal<string | null>(null);
-
-  // Menu sheet state (export/import)
-  menuOpen = signal(false);
 
   // Options for filter picker
   filterOptions = computed<OptionItem[]>(() => [
@@ -107,10 +107,6 @@ export class VocabularyListComponent {
   clearSearch(): void {
     this.searchQuery = '';
   }
-
-  // Delete modal state
-  deleteModalVisible = signal(false);
-  private pendingDeleteId: string | null = null;
 
   // Toast notification state
   toastMessage = signal<string | null>(null);
@@ -199,26 +195,10 @@ export class VocabularyListComponent {
   }
 
   deleteWord(id: string): void {
-    this.pendingDeleteId = id;
-    this.deleteModalVisible.set(true);
+    this.deleteRequest.emit(id);
   }
 
-
-  confirmDelete(): void {
-    if (this.pendingDeleteId) {
-      this.vocab.deleteWord(this.pendingDeleteId);
-      this.pendingDeleteId = null;
-    }
-    this.deleteModalVisible.set(false);
-  }
-
-
-  cancelDelete(): void {
-    this.pendingDeleteId = null;
-    this.deleteModalVisible.set(false);
-  }
-
-
+  // Export methods (called by parent via ViewChild or service)
   exportJSON(): void {
     const json = this.vocab.exportToJSON();
     this.downloadFile(json, 'voca-vocabulary.json', 'application/json');
