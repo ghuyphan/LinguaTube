@@ -12,6 +12,12 @@ export class VocabularyService {
     readonly vocabulary = signal<VocabularyItem[]>([]);
     private authService = inject(AuthService);
 
+    // Track when vocabulary was last modified for cache invalidation
+    readonly lastModified = computed(() => {
+        this.vocabulary();
+        return Date.now();
+    });
+
     // Debounce timer for localStorage writes
     private saveTimeout: ReturnType<typeof setTimeout> | null = null;
 

@@ -73,9 +73,10 @@ import { Token } from '../../../models';
            (click)="onMobileBarClick()">
         
         <!-- Playlist Thumbnail (only when in playlist) -->
-        @if (playlistService.currentPlaylist()) {
-          <div class="bar-thumb" [class.skeleton]="!playlistService.currentVideo()?.thumbnail">
-            @if (playlistService.currentVideo()?.thumbnail; as thumb) {
+        <!-- Thumbnail (Playlist or Single Video) -->
+        @if (playlistService.currentVideo() || youtube.currentVideo()) {
+          <div class="bar-thumb" [class.skeleton]="!(playlistService.currentVideo()?.thumbnail || youtube.currentVideo()?.thumbnail)">
+             @if ((playlistService.currentVideo()?.thumbnail || youtube.currentVideo()?.thumbnail); as thumb) {
               <img [src]="thumb" alt="">
             }
           </div>

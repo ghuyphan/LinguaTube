@@ -20,8 +20,8 @@
                     </span>
                     } @else {
                     <span class="subtitle-content" @subtitleFade>
-                        @for (token of currentTokens(); track $index) {@if (token.isPunctuation) {<span
-                            class="punctuation">{{ token.surface }}</span>} @else {<span class="word"
+                        @for (token of currentTokens(); track token.surface + '-' + $index) {@if (token.isPunctuation)
+                        {<span class="punctuation">{{ token.surface }}</span>} @else {<span class="word"
                             [class.word--new]="token.level === 'new'"
                             [class.word--learning]="token.level === 'learning'"
                             [class.word--known]="token.level === 'known'"

@@ -1,14 +1,14 @@
 import {
-    Component,
-    ChangeDetectionStrategy,
-    input,
-    output,
-    signal,
-    inject,
-    ElementRef,
-    viewChild,
-    effect,
-    PLATFORM_ID
+  Component,
+  ChangeDetectionStrategy,
+  input,
+  output,
+  signal,
+  inject,
+  ElementRef,
+  viewChild,
+  effect,
+  PLATFORM_ID
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,11 +17,11 @@ import { IconComponent } from '../icon/icon.component';
 import { I18nService } from '../../../services';
 
 @Component({
-    selector: 'app-command-palette',
-    standalone: true,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, FormsModule, IconComponent],
-    template: `
+  selector: 'app-command-palette',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, FormsModule, IconComponent],
+  template: `
     @if (isOpen()) {
     <div 
       class="palette-overlay" 
@@ -70,7 +70,7 @@ import { I18nService } from '../../../services';
     </div>
     }
   `,
-    styles: [`
+  styles: [`
     .palette-overlay {
       position: fixed;
       inset: 0;
@@ -103,23 +103,21 @@ import { I18nService } from '../../../services';
     }
 
     .palette__header {
-      padding: var(--space-md);
+      padding: 0;
     }
 
     .palette__input-wrapper {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
-      background: var(--bg-secondary);
-      border-radius: var(--border-radius);
+      gap: var(--space-md);
+      background: transparent;
       padding: 0 var(--space-md);
-      height: 52px;
-      border: 1px solid var(--border-color);
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      height: 60px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .palette__input-wrapper:focus-within {
-      border-color: var(--accent-primary);
+      /* No change on focus */
     }
 
     .palette__icon {
@@ -132,7 +130,7 @@ import { I18nService } from '../../../services';
       height: 100%;
       border: none;
       background: transparent;
-      font-size: 1rem;
+      font-size: 1.125rem;
       color: var(--text-primary);
       outline: none;
       padding: 0;
@@ -153,9 +151,12 @@ import { I18nService } from '../../../services';
       justify-content: center;
       width: 28px;
       height: 28px;
+      min-width: 28px;
+      min-height: 28px;
+      padding: 0;
       border: none;
       background: var(--bg-tertiary);
-      border-radius: var(--border-radius-round);
+      border-radius: 50%;
       color: var(--text-muted);
       cursor: pointer;
       transition: all var(--transition-fast);
@@ -264,86 +265,86 @@ import { I18nService } from '../../../services';
   `]
 })
 export class CommandPaletteComponent {
-    private platformId = inject(PLATFORM_ID);
-    private router = inject(Router);
-    i18n = inject(I18nService);
+  private platformId = inject(PLATFORM_ID);
+  private router = inject(Router);
+  i18n = inject(I18nService);
 
-    isOpen = input<boolean>(false);
-    closed = output<void>();
+  isOpen = input<boolean>(false);
+  closed = output<void>();
 
-    url = signal('');
-    error = signal('');
-    isClosing = signal(false);
+  url = signal('');
+  error = signal('');
+  isClosing = signal(false);
 
-    private urlInputRef = viewChild<ElementRef<HTMLInputElement>>('urlInput');
+  private urlInputRef = viewChild<ElementRef<HTMLInputElement>>('urlInput');
 
-    constructor() {
-        // Focus input when opened
-        effect(() => {
-            if (this.isOpen() && isPlatformBrowser(this.platformId)) {
-                // Small delay to ensure DOM is ready
-                setTimeout(() => {
-                    this.urlInputRef()?.nativeElement?.focus();
-                }, 50);
-            }
-        });
-    }
-
-    onBackdropClick(event: MouseEvent): void {
-        if (event.target === event.currentTarget) {
-            this.close();
-        }
-    }
-
-    close(): void {
-        this.isClosing.set(true);
+  constructor() {
+    // Focus input when opened
+    effect(() => {
+      if (this.isOpen() && isPlatformBrowser(this.platformId)) {
+        // Small delay to ensure DOM is ready
         setTimeout(() => {
-            this.isClosing.set(false);
-            this.url.set('');
-            this.error.set('');
-            this.closed.emit();
-        }, 150);
+          this.urlInputRef()?.nativeElement?.focus();
+        }, 50);
+      }
+    });
+  }
+
+  onBackdropClick(event: MouseEvent): void {
+    if (event.target === event.currentTarget) {
+      this.close();
+    }
+  }
+
+  close(): void {
+    this.isClosing.set(true);
+    setTimeout(() => {
+      this.isClosing.set(false);
+      this.url.set('');
+      this.error.set('');
+      this.closed.emit();
+    }, 150);
+  }
+
+  clearInput(): void {
+    this.url.set('');
+    this.error.set('');
+    this.urlInputRef()?.nativeElement?.focus();
+  }
+
+  submit(): void {
+    const urlValue = this.url().trim();
+    if (!urlValue) return;
+
+    const videoId = this.extractVideoId(urlValue);
+    if (!videoId) {
+      this.error.set(this.i18n.t('commandPalette.invalid'));
+      return;
     }
 
-    clearInput(): void {
-        this.url.set('');
-        this.error.set('');
-        this.urlInputRef()?.nativeElement?.focus();
+    // Navigate to video
+    this.router.navigate(['/video'], { queryParams: { id: videoId } });
+    this.close();
+  }
+
+  private extractVideoId(input: string): string | null {
+    // Handle direct video ID (11 characters)
+    if (/^[a-zA-Z0-9_-]{11}$/.test(input)) {
+      return input;
     }
 
-    submit(): void {
-        const urlValue = this.url().trim();
-        if (!urlValue) return;
+    // Handle various YouTube URL formats
+    const patterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/live\/([a-zA-Z0-9_-]{11})/
+    ];
 
-        const videoId = this.extractVideoId(urlValue);
-        if (!videoId) {
-            this.error.set(this.i18n.t('commandPalette.invalid'));
-            return;
-        }
-
-        // Navigate to video
-        this.router.navigate(['/video'], { queryParams: { id: videoId } });
-        this.close();
+    for (const pattern of patterns) {
+      const match = input.match(pattern);
+      if (match) return match[1];
     }
 
-    private extractVideoId(input: string): string | null {
-        // Handle direct video ID (11 characters)
-        if (/^[a-zA-Z0-9_-]{11}$/.test(input)) {
-            return input;
-        }
-
-        // Handle various YouTube URL formats
-        const patterns = [
-            /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,
-            /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
-            /youtube\.com\/live\/([a-zA-Z0-9_-]{11})/
-        ];
-
-        for (const pattern of patterns) {
-            const match = input.match(pattern);
-            if (match) return match[1];
-        }
-
-        return null;
-    }
+    return null;
+  }
 }
