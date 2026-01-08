@@ -218,9 +218,14 @@
     font-size: 0.875rem;
     color: var(--text-secondary);
     margin: 0;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .vocab-item__actions {
