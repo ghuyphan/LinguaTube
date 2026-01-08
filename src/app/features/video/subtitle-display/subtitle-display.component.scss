@@ -940,6 +940,19 @@ ruby rt {
     overflow-y: hidden;
     scroll-behavior: smooth;
 
+    /* ADD THESE 3 BLOCKS HERE ↓ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+
+    &::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
+    }
+
+    /* END OF ADDITION ↑ */
+
     &.has-overflow {
         mask-image: linear-gradient(to right, black 90%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);

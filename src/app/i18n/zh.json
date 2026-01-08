@@ -302,7 +302,8 @@
         "delete": "删除",
         "deleteConfirmTitle": "删除播放列表？",
         "deleteConfirmBody": "确定要删除此播放列表吗？此操作无法撤销。",
-        "saving": "保存中..."
+        "saving": "保存中...",
+        "loginForVisibility": "登录后可与他人分享播放列表"
     },
     "common": {
         "loading": "加载中...",

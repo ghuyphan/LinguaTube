@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { PlaylistService } from '../../../features/playlist/playlist.service';
+import { AuthService } from '../../../core/services';
 import { I18nService } from '../../../services';
 import { IconComponent } from '../icon/icon.component';
 import { Playlist } from '../../../models';
@@ -24,7 +25,11 @@ const LANGUAGES = [
 })
 export class CreatePlaylistDialogComponent {
     private playlistService = inject(PlaylistService);
+    private auth = inject(AuthService);
     i18n = inject(I18nService);
+
+    // Check if user is logged in (only logged in users can use unlisted/public)
+    isLoggedIn = this.auth.isLoggedIn;
 
     // Inputs
     isOpen = input<boolean>(false);
@@ -100,7 +105,8 @@ export class CreatePlaylistDialogComponent {
 
     private resetForm() {
         this.title.set('');
-        this.visibility.set('unlisted');
+        // Default to private for unauthenticated users, unlisted for logged-in users
+        this.visibility.set(this.auth.isLoggedIn() ? 'unlisted' : 'private');
         this.language.set('ja');
         this.isSubmitting.set(false);
     }

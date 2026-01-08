@@ -304,7 +304,8 @@
         "delete": "Xóa",
         "deleteConfirmTitle": "Xóa danh sách?",
         "deleteConfirmBody": "Bạn có chắc muốn xóa danh sách này không? Hành động này không thể hoàn tác.",
-        "saving": "Đang lưu..."
+        "saving": "Đang lưu...",
+        "loginForVisibility": "Đăng nhập để chia sẻ danh sách với người khác"
     },
     "common": {
         "loading": "Đang tải...",

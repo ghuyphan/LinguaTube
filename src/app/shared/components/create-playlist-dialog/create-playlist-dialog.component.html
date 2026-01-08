@@ -23,16 +23,20 @@
                         <span>{{ i18n.t('playlist.visibility.private') }}</span>
                     </button>
                     <button type="button" class="visibility-option" [class.selected]="visibility() === 'unlisted'"
-                        (click)="visibility.set('unlisted')">
+                        [disabled]="!isLoggedIn()" (click)="visibility.set('unlisted')">
                         <app-icon name="link" [size]="18" />
                         <span>{{ i18n.t('playlist.visibility.unlisted') }}</span>
                     </button>
                     <button type="button" class="visibility-option" [class.selected]="visibility() === 'published'"
-                        (click)="visibility.set('published')">
+                        [disabled]="!isLoggedIn()" (click)="visibility.set('published')">
                         <app-icon name="globe" [size]="18" />
                         <span>{{ i18n.t('playlist.visibility.public') }}</span>
                     </button>
                 </div>
+                @if (!isLoggedIn()) {
+                <p class="form-hint">{{ i18n.t('playlist.loginForVisibility') || 'Login to share playlists with others'
+                    }}</p>
+                }
             </div>
 
             <!-- Language -->
