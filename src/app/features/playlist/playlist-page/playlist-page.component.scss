@@ -162,6 +162,21 @@
 }
 
 // -------------------------
+// Filters
+// -------------------------
+.filter-chips {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding: 0 var(--space-md); // Add horizontal padding to align with header/content
+
+    .btn {
+        margin-left: auto;
+    }
+}
+
+// -------------------------
 // Content Area
 // -------------------------
 .panel-content {
