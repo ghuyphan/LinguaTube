@@ -60,6 +60,7 @@ import { Token } from '../../../models';
             [class.slide-in-right]="sidebarSwapping()"
             (close)="closePlaylist()" 
             (videoSelect)="onPlaylistVideoSelect($event)"
+            (openMenu)="onOpenPlaylistMenu($event)"
           />
         } @else {
           <app-vocabulary-list [class.slide-in-left]="sidebarSwapping()" />
@@ -117,6 +118,7 @@ import { Token } from '../../../models';
         [isMobile]="true"
         (close)="showMobilePlaylistSheet.set(false); closePlaylist()" 
         (videoSelect)="onPlaylistVideoSelect($event)"
+        (openMenu)="onOpenPlaylistMenu($event)"
       />
     </app-bottom-sheet>
     }
@@ -158,6 +160,30 @@ import { Token } from '../../../models';
         [currentSentence]="currentSentence()"
         (closed)="onWordPopupClosed()"
       />
+    }
+
+    <!-- Playlist Video Options Menu -->
+    @if (playlistService.currentPlaylist(); as playlist) {
+    <app-bottom-sheet [isOpen]="videoMenuOpen()" [showCloseButton]="true" (closed)="videoMenuOpen.set(false)">
+        <div class="menu-sheet">
+            <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
+            <div class="menu-sheet__options">
+                <button class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoUp()">
+                    <app-icon name="chevron-up" [size]="18"></app-icon>
+                    <span>{{ i18n.t('playlist.moveUp') }}</span>
+                </button>
+                <button class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
+                    (click)="moveVideoDown()">
+                    <app-icon name="chevron-down" [size]="18"></app-icon>
+                    <span>{{ i18n.t('playlist.moveDown') }}</span>
+                </button>
+                <button class="menu-option menu-option--danger" (click)="removeVideo()">
+                    <app-icon name="trash-2" [size]="18"></app-icon>
+                    <span>{{ i18n.t('playlist.removeFromPlaylist') }}</span>
+                </button>
+            </div>
+        </div>
+    </app-bottom-sheet>
     }
   `,
   styles: [`
@@ -494,6 +520,62 @@ import { Token } from '../../../models';
         transform: translateX(0);
       }
     }
+
+    /* Menu Sheet Styles */
+    .menu-sheet {
+        padding: var(--space-md);
+    }
+
+    .menu-sheet__title {
+        font-size: var(--text-md);
+        font-weight: 600;
+        color: var(--text-primary);
+        text-align: center;
+        margin: 0 0 var(--space-md);
+    }
+
+    .menu-sheet__options {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    .menu-option {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        padding: var(--space-md);
+        background: transparent;
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: var(--text-base);
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: background var(--transition-fast);
+    }
+
+    @media (hover: hover) {
+        .menu-option:hover:not(:disabled) {
+            background: var(--bg-secondary);
+        }
+    }
+
+    .menu-option app-icon {
+        color: var(--text-secondary);
+    }
+
+    .menu-option:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    .menu-option--danger {
+        color: var(--error);
+    }
+
+    .menu-option--danger app-icon {
+        color: var(--error);
+    }
   `]
 })
 export class VideoPageComponent implements OnInit {
@@ -537,6 +619,11 @@ export class VideoPageComponent implements OnInit {
   // Language Mismatch Alert
   readonly showLanguageMismatchDialog = signal(false);
   private mismatchDetectedLang = signal<string | null>(null);
+
+  // Playlist Video Menu State
+  videoMenuOpen = signal(false);
+  menuVideoIndex = signal(-1);
+  menuVideoId = signal('');
 
   readonly languageMismatchMessage = computed(() => {
     const requested = this.settings.settings().language;
@@ -797,6 +884,46 @@ export class VideoPageComponent implements OnInit {
           error: (err) => console.error('[VideoPage] Manual AI error:', err)
         });
     }
+  }
+
+  // Playlist Menu Actions
+  onOpenPlaylistMenu(event: { videoId: string, index: number, event: Event }): void {
+    this.menuVideoId.set(event.videoId);
+    this.menuVideoIndex.set(event.index);
+    this.videoMenuOpen.set(true);
+  }
+
+  async moveVideoUp(): Promise<void> {
+    const playlist = this.playlistService.currentPlaylist();
+    const index = this.menuVideoIndex();
+    if (!playlist || index <= 0) return;
+
+    const videoIds = [...playlist.videoIds];
+    [videoIds[index - 1], videoIds[index]] = [videoIds[index], videoIds[index - 1]];
+
+    await this.playlistService.reorderVideos(playlist.id, videoIds);
+    this.videoMenuOpen.set(false);
+  }
+
+  async moveVideoDown(): Promise<void> {
+    const playlist = this.playlistService.currentPlaylist();
+    const index = this.menuVideoIndex();
+    if (!playlist || index >= playlist.videos.length - 1) return;
+
+    const videoIds = [...playlist.videoIds];
+    [videoIds[index], videoIds[index + 1]] = [videoIds[index + 1], videoIds[index]];
+
+    await this.playlistService.reorderVideos(playlist.id, videoIds);
+    this.videoMenuOpen.set(false);
+  }
+
+  async removeVideo(): Promise<void> {
+    const playlist = this.playlistService.currentPlaylist();
+    const videoId = this.menuVideoId();
+    if (!playlist || !videoId) return;
+
+    await this.playlistService.removeVideo(playlist.id, videoId);
+    this.videoMenuOpen.set(false);
   }
 
   private fetchCaptions(videoId: string): void {

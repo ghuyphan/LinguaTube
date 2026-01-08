@@ -105,25 +105,4 @@
     </div>
 </div>
 
-<!-- Video Options Menu -->
-<app-bottom-sheet [isOpen]="menuOpen()" [showCloseButton]="true" (closed)="menuOpen.set(false)">
-    <div class="menu-sheet">
-        <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
-        <div class="menu-sheet__options">
-            <button class="menu-option" [disabled]="selectedVideoIndex() === 0" (click)="moveVideoUp()">
-                <app-icon name="chevron-up" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.moveUp') }}</span>
-            </button>
-            <button class="menu-option" [disabled]="selectedVideoIndex() >= playlist.videos.length - 1"
-                (click)="moveVideoDown()">
-                <app-icon name="chevron-down" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.moveDown') }}</span>
-            </button>
-            <button class="menu-option menu-option--danger" (click)="removeVideo()">
-                <app-icon name="trash-2" [size]="18"></app-icon>
-                <span>{{ i18n.t('playlist.removeFromPlaylist') }}</span>
-            </button>
-        </div>
-    </div>
-</app-bottom-sheet>
 }

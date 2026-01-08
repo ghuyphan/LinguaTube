@@ -2,13 +2,12 @@ import { Component, ChangeDetectionStrategy, inject, output, signal, effect, inp
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { I18nService } from '../../../services';
 
 @Component({
     selector: 'app-playlist-panel',
     standalone: true,
-    imports: [CommonModule, IconComponent, BottomSheetComponent],
+    imports: [CommonModule, IconComponent],
     templateUrl: './playlist-panel.component.html',
     styleUrls: ['./playlist-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -24,14 +23,10 @@ export class PlaylistPanelComponent implements AfterViewInit {
     isMobile = input<boolean>(false);
     close = output<void>();
     videoSelect = output<string>();
+    openMenu = output<{ videoId: string, index: number, event: Event }>();
 
     // ViewChildren for scroll management
     @ViewChildren('playlistItem') playlistItems!: QueryList<ElementRef<HTMLDivElement>>;
-
-    // Menu state
-    menuOpen = signal(false);
-    selectedVideoIndex = signal<number>(-1);
-    selectedVideoId = signal<string>('');
 
     private scrollPending = false;
 
@@ -84,41 +79,6 @@ export class PlaylistPanelComponent implements AfterViewInit {
 
     openVideoMenu(index: number, videoId: string, event: Event): void {
         event.stopPropagation();
-        this.selectedVideoIndex.set(index);
-        this.selectedVideoId.set(videoId);
-        this.menuOpen.set(true);
-    }
-
-    async moveVideoUp(): Promise<void> {
-        const playlist = this._playlistService.currentPlaylist();
-        const index = this.selectedVideoIndex();
-        if (!playlist || index <= 0) return;
-
-        const videoIds = [...playlist.videoIds];
-        [videoIds[index - 1], videoIds[index]] = [videoIds[index], videoIds[index - 1]];
-
-        await this._playlistService.reorderVideos(playlist.id, videoIds);
-        this.menuOpen.set(false);
-    }
-
-    async moveVideoDown(): Promise<void> {
-        const playlist = this._playlistService.currentPlaylist();
-        const index = this.selectedVideoIndex();
-        if (!playlist || index >= playlist.videos.length - 1) return;
-
-        const videoIds = [...playlist.videoIds];
-        [videoIds[index], videoIds[index + 1]] = [videoIds[index + 1], videoIds[index]];
-
-        await this._playlistService.reorderVideos(playlist.id, videoIds);
-        this.menuOpen.set(false);
-    }
-
-    async removeVideo(): Promise<void> {
-        const playlist = this._playlistService.currentPlaylist();
-        const videoId = this.selectedVideoId();
-        if (!playlist || !videoId) return;
-
-        await this._playlistService.removeVideo(playlist.id, videoId);
-        this.menuOpen.set(false);
+        this.openMenu.emit({ videoId, index, event });
     }
 }
