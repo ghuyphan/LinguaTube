@@ -162,21 +162,27 @@
    ============================================ */
 
 [data-theme="dark"] {
-  --bg-primary: #09090B;
-  --bg-secondary: #18181B;
-  --bg-tertiary: #27272A;
-  --bg-card: #1C1C1F;
+  /* Subtle purple tint - blended approach (Option C) */
+  --bg-primary: #121016;
+  /* Very deep, subtle purple-black */
+  --bg-secondary: #1C1A21;
+  /* Subtle warmth */
+  --bg-tertiary: #26242C;
+  --bg-card: #1F1D24;
+  /* Dark card with hint of purple */
 
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: #33303A;
 
-  --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-muted: #71717A;
+  --text-primary: #F5F3FF;
+  /* Nearly white with tiny cool tint */
+  --text-secondary: #B8B5C2;
+  /* Neutral-warm gray */
+  --text-muted: #7D7888;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.8);
 
   /* Word levels - darker for dark mode */
   --word-new: rgba(220, 38, 38, 0.15);
