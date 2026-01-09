@@ -165,6 +165,12 @@
         transform 0.25s ease;
 }
 
+.header-single.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+}
+
 /* Action buttons container (search + add) on right */
 .single-actions {
     display: flex;

@@ -20,8 +20,7 @@
             <!-- ========================================
                  SINGLE VIDEO MODE: Thumb + Title + Search + Add
                  ======================================== -->
-            @if (!playlist()) {
-            <div class="header-single">
+            <div class="header-single" [class.hidden]="playlist()">
                 <!-- Thumbnail -->
                 <div class="bar-thumb-container">
                     @if (currentVideo(); as video) {
@@ -55,14 +54,12 @@
                     </button>
                 </div>
             </div>
-            }
 
             <!-- ========================================
                  PLAYLIST MODE (Collapsed): Thumb + Title + Nav
                  ======================================== -->
-            @if (playlist()) {
-            <div class="header-collapsed" [class.hidden]="isExpanded()" [class.transitioning]="isTransitioning()"
-                (click)="toggleExpand()">
+            <div class="header-collapsed" [class.hidden]="!playlist() || isExpanded()"
+                [class.transitioning]="isTransitioning()" (click)="toggleExpand()">
                 <!-- Thumbnail -->
                 <div class="bar-thumb-container">
                     @if (currentVideo(); as video) {
@@ -80,7 +77,9 @@
                 <div class="bar-info">
                     @if (currentVideo(); as video) {
                     <div class="bar-title">{{ video.title }}</div>
+                    @if (playlist()) {
                     <div class="bar-meta">{{ currentIndex() + 1 }} / {{ playlist()!.videos.length }}</div>
+                    }
                     } @else {
                     <div class="skeleton skeleton-text" style="width: 120px; margin-bottom: 4px;"></div>
                     <div class="skeleton skeleton-text" style="width: 40px; height: 10px; margin-bottom: 0;"></div>
@@ -88,7 +87,6 @@
                 </div>
 
                 <!-- Action Buttons (Search + Nav + Expand) -->
-                <!-- Action Buttons (Search + Expand) -->
                 <div class="action-buttons">
                     <!-- Search Button -->
                     <button class="nav-btn" (click)="onSearchClick($event)" aria-label="Search videos">
@@ -110,18 +108,19 @@
             <!-- ========================================
                  PLAYLIST MODE (Expanded): Playlist Header
                  ======================================== -->
-            <div class="header-expanded" [class.hidden]="!isExpanded()" (click)="toggleExpand()">
+            <div class="header-expanded" [class.hidden]="!playlist() || !isExpanded()" (click)="toggleExpand()">
+                @if (playlist(); as pl) {
                 <div class="playlist-info">
-                    <div class="playlist-title">{{ playlist()!.title }}</div>
-                    <div class="playlist-meta">{{ playlist()!.videos.length }} videos</div>
+                    <div class="playlist-title">{{ pl.title }}</div>
+                    <div class="playlist-meta">{{ pl.videos.length }} videos</div>
                 </div>
+                }
 
                 <!-- Collapse Button -->
                 <button class="bar-action-btn" (click)="onActionClick($event)">
                     <app-icon name="chevron-down" [size]="20" />
                 </button>
             </div>
-            }
 
         </div>
 

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef, HostListener } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -104,7 +104,7 @@ import { Token } from '../../../models';
     <!-- Command Palette -->
     <app-command-palette
       [isOpen]="showCommandPalette()"
-      (closed)="showCommandPalette.set(false)"
+      (closed)="onCommandPaletteClosed()"
     />
 
     <!-- Language Mismatch Alert -->
@@ -955,6 +955,30 @@ export class VideoPageComponent implements OnInit {
   }
 
   openCommandPalette(): void {
+    if (isPlatformBrowser(this.platformId) && !this.showCommandPalette()) {
+      // Push history state when opening
+      history.pushState({ commandPalette: true }, '');
+    }
     this.showCommandPalette.set(true);
+  }
+
+  onCommandPaletteClosed(): void {
+    // Called when palette emits 'closed' (manual close)
+    this.showCommandPalette.set(false);
+
+    // Revert history state if we initiated it
+    if (isPlatformBrowser(this.platformId)) {
+      history.back();
+    }
+  }
+
+  // Listen for back button/gesture
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event: PopStateEvent) {
+    if (this.showCommandPalette()) {
+      // Palette is open and user pressed back -> close it
+      // Don't call history.back() here because popstate means we already went back!
+      this.showCommandPalette.set(false);
+    }
   }
 }
