@@ -42,6 +42,7 @@ export class PlaylistPageComponent {
     menuOpen = signal(false);
     deleteConfirmationOpen = signal(false);
     selectedPlaylist = signal<Playlist | null>(null);
+    toastMessage = signal('');
 
     // Language Filter
     languageFilter = signal<'all' | PlaylistLanguage>('all');
@@ -110,6 +111,18 @@ export class PlaylistPageComponent {
 
     closeMenu(): void {
         this.menuOpen.set(false);
+    }
+
+    async onSharePlaylist(): Promise<void> {
+        const p = this.selectedPlaylist();
+        this.closeMenu();
+        if (p) {
+            const success = await this.playlistService.copyShareLink(p.id);
+            if (success) {
+                this.toastMessage.set(this.i18n.t('playlist.linkCopied') || 'Link copied!');
+                setTimeout(() => this.toastMessage.set(''), 3000);
+            }
+        }
     }
 
     onEditPlaylist(): void {

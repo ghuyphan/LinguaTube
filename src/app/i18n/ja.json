@@ -307,6 +307,8 @@
         "saving": "保存中...",
         "allLanguages": "すべて",
         "filterByLanguage": "言語で絞り込む",
+        "copyLink": "リンクをコピー",
+        "linkCopied": "リンクがコピーされました!",
         "loginForVisibility": "ログインしてプレイリストを共有"
     },
     "common": {

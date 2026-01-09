@@ -309,6 +309,8 @@
         "saving": "Đang lưu...",
         "allLanguages": "Tất cả",
         "filterByLanguage": "Lọc theo ngôn ngữ",
+        "copyLink": "Sao chép liên kết",
+        "linkCopied": "Đã sao chép liên kết!",
         "loginForVisibility": "Đăng nhập để chia sẻ danh sách với người khác"
     },
     "common": {

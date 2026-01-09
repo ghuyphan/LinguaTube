@@ -307,6 +307,8 @@
         "saving": "저장 중...",
         "allLanguages": "전체",
         "filterByLanguage": "언어별 필터",
+        "copyLink": "링크 복사",
+        "linkCopied": "링크가 복사되었습니다!",
         "loginForVisibility": "로그인하여 재생목록을 공유하세요"
     },
     "common": {

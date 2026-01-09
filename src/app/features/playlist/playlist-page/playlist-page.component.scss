@@ -365,8 +365,10 @@
     }
 }
 
-.playlist-card:hover .menu-btn {
-    opacity: 1;
+@media (hover: hover) {
+    .playlist-card:hover .menu-btn {
+        opacity: 1;
+    }
 }
 
 // Touch devices: always show menu button

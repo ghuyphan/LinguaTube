@@ -153,6 +153,12 @@
         </div>
 
         <div class="menu-items">
+            @if (p.visibility !== 'private') {
+            <button class="menu-item" (click)="onSharePlaylist()">
+                <app-icon name="link" [size]="20"></app-icon>
+                <span>{{ i18n.t('playlist.copyLink') || 'Copy Link' }}</span>
+            </button>
+            }
             <button class="menu-item" (click)="onEditPlaylist()">
                 <app-icon name="settings" [size]="20"></app-icon>
                 <span>{{ i18n.t('playlist.edit') }}</span>
@@ -165,6 +171,14 @@
         }
     </div>
 </app-bottom-sheet>
+
+<!-- Toast -->
+@if (toastMessage()) {
+<div class="toast toast--success">
+    <app-icon name="check" [size]="16"></app-icon>
+    <span>{{ toastMessage() }}</span>
+</div>
+}
 
 <!-- Delete Confirmation -->
 <app-bottom-sheet [isOpen]="deleteConfirmationOpen()" [allowBackdropClose]="true" [showCloseButton]="true"

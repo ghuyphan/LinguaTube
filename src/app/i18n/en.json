@@ -309,6 +309,8 @@
         "saving": "Saving...",
         "allLanguages": "All",
         "filterByLanguage": "Filter by Language",
+        "copyLink": "Copy Link",
+        "linkCopied": "Link copied!",
         "loginForVisibility": "Login to share playlists with others"
     },
     "common": {
