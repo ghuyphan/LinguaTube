@@ -319,7 +319,7 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
 
 /* Playlist navigation buttons */
 .center-nav-btn {
-  width: 36px;
+  // width: 36px;
   height: 36px;
   background: rgba(0, 0, 0, 0.6);
   border: none;
@@ -333,6 +333,14 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   pointer-events: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  min-width: 36px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
 
   app-icon {
     width: 18px;
