@@ -178,6 +178,46 @@
     }
 }
 
+// Language filter chip - circle button
+.filter-chip--circle {
+    // Override all conflicting styles from global .filter-chip
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    aspect-ratio: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    // Entrance animation
+    animation: langFilterAppear 0.3s ease-out;
+}
+
+@keyframes langFilterAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lang-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
 // -------------------------
 // Content Area
 // -------------------------

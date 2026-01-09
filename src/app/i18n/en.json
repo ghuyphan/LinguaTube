@@ -99,7 +99,9 @@
         "transcriptAvailableIn": "This video has {language} captions available",
         "switchTo": "Switch to {language}",
         "orUseAI": "Or use AI",
-        "dualSubs": "Dual Subtitles"
+        "dualSubs": "Dual Subtitles",
+        "aiCredits": "AI Credits",
+        "ready": "Ready"
     },
     "vocab": {
         "title": "Vocabulary",
@@ -305,6 +307,8 @@
         "deleteConfirmTitle": "Delete Playlist?",
         "deleteConfirmBody": "Are you sure you want to delete this playlist? This action cannot be undone.",
         "saving": "Saving...",
+        "allLanguages": "All",
+        "filterByLanguage": "Filter by Language",
         "loginForVisibility": "Login to share playlists with others"
     },
     "common": {

@@ -27,6 +27,16 @@
                     <app-icon name="globe" [size]="14" />
                     <span class="chip-text">{{ i18n.t('playlist.community') }}</span>
                 </button>
+                @if (view() === 'community') {
+                <button class="filter-chip filter-chip--circle" (click)="showLanguageFilter.set(true)"
+                    title="Filter by language">
+                    @if (languageFilter() !== 'all') {
+                    <img [src]="getFlagUrl(languageFilter())" class="lang-flag" alt="" />
+                    } @else {
+                    <app-icon name="languages" [size]="16" />
+                    }
+                </button>
+                }
                 <button class="btn btn-sm btn-primary" (click)="showCreateDialog.set(true)">
                     <app-icon name="plus" [size]="14" />
                     <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
@@ -75,15 +85,12 @@
                         <div class="card-content">
                             <h3 class="card-title">{{ playlist.title }}</h3>
                             <div class="card-meta">
+                                <img [src]="getFlagUrl(playlist.language)" class="lang-flag" alt="" />
                                 @if (view() === 'my') {
                                 <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'"
                                     [size]="12"></app-icon>
                                 <span>{{ playlist.visibility | titlecase }}</span>
-                                <span>•</span>
-                                <span>{{ playlist.updatedAt | date:'mediumDate' }}</span>
                                 } @else {
-                                <span>{{ getCreatorLabel(playlist.userId) }}</span>
-                                <span>•</span>
                                 <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
                                 }
                             </div>
@@ -180,3 +187,8 @@
         </div>
     </div>
 </app-bottom-sheet>
+
+<!-- Language Filter Picker -->
+<app-option-picker [options]="languageFilterOptions" [value]="languageFilter()" [isOpen]="showLanguageFilter()"
+    [title]="i18n.t('playlist.filterByLanguage') || 'Filter by Language'" (selected)="onLanguageFilterChange($event)"
+    (closed)="showLanguageFilter.set(false)" />

@@ -98,15 +98,8 @@
         </div>
 
         <!-- Diamond Credits Card -->
-        <div class="diamond-card" [attr.title]="i18n.t('subtitle.diamondsRegenerate')">
-            <div class="diamond-icon-wrapper">
-                <app-icon name="diamond" [size]="18" class="diamond-icon" />
-            </div>
-            <div class="diamond-info">
-                <span class="diamond-count">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
-                <span class="diamond-label">AI Credits</span>
-            </div>
-        </div>
+        <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+            [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" />
     </div>
     }
 
@@ -118,6 +111,9 @@
             <app-icon name="fire" [size]="18" />
             <span class="collapsed-streak-count">{{ streak.currentStreak() }}</span>
         </div>
+        <!-- Collapsed Diamond Indicator -->
+        <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+            [nextRegenAt]="transcript.nextRegenAt()" variant="collapsed" [showLabel]="false" />
         }
 
         @if (!auth.isInitialized()) {

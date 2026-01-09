@@ -99,7 +99,9 @@
         "transcriptAvailableIn": "Video này có phụ đề {language}",
         "switchTo": "Chuyển sang {language}",
         "orUseAI": "Hoặc dùng AI",
-        "dualSubs": "Phụ đề đôi"
+        "dualSubs": "Phụ đề đôi",
+        "aiCredits": "Điểm AI",
+        "ready": "Sẵn sàng"
     },
     "vocab": {
         "title": "Từ vựng",
@@ -305,6 +307,8 @@
         "deleteConfirmTitle": "Xóa danh sách?",
         "deleteConfirmBody": "Bạn có chắc muốn xóa danh sách này không? Hành động này không thể hoàn tác.",
         "saving": "Đang lưu...",
+        "allLanguages": "Tất cả",
+        "filterByLanguage": "Lọc theo ngôn ngữ",
         "loginForVisibility": "Đăng nhập để chia sẻ danh sách với người khác"
     },
     "common": {

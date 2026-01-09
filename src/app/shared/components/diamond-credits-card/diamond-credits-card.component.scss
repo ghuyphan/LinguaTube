@@ -1,0 +1,208 @@
+/* Diamond color palette */
+$diamond-color: #60a5fa;
+$diamond-color-light: rgba(96, 165, 250, 0.15);
+$diamond-color-glow: rgba(96, 165, 250, 0.3);
+$depleted-color: #f59e0b;
+$depleted-color-light: rgba(245, 158, 11, 0.15);
+
+/* Base container */
+.diamond-credits {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all var(--transition-fast);
+}
+
+/* ============================================
+   VARIANT: CARD (Full display)
+   ============================================ */
+.variant--card {
+    padding: var(--space-sm) var(--space-md);
+    margin-top: var(--space-sm);
+    background: var(--bg-surface, var(--bg-secondary));
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+
+    &.is-full {
+        background: linear-gradient(135deg, $diamond-color-light 0%, rgba(59, 130, 246, 0.08) 100%);
+        border-color: rgba(96, 165, 250, 0.2);
+    }
+
+    &.is-depleted {
+        background: linear-gradient(135deg, $depleted-color-light 0%, rgba(245, 158, 11, 0.08) 100%);
+        border-color: rgba(245, 158, 11, 0.2);
+
+        .diamond-gem {
+            color: var(--text-muted);
+        }
+
+        .diamond-timer {
+            color: $depleted-color;
+            font-weight: 600;
+        }
+    }
+}
+
+/* Diamond icons container */
+.diamond-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.diamond-gem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    opacity: 0.4;
+    transition: all var(--transition-fast);
+
+    &.filled {
+        color: $diamond-color;
+        opacity: 1;
+        animation: diamond-pulse 2s ease-in-out infinite;
+    }
+}
+
+/* Info section */
+.diamond-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+}
+
+.diamond-label {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.diamond-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+
+    app-icon {
+        opacity: 0.7;
+    }
+}
+
+.diamond-status {
+    font-size: 0.75rem;
+    color: $diamond-color;
+    font-weight: 600;
+}
+
+/* ============================================
+   VARIANT: COMPACT (Smaller card)
+   ============================================ */
+.variant--compact {
+    padding: var(--space-xs) var(--space-sm);
+    background: $diamond-color-light;
+    border-radius: var(--border-radius-sm);
+
+    .diamond-icons {
+        gap: 0.125rem;
+    }
+
+    &.is-depleted {
+        background: $depleted-color-light;
+    }
+}
+
+.compact-timer {
+    font-size: 0.625rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ============================================
+   VARIANT: INLINE (For buttons)
+   ============================================ */
+.variant--inline {
+    display: inline-flex;
+    gap: 0;
+}
+
+.inline-count {
+    font-size: inherit;
+    color: inherit;
+    opacity: 0.8;
+}
+
+/* ============================================
+   VARIANT: COLLAPSED (Sidebar collapsed)
+   ============================================ */
+.variant--collapsed {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.5rem 0;
+    color: $diamond-color;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--bg-hover);
+    }
+
+    &.is-depleted {
+        color: $depleted-color;
+    }
+
+    .collapsed-icon {
+        opacity: 0.9;
+    }
+
+    .collapsed-count {
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes diamond-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 transparent);
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 4px $diamond-color-glow);
+    }
+}
+
+@keyframes diamond-shimmer {
+    0% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 8px $diamond-color);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 transparent);
+    }
+}
+
+/* Regeneration animation class (applied programmatically) */
+.diamond-gem.regenerating {
+    animation: diamond-shimmer 0.6s ease-out forwards;
+}

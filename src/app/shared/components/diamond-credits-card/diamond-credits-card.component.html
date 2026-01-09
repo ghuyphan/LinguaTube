@@ -1,0 +1,47 @@
+<div class="diamond-credits" [class]="'variant--' + variant" [class.is-depleted]="isDepleted()"
+    [class.is-full]="isFull()">
+
+    <!-- Diamond Icons (for card/compact variants) -->
+    @if (variant === 'card' || variant === 'compact') {
+    <div class="diamond-icons">
+        @for (i of diamondArray(); track i) {
+        <span class="diamond-gem" [class.filled]="i < diamonds">
+            <app-icon name="diamond" [size]="variant === 'compact' ? 12 : 14" />
+        </span>
+        }
+    </div>
+    }
+
+    <!-- Collapsed variant: just icon + count -->
+    @if (variant === 'collapsed') {
+    <app-icon name="diamond" [size]="18" class="collapsed-icon" />
+    <span class="collapsed-count">{{ diamonds }}</span>
+    }
+
+    <!-- Inline variant: compact display for buttons -->
+    @if (variant === 'inline') {
+    <span class="inline-count">({{ diamonds }}/{{ maxDiamonds }})</span>
+    }
+
+    <!-- Info Section (for card variant) -->
+    @if (variant === 'card') {
+    <div class="diamond-info">
+        @if (showLabel) {
+        <span class="diamond-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>
+        }
+
+        @if (diamonds < maxDiamonds && countdown()) { <span class="diamond-timer">
+            <app-icon name="clock" [size]="12" />
+            {{ countdown() }}
+            </span>
+            } @else if (diamonds === maxDiamonds) {
+            <span class="diamond-status">{{ i18n.t('subtitle.ready') || 'Ready' }}</span>
+            }
+    </div>
+    }
+
+    <!-- Timer for compact variant -->
+    @if (variant === 'compact' && diamonds < maxDiamonds && countdown()) { <span class="compact-timer">{{ countdown()
+        }}</span>
+        }
+</div>

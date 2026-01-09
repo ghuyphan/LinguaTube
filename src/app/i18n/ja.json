@@ -97,7 +97,9 @@
         "noCaptionsInLanguage": "{language}の字幕がありません",
         "transcriptAvailableIn": "この動画には{language}字幕があります",
         "switchTo": "{language}に切り替え",
-        "orUseAI": "またはAIを使用"
+        "orUseAI": "またはAIを使用",
+        "aiCredits": "AIクレジット",
+        "ready": "準備完了"
     },
     "vocab": {
         "title": "単語帳",
@@ -303,6 +305,8 @@
         "deleteConfirmTitle": "削除しますか？",
         "deleteConfirmBody": "このプレイリストを削除しますか？この操作は取り消せません。",
         "saving": "保存中...",
+        "allLanguages": "すべて",
+        "filterByLanguage": "言語で絞り込む",
         "loginForVisibility": "ログインしてプレイリストを共有"
     },
     "common": {

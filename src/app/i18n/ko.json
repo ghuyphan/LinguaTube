@@ -97,7 +97,9 @@
         "noCaptionsInLanguage": "{language} 자막이 없습니다",
         "transcriptAvailableIn": "이 동영상에는 {language} 자막이 있습니다",
         "switchTo": "{language}로 전환",
-        "orUseAI": "또는 AI 사용"
+        "orUseAI": "또는 AI 사용",
+        "aiCredits": "AI 크레딧",
+        "ready": "준비됨"
     },
     "vocab": {
         "title": "단어장",
@@ -303,6 +305,8 @@
         "deleteConfirmTitle": "삭제하시겠습니까?",
         "deleteConfirmBody": "이 플레이리스트를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
         "saving": "저장 중...",
+        "allLanguages": "전체",
+        "filterByLanguage": "언어별 필터",
         "loginForVisibility": "로그인하여 재생목록을 공유하세요"
     },
     "common": {

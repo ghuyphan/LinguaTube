@@ -5,17 +5,25 @@ import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../services';
-import { Playlist } from '../../../models';
+import { Playlist, PlaylistLanguage } from '../../../models';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
+const LANGUAGES = [
+    { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
+    { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
+    { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+    { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
+];
+
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, ScrollingModule, BottomSheetComponent],
+    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, ScrollingModule, BottomSheetComponent, OptionPickerComponent],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -34,6 +42,14 @@ export class PlaylistPageComponent {
     menuOpen = signal(false);
     deleteConfirmationOpen = signal(false);
     selectedPlaylist = signal<Playlist | null>(null);
+
+    // Language Filter
+    languageFilter = signal<'all' | PlaylistLanguage>('all');
+    showLanguageFilter = signal(false);
+    readonly languageFilterOptions = [
+        { value: 'all', label: this.i18n.t('playlist.allLanguages') || 'All' },
+        ...LANGUAGES.map(l => ({ value: l.code, label: l.name, iconUrl: l.flag }))
+    ];
 
     playlists = this.playlistService.myPlaylists;
     communityPlaylists = this.playlistService.communityPlaylists;
@@ -68,7 +84,12 @@ export class PlaylistPageComponent {
     // Use regular list on mobile for shrink-to-fit, virtual scroll on desktop for performance
     isMobile = computed(() => this.screenWidth() < 768);
 
-    currentList = computed(() => this.view() === 'my' ? this.playlists() : this.communityPlaylists());
+    currentList = computed(() => {
+        const list = this.view() === 'my' ? this.playlists() : this.communityPlaylists();
+        const filter = this.languageFilter();
+        if (filter === 'all') return list;
+        return list.filter(p => p.language === filter);
+    });
 
     virtualRows = computed(() => {
         const list = this.currentList();
@@ -156,5 +177,16 @@ export class PlaylistPageComponent {
         return template
             .replace('{{count}}', count.toString())
             .replace('{{plural}}', count === 1 ? '' : 's');
+    }
+
+    getFlagUrl(lang: 'all' | PlaylistLanguage): string {
+        if (lang === 'all') return '';
+        const found = LANGUAGES.find(l => l.code === lang);
+        return found?.flag || LANGUAGES[0].flag;
+    }
+
+    onLanguageFilterChange(value: string): void {
+        this.languageFilter.set(value as 'all' | PlaylistLanguage);
+        this.showLanguageFilter.set(false);
     }
 }

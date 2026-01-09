@@ -97,7 +97,9 @@
         "noCaptionsInLanguage": "没有{language}字幕",
         "transcriptAvailableIn": "此视频有{language}字幕可用",
         "switchTo": "切换到{language}",
-        "orUseAI": "或使用AI"
+        "orUseAI": "或使用AI",
+        "aiCredits": "AI积分",
+        "ready": "就绪"
     },
     "vocab": {
         "title": "词汇本",
@@ -303,6 +305,8 @@
         "deleteConfirmTitle": "删除播放列表？",
         "deleteConfirmBody": "确定要删除此播放列表吗？此操作无法撤销。",
         "saving": "保存中...",
+        "allLanguages": "全部",
+        "filterByLanguage": "按语言筛选",
         "loginForVisibility": "登录后可与他人分享播放列表"
     },
     "common": {

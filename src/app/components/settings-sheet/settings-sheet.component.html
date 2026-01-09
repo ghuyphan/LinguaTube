@@ -64,16 +64,8 @@
             </div>
 
             <!-- Diamond Credits Row -->
-            <div class="setting-row diamond-row">
-                <div class="diamond-icon-wrapper">
-                    <app-icon name="diamond" [size]="18" />
-                </div>
-                <div class="diamond-info">
-                    <span class="diamond-count">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
-                    <span class="diamond-label">AI Credits</span>
-                </div>
-                <span class="diamond-hint">{{ i18n.t('subtitle.diamondsRegenerate') }}</span>
-            </div>
+            <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+                [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" />
         </div>
 
         <!-- Quick Navigation (Mobile Only) -->
