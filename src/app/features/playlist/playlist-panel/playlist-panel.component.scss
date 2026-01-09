@@ -103,9 +103,9 @@
             display: none !important;
         }
 
+        // Hide header - parent component (ExpandablePlaylistComponent) provides its own
         .playlist-header {
-            padding: var(--space-sm) var(--space-md);
-            // border-bottom: 1px solid var(--border-color);
+            display: none;
         }
 
         .playlist-items {

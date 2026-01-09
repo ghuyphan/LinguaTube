@@ -14,6 +14,7 @@ import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I1
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
+import { ExpandablePlaylistComponent } from '../../playlist/expandable-playlist/expandable-playlist.component';
 import { PlaylistService } from '../../playlist/playlist.service';
 import { Token } from '../../../models';
 
@@ -33,6 +34,7 @@ import { Token } from '../../../models';
     IconComponent,
     BottomSheetComponent,
     CommandPaletteComponent,
+    ExpandablePlaylistComponent
   ],
   template: `
     <div class="layout">
@@ -71,61 +73,24 @@ import { Token } from '../../../models';
         }
       </aside>
 
-      <!-- Unified Mobile Video Bar -->
-      <div class="mobile-video-bar desktop-none" 
-           [class.hidden]="!youtube.currentVideo() && !playlistService.currentPlaylist()"
-           [class.has-playlist]="!!playlistService.currentPlaylist()"
-           [class.single-video-mode]="!playlistService.currentPlaylist()"
-           (click)="onMobileBarClick()">
-        
-        <!-- Playlist Thumbnail (only when in playlist) -->
-        <!-- Thumbnail (Playlist or Single Video) -->
-        @if (playlistService.currentVideo() || youtube.currentVideo()) {
-          <div class="bar-thumb" [class.skeleton]="!(playlistService.currentVideo()?.thumbnail || youtube.currentVideo()?.thumbnail)">
-             @if ((playlistService.currentVideo()?.thumbnail || youtube.currentVideo()?.thumbnail); as thumb) {
-              <img [src]="thumb" alt="">
-            }
-          </div>
-        }
-
-        <!-- Title & Meta Wrapper -->
-        <div class="bar-content-wrapper">
-          @for (video of [playlistService.currentVideo() || youtube.currentVideo()]; track ($any(video)?.videoId || $any(video)?.id)) {
-            <div class="bar-title">{{ video?.title || '' }}</div>
-            
-            <!-- Playlist position indicator -->
-            @if (playlistService.currentPlaylist(); as playlist) {
-              <span class="bar-meta">{{ playlistService.currentIndex() + 1 }}/{{ playlist.videos.length }}</span>
-            }
-          }
-        </div>
-
-        
-        <!-- Search button (circle) -->
-        <button class="bar-search-btn" 
-          (click)="openCommandPalette(); $event.stopPropagation()"
-          aria-label="Search new video">
-          <app-icon name="search" [size]="18" />
-        </button>
-      </div>
+      <!-- Unified Expandable Playlist (Mobile) -->
+       <!-- Only show when we have a video involved (either single or playlist) -->
+      @if (youtube.currentVideo() || playlistService.currentPlaylist()) {
+        <app-expandable-playlist
+          class="desktop-none"
+          [currentVideo]="youtube.currentVideo()"
+          [playlist]="playlistService.currentPlaylist()"
+          [currentIndex]="playlistService.currentIndex()"
+          [isHidden]="showCommandPalette()"
+          (videoSelect)="onPlaylistVideoSelect($event)"
+          (close)="closePlaylist()"
+          (openCommandPalette)="openCommandPalette()"
+          (addToPlaylist)="openAddToPlaylist()"
+          (prevVideo)="playlistService.playPrevious()"
+          (nextVideo)="playlistService.playNext()"
+        />
+      }
     </div>
-
-    <!-- Mobile Playlist Bottom Sheet -->
-    @if (playlistService.currentPlaylist()) {
-    <app-bottom-sheet
-      [isOpen]="showMobilePlaylistSheet()"
-      [showCloseButton]="true"
-      [maxHeight]="'70vh'"
-      (closed)="showMobilePlaylistSheet.set(false)"
-    >
-      <app-playlist-panel 
-        [isMobile]="true"
-        (close)="showMobilePlaylistSheet.set(false); closePlaylist()" 
-        (videoSelect)="onPlaylistVideoSelect($event)"
-        (openMenu)="onOpenPlaylistMenu($event)"
-      />
-    </app-bottom-sheet>
-    }
 
     <!-- Add to Playlist Dialog -->
     @if (showAddToPlaylistDialog() && youtube.currentVideo(); as video) {
@@ -287,189 +252,8 @@ import { Token } from '../../../models';
       }
 
       /* ============================================
-         MOBILE VIDEO BAR - Pill Style
+         MOBILE VIDEO BAR - REMOVED (Replaced by ExpandablePlaylistComponent)
          ============================================ */
-      .mobile-video-bar {
-        display: none;
-        position: fixed;
-        left: var(--space-md);
-        right: var(--space-md);
-        bottom: calc(var(--bottom-nav-height) + var(--space-xs));
-        height: 44px;
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 24px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        z-index: var(--z-fixed);
-        cursor: pointer;
-        overflow: hidden;
-        /* Smooth Scale/position transitions */
-        transition: 
-          left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          right 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          background-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          border-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          padding 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        align-items: center;
-        padding: 0 var(--space-xs) 0 var(--space-xs);
-        gap: var(--space-xs);
-        
-        /* Entry Animation default state */
-        animation: barSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-      }
-
-      /* ... (keyframes unchanged) ... */
-
-      /* Single Video Mode: Floating Search Button Morphing */
-      .mobile-video-bar.single-video-mode {
-        /* Morph into a small circle at the right */
-        left: calc(100% - var(--space-md) - 44px); /* Position at right with dynamic spacing */
-        right: var(--space-md);          /* Keep anchored right */
-        
-        /* Transparent container */
-        background: transparent;
-        border-color: transparent;
-        box-shadow: none;
-        
-        /* Remove padding to tighten the circle */
-        padding: 0;
-        
-        /* Allow button shadow to be visible */
-        overflow: visible;
-        
-        pointer-events: none; /* Let clicks pass through the empty area context */
-      }
-
-      /* Title Wrapper Transition */
-      .bar-content-wrapper {
-        flex: 1;
-        min-width: 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        overflow: hidden;
-        /* Smoothly collapse content */
-        transition: 
-          opacity 0.2s ease-in-out,
-          flex-grow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        opacity: 1;
-      }
-
-      .mobile-video-bar.single-video-mode .bar-content-wrapper {
-        opacity: 0;
-        flex-grow: 0.0001; /* Shrink to almost 0 but keep layout valid for transition */
-        pointer-events: none;
-      }
-
-      /* Search Button Transition */
-      .mobile-video-bar.single-video-mode .bar-search-btn {
-        display: flex;
-        pointer-events: auto; /* Restore clicks */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        
-        /* Ensure it stays the right size and overrides base value constraints */
-        width: 44px;
-        height: 44px;
-        min-height: 44px;
-        max-height: 44px;
-        border-radius: 50%;
-      }
-      
-      /* Playlist thumbnail */
-      .bar-thumb {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        overflow: hidden;
-        flex-shrink: 0;
-        background: var(--bg-secondary); /* Placeholder color always visible */
-        margin-left: -4px;
-        position: relative; /* Context for absolute img */
-        
-        transition: 
-          width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-          opacity 0.2s ease-in-out,
-          margin 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        opacity: 1;
-      }
-      
-      .bar-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        animation: fadeIn 0.3s ease-out forwards; /* Smooth fade in when loaded */
-      }
-
-      @keyframes fadeIn {
-        to { opacity: 1; }
-      }
-
-      .mobile-video-bar.single-video-mode .bar-thumb {
-        width: 0;
-        opacity: 0;
-        margin: 0;
-      }
-
-      /* Bar title */
-      .bar-title {
-        font-size: 0.8125rem;
-        color: var(--text-primary);
-        font-weight: 500;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        flex: 1;
-        min-width: 0;
-        animation: textSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-      }
-
-      .bar-meta {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        font-weight: 500;
-        flex-shrink: 0;
-        animation: textSlideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-        /* Add a small staggering delay */
-        animation-delay: 0.05s;
-      }
-      
-      @keyframes textSlideUp {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      /* Circular search button */
-      .bar-search-btn {
-        width: 36px;
-        height: 36px;
-        min-height: 36px;
-        max-height: 36px;
-        border: none;
-        border-radius: 50%;
-        background: var(--accent-primary);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        align-self: center;
-        cursor: pointer;
-        transition: transform var(--transition-fast), opacity var(--transition-fast);
-      }
-
-      .bar-search-btn:active {
-        transform: scale(0.92);
-      }
-
-      @media (hover: hover) {
-        .bar-search-btn:hover {
-          opacity: 0.9;
-        }
-      }
-
     @media (max-width: 1024px) {
       .layout {
         grid-template-columns: 1fr;
@@ -504,12 +288,8 @@ import { Token } from '../../../models';
       }
       
       .layout-main.has-video-bar {
-         /* Padding when video bar is visible */
+         /* Padding when video bar is visible (ExpandablePlaylistComponent) */
          padding-bottom: 72px;
-      }
-
-      .mobile-video-bar {
-        display: flex;
       }
     }
 
@@ -633,8 +413,6 @@ export class VideoPageComponent implements OnInit {
   private previousSidebarView = signal<'vocab' | 'playlist' | null>(null);
   sidebarSwapping = signal(false);
 
-  // Mobile playlist sheet state
-  showMobilePlaylistSheet = signal(false);
   showCommandPalette = signal(false);
 
   // Playlist navigation helpers
@@ -695,9 +473,6 @@ export class VideoPageComponent implements OnInit {
   private lastLang = '';
   private wasPlayingBeforeWordLookup = false;
   private skipNextMismatchDialog = false;
-
-  // Animation control
-  shouldAnimateEntry = signal(false);
 
   constructor() {
     // Watch for language changes and refetch captions when language changes
@@ -767,14 +542,6 @@ export class VideoPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Only animate the video bar entry if it hasn't been shown yet in this session
-    if (!this.playlistService.hasShownMobileBar) {
-      this.shouldAnimateEntry.set(true);
-      this.playlistService.hasShownMobileBar = true;
-      // Reset after animation completes to prevent re-animation on video changes
-      setTimeout(() => this.shouldAnimateEntry.set(false), 350);
-    }
-
     if (isPlatformBrowser(this.platformId)) {
       this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
         const videoId = params.get('id');
@@ -1181,12 +948,7 @@ export class VideoPageComponent implements OnInit {
     this.showAddToPlaylistDialog.set(true);
   }
 
-  // Mobile video bar methods
-  onMobileBarClick(): void {
-    if (this.playlistService.currentPlaylist()) {
-      this.showMobilePlaylistSheet.set(true);
-    }
-  }
+
 
   toggleShuffle(): void {
     this.playlistService.toggleShuffle();
