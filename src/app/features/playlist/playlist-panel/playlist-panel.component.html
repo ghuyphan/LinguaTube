@@ -71,8 +71,7 @@
         } @else {
         @for (video of playlist.videos; track video.videoId; let i = $index) {
         <div #playlistItem class="playlist-item" [class.active]="i === playlistService.currentIndex()"
-            [id]="'playlist-item-' + i" (click)="onVideoClick(video.videoId, i)" cdkDrag cdkDragLockAxis="y"
-            cdkDragBoundary=".playlist-items">
+            [id]="'playlist-item-' + i" (click)="onVideoClick(video.videoId, i)" cdkDrag cdkDragLockAxis="y">
 
             <!-- Custom Drag Preview (Optional, makes it look cleaner while dragging) -->
             <div *cdkDragPreview class="playlist-item drag-preview">

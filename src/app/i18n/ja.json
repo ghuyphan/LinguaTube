@@ -289,6 +289,8 @@
         "shufflePlaylist": "シャッフル再生",
         "moveUp": "上に移動",
         "moveDown": "下に移動",
+        "moveToTop": "一番上に移動",
+        "moveToBottom": "一番下に移動",
         "removeFromPlaylist": "プレイリストから削除",
         "videoOptions": "動画オプション",
         "visibility": {

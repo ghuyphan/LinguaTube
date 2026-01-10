@@ -78,7 +78,8 @@
 }
 
 // Apply fade-in to content when it replaces skeleton
-.playlist-item:not(.playlist-item--skeleton) {
+// BUT exclude drag previews to prevent jumping/transform conflicts
+.playlist-item:not(.playlist-item--skeleton):not(.cdk-drag-preview):not(.cdk-drag-placeholder) {
     animation: contentFadeIn 0.25s ease-out;
 }
 
@@ -350,7 +351,7 @@
         }
     }
 
-// 3-dot menu button
+    // 3-dot menu button
     .item-menu-btn {
         background: none;
         border: none;
@@ -398,13 +399,13 @@
     width: 1rem;
     height: 1rem;
     padding-bottom: 2px;
-    
+
     // Pause animation when video is paused
     &.paused {
         .bar {
             animation-play-state: paused;
             // Optional: reset height to look "flat" or "paused"
-            height: 3px !important; 
+            height: 3px !important;
         }
     }
 
@@ -447,24 +448,25 @@
 .cdk-drag-preview {
     box-sizing: border-box;
     border-radius: var(--border-radius);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background: var(--bg-card);
     opacity: 0.9;
-    
+
     .item-thumbnail {
         width: 60px;
         height: 34px;
         margin-right: var(--space-md);
     }
-    
+
     .item-info {
         display: flex;
         align-items: center;
         font-weight: 500;
         color: var(--text-primary);
     }
-    
-    .item-left, .item-menu-btn {
+
+    .item-left,
+    .item-menu-btn {
         display: none;
     }
 }
@@ -489,11 +491,11 @@
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    
+
     &:active {
         cursor: grabbing;
     }
-    
+
     @media (hover: hover) {
         &:hover {
             color: var(--text-primary);

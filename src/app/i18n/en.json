@@ -291,6 +291,8 @@
         "shufflePlaylist": "Shuffle playlist",
         "moveUp": "Move up",
         "moveDown": "Move down",
+        "moveToTop": "Move to top",
+        "moveToBottom": "Move to bottom",
         "removeFromPlaylist": "Remove from playlist",
         "videoOptions": "Video Options",
         "visibility": {

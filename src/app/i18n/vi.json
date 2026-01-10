@@ -291,6 +291,8 @@
         "shufflePlaylist": "Phát ngẫu nhiên",
         "moveUp": "Di chuyển lên",
         "moveDown": "Di chuyển xuống",
+        "moveToTop": "Chuyển lên đầu",
+        "moveToBottom": "Chuyển xuống cuối",
         "removeFromPlaylist": "Xóa khỏi danh sách phát",
         "videoOptions": "Tùy chọn video",
         "visibility": {

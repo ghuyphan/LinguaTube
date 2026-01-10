@@ -372,9 +372,14 @@ export class PlaylistService {
                 position: current.videos.length
             };
 
+            // If the video is already in the runtime playlist (e.g. from queueing), don't duplicate it visually.
+            // But we DO want to ensure `videoIds` reflects the persistent state we are about to save.
+            const alreadyExists = current.videos.some(v => v.videoId === videoId);
+            const videos = alreadyExists ? current.videos : [...current.videos, newVideo];
+
             this.currentPlaylist.set({
                 ...current,
-                videos: [...current.videos, newVideo],
+                videos,
                 videoIds: updatedVideoIds,
                 videoCount: updatedVideoIds.length
             });
@@ -435,18 +440,46 @@ export class PlaylistService {
      * Reorder videos in a playlist
      */
     async reorderVideos(playlistId: string, videoIds: string[]): Promise<void> {
-        // Optimistic update for current playlist
         const current = this.currentPlaylist();
-        if (current && current.id === playlistId) {
-            const reorderedVideos = videoIds
-                .map(id => current.videos.find(v => v.videoId === id))
-                .filter((v): v is PlaylistVideo => !!v)
-                .map((v, index) => ({ ...v, position: index }));
+        if (!current || current.id !== playlistId) return;
 
-            this.currentPlaylist.set({
-                ...current,
-                videos: reorderedVideos
-            });
+        // 1. Capture current state securely
+        const currentVideoId = current.videos[this.currentIndex()]?.videoId;
+
+        // 2. Reconstruct the full video list in the new order
+        // Create a map for O(1) lookup to ensure performance
+        const videoMap = new Map(current.videos.map(v => [v.videoId, v]));
+
+        const reorderedVideos = videoIds
+            .map((id, index) => {
+                const video = videoMap.get(id);
+                if (video) {
+                    return { ...video, position: index };
+                }
+                return null;
+            })
+            .filter((v): v is PlaylistVideo => !!v);
+
+        // 3. Find the new index of the currently playing video
+        let newIndex = this.currentIndex();
+        if (currentVideoId) {
+            const foundIndex = reorderedVideos.findIndex(v => v.videoId === currentVideoId);
+            if (foundIndex !== -1) {
+                newIndex = foundIndex;
+            }
+        }
+
+        // 4. Atomic Update
+        this.currentPlaylist.set({
+            ...current,
+            videos: reorderedVideos,
+            videoIds: videoIds
+        });
+
+        // Critical: Update index immediately to prevent desync
+        // If we don't do this, the player might think it's playing a different video
+        if (newIndex !== this.currentIndex()) {
+            this.currentIndex.set(newIndex);
         }
 
         await this.updatePlaylist(playlistId, {

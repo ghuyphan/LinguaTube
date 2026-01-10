@@ -98,6 +98,7 @@ export class PlaylistPanelComponent implements AfterViewInit {
         videoIds.splice(event.currentIndex, 0, movedItem);
 
         // Call service to update
+        // The service now handles optimistic updates, state management, and persistency atomically
         await this.playlistService.reorderVideos(playlist.id, videoIds);
     }
 

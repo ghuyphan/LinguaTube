@@ -289,6 +289,8 @@
         "shufflePlaylist": "셔플 재생",
         "moveUp": "위로 이동",
         "moveDown": "아래로 이동",
+        "moveToTop": "맨 위로 이동",
+        "moveToBottom": "맨 아래로 이동",
         "removeFromPlaylist": "재생목록에서 삭제",
         "videoOptions": "동영상 옵션",
         "visibility": {
