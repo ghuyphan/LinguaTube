@@ -136,6 +136,16 @@
     * {
         pointer-events: none;
     }
+
+    &.active-streak {
+        background: #fff3e0;
+        border-color: #ff9500;
+
+        @media (prefers-color-scheme: dark) {
+            background: rgba(255, 149, 0, 0.15);
+            border-color: #ff9500;
+        }
+    }
 }
 
 .setting-row__content {
@@ -184,7 +194,9 @@
    STREAK ROW
    ============================================ */
 .streak-section {
-    /* Visible on all devices now */
+    @media (min-width: 769px) {
+        display: none;
+    }
 }
 
 .streak-row {

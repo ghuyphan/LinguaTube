@@ -231,7 +231,11 @@
         "milestone365": "1年達成！👑",
         "keepItUp": "この調子で頑張ろう！",
         "practiceToday": "今日も学習して記録を伸ばそう",
-        "newRecord": "新記録！"
+        "newRecord": "新記録！",
+        "clickDetails": "クリックして詳細を表示",
+        "freezesRemainingSentence": "ストリークフリーズが残り{{count}}回分あります。",
+        "extended": "ストリーク継続！",
+        "onStreak": "{{count}}日連続達成中！"
     },
     "history": {
         "title": "履歴",

@@ -223,7 +223,7 @@
     },
     "streak": {
         "dayStreak": "Chuỗi",
-        "longestStreak": "Kỷ lục dài nhất",
+        "longestStreak": "Chuỗi dài nhất",
         "freezesRemaining": "Bảo vệ chuỗi",
         "freezeUsed": "Đã dùng bảo vệ chuỗi!",
         "streakLost": "Chuỗi đã bị đặt lại",
@@ -235,7 +235,9 @@
         "practiceToday": "Học hôm nay để kéo dài chuỗi",
         "newRecord": "Kỷ lục mới!",
         "clickDetails": "Nhấn để xem chi tiết",
-        "freezesRemainingSentence": "Bạn còn {{count}} bảo vệ chuỗi."
+        "freezesRemainingSentence": "Bạn còn {{count}} bảo vệ chuỗi.",
+        "extended": "Đã kéo dài chuỗi!",
+        "onStreak": "Bạn đang đạt chuỗi {{count}} ngày!"
     },
     "history": {
         "title": "Lịch sử",

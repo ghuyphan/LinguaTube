@@ -467,12 +467,11 @@
     }
 
     &.active {
-        background: rgba(255, 149, 0, 0.08);
-        /* slight orange tint */
-        border-color: rgba(255, 149, 0, 0.3);
+        background: #fff3e0;
+        border-color: #ff9500;
 
         .streak-icon-wrapper {
-            background: #ff9500;
+            // background: #ff9500;
             color: white;
             box-shadow: 0 4px 12px rgba(255, 149, 0, 0.4);
         }
@@ -482,8 +481,14 @@
         }
 
         .streak-label {
-            color: #ff9500;
+            color: #d97706;
             font-weight: 600;
+        }
+
+        // Dark mode support
+        @media (prefers-color-scheme: dark) {
+            background: rgba(255, 149, 0, 0.15);
+            border-color: #ff9500;
         }
     }
 }
@@ -696,6 +701,18 @@
 
     &:hover {
         background-color: var(--bg-hover);
+    }
+
+    &.active {
+        background: #fff3e0;
+        border: 1px solid #ff9500;
+        border-radius: var(--border-radius);
+
+        // Dark mode support
+        @media (prefers-color-scheme: dark) {
+            background: rgba(255, 149, 0, 0.15);
+            border-color: #ff9500;
+        }
     }
 
     .collapsed-streak-count {

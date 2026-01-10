@@ -257,9 +257,8 @@
                 <h3>{{ i18n.t('streak.saved') || 'Streak Saved! ❄️' }}</h3>
                 <p>{{ i18n.t('streak.freezeUsed') || 'You used a streak freeze.' }}</p>
                 } @else {
-                <h3>{{ i18n.t('streak.extended') || 'Streak Extended! 🔥' }}</h3>
-                <p>{{ i18n.t('streak.onStreak') || "You're on a" }} {{ streak.currentStreak() }} {{
-                    i18n.t('streak.dayStreak') || 'day streak!' }}</p>
+                <h3>{{ i18n.t('streak.extended') }}</h3>
+                <p>{{ i18n.t('streak.onStreak', { count: streak.currentStreak() }) }}</p>
                 }
             </div>
         </div>

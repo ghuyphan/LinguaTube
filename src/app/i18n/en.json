@@ -235,7 +235,9 @@
         "practiceToday": "Practice today to extend your streak",
         "newRecord": "New Record!",
         "clickDetails": "Click for details",
-        "freezesRemainingSentence": "You have {{count}} streak freezes remaining."
+        "freezesRemainingSentence": "You have {{count}} streak freezes remaining.",
+        "extended": "Streak extended!",
+        "onStreak": "You are on a {{count}} day streak!"
     },
     "history": {
         "title": "History",

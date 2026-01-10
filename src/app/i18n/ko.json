@@ -231,7 +231,11 @@
         "milestone365": "1년 연속 학습! 👑",
         "keepItUp": "계속 힘내세요!",
         "practiceToday": "오늘도 학습하여 기록을 이어가세요",
-        "newRecord": "새 기록!"
+        "newRecord": "새 기록!",
+        "clickDetails": "클릭하여 자세히 보기",
+        "freezesRemainingSentence": "남은 스트릭 프리즈가 {{count}}개 있습니다.",
+        "extended": "스트릭 연장 성공!",
+        "onStreak": "{{count}}일 연속 학습 중입니다!"
     },
     "history": {
         "title": "기록",

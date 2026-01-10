@@ -43,7 +43,8 @@
 
         <!-- Streak Section -->
         <div class="settings-section streak-section">
-            <button class="setting-row setting-row--clickable" (click)="openStreakDialog()">
+            <button class="setting-row setting-row--clickable" [class.active-streak]="streak.practicedToday()"
+                (click)="openStreakDialog()">
                 <div class="setting-row__content">
                     <div class="streak-icon-wrapper-simple">
                         <app-icon name="fire" [size]="20"
@@ -57,13 +58,16 @@
                     </div>
                 </div>
                 <!-- Diamond Credits -->
-                <div
-                    style="display: flex; align-items: center; gap: 4px; margin-right: 8px; color: #3b82f6; font-size: 0.8rem; font-weight: 500;">
-                    <app-icon name="diamond" [size]="14" />
-                    <span>{{ transcript.diamonds() }}</span>
-                </div>
+
                 <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
             </button>
+
+            <!-- Diamond Credits Row -->
+            <div class="setting-row diamond-row-container"
+                style="margin-top: 8px; padding: 0; background: transparent; border: none;">
+                <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+                    [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" style="width: 100%;" />
+            </div>
         </div>
 
         <!-- Quick Navigation (Mobile Only) -->
