@@ -70,37 +70,37 @@
                 } @else if (currentList().length > 0) {
                 <!-- Simple grid with CSS content-visibility for performance -->
                 <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
-                    @for (playlist of currentList(); track playlist.id) {
+                    @for (playlist of paginatedPlaylists(); track playlist.id) {
                     <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
                         <div class="card-thumbnail">
                             @if (playlist.thumbnail) {
-                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy">
+                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" decoding="async">
                             } @else {
-                            <app-icon name="list-video" [size]="48" class="placeholder-icon"></app-icon>
+                            <div class="placeholder-icon">
+                                <app-icon name="list-video" [size]="32" />
+                            </div>
                             }
                             <div class="video-count">
-                                <app-icon name="list-video" [size]="12"></app-icon>
-                                {{ playlist.videoIds.length }}
+                                <app-icon name="list-video" [size]="12" />
+                                <span>{{ playlist.videoIds.length }}</span>
                             </div>
+
+                            <!-- Menu Button (Visible on Hover/Touch) -->
+                            <button class="menu-btn" (click)="openMenu(playlist, $event)">
+                                <app-icon name="more-vertical" [size]="16" />
+                            </button>
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">{{ playlist.title }}</h3>
                             <div class="card-meta">
-                                <img [src]="getFlagUrl(playlist.language)" class="lang-flag" alt="" />
-                                @if (view() === 'my') {
-                                <app-icon [name]="playlist.visibility === 'private' ? 'lock' : 'globe'"
-                                    [size]="12"></app-icon>
-                                <span>{{ playlist.visibility | titlecase }}</span>
-                                } @else {
-                                <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
+                                @if (playlist.language) {
+                                <img [src]="'/icons/flags/' + playlist.language + '.svg'" [alt]="playlist.language"
+                                    class="lang-flag"
+                                    style="width: 16px; height: 16px; border-radius: 50%; object-fit: cover;">
                                 }
+                                <span>{{ (view() === 'my') ? i18n.t('playlist.myPlaylist') : (playlist.userName ||
+                                    i18n.t('playlist.community')) }}</span>
                             </div>
-
-                            @if (view() === 'my') {
-                            <button class="btn-icon menu-btn" (click)="openMenu(playlist, $event)">
-                                <app-icon name="more-vertical" [size]="20"></app-icon>
-                            </button>
-                            }
                         </div>
                     </div>
                     }
@@ -111,9 +111,11 @@
                         <app-icon [name]="view() === 'my' ? 'list-video' : 'globe'" [size]="20" />
                     </div>
                     <div class="empty-state__text">
-                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') :
+                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle')
+                            :
                             i18n.t('playlist.empty.communityTitle') }}</p>
-                        <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') :
+                        <p class="empty-state__description">{{ view() === 'my' ?
+                            i18n.t('playlist.empty.myHint') :
                             i18n.t('playlist.empty.communityHint') }}</p>
                     </div>
                 </div>
@@ -121,6 +123,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Pagination -->
+    @if (totalPages() > 1) {
+    <div class="playlist-pagination">
+        <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === 1" (click)="prevPage()">
+            <app-icon name="chevron-left" [size]="16" />
+        </button>
+        <span class="pagination-info">
+            {{ currentPage() }} / {{ totalPages() }}
+        </span>
+        <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === totalPages()" (click)="nextPage()">
+            <app-icon name="chevron-right" [size]="16" />
+        </button>
+    </div>
+    }
 
     <!-- Desktop Sidebar -->
     <aside class="page-layout__sidebar desktop-only">

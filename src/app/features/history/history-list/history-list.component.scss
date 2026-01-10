@@ -4,6 +4,16 @@
 
 :host {
     display: block;
+    height: 100%;
+}
+
+.history-items {
+    height: 100%;
+}
+
+.history-viewport {
+    height: 100%;
+    width: 100%;
 }
 
 // Note: Empty states use global .empty-state classes from styles.css

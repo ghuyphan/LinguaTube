@@ -197,7 +197,15 @@ type FilterType = 'all' | 'favorites';
 
     .history-list {
       flex: 1;
-      overflow-y: auto;
+      overflow: hidden; /* Virtual Scroll handles overflow */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    app-history-list {
+      flex: 1;
+      height: 100%;
+      min-height: 0;
     }
 
     /* Sidebar - uses global .sidebar-card, .stats-grid, .stat-item */

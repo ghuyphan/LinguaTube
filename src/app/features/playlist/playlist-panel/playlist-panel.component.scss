@@ -244,6 +244,10 @@
     transition: background-color var(--transition-fast);
     position: relative; // For active indicator
 
+    // Performance optimization: skip rendering off-screen items
+    content-visibility: auto;
+    contain-intrinsic-size: 84px; // Estimated height (56px thumb + 16px padding + gaps)
+
     @media (hover: hover) {
         &:hover {
             background-color: var(--bg-secondary);

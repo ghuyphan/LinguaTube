@@ -32,11 +32,13 @@ const DELETE_THRESHOLD = 160;
 const DIRECTION_LOCK_THRESHOLD = 10;
 const VELOCITY_THRESHOLD = 0.5;
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 @Component({
     selector: 'app-history-list',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent],
+    imports: [CommonModule, IconComponent, ScrollingModule],
     templateUrl: './history-list.component.html',
     styleUrl: './history-list.component.scss',
 })

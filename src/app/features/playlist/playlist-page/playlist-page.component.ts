@@ -60,6 +60,39 @@ export class PlaylistPageComponent {
         return list.filter(p => p.language === filter);
     });
 
+    // Pagination
+    currentPage = signal(1);
+    pageSize = 24; // Grid usually fits 3-4 columns, 24 is a good multiple (3x8, 4x6)
+
+    paginatedPlaylists = computed(() => {
+        const list = this.currentList();
+        const startIndex = (this.currentPage() - 1) * this.pageSize;
+        return list.slice(startIndex, startIndex + this.pageSize);
+    });
+
+    totalPages = computed(() => Math.ceil(this.currentList().length / this.pageSize));
+
+    nextPage(): void {
+        if (this.currentPage() < this.totalPages()) {
+            this.currentPage.update(p => p + 1);
+            this.scrollToTop();
+        }
+    }
+
+    prevPage(): void {
+        if (this.currentPage() > 1) {
+            this.currentPage.update(p => p - 1);
+            this.scrollToTop();
+        }
+    }
+
+    private scrollToTop(): void {
+        const panel = document.querySelector('.panel-content');
+        if (panel) {
+            panel.scrollTop = 0;
+        }
+    }
+
     openMenu(playlist: Playlist, event: Event): void {
         event.preventDefault();
         event.stopPropagation();
