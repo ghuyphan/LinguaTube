@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSheetComponent } from './shared/components/bottom-sheet/bottom-sheet.component';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
+import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
@@ -28,7 +29,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     SidebarComponent,
     BottomSheetComponent,
     OnboardingComponent,
-    CommandPaletteComponent
+    CommandPaletteComponent,
+    StreakDialogComponent
   ],
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
@@ -42,6 +44,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             class="desktop-sidebar"
             (openSettings)="showSettingsSheet.set(true)"
             (openCommandPalette)="showCommandPalette.set(true)"
+            (openStreak)="showStreakSheet.set(true)"
           />
         }
 
@@ -107,7 +110,18 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           <app-settings-sheet 
             [isOpen]="showSettingsSheet()" 
             (closed)="showSettingsSheet.set(false)" 
+            (openStreak)="showSettingsSheet.set(false); showStreakSheet.set(true)"
           />
+        }
+
+        @defer (when showStreakSheet()) {
+          <app-bottom-sheet
+            [isOpen]="showStreakSheet()"
+            [showCloseButton]="true"
+            (closed)="showStreakSheet.set(false)"
+          >
+            <app-streak-dialog />
+          </app-bottom-sheet>
         }
 
         <!-- Command Palette -->
@@ -405,6 +419,7 @@ export class AppComponent implements OnDestroy {
   }
 
   showSettingsSheet = signal(false);
+  showStreakSheet = signal(false);
   showUpdateSheet = signal(false);
   showCommandPalette = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);

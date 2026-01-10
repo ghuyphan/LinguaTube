@@ -1,0 +1,211 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.streak-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* --- Header / Flame --- */
+.streak-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flame-container {
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--surface-variant);
+    position: relative;
+    transition: all 0.3s ease;
+
+    &.active {
+        background: rgba(255, 149, 0, 0.15);
+        box-shadow: 0 0 30px rgba(255, 149, 0, 0.2);
+
+        .flame-icon {
+            color: #ff9500;
+            filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.5));
+            animation: flame-pulse 2s infinite ease-in-out;
+        }
+    }
+
+    .flame-icon {
+        color: var(--text-tertiary);
+        transition: all 0.3s ease;
+    }
+}
+
+@keyframes flame-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.streak-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--text-primary);
+    }
+
+    p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin: 0;
+    }
+}
+
+/* --- Week View --- */
+.week-view {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--surface-variant);
+    border-radius: 1rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.day-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+
+    .day-name {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+    }
+
+    .day-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--surface-container);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: transparent;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+
+        &.active {
+            background: #ff9500;
+            color: white;
+            box-shadow: 0 2px 8px rgba(255, 149, 0, 0.3);
+        }
+
+        &.missed {
+            border-color: var(--border-color);
+        }
+    }
+
+    &.today {
+        .day-name {
+            color: #ff9500;
+            font-weight: 700;
+        }
+
+        .day-circle {
+            border-color: #ff9500;
+            border-width: 2px;
+        }
+    }
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.stat-card {
+    background: var(--surface-variant);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+
+    app-icon {
+        margin-bottom: 0.25rem;
+        color: var(--text-tertiary);
+    }
+
+    &.highlighted {
+        background: rgba(255, 149, 0, 0.1);
+        border: 1px solid rgba(255, 149, 0, 0.2);
+
+        app-icon {
+            color: #ff9500;
+        }
+
+        .stat-value {
+            color: #ff9500;
+        }
+    }
+}
+
+/* --- Freeze Info --- */
+.freeze-info {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: var(--surface-variant);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    app-icon {
+        color: #3b82f6;
+        /* Blue for ice/freeze */
+    }
+}

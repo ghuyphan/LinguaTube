@@ -81,7 +81,8 @@
     <!-- Streak Goal (Motivation) -->
     @if (!isCollapsed()) {
     <div class="sidebar__section sidebar__section--stats">
-        <div class="streak-card" [attr.title]="i18n.t('streak.longestStreak') + ': ' + streak.longestStreak()">
+        <div class="streak-card" [attr.title]="i18n.t('streak.clickDetails')" [class.active]="streak.practicedToday()"
+            (click)="openStreak.emit()">
             <div class="streak-icon-wrapper">
                 <app-icon name="fire" [size]="20" class="streak-icon" />
             </div>
@@ -107,10 +108,11 @@
     <div class="sidebar__footer">
         <!-- Collapsed Streak Indicator -->
         @if (isCollapsed()) {
-        <div class="collapsed-streak" [attr.title]="i18n.t('streak.dayStreak')">
+        <button class="collapsed-streak" [attr.title]="i18n.t('streak.clickDetails')"
+            [class.active]="streak.practicedToday()" (click)="openStreak.emit()">
             <app-icon name="fire" [size]="18" />
             <span class="collapsed-streak-count">{{ streak.currentStreak() }}</span>
-        </div>
+        </button>
         <!-- Collapsed Diamond Indicator -->
         <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
             [nextRegenAt]="transcript.nextRegenAt()" variant="collapsed" [showLabel]="false" />

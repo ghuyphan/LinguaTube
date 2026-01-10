@@ -180,16 +180,31 @@
 /* ============================================
    STREAK ROW (Mobile Only)
    ============================================ */
+/* ============================================
+   STREAK ROW
+   ============================================ */
 .streak-section {
-    @media (min-width: 769px) {
-        display: none;
-    }
+    /* Visible on all devices now */
 }
 
 .streak-row {
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(247, 147, 30, 0.08) 100%);
     border-color: rgba(255, 107, 53, 0.2);
     gap: var(--space-sm);
+
+    &.inactive {
+        background: var(--bg-surface);
+        border-color: var(--border-color);
+
+        .streak-icon-wrapper {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+        }
+
+        .streak-count {
+            color: var(--text-muted);
+        }
+    }
 }
 
 .streak-row .streak-icon-wrapper {

@@ -245,6 +245,26 @@
             <h2>{{ i18n.t('study.sessionComplete') }}</h2>
         </div>
 
+        @if (streak.lastActivityResult(); as result) {
+        <div class="streak-celebration" [class.new-record]="result.isNewRecord">
+            <app-icon name="fire" [size]="32" class="streak-icon" />
+            <div class="streak-details">
+                @if (result.isNewRecord) {
+                <h3>{{ i18n.t('streak.newRecord') || 'New Streak Record! 🔥' }}</h3>
+                <p>{{ i18n.t('streak.reached') || 'You hit' }} {{ streak.currentStreak() }} {{ i18n.t('streak.days') ||
+                    'days!' }}</p>
+                } @else if (result.freezeUsed) {
+                <h3>{{ i18n.t('streak.saved') || 'Streak Saved! ❄️' }}</h3>
+                <p>{{ i18n.t('streak.freezeUsed') || 'You used a streak freeze.' }}</p>
+                } @else {
+                <h3>{{ i18n.t('streak.extended') || 'Streak Extended! 🔥' }}</h3>
+                <p>{{ i18n.t('streak.onStreak') || "You're on a" }} {{ streak.currentStreak() }} {{
+                    i18n.t('streak.dayStreak') || 'day streak!' }}</p>
+                }
+            </div>
+        </div>
+        }
+
         <div class="complete-stats">
             <div class="stat-badge">
                 <span class="stat-value">{{ sessionStats().total }}</span>

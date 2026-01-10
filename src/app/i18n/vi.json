@@ -233,7 +233,9 @@
         "milestone365": "1 năm liên tiếp! 👑",
         "keepItUp": "Tiếp tục phát huy!",
         "practiceToday": "Học hôm nay để kéo dài chuỗi",
-        "newRecord": "Kỷ lục mới!"
+        "newRecord": "Kỷ lục mới!",
+        "clickDetails": "Nhấn để xem chi tiết",
+        "freezesRemainingSentence": "Bạn còn {{count}} bảo vệ chuỗi."
     },
     "history": {
         "title": "Lịch sử",

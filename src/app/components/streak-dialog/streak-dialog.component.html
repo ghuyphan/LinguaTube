@@ -1,0 +1,50 @@
+<div class="streak-dialog">
+    <!-- Header / Flame -->
+    <div class="streak-header">
+        <app-icon name="fire" [size]="48" class="main-flame" [class.active]="streak.practicedToday()" />
+        <div class="streak-count-large">
+            <span class="count">{{ streak.currentStreak() }}</span>&nbsp;
+            <span class="label">{{ i18n.t('streak.dayStreak') || 'Streak' }}</span>
+        </div>
+        <p class="streak-subtitle">
+            {{ streak.practicedToday() ? (i18n.t('streak.keepItUp') || 'Keep it up!') : (i18n.t('streak.practiceToday')
+            || 'Practice today to keep it going!') }}
+        </p>
+    </div>
+
+    <!-- Week View -->
+    <div class="week-view">
+        @for (day of weekDays(); track day.day) {
+        <div class="day-item" [class.today]="day.isToday">
+            <span class="day-name">{{ day.day }}</span>
+            <div class="day-circle" [class.active]="day.active" [class.missed]="!day.active && !day.isToday">
+                @if (day.active) {
+                <app-icon name="check" [size]="16" />
+                }
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card highlighted">
+            <app-icon name="fire" [size]="24" />
+            <span class="stat-value">{{ streak.currentStreak() }}</span>
+            <span class="stat-label">{{ i18n.t('streak.dayStreak') || 'Current Streak' }}</span>
+        </div>
+        <div class="stat-card">
+            <app-icon name="trophy" [size]="24" />
+            <span class="stat-value">{{ streak.longestStreak() }}</span>
+            <span class="stat-label">{{ i18n.t('streak.longestStreak') || 'Longest Streak' }}</span>
+        </div>
+    </div>
+
+    <!-- Freeze Info -->
+    @if (streak.freezesRemaining() > 0) {
+    <div class="freeze-info">
+        <app-icon name="snowflake" [size]="16" />
+        <span>{{ i18n.t('streak.freezesRemainingSentence', { count: streak.freezesRemaining() }) }}</span>
+    </div>
+    }
+</div>

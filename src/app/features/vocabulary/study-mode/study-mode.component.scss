@@ -552,6 +552,76 @@
     }
 }
 
+
+
+.streak-celebration {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: #fff3e0;
+    border: 1px solid #ff9500;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    animation: slideUp 0.5s ease-out;
+
+    .streak-icon {
+        color: #ff9500;
+        filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.4));
+    }
+
+    .streak-details {
+        text-align: left;
+
+        h3 {
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #d97706;
+        }
+
+        p {
+            margin: 0.25rem 0 0 0;
+            font-size: 0.9375rem;
+            color: #b45309;
+        }
+    }
+
+    &.new-record {
+        background: radial-gradient(circle at center, #fff3e0 0%, #ffedd5 100%);
+        border: 2px solid #ff9500;
+        box-shadow: 0 4px 20px rgba(255, 149, 0, 0.2);
+
+        .streak-icon {
+            animation: pulse-fire 1s infinite alternate;
+        }
+    }
+}
+
+@keyframes pulse-fire {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(255, 149, 0, 0.4));
+    }
+
+    to {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 15px rgba(255, 149, 0, 0.8));
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .complete-header {
     margin-bottom: var(--space-lg);
 }

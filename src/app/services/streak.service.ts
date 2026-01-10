@@ -105,6 +105,11 @@ export class StreakService {
                 });
                 // Also cache locally
                 this.saveToStorage(this.streakData());
+
+                // Sync local history if practiced today
+                if (data.practiced_today) {
+                    this.addToHistory(new Date());
+                }
             } else {
                 console.warn('[Streak] Failed to fetch from server:', response.status);
                 this.loadFromStorage();
@@ -155,6 +160,7 @@ export class StreakService {
 
                 // Cache locally
                 this.saveToStorage(this.streakData());
+                this.addToHistory(new Date());
 
                 console.log('[Streak] Activity recorded:', data);
             } else {
@@ -230,6 +236,7 @@ export class StreakService {
         });
 
         this.saveToStorage(this.streakData());
+        this.addToHistory(now);
     }
 
     /**
@@ -237,6 +244,57 @@ export class StreakService {
      */
     clearActivityResult(): void {
         this.lastActivityResult.set(null);
+    }
+
+    // ==================== History Tracking ====================
+
+    /**
+     * Get activity status for the last 7 days (including today)
+     * Returns array of booleans where true means practiced
+     * Index 0 = Today, Index 1 = Yesterday, etc.
+     */
+    getWeekActivity(): boolean[] {
+        const history = this.loadHistory();
+        const week: boolean[] = [];
+        const today = this.startOfDay(new Date());
+
+        for (let i = 0; i < 7; i++) {
+            const date = new Date(today);
+            date.setDate(date.getDate() - i);
+            const dateStr = date.toISOString().split('T')[0];
+            week.push(history.includes(dateStr));
+        }
+
+        return week;
+    }
+
+    private loadHistory(): string[] {
+        try {
+            const stored = localStorage.getItem('linguatube_activity_log');
+            return stored ? JSON.parse(stored) : [];
+        } catch {
+            return [];
+        }
+    }
+
+    private saveHistory(history: string[]): void {
+        try {
+            // Keep only last 365 days to avoid unlimited growth
+            const trimmed = history.slice(-365);
+            localStorage.setItem('linguatube_activity_log', JSON.stringify(trimmed));
+        } catch (e) {
+            console.warn('[Streak] Failed to save history:', e);
+        }
+    }
+
+    addToHistory(date: Date): void {
+        const dateStr = this.startOfDay(date).toISOString().split('T')[0]; // YYYY-MM-DD
+        const history = this.loadHistory();
+
+        if (!history.includes(dateStr)) {
+            history.push(dateStr);
+            this.saveHistory(history);
+        }
     }
 
     // ==================== Storage ====================

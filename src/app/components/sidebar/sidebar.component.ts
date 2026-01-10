@@ -29,6 +29,7 @@ export class SidebarComponent {
     isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
     openSettings = output<void>();
     openCommandPalette = output<void>();
+    openStreak = output<void>();
     showLangPicker = signal(false);
 
     // Learning language options with display info

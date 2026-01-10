@@ -233,7 +233,9 @@
         "milestone365": "1 Year Streak! 👑",
         "keepItUp": "Keep it up!",
         "practiceToday": "Practice today to extend your streak",
-        "newRecord": "New Record!"
+        "newRecord": "New Record!",
+        "clickDetails": "Click for details",
+        "freezesRemainingSentence": "You have {{count}} streak freezes remaining."
     },
     "history": {
         "title": "History",

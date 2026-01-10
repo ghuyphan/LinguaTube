@@ -465,6 +465,27 @@
             /* removed transform: translateY(-1px) */
         }
     }
+
+    &.active {
+        background: rgba(255, 149, 0, 0.08);
+        /* slight orange tint */
+        border-color: rgba(255, 149, 0, 0.3);
+
+        .streak-icon-wrapper {
+            background: #ff9500;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 149, 0, 0.4);
+        }
+
+        .streak-count {
+            color: #ff9500;
+        }
+
+        .streak-label {
+            color: #ff9500;
+            font-weight: 600;
+        }
+    }
 }
 
 .streak-freezes {
@@ -667,6 +688,8 @@
     padding: 0.5rem 0;
     margin-bottom: 0.5rem;
     color: #f59e0b;
+    background: transparent;
+    border: none;
     // border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -679,6 +702,18 @@
         font-size: 0.75rem;
         font-weight: 700;
         line-height: 1;
+    }
+
+    &.active {
+        color: #ff9500;
+
+        .collapsed-streak-count {
+            color: #ff9500;
+        }
+
+        ::ng-deep .fire-flame {
+            filter: drop-shadow(0 0 6px rgba(255, 149, 0, 0.6));
+        }
     }
 }
 

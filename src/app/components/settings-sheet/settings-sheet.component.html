@@ -41,31 +41,29 @@
             }
         </div>
 
-        <!-- Streak Section (Mobile Only) -->
+        <!-- Streak Section -->
         <div class="settings-section streak-section">
-            <div class="setting-row streak-row">
-                <div class="streak-icon-wrapper">
-                    <app-icon name="fire" [size]="20" class="streak-icon" />
+            <button class="setting-row setting-row--clickable" (click)="openStreakDialog()">
+                <div class="setting-row__content">
+                    <div class="streak-icon-wrapper-simple">
+                        <app-icon name="fire" [size]="20"
+                            [style.color]="streak.practicedToday() ? '#f59e0b' : 'var(--text-muted)'" />
+                    </div>
+                    <div class="streak-info-simple" style="display: flex; gap: 8px; align-items: baseline;">
+                        <span class="setting-row__value"
+                            [style.color]="streak.practicedToday() ? '#f59e0b' : 'inherit'">{{ streak.currentStreak()
+                            }}</span>
+                        <span class="setting-row__label">{{ i18n.t('streak.dayStreak') }}</span>
+                    </div>
                 </div>
-                <div class="streak-info">
-                    <span class="streak-count">{{ streak.currentStreak() }}</span>
-                    <span class="streak-label">{{ i18n.t('streak.dayStreak') }}</span>
+                <!-- Diamond Credits -->
+                <div
+                    style="display: flex; align-items: center; gap: 4px; margin-right: 8px; color: #3b82f6; font-size: 0.8rem; font-weight: 500;">
+                    <app-icon name="diamond" [size]="14" />
+                    <span>{{ transcript.diamonds() }}</span>
                 </div>
-                <div class="streak-meta">
-                    <span class="streak-longest">{{ i18n.t('streak.longestStreak') }}: {{ streak.longestStreak()
-                        }}</span>
-                    @if (streak.freezesRemaining() > 0 && streak.currentStreak() > 0) {
-                    <span class="streak-freezes-badge">
-                        <app-icon name="snowflake" [size]="12" />
-                        {{ streak.freezesRemaining() }}
-                    </span>
-                    }
-                </div>
-            </div>
-
-            <!-- Diamond Credits Row -->
-            <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
-                [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" />
+                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
+            </button>
         </div>
 
         <!-- Quick Navigation (Mobile Only) -->

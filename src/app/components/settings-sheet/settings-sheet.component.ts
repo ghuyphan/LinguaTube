@@ -5,7 +5,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
-import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
+
 import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
@@ -13,7 +13,7 @@ import { StreakService } from '../../services/streak.service';
   selector: 'app-settings-sheet',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent, ConfirmDialogComponent, DiamondCreditsCardComponent],
+  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent, ConfirmDialogComponent],
   templateUrl: './settings-sheet.component.html',
   styleUrl: './settings-sheet.component.scss'
 })
@@ -34,6 +34,7 @@ export class SettingsSheetComponent {
 
   isOpen = input<boolean>(false);
   closed = output<void>();
+  openStreak = output<void>();
 
   showSignOutConfirm = signal(false);
   showLearningLangPicker = signal(false);
@@ -140,5 +141,9 @@ export class SettingsSheetComponent {
 
   onSheetClosed(): void {
     this.closed.emit();
+  }
+
+  openStreakDialog(): void {
+    this.openStreak.emit();
   }
 }

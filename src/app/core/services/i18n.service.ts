@@ -49,7 +49,11 @@ export class I18nService {
     /**
      * Get a translated string by key path (e.g., 'nav.video', 'player.load')
      */
-    t(key: string): string {
+    /**
+     * Get a translated string by key path (e.g., 'nav.video', 'player.load')
+     * Supports interpolation: t('key', { count: 5 }) -> "You have 5 items"
+     */
+    t(key: string, params?: Record<string, string | number>): string {
         const parts = key.split('.');
         let current: TranslationData | string = this.translations();
 
@@ -63,7 +67,16 @@ export class I18nService {
             }
         }
 
-        return typeof current === 'string' ? current : key;
+        let value = typeof current === 'string' ? current : key;
+
+        // Perform interpolation if params provided
+        if (params && typeof value === 'string') {
+            Object.keys(params).forEach(paramKey => {
+                value = (value as string).replace(new RegExp(`{{${paramKey}}}`, 'g'), String(params[paramKey]));
+            });
+        }
+
+        return value;
     }
 
     /**
