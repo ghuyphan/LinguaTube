@@ -292,7 +292,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
     // Handle play/pause state changes
     effect(() => {
-      const isPlaying = this.youtube.isPlaying();
+      const isPlaying = this.youtube.intendedPlayingState();
       if (isPlaying) {
         this.startBufferedTracking();
         if (untracked(() => this.areControlsVisible())) {
@@ -474,7 +474,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   onMouseLeave() {
     // Simple version - CSS handles desktop vs mobile via pointer-events
-    if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
       this.clearControlsTimeout();
     }
@@ -488,7 +488,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private startControlsAutoHide() {
-    if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible()) {
+    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible()) {
       this.hideControlsAfterDelay(3000);
     }
   }
@@ -496,7 +496,7 @@ export class VideoPlayerComponent implements OnDestroy {
   private hideControlsAfterDelay(ms: number) {
     this.clearControlsTimeout();
     this.controlsTimeout = setTimeout(() => {
-      if (this.youtube.isPlaying() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+      if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
         this.areControlsVisible.set(false);
       }
     }, ms);
@@ -522,7 +522,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private showPlayPauseFeedback() {
-    this.feedbackIconName.set(this.youtube.isPlaying() ? 'pause' : 'play');
+    this.feedbackIconName.set(this.youtube.intendedPlayingState() ? 'pause' : 'play');
     this.playPauseFeedback.set(true);
     setTimeout(() => this.playPauseFeedback.set(false), 400);
   }
@@ -708,7 +708,7 @@ export class VideoPlayerComponent implements OnDestroy {
     const now = Date.now();
     this.lastToggleTime = now;
 
-    if (this.youtube.isPlaying()) {
+    if (this.youtube.intendedPlayingState()) {
       const newValue = !this.areControlsVisible();
       this.areControlsVisible.set(newValue);
       this.lastControlsShowTime = now;
@@ -725,7 +725,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private activateLongPress() {
-    if (!this.youtube.isPlaying()) return;
+    if (!this.youtube.intendedPlayingState()) return;
     this.longPressSpeed = this.currentSpeed();
     this.longPressActive.set(true);
     this.youtube.setPlaybackRate(2);
@@ -917,7 +917,7 @@ export class VideoPlayerComponent implements OnDestroy {
   onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
     event.stopPropagation();
 
-    if (this.youtube.isPlaying()) {
+    if (this.youtube.intendedPlayingState()) {
       this.youtube.pause();
     }
 
@@ -964,7 +964,7 @@ export class VideoPlayerComponent implements OnDestroy {
     event.stopPropagation();
     const match = this.getFsGrammarMatchForToken(index);
     if (match) {
-      if (this.youtube.isPlaying()) {
+      if (this.youtube.intendedPlayingState()) {
         this.youtube.pause();
       }
       this.fsSelectedGrammarPattern.set(match.pattern);

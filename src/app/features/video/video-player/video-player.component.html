@@ -117,7 +117,7 @@
       }
 
       <!-- Playlist Navigation + Play Button Container - Mobile -->
-      @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.isPlaying() ||
+      @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.intendedPlayingState() ||
       youtube.isBuffering())) {
       <div class="center-button-group touch-only">
         <!-- Previous Button (Playlist only) -->
@@ -135,7 +135,7 @@
           (touchstart)="$event.stopPropagation()" (click)="$event.stopPropagation()" disabled>
           <app-icon name="loader" [size]="44" aria-hidden="true" />
         </button>
-        } @else if (!youtube.isPlaying()) {
+        } @else if (!youtube.intendedPlayingState()) {
         <button class="big-play-btn touch-only" aria-label="Play video" (touchstart)="$event.stopPropagation()"
           (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
           <app-icon name="play" [size]="44" aria-hidden="true" />
@@ -178,7 +178,7 @@
           <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
         </button>
         }
-        } @else if (!youtube.isPlaying()) {
+        } @else if (!youtube.intendedPlayingState()) {
         <!-- Previous Button (Playlist only) -->
         @if (hasPlaylist()) {
         <button class="center-nav-btn" [disabled]="!canPlayPrev()"
@@ -242,7 +242,7 @@
     </div>
 
     <!-- Mini Progress Bar -->
-    <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.isPlaying()"
+    <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.intendedPlayingState()"
       [style.--progress]="progressPercentage()" (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
       <div class="mini-progress__fill"></div>
     </div>
@@ -358,7 +358,7 @@
     }
 
     <!-- Custom Controls -->
-    <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.isPlaying()">
+    <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.intendedPlayingState()">
       <!-- Progress Bar -->
       <div class="progress-container" role="slider" [attr.aria-valuenow]="displayTime()" [attr.aria-valuemin]="0"
         [attr.aria-valuemax]="youtube.duration()"

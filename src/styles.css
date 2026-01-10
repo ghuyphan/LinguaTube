@@ -2021,7 +2021,6 @@ select {
   visibility: hidden;
   transition: all var(--transition-normal);
   z-index: var(--z-modal-backdrop);
-  backdrop-filter: blur(2px);
 }
 
 .overlay.visible {

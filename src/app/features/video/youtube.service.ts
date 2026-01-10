@@ -361,19 +361,8 @@ export class YoutubeService {
     this.timeUpdateInterval = requestAnimationFrame(track);
   }
 
-  private setPlaying(isPlaying: boolean) {
-    if (isPlaying && !this.isPlaying()) {
-      this.isPlaying.set(true);
-      this.startTimeTracking();
-    } else if (!isPlaying) {
-      this.isPlaying.set(false);
-      cancelAnimationFrame(this.timeUpdateInterval);
-    }
-  }
-
   play(): void {
     this.intendedPlayingState.set(true);
-    this.setPlaying(true);
     try {
       this.player?.playVideo();
     } catch (e) { }
@@ -381,7 +370,6 @@ export class YoutubeService {
 
   pause(): void {
     this.intendedPlayingState.set(false);
-    this.setPlaying(false);
     try {
       this.player?.pauseVideo();
     } catch (e) { }
@@ -397,7 +385,7 @@ export class YoutubeService {
   }
 
   togglePlay(): void {
-    if (this.isPlaying()) {
+    if (this.intendedPlayingState()) {
       this.pause();
     } else {
       this.play();

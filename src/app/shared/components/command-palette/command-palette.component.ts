@@ -86,7 +86,6 @@ import { I18nService } from '../../../services';
       justify-content: center;
       padding-top: 15vh;
       background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
       animation: fadeIn 0.2s ease-out forwards;
     }
 
