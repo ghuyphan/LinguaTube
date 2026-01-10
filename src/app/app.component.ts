@@ -113,6 +113,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         <!-- Command Palette -->
         <app-command-palette
           [isOpen]="showCommandPalette()"
+          (search)="onCommandPaletteSearch($event)"
           (closed)="showCommandPalette.set(false)"
         />
       }
@@ -450,6 +451,11 @@ export class AppComponent implements OnDestroy {
 
   toggleSettingsSheet(): void {
     this.showSettingsSheet.update(v => !v);
+  }
+
+  onCommandPaletteSearch(videoId: string): void {
+    this.showCommandPalette.set(false);
+    this.router.navigate(['/video'], { queryParams: { id: videoId } });
   }
 
   /**

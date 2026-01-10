@@ -1,7 +1,7 @@
 <div class="page-layout">
     <div class="page-layout__main">
         <!-- Main Playlist Panel -->
-        <div class="playlist-panel" [class.panel-filled]="playlistService.isLoading() || virtualRows().length > 0">
+        <div class="playlist-panel" [class.panel-filled]="playlistService.isLoading() || currentList().length > 0">
             <div class="panel-header">
                 <div class="header-row">
                     <app-icon name="list-video" [size]="20" class="panel-icon" />
@@ -47,7 +47,8 @@
             <div class="panel-content">
                 @if (playlistService.isLoading()) {
                 <!-- Skeleton Loading State -->
-                <div class="grid skeleton-container" [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
+                <div class="grid skeleton-container"
+                    style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
                     @for (_ of [1,2,3,4,5,6,7,8]; track $index) {
                     <div class="card playlist-card playlist-card--skeleton">
                         <div class="card-thumbnail skeleton-box">
@@ -68,7 +69,7 @@
                 </div>
                 } @else if (currentList().length > 0) {
                 <!-- Simple grid with CSS content-visibility for performance -->
-                <div class="grid" [style.grid-template-columns]="'repeat(' + columns() + ', 1fr)'">
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
                     @for (playlist of currentList(); track playlist.id) {
                     <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
                         <div class="card-thumbnail">

@@ -24,7 +24,8 @@
         <!-- Controls Row -->
         <div class="playlist-controls">
             <button class="control-btn" (click)="onShare()" [title]="i18n.t('playlist.sharePlaylist')">
-                <app-icon name="share" [size]="18"></app-icon>
+                <app-icon [name]="isCopied() ? 'check' : 'share'" [size]="18"
+                    [class.text-success]="isCopied()"></app-icon>
             </button>
             <button class="control-btn" [class.active]="playlistService.isLooping()"
                 (click)="playlistService.toggleLoop()" [title]="i18n.t('playlist.loopPlaylist')">
@@ -38,7 +39,8 @@
     </div>
 
     <!-- Playlist Items -->
-    <div class="playlist-items" #scrollContainer>
+    <div class="playlist-items" #scrollContainer cdkDropList (cdkDropListDropped)="drop($event)"
+        [cdkDropListDisabled]="!playlist.isOwner">
         @if (playlistService.isLoading()) {
         <!-- Skeleton Loading State -->
         <div class="skeleton-container">
@@ -69,12 +71,34 @@
         } @else {
         @for (video of playlist.videos; track video.videoId; let i = $index) {
         <div #playlistItem class="playlist-item" [class.active]="i === playlistService.currentIndex()"
-            [id]="'playlist-item-' + i" (click)="onVideoClick(video.videoId, i)">
+            [id]="'playlist-item-' + i" (click)="onVideoClick(video.videoId, i)" cdkDrag cdkDragLockAxis="y"
+            cdkDragBoundary=".playlist-items">
+
+            <!-- Custom Drag Preview (Optional, makes it look cleaner while dragging) -->
+            <div *cdkDragPreview class="playlist-item drag-preview">
+                <div class="item-thumbnail">
+                    <img [src]="video.thumbnail" [alt]="video.title">
+                </div>
+                <div class="item-info">
+                    <div class="item-title">{{ video.title }}</div>
+                </div>
+            </div>
+
+            <!-- Drag Placeholder -->
+            <div class="custom-placeholder" *cdkDragPlaceholder></div>
 
             <div class="item-left">
+                <!-- Show index normally, show drag handle if owner (or hover on desktop) -->
+                @if (playlist.isOwner) {
+                <div class="drag-handle" cdkDragHandle (click)="$event.stopPropagation()">
+                    <app-icon name="grip-vertical" [size]="16" />
+                </div>
+                } @else {
                 <span class="item-index">{{ i + 1 }}</span>
+                }
+
                 <app-icon class="play-icon" name="play" [size]="16"></app-icon>
-                <div class="now-playing-indicator">
+                <div class="now-playing-indicator" [class.paused]="!youtube.isPlaying()">
                     <div class="bar bar-1"></div>
                     <div class="bar bar-2"></div>
                     <div class="bar bar-3"></div>

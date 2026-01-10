@@ -83,6 +83,7 @@ import { Token } from '../../../models';
           [currentIndex]="playlistService.currentIndex()"
           [isHidden]="showCommandPalette()"
           (videoSelect)="onPlaylistVideoSelect($event)"
+          (openMenu)="onOpenPlaylistMenu($event)"
           (close)="closePlaylist()"
           (openCommandPalette)="openCommandPalette()"
           (addToPlaylist)="openAddToPlaylist()"
@@ -104,6 +105,7 @@ import { Token } from '../../../models';
     <!-- Command Palette -->
     <app-command-palette
       [isOpen]="showCommandPalette()"
+      (search)="onCommandPaletteSearch($event)"
       (closed)="onCommandPaletteClosed()"
     />
 
@@ -146,6 +148,17 @@ import { Token } from '../../../models';
                     <app-icon name="chevron-down" [size]="18"></app-icon>
                     <span>{{ i18n.t('playlist.moveDown') }}</span>
                 </button>
+                <div class="menu-divider"></div>
+                <button class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoToTop()">
+                    <app-icon name="chevrons-up" [size]="18"></app-icon>
+                    <span>{{ i18n.t('playlist.moveToTop') }}</span>
+                </button>
+                <button class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
+                    (click)="moveVideoToBottom()">
+                    <app-icon name="chevrons-down" [size]="18"></app-icon>
+                    <span>{{ i18n.t('playlist.moveToBottom') }}</span>
+                </button>
+                <div class="menu-divider"></div>
                 <button class="menu-option menu-option--danger" (click)="removeVideo()">
                     <app-icon name="trash-2" [size]="18"></app-icon>
                     <span>{{ i18n.t('playlist.removeFromPlaylist') }}</span>
@@ -391,6 +404,12 @@ import { Token } from '../../../models';
 
     .menu-option--danger app-icon {
         color: var(--error);
+    }
+
+    .menu-divider {
+        height: 1px;
+        background: var(--border-color);
+        margin: 4px 0;
     }
   `]
 })
@@ -727,6 +746,32 @@ export class VideoPageComponent implements OnInit {
     this.videoMenuOpen.set(false);
   }
 
+  async moveVideoToTop(): Promise<void> {
+    const playlist = this.playlistService.currentPlaylist();
+    const index = this.menuVideoIndex();
+    if (!playlist || index <= 0) return;
+
+    const videoIds = [...playlist.videoIds];
+    const [movedItem] = videoIds.splice(index, 1);
+    videoIds.unshift(movedItem);
+
+    await this.playlistService.reorderVideos(playlist.id, videoIds);
+    this.videoMenuOpen.set(false);
+  }
+
+  async moveVideoToBottom(): Promise<void> {
+    const playlist = this.playlistService.currentPlaylist();
+    const index = this.menuVideoIndex();
+    if (!playlist || index >= playlist.videos.length - 1) return;
+
+    const videoIds = [...playlist.videoIds];
+    const [movedItem] = videoIds.splice(index, 1);
+    videoIds.push(movedItem);
+
+    await this.playlistService.reorderVideos(playlist.id, videoIds);
+    this.videoMenuOpen.set(false);
+  }
+
   async removeVideo(): Promise<void> {
     const playlist = this.playlistService.currentPlaylist();
     const videoId = this.menuVideoId();
@@ -960,6 +1005,18 @@ export class VideoPageComponent implements OnInit {
       history.pushState({ commandPalette: true }, '');
     }
     this.showCommandPalette.set(true);
+  }
+
+  onCommandPaletteSearch(videoId: string): void {
+    if (this.playlistService.currentPlaylist()) {
+      // If in a playlist, queue the video instead of navigating away
+      this.playlistService.queueVideo(videoId);
+      this.showCommandPalette.set(false);
+    } else {
+      // Standard navigation
+      this.showCommandPalette.set(false);
+      this.router.navigate(['/video'], { queryParams: { id: videoId } });
+    }
   }
 
   onCommandPaletteClosed(): void {

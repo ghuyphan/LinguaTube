@@ -8,8 +8,6 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../services';
 import { Playlist, PlaylistLanguage } from '../../../models';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -23,7 +21,7 @@ const LANGUAGES = [
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, ScrollingModule, BottomSheetComponent, OptionPickerComponent],
+    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, BottomSheetComponent, OptionPickerComponent],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -55,51 +53,11 @@ export class PlaylistPageComponent {
     playlists = this.playlistService.myPlaylists;
     communityPlaylists = this.playlistService.communityPlaylists;
 
-    // Virtualization Logic
-    private screenWidth = signal(typeof window !== 'undefined' ? window.innerWidth : 1200);
-
-    constructor() {
-        if (typeof window !== 'undefined') {
-            fromEvent(window, 'resize')
-                .pipe(debounceTime(200), takeUntilDestroyed())
-                .subscribe(() => this.screenWidth.set(window.innerWidth));
-        }
-    }
-
-    columns = computed(() => {
-        // Approximate container width (screenWidth - sidebar 340px - padding 48px)
-        // Adjust logic based on actual layout breakpoints if needed
-        // For simplicity, we assume grid takes available space
-        const containerWidth = this.screenWidth() < 768 ? this.screenWidth() - 32 : this.screenWidth() - 340 - 64;
-        const minColWidth = 240;
-        const gap = 16;
-        const cols = Math.floor((containerWidth + gap) / (minColWidth + gap));
-        return Math.max(1, cols);
-    });
-
-    itemHeight = computed(() => {
-        // Mobile compact view vs Desktop card view
-        return this.columns() === 1 ? 100 : 320;
-    });
-
-    // Use regular list on mobile for shrink-to-fit, virtual scroll on desktop for performance
-    isMobile = computed(() => this.screenWidth() < 768);
-
     currentList = computed(() => {
         const list = this.view() === 'my' ? this.playlists() : this.communityPlaylists();
         const filter = this.languageFilter();
         if (filter === 'all') return list;
         return list.filter(p => p.language === filter);
-    });
-
-    virtualRows = computed(() => {
-        const list = this.currentList();
-        const cols = this.columns();
-        const rows: Playlist[][] = [];
-        for (let i = 0; i < list.length; i += cols) {
-            rows.push(list.slice(i, i + cols));
-        }
-        return rows;
     });
 
     openMenu(playlist: Playlist, event: Event): void {

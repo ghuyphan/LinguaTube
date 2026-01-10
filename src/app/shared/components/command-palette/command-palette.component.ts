@@ -374,9 +374,8 @@ import { I18nService } from '../../../services';
 })
 export class CommandPaletteComponent {
   private platformId = inject(PLATFORM_ID);
-  private router = inject(Router);
+  search = output<string>();
   i18n = inject(I18nService);
-
   isOpen = input<boolean>(false);
   closed = output<void>();
 
@@ -430,9 +429,17 @@ export class CommandPaletteComponent {
       return;
     }
 
-    // Navigate to video
-    this.router.navigate(['/video'], { queryParams: { id: videoId } });
-    this.close();
+    // Emit search intent
+    this.search.emit(videoId);
+
+    // Close the palette gracefully
+    this.isClosing.set(true);
+    setTimeout(() => {
+      this.isClosing.set(false);
+      this.url.set('');
+      this.error.set('');
+      // We don't emit closed() here because the action was submitted, not cancelled
+    }, 150);
   }
 
   private extractVideoId(input: string): string | null {

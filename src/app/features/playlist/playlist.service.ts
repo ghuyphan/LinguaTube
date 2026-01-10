@@ -265,6 +265,76 @@ export class PlaylistService {
 
     // ==================== Video Management ====================
 
+    async queueVideo(videoId: string): Promise<void> {
+        console.debug('[Playlist] Queuing video:', videoId);
+
+        const current = this.currentPlaylist();
+        if (!current) {
+            console.warn('[Playlist] No active playlist to queue into');
+            return;
+        }
+
+        // 1. Check if already in playlist -> Jump to it
+        const existingIndex = current.videos.findIndex(v => v.videoId === videoId);
+        if (existingIndex !== -1) {
+            console.debug('[Playlist] Video already in playlist, jumping to index:', existingIndex);
+            this.currentIndex.set(existingIndex);
+            return;
+        }
+
+        // 2. Prepare new video item
+        const playerVideo = this.youtube.currentVideo();
+        const cachedTitle = (playerVideo?.id === videoId && playerVideo.title) ? playerVideo.title : 'Loading...';
+        const cachedChannel = (playerVideo?.id === videoId && playerVideo.channel) ? playerVideo.channel : '';
+
+        // Insert after current video
+        const insertIndex = this.currentIndex() + 1;
+
+        // 3. Fetch full metadata in background if not cached
+        if (cachedTitle === 'Loading...') {
+            this.youtube.fetchVideoMetadata(videoId).then(meta => {
+                const updated = this.currentPlaylist();
+                if (updated && updated.videos[insertIndex]?.videoId === videoId) {
+                    const newVideos = [...updated.videos];
+                    newVideos[insertIndex] = {
+                        ...newVideos[insertIndex],
+                        title: meta.title,
+                        channel: meta.channel
+                    };
+
+                    this.currentPlaylist.set({
+                        ...updated,
+                        videos: newVideos
+                    });
+                }
+            });
+        }
+
+        const newVideo: PlaylistVideo = {
+            videoId,
+            title: cachedTitle,
+            thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+            position: current.videos.length
+        };
+
+        const newVideos = [...current.videos];
+        newVideos.splice(insertIndex, 0, newVideo);
+
+        // Update runtime state ONLY (no persistence)
+        this.currentPlaylist.set({
+            ...current,
+            videos: newVideos,
+            videoIds: newVideos.map(v => v.videoId),
+            videoCount: newVideos.length
+        });
+
+        // Advance to play it immediately
+        this.currentIndex.set(insertIndex);
+    }
+
+
+
+
     /**
      * Add a video to a playlist
      */

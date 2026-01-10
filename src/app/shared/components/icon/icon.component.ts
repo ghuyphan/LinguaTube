@@ -11,7 +11,7 @@ export type IconName =
     | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus' | 'bookmark-filled'
     | 'repeat' | 'languages' | 'subtitles' | 'captions'
     | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle' | 'refresh-cw'
-    | 'chevron-left' | 'chevron-right' | 'chevron-up' | 'arrow-right' | 'layers'
+    | 'chevron-left' | 'chevron-right' | 'chevron-up' | 'chevrons-up' | 'chevrons-down' | 'arrow-right' | 'layers'
     | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'
     | 'user' | 'google' | 'log-in'
@@ -19,7 +19,7 @@ export type IconName =
     // Gamification & cute icons
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical'
-    | 'list' | 'list-video' | 'share' | 'link' | 'lock';
+    | 'list' | 'list-video' | 'share' | 'link' | 'lock' | 'grip-vertical';
 
 @Component({
     selector: 'app-icon',
