@@ -1,6 +1,6 @@
 import { Injectable, signal, computed, effect, untracked, inject } from '@angular/core';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
-import { AuthService } from '../../core/services';
+import { AuthService, StorageService } from '../../core/services';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
 const SAVE_DEBOUNCE_MS = 300;
@@ -11,6 +11,11 @@ const SAVE_DEBOUNCE_MS = 300;
 export class VocabularyService {
     readonly vocabulary = signal<VocabularyItem[]>([]);
     private authService = inject(AuthService);
+    private storage = inject(StorageService);
+
+    // Initial empty stats
+    private readonly initialStats = { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0 };
+    readonly stats = signal<typeof this.initialStats>(this.initialStats);
 
     // Track when vocabulary was last modified for cache invalidation
     readonly lastModified = computed(() => {
@@ -21,26 +26,8 @@ export class VocabularyService {
     // Debounce timer for localStorage writes
     private saveTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    readonly stats = computed(() => {
-        const items = this.vocabulary();
-        // Single pass through array instead of 7 filter operations
-        return items.reduce(
-            (acc, item) => {
-                acc.total++;
-                // Count by level
-                if (item.level === 'new') acc.new++;
-                else if (item.level === 'learning') acc.learning++;
-                else if (item.level === 'known') acc.known++;
-                else if (item.level === 'ignored') acc.ignored++;
-                // Count by language
-                if (item.language === 'ja') acc.japanese++;
-                else if (item.language === 'zh') acc.chinese++;
-                else if (item.language === 'ko') acc.korean++;
-                return acc;
-            },
-            { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0 }
-        );
-    });
+    // Removed computed stats to prevent O(N) recalc on every change
+    // Stats are now managed incrementally via updateStats methods
 
     /**
      * Get stats filtered by language
@@ -141,6 +128,7 @@ export class VocabularyService {
         };
 
         this.vocabulary.update(items => [...items, item]);
+        this.updateStatsIncremental(null, item);
         return item;
     }
 
@@ -185,6 +173,7 @@ export class VocabularyService {
         };
 
         this.vocabulary.update(items => [...items, item]);
+        this.updateStatsIncremental(null, item);
         return item;
     }
 
@@ -192,11 +181,21 @@ export class VocabularyService {
      * Update word level
      */
     updateLevel(id: string, level: WordLevel): void {
-        this.vocabulary.update(items =>
-            items.map(item =>
-                item.id === id ? { ...item, level, updatedAt: new Date() } : item
-            )
-        );
+        const items = this.vocabulary();
+        const index = items.findIndex(i => i.id === id);
+        if (index === -1) return;
+
+        const oldItem = items[index];
+        if (oldItem.level === level) return;
+
+        const newItem = { ...oldItem, level, updatedAt: new Date() };
+
+        // Immutable update
+        const newItems = [...items];
+        newItems[index] = newItem;
+
+        this.vocabulary.set(newItems);
+        this.updateStatsIncremental(oldItem, newItem);
     }
 
     /**
@@ -204,55 +203,61 @@ export class VocabularyService {
      * @param quality 0-5 scale (0-2 = incorrect, 3-5 = correct with varying difficulty)
      */
     markReviewedSRS(id: string, quality: number): void {
-        this.vocabulary.update(items =>
-            items.map(item => {
-                if (item.id !== id) return item;
+        const items = this.vocabulary();
+        const index = items.findIndex(i => i.id === id);
+        if (index === -1) return;
 
-                // SM-2 Algorithm
-                let { easeFactor, interval, repetitions } = item;
-                let newLevel: WordLevel = item.level;
+        const item = items[index];
 
-                if (quality < 3) {
-                    // Incorrect - reset
-                    repetitions = 0;
-                    interval = 0;
-                    newLevel = item.level === 'known' ? 'learning' : 'new';
-                } else {
-                    // Correct
-                    repetitions++;
+        // SM-2 Algorithm
+        let { easeFactor, interval, repetitions } = item;
+        let newLevel: WordLevel = item.level;
 
-                    if (repetitions === 1) {
-                        interval = 1;
-                    } else if (repetitions === 2) {
-                        interval = 6;
-                    } else {
-                        interval = Math.round(interval * easeFactor);
-                    }
+        if (quality < 3) {
+            // Incorrect - reset
+            repetitions = 0;
+            interval = 0;
+            newLevel = item.level === 'known' ? 'learning' : 'new';
+        } else {
+            // Correct
+            repetitions++;
 
-                    // Update ease factor (min 1.3)
-                    easeFactor = Math.max(1.3, easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+            if (repetitions === 1) {
+                interval = 1;
+            } else if (repetitions === 2) {
+                interval = 6;
+            } else {
+                interval = Math.round(interval * easeFactor);
+            }
 
-                    // Update level based on repetitions
-                    if (item.level === 'new') newLevel = 'learning';
-                    else if (item.level === 'learning' && repetitions >= 3) newLevel = 'known';
-                }
+            // Update ease factor (min 1.3)
+            easeFactor = Math.max(1.3, easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
 
-                const nextReviewDate = new Date();
-                nextReviewDate.setDate(nextReviewDate.getDate() + interval);
+            // Update level based on repetitions
+            if (item.level === 'new') newLevel = 'learning';
+            else if (item.level === 'learning' && repetitions >= 3) newLevel = 'known';
+        }
 
-                return {
-                    ...item,
-                    level: newLevel,
-                    lastReviewedAt: new Date(),
-                    updatedAt: new Date(),
-                    reviewCount: item.reviewCount + 1,
-                    easeFactor,
-                    interval,
-                    repetitions,
-                    nextReviewDate
-                };
-            })
-        );
+        const nextReviewDate = new Date();
+        nextReviewDate.setDate(nextReviewDate.getDate() + interval);
+
+        const newItem = {
+            ...item,
+            level: newLevel,
+            lastReviewedAt: new Date(),
+            updatedAt: new Date(),
+            reviewCount: item.reviewCount + 1,
+            easeFactor,
+            interval,
+            repetitions,
+            nextReviewDate
+        };
+
+        const newItems = [...items];
+        newItems[index] = newItem;
+
+        this.vocabulary.set(newItems);
+        this.updateStatsIncremental(item, newItem);
     }
 
     /**
@@ -291,7 +296,13 @@ export class VocabularyService {
      * Delete a word
      */
     deleteWord(id: string): void {
-        this.vocabulary.update(items => items.filter(item => item.id !== id));
+        const items = this.vocabulary();
+        const item = items.find(i => i.id === id);
+
+        if (item) {
+            this.vocabulary.set(items.filter(i => i.id !== id));
+            this.updateStatsIncremental(item, null);
+        }
     }
 
     /**
@@ -374,6 +385,7 @@ export class VocabularyService {
             const existing = new Set(this.vocabulary().map(i => i.word));
             const newItems = items.filter(i => !existing.has(i.word));
             this.vocabulary.update(current => [...current, ...newItems]);
+            this.recalculateStats();
         } catch (err) {
             console.error('Failed to import vocabulary:', err);
             throw new Error('Invalid JSON format');
@@ -385,6 +397,7 @@ export class VocabularyService {
      */
     clear(): void {
         this.vocabulary.set([]);
+        this.recalculateStats();
     }
 
     /**
@@ -430,52 +443,43 @@ export class VocabularyService {
         }
 
         this.vocabulary.set(Array.from(merged.values()));
+        this.recalculateStats();
     }
 
     // Private methods
 
     private loadFromStorage(): void {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored) {
-                const items = JSON.parse(stored) as VocabularyItem[];
-                // Convert date strings back to Date objects
-                const parsed = items.map(item => ({
-                    ...item,
-                    addedAt: new Date(item.addedAt),
-                    updatedAt: item.updatedAt ? new Date(item.updatedAt) : undefined,
-                    lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : undefined
-                }));
-                this.vocabulary.set(parsed);
-            }
-        } catch (err) {
-            console.error('Failed to load vocabulary from storage:', err);
+        const items = this.storage.get<VocabularyItem[]>(STORAGE_KEY);
+        if (items) {
+            // Convert date strings back to Date objects
+            const parsed = items.map(item => ({
+                ...item,
+                addedAt: new Date(item.addedAt),
+                updatedAt: item.updatedAt ? new Date(item.updatedAt) : undefined,
+                lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : undefined
+            }));
+            this.vocabulary.set(parsed);
+            this.recalculateStats();
         }
     }
 
     private saveToStorage(items: VocabularyItem[]): void {
-        try {
-            const data = JSON.stringify(items);
-            localStorage.setItem(STORAGE_KEY, data);
-        } catch (err) {
-            // Handle QuotaExceededError
-            if (err instanceof DOMException && (
-                err.code === 22 || // QuotaExceededError
-                err.name === 'QuotaExceededError' ||
-                err.name === 'NS_ERROR_DOM_QUOTA_REACHED'
-            )) {
-                console.warn('[VocabularyService] Storage quota exceeded, cleaning up old data');
-                // Try to free up space by removing old ignored words
-                const filtered = items.filter(item => item.level !== 'ignored');
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+        const success = this.storage.set(STORAGE_KEY, items);
+
+        if (!success) {
+            // If storage failed (likely quota), try to clean up
+            console.warn('[VocabularyService] Storage full, attempting cleanup...');
+            // Try to free up space by removing old ignored words
+            const filtered = items.filter(item => item.level !== 'ignored');
+
+            if (filtered.length < items.length) {
+                if (this.storage.set(STORAGE_KEY, filtered)) {
                     this.vocabulary.set(filtered);
-                    console.log('[VocabularyService] Removed ignored words to free space');
-                } catch {
-                    console.error('[VocabularyService] Still cannot save after cleanup');
+                    this.recalculateStats();
+                    console.log('[VocabularyService] Cleanup success: removed ignored words');
+                } else {
+                    console.error('[VocabularyService] Cleanup failed to free enough space');
                 }
-            } else {
-                console.error('Failed to save vocabulary to storage:', err);
             }
         }
     }
@@ -501,5 +505,62 @@ export class VocabularyService {
      */
     private generateId(): string {
         return Date.now().toString(36) + Math.random().toString(36).substring(2);
+    }
+
+    // ==================== Stats Helpers ====================
+
+    private recalculateStats(): void {
+        const items = this.vocabulary();
+        const stats = items.reduce(
+            (acc, item) => {
+                acc.total++;
+                // Count by level
+                if (item.level === 'new') acc.new++;
+                else if (item.level === 'learning') acc.learning++;
+                else if (item.level === 'known') acc.known++;
+                else if (item.level === 'ignored') acc.ignored++;
+                // Count by language
+                if (item.language === 'ja') acc.japanese++;
+                else if (item.language === 'zh') acc.chinese++;
+                else if (item.language === 'ko') acc.korean++;
+                return acc;
+            },
+            { ...this.initialStats }
+        );
+        this.stats.set(stats);
+    }
+
+    private updateStatsIncremental(oldItem: VocabularyItem | null, newItem: VocabularyItem | null): void {
+        this.stats.update(current => {
+            const stats = { ...current };
+
+            // Remove old stats
+            if (oldItem) {
+                stats.total--;
+                if (oldItem.level === 'new') stats.new--;
+                else if (oldItem.level === 'learning') stats.learning--;
+                else if (oldItem.level === 'known') stats.known--;
+                else if (oldItem.level === 'ignored') stats.ignored--;
+
+                if (oldItem.language === 'ja') stats.japanese--;
+                else if (oldItem.language === 'zh') stats.chinese--;
+                else if (oldItem.language === 'ko') stats.korean--;
+            }
+
+            // Add new stats
+            if (newItem) {
+                stats.total++;
+                if (newItem.level === 'new') stats.new++;
+                else if (newItem.level === 'learning') stats.learning++;
+                else if (newItem.level === 'known') stats.known++;
+                else if (newItem.level === 'ignored') stats.ignored++;
+
+                if (newItem.language === 'ja') stats.japanese++;
+                else if (newItem.language === 'zh') stats.chinese++;
+                else if (newItem.language === 'ko') stats.korean++;
+            }
+
+            return stats;
+        });
     }
 }

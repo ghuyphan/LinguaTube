@@ -10,8 +10,9 @@ import {
 import { AuthService } from '../../core/services';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { YoutubeService } from '../video';
+import { OfflinePlaylistRepository } from '../../core/repositories';
 
-const STORAGE_KEY = 'linguatube_playlists';
+// Note: storage key is now managed by the repository
 const MAX_LOCAL_PLAYLISTS = 10;
 
 /**
@@ -25,14 +26,15 @@ export class PlaylistService {
     private auth = inject(AuthService);
     private pb = inject(PocketBaseService);
     private youtube = inject(YoutubeService);
+    private repo = inject(OfflinePlaylistRepository);
 
     // ==================== State ====================
 
     // UI State for mobile bar animation
     hasShownMobileBar = false;
 
-    /** User's own playlists */
-    readonly myPlaylists = signal<Playlist[]>([]);
+    /** User's own playlists (from repository) */
+    readonly myPlaylists = this.repo.getPlaylists();
 
     /** Playlists saved from other users */
     readonly savedPlaylists = signal<Playlist[]>([]);
@@ -90,38 +92,7 @@ export class PlaylistService {
     });
 
     constructor() {
-        // Initialize playlists based on auth state
-        this.initializePlaylists();
-
-        // Persist changes to localStorage (for guest users only)
-        effect(() => {
-            const playlists = this.myPlaylists();
-            untracked(() => this.saveToStorage(playlists));
-        });
-
-        // Load playlists from PocketBase when user logs in
-        this.auth.loginEvent.subscribe(() => {
-            console.debug('[Playlist] User logged in, loading from PocketBase');
-            this.loadUserPlaylists();
-        });
-    }
-
-    /**
-     * Initialize playlists on service startup
-     */
-    private async initializePlaylists(): Promise<void> {
-        // Always try to load from localStorage first (for guest users or as fallback)
-        this.loadFromStorage();
-        console.debug('[Playlist] Loaded from localStorage:', this.myPlaylists().length, 'playlists');
-
-        // If user is already logged in, load from PocketBase
-        // Wait a bit for auth to initialize
-        setTimeout(async () => {
-            if (this.auth.isLoggedIn()) {
-                console.debug('[Playlist] User already logged in, loading from PocketBase');
-                await this.loadUserPlaylists();
-            }
-        }, 500);
+        // No explicit init needed, repo handles it
     }
 
     // ==================== CRUD Operations ====================
@@ -130,8 +101,6 @@ export class PlaylistService {
      * Create a new playlist
      */
     async createPlaylist(input: CreatePlaylistInput): Promise<Playlist> {
-        console.debug('[Playlist] Creating playlist:', input.title, 'isLoggedIn:', this.auth.isLoggedIn());
-
         const playlist: Playlist = {
             id: this.generateId(),
             userId: this.auth.getUserId() || 'local',
@@ -149,34 +118,8 @@ export class PlaylistService {
             updatedAt: new Date()
         };
 
-        if (this.auth.isLoggedIn()) {
-            // Save to PocketBase
-            try {
-                const client = await this.pb.getClient();
-                const record = await client.collection('playlists').create({
-                    user: this.auth.getUserId(),
-                    title: playlist.title,
-                    description: playlist.description || '',
-                    visibility: playlist.visibility,
-                    language: playlist.language,
-                    tags: playlist.tags,
-                    video_ids: playlist.videoIds,
-                    video_count: 0,
-                    thumbnail: '',
-                    save_count: 0,
-                    is_featured: false
-                });
-                playlist.id = record.id;
-                console.debug('[Playlist] Created in PocketBase with ID:', record.id);
-            } catch (error) {
-                console.error('[Playlist] Failed to create in PocketBase:', error);
-                throw error;
-            }
-        }
-
-        // Update local state
-        this.myPlaylists.set([playlist, ...this.myPlaylists()]);
-        console.debug('[Playlist] Created playlist:', playlist.id, 'Total playlists:', this.myPlaylists().length);
+        await this.repo.createPlaylist(playlist);
+        console.debug('[Playlist] Created playlist via repo:', playlist.id);
         return playlist;
     }
 
@@ -186,76 +129,12 @@ export class PlaylistService {
      * while API sync happens in the background.
      */
     async updatePlaylist(id: string, updates: Partial<Playlist>): Promise<void> {
-        console.debug('[Playlist] Updating playlist:', id, 'updates:', updates, 'isLoggedIn:', this.auth.isLoggedIn());
-
-        const playlists = this.myPlaylists();
-        const index = playlists.findIndex(p => p.id === id);
-
-        if (index < 0) {
-            console.error('[Playlist] Playlist not found for update:', id);
-            throw new Error('Playlist not found');
-        }
-
-        const updated = {
-            ...playlists[index],
-            ...updates,
-            updatedAt: new Date()
-        };
-
-        // Optimistic update: Update local state immediately
-        const newPlaylists = [...playlists];
-        newPlaylists[index] = updated;
-        this.myPlaylists.set(newPlaylists);
-        console.debug('[Playlist] Local state updated optimistically');
-
-        // Sync to API in background (don't await)
-        if (this.auth.isLoggedIn()) {
-            this.syncPlaylistToApi(id, updated).catch(error => {
-                console.error('[Playlist] Background sync failed:', error);
-                // Note: We don't rollback the optimistic update here.
-                // The next loadUserPlaylists() will reconcile the state.
-            });
-        }
+        await this.repo.updatePlaylist(id, updates);
+        console.debug('[Playlist] Updated playlist via repo:', id);
     }
 
-    /**
-     * Sync playlist updates to PocketBase API (background operation)
-     */
-    private async syncPlaylistToApi(id: string, updated: Playlist): Promise<void> {
-        try {
-            const client = await this.pb.getClient();
-            await client.collection('playlists').update(id, {
-                title: updated.title,
-                description: updated.description || '',
-                visibility: updated.visibility,
-                language: updated.language,
-                tags: updated.tags,
-                video_ids: updated.videoIds,
-                video_count: updated.videoCount,
-                thumbnail: updated.thumbnail || ''
-            });
-            console.debug('[Playlist] Synced to PocketBase successfully');
-        } catch (error) {
-            console.error('[Playlist] Failed to sync to PocketBase:', error);
-            throw error;
-        }
-    }
-
-    /**
-     * Delete a playlist
-     */
     async deletePlaylist(id: string): Promise<void> {
-        if (this.auth.isLoggedIn()) {
-            try {
-                const client = await this.pb.getClient();
-                await client.collection('playlists').delete(id);
-            } catch (error) {
-                console.error('[Playlist] Failed to delete from PocketBase:', error);
-                throw error;
-            }
-        }
-
-        this.myPlaylists.set(this.myPlaylists().filter(p => p.id !== id));
+        await this.repo.deletePlaylist(id);
 
         // Clear current playlist if it was deleted
         if (this.currentPlaylist()?.id === id) {
@@ -771,49 +650,8 @@ export class PlaylistService {
      * Load user's playlists from PocketBase
      */
     async loadUserPlaylists(): Promise<void> {
-        if (!this.auth.isLoggedIn()) return;
-
-        this.isLoading.set(true);
-
-        try {
-            const client = await this.pb.getClient();
-
-            // Load owned playlists
-            const owned = await client.collection('playlists').getList(1, 50, {
-                filter: `user="${this.auth.getUserId()}"`,
-                sort: '-updated'
-            });
-
-            const playlists = owned.items.map(r => this.recordToPlaylist(r));
-            this.myPlaylists.set(playlists);
-
-            // Cache to localStorage for faster next load
-            this.saveToStorage(playlists, true);
-            console.debug('[Playlist] Loaded', playlists.length, 'playlists from PocketBase');
-
-            // Load saved playlists (playlists you've bookmarked from other users)
-            try {
-                const saves = await client.collection('playlist_saves').getList(1, 50, {
-                    filter: `user="${this.auth.getUserId()}"`,
-                    expand: 'playlist',
-                    sort: '-saved_at'
-                });
-
-                const savedPlaylists = saves.items
-                    .map(s => s.expand?.['playlist'])
-                    .filter(Boolean)
-                    .map((r: any) => this.recordToPlaylist(r));
-
-                this.savedPlaylists.set(savedPlaylists);
-            } catch (e) {
-                // If collection doesn't exist or other error, just set empty
-                this.savedPlaylists.set([]);
-            }
-        } catch (error) {
-            console.error('[Playlist] Failed to load playlists:', error);
-        } finally {
-            this.isLoading.set(false);
-        }
+        // Delegated to repo refresh/sync
+        await this.repo.refresh();
     }
 
     /**
@@ -893,41 +731,7 @@ export class PlaylistService {
         return videos;
     }
 
-    private loadFromStorage(): void {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored) {
-                const data = JSON.parse(stored);
-                const playlists: Playlist[] = (data.playlists || []).map((p: any) => ({
-                    ...p,
-                    createdAt: new Date(p.createdAt),
-                    updatedAt: new Date(p.updatedAt)
-                }));
-                this.myPlaylists.set(playlists);
-            }
-        } catch (e) {
-            console.warn('[Playlist] Failed to load from storage:', e);
-        }
-    }
-
-    private saveToStorage(playlists: Playlist[], force = false): void {
-        // Skip auto-save for logged-in users (they sync via PocketBase)
-        // But allow forced saves for caching PocketBase data
-        if (!force && this.auth.isLoggedIn()) {
-            return;
-        }
-
-        try {
-            const data = {
-                playlists: playlists.slice(0, MAX_LOCAL_PLAYLISTS),
-                updatedAt: new Date().toISOString()
-            };
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-            console.debug('[Playlist] Cached to localStorage:', playlists.length, 'playlists');
-        } catch (e) {
-            console.warn('[Playlist] Failed to save to storage:', e);
-        }
-    }
+    // Private persistence methods removed as they are handled by repository
 
     private generateId(): string {
         return `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;

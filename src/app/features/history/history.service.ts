@@ -1,6 +1,6 @@
 import { Injectable, inject, signal, computed, effect, untracked } from '@angular/core';
 import { HistoryItem, VideoInfo } from '../../models';
-import { SettingsService, AuthService } from '../../core/services';
+import { SettingsService, AuthService, StorageService } from '../../core/services';
 import { YoutubeService } from '../video';
 
 const STORAGE_KEY = 'linguatube_history';
@@ -17,6 +17,7 @@ export class HistoryService {
     private settings = inject(SettingsService);
     private auth = inject(AuthService);
     private youtube = inject(YoutubeService);
+    private storage = inject(StorageService);
 
     /** All history items, sorted by watched_at descending */
     readonly history = signal<HistoryItem[]>([]);
@@ -163,31 +164,22 @@ export class HistoryService {
     // ==================== Private Methods ====================
 
     private loadFromStorage(): void {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored) {
-                const data = JSON.parse(stored);
-                const items: HistoryItem[] = (data.items || []).map((item: any) => ({
-                    ...item,
-                    watched_at: new Date(item.watched_at)
-                }));
-                this.history.set(items);
-            }
-        } catch (e) {
-            console.warn('[History] Failed to load from storage:', e);
+        const stored = this.storage.get<{ items: HistoryItem[], updatedAt: string }>(STORAGE_KEY);
+        if (stored && stored.items) {
+            const items: HistoryItem[] = (stored.items || []).map((item: any) => ({
+                ...item,
+                watched_at: new Date(item.watched_at)
+            }));
+            this.history.set(items);
         }
     }
 
     private saveToStorage(items: HistoryItem[]): void {
-        try {
-            const data = {
-                items: items.slice(0, MAX_LOCAL_HISTORY),
-                updatedAt: new Date().toISOString()
-            };
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        } catch (e) {
-            console.warn('[History] Failed to save to storage:', e);
-        }
+        const data = {
+            items: items.slice(0, MAX_LOCAL_HISTORY),
+            updatedAt: new Date().toISOString()
+        };
+        this.storage.set(STORAGE_KEY, data);
     }
 
     /**

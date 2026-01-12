@@ -1,5 +1,5 @@
 import { Injectable, inject, signal, computed } from '@angular/core';
-import { PocketBaseService, AuthService } from '../core/services';
+import { PocketBaseService, AuthService, StorageService } from '../core/services';
 
 const STORAGE_KEY = 'linguatube_streak';
 
@@ -22,6 +22,7 @@ export interface StreakData {
 export class StreakService {
     private pb = inject(PocketBaseService);
     private auth = inject(AuthService);
+    private storage = inject(StorageService);
 
     /** Current streak data */
     readonly streakData = signal<StreakData>({
@@ -350,22 +351,12 @@ export class StreakService {
     }
 
     private loadHistory(): string[] {
-        try {
-            const stored = localStorage.getItem('linguatube_activity_log');
-            return stored ? JSON.parse(stored) : [];
-        } catch {
-            return [];
-        }
+        return this.storage.get<string[]>('linguatube_activity_log') || [];
     }
 
     private saveHistory(history: string[]): void {
-        try {
-            // Keep only last 365 days to avoid unlimited growth
-            const trimmed = history.slice(-365);
-            localStorage.setItem('linguatube_activity_log', JSON.stringify(trimmed));
-        } catch (e) {
-            console.warn('[Streak] Failed to save history:', e);
-        }
+        const trimmed = history.slice(-365);
+        this.storage.set('linguatube_activity_log', trimmed);
     }
 
     addToHistory(date: Date): void {
@@ -381,34 +372,24 @@ export class StreakService {
     // ==================== Storage ====================
 
     private loadFromStorage(): void {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored) {
-                const data = JSON.parse(stored);
+        const data = this.storage.get<StreakData>(STORAGE_KEY);
+        if (data) {
+            // Check if practiced today based on stored lastActivity
+            const lastActivity = data.lastActivity ? new Date(data.lastActivity) : null;
+            const practicedToday = lastActivity ? this.isSameDay(new Date(), lastActivity) : false;
 
-                // Check if practiced today based on stored lastActivity
-                const lastActivity = data.lastActivity ? new Date(data.lastActivity) : null;
-                const practicedToday = lastActivity ? this.isSameDay(new Date(), lastActivity) : false;
-
-                this.streakData.set({
-                    currentStreak: data.currentStreak || 0,
-                    longestStreak: data.longestStreak || 0,
-                    freezesRemaining: data.freezesRemaining ?? 2,
-                    lastActivity: data.lastActivity,
-                    practicedToday
-                });
-            }
-        } catch (e) {
-            console.warn('[Streak] Failed to load from storage:', e);
+            this.streakData.set({
+                currentStreak: data.currentStreak || 0,
+                longestStreak: data.longestStreak || 0,
+                freezesRemaining: data.freezesRemaining ?? 2,
+                lastActivity: data.lastActivity,
+                practicedToday
+            });
         }
     }
 
     private saveToStorage(data: StreakData): void {
-        try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        } catch (e) {
-            console.warn('[Streak] Failed to save to storage:', e);
-        }
+        this.storage.set(STORAGE_KEY, data);
     }
 
     // ==================== Date Helpers ====================

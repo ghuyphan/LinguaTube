@@ -4,6 +4,13 @@ import { VocabularyService } from '../features/vocabulary';
 import { HistoryService } from '../features/history';
 import { StreakService } from './streak.service';
 import type { RecordModel } from 'pocketbase';
+import {
+    calculateHash,
+    mergeByTimestamp,
+    processBatch,
+    sanitizeFilterValue,
+    withRetry
+} from '../shared/utils/sync.utils';
 
 export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
 
@@ -71,12 +78,9 @@ export class SyncService {
         this.setupAutoSync();
     }
 
-    /**
-     * Sanitize values for PocketBase filter strings to prevent injection
-     */
-    private sanitizeFilterValue(value: string): string {
-        // Escape backslashes first, then double quotes
-        return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    // Helper wrappers using imported utils
+    private sanitize(value: string): string {
+        return sanitizeFilterValue(value);
     }
 
     /**
@@ -137,11 +141,11 @@ export class SyncService {
     }
 
     private calculateHash(items: any[]): string {
-        return items.map(i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`).join('|');
+        return calculateHash(items, i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`);
     }
 
     private calculateHistoryHash(items: any[]): string {
-        return items.map(i => `${i.video_id}:${Math.floor(i.progress)}:${new Date(i.watched_at).getTime()}:${i.is_favorite}`).join('|');
+        return calculateHash(items, i => `${i.video_id}:${Math.floor(i.progress)}:${new Date(i.watched_at).getTime()}:${i.is_favorite}`);
     }
 
     private debouncedPush(): void {
@@ -329,25 +333,23 @@ export class SyncService {
             operations.push({ item, existing });
         }
 
-        // Process in parallel batches of 10
-        const BATCH_SIZE = 10;
-        for (let i = 0; i < operations.length; i += BATCH_SIZE) {
-            const batch = operations.slice(i, i + BATCH_SIZE);
-            await Promise.all(batch.map(({ item, existing }) =>
-                this.syncItemWithRetry(client, userId, item, existing)
-            ));
-        }
+        // Process in batches with retry using utils
+        await processBatch(operations, async ({ item, existing }) => {
+            await withRetry(
+                () => this.syncItem(client, userId, item, existing),
+                { maxRetries: 3 }
+            );
+        }, 10);
     }
 
     /**
-     * Sync a single item with retry logic (exponential backoff)
+     * Sync a single item
      */
-    private async syncItemWithRetry(
+    private async syncItem(
         client: Awaited<ReturnType<typeof this.pb.getClient>>,
         userId: string,
         item: SyncItem,
-        existing: RecordModel | undefined,
-        retries = 3
+        existing: RecordModel | undefined
     ): Promise<void> {
         const data = {
             word: item.word,
@@ -361,65 +363,27 @@ export class SyncService {
             user: userId
         };
 
-        for (let attempt = 0; attempt < retries; attempt++) {
-            try {
-                if (existing) {
-                    await client.collection('vocabulary').update(existing.id, data);
-                } else {
-                    // Use deterministic ID for creation
-                    await client.collection('vocabulary').create({ ...data, id: item.id });
-                }
-                return; // Success
-            } catch (error: any) {
-                const isLastAttempt = attempt === retries - 1;
-                const isNetworkError = error?.message?.includes('fetch') || error?.status === 0;
-
-                if (isLastAttempt || !isNetworkError) {
-                    console.error('[Sync] Failed to sync item after retries:', item.word, error);
-                    return; // Give up
-                }
-
-                // Exponential backoff: 1s, 2s, 4s
-                const delay = Math.pow(2, attempt) * 1000;
-                console.warn(`[Sync] Retry ${attempt + 1}/${retries} for ${item.word} in ${delay}ms`);
-                await new Promise(resolve => setTimeout(resolve, delay));
-            }
+        if (existing) {
+            await client.collection('vocabulary').update(existing.id, data);
+        } else {
+            // Use deterministic ID for creation
+            await client.collection('vocabulary').create({ ...data, id: item.id });
         }
     }
 
     /**
      * Merge local and remote items - prefer newer based on updated timestamp
      */
+    /**
+     * Merge local and remote items - prefer newer based on updated timestamp
+     */
     private mergeItems(local: SyncItem[], remote: SyncItem[]): SyncItem[] {
-        const merged = new Map<string, SyncItem>();
-
-        // Add all local items first
-        for (const item of local) {
-            merged.set(`${item.word}-${item.language}`, item);
-        }
-
-        // Merge remote items, preferring newer versions based on timestamp comparison
-        for (const item of remote) {
-            const key = `${item.word}-${item.language}`;
-            const existing = merged.get(key);
-
-            if (!existing) {
-                // Remote item doesn't exist locally - add it
-                merged.set(key, item);
-            } else {
-                // Both exist - compare timestamps to determine which is newer
-                const remoteTime = item.updated ? new Date(item.updated).getTime() : 0;
-                const localTime = existing.updated ? new Date(existing.updated).getTime() : 0;
-
-                if (remoteTime > localTime) {
-                    // Remote is newer - use remote version
-                    merged.set(key, item);
-                }
-                // Otherwise keep existing (local) version
-            }
-        }
-
-        return Array.from(merged.values());
+        return mergeByTimestamp(
+            local,
+            remote,
+            item => `${item.word}-${item.language}`,
+            item => item.updated ? new Date(item.updated).getTime() : 0
+        );
     }
 
     /**
@@ -459,7 +423,7 @@ export class SyncService {
 
             // Find the record
             const records = await client.collection('vocabulary').getFullList({
-                filter: `user = "${userId}" && word = "${this.sanitizeFilterValue(word)}" && language = "${this.sanitizeFilterValue(language)}"`
+                filter: `user = "${userId}" && word = "${this.sanitize(word)}" && language = "${this.sanitize(language)}"`
             });
 
             // Delete if found
@@ -613,64 +577,42 @@ export class SyncService {
             existingByVideoId.set(record['video_id'], record);
         }
 
-        // Process items
-        const BATCH_SIZE = 10;
-        for (let i = 0; i < items.length; i += BATCH_SIZE) {
-            const batch = items.slice(i, i + BATCH_SIZE);
-            await Promise.all(batch.map(async (item) => {
-                const existing = existingByVideoId.get(item.video_id);
-                const data = {
-                    video_id: item.video_id,
-                    title: item.title,
-                    thumbnail: item.thumbnail || '',
-                    channel: item.channel || '',
-                    duration: item.duration || 0,
-                    language: item.language || 'en',
-                    languages: item.languages || [],
-                    watched_at: item.watched_at,
-                    progress: item.progress || 1,
-                    is_favorite: item.is_favorite || false,
-                    user: userId
-                };
+        // Process items using generic batch processor
+        await processBatch(items, async (item) => {
+            const existing = existingByVideoId.get(item.video_id);
+            const data = {
+                video_id: item.video_id,
+                title: item.title,
+                thumbnail: item.thumbnail || '',
+                channel: item.channel || '',
+                duration: item.duration || 0,
+                language: item.language || 'en',
+                languages: item.languages || [],
+                watched_at: item.watched_at,
+                progress: item.progress || 1,
+                is_favorite: item.is_favorite || false,
+                user: userId
+            };
 
-                try {
-                    if (existing) {
-                        await client.collection('history').update(existing.id, data);
-                    } else {
-                        await client.collection('history').create(data);
-                    }
-                } catch (error) {
-                    console.error('[Sync] Failed to sync history item:', item.video_id, error);
+            try {
+                if (existing) {
+                    await client.collection('history').update(existing.id, data);
+                } else {
+                    await client.collection('history').create(data);
                 }
-            }));
-        }
+            } catch (error) {
+                console.error('[Sync] Failed to sync history item:', item.video_id, error);
+            }
+        }, 10);
     }
 
     private mergeHistoryItems(local: HistorySyncItem[], remote: HistorySyncItem[]): HistorySyncItem[] {
-        const merged = new Map<string, HistorySyncItem>();
-
-        // Add all local items
-        for (const item of local) {
-            merged.set(item.video_id, item);
-        }
-
-        // Merge remote items, prefer newer watched_at
-        for (const item of remote) {
-            const existing = merged.get(item.video_id);
-
-            if (!existing) {
-                merged.set(item.video_id, item);
-            } else {
-                const remoteTime = new Date(item.watched_at).getTime();
-                const localTime = new Date(existing.watched_at).getTime();
-
-                if (remoteTime > localTime) {
-                    merged.set(item.video_id, item);
-                }
-            }
-        }
-
-        return Array.from(merged.values());
+        return mergeByTimestamp(
+            local,
+            remote,
+            item => item.video_id,
+            item => new Date(item.watched_at).getTime()
+        );
     }
 
     private importHistoryToLocal(items: HistorySyncItem[]): void {
@@ -702,7 +644,7 @@ export class SyncService {
             if (!userId) return;
 
             const records = await client.collection('history').getFullList({
-                filter: `user = "${userId}" && video_id = "${this.sanitizeFilterValue(videoId)}"`
+                filter: `user = "${userId}" && video_id = "${this.sanitize(videoId)}"`
             });
 
             for (const record of records) {
