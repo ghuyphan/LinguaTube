@@ -59,6 +59,13 @@
         margin-bottom: 8px;
     }
 
+    &--circle {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin-right: -4px;
+    }
+
     &--meta {
         height: 0.75rem;
         width: 60px;
@@ -237,7 +244,10 @@
     gap: var(--space-md);
     // height: 100%;
     width: 100%;
-    animation: contentFadeIn 0.25s ease-out;
+
+    &.animate-content {
+        animation: contentFadeIn 0.25s ease-out;
+    }
 }
 
 .virtual-viewport {

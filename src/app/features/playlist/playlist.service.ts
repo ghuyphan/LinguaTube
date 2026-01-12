@@ -650,7 +650,11 @@ export class PlaylistService {
      * Load user's playlists from PocketBase
      */
     async loadUserPlaylists(): Promise<void> {
-        this.isLoading.set(true);
+        // Only show full-screen loading/skeleton if we have no data
+        if (this.myPlaylists().length === 0) {
+            this.isLoading.set(true);
+        }
+
         try {
             // Delegated to repo refresh/sync
             await this.repo.refresh();
@@ -663,7 +667,9 @@ export class PlaylistService {
      * Load community playlists (published)
      */
     async loadCommunityPlaylists(): Promise<void> {
-        this.isLoading.set(true);
+        if (this.communityPlaylists().length === 0) {
+            this.isLoading.set(true);
+        }
 
         try {
             const client = await this.pb.getClient();

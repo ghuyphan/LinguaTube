@@ -50,6 +50,11 @@ export class PlaylistPageComponent {
         ...LANGUAGES.map(l => ({ value: l.code, label: l.name, iconUrl: l.flag }))
     ];
 
+    // Animation State
+    // Default to animating (true) only if we have NO data initially.
+    // If we have data, we skip the initial animation (false) to avoid "flash" on tab switch.
+    shouldAnimate = signal(this.playlistService.myPlaylists().length === 0);
+
     playlists = this.playlistService.myPlaylists;
     communityPlaylists = this.playlistService.communityPlaylists;
 
@@ -153,6 +158,7 @@ export class PlaylistPageComponent {
     }
 
     setView(view: 'my' | 'community'): void {
+        this.shouldAnimate.set(true);
         this.view.set(view);
         if (view === 'community' && this.communityPlaylists().length === 0) {
             this.playlistService.loadCommunityPlaylists();
@@ -190,6 +196,7 @@ export class PlaylistPageComponent {
     }
 
     onLanguageFilterChange(value: string): void {
+        this.shouldAnimate.set(true);
         this.languageFilter.set(value as 'all' | PlaylistLanguage);
         this.showLanguageFilter.set(false);
     }
