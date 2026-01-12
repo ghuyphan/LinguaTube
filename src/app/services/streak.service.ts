@@ -64,7 +64,7 @@ export class StreakService {
      */
     async loadStreak(): Promise<void> {
         if (this.auth.isLoggedIn()) {
-            await this.fetchFromServer();
+            await this.syncWithServer();
         } else {
             this.loadFromStorage();
         }
@@ -107,7 +107,10 @@ export class StreakService {
                 this.saveToStorage(this.streakData());
 
                 // Sync local history if practiced today
-                if (data.practiced_today) {
+                if (data.activity_log && Array.isArray(data.activity_log)) {
+                    this.saveHistory(data.activity_log);
+                } else if (data.practiced_today) {
+                    // Fallback if server doesn't return log yet
                     this.addToHistory(new Date());
                 }
             } else {
@@ -116,6 +119,78 @@ export class StreakService {
             }
         } catch (error) {
             console.error('[Streak] Error fetching from server:', error);
+            this.loadFromStorage();
+        } finally {
+            this.isLoading.set(false);
+        }
+    }
+
+    /**
+     * Sync with server (Reconciliation)
+     * Compares local and server state and updates the outdated one
+     */
+    async syncWithServer(): Promise<void> {
+        if (!this.auth.isLoggedIn()) return;
+
+        this.isLoading.set(true);
+        try {
+            // 1. Get Server State
+            const client = await this.pb.getClient();
+            const response = await fetch(`${client.baseURL}/api/streaks/me`, {
+                headers: {
+                    'Authorization': `Bearer ${this.pb.getToken()}`
+                }
+            });
+
+            if (!response.ok) {
+                console.warn('[Streak] Failed to fetch server state:', response.status);
+                return;
+            }
+
+            const serverData = await response.json();
+            const localData = this.streakData();
+
+            // 2. Compare Timestamps
+            const localTime = localData.lastActivity ? new Date(localData.lastActivity).getTime() : 0;
+            const serverTime = serverData.last_activity ? new Date(serverData.last_activity).getTime() : 0;
+
+            // 3. Reconcile
+            if (localTime > serverTime) {
+                // Local is ahead (e.g. practiced offline)
+                // We should push local state to server if possible or at least record activity
+                console.log('[Streak] Local is ahead, attempting to push...');
+
+                // If practiced today locally but not on server, record it
+                // Note: This API might only support "record now", so it works best for "today"
+                if (localData.practicedToday && !serverData.practiced_today) {
+                    await this.recordActivityOnServer();
+                } else {
+                    // Fallback: Just update local with merged data if needed, 
+                    // but since local is newer, we generally trust local for display
+                    // untill next server sync confirms.
+                    console.log('[Streak] keeping local state pending server sync');
+                }
+            } else {
+                // Server is ahead or equal -> Update local
+                console.log('[Streak] Server is ahead, updating local');
+                this.streakData.set({
+                    currentStreak: serverData.current_streak || 0,
+                    longestStreak: serverData.longest_streak || 0,
+                    freezesRemaining: serverData.freezes_remaining ?? 2,
+                    lastActivity: serverData.last_activity,
+                    practicedToday: serverData.practiced_today || false
+                });
+
+                this.saveToStorage(this.streakData());
+
+                // Sync history log if available
+                if (serverData.activity_log && Array.isArray(serverData.activity_log)) {
+                    this.saveHistory(serverData.activity_log);
+                }
+            }
+        } catch (error) {
+            console.error('[Streak] Sync failed:', error);
+            // Fallback to local
             this.loadFromStorage();
         } finally {
             this.isLoading.set(false);
@@ -160,7 +235,13 @@ export class StreakService {
 
                 // Cache locally
                 this.saveToStorage(this.streakData());
-                this.addToHistory(new Date());
+
+                // Sync history from server response
+                if (data.activity_log && Array.isArray(data.activity_log)) {
+                    this.saveHistory(data.activity_log);
+                } else {
+                    this.addToHistory(new Date());
+                }
 
                 console.log('[Streak] Activity recorded:', data);
             } else {

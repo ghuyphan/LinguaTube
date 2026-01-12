@@ -2,6 +2,7 @@ import { Injectable, inject, effect, untracked, signal } from '@angular/core';
 import { AuthService, PocketBaseService } from '../core/services';
 import { VocabularyService } from '../features/vocabulary';
 import { HistoryService } from '../features/history';
+import { StreakService } from './streak.service';
 import type { RecordModel } from 'pocketbase';
 
 export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
@@ -41,11 +42,14 @@ export class SyncService {
     private auth = inject(AuthService);
     private vocab = inject(VocabularyService);
     private historyService = inject(HistoryService);
+    private streakService = inject(StreakService);
     private pb = inject(PocketBaseService);
 
     private isSyncing = false;
     private pushTimeout: ReturnType<typeof setTimeout> | null = null;
+    private historyPushTimeout: ReturnType<typeof setTimeout> | null = null;
     private lastPushedHash = '';
+    private lastPushedHistoryHash = '';
     private hasInitialSynced = false;
 
     // Public sync status signals
@@ -112,10 +116,32 @@ export class SyncService {
                 }
             });
         });
+
+        // Watch history changes and push to server (debounced)
+        effect(() => {
+            const items = this.historyService.history();
+            const userId = untracked(() => this.auth.getUserId());
+
+            if (!userId || items.length === 0) return;
+
+            // Only sync significantly changed items (progress/watched_at/favorite/deleted)
+            const hash = this.calculateHistoryHash(items);
+
+            untracked(() => {
+                // If hash changed and we are not currently sinking (to avoid loops)
+                if (hash !== this.lastPushedHistoryHash && !this.historySyncing()) {
+                    this.debouncedHistoryPush();
+                }
+            });
+        });
     }
 
     private calculateHash(items: any[]): string {
         return items.map(i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`).join('|');
+    }
+
+    private calculateHistoryHash(items: any[]): string {
+        return items.map(i => `${i.video_id}:${Math.floor(i.progress)}:${new Date(i.watched_at).getTime()}:${i.is_favorite}`).join('|');
     }
 
     private debouncedPush(): void {
@@ -125,6 +151,17 @@ export class SyncService {
         this.pushTimeout = setTimeout(() => {
             this.pushToServerOnly();
         }, 2000);
+    }
+
+    private debouncedHistoryPush(): void {
+        if (this.historyPushTimeout) {
+            clearTimeout(this.historyPushTimeout);
+        }
+        // Debounce history more aggressively (10s) to avoid spamming while watching
+        // But fast enough to capture "I watched this" before closing app
+        this.historyPushTimeout = setTimeout(() => {
+            this.pushHistoryToServerOnly();
+        }, 8000);
     }
 
     /**
@@ -186,6 +223,9 @@ export class SyncService {
 
             // Sync history
             await this.syncHistory();
+
+            // Sync streak
+            await this.streakService.loadStreak();
 
             this.syncStatus.set('synced');
             this.lastSyncTime.set(new Date());
@@ -441,6 +481,28 @@ export class SyncService {
         this.sync();
     }
 
+    /**
+     * Push only history to server (for auto-sync)
+     */
+    private async pushHistoryToServerOnly(): Promise<void> {
+        const userId = this.auth.getUserId();
+        if (!userId || this.historySyncing()) return;
+
+        const items = this.convertToHistorySyncItems(this.historyService.getAllItems());
+
+        try {
+            this.historySyncing.set(true);
+            await this.pushHistoryToPocketBase(items);
+            this.lastPushedHistoryHash = this.calculateHistoryHash(this.historyService.getAllItems());
+            this.lastSyncTime.set(new Date());
+            console.log('[Sync] Auto-pushed', items.length, 'history items to PocketBase');
+        } catch (error) {
+            console.error('[Sync] History auto-push failed:', error);
+        } finally {
+            this.historySyncing.set(false);
+        }
+    }
+
     // ==================== History Sync ====================
 
     /**
@@ -472,6 +534,9 @@ export class SyncService {
 
             // Import merged items back to local
             this.importHistoryToLocal(merged);
+
+            // Update hash
+            this.lastPushedHistoryHash = this.calculateHistoryHash(this.historyService.getAllItems());
 
             console.log('[Sync] History sync complete!');
         } catch (error) {

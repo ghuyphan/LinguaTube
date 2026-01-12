@@ -69,7 +69,8 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
                 longest_streak: 1,
                 last_activity: now.toISOString(),
                 freezes_remaining: 2,
-                last_freeze_used: null
+                last_freeze_used: null,
+                activity_log: [now.toISOString().split('T')[0]]
             });
             $app.save(streakRecord);
 
@@ -78,7 +79,8 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
                 current_streak: 1,
                 longest_streak: 1,
                 freezes_remaining: 2,
-                is_new_record: false
+                is_new_record: false,
+                activity_log: [now.toISOString().split('T')[0]]
             });
         }
 
@@ -93,7 +95,8 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
                 current_streak: streakRecord.get('current_streak'),
                 longest_streak: streakRecord.get('longest_streak'),
                 freezes_remaining: streakRecord.get('freezes_remaining'),
-                is_new_record: false
+                is_new_record: false,
+                activity_log: streakRecord.get('activity_log') || []
             });
         }
 
@@ -141,6 +144,19 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
         streakRecord.set('longest_streak', longestStreak);
         streakRecord.set('freezes_remaining', freezesRemaining);
         streakRecord.set('last_activity', now.toISOString());
+
+        // Update activity log
+        let activityLog = streakRecord.get('activity_log') || [];
+        const todayStr = now.toISOString().split('T')[0];
+        if (!activityLog.includes(todayStr)) {
+            activityLog.push(todayStr);
+            // Optional: Limit log size (e.g., last 365 days)
+            if (activityLog.length > 365) {
+                activityLog = activityLog.slice(-365);
+            }
+            streakRecord.set('activity_log', activityLog);
+        }
+
         $app.save(streakRecord);
 
         return e.json(200, {
@@ -149,7 +165,8 @@ routerAdd('POST', '/api/streaks/record-activity', (e) => {
             longest_streak: longestStreak,
             freezes_remaining: freezesRemaining,
             freeze_used: freezeUsed,
-            is_new_record: isNewRecord
+            is_new_record: isNewRecord,
+            activity_log: streakRecord.get('activity_log')
         });
 
     } catch (error) {
@@ -205,7 +222,10 @@ routerAdd('GET', '/api/streaks/me', (e) => {
                 longest_streak: 0,
                 freezes_remaining: 2,
                 last_activity: null,
-                practiced_today: false
+                freezes_remaining: 2,
+                last_activity: null,
+                practiced_today: false,
+                activity_log: []
             });
         }
 
@@ -219,7 +239,9 @@ routerAdd('GET', '/api/streaks/me', (e) => {
             longest_streak: streakRecord.get('longest_streak') || 0,
             freezes_remaining: streakRecord.get('freezes_remaining') || 0,
             last_activity: streakRecord.get('last_activity'),
-            practiced_today: practicedToday
+            last_activity: streakRecord.get('last_activity'),
+            practiced_today: practicedToday,
+            activity_log: streakRecord.get('activity_log') || []
         });
 
     } catch (error) {
