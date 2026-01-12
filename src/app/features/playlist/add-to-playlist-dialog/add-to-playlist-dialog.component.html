@@ -10,7 +10,7 @@
                     @if (isInPlaylist(playlist)) {
                     <app-icon name="check" [size]="18"></app-icon>
                     } @else {
-                    <app-icon name="plus" [size]="18"></app-icon>
+                    <app-icon name="list-plus" [size]="18"></app-icon>
                     }
                 </div>
                 <div class="playlist-info">
@@ -33,7 +33,7 @@
 
         <div class="dialog-footer">
             <button class="btn btn-text create-btn" (click)="openCreateDialog()">
-                <app-icon name="plus" [size]="18"></app-icon>
+                <app-icon name="list-plus" [size]="18"></app-icon>
                 {{ i18n.t('playlist.createNew') }}
             </button>
         </div>

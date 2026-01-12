@@ -157,26 +157,14 @@ type FilterType = 'all' | 'favorites';
   styles: [`
     :host {
       display: block;
-      /* Explicit height required for virtual scroll because parent has min-height: 100vh */
-      height: calc(100vh - 120px); 
-      overflow: hidden;
-    }
-
-    /* Mobile adjustment: account for bottom nav and different padding */
-    @media (max-width: 768px) {
-      :host {
-        height: calc(100vh - 180px); /* More space for bottom nav + browser bars */
-      }
+      /* Allow natural height */
     }
 
     .page-layout {
-      height: 100%;
-      overflow: hidden;
+      /* Remove fixed height */
     }
 
     .page-layout__main {
-      height: 100%;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
@@ -188,7 +176,6 @@ type FilterType = 'all' | 'favorites';
       border: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      height: 100%; /* Ensure full height */
       overflow: hidden;
     }
 
@@ -225,20 +212,22 @@ type FilterType = 'all' | 'favorites';
     }
 
     .history-list {
-      flex: 1;
-      overflow: hidden; /* Virtual Scroll handles overflow */
       display: flex;
       flex-direction: column;
-      position: relative; /* Context for absolute positioning if needed */
-      min-height: 0; /* Critical for flex child scrolling */
+      position: relative;
     }
     
     app-history-list {
       display: block;
-      flex: 1;
-      height: 100%;
-      min-height: 0;
+      /* Explicit height required for virtual scroll */
+      height: calc(100vh - 220px); 
       overflow: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      app-history-list {
+         height: calc(100vh - 280px); /* Account for bottom nav */
+      }
     }
 
     /* Sidebar - uses global .sidebar-card, .stats-grid, .stat-item */

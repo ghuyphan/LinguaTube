@@ -446,6 +446,11 @@
 
 
 
+          <!-- Add to Playlist -->
+          <button class="control-btn" (click)="onSaveClick()" aria-label="Add to playlist">
+            <app-icon name="list-plus" [size]="18" />
+          </button>
+
           <!-- Fullscreen -->
           <button class="control-btn" (click)="toggleFullscreen()"
             [attr.aria-label]="isFullscreen() ? 'Exit fullscreen' : 'Fullscreen'">
