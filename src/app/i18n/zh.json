@@ -258,6 +258,7 @@
     "playlist": {
         "title": "播放列表",
         "myPlaylists": "我的播放列表",
+        "myPlaylist": "你",
         "community": "社区",
         "newPlaylist": "新建播放列表",
         "saveToPlaylist": "保存到播放列表",

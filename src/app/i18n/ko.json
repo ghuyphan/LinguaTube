@@ -258,6 +258,7 @@
     "playlist": {
         "title": "재생목록",
         "myPlaylists": "내 재생목록",
+        "myPlaylist": "나",
         "community": "커뮤니티",
         "newPlaylist": "새 재생목록",
         "saveToPlaylist": "재생목록에 저장",

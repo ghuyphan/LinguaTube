@@ -258,6 +258,7 @@
     "playlist": {
         "title": "プレイリスト",
         "myPlaylists": "マイプレイリスト",
+        "myPlaylist": "あなた",
         "community": "コミュニティ",
         "newPlaylist": "新しいプレイリスト",
         "saveToPlaylist": "プレイリストに保存",

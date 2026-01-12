@@ -94,9 +94,8 @@
                             <h3 class="card-title">{{ playlist.title }}</h3>
                             <div class="card-meta">
                                 @if (playlist.language) {
-                                <img [src]="'/icons/flags/' + playlist.language + '.svg'" [alt]="playlist.language"
-                                    class="lang-flag"
-                                    style="width: 16px; height: 16px; border-radius: 50%; object-fit: cover;">
+                                <img [src]="getFlagUrl(playlist.language)" [alt]="playlist.language" class="lang-flag"
+                                    loading="lazy">
                                 }
                                 <span>{{ (view() === 'my') ? i18n.t('playlist.myPlaylist') : (playlist.userName ||
                                     i18n.t('playlist.community')) }}</span>

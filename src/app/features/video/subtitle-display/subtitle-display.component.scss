@@ -802,11 +802,13 @@ ruby rt {
 /* English text */
 .text-en {
     word-spacing: 0.05em;
+    font-size: 1.15rem;
+    line-height: 1.8;
 }
 
 .text-en .word {
-    padding: 4px 6px;
-    margin: 1px 3px;
+    padding: 2px 4px;
+    margin: 1px 2px;
 }
 
 /* ============================================

@@ -650,8 +650,13 @@ export class PlaylistService {
      * Load user's playlists from PocketBase
      */
     async loadUserPlaylists(): Promise<void> {
-        // Delegated to repo refresh/sync
-        await this.repo.refresh();
+        this.isLoading.set(true);
+        try {
+            // Delegated to repo refresh/sync
+            await this.repo.refresh();
+        } finally {
+            this.isLoading.set(false);
+        }
     }
 
     /**

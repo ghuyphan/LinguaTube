@@ -157,6 +157,28 @@ type FilterType = 'all' | 'favorites';
   styles: [`
     :host {
       display: block;
+      /* Explicit height required for virtual scroll because parent has min-height: 100vh */
+      height: calc(100vh - 120px); 
+      overflow: hidden;
+    }
+
+    /* Mobile adjustment: account for bottom nav and different padding */
+    @media (max-width: 768px) {
+      :host {
+        height: calc(100vh - 180px); /* More space for bottom nav + browser bars */
+      }
+    }
+
+    .page-layout {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .page-layout__main {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     /* History panel - component specific */
@@ -166,10 +188,13 @@ type FilterType = 'all' | 'favorites';
       border: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
+      height: 100%; /* Ensure full height */
+      overflow: hidden;
     }
 
     .history-header {
       padding: var(--space-sm) var(--space-md);
+      flex-shrink: 0;
     }
 
     .header-row {
@@ -195,17 +220,25 @@ type FilterType = 'all' | 'favorites';
       margin-top: var(--space-xs);
     }
 
+    .filter-chips {
+      flex-shrink: 0;
+    }
+
     .history-list {
       flex: 1;
       overflow: hidden; /* Virtual Scroll handles overflow */
       display: flex;
       flex-direction: column;
+      position: relative; /* Context for absolute positioning if needed */
+      min-height: 0; /* Critical for flex child scrolling */
     }
     
     app-history-list {
+      display: block;
       flex: 1;
       height: 100%;
       min-height: 0;
+      overflow: hidden;
     }
 
     /* Sidebar - uses global .sidebar-card, .stats-grid, .stat-item */
@@ -238,6 +271,7 @@ type FilterType = 'all' | 'favorites';
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
+      flex-shrink: 0;
     }
 
     /* Confirm sheet */
@@ -326,6 +360,11 @@ type FilterType = 'all' | 'favorites';
 
       .mobile-only {
         display: flex;
+      }
+      
+      /* Mobile layout adjustments */
+      .page-layout {
+        padding-bottom: 80px; /* Space for bottom nav */
       }
     }
 

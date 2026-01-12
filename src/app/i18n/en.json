@@ -260,6 +260,7 @@
     "playlist": {
         "title": "Playlists",
         "myPlaylists": "My Playlists",
+        "myPlaylist": "You",
         "community": "Community",
         "newPlaylist": "New Playlist",
         "saveToPlaylist": "Save to playlist",
