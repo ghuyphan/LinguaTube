@@ -1,10 +1,8 @@
 import { Injectable, inject, signal, computed, effect, untracked } from '@angular/core';
 import { HistoryItem, VideoInfo } from '../../models';
-import { SettingsService, AuthService, StorageService } from '../../core/services';
+import { SettingsService, AuthService } from '../../core/services';
 import { YoutubeService } from '../video';
-
-const STORAGE_KEY = 'linguatube_history';
-const MAX_LOCAL_HISTORY = 50;
+import { OfflineHistoryRepository } from '../../core/repositories';
 
 /**
  * History Service
@@ -17,10 +15,10 @@ export class HistoryService {
     private settings = inject(SettingsService);
     private auth = inject(AuthService);
     private youtube = inject(YoutubeService);
-    private storage = inject(StorageService);
+    private repo = inject(OfflineHistoryRepository);
 
     /** All history items, sorted by watched_at descending */
-    readonly history = signal<HistoryItem[]>([]);
+    readonly history = this.repo.getHistory();
 
     /** Computed: favorites only */
     readonly favorites = computed(() => this.history().filter(item => item.is_favorite));
@@ -34,17 +32,10 @@ export class HistoryService {
     /** Computed: count of history items */
     readonly count = computed(() => this.history().length);
 
+    readonly isLoading = this.repo.isLoading;
+
     constructor() {
-        this.loadFromStorage();
-
-        // Persist changes to localStorage
-        effect(() => {
-            const items = this.history();
-            untracked(() => this.saveToStorage(items));
-        });
-
-        // NOTE: Auto-tracking removed - history is now tracked from VideoPageComponent
-        // after transcript loads, using actual available languages
+        // Repository handles loading
     }
 
     /**
@@ -52,14 +43,14 @@ export class HistoryService {
      * If the video already exists, updates watched_at, progress, and languages
      * @param availableLanguages - raw language codes from transcript API (will be filtered)
      */
-    addToHistory(video: VideoInfo, availableLanguages: string[], progress: number = 0): void {
-        const items = [...this.history()];
-        const existingIndex = items.findIndex(item => item.video_id === video.id);
+    async addToHistory(video: VideoInfo, availableLanguages: string[], progress: number = 0): Promise<void> {
+        const items = this.history();
+        const existingItem = items.find(item => item.video_id === video.id);
         const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
         const primaryLang = filteredLanguages[0] || 'en';
 
         const historyItem: HistoryItem = {
-            id: existingIndex >= 0 ? items[existingIndex].id : this.generateId(),
+            id: existingItem ? existingItem.id : this.generateId(),
             video_id: video.id,
             title: video.title,
             thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`,
@@ -68,76 +59,56 @@ export class HistoryService {
             language: primaryLang,  // Keep for backward compatibility
             languages: filteredLanguages,
             watched_at: new Date(),
-            progress: existingIndex >= 0 ? Math.max(items[existingIndex].progress, progress) : progress,
-            is_favorite: existingIndex >= 0 ? items[existingIndex].is_favorite : false
+            progress: existingItem ? Math.max(existingItem.progress, progress) : progress,
+            is_favorite: existingItem ? existingItem.is_favorite : false
         };
 
-        if (existingIndex >= 0) {
-            // Update existing entry
-            items[existingIndex] = historyItem;
-        } else {
-            // Add new entry at the beginning
-            items.unshift(historyItem);
-        }
-
-        // Enforce max limit for local storage (FIFO)
-        if (items.length > MAX_LOCAL_HISTORY && !this.auth.isLoggedIn()) {
-            items.splice(MAX_LOCAL_HISTORY);
-        }
-
-        // Sort by watched_at descending
-        items.sort((a, b) => new Date(b.watched_at).getTime() - new Date(a.watched_at).getTime());
-
-        this.history.set(items);
+        await this.repo.addToHistory(historyItem);
     }
 
     /**
      * Update watch progress for a video
      */
-    updateProgress(videoId: string, progress: number): void {
+    async updateProgress(videoId: string, progress: number): Promise<void> {
         const items = this.history();
-        const index = items.findIndex(item => item.video_id === videoId);
+        const item = items.find(i => i.video_id === videoId);
 
-        if (index >= 0) {
-            const updated = [...items];
-            updated[index] = {
-                ...updated[index],
-                progress: Math.max(updated[index].progress, progress),
+        if (item) {
+            await this.repo.addToHistory({
+                ...item,
+                progress: Math.max(item.progress, progress),
                 watched_at: new Date()
-            };
-            this.history.set(updated);
+            });
         }
     }
 
     /**
      * Toggle favorite status
      */
-    toggleFavorite(id: string): void {
+    async toggleFavorite(id: string): Promise<void> {
         const items = this.history();
-        const index = items.findIndex(item => item.id === id);
+        const item = items.find(i => i.id === id);
 
-        if (index >= 0) {
-            const updated = [...items];
-            updated[index] = {
-                ...updated[index],
-                is_favorite: !updated[index].is_favorite
-            };
-            this.history.set(updated);
+        if (item) {
+            await this.repo.addToHistory({
+                ...item,
+                is_favorite: !item.is_favorite
+            });
         }
     }
 
     /**
      * Remove a single item from history
      */
-    removeFromHistory(id: string): void {
-        this.history.set(this.history().filter(item => item.id !== id));
+    async removeFromHistory(id: string): Promise<void> {
+        await this.repo.removeFromHistory(id);
     }
 
     /**
      * Clear all history
      */
-    clearHistory(): void {
-        this.history.set([]);
+    async clearHistory(): Promise<void> {
+        await this.repo.clearHistory();
     }
 
     /**
@@ -149,9 +120,11 @@ export class HistoryService {
 
     /**
      * Import items (used by sync service)
+     * Note: Deprecated in favor of Repo sync, but kept for interface compatibility if needed
      */
     importItems(items: HistoryItem[]): void {
-        this.history.set(items);
+        // this.history.set(items); // Read-only now
+        console.warn('HistoryService.importItems is deprecated, use repository sync');
     }
 
     /**
@@ -162,25 +135,6 @@ export class HistoryService {
     }
 
     // ==================== Private Methods ====================
-
-    private loadFromStorage(): void {
-        const stored = this.storage.get<{ items: HistoryItem[], updatedAt: string }>(STORAGE_KEY);
-        if (stored && stored.items) {
-            const items: HistoryItem[] = (stored.items || []).map((item: any) => ({
-                ...item,
-                watched_at: new Date(item.watched_at)
-            }));
-            this.history.set(items);
-        }
-    }
-
-    private saveToStorage(items: HistoryItem[]): void {
-        const data = {
-            items: items.slice(0, MAX_LOCAL_HISTORY),
-            updatedAt: new Date().toISOString()
-        };
-        this.storage.set(STORAGE_KEY, data);
-    }
 
     /**
      * Filter and normalize language codes to only supported languages (CJK + EN)
@@ -196,6 +150,12 @@ export class HistoryService {
     }
 
     private generateId(): string {
-        return `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+        // Generate a 15-character random string (PocketBase compatible)
+        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < 15; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
     }
 }

@@ -14,6 +14,7 @@ export interface HistoryItem {
     watched_at: Date;                        // Last watched timestamp
     progress: number;                        // Playback progress (0-100%)
     is_favorite: boolean;                    // Favorited flag
+    synced?: boolean;                        // Synchronization status
 }
 
 /**

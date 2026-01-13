@@ -12,7 +12,7 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { HistoryService, I18nService, AuthService, SyncService } from '../../../services';
+import { HistoryService, I18nService, AuthService } from '../../../services';
 import { HistoryItem } from '../../../models';
 
 type SwipeState = 'closed' | 'revealed';
@@ -43,9 +43,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     styleUrl: './history-list.component.scss',
 })
 export class HistoryListComponent implements OnInit {
-    private historyService = inject(HistoryService);
+    protected historyService = inject(HistoryService);
     private router = inject(Router);
-    readonly sync = inject(SyncService);
+    // readonly sync = inject(SyncService); // Removed
     readonly auth = inject(AuthService);
     private platformId = inject(PLATFORM_ID);
 
@@ -274,7 +274,7 @@ export class HistoryListComponent implements OnInit {
         this.historyService.removeFromHistory(item.id);
 
         if (this.auth.isLoggedIn()) {
-            this.sync.deleteHistoryFromServer(item.video_id);
+            // Sync handled by repository
         }
 
         this.itemRemoved.emit(item);

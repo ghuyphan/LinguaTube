@@ -115,7 +115,8 @@ export class PlaylistService {
             saveCount: 0,
             isFeatured: false,
             createdAt: new Date(),
-            updatedAt: new Date()
+            updatedAt: new Date(),
+            synced: false
         };
 
         await this.repo.createPlaylist(playlist);
@@ -745,6 +746,12 @@ export class PlaylistService {
     // Private persistence methods removed as they are handled by repository
 
     private generateId(): string {
-        return `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+        // Generate a 15-character random string (PocketBase compatible)
+        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < 15; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
     }
 }

@@ -80,6 +80,16 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                     save_count: 0,
                     is_featured: false
                 });
+
+                // Mark as synced on success
+                const current = this.playlists();
+                const index = current.findIndex(p => p.id === playlist.id);
+                if (index !== -1) {
+                    const newPlaylists = [...current];
+                    newPlaylists[index] = { ...newPlaylists[index], synced: true };
+                    this.playlists.set(newPlaylists);
+                    this.saveToStorage(newPlaylists);
+                }
             } catch (error) {
                 console.error('[PlaylistRepo] Failed to create on server:', error);
                 // TODO: Queue for retry
@@ -151,7 +161,32 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         try {
             const client = await this.pb.getClient();
 
-            // Fetch all playlists from server
+            // 1. Push unsynced local playlists
+            const unsynced = this.playlists().filter(p => !p.synced);
+            for (const p of unsynced) {
+                try {
+                    await client.collection('playlists').create({
+                        id: p.id,
+                        user: this.auth.getUserId(),
+                        title: p.title,
+                        description: p.description || '',
+                        visibility: p.visibility,
+                        language: p.language,
+                        tags: p.tags,
+                        video_ids: p.videoIds,
+                        video_count: p.videoCount,
+                        thumbnail: p.thumbnail || '',
+                        save_count: 0,
+                        is_featured: false
+                    });
+                    console.debug('[PlaylistRepo] Pushed unsynced playlist:', p.id);
+                } catch (err) {
+                    console.error('[PlaylistRepo] Failed to push unsynced playlist:', p.id, err);
+                    // Continue to next item even if one fails
+                }
+            }
+
+            // 2. Fetch all playlists from server
             const owned = await client.collection('playlists').getList(1, 50, {
                 filter: `user="${this.auth.getUserId()}"`,
                 sort: '-updated'
@@ -159,14 +194,20 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
 
             const remotePlaylists = owned.items.map(r => this.recordToPlaylist(r));
 
-            // Merge strategy: Server wins for now (simpler than full CRDT)
-            // But we can keep local-only playlists if they don't exist remotely yet?
-            // For true Offline-First, we simply overwrite local with server truth for existing IDs,
-            // and keep non-conflicting new local items.
+            // Safe Merge Strategy:
+            // 1. Remote is the source of truth for anything that has synced.
+            // 2. Keep local playlists that haven't synced yet (synced = false).
+            // 3. Removes local playlists that were synced but are no longer on remote (deleted remotely).
 
-            this.playlists.set(remotePlaylists);
-            this.saveToStorage(remotePlaylists);
-            console.debug('[PlaylistRepo] Synced with remote:', remotePlaylists.length);
+            const remoteIds = new Set(remotePlaylists.map(p => p.id));
+            const unsyncedLocal = this.playlists().filter(p => !p.synced && !remoteIds.has(p.id));
+
+            // Combine remote items + unsynced local items
+            const combined = [...remotePlaylists, ...unsyncedLocal];
+
+            this.playlists.set(combined);
+            this.saveToStorage(combined);
+            console.debug('[PlaylistRepo] Synced with remote:', remotePlaylists.length, 'remote,', unsyncedLocal.length, 'unsynced local');
         } catch (error) {
             console.error('[PlaylistRepo] Remote sync failed:', error);
         }
@@ -208,7 +249,8 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             saveCount: record.save_count || 0,
             isFeatured: record.is_featured || false,
             createdAt: new Date(record.created),
-            updatedAt: new Date(record.updated)
+            updatedAt: new Date(record.updated),
+            synced: true
         };
     }
 }

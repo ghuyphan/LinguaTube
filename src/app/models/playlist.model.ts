@@ -25,6 +25,7 @@ export interface Playlist {
     isFeatured: boolean;
     createdAt: Date;
     updatedAt: Date;
+    synced?: boolean;
 }
 
 /**

@@ -7,7 +7,7 @@ import { OptionPickerComponent, OptionItem } from '../../shared/components/optio
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
 
-import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, SyncService, TranscriptService } from '../../services';
+import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
 @Component({
@@ -26,7 +26,6 @@ export class SettingsSheetComponent {
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
   i18n = inject(I18nService);
-  sync = inject(SyncService);
   transcript = inject(TranscriptService);
   streak = inject(StreakService);
 

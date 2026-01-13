@@ -17,12 +17,9 @@
                     </div>
                     <span class="user-email">{{ auth.user()?.email }}</span>
                 </div>
-                <div class="sync-badge" [class.syncing]="sync.syncStatus() === 'syncing'"
-                    [class.error]="sync.syncStatus() === 'error'">
-                    @if (sync.syncStatus() === 'syncing') {
+                <div class="sync-badge" [class.syncing]="vocab.isSyncing()">
+                    @if (vocab.isSyncing()) {
                     <app-icon name="loader" [size]="14" class="spin" />
-                    } @else if (sync.syncStatus() === 'error') {
-                    <app-icon name="alert-circle" [size]="14" />
                     } @else {
                     <app-icon name="check" [size]="14" />
                     }

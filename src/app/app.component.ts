@@ -340,12 +340,14 @@ export class AppComponent implements OnDestroy {
     this.initServiceWorkerUpdates();
     this.initKeyboardShortcuts();
 
-    // Lazy load SyncService after first render to reduce initial bundle size
+    // Lazy load SyncService removed - Repositories handle auto-sync internally
+    /* 
     afterNextRender(() => {
       import('./services/sync.service').then(({ SyncService }) => {
         this.injector.get(SyncService);
       });
     });
+    */
   }
 
   ngOnDestroy(): void {

@@ -1,4 +1,4 @@
-@if (sync.isInitialSyncing() && auth.isLoggedIn() && items().length === 0) {
+@if (historyService.isLoading() && auth.isLoggedIn() && items().length === 0) {
 <!-- Skeleton loading state during initial sync -->
 <div class="history-items skeleton-container">
     @for (i of [1, 2, 3, 4]; track i) {
