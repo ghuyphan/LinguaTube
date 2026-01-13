@@ -796,8 +796,8 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   transform: translate(-50%, -50%) scale(1);
 }
 
-.progress-container::after {
-  content: '';
+/* Hit area element - using real element instead of ::after for Safari compatibility */
+.progress-hit-area {
   position: absolute;
   left: 0;
   right: 0;
@@ -806,6 +806,9 @@ $skeleton-highlight: rgba(255, 255, 255, 0.12);
   height: 24px;
   z-index: 2;
   cursor: pointer;
+  /* Safari needs explicit pointer-events */
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .progress-buffered {

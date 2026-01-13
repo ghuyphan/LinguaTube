@@ -359,14 +359,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
         el.addEventListener('touchcancel', (e) => this.onOverlayTouchEnd(e as TouchEvent));
       }
 
-      // Progress Bar Events
-      if (this.progressBar?.nativeElement) {
-        const el = this.progressBar.nativeElement;
-        el.addEventListener('mousemove', (e) => this.updateSeekPreview(e as MouseEvent));
-        el.addEventListener('mouseleave', () => this.hideSeekPreview());
-        el.addEventListener('mousedown', (e) => this.startSeeking(e as MouseEvent));
-        el.addEventListener('touchstart', (e) => this.startSeeking(e as TouchEvent));
-      }
+      // Progress Bar Events - now handled by hit area element in template for Safari compatibility
+      // The hit area element uses template bindings which work reliably in Safari
     });
   }
 

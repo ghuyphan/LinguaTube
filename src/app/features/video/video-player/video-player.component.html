@@ -362,6 +362,12 @@
         [attr.aria-valuetext]="formattedCurrentTime() + ' of ' + formattedDuration()" aria-label="Video progress"
         tabindex="0" [class.seeking]="isDragging()" [style.--progress]="progressPercentage()"
         [style.--buffered]="bufferedPercentage()" [style.--seek-pos]="seekPreview().position + 'px'" #progressBar>
+        <!-- Hit area for Safari compatibility - real element instead of ::after -->
+        <div class="progress-hit-area" 
+          (mousedown)="startSeeking($event)" 
+          (touchstart)="startSeeking($event)"
+          (mousemove)="updateSeekPreview($event)"
+          (mouseleave)="hideSeekPreview()"></div>
         <div class="progress-buffered" aria-hidden="true"></div>
         <div class="progress-fill" aria-hidden="true"></div>
         <div class="progress-handle" aria-hidden="true"></div>
