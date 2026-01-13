@@ -342,18 +342,28 @@ export class SubtitleDisplayComponent {
 
     // Segment loop effect
     effect(() => {
-      const currentCue = this.subtitles.currentCue();
       const currentTime = this.youtube.currentTime();
       const targetId = this.loopTargetId();
 
       if (!this.isLoopEnabled() || !targetId) return;
 
-      if (!currentCue) {
+      const currentCueIndex = this.subtitles.currentCueIndex();
+
+      // If we don't have a current cue index (e.g. before start or after end), we might need to check if we passed the loop target
+      if (currentCueIndex === -1) {
+        // Fallback logic could go here, but usually currentCueIndex covers playback
+        // If we are strictly outside, maybe we should just let it be or check if we are significantly past
         return;
       }
 
       const subtitles = this.subtitles.subtitles();
-      const currentCueIndex = subtitles.findIndex(c => c.id === currentCue.id);
+      // Optimization: We could cache targetCueIndex, but looking it up once per cue change (mostly) is okay-ish.
+      // However, this effect runs on currentTime() change.
+      // We should ideally NOT search the array every frame.
+      // Let's rely on indices. obtain target index once when targetId changes?
+      // For now, let's just do the search, it's O(N) but N is usually < 2000.
+      // But we can enable a "fast path" if we knew the index.
+
       const targetCueIndex = subtitles.findIndex(c => c.id === targetId);
 
       if (targetCueIndex === -1) {
@@ -362,21 +372,17 @@ export class SubtitleDisplayComponent {
       }
 
       if (currentCueIndex !== targetCueIndex && currentCueIndex !== targetCueIndex + 1) {
+        // If we drifted too far, disable loop
+        // Allow +1 because we might just have stepped over
         this.disableLoop();
         return;
       }
 
       const targetCue = subtitles[targetCueIndex];
-
-      let shouldLoop = false;
       const isPastEndTime = currentTime >= targetCue.endTime - 0.1;
       const movedToNextCue = currentCueIndex === targetCueIndex + 1;
 
       if (isPastEndTime || movedToNextCue) {
-        shouldLoop = true;
-      }
-
-      if (shouldLoop) {
         if (Date.now() - this.lastLoopTime < 1000) return;
 
         const maxLoopsValue = this.maxLoops();

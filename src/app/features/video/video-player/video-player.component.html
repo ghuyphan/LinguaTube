@@ -40,8 +40,7 @@
   <!-- Video Loaded State -->
   <!-- Mouse handlers on container level so controls stay visible when hovering on them -->
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
-    [class.animate-enter]="stateTransition() === 'to-video'" (mousemove)="onUserActivity()"
-    (mouseleave)="onMouseLeave()">
+    [class.animate-enter]="stateTransition() === 'to-video'">
 
     <div class="video-embed-ratio">
       <div id="youtube-player"></div>
@@ -73,9 +72,7 @@
     </div>
 
     <!-- Touch Overlay (mobile only) -->
-    <div class="player-overlay touch-only" (touchstart)="onOverlayTouchStart($event)"
-      (touchmove)="onOverlayTouchMove($event)" (touchend)="onOverlayTouchEnd($event)"
-      (touchcancel)="onOverlayTouchEnd($event)">
+    <div class="player-overlay touch-only" #playerOverlay>
       <div class="zone zone-left">
         @if (leftRipple()) {
         <div class="ripple-effect" [style.--x]="ripplePos().x + 'px'" [style.--y]="ripplePos().y + 'px'"></div>
@@ -363,10 +360,8 @@
       <div class="progress-container" role="slider" [attr.aria-valuenow]="displayTime()" [attr.aria-valuemin]="0"
         [attr.aria-valuemax]="youtube.duration()"
         [attr.aria-valuetext]="formattedCurrentTime() + ' of ' + formattedDuration()" aria-label="Video progress"
-        tabindex="0" [class.seeking]="isDragging()" (mousedown)="startSeeking($event)"
-        (touchstart)="startSeeking($event)" (mousemove)="updateSeekPreview($event)" (mouseleave)="hideSeekPreview()"
-        [style.--progress]="progressPercentage()" [style.--buffered]="bufferedPercentage()"
-        [style.--seek-pos]="seekPreview().position + 'px'" #progressBar>
+        tabindex="0" [class.seeking]="isDragging()" [style.--progress]="progressPercentage()"
+        [style.--buffered]="bufferedPercentage()" [style.--seek-pos]="seekPreview().position + 'px'" #progressBar>
         <div class="progress-buffered" aria-hidden="true"></div>
         <div class="progress-fill" aria-hidden="true"></div>
         <div class="progress-handle" aria-hidden="true"></div>
@@ -447,7 +442,7 @@
 
 
           <!-- Add to Playlist -->
-          <button class="control-btn" (click)="onSaveClick()" aria-label="Add to playlist">
+          <button class="control-btn desktop-only" (click)="onSaveClick()" aria-label="Add to playlist">
             <app-icon name="list-plus" [size]="18" />
           </button>
 

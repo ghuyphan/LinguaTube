@@ -10,7 +10,9 @@ import {
   HostListener,
   computed,
   output,
-  untracked
+  untracked,
+  NgZone,
+  AfterViewInit
 } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -55,9 +57,10 @@ interface SeekPreview {
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
-export class VideoPlayerComponent implements OnDestroy {
+export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private document = inject(DOCUMENT);
   private router = inject(Router);
+  private ngZone = inject(NgZone);
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
   transcript = inject(TranscriptService);
@@ -253,6 +256,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
   @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
+  @ViewChild('playerOverlay') playerOverlayRef!: ElementRef<HTMLDivElement>;
 
   constructor() {
     // Initialize player when video exists but player isn't ready
@@ -331,6 +335,66 @@ export class VideoPlayerComponent implements OnDestroy {
     });
 
 
+  }
+
+  ngAfterViewInit() {
+    this.setupEventListeners();
+  }
+
+  private setupEventListeners() {
+    this.ngZone.runOutsideAngular(() => {
+      // Video Container Mouse Move (User Activity)
+      if (this.videoContainerRef?.nativeElement) {
+        const el = this.videoContainerRef.nativeElement;
+        el.addEventListener('mousemove', () => this.onUserActivity());
+        el.addEventListener('mouseleave', () => this.onMouseLeave());
+      }
+
+      // Touch Overlay Events
+      if (this.playerOverlayRef?.nativeElement) {
+        const el = this.playerOverlayRef.nativeElement;
+        el.addEventListener('touchstart', (e) => this.onOverlayTouchStart(e as TouchEvent));
+        el.addEventListener('touchmove', (e) => this.onOverlayTouchMove(e as TouchEvent));
+        el.addEventListener('touchend', (e) => this.onOverlayTouchEnd(e as TouchEvent));
+        el.addEventListener('touchcancel', (e) => this.onOverlayTouchEnd(e as TouchEvent));
+      }
+
+      // Progress Bar Events
+      if (this.progressBar?.nativeElement) {
+        const el = this.progressBar.nativeElement;
+        el.addEventListener('mousemove', (e) => this.updateSeekPreview(e as MouseEvent));
+        el.addEventListener('mouseleave', () => this.hideSeekPreview());
+        el.addEventListener('mousedown', (e) => this.startSeeking(e as MouseEvent));
+        el.addEventListener('touchstart', (e) => this.startSeeking(e as TouchEvent));
+      }
+    });
+  }
+
+  // Refactored onUserActivity to re-enter zone only when needed
+  onUserActivity() {
+    // Desktop only - mobile uses touch overlay with tap-to-toggle
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
+    }
+
+    // Check state without triggering CD
+    const controlsVisible = untracked(() => this.areControlsVisible());
+
+    if (!controlsVisible) {
+      // If controls are hidden, show immediately (enter zone)
+      this.ngZone.run(() => {
+        this.showControls();
+      });
+    } else {
+      // Controls are visible. We just want to keep them alive.
+      // Throttle the reset to avoid spamming setTimeout every frame.
+      // Only reset if > 500ms since last show time.
+      // We are already OUTSIDE angular zone here (called from event listener).
+      const now = Date.now();
+      if (now - this.lastControlsShowTime > 500) {
+        this.showControls(); // Update timestamp and reset timer
+      }
+    }
   }
 
   // ============================================
@@ -463,15 +527,6 @@ export class VideoPlayerComponent implements OnDestroy {
   // CONTROLS VISIBILITY
   // ============================================
 
-  onUserActivity() {
-    // Desktop only - mobile uses touch overlay with tap-to-toggle
-    // Guard against synthetic mouse events from touch devices
-    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-      return;
-    }
-    this.showControls();
-  }
-
   onMouseLeave() {
     // Simple version - CSS handles desktop vs mobile via pointer-events
     if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
@@ -495,10 +550,15 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private hideControlsAfterDelay(ms: number) {
     this.clearControlsTimeout();
+    // Timeout runs outside Angular (if called from outside) or inside (if called from inside).
+    // But we want the *callback* to always update UI in zone.
     this.controlsTimeout = setTimeout(() => {
-      if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
-        this.areControlsVisible.set(false);
-      }
+      // Re-enter zone for the check and update
+      this.ngZone.run(() => {
+        if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+          this.areControlsVisible.set(false);
+        }
+      });
     }, ms);
   }
 
@@ -595,11 +655,17 @@ export class VideoPlayerComponent implements OnDestroy {
 
     // Horizontal swipe = seek scrub
     if (this.touchState.hasMoved && absX > absY) {
-      event.preventDefault();
+      if (event.cancelable) event.preventDefault(); // Prevent scrolling
+
+      // Calculate new state
       const seekDelta = deltaX * GESTURE_SEEK_SENSITIVITY;
       const newTime = Math.max(0, Math.min(this.youtube.duration(), this.touchState.initialVideoTime + seekDelta));
-      this.gestureSeekActive.set(true);
-      this.gestureSeekTime.set(newTime);
+
+      // Update state in zone
+      this.ngZone.run(() => {
+        this.gestureSeekActive.set(true);
+        this.gestureSeekTime.set(newTime);
+      });
     }
   }
 
@@ -1067,56 +1133,113 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   updateSeekPreview(event: MouseEvent) {
-    if (!this.youtube.duration() || !this.progressBar?.nativeElement) return;
+    if (!this.youtube.duration()) return;
 
-    const rect = this.progressBar.nativeElement.getBoundingClientRect();
-    const offsetX = event.clientX - rect.left;
-    const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
-    const time = percentage * this.youtube.duration();
+    // Run UI update in zone
+    this.ngZone.run(() => {
+      const progressBar = this.progressBar?.nativeElement;
+      if (!progressBar) return;
 
-    this.seekPreview.set({
-      visible: true,
-      time,
-      position: Math.max(30, Math.min(rect.width - 30, offsetX))
+      const rect = progressBar.getBoundingClientRect();
+      const offsetX = Math.max(0, Math.min(event.clientX - rect.left, rect.width));
+      const percentage = offsetX / rect.width;
+      const time = percentage * this.youtube.duration();
+
+      this.seekPreview.set({
+        visible: true,
+        time,
+        position: offsetX
+      });
     });
   }
 
   hideSeekPreview() {
-    if (!this.isDragging()) {
-      this.seekPreview.set({ visible: false, time: 0, position: 0 });
-    }
+    this.ngZone.run(() => {
+      this.seekPreview.update(prev => ({ ...prev, visible: false }));
+    });
   }
 
   startSeeking(event: MouseEvent | TouchEvent) {
+    // Ensure we are in zone for logic? 
+    // Start seeking interacts with global listeners, so better to be consistent.
+    // However, startSeeking sets state `isDragging`.
+
+    this.ngZone.run(() => {
+      if (!this.youtube.duration()) return;
+      event.preventDefault(); // Prevent text selection
+
+      this.isDragging.set(true);
+      this.calculateSeekTime(event);
+
+      // Add document listeners for drag
+      document.addEventListener('mousemove', this.boundOnSeekMove);
+      document.addEventListener('mouseup', this.boundOnSeekUp);
+      document.addEventListener('touchmove', this.boundOnSeekMove, { passive: false });
+      document.addEventListener('touchend', this.boundOnSeekUp);
+    });
+  }
+
+  // Helper for seek calculations
+  private calculateSeekTime(event: MouseEvent | TouchEvent) {
+    const progressBar = this.progressBar?.nativeElement;
+    if (!progressBar) return;
+
+    const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
+    const rect = progressBar.getBoundingClientRect();
+    const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percentage = offsetX / rect.width;
+    const time = percentage * this.youtube.duration();
+
+    this.previewTime.set(time);
+    this.seekPreview.set({
+      visible: true,
+      time,
+      position: offsetX
+    });
+  }
+
+  private onSeekMove(event: MouseEvent | TouchEvent) {
     event.preventDefault();
-    this.showControls();
-    this.isDragging.set(true);
-    this.updateSeek(event);
+    // Run in zone to update preview UI
+    this.ngZone.run(() => {
+      const progressBar = this.progressBar?.nativeElement;
+      if (progressBar) {
+        const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
+        const rect = progressBar.getBoundingClientRect();
+        const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+        const percentage = offsetX / rect.width;
+        const time = percentage * this.youtube.duration();
 
-    document.addEventListener('mousemove', this.boundOnSeekMove);
-    document.addEventListener('touchmove', this.boundOnSeekMove, { passive: false });
-    document.addEventListener('mouseup', this.boundOnSeekUp);
-    document.addEventListener('touchend', this.boundOnSeekUp);
+        this.previewTime.set(time);
+        this.seekPreview.set({
+          visible: true,
+          time,
+          position: offsetX
+        });
+      }
+    });
   }
 
-  private onSeekMove(e: MouseEvent | TouchEvent) {
-    e.preventDefault();
-    this.updateSeek(e);
-  }
+  private onSeekUp(event: MouseEvent | TouchEvent) {
+    this.ngZone.run(() => {
+      this.isDragging.set(false);
+      this.seekPreview.update(prev => ({ ...prev, visible: false })); // Hide tooltip on release
 
-  private onSeekUp() {
-    this.stopSeeking();
-    document.removeEventListener('mousemove', this.boundOnSeekMove);
-    document.removeEventListener('touchmove', this.boundOnSeekMove);
-    document.removeEventListener('mouseup', this.boundOnSeekUp);
-    document.removeEventListener('touchend', this.boundOnSeekUp);
+      const time = this.previewTime();
+      this.youtube.seekTo(time);
+
+      document.removeEventListener('mousemove', this.boundOnSeekMove);
+      document.removeEventListener('mouseup', this.boundOnSeekUp);
+      document.removeEventListener('touchmove', this.boundOnSeekMove);
+      document.removeEventListener('touchend', this.boundOnSeekUp);
+    });
   }
 
   private updateSeek(event: MouseEvent | TouchEvent) {
     if (!this.youtube.duration() || !this.progressBar?.nativeElement) return;
 
-    const rect = this.progressBar.nativeElement.getBoundingClientRect();
     const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX;
+    const rect = this.progressBar.nativeElement.getBoundingClientRect(); // Define rect here
     const offsetX = clientX - rect.left;
     const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
 

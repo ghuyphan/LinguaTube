@@ -7,6 +7,9 @@ import { OptionPickerComponent, OptionItem } from '../../shared/components/optio
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
 
+import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { StatsRowComponent } from './stats-row/stats-row.component';
+
 import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
@@ -14,7 +17,7 @@ import { StreakService } from '../../services/streak.service';
   selector: 'app-settings-sheet',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent, ConfirmDialogComponent, DiamondCreditsCardComponent],
+  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent, ConfirmDialogComponent, ProfileCardComponent, StatsRowComponent],
   templateUrl: './settings-sheet.component.html',
   styleUrl: './settings-sheet.component.scss'
 })

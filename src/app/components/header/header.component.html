@@ -27,12 +27,12 @@
 
     <div class="header__stats">
         <div class="stat-item">
-            <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).total }}</span>
+            <span class="stat-value">{{ vocab.statsByLanguage()[settings.settings().language].total }}</span>
             <span class="stat-label">{{ i18n.t('header.words') }}</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-            <span class="stat-value stat-value--success">{{ vocab.getStatsByLanguage(settings.settings().language).known
+            <span class="stat-value stat-value--success">{{ vocab.statsByLanguage()[settings.settings().language].known
                 }}</span>
             <span class="stat-label">{{ i18n.t('header.known') }}</span>
         </div>

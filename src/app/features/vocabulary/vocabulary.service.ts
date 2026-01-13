@@ -51,6 +51,27 @@ export class VocabularyService {
             });
     });
 
+    readonly statsByLanguage = computed(() => {
+        const vocab = this.vocabulary();
+        const stats = {
+            ja: { total: 0, new: 0, learning: 0, known: 0 },
+            zh: { total: 0, new: 0, learning: 0, known: 0 },
+            ko: { total: 0, new: 0, learning: 0, known: 0 },
+            en: { total: 0, new: 0, learning: 0, known: 0 }
+        };
+
+        for (const item of vocab) {
+            const lang = item.language as 'ja' | 'zh' | 'ko' | 'en';
+            if (stats[lang]) {
+                stats[lang].total++;
+                if (item.level === 'new') stats[lang].new++;
+                if (item.level === 'learning') stats[lang].learning++;
+                if (item.level === 'known') stats[lang].known++;
+            }
+        }
+        return stats;
+    });
+
     // Proxy Methods
 
     getStatsByLanguage(language: 'ja' | 'zh' | 'ko' | 'en') {
