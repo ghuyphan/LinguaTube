@@ -716,31 +716,33 @@ export class PlaylistService {
     }
 
     private async hydrateVideos(videoIds: string[]): Promise<PlaylistVideo[]> {
-        const videos: PlaylistVideo[] = [];
-
-        for (let i = 0; i < videoIds.length; i++) {
-            const videoId = videoIds[i];
-            try {
+        // Fetch all video metadata in parallel for much faster loading
+        const results = await Promise.allSettled(
+            videoIds.map(async (videoId, position) => {
                 const metadata = await this.youtube.fetchVideoMetadata(videoId);
-                videos.push({
+                return {
                     videoId,
                     title: metadata.title,
                     thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
                     channel: metadata.channel,
-                    position: i
-                });
-            } catch (error) {
-                // Fallback for failed fetches
-                videos.push({
-                    videoId,
-                    title: 'Unknown Video',
-                    thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
-                    position: i
-                });
-            }
-        }
+                    position
+                };
+            })
+        );
 
-        return videos;
+        // Map results, using fallback for any failed fetches
+        return results.map((result, position) => {
+            if (result.status === 'fulfilled') {
+                return result.value;
+            }
+            // Fallback for failed fetches
+            return {
+                videoId: videoIds[position],
+                title: 'Unknown Video',
+                thumbnail: `https://i.ytimg.com/vi/${videoIds[position]}/mqdefault.jpg`,
+                position
+            };
+        });
     }
 
     // Private persistence methods removed as they are handled by repository

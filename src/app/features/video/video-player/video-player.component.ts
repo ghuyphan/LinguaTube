@@ -235,6 +235,9 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private longPressTimeout: ReturnType<typeof setTimeout> | null = null;
   private bufferedInterval: ReturnType<typeof setInterval> | null = null;
 
+  // Event listener cleanup functions to prevent memory leaks
+  private eventCleanupFns: (() => void)[] = [];
+
   // Bound event handlers for seeking
   private readonly boundOnSeekMove = this.onSeekMove.bind(this);
   private readonly boundOnSeekUp = this.onSeekUp.bind(this);
@@ -346,17 +349,36 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       // Video Container Mouse Move (User Activity)
       if (this.videoContainerRef?.nativeElement) {
         const el = this.videoContainerRef.nativeElement;
-        el.addEventListener('mousemove', () => this.onUserActivity());
-        el.addEventListener('mouseleave', () => this.onMouseLeave());
+        const moveHandler = () => this.onUserActivity();
+        const leaveHandler = () => this.onMouseLeave();
+
+        el.addEventListener('mousemove', moveHandler);
+        el.addEventListener('mouseleave', leaveHandler);
+
+        this.eventCleanupFns.push(
+          () => el.removeEventListener('mousemove', moveHandler),
+          () => el.removeEventListener('mouseleave', leaveHandler)
+        );
       }
 
       // Touch Overlay Events
       if (this.playerOverlayRef?.nativeElement) {
         const el = this.playerOverlayRef.nativeElement;
-        el.addEventListener('touchstart', (e) => this.onOverlayTouchStart(e as TouchEvent));
-        el.addEventListener('touchmove', (e) => this.onOverlayTouchMove(e as TouchEvent));
-        el.addEventListener('touchend', (e) => this.onOverlayTouchEnd(e as TouchEvent));
-        el.addEventListener('touchcancel', (e) => this.onOverlayTouchEnd(e as TouchEvent));
+        const touchStartHandler = (e: Event) => this.onOverlayTouchStart(e as TouchEvent);
+        const touchMoveHandler = (e: Event) => this.onOverlayTouchMove(e as TouchEvent);
+        const touchEndHandler = (e: Event) => this.onOverlayTouchEnd(e as TouchEvent);
+
+        el.addEventListener('touchstart', touchStartHandler);
+        el.addEventListener('touchmove', touchMoveHandler);
+        el.addEventListener('touchend', touchEndHandler);
+        el.addEventListener('touchcancel', touchEndHandler);
+
+        this.eventCleanupFns.push(
+          () => el.removeEventListener('touchstart', touchStartHandler),
+          () => el.removeEventListener('touchmove', touchMoveHandler),
+          () => el.removeEventListener('touchend', touchEndHandler),
+          () => el.removeEventListener('touchcancel', touchEndHandler)
+        );
       }
 
       // Progress Bar Events - now handled by hit area element in template for Safari compatibility
@@ -1375,6 +1397,10 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     document.removeEventListener('touchmove', this.boundOnSeekMove);
     document.removeEventListener('mouseup', this.boundOnSeekUp);
     document.removeEventListener('touchend', this.boundOnSeekUp);
+
+    // Clean up video container and overlay event listeners
+    this.eventCleanupFns.forEach(fn => fn());
+    this.eventCleanupFns = [];
 
     this.youtube.destroy();
   }

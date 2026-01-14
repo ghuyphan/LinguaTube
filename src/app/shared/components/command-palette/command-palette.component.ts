@@ -84,27 +84,32 @@ import { I18nService } from '../../../services';
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 15vh;
-      background: rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.2s ease-out forwards;
+      padding-top: 18vh;
+      background: rgba(0, 0, 0, 0.4);
+      animation: overlayFadeIn 0.18s ease-out forwards;
+      cursor: pointer; /* Indicate clickable backdrop */
     }
 
     .palette-overlay.closing {
-      animation: fadeOut 0.1s ease-in forwards;
+      animation: overlayFadeOut 0.12s ease-in forwards;
     }
 
     .palette {
       width: 100%;
       max-width: 560px;
       background: var(--bg-card);
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-xl);
+      border-radius: 12px;
+      box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.08),
+        0 20px 60px -10px rgba(0, 0, 0, 0.35),
+        0 10px 25px -5px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      animation: slideDown 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+      animation: spotlightOpen 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      cursor: default; /* Reset cursor for the palette itself */
     }
 
     .palette.closing {
-      animation: slideUp 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+      animation: spotlightClose 0.12s cubic-bezier(0.4, 0, 1, 1) forwards;
     }
 
     .palette__header {
@@ -189,24 +194,6 @@ import { I18nService } from '../../../services';
       background: rgba(var(--primary-rgb), 0.1);
     }
 
-    .palette__clear {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      min-height: 28px;
-      padding: 0;
-      border: none;
-      background: var(--bg-tertiary);
-      border-radius: 50%;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      flex-shrink: 0;
-    }
-
     @media (hover: hover) {
       .palette__clear:hover {
         background: var(--bg-card);
@@ -265,7 +252,10 @@ import { I18nService } from '../../../services';
         padding-top: 0;
         background: var(--bg-body);
         backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         align-items: stretch; /* Full height */
+        cursor: default;
+        animation: none;
       }
 
       .palette {
@@ -314,36 +304,36 @@ import { I18nService } from '../../../services';
       }
     }
 
-    /* Animations */
-    @keyframes fadeIn {
+    /* Desktop Spotlight-like animations */
+    @keyframes overlayFadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    @keyframes fadeOut {
+    @keyframes overlayFadeOut {
       from { opacity: 1; }
       to { opacity: 0; }
     }
 
-    @keyframes slideDown {
+    @keyframes spotlightOpen {
       from {
         opacity: 0;
-        transform: translateY(-10px) scale(0.98);
+        transform: scale(0.95) translateY(-8px);
       }
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1) translateY(0);
       }
     }
 
-    @keyframes slideUp {
+    @keyframes spotlightClose {
       from {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1) translateY(0);
       }
       to {
         opacity: 0;
-        transform: translateY(-10px) scale(0.98);
+        transform: scale(0.96) translateY(-6px);
       }
     }
 

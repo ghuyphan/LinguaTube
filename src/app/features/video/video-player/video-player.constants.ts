@@ -43,6 +43,7 @@ export const FEEDBACK_DURATION = {
     seek: 800,
     ripple: 600,
     volume: 600,
+    closeAnimation: 150,
 } as const;
 
 // ============================================

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../../models';
 import { Observable, of, catchError, map, tap } from 'rxjs';
 import { I18nService, UILanguage } from '../../core/services';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,12 @@ export class DictionaryService {
   readonly lastQuery = signal<string>(''); // Persistence for search term
   readonly recentSearches = signal<string[]>([]); // Shared recent searches state
 
-  // Use proxy to avoid CORS issues
-  private readonly JOTOBA_API = '/proxy/jotoba/api/search/words';
-  private readonly MDBG_API = '/api/mdbg';
-  private readonly KRDICT_API = '/api/krdict';
-  private readonly ENDICT_API = '/api/endict';
-  private readonly UNIFIED_DICT_API = '/api/dict'; // New unified endpoint
+  // Use centralized API endpoints from environment
+  private readonly JOTOBA_API = environment.api.jotobaProxy;
+  private readonly MDBG_API = environment.api.mdbg;
+  private readonly KRDICT_API = environment.api.krdict;
+  private readonly ENDICT_API = environment.api.endict;
+  private readonly UNIFIED_DICT_API = environment.api.dict;
 
   // Inject I18nService to get user's UI language
   private readonly i18n = inject(I18nService);

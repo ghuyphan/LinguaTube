@@ -1,6 +1,7 @@
 import { HttpInterceptorFn, HttpResponse, HttpEvent } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, shareReplay, finalize } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 /**
  * HTTP Caching Interceptor
@@ -15,9 +16,9 @@ const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 // Patterns to cache (dictionary lookups only - these are safe to cache)
 const CACHEABLE_PATTERNS = [
-    '/api/mdbg',
-    '/api/krdict',
-    '/proxy/jotoba'
+    environment.api.mdbg,
+    environment.api.krdict,
+    environment.api.jotobaProxy
 ];
 
 // Cache storage

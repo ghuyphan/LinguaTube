@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
 import { SubtitleCue } from '../../models';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
+import { environment } from '../../../environments/environment';
 
 // ============================================================================
 // Types
@@ -354,7 +355,7 @@ export class TranscriptService {
       return this.pendingRequests.get(requestKey)!;
     }
 
-    const request$ = this.http.post<TranscriptResponse>('/api/transcript', {
+    const request$ = this.http.post<TranscriptResponse>(environment.api.transcript, {
       videoId,
       lang,
       preferAI,

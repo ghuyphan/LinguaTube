@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, catchError, of, shareReplay, finalize } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface TranslationResponse {
     translation: string;
@@ -15,7 +16,7 @@ const MAX_CACHE_SIZE = 200;
     providedIn: 'root'
 })
 export class TranslationService {
-    private readonly API_URL = '/api/translate';
+    private readonly API_URL = environment.api.translate;
 
     // In-memory cache for translations
     private translationCache = new Map<string, string>();
@@ -105,7 +106,7 @@ export class TranslationService {
         }
 
         // Batch API call for non-cached texts
-        return this.http.post<{ translations: (string | null)[] }>('/api/translate/batch', {
+        return this.http.post<{ translations: (string | null)[] }>(environment.api.translateBatch, {
             texts: toTranslate.map(t => t.text),
             source,
             target
@@ -148,8 +149,7 @@ export class TranslationService {
      * Handles caching and API calls
      */
     getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: any[], onlyCache = false): Observable<any[]> {
-        const url = '/api/dual-subtitles';
-        return this.http.post<any>(url, {
+        return this.http.post<any>(environment.api.dualSubtitles, {
             videoId,
             sourceLang,
             targetLang,

@@ -175,12 +175,12 @@ export class VocabularyService {
     }
 
     importItems(items: VocabularyItem[]): void {
-        // Deprecated? No, potentially used by something else, but Repo has internal import logic.
-        // If external calls use this, we proxy it to JSON or manual add?
-        // Actually, SyncService used this. But SyncService is being deleted.
-        // We'll keep it for now but implementation is complex via repo public API.
-        // Actually, let's remove it if only SyncService used it.
-        // Checking usages...
+        // Deprecated: Use importFromJSON instead
+        // This method was previously used by SyncService which has been removed
+        console.warn('VocabularyService.importItems is deprecated, use importFromJSON instead');
+        if (items.length > 0) {
+            this.repo.importFromJSON(JSON.stringify(items));
+        }
     }
 
     clear(): void {

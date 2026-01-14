@@ -1,6 +1,7 @@
 import { Injectable, signal, computed, inject, effect, OnDestroy } from '@angular/core';
 import { SubtitleCue, Token } from '../../models';
 import { YoutubeService } from './youtube.service';
+import { environment } from '../../../environments/environment';
 
 // ============================================================================
 // Constants
@@ -513,7 +514,7 @@ export class SubtitleService implements OnDestroy {
     // Try batch endpoint first (requires videoId)
     if (videoId) {
       try {
-        const response = await fetch(`/api/tokenize-batch/${lang}`, {
+        const response = await fetch(`${environment.api.tokenizeBatch}/${lang}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ texts, videoId }),

@@ -39,21 +39,15 @@ export class AuthService {
      * Initialize auth state from PocketBase authStore
      */
     private async initializeAuth(): Promise<void> {
-        // Wait for PocketBase to be ready
-        // If there's stored auth, PocketBase will initialize and restore it
-        const checkReady = () => {
-            if (this.pb.isReady()) {
-                const model = this.pb.model();
-                if (model) {
-                    const profile = this.modelToProfile(model as RecordModel);
-                    this.user.set(profile);
-                }
-                this.isInitialized.set(true);
-            } else {
-                setTimeout(checkReady, 50);
-            }
-        };
-        checkReady();
+        // Wait for PocketBase to be ready (no polling - uses promise)
+        await this.pb.waitForReady();
+
+        const model = this.pb.model();
+        if (model) {
+            const profile = this.modelToProfile(model as RecordModel);
+            this.user.set(profile);
+        }
+        this.isInitialized.set(true);
     }
 
     /**
