@@ -196,15 +196,6 @@
 
         <!-- Expandable section -->
         <div class="controls-expand" [class.expanded]="isControlsExpanded()">
-            <!-- Dual Subtitles Toggle (available for all CJK languages) -->
-            @if (['ja', 'zh', 'ko'].includes(effectiveLanguage())) {
-            <button class="ctrl-btn" [class.active]="settings.settings().showDualSubtitles"
-                (click)="settings.toggleDualSubtitles()" [title]="i18n.t('subtitle.dualSubs')">
-                <app-icon name="languages" [size]="16" />
-                <span class="ctrl-label">EN</span>
-            </button>
-            }
-
             <!-- Grammar Mode Toggle -->
             <button class="ctrl-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
                 [title]="i18n.t('grammar.mode')">

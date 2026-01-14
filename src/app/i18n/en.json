@@ -105,6 +105,7 @@
     },
     "vocab": {
         "title": "Vocabulary",
+        "vocabulary": "Vocabulary",
         "words": "words",
         "new": "new",
         "learning": "learning",
@@ -259,6 +260,7 @@
     },
     "playlist": {
         "title": "Playlists",
+        "playlist": "Playlist",
         "myPlaylists": "My Playlists",
         "myPlaylist": "You",
         "community": "Community",

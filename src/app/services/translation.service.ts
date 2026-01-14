@@ -203,21 +203,13 @@ export class TranslationService {
     /**
      * Supported languages for target translation
      */
-    getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string }> {
+    getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string, flagUrl: string }> {
         return [
-            { code: 'vi', name: 'Vietnamese', flag: '🇻🇳' },
-            { code: 'en', name: 'English', flag: '🇬🇧' },
-            { code: 'es', name: 'Spanish', flag: '🇪🇸' },
-            { code: 'fr', name: 'French', flag: '🇫🇷' },
-            { code: 'de', name: 'German', flag: '🇩🇪' },
-            { code: 'it', name: 'Italian', flag: '🇮🇹' },
-            { code: 'pt', name: 'Portuguese', flag: '🇵🇹' },
-            { code: 'ru', name: 'Russian', flag: '🇷🇺' },
-            { code: 'ko', name: 'Korean', flag: '🇰🇷' },
-            { code: 'th', name: 'Thai', flag: '🇹🇭' },
-            { code: 'id', name: 'Indonesian', flag: '🇮🇩' },
-            { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
-            { code: 'ja', name: 'Japanese', flag: '🇯🇵' },
+            { code: 'en', name: 'English', flag: '🇺🇸', flagUrl: 'https://flagcdn.com/w80/us.png' },
+            { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://flagcdn.com/w80/vn.png' },
+            { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://flagcdn.com/w80/jp.png' },
+            { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://flagcdn.com/w80/kr.png' },
+            { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: 'https://flagcdn.com/w80/cn.png' },
         ];
     }
 }

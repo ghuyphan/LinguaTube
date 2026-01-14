@@ -103,6 +103,7 @@
     },
     "vocab": {
         "title": "単語帳",
+        "vocabulary": "単語帳",
         "words": "語",
         "new": "新規",
         "learning": "学習中",
@@ -257,6 +258,7 @@
     },
     "playlist": {
         "title": "プレイリスト",
+        "playlist": "プレイリスト",
         "myPlaylists": "マイプレイリスト",
         "myPlaylist": "あなた",
         "community": "コミュニティ",

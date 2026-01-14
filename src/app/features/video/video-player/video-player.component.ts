@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
+import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 
 import {
   YoutubeService,
@@ -28,7 +29,8 @@ import {
   VocabularyService,
   DictionaryService,
   I18nService,
-  GrammarService
+  GrammarService,
+  TranslationService
 } from '../../../services';
 import { PlaylistService } from '../../playlist/playlist.service';
 import { Token, SubtitleCue, DictionaryEntry, GrammarPattern, GrammarMatch } from '../../../models';
@@ -53,7 +55,7 @@ interface SeekPreview {
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, OptionPickerComponent],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
@@ -69,7 +71,30 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private dictionary = inject(DictionaryService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
-  private playlistService = inject(PlaylistService);
+  protected playlistService = inject(PlaylistService);
+  private translation = inject(TranslationService);
+
+  // Translation language picker state
+  langPickerOpen = signal(false);
+  targetLang = signal('en'); // Default to English
+  langOptions = computed<OptionItem[]>(() =>
+    this.translation.getSupportedTargetLanguages().map(lang => ({
+      value: lang.code,
+      label: lang.name,
+      iconUrl: lang.flagUrl
+    }))
+  );
+
+  getSelectedLangFlag(): string {
+    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === this.targetLang());
+    return lang ? lang.flagUrl : '';
+  }
+
+  onLangSelected(value: string): void {
+    this.targetLang.set(value);
+    this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
+    this.langPickerOpen.set(false);
+  }
 
   // Playlist navigation
   hasPlaylist = computed(() => !!this.playlistService.currentPlaylist());
@@ -89,6 +114,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   saveClicked = output<void>();
   playlistNext = output<void>();
   playlistPrev = output<void>();
+  closePlaylist = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);

@@ -103,6 +103,7 @@
     },
     "vocab": {
         "title": "词汇本",
+        "vocabulary": "词汇",
         "words": "词",
         "new": "新词",
         "learning": "学习中",
@@ -257,6 +258,7 @@
     },
     "playlist": {
         "title": "播放列表",
+        "playlist": "播放列表",
         "myPlaylists": "我的播放列表",
         "myPlaylist": "你",
         "community": "社区",

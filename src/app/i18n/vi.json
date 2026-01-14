@@ -105,6 +105,7 @@
     },
     "vocab": {
         "title": "Từ vựng",
+        "vocabulary": "Từ vựng",
         "words": "từ",
         "new": "mới",
         "learning": "đang học",
@@ -259,6 +260,7 @@
     },
     "playlist": {
         "title": "Danh sách phát",
+        "playlist": "Danh sách",
         "myPlaylists": "Danh sách của tôi",
         "myPlaylist": "Bạn",
         "community": "Cộng đồng",

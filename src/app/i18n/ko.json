@@ -103,6 +103,7 @@
     },
     "vocab": {
         "title": "단어장",
+        "vocabulary": "단어장",
         "words": "단어",
         "new": "새 단어",
         "learning": "학습 중",
@@ -257,6 +258,7 @@
     },
     "playlist": {
         "title": "재생목록",
+        "playlist": "재생목록",
         "myPlaylists": "내 재생목록",
         "myPlaylist": "나",
         "community": "커뮤니티",

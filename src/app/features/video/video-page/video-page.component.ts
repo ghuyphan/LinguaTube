@@ -46,6 +46,7 @@ import { Token } from '../../../models';
           (saveClicked)="openAddToPlaylist()"
           (playlistNext)="onPlaylistNext()"
           (playlistPrev)="onPlaylistPrev()"
+          (closePlaylist)="closePlaylist()"
         />
 
         <app-subtitle-display 
@@ -55,18 +56,44 @@ import { Token } from '../../../models';
         />
       </div>
 
-      <!-- Desktop sidebar: Show Playlist Panel if active, otherwise Vocabulary List -->
-      <aside class="layout-sidebar desktop-only" [class.swapping]="sidebarSwapping()">
+      <!-- Desktop sidebar: Tab switcher when playlist active -->
+      <aside class="layout-sidebar desktop-only">
         @if (playlistService.currentPlaylist()) {
-          <app-playlist-panel 
-            [class.slide-in-right]="sidebarSwapping()"
-            (close)="closePlaylist()" 
-            (videoSelect)="onPlaylistVideoSelect($event)"
-            (openMenu)="onOpenPlaylistMenu($event)"
-          />
+          <!-- Tab Switcher -->
+          <div class="sidebar-tabs">
+            <button class="sidebar-tab" 
+              [class.active]="sidebarTab() === 'playlist'"
+              (click)="sidebarTab.set('playlist')">
+              <app-icon name="list-video" [size]="16" />
+              {{ i18n.t('playlist.playlist') }}
+            </button>
+            <button class="sidebar-tab" 
+              [class.active]="sidebarTab() === 'vocab'"
+              (click)="sidebarTab.set('vocab')">
+              <app-icon name="book-open" [size]="16" />
+              {{ i18n.t('vocab.vocabulary') }}
+            </button>
+          </div>
+          
+          <!-- Tab Content -->
+          @if (sidebarTab() === 'playlist') {
+            <app-playlist-panel 
+              class="sidebar-content"
+              (close)="closePlaylist()" 
+              (videoSelect)="onPlaylistVideoSelect($event)"
+              (openMenu)="onOpenPlaylistMenu($event)"
+            />
+          } @else {
+            <app-vocabulary-list 
+              class="sidebar-content"
+              (deleteRequest)="onVocabDeleteRequest($event)"
+              (menuRequest)="vocabMenuOpen.set(true)"
+            />
+          }
         } @else {
+          <!-- No playlist: Show vocab directly without tabs -->
           <app-vocabulary-list 
-            [class.slide-in-left]="sidebarSwapping()" 
+            class="sidebar-content"
             (deleteRequest)="onVocabDeleteRequest($event)"
             (menuRequest)="vocabMenuOpen.set(true)"
           />
@@ -225,35 +252,58 @@ import { Token } from '../../../models';
       align-self: start;
       position: sticky;
       top: var(--space-md);
-      /* 
-       * Match video player height:
-       * Video is 16:9 aspect ratio in the main column
-       * Main column = 100% - 340px sidebar - gap
-       * Video height = (container width - 340px - 32px) * 9/16
-       * Simplified: use calc with approximate values
-       */
       max-height: calc((min(100vw, 1280px) - 340px - 48px) * 0.5625);
       overflow: hidden;
       z-index: 50;
-      
-      /* Grid Overlay Strategy */
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 1fr;
-    }
-    
-    .layout-sidebar > * {
-      grid-column: 1;
-      grid-row: 1;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
-.layout-sidebar > app-vocabulary-list,
-.layout-sidebar > app-playlist-panel {
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+    /* Tab switcher */
+    .sidebar-tabs {
+      display: flex;
+      gap: 2px;
+      padding: var(--space-xs);
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: var(--space-sm);
+      flex-shrink: 0;
+    }
+
+    .sidebar-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      padding: var(--space-sm) var(--space-md);
+      background: transparent;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .sidebar-tab:hover {
+      color: var(--text-primary);
+      background: var(--bg-tertiary);
+    }
+
+    .sidebar-tab.active {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Tab content fills remaining space */
+    .sidebar-content {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
 
     .desktop-only {
       display: block;
@@ -312,43 +362,6 @@ import { Token } from '../../../models';
       }
     }
 
-    /* Swap animations */
-    .layout-sidebar.swapping > *,
-    .panel-content.swapping > * {
-      animation-duration: 250ms;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      animation-fill-mode: forwards;
-    }
-
-    .slide-in-left {
-      animation-name: slideInLeft;
-    }
-
-    .slide-in-right {
-      animation-name: slideInRight;
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
 
     /* Menu Sheet Styles */
     .menu-sheet {
@@ -428,11 +441,10 @@ export class VideoPageComponent implements OnInit {
   protected playlistService = inject(PlaylistService);
   i18n = inject(I18nService);
 
-  // Sidebar swap tracking
-  private previousSidebarView = signal<'vocab' | 'playlist' | null>(null);
-  sidebarSwapping = signal(false);
-
   showCommandPalette = signal(false);
+
+  // Sidebar tab state (only used when playlist is active)
+  sidebarTab = signal<'playlist' | 'vocab'>('playlist');
 
   // Playlist navigation helpers
   canPlayPrev = computed(() => {
@@ -543,20 +555,6 @@ export class VideoPageComponent implements OnInit {
           queryParamsHandling: 'merge'
         });
       }
-    });
-
-    // Sidebar swap detection - only animate when actually switching between views
-    effect(() => {
-      const currentView = this.playlistService.currentPlaylist() ? 'playlist' : 'vocab';
-      const previous = this.previousSidebarView();
-
-      // Only animate if BOTH previous and current are valid views (actual swap)
-      if (previous !== null && previous !== currentView) {
-        this.sidebarSwapping.set(true);
-        setTimeout(() => this.sidebarSwapping.set(false), 300);
-      }
-
-      this.previousSidebarView.set(currentView);
     });
   }
 
