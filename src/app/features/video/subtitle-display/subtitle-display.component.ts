@@ -235,7 +235,6 @@ export class SubtitleDisplayComponent {
   // FIX 4: Throttled lazy loading
   // ============================================
   private isLazyLoadPending = false;
-  private loadingIndicatorTimer: ReturnType<typeof setTimeout> | null = null;
 
   private lazyLoadUpcomingCues(): void {
     if (this.isLazyLoadPending) return;
@@ -266,11 +265,7 @@ export class SubtitleDisplayComponent {
       console.log(`[SubtitleDisplay] Lazy loading ${cuesToTranslate.length} cues`);
       this.lastLazyLoadedIndex = endIdx;
       this.isLazyLoadPending = true;
-
-      // Delay showing loading indicator to prevent flicker on fast loads
-      this.loadingIndicatorTimer = setTimeout(() => {
-        this.isTranslatingDual.set(true);
-      }, 200);
+      this.isTranslatingDual.set(true);
 
       const texts = cuesToTranslate.map(c => c.text);
       const lang = this.effectiveLanguage();
@@ -297,10 +292,6 @@ export class SubtitleDisplayComponent {
   }
 
   private clearLoadingState(): void {
-    if (this.loadingIndicatorTimer) {
-      clearTimeout(this.loadingIndicatorTimer);
-      this.loadingIndicatorTimer = null;
-    }
     this.isTranslatingDual.set(false);
     this.isLazyLoadPending = false;
   }
