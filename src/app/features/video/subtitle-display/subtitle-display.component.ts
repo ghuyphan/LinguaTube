@@ -275,7 +275,7 @@ export class SubtitleDisplayComponent {
       const texts = cuesToTranslate.map(c => c.text);
       const lang = this.effectiveLanguage();
 
-      this.translation.translateBatch(texts, lang, 'en').subscribe({
+      this.translation.translateBatch(texts, lang, this.subtitles.dualSubtitleTargetLang()).subscribe({
         next: (translations) => {
           this.clearLoadingState();
           const newMap = new Map(this.cueTranslations());
@@ -415,7 +415,7 @@ export class SubtitleDisplayComponent {
       if (showDual && supportsDual && videoId && cues.length > 0) {
         console.log('[SubtitleDisplay] Checking cache for dual subtitles:', videoId);
 
-        this.translation.getDualSubtitles(videoId, lang, 'en', cues, true)
+        this.translation.getDualSubtitles(videoId, lang, this.subtitles.dualSubtitleTargetLang(), cues, true)
           .subscribe({
             next: (translatedSegments) => {
               if (translatedSegments && translatedSegments.length) {
@@ -452,7 +452,7 @@ export class SubtitleDisplayComponent {
       const showDual = this.settings.settings().showDualSubtitles;
       const index = this.subtitles.currentCueIndex();
 
-      if (showDual && !this.isDualCached() && index !== -1) {
+      if (showDual && !this.isDualCached() && index !== -1 && !this.subtitles.isDualSubLoading()) {
         untracked(() => {
           this.lazyLoadUpcomingCues();
         });

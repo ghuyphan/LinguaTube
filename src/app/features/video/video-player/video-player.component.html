@@ -239,6 +239,16 @@
     </div>
 
     <!-- Fullscreen Subtitle Overlay -->
+    <!-- Desktop Fullscreen Controls -->
+    <div class="desktop-fullscreen-controls desktop-only" [class.controls-visible]="areControlsVisible()">
+
+      <!-- Left side controls -->
+      <div class="control-group">
+        <button class="control-btn" (click)="openFsSettings()" aria-label="Subtitle settings">
+          <app-icon name="settings" [size]="20" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
     @if (isFullscreen()) {
     <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()" [ngClass]="fontSizeClass()"
       [class.popup-open]="fsPopupVisible()" [class.has-content]="!!subtitles.currentCue()">
@@ -259,7 +269,7 @@
         </div>
 
         @if (settings.settings().showDualSubtitles) {
-        @if (isDualSubLoading()) {
+        @if (subtitles.isDualSubLoading()) {
         <div class="fs-subtitle-translation skeleton-text"></div>
         } @else if (currentTranslation()) {
         <div class="fs-subtitle-translation">
@@ -345,6 +355,49 @@
     <div role="dialog" aria-modal="true" (click)="closeFsGrammarPopup()" (touchstart)="onPopupOverlayTouchStart($event)"
       (touchmove)="onPopupOverlayTouchMove($event)" (touchend)="onGrammarPopupOverlayTouchEnd($event)">
       <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="true" (closed)="closeFsGrammarPopup()" />
+    </div>
+    }
+
+    <!-- Fullscreen Settings Sheet -->
+    @if (isFullscreen() && fsSettingsVisible()) {
+    <div role="dialog" aria-modal="true" class="fs-popup-overlay" (click)="closeFsSettings()"
+      (touchstart)="onPopupOverlayTouchStart($event)" (touchmove)="onPopupOverlayTouchMove($event)">
+
+      <div class="fs-popup fs-settings-popup" (click)="$event.stopPropagation()"
+        (touchstart)="onFsSettingsTouchStart($event)">
+        <button class="fs-popup-close" aria-label="Close settings" (click)="closeFsSettings()">
+          <app-icon name="x" [size]="18" aria-hidden="true" />
+        </button>
+
+        <div class="fs-popup-header">
+          <h3 class="fs-popup-word">{{ i18n.t('settings.title') }}</h3>
+        </div>
+
+        <div class="fs-popup-body">
+          <div class="fs-settings-section">
+            <h4 class="fs-settings-title">{{ i18n.t('settings.targetLanguage') }}</h4>
+            <div class="fs-lang-grid">
+              @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
+              <button class="fs-lang-btn" [class.active]="targetLang() === lang.code"
+                (click)="onFsLangSelected(lang.code)">
+                <img [src]="lang.flagUrl" [alt]="lang.name" class="fs-lang-flag">
+                <span class="fs-lang-name">{{ lang.name }}</span>
+                @if (targetLang() === lang.code) {
+                <app-icon name="check" [size]="14" class="fs-lang-check" />
+                }
+              </button>
+              }
+            </div>
+          </div>
+
+          <div class="fs-settings-actions">
+            <button class="fs-popup-btn" (click)="addToPlaylist.emit(); closeFsSettings()">
+              <app-icon name="list" [size]="16" />
+              {{ i18n.t('video.saveToPlaylist') }}
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     }
 

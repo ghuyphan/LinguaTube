@@ -1716,6 +1716,77 @@ $transition-normal: 0.25s ease;
   line-height: 1.5;
 }
 
+.fs-settings-popup {
+  min-width: 320px;
+  max-width: 400px;
+}
+
+.fs-settings-section {
+  margin-bottom: 1.5rem;
+}
+
+.fs-settings-title {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fs-lang-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.fs-lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background: rgba(var(--accent-primary-rgb), 0.15);
+    border-color: var(--accent-primary);
+  }
+}
+
+.fs-lang-flag {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fs-lang-name {
+  flex: 1;
+  text-align: left;
+  font-size: 0.9375rem;
+}
+
+.fs-lang-check {
+  color: var(--accent-primary);
+}
+
+.fs-settings-actions {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
 .fs-popup-actions {
   display: flex;
   gap: var(--space-sm);

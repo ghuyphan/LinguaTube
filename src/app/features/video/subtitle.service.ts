@@ -65,6 +65,10 @@ export class SubtitleService implements OnDestroy {
   readonly isTokenizing = signal(false);
   // Dual subtitle translations (mapped by cue ID)
   readonly cueTranslations = signal<Map<string, string>>(new Map());
+  // Dual subtitle loading state (shared across components)
+  readonly isDualSubLoading = signal(false);
+  // Target language for dual subtitles (shared across components)
+  readonly dualSubtitleTargetLang = signal<string>('en');
 
   // Language state tracking
   readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en'>('ja');

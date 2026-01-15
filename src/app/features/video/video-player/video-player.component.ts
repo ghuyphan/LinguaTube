@@ -73,7 +73,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
   protected playlistService = inject(PlaylistService);
-  private translation = inject(TranslationService);
+  translation = inject(TranslationService); // Made public for template
 
   // Translation language picker state
   langPickerOpen = signal(false);
@@ -93,12 +93,13 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   onLangSelected(value: string): void {
     this.targetLang.set(value);
+    this.subtitles.dualSubtitleTargetLang.set(value); // Update shared state
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
     this.langPickerOpen.set(false);
   }
 
-  // Dual subtitle loading state
-  isDualSubLoading = signal(false);
+  // Dual subtitle loading state - Now using SubtitleService
+  // isDualSubLoading = signal(false);
 
   private fetchDualSubtitles(videoId: string, targetLang: string, cues: SubtitleCue[]) {
     const sourceLang = this.subtitles.loadedLanguage();
@@ -108,10 +109,10 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     }
 
     const segments = cues.map(c => ({ id: c.id, text: c.text }));
-    this.isDualSubLoading.set(true);
+    this.subtitles.isDualSubLoading.set(true);
 
     this.translation.getDualSubtitles(videoId, sourceLang, targetLang, segments)
-      .pipe(finalize(() => this.isDualSubLoading.set(false)))
+      .pipe(finalize(() => this.subtitles.isDualSubLoading.set(false)))
       .subscribe(translatedSegments => {
         const map = new Map<string, string>();
         translatedSegments.forEach((s: any) => map.set(s.id, s.text));
@@ -138,6 +139,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   playlistNext = output<void>();
   playlistPrev = output<void>();
   closePlaylist = output<void>();
+  addToPlaylist = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -159,6 +161,31 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   previewTime = signal(0);
   seekPreview = signal<SeekPreview>({ visible: false, time: 0, position: 0 });
   bufferedPercentage = signal(0);
+
+  // Fullscreen Settings Sheet
+  fsSettingsVisible = signal(false);
+
+  openFsSettings(): void {
+    if (this.isFullscreen()) {
+      this.fsSettingsVisible.set(true);
+      this.areControlsVisible.set(false); // Hide main controls
+    }
+  }
+
+  closeFsSettings(): void {
+    this.fsSettingsVisible.set(false);
+  }
+
+  onFsSettingsTouchStart(event: TouchEvent): void {
+    event.stopPropagation();
+  }
+
+  onFsLangSelected(langCode: string): void {
+    this.targetLang.set(langCode);
+    this.subtitles.dualSubtitleTargetLang.set(langCode); // Update shared state
+    this.settings.updateSettings({ showDualSubtitles: true });
+    // Don't close immediately so user can see it's selected
+  }
 
   // Fullscreen popup state
   fsPopupVisible = signal(false);
