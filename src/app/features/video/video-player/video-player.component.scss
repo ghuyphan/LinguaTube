@@ -1485,21 +1485,44 @@ $transition-normal: 0.25s ease;
   }
 }
 
+@keyframes skeletonPulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
 .fs-subtitle-translation {
   display: block;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
 
   .fullscreen-subtitle.fs-small & {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .fullscreen-subtitle.fs-large & {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  &.skeleton-text {
+    height: 1.2em;
+    width: 60%;
+    margin: 0.75rem auto 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s infinite ease-in-out;
   }
 }
 

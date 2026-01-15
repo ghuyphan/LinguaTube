@@ -258,10 +258,14 @@
             }}}</button>}} }
         </div>
 
-        @if (settings.settings().showDualSubtitles && currentTranslation()) {
+        @if (settings.settings().showDualSubtitles) {
+        @if (isDualSubLoading()) {
+        <div class="fs-subtitle-translation skeleton-text"></div>
+        } @else if (currentTranslation()) {
         <div class="fs-subtitle-translation">
           {{ currentTranslation() }}
         </div>
+        }
         }
       </div>
       }

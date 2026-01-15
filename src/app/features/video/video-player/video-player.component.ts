@@ -17,6 +17,7 @@ import {
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable, map, catchError, of, shareReplay, finalize } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
@@ -94,6 +95,28 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.targetLang.set(value);
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
     this.langPickerOpen.set(false);
+  }
+
+  // Dual subtitle loading state
+  isDualSubLoading = signal(false);
+
+  private fetchDualSubtitles(videoId: string, targetLang: string, cues: SubtitleCue[]) {
+    const sourceLang = this.subtitles.loadedLanguage();
+    if (sourceLang === targetLang) {
+      this.subtitles.cueTranslations.set(new Map());
+      return;
+    }
+
+    const segments = cues.map(c => ({ id: c.id, text: c.text }));
+    this.isDualSubLoading.set(true);
+
+    this.translation.getDualSubtitles(videoId, sourceLang, targetLang, segments)
+      .pipe(finalize(() => this.isDualSubLoading.set(false)))
+      .subscribe(translatedSegments => {
+        const map = new Map<string, string>();
+        translatedSegments.forEach((s: any) => map.set(s.id, s.text));
+        this.subtitles.cueTranslations.set(map);
+      });
   }
 
   // Playlist navigation
@@ -363,6 +386,19 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       setTimeout(() => this.stateTransition.set('none'), 350);
     });
 
+    // Auto-translate subtitles when dual subs enabled or language changes
+    effect(() => {
+      const settings = this.settings.settings();
+      const targetLang = this.targetLang();
+      const subtitles = this.subtitles.subtitles();
+      const video = this.youtube.currentVideo();
+
+      if (settings.showDualSubtitles && video && subtitles.length > 0) {
+        untracked(() => {
+          this.fetchDualSubtitles(video.id, targetLang, subtitles);
+        });
+      }
+    });
 
   }
 
