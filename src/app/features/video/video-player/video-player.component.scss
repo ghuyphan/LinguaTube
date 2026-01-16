@@ -1180,6 +1180,83 @@ $transition-normal: 0.25s ease;
 }
 
 // ============================================
+// LANGUAGE CONTROL (Inline dropdown like speed-control)
+// ============================================
+
+.lang-control {
+  position: relative;
+}
+
+.lang-btn {
+  @include player-btn-ghost($btn-size-sm, $icon-size-md);
+}
+
+.lang-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 0.5rem;
+  background: rgba(20, 20, 20, 0.98);
+  border-radius: var(--border-radius);
+  padding: 0.375rem 0;
+  min-width: 9rem;
+  max-height: 15rem;
+  overflow-y: auto;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+  z-index: $z-speed-menu;
+  animation: menuSlideUp 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lang-option {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease, color 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &.active {
+    color: var(--accent-primary);
+    font-weight: 500;
+
+    &::after {
+      content: '✓';
+      margin-left: auto;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.lang-option-flag {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-option-name {
+  flex: 1;
+}
+
+// ============================================
 // DEVICE-BASED VISIBILITY
 // ============================================
 
@@ -1469,8 +1546,7 @@ $transition-normal: 0.25s ease;
   }
 }
 
-.fs-subtitle-text ruby {
-  display: ruby;
+ruby {
   ruby-align: center;
   ruby-position: over;
 
@@ -1506,64 +1582,8 @@ $transition-normal: 0.25s ease;
 }
 
 // ============================================
-// FULLSCREEN POPUP
+// FULLSCREEN POPUP CONTENT
 // ============================================
-
-.fs-popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 500;
-  animation: fadeIn 0.2s ease;
-  padding: var(--space-md);
-}
-
-.fs-popup {
-  background: var(--bg-card);
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 0.75rem 3rem rgba(0, 0, 0, 0.6);
-  max-width: 20rem;
-  width: 100%;
-  position: relative;
-  animation: popupSlideUp 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@keyframes popupSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.fs-popup-close {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  background: none;
-  color: var(--text-muted);
-  z-index: 1;
-  @include player-btn-ghost($btn-size-sm, $icon-size-md);
-
-  @media (hover: hover) {
-    &:hover {
-      background: var(--bg-secondary);
-      color: var(--text-primary);
-    }
-  }
-}
-
-.fs-popup-header {
-  padding: var(--space-md);
-  text-align: center;
-}
 
 .fs-popup-word {
   font-size: 1.75rem;
@@ -1576,11 +1596,6 @@ $transition-normal: 0.25s ease;
   font-size: 0.9375rem;
   color: var(--text-secondary);
   display: block;
-}
-
-.fs-popup-body {
-  padding: var(--space-md);
-  min-height: 60px;
 }
 
 .fs-popup-loading {
@@ -1616,11 +1631,6 @@ $transition-normal: 0.25s ease;
   color: var(--text-secondary);
   text-align: center;
   line-height: 1.5;
-}
-
-.fs-settings-popup {
-  min-width: 320px;
-  max-width: 400px;
 }
 
 .fs-settings-section {

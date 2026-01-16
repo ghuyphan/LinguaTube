@@ -1,0 +1,219 @@
+// ============================================
+// FULLSCREEN SUBTITLE COMPONENT STYLES
+// ============================================
+
+// Variables (match parent component)
+$z-fullscreen-subtitle: 18;
+$transition-normal: 0.3s ease;
+$transition-fast: 0.15s ease;
+
+// Host element should not affect layout
+:host {
+    display: contents;
+}
+
+.fullscreen-subtitle {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 75%;
+    width: auto;
+    z-index: $z-fullscreen-subtitle;
+    text-align: center;
+    transition: bottom $transition-normal, opacity $transition-normal;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+
+    &.controls-visible {
+        bottom: 5rem;
+    }
+
+    &.popup-open {
+        opacity: 0.35;
+    }
+}
+
+.fs-subtitle-inner {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: var(--border-radius-lg);
+    padding: 0.75rem 1.25rem;
+    max-height: 35vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation: subtitleFadeIn 0.2s ease-out;
+}
+
+@keyframes subtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fs-subtitle-text {
+    display: inline;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--text-inverse);
+    word-break: normal;
+    overflow-wrap: break-word;
+
+    .fullscreen-subtitle.fs-small & {
+        font-size: 1.25rem;
+        line-height: 1.8;
+    }
+
+    .fullscreen-subtitle.fs-large & {
+        font-size: 2rem;
+        line-height: 2.2;
+    }
+
+    .fullscreen-subtitle.fs-xlarge & {
+        font-size: 2.5rem;
+        line-height: 2.4;
+    }
+}
+
+@keyframes skeletonPulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.fs-subtitle-translation {
+    display: block;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+
+    .fullscreen-subtitle.fs-small & {
+        font-size: 0.875rem;
+    }
+
+    .fullscreen-subtitle.fs-large & {
+        font-size: 1.125rem;
+    }
+
+    &.skeleton-text {
+        height: 1.2em;
+        width: 60%;
+        margin: 0.75rem auto 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+        animation: skeletonPulse 1.5s infinite ease-in-out;
+    }
+}
+
+.fs-word {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    padding: 0.125rem 0.25rem;
+    border-radius: 4px;
+    transition: background $transition-fast;
+    display: inline;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    &:active {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0.98);
+    }
+
+    &--punctuation {
+        padding: 0;
+        pointer-events: none;
+
+        @media (hover: hover) {
+            &:hover {
+                background: none;
+            }
+        }
+    }
+
+    &--saved {
+        background: rgba(var(--color-primary-rgb), 0.25);
+        color: var(--color-primary-300);
+        text-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.3);
+        font-weight: 600;
+
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(var(--color-primary-rgb), 0.35);
+            }
+        }
+    }
+
+    &--grammar {
+        background: rgba(var(--color-secondary-rgb), 0.25);
+        color: var(--color-secondary-300);
+        text-shadow: 0 0 10px rgba(var(--color-secondary-rgb), 0.3);
+        margin: 0 -0.1rem;
+        padding: 0.125rem 0.3rem;
+        border-radius: 4px;
+        z-index: 1;
+        position: relative;
+        box-shadow: 0 2px 0 rgba(var(--color-secondary-rgb), 0.4);
+
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(var(--color-secondary-rgb), 0.35);
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    ruby {
+        ruby-align: center;
+
+        rt {
+            font-size: 0.5em;
+            opacity: 0.8;
+            font-weight: normal;
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+}
+
+// Language-specific typography
+.text-ja {
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.text-zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.04em;
+}
+
+.text-ko {
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 0.01em;
+}

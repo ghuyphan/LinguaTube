@@ -88,149 +88,14 @@
     <div class="player-overlay hover-only" (click)="onOverlayClick($event)"></div>
 
     <!-- Center Controls -->
-    <div class="center-controls" [class.has-playlist]="hasPlaylist()">
-      <!-- Volume Feedback -->
-      @if (volumeFeedback()) {
-      <div class="center-feedback volume-feedback animate">
-        <app-icon [name]="volumeFeedbackIcon()" [size]="44" aria-hidden="true" />
-      </div>
-      }
-
-      <!-- Gesture Seek Preview -->
-      @if (gestureSeekActive()) {
-      <div class="gesture-seek-preview">
-        <span class="gesture-seek-time">{{ formatTime(gestureSeekTime()) }}</span>
-        <span class="gesture-seek-delta">
-          @if (gestureSeekTime() > youtube.currentTime()) {
-          +{{ formatTime(gestureSeekTime() - youtube.currentTime()) }}
-          } @else {
-          -{{ formatTime(youtube.currentTime() - gestureSeekTime()) }}
-          }
-        </span>
-      </div>
-      }
-
-      <!-- Playlist Navigation + Play Button Container - Mobile -->
-      @if (youtube.isReady() && !youtube.isEnded() && (areControlsVisible() || !youtube.intendedPlayingState() ||
-      youtube.isBuffering())) {
-      <div class="center-button-group touch-only">
-        <!-- Previous Button (Playlist only) -->
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
-          (click)="playlistPrev.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
-          aria-label="Previous video">
-          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
-        </button>
-        }
-
-        <!-- Big Play/Pause Button - Mobile -->
-        @if (youtube.isBuffering()) {
-        <button class="big-play-btn touch-only buffering" aria-label="Loading video"
-          (touchstart)="$event.stopPropagation()" (click)="$event.stopPropagation()" disabled>
-          <app-icon name="loader" [size]="44" aria-hidden="true" />
-        </button>
-        } @else if (!youtube.intendedPlayingState()) {
-        <button class="big-play-btn touch-only" aria-label="Play video" (touchstart)="$event.stopPropagation()"
-          (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
-          <app-icon name="play" [size]="44" aria-hidden="true" />
-        </button>
-        } @else {
-        <button class="big-play-btn touch-only fade-in" aria-label="Pause video" (touchstart)="$event.stopPropagation()"
-          (touchend)="onPlayPauseButtonTouch($event)" (click)="$event.stopPropagation()">
-          <app-icon name="pause" [size]="44" aria-hidden="true" />
-        </button>
-        }
-
-        <!-- Next Button (Playlist only) -->
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayNext()"
-          (click)="playlistNext.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
-          aria-label="Next video">
-          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
-        </button>
-        }
-      </div>
-      }
-
-      <!-- Big Play/Pause Button - Desktop (separate for hover logic) -->
-      @if (youtube.isReady() && !youtube.isEnded()) {
-      <div class="center-button-group hover-only">
-        @if (youtube.isBuffering()) {
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
-          (click)="playlistPrev.emit(); $event.stopPropagation()" aria-label="Previous video">
-          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        <button class="big-play-btn buffering" aria-label="Loading video" disabled>
-          <app-icon name="loader" [size]="44" aria-hidden="true" />
-        </button>
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayNext()"
-          (click)="playlistNext.emit(); $event.stopPropagation()" aria-label="Next video">
-          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        } @else if (!youtube.intendedPlayingState()) {
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
-          (click)="playlistPrev.emit(); $event.stopPropagation()" aria-label="Previous video">
-          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        <button class="big-play-btn" aria-label="Play video" (click)="onPlayPauseButtonClick($event)">
-          <app-icon name="play" [size]="44" aria-hidden="true" />
-        </button>
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayNext()"
-          (click)="playlistNext.emit(); $event.stopPropagation()" aria-label="Next video">
-          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        } @else if (areControlsVisible()) {
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
-          (click)="playlistPrev.emit(); $event.stopPropagation()" aria-label="Previous video">
-          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        <button class="big-play-btn fade-in" aria-label="Pause video" (click)="onPlayPauseButtonClick($event)">
-          <app-icon name="pause" [size]="44" aria-hidden="true" />
-        </button>
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayNext()"
-          (click)="playlistNext.emit(); $event.stopPropagation()" aria-label="Next video">
-          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        }
-      </div>
-      }
-
-      <!-- Replay Button -->
-      @if (youtube.isEnded()) {
-      <div class="center-button-group">
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayPrev()"
-          (click)="playlistPrev.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
-          aria-label="Previous video">
-          <app-icon name="skip-back" [size]="24" aria-hidden="true" />
-        </button>
-        }
-        <button class="big-play-btn replay-btn" aria-label="Replay video" (touchstart)="$event.stopPropagation()"
-          (touchend)="onReplayClick($event)" (click)="onReplayClick($event)">
-          <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
-        </button>
-        @if (hasPlaylist()) {
-        <button class="center-nav-btn" [disabled]="!canPlayNext()"
-          (click)="playlistNext.emit(); $event.stopPropagation()" (touchstart)="$event.stopPropagation()"
-          aria-label="Next video">
-          <app-icon name="skip-forward" [size]="24" aria-hidden="true" />
-        </button>
-        }
-      </div>
-      }
-    </div>
+    <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.intendedPlayingState()"
+      [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible()"
+      [hasPlaylist]="hasPlaylist()" [canPlayPrev]="canPlayPrev()" [canPlayNext]="canPlayNext()"
+      [volumeFeedback]="volumeFeedback()" [volumeFeedbackIcon]="volumeFeedbackIcon()"
+      [gestureSeekActive]="gestureSeekActive()" [gestureSeekTime]="gestureSeekTime()"
+      [currentTime]="youtube.currentTime()" (playPauseClicked)="onPlayPauseButtonClick($event)"
+      (playPauseTouched)="onPlayPauseButtonTouch($event)" (replayClicked)="onReplayClick($event)"
+      (replayTouched)="onReplayClick($event)" (prevClicked)="playlistPrev.emit()" (nextClicked)="playlistNext.emit()" />
 
     <!-- Mini Progress Bar -->
     <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.intendedPlayingState()"
@@ -240,67 +105,37 @@
 
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
-    <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()" [ngClass]="fontSizeClass()"
-      [class.popup-open]="fsPopupVisible()" [class.has-content]="!!subtitles.currentCue()">
-      @if (subtitles.currentCue(); as cue) {
-      <div class="fs-subtitle-inner">
-        <div class="fs-subtitle-text" [class]="'text-' + settings.settings().language">
-          @if (subtitles.isTokenizing()) {
-          <span class="fs-word">{{ cue.text }}</span>
-          } @else { @for (token of fullscreenTokens(); track $index) {@if (token.isPunctuation) {<span
-            class="fs-word fs-word--punctuation">{{ token.surface }}</span>} @else {<button type="button"
-            class="fs-word" [class.fs-word--saved]="vocab.hasWord(token.surface)"
-            [class.fs-word--grammar]="isFsGrammarToken($index)" [attr.aria-label]="'Look up ' + token.surface"
-            (click)="isFsGrammarToken($index) ? onFsGrammarClick($index, $event) : onFullscreenWordClick(token, cue.text, $event)">@if
-            (showFsReading() &&
-            getFullscreenReading(token))
-            {<ruby>{{ token.surface }}<rt>{{ getFullscreenReading(token) }}</rt></ruby>} @else {{{ token.surface
-            }}}</button>}} }
-        </div>
-
-        @if (settings.settings().showDualSubtitles) {
-        @if (subtitles.isDualSubLoading()) {
-        <div class="fs-subtitle-translation skeleton-text"></div>
-        } @else if (currentTranslation()) {
-        <div class="fs-subtitle-translation">
-          {{ currentTranslation() }}
-        </div>
-        }
-        }
-      </div>
-      }
-    </div>
+    <app-fullscreen-subtitle [currentCue]="subtitles.currentCue()" [tokens]="fullscreenTokens()"
+      [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
+      [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
+      [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
+      [currentTranslation]="currentTranslation()" [grammarMatches]="fsGrammarMatches()"
+      (wordClicked)="onFullscreenComponentWordClick($event)"
+      (grammarClicked)="onFsGrammarClick($event.index, $event.event)" />
     }
 
     <!-- Fullscreen Word Popup -->
-    @if (isFullscreen() && fsPopupVisible()) {
-    <div role="dialog" aria-modal="true" aria-labelledby="fs-popup-title" (click)="closeFsPopup()"
-      (touchstart)="onPopupOverlayTouchStart($event)" (touchmove)="onPopupOverlayTouchMove($event)"
-      (touchend)="onWordPopupOverlayTouchEnd($event)">
-      <div class="fs-popup" (click)="$event.stopPropagation()">
-        <button class="fs-popup-close" aria-label="Close popup" (click)="closeFsPopup()">
-          <app-icon name="x" [size]="18" aria-hidden="true" />
-        </button>
-
+    @if (isFullscreen()) {
+    <app-bottom-sheet [isOpen]="fsPopupVisible()" [showCloseButton]="true" (closed)="closeFsPopup()">
+      <div class="fs-popup-content">
+        @if (fsSelectedWord(); as word) {
         <div class="fs-popup-header">
           <h3 class="fs-popup-word" [class]="'text-' + settings.settings().language">
-            {{ fsSelectedWord()?.surface }}
+            {{ word.surface }}
           </h3>
           @if (fsEntry()?.reading) {
           <span class="fs-popup-reading">{{ fsEntry()?.reading }}</span>
-          } @if (fsEntry()?.pinyin) {
-          <span class="fs-popup-reading">{{ fsEntry()?.pinyin }}</span>
-          } @if (fsEntry()?.romanization) {
-          <span class="fs-popup-reading">{{ fsEntry()?.romanization }}</span>
           }
         </div>
+        }
 
         <div class="fs-popup-body">
           @if (fsLookupLoading()) {
           <div class="fs-popup-loading">
             <app-icon name="loader" [size]="20" />
           </div>
-          } @else if (fsEntry()) { @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
+          } @else if (fsEntry()) {
+          @if (fsEntry()?.jlptLevel || fsEntry()?.hskLevel || fsEntry()?.topikLevel) {
           <div class="fs-popup-badges">
             @if (fsEntry()?.jlptLevel) {
             <span class="badge">{{ fsEntry()?.jlptLevel }}</span>
@@ -333,35 +168,25 @@
           }
           <button class="fs-popup-btn" (click)="resumeAndClose()">
             <app-icon name="play" [size]="16" />
-            Resume
+            Please Resume
           </button>
         </div>
       </div>
-    </div>
+    </app-bottom-sheet>
     }
 
     <!-- Fullscreen Grammar Popup -->
-    @if (isFullscreen() && fsGrammarPopupVisible()) {
-    <div role="dialog" aria-modal="true" (click)="closeFsGrammarPopup()" (touchstart)="onPopupOverlayTouchStart($event)"
-      (touchmove)="onPopupOverlayTouchMove($event)" (touchend)="onGrammarPopupOverlayTouchEnd($event)">
+    @if (isFullscreen()) {
+    <app-bottom-sheet [isOpen]="fsGrammarPopupVisible()" [showCloseButton]="true" (closed)="closeFsGrammarPopup()">
       <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="true" (closed)="closeFsGrammarPopup()" />
-    </div>
+    </app-bottom-sheet>
     }
 
     <!-- Fullscreen Settings Sheet -->
-    @if (isFullscreen() && fsSettingsVisible()) {
-    <div role="dialog" aria-modal="true" class="fs-popup-overlay" (click)="closeFsSettings()"
-      (touchstart)="onPopupOverlayTouchStart($event)" (touchmove)="onPopupOverlayTouchMove($event)">
-
-      <div class="fs-popup fs-settings-popup" (click)="$event.stopPropagation()"
-        (touchstart)="onFsSettingsTouchStart($event)">
-        <button class="fs-popup-close" aria-label="Close settings" (click)="closeFsSettings()">
-          <app-icon name="x" [size]="18" aria-hidden="true" />
-        </button>
-
-        <div class="fs-popup-header">
-          <h3 class="fs-popup-word">{{ i18n.t('settings.title') }}</h3>
-        </div>
+    @if (isFullscreen()) {
+    <app-bottom-sheet [isOpen]="fsSettingsVisible()" [showCloseButton]="true" (closed)="closeFsSettings()">
+      <div class="fs-popup-content fs-settings-popup">
+        <h3 class="fs-popup-title">{{ i18n.t('settings.title') }}</h3>
 
         <div class="fs-popup-body">
           <div class="fs-settings-section">
@@ -379,17 +204,11 @@
               }
             </div>
           </div>
-
-          <div class="fs-settings-actions">
-            <button class="fs-popup-btn" (click)="addToPlaylist.emit(); closeFsSettings()">
-              <app-icon name="list" [size]="16" />
-              {{ i18n.t('video.saveToPlaylist') }}
-            </button>
-          </div>
         </div>
       </div>
-    </div>
+    </app-bottom-sheet>
     }
+
 
     <!-- Custom Controls -->
     <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.intendedPlayingState()">
@@ -442,7 +261,7 @@
           <!-- Unified right controls group -->
           <div class="controls-right-group">
             <!-- Playback Speed - desktop only -->
-            <div class="speed-control desktop-only" [class.open]="isSpeedMenuOpen()">
+            <div class="speed-control" [class.open]="isSpeedMenuOpen()">
               <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" aria-label="Playback speed">
                 <span class="speed-label">{{ currentSpeed() }}x</span>
               </button>
@@ -465,18 +284,33 @@
             </button>
             }
 
-            <!-- Translation Language Picker - visible for CJK languages -->
+            <!-- Translation Language Picker - visible for CJK languages (desktop only) -->
             @if (['ja', 'zh', 'ko'].includes(settings.settings().language)) {
-            <button class="control-btn" [class.is-dual-active]="settings.settings().showDualSubtitles"
-              (click)="langPickerOpen.set(true)" [title]="i18n.t('subtitle.dualSubs')">
-              <img [src]="getSelectedLangFlag()" class="lang-flag-img" alt="Language" />
-            </button>
+            <div class="lang-control" [class.open]="langPickerOpen()">
+              <button class="control-btn lang-btn" [class.is-dual-active]="settings.settings().showDualSubtitles"
+                (click)="toggleLangMenu($event)" [title]="i18n.t('subtitle.dualSubs')">
+                <img [src]="getSelectedLangFlag()" class="lang-flag-img" alt="Language" />
+              </button>
+              @if (langPickerOpen()) {
+              <div class="lang-menu" (click)="$event.stopPropagation()">
+                @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
+                <button class="lang-option" [class.active]="targetLang() === lang.code"
+                  (click)="onLangSelected(lang.code)">
+                  <img [src]="lang.flagUrl" [alt]="lang.name" class="lang-option-flag">
+                  <span class="lang-option-name">{{ lang.name }}</span>
+                </button>
+                }
+              </div>
+              }
+            </div>
             }
 
-            <!-- Add to Playlist - desktop only -->
+            <!-- Add to Playlist - desktop only, hidden in fullscreen -->
+            @if (!isFullscreen()) {
             <button class="control-btn desktop-only" (click)="onSaveClick()" aria-label="Add to playlist">
               <app-icon name="list-plus" [size]="18" />
             </button>
+            }
 
             <!-- Fullscreen -->
             <button class="control-btn" (click)="toggleFullscreen()"
@@ -508,7 +342,3 @@
   }
   }
 </div>
-
-<!-- Translation Language Picker -->
-<app-option-picker [options]="langOptions()" [value]="targetLang()" [isOpen]="langPickerOpen()"
-  [title]="i18n.t('subtitle.dualSubs')" (selected)="onLangSelected($event)" (closed)="langPickerOpen.set(false)" />

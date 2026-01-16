@@ -44,6 +44,9 @@ import {
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
 import { ProgressBarComponent } from './components/progress-bar';
+import { CenterControlsComponent } from './components/center-controls';
+import { FullscreenSubtitleComponent } from './components/fullscreen-subtitle';
+import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 
 interface SeekPreview {
   visible: boolean;
@@ -55,7 +58,7 @@ interface SeekPreview {
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, OptionPickerComponent, ProgressBarComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, OptionPickerComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent],
   providers: [GestureHandlerService],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
@@ -97,6 +100,12 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.subtitles.dualSubtitleTargetLang.set(value); // Update shared state
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
     this.langPickerOpen.set(false);
+  }
+
+  toggleLangMenu(event: Event): void {
+    event.stopPropagation();
+    this.langPickerOpen.update(v => !v);
+    this.isSpeedMenuOpen.set(false); // Close speed menu if open
   }
 
   // Dual subtitle loading state - Now using SubtitleService
@@ -587,6 +596,9 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     const target = event.target as HTMLElement;
     if (!target.closest('.speed-control')) {
       this.isSpeedMenuOpen.set(false);
+    }
+    if (!target.closest('.lang-control')) {
+      this.langPickerOpen.set(false);
     }
 
     if (this.youtube.currentVideo() && this.areControlsVisible()) {
@@ -1093,6 +1105,10 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     if (deltaY > 10) {
       this.popupTouchState.hasMoved = true;
     }
+  }
+
+  onFullscreenComponentWordClick(event: { token: Token; context: string; event: MouseEvent }): void {
+    this.onFullscreenWordClick(event.token, event.context, event.event);
   }
 
   onWordPopupOverlayTouchEnd(event: TouchEvent): void {
