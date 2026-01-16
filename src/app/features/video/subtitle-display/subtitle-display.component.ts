@@ -406,6 +406,12 @@ export class SubtitleDisplayComponent {
       if (showDual && supportsDual && videoId && cues.length > 0) {
         console.log('[SubtitleDisplay] Checking cache for dual subtitles:', videoId);
 
+        // Set loading state BEFORE cache check so skeleton shows immediately
+        // This prevents blank space while waiting for cache check/translation
+        if (this.cueTranslations().size === 0) {
+          this.isTranslatingDual.set(true);
+        }
+
         this.translation.getDualSubtitles(videoId, lang, this.subtitles.dualSubtitleTargetLang(), cues, true)
           .subscribe({
             next: (translatedSegments) => {
@@ -419,6 +425,7 @@ export class SubtitleDisplayComponent {
                 });
                 this.cueTranslations.set(newMap);
                 this.isDualCached.set(true);
+                this.isTranslatingDual.set(false); // Clear loading state on cache hit
               } else {
                 console.log('[SubtitleDisplay] Cache MISS. Enabling lazy loading.');
                 this.isDualCached.set(false);
@@ -428,6 +435,7 @@ export class SubtitleDisplayComponent {
             error: (err) => {
               console.error('[SubtitleDisplay] Cache check failed:', err);
               this.isDualCached.set(false);
+              this.isTranslatingDual.set(false); // Clear loading state on error
             }
           });
       } else {
@@ -435,6 +443,9 @@ export class SubtitleDisplayComponent {
           this.cueTranslations.set(new Map());
           this.isDualCached.set(false);
         }
+        // Clear loading state and reset lazy load tracking when dual subs disabled
+        this.isTranslatingDual.set(false);
+        this.lastLazyLoadedIndex = -1;
       }
     });
 

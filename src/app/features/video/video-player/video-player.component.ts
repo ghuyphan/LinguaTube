@@ -17,10 +17,10 @@ import {
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, map, catchError, of, shareReplay, finalize } from 'rxjs';
+import { finalize } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
-import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 
 import {
   YoutubeService,
@@ -39,7 +39,6 @@ import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
   DOUBLE_TAP_DELAY,
-  BUFFERED_TRACKING_INTERVAL,
   SEEK_STEP
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
@@ -48,17 +47,11 @@ import { CenterControlsComponent } from './components/center-controls';
 import { FullscreenSubtitleComponent } from './components/fullscreen-subtitle';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 
-interface SeekPreview {
-  visible: boolean;
-  time: number;
-  position: number;
-}
-
 @Component({
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, OptionPickerComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent],
   providers: [GestureHandlerService],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
