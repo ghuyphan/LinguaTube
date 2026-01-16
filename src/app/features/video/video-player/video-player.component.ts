@@ -91,6 +91,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   onLangSelected(value: string): void {
     this.targetLang.set(value);
     this.subtitles.dualSubtitleTargetLang.set(value); // Update shared state
+    this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
     this.langPickerOpen.set(false);
   }
@@ -189,6 +190,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   onFsLangSelected(langCode: string): void {
     this.targetLang.set(langCode);
     this.subtitles.dualSubtitleTargetLang.set(langCode); // Update shared state
+    this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true });
     // Don't close immediately so user can see it's selected
   }
@@ -314,10 +316,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private eventCleanupFns: (() => void)[] = [];
 
   // Bound event handlers for seeking
-  private readonly boundOnSeekMove = this.onSeekMove.bind(this);
-  private readonly boundOnSeekUp = this.onSeekUp.bind(this);
 
-  // Desktop double-click tracking
   private lastDesktopClickTime = 0;
   private lastControlsShowTime = 0;
 
@@ -792,9 +791,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   get gestureSeekActive() { return this.gestures.gestureSeekActive; }
   get gestureSeekTime() { return this.gestures.gestureSeekTime; }
 
-  private cancelPendingSingleTap() {
-    // No longer needed - handled by service
-  }
+
 
   onOverlayClick(event: MouseEvent) {
     const now = Date.now();
@@ -858,7 +855,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   onPlayPauseButtonTouch(event: Event) {
     event.stopPropagation();
     event.preventDefault();
-    this.cancelPendingSingleTap();
+
     this.togglePlay();
     this.lastControlsShowTime = Date.now();
     this.clearControlsTimeout();
@@ -878,7 +875,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   onReplayClick(event: Event) {
     event.stopPropagation();
     event.preventDefault();
-    this.cancelPendingSingleTap();
+
     if (this.doubleTapTimeout) {
       clearTimeout(this.doubleTapTimeout);
       this.doubleTapTimeout = null;
@@ -1205,13 +1202,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   }
 
   // Helper for seek calculations
-  private onSeekMove(event: MouseEvent | TouchEvent) {
-    // Legacy method - removed
-  }
 
-  private onSeekUp(event: MouseEvent | TouchEvent) {
-    // Legacy method - removed
-  }
 
   private startBufferedTracking() {
     this.progressBarComponent?.startBufferedTracking();

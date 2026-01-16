@@ -1,0 +1,141 @@
+<div class="layout">
+    <div class="layout-main" [class.has-video-bar]="!!youtube.currentVideo()">
+        <app-video-player (fullscreenWordClicked)="onWordClicked($event)"
+            (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
+            (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()"
+            (closePlaylist)="closePlaylist()" />
+
+        <app-subtitle-display [isVideoFullscreen]="isVideoFullscreen()" (wordClicked)="onWordClicked($event)"
+            (manualAITrigger)="onManualAITrigger()" />
+    </div>
+
+    <!-- Desktop sidebar: Tab switcher when playlist active -->
+    <aside class="layout-sidebar desktop-only">
+        @if (playlistService.currentPlaylist()) {
+        <!-- Tab Switcher -->
+        <div class="sidebar-tabs">
+            <button class="sidebar-tab" [class.active]="sidebarTab() === 'playlist'"
+                (click)="sidebarTab.set('playlist')">
+                <app-icon name="list-video" [size]="16" />
+                {{ i18n.t('playlist.playlist') }}
+            </button>
+            <button class="sidebar-tab" [class.active]="sidebarTab() === 'vocab'" (click)="sidebarTab.set('vocab')">
+                <app-icon name="book-open" [size]="16" />
+                {{ i18n.t('vocab.vocabulary') }}
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        @if (sidebarTab() === 'playlist') {
+        <app-playlist-panel class="sidebar-content" (close)="closePlaylist()"
+            (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)" />
+        } @else {
+        <app-vocabulary-list class="sidebar-content" (deleteRequest)="onVocabDeleteRequest($event)"
+            (menuRequest)="vocabMenuOpen.set(true)" />
+        }
+        } @else {
+        <!-- No playlist: Show vocab directly without tabs -->
+        <app-vocabulary-list class="sidebar-content" (deleteRequest)="onVocabDeleteRequest($event)"
+            (menuRequest)="vocabMenuOpen.set(true)" />
+        }
+    </aside>
+
+    <!-- Unified Expandable Playlist (Mobile) -->
+    <!-- Only show when we have a video involved (either single or playlist) -->
+    @if (youtube.currentVideo() || playlistService.currentPlaylist()) {
+    <app-expandable-playlist class="desktop-none" [currentVideo]="youtube.currentVideo()"
+        [playlist]="playlistService.currentPlaylist()" [currentIndex]="playlistService.currentIndex()"
+        [isHidden]="showCommandPalette()" (videoSelect)="onPlaylistVideoSelect($event)"
+        (openMenu)="onOpenPlaylistMenu($event)" (close)="closePlaylist()" (openCommandPalette)="openCommandPalette()"
+        (addToPlaylist)="openAddToPlaylist()" (prevVideo)="playlistService.playPrevious()"
+        (nextVideo)="playlistService.playNext()" />
+    }
+</div>
+
+<!-- Add to Playlist Dialog -->
+@if (showAddToPlaylistDialog() && youtube.currentVideo(); as video) {
+<app-add-to-playlist-dialog [isOpen]="showAddToPlaylistDialog()" [videoId]="video.id"
+    (closed)="showAddToPlaylistDialog.set(false)">
+</app-add-to-playlist-dialog>
+}
+
+<!-- Command Palette -->
+<app-command-palette [isOpen]="showCommandPalette()" (search)="onCommandPaletteSearch($event)"
+    (closed)="onCommandPaletteClosed()" />
+
+<!-- Language Mismatch Alert -->
+@if (showLanguageMismatchDialog()) {
+<app-confirm-dialog [isOpen]="true" [title]="i18n.t('subtitle.languageMismatch')" [message]="languageMismatchMessage()"
+    [confirmText]="switchLanguageButtonText()" [showCancel]="false" [allowBackdropClose]="false" variant="default"
+    icon="alert-circle" (confirmed)="onMismatchConfirm()">
+</app-confirm-dialog>
+}
+
+<!-- Word popup -->
+@defer (when selectedWord()) {
+<app-word-popup [selectedWord]="selectedWord()" [currentSentence]="currentSentence()" (closed)="onWordPopupClosed()" />
+}
+
+<!-- Playlist Video Options Menu -->
+@if (playlistService.currentPlaylist(); as playlist) {
+<app-bottom-sheet [isOpen]="videoMenuOpen()" [showCloseButton]="true" (closed)="videoMenuOpen.set(false)">
+    <div class="menu-sheet">
+        <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
+        <div class="menu-sheet__options">
+            <button class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoUp()">
+                <app-icon name="chevron-up" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.moveUp') }}</span>
+            </button>
+            <button class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
+                (click)="moveVideoDown()">
+                <app-icon name="chevron-down" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.moveDown') }}</span>
+            </button>
+            <div class="menu-divider"></div>
+            <button class="menu-option" [disabled]="menuVideoIndex() === 0" (click)="moveVideoToTop()">
+                <app-icon name="chevrons-up" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.moveToTop') }}</span>
+            </button>
+            <button class="menu-option" [disabled]="menuVideoIndex() >= playlist.videos.length - 1"
+                (click)="moveVideoToBottom()">
+                <app-icon name="chevrons-down" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.moveToBottom') }}</span>
+            </button>
+            <div class="menu-divider"></div>
+            <button class="menu-option menu-option--danger" (click)="removeVideo()">
+                <app-icon name="trash-2" [size]="18"></app-icon>
+                <span>{{ i18n.t('playlist.removeFromPlaylist') }}</span>
+            </button>
+        </div>
+    </div>
+</app-bottom-sheet>
+}
+
+<!-- Vocab Delete Confirmation -->
+<app-confirm-dialog [isOpen]="vocabDeleteOpen()" [title]="i18n.t('vocab.deleteWord')"
+    [message]="i18n.t('vocab.deleteConfirm')" [confirmText]="i18n.t('vocab.delete')"
+    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" (confirmed)="confirmVocabDelete()"
+    (cancelled)="vocabDeleteOpen.set(false)" />
+
+<!-- Vocab Menu Sheet -->
+<app-bottom-sheet [isOpen]="vocabMenuOpen()" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
+    <div class="menu-sheet">
+        <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
+        <div class="menu-sheet__options">
+            <button class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
+                <app-icon name="download" [size]="18" />
+                <span>{{ i18n.t('vocab.exportJson') }}</span>
+            </button>
+            <button class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
+                <app-icon name="download" [size]="18" />
+                <span>{{ i18n.t('vocab.exportAnki') }}</span>
+            </button>
+            <label class="menu-option">
+                <app-icon name="upload" [size]="18" />
+                <span>{{ i18n.t('vocab.import') }}</span>
+                <input type="file" accept=".json" class="hidden-input"
+                    (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
+            </label>
+        </div>
+    </div>
+</app-bottom-sheet>
