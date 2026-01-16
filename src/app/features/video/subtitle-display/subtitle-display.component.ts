@@ -417,6 +417,9 @@ export class SubtitleDisplayComponent {
             next: (translatedSegments) => {
               if (translatedSegments && translatedSegments.length) {
                 console.log('[SubtitleDisplay] Cache HIT. Loaded:', translatedSegments.length);
+                if (translatedSegments.length > 0) {
+                  console.log('[SubtitleDisplay] Sample segment:', translatedSegments[0]);
+                }
                 const newMap = new Map<string, string>();
                 translatedSegments.forEach((seg: any, index: number) => {
                   if (index < cues.length && seg.translation) {

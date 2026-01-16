@@ -596,9 +596,9 @@
     height: 1.5em;
     border-radius: 6px;
     background: linear-gradient(90deg,
-            var(--bg-secondary) 25%,
-            var(--bg-card) 50%,
-            var(--bg-secondary) 75%);
+            color-mix(in srgb, var(--text-secondary), transparent 92%) 25%,
+            color-mix(in srgb, var(--text-secondary), transparent 85%) 50%,
+            color-mix(in srgb, var(--text-secondary), transparent 92%) 75%);
     background-size: 200% 100%;
     animation: skeleton-pulse 1.5s ease-in-out infinite;
     width: 60px;

@@ -118,7 +118,11 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       .pipe(finalize(() => this.subtitles.isDualSubLoading.set(false)))
       .subscribe(translatedSegments => {
         const map = new Map<string, string>();
-        translatedSegments.forEach((s: any) => map.set(s.id, s.text));
+        translatedSegments.forEach((s: any) => {
+          if (s.translation) {
+            map.set(s.id, s.translation);
+          }
+        });
         this.subtitles.cueTranslations.set(map);
       });
   }
