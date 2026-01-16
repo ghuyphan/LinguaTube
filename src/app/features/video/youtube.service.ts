@@ -217,6 +217,14 @@ export class YoutubeService {
         // Load the new video
         this.player.loadVideoById(videoId);
 
+        // Disable YouTube's built-in captions (we use our own)
+        try {
+          this.player.unloadModule('captions');
+          this.player.unloadModule('cc');
+        } catch (e) {
+          // Module might not be loaded
+        }
+
         // Fetch fresh metadata
         const metadata = await metadataPromise;
         const duration = this.player.getDuration() || 0; // Might be 0 initially, updated by onStateChange/metadata
@@ -274,6 +282,14 @@ export class YoutubeService {
               // Use the unified state update method
               this.updateVideoState(videoId, metadata, duration);
 
+              // Disable YouTube's built-in captions (we use our own)
+              try {
+                event.target.unloadModule('captions');
+                event.target.unloadModule('cc');
+              } catch (e) {
+                // Module might not be loaded
+              }
+
               this.isReady.set(true); // Explicitly set ready here for new players
 
               // Restore playing state if intended
@@ -299,6 +315,12 @@ export class YoutubeService {
                 this.isPlaying.set(true);
                 this.intendedPlayingState.set(true);
                 this.startTimeTracking();
+
+                // Force disable captions again when playback starts
+                try {
+                  event.target.unloadModule('captions');
+                  event.target.unloadModule('cc');
+                } catch (e) { }
               } else if (!isPlaying && !isBuffering && this.isPlaying()) {
                 // Only set to false if we're not buffering (e.g., paused or ended)
                 this.isPlaying.set(false);

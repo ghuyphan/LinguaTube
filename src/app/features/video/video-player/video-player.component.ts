@@ -39,12 +39,11 @@ import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
   DOUBLE_TAP_DELAY,
-  LONG_PRESS_DELAY,
   BUFFERED_TRACKING_INTERVAL,
-  SEEK_STEP,
-  SWIPE_THRESHOLD,
-  GESTURE_SEEK_SENSITIVITY
+  SEEK_STEP
 } from './video-player.constants';
+import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
+import { ProgressBarComponent } from './components/progress-bar';
 
 interface SeekPreview {
   visible: boolean;
@@ -56,7 +55,8 @@ interface SeekPreview {
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, OptionPickerComponent, ProgressBarComponent],
+  providers: [GestureHandlerService],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
@@ -74,6 +74,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   grammar = inject(GrammarService);
   protected playlistService = inject(PlaylistService);
   translation = inject(TranslationService); // Made public for template
+  private gestures = inject(GestureHandlerService);
 
   // Translation language picker state
   langPickerOpen = signal(false);
@@ -156,11 +157,10 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   });
   currentSpeed = signal<PlaybackSpeed>(1);
 
-  // Seeking State
+  // Seeking State (managed by ProgressBarComponent, tracked here for visibility)
   isDragging = signal(false);
-  previewTime = signal(0);
-  seekPreview = signal<SeekPreview>({ visible: false, time: 0, position: 0 });
-  bufferedPercentage = signal(0);
+
+  @ViewChild('progressBarComponent') progressBarComponent!: ProgressBarComponent;
 
   // Fullscreen Settings Sheet
   fsSettingsVisible = signal(false);
@@ -204,7 +204,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   // Computed values
   displayTime = computed(() => {
-    return this.isDragging() ? this.previewTime() : this.youtube.currentTime();
+    return this.youtube.currentTime();
   });
 
   formattedCurrentTime = computed(() => this.formatTime(this.displayTime()));
@@ -290,13 +290,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   volumeFeedback = signal(false);
   volumeFeedbackIcon = signal<'volume-2' | 'volume-1' | 'volume-x'>('volume-2');
 
-  // Gesture seek feedback
-  gestureSeekActive = signal(false);
-  gestureSeekTime = signal(0);
-
-  // Long press for 2x speed
+  // Long press for 2x speed (signal exposed from GestureHandlerService)
   longPressActive = signal(false);
-  private longPressSpeed: PlaybackSpeed = 1;
 
   // State transition animation tracking
   stateTransition = signal<'none' | 'to-video' | 'to-input'>('none');
@@ -307,9 +302,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
   private doubleTapTimeout: ReturnType<typeof setTimeout> | null = null;
-  private seekFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
-  private longPressTimeout: ReturnType<typeof setTimeout> | null = null;
-  private bufferedInterval: ReturnType<typeof setInterval> | null = null;
+
 
   // Event listener cleanup functions to prevent memory leaks
   private eventCleanupFns: (() => void)[] = [];
@@ -318,18 +311,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private readonly boundOnSeekMove = this.onSeekMove.bind(this);
   private readonly boundOnSeekUp = this.onSeekUp.bind(this);
 
-  // Touch state
-  private touchState = {
-    startX: 0,
-    startY: 0,
-    startTime: 0,
-    hasMoved: false,
-    initialVideoTime: 0,
-    initialVolume: 0
-  };
-
-  // Tap tracking for double-tap detection
-  private lastTapInfo: { zone: string; time: number } | null = null;
+  // Desktop double-click tracking
   private lastDesktopClickTime = 0;
   private lastControlsShowTime = 0;
 
@@ -722,118 +704,87 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   }
 
   // ============================================
-  // MOBILE TOUCH HANDLING
+  // MOBILE TOUCH HANDLING (delegated to GestureHandlerService)
   // ============================================
 
   onOverlayTouchStart(event: TouchEvent) {
-    if (event.touches.length !== 1) return;
-
-    const touch = event.touches[0];
-    this.touchState = {
-      startX: touch.clientX,
-      startY: touch.clientY,
-      startTime: Date.now(),
-      hasMoved: false,
-      initialVideoTime: this.youtube.currentTime(),
-      initialVolume: this.volume()
-    };
-
-    this.cancelLongPress();
-    this.longPressTimeout = setTimeout(() => {
-      this.activateLongPress();
-    }, LONG_PRESS_DELAY);
+    this.gestures.handleTouchStart(event, () => this.volume());
   }
 
   onOverlayTouchMove(event: TouchEvent) {
-    if (event.touches.length !== 1) return;
-
-    const touch = event.touches[0];
-    const deltaX = touch.clientX - this.touchState.startX;
-    const deltaY = touch.clientY - this.touchState.startY;
-    const absX = Math.abs(deltaX);
-    const absY = Math.abs(deltaY);
-
-    if (absX > SWIPE_THRESHOLD || absY > SWIPE_THRESHOLD) {
-      this.touchState.hasMoved = true;
-      this.cancelLongPress();
-    }
-
-    // Horizontal swipe = seek scrub
-    if (this.touchState.hasMoved && absX > absY) {
-      if (event.cancelable) event.preventDefault(); // Prevent scrolling
-
-      // Calculate new state
-      const seekDelta = deltaX * GESTURE_SEEK_SENSITIVITY;
-      const newTime = Math.max(0, Math.min(this.youtube.duration(), this.touchState.initialVideoTime + seekDelta));
-
-      // Update state in zone
-      this.ngZone.run(() => {
-        this.gestureSeekActive.set(true);
-        this.gestureSeekTime.set(newTime);
-      });
-    }
+    this.gestures.handleTouchMove(event);
   }
 
   onOverlayTouchEnd(event: TouchEvent) {
-    this.cancelLongPress();
-    this.deactivateLongPress();
-
-    if (this.gestureSeekActive()) {
-      this.youtube.seekTo(this.gestureSeekTime());
-      this.gestureSeekActive.set(false);
-      return;
-    }
-
-    if (this.touchState.hasMoved) {
-      return;
-    }
-
-    const touch = event.changedTouches[0];
-    this.handleTap(touch.clientX, touch.clientY);
-  }
-
-  private handleTap(clientX: number, clientY: number) {
     const container = this.videoContainerRef?.nativeElement;
     if (!container) return;
 
     const rect = container.getBoundingClientRect();
-    const relativeX = clientX - rect.left;
-    const relativeY = clientY - rect.top;
-    const width = rect.width;
+    const gestureEvent = this.gestures.handleTouchEnd(rect);
 
-    const zone: 'left' | 'right' = relativeX < width * 0.5 ? 'left' : 'right';
-    const now = Date.now();
-
-    // Check for double-tap
-    if (this.lastTapInfo && this.lastTapInfo.zone === zone && now - this.lastTapInfo.time < DOUBLE_TAP_DELAY) {
-      // Double-tap detected - SEEK
-      this.lastTapInfo = null;
-
-      const zoneRelativeX = zone === 'left' ? relativeX : relativeX - width / 2;
-
-      if (zone === 'left') {
-        this.seekRelative(-SEEK_STEP);
-        this.showSeekFeedback('left', SEEK_STEP);
-        this.triggerRipple(zoneRelativeX, relativeY, 'left');
-      } else {
-        this.seekRelative(SEEK_STEP);
-        this.showSeekFeedback('right', SEEK_STEP);
-        this.triggerRipple(zoneRelativeX, relativeY, 'right');
-      }
-
-      this.areControlsVisible.set(true);
-      this.lastControlsShowTime = now;
-      this.clearControlsTimeout();
-      this.hideControlsAfterDelay(1500);
-    } else {
-      // Single tap - TOGGLE CONTROLS IMMEDIATELY
-      this.lastTapInfo = { zone, time: now };
-      this.toggleControlsVisibility();
+    if (gestureEvent) {
+      this.handleGestureEvent(gestureEvent);
     }
   }
 
+  /**
+   * Handle gesture events from GestureHandlerService
+   */
+  private handleGestureEvent(event: GestureEvent): void {
+    const container = this.videoContainerRef?.nativeElement;
+    const rect = container?.getBoundingClientRect();
+
+    switch (event.type) {
+      case 'double-tap-left':
+        this.showSeekFeedback('left', event.data?.seconds || SEEK_STEP);
+        if (rect) {
+          const x = rect.width * 0.25;
+          const y = rect.height * 0.5;
+          this.triggerRipple(x, y, 'left');
+        }
+        this.areControlsVisible.set(true);
+        this.lastControlsShowTime = Date.now();
+        this.clearControlsTimeout();
+        this.hideControlsAfterDelay(1500);
+        break;
+
+      case 'double-tap-right':
+        this.showSeekFeedback('right', event.data?.seconds || SEEK_STEP);
+        if (rect) {
+          const x = rect.width * 0.25;
+          const y = rect.height * 0.5;
+          this.triggerRipple(x, y, 'right');
+        }
+        this.areControlsVisible.set(true);
+        this.lastControlsShowTime = Date.now();
+        this.clearControlsTimeout();
+        this.hideControlsAfterDelay(1500);
+        break;
+
+      case 'single-tap':
+        this.toggleControlsVisibility();
+        break;
+
+      case 'gesture-seek-complete':
+        // Seek already handled by service
+        break;
+
+      case 'long-press-start':
+        this.longPressActive.set(true);
+        break;
+
+      case 'long-press-end':
+        this.longPressActive.set(false);
+        break;
+    }
+  }
+
+  // Expose gesture service state to template
+  get gestureSeekActive() { return this.gestures.gestureSeekActive; }
+  get gestureSeekTime() { return this.gestures.gestureSeekTime; }
+
   private cancelPendingSingleTap() {
-    this.lastTapInfo = null;
+    // No longer needed - handled by service
   }
 
   onOverlayClick(event: MouseEvent) {
@@ -892,27 +843,6 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       this.areControlsVisible.set(true);
       this.lastControlsShowTime = now;
       this.clearControlsTimeout();
-    }
-  }
-
-  private activateLongPress() {
-    if (!this.youtube.intendedPlayingState()) return;
-    this.longPressSpeed = this.currentSpeed();
-    this.longPressActive.set(true);
-    this.youtube.setPlaybackRate(2);
-  }
-
-  private deactivateLongPress() {
-    if (this.longPressActive()) {
-      this.youtube.setPlaybackRate(this.longPressSpeed);
-      this.longPressActive.set(false);
-    }
-  }
-
-  private cancelLongPress() {
-    if (this.longPressTimeout) {
-      clearTimeout(this.longPressTimeout);
-      this.longPressTimeout = null;
     }
   }
 
@@ -1237,161 +1167,47 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   // PROGRESS BAR
   // ============================================
 
-  updateSeekPreview(event: MouseEvent) {
-    if (!this.youtube.duration()) return;
 
-    // Run UI update in zone
-    this.ngZone.run(() => {
-      const progressBar = this.progressBar?.nativeElement;
-      if (!progressBar) return;
-
-      const rect = progressBar.getBoundingClientRect();
-      const offsetX = Math.max(0, Math.min(event.clientX - rect.left, rect.width));
-      const percentage = offsetX / rect.width;
-      const time = percentage * this.youtube.duration();
-
-      this.seekPreview.set({
-        visible: true,
-        time,
-        position: offsetX
-      });
-    });
-  }
 
   hideSeekPreview() {
-    this.ngZone.run(() => {
-      this.seekPreview.update(prev => ({ ...prev, visible: false }));
-    });
+    this.progressBarComponent?.hideSeekPreview();
   }
 
   startSeeking(event: MouseEvent | TouchEvent) {
-    // Ensure we are in zone for logic? 
-    // Start seeking interacts with global listeners, so better to be consistent.
-    // However, startSeeking sets state `isDragging`.
+    this.progressBarComponent?.startSeeking(event);
+  }
 
-    this.ngZone.run(() => {
-      if (!this.youtube.duration()) return;
-      event.preventDefault(); // Prevent text selection
+  updateSeekPreview(event: MouseEvent) {
+    this.progressBarComponent?.updateSeekPreview(event);
+  }
 
-      this.isDragging.set(true);
-      this.calculateSeekTime(event);
+  onSeekStarted() {
+    this.isDragging.set(true);
+    this.clearControlsTimeout();
+  }
 
-      // Add document listeners for drag
-      document.addEventListener('mousemove', this.boundOnSeekMove);
-      document.addEventListener('mouseup', this.boundOnSeekUp);
-      document.addEventListener('touchmove', this.boundOnSeekMove, { passive: false });
-      document.addEventListener('touchend', this.boundOnSeekUp);
-    });
+  onSeekEnded(time: number) {
+    this.isDragging.set(false);
+    this.startControlsAutoHide();
   }
 
   // Helper for seek calculations
-  private calculateSeekTime(event: MouseEvent | TouchEvent) {
-    const progressBar = this.progressBar?.nativeElement;
-    if (!progressBar) return;
-
-    const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
-    const rect = progressBar.getBoundingClientRect();
-    const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
-    const percentage = offsetX / rect.width;
-    const time = percentage * this.youtube.duration();
-
-    this.previewTime.set(time);
-    this.seekPreview.set({
-      visible: true,
-      time,
-      position: offsetX
-    });
-  }
-
   private onSeekMove(event: MouseEvent | TouchEvent) {
-    event.preventDefault();
-    // Run in zone to update preview UI
-    this.ngZone.run(() => {
-      const progressBar = this.progressBar?.nativeElement;
-      if (progressBar) {
-        const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
-        const rect = progressBar.getBoundingClientRect();
-        const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
-        const percentage = offsetX / rect.width;
-        const time = percentage * this.youtube.duration();
-
-        this.previewTime.set(time);
-        this.seekPreview.set({
-          visible: true,
-          time,
-          position: offsetX
-        });
-      }
-    });
+    // Legacy method - removed
   }
 
   private onSeekUp(event: MouseEvent | TouchEvent) {
-    this.ngZone.run(() => {
-      this.isDragging.set(false);
-      this.seekPreview.update(prev => ({ ...prev, visible: false })); // Hide tooltip on release
-
-      const time = this.previewTime();
-      this.youtube.seekTo(time);
-
-      document.removeEventListener('mousemove', this.boundOnSeekMove);
-      document.removeEventListener('mouseup', this.boundOnSeekUp);
-      document.removeEventListener('touchmove', this.boundOnSeekMove);
-      document.removeEventListener('touchend', this.boundOnSeekUp);
-    });
+    // Legacy method - removed
   }
-
-  private updateSeek(event: MouseEvent | TouchEvent) {
-    if (!this.youtube.duration() || !this.progressBar?.nativeElement) return;
-
-    const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX;
-    const rect = this.progressBar.nativeElement.getBoundingClientRect(); // Define rect here
-    const offsetX = clientX - rect.left;
-    const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
-
-    this.previewTime.set(percentage * this.youtube.duration());
-
-    this.seekPreview.set({
-      visible: true,
-      time: this.previewTime(),
-      position: Math.max(30, Math.min(rect.width - 30, offsetX))
-    });
-  }
-
-  private stopSeeking() {
-    if (this.isDragging()) {
-      this.youtube.seekTo(this.previewTime());
-      this.isDragging.set(false);
-      this.hideSeekPreview();
-    }
-  }
-
-  // ============================================
-  // BUFFERED TRACKING
-  // ============================================
 
   private startBufferedTracking() {
-    if (this.bufferedInterval) return;
-
-    this.bufferedInterval = setInterval(() => {
-      const loadedFraction = this.getLoadedFraction();
-      this.bufferedPercentage.set(loadedFraction * 100);
-    }, BUFFERED_TRACKING_INTERVAL);
+    this.progressBarComponent?.startBufferedTracking();
   }
 
   private stopBufferedTracking() {
-    if (this.bufferedInterval) {
-      clearInterval(this.bufferedInterval);
-      this.bufferedInterval = null;
-    }
+    this.progressBarComponent?.stopBufferedTracking();
   }
 
-  private getLoadedFraction(): number {
-    const duration = this.youtube.duration();
-    const currentTime = this.youtube.currentTime();
-    if (!duration) return 0;
-    const bufferedTime = Math.min(currentTime + 30, duration);
-    return bufferedTime / duration;
-  }
 
   // ============================================
   // VIDEO LOADING
@@ -1474,18 +1290,10 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     this.clearControlsTimeout();
-    this.cancelLongPress();
-    this.cancelPendingSingleTap();
+    this.gestures.destroy();
 
     if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
-    if (this.bufferedInterval) clearInterval(this.bufferedInterval);
-    if (this.seekFeedbackTimeout) clearTimeout(this.seekFeedbackTimeout);
     if (this.doubleTapTimeout) clearTimeout(this.doubleTapTimeout);
-
-    document.removeEventListener('mousemove', this.boundOnSeekMove);
-    document.removeEventListener('touchmove', this.boundOnSeekMove);
-    document.removeEventListener('mouseup', this.boundOnSeekUp);
-    document.removeEventListener('touchend', this.boundOnSeekUp);
 
     // Clean up video container and overlay event listeners
     this.eventCleanupFns.forEach(fn => fn());

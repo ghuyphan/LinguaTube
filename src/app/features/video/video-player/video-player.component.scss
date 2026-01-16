@@ -14,8 +14,8 @@ $btn-size-lg: 3.5rem; // 56px - big play button
 $btn-size-xl: 4rem; // 64px - big play button desktop
 
 // === BUTTON BACKGROUNDS ===
-$btn-bg: rgba(0, 0, 0, 0.65);
-$btn-bg-hover: rgba(0, 0, 0, 0.85);
+$btn-bg: rgba(0, 0, 0, 0.3);
+$btn-bg-hover: rgba(0, 0, 0, 0.65);
 $btn-bg-active: rgba(255, 255, 255, 0.15);
 
 // === ICON SIZES (relative to button) ===
@@ -767,9 +767,11 @@ $transition-normal: 0.25s ease;
   opacity: 0;
   transition: opacity $transition-normal;
   z-index: $z-mini-progress;
+  pointer-events: none; // Prevent blocking clicks
 
   &.visible {
     opacity: 1;
+    pointer-events: auto; // Re-enable clicking when visible
   }
 
   &::after {
@@ -840,107 +842,7 @@ $transition-normal: 0.25s ease;
 // PROGRESS BAR
 // ============================================
 
-.progress-container {
-  --progress: 0;
-  --buffered: 0;
-  --seek-pos: 0px;
 
-  width: 100%;
-  height: $progress-height;
-  background: rgba(255, 255, 255, 0.2);
-  position: relative;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: height $transition-fast;
-  touch-action: none;
-  overflow: visible;
-
-  @media (hover: hover) {
-    &:hover {
-      height: $progress-height-hover;
-
-      .progress-handle {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
-  }
-
-  &.seeking {
-    height: $progress-height-hover;
-
-    .progress-handle {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
-}
-
-.progress-hit-area {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 24px;
-  z-index: 2;
-  cursor: pointer;
-  pointer-events: auto;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.progress-buffered {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: calc(var(--buffered) * 1%);
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 2px;
-  pointer-events: none;
-}
-
-.progress-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: calc(var(--progress) * 1%);
-  background: var(--accent-primary);
-  border-radius: 2px;
-  pointer-events: none;
-}
-
-.progress-handle {
-  position: absolute;
-  top: 50%;
-  left: calc(var(--progress) * 1%);
-  transform: translate(-50%, -50%) scale(0);
-  width: $progress-handle-size;
-  height: $progress-handle-size;
-  background: var(--accent-primary);
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity $transition-fast, transform $transition-fast;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-.seek-tooltip {
-  position: absolute;
-  bottom: 18px;
-  left: var(--seek-pos);
-  transform: translateX(-50%);
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  font-size: 0.8125rem;
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  border-radius: var(--border-radius-sm);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: $z-seek-tooltip;
-}
 
 // ============================================
 // CONTROLS ROW

@@ -4,3 +4,5 @@ export * from './settings.service';
 export * from './i18n.service';
 export * from './pocketbase.service';
 export * from './storage.service';
+export * from './error-handler.service';
+export * from './loading.service';

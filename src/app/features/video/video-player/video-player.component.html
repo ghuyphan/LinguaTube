@@ -239,16 +239,6 @@
     </div>
 
     <!-- Fullscreen Subtitle Overlay -->
-    <!-- Desktop Fullscreen Controls -->
-    <div class="desktop-fullscreen-controls desktop-only" [class.controls-visible]="areControlsVisible()">
-
-      <!-- Left side controls -->
-      <div class="control-group">
-        <button class="control-btn" (click)="openFsSettings()" aria-label="Subtitle settings">
-          <app-icon name="settings" [size]="20" aria-hidden="true" />
-        </button>
-      </div>
-    </div>
     @if (isFullscreen()) {
     <div class="fullscreen-subtitle" [class.controls-visible]="areControlsVisible()" [ngClass]="fontSizeClass()"
       [class.popup-open]="fsPopupVisible()" [class.has-content]="!!subtitles.currentCue()">
@@ -404,24 +394,8 @@
     <!-- Custom Controls -->
     <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.intendedPlayingState()">
       <!-- Progress Bar -->
-      <div class="progress-container" role="slider" [attr.aria-valuenow]="displayTime()" [attr.aria-valuemin]="0"
-        [attr.aria-valuemax]="youtube.duration()"
-        [attr.aria-valuetext]="formattedCurrentTime() + ' of ' + formattedDuration()" aria-label="Video progress"
-        tabindex="0" [class.seeking]="isDragging()" [style.--progress]="progressPercentage()"
-        [style.--buffered]="bufferedPercentage()" [style.--seek-pos]="seekPreview().position + 'px'" #progressBar>
-        <!-- Hit area for Safari compatibility -->
-        <div class="progress-hit-area" (mousedown)="startSeeking($event)" (touchstart)="startSeeking($event)"
-          (mousemove)="updateSeekPreview($event)" (mouseleave)="hideSeekPreview()"></div>
-        <div class="progress-buffered" aria-hidden="true"></div>
-        <div class="progress-fill" aria-hidden="true"></div>
-        <div class="progress-handle" aria-hidden="true"></div>
-
-        @if (seekPreview().visible) {
-        <div class="seek-tooltip" aria-hidden="true">
-          {{ formatTime(seekPreview().time) }}
-        </div>
-        }
-      </div>
+      <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
+      </app-progress-bar>
 
       <div class="controls-row">
         <!-- Left Controls -->
