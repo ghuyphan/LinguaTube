@@ -228,7 +228,7 @@ export class SubtitleDisplayComponent {
   isDualCached = signal(false);
 
   private lastLazyLoadedIndex = -1;
-  private readonly LAZY_LOAD_BATCH_SIZE = 30;
+  private readonly LAZY_LOAD_BATCH_SIZE = 20;
   private readonly LAZY_LOAD_BUFFER = 5;
 
   // ============================================
