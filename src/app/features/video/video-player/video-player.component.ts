@@ -74,7 +74,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   // Translation language picker state
   langPickerOpen = signal(false);
-  targetLang = signal(this.settings.settings().dualSubtitleTargetLang);
+  targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
   langOptions = computed<OptionItem[]>(() => {
     const currentLang = this.subtitles.loadedLanguage();
     return this.translation.getSupportedTargetLanguages()
@@ -92,7 +92,6 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   }
 
   onLangSelected(value: string): void {
-    this.targetLang.set(value);
     this.settings.setDualSubtitleTargetLang(value); // Update shared state
     this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
@@ -170,7 +169,6 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   }
 
   onFsLangSelected(langCode: string): void {
-    this.targetLang.set(langCode);
     this.settings.setDualSubtitleTargetLang(langCode); // Update shared state
     this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true });

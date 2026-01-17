@@ -242,53 +242,56 @@ export class SubtitleDisplayComponent {
     const currentIndex = this.subtitles.currentCueIndex();
     if (currentIndex < 0) return;
 
-    if (currentIndex > this.lastLazyLoadedIndex - this.LAZY_LOAD_BUFFER) {
-      const cues = this.subtitles.subtitles();
-      const startIdx = Math.max(0, currentIndex);
-      const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE - 1);
+    // Check upcoming batch for missing translations
+    // Removed optimized check (currentIndex > lastLazyLoadedIndex) because it breaks on seek/lang change
+    // The map lookup loop below is cheap enough to run on every cue change
 
-      const cuesToTranslate: { id: string, text: string }[] = [];
-      const map = this.cueTranslations();
+    const cues = this.subtitles.subtitles();
+    const startIdx = Math.max(0, currentIndex);
+    const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE - 1);
 
-      for (let i = startIdx; i <= endIdx; i++) {
-        const cue = cues[i];
-        if (!map.has(cue.id)) {
-          cuesToTranslate.push({ id: cue.id, text: cue.text });
-        }
+    const cuesToTranslate: { id: string, text: string }[] = [];
+    const map = this.cueTranslations();
+
+    for (let i = startIdx; i <= endIdx; i++) {
+      const cue = cues[i];
+      if (!map.has(cue.id)) {
+        cuesToTranslate.push({ id: cue.id, text: cue.text });
       }
-
-      if (cuesToTranslate.length === 0) {
-        this.lastLazyLoadedIndex = endIdx;
-        return;
-      }
-
-
-      this.lastLazyLoadedIndex = endIdx;
-      this.isLazyLoadPending = true;
-      this.isTranslatingDual.set(true);
-
-      const texts = cuesToTranslate.map(c => c.text);
-      const lang = this.effectiveLanguage();
-
-      this.translation.translateBatch(texts, lang, this.subtitles.dualSubtitleTargetLang()).subscribe({
-        next: (translations) => {
-          this.clearLoadingState();
-          const newMap = new Map(this.cueTranslations());
-
-          translations.forEach((trans, i) => {
-            if (trans) {
-              newMap.set(cuesToTranslate[i].id, trans);
-            }
-          });
-
-          this.cueTranslations.set(newMap);
-        },
-        error: (err) => {
-          console.error('[SubtitleDisplay] Lazy load failed:', err);
-          this.clearLoadingState();
-        }
-      });
     }
+
+    if (cuesToTranslate.length === 0) {
+      this.lastLazyLoadedIndex = endIdx;
+      return;
+    }
+
+
+    this.lastLazyLoadedIndex = endIdx;
+    this.isLazyLoadPending = true;
+    this.isTranslatingDual.set(true);
+
+    const texts = cuesToTranslate.map(c => c.text);
+    const lang = this.effectiveLanguage();
+
+    this.translation.translateBatch(texts, lang, this.subtitles.dualSubtitleTargetLang()).subscribe({
+      next: (translations) => {
+        this.clearLoadingState();
+        const newMap = new Map(this.cueTranslations());
+
+        translations.forEach((trans, i) => {
+          if (trans) {
+            newMap.set(cuesToTranslate[i].id, trans);
+          }
+        });
+
+        this.cueTranslations.set(newMap);
+      },
+      error: (err) => {
+        console.error('[SubtitleDisplay] Lazy load failed:', err);
+        this.clearLoadingState();
+      }
+    });
+
   }
 
   private clearLoadingState(): void {
@@ -400,6 +403,17 @@ export class SubtitleDisplayComponent {
       const lang = this.effectiveLanguage();
       const videoId = this.youtube.currentVideo()?.id;
       const cues = this.subtitles.subtitles();
+      const targetLang = this.subtitles.dualSubtitleTargetLang();
+
+      // If target language matches source language, don't show dual subs
+      if (targetLang === lang) {
+        if (this.cueTranslations().size > 0) {
+          this.cueTranslations.set(new Map());
+        }
+        this.isTranslatingDual.set(false);
+        this.isDualCached.set(false);
+        return;
+      }
 
       const supportsDual = ['ja', 'zh', 'ko'].includes(lang);
 
@@ -412,7 +426,7 @@ export class SubtitleDisplayComponent {
           this.isTranslatingDual.set(true);
         }
 
-        this.translation.getDualSubtitles(videoId, lang, this.subtitles.dualSubtitleTargetLang(), cues, true)
+        this.translation.getDualSubtitles(videoId, lang, targetLang, cues, true)
           .subscribe({
             next: (translatedSegments) => {
               if (translatedSegments && translatedSegments.length) {
@@ -429,12 +443,14 @@ export class SubtitleDisplayComponent {
               } else {
 
                 this.isDualCached.set(false);
+                this.lastLazyLoadedIndex = -1; // Reset tracking
                 this.lazyLoadUpcomingCues();
               }
             },
             error: (err) => {
               console.error('[SubtitleDisplay] Cache check failed:', err);
               this.isDualCached.set(false);
+              this.lastLazyLoadedIndex = -1;
               this.isTranslatingDual.set(false); // Clear loading state on error
             }
           });

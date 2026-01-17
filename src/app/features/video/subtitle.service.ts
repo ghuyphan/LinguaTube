@@ -70,7 +70,6 @@ export class SubtitleService implements OnDestroy {
   // Dual subtitle loading state (shared across components)
   readonly isDualSubLoading = signal(false);
   // Target language for dual subtitles (shared across components)
-  // Target language for dual subtitles (shared across components)
   readonly dualSubtitleTargetLang = computed(() => this.settings.settings().dualSubtitleTargetLang);
 
   // Language state tracking
