@@ -36,6 +36,10 @@ export class YoutubeService {
   /** Emits when a video is successfully loaded (for history tracking) */
   readonly videoLoaded = new Subject<VideoInfo>();
 
+  /** Emits when user requests next/prev track via Media Session API */
+  readonly nextTrack$ = new Subject<void>();
+  readonly previousTrack$ = new Subject<void>();
+
   /**
    * Get the last video ID from localStorage (for restoring after page reload)
    */
@@ -79,6 +83,7 @@ export class YoutubeService {
     });
     this.loadYouTubeAPI();
     this.setupVisibilityHandler();
+    this.setupMediaSession();
   }
 
   private setupVisibilityHandler(): void {
@@ -91,6 +96,8 @@ export class YoutubeService {
       }
 
       if (document.visibilityState === 'visible' && this.player) {
+        // Re-sync state when becoming visible, but don't force pause
+        // Let the background playback continue if it was playing
         try {
           const time = this.player.getCurrentTime();
           if (time != null && time >= 0) {
@@ -111,6 +118,24 @@ export class YoutubeService {
         }
       }
     });
+  }
+
+  private setupMediaSession(): void {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.setActionHandler('play', () => this.play());
+      navigator.mediaSession.setActionHandler('pause', () => this.pause());
+      navigator.mediaSession.setActionHandler('seekto', (details) => {
+        if (details.seekTime !== undefined) {
+          this.seekTo(details.seekTime);
+        }
+      });
+      navigator.mediaSession.setActionHandler('previoustrack', () => {
+        this.previousTrack$.next();
+      });
+      navigator.mediaSession.setActionHandler('nexttrack', () => {
+        this.nextTrack$.next();
+      });
+    }
   }
 
   private loadYouTubeAPI(): void {
@@ -316,13 +341,19 @@ export class YoutubeService {
                 this.intendedPlayingState.set(true);
                 this.startTimeTracking();
 
-                // Force disable captions again when playback starts
                 try {
                   event.target.unloadModule('captions');
                   event.target.unloadModule('cc');
                 } catch (e) { }
+
+                if ('mediaSession' in navigator) {
+                  navigator.mediaSession.playbackState = 'playing';
+                }
               } else if (!isPlaying && !isBuffering && this.isPlaying()) {
                 // Only set to false if we're not buffering (e.g., paused or ended)
+                if ('mediaSession' in navigator) {
+                  navigator.mediaSession.playbackState = 'paused';
+                }
                 this.isPlaying.set(false);
                 this.intendedPlayingState.set(false);
                 cancelAnimationFrame(this.timeUpdateInterval);
@@ -542,5 +573,16 @@ export class YoutubeService {
       channel: metadata.channel,
       thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
     });
+
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: metadata.title,
+        artist: metadata.channel,
+        artwork: [
+          { src: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`, sizes: '320x180', type: 'image/jpeg' },
+          { src: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, sizes: '480x360', type: 'image/jpeg' }
+        ]
+      });
+    }
   }
 }

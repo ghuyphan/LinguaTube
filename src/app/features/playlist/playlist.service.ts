@@ -93,6 +93,19 @@ export class PlaylistService {
 
     constructor() {
         // No explicit init needed, repo handles it
+        this.youtube.nextTrack$.subscribe(() => {
+            const nextId = this.playNext();
+            if (nextId) {
+                this.youtube.initPlayer('youtube-player', nextId);
+            }
+        });
+
+        this.youtube.previousTrack$.subscribe(() => {
+            const prevId = this.playPrevious();
+            if (prevId) {
+                this.youtube.initPlayer('youtube-player', prevId);
+            }
+        });
     }
 
     // ==================== CRUD Operations ====================
