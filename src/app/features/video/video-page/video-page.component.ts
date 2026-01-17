@@ -330,7 +330,7 @@ export class VideoPageComponent implements OnInit {
       // 2. Language has actually changed from what we last used
       // 3. We're not in the initial load (lastLang is set)
       if (currentVideo && this.lastLang && this.lastLang !== currentLang) {
-        console.log(`[VideoPage] Language changed from ${this.lastLang} to ${currentLang}, refetching captions`);
+
         this.lastLang = currentLang;
 
         // User intentionally changed language, don't show mismatch dialog on next fetch
@@ -423,7 +423,7 @@ export class VideoPageComponent implements OnInit {
           const currentVideoId = videoId || this.youtube.currentVideo()?.id;
 
           if (currentPlaylist && currentVideoId && currentPlaylist.videoIds.includes(currentVideoId)) {
-            console.log('[VideoPage] Restoring playlist context for video:', currentVideoId);
+
             this.router.navigate([], {
               relativeTo: this.route,
               queryParams: { playlist: currentPlaylist.id },
@@ -513,7 +513,7 @@ export class VideoPageComponent implements OnInit {
     const lang = this.settings.settings().language;
 
     if (currentVideo) {
-      console.log(`[VideoPage] Manually triggering AI generation for ${currentVideo.id} (${lang})`);
+
 
       this.transcript.generateWithAI(currentVideo.id, lang)
         .subscribe({

@@ -103,30 +103,9 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   }
 
   // Dual subtitle loading state - Now using SubtitleService
-  // isDualSubLoading = signal(false);
 
-  private fetchDualSubtitles(videoId: string, targetLang: string, cues: SubtitleCue[]) {
-    const sourceLang = this.subtitles.loadedLanguage();
-    if (sourceLang === targetLang) {
-      this.subtitles.cueTranslations.set(new Map());
-      return;
-    }
 
-    const segments = cues.map(c => ({ id: c.id, text: c.text }));
-    this.subtitles.isDualSubLoading.set(true);
 
-    this.translation.getDualSubtitles(videoId, sourceLang, targetLang, segments)
-      .pipe(finalize(() => this.subtitles.isDualSubLoading.set(false)))
-      .subscribe(translatedSegments => {
-        const map = new Map<string, string>();
-        translatedSegments.forEach((s: any) => {
-          if (s.translation) {
-            map.set(s.id, s.translation);
-          }
-        });
-        this.subtitles.cueTranslations.set(map);
-      });
-  }
 
   // Playlist navigation
   hasPlaylist = computed(() => !!this.playlistService.currentPlaylist());
@@ -401,18 +380,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     });
 
     // Auto-translate subtitles when dual subs enabled or language changes
-    effect(() => {
-      const settings = this.settings.settings();
-      const targetLang = this.targetLang();
-      const subtitles = this.subtitles.subtitles();
-      const video = this.youtube.currentVideo();
 
-      if (settings.showDualSubtitles && video && subtitles.length > 0) {
-        untracked(() => {
-          this.fetchDualSubtitles(video.id, targetLang, subtitles);
-        });
-      }
-    });
 
   }
 
@@ -959,6 +927,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   toggleSpeedMenu(event: Event) {
     event.stopPropagation();
     this.isSpeedMenuOpen.update(v => !v);
+    this.langPickerOpen.set(false); // Close lang menu if open
     this.showControls();
   }
 

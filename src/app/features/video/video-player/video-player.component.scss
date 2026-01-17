@@ -1096,6 +1096,13 @@ $transition-normal: 0.25s ease;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
   z-index: $z-speed-menu;
   animation: menuSlideUp 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+
+  // Compact mobile version
+  @media (hover: none) and (pointer: coarse) {
+    min-width: 5.5rem;
+    max-height: 8rem;
+    padding: 0.25rem 0;
+  }
 }
 
 @keyframes menuSlideUp {
@@ -1120,6 +1127,12 @@ $transition-normal: 0.25s ease;
   text-align: left;
   cursor: pointer;
   transition: background 0.1s ease, color 0.1s ease;
+
+  // Compact mobile version
+  @media (hover: none) and (pointer: coarse) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -1205,6 +1218,13 @@ $transition-normal: 0.25s ease;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
   z-index: $z-speed-menu;
   animation: menuSlideUp 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+
+  // Compact mobile version
+  @media (hover: none) and (pointer: coarse) {
+    min-width: 7rem;
+    max-height: 9rem;
+    padding: 0.25rem 0;
+  }
 }
 
 .lang-option {
@@ -1220,6 +1240,13 @@ $transition-normal: 0.25s ease;
   display: flex;
   align-items: center;
   gap: 0.625rem;
+
+  // Compact mobile version
+  @media (hover: none) and (pointer: coarse) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    gap: 0.5rem;
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -2090,7 +2117,7 @@ ruby {
 }
 
 // Fullscreen desktop adjustments
-@media (min-width: $breakpoint-md + 1) {
+@media (min-width: #{$breakpoint-md + 1}) {
   .is-fullscreen .desktop-only {
     display: flex;
   }
