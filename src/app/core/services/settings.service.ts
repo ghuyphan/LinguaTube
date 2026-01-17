@@ -1,5 +1,6 @@
-import { Injectable, signal, effect, untracked, OnDestroy } from '@angular/core';
+import { Injectable, signal, effect, untracked, OnDestroy, inject } from '@angular/core';
 import { UserSettings } from '../../models';
+import { FontLoaderService } from './font-loader.service';
 
 const STORAGE_KEY = 'linguatube_settings';
 
@@ -20,6 +21,8 @@ const DEFAULT_SETTINGS: UserSettings = {
   providedIn: 'root'
 })
 export class SettingsService implements OnDestroy {
+  private fontLoader = inject(FontLoaderService);
+
   readonly settings = signal<UserSettings>(DEFAULT_SETTINGS);
 
   // Store reference for cleanup
@@ -33,6 +36,9 @@ export class SettingsService implements OnDestroy {
   constructor() {
     this.loadFromStorage();
     this.applyTheme();
+
+    // Load font for initial language setting
+    this.fontLoader.loadFontForLanguage(this.settings().language);
 
     // Combined effect: save to storage and apply theme when settings change
     // Using untracked to prevent signal loops during localStorage writes
@@ -61,6 +67,8 @@ export class SettingsService implements OnDestroy {
   }
 
   setLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): void {
+    // Load the appropriate CJK font before changing language
+    this.fontLoader.loadFontForLanguage(language);
     this.updateSettings({ language });
   }
 

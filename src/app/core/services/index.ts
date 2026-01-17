@@ -6,3 +6,4 @@ export * from './pocketbase.service';
 export * from './storage.service';
 export * from './error-handler.service';
 export * from './loading.service';
+export * from './font-loader.service';

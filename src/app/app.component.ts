@@ -36,7 +36,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
       
       @if (!settings.settings().hasCompletedOnboarding) {
-        <app-onboarding />
+        @defer {
+          <app-onboarding />
+        } @placeholder {
+          <div class="onboarding-loading"></div>
+        }
       } @else {
         <!-- Desktop Sidebar (lazy loaded) -->
         @defer (on idle) {

@@ -43,7 +43,11 @@
     {
       "name": "api-dictionary",
       "urls": [
-        "/api/dictionary"
+        "/api/dict*",
+        "/api/mdbg*",
+        "/api/krdict*",
+        "/api/endict*",
+        "/proxy/jotoba/*"
       ],
       "cacheConfig": {
         "strategy": "performance",
