@@ -39,6 +39,7 @@ import {
 } from '../_shared/rate-limiter.js';
 import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
 import { validateVideoRequest } from '../_shared/video-validator.js';
+import { getNextApiKey, markKeyRateLimited } from '../_shared/api-key-rotator.js';
 import {
     getVideoLanguages,
     addVideoLanguage,
@@ -503,7 +504,7 @@ export async function onRequestPost(context) {
                 });
             }
 
-            // Try to fetch native captions
+            // Try to fetch native captions (with API key rotation)
             const nativeResult = await tryNativeCaptions(videoId, lang, env, cache);
 
             if (nativeResult?.segments?.length > 0) {
@@ -657,27 +658,62 @@ export async function onRequestPost(context) {
 
 /**
  * Try to get native captions from Supadata API
- * Note: Free scraper disabled - it caused false negative cache entries
+ * Supports multiple API keys with automatic rotation and failover
  */
 async function tryNativeCaptions(videoId, lang, env, cache) {
-    // Strategy 1: Free scraper - DISABLED
-    // The free scraper was causing issues: when it failed and Supadata API key 
-    // wasn't configured, videos would be incorrectly marked as "no native captions"
-    // even though Supadata was never tried.
+    // Collect all available Supadata API keys
+    const supadataKeys = [
+        env.SUPADATA_API_KEY,
+        env.SUPADATA_API_KEY_2,
+        env.SUPADATA_API_KEY_3
+    ].filter(Boolean);
 
-    // Strategy 2: Supadata API (now primary)
-    if (env.SUPADATA_API_KEY) {
-        try {
-            log('Trying Supadata...');
-            const result = await trySupadata(videoId, lang, env.SUPADATA_API_KEY, cache);
-            // Check for language mismatch (Supadata returned wrong language)
-            if (result && result.languageMismatch) {
-                log('Supadata returned wrong language, rejecting');
-                return null;
+    if (supadataKeys.length === 0) {
+        log('No Supadata API keys configured');
+        return null;
+    }
+
+    // Get the next available key (round-robin with cooldown awareness)
+    const apiKey = await getNextApiKey(cache, 'supadata', supadataKeys);
+
+    if (!apiKey) {
+        log('No available Supadata API keys');
+        return null;
+    }
+
+    try {
+        log(`Trying Supadata (key: ...${apiKey.slice(-4)})...`);
+        const result = await trySupadata(videoId, lang, apiKey, cache);
+
+        // Check for language mismatch (Supadata returned wrong language)
+        if (result && result.languageMismatch) {
+            log('Supadata returned wrong language, rejecting');
+            return null;
+        }
+
+        if (result) return result;
+    } catch (e) {
+        log('Supadata failed:', e.message);
+
+        // If rate limited, mark this key for cooldown and try another
+        if (e.message?.includes('429') || e.message?.includes('rate')) {
+            await markKeyRateLimited(cache, 'supadata', apiKey);
+
+            // Try with next available key if we have more
+            if (supadataKeys.length > 1) {
+                const nextKey = await getNextApiKey(cache, 'supadata', supadataKeys);
+                if (nextKey && nextKey !== apiKey) {
+                    log(`Retrying with different key (key: ...${nextKey.slice(-4)})...`);
+                    try {
+                        const retryResult = await trySupadata(videoId, lang, nextKey, cache);
+                        if (retryResult && !retryResult.languageMismatch) {
+                            return retryResult;
+                        }
+                    } catch (retryError) {
+                        log('Retry also failed:', retryError.message);
+                    }
+                }
             }
-            if (result) return result;
-        } catch (e) {
-            log('Supadata failed:', e.message);
         }
     }
 
@@ -730,6 +766,10 @@ async function trySupadata(videoId, lang, apiKey, cache) {
         });
 
         if (!response.ok) {
+            // Throw specific error for rate limiting to trigger key rotation
+            if (response.status === 429) {
+                throw new Error(`429 Rate limited`);
+            }
             if (response.status === 404 && cache) {
                 await cache.put(cacheKeyNoCap, '1', { expirationTtl: SUPADATA_NO_CAPTION_TTL });
             }
