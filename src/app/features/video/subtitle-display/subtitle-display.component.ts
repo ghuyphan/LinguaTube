@@ -261,7 +261,7 @@ export class SubtitleDisplayComponent {
     // Start checking from current index
     const startIdx = Math.max(0, currentIndex);
     // Look further ahead (batch size)
-    const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE);
+    const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE - 1);
 
     const cuesToTranslate: { id: string, text: string }[] = [];
 
