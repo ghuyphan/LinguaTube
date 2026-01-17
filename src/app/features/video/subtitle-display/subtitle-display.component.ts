@@ -228,7 +228,7 @@ export class SubtitleDisplayComponent {
   isDualCached = signal(false);
 
   private lastLazyLoadedIndex = -1;
-  private readonly LAZY_LOAD_BATCH_SIZE = 20;
+  private readonly LAZY_LOAD_BATCH_SIZE = 30;
   private readonly LAZY_LOAD_BUFFER = 5;
 
   // ============================================
@@ -245,13 +245,25 @@ export class SubtitleDisplayComponent {
     if (currentIndex < 0) return;
 
     const cues = this.subtitles.subtitles();
+    const map = this.cueTranslations();
+
+    // OPTIMIZATION: Check if we have enough buffer before loading
+    // We only load if we are running out of translated cues ahead
+    const checkIndex = currentIndex + this.LAZY_LOAD_BUFFER;
+    const hasBuffer = checkIndex >= cues.length || map.has(cues[checkIndex].id);
+    const hasCurrent = map.has(cues[currentIndex].id);
+
+    // If we have coverage at current pos AND at buffer distance, we skip loading
+    if (hasBuffer && hasCurrent) {
+      return;
+    }
+
     // Start checking from current index
     const startIdx = Math.max(0, currentIndex);
     // Look further ahead (batch size)
     const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE);
 
     const cuesToTranslate: { id: string, text: string }[] = [];
-    const map = this.cueTranslations();
 
     for (let i = startIdx; i <= endIdx; i++) {
       const cue = cues[i];

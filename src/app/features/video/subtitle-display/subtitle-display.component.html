@@ -36,16 +36,23 @@
 
                 </div>
 
-                @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
-                <div class="subtitle-translation subtitle-translation--loading">
-                    <span class="token-shimmer" style="width: 120px; height: 1em; opacity: 0.6;"></span>
+                @if (settings.settings().showDualSubtitles && ['ja', 'zh', 'ko'].includes(effectiveLanguage())) {
+                <div class="subtitle-translation-wrapper">
+                    @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
+                    <div class="subtitle-translation subtitle-translation--loading">
+                        <span class="token-shimmer" style="width: 120px; height: 1em; opacity: 0.6;"></span>
+                    </div>
+                    } @else {
+                    @if (cueTranslations().get(cue.id); as translation) {
+                    <div class="subtitle-translation" @subtitleFade>
+                        {{ translation }}
+                    </div>
+                    } @else {
+                    <!-- Reserve space even if empty/failed -->
+                    <div class="subtitle-translation subtitle-translation--empty"></div>
+                    }
+                    }
                 </div>
-                } @else {
-                @if (cueTranslations().get(cue.id); as translation) {
-                <div class="subtitle-translation" @subtitleFade>
-                    {{ translation }}
-                </div>
-                }
                 }
             </div>
             } @else {
