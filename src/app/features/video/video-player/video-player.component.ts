@@ -219,6 +219,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   showFsReading = computed(() => {
     const lang = this.subtitles.loadedLanguage();
+    if (!lang) return false;
     return lang === 'ja'
       ? this.settings.settings().showFurigana
       : this.settings.settings().showPinyin;
@@ -235,8 +236,10 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   fsGrammarMatches = computed(() => {
     const tokens = this.fullscreenTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
+
     const lang = this.subtitles.loadedLanguage();
-    if (lang === 'en') return [];
+    if (!lang || lang === 'en') return [];
+
     return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
   });
 

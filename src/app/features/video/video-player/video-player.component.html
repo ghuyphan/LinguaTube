@@ -192,12 +192,12 @@
           <div class="fs-settings-section">
             <h4 class="fs-settings-title">{{ i18n.t('settings.targetLanguage') }}</h4>
             <div class="fs-lang-grid">
-              @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
-              <button class="fs-lang-btn" [class.active]="targetLang() === lang.code"
-                (click)="onFsLangSelected(lang.code)">
-                <img [src]="lang.flagUrl" [alt]="lang.name" class="fs-lang-flag">
-                <span class="fs-lang-name">{{ lang.name }}</span>
-                @if (targetLang() === lang.code) {
+              @for (lang of langOptions(); track lang.value) {
+              <button class="fs-lang-btn" [class.active]="targetLang() === lang.value"
+                (click)="onFsLangSelected(lang.value)">
+                <img [src]="lang.iconUrl" [alt]="lang.label" class="fs-lang-flag">
+                <span class="fs-lang-name">{{ lang.label }}</span>
+                @if (targetLang() === lang.value) {
                 <app-icon name="check" [size]="14" class="fs-lang-check" />
                 }
               </button>
@@ -293,11 +293,11 @@
               </button>
               @if (langPickerOpen()) {
               <div class="lang-menu" (click)="$event.stopPropagation()">
-                @for (lang of translation.getSupportedTargetLanguages(); track lang.code) {
-                <button class="lang-option" [class.active]="targetLang() === lang.code"
-                  (click)="onLangSelected(lang.code)">
-                  <img [src]="lang.flagUrl" [alt]="lang.name" class="lang-option-flag">
-                  <span class="lang-option-name">{{ lang.name }}</span>
+                @for (lang of langOptions(); track lang.value) {
+                <button class="lang-option" [class.active]="targetLang() === lang.value"
+                  (click)="onLangSelected(lang.value)">
+                  <img [src]="lang.iconUrl" [alt]="lang.label" class="lang-option-flag">
+                  <span class="lang-option-name">{{ lang.label }}</span>
                 </button>
                 }
               </div>

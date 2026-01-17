@@ -73,7 +73,7 @@ export class SubtitleService implements OnDestroy {
   readonly dualSubtitleTargetLang = computed(() => this.settings.settings().dualSubtitleTargetLang);
 
   // Language state tracking
-  readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en'>('ja');
+  readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en' | null>(null);
   readonly requestedLanguage = signal<string | null>(null);
 
   // Computed
@@ -99,7 +99,7 @@ export class SubtitleService implements OnDestroy {
    * Update the language state (loaded vs requested)
    * This helps track if we have a mismatch and avoid refetching on navigation
    */
-  setLanguageState(loaded: 'ja' | 'zh' | 'ko' | 'en', requested: string): void {
+  setLanguageState(loaded: 'ja' | 'zh' | 'ko' | 'en' | null, requested: string): void {
     this.loadedLanguage.set(loaded);
     this.requestedLanguage.set(requested);
   }
@@ -108,7 +108,7 @@ export class SubtitleService implements OnDestroy {
    * Batch tokenize subtitle cues.
    * For videos with > LAZY_THRESHOLD cues, only tokenizes initial range and continues lazily.
    */
-  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko' | 'en'): Promise<void> {
+  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko' | 'en' | null): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -125,7 +125,7 @@ export class SubtitleService implements OnDestroy {
 
     // Try to load cached tokens from localStorage first
     const videoId = this.youtube.currentVideo()?.id;
-    if (videoId) {
+    if (videoId && lang) {
       this.loadTokensForVideo(videoId, lang);
       // Check again after loading from cache
       const stillNeedTokenization = this.subtitles().some(cue => !cue.tokens || cue.tokens.length === 0);
@@ -277,7 +277,7 @@ export class SubtitleService implements OnDestroy {
   /**
    * Tokenize cues within a specific range [startIdx, endIdx]
    */
-  private async tokenizeRange(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en'): Promise<void> {
+  private async tokenizeRange(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en' | null): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -330,10 +330,18 @@ export class SubtitleService implements OnDestroy {
 
       console.log(`[SubtitleService] Tokenizing ${uniqueTexts.size} unique texts (range ${startIdx}-${endIdx})`);
 
-      // Batch tokenize
+      // Batch tokenize where possible (if lang is set)
       const videoId = this.youtube.currentVideo()?.id;
       const texts = Array.from(uniqueTexts.keys());
-      const results = await this.batchTokenize(texts, lang, videoId);
+
+      let results: Token[][] = [];
+      if (lang) {
+        results = await this.batchTokenize(texts, lang, videoId);
+      } else {
+        // Fallback or skip if no lang? For now, if no lang, we can't really tokenize properly
+        // so we might result in empty tokens or basic splitting
+        results = await this.batchTokenize(texts, 'en', videoId); // generic fallback?
+      }
 
       // Distribute tokens to cues
       texts.forEach((text, i) => {
@@ -350,7 +358,7 @@ export class SubtitleService implements OnDestroy {
       this.updateTokenizedRange(startIdx, endIdx);
 
       // Save tokens to localStorage for future visits
-      if (videoId) {
+      if (videoId && lang) {
         this.saveTokensForVideo(videoId, lang);
       }
 
@@ -432,7 +440,7 @@ export class SubtitleService implements OnDestroy {
    * Get tokens for a cue (pre-computed or fallback)
    * Detects if API returned a suspiciously single token and falls back
    */
-  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko' | 'en'): Token[] {
+  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko' | 'en' | null): Token[] {
     // Check if we have tokens and they look valid
     if (cue.tokens?.length) {
       // Detect bad tokenization: if we only have 1 token for a long text,
@@ -543,12 +551,12 @@ export class SubtitleService implements OnDestroy {
     // This is less accurate than server-side kuromoji for Japanese,
     // but prevents exhausting user's rate limit
     console.log('[SubtitleService] Using local fallback tokenization');
-    return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en'));
+    return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en' | null));
   }
 
 
 
-  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko' | 'en'): Token[] {
+  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko' | 'en' | null): Token[] {
     if (!text.trim()) return [];
 
     switch (lang) {
@@ -606,7 +614,7 @@ export class SubtitleService implements OnDestroy {
     return tokens;
   }
 
-  private applyFallbackTokens(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en'): void {
+  private applyFallbackTokens(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en' | null): void {
     const cues = this.subtitles();
     const updatedCues = cues.map((cue, idx) => {
       if (idx >= startIdx && idx <= endIdx && !cue.tokens) {
