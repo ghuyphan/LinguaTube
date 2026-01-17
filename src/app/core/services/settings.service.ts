@@ -14,6 +14,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   playbackSpeed: 1,
   sidebarCollapsed: false,
   showDualSubtitles: true,
+  dualSubtitleTargetLang: 'en',
   hasCompletedOnboarding: false
 };
 
@@ -94,6 +95,10 @@ export class SettingsService implements OnDestroy {
 
   toggleDualSubtitles(): void {
     this.updateSettings({ showDualSubtitles: !this.settings().showDualSubtitles });
+  }
+
+  setDualSubtitleTargetLang(lang: string): void {
+    this.updateSettings({ dualSubtitleTargetLang: lang });
   }
 
   completeOnboarding(): void {

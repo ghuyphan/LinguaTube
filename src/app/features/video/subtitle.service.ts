@@ -1,6 +1,7 @@
 import { Injectable, signal, computed, inject, effect, OnDestroy } from '@angular/core';
 import { SubtitleCue, Token } from '../../models';
 import { YoutubeService } from './youtube.service';
+import { SettingsService } from '../../core/services/settings.service';
 import { environment } from '../../../environments/environment';
 
 // ============================================================================
@@ -26,6 +27,7 @@ const TOKENIZE_THROTTLE_MS = 500; // Throttle lazy tokenization checks
 })
 export class SubtitleService implements OnDestroy {
   private youtube = inject(YoutubeService);
+  private settings = inject(SettingsService);
 
   // Throttle tracking (only for expensive tokenization, not cue lookup)
   private lastTokenizeCheck = 0;
@@ -68,7 +70,8 @@ export class SubtitleService implements OnDestroy {
   // Dual subtitle loading state (shared across components)
   readonly isDualSubLoading = signal(false);
   // Target language for dual subtitles (shared across components)
-  readonly dualSubtitleTargetLang = signal<string>('en');
+  // Target language for dual subtitles (shared across components)
+  readonly dualSubtitleTargetLang = computed(() => this.settings.settings().dualSubtitleTargetLang);
 
   // Language state tracking
   readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en'>('ja');

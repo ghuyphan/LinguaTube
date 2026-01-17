@@ -103,5 +103,6 @@ export interface UserSettings {
   playbackSpeed: number;
   sidebarCollapsed: boolean;
   showDualSubtitles: boolean;
+  dualSubtitleTargetLang: string;
   hasCompletedOnboarding: boolean;
 }

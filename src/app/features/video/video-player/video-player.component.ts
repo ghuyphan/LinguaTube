@@ -74,14 +74,17 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   // Translation language picker state
   langPickerOpen = signal(false);
-  targetLang = signal('en'); // Default to English
-  langOptions = computed<OptionItem[]>(() =>
-    this.translation.getSupportedTargetLanguages().map(lang => ({
-      value: lang.code,
-      label: lang.name,
-      iconUrl: lang.flagUrl
-    }))
-  );
+  targetLang = signal(this.settings.settings().dualSubtitleTargetLang);
+  langOptions = computed<OptionItem[]>(() => {
+    const currentLang = this.subtitles.loadedLanguage();
+    return this.translation.getSupportedTargetLanguages()
+      .filter(lang => lang.code !== currentLang)
+      .map(lang => ({
+        value: lang.code,
+        label: lang.name,
+        iconUrl: lang.flagUrl
+      }));
+  });
 
   getSelectedLangFlag(): string {
     const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === this.targetLang());
@@ -90,7 +93,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   onLangSelected(value: string): void {
     this.targetLang.set(value);
-    this.subtitles.dualSubtitleTargetLang.set(value); // Update shared state
+    this.settings.setDualSubtitleTargetLang(value); // Update shared state
     this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
     this.langPickerOpen.set(false);
@@ -168,7 +171,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   onFsLangSelected(langCode: string): void {
     this.targetLang.set(langCode);
-    this.subtitles.dualSubtitleTargetLang.set(langCode); // Update shared state
+    this.settings.setDualSubtitleTargetLang(langCode); // Update shared state
     this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true });
     // Don't close immediately so user can see it's selected
