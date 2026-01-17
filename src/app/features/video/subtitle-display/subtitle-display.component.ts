@@ -228,13 +228,15 @@ export class SubtitleDisplayComponent {
   isDualCached = signal(false);
 
   private lastLazyLoadedIndex = -1;
-  private readonly LAZY_LOAD_BATCH_SIZE = 5;
-  private readonly LAZY_LOAD_BUFFER = 2;
+  private readonly LAZY_LOAD_BATCH_SIZE = 20;
+  private readonly LAZY_LOAD_BUFFER = 5;
 
   // ============================================
   // FIX 4: Throttled lazy loading
   // ============================================
   private isLazyLoadPending = false;
+  private lazyLoadSubscription: any = null; // Subscription type
+  private dualSubSubscription: any = null; // Subscription type
 
   private lazyLoadUpcomingCues(): void {
     if (this.isLazyLoadPending) return;
@@ -242,13 +244,11 @@ export class SubtitleDisplayComponent {
     const currentIndex = this.subtitles.currentCueIndex();
     if (currentIndex < 0) return;
 
-    // Check upcoming batch for missing translations
-    // Removed optimized check (currentIndex > lastLazyLoadedIndex) because it breaks on seek/lang change
-    // The map lookup loop below is cheap enough to run on every cue change
-
     const cues = this.subtitles.subtitles();
+    // Start checking from current index
     const startIdx = Math.max(0, currentIndex);
-    const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE - 1);
+    // Look further ahead (batch size)
+    const endIdx = Math.min(cues.length - 1, startIdx + this.LAZY_LOAD_BATCH_SIZE);
 
     const cuesToTranslate: { id: string, text: string }[] = [];
     const map = this.cueTranslations();
@@ -265,16 +265,25 @@ export class SubtitleDisplayComponent {
       return;
     }
 
-
+    // Only set pending if we actually have something to do
     this.lastLazyLoadedIndex = endIdx;
     this.isLazyLoadPending = true;
     this.isTranslatingDual.set(true);
 
     const texts = cuesToTranslate.map(c => c.text);
     const lang = this.effectiveLanguage();
+    const targetLang = this.subtitles.dualSubtitleTargetLang();
 
-    this.translation.translateBatch(texts, lang, this.subtitles.dualSubtitleTargetLang()).subscribe({
+    // Cancel any previous lazy load request to avoid overlap/race conditions
+    if (this.lazyLoadSubscription) {
+      this.lazyLoadSubscription.unsubscribe();
+    }
+
+    this.lazyLoadSubscription = this.translation.translateBatch(texts, lang, targetLang).subscribe({
       next: (translations) => {
+        // Double check language hasn't changed while waiting (extra safety)
+        if (this.subtitles.dualSubtitleTargetLang() !== targetLang) return;
+
         this.clearLoadingState();
         const newMap = new Map(this.cueTranslations());
 
@@ -291,7 +300,6 @@ export class SubtitleDisplayComponent {
         this.clearLoadingState();
       }
     });
-
   }
 
   private clearLoadingState(): void {
@@ -405,6 +413,16 @@ export class SubtitleDisplayComponent {
       const cues = this.subtitles.subtitles();
       const targetLang = this.subtitles.dualSubtitleTargetLang();
 
+      // Cancel previous requests immediately when dependencies change (especially targetLang)
+      if (this.dualSubSubscription) {
+        this.dualSubSubscription.unsubscribe();
+        this.dualSubSubscription = null;
+      }
+      if (this.lazyLoadSubscription) {
+        this.lazyLoadSubscription.unsubscribe();
+        this.lazyLoadSubscription = null;
+      }
+
       // If target language matches source language, don't show dual subs
       if (targetLang === lang) {
         if (this.cueTranslations().size > 0) {
@@ -418,42 +436,44 @@ export class SubtitleDisplayComponent {
       const supportsDual = ['ja', 'zh', 'ko'].includes(lang);
 
       if (showDual && supportsDual && videoId && cues.length > 0) {
-
-
         // Set loading state BEFORE cache check so skeleton shows immediately
-        // This prevents blank space while waiting for cache check/translation
         if (this.cueTranslations().size === 0) {
           this.isTranslatingDual.set(true);
         }
 
-        this.translation.getDualSubtitles(videoId, lang, targetLang, cues, true)
-          .subscribe({
-            next: (translatedSegments) => {
-              if (translatedSegments && translatedSegments.length) {
+        // Use untracked for the subscription to avoid infinite loops if it were setting tracked signals improperly (good practice)
+        untracked(() => {
+          this.dualSubSubscription = this.translation.getDualSubtitles(videoId, lang, targetLang, cues, true)
+            .subscribe({
+              next: (translatedSegments) => {
+                // Check if language changed while waiting (effect cleanup should handle this, but for safety)
+                if (this.subtitles.dualSubtitleTargetLang() !== targetLang) return;
 
-                const newMap = new Map<string, string>();
-                translatedSegments.forEach((seg: any, index: number) => {
-                  if (index < cues.length && seg.translation) {
-                    newMap.set(cues[index].id, seg.translation);
-                  }
-                });
-                this.cueTranslations.set(newMap);
-                this.isDualCached.set(true);
-                this.isTranslatingDual.set(false); // Clear loading state on cache hit
-              } else {
-
+                if (translatedSegments && translatedSegments.length) {
+                  const newMap = new Map<string, string>();
+                  translatedSegments.forEach((seg: any, index: number) => {
+                    if (index < cues.length && seg.translation) {
+                      newMap.set(cues[index].id, seg.translation);
+                    }
+                  });
+                  this.cueTranslations.set(newMap);
+                  this.isDualCached.set(true);
+                  this.isTranslatingDual.set(false); // Clear loading state on cache hit
+                } else {
+                  this.isDualCached.set(false);
+                  this.lastLazyLoadedIndex = -1; // Reset tracking
+                  this.lazyLoadUpcomingCues();
+                }
+              },
+              error: (err) => {
+                console.error('[SubtitleDisplay] Cache check failed:', err);
                 this.isDualCached.set(false);
-                this.lastLazyLoadedIndex = -1; // Reset tracking
-                this.lazyLoadUpcomingCues();
+                this.lastLazyLoadedIndex = -1;
+                this.isTranslatingDual.set(false); // Clear loading state on error
               }
-            },
-            error: (err) => {
-              console.error('[SubtitleDisplay] Cache check failed:', err);
-              this.isDualCached.set(false);
-              this.lastLazyLoadedIndex = -1;
-              this.isTranslatingDual.set(false); // Clear loading state on error
-            }
-          });
+            });
+        });
+
       } else {
         if (this.cueTranslations().size > 0) {
           this.cueTranslations.set(new Map());
