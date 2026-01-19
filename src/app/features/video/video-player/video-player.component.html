@@ -220,6 +220,12 @@
       <div class="controls-row">
         <!-- Left Controls -->
         <div class="controls-left">
+          <!-- Play/Pause Button - Desktop only -->
+          <button class="control-btn desktop-only" (click)="onPlayPauseButtonClick($event)"
+            [attr.aria-label]="youtube.intendedPlayingState() ? 'Pause' : 'Play'">
+            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="20" />
+          </button>
+
           <!-- Seek buttons group - desktop only -->
           <div class="seek-group desktop-only">
             <button class="control-btn" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
