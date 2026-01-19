@@ -55,18 +55,19 @@
     }
 
     <!-- Seek Feedback - positioned at container level -->
+    <!-- Seek Feedback - positioned at container level -->
     <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()"
       (animationend)="onSeekAnimationEnd()">
       <div class="seek-feedback-inner">
-        <app-icon name="rewind" [size]="24" />
-        <span class="seek-time">{{ seekAccumulator() }}</span>
+        <app-icon name="chevron-left" [size]="32" />
+        <span class="seek-time">{{ seekAccumulator() }}s</span>
       </div>
     </div>
     <div class="seek-feedback seek-feedback--right" [class.animate]="forwardFeedback()"
       (animationend)="onSeekAnimationEnd()">
       <div class="seek-feedback-inner">
-        <app-icon name="fast-forward" [size]="24" />
-        <span class="seek-time">{{ seekAccumulator() }}</span>
+        <span class="seek-time">{{ seekAccumulator() }}s</span>
+        <app-icon name="chevron-right" [size]="32" />
       </div>
     </div>
 
