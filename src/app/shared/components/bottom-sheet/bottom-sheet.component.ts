@@ -39,6 +39,7 @@ export class BottomSheetComponent implements OnDestroy {
   maxHeight = input<string>('85vh');
   showDragHandle = input<boolean>(true);
   allowBackdropClose = input<boolean>(true);
+  allowEscapeClose = input<boolean>(true);
   showCloseButton = input<boolean>(false);
   squareCorners = input<boolean>(false);
 
@@ -87,7 +88,8 @@ export class BottomSheetComponent implements OnDestroy {
         // Register with service - it handles scroll locking and history
         this.unregisterFn = this.sheetService.register({
           id: this.sheetId,
-          close: () => this.onServiceClose()
+          close: () => this.onServiceClose(),
+          allowEscape: this.allowEscapeClose()
         });
 
         this.isClosing.set(false);
