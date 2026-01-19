@@ -511,12 +511,12 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       case 'ArrowUp':
         event.preventDefault();
         this.adjustVolume(5);
-        this.showVolumeFeedback();
+        this.showVolumeFeedback({ direction: 'up' });
         break;
       case 'ArrowDown':
         event.preventDefault();
         this.adjustVolume(-5);
-        this.showVolumeFeedback();
+        this.showVolumeFeedback({ direction: 'down' });
         break;
       case 'KeyM':
         this.toggleMute();
@@ -872,7 +872,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       this.youtube.mute();
     }
     this.showControls();
-    this.showVolumeFeedback(!wasMuted);
+    this.showVolumeFeedback({ isMuted: !wasMuted });
   }
 
   getVolumeIcon(): 'volume-2' | 'volume-1' | 'volume-x' {
@@ -910,11 +910,16 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     }
   }
 
-  private showVolumeFeedback(isMuted?: boolean) {
+  private showVolumeFeedback(options: { isMuted?: boolean, direction?: 'up' | 'down' } = {}) {
     const vol = this.volume();
-    const muted = isMuted ?? this.youtube.isMuted();
+    const muted = options.isMuted ?? this.youtube.isMuted();
+
     if (vol === 0 || muted) {
       this.volumeFeedbackIcon.set('volume-x');
+    } else if (options.direction === 'up') {
+      this.volumeFeedbackIcon.set('volume-2');
+    } else if (options.direction === 'down') {
+      this.volumeFeedbackIcon.set('volume-1');
     } else if (vol < 50) {
       this.volumeFeedbackIcon.set('volume-1');
     } else {
