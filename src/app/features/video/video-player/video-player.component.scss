@@ -777,12 +777,31 @@ $transition-normal: 0.25s ease;
   transition: opacity $transition-normal;
   z-index: $z-mini-progress;
   pointer-events: none; // Prevent blocking clicks
+  // Removed border-radius and overflow from here to preserve hit area
 
   &.visible {
     opacity: 1;
     pointer-events: auto; // Re-enable clicking when visible
   }
 
+  // The mask element handles visual clipping
+  .mini-progress-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    overflow: hidden;
+
+    // Reset border radius in fullscreen
+    .is-fullscreen & {
+      border-radius: 0;
+    }
+  }
+
+  // Hit area extension
   &::after {
     content: '';
     position: absolute;

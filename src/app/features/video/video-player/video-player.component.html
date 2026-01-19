@@ -101,7 +101,9 @@
     <!-- Mini Progress Bar -->
     <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.intendedPlayingState()"
       [style.--progress]="progressPercentage()" (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
-      <div class="mini-progress__fill"></div>
+      <div class="mini-progress-mask">
+        <div class="mini-progress__fill"></div>
+      </div>
     </div>
 
     <!-- Fullscreen Subtitle Overlay -->

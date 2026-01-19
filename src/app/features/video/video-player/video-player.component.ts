@@ -102,6 +102,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     event.stopPropagation();
     this.langPickerOpen.update(v => !v);
     this.isSpeedMenuOpen.set(false); // Close speed menu if open
+    this.showControls();
   }
 
   // Dual subtitle loading state - Now using SubtitleService
@@ -596,7 +597,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   onMouseLeave() {
     // Simple version - CSS handles desktop vs mobile via pointer-events
-    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
       this.clearControlsTimeout();
     }
@@ -610,7 +611,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   }
 
   private startControlsAutoHide() {
-    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible()) {
+    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible()) {
       this.hideControlsAfterDelay(3000);
     }
   }
@@ -622,7 +623,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.controlsTimeout = setTimeout(() => {
       // Re-enter zone for the check and update
       this.ngZone.run(() => {
-        if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+        if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible() && !this.isDragging()) {
           this.areControlsVisible.set(false);
         }
       });
