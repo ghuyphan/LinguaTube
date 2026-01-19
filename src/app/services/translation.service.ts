@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, map, catchError, of, shareReplay, finalize, timer, switchMap, retry, throwError } from 'rxjs';
+import { Observable, map, catchError, of, shareReplay, finalize, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 export interface TranslationResponse {
@@ -25,8 +25,66 @@ export class TranslationService {
     // Loading states
     private loadingStates = signal<Set<string>>(new Set());
 
+    // Request queue for batch translations
+    private requestQueue$ = new Subject<{
+        params: any;
+        observer: any;
+        cancelled?: boolean;
+    }>();
+
     constructor(private http: HttpClient) {
         this.loadCacheFromStorage();
+        this.initializeRequestQueue();
+    }
+
+    private initializeRequestQueue() {
+        this.requestQueue$.pipe(
+            // Process requests sequentially with a delay between them
+            concatMap(request => {
+                // Check if request was cancelled while waiting in queue
+                if (request.cancelled) {
+                    return of(void 0);
+                }
+
+                return of(request).pipe(
+                    // Add delay BEFORE processing request
+                    delay(300),
+                    switchMap(req => {
+                        // Check again after delay
+                        if (req.cancelled) return of(void 0);
+                        return this.processBatchRequest(req);
+                    })
+                );
+            })
+        ).subscribe();
+    }
+
+    private processBatchRequest(request: { params: any, observer: any }): Observable<void> {
+        const { params, observer } = request;
+
+        return this.http.post<{ translations: (string | null)[] }>(environment.api.translateBatch, {
+            texts: params.texts,
+            source: params.source,
+            target: params.target
+        }).pipe(
+            // If success, emit result and complete
+            map(response => {
+                observer.next(response);
+                observer.complete();
+            }),
+            // If error, emit error
+            catchError(err => {
+                // If 429, we might want to delay longer? 
+                // For now, just pass the error back to the caller
+                // The caller (or the queue logic) could handle retries, 
+                // but simpler is better for "rate limiting ourselves"
+                console.warn('Batch translation failed:', err);
+                observer.error(err);
+                return of(null);
+            }),
+            // Ensure we return void for the switchMap/concatMap chain
+            map(() => void 0)
+        );
     }
 
     /**
@@ -105,51 +163,38 @@ export class TranslationService {
             return of(results);
         }
 
-        // Batch API call for non-cached texts with rate limit handling
-        return this.http.post<{ translations: (string | null)[] }>(environment.api.translateBatch, {
-            texts: toTranslate.map(t => t.text),
-            source,
-            target
-        }).pipe(
-            catchError((err: HttpErrorResponse) => {
-                // Handle rate limiting (429) with exponential backoff
-                if (err.status === 429) {
-                    const retryAfter = this.extractRetryAfter(err);
-                    console.warn(`Batch translation rate limited. Retrying after ${retryAfter}s...`);
-                    return timer(retryAfter * 1000).pipe(
-                        switchMap(() => throwError(() => err))
-                    );
-                }
-                return throwError(() => err);
-            }),
-            retry({
-                count: 3,
-                delay: (error, retryCount) => {
-                    if (error.status === 429) {
-                        // Exponential backoff: 1s, 2s, 4s
-                        const delay = Math.pow(2, retryCount - 1) * 1000;
-                        console.warn(`Batch translation retry ${retryCount}/3 after ${delay}ms`);
-                        return timer(delay);
-                    }
-                    // Don't retry non-429 errors
-                    return throwError(() => error);
-                }
-            }),
-            map(response => {
-                response.translations.forEach((translation, i) => {
-                    const { index, text } = toTranslate[i];
-                    results[index] = translation;
-                    if (translation) {
-                        this.addToCache(`${source}:${target}:${text}`, translation);
-                    }
-                });
-                return results;
-            }),
-            catchError(err => {
-                console.error('Batch translation failed after retries:', err);
-                return of(results); // Return partial results (cached ones)
-            })
-        );
+        return new Observable(observer => {
+            const requestContext = {
+                params: {
+                    texts: toTranslate.map(t => t.text),
+                    source,
+                    target
+                },
+                observer: {
+                    next: (response: { translations: (string | null)[] }) => {
+                        response.translations.forEach((translation, i) => {
+                            const { index, text } = toTranslate[i];
+                            results[index] = translation;
+                            if (translation) {
+                                this.addToCache(`${source}:${target}:${text}`, translation);
+                            }
+                        });
+                        observer.next(results);
+                        observer.complete();
+                    },
+                    error: (err: any) => observer.error(err),
+                    complete: () => observer.complete()
+                },
+                cancelled: false
+            };
+
+            this.requestQueue$.next(requestContext);
+
+            // Teardown logic: mark as cancelled if subscriber unsubscribes
+            return () => {
+                requestContext.cancelled = true;
+            };
+        });
     }
 
     isLoading(key: string): boolean {

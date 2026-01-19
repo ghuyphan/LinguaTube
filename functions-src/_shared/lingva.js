@@ -103,7 +103,32 @@ export async function translateText(text, source, target) {
  * @returns {Promise<string[]>} - Array of translations
  */
 export async function translateBatch(texts, source, target) {
-    return Promise.all(
-        texts.map(text => translateText(text, source, target))
+    const CONCURRENCY_LIMIT = 5;
+    const results = new Array(texts.length);
+    const queue = texts.map((text, index) => ({ text, index }));
+
+    // Worker function: continuously takes items from the queue until empty
+    const worker = async () => {
+        while (queue.length > 0) {
+            const { text, index } = queue.shift();
+            // Stop early if queue empty (race condition check)
+            if (index === undefined) break;
+
+            try {
+                results[index] = await translateText(text, source, target);
+            } catch (error) {
+                console.warn(`[Lingva] Batch item failed: ${error.message}`);
+                results[index] = null;
+            }
+        }
+    };
+
+    // Start workers up to the concurrency limit
+    const activeWorkers = Array.from(
+        { length: Math.min(CONCURRENCY_LIMIT, texts.length) },
+        () => worker()
     );
+
+    await Promise.all(activeWorkers);
+    return results;
 }
