@@ -13,7 +13,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   fontSize: 'medium',
   playbackSpeed: 1,
   sidebarCollapsed: false,
-  showDualSubtitles: true,
+  showDualSubtitles: false,
   dualSubtitleTargetLang: 'en',
   hasCompletedOnboarding: false
 };
@@ -123,7 +123,12 @@ export class SettingsService implements OnDestroy {
 
   private saveToStorage(settings: UserSettings): void {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+      const toSave = { ...settings };
+      // Don't persist dual subtitle state or target language to avoid accidental API usage on reload
+      delete (toSave as any).showDualSubtitles;
+      delete (toSave as any).dualSubtitleTargetLang;
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
     } catch (err) {
       console.error('Failed to save settings:', err);
     }

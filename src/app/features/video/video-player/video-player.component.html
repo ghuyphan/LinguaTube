@@ -298,15 +298,32 @@
             <div class="lang-control" [class.open]="langPickerOpen()">
               <button class="control-btn lang-btn" [class.is-dual-active]="settings.settings().showDualSubtitles"
                 (click)="toggleLangMenu($event)" [title]="i18n.t('subtitle.dualSubs')">
+                @if (settings.settings().showDualSubtitles) {
                 <img [src]="getSelectedLangFlag()" class="lang-flag-img" alt="Language" />
+                } @else {
+                <app-icon name="languages" [size]="20" />
+                }
               </button>
               @if (langPickerOpen()) {
               <div class="lang-menu" (click)="$event.stopPropagation()">
+                <button class="lang-option" [class.active]="!settings.settings().showDualSubtitles"
+                  (click)="disableDualSubtitles()">
+                  <app-icon name="x" [size]="16" class="lang-option-icon" />
+                  <span class="lang-option-name">{{ i18n.t('common.off') }}</span>
+                  @if (!settings.settings().showDualSubtitles) {
+                  <app-icon name="check" [size]="14" class="lang-check" />
+                  }
+                </button>
+                <div class="menu-divider"></div>
                 @for (lang of langOptions(); track lang.value) {
-                <button class="lang-option" [class.active]="targetLang() === lang.value"
+                <button class="lang-option"
+                  [class.active]="settings.settings().showDualSubtitles && targetLang() === lang.value"
                   (click)="onLangSelected(lang.value)">
                   <img [src]="lang.iconUrl" [alt]="lang.label" class="lang-option-flag">
                   <span class="lang-option-name">{{ lang.label }}</span>
+                  @if (settings.settings().showDualSubtitles && targetLang() === lang.value) {
+                  <app-icon name="check" [size]="14" class="lang-check" />
+                  }
                 </button>
                 }
               </div>

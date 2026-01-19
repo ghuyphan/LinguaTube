@@ -98,6 +98,11 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.langPickerOpen.set(false);
   }
 
+  disableDualSubtitles(): void {
+    this.settings.updateSettings({ showDualSubtitles: false });
+    this.langPickerOpen.set(false);
+  }
+
   toggleLangMenu(event: Event): void {
     event.stopPropagation();
     this.langPickerOpen.update(v => !v);

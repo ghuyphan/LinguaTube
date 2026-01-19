@@ -325,7 +325,8 @@
     "common": {
         "loading": "Loading...",
         "error": "Error",
-        "success": "Success"
+        "success": "Success",
+        "off": "Off"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

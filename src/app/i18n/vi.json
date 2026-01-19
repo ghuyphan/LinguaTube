@@ -325,7 +325,8 @@
     "common": {
         "loading": "Đang tải...",
         "error": "Lỗi",
-        "success": "Thành công"
+        "success": "Thành công",
+        "off": "Tắt"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

@@ -24,7 +24,7 @@ const MAX_BATCH_SIZE = 20;
 // Free: ~3-4 videos
 // Pro: Heavy usage
 const RATE_LIMIT_CONFIG = {
-    max: { anonymous: 100, free: 500, pro: 2000, premium: 5000 },
+    max: { anonymous: 500, free: 1000, pro: 4000, premium: 10000 },
     windowSeconds: 3600,
     keyPrefix: 'translate-texts'
 };

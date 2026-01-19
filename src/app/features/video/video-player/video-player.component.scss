@@ -1291,11 +1291,12 @@ $transition-normal: 0.25s ease;
     color: var(--accent-primary);
     font-weight: 500;
 
-    &::after {
-      content: '✓';
-      margin-left: auto;
-      font-size: 0.75rem;
-    }
+    // Checkmark handled by icon in template
+    // &::after {
+    //   content: '✓';
+    //   margin-left: auto;
+    //   font-size: 0.75rem;
+    // }
   }
 }
 

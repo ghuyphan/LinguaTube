@@ -323,7 +323,8 @@
     "common": {
         "loading": "加载中...",
         "error": "错误",
-        "success": "成功"
+        "success": "成功",
+        "off": "关闭"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

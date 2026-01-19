@@ -67,18 +67,37 @@ export class TranslationService {
             source: params.source,
             target: params.target
         }).pipe(
+            retry({
+                count: 3,
+                delay: (error, retryCount) => {
+                    // Only retry on 429 or 5xx
+                    if (error.status !== 429 && !error.status.toString().startsWith('5')) {
+                        return throwError(() => error);
+                    }
+
+                    // Get retry-after from header or default to exponential backoff
+                    const retryAfterHeader = error.headers?.get('Retry-After');
+                    let delayMs = 1000 * Math.pow(2, retryCount - 1); // 1s, 2s, 4s
+
+                    if (retryAfterHeader) {
+                        const seconds = parseInt(retryAfterHeader, 10);
+                        if (!isNaN(seconds)) {
+                            delayMs = seconds * 1000;
+                        }
+                    }
+
+                    console.warn(`[Translation] Batch failed (${error.status}), retrying in ${delayMs}ms...`);
+                    return timer(delayMs);
+                }
+            }),
             // If success, emit result and complete
             map(response => {
                 observer.next(response);
                 observer.complete();
             }),
-            // If error, emit error
+            // If error after retries
             catchError(err => {
-                // If 429, we might want to delay longer? 
-                // For now, just pass the error back to the caller
-                // The caller (or the queue logic) could handle retries, 
-                // but simpler is better for "rate limiting ourselves"
-                console.warn('Batch translation failed:', err);
+                console.warn('Batch translation failed after retries:', err);
                 observer.error(err);
                 return of(null);
             }),
