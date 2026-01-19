@@ -286,11 +286,11 @@ export class TranslationService {
      */
     getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string, flagUrl: string }> {
         return [
-            { code: 'en', name: 'English', flag: '🇺🇸', flagUrl: 'https://flagcdn.com/w80/us.png' },
-            { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://flagcdn.com/w80/vn.png' },
-            { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://flagcdn.com/w80/jp.png' },
-            { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://flagcdn.com/w80/kr.png' },
-            { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: 'https://flagcdn.com/w80/cn.png' },
+            { code: 'en', name: 'English', flag: '🇺🇸', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/us.svg' },
+            { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' },
+            { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
+            { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
+            { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
         ];
     }
 }
