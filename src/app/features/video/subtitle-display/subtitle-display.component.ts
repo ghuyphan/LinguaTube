@@ -433,6 +433,7 @@ export class SubtitleDisplayComponent {
       if (this.lazyLoadSubscription) {
         this.lazyLoadSubscription.unsubscribe();
         this.lazyLoadSubscription = null;
+        this.isLazyLoadPending = false;
       }
 
       // If target language matches source language, don't show dual subs
