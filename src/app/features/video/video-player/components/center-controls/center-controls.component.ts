@@ -69,7 +69,9 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
               <!-- Icon Container for Animation -->
               <div class="icon-wrapper">
                 @if (isBuffering() && isPlaying()) {
-                  <app-icon name="loader" [size]="44" class="spin pop" />
+                  <span class="pop">
+                    <app-icon name="loader" [size]="44" class="animate-spin" />
+                  </span>
                 } @else if (isPlaying()) {
                   <app-icon name="pause" [size]="44" class="pop" />
                 } @else {

@@ -129,14 +129,19 @@ $z-center-controls: 15;
         align-items: center;
         justify-content: center;
 
+        // Ensure resizing works for wrappers
+        span.pop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .pop {
             animation: iconPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
     }
 
-    .spin {
-        animation: spin 1s linear infinite;
-    }
+
 }
 
 .replay-btn {
@@ -248,15 +253,7 @@ $z-center-controls: 15;
     }
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 @keyframes iconPop {
     0% {
