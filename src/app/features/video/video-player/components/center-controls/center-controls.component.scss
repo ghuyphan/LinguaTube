@@ -123,13 +123,19 @@ $z-center-controls: 15;
         animation: fadeIn 0.2s ease;
     }
 
-    &.buffering {
-        cursor: default;
-        opacity: 0.9;
+    // New styles for unified button
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        app-icon {
-            animation: spin 1s linear infinite;
+        .pop {
+            animation: iconPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+    }
+
+    .spin {
+        animation: spin 1s linear infinite;
     }
 }
 
@@ -249,5 +255,17 @@ $z-center-controls: 15;
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes iconPop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

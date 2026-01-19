@@ -267,8 +267,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   // Feedback animations
   rewindFeedback = signal(false);
   forwardFeedback = signal(false);
-  feedbackIconName = signal<'play' | 'pause'>('play');
-  playPauseFeedback = signal(false);
+  // feedbackIconName = signal<'play' | 'pause'>('play'); // Removed
+  // playPauseFeedback = signal(false); // Removed
   leftRipple = signal(false);
   rightRipple = signal(false);
   ripplePos = signal({ x: 0, y: 0 });
@@ -494,7 +494,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       case 'KeyK':
         event.preventDefault();
         this.togglePlay();
-        this.showPlayPauseFeedback();
+        // this.showPlayPauseFeedback(); // Removed
         break;
       case 'ArrowLeft':
       case 'KeyJ':
@@ -644,15 +644,15 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   togglePlay() {
     this.youtube.togglePlay();
-    this.showPlayPauseFeedback();
+    // this.showPlayPauseFeedback(); // Removed
     this.showControls();
   }
 
-  private showPlayPauseFeedback() {
-    this.feedbackIconName.set(this.youtube.intendedPlayingState() ? 'pause' : 'play');
-    this.playPauseFeedback.set(true);
-    setTimeout(() => this.playPauseFeedback.set(false), 400);
-  }
+  // private showPlayPauseFeedback() { // Removed
+  //   this.feedbackIconName.set(this.youtube.intendedPlayingState() ? 'pause' : 'play');
+  //   this.playPauseFeedback.set(true);
+  //   setTimeout(() => this.playPauseFeedback.set(false), 400);
+  // }
 
   seekRelative(seconds: number) {
     this.youtube.seekRelative(seconds);
@@ -779,7 +779,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     } else {
       this.doubleTapTimeout = setTimeout(() => {
         this.togglePlay();
-        this.showPlayPauseFeedback();
+        // this.showPlayPauseFeedback();
         this.doubleTapTimeout = null;
       }, DOUBLE_TAP_DELAY);
     }
