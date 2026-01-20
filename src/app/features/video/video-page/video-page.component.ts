@@ -738,6 +738,15 @@ export class VideoPageComponent implements OnInit {
       this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
     }
     this.showLanguageMismatchDialog.set(false);
+    this.showLanguageMismatchDialog.set(false);
+    this.mismatchDetectedLang.set(null);
+  }
+
+  onMismatchCancel() {
+    // User explicitly chose to keep current language despite mismatch
+    // Don't pester them again for this video/session
+    this.skipNextMismatchDialog = true;
+    this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);
   }
 

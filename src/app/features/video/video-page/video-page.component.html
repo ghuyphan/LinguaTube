@@ -66,8 +66,8 @@
 <!-- Language Mismatch Alert -->
 @if (showLanguageMismatchDialog()) {
 <app-confirm-dialog [isOpen]="true" [title]="i18n.t('subtitle.languageMismatch')" [message]="languageMismatchMessage()"
-    [confirmText]="switchLanguageButtonText()" [showCancel]="false" [allowBackdropClose]="false" variant="default"
-    icon="alert-circle" (confirmed)="onMismatchConfirm()">
+    [confirmText]="switchLanguageButtonText()" [showCancel]="true" [allowBackdropClose]="false" variant="default"
+    icon="alert-circle" (confirmed)="onMismatchConfirm()" (cancelled)="onMismatchCancel()">
 </app-confirm-dialog>
 }
 
