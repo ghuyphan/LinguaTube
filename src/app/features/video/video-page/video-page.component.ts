@@ -333,9 +333,6 @@ export class VideoPageComponent implements OnInit {
 
         this.lastLang = currentLang;
 
-        // User intentionally changed language, don't show mismatch dialog on next fetch
-        this.skipNextMismatchDialog = true;
-
         // Close any open mismatch dialog
         this.showLanguageMismatchDialog.set(false);
         this.mismatchDetectedLang.set(null);
