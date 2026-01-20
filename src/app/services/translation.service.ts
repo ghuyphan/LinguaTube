@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, OnDestroy } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, map, catchError, of, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -12,11 +12,12 @@ const MAX_CACHE_SIZE = 1000;
 @Injectable({
     providedIn: 'root'
 })
-export class TranslationService {
+export class TranslationService implements OnDestroy {
     private readonly API_URL = environment.api.translate;
 
     // In-memory cache for translations
     private translationCache = new Map<string, string>();
+    private storageSaveTimer: any = null;
 
     // Request queue for batch translations
     private requestQueue$ = new Subject<{
@@ -147,8 +148,8 @@ export class TranslationService {
                                 this.addToCache(`${source}:${target}:${text}`, translation);
                             }
                         });
-                        // Save to storage once per batch
-                        this.saveCacheToStorage();
+                        // Schedule save to storage (debounced)
+                        this.scheduleCacheSave();
 
                         observer.next(results);
                         observer.complete();
@@ -216,12 +217,31 @@ export class TranslationService {
         }
     }
 
+    private scheduleCacheSave(): void {
+        if (this.storageSaveTimer) {
+            clearTimeout(this.storageSaveTimer);
+        }
+
+        this.storageSaveTimer = setTimeout(() => {
+            this.saveCacheToStorage();
+        }, 5000); // 5 seconds debounce
+    }
+
     private saveCacheToStorage(): void {
         try {
             const entries = Array.from(this.translationCache.entries());
             localStorage.setItem(CACHE_KEY, JSON.stringify(entries.slice(-MAX_CACHE_SIZE)));
+            this.storageSaveTimer = null;
         } catch {
             // Ignore storage errors
+        }
+    }
+
+    ngOnDestroy(): void {
+        // Flush pending save on destroy
+        if (this.storageSaveTimer) {
+            clearTimeout(this.storageSaveTimer);
+            this.saveCacheToStorage();
         }
     }
 

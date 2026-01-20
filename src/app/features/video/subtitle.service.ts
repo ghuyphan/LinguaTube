@@ -59,9 +59,23 @@ export class SubtitleService implements OnDestroy {
    */
   ngOnDestroy(): void {
     this.cancelTokenization();
+    // Flush pending save on destroy
+    if (this.tokenSaveTimer) {
+      clearTimeout(this.tokenSaveTimer);
+      // We don't have videoId/lang context here easily to force save, 
+      // but usually `saveTokensForVideo` is called with those args.
+      // We'll rely on the fact that if we are destroying, we might not need to save immediately 
+      // OR we should have saved earlier. 
+      // Actually, let's store the pending save args to flush them.
+      if (this.pendingSaveArgs) {
+        this.saveTokensForVideo(this.pendingSaveArgs.videoId, this.pendingSaveArgs.lang);
+      }
+    }
   }
 
   // State
+  private tokenSaveTimer: any = null;
+  private pendingSaveArgs: { videoId: string, lang: string } | null = null;
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal(-1);
   readonly isTokenizing = signal(false);
@@ -357,9 +371,9 @@ export class SubtitleService implements OnDestroy {
       this.subtitles.set(updatedCues);
       this.updateTokenizedRange(startIdx, endIdx);
 
-      // Save tokens to localStorage for future visits
+      // Save tokens to localStorage for future visits (debounced)
       if (videoId && lang) {
-        this.saveTokensForVideo(videoId, lang);
+        this.scheduleTokenSave(videoId, lang);
       }
 
     } catch (error) {
@@ -704,10 +718,28 @@ export class SubtitleService implements OnDestroy {
   }
 
   /**
+   * Schedule saving tokens to localStorage
+   */
+  private scheduleTokenSave(videoId: string, lang: string): void {
+    if (this.tokenSaveTimer) {
+      clearTimeout(this.tokenSaveTimer);
+    }
+
+    this.pendingSaveArgs = { videoId, lang };
+
+    this.tokenSaveTimer = setTimeout(() => {
+      this.saveTokensForVideo(videoId, lang);
+    }, 5000); // 5 seconds debounce
+  }
+
+  /**
    * Save tokens for a video to localStorage
    */
   saveTokensForVideo(videoId: string, lang: string): void {
     if (!videoId) return;
+
+    this.tokenSaveTimer = null;
+    this.pendingSaveArgs = null;
 
     try {
       const stored = this.getStoredTokens();
