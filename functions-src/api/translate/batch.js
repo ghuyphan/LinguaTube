@@ -4,7 +4,7 @@
  * Route: POST /api/translate/batch
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody } from '../../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, sha256 } from '../../_shared/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIdentifier,
@@ -30,16 +30,6 @@ const RATE_LIMIT_CONFIG = {
 
 // Cache configuration (7 days)
 const CACHE_TTL = 7 * 24 * 60 * 60;
-
-/**
- * Generate a consistent hash for a string
- */
-async function sha256(message) {
-    const msgBuffer = new TextEncoder().encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
 
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);

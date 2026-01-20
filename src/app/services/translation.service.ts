@@ -1,12 +1,9 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, map, catchError, of, shareReplay, finalize, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
+import { Observable, map, catchError, of, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-export interface TranslationResponse {
-    translation: string;
-    info?: unknown;
-}
+
 
 // Cache configuration
 const CACHE_KEY = 'linguatube_translations';
@@ -20,10 +17,6 @@ export class TranslationService {
 
     // In-memory cache for translations
     private translationCache = new Map<string, string>();
-    // Pending requests for deduplication
-    private pendingRequests = new Map<string, Observable<string | null>>();
-    // Loading states
-    private loadingStates = signal<Set<string>>(new Set());
 
     // Request queue for batch translations
     private requestQueue$ = new Subject<{
@@ -106,51 +99,7 @@ export class TranslationService {
         );
     }
 
-    /**
-     * Translate text from source language to target language
-     * With caching and request deduplication
-     */
-    translate(text: string, source: string, target: string): Observable<string | null> {
-        if (!text.trim()) return of(null);
 
-        const key = `${source}:${target}:${text}`;
-
-        // Check memory cache first
-        if (this.translationCache.has(key)) {
-            return of(this.translationCache.get(key)!);
-        }
-
-        // Check if request is already pending (deduplication)
-        if (this.pendingRequests.has(key)) {
-            return this.pendingRequests.get(key)!;
-        }
-
-        this.setLoading(key, true);
-
-        const url = `${this.API_URL}/${source}/${target}/${encodeURIComponent(text)}`;
-
-        const request$ = this.http.get<TranslationResponse>(url).pipe(
-            map(response => {
-                const translation = response.translation || null;
-                if (translation) {
-                    this.addToCache(key, translation);
-                }
-                return translation;
-            }),
-            catchError(err => {
-                console.error('Translation failed:', err);
-                return of(null);
-            }),
-            shareReplay(1),
-            finalize(() => {
-                this.setLoading(key, false);
-                this.pendingRequests.delete(key);
-            })
-        );
-
-        this.pendingRequests.set(key, request$);
-        return request$;
-    }
 
     /**
      * Batch translate multiple texts at once
@@ -216,21 +165,7 @@ export class TranslationService {
         });
     }
 
-    isLoading(key: string): boolean {
-        return this.loadingStates().has(key);
-    }
 
-    private setLoading(key: string, isLoading: boolean): void {
-        this.loadingStates.update(states => {
-            const newStates = new Set(states);
-            if (isLoading) {
-                newStates.add(key);
-            } else {
-                newStates.delete(key);
-            }
-            return newStates;
-        });
-    }
 
     /**
      * Get dual subtitles for a video

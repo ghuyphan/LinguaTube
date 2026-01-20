@@ -7,7 +7,6 @@
 import { jsonResponse, handleOptions, errorResponse, validateBody, logError } from '../_shared/utils.js';
 import {
     consumeRateLimit,
-    getClientIP,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders,

@@ -167,7 +167,8 @@ export class WordPopupComponent implements OnDestroy {
     this.toggleTranslating(index, true);
 
     const targetLang = this.targetLang();
-    this.translation.translate(text, 'en', targetLang).subscribe(translatedText => {
+    this.translation.translateBatch([text], 'en', targetLang).subscribe(results => {
+      const translatedText = results[0];
       if (translatedText) {
         this.translatedDefinitions.update(map => {
           const newMap = new Map(map);
