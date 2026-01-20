@@ -675,7 +675,6 @@ export class VideoPageComponent implements OnInit {
 
               // Only show if it's different from what we asked for
               if (normalize(requested) !== suggestionSimple) {
-                console.log(`[VideoPage] No native for ${requested}, but found ${suggestion}. Showing mismatch dialog.`);
                 this.mismatchDetectedLang.set(suggestionSimple);
                 this.showLanguageMismatchDialog.set(true);
               }

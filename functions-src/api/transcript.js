@@ -175,7 +175,7 @@ async function getDiamonds(cache, clientId, user = null) {
  * 
  * @returns {{ success: boolean, diamonds: number, nextRegenAt: number | null }}
  */
-async function consumeDiamond(cache, clientId, user = null, env = null) {
+async function consumeDiamond(cache, clientId, user = null, env = null, waitUntil = null) {
     // Get current diamonds (handles regeneration)
     const { diamonds } = await getDiamonds(cache, clientId, user);
 
@@ -191,28 +191,38 @@ async function consumeDiamond(cache, clientId, user = null, env = null) {
 
     // For authenticated users: Update PocketBase
     if (user && user.id && env) {
-        try {
-            const pocketbaseUrl = env.POCKETHOST_URL || 'https://voca.pockethost.io';
-            const response = await fetch(`${pocketbaseUrl}/api/collections/users/records/${user.id}`, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    diamonds: newDiamonds,
-                    diamonds_updated_at: new Date().toISOString()
-                }),
-                signal: AbortSignal.timeout(5000)
-            });
+        const updatePromise = (async () => {
+            try {
+                const pocketbaseUrl = env.POCKETHOST_URL || 'https://voca.pockethost.io';
+                const response = await fetch(`${pocketbaseUrl}/api/collections/users/records/${user.id}`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        diamonds: newDiamonds,
+                        diamonds_updated_at: new Date().toISOString()
+                    }),
+                    signal: AbortSignal.timeout(5000)
+                });
 
-            if (!response.ok) {
-                log('Failed to update PocketBase diamonds:', response.status);
-                // Fall through to success - don't block user on PB write failure
+                if (!response.ok) {
+                    log('Failed to update PocketBase diamonds:', response.status);
+                }
+            } catch (e) {
+                log('consumeDiamond PB error:', e.message);
             }
+        })();
 
-            return { success: true, diamonds: newDiamonds, nextRegenAt };
-        } catch (e) {
-            log('consumeDiamond PB error:', e.message);
-            return { success: true, diamonds: newDiamonds, nextRegenAt };
+        if (waitUntil) {
+            waitUntil(updatePromise);
+        } else {
+            // Only await if we can't background it (fallback)
+            // But actually we want to return fast regardless, so we could technically fire-and-forget
+            // even without waitUntil if the runtime didn't kill us, but Cloudflare requires waitUntil.
+            // So we await if no waitUntil.
+            try { await updatePromise; } catch (e) { }
         }
+
+        return { success: true, diamonds: newDiamonds, nextRegenAt };
     }
 
     // Fallback for anonymous users: Use KV cache
@@ -220,20 +230,27 @@ async function consumeDiamond(cache, clientId, user = null, env = null) {
 
     const key = `${DIAMOND_CONFIG.keyPrefix}:${clientId}`;
 
-    try {
-        await cache.put(key, JSON.stringify({
-            diamonds: newDiamonds,
-            lastUsedAt: now
-        }), {
-            // Keep for 24 hours (increased from 2 hours)
-            expirationTtl: 86400
-        });
+    const kvPromise = (async () => {
+        try {
+            await cache.put(key, JSON.stringify({
+                diamonds: newDiamonds,
+                lastUsedAt: now
+            }), {
+                // Keep for 24 hours (increased from 2 hours)
+                expirationTtl: 86400
+            });
+        } catch (e) {
+            log('consumeDiamond KV error:', e.message);
+        }
+    })();
 
-        return { success: true, diamonds: newDiamonds, nextRegenAt };
-    } catch (e) {
-        log('consumeDiamond KV error:', e.message);
-        return { success: true, diamonds: newDiamonds, nextRegenAt: null };
+    if (waitUntil) {
+        waitUntil(kvPromise);
+    } else {
+        try { await kvPromise; } catch (e) { }
     }
+
+    return { success: true, diamonds: newDiamonds, nextRegenAt };
 }
 
 // ============================================================================
@@ -399,8 +416,12 @@ export async function onRequestPost(context) {
 
                 // Check for existing AI transcript in R2 before returning error
                 const aiLangs = ['ja', 'zh', 'ko', 'en'];
-                for (const aiLang of aiLangs) {
-                    const aiCached = await getTranscriptFromR2(r2, videoId, aiLang);
+                const aiPromises = aiLangs.map(aiLang => getTranscriptFromR2(r2, videoId, aiLang));
+                const aiResults = await Promise.all(aiPromises);
+
+                for (let i = 0; i < aiResults.length; i++) {
+                    const aiCached = aiResults[i];
+                    const aiLang = aiLangs[i];
                     if (aiCached?.segments?.length > 0) {
                         log(`AI fallback found in negative cache path: ${aiLang}`);
                         return jsonResponse({
@@ -443,32 +464,48 @@ export async function onRequestPost(context) {
                 log(`Strict D1 Trust: ${lang} not in known languages [${nativeLanguages.join(',')}]`);
 
                 // Try to return a fallback from cache
-                for (const fallbackLang of nativeLanguages) {
-                    const fallbackCached = await getTranscriptFromR2(r2, videoId, fallbackLang);
-                    if (fallbackCached?.segments?.length > 0) {
-                        return jsonResponse({
-                            success: true,
-                            videoId,
-                            language: fallbackLang,
-                            requestedLanguage: lang,
-                            segments: fallbackCached.segments,
-                            source: 'cache',
-                            sourceDetail: `fallback:${fallbackCached.source}`,
-                            availableLanguages,
-                            whisperAvailable: diamondStatus.diamonds > 0,
-                            ...diamondInfo,
-                            warning: `Requested '${lang}' not available natively. Returned '${fallbackLang}'.`,
-                            timing: elapsed()
-                        }, 200, { 'X-Cache': 'HIT:FALLBACK', 'Cache-Control': CACHE_CONTROL.R2_HIT });
+                if (nativeLanguages.length > 0) {
+                    const fallbackPromises = nativeLanguages.map(fl => getTranscriptFromR2(r2, videoId, fl));
+                    const fallbackResults = await Promise.all(fallbackPromises);
+
+                    for (let i = 0; i < fallbackResults.length; i++) {
+                        const fallbackCached = fallbackResults[i];
+                        const fallbackLang = nativeLanguages[i];
+
+                        if (fallbackCached?.segments?.length > 0) {
+                            return jsonResponse({
+                                success: true,
+                                videoId,
+                                language: fallbackLang,
+                                requestedLanguage: lang,
+                                segments: fallbackCached.segments,
+                                source: 'cache',
+                                sourceDetail: `fallback:${fallbackCached.source}`,
+                                availableLanguages,
+                                whisperAvailable: diamondStatus.diamonds > 0,
+                                ...diamondInfo,
+                                warning: `Requested '${lang}' not available natively. Returned '${fallbackLang}'.`,
+                                timing: elapsed()
+                            }, 200, { 'X-Cache': 'HIT:FALLBACK', 'Cache-Control': CACHE_CONTROL.R2_HIT });
+                        }
                     }
                 }
 
                 // Check for existing AI transcript in R2 (any language) before suggesting diamonds
                 // This handles cases where user already paid for AI transcription in another language
                 const aiLangs = ['ja', 'zh', 'ko', 'en'];
-                for (const aiLang of aiLangs) {
-                    if (aiLang === lang) continue; // Already checked exact match in Step 1
-                    const aiCached = await getTranscriptFromR2(r2, videoId, aiLang);
+                const aiPromises = aiLangs.map(aiLang => {
+                    if (aiLang === lang) return null; // Already checked exact match in Step 1
+                    return getTranscriptFromR2(r2, videoId, aiLang);
+                });
+                const aiResults = await Promise.all(aiPromises);
+
+                for (let i = 0; i < aiResults.length; i++) {
+                    const aiCached = aiResults[i];
+                    const aiLang = aiLangs[i];
+
+                    if (!aiCached) continue;
+
                     if (aiCached?.segments?.length > 0 && aiCached.source === 'ai') {
                         log(`AI fallback found: ${aiLang} for requested ${lang}`);
                         return jsonResponse({
@@ -583,10 +620,16 @@ export async function onRequestPost(context) {
             // Let's rely on the fact that if a user previously paid for AI, it SHOULD be in R2.
             // We can check the languages in `nativeLanguages` (from earlier) - if any of them exist in R2 with source='ai', return that.
 
-            for (const existingLang of nativeLanguages) {
-                if (existingLang === lang) continue; // We already tried this and failed (or it's the requested one)
+            // We can check the languages in `nativeLanguages` (from earlier) - if any of them exist in R2 with source='ai', return that.
 
-                const fallbackCached = await getTranscriptFromR2(r2, videoId, existingLang);
+            const existingToCheck = nativeLanguages.filter(l => l !== lang);
+            const existingPromises = existingToCheck.map(l => getTranscriptFromR2(r2, videoId, l));
+            const existingResults = await Promise.all(existingPromises);
+
+            for (let i = 0; i < existingResults.length; i++) {
+                const fallbackCached = existingResults[i];
+                const existingLang = existingToCheck[i];
+
                 if (fallbackCached?.segments?.length > 0 && fallbackCached.source === 'ai') {
                     log(`Found existing AI transcript in ${existingLang}, returning as fallback for ${lang}`);
                     return jsonResponse({
@@ -902,7 +945,7 @@ async function startGladiaJob(context, { videoId, lang, r2, db, cache, body, aut
     }
 
     // Consume a diamond for new job (use PocketBase for authenticated users)
-    const consumeResult = await consumeDiamond(cache, clientId, user, env);
+    const consumeResult = await consumeDiamond(cache, clientId, user, env, waitUntil);
     if (!consumeResult.success) {
         return jsonResponse({
             success: false,
