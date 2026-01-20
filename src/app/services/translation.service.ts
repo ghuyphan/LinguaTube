@@ -147,6 +147,9 @@ export class TranslationService {
                                 this.addToCache(`${source}:${target}:${text}`, translation);
                             }
                         });
+                        // Save to storage once per batch
+                        this.saveCacheToStorage();
+
                         observer.next(results);
                         observer.complete();
                     },
@@ -199,7 +202,6 @@ export class TranslationService {
             }
         }
         this.translationCache.set(key, translation);
-        this.saveCacheToStorage();
     }
 
     private loadCacheFromStorage(): void {
