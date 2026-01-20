@@ -228,8 +228,8 @@ export class SubtitleDisplayComponent {
   isDualCached = signal(false);
 
   private lastLazyLoadedIndex = -1;
-  private readonly LAZY_LOAD_BATCH_SIZE = 20;
-  private readonly LAZY_LOAD_BUFFER = 5;
+  private readonly LAZY_LOAD_BATCH_SIZE = 50;
+  private readonly LAZY_LOAD_BUFFER = 15;
 
   // ============================================
   // FIX 4: Throttled lazy loading
@@ -454,35 +454,48 @@ export class SubtitleDisplayComponent {
           this.isTranslatingDual.set(true);
         }
 
-        // Use untracked for the subscription to avoid infinite loops if it were setting tracked signals improperly (good practice)
+        // Use untracked for the subscription to avoid infinite loops
         untracked(() => {
+          // CACHE-FIRST STRATEGY: 
+          // 1. First check if we have a full server-side cache (onlyCache=true)
+          // 2. If not, normal flow (lazy load will trigger later)
+
           this.dualSubSubscription = this.translation.getDualSubtitles(videoId, lang, targetLang, cues, true)
             .subscribe({
               next: (translatedSegments) => {
-                // Check if language changed while waiting (effect cleanup should handle this, but for safety)
-                if (this.subtitles.dualSubtitleTargetLang() !== targetLang) return;
+                if (this.subtitles.dualSubtitleTargetLang() !== targetLang) return; // Stale
 
                 if (translatedSegments && translatedSegments.length) {
+                  // Cache hit! Populate everything
                   const newMap = new Map<string, string>();
+                  let hasContent = false;
+
                   translatedSegments.forEach((seg: any, index: number) => {
                     if (index < cues.length && seg.translation) {
                       newMap.set(cues[index].id, seg.translation);
+                      hasContent = true;
                     }
                   });
-                  this.cueTranslations.set(newMap);
-                  this.isDualCached.set(true);
-                  this.isTranslatingDual.set(false); // Clear loading state on cache hit
-                } else {
-                  this.isDualCached.set(false);
-                  this.lastLazyLoadedIndex = -1; // Reset tracking
-                  this.lazyLoadUpcomingCues();
+
+                  if (hasContent) {
+                    this.cueTranslations.set(newMap);
+                    this.isDualCached.set(true);
+                    this.isTranslatingDual.set(false);
+                    return;
+                  }
                 }
+
+                // Cache miss or empty
+                this.isDualCached.set(false);
+                this.lastLazyLoadedIndex = -1;
+                // Force lazy load start immediately if we missed cache
+                this.lazyLoadUpcomingCues();
               },
               error: (err) => {
                 console.error('[SubtitleDisplay] Cache check failed:', err);
                 this.isDualCached.set(false);
                 this.lastLazyLoadedIndex = -1;
-                this.isTranslatingDual.set(false); // Clear loading state on error
+                this.isTranslatingDual.set(false);
               }
             });
         });

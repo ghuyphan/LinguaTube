@@ -10,7 +10,7 @@ export interface TranslationResponse {
 
 // Cache configuration
 const CACHE_KEY = 'linguatube_translations';
-const MAX_CACHE_SIZE = 200;
+const MAX_CACHE_SIZE = 1000;
 
 @Injectable({
     providedIn: 'root'
@@ -48,7 +48,7 @@ export class TranslationService {
 
                 return of(request).pipe(
                     // Add delay BEFORE processing request
-                    delay(300),
+                    delay(150),
                     switchMap(req => {
                         // Check again after delay
                         if (req.cancelled) return of(void 0);
