@@ -9,6 +9,17 @@ declare global {
   }
 }
 
+/**
+ * YouTube Player Service
+ * 
+ * Root-level singleton that manages the YouTube IFrame Player API.
+ * 
+ * NOTE: This service intentionally adds persistent event listeners for:
+ * - document.visibilitychange: To track play state when tab is hidden/shown
+ * - Media Session API handlers: For playback controls on lock screen
+ * 
+ * These are NOT cleaned up because this service lives for the entire app lifecycle.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +29,9 @@ export class YoutubeService {
   private apiReadyPromise: Promise<void>;
   private resolveApiReady!: () => void;
   private timeUpdateInterval: any = null;
+
+  /** Guard to prevent concurrent initPlayer calls */
+  private pendingInit: Promise<void> | null = null;
 
   private readonly STORAGE_KEY = 'lingua-tube-last-video';
 
@@ -215,181 +229,206 @@ export class YoutubeService {
   }
 
   async initPlayer(elementId: string, videoId: string): Promise<void> {
-    this.error.set(null);
-    // Don't set isReady to false yet if we are potentially reusing the player
-
-    await this.apiReadyPromise;
-
-    // REUSE PLAYER if possible
-    let canReuse = false;
-    if (this.player && typeof this.player.loadVideoById === 'function') {
-      try {
-        const iframe = this.player.getIframe();
-        if (iframe && iframe.isConnected) {
-          canReuse = true;
-        } else {
-          console.warn('[YoutubeService] Player instance exists but iframe is disconnected. Recreating.');
-        }
-      } catch (e) {
-        console.warn('[YoutubeService] Error checking player iframe:', e);
-      }
+    // Guard against concurrent initialization - wait for pending init to complete
+    if (this.pendingInit) {
+      console.log('[YoutubeService] Waiting for pending initialization to complete...');
+      await this.pendingInit;
     }
 
-    if (canReuse) {
-      try {
-        const metadataPromise = this.fetchVideoMetadata(videoId);
+    // Create new initialization promise
+    let resolveInit: () => void;
+    this.pendingInit = new Promise(resolve => { resolveInit = resolve; });
 
-        // Load the new video
-        this.player.loadVideoById(videoId);
+    try {
+      this.error.set(null);
+      // Don't set isReady to false yet if we are potentially reusing the player
 
-        // Disable YouTube's built-in captions (we use our own)
+      await this.apiReadyPromise;
+
+      // REUSE PLAYER if possible
+      let canReuse = false;
+      if (this.player && typeof this.player.loadVideoById === 'function') {
         try {
-          this.player.unloadModule('captions');
-          this.player.unloadModule('cc');
+          const iframe = this.player.getIframe();
+          if (iframe && iframe.isConnected) {
+            canReuse = true;
+          } else {
+            console.warn('[YoutubeService] Player instance exists but iframe is disconnected. Recreating.');
+          }
         } catch (e) {
-          // Module might not be loaded
+          console.warn('[YoutubeService] Error checking player iframe:', e);
         }
-
-        // Fetch fresh metadata
-        const metadata = await metadataPromise;
-        const duration = this.player.getDuration() || 0; // Might be 0 initially, updated by onStateChange/metadata
-
-        // Update application state
-        this.updateVideoState(videoId, metadata, duration);
-        return;
-      } catch (e) {
-        console.warn('Failed to reuse player, falling back to recreation', e);
-        // Fall through to recreation
       }
-    }
 
-    this.isReady.set(false);
+      if (canReuse) {
+        try {
+          const metadataPromise = this.fetchVideoMetadata(videoId);
 
-    if (this.player) {
-      this.destroy();
-    }
+          // Load the new video
+          this.player.loadVideoById(videoId);
 
-    // Fetch metadata in parallel with player initialization
-    const metadataPromise = this.fetchVideoMetadata(videoId);
+          // Disable YouTube's built-in captions (we use our own)
+          try {
+            this.player.unloadModule('captions');
+            this.player.unloadModule('cc');
+          } catch (e) {
+            // Module might not be loaded
+          }
 
-    return new Promise((resolve, reject) => {
-      try {
-        const element = document.getElementById(elementId);
-        if (!element) {
-          reject(new Error('Player element not found'));
+          // Fetch fresh metadata
+          const metadata = await metadataPromise;
+          const duration = this.player.getDuration() || 0; // Might be 0 initially, updated by onStateChange/metadata
+
+          // Update application state
+          this.updateVideoState(videoId, metadata, duration);
           return;
+        } catch (e) {
+          console.warn('Failed to reuse player, falling back to recreation', e);
+          // Fall through to recreation
+        } finally {
+          // Clear pending init guard on reuse path
+          this.pendingInit = null;
+          resolveInit!();
         }
+      }
 
-        this.player = new window.YT.Player(elementId, {
-          videoId,
-          width: '100%',
-          height: '100%',
-          playerVars: {
-            autoplay: 0,
-            controls: 0,
-            modestbranding: 1,
-            rel: 0,
-            cc_load_policy: 0,
-            iv_load_policy: 3,
-            playsinline: 1,
-            fs: 0,
-            disablekb: 0,
-            showinfo: 0,
-            origin: window.location.origin,
-            enablejsapi: 1,
-            host: 'https://www.youtube.com'
-          },
-          events: {
-            onReady: async (event: any) => {
-              const duration = event.target.getDuration() || 0;
-              const metadata = await metadataPromise;
+      this.isReady.set(false);
 
-              // Use the unified state update method
-              this.updateVideoState(videoId, metadata, duration);
+      if (this.player) {
+        this.destroy();
+      }
 
-              // Disable YouTube's built-in captions (we use our own)
-              try {
-                event.target.unloadModule('captions');
-                event.target.unloadModule('cc');
-              } catch (e) {
-                // Module might not be loaded
-              }
+      // Fetch metadata in parallel with player initialization
+      const metadataPromise = this.fetchVideoMetadata(videoId);
 
-              this.isReady.set(true); // Explicitly set ready here for new players
+      return new Promise<void>((resolve, reject) => {
+        try {
+          const element = document.getElementById(elementId);
+          if (!element) {
+            reject(new Error('Player element not found'));
+            return;
+          }
 
-              // Restore playing state if intended
-              if (this.intendedPlayingState()) {
-                this.play();
-              } else {
-                this.pause();
-              }
-
-              resolve();
+          this.player = new window.YT.Player(elementId, {
+            videoId,
+            width: '100%',
+            height: '100%',
+            playerVars: {
+              autoplay: 0,
+              controls: 0,
+              modestbranding: 1,
+              rel: 0,
+              cc_load_policy: 0,
+              iv_load_policy: 3,
+              playsinline: 1,
+              fs: 0,
+              disablekb: 0,
+              showinfo: 0,
+              origin: window.location.origin,
+              enablejsapi: 1,
+              host: 'https://www.youtube.com'
             },
-            onStateChange: (event: any) => {
-              const state = event.data;
-              const isPlaying = state === window.YT.PlayerState.PLAYING;
-              const isBuffering = state === window.YT.PlayerState.BUFFERING;
+            events: {
+              onReady: async (event: any) => {
+                const duration = event.target.getDuration() || 0;
+                const metadata = await metadataPromise;
 
-              // Update buffering state
-              this.isBuffering.set(isBuffering);
+                // Use the unified state update method
+                this.updateVideoState(videoId, metadata, duration);
 
-              // Only update isPlaying when transitioning to/from PLAYING state
-              // Don't set isPlaying to false when buffering (user pressed play, waiting for buffer)
-              if (isPlaying && !this.isPlaying()) {
-                this.isPlaying.set(true);
-                this.intendedPlayingState.set(true);
-                this.startTimeTracking();
-
+                // Disable YouTube's built-in captions (we use our own)
                 try {
                   event.target.unloadModule('captions');
                   event.target.unloadModule('cc');
-                } catch (e) { }
-
-                if ('mediaSession' in navigator) {
-                  navigator.mediaSession.playbackState = 'playing';
+                } catch (e) {
+                  // Module might not be loaded
                 }
-              } else if (!isPlaying && !isBuffering && this.isPlaying()) {
-                // Only set to false if we're not buffering (e.g., paused or ended)
-                if ('mediaSession' in navigator) {
-                  navigator.mediaSession.playbackState = 'paused';
+
+                this.isReady.set(true); // Explicitly set ready here for new players
+
+                // Restore playing state if intended
+                if (this.intendedPlayingState()) {
+                  this.play();
+                } else {
+                  this.pause();
                 }
-                this.isPlaying.set(false);
-                this.intendedPlayingState.set(false);
-                cancelAnimationFrame(this.timeUpdateInterval);
-              }
 
-              this.isEnded.set(state === window.YT.PlayerState.ENDED);
+                resolve();
+              },
+              onStateChange: (event: any) => {
+                const state = event.data;
+                const isPlaying = state === window.YT.PlayerState.PLAYING;
+                const isBuffering = state === window.YT.PlayerState.BUFFERING;
 
-              if (state === window.YT.PlayerState.PLAYING && this.wasPausedOnLeave) {
-                this.wasPausedOnLeave = false;
-                this.pause();
-              }
+                // Update buffering state
+                this.isBuffering.set(isBuffering);
 
-              if (state === window.YT.PlayerState.PLAYING || state === window.YT.PlayerState.PAUSED) {
-                const dur = event.target.getDuration();
-                if (dur > 0) this.duration.set(dur);
+                // Only update isPlaying when transitioning to/from PLAYING state
+                // Don't set isPlaying to false when buffering (user pressed play, waiting for buffer)
+                if (isPlaying && !this.isPlaying()) {
+                  this.isPlaying.set(true);
+                  this.intendedPlayingState.set(true);
+                  this.startTimeTracking();
+
+                  try {
+                    event.target.unloadModule('captions');
+                    event.target.unloadModule('cc');
+                  } catch (e) { }
+
+                  if ('mediaSession' in navigator) {
+                    navigator.mediaSession.playbackState = 'playing';
+                  }
+                } else if (!isPlaying && !isBuffering && this.isPlaying()) {
+                  // Only set to false if we're not buffering (e.g., paused or ended)
+                  if ('mediaSession' in navigator) {
+                    navigator.mediaSession.playbackState = 'paused';
+                  }
+                  this.isPlaying.set(false);
+                  this.intendedPlayingState.set(false);
+                  cancelAnimationFrame(this.timeUpdateInterval);
+                }
+
+                this.isEnded.set(state === window.YT.PlayerState.ENDED);
+
+                if (state === window.YT.PlayerState.PLAYING && this.wasPausedOnLeave) {
+                  this.wasPausedOnLeave = false;
+                  this.pause();
+                }
+
+                if (state === window.YT.PlayerState.PLAYING || state === window.YT.PlayerState.PAUSED) {
+                  const dur = event.target.getDuration();
+                  if (dur > 0) this.duration.set(dur);
+                }
+              },
+              onError: (event: any) => {
+                const errorMessages: Record<number, string> = {
+                  2: 'Invalid video ID',
+                  5: 'HTML5 player error',
+                  100: 'Video not found or private',
+                  101: 'Video cannot be embedded',
+                  150: 'Video cannot be embedded'
+                };
+                const msg = errorMessages[event.data] || 'Unknown error';
+                this.error.set(msg);
+                reject(new Error(msg));
               }
-            },
-            onError: (event: any) => {
-              const errorMessages: Record<number, string> = {
-                2: 'Invalid video ID',
-                5: 'HTML5 player error',
-                100: 'Video not found or private',
-                101: 'Video cannot be embedded',
-                150: 'Video cannot be embedded'
-              };
-              const msg = errorMessages[event.data] || 'Unknown error';
-              this.error.set(msg);
-              reject(new Error(msg));
             }
-          }
-        });
-      } catch (err) {
-        this.error.set('Failed to initialize player');
-        reject(err);
-      }
-    });
+          });
+        } catch (err) {
+          this.error.set('Failed to initialize player');
+          reject(err);
+        }
+      }).finally(() => {
+        // Clear pending init guard when done (success or error)
+        this.pendingInit = null;
+        resolveInit!();
+      });
+    } catch (error) {
+      // Ensure guard is cleared even if the async operation fails
+      this.pendingInit = null;
+      resolveInit!();
+      throw error;
+    }
   }
 
   private startTimeTracking(): void {

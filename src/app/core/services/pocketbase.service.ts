@@ -10,6 +10,12 @@ const PB_AUTH_KEY = 'pocketbase_auth';
  * PocketBase Service
  * Singleton service managing PocketBase client connection
  * Lazy loads the PocketBase SDK to reduce initial bundle size
+ * 
+ * NOTE: This service intentionally adds persistent event listeners for:
+ * - window.online/offline: To track network connectivity and auto-refresh tokens
+ * 
+ * These are NOT cleaned up because this service lives for the entire app lifecycle.
+ * The refresh timer IS cleaned up in clearAuth() when the user logs out.
  */
 @Injectable({
     providedIn: 'root'

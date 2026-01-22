@@ -177,8 +177,9 @@ export class QuizService {
             streak: s.streak + 1
         }));
 
-        // Auto-advance after delay
-        setTimeout(() => {
+        // Auto-advance after delay (tracked for cleanup)
+        this.clearPlaybackTimeout();
+        this.playbackTimeout = setTimeout(() => {
             this.nextQuestion();
         }, 1500);
     }
