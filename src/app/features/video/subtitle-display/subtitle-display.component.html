@@ -5,6 +5,10 @@
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
         [class.is-generating]="transcript.isGeneratingAI()" [class.has-scroll-top]="hasScrollTop()"
         [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko'].includes(effectiveLanguage())">
+
+        @if (quiz.isActive()) {
+        <app-quiz-input />
+        } @else {
         <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()">
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->
@@ -154,6 +158,7 @@
             </div>
             }
         </div>
+        }
     </div>
 
     <!-- Subtitle list (scrollable) -->
@@ -208,6 +213,12 @@
                 [title]="i18n.t('grammar.mode')">
                 <app-icon name="book-open" [size]="16" />
                 <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
+            </button>
+
+            <!-- Quiz Mode Toggle -->
+            <button class="ctrl-btn" [class.active]="quiz.isActive()" (click)="toggleQuizMode()" [title]="'Quiz Mode'">
+                <app-icon name="clipboard-check" [size]="16" />
+                <span class="ctrl-label">Quiz</span>
             </button>
 
             <!-- Font Size - cycles through S/M/L like fullscreen mode -->

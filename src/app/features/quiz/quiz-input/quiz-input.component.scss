@@ -1,0 +1,152 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.quiz-container {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: all var(--transition-normal);
+
+    &.is-success {
+        border-color: var(--success);
+        background: rgba(var(--success-rgb), 0.05);
+    }
+
+    &.is-error {
+        border-color: var(--error);
+    }
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.quiz-status-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: none;
+    border: none;
+    padding: 2px 6px;
+    margin: -2px -6px;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    /* Darker for better visibility */
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    transition: background var(--transition-fast);
+
+    &:hover {
+        background: var(--bg-secondary);
+    }
+
+    .mode-icon {
+        color: var(--accent-primary);
+    }
+
+    .chevron-icon {
+        color: var(--text-muted);
+        margin-left: 2px;
+    }
+}
+
+.quiz-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.streak-badge {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all var(--transition-spring);
+
+    &.has-streak {
+        color: #f59e0b;
+        /* Amber */
+
+        app-icon {
+            fill: currentColor;
+        }
+    }
+}
+
+.quiz-input-area {
+    width: 100%;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.quiz-input {
+    width: 100%;
+    height: var(--input-height-lg);
+    font-size: var(--text-lg);
+    padding-right: 40px;
+    /* Space for icon */
+
+    &.is-success {
+        border-color: var(--success);
+        color: var(--success);
+    }
+
+    &.is-error {
+        border-color: var(--error);
+        color: var(--error);
+    }
+
+    &:disabled {
+        background: var(--bg-secondary);
+        opacity: 0.8;
+    }
+}
+
+.input-actions {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.result-icon {
+    display: flex;
+    align-items: center;
+
+    &.success {
+        color: var(--success);
+    }
+
+    &.error {
+        color: var(--error);
+    }
+}
+
+.quiz-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.spacer {
+    flex: 1;
+}

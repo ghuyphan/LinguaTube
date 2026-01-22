@@ -6,12 +6,14 @@ import { VocabularyQuickViewComponent } from '../../vocabulary/vocabulary-quick-
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService, GrammarService, TranslationService } from '../../../services';
 import { SubtitleCue, Token, GrammarMatch, GrammarPattern } from '../../../models';
+import { QuizService } from '../quiz.service';
+import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 
 @Component({
   selector: 'app-subtitle-display',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent, GrammarPopupComponent],
+  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent, GrammarPopupComponent, QuizInputComponent],
   animations: [
     trigger('subtitleFade', [
       transition(':enter', [
@@ -32,6 +34,7 @@ export class SubtitleDisplayComponent {
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
   translation = inject(TranslationService);
+  quiz = inject(QuizService);
 
   readonly whisperAvailable = computed(() => {
     const error = this.transcript.error();
@@ -700,5 +703,13 @@ export class SubtitleDisplayComponent {
 
   toggleGrammarMode(): void {
     this.grammar.toggleGrammarMode();
+  }
+
+  toggleQuizMode(): void {
+    if (this.quiz.isActive()) {
+      this.quiz.stopQuiz();
+    } else {
+      this.quiz.startQuiz();
+    }
   }
 }
