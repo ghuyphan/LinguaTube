@@ -869,6 +869,32 @@ ruby rt {
         display: none;
         /* Chrome, Safari, Opera */
     }
+
+    /* Redacted Style for Quiz Mode */
+    &.quiz-obfuscated {
+        pointer-events: none;
+        user-select: none;
+
+        .cue-time,
+        .cue-text {
+            color: transparent !important;
+            background-color: var(--bg-tertiary);
+            border-radius: 4px;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .cue-item--active {
+            background: none !important;
+            border-left-color: transparent !important;
+
+            .cue-time,
+            .cue-text {
+                background-color: var(--accent-primary);
+                opacity: 0.3;
+            }
+        }
+    }
 }
 
 .cue-item {
@@ -894,6 +920,8 @@ ruby rt {
     min-height: 48px;
     height: auto;
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 48px;
 }
 
 /* No more scale transform - use border & opacity for visual hierarchy */

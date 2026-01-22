@@ -164,7 +164,7 @@
 
     <!-- Subtitle list (scrollable) -->
     @if (subtitles.subtitles().length > 0) {
-    <div class="subtitle-list" #subtitleList>
+    <div class="subtitle-list" #subtitleList [class.quiz-obfuscated]="quiz.isActive()">
         @for (cue of subtitles.subtitles(); track cue.id; let i = $index) {
         <button class="cue-item" [class.cue-item--active]="cue.id === subtitles.currentCue()?.id"
             [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
