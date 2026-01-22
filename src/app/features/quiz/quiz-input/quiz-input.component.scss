@@ -9,47 +9,39 @@
     height: 100%;
 }
 
-/* Mirrors .current-subtitle__inner */
+/* Mirrors .current-subtitle__inner - use relative for absolute children */
 .quiz-container {
     width: 100%;
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    padding: var(--space-sm) var(--space-md);
-
-    /* Hide scrollbar */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    position: relative;
+    overflow: hidden;
 }
 
-/* Mirrors .subtitle-center-wrapper */
+/* Main content area - centered like subtitle-center-wrapper */
 .quiz-inner {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--space-xs) 0;
-    gap: var(--space-sm);
+    padding: var(--space-md);
 }
 
 /* ============================================
-   HEADER - Mode + Stats row
+   HEADER - Floating at top
    ============================================ */
 .quiz-header {
-    width: 100%;
+    position: absolute;
+    top: var(--space-xs);
+    left: var(--space-md);
+    right: var(--space-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.75rem;
     color: var(--text-muted);
+    z-index: 2;
 }
 
 .mode-badge {
@@ -221,14 +213,18 @@
 }
 
 /* ============================================
-   CONTROLS - Center aligned
+   CONTROLS - Floating at bottom
    ============================================ */
 .quiz-controls {
-    width: 100%;
+    position: absolute;
+    bottom: var(--space-xs);
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--space-md);
+    z-index: 2;
 }
 
 .btn-icon {

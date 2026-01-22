@@ -1,26 +1,26 @@
 <div class="quiz-container" [ngClass]="stateClass()">
-    <div class="quiz-inner">
-        <!-- Header: Meta Info (Floating/ subtle) -->
-        <div class="quiz-header">
-            <div class="mode-badge" (click)="toggleMode()" title="Click to switch mode">
-                <app-icon [name]="quiz.mode() === 'dictation' ? 'headphones' : 'languages'" [size]="14" />
-                <span>{{ quiz.mode() === 'dictation' ? i18n.t('quiz.dictation') : i18n.t('quiz.translation') }}</span>
-                <app-icon name="refresh-cw" [size]="10" class="switch-icon" />
-            </div>
-
-            <div class="stats-badge" [class.has-streak]="quiz.streak() > 2">
-                @if (quiz.streak() > 0) {
-                <span class="streak" [title]="i18n.t('quiz.streak')">
-                    <app-icon name="fire" [size]="14" /> {{ quiz.streak() }}
-                </span>
-                }
-                <span class="score" [title]="i18n.t('quiz.score')">
-                    {{ quiz.correctAnswers() }} / {{ quiz.totalQuestions() }}
-                </span>
-            </div>
+    <!-- Header: Floating overlay -->
+    <div class="quiz-header">
+        <div class="mode-badge" (click)="toggleMode()" title="Click to switch mode">
+            <app-icon [name]="quiz.mode() === 'dictation' ? 'headphones' : 'languages'" [size]="14" />
+            <span>{{ quiz.mode() === 'dictation' ? i18n.t('quiz.dictation') : i18n.t('quiz.translation') }}</span>
+            <app-icon name="refresh-cw" [size]="10" class="switch-icon" />
         </div>
 
-        <!-- Main Input Area (Centered, Large) -->
+        <div class="stats-badge" [class.has-streak]="quiz.streak() > 2">
+            @if (quiz.streak() > 0) {
+            <span class="streak" [title]="i18n.t('quiz.streak')">
+                <app-icon name="fire" [size]="14" /> {{ quiz.streak() }}
+            </span>
+            }
+            <span class="score" [title]="i18n.t('quiz.score')">
+                {{ quiz.correctAnswers() }} / {{ quiz.totalQuestions() }}
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Input Area (Centered) -->
+    <div class="quiz-inner">
         <div class="quiz-input-area">
             @if (quiz.questionState() === 'listening') {
             <div class="listening-state" @fadeIn>
@@ -38,20 +38,20 @@
             </div>
             }
         </div>
+    </div>
 
-        <!-- Minimal Controls (Bottom Row) -->
-        <div class="quiz-controls">
-            <button class="btn-icon" (click)="quiz.replaySegment()" [title]="i18n.t('quiz.replay') + ' (R)'">
-                <app-icon name="rotate-ccw" [size]="20" />
-            </button>
+    <!-- Controls: Floating overlay -->
+    <div class="quiz-controls">
+        <button class="btn-icon" (click)="quiz.replaySegment()" [title]="i18n.t('quiz.replay') + ' (R)'">
+            <app-icon name="rotate-ccw" [size]="20" />
+        </button>
 
-            <button class="btn-icon" (click)="quiz.skipQuestion()" [title]="i18n.t('quiz.skip')">
-                <app-icon name="skip-forward" [size]="20" />
-            </button>
+        <button class="btn-icon" (click)="quiz.skipQuestion()" [title]="i18n.t('quiz.skip')">
+            <app-icon name="skip-forward" [size]="20" />
+        </button>
 
-            <button class="btn-icon btn-check" (click)="onSubmit()" [title]="i18n.t('quiz.check') + ' (Enter)'">
-                <app-icon name="check" [size]="20" />
-            </button>
-        </div>
+        <button class="btn-icon btn-check" (click)="onSubmit()" [title]="i18n.t('quiz.check') + ' (Enter)'">
+            <app-icon name="check" [size]="20" />
+        </button>
     </div>
 </div>
