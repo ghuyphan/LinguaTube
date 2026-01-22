@@ -1061,6 +1061,19 @@ ruby rt {
     }
 }
 
+/* Responsive button - icon only on small screens */
+.ctrl-btn--responsive {
+    .ctrl-label {
+        display: none;
+    }
+
+    @media (min-width: 640px) {
+        .ctrl-label {
+            display: inline;
+        }
+    }
+}
+
 .ctrl-badge {
     position: absolute;
     top: -4px;

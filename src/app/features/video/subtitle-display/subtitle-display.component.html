@@ -201,6 +201,13 @@
             }
         </button>
 
+        <!-- Quiz Mode Toggle - Always visible, icon-only on mobile -->
+        <button class="ctrl-btn ctrl-btn--responsive" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
+            [title]="i18n.t('quiz.mode')">
+            <app-icon name="clipboard-check" [size]="16" />
+            <span class="ctrl-label">{{ i18n.t('quiz.mode') }}</span>
+        </button>
+
         <!-- Expand toggle button -->
         <button class="ctrl-btn ctrl-btn--expand" [class.active]="isControlsExpanded()"
             (click)="toggleControlsExpanded()" [title]="i18n.t('subtitle.moreOptions')">
@@ -214,12 +221,6 @@
                 [title]="i18n.t('grammar.mode')">
                 <app-icon name="book-open" [size]="16" />
                 <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
-            </button>
-
-            <!-- Quiz Mode Toggle -->
-            <button class="ctrl-btn" [class.active]="quiz.isActive()" (click)="toggleQuizMode()" [title]="'Quiz Mode'">
-                <app-icon name="clipboard-check" [size]="16" />
-                <span class="ctrl-label">Quiz</span>
             </button>
 
             <!-- Font Size - cycles through S/M/L like fullscreen mode -->
