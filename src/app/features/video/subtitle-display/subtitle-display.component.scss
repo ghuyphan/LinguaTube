@@ -53,6 +53,20 @@
         height: 11rem;
     }
 
+    // Quiz Mode - Needs more vertical space
+    &.is-quiz-active {
+        height: auto;
+        min-height: 14rem;
+        overflow: visible;
+        /* Allow animations to spill if needed */
+
+        /* Remove gradients in quiz mode as it has its own panel */
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+
     &::before {
         content: '';
         position: absolute;

@@ -1,68 +1,60 @@
-<div class="quiz-container" [class]="stateClass()">
+<div class="quiz-container" [ngClass]="stateClass()">
 
-    <!-- Status / Prompt -->
+    <!-- Header: Meta Info (Floating/ subtle) -->
     <div class="quiz-header">
-        <button class="quiz-status-btn" (click)="toggleMode()" title="Switch Quiz Mode">
-            @if (quiz.mode() === 'dictation') {
-            <app-icon name="headphones" [size]="16" class="mode-icon" />
-            <span class="mode-text">Dictation (Type what you hear)</span>
-            } @else {
-            <app-icon name="languages" [size]="16" class="mode-icon" />
-            <span class="mode-text">Translation (Type the meaning)</span>
-            <!-- Could show source text here if needed -->
-            }
-            <app-icon name="chevron-down" [size]="12" class="chevron-icon" />
-        </button>
+        <div class="mode-badge" (click)="toggleMode()" title="Click to switch mode">
+            <app-icon [name]="quiz.mode() === 'dictation' ? 'headphones' : 'languages'" [size]="14" />
+            <span>{{ quiz.mode() === 'dictation' ? i18n.t('quiz.dictation') : i18n.t('quiz.translation') }}</span>
+            <app-icon name="refresh-cw" [size]="10" class="switch-icon" />
+        </div>
 
-        <div class="quiz-stats">
-            <span class="streak-badge" [class.has-streak]="quiz.stats().streak > 1">
-                <app-icon name="fire" [size]="14" />
-                {{ quiz.stats().streak }}
+        <div class="stats-badge" [class.has-streak]="quiz.streak() > 2">
+            @if (quiz.streak() > 0) {
+            <span class="streak" [title]="i18n.t('quiz.streak')">
+                <app-icon name="fire" [size]="14" /> {{ quiz.streak() }}
             </span>
-            <span class="score-text">{{ quiz.stats().correct }}/{{ quiz.stats().total }}</span>
+            }
+            <span class="score" [title]="i18n.t('quiz.score')">
+                {{ quiz.correctAnswers() }} / {{ quiz.totalQuestions() }}
+            </span>
         </div>
     </div>
 
-    <!-- Main Interaction Area -->
+    <!-- Main Input Area (Centered, Large) -->
     <div class="quiz-input-area">
-        <div class="input-wrapper" [@shake]="isShake()">
-            <input #inputField type="text" [(ngModel)]="inputValue" (keydown.enter)="onSubmit()"
-                [placeholder]="quiz.questionState() === 'listening' ? 'Listening...' : 'Type here...'"
-                [disabled]="quiz.questionState() === 'listening' || quiz.questionState() === 'success'"
-                class="quiz-input" [class.is-success]="quiz.questionState() === 'success'"
-                [class.is-error]="quiz.questionState() === 'failed'" autocomplete="off" spellcheck="false" />
-
-            <div class="input-actions">
-                @if (quiz.questionState() === 'success') {
-                <div class="result-icon success" @fadeIn>
-                    <app-icon name="check" [size]="20" />
-                </div>
-                } @else if (quiz.questionState() === 'failed') {
-                <div class="result-icon error" @fadeIn>
-                    <app-icon name="x" [size]="20" />
-                </div>
-                }
+        @if (quiz.questionState() === 'listening') {
+        <div class="listening-state" @fadeIn>
+            <div class="listening-indicator">
+                <span class="pulse-dot"></span>
+                <span>{{ i18n.t('quiz.listening') }}</span>
             </div>
         </div>
+        } @else {
+        <div class="input-wrapper" [@shake]="isShake()" @fadeIn>
+            <!-- Removed input-actions, using text color/underline for feedback now -->
+            <input #inputField type="text" [(ngModel)]="inputValue" (keydown.enter)="onSubmit()"
+                [placeholder]="getPlaceholder()" [disabled]="quiz.questionState() === 'success'" class="quiz-input"
+                [class.is-success]="quiz.questionState() === 'success'"
+                [class.is-error]="quiz.questionState() === 'failed'" autocomplete="off" spellcheck="false" />
+        </div>
+        }
     </div>
 
-    <!-- Controls -->
+    <!-- Minimal Controls (Bottom Row) -->
     <div class="quiz-controls">
-        <button class="btn btn-ghost btn-sm" (click)="onReplay()" [disabled]="quiz.questionState() === 'success'">
-            <app-icon name="repeat" [size]="16" />
-            <span>Replay</span>
+        <button class="btn-icon" (click)="quiz.replaySegment()" [title]="i18n.t('quiz.replay') + ' (R)'">
+            <app-icon name="rotate-ccw" [size]="20" />
+            <!-- Optional label <span class="btn-label">Replay</span> -->
         </button>
 
-        <div class="spacer"></div>
-
-        <button class="btn btn-ghost btn-sm" (click)="onSkip()" [disabled]="quiz.questionState() === 'success'">
-            <span>Skip</span>
+        <button class="btn-icon" (click)="quiz.skipQuestion()" [title]="i18n.t('quiz.skip')">
+            <app-icon name="skip-forward" [size]="20" />
         </button>
 
-        <button class="btn btn-primary btn-sm" (click)="onSubmit()"
-            [disabled]="!inputValue().trim() || quiz.questionState() === 'success' || quiz.questionState() === 'listening'">
-            <span>Check</span>
-            <app-icon name="arrow-right" [size]="16" />
+        <!-- Check button mainly for mobile or click preference, Enter key is primary -->
+        <button class="btn-icon btn-check" (click)="onSubmit()" [title]="i18n.t('quiz.check') + ' (Enter)'">
+            <app-icon name="check" [size]="20" />
         </button>
     </div>
+
 </div>

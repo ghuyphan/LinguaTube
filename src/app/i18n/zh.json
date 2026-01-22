@@ -365,5 +365,20 @@
                 "together": "一起"
             }
         }
+    },
+    "quiz": {
+        "dictation": "听写",
+        "translation": "翻译",
+        "dictationHint": "输入听到的内容",
+        "translationHint": "输入含义",
+        "listening": "正在收听...",
+        "placeholderDictation": "请输入您听到的内容...",
+        "placeholderTranslation": "请输入翻译...",
+        "replay": "重放",
+        "skip": "跳过",
+        "check": "检查",
+        "score": "得分",
+        "streak": "连胜",
+        "mode": "测验模式"
     }
 }

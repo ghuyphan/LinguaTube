@@ -367,5 +367,20 @@
                 "together": "together"
             }
         }
+    },
+    "quiz": {
+        "dictation": "Dictation",
+        "translation": "Translation",
+        "dictationHint": "Type what you hear",
+        "translationHint": "Type the meaning",
+        "listening": "Listening...",
+        "placeholderDictation": "Type what you hear...",
+        "placeholderTranslation": "Type the translation...",
+        "replay": "Replay",
+        "skip": "Skip",
+        "check": "Check",
+        "score": "Score",
+        "streak": "Streak",
+        "mode": "Quiz Mode"
     }
 }

@@ -4,7 +4,8 @@
     <div class="current-subtitle" [class.current-subtitle--small]="settings.settings().fontSize === 'small'"
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
         [class.is-generating]="transcript.isGeneratingAI()" [class.has-scroll-top]="hasScrollTop()"
-        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko'].includes(effectiveLanguage())">
+        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko'].includes(effectiveLanguage())"
+        [class.is-quiz-active]="quiz.isActive()">
 
         @if (quiz.isActive()) {
         <app-quiz-input />

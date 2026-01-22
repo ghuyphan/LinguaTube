@@ -709,6 +709,9 @@ export class SubtitleDisplayComponent {
     if (this.quiz.isActive()) {
       this.quiz.stopQuiz();
     } else {
+      if (this.isLoopEnabled()) {
+        this.disableLoop();
+      }
       this.quiz.startQuiz();
     }
   }

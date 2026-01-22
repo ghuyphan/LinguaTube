@@ -40,6 +40,11 @@ export class QuizService {
     readonly isActive = computed(() => this.state() === 'active');
     readonly isListening = computed(() => this.questionState() === 'listening');
 
+    // Computed helper signals for template access
+    readonly streak = computed(() => this.stats().streak);
+    readonly correctAnswers = computed(() => this.stats().correct);
+    readonly totalQuestions = computed(() => this.stats().total);
+
     private playbackTimeout: ReturnType<typeof setTimeout> | null = null;
     private currentCueIndex = -1;
 
@@ -108,6 +113,10 @@ export class QuizService {
         this.questionState.set('listening');
         this.youtubeService.seekTo(cue.startTime);
         this.youtubeService.play();
+    }
+
+    replaySegment(): void {
+        this.playSegment();
     }
 
     private pauseAndPrompt(): void {

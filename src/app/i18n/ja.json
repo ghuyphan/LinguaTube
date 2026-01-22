@@ -365,5 +365,20 @@
                 "together": "一緒に"
             }
         }
+    },
+    "quiz": {
+        "dictation": "書き取り",
+        "translation": "翻訳",
+        "dictationHint": "聞こえた通りに入力",
+        "translationHint": "意味を入力",
+        "listening": "リスニング中...",
+        "placeholderDictation": "聞こえた通りに入力してください...",
+        "placeholderTranslation": "翻訳を入力してください...",
+        "replay": "リプレイ",
+        "skip": "スキップ",
+        "check": "確認",
+        "score": "スコア",
+        "streak": "ストリーク",
+        "mode": "クイズモード"
     }
 }

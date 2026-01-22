@@ -1,152 +1,296 @@
 :host {
     display: block;
     width: 100%;
+    /* Align with subtitle text placement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .quiz-container {
-    background: var(--bg-card);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--border-color);
-    padding: var(--space-md);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    /* Remove card styling to blend with subtitle display */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    transition: all var(--transition-normal);
+    position: relative;
+
+    &::after {
+        display: none;
+    }
+
+    /* Remove accent border */
 
     &.is-success {
         border-color: var(--success);
-        background: rgba(var(--success-rgb), 0.05);
+        background: linear-gradient(to bottom, rgba(var(--success-rgb), 0.02), rgba(var(--success-rgb), 0.08));
+
+        &::after {
+            background: var(--success);
+            opacity: 1;
+        }
     }
 
     &.is-error {
         border-color: var(--error);
-    }
-}
+        background: linear-gradient(to bottom, rgba(var(--error-rgb), 0.02), rgba(var(--error-rgb), 0.08));
 
-.quiz-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-secondary);
-    font-size: var(--text-sm);
-}
-
-.quiz-status-btn {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    background: none;
-    border: none;
-    padding: 2px 6px;
-    margin: -2px -6px;
-    border-radius: var(--border-radius-sm);
-    color: var(--text-primary);
-    /* Darker for better visibility */
-    cursor: pointer;
-    font-size: inherit;
-    font-family: inherit;
-    transition: background var(--transition-fast);
-
-    &:hover {
-        background: var(--bg-secondary);
+        &::after {
+            background: var(--error);
+            opacity: 1;
+        }
     }
 
-    .mode-icon {
-        color: var(--accent-primary);
-    }
+    &.is-listening {
+        border-color: var(--accent-secondary);
+        box-shadow: 0 0 0 2px rgba(var(--accent-secondary-rgb), 0.1);
 
-    .chevron-icon {
-        color: var(--text-muted);
-        margin-left: 2px;
-    }
-}
-
-.quiz-stats {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.streak-badge {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    font-weight: 600;
-    color: var(--text-muted);
-    transition: all var(--transition-spring);
-
-    &.has-streak {
-        color: #f59e0b;
-        /* Amber */
-
-        app-icon {
-            fill: currentColor;
+        &::after {
+            background: var(--accent-secondary);
+            opacity: 1;
         }
     }
 }
 
+/* Header becomes minimal meta-data row */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--space-md);
+    opacity: 0.8;
+}
+
+.mode-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.2);
+    /* Subtle pill */
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-primary);
+        transform: translateY(-1px);
+    }
+}
+
+.switch-icon {
+    opacity: 0.6;
+}
+
+.stats-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+
+    &.has-streak .streak {
+        color: #f59e0b;
+        background: rgba(245, 158, 11, 0.1);
+        padding: 2px 8px;
+        border-radius: var(--border-radius-pill);
+        border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+}
+
+.streak {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+}
+
+.score {
+    color: var(--text-secondary);
+}
+
+/* Pulsing dot for listening state */
+.listening-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-secondary);
+    font-weight: 500;
+    font-size: var(--text-sm);
+
+    .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: currentColor;
+        border-radius: 50%;
+        animation: pulse 1.5s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(var(--accent-secondary-rgb), 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(var(--accent-secondary-rgb), 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(var(--accent-secondary-rgb), 0);
+    }
+}
+
+/* Main Input Area - Mimics Subtitle Text */
 .quiz-input-area {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: var(--space-sm) 0;
 }
 
 .input-wrapper {
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .quiz-input {
     width: 100%;
-    height: var(--input-height-lg);
-    font-size: var(--text-lg);
-    padding-right: 40px;
-    /* Space for icon */
+    background: transparent;
+    border: none;
+    /* Remove visible border to make it feel like raw text */
+    outline: none;
+    border-radius: 0;
 
-    &.is-success {
-        border-color: var(--success);
-        color: var(--success);
+    /* Typography matching subtitle panel exactly */
+    font-size: 1.75rem;
+    /* Slightly larger to match typical subtitle prominence */
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--text-primary);
+    padding: 0;
+    margin: 0;
+
+    /* Make caret visible and prominent */
+    caret-color: var(--accent-primary);
+
+    transition: all var(--transition-fast);
+
+    &:focus {
+        outline: none;
+        background: transparent;
+        box-shadow: none;
     }
 
-    &.is-error {
-        border-color: var(--error);
-        color: var(--error);
-    }
-
-    &:disabled {
-        background: var(--bg-secondary);
-        opacity: 0.8;
+    &::placeholder {
+        color: var(--text-muted);
+        opacity: 0.3;
+        /* Very subtle placeholder */
+        font-weight: 400;
+        font-style: normal;
     }
 }
 
-.input-actions {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+
+
+/* State Feedback via Text Color/Glow */
+.quiz-input.is-success {
+    color: var(--success);
+    text-shadow: 0 0 20px rgba(var(--success-rgb), 0.4);
+}
+
+.quiz-input.is-error {
+    color: var(--error);
+    text-shadow: 0 0 20px rgba(var(--error-rgb), 0.4);
+    animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+/* Listening State - Centered pulsing text */
+.listening-state {
+    width: 100%;
+    height: 4rem;
+    /* Approximate height of input */
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
+    background: transparent;
+    border: none;
+    color: var(--accent-secondary);
+    font-size: 1.25rem;
+    gap: 12px;
 }
 
-.result-icon {
-    display: flex;
-    align-items: center;
-
-    &.success {
-        color: var(--success);
-    }
-
-    &.error {
-        color: var(--error);
-    }
+.pulse-dot {
+    width: 10px;
+    height: 10px;
 }
 
+/* Controls - Floating/Minimal */
+/* Controls - Floating/Minimal */
 .quiz-controls {
     display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 4px;
+    font-size: 0.75rem;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        transform: scale(1.1);
+    }
+
+    &.btn-check {
+        color: var(--accent-primary);
+        border: 1px solid rgba(var(--accent-primary-rgb), 0.3);
+
+        &:hover {
+            background: rgba(var(--accent-primary-rgb), 0.1);
+        }
+    }
 }
 
 .spacer {
-    flex: 1;
+    display: none;
 }
+
+/* Not needed in centered layout */

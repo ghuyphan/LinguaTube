@@ -365,5 +365,20 @@
                 "together": "함께"
             }
         }
+    },
+    "quiz": {
+        "dictation": "받아쓰기",
+        "translation": "번역",
+        "dictationHint": "들리는 대로 입력",
+        "translationHint": "의미를 입력",
+        "listening": "듣는 중...",
+        "placeholderDictation": "들리는 대로 입력하세요...",
+        "placeholderTranslation": "번역을 입력하세요...",
+        "replay": "다시 듣기",
+        "skip": "건너뛰기",
+        "check": "확인",
+        "score": "점수",
+        "streak": "연속",
+        "mode": "퀴즈 모드"
     }
 }

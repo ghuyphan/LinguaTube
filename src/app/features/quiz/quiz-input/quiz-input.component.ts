@@ -1,7 +1,8 @@
 import { Component, ChangeDetectionStrategy, inject, signal, effect, computed, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { QuizService, QuestionState } from '../../video/quiz.service'; // Adjust import path
+import { QuizService, QuestionState } from '../../video/quiz.service';
+import { I18nService } from '../../../core/services/i18n.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { trigger, transition, style, animate, keyframes } from '@angular/animations';
 
@@ -35,6 +36,7 @@ import { trigger, transition, style, animate, keyframes } from '@angular/animati
 })
 export class QuizInputComponent {
     quiz = inject(QuizService);
+    i18n = inject(I18nService);
 
     @ViewChild('inputField') inputField!: ElementRef<HTMLInputElement>;
 
@@ -49,6 +51,12 @@ export class QuizInputComponent {
             default: return '';
         }
     });
+
+    getPlaceholder(): string {
+        return this.quiz.mode() === 'dictation' ?
+            this.i18n.t('quiz.placeholderDictation') :
+            this.i18n.t('quiz.placeholderTranslation');
+    }
 
     constructor() {
         // Focus input when answering state begins

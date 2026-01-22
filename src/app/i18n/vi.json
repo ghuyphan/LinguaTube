@@ -367,5 +367,19 @@
                 "together": "cùng nhau"
             }
         }
+    },
+    "quiz": {
+        "dictation": "Nghe chép chính tả",
+        "translation": "Dịch nghĩa",
+        "dictationHint": "Nhập những gì bạn nghe được",
+        "translationHint": "Nhập ý nghĩa câu",
+        "listening": "Đang nghe...",
+        "placeholderDictation": "Nhập những gì bạn nghe được...",
+        "placeholderTranslation": "Nhập bản dịch...",
+        "replay": "Nghe lại",
+        "skip": "Bỏ qua",
+        "check": "Kiểm tra",
+        "score": "Điểm",
+        "streak": "Chuỗi"
     }
 }
