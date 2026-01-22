@@ -58,12 +58,21 @@
         height: auto;
         min-height: 14rem;
         overflow: visible;
-        /* Allow animations to spill if needed */
+
+        /* Flex container so quiz-input can fill height */
+        display: flex;
+        flex-direction: column;
 
         /* Remove gradients in quiz mode as it has its own panel */
         &::before,
         &::after {
             display: none;
+        }
+
+        /* Make the quiz-input component fill the container */
+        app-quiz-input {
+            flex: 1;
+            display: flex;
         }
     }
 
