@@ -1,40 +1,52 @@
 /* 
  * Quiz Input Component
- * Designed to match the subtitle-display .subtitle-text styling exactly.
- * No separate UI chrome - just the input that looks like subtitle text.
+ * Mirrors the exact structure of .current-subtitle__inner + .subtitle-center-wrapper
+ * so there's no layout shift when toggling quiz mode.
  */
 
 :host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
     height: 100%;
-    /* Fill parent container */
 }
 
+/* Mirrors .current-subtitle__inner */
 .quiz-container {
-    width: 100%;
     height: 100%;
-    /* Fill host */
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--space-sm) var(--space-md);
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Mirrors .subtitle-center-wrapper */
+.quiz-inner {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: var(--space-xs) 0;
     gap: var(--space-sm);
-    padding: var(--space-xs) var(--space-md);
 }
 
 /* ============================================
-   HEADER - Minimal, matches subtitle metadata
+   HEADER - Subtle meta info (mode + stats)
    ============================================ */
 .quiz-header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 0 var(--space-md);
     font-size: 0.75rem;
     color: var(--text-muted);
 }
@@ -84,29 +96,18 @@
 }
 
 /* ============================================
-   INPUT AREA - Matches .subtitle-text exactly
+   INPUT AREA - Mirrors .subtitle-text exactly
    ============================================ */
 .quiz-input-area {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    /* Match .subtitle-center-wrapper */
 }
 
 .input-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
-/* 
- * The input itself - styled to match .subtitle-text exactly 
- */
+/* Mirrors .subtitle-text typography */
 .quiz-input {
-    /* Match .subtitle-text typography */
     font-size: 1.375rem;
     line-height: 2.1;
     text-align: center;
@@ -115,15 +116,13 @@
     border-radius: var(--border-radius-lg);
     padding: var(--space-sm) var(--space-md);
     max-width: 100%;
+    width: 100%;
 
-    /* Make it invisible as an input */
+    /* Invisible input */
     background: transparent;
     border: none;
     outline: none;
     color: var(--text-primary);
-    width: 100%;
-
-    /* Caret styling */
     caret-color: var(--accent-primary);
 
     &::placeholder {
@@ -131,7 +130,6 @@
         opacity: 0.5;
     }
 
-    /* Remove ALL focus styling */
     &:focus,
     &:focus-visible,
     &:active {
@@ -140,12 +138,10 @@
         box-shadow: none;
     }
 
-    /* Success - subtle glow, no jarring color change */
     &.is-success {
         color: var(--success);
     }
 
-    /* Error - subtle glow + shake */
     &.is-error {
         color: var(--error);
         animation: shake 0.4s ease-in-out;
@@ -177,17 +173,13 @@
 }
 
 /* ============================================
-   LISTENING STATE - Matches subtitle text style
+   LISTENING STATE - Matches subtitle text position
    ============================================ */
 .listening-state {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .listening-indicator {
-    /* Match .subtitle-text typography */
     font-size: 1.375rem;
     line-height: 2.1;
     text-align: center;
@@ -195,6 +187,7 @@
 
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     color: var(--text-muted);
 
@@ -222,14 +215,13 @@
 }
 
 /* ============================================
-   CONTROLS - Minimal, unobtrusive
+   CONTROLS - Minimal action buttons
    ============================================ */
 .quiz-controls {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-xs) 0;
 }
 
 .btn-icon {
@@ -250,7 +242,6 @@
         background: rgba(var(--text-muted-rgb), 0.1);
     }
 
-    /* Primary action button */
     &.btn-check {
         color: var(--accent-primary);
 
