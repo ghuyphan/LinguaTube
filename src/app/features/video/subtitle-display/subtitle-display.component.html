@@ -179,7 +179,9 @@
     <!-- Controls -->
     <div class="subtitle-controls" #subtitleControls>
         <!-- Primary controls - always visible -->
-        <button class="ctrl-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
+
+        <!-- Loop Button -->
+        <button class="ctrl-btn ctrl-btn--responsive" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
             [title]="i18n.t('subtitle.loop') + ' (L)'">
             <app-icon name="repeat" [size]="16" />
             <span class="ctrl-label">{{ i18n.t('subtitle.loop') }}</span>
@@ -188,24 +190,26 @@
             }
         </button>
 
-        <button class="ctrl-btn" [class.active]="showReading()" (click)="toggleReading()"
-            [title]="'Toggle ' + readingLabel()">
-            <app-icon name="type" [size]="16" />
-            <span class="ctrl-label">{{ readingLabel() }}</span>
-        </button>
-
-        <button class="ctrl-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
+        <!-- Added Words Button -->
+        <button class="ctrl-btn ctrl-btn--responsive" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
             <app-icon name="bookmark-plus" [size]="16" />
+            <span class="ctrl-label">{{ i18n.t('nav.added') }}</span>
             @if (recentCount() > 0) {
             <span class="ctrl-badge">{{ recentCount() }}</span>
             }
         </button>
 
-        <!-- Quiz Mode Toggle - Always visible, icon-only on mobile -->
+        <!-- Quiz Mode Toggle -->
         <button class="ctrl-btn ctrl-btn--responsive" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
             [title]="i18n.t('quiz.mode')">
             <app-icon name="clipboard-check" [size]="16" />
             <span class="ctrl-label">{{ i18n.t('quiz.mode') }}</span>
+        </button>
+
+        <!-- Font Size Button -->
+        <button class="ctrl-btn ctrl-btn--responsive" (click)="cycleFontSize()" [title]="i18n.t('subtitle.fontSize')">
+            <app-icon name="type" [size]="16" />
+            <span class="ctrl-label">{{ getFontSizeLabel() }}</span>
         </button>
 
         <!-- Expand toggle button -->
@@ -216,19 +220,19 @@
 
         <!-- Expandable section -->
         <div class="controls-expand" [class.expanded]="isControlsExpanded()">
+            <!-- Reading Toggle -->
+            <button class="ctrl-btn" [class.active]="showReading()" (click)="toggleReading()"
+                [title]="'Toggle ' + readingLabel()">
+                <app-icon name="eye" [size]="16" />
+                <span class="ctrl-label">{{ readingLabel() }}</span>
+            </button>
+
             <!-- Grammar Mode Toggle -->
             <button class="ctrl-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
                 [title]="i18n.t('grammar.mode')">
                 <app-icon name="book-open" [size]="16" />
                 <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
             </button>
-
-            <!-- Font Size - cycles through S/M/L like fullscreen mode -->
-            <button class="ctrl-btn" (click)="cycleFontSize()" [title]="i18n.t('subtitle.fontSize')">
-                <span class="font-size-label">{{ getFontSizeLabel() }}</span>
-            </button>
-
-
         </div>
     </div>
     }
