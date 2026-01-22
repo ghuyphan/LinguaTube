@@ -33,6 +33,7 @@ import {
   GrammarService,
   TranslationService
 } from '../../../services';
+import { QuizService } from '../quiz.service';
 import { PlaylistService } from '../../playlist/playlist.service';
 import { Token, SubtitleCue, DictionaryEntry, GrammarPattern, GrammarMatch } from '../../../models';
 import {
@@ -66,6 +67,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
+  quiz = inject(QuizService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
   protected playlistService = inject(PlaylistService);
@@ -505,14 +507,22 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       case 'ArrowLeft':
       case 'KeyJ':
         event.preventDefault();
-        this.seekRelative(-SEEK_STEP);
-        this.showSeekFeedback('left', SEEK_STEP);
+        if (this.quiz.isActive()) {
+          this.quiz.replaySegment();
+        } else {
+          this.seekRelative(-SEEK_STEP);
+          this.showSeekFeedback('left', SEEK_STEP);
+        }
         break;
       case 'ArrowRight':
       case 'KeyL':
         event.preventDefault();
-        this.seekRelative(SEEK_STEP);
-        this.showSeekFeedback('right', SEEK_STEP);
+        if (this.quiz.isActive()) {
+          this.quiz.skipQuestion();
+        } else {
+          this.seekRelative(SEEK_STEP);
+          this.showSeekFeedback('right', SEEK_STEP);
+        }
         break;
       case 'ArrowUp':
         event.preventDefault();
@@ -722,7 +732,11 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
     switch (event.type) {
       case 'double-tap-left':
-        this.showSeekFeedback('left', event.data?.seconds || SEEK_STEP);
+        if (this.quiz.isActive()) {
+          this.quiz.replaySegment();
+        } else {
+          this.showSeekFeedback('left', event.data?.seconds || SEEK_STEP);
+        }
         if (rect) {
           const x = rect.width * 0.25;
           const y = rect.height * 0.5;
@@ -735,7 +749,11 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
         break;
 
       case 'double-tap-right':
-        this.showSeekFeedback('right', event.data?.seconds || SEEK_STEP);
+        if (this.quiz.isActive()) {
+          this.quiz.skipQuestion();
+        } else {
+          this.showSeekFeedback('right', event.data?.seconds || SEEK_STEP);
+        }
         if (rect) {
           const x = rect.width * 0.25;
           const y = rect.height * 0.5;
