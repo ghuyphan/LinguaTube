@@ -53,17 +53,17 @@
         height: 11rem;
     }
 
-    // Quiz Mode - Needs more vertical space
+    // Quiz Mode - Same height as normal mode to prevent layout shift
     &.is-quiz-active {
-        height: auto;
-        min-height: 14rem;
+        height: 9rem;
+        /* Match normal state exactly */
         overflow: visible;
 
-        /* Flex container so quiz-input can fill height */
+        /* Flex container so quiz-input fills the space */
         display: flex;
         flex-direction: column;
 
-        /* Remove gradients in quiz mode as it has its own panel */
+        /* Remove gradients in quiz mode */
         &::before,
         &::after {
             display: none;
@@ -73,6 +73,7 @@
         app-quiz-input {
             flex: 1;
             display: flex;
+            width: 100%;
         }
     }
 
