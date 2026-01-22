@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, effect, computed, ElementRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, effect, computed, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { QuizService, QuestionState } from '../../video/quiz.service';
@@ -34,7 +34,7 @@ import { trigger, transition, style, animate, keyframes } from '@angular/animati
     templateUrl: './quiz-input.component.html',
     styleUrl: './quiz-input.component.scss'
 })
-export class QuizInputComponent {
+export class QuizInputComponent implements OnDestroy {
     quiz = inject(QuizService);
     i18n = inject(I18nService);
 
@@ -42,6 +42,9 @@ export class QuizInputComponent {
 
     inputValue = signal('');
     isShake = signal(false);
+
+    // Track timeouts for cleanup
+    private timeouts: ReturnType<typeof setTimeout>[] = [];
 
     stateClass = computed(() => {
         switch (this.quiz.questionState()) {
@@ -61,18 +64,26 @@ export class QuizInputComponent {
     constructor() {
         // Focus input when answering state begins
         effect(() => {
-            if (this.quiz.questionState() === 'answering') {
-                setTimeout(() => {
+            const state = this.quiz.questionState();
+
+            if (state === 'answering') {
+                this.scheduleTimeout(() => {
                     this.inputField?.nativeElement?.focus();
                 }, 100);
-            } else if (this.quiz.questionState() === 'success') {
-                // Clear input on success (after delay handles in service usually, but good to reset UI)
-                // setTimeout(() => this.inputValue.set(''), 1000); 
-                // Actually, keep it to show what they typed? Let service reset it on next question.
-            } else if (this.quiz.questionState() === 'waiting') {
+            } else if (state === 'success') {
+                // Clear input after brief delay so user sees their correct answer
+                this.scheduleTimeout(() => this.inputValue.set(''), 800);
+            } else if (state === 'waiting' || state === 'listening') {
+                // Clear immediately when starting new question
                 this.inputValue.set('');
             }
         });
+    }
+
+    ngOnDestroy(): void {
+        // Clear all pending timeouts
+        this.timeouts.forEach(id => clearTimeout(id));
+        this.timeouts = [];
     }
 
     onSubmit(): void {
@@ -97,11 +108,20 @@ export class QuizInputComponent {
         const newMode = this.quiz.mode() === 'dictation' ? 'translation' : 'dictation';
         this.quiz.switchMode(newMode);
         // Refocus input
-        setTimeout(() => this.inputField?.nativeElement?.focus(), 100);
+        this.scheduleTimeout(() => this.inputField?.nativeElement?.focus(), 100);
     }
 
     private triggerShake(): void {
         this.isShake.set(true);
-        setTimeout(() => this.isShake.set(false), 400);
+        this.scheduleTimeout(() => this.isShake.set(false), 400);
+    }
+
+    private scheduleTimeout(callback: () => void, delay: number): void {
+        const id = setTimeout(() => {
+            callback();
+            // Remove from tracked list after execution
+            this.timeouts = this.timeouts.filter(t => t !== id);
+        }, delay);
+        this.timeouts.push(id);
     }
 }
