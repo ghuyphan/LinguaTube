@@ -188,18 +188,18 @@
 }
 
 .listening-indicator {
-    font-size: 1.375rem;
-    line-height: 2.1;
+    font-size: 0.875rem;
+    line-height: 1.6;
     text-align: center;
 
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: var(--text-muted);
 
     .pulse-dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         background-color: var(--accent-secondary);
         border-radius: 50%;
         animation: pulse 1.5s ease-in-out infinite;
