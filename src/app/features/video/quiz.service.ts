@@ -214,6 +214,13 @@ export class QuizService {
         this.nextQuestion();
     }
 
+    retryQuestion(): void {
+        // Reset state to allow user to try again
+        this.questionState.set('answering');
+        this.currentInput.set('');
+        this.answerComparison.set([]);
+    }
+
     private finishQuiz(): void {
         this.state.set('completed');
     }

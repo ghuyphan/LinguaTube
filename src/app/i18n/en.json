@@ -382,6 +382,9 @@
         "score": "Score",
         "streak": "Streak",
         "mode": "Quiz Mode",
-        "correctAnswer": "Correct"
+        "correctAnswer": "Correct",
+        "yourAnswer": "Your answer",
+        "retry": "Retry",
+        "next": "Next"
     }
 }

@@ -111,6 +111,13 @@ export class QuizInputComponent implements OnDestroy {
         this.scheduleTimeout(() => this.inputField?.nativeElement?.focus(), 100);
     }
 
+    onRetry(): void {
+        // Reset to answering state so user can try again
+        this.quiz.retryQuestion();
+        this.inputValue.set('');
+        this.scheduleTimeout(() => this.inputField?.nativeElement?.focus(), 100);
+    }
+
     private triggerShake(): void {
         this.isShake.set(true);
         this.scheduleTimeout(() => this.isShake.set(false), 400);

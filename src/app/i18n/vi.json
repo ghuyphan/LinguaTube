@@ -382,6 +382,9 @@
         "score": "Điểm",
         "streak": "Chuỗi",
         "mode": "Chế độ Quiz",
-        "correctAnswer": "Đáp án đúng"
+        "correctAnswer": "Đáp án đúng",
+        "yourAnswer": "Câu trả lời của bạn",
+        "retry": "Thử lại",
+        "next": "Tiếp"
     }
 }

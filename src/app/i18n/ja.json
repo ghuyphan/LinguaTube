@@ -380,6 +380,9 @@
         "score": "スコア",
         "streak": "ストリーク",
         "mode": "クイズモード",
-        "correctAnswer": "正解"
+        "correctAnswer": "正解",
+        "yourAnswer": "あなたの回答",
+        "retry": "もう一度",
+        "next": "次へ"
     }
 }
