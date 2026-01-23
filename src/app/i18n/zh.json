@@ -379,6 +379,7 @@
         "check": "检查",
         "score": "得分",
         "streak": "连胜",
-        "mode": "测验模式"
+        "mode": "测验模式",
+        "correctAnswer": "正确答案"
     }
 }

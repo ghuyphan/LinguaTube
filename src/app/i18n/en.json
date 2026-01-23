@@ -381,6 +381,7 @@
         "check": "Check",
         "score": "Score",
         "streak": "Streak",
-        "mode": "Quiz Mode"
+        "mode": "Quiz Mode",
+        "correctAnswer": "Correct"
     }
 }

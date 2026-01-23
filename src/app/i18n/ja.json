@@ -379,6 +379,7 @@
         "check": "確認",
         "score": "スコア",
         "streak": "ストリーク",
-        "mode": "クイズモード"
+        "mode": "クイズモード",
+        "correctAnswer": "正解"
     }
 }

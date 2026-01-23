@@ -381,6 +381,7 @@
         "check": "Kiểm tra",
         "score": "Điểm",
         "streak": "Chuỗi",
-        "mode": "Chế độ Quiz"
+        "mode": "Chế độ Quiz",
+        "correctAnswer": "Đáp án đúng"
     }
 }

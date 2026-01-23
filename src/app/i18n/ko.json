@@ -379,6 +379,7 @@
         "check": "확인",
         "score": "점수",
         "streak": "연속",
-        "mode": "퀴즈 모드"
+        "mode": "퀴즈 모드",
+        "correctAnswer": "정답"
     }
 }

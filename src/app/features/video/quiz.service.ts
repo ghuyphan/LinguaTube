@@ -13,6 +13,13 @@ export interface QuizStats {
     streak: number;
 }
 
+export interface ComparisonChar {
+    char: string;
+    isCorrect: boolean;
+    isMissing?: boolean;  // Character exists in target but not in input
+    isExtra?: boolean;    // Character exists in input but not in target
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -35,6 +42,10 @@ export class QuizService {
         correct: 0,
         streak: 0
     });
+
+    // Comparison result for showing diff on failure
+    readonly answerComparison = signal<ComparisonChar[]>([]);
+    readonly correctAnswer = signal<string>('');
 
     // Computed
     readonly isActive = computed(() => this.state() === 'active');
@@ -131,38 +142,33 @@ export class QuizService {
         this.currentInput.set(input);
         let isCorrect = false;
 
+        // Similarity threshold - 85% match is considered correct
+        const SIMILARITY_THRESHOLD = 0.85;
+
+        // Determine the target text based on mode
+        let targetText: string;
         if (this.mode() === 'dictation') {
-            const normalizedInput = this.normalize(input);
-            const normalizedTarget = this.normalize(cue.text);
-
-            // Simple exact match for now, maybe fuzzy later
-            isCorrect = normalizedInput === normalizedTarget;
+            targetText = cue.text;
         } else {
-            // Translation mode: Check against dual subtitle
-            // We access the signal directly from the service
             const translations = this.subtitleService.cueTranslations();
-            const targetTranslation = translations.get(cue.id);
-
-            if (targetTranslation) {
-                const normalizedInput = this.normalize(input);
-                const normalizedTarget = this.normalize(targetTranslation);
-                // Fuzzy-ish match: input should be somewhat close or contain key words
-                // For strict MVP: exact match (normalized)
-                isCorrect = normalizedInput === normalizedTarget;
-                // Relaxed: if input is > 50% similar or contains the main words? 
-                // Levenshtein distance would be better but simple inclusion might pass for now
-                if (!isCorrect && normalizedTarget.length > 5) {
-                    isCorrect = normalizedTarget.includes(normalizedInput) && normalizedInput.length > normalizedTarget.length * 0.6;
-                }
-            } else {
-                // Fallback if no translation loaded
-                isCorrect = input.length > 2;
-            }
+            targetText = translations.get(cue.id) || '';
         }
 
+        const normalizedInput = this.normalize(input);
+        const normalizedTarget = this.normalize(targetText);
+
+        // Use fuzzy matching for better UX
+        const similarity = this.calculateSimilarity(normalizedInput, normalizedTarget);
+        isCorrect = similarity >= SIMILARITY_THRESHOLD;
+
         if (isCorrect) {
+            this.answerComparison.set([]);
+            this.correctAnswer.set('');
             this.handleSuccess();
         } else {
+            // Generate comparison for display
+            this.correctAnswer.set(targetText);
+            this.answerComparison.set(this.generateComparison(input, targetText));
             this.handleFailure();
         }
 
@@ -214,9 +220,110 @@ export class QuizService {
 
     private normalize(text: string): string {
         return text.toLowerCase()
-            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-            .replace(/\s{2,}/g, " ")
+            // Remove Western punctuation
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()'"?]/g, "")
+            // Remove CJK punctuation (Chinese, Japanese, Korean)
+            .replace(/[。、！？「」『』【】（）《》〈〉・：；，""''～…—－]/g, "")
+            // Remove Japanese-specific punctuation
+            .replace(/[｡､｢｣]/g, "")
+            // Normalize all whitespace (including full-width spaces) to single space
+            .replace(/[\s\u3000]+/g, " ")
             .trim();
+    }
+
+    /**
+     * Calculate similarity ratio between two strings (0-1)
+     * Uses a simple character-based approach suitable for CJK and Latin text
+     */
+    private calculateSimilarity(input: string, target: string): number {
+        if (target.length === 0) return input.length === 0 ? 1 : 0;
+        if (input.length === 0) return 0;
+
+        // For very short strings, be stricter
+        if (target.length <= 3) {
+            return input === target ? 1 : 0;
+        }
+
+        // Levenshtein distance
+        const matrix: number[][] = [];
+        for (let i = 0; i <= input.length; i++) {
+            matrix[i] = [i];
+        }
+        for (let j = 0; j <= target.length; j++) {
+            matrix[0][j] = j;
+        }
+        for (let i = 1; i <= input.length; i++) {
+            for (let j = 1; j <= target.length; j++) {
+                const cost = input[i - 1] === target[j - 1] ? 0 : 1;
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j] + 1,      // deletion
+                    matrix[i][j - 1] + 1,      // insertion
+                    matrix[i - 1][j - 1] + cost // substitution
+                );
+            }
+        }
+
+        const distance = matrix[input.length][target.length];
+        const maxLength = Math.max(input.length, target.length);
+        return 1 - distance / maxLength;
+    }
+
+    /**
+     * Generate character-by-character comparison for display
+     * Shows which characters are correct, wrong, missing, or extra
+     */
+    private generateComparison(input: string, target: string): ComparisonChar[] {
+        const result: ComparisonChar[] = [];
+
+        // Use dynamic programming to find the longest common subsequence
+        // This gives us a better alignment than simple character-by-character comparison
+        const m = input.length;
+        const n = target.length;
+
+        // Build LCS matrix
+        const dp: number[][] = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+        for (let i = 1; i <= m; i++) {
+            for (let j = 1; j <= n; j++) {
+                if (input[i - 1] === target[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        // Backtrack to find alignment
+        let i = m, j = n;
+        const alignedPairs: { inputChar: string | null; targetChar: string | null }[] = [];
+
+        while (i > 0 || j > 0) {
+            if (i > 0 && j > 0 && input[i - 1] === target[j - 1]) {
+                alignedPairs.unshift({ inputChar: input[i - 1], targetChar: target[j - 1] });
+                i--; j--;
+            } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+                alignedPairs.unshift({ inputChar: null, targetChar: target[j - 1] });
+                j--;
+            } else {
+                alignedPairs.unshift({ inputChar: input[i - 1], targetChar: null });
+                i--;
+            }
+        }
+
+        // Convert aligned pairs to comparison result
+        for (const pair of alignedPairs) {
+            if (pair.inputChar !== null && pair.targetChar !== null) {
+                // Both present and matching
+                result.push({ char: pair.inputChar, isCorrect: true });
+            } else if (pair.inputChar !== null && pair.targetChar === null) {
+                // Extra character in input (user typed something that shouldn't be there)
+                result.push({ char: pair.inputChar, isCorrect: false, isExtra: true });
+            } else if (pair.inputChar === null && pair.targetChar !== null) {
+                // Missing character (user didn't type something they should have)
+                result.push({ char: pair.targetChar, isCorrect: false, isMissing: true });
+            }
+        }
+
+        return result;
     }
 
     private clearPlaybackTimeout(): void {

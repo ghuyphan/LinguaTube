@@ -31,10 +31,26 @@
             </div>
             } @else {
             <div class="input-wrapper" [@shake]="isShake()" @fadeIn>
+                @if (quiz.questionState() === 'failed' && quiz.answerComparison().length > 0) {
+                <!-- Show comparison diff when failed -->
+                <div class="comparison-display">
+                    <div class="comparison-text">
+                        @for (char of quiz.answerComparison(); track $index) {
+                        <span class="char" [class.correct]="char.isCorrect" [class.missing]="char.isMissing"
+                            [class.extra]="char.isExtra">{{ char.char }}</span>
+                        }
+                    </div>
+                    <div class="correct-answer">
+                        <span class="label">{{ i18n.t('quiz.correctAnswer') }}:</span>
+                        <span class="answer">{{ quiz.correctAnswer() }}</span>
+                    </div>
+                </div>
+                } @else {
                 <input #inputField type="text" [(ngModel)]="inputValue" (keydown.enter)="onSubmit()"
                     [placeholder]="getPlaceholder()" [disabled]="quiz.questionState() === 'success'" class="quiz-input"
                     [class.is-success]="quiz.questionState() === 'success'"
                     [class.is-error]="quiz.questionState() === 'failed'" autocomplete="off" spellcheck="false" />
+                }
             </div>
             }
         </div>
