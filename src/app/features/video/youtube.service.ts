@@ -2,6 +2,26 @@ import { Injectable, signal } from '@angular/core';
 import { Subject } from 'rxjs';
 import { VideoInfo } from '../../models';
 
+interface YTPlayer {
+  playVideo(): void;
+  pauseVideo(): void;
+  seekTo(seconds: number, allowSeekAhead: boolean): void;
+  getCurrentTime(): number;
+  getDuration(): number;
+  getPlayerState(): number;
+  getVolume(): number;
+  setVolume(volume: number): void;
+  mute(): void;
+  unMute(): void;
+  isMuted(): boolean;
+  setPlaybackRate(rate: number): void;
+  getPlaybackRate(): number;
+  loadVideoById(videoId: string): void;
+  unloadModule(module: string): void;
+  getIframe(): HTMLIFrameElement;
+  destroy(): void;
+}
+
 declare global {
   interface Window {
     YT: any;
@@ -24,7 +44,7 @@ declare global {
   providedIn: 'root'
 })
 export class YoutubeService {
-  private player: any = null;
+  private player: YTPlayer | null = null;
   private apiReady = signal(false);
   private apiReadyPromise: Promise<void>;
   private resolveApiReady!: () => void;
@@ -261,23 +281,25 @@ export class YoutubeService {
       }
 
       if (canReuse) {
+        // player is guaranteed non-null here (checked above in the canReuse guard)
+        const player = this.player!;
         try {
           const metadataPromise = this.fetchVideoMetadata(videoId);
 
           // Load the new video
-          this.player.loadVideoById(videoId);
+          player.loadVideoById(videoId);
 
           // Disable YouTube's built-in captions (we use our own)
           try {
-            this.player.unloadModule('captions');
-            this.player.unloadModule('cc');
+            player.unloadModule('captions');
+            player.unloadModule('cc');
           } catch (e) {
             // Module might not be loaded
           }
 
           // Fetch fresh metadata
           const metadata = await metadataPromise;
-          const duration = this.player.getDuration() || 0; // Might be 0 initially, updated by onStateChange/metadata
+          const duration = player.getDuration() || 0; // Might be 0 initially, updated by onStateChange/metadata
 
           // Update application state
           this.updateVideoState(videoId, metadata, duration);
@@ -467,14 +489,6 @@ export class YoutubeService {
     } catch (e) { }
   }
 
-  pauseVideo(): void {
-    this.intendedPlayingState.set(false);
-    try {
-      this.player?.pauseVideo();
-    } catch (e) {
-      console.warn('Could not pause video', e);
-    }
-  }
 
   togglePlay(): void {
     if (this.intendedPlayingState()) {
@@ -581,37 +595,34 @@ export class YoutubeService {
     this.clearLastVideoId();
   }
   /**
- * Update internal state when video is loaded (reused or new)
- */
+   * Update internal state when video is loaded (reused or new)
+   */
   private updateVideoState(videoId: string, metadata: { title: string; channel: string }, duration: number): void {
     this.duration.set(duration);
 
-    this.currentVideo.set({
+    // Build VideoInfo once and reuse for both the signal and the event
+    const video: VideoInfo = {
       id: videoId,
       title: metadata.title,
-      duration: duration,
+      duration,
       channel: metadata.channel,
       thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
-    });
+    };
+
+    this.currentVideo.set(video);
 
     // Persist video ID for page reload recovery
     this.saveLastVideoId(videoId);
 
-    // Initial mute state check (safe to check on existing player or new player event target)
-    if (this.player && typeof this.player.isMuted === 'function') {
+    // Initial mute state check
+    if (this.player) {
       this.isMuted.set(this.player.isMuted());
     }
 
     this.startTimeTracking();
 
     // Emit event for history tracking
-    this.videoLoaded.next({
-      id: videoId,
-      title: metadata.title,
-      duration: duration,
-      channel: metadata.channel,
-      thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
-    });
+    this.videoLoaded.next(video);
 
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({

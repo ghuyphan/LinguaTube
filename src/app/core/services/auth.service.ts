@@ -21,7 +21,6 @@ export interface UserProfile {
     providedIn: 'root'
 })
 export class AuthService {
-    private readonly STORAGE_KEY = 'linguatube_user';
     private pb = inject(PocketBaseService);
 
     readonly user = signal<UserProfile | null>(null);
@@ -156,7 +155,6 @@ export class AuthService {
     signOut(): void {
         this.pb.clearAuth();
         this.user.set(null);
-        localStorage.removeItem(this.STORAGE_KEY);
     }
 
     /**

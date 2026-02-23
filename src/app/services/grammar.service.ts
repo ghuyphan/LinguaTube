@@ -27,8 +27,8 @@ export class GrammarService {
     private koIndex: Map<string, GrammarPattern[]> | null = null;
     private zhIndex: Map<string, GrammarPattern[]> | null = null;
 
-    // Loading states
-    private loadingLangs = new Set<string>();
+    // Loading states - map from lang to in-flight promise, prevents concurrent duplicate loads
+    private loadingPromises = new Map<string, Promise<GrammarPattern[]>>();
 
     // Common Japanese grammar endings to detect
     private jaEndingPatterns = [
@@ -49,17 +49,21 @@ export class GrammarService {
     ];
 
     /**
-     * Load patterns for a language (lazy)
+     * Load patterns for a language (lazy).
+     * Uses a per-language in-flight promise to prevent redundant concurrent fetches.
      */
-    private async loadPatterns(lang: 'ja' | 'zh' | 'ko'): Promise<GrammarPattern[]> {
-        if (this.loadingLangs.has(lang)) {
-            // Already loading, wait a bit and try again
-            await new Promise(r => setTimeout(r, 100));
-            return this.getPatterns(lang);
+    private loadPatterns(lang: 'ja' | 'zh' | 'ko'): Promise<GrammarPattern[]> {
+        // If already loading or loaded, return the existing promise
+        if (this.loadingPromises.has(lang)) {
+            return this.loadingPromises.get(lang)!;
         }
 
-        this.loadingLangs.add(lang);
+        const promise = this._doLoadPatterns(lang);
+        this.loadingPromises.set(lang, promise);
+        return promise;
+    }
 
+    private async _doLoadPatterns(lang: 'ja' | 'zh' | 'ko'): Promise<GrammarPattern[]> {
         try {
             switch (lang) {
                 case 'ja':
@@ -86,8 +90,10 @@ export class GrammarService {
                 default:
                     return [];
             }
-        } finally {
-            this.loadingLangs.delete(lang);
+        } catch (err) {
+            // Remove the failed promise so we can retry next time
+            this.loadingPromises.delete(lang);
+            throw err;
         }
     }
 

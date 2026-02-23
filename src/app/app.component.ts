@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, comput
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, startWith, interval, Subject, takeUntil } from 'rxjs';
+import { filter, map, startWith, interval, Subject, takeUntil, fromEvent } from 'rxjs';
 import { HeaderComponent } from './components/header/header.component';
 import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
@@ -343,15 +343,6 @@ export class AppComponent implements OnDestroy {
   constructor() {
     this.initServiceWorkerUpdates();
     this.initKeyboardShortcuts();
-
-    // Lazy load SyncService removed - Repositories handle auto-sync internally
-    /* 
-    afterNextRender(() => {
-      import('./services/sync.service').then(({ SyncService }) => {
-        this.injector.get(SyncService);
-      });
-    });
-    */
   }
 
   ngOnDestroy(): void {
@@ -385,12 +376,14 @@ export class AppComponent implements OnDestroy {
     setTimeout(() => this.checkForUpdate('startup'), 5000);
 
     // 2. Check when app regains focus (essential for study app - users switch tabs often)
-    if (typeof document !== 'undefined') {
-      this.document.addEventListener('visibilitychange', () => {
-        if (this.document.visibilityState === 'visible') {
-          this.checkForUpdate('visibility');
-        }
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      fromEvent(this.document, 'visibilitychange')
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => {
+          if (this.document.visibilityState === 'visible') {
+            this.checkForUpdate('visibility');
+          }
+        });
     }
 
     // 3. Hourly fallback for long study sessions
@@ -448,7 +441,9 @@ export class AppComponent implements OnDestroy {
   });
 
   // Check if any sheet is open (for bottom nav active state)
-  anySheetOpen = computed(() => this.showSettingsSheet());
+  anySheetOpen = computed(() =>
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette()
+  );
 
   // Check if current route matches
   isRouteActive(route: string): boolean {
@@ -461,13 +456,15 @@ export class AppComponent implements OnDestroy {
   private initKeyboardShortcuts(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.document.addEventListener('keydown', (event: KeyboardEvent) => {
-      // Cmd/Ctrl + K to open command palette
-      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-        event.preventDefault();
-        this.showCommandPalette.set(true);
-      }
-    });
+    fromEvent<KeyboardEvent>(this.document, 'keydown')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(event => {
+        // Cmd/Ctrl + K to open command palette
+        if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+          event.preventDefault();
+          this.showCommandPalette.set(true);
+        }
+      });
   }
 
   toggleSettingsSheet(): void {

@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, inject, effect, OnDestroy } from '@angular/core';
+import { Injectable, signal, computed, inject, effect } from '@angular/core';
 import { SubtitleCue, Token } from '../../models';
 import { YoutubeService } from './youtube.service';
 import { SettingsService } from '../../core/services/settings.service';
@@ -25,7 +25,7 @@ const TOKENIZE_THROTTLE_MS = 500; // Throttle lazy tokenization checks
 @Injectable({
   providedIn: 'root'
 })
-export class SubtitleService implements OnDestroy {
+export class SubtitleService {
   private youtube = inject(YoutubeService);
   private settings = inject(SettingsService);
 
@@ -54,24 +54,9 @@ export class SubtitleService implements OnDestroy {
     });
   }
 
-  /**
-   * Cleanup on service destruction
-   */
-  ngOnDestroy(): void {
-    this.cancelTokenization();
-    // Flush pending save on destroy
-    if (this.tokenSaveTimer) {
-      clearTimeout(this.tokenSaveTimer);
-      // We don't have videoId/lang context here easily to force save, 
-      // but usually `saveTokensForVideo` is called with those args.
-      // We'll rely on the fact that if we are destroying, we might not need to save immediately 
-      // OR we should have saved earlier. 
-      // Actually, let's store the pending save args to flush them.
-      if (this.pendingSaveArgs) {
-        this.saveTokensForVideo(this.pendingSaveArgs.videoId, this.pendingSaveArgs.lang);
-      }
-    }
-  }
+  // NOTE: ngOnDestroy is intentionally not implemented because SubtitleService is provided in 'root'
+  // and Angular never calls lifecycle hooks on singleton services. Token persistence is handled
+  // by scheduleTokenSave() which runs with a debounce whenever tokens are computed.
 
   // State
   private tokenSaveTimer: any = null;
@@ -483,9 +468,6 @@ export class SubtitleService implements OnDestroy {
     return cached || this.fallbackTokenize(cue.text, lang);
   }
 
-  /**
-   * Update current cue based on video time (sticky subtitles)
-   */
   /**
    * Update current cue based on video time (sticky subtitles)
    */

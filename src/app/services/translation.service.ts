@@ -246,18 +246,6 @@ export class TranslationService implements OnDestroy {
     }
 
     /**
-     * Extract retry-after seconds from response headers
-     */
-    private extractRetryAfter(err: HttpErrorResponse): number {
-        const retryHeader = err.headers?.get('Retry-After');
-        if (retryHeader) {
-            const seconds = parseInt(retryHeader, 10);
-            if (!isNaN(seconds)) return seconds;
-        }
-        return 2; // Default: 2 seconds
-    }
-
-    /**
      * Supported languages for target translation
      */
     getSupportedTargetLanguages(): Array<{ code: string, name: string, flag: string, flagUrl: string }> {
