@@ -14,8 +14,8 @@ $btn-size-lg: 3.5rem; // 56px - big play button
 $btn-size-xl: 4rem; // 64px - big play button desktop
 
 // === BUTTON BACKGROUNDS ===
-$btn-bg: rgba(0, 0, 0, 0.3);
-$btn-bg-hover: rgba(0, 0, 0, 0.65);
+$btn-bg: rgba(0, 0, 0, 0.5);
+$btn-bg-hover: rgba(0, 0, 0, 0.7);
 $btn-bg-active: rgba(255, 255, 255, 0.15);
 
 // === ICON SIZES (relative to button) ===
@@ -97,7 +97,7 @@ $transition-normal: 0.25s ease;
 
   @media (hover: hover) {
     &:hover:not(:disabled) {
-      background: rgba(255, 255, 255, 0.15);
+      background: $btn-bg-hover;
     }
   }
 
@@ -1783,7 +1783,7 @@ ruby {
   }
 
   &:active {
-    transform: scale(0.97);
+    transform: scale(0.92);
   }
 
   &--save {
