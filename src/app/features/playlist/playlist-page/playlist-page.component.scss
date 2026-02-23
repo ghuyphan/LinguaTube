@@ -125,13 +125,15 @@
 // -------------------------
 .playlist-panel {
     background: var(--bg-card);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     box-shadow: none;
     display: flex;
     flex-direction: column;
-    overflow: clip;
+    overflow: visible; // Don't clip — overflow:clip cuts off button box-shadows
     min-width: 0;
+    // Clip the background/border to the border-radius without clipping shadows:
+    // child elements with overflow:hidden (e.g. thumbnail) handle their own clipping
 
     &.panel-filled {
         // Desktop: max height for large lists, but wrap content if small
@@ -178,8 +180,8 @@
     align-items: center;
     gap: var(--space-sm);
     margin-bottom: var(--space-md);
-    padding: 0 var(--space-md); // Add horizontal padding to align with header/content
-    flex-shrink: 0; // Prevent compression which clips the button
+    padding: 0 var(--space-md) 6px; // 6px bottom padding gives btn-primary's 4px shadow room
+    flex-shrink: 0;
 
     .btn {
         margin-left: auto;

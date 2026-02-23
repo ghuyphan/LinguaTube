@@ -15,6 +15,18 @@
   --bg-tertiary: #cbd5e1;
   --bg-card: #FFFFFF;
   --bg-dark: #1e293b;
+  --bg-surface: #f8fafc;
+  /* Used for inset/sunken surfaces */
+  --bg-hover: #edf1f7;
+  /* Hover state over surfaces */
+
+  /* Extended text tokens */
+  --text-tertiary: #9ca3af;
+  /* More muted than text-secondary */
+
+  /* Extended border tokens */
+  --border-color-light: #f1f5f9;
+  /* Very subtle border */
 
   /* Fun accent colors based on Duolingo/learning apps */
   --accent-primary: #FF6B6B;
@@ -175,41 +187,67 @@
    ============================================ */
 
 [data-theme="dark"] {
-  /* Playful dark colors (Not purely black, fun deep navy) */
-  --bg-primary: #111b21;
-  --bg-secondary: #202f36;
-  --bg-tertiary: #2e434f;
-  --bg-card: #202f36;
+  /* Standard neutral dark — familiar GitHub/VS Code style, works with any accent */
+  --bg-primary: #0f1117;
+  --bg-secondary: #181818;
+  --bg-tertiary: #2a2a2a;
+  --bg-card: #212121;
 
-  --border-color: #2e434f;
+  --border-color: #383838;
 
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #64748b;
+  --text-primary: #e5e5e5;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
 
-  /* Accent Colors adapted for Dark Mode pop */
-  --accent-primary: #FF6B6B;
-  --accent-primary-shadow: #cc584f;
+  /* Accent Colors — slightly brighter to pop on dark */
+  --accent-primary: #ff7b7b;
+  --accent-primary-hover: #ff6161;
+  --accent-primary-shadow: #c94f4f;
 
-  --accent-secondary: #a855f7;
-  --accent-secondary-shadow: #7e22ce;
+  --accent-secondary: #b870ff;
+  --accent-secondary-shadow: #8c3fd6;
 
-  /* Word levels - vibrant for dark background */
-  --word-new: #4c1114;
-  --word-new-text: #ff7b7b;
-  --word-learning: #4d3300;
-  --word-learning-text: #ffc800;
-  --word-known: #082f49;
-  --word-known-text: #38bdf8;
-  --word-ignored: #2e3e46;
+  /* Word levels — on dark, shift amber hue from ~40° to ~52° to avoid browning */
+  --word-new: #2e0e12;
+  --word-new-text: #ff8a8a;
+  --word-learning: #2e2800;
+  /* hue 51° amber, not 40° orange-brown */
+  --word-learning-text: #ffd43b;
+  --word-known: #062440;
+  --word-known-text: #4fc3f7;
+  --word-ignored: #2a2a2a;
 
-  /* Focus ring - brighter for visibility */
-  --focus-ring: 0 0 0 4px rgba(255, 107, 107, 0.4);
+  /* Grammar levels */
+  --level-beginner: #062440;
+  --level-beginner-text: #4fc3f7;
+  --level-elementary: #062440;
+  --level-elementary-text: #38bdf8;
+  --level-intermediate: #2e2800;
+  /* same fix — amber not brown */
+  --level-intermediate-text: #ffd43b;
+  --level-upper: #2a1800;
+  /* hue ~40° orange-brown → #2a1800 still warm but less muddy */
+  --level-upper-text: #fb923c;
+  --level-advanced: #2e0e12;
+  --level-advanced-text: #ff8a8a;
+
+  /* Missing utility tokens (used by sidebar, etc.) */
+  --bg-surface: #282828;
+  /* Inset/sunken surfaces */
+  --bg-hover: #2a2a2a;
+  /* Hover state over surfaces */
+  --text-tertiary: #737373;
+  /* More muted than text-secondary */
+  --border-color-light: #2a2a2a;
+  /* Very subtle border */
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 4px rgba(255, 123, 123, 0.35);
 }
 
 /* ============================================
