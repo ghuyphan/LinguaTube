@@ -896,6 +896,7 @@ $transition-normal: 0.25s ease;
   background: $btn-bg;
   border-radius: 1rem;
   padding: 0;
+  flex-shrink: 0;
 
   .control-btn {
     @include player-btn-ghost($btn-size-sm, $icon-size-md);
@@ -916,6 +917,7 @@ $transition-normal: 0.25s ease;
   background: $btn-bg;
   border-radius: 1rem;
   padding: 0;
+  flex-shrink: 0;
 
   .control-btn {
     @include player-btn-ghost($btn-size-sm, $icon-size-md);
@@ -1966,6 +1968,24 @@ ruby {
 // ============================================
 
 @media (max-width: $breakpoint-md) {
+
+  // Force mobile visibility rules on narrow screens regardless of pointer type
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .touch-only {
+    display: flex !important;
+  }
+
+  .hover-only {
+    display: none !important;
+  }
+
   .video-container {
     border-radius: 0;
     margin: 0 calc(var(--mobile-padding, 16px) * -1);
