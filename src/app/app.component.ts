@@ -178,7 +178,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     .main {
       flex: 1;
-      padding: var(--space-xl) 0;
     }
 
     /* Desktop: with sidebar */
