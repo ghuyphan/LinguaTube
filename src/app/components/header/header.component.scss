@@ -100,7 +100,7 @@
 .lang-btn.active {
     background: var(--bg-card);
     color: var(--accent-primary);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
     font-weight: 600;
 }
 

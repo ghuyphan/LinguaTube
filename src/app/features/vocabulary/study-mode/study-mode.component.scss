@@ -559,15 +559,15 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.5rem;
-    background: #fff3e0;
-    border: 1px solid #ff9500;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--warning);
     border-radius: 1rem;
     margin-bottom: 2rem;
     animation: slideUp 0.5s ease-out;
 
     .streak-icon {
-        color: #ff9500;
-        filter: drop-shadow(0 0 10px rgba(255, 149, 0, 0.4));
+        color: var(--warning);
+        filter: drop-shadow(0 0 10px rgba(var(--warning-rgb), 0.4));
     }
 
     .streak-details {
@@ -577,20 +577,20 @@
             margin: 0;
             font-size: 1.125rem;
             font-weight: 700;
-            color: #d97706;
+            color: var(--warning);
         }
 
         p {
             margin: 0.25rem 0 0 0;
             font-size: 0.9375rem;
-            color: #b45309;
+            color: var(--warning);
         }
     }
 
     &.new-record {
-        background: radial-gradient(circle at center, #fff3e0 0%, #ffedd5 100%);
-        border: 2px solid #ff9500;
-        box-shadow: 0 4px 20px rgba(255, 149, 0, 0.2);
+        background: radial-gradient(circle at center, var(--bg-tertiary) 0%, rgba(var(--warning-rgb), 0.1) 100%);
+        border: 2px solid var(--warning);
+        box-shadow: 0 4px 20px rgba(var(--warning-rgb), 0.2);
 
         .streak-icon {
             animation: pulse-fire 1s infinite alternate;
@@ -601,12 +601,12 @@
 @keyframes pulse-fire {
     from {
         transform: scale(1);
-        filter: drop-shadow(0 0 5px rgba(255, 149, 0, 0.4));
+        filter: drop-shadow(0 0 5px rgba(var(--warning-rgb), 0.4));
     }
 
     to {
         transform: scale(1.1);
-        filter: drop-shadow(0 0 15px rgba(255, 149, 0, 0.8));
+        filter: drop-shadow(0 0 15px rgba(var(--warning-rgb), 0.8));
     }
 }
 
@@ -719,7 +719,7 @@
 
 .confetti--5 {
     left: 42%;
-    background: #ffd700;
+    background: var(--warning);
     animation-delay: 0.15s;
     transform: rotate(300deg);
     border-radius: 0;
@@ -727,7 +727,7 @@
 
 .confetti--6 {
     left: 50%;
-    background: #ff69b4;
+    background: var(--error);
     animation-delay: 0.25s;
     transform: rotate(160deg);
     border-radius: 50%;
@@ -767,7 +767,7 @@
 
 .confetti--11 {
     left: 92%;
-    background: #ffd700;
+    background: var(--warning);
     animation-delay: 0.28s;
     transform: rotate(60deg);
     border-radius: 0;
@@ -775,7 +775,7 @@
 
 .confetti--12 {
     left: 97%;
-    background: #ff69b4;
+    background: var(--error);
     animation-delay: 0.18s;
     transform: rotate(330deg);
     border-radius: 50%;

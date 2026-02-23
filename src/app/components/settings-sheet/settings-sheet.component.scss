@@ -41,26 +41,34 @@
     min-height: var(--touch-target-min);
     padding: var(--space-sm) var(--space-md);
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
+    border-radius: var(--border-radius-md);
     width: 100%;
     font-family: inherit;
     font-size: inherit;
     color: inherit;
     text-align: left;
     cursor: default;
+    margin-bottom: var(--space-xs);
 }
 
 .setting-row--clickable {
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
 
     @media (hover: hover) {
         &:hover {
             background: var(--bg-secondary);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+            border-color: var(--accent-primary);
+            box-shadow: none;
         }
+    }
+
+    &:active {
+        
+        
     }
 
     // Prevent inner elements from interfering with hover

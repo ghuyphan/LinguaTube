@@ -78,12 +78,12 @@
     0%,
     100% {
         opacity: 1;
-        filter: drop-shadow(0 0 2px rgba(255, 150, 0, 0.5));
+        filter: drop-shadow(0 0 2px rgba(var(--warning-rgb), 0.5));
     }
 
     50% {
         opacity: 0.9;
-        filter: drop-shadow(0 0 6px rgba(255, 150, 0, 0.8));
+        filter: drop-shadow(0 0 6px rgba(var(--warning-rgb), 0.8));
     }
 }
 

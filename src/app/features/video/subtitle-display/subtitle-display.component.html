@@ -45,7 +45,7 @@
                 <div class="subtitle-translation-wrapper">
                     @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
                     <div class="subtitle-translation subtitle-translation--loading">
-                        <span class="token-shimmer" style="width: 120px; height: 1em; opacity: 0.6;"></span>
+                        <span class="token-shimmer dual-translation-shimmer"></span>
                     </div>
                     } @else {
                     @if (cueTranslations().get(cue.id); as translation) {

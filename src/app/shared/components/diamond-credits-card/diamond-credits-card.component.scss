@@ -1,9 +1,7 @@
 /* Diamond color palette */
-$diamond-color: #60a5fa;
-$diamond-color-light: rgba(96, 165, 250, 0.15);
-$diamond-color-glow: rgba(96, 165, 250, 0.3);
-$depleted-color: #f59e0b;
-$depleted-color-light: rgba(245, 158, 11, 0.15);
+// Using global tokens instead:
+// $diamond-color -> var(--info)
+// $depleted-color -> var(--warning)
 
 /* Base container */
 .diamond-credits {
@@ -18,26 +16,26 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
    ============================================ */
 .variant--card {
     padding: var(--space-sm) var(--space-md);
-    margin-top: var(--space-sm);
     background: var(--bg-surface, var(--bg-secondary));
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--border-color);
+    // margin-top handled by parent gap
 
     &.is-full {
-        background: linear-gradient(135deg, $diamond-color-light 0%, rgba(59, 130, 246, 0.08) 100%);
-        border-color: rgba(96, 165, 250, 0.2);
+        background: linear-gradient(135deg, rgba(var(--info-rgb), 0.1) 0%, rgba(var(--info-rgb), 0.02) 100%);
+        border-color: rgba(var(--info-rgb), 0.3);
     }
 
     &.is-depleted {
-        background: linear-gradient(135deg, $depleted-color-light 0%, rgba(245, 158, 11, 0.08) 100%);
-        border-color: rgba(245, 158, 11, 0.2);
+        background: linear-gradient(135deg, rgba(var(--warning-rgb), 0.1) 0%, rgba(var(--warning-rgb), 0.02) 100%);
+        border-color: rgba(var(--warning-rgb), 0.3);
 
         .diamond-gem {
             color: var(--text-muted);
         }
 
         .diamond-timer {
-            color: $depleted-color;
+            color: var(--warning);
             font-weight: 600;
         }
     }
@@ -59,7 +57,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
     transition: all var(--transition-fast);
 
     &.filled {
-        color: $diamond-color;
+        color: var(--info);
         opacity: 1;
         animation: diamond-pulse 2s ease-in-out infinite;
     }
@@ -94,7 +92,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
 
 .diamond-status {
     font-size: 0.75rem;
-    color: $diamond-color;
+    color: var(--info);
     font-weight: 600;
 }
 
@@ -103,7 +101,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
    ============================================ */
 .variant--compact {
     padding: var(--space-xs) var(--space-sm);
-    background: $diamond-color-light;
+    background: rgba(var(--info-rgb), 0.15);
     border-radius: var(--border-radius-sm);
 
     .diamond-icons {
@@ -111,7 +109,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
     }
 
     &.is-depleted {
-        background: $depleted-color-light;
+        background: rgba(var(--warning-rgb), 0.15);
     }
 }
 
@@ -143,7 +141,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
     align-items: center;
     gap: 0.125rem;
     padding: 0.5rem 0;
-    color: $diamond-color;
+    color: var(--info);
     cursor: pointer;
     transition: background-color 0.2s ease;
 
@@ -152,7 +150,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
     }
 
     &.is-depleted {
-        color: $depleted-color;
+        color: var(--warning);
     }
 
     .collapsed-icon {
@@ -179,7 +177,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
 
     50% {
         transform: scale(1.05);
-        filter: drop-shadow(0 0 4px $diamond-color-glow);
+        filter: drop-shadow(0 0 4px rgba(var(--info-rgb), 0.3));
     }
 }
 
@@ -192,7 +190,7 @@ $depleted-color-light: rgba(245, 158, 11, 0.15);
     50% {
         opacity: 1;
         transform: scale(1.2);
-        filter: drop-shadow(0 0 8px $diamond-color);
+        filter: drop-shadow(0 0 8px var(--info));
     }
 
     100% {

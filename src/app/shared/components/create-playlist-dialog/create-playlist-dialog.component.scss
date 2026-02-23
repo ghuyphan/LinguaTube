@@ -33,13 +33,13 @@
     input[type="text"] {
         width: 100%;
         padding: var(--space-md);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
+        border: 2px solid var(--border-color);
+        border-radius: var(--border-radius-md);
         background: var(--bg-card);
         color: var(--text-primary);
         font-family: inherit;
         font-size: var(--text-base);
-        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
 
         &::placeholder {
             color: var(--text-muted);
@@ -48,7 +48,7 @@
         &:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: var(--focus-ring);
+            box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2);
         }
     }
 }
@@ -68,12 +68,13 @@
     align-items: center;
     gap: var(--space-xs);
     padding: var(--space-sm) var(--space-xs);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
+    border-radius: var(--border-radius-md);
     background: var(--bg-card);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
     font-size: var(--text-xs);
 
     &:hover:not(:disabled) {
@@ -82,8 +83,10 @@
 
     &.selected {
         border-color: var(--accent-primary);
+        box-shadow: none;
         background: var(--accent-primary-soft);
         color: var(--accent-primary);
+        
     }
 
     &:disabled {
@@ -121,11 +124,12 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-sm);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
+    border-radius: var(--border-radius-md);
     background: var(--bg-card);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
 
     &:hover {
         border-color: var(--text-muted);
@@ -133,7 +137,9 @@
 
     &.selected {
         border-color: var(--accent-primary);
+        box-shadow: none;
         background: var(--accent-primary-soft);
+        
     }
 
     .flag-icon {

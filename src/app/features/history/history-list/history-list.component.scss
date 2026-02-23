@@ -144,7 +144,7 @@
     }
 
     &.past-threshold {
-        background: var(--error-dark, #c0392b);
+        background: var(--error-dark);
 
         .swipe-action {
             width: 100%;
@@ -185,13 +185,17 @@
     gap: var(--space-md);
     padding: var(--space-sm) var(--space-md);
     background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--space-sm);
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     will-change: transform;
     // Smooth snap-back animation
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
 
     // Disable transition during active swipe
     &.swiping {
@@ -200,21 +204,25 @@
 
     @media (hover: hover) {
         &:hover {
-            background-color: var(--bg-secondary);
+            
+            border-color: var(--accent-primary);
+            box-shadow: none;
         }
 
         &:hover .action-btn--delete {
             opacity: 1;
         }
+    }
 
-        &:active {
-            background-color: var(--bg-tertiary);
-        }
+    &:active:not(.swiping) {
+        
+        box-shadow: none;
     }
 
     @media (hover: none) {
         &:active:not(.swiping) {
-            background-color: var(--bg-secondary);
+            
+            box-shadow: none;
         }
     }
 
@@ -391,7 +399,7 @@
 
     @media (hover: hover) {
         &:hover {
-            background: var(--bg-tertiary);
+            background: var(--bg-hover);
         }
 
         &--favorite:hover {
@@ -404,7 +412,7 @@
     }
 
     &:active {
-        transform: scale(0.92);
+        transform: translateY(2px);
     }
 }
 
@@ -494,7 +502,7 @@
 @keyframes filterFade {
     from {
         opacity: 0.5;
-        transform: translateY(4px);
+        
     }
 
     to {

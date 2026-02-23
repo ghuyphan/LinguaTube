@@ -52,7 +52,7 @@
 
     @media (hover: hover) {
         &:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-primary);
             background: var(--bg-hover);
         }
     }

@@ -47,8 +47,7 @@
             <div class="panel-content">
                 @if (playlistService.isLoading() && currentList().length === 0) {
                 <!-- Skeleton Loading State -->
-                <div class="grid skeleton-container"
-                    style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+                <div class="grid skeleton-container">
                     @for (_ of [1,2,3,4,5,6,7,8]; track $index) {
                     <div class="card playlist-card playlist-card--skeleton">
                         <div class="card-thumbnail skeleton-box">
@@ -68,8 +67,7 @@
                 </div>
                 } @else if (currentList().length > 0) {
                 <!-- Simple grid with CSS content-visibility for performance -->
-                <div class="grid" [class.animate-content]="shouldAnimate()"
-                    style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+                <div class="grid" [class.animate-content]="shouldAnimate()">
                     @for (playlist of paginatedPlaylists(); track playlist.id) {
                     <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
                         <div class="card-thumbnail">

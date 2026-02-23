@@ -422,10 +422,10 @@
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: opacity 0.2s;
 
     &:hover {
-        background: #b32d29;
+        opacity: 0.9;
     }
 }
 

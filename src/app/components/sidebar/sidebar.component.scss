@@ -227,14 +227,13 @@
     }
 
     &:active {
-        transform: scale(0.96);
+        transform: translateY(4px);
     }
 
     &.active {
         background: var(--accent-primary);
         color: white;
-        font-weight: 600;
-        box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.2);
+        font-weight: 700;
     }
 
     span {
@@ -248,8 +247,9 @@
 .nav-item--new {
     background: rgba(var(--accent-primary-rgb), 0.08);
     color: var(--accent-primary);
-    border: 1px dashed rgba(var(--accent-primary-rgb), 0.3);
+    border: 2px dashed rgba(var(--accent-primary-rgb), 0.5);
     font-family: inherit;
+    font-weight: 700;
     font-size: inherit;
     text-align: left;
     cursor: pointer;
@@ -264,7 +264,7 @@
     }
 
     &:active {
-        transform: scale(0.96);
+        transform: translateY(4px);
     }
 }
 
@@ -282,6 +282,9 @@
 
 /* Stats section with fixed height to prevent layout shift */
 .sidebar__section--stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
     min-height: 7.5rem;
     /* Reserve space for streak + diamond cards */
 }
@@ -306,10 +309,11 @@
     align-items: center;
     gap: var(--space-sm);
     width: 100%;
-    padding: 0.625rem 0.75rem;
+    padding: var(--space-sm) var(--space-md);
     background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     transition: all var(--transition-fast);
     font-family: inherit;
@@ -452,12 +456,13 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
     background: var(--bg-surface);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
 
     @media (hover: hover) {
         &:hover {
@@ -467,28 +472,29 @@
     }
 
     &.active {
-        background: #fff3e0;
-        border-color: #ff9500;
+        background: var(--bg-tertiary);
+        border-color: var(--warning);
+        box-shadow: none;
 
         .streak-icon-wrapper {
-            // background: #ff9500;
+            // background: var(--warning);
             color: white;
-            box-shadow: 0 4px 12px rgba(255, 149, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(var(--warning-rgb), 0.4);
         }
 
         .streak-count {
-            color: #ff9500;
+            color: var(--warning);
         }
 
         .streak-label {
-            color: #d97706;
+            color: var(--warning);
             font-weight: 600;
         }
 
         // Dark mode support
         @media (prefers-color-scheme: dark) {
-            background: rgba(255, 149, 0, 0.15);
-            border-color: #ff9500;
+            background: rgba(var(--warning-rgb), 0.15);
+            border-color: var(--warning);
         }
     }
 }
@@ -499,9 +505,9 @@
     gap: 0.25rem;
     margin-left: auto;
     padding: 0.25rem 0.5rem;
-    background: rgba(59, 130, 246, 0.12);
+    background: rgba(var(--info-rgb), 0.12);
     border-radius: var(--border-radius-sm);
-    color: #3b82f6;
+    color: var(--info);
     font-size: 0.75rem;
     font-weight: 600;
     pointer-events: none; // Don't block parent hover
@@ -517,9 +523,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff3e0;
+    background: var(--bg-tertiary);
     border-radius: 50%;
-    color: #f59e0b;
+    color: var(--warning);
     pointer-events: none; // Don't block parent hover
 }
 
@@ -542,53 +548,6 @@
 }
 
 /* Diamond Card */
-.diamond-card {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
-    background: var(--bg-surface);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    margin-top: var(--space-sm);
-    cursor: default;
-    transition: background-color 0.2s ease;
-
-    @media (hover: hover) {
-        &:hover {
-            background: var(--bg-hover);
-        }
-    }
-}
-
-.diamond-icon-wrapper {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(96, 165, 250, 0.15);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.diamond-info {
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-}
-
-.diamond-count {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.1;
-}
-
-.diamond-label {
-    font-size: 0.6875rem;
-    color: var(--text-muted);
-}
 
 
 
@@ -692,7 +651,7 @@
     gap: 0.125rem;
     padding: 0.5rem 0;
     margin-bottom: 0.5rem;
-    color: #f59e0b;
+    color: var(--warning);
     background: transparent;
     border: none;
     // border-bottom: 1px solid var(--border-color);
@@ -704,14 +663,14 @@
     }
 
     &.active {
-        background: #fff3e0;
-        border: 1px solid #ff9500;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--warning);
         border-radius: var(--border-radius);
 
         // Dark mode support
         @media (prefers-color-scheme: dark) {
-            background: rgba(255, 149, 0, 0.15);
-            border-color: #ff9500;
+            background: rgba(var(--warning-rgb), 0.15);
+            border-color: var(--warning);
         }
     }
 
@@ -722,14 +681,14 @@
     }
 
     &.active {
-        color: #ff9500;
+        color: var(--warning);
 
         .collapsed-streak-count {
-            color: #ff9500;
+            color: var(--warning);
         }
 
         ::ng-deep .fire-flame {
-            filter: drop-shadow(0 0 6px rgba(255, 149, 0, 0.6));
+            filter: drop-shadow(0 0 6px rgba(var(--warning-rgb), 0.6));
         }
     }
 }
@@ -771,7 +730,7 @@
     }
 
     &:active {
-        transform: scale(0.96);
+        transform: translateY(4px);
     }
 
     span:not(.badge) {

@@ -97,8 +97,7 @@ $transition-normal: 0.25s ease;
 
   @media (hover: hover) {
     &:hover:not(:disabled) {
-      background: $btn-bg-hover;
-      color: white;
+      background: rgba(255, 255, 255, 0.15);
     }
   }
 
@@ -232,12 +231,13 @@ $transition-normal: 0.25s ease;
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);
   padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
+  box-shadow: none;
 }
 
 .input-group {
   display: flex;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
 .input-wrapper {
@@ -252,14 +252,14 @@ $transition-normal: 0.25s ease;
   width: 100%;
   height: var(--btn-height-md);
   font-size: 0.875rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
   background: var(--bg-card);
   transition: all $transition-fast;
 
   &:focus {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1);
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2);
   }
 }
 
@@ -494,9 +494,7 @@ $transition-normal: 0.25s ease;
   }
 }
 
-.replay-btn {
-  // Inherits from .big-play-btn
-}
+
 
 // ============================================
 // CENTER FEEDBACK
@@ -1595,7 +1593,7 @@ $transition-normal: 0.25s ease;
 
   &--grammar {
     text-decoration: underline;
-    text-decoration-color: var(--ai-purple, #8b5cf6);
+    text-decoration-color: var(--ai-purple);
     text-decoration-style: dotted;
     text-underline-offset: 3px;
     text-decoration-thickness: 2px;
@@ -1780,7 +1778,7 @@ ruby {
   @media (hover: hover) {
     &:hover {
       background: var(--bg-card);
-      box-shadow: var(--shadow-sm);
+      box-shadow: none;
     }
   }
 
@@ -1791,10 +1789,11 @@ ruby {
   &--save {
     background: var(--accent-primary);
     color: white;
+    transition: opacity 0.2s;
 
     @media (hover: hover) {
       &:hover {
-        background: #b32d29;
+        opacity: 0.9;
       }
     }
   }

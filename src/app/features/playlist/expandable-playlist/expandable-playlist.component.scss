@@ -458,6 +458,22 @@
     margin-top: 2px;
 }
 
+.bar-title-skeleton {
+    width: 150px;
+    margin-bottom: 0;
+}
+
+.bar-title-skeleton-collapsed {
+    width: 120px;
+    margin-bottom: 4px;
+}
+
+.bar-meta-skeleton {
+    width: 40px;
+    height: 10px;
+    margin-bottom: 0;
+}
+
 /* Single mode: bar-info styles are inherited - no hiding needed */
 
 /* ============================================
