@@ -13,6 +13,7 @@ import { CommandPaletteComponent } from './shared/components/command-palette/com
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
+import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
@@ -128,7 +129,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [showCloseButton]="true"
             (closed)="showStreakSheet.set(false)"
           >
-            <app-streak-dialog />
+            <app-streak-dialog (close)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
@@ -138,7 +139,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [showCloseButton]="true"
             (closed)="showAiCreditsSheet.set(false)"
           >
-            <app-ai-credits-dialog />
+            <app-ai-credits-dialog (close)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
@@ -347,6 +348,7 @@ export class AppComponent implements OnDestroy {
   i18n = inject(I18nService);
   settings = inject(SettingsService);
   protected playlistService = inject(PlaylistService);
+  protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);
 
   private destroy$ = new Subject<void>();

@@ -29,4 +29,8 @@
             </div>
         </div>
     </div>
+
+    <button class="btn btn-primary" style="width: 100%;" (click)="close.emit()">
+        {{ i18n.t('subtitle.gotIt') || 'Got it' }}
+    </button>
 </div>
