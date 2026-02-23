@@ -11,6 +11,7 @@ import { BottomSheetComponent } from './shared/components/bottom-sheet/bottom-sh
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
+import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
 import { YoutubeService, I18nService, SettingsService } from './services';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
@@ -30,7 +31,8 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     BottomSheetComponent,
     OnboardingComponent,
     CommandPaletteComponent,
-    StreakDialogComponent
+    StreakDialogComponent,
+    AiCreditsDialogComponent
   ],
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
@@ -49,6 +51,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (openSettings)="showSettingsSheet.set(true)"
             (openCommandPalette)="showCommandPalette.set(true)"
             (openStreak)="showStreakSheet.set(true)"
+            (openAiCredits)="showAiCreditsSheet.set(true)"
           />
         }
 
@@ -115,6 +118,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [isOpen]="showSettingsSheet()" 
             (closed)="showSettingsSheet.set(false)" 
             (openStreak)="showSettingsSheet.set(false); showStreakSheet.set(true)"
+            (openAiCredits)="showSettingsSheet.set(false); showAiCreditsSheet.set(true)"
           />
         }
 
@@ -125,6 +129,16 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             (closed)="showStreakSheet.set(false)"
           >
             <app-streak-dialog />
+          </app-bottom-sheet>
+        }
+
+        @defer (when showAiCreditsSheet()) {
+          <app-bottom-sheet
+            [isOpen]="showAiCreditsSheet()"
+            [showCloseButton]="true"
+            (closed)="showAiCreditsSheet.set(false)"
+          >
+            <app-ai-credits-dialog />
           </app-bottom-sheet>
         }
 
@@ -419,6 +433,7 @@ export class AppComponent implements OnDestroy {
 
   showSettingsSheet = signal(false);
   showStreakSheet = signal(false);
+  showAiCreditsSheet = signal(false);
   showUpdateSheet = signal(false);
   showCommandPalette = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
@@ -442,7 +457,7 @@ export class AppComponent implements OnDestroy {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() =>
-    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette()
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet()
   );
 
   // Check if current route matches

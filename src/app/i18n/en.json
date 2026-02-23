@@ -101,7 +101,12 @@
         "orUseAI": "Or use AI",
         "dualSubs": "Dual Subtitles",
         "aiCredits": "AI Credits",
-        "ready": "Ready"
+        "ready": "Ready",
+        "aiCreditsDescription": "AI credits are used to power intelligent features like generating transcripts for videos without captions.",
+        "whatAreThey": "What are they?",
+        "whatAreTheyDesc": "AI credits (diamonds) allow you to use Whispher AI to transcribe videos that don't have English, Japanese, Korean, or Chinese captions.",
+        "howDoIGetMore": "How do I get more?",
+        "howDoIGetMoreDesc": "Credits regenerate automatically over time. You don't need to do anything to get them back!"
     },
     "vocab": {
         "title": "Vocabulary",
@@ -238,7 +243,10 @@
         "clickDetails": "Click for details",
         "freezesRemainingSentence": "You have {{count}} streak freezes remaining.",
         "extended": "Streak extended!",
-        "onStreak": "You are on a {{count}} day streak!"
+        "onStreak": "You are on a {{count}} day streak!",
+        "howItWorks": "How it works",
+        "howToExtend": "Practice every day to extend your streak. If you skip a day without a freeze, your streak resets to 0.",
+        "freezeExplanation": "Streak freezes automatically protect your streak if you miss a day. You have {{count}} freeze(s) left."
     },
     "history": {
         "title": "History",

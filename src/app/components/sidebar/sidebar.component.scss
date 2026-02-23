@@ -7,6 +7,29 @@
     z-index: 200;
 }
 
+/* Quick Reset for diamond buttons in sidebar */
+.diamond-credits-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.collapsed-diamond-btn {
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    justify-content: center;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;

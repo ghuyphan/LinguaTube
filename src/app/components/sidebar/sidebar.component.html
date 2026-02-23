@@ -99,8 +99,10 @@
         </div>
 
         <!-- Diamond Credits Card -->
-        <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
-            [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" />
+        <button class="diamond-credits-btn" (click)="openAiCredits.emit()" [attr.title]="i18n.t('subtitle.aiCredits')">
+            <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+                [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" />
+        </button>
     </div>
     }
 
@@ -114,8 +116,11 @@
             <span class="collapsed-streak-count">{{ streak.currentStreak() }}</span>
         </button>
         <!-- Collapsed Diamond Indicator -->
-        <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
-            [nextRegenAt]="transcript.nextRegenAt()" variant="collapsed" [showLabel]="false" />
+        <button class="diamond-credits-btn collapsed-diamond-btn" (click)="openAiCredits.emit()"
+            [attr.title]="i18n.t('subtitle.aiCredits')">
+            <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+                [nextRegenAt]="transcript.nextRegenAt()" variant="collapsed" [showLabel]="false" />
+        </button>
         }
 
         @if (!auth.isInitialized()) {

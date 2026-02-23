@@ -15,7 +15,7 @@
         <div class="settings-section">
             <app-stats-row [streak]="streak.currentStreak()" [practicedToday]="streak.practicedToday()"
                 [diamonds]="transcript.diamonds()" [label]="i18n.t('streak.dayStreak')"
-                (clicked)="openStreakDialog()" />
+                (openStreak)="openStreakDialog()" (openAiCredits)="openAiCreditsDialog()" />
         </div>
 
         <!-- Quick Navigation (Mobile Only) -->

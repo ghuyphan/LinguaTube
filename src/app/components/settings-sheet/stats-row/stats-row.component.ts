@@ -8,23 +8,22 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, IconComponent],
     template: `
-    <button class="setting-row setting-row--clickable" (click)="onClick()">
+    <div class="setting-row">
         <div class="setting-row__content">
             <div class="stats-group">
-                <div class="stat-badge" [class.active-streak]="practicedToday()">
+                <button class="stat-badge clickable-badge" [class.active-streak]="practicedToday()" (click)="onStreakClick($event)">
                     <app-icon name="fire" [size]="16" [style.color]="practicedToday() ? '#f59e0b' : 'var(--text-muted)'" />
                     <span [style.color]="practicedToday() ? '#f59e0b' : 'inherit'">{{ streak() }}</span>
-                </div>
+                </button>
                 <div class="stat-divider"></div>
-                <div class="stat-badge">
+                <button class="stat-badge clickable-badge" (click)="onDiamondsClick($event)">
                     <app-icon name="diamond" [size]="16" style="color: #60a5fa" />
                     <span>{{ diamonds() }}</span>
-                </div>
+                </button>
             </div>
             <span class="setting-row__label">{{ label() }}</span>
         </div>
-        <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
-    </button>
+    </div>
   `,
     styles: [`
     .setting-row {
@@ -39,12 +38,6 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
         width: 100%;
         color: inherit;
         text-align: left;
-        cursor: pointer;
-        transition: all var(--transition-fast);
-    }
-    
-    .setting-row:active {
-        background: var(--bg-secondary);
     }
 
     .setting-row__content {
@@ -84,6 +77,23 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
         font-size: 0.875rem;
         font-weight: 600;
         color: var(--text-secondary);
+        background: transparent;
+        border: none;
+        padding: 0.25rem;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .clickable-badge {
+        cursor: pointer;
+        transition: background-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .clickable-badge:hover {
+        background: var(--bg-hover);
+    }
+
+    .clickable-badge:active {
+        transform: scale(0.95);
     }
 
     .stat-badge.active-streak {
@@ -104,9 +114,16 @@ export class StatsRowComponent {
     diamonds = input<number>(0);
     label = input<string>('Statistics');
 
-    clicked = output<void>();
+    openStreak = output<void>();
+    openAiCredits = output<void>();
 
-    onClick() {
-        this.clicked.emit();
+    onStreakClick(event: Event) {
+        event.stopPropagation();
+        this.openStreak.emit();
+    }
+
+    onDiamondsClick(event: Event) {
+        event.stopPropagation();
+        this.openAiCredits.emit();
     }
 }

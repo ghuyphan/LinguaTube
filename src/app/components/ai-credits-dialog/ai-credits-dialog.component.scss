@@ -1,0 +1,99 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.ai-credits-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* --- Header --- */
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.large-diamonds-card {
+    /* Scale up the existing card slightly for the dialog header */
+    transform: scale(1.1);
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--text-primary);
+    }
+
+    p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+/* --- Info Box --- */
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: var(--bg-secondary);
+    padding: 1.5rem 1.25rem;
+    border-radius: 1rem;
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    .info-icon {
+        color: var(--text-secondary);
+        flex-shrink: 0;
+        margin-top: 0.125rem;
+    }
+
+    .zap-icon {
+        color: var(--accent-primary, #FF6B6B);
+    }
+
+    .clock-icon {
+        color: var(--info);
+    }
+
+    .info-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        strong {
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+    }
+}

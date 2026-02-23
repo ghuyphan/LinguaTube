@@ -21,6 +21,8 @@ export class DiamondCreditsCardComponent implements OnDestroy {
 
     private intervalId: number | null = null;
     readonly countdown = signal<string>('');
+    readonly progress = signal<number>(0);
+    private readonly REGEN_TIME_MS = 30 * 60 * 1000; // 30 minutes
 
     // Array for rendering diamond icons
     readonly diamondArray = computed(() =>
@@ -72,10 +74,11 @@ export class DiamondCreditsCardComponent implements OnDestroy {
         const minutes = Math.floor(remaining / 60000);
         const seconds = Math.floor((remaining % 60000) / 1000);
 
-        if (minutes > 0) {
-            this.countdown.set(`${minutes}m ${seconds}s`);
-        } else {
-            this.countdown.set(`${seconds}s`);
-        }
+        const m = minutes.toString().padStart(2, '0');
+        const s = seconds.toString().padStart(2, '0');
+        this.countdown.set(`+1 in ${m}:${s}`);
+
+        const progressPercent = Math.max(0, Math.min(100, ((this.REGEN_TIME_MS - remaining) / this.REGEN_TIME_MS) * 100));
+        this.progress.set(progressPercent);
     }
 }

@@ -101,7 +101,12 @@
         "orUseAI": "Hoặc dùng AI",
         "dualSubs": "Phụ đề đôi",
         "aiCredits": "Điểm AI",
-        "ready": "Sẵn sàng"
+        "ready": "Sẵn sàng",
+        "aiCreditsDescription": "Điểm AI được sử dụng để chạy các tính năng thông minh như phiên âm video không có phụ đề.",
+        "whatAreThey": "Điểm AI là gì?",
+        "whatAreTheyDesc": "Điểm AI (Kim cương) cho phép bạn dùng Whisper AI để tạo phụ đề cho các video không có phụ đề tiếng Anh, Nhật, Hàn hoặc Trung.",
+        "howDoIGetMore": "Làm sao để lấy thêm?",
+        "howDoIGetMoreDesc": "Điểm sẽ tự động phục hồi theo thời gian. Bạn không cần làm gì để nhận lại!"
     },
     "vocab": {
         "title": "Từ vựng",
@@ -238,7 +243,10 @@
         "clickDetails": "Nhấn để xem chi tiết",
         "freezesRemainingSentence": "Bạn còn {{count}} bảo vệ chuỗi.",
         "extended": "Đã kéo dài chuỗi!",
-        "onStreak": "Bạn đang đạt chuỗi {{count}} ngày!"
+        "onStreak": "Bạn đang đạt chuỗi {{count}} ngày!",
+        "howItWorks": "Cách hoạt động",
+        "howToExtend": "Luyện tập mỗi ngày để kéo dài chuỗi của bạn. Nếu bạn bỏ lỡ một ngày mà không có bảo vệ, chuỗi sẽ về 0.",
+        "freezeExplanation": "Bảo vệ chuỗi tự động giữ chuỗi của bạn nếu bạn quên học. Bạn còn {{count}} lần bảo vệ."
     },
     "history": {
         "title": "Lịch sử",

@@ -99,7 +99,12 @@
         "switchTo": "{language}に切り替え",
         "orUseAI": "またはAIを使用",
         "aiCredits": "AIクレジット",
-        "ready": "準備完了"
+        "ready": "準備完了",
+        "aiCreditsDescription": "AIクレジットは、字幕のない動画の文字起こしなど、インテリジェントな機能に使用されます。",
+        "whatAreThey": "AIクレジットとは？",
+        "whatAreTheyDesc": "AIクレジット（ダイヤモンド）を使用すると、Whisper AIを使って英語、日本語、韓国語、中国語の字幕がない動画を文字起こしできます。",
+        "howDoIGetMore": "増やすには？",
+        "howDoIGetMoreDesc": "クレジットは時間が経つと自動的に回復します。何もする必要はありません！"
     },
     "vocab": {
         "title": "単語帳",
@@ -236,7 +241,10 @@
         "clickDetails": "クリックして詳細を表示",
         "freezesRemainingSentence": "ストリークフリーズが残り{{count}}回分あります。",
         "extended": "ストリーク継続！",
-        "onStreak": "{{count}}日連続達成中！"
+        "onStreak": "{{count}}日連続達成中！",
+        "howItWorks": "仕組み",
+        "howToExtend": "継続記録を伸ばすには毎日学習してください。フリーズなしで1日学習を休むと、記録は0にリセットされます。",
+        "freezeExplanation": "ストリークフリーズを持っていると、学習し忘れた日でも記録が自動的に保護されます。残り{{count}}回分あります。"
     },
     "history": {
         "title": "履歴",

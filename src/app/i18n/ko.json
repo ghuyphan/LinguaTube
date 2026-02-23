@@ -99,7 +99,12 @@
         "switchTo": "{language}로 전환",
         "orUseAI": "또는 AI 사용",
         "aiCredits": "AI 크레딧",
-        "ready": "준비됨"
+        "ready": "준비됨",
+        "aiCreditsDescription": "AI 크레딧은 자막 없는 동영상의 대본 생성과 같은 지능형 기능에 사용됩니다.",
+        "whatAreThey": "이게 뭔가요?",
+        "whatAreTheyDesc": "AI 크레딧(다이아몬드)을 사용하면 Whisper AI로 영어, 일본어, 한국어 또는 중국어 자막이 없는 동영상을 전사할 수 있습니다.",
+        "howDoIGetMore": "어떻게 더 얻나요?",
+        "howDoIGetMoreDesc": "크레딧은 시간이 지남에 따라 자동으로 복구됩니다. 아무것도 하지 않으셔도 됩니다!"
     },
     "vocab": {
         "title": "단어장",
@@ -236,7 +241,10 @@
         "clickDetails": "클릭하여 자세히 보기",
         "freezesRemainingSentence": "남은 스트릭 프리즈가 {{count}}개 있습니다.",
         "extended": "스트릭 연장 성공!",
-        "onStreak": "{{count}}일 연속 학습 중입니다!"
+        "onStreak": "{{count}}일 연속 학습 중입니다!",
+        "howItWorks": "작동 방식",
+        "howToExtend": "연속 기록을 연장하려면 매일 연습하세요. 프리즈 없이 하루를 거르면 기록이 0으로 초기화됩니다.",
+        "freezeExplanation": "스트릭 프리즈는 연습을 잊은 날 자동으로 기록을 보호합니다. {{count}}개의 프리즈가 남았습니다."
     },
     "history": {
         "title": "기록",

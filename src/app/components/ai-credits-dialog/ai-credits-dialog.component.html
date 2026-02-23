@@ -1,0 +1,32 @@
+<div class="ai-credits-dialog">
+    <!-- Header -->
+    <div class="header-section">
+        <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
+            [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="false" class="large-diamonds-card" />
+
+        <div class="title-group">
+            <h2>{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</h2>
+            <p>{{ transcript.diamonds() }} / {{ transcript.maxDiamonds() }} {{ i18n.t('subtitle.creditsAvailable') ||
+                'Available' }}</p>
+        </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="info-box">
+        <div class="info-row">
+            <app-icon name="zap" [size]="16" class="info-icon zap-icon" />
+            <div class="info-content">
+                <strong>{{ i18n.t('subtitle.whatAreThey') }}</strong>
+                <p>{{ i18n.t('subtitle.whatAreTheyDesc') }}</p>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <app-icon name="clock" [size]="16" class="info-icon clock-icon" />
+            <div class="info-content">
+                <strong>{{ i18n.t('subtitle.howDoIGetMore') }}</strong>
+                <p>{{ i18n.t('subtitle.howDoIGetMoreDesc') }}</p>
+            </div>
+        </div>
+    </div>
+</div>

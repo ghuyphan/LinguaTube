@@ -30,6 +30,7 @@ export class SidebarComponent {
     openSettings = output<void>();
     openCommandPalette = output<void>();
     openStreak = output<void>();
+    openAiCredits = output<void>();
     showLangPicker = signal(false);
 
     // Learning language options with display info

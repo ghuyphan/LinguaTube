@@ -38,6 +38,7 @@ export class SettingsSheetComponent {
   isOpen = input<boolean>(false);
   closed = output<void>();
   openStreak = output<void>();
+  openAiCredits = output<void>();
 
   showSignOutConfirm = signal(false);
   showLearningLangPicker = signal(false);
@@ -148,5 +149,9 @@ export class SettingsSheetComponent {
 
   openStreakDialog(): void {
     this.openStreak.emit();
+  }
+
+  openAiCreditsDialog(): void {
+    this.openAiCredits.emit();
   }
 }

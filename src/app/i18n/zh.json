@@ -99,7 +99,12 @@
         "switchTo": "切换到{language}",
         "orUseAI": "或使用AI",
         "aiCredits": "AI积分",
-        "ready": "就绪"
+        "ready": "就绪",
+        "aiCreditsDescription": "AI积分用于支持智能功能，例如为没有字幕的视频生成听写文本。",
+        "whatAreThey": "什么是AI积分？",
+        "whatAreTheyDesc": "AI积分（钻石）让您可以使用Whisper AI来转录没有英语、日语、韩语或中文的视频。",
+        "howDoIGetMore": "如何获得更多？",
+        "howDoIGetMoreDesc": "积分会随着时间自动恢复。您无需进行任何操作！"
     },
     "vocab": {
         "title": "词汇本",
@@ -236,7 +241,10 @@
         "clickDetails": "点击查看详情",
         "freezesRemainingSentence": "您还有 {{count}} 个连胜保护。",
         "extended": "连胜已延长！",
-        "onStreak": "您已连续学习 {{count}} 天！"
+        "onStreak": "您已连续学习 {{count}} 天！",
+        "howItWorks": "如何运作",
+        "howToExtend": "每天练习即可延长连续天数。如果一天未练习且未使用保护，连续天数将重置为0。",
+        "freezeExplanation": "如果您忘记练习，连续保护会自动保护您的连续天数。您还有 {{count}} 个保护。"
     },
     "history": {
         "title": "历史",

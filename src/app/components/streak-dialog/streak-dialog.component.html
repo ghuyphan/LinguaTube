@@ -41,10 +41,23 @@
     </div>
 
     <!-- Freeze Info -->
-    @if (streak.freezesRemaining() > 0) {
-    <div class="freeze-info">
-        <app-icon name="snowflake" [size]="16" />
-        <span>{{ i18n.t('streak.freezesRemainingSentence', { count: streak.freezesRemaining() }) }}</span>
+    <!-- How it works -->
+    <div class="streak-info-box">
+        <div class="info-row">
+            <app-icon name="info" [size]="16" class="info-icon" />
+            <div class="info-content">
+                <strong>{{ i18n.t('streak.howItWorks') }}</strong>
+                <p>{{ i18n.t('streak.howToExtend') }}</p>
+            </div>
+        </div>
+        @if (streak.freezesRemaining() > 0) {
+        <div class="info-row freeze-info">
+            <app-icon name="snowflake" [size]="16" class="info-icon freeze-icon" />
+            <div class="info-content">
+                <strong>{{ i18n.t('streak.freezesRemaining') }}</strong>
+                <p>{{ i18n.t('streak.freezeExplanation', { count: streak.freezesRemaining() }) }}</p>
+            </div>
+        </div>
+        }
     </div>
-    }
 </div>
