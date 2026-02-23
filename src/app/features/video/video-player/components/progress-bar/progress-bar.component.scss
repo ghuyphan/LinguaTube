@@ -114,7 +114,14 @@ $z-seek-tooltip: 30;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-// Mobile specific adjustments
+// Touch / Mobile specific adjustments
+@media (hover: none) and (pointer: coarse) {
+    .progress-container .progress-handle {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
 @media (max-width: 640px) {
     .progress-container {
         height: $progress-height-mobile;

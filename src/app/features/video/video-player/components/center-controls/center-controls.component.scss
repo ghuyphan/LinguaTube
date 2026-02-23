@@ -35,6 +35,10 @@ $z-center-controls: 15;
 @mixin player-btn($size, $icon-size) {
     width: $size;
     height: $size;
+    min-width: $size;
+    min-height: $size;
+    flex-shrink: 0;
+    aspect-ratio: 1;
     border-radius: 50%;
     background: $btn-bg;
     border: none;
