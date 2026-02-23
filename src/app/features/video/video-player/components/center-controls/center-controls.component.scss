@@ -83,11 +83,6 @@ $z-center-controls: 15;
     opacity: 1;
     visibility: visible;
 
-    &.controls-hidden {
-        opacity: 0;
-        visibility: hidden;
-    }
-
     >* {
         pointer-events: auto;
     }
@@ -100,6 +95,13 @@ $z-center-controls: 15;
     justify-content: center;
     gap: var(--space-lg);
     pointer-events: auto;
+    transition: opacity $transition-normal, visibility $transition-normal;
+
+    &.controls-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 }
 
 // Playlist navigation buttons (prev/next)

@@ -45,7 +45,7 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
 
       <!-- Main Button Group -->
       @if (isReady() && !isEnded()) {
-        <div class="center-button-group">
+        <div class="center-button-group" [class.controls-hidden]="!areControlsVisible() && isPlaying()">
           <!-- Previous Button (Playlist only) -->
           @if (hasPlaylist()) {
             <button 
@@ -59,8 +59,7 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
           }
 
           <!-- Play/Pause Button (Unified & Optimistic) -->
-          @if (areControlsVisible() || !isPlaying()) {
-            <button class="big-play-btn fade-in" 
+          <button class="big-play-btn fade-in" 
               [attr.aria-label]="isPlaying() ? 'Pause video' : 'Play video'"
               (touchstart)="$event.stopPropagation()"
               (touchend)="onPlayPauseTouch($event)"
@@ -79,7 +78,6 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
                 }
               </div>
             </button>
-          }
 
           <!-- Next Button (Playlist only) -->
           @if (hasPlaylist()) {
