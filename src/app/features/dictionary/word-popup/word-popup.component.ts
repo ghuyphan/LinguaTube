@@ -221,6 +221,6 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Cleanup handled by BottomSheetComponent
+    this.lookupSubscription?.unsubscribe();
   }
 }

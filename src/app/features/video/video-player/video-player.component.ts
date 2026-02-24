@@ -301,11 +301,19 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private hasInitialized = false;
   private previousHasVideo: boolean | null = null;
 
-  // Timeouts and intervals
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
   private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
   private doubleTapTimeout: ReturnType<typeof setTimeout> | null = null;
 
+  // Track elements and handlers for ViewChild setters
+  private _videoContainerEl: HTMLElement | null = null;
+  private _playerOverlayEl: HTMLElement | null = null;
+
+  private readonly _moveHandler = () => this.onUserActivity();
+  private readonly _leaveHandler = () => this.onMouseLeave();
+  private readonly _touchStartHandler = (e: Event) => this.onOverlayTouchStart(e as TouchEvent);
+  private readonly _touchMoveHandler = (e: Event) => this.onOverlayTouchMove(e as TouchEvent);
+  private readonly _touchEndHandler = (e: Event) => this.onOverlayTouchEnd(e as TouchEvent);
 
   // Event listener cleanup functions to prevent memory leaks
   private eventCleanupFns: (() => void)[] = [];
@@ -316,8 +324,6 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   private lastControlsShowTime = 0;
 
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
-  @ViewChild('videoContainer') videoContainerRef!: ElementRef<HTMLDivElement>;
-  @ViewChild('playerOverlay') playerOverlayRef!: ElementRef<HTMLDivElement>;
 
   constructor() {
     // Initialize player when video exists but player isn't ready
@@ -408,50 +414,48 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.setupEventListeners();
+  private _videoContainerRef?: ElementRef<HTMLDivElement>;
+  @ViewChild('videoContainer')
+  get videoContainerRef(): ElementRef<HTMLDivElement> | undefined { return this._videoContainerRef; }
+  set videoContainerRef(ref: ElementRef<HTMLDivElement> | undefined) {
+    this._videoContainerRef = ref;
+    this.ngZone.runOutsideAngular(() => {
+      if (this._videoContainerEl) {
+        this._videoContainerEl.removeEventListener('mousemove', this._moveHandler);
+        this._videoContainerEl.removeEventListener('mouseleave', this._leaveHandler);
+      }
+      this._videoContainerEl = ref?.nativeElement || null;
+      if (this._videoContainerEl) {
+        this._videoContainerEl.addEventListener('mousemove', this._moveHandler);
+        this._videoContainerEl.addEventListener('mouseleave', this._leaveHandler);
+      }
+    });
   }
 
-  private setupEventListeners() {
+  private _playerOverlayRef?: ElementRef<HTMLDivElement>;
+  @ViewChild('playerOverlay')
+  get playerOverlayRef(): ElementRef<HTMLDivElement> | undefined { return this._playerOverlayRef; }
+  set playerOverlayRef(ref: ElementRef<HTMLDivElement> | undefined) {
+    this._playerOverlayRef = ref;
     this.ngZone.runOutsideAngular(() => {
-      // Video Container Mouse Move (User Activity)
-      if (this.videoContainerRef?.nativeElement) {
-        const el = this.videoContainerRef.nativeElement;
-        const moveHandler = () => this.onUserActivity();
-        const leaveHandler = () => this.onMouseLeave();
-
-        el.addEventListener('mousemove', moveHandler);
-        el.addEventListener('mouseleave', leaveHandler);
-
-        this.eventCleanupFns.push(
-          () => el.removeEventListener('mousemove', moveHandler),
-          () => el.removeEventListener('mouseleave', leaveHandler)
-        );
+      if (this._playerOverlayEl) {
+        this._playerOverlayEl.removeEventListener('touchstart', this._touchStartHandler);
+        this._playerOverlayEl.removeEventListener('touchmove', this._touchMoveHandler);
+        this._playerOverlayEl.removeEventListener('touchend', this._touchEndHandler);
+        this._playerOverlayEl.removeEventListener('touchcancel', this._touchEndHandler);
       }
-
-      // Touch Overlay Events
-      if (this.playerOverlayRef?.nativeElement) {
-        const el = this.playerOverlayRef.nativeElement;
-        const touchStartHandler = (e: Event) => this.onOverlayTouchStart(e as TouchEvent);
-        const touchMoveHandler = (e: Event) => this.onOverlayTouchMove(e as TouchEvent);
-        const touchEndHandler = (e: Event) => this.onOverlayTouchEnd(e as TouchEvent);
-
-        el.addEventListener('touchstart', touchStartHandler);
-        el.addEventListener('touchmove', touchMoveHandler);
-        el.addEventListener('touchend', touchEndHandler);
-        el.addEventListener('touchcancel', touchEndHandler);
-
-        this.eventCleanupFns.push(
-          () => el.removeEventListener('touchstart', touchStartHandler),
-          () => el.removeEventListener('touchmove', touchMoveHandler),
-          () => el.removeEventListener('touchend', touchEndHandler),
-          () => el.removeEventListener('touchcancel', touchEndHandler)
-        );
+      this._playerOverlayEl = ref?.nativeElement || null;
+      if (this._playerOverlayEl) {
+        this._playerOverlayEl.addEventListener('touchstart', this._touchStartHandler, { passive: true });
+        this._playerOverlayEl.addEventListener('touchmove', this._touchMoveHandler, { passive: false });
+        this._playerOverlayEl.addEventListener('touchend', this._touchEndHandler);
+        this._playerOverlayEl.addEventListener('touchcancel', this._touchEndHandler);
       }
-
-      // Progress Bar Events - now handled by hit area element in template for Safari compatibility
-      // The hit area element uses template bindings which work reliably in Safari
     });
+  }
+
+  ngAfterViewInit() {
+    // Progress Bar Events - now handled by hit area element in template for Safari compatibility
   }
 
   // Refactored onUserActivity to re-enter zone only when needed

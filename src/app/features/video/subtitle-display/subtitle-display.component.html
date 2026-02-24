@@ -16,7 +16,7 @@
             <div class="subtitle-center-wrapper">
                 <div class="subtitle-text" [ngClass]="'text-' + settings.settings().language"
                     [class.is-looping]="isLoopEnabled()">
-                    @if (currentTokens().length === 0) {
+                    @if (viewTokens().length === 0) {
                     <!-- Shimmer skeleton while tokens load -->
                     <span class="token-loading">
                         @for (i of [1,2,3,4,5]; track $index) {
@@ -25,17 +25,23 @@
                     </span>
                     } @else {
                     <span class="subtitle-content" @subtitleFade>
-                        @for (token of currentTokens(); track token.surface + '-' + $index) {@if (token.isPunctuation)
-                        {<span class="punctuation">{{ token.surface }}</span>} @else {<span class="word"
-                            [class.word--new]="token.level === 'new'"
+                        @for (token of viewTokens(); track token.surface + '-' + $index) {
+                        @if (token.isPunctuation) {
+                        <span class="punctuation">{{ token.surface }}</span>
+                        } @else {
+                        <span class="word" [class.word--new]="token.level === 'new'"
                             [class.word--learning]="token.level === 'learning'"
-                            [class.word--known]="token.level === 'known'"
-                            [class.word--saved]="vocab.hasWord(token.surface)"
-                            [class.word--grammar]="isGrammarToken($index)"
-                            (click)="isGrammarToken($index) ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">@if
-                            (showReading() && getReading(token)) {<ruby>{{ token.surface }}<rt>{{ getReading(token) }}
-                                </rt>
-                            </ruby>} @else {{{ token.surface }}}</span>}}
+                            [class.word--known]="token.level === 'known'" [class.word--saved]="token.isSaved"
+                            [class.word--grammar]="token.isGrammar"
+                            (click)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">
+                            @if (showReading() && token.readingText) {
+                            <ruby>{{ token.surface }}<rt>{{ token.readingText }}</rt></ruby>
+                            } @else {
+                            {{ token.surface }}
+                            }
+                        </span>
+                        }
+                        }
                     </span>
                     }
 

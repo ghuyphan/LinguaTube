@@ -513,6 +513,7 @@ export class VideoPageComponent implements OnInit {
 
 
       this.transcript.generateWithAI(currentVideo.id, lang)
+        .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe({
           next: (cues) => {
             if (cues.length > 0) {
@@ -646,46 +647,48 @@ export class VideoPageComponent implements OnInit {
 
   private fetchCaptions(videoId: string): void {
     const lang = this.settings.settings().language;
-    this.transcript.fetchTranscript(videoId, lang).subscribe({
-      next: (cues) => {
-        if (cues.length > 0) {
-          this.handleCaptionsSuccess(cues, lang);
-        }
-      },
-      error: (err) => {
-        console.log('Auto-caption fetch failed:', err);
+    this.transcript.fetchTranscript(videoId, lang)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (cues) => {
+          if (cues.length > 0) {
+            this.handleCaptionsSuccess(cues, lang);
+          }
+        },
+        error: (err) => {
+          console.log('Auto-caption fetch failed:', err);
 
-        // Handle NO_NATIVE case where other languages might be available
-        if (this.transcript.error() === 'NO_NATIVE' && !this.skipNextMismatchDialog) {
-          const availableNative = this.transcript.availableLanguages().native;
+          // Handle NO_NATIVE case where other languages might be available
+          if (this.transcript.error() === 'NO_NATIVE' && !this.skipNextMismatchDialog) {
+            const availableNative = this.transcript.availableLanguages().native;
 
-          if (availableNative && availableNative.length > 0) {
-            // Find a preferred language to suggest
-            const preferred = ['ja', 'zh', 'ko', 'en'];
-            const requested = this.settings.settings().language;
+            if (availableNative && availableNative.length > 0) {
+              // Find a preferred language to suggest
+              const preferred = ['ja', 'zh', 'ko', 'en'];
+              const requested = this.settings.settings().language;
 
-            // normalize function to match simpler codes
-            const normalize = (l: string) => l.split('-')[0].toLowerCase();
+              // normalize function to match simpler codes
+              const normalize = (l: string) => l.split('-')[0].toLowerCase();
 
-            let suggestion = availableNative.find(l => preferred.includes(normalize(l)));
-            if (!suggestion) suggestion = availableNative[0]; // fallback to first available
+              let suggestion = availableNative.find(l => preferred.includes(normalize(l)));
+              if (!suggestion) suggestion = availableNative[0]; // fallback to first available
 
-            if (suggestion) {
-              const suggestionSimple = normalize(suggestion);
+              if (suggestion) {
+                const suggestionSimple = normalize(suggestion);
 
-              // Only show if it's different from what we asked for
-              if (normalize(requested) !== suggestionSimple) {
-                this.mismatchDetectedLang.set(suggestionSimple);
-                this.showLanguageMismatchDialog.set(true);
+                // Only show if it's different from what we asked for
+                if (normalize(requested) !== suggestionSimple) {
+                  this.mismatchDetectedLang.set(suggestionSimple);
+                  this.showLanguageMismatchDialog.set(true);
+                }
               }
             }
           }
-        }
 
-        // Always reset the skip flag after an attempt
-        this.skipNextMismatchDialog = false;
-      }
-    });
+          // Always reset the skip flag after an attempt
+          this.skipNextMismatchDialog = false;
+        }
+      });
   }
 
   private handleCaptionsSuccess(cues: any[], requestedLang: string) {

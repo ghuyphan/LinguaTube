@@ -222,6 +222,26 @@ export class SubtitleDisplayComponent {
     return indices;
   });
 
+  viewTokens = computed(() => {
+    const tokens = this.currentTokens();
+    const grammarIndices = this.grammarTokenIndices();
+    const lang = this.effectiveLanguage();
+
+    return tokens.map((token, index) => {
+      let readingText: string | undefined;
+      if (lang === 'ja') readingText = token.reading;
+      else if (lang === 'zh') readingText = token.pinyin;
+      else readingText = token.romanization || token.pinyin;
+
+      return {
+        ...token,
+        isGrammar: grammarIndices.has(index),
+        readingText,
+        isSaved: this.vocab.hasWord(token.surface)
+      };
+    });
+  });
+
   selectedGrammarPattern = signal<GrammarPattern | null>(null);
   grammarPopupOpen = signal(false);
 
@@ -567,13 +587,6 @@ export class SubtitleDisplayComponent {
     }
   });
 
-  getReading(token: Token): string | undefined {
-    const lang = this.effectiveLanguage();
-    if (lang === 'ja') return token.reading;
-    if (lang === 'zh') return token.pinyin;
-    return token.romanization || token.pinyin;
-  }
-
   toggleReading(): void {
     const lang = this.effectiveLanguage();
     if (lang === 'ja') {
@@ -665,10 +678,6 @@ export class SubtitleDisplayComponent {
     return `${token.surface}-${index}`;
   }
 
-  isGrammarToken(index: number): boolean {
-    return this.grammarTokenIndices().has(index);
-  }
-
   getGrammarMatchForToken(index: number): GrammarMatch | undefined {
     return this.grammarMatches().find(m => m.tokenIndices.includes(index));
   }
@@ -714,6 +723,15 @@ export class SubtitleDisplayComponent {
         this.disableLoop();
       }
       this.quiz.startQuiz();
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.lazyLoadSubscription) {
+      this.lazyLoadSubscription.unsubscribe();
+    }
+    if (this.dualSubSubscription) {
+      this.dualSubSubscription.unsubscribe();
     }
   }
 }
