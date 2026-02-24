@@ -6,35 +6,7 @@
     flex-direction: column;
 }
 
-// ============================================
-// HEADER - Clean and minimal
-// ============================================
-.dict-header {
-    padding: var(--space-sm) var(--space-md);
-}
 
-.header-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.dict-icon {
-    color: var(--accent-primary);
-}
-
-.dict-header h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.dict-subtitle {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-    margin-top: var(--space-xs);
-    margin-bottom: 0;
-}
 
 // ============================================
 // SEARCH BAR - Modern pill style
@@ -319,8 +291,7 @@
 // TABLET RESPONSIVE
 // ============================================
 @media (max-width: 768px) {
-    .dict-header {
-        padding: var(--space-sm) var(--space-md);
+    .panel-header {
         border-bottom: none;
     }
 
@@ -349,9 +320,7 @@
 // MOBILE RESPONSIVE
 // ============================================
 @media (max-width: 480px) {
-    .dict-header {
-        padding: var(--space-sm) var(--space-md);
-    }
+
 
     .dict-filters {
         padding: var(--space-sm);

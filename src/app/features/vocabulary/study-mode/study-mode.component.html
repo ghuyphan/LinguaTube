@@ -2,12 +2,12 @@
     @if (!isStudying() && !isComplete()) {
     <!-- Study Start Screen -->
     <div class="study-start">
-        <div class="study-header">
-            <div class="header-row">
-                <app-icon name="graduation-cap" [size]="24" class="study-icon" />
-                <h2>{{ i18n.t('study.title') }}</h2>
+        <div class="panel-header">
+            <div class="panel-header__row">
+                <app-icon name="graduation-cap" [size]="24" class="panel-header__icon" />
+                <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
             </div>
-            <p class="study-subtitle">{{ i18n.t('study.subtitle') }}</p>
+            <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
         </div>
 
         <div class="study-stats">
@@ -48,22 +48,30 @@
         </div>
 
         <div class="study-options">
-            <div class="option-item">
-                <span class="option-label">{{ i18n.t('study.includeNew') }}</span>
+            <div class="setting-row">
+                <div class="setting-row__content">
+                    <span class="setting-row__label">{{ i18n.t('study.includeNew') }}</span>
+                </div>
                 <app-switch [checked]="includeNew" (checkedChange)="includeNew = $event" />
             </div>
-            <div class="option-item">
-                <span class="option-label">{{ i18n.t('study.includeLearning') }}</span>
+            <div class="setting-row">
+                <div class="setting-row__content">
+                    <span class="setting-row__label">{{ i18n.t('study.includeLearning') }}</span>
+                </div>
                 <app-switch [checked]="includeLearning" (checkedChange)="includeLearning = $event" />
             </div>
-            <div class="option-item">
-                <span class="option-label">{{ i18n.t('study.reviewKnown') }}</span>
+            <div class="setting-row">
+                <div class="setting-row__content">
+                    <span class="setting-row__label">{{ i18n.t('study.reviewKnown') }}</span>
+                </div>
                 <app-switch [checked]="includeKnown" (checkedChange)="includeKnown = $event" />
             </div>
-            <div class="option-item option-item--highlight">
-                <div class="option-label-group">
-                    <span class="option-label">{{ i18n.t('study.reverseMode') }}</span>
-                    <span class="option-hint">{{ i18n.t('study.meaningFirst') }}</span>
+            <div class="setting-row setting-row--highlight">
+                <div class="setting-row__content">
+                    <div class="setting-row__group">
+                        <span class="setting-row__label">{{ i18n.t('study.reverseMode') }}</span>
+                        <span class="setting-row__hint">{{ i18n.t('study.meaningFirst') }}</span>
+                    </div>
                 </div>
                 <app-switch [checked]="reverseMode" (checkedChange)="reverseMode = $event" />
             </div>
@@ -78,7 +86,7 @@
             <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}
             </p>
             } @else {
-            <div class="empty-state empty-state--centered">
+            <div class="empty-state">
                 <div class="empty-state__icon-box">
                     <app-icon name="info" [size]="18" />
                 </div>

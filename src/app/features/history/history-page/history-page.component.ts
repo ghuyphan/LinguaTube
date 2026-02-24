@@ -65,7 +65,7 @@ type FilterType = 'all' | 'favorites';
           <div class="history-list">
             @if (filteredItems().length === 0 && historyItems().length > 0) {
               <!-- No favorites -->
-              <div class="empty-state empty-state--centered empty-state--animate">
+              <div class="empty-state empty-state--animate">
                 <div class="empty-state__icon-box">
                   <app-icon name="heart" [size]="20" />
                 </div>
@@ -76,17 +76,13 @@ type FilterType = 'all' | 'favorites';
               </div>
             } @else if (historyItems().length === 0) {
               <!-- No history at all -->
-              <div class="empty-state empty-state--centered">
+              <div class="empty-state">
                 <div class="empty-state__icon-box">
                   <app-icon name="play-circle" [size]="20" />
                 </div>
                 <div class="empty-state__text">
                   <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
                   <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') }}</p>
-                  <a routerLink="/video" class="btn btn-primary btn-sm empty-state__action">
-                    <app-icon name="play" [size]="14" />
-                    {{ i18n.t('nav.video') }}
-                  </a>
                 </div>
               </div>
             } @else {

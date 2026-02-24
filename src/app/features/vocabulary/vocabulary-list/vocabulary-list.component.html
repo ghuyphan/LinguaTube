@@ -5,7 +5,7 @@
             <h2>{{ i18n.t('vocab.title') }}</h2>
         </div>
         <p class="vocab-subtitle">{{ vocab.getStatsByLanguage(settings.settings().language).total }} {{
-            i18n.t('vocab.words') }}</p>
+            i18n.t('study.cards') }}</p>
     </div>
 
     <!-- Search / Filters -->
@@ -49,10 +49,10 @@
                 }
             </div>
             } @else if (filteredWords().length === 0) {
-            <div class="empty-state empty-state--centered">
+            <div class="empty-state">
                 @if (vocab.vocabulary().length === 0) {
                 <div class="empty-state__icon-box">
-                    <app-icon name="book-open" [size]="20" />
+                    <app-icon name="bookmark" [size]="20" />
                 </div>
                 <div class="empty-state__text">
                     <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>

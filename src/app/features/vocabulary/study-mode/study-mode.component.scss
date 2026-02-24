@@ -16,33 +16,7 @@
     border: 1px solid var(--border-color);
 }
 
-.study-header {
-    padding: var(--space-sm) var(--space-md);
-}
 
-
-.header-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.study-icon {
-    color: var(--accent-primary);
-}
-
-.study-header h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.study-subtitle {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-    margin-top: var(--space-xs);
-    margin-bottom: 0;
-}
 
 // ============================================
 // STATS - Horizontal inline badges
@@ -53,54 +27,6 @@
     padding: var(--space-sm) var(--space-md);
 }
 
-
-.stat-badge {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    padding: var(--space-xs) var(--space-sm);
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    flex: 1;
-    justify-content: center;
-}
-
-.stat-badge--new {
-    background: var(--word-new);
-
-    .stat-value {
-        color: var(--accent-primary);
-    }
-}
-
-.stat-badge--learning {
-    background: var(--word-learning);
-
-    .stat-value {
-        color: var(--word-learning-text);
-    }
-}
-
-.stat-badge--known {
-    background: var(--word-known);
-
-    .stat-value {
-        color: var(--success);
-    }
-}
-
-.stat-value {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.stat-label {
-    font-size: 0.6875rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-}
 
 // ============================================
 // DUE TODAY BANNER
@@ -182,40 +108,7 @@
 .study-options {
     display: flex;
     flex-direction: column;
-    gap: 0;
-}
-
-.option-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    cursor: pointer;
-    transition: background var(--transition-fast);
-}
-
-.option-item--highlight {
-    background: var(--bg-secondary);
-    margin: var(--space-xs) var(--space-md);
-    border-radius: var(--border-radius);
-    padding: var(--space-sm);
-}
-
-.option-label-group {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.option-label {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-}
-
-.option-hint {
-    font-size: 0.75rem;
-    color: var(--text-muted);
+    padding: 0 var(--space-md);
 }
 
 // ============================================

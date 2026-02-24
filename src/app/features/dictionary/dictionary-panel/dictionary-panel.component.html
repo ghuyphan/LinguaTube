@@ -1,10 +1,10 @@
 <div class="card dict-panel">
-    <div class="dict-header">
-        <div class="header-row">
-            <app-icon name="book-open" [size]="20" class="dict-icon" />
-            <h2>{{ i18n.t('dictionary.title') }}</h2>
+    <div class="panel-header">
+        <div class="panel-header__row">
+            <app-icon name="book-open" [size]="20" class="panel-header__icon" />
+            <h2 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h2>
         </div>
-        <p class="dict-subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
+        <p class="panel-header__subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
     </div>
 
     <!-- Search / Filters -->
@@ -96,7 +96,7 @@
             </div>
         </div>
         } @else if (hasSearched() && !isLoading()) {
-        <div class="empty-state empty-state--centered">
+        <div class="empty-state">
             <div class="empty-state__icon-box">
                 <app-icon name="info" [size]="20" />
             </div>
@@ -108,7 +108,7 @@
         </div>
         } @else if (!hasSearched()) {
         <!-- Empty state - always visible -->
-        <div class="empty-state empty-state--centered">
+        <div class="empty-state">
             <div class="empty-state__icon-box">
                 <app-icon name="book-open" [size]="20" />
             </div>
