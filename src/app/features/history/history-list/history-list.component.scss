@@ -99,6 +99,8 @@
 .history-items {
     display: flex;
     flex-direction: column;
+    padding: 0 var(--space-md);
+    box-sizing: border-box;
 
     &.filter-animate {
         animation: filterFade 0.25s ease-out;
