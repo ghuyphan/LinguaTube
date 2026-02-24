@@ -172,11 +172,6 @@
 // Filters
 // -------------------------
 .filter-chips {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-md);
-    padding: 0 var(--space-md) 6px; // 6px bottom padding gives btn-primary's 4px shadow room
     flex-shrink: 0;
 
     .btn {

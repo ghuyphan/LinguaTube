@@ -24,12 +24,12 @@ type FilterType = 'all' | 'favorites';
       <div class="page-layout__main">
         <!-- Main History Panel -->
         <div class="card history-panel">
-          <div class="history-header">
+          <div class="panel-header">
             <div class="header-row">
-              <app-icon name="clock" [size]="20" class="history-icon" />
-              <h2 class="history-title">{{ i18n.t('history.title') }}</h2>
+              <app-icon name="clock" [size]="20" class="panel-icon" />
+              <h2 class="panel-title">{{ i18n.t('history.title') }}</h2>
             </div>
-            <div class="history-badges">
+            <div class="panel-badges">
               <span class="badge badge--primary">{{ historyItems().length }} {{ i18n.t('history.all') }}</span>
               @if (favorites().length > 0) {
                 <span class="badge badge--accent">{{ favorites().length }} {{ i18n.t('history.favorites') }}</span>
@@ -166,7 +166,7 @@ type FilterType = 'all' | 'favorites';
       overflow: hidden;
     }
 
-    .history-header {
+    .panel-header {
       padding: var(--space-sm) var(--space-md);
       flex-shrink: 0;
     }
@@ -177,17 +177,17 @@ type FilterType = 'all' | 'favorites';
       gap: var(--space-sm);
     }
 
-    .history-icon {
+    .panel-icon {
       color: var(--accent-primary);
     }
 
-    .history-title {
+    .panel-title {
       font-size: 1rem;
       font-weight: 600;
       margin: 0;
     }
 
-    .history-badges {
+    .panel-badges {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-xs);

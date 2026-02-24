@@ -2,8 +2,6 @@
     position: relative;
 }
 
-
-
 .popup-header {
     padding: var(--space-md);
     text-align: center;
@@ -35,6 +33,9 @@
 
 .translation-controls {
     margin-top: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
 }
 
 .lang-select-btn {
@@ -66,19 +67,141 @@
     }
 }
 
+/* Translate All button */
+.translate-all-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-height: unset;
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            background: var(--bg-hover);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
 .popup-body {
     padding: var(--space-md);
-    max-height: 40vh;
+    max-height: clamp(120px, 35vh, 400px);
     overflow-y: auto;
 }
 
-.popup-loading {
+/* Shimmer skeleton loading */
+.popup-shimmer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+}
+
+.shimmer-line {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+}
+
+.shimmer-num {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: var(--border-radius-round);
+    background: linear-gradient(90deg,
+            color-mix(in srgb, var(--text-secondary), transparent 92%) 25%,
+            color-mix(in srgb, var(--text-secondary), transparent 85%) 50%,
+            color-mix(in srgb, var(--text-secondary), transparent 92%) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.shimmer-text {
+    flex: 1;
+    height: 1rem;
+    border-radius: 6px;
+    background: linear-gradient(90deg,
+            color-mix(in srgb, var(--text-secondary), transparent 92%) 25%,
+            color-mix(in srgb, var(--text-secondary), transparent 85%) 50%,
+            color-mix(in srgb, var(--text-secondary), transparent 92%) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+
+    &:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+}
+
+.shimmer-line:nth-child(2) .shimmer-text {
+    width: 75%;
+    animation-delay: 0.15s;
+}
+
+.shimmer-line:nth-child(3) .shimmer-text {
+    width: 60%;
+    animation-delay: 0.25s;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Error state */
+.popup-error {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-sm);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
+    text-align: center;
     color: var(--text-muted);
+}
+
+.popup-error-text {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.popup-retry-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-height: unset;
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+        }
+    }
 }
 
 .popup-badges {
@@ -99,16 +222,29 @@
     border-radius: var(--border-radius-sm);
 }
 
-
 .popup-meanings {
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
 }
 
+/* Staggered fade-in for meanings */
 .meaning-item {
     display: flex;
     gap: var(--space-sm);
+    animation: fadeSlideIn 0.25s ease-out both;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .meaning-num {
@@ -123,7 +259,6 @@
     background: var(--bg-secondary);
     border-radius: var(--border-radius-round);
     flex-shrink: 0;
-
 }
 
 .meaning-content {
@@ -157,7 +292,7 @@
     justify-content: center;
     border-radius: var(--border-radius-sm);
     transition: all var(--transition-fast);
-    opacity: 0.6;
+    opacity: 0.8;
     min-height: unset;
 }
 
@@ -182,6 +317,33 @@
     animation: fadeIn 0.2s ease;
 }
 
+/* Translation error state */
+.translation-error {
+    font-size: 0.8125rem;
+    color: var(--error, #ef4444);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    button {
+        font-size: 0.75rem;
+        color: var(--accent-primary);
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 0;
+        min-height: unset;
+
+        @media (hover: hover) {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
 .translation-flag {
     font-size: 1rem;
 }
@@ -201,8 +363,6 @@
     border-radius: var(--border-radius-sm);
 }
 
-
-
 .popup-footer {
     display: flex;
     gap: var(--space-sm);
@@ -211,16 +371,89 @@
 
 .popup-footer .btn {
     flex: 1;
+    min-height: 44px;
 }
 
 .saved-btn {
     color: var(--success) !important;
 }
 
-// Level select btn styles removed - using global styles
+/* Level selector button */
+.level-select-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    height: 44px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 0 var(--border-color);
+    min-height: unset;
 
-/* fadeIn animation is now global */
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 0 var(--border-color);
+        }
+    }
 
+    &:active {
+        transform: translateY(4px) !important;
+        box-shadow: 0 0 0 var(--border-color) !important;
+    }
+
+    app-icon {
+        color: var(--text-muted);
+    }
+}
+
+.level-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--text-muted);
+    transition: background 0.2s;
+}
+
+.level-text {
+    text-transform: capitalize;
+}
+
+/* Level color variants */
+.level--new .level-dot {
+    background: var(--error, #ff4b4b);
+}
+
+.level--learning .level-dot {
+    background: var(--warning, #ffc800);
+}
+
+.level--known .level-dot {
+    background: var(--success, #1cb0f6);
+}
+
+.level--ignored .level-dot {
+    background: var(--text-muted);
+}
+
+/* fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -239,5 +472,25 @@
     .popup-footer .btn {
         min-height: 48px;
         font-size: 0.9375rem;
+    }
+}
+
+/* Landscape adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .popup-header {
+        padding: var(--space-xs) var(--space-md);
+        gap: 2px;
+    }
+
+    .popup-word {
+        font-size: 1.5rem;
+    }
+
+    .popup-body {
+        max-height: 50vh;
+    }
+
+    .popup-footer {
+        padding: var(--space-sm) var(--space-md);
     }
 }

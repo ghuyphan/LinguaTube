@@ -33,10 +33,14 @@ export class WordPopupComponent implements OnDestroy {
   isVisible = signal(false);
   isSaved = signal(false);
 
+  // Error state
+  lookupError = signal<string | null>(null);
+
   // Translation state
   targetLang = signal(this.getDefaultTargetLang());
   translatedDefinitions = signal<Map<number, { text: string; lang: string }>>(new Map());
   translatingIndices = signal<Set<number>>(new Set());
+  translationErrors = signal<Set<number>>(new Set());
 
   // Picker state
   langPickerOpen = signal(false);
@@ -67,6 +71,14 @@ export class WordPopupComponent implements OnDestroy {
     return this.vocab.getWordLevel(word.surface) || 'new';
   });
 
+  // Translate-all loading state
+  isTranslatingAll = computed(() => {
+    const meanings = this.entry()?.meanings;
+    if (!meanings) return false;
+    const translating = this.translatingIndices();
+    return meanings.length > 1 && meanings.some((_, i) => translating.has(i));
+  });
+
   private getDefaultTargetLang(): string {
     const uiLang = this.i18n.currentLanguage();
     const supported = this.translation.getSupportedTargetLanguages().map(l => l.code);
@@ -88,9 +100,11 @@ export class WordPopupComponent implements OnDestroy {
       if (word) {
         this.isVisible.set(true);
         this.isSaved.set(this.vocab.hasWord(word.surface));
-        // Reset translations when word changes
+        // Reset all state when word changes
         this.translatedDefinitions.set(new Map());
         this.translatingIndices.set(new Set());
+        this.translationErrors.set(new Set());
+        this.lookupError.set(null);
         this.lookupWord(word.surface);
       }
     });
@@ -99,11 +113,25 @@ export class WordPopupComponent implements OnDestroy {
   lookupWord(word: string): void {
     // Cancel any in-flight lookup
     this.lookupSubscription?.unsubscribe();
+    this.lookupError.set(null);
 
     const lang = this.settings.settings().language;
-    this.lookupSubscription = this.dictionary.lookup(word, lang).subscribe(result => {
-      this.entry.set(result);
+    this.lookupSubscription = this.dictionary.lookup(word, lang).subscribe({
+      next: result => {
+        this.entry.set(result);
+      },
+      error: () => {
+        this.lookupError.set('LOOKUP_FAILED');
+        this.entry.set(null);
+      }
     });
+  }
+
+  retryLookup(): void {
+    const word = this.selectedWord();
+    if (word) {
+      this.lookupWord(word.surface);
+    }
   }
 
   saveWord(): void {
@@ -159,29 +187,59 @@ export class WordPopupComponent implements OnDestroy {
     return lang ? lang.flag : '🌐';
   }
 
+  translateAll(): void {
+    const meanings = this.entry()?.meanings;
+    if (!meanings) return;
+
+    meanings.forEach((meaning, index) => {
+      this.translateDefinition(index, meaning.definition);
+    });
+  }
+
   translateDefinition(index: number, text: string): void {
     // Skip if already translated to current target language
     const existing = this.translatedDefinitions().get(index);
     if (existing && existing.lang === this.targetLang()) return;
 
+    // Clear any previous error for this index
+    this.translationErrors.update(set => {
+      const newSet = new Set(set);
+      newSet.delete(index);
+      return newSet;
+    });
+
     this.toggleTranslating(index, true);
 
     const targetLang = this.targetLang();
-    this.translation.translateBatch([text], 'en', targetLang).subscribe(results => {
-      const translatedText = results[0];
-      if (translatedText) {
-        this.translatedDefinitions.update(map => {
-          const newMap = new Map(map);
-          newMap.set(index, { text: translatedText, lang: targetLang });
-          return newMap;
+    this.translation.translateBatch([text], 'en', targetLang).subscribe({
+      next: results => {
+        const translatedText = results[0];
+        if (translatedText) {
+          this.translatedDefinitions.update(map => {
+            const newMap = new Map(map);
+            newMap.set(index, { text: translatedText, lang: targetLang });
+            return newMap;
+          });
+        }
+        this.toggleTranslating(index, false);
+      },
+      error: () => {
+        this.toggleTranslating(index, false);
+        this.translationErrors.update(set => {
+          const newSet = new Set(set);
+          newSet.add(index);
+          return newSet;
         });
       }
-      this.toggleTranslating(index, false);
     });
   }
 
   isTranslating(index: number): boolean {
     return this.translatingIndices().has(index);
+  }
+
+  hasTranslationError(index: number): boolean {
+    return this.translationErrors().has(index);
   }
 
   toggleTranslating(index: number, state: boolean): void {
