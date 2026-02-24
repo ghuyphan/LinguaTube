@@ -23,7 +23,7 @@ type FilterType = 'all' | 'favorites';
     <div class="page-layout">
       <div class="page-layout__main">
         <!-- Main History Panel -->
-        <div class="history-panel">
+        <div class="card history-panel">
           <div class="history-header">
             <div class="header-row">
               <app-icon name="clock" [size]="20" class="history-icon" />
@@ -65,7 +65,7 @@ type FilterType = 'all' | 'favorites';
           <div class="history-list">
             @if (filteredItems().length === 0 && historyItems().length > 0) {
               <!-- No favorites -->
-              <div class="empty-state empty-state--animate">
+              <div class="empty-state empty-state--centered empty-state--animate">
                 <div class="empty-state__icon-box">
                   <app-icon name="heart" [size]="20" />
                 </div>
@@ -76,7 +76,7 @@ type FilterType = 'all' | 'favorites';
               </div>
             } @else if (historyItems().length === 0) {
               <!-- No history at all -->
-              <div class="empty-state">
+              <div class="empty-state empty-state--centered">
                 <div class="empty-state__icon-box">
                   <app-icon name="play-circle" [size]="20" />
                 </div>
@@ -107,7 +107,7 @@ type FilterType = 'all' | 'favorites';
       <!-- Desktop sidebar -->
       <aside class="page-layout__sidebar desktop-only">
         <div class="sidebar-card">
-          <h3>{{ i18n.t('history.title') }}</h3>
+          <h3 class="sidebar-card__title">{{ i18n.t('history.title') }}</h3>
           
           <div class="stats-grid">
             <div class="stat-item">
@@ -157,23 +157,10 @@ type FilterType = 'all' | 'favorites';
   styles: [`
     :host {
       display: block;
-      /* Allow natural height */
-    }
-
-    .page-layout {
-      /* Remove fixed height */
-    }
-
-    .page-layout__main {
-      display: flex;
-      flex-direction: column;
     }
 
     /* History panel - component specific */
     .history-panel {
-      background: var(--bg-card);
-      border-radius: var(--border-radius-lg);
-      border: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -228,13 +215,6 @@ type FilterType = 'all' | 'favorites';
       app-history-list {
          height: calc(100vh - 280px); /* Account for bottom nav */
       }
-    }
-
-    /* Sidebar - uses global .sidebar-card, .stats-grid, .stat-item */
-    .sidebar-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-md);
     }
 
     .sync-hint {
@@ -321,49 +301,6 @@ type FilterType = 'all' | 'favorites';
 
       .confirm-sheet__btn--danger:hover {
         opacity: 0.9;
-      }
-    }
-
-    .desktop-only {
-      display: flex;
-    }
-
-    .mobile-only {
-      display: none;
-    }
-
-    @media (max-width: 1024px) {
-      .layout {
-        grid-template-columns: 1fr 280px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .desktop-only {
-        display: none !important;
-      }
-
-      .mobile-only {
-        display: flex;
-      }
-      
-      /* Mobile layout adjustments */
-      .page-layout {
-        padding-bottom: 80px; /* Space for bottom nav */
-      }
-    }
-
-    @media (max-height: 500px) and (orientation: landscape) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .desktop-only {
-        display: none !important;
       }
     }
   `]

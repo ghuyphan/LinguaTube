@@ -23,15 +23,15 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     ConfirmDialogComponent
   ],
   template: `
-    <div class="layout">
-      <div class="layout-main">
+    <div class="page-layout">
+      <div class="page-layout__main">
         <app-dictionary-panel />
       </div>
 
       <!-- Desktop sidebar with stats -->
-      <aside class="layout-sidebar desktop-only">
+      <aside class="page-layout__sidebar desktop-only">
         <div class="sidebar-card">
-          <h3>{{ i18n.t('vocab.title') }}</h3>
+          <h3 class="sidebar-card__title">{{ i18n.t('vocab.title') }}</h3>
           
           <div class="stats-grid">
             <div class="stat-item">
@@ -63,7 +63,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
         @if (recentSearches().length > 0) {
           <div class="sidebar-card">
             <div class="recent-header">
-              <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
+              <h4 class="sidebar-card__subtitle m-0">{{ i18n.t('dictionary.recentSearches') }}</h4>
               <button class="clear-all-btn" (click)="clearAllRecentSearches()">
                 {{ i18n.t('dictionary.clearAll') }}
               </button>
@@ -124,39 +124,6 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       display: block;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: var(--space-lg);
-      align-items: start;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .layout-main {
-      min-width: 0;
-    }
-
-    .layout-sidebar {
-      align-self: start;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-
-    .sidebar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: var(--space-md);
-    }
-
-    .sidebar-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-md);
-    }
-
     .recent-header {
       display: flex;
       align-items: center;
@@ -187,22 +154,6 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     .clear-all-btn:hover {
       color: var(--accent-primary);
       background: rgba(199, 62, 58, 0.1);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-sm);
-      margin-bottom: var(--space-md);
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: var(--space-sm);
-      background: var(--bg-secondary);
-      border-radius: var(--border-radius);
     }
 
     .stat-value {
@@ -292,43 +243,6 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
 
     .mobile-only {
       display: none;
-    }
-
-    /* Tablet: stack to single column */
-    @media (max-width: 1024px) {
-      .layout {
-        grid-template-columns: 1fr 280px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .layout {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-      }
-
-      .desktop-only {
-        display: none !important;
-      }
-
-      .mobile-only {
-        display: block;
-      }
-    }
-
-    /* Landscape phones: treat as mobile */
-    @media (max-height: 500px) and (orientation: landscape) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .desktop-only {
-        display: none !important;
-      }
-
-      .mobile-only {
-        display: block;
-      }
     }
 
     /* Hidden file input for import */

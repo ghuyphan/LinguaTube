@@ -219,152 +219,27 @@
       <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
       </app-progress-bar>
 
-      <div class="controls-row">
-        <!-- Left Controls -->
-        <div class="controls-left">
-          <!-- Play/Pause Button - Desktop only -->
-          <button class="control-btn desktop-only" (click)="onPlayPauseButtonClick($event)"
-            [attr.aria-label]="youtube.intendedPlayingState() ? 'Pause' : 'Play'">
-            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="20" />
-          </button>
-
-          <!-- Seek buttons group - desktop only -->
-          <div class="seek-group desktop-only">
-            <button class="control-btn" (click)="seekRelative(-10); showSeekFeedback('left', 10)"
-              aria-label="Rewind 10 seconds">
-              <app-icon name="rewind" [size]="18" aria-hidden="true" />
-            </button>
-            <button class="control-btn" (click)="seekRelative(10); showSeekFeedback('right', 10)"
-              aria-label="Forward 10 seconds">
-              <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
-            </button>
-          </div>
-
-          <!-- Volume group - desktop only -->
-          <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider()" (mouseleave)="hideVolumeSlider()">
-            <button class="control-btn" (click)="toggleMute()" aria-label="Toggle mute">
-              <app-icon [name]="getVolumeIcon()" [size]="18" />
-            </button>
-            <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
-              <input type="range" class="volume-slider" min="0" max="100" [value]="volume()"
-                [style.--volume-percent]="volumePercent() + '%'" (input)="onVolumeChange($event)"
-                (mousedown)="$event.stopPropagation()" aria-label="Volume" />
-            </div>
-          </div>
-
-          <!-- Time Display -->
-          <div class="time-display">
-            <span class="time-current">{{ formattedCurrentTime() }}</span>
-            <span class="time-separator">/</span>
-            <span class="time-total">{{ formattedDuration() }}</span>
-          </div>
-
-          <!-- Mute button - mobile only (standalone) -->
-          <button class="control-btn mobile-only" (click)="toggleMute()" aria-label="Toggle mute">
-            <app-icon [name]="getVolumeIcon()" [size]="18" />
-          </button>
-        </div>
-
-        <!-- Right Controls -->
-        <div class="controls-right">
-          <!-- Unified right controls group -->
-          <div class="controls-right-group">
-            <!-- Playback Speed - desktop only -->
-            <div class="speed-control" [class.open]="isSpeedMenuOpen()">
-              <button class="control-btn speed-btn" (click)="toggleSpeedMenu($event)" aria-label="Playback speed">
-                <span class="speed-label">{{ currentSpeed() }}x</span>
-              </button>
-              @if (isSpeedMenuOpen()) {
-              <div class="speed-menu" (click)="$event.stopPropagation()">
-                @for (speed of playbackSpeeds; track speed) {
-                <button class="speed-option" [class.active]="currentSpeed() === speed"
-                  (click)="setPlaybackSpeed(speed)">
-                  {{ speed === 1 ? i18n.t('player.normal') : speed + 'x' }}
-                </button>
-                }
-              </div>
-              }
-            </div>
-
-            <!-- Font Size - fullscreen only -->
-            @if (isFullscreen()) {
-            <button class="control-btn font-size-btn" (click)="cycleFontSize()" aria-label="Change subtitle font size">
-              <span class="font-size-label">{{ getFontSizeLabel() }}</span>
-            </button>
-            }
-
-            <!-- Translation Language Picker - visible for CJK languages (desktop only) -->
-            @if (['ja', 'zh', 'ko'].includes(settings.settings().language)) {
-            <div class="lang-control" [class.open]="langPickerOpen()">
-              <button class="control-btn lang-btn" [class.is-dual-active]="settings.settings().showDualSubtitles"
-                (click)="toggleLangMenu($event)" [title]="i18n.t('subtitle.dualSubs')">
-                @if (settings.settings().showDualSubtitles) {
-                <img [src]="getSelectedLangFlag()" class="lang-flag-img" alt="Language" />
-                } @else {
-                <app-icon name="languages" [size]="20" />
-                }
-              </button>
-              @if (langPickerOpen()) {
-              <div class="lang-menu" (click)="$event.stopPropagation()">
-                <button class="lang-option" [class.active]="!settings.settings().showDualSubtitles"
-                  (click)="disableDualSubtitles()">
-                  <app-icon name="x" [size]="16" class="lang-option-icon" />
-                  <span class="lang-option-name">{{ i18n.t('common.off') }}</span>
-                  @if (!settings.settings().showDualSubtitles) {
-                  <app-icon name="check" [size]="14" class="lang-check" />
-                  }
-                </button>
-                <div class="menu-divider"></div>
-                @for (lang of langOptions(); track lang.value) {
-                <button class="lang-option"
-                  [class.active]="settings.settings().showDualSubtitles && targetLang() === lang.value"
-                  (click)="onLangSelected(lang.value)">
-                  <img [src]="lang.iconUrl" [alt]="lang.label" class="lang-option-flag">
-                  <span class="lang-option-name">{{ lang.label }}</span>
-                  @if (settings.settings().showDualSubtitles && targetLang() === lang.value) {
-                  <app-icon name="check" [size]="14" class="lang-check" />
-                  }
-                </button>
-                }
-              </div>
-              }
-            </div>
-            }
-
-            <!-- Add to Playlist - desktop only, hidden in fullscreen -->
-            @if (!isFullscreen()) {
-            <button class="control-btn desktop-only" (click)="onSaveClick()" aria-label="Add to playlist">
-              <app-icon name="list-plus" [size]="18" />
-            </button>
-            }
-
-            <!-- Fullscreen -->
-            <button class="control-btn" (click)="toggleFullscreen()"
-              [attr.aria-label]="isFullscreen() ? 'Exit fullscreen' : 'Fullscreen'">
-              <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
-            </button>
-          </div>
-        </div>
-      </div>
+      <app-video-bottom-bar [isPlaying]="youtube.intendedPlayingState()" [currentTime]="formattedCurrentTime()"
+        [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
+        [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [currentSpeed]="currentSpeed()"
+        [playbackSpeeds]="playbackSpeeds" [showDualSubtitles]="settings.settings().showDualSubtitles"
+        [targetLang]="targetLang()" [langOptions]="langOptions()" [fontSizeLabel]="getFontSizeLabel()"
+        [isCJKLanguage]="['ja', 'zh', 'ko'].includes(settings.settings().language)"
+        [isSpeedMenuOpen]="isSpeedMenuOpen()" [langPickerOpen]="langPickerOpen()"
+        [isVolumeSliderVisible]="isVolumeSliderVisible()" [t]="i18n.t.bind(i18n)"
+        (playPauseClicked)="onPlayPauseButtonClick($event)"
+        (seekRelative)="seekRelative($event.amount); showSeekFeedback($event.direction, ($event.amount > 0 ? $event.amount : -$event.amount))"
+        (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSpeedMenu)="toggleSpeedMenu($event)"
+        (setPlaybackSpeed)="setPlaybackSpeed($event)" (cycleFontSize)="cycleFontSize()"
+        (toggleLangMenu)="toggleLangMenu($event)" (disableDualSubtitles)="disableDualSubtitles()"
+        (langSelected)="onLangSelected($event)" (saveClick)="onSaveClick()" (toggleFullscreen)="toggleFullscreen()"
+        (showVolumeSlider)="showVolumeSlider()" (hideVolumeSlider)="hideVolumeSlider()" />
     </div>
   </div>
 
   <!-- Video Info -->
   @if (!isFullscreen()) {
-  <div class="video-info">
-    @if (youtube.currentVideo(); as video) {
-    <div class="video-text">
-      <h2 class="video-title">{{ video.title }}</h2>
-      <span class="video-channel">{{ video.channel }}</span>
-    </div>
-    } @else {
-    <!-- Skeleton loading with shimmer effect -->
-    <div class="video-text">
-      <div class="skeleton skeleton-title"></div>
-      <div class="skeleton skeleton-channel"></div>
-    </div>
-    }
-  </div>
+  <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel" />
   }
   }
 </div>

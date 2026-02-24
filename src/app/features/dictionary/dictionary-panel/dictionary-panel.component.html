@@ -1,4 +1,4 @@
-<div class="dict-panel">
+<div class="card dict-panel">
     <div class="dict-header">
         <div class="header-row">
             <app-icon name="book-open" [size]="20" class="dict-icon" />
@@ -96,7 +96,7 @@
             </div>
         </div>
         } @else if (hasSearched() && !isLoading()) {
-        <div class="empty-state">
+        <div class="empty-state empty-state--centered">
             <div class="empty-state__icon-box">
                 <app-icon name="info" [size]="20" />
             </div>
@@ -108,7 +108,7 @@
         </div>
         } @else if (!hasSearched()) {
         <!-- Empty state - always visible -->
-        <div class="empty-state">
+        <div class="empty-state empty-state--centered">
             <div class="empty-state__icon-box">
                 <app-icon name="book-open" [size]="20" />
             </div>

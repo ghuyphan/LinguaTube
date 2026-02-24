@@ -50,34 +50,22 @@
         <div class="study-options">
             <div class="option-item">
                 <span class="option-label">{{ i18n.t('study.includeNew') }}</span>
-                <label class="toggle-switch">
-                    <input type="checkbox" [(checked)]="includeNew" />
-                    <span class="slider"></span>
-                </label>
+                <app-switch [checked]="includeNew" (checkedChange)="includeNew = $event" />
             </div>
             <div class="option-item">
                 <span class="option-label">{{ i18n.t('study.includeLearning') }}</span>
-                <label class="toggle-switch">
-                    <input type="checkbox" [(checked)]="includeLearning" />
-                    <span class="slider"></span>
-                </label>
+                <app-switch [checked]="includeLearning" (checkedChange)="includeLearning = $event" />
             </div>
             <div class="option-item">
                 <span class="option-label">{{ i18n.t('study.reviewKnown') }}</span>
-                <label class="toggle-switch">
-                    <input type="checkbox" [(checked)]="includeKnown" />
-                    <span class="slider"></span>
-                </label>
+                <app-switch [checked]="includeKnown" (checkedChange)="includeKnown = $event" />
             </div>
             <div class="option-item option-item--highlight">
                 <div class="option-label-group">
                     <span class="option-label">{{ i18n.t('study.reverseMode') }}</span>
                     <span class="option-hint">{{ i18n.t('study.meaningFirst') }}</span>
                 </div>
-                <label class="toggle-switch">
-                    <input type="checkbox" [(checked)]="reverseMode" />
-                    <span class="slider"></span>
-                </label>
+                <app-switch [checked]="reverseMode" (checkedChange)="reverseMode = $event" />
             </div>
         </div>
 
@@ -90,7 +78,7 @@
             <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}
             </p>
             } @else {
-            <div class="empty-state">
+            <div class="empty-state empty-state--centered">
                 <div class="empty-state__icon-box">
                     <app-icon name="info" [size]="18" />
                 </div>

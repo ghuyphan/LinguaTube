@@ -1,0 +1,14 @@
+<div class="video-info">
+    @if (title() && channel()) {
+    <div class="video-text">
+        <h2 class="video-title">{{ title() }}</h2>
+        <span class="video-channel">{{ channel() }}</span>
+    </div>
+    } @else {
+    <!-- Skeleton loading with shimmer effect -->
+    <div class="video-text">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-channel"></div>
+    </div>
+    }
+</div>

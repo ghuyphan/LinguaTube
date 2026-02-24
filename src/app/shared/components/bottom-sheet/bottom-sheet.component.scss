@@ -154,10 +154,10 @@
 }
 
 .sheet-drag-indicator {
-    width: 2.25rem;
-    height: var(--space-xs);
+    width: 2.5rem;
+    height: 5px;
     background: var(--border-color);
-    border-radius: 2px;
+    border-radius: var(--border-radius-pill);
     margin: 0 auto;
     transition: background 0.2s;
 }

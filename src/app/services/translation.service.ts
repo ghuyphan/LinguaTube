@@ -5,6 +5,13 @@ import { environment } from '../../environments/environment';
 
 
 
+export interface LanguageOption {
+    code: string;
+    name: string;
+    flag: string;
+    flagUrl: string;
+}
+
 // Cache configuration
 const CACHE_KEY = 'linguatube_translations';
 const MAX_CACHE_SIZE = 1000;
@@ -21,8 +28,8 @@ export class TranslationService implements OnDestroy {
 
     // Request queue for batch translations
     private requestQueue$ = new Subject<{
-        params: any;
-        observer: any;
+        params: { texts: string[]; source: string; target: string };
+        observer: any; // Keep any here for RxJS observer flexibility or properly type it later
         cancelled?: boolean;
     }>();
 
@@ -53,7 +60,7 @@ export class TranslationService implements OnDestroy {
         ).subscribe();
     }
 
-    private processBatchRequest(request: { params: any, observer: any }): Observable<void> {
+    private processBatchRequest(request: { params: { texts: string[]; source: string; target: string }, observer: any }): Observable<void> {
         const { params, observer } = request;
 
         return this.http.post<{ translations: (string | null)[] }>(environment.api.translateBatch, {
@@ -175,8 +182,8 @@ export class TranslationService implements OnDestroy {
      * Get dual subtitles for a video
      * Handles caching and API calls
      */
-    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: any[], onlyCache = false): Observable<any[]> {
-        return this.http.post<any>(environment.api.dualSubtitles, {
+    getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: { text: string; start: number; duration: number; }[], onlyCache = false): Observable<{ text: string; start: number; duration: number; translation?: string }[]> {
+        return this.http.post<{ segments: { text: string; start: number; duration: number; translation?: string }[] }>(environment.api.dualSubtitles, {
             videoId,
             sourceLang,
             targetLang,

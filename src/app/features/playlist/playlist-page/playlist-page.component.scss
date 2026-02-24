@@ -124,10 +124,6 @@
 // Main Panel
 // -------------------------
 .playlist-panel {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-lg);
-    box-shadow: none;
     display: flex;
     flex-direction: column;
     overflow: visible; // Don't clip — overflow:clip cuts off button box-shadows

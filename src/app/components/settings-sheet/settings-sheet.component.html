@@ -63,10 +63,7 @@
                         {{ isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode') }}
                     </span>
                 </div>
-                <label class="toggle-switch">
-                    <input type="checkbox" [checked]="isDarkMode()" (change)="toggleTheme()" />
-                    <span class="slider"></span>
-                </label>
+                <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" />
             </div>
         </div>
     </div>

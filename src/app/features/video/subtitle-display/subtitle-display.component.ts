@@ -463,7 +463,8 @@ export class SubtitleDisplayComponent {
           // 1. First check if we have a full server-side cache (onlyCache=true)
           // 2. If not, normal flow (lazy load will trigger later)
 
-          this.dualSubSubscription = this.translation.getDualSubtitles(videoId, lang, targetLang, cues, true)
+          const mappedCues = cues.map(c => ({ text: c.text, start: c.startTime, duration: c.endTime - c.startTime }));
+          this.dualSubSubscription = this.translation.getDualSubtitles(videoId, lang, targetLang, mappedCues, true)
             .subscribe({
               next: (translatedSegments) => {
                 if (this.subtitles.dualSubtitleTargetLang() !== targetLang) return; // Stale

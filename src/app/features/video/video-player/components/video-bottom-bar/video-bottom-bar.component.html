@@ -1,0 +1,129 @@
+<div class="controls-row">
+    <!-- Left Controls -->
+    <div class="controls-left">
+        <!-- Play/Pause Button - Desktop only -->
+        <button class="control-btn desktop-only" (click)="playPauseClicked.emit($event)"
+            [attr.aria-label]="isPlaying() ? 'Pause' : 'Play'">
+            <app-icon [name]="isPlaying() ? 'pause' : 'play'" [size]="20" />
+        </button>
+
+        <!-- Seek buttons group - desktop only -->
+        <div class="seek-group desktop-only">
+            <button class="control-btn" (click)="seekRelative.emit({ amount: -10, direction: 'left' })"
+                aria-label="Rewind 10 seconds">
+                <app-icon name="rewind" [size]="18" aria-hidden="true" />
+            </button>
+            <button class="control-btn" (click)="seekRelative.emit({ amount: 10, direction: 'right' })"
+                aria-label="Forward 10 seconds">
+                <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
+            </button>
+        </div>
+
+        <!-- Volume group - desktop only -->
+        <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider.emit()"
+            (mouseleave)="hideVolumeSlider.emit()">
+            <button class="control-btn" (click)="toggleMute.emit()" aria-label="Toggle mute">
+                <app-icon [name]="getVolumeIcon()" [size]="18" />
+            </button>
+            <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
+                <input type="range" class="volume-slider" min="0" max="100" [value]="volume()"
+                    [style.--volume-percent]="volumePercent() + '%'" (input)="volumeChange.emit($event)"
+                    (mousedown)="$event.stopPropagation()" aria-label="Volume" />
+            </div>
+        </div>
+
+        <!-- Time Display -->
+        <div class="time-display">
+            <span class="time-current">{{ currentTime() }}</span>
+            <span class="time-separator">/</span>
+            <span class="time-total">{{ duration() }}</span>
+        </div>
+
+        <!-- Mute button - mobile only (standalone) -->
+        <button class="control-btn mobile-only" (click)="toggleMute.emit()" aria-label="Toggle mute">
+            <app-icon [name]="getVolumeIcon()" [size]="18" />
+        </button>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="controls-right">
+        <!-- Unified right controls group -->
+        <div class="controls-right-group">
+            <!-- Playback Speed - desktop only -->
+            <div class="speed-control" [class.open]="isSpeedMenuOpen()">
+                <button class="control-btn speed-btn" (click)="toggleSpeedMenu.emit($event)"
+                    aria-label="Playback speed">
+                    <span class="speed-label">{{ currentSpeed() }}x</span>
+                </button>
+                @if (isSpeedMenuOpen()) {
+                <div class="speed-menu" (click)="clickMenuOption($event)">
+                    @for (speed of playbackSpeeds(); track speed) {
+                    <button class="speed-option" [class.active]="currentSpeed() === speed"
+                        (click)="setPlaybackSpeed.emit(speed)">
+                        {{ speed === 1 ? t()('player.normal') : speed + 'x' }}
+                    </button>
+                    }
+                </div>
+                }
+            </div>
+
+            <!-- Font Size - fullscreen only -->
+            @if (isFullscreen()) {
+            <button class="control-btn font-size-btn" (click)="cycleFontSize.emit()"
+                aria-label="Change subtitle font size">
+                <span class="font-size-label">{{ fontSizeLabel() }}</span>
+            </button>
+            }
+
+            <!-- Translation Language Picker - visible for CJK languages (desktop only) -->
+            @if (isCJKLanguage()) {
+            <div class="lang-control" [class.open]="langPickerOpen()">
+                <button class="control-btn lang-btn" [class.is-dual-active]="showDualSubtitles()"
+                    (click)="toggleLangMenu.emit($event)" [title]="t()('subtitle.dualSubs')">
+                    @if (showDualSubtitles()) {
+                    <img [src]="getSelectedLangFlag()" class="lang-flag-img" alt="Language" />
+                    } @else {
+                    <app-icon name="languages" [size]="20" />
+                    }
+                </button>
+                @if (langPickerOpen()) {
+                <div class="lang-menu" (click)="clickMenuOption($event)">
+                    <button class="lang-option" [class.active]="!showDualSubtitles()"
+                        (click)="disableDualSubtitles.emit()">
+                        <app-icon name="x" [size]="16" class="lang-option-icon" />
+                        <span class="lang-option-name">{{ t()('common.off') }}</span>
+                        @if (!showDualSubtitles()) {
+                        <app-icon name="check" [size]="14" class="lang-check" />
+                        }
+                    </button>
+                    <div class="menu-divider"></div>
+                    @for (lang of langOptions(); track lang.value) {
+                    <button class="lang-option" [class.active]="showDualSubtitles() && targetLang() === lang.value"
+                        (click)="langSelected.emit(lang.value)">
+                        <img [src]="lang.iconUrl" [alt]="lang.label" class="lang-option-flag">
+                        <span class="lang-option-name">{{ lang.label }}</span>
+                        @if (showDualSubtitles() && targetLang() === lang.value) {
+                        <app-icon name="check" [size]="14" class="lang-check" />
+                        }
+                    </button>
+                    }
+                </div>
+                }
+            </div>
+            }
+
+            <!-- Add to Playlist - desktop only, hidden in fullscreen -->
+            @if (!isFullscreen()) {
+            <button class="control-btn desktop-only" (click)="saveClick.emit()" aria-label="Add to playlist">
+                <app-icon name="list-plus" [size]="18" />
+            </button>
+            }
+
+            <!-- Fullscreen -->
+            <button class="control-btn" (click)="toggleFullscreen.emit()"
+                [attr.aria-label]="isFullscreen() ? 'Exit fullscreen' : 'Fullscreen'">
+                <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
+            </button>
+        </div>
+    </div>
+</div>

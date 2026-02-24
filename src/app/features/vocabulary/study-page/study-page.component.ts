@@ -19,13 +19,13 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
     IconComponent
   ],
   template: `
-    <div class="layout">
-      <div class="layout-main">
+    <div class="page-layout">
+      <div class="page-layout__main">
         <app-study-mode />
       </div>
 
       <!-- Desktop sidebar with study stats -->
-      <aside class="layout-sidebar desktop-only">
+      <aside class="page-layout__sidebar desktop-only">
         <!-- Due Today Card -->
         @if (dueToday() > 0) {
         <div class="sidebar-card due-card">
@@ -53,7 +53,7 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
         <!-- Progress Ring Card -->
         <div class="sidebar-card">
-          <h3>{{ i18n.t('study.title') }}</h3>
+          <h3 class="sidebar-card__title">{{ i18n.t('study.title') }}</h3>
           
           <div class="progress-ring-container">
             <svg class="progress-ring" viewBox="0 0 100 100">
@@ -91,7 +91,7 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
         </div>
 
         <div class="sidebar-card">
-          <h4>{{ i18n.t('nav.words') }}</h4>
+          <h4 class="sidebar-card__subtitle">{{ i18n.t('nav.words') }}</h4>
           <p class="sidebar-hint">{{ i18n.t('dictionary.subtitle') }}</p>
           <a routerLink="/dictionary" class="btn btn-secondary dict-btn">
             <app-icon name="book-open" [size]="16" />
@@ -104,49 +104,6 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
   styles: [`
     :host {
       display: block;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: var(--space-lg);
-      align-items: start;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .layout-main {
-      min-width: 0;
-    }
-
-    .layout-sidebar {
-      align-self: start;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-
-    .sidebar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: var(--space-md);
-    }
-
-    .sidebar-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-md);
-      text-align: center;
-    }
-
-    .sidebar-card h4 {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: var(--space-xs);
     }
 
     .sidebar-hint {
@@ -326,34 +283,6 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
     .desktop-only {
       display: flex;
-    }
-
-    /* Tablet: narrower sidebar */
-    @media (max-width: 1024px) {
-      .layout {
-        grid-template-columns: 1fr 280px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .desktop-only {
-        display: none !important;
-      }
-    }
-
-    /* Landscape phones: treat as mobile */
-    @media (max-height: 500px) and (orientation: landscape) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .desktop-only {
-        display: none !important;
-      }
     }
   `]
 })

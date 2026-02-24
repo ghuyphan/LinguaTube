@@ -43,16 +43,19 @@ import {
   SEEK_STEP
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
+import { VideoKeyboardShortcutService } from './services/video-keyboard-shortcut.service';
 import { ProgressBarComponent } from './components/progress-bar';
 import { CenterControlsComponent } from './components/center-controls';
 import { FullscreenSubtitleComponent } from './components/fullscreen-subtitle';
+import { VideoBottomBarComponent } from './components/video-bottom-bar/video-bottom-bar.component';
+import { VideoHeaderComponent } from './components/video-header/video-header.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 
 @Component({
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent, VideoBottomBarComponent, VideoHeaderComponent],
   providers: [GestureHandlerService],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
@@ -73,6 +76,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   protected playlistService = inject(PlaylistService);
   translation = inject(TranslationService); // Made public for template
   private gestures = inject(GestureHandlerService);
+  private keyboardShortcuts = inject(VideoKeyboardShortcutService);
 
   // Translation language picker state
   langPickerOpen = signal(false);
@@ -393,7 +397,15 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
     // Auto-translate subtitles when dual subs enabled or language changes
 
-
+    // Wire up keyboard shortcuts
+    effect(() => {
+      const sub = this.keyboardShortcuts.events$.subscribe(event => {
+        this.ngZone.run(() => {
+          this.handleKeyboardEvent(event);
+        });
+      });
+      return () => sub.unsubscribe();
+    });
   }
 
   ngAfterViewInit() {
@@ -479,98 +491,42 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    if (!this.youtube.currentVideo()) return;
+    // Delegate to service. It returns true if it handled a command.
+    const isFsPopupVisible = untracked(() => this.fsPopupVisible());
+    const isFullscreen = untracked(() => this.isFullscreen());
 
-    const target = event.target as HTMLElement;
-    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
-      return;
-    }
+    this.keyboardShortcuts.handleKeyDown(event, isFsPopupVisible, isFullscreen);
+  }
 
-    if (event.code === 'Escape') {
-      if (this.fsPopupVisible()) {
-        this.closeFsPopup();
-        return;
-      }
-      if (this.isFullscreen()) {
-        this.toggleFullscreen();
-        return;
-      }
-    }
-
-    switch (event.code) {
-      case 'Space':
-      case 'KeyK':
-        event.preventDefault();
+  private handleKeyboardEvent(event: import('./services/video-keyboard-shortcut.service').KeyboardShortcutEvent) {
+    switch (event.type) {
+      case 'toggle-play':
         this.togglePlay();
-        // this.showPlayPauseFeedback(); // Removed
         break;
-      case 'ArrowLeft':
-      case 'KeyJ':
-        event.preventDefault();
-        if (this.quiz.isActive()) {
-          this.quiz.replaySegment();
-        } else {
-          this.seekRelative(-SEEK_STEP);
-          this.showSeekFeedback('left', SEEK_STEP);
-        }
+      case 'seek':
+        this.seekRelative(event.data.seconds);
+        this.showSeekFeedback(event.data.direction, Math.abs(event.data.seconds));
         break;
-      case 'ArrowRight':
-      case 'KeyL':
-        event.preventDefault();
-        if (this.quiz.isActive()) {
-          this.quiz.skipQuestion();
-        } else {
-          this.seekRelative(SEEK_STEP);
-          this.showSeekFeedback('right', SEEK_STEP);
-        }
+      case 'adjust-volume':
+        this.adjustVolume(event.data.amount);
+        this.showVolumeFeedback({ direction: event.data.amount > 0 ? 'up' : 'down' });
         break;
-      case 'ArrowUp':
-        event.preventDefault();
-        this.adjustVolume(5);
-        this.showVolumeFeedback({ direction: 'up' });
-        break;
-      case 'ArrowDown':
-        event.preventDefault();
-        this.adjustVolume(-5);
-        this.showVolumeFeedback({ direction: 'down' });
-        break;
-      case 'KeyM':
+      case 'toggle-mute':
         this.toggleMute();
         break;
-      case 'KeyF':
-        this.toggleFullscreen();
+      case 'toggle-fullscreen':
+        if (event.data.action === 'close-popup') {
+          this.closeFsPopup();
+        } else if (event.data.action === 'exit-fullscreen' || event.data.action === 'toggle') {
+          this.toggleFullscreen();
+        }
         break;
-      case 'Digit0':
-      case 'Numpad0':
-        event.preventDefault();
-        this.youtube.seekTo(0);
-        break;
-      case 'Digit1':
-      case 'Digit2':
-      case 'Digit3':
-      case 'Digit4':
-      case 'Digit5':
-      case 'Digit6':
-      case 'Digit7':
-      case 'Digit8':
-      case 'Digit9':
-        event.preventDefault();
-        const num = parseInt(event.code.replace('Digit', ''));
-        this.youtube.seekTo((num / 10) * this.youtube.duration());
-        break;
-      case 'Home':
-        event.preventDefault();
-        this.youtube.seekTo(0);
-        break;
-      case 'End':
-        event.preventDefault();
-        this.youtube.seekTo(this.youtube.duration());
-        break;
-      case 'Comma':
-        if (event.shiftKey) this.decreaseSpeed();
-        break;
-      case 'Period':
-        if (event.shiftKey) this.increaseSpeed();
+      case 'adjust-speed':
+        if (event.data.action === 'decrease') {
+          this.decreaseSpeed();
+        } else {
+          this.increaseSpeed();
+        }
         break;
     }
   }

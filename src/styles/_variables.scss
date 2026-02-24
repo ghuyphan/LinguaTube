@@ -1,0 +1,207 @@
+/* ============================================
+   VOCA - Global Styles (Variables)
+   ============================================ */
+
+:root {
+    /* Vibrant, Playful Palette */
+    --bg-primary: #f0f4f8;
+    --bg-secondary: #e2e8f0;
+    --bg-tertiary: #cbd5e1;
+    --bg-card: #FFFFFF;
+    --bg-dark: #1e293b;
+    --bg-surface: #f8fafc;
+    --bg-hover: #edf1f7;
+
+    /* Extended text tokens */
+    --text-tertiary: #9ca3af;
+
+    /* Extended border tokens */
+    --border-color-light: #f1f5f9;
+
+    /* Fun accent colors */
+    --accent-primary: #FF6B6B;
+    --accent-primary-rgb: 255, 107, 107;
+    --accent-primary-hover: #e85555;
+    --accent-primary-shadow: #cc584f;
+
+    --accent-secondary: #a855f7;
+    --accent-secondary-rgb: 168, 85, 247;
+    --accent-secondary-shadow: #9333ea;
+
+    --accent-tertiary: #ffc800;
+
+    /* Text colors */
+    --text-primary: #374151;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --text-inverse: #FFFFFF;
+
+    /* Semantic colors */
+    --success: #1cb0f6;
+    --success-rgb: 28, 176, 246;
+    --warning: #ffc800;
+    --warning-rgb: 255, 200, 0;
+    --error: #ff4b4b;
+    --error-rgb: 255, 75, 75;
+    --info: #1cb0f6;
+    --info-rgb: 28, 176, 246;
+
+    /* Word levels */
+    --word-new: #ffdfe0;
+    --word-new-text: #ff4b4b;
+    --word-learning: #fff4ce;
+    --word-learning-text: #e5a400;
+    --word-known: #e0f2fe;
+    --word-known-text: #0284c7;
+    --word-ignored: #f3f4f6;
+
+    /* Grammar levels */
+    --level-beginner: #e0f2fe;
+    --level-beginner-text: #0284c7;
+    --level-elementary: #dff4ff;
+    --level-elementary-text: #1899d6;
+    --level-intermediate: #fff4ce;
+    --level-intermediate-text: #e5a400;
+    --level-upper: #ffe3cd;
+    --level-upper-text: #ff7b00;
+    --level-advanced: #ffdfe0;
+    --level-advanced-text: #ff4b4b;
+
+    /* Spacing scale */
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 5rem;
+
+    /* Typography */
+    --font-sans: 'Nunito', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-jp: 'Kosugi Maru', 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+    --font-cn: 'Noto Sans SC', 'PingFang SC', sans-serif;
+    --font-ko: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Font sizes */
+    --text-xs: 0.8125rem;
+    --text-sm: 0.9375rem;
+    --text-base: 1.0625rem;
+    --text-md: 1.1875rem;
+    --text-lg: 1.3125rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.75rem;
+    --text-3xl: 2.25rem;
+
+    /* Borders & Shadows */
+    --border-color: #e5e7eb;
+    --border-width: 2px;
+    --border-radius-sm: 12px;
+    --border-radius: 16px;
+    --border-radius-md: 20px;
+    --border-radius-lg: 24px;
+    --border-radius-pill: 999px;
+    --border-radius-round: 50%;
+
+    /* Modern soft shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+    /* Icon Sizes */
+    --icon-size-xs: 16px;
+    --icon-size-sm: 20px;
+    --icon-size-md: 24px;
+    --icon-size-lg: 32px;
+    --icon-size-xl: 40px;
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-slow: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Sizing - Buttons */
+    --btn-height-xs: 32px;
+    --btn-height-sm: 40px;
+    --btn-height-md: 48px;
+    --btn-height-lg: 56px;
+
+    /* Sizing - Inputs */
+    --input-height-sm: 40px;
+    --input-height-md: 48px;
+    --input-height-lg: 56px;
+
+    /* Focus ring */
+    --focus-ring: 0 0 0 4px rgba(255, 107, 107, 0.3);
+    --focus-ring-offset: 2px;
+
+    /* Mobile-specific sizing */
+    --touch-target-min: 48px;
+    --mobile-padding: 20px;
+    --mobile-card-radius: 20px;
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-left: env(safe-area-inset-left, 0px);
+    --safe-area-right: env(safe-area-inset-right, 0px);
+    --bottom-nav-height: 4.5rem;
+
+    /* AI/Generation colors */
+    --ai-purple: #ce82ff;
+    --ai-pink: #ff79c6;
+    --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-pink));
+
+    /* Z-index scale */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+    --z-toast: 800;
+    --z-nav: 1000;
+    --z-google-signin: 20000;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f1117;
+    --bg-secondary: #181818;
+    --bg-tertiary: #2a2a2a;
+    --bg-card: #212121;
+    --border-color: #383838;
+    --text-primary: #e5e5e5;
+    --text-secondary: #a3a3a3;
+    --text-muted: #737373;
+    --text-inverse: #171717;
+    --bg-surface: #262626;
+    --bg-hover: #333333;
+    --text-tertiary: #525252;
+    --border-color-light: #2a2a2a;
+
+    --word-new: rgba(255, 75, 75, 0.15);
+    --word-new-text: #ff6b6b;
+    --word-learning: rgba(255, 200, 0, 0.15);
+    --word-learning-text: #ffd54f;
+    --word-known: rgba(28, 176, 246, 0.15);
+    --word-known-text: #60a5fa;
+    --word-ignored: #2d2d2d;
+
+    --level-beginner: rgba(2, 132, 199, 0.15);
+    --level-beginner-text: #38bdf8;
+    --level-elementary: rgba(24, 153, 214, 0.15);
+    --level-elementary-text: #0ea5e9;
+    --level-intermediate: rgba(229, 164, 0, 0.15);
+    --level-intermediate-text: #fbbf24;
+    --level-upper: rgba(255, 123, 0, 0.15);
+    --level-upper-text: #f97316;
+    --level-advanced: rgba(255, 75, 75, 0.15);
+    --level-advanced-text: #f87171;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+}

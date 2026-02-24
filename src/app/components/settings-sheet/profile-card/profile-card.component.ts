@@ -31,12 +31,12 @@ import { RecordModel } from 'pocketbase';
                 }
             </div>
         </div>
-        <button class="settings-btn settings-btn--danger" (click)="onSignOut()">
+        <button class="btn btn-danger auth-btn" (click)="onSignOut()">
             <app-icon name="log-out" [size]="18" />
             <span>{{ signOutLabel() }}</span>
         </button>
     } @else {
-        <button class="settings-btn settings-btn--primary" (click)="onSignIn()" [disabled]="isLoggingIn()">
+        <button class="btn btn-primary auth-btn" (click)="onSignIn()" [disabled]="isLoggingIn()">
             <app-icon name="user" [size]="18" />
             <span>{{ signInLabel() }}</span>
         </button>
@@ -110,31 +110,9 @@ import { RecordModel } from 'pocketbase';
         to { transform: rotate(360deg); }
     }
 
-    .settings-btn {
+    .auth-btn {
         width: 100%;
-        display: flex;
-        align-items: center;
-        gap: var(--space-sm);
-        padding: var(--space-md);
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
-        color: var(--text-primary);
-        font-size: 0.9375rem;
-        cursor: pointer;
-        transition: all var(--transition-fast);
-        justify-content: center; /* Center content for buttons */
-    }
-
-    .settings-btn--danger {
-        color: var(--error);
-        border-color: rgba(239, 68, 68, 0.2);
-    }
-    
-    .settings-btn--primary {
-        background: var(--accent-primary);
-        color: white;
-        border-color: var(--accent-primary);
+        margin-top: var(--space-xs);
     }
 
     .google-signin-hint {

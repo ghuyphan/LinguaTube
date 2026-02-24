@@ -1,6 +1,7 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { VocabularyService, SettingsService, I18nService } from '../../../services';
 import { StreakService } from '../../../services/streak.service';
 import { VocabularyItem } from '../../../models';
@@ -17,7 +18,7 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent],
+    imports: [CommonModule, IconComponent, SwitchComponent],
     templateUrl: './study-mode.component.html',
     styleUrl: './study-mode.component.scss'
 })

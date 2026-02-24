@@ -22,6 +22,11 @@ interface YTPlayer {
   destroy(): void;
 }
 
+interface YTEvent {
+  target: YTPlayer;
+  data: number;
+}
+
 declare global {
   interface Window {
     YT: any;
@@ -351,7 +356,7 @@ export class YoutubeService {
               host: 'https://www.youtube.com'
             },
             events: {
-              onReady: async (event: any) => {
+              onReady: async (event: YTEvent) => {
                 const duration = event.target.getDuration() || 0;
                 const metadata = await metadataPromise;
 
@@ -377,7 +382,7 @@ export class YoutubeService {
 
                 resolve();
               },
-              onStateChange: (event: any) => {
+              onStateChange: (event: YTEvent) => {
                 const state = event.data;
                 const isPlaying = state === window.YT.PlayerState.PLAYING;
                 const isBuffering = state === window.YT.PlayerState.BUFFERING;
@@ -422,7 +427,7 @@ export class YoutubeService {
                   if (dur > 0) this.duration.set(dur);
                 }
               },
-              onError: (event: any) => {
+              onError: (event: YTEvent) => {
                 const errorMessages: Record<number, string> = {
                   2: 'Invalid video ID',
                   5: 'HTML5 player error',
