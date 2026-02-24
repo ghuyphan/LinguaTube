@@ -33,7 +33,7 @@
                 <div class="word-meta">
                     <button class="level-badge" [class]="'level--' + word.level" (click)="openLevelPicker(word.id)">
                         <span class="level-dot"></span>
-                        <span class="level-text">{{ word.level }}</span>
+                        <span class="level-text">{{ i18n.t('vocab.' + word.level) }}</span>
                     </button>
                 </div>
             </li>
