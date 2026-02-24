@@ -20,20 +20,27 @@
 
 .filter-chip {
     height: 36px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-sm);
     padding: 0 var(--space-md);
+    font-family: var(--font-sans);
     font-size: var(--text-sm);
-    font-weight: 500;
-    background: var(--bg-secondary);
+    font-weight: 700;
+    line-height: 1;
+    background: var(--bg-card);
     color: var(--text-secondary);
-    border: 1px solid transparent;
+    border: 2px solid var(--border-color);
     border-radius: var(--border-radius-pill);
+    box-shadow: 0 4px 0 var(--border-color);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
     white-space: nowrap;
     flex-shrink: 0;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .filter-chips .btn {
@@ -46,15 +53,32 @@
 }
 
 .filter-chip.active {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
+    background: var(--accent-primary);
+    color: var(--text-inverse);
     border-color: transparent;
+    box-shadow: 0 4px 0 var(--accent-primary-shadow);
 }
 
 @media (hover: hover) {
     .filter-chip:hover:not(.active) {
-        background: var(--bg-tertiary);
+        background: var(--bg-secondary);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 0 var(--border-color);
     }
+
+    .filter-chip.active:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 0 var(--accent-primary-shadow);
+    }
+}
+
+.filter-chip:active:not(:disabled) {
+    transform: translateY(4px) !important;
+    box-shadow: 0 0 0 var(--border-color) !important;
+}
+
+.filter-chip.active:active:not(:disabled) {
+    box-shadow: 0 0 0 var(--accent-primary-shadow) !important;
 }
 
 .filter-chips__spacer {

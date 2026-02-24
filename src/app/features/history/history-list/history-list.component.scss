@@ -185,7 +185,7 @@
     gap: var(--space-md);
     padding: var(--space-sm) var(--space-md);
     background: var(--bg-card);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     box-shadow: none;
     border-radius: var(--border-radius-lg);
     margin-bottom: var(--space-sm);
@@ -204,7 +204,7 @@
 
     @media (hover: hover) {
         &:hover {
-            
+
             border-color: var(--accent-primary);
             box-shadow: none;
         }
@@ -215,13 +215,13 @@
     }
 
     &:active:not(.swiping) {
-        
+
         box-shadow: none;
     }
 
     @media (hover: none) {
         &:active:not(.swiping) {
-            
+
             box-shadow: none;
         }
     }
@@ -502,7 +502,7 @@
 @keyframes filterFade {
     from {
         opacity: 0.5;
-        
+
     }
 
     to {

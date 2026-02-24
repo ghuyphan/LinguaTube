@@ -125,10 +125,10 @@ button {
     font-size: var(--text-md);
 }
 
-/* Icon button */
+/* Icon button - always circular */
 .btn-icon {
-    width: 36px;
-    height: 36px;
+    aspect-ratio: 1;
+    width: auto;
     padding: 0;
     border-radius: var(--border-radius-round);
 }
@@ -136,14 +136,4 @@ button {
 .btn-icon app-icon {
     width: var(--icon-size-md);
     height: var(--icon-size-md);
-}
-
-.btn-icon.btn-sm {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-icon.btn-lg {
-    width: 44px;
-    height: 44px;
 }
