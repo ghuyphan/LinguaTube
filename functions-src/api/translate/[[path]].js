@@ -13,14 +13,7 @@ import {
     rateLimitResponse,
     getRateLimitHeaders
 } from '../../middlewares/rate-limiter.js';
-
-const LINGVA_INSTANCES = [
-    'https://lingva.ml',
-    'https://lingva.lunar.icu',
-    'https://translate.plausibility.cloud'
-];
-
-const INSTANCE_TIMEOUT_MS = 5000;
+import { translateText } from '../../providers/lingva.js';
 
 // Rate limit by texts translated, not requests
 // Single endpoint counts as 1 text, batch counts as texts.length
@@ -57,37 +50,18 @@ export async function onRequestGet(context) {
         return jsonResponse({ error: 'Missing source, target, or text' }, 400);
     }
 
-    // Try each Lingva instance until one succeeds
-    let lastError = null;
+    try {
+        const translation = await translateText(text, source, target);
 
-    for (const instance of LINGVA_INSTANCES) {
-        const url = `${instance}/api/v1/${source}/${target}/${text}`;
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-                },
-                signal: AbortSignal.timeout(INSTANCE_TIMEOUT_MS)
+        if (translation !== null) {
+            return jsonResponse({ translation }, 200, {
+                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
             });
-
-            if (response.ok) {
-                const data = await response.json();
-                return jsonResponse(data, 200, {
-                    'X-Lingva-Instance': instance,
-                    ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
-                });
-            }
-
-            lastError = new Error(`${instance} returned ${response.status}`);
-        } catch (error) {
-            lastError = error;
-            // Continue to next instance
         }
+    } catch (error) {
+        console.error('[Translate] Single translate error:', error);
     }
 
-    // All instances failed
-    console.error('[Translate] All instances failed:', lastError?.message);
-    return errorResponse(`Translation failed: ${lastError?.message || 'All instances unavailable'}`);
+    return errorResponse('Translation failed: All instances unavailable or rate limited');
 }
 
