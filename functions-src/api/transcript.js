@@ -65,10 +65,10 @@ export async function onRequestPost(context) {
         const { videoId, lang, preferAI, forceRefresh, resultUrl } = body;
 
         // Validation
-        const validation = validateVideoRequest(videoId, lang);
-        if (!validation.valid) {
+        const validationError = await validateVideoRequest(videoId, lang);
+        if (validationError) {
             return jsonResponse({
-                success: false, videoId, requestedLanguage: lang, segments: [], errorCode: 'INVALID_REQUEST', error: validation.error, timing: elapsed()
+                success: false, videoId, requestedLanguage: lang, segments: [], errorCode: 'INVALID_REQUEST', error: validationError.error, timing: elapsed()
             }, 400);
         }
 
