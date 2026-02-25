@@ -4,21 +4,26 @@
  * Route: /api/translate/[[path]]
  */
 
-import { validateAuthToken } from '../../middlewares/auth.js';
+import { validateAuthToken, hasPremiumAccess } from '../../middlewares/auth.js';
 import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIP,
     getClientIdentifier,
     rateLimitResponse,
-    getRateLimitHeaders
+    getRateLimitHeaders,
+    getTieredConfig
 } from '../../middlewares/rate-limiter.js';
 import { translateText } from '../../providers/lingva.js';
 
 // Rate limit by texts translated, not requests
 // Single endpoint counts as 1 text, batch counts as texts.length
 // Shared key: 'translate-texts' so single and batch share the same quota
-const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'translate-texts' };
+const RATE_LIMIT_CONFIG = {
+    max: { anonymous: 2000, free: 5000, pro: 25000, premium: 100000 },
+    windowSeconds: 3600,
+    keyPrefix: 'translate-texts'
+};
 
 // Handle preflight requests
 export async function onRequestOptions() {
@@ -30,8 +35,13 @@ export async function onRequestGet(context) {
 
     // Rate limiting (Atomic)
     const authResult = await validateAuthToken(request, env);
+    const tier = authResult.valid
+        ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+        : 'anonymous';
+
+    const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
     const clientId = getClientIdentifier(request, authResult);
-    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
