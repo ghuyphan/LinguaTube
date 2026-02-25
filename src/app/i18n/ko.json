@@ -99,6 +99,7 @@
         "switchTo": "{language}로 전환",
         "orUseAI": "또는 AI 사용",
         "aiCredits": "AI 크레딧",
+        "creditsAvailable": "사용 가능 크레딧",
         "ready": "준비됨",
         "aiCreditsDescription": "AI 크레딧은 자막 없는 동영상의 대본 생성과 같은 지능형 기능에 사용됩니다.",
         "whatAreThey": "이게 뭔가요?",

@@ -99,6 +99,7 @@
         "switchTo": "{language}に切り替え",
         "orUseAI": "またはAIを使用",
         "aiCredits": "AIクレジット",
+        "creditsAvailable": "利用可能なクレジット",
         "ready": "準備完了",
         "aiCreditsDescription": "AIクレジットは、字幕のない動画の文字起こしなど、インテリジェントな機能に使用されます。",
         "whatAreThey": "AIクレジットとは？",

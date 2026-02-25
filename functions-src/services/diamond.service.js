@@ -5,7 +5,7 @@
 const DIAMOND_CONFIG = {
     regenIntervalHours: 1,      // How often diamonds regenerate
     regenAmount: 3,             // How many diamonds to add per interval
-    maxDiamonds: 10,            // Maximum free diamonds a user can hold
+    maxDiamonds: 3,             // Maximum free diamonds a user can hold
     cachePrefix: 'diamonds',    // KV cache prefix for anonymous users
 };
 
