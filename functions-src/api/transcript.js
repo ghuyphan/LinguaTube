@@ -12,10 +12,10 @@ import { validateAuthToken, hasPremiumAccess } from '../middlewares/auth.js';
 import { validateVideoRequest } from '../middlewares/video-validator.js';
 import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
-    jsonResponse, handleOptions, errorResponse, logError,
-    cleanTranscriptSegments, rateLimitResponse
+    jsonResponse, handleOptions, errorResponse, logError
 } from '../utils/utils.js';
-import { consumeRateLimit, getClientIdentifier, getTieredConfig } from '../middlewares/rate-limiter.js';
+import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
+import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
 import {
     getVideoLanguages,

@@ -10,7 +10,7 @@ import {
     getClientIP,
     rateLimitResponse,
     getRateLimitHeaders
-} from '../../utils/rate-limiter.js';
+} from '../../middlewares/rate-limiter.js';
 
 // Rate limiting: 100 requests per hour per IP
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'proxy' };

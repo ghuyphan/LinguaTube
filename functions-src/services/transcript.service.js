@@ -8,19 +8,23 @@ import {
     addVideoLanguages,
     getVideoDuration,
     isNoTranscript,
-    markNoTranscript,
+    markNoTranscript
+} from '../data/video-info-db.js';
+
+import {
     savePendingJob,
     getPendingJob,
     deletePendingJob,
     cleanupStaleJobs
-} from '../data/video-info-db.js';
+} from '../data/transcript-db.js';
 
 import {
     getTranscriptFromR2,
     saveTranscriptToR2
 } from '../data/transcript-r2.js';
 
-import { cleanTranscriptSegments, jsonResponse } from '../utils/utils.js';
+import { jsonResponse } from '../utils/utils.js';
+import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
 
 const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours
 
