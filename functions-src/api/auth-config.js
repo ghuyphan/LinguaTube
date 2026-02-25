@@ -3,7 +3,7 @@
  * Serves Google OAuth client configuration
  */
 
-import { jsonResponse, handleOptions } from '../_shared/utils.js';
+import { jsonResponse, handleOptions } from '../utils/utils.js';
 
 // Handle preflight requests
 export async function onRequestOptions() {

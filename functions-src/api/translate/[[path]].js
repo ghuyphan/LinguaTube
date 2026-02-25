@@ -4,15 +4,15 @@
  * Route: /api/translate/[[path]]
  */
 
-import { validateAuthToken } from '../../_shared/auth.js';
-import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+import { validateAuthToken } from '../../middlewares/auth.js';
+import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIP,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders
-} from '../../_shared/rate-limiter.js';
+} from '../../middlewares/rate-limiter.js';
 
 const LINGVA_INSTANCES = [
     'https://lingva.ml',

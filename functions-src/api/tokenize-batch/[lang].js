@@ -11,8 +11,8 @@ import {
     rateLimitResponse,
     getRateLimitHeaders,
     getTieredConfig
-} from '../../_shared/rate-limiter.js';
-import { validateAuthToken, hasPremiumAccess } from '../../_shared/auth.js';
+} from '../../middlewares/rate-limiter.js';
+import { validateAuthToken, hasPremiumAccess } from '../../middlewares/auth.js';
 import {
     jsonResponse,
     handleOptions,
@@ -20,8 +20,8 @@ import {
     sanitizeVideoId,
     validateBatchSize,
     validateBody
-} from '../../_shared/utils.js';
-import { tokenize } from '../../_shared/tokenizer.js';
+} from '../../utils/utils.js';
+import { tokenize } from '../../utils/tokenizer.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 // Tiered rate limiting - anonymous: 50/hr, free: 100/hr, premium: 1000/hr (effectively unlimited)

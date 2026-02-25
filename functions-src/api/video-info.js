@@ -12,14 +12,14 @@
  * Returns: { videoId, title, duration, availableLanguages, hasAutoCaptions, channel }
  */
 
-import { jsonResponse, handleOptions, sanitizeVideoId } from '../_shared/utils.js';
+import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
 import {
     getVideoLanguages,
     saveVideoLanguages,
     getVideoInfoFromKV,
     saveVideoInfoToKV
-} from '../_shared/video-info-db.js';
-import { getVideoMetadata } from '../_shared/video-validator.js';
+} from '../data/video-info-db.js';
+import { getVideoMetadata } from '../middlewares/video-validator.js';
 
 // Handle preflight requests
 export async function onRequestOptions() {

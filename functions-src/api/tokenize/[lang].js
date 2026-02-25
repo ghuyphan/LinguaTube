@@ -3,17 +3,17 @@
  * Single-text tokenization endpoint with optional caching
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '../../_shared/utils.js';
-import { tokenize } from '../../_shared/tokenizer.js';
+import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '../../utils/utils.js';
+import { tokenize } from '../../utils/tokenizer.js';
 import {
     consumeRateLimit,
     getClientIP,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders
-} from '../../_shared/rate-limiter.js';
+} from '../../middlewares/rate-limiter.js';
 
-import { validateAuthToken } from '../../_shared/auth.js';
+import { validateAuthToken } from '../../middlewares/auth.js';
 
 const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };

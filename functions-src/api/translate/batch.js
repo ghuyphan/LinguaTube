@@ -4,16 +4,16 @@
  * Route: POST /api/translate/batch
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, sha256 } from '../../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, sha256 } from '../../utils/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders,
     getTieredConfig
-} from '../../_shared/rate-limiter.js';
-import { translateBatch } from '../../_shared/lingva.js';
-import { validateAuthToken, hasPremiumAccess } from '../../_shared/auth.js';
+} from '../../middlewares/rate-limiter.js';
+import { translateBatch } from '../../providers/lingva.js';
+import { validateAuthToken, hasPremiumAccess } from '../../middlewares/auth.js';
 
 const MAX_BATCH_SIZE = 50;
 

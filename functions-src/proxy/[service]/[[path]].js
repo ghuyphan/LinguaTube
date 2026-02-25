@@ -4,13 +4,13 @@
  * Route: /proxy/[service]/[[path]]
  */
 
-import { jsonResponse, handleOptions, errorResponse } from '../../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIP,
     rateLimitResponse,
     getRateLimitHeaders
-} from '../../_shared/rate-limiter.js';
+} from '../../utils/rate-limiter.js';
 
 // Rate limiting: 100 requests per hour per IP
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'proxy' };

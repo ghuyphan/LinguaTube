@@ -4,17 +4,17 @@
  * Route: POST /api/dual-subtitles
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, logError } from '../_shared/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, logError } from '../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
     rateLimitResponse,
     getRateLimitHeaders,
     getTieredConfig
-} from '../_shared/rate-limiter.js';
-import { validateAuthToken, hasPremiumAccess } from '../_shared/auth.js';
-import { translateBatch } from '../_shared/lingva.js';
-import { getTranslation, saveTranslation, recordTranslation } from '../_shared/translation-cache.js';
+} from '../middlewares/rate-limiter.js';
+import { validateAuthToken, hasPremiumAccess } from '../middlewares/auth.js';
+import { translateBatch } from '../providers/lingva.js';
+import { getTranslation, saveTranslation, recordTranslation } from '../utils/translation-cache.js';
 
 // Tiered rate limiting - anonymous: 5/hr, free: 10/hr, premium: 50/hr
 const RATE_LIMIT_CONFIG = {
