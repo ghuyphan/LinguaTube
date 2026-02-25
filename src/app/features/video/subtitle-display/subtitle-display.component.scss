@@ -187,6 +187,20 @@
     opacity: 0.7;
 }
 
+.subtitle-translation--error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+
+    app-icon {
+        color: inherit;
+        display: flex;
+    }
+}
+
 .subtitle-translation-wrapper {
     display: flex;
     justify-content: center;
@@ -1075,7 +1089,9 @@ ruby rt {
 
     }
 
-    .ctrl-btn:hover.active {}
+    .ctrl-btn:hover.active {
+        /* No hover override needed when active */
+    }
 }
 
 .ctrl-btn--expand {
@@ -1206,33 +1222,33 @@ ruby rt {
     }
 
     .subtitle-text {
-        font-size: 1.25rem;
-        line-height: 2.1;
+        font-size: 1.125rem;
+        line-height: 1.9;
         padding: var(--space-xs) var(--space-sm);
     }
 
     .subtitle-translation {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
     }
 
     .current-subtitle--small .subtitle-text {
-        font-size: 1.0625rem;
-    }
-
-    .current-subtitle--small .subtitle-translation {
-        font-size: 0.75rem;
-    }
-
-    .current-subtitle--large .subtitle-text {
-        font-size: 1.4375rem;
-    }
-
-    .current-subtitle--large .subtitle-translation {
         font-size: 0.9375rem;
     }
 
+    .current-subtitle--small .subtitle-translation {
+        font-size: 0.6875rem;
+    }
+
+    .current-subtitle--large .subtitle-text {
+        font-size: 1.25rem;
+    }
+
+    .current-subtitle--large .subtitle-translation {
+        font-size: 0.875rem;
+    }
+
     .word {
-        padding: 0.375rem 0.5rem;
+        padding: 0.25rem 0.375rem;
         margin: 2px;
         border-radius: 6px;
         background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.08);
@@ -1241,13 +1257,13 @@ ruby rt {
     .text-ja .word,
     .text-zh .word,
     .text-ko .word {
-        padding: 0.375rem 0.5rem;
+        padding: 0.25rem 0.375rem;
         margin: 2px;
         vertical-align: top;
     }
 
     .text-en .word {
-        padding: 0.375rem 0.5rem;
+        padding: 0.25rem 0.375rem;
         margin: 2px;
     }
 
@@ -1382,45 +1398,45 @@ ruby rt {
     }
 
     .subtitle-text {
-        font-size: 1.125rem;
-        line-height: 2;
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
     .subtitle-translation {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
     }
 
     .current-subtitle--small .subtitle-text {
-        font-size: 0.9375rem;
+        font-size: 0.8125rem;
     }
 
     .current-subtitle--small .subtitle-translation {
-        font-size: 0.6875rem;
+        font-size: 0.625rem;
     }
 
     .current-subtitle--large .subtitle-text {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
 
     .current-subtitle--large .subtitle-translation {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
     }
 
     .word {
-        padding: 0.3125rem 0.4375rem;
+        padding: 0.2rem 0.3rem;
         margin: 2px;
     }
 
     .text-ja .word,
     .text-zh .word,
     .text-ko .word {
-        padding: 0.3125rem 0.4375rem;
+        padding: 0.2rem 0.3rem;
         margin: 2px;
         vertical-align: top;
     }
 
     .text-en .word {
-        padding: 0.3125rem 0.4375rem;
+        padding: 0.2rem 0.3rem;
         margin: 2px;
     }
 

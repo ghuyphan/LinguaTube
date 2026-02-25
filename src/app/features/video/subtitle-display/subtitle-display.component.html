@@ -58,6 +58,12 @@
                     <div class="subtitle-translation" @subtitleFade>
                         {{ translation }}
                     </div>
+                    } @else if (toastType() === 'error') {
+                    <div class="subtitle-translation subtitle-translation--error" @subtitleFade>
+                        <app-icon name="alert-circle" [size]="14" />
+                        <span>{{ toastMessage() || i18n.t('subtitle.translationFailed') || 'Translation failed'
+                            }}</span>
+                    </div>
                     } @else {
                     <!-- Reserve space even if empty/failed -->
                     <div class="subtitle-translation subtitle-translation--empty"></div>

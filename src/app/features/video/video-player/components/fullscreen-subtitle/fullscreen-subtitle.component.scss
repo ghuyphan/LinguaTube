@@ -43,6 +43,14 @@ $transition-fast: 0.15s ease;
     overflow-y: auto;
     overflow-x: hidden;
     animation: subtitleFadeIn 0.2s ease-out;
+
+    @media (max-width: 640px) {
+        padding: 0.5rem 1rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 0.5rem 0.75rem;
+    }
 }
 
 @keyframes subtitleFadeIn {
@@ -78,6 +86,46 @@ $transition-fast: 0.15s ease;
     .fullscreen-subtitle.fs-xlarge & {
         font-size: 2.5rem;
         line-height: 2.4;
+    }
+
+    @media (max-width: 640px) {
+        font-size: 1.25rem;
+        line-height: 1.8;
+
+        .fullscreen-subtitle.fs-small & {
+            font-size: 1.0625rem;
+            line-height: 1.6;
+        }
+
+        .fullscreen-subtitle.fs-large & {
+            font-size: 1.5rem;
+            line-height: 2;
+        }
+
+        .fullscreen-subtitle.fs-xlarge & {
+            font-size: 1.75rem;
+            line-height: 2.2;
+        }
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.125rem;
+        line-height: 1.6;
+
+        .fullscreen-subtitle.fs-small & {
+            font-size: 0.9375rem;
+            line-height: 1.4;
+        }
+
+        .fullscreen-subtitle.fs-large & {
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .fullscreen-subtitle.fs-xlarge & {
+            font-size: 1.5rem;
+            line-height: 2;
+        }
     }
 }
 
@@ -119,6 +167,30 @@ $transition-fast: 0.15s ease;
         background: rgba(255, 255, 255, 0.15);
         border-radius: 4px;
         animation: skeletonPulse 1.5s infinite ease-in-out;
+    }
+
+    @media (max-width: 640px) {
+        font-size: 0.875rem;
+
+        .fullscreen-subtitle.fs-small & {
+            font-size: 0.75rem;
+        }
+
+        .fullscreen-subtitle.fs-large & {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.8125rem;
+
+        .fullscreen-subtitle.fs-small & {
+            font-size: 0.6875rem;
+        }
+
+        .fullscreen-subtitle.fs-large & {
+            font-size: 0.875rem;
+        }
     }
 }
 

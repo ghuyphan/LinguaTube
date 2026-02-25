@@ -95,6 +95,22 @@ export class SubtitleDisplayComponent {
 
   isVideoFullscreen = input(false);
 
+  toastMessage = signal<string | null>(null);
+  toastType = signal<'success' | 'error'>('success');
+  private toastTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  showToast(message: string, type: 'success' | 'error' = 'success'): void {
+    if (this.toastTimeout) {
+      clearTimeout(this.toastTimeout);
+    }
+    this.toastMessage.set(message);
+    this.toastType.set(type);
+
+    this.toastTimeout = setTimeout(() => {
+      this.toastMessage.set(null);
+    }, 3000);
+  }
+
   showAddedSheet = signal(false);
   recentCount = computed(() => {
     const lang = this.settings.settings().language;
@@ -333,6 +349,7 @@ export class SubtitleDisplayComponent {
       error: (err) => {
         console.error('[SubtitleDisplay] Lazy load failed:', err);
         this.clearLoadingState();
+        this.showToast(this.i18n.t('subtitle.translationFailed') || 'Translation failed. Please try again.', 'error');
       }
     });
   }
@@ -520,6 +537,7 @@ export class SubtitleDisplayComponent {
                 this.isDualCached.set(false);
                 this.lastLazyLoadedIndex = -1;
                 this.isTranslatingDual.set(false);
+                this.showToast(this.i18n.t('subtitle.translationFailed') || 'Translation failed. Please try again.', 'error');
               }
             });
         });
