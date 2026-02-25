@@ -4,7 +4,7 @@
     <div class="step step--language fade-in">
         <div class="step-content">
             <div class="logo-container pulse">
-                <img src="assets/icon.svg" alt="Voca" class="logo" />
+                <app-mascot mood="happy"></app-mascot>
             </div>
 
             <h1 class="title">{{ i18n.t('onboarding.uiLanguageTitle') }}</h1>
@@ -39,8 +39,11 @@
     @if (step() === 1) {
     <div class="step step--learning fade-in-up">
         <div class="step-content">
+            <button class="back-btn" (click)="previousStep(); $event.stopPropagation()" aria-label="Go back">
+                <app-icon name="chevron-left" [size]="24" />
+            </button>
             <div class="logo-container">
-                <img src="assets/icon.svg" alt="Voca" class="logo" />
+                <app-mascot mood="happy"></app-mascot>
             </div>
 
             <h1 class="title">{{ i18n.t('onboarding.learningLanguageTitle') }}</h1>
@@ -72,25 +75,28 @@
                 <div class="demo-display">
                     <div class="demo-sentence" [ngClass]="'text-' + selectedLang()">
                         @for (word of demoSentences[selectedLang()!]; track $index) {
-                        <span class="demo-word" [class.demo-word--highlight]="word.highlight"
-                            [class.demo-word--active]="selectedWord() === word" (click)="onDemoWordClick(word, $event)">
-                            {{ word.surface }}
-                        </span>
+                        <div class="demo-word-container">
+                            <span class="demo-word" [class.demo-word--highlight]="word.highlight"
+                                [class.demo-word--active]="selectedWord() === word"
+                                (click)="onDemoWordClick(word, $event)">
+                                {{ word.surface }}
+                            </span>
+
+                            <!-- Mini Popup (Positioned Relative to Word) -->
+                            @if (selectedWord() === word) {
+                            <div class="demo-popup">
+                                <div class="popup-content">
+                                    @if (word.reading) {
+                                    <span class="popup-reading">{{ word.reading }}</span>
+                                    }
+                                    <span class="popup-meaning">{{ i18n.t(word.meaning) }}</span>
+                                </div>
+                                <div class="popup-arrow"></div>
+                            </div>
+                            }
+                        </div>
                         }
                     </div>
-
-                    <!-- Mini Popup -->
-                    @if (selectedWord()) {
-                    <div class="demo-popup float-in">
-                        <div class="popup-content">
-                            @if (selectedWord()!.reading) {
-                            <span class="popup-reading">{{ selectedWord()!.reading }}</span>
-                            }
-                            <span class="popup-meaning">{{ i18n.t(selectedWord()!.meaning) }}</span>
-                        </div>
-                        <div class="popup-arrow"></div>
-                    </div>
-                    }
                 </div>
             </div>
             }

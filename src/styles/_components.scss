@@ -401,6 +401,21 @@
     opacity: 0.7;
 }
 
+.empty-state__mascot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    max-width: 160px;
+    max-height: 160px;
+    transition: transform var(--transition-normal);
+}
+
+.empty-state__mascot app-mascot {
+    width: 100%;
+    height: 100%;
+}
+
 .empty-state__text {
     display: flex;
     flex-direction: column;

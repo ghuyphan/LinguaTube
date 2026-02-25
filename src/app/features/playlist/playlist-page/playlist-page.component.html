@@ -103,11 +103,11 @@
                     }
                 </div>
                 } @else {
-                <div class="empty-state">
-                    <div class="empty-state__icon-box">
-                        <app-icon [name]="view() === 'my' ? 'list-video' : 'globe'" [size]="20" />
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__mascot" style="width: 140px; height: 140px; margin-bottom: 1rem;">
+                        <app-mascot mood="thinking"></app-mascot>
                     </div>
-                    <div class="empty-state__text">
+                    <div class="empty-state__text" style="align-items: center; text-align: center;">
                         <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle')
                             :
                             i18n.t('playlist.empty.communityTitle') }}</p>

@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
+import { MascotComponent } from '../mascot/mascot.component';
 import { SettingsService, UILanguage, I18nService } from '../../services';
 
 interface DemoWord {
@@ -14,7 +15,7 @@ interface DemoWord {
     selector: 'app-onboarding',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent],
+    imports: [CommonModule, IconComponent, MascotComponent],
     templateUrl: './onboarding.component.html',
     styleUrls: ['./onboarding.component.scss']
 })
@@ -77,6 +78,11 @@ export class OnboardingComponent {
 
     nextStep(): void {
         this.step.set(1);
+    }
+
+    previousStep(): void {
+        this.step.set(0);
+        this.selectedLang.set(null); // Reset their learning lang choice just in case
     }
 
     selectLanguage(code: 'ja' | 'zh' | 'ko' | 'en'): void {

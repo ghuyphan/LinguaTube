@@ -5,11 +5,13 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { VocabularyService, SettingsService, I18nService } from '../../../services';
 
+import { MascotComponent } from '../../../components/mascot/mascot.component';
+
 @Component({
   selector: 'app-vocabulary-quick-view',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent],
+  imports: [CommonModule, BottomSheetComponent, OptionPickerComponent, MascotComponent],
   templateUrl: './vocabulary-quick-view.component.html',
   styleUrl: './vocabulary-quick-view.component.scss'
 })

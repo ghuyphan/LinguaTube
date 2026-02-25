@@ -14,11 +14,13 @@ interface StudyCard {
 const DAILY_GOAL_KEY = 'linguatube_daily_goal';
 const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
+import { MascotComponent } from '../../../components/mascot/mascot.component';
+
 @Component({
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, SwitchComponent],
+    imports: [CommonModule, IconComponent, SwitchComponent, MascotComponent],
     templateUrl: './study-mode.component.html',
     styleUrl: './study-mode.component.scss'
 })

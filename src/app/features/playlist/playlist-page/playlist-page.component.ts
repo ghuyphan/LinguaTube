@@ -18,10 +18,12 @@ const LANGUAGES = [
     { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
 ];
 
+import { MascotComponent } from '../../../components/mascot/mascot.component';
+
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, BottomSheetComponent, OptionPickerComponent],
+    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, BottomSheetComponent, OptionPickerComponent, MascotComponent],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

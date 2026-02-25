@@ -49,20 +49,20 @@
                 }
             </div>
             } @else if (filteredWords().length === 0) {
-            <div class="empty-state">
+            <div class="empty-state empty-state--centered">
                 @if (vocab.vocabulary().length === 0) {
-                <div class="empty-state__icon-box">
-                    <app-icon name="bookmark" [size]="20" />
+                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                    <app-mascot mood="sad"></app-mascot>
                 </div>
-                <div class="empty-state__text">
+                <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                     <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
                 </div>
                 } @else {
-                <div class="empty-state__icon-box">
-                    <app-icon name="search" [size]="20" />
+                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                    <app-mascot mood="thinking"></app-mascot>
                 </div>
-                <div class="empty-state__text">
+                <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
                     <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
                 </div>

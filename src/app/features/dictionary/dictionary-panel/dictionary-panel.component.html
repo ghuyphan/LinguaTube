@@ -96,11 +96,11 @@
             </div>
         </div>
         } @else if (hasSearched() && !isLoading()) {
-        <div class="empty-state">
-            <div class="empty-state__icon-box">
-                <app-icon name="info" [size]="20" />
+        <div class="empty-state empty-state--centered">
+            <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                <app-mascot mood="sad"></app-mascot>
             </div>
-            <div class="empty-state__text">
+            <div class="empty-state__text" style="align-items: center; text-align: center;">
                 <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"
                 </p>
                 <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
@@ -108,9 +108,9 @@
         </div>
         } @else if (!hasSearched()) {
         <!-- Empty state - always visible -->
-        <div class="empty-state">
-            <div class="empty-state__icon-box">
-                <app-icon name="book-open" [size]="20" />
+        <div class="empty-state empty-state--centered">
+            <div class="empty-state__mascot" style="width: 140px; height: 140px; margin-bottom: 1rem;">
+                <app-mascot mood="default"></app-mascot>
             </div>
             <div class="empty-state__text">
                 <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>

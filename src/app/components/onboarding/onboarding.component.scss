@@ -37,6 +37,17 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: var(--space-md);
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* Animations */
@@ -131,9 +142,34 @@
 }
 
 /* Common Elements */
+.back-btn {
+    position: absolute;
+    top: var(--space-xl);
+    left: var(--space-xl);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 10;
+}
+
+@media (hover: hover) {
+    .back-btn:hover {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+}
+
 .logo-container {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin-bottom: var(--space-lg);
     flex-shrink: 0;
 }
@@ -313,6 +349,12 @@
     font-weight: 500;
 }
 
+.demo-word-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+}
+
 .demo-word {
     cursor: pointer;
     padding: 4px 8px;
@@ -336,6 +378,18 @@
 }
 
 /* Demo Popup */
+@keyframes popupFloatIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 .demo-popup {
     position: absolute;
     bottom: calc(100% + var(--space-sm));
@@ -345,13 +399,16 @@
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     padding: var(--space-sm) var(--space-md);
-    box-shadow: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 10;
     pointer-events: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     transform-origin: bottom center;
+    white-space: nowrap;
+    min-width: 80px;
+    animation: popupFloatIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .popup-content {
@@ -416,6 +473,38 @@
     border: 2px solid var(--border-color);
     box-shadow: 0 4px 0 var(--border-color);
     transform: none;
+}
+
+/* Desktop and tablet Optimizations */
+@media (min-width: 768px) {
+    .onboarding {
+        background: var(--bg-secondary);
+        /* Add subtle contrast */
+    }
+
+    .step {
+        height: auto;
+        min-height: 540px;
+        background: var(--bg-card);
+        padding: var(--space-xl) var(--space-2xl);
+        border-radius: var(--border-radius-xl);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+        margin: auto;
+        /* Center vertically since .onboarding is flex */
+        justify-content: center;
+    }
+
+    .step-content {
+        flex: 0 1 auto;
+        /* Don't force stretch */
+    }
+
+    .action-btn {
+        margin-top: var(--space-xl);
+        margin-bottom: 0;
+        /* Removing the safe-area inset on desktop */
+    }
 }
 
 /* Mobile Optimizations */

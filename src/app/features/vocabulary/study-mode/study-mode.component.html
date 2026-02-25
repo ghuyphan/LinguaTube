@@ -86,11 +86,11 @@
             <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}
             </p>
             } @else {
-            <div class="empty-state">
-                <div class="empty-state__icon-box">
-                    <app-icon name="info" [size]="18" />
+            <div class="empty-state empty-state--centered">
+                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                    <app-mascot mood="sad"></app-mascot>
                 </div>
-                <div class="empty-state__text">
+                <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
                     <span class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</span>
                 </div>

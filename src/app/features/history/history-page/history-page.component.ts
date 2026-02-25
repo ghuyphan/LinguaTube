@@ -8,16 +8,18 @@ import { HistoryService, SettingsService, I18nService, AuthService } from '../..
 
 type FilterType = 'all' | 'favorites';
 
+import { MascotComponent } from '../../../components/mascot/mascot.component';
+
 @Component({
   selector: 'app-history-page',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
-    RouterLink,
     IconComponent,
     BottomSheetComponent,
-    HistoryListComponent
+    HistoryListComponent,
+    MascotComponent
   ],
   template: `
     <div class="page-layout">
@@ -65,22 +67,22 @@ type FilterType = 'all' | 'favorites';
           <div class="history-list">
             @if (filteredItems().length === 0 && historyItems().length > 0) {
               <!-- No favorites -->
-              <div class="empty-state empty-state--animate">
-                <div class="empty-state__icon-box">
-                  <app-icon name="heart" [size]="20" />
+              <div class="empty-state empty-state--centered empty-state--animate">
+                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                  <app-mascot mood="sad"></app-mascot>
                 </div>
-                <div class="empty-state__text">
+                <div class="empty-state__text" style="align-items: center; text-align: center;">
                   <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
                   <p class="empty-state__description">{{ i18n.t('history.noFavoritesHint') }}</p>
                 </div>
               </div>
             } @else if (historyItems().length === 0) {
               <!-- No history at all -->
-              <div class="empty-state">
-                <div class="empty-state__icon-box">
-                  <app-icon name="play-circle" [size]="20" />
+              <div class="empty-state empty-state--centered">
+                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
+                  <app-mascot mood="sleeping"></app-mascot>
                 </div>
-                <div class="empty-state__text">
+                <div class="empty-state__text" style="align-items: center; text-align: center;">
                   <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
                   <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') }}</p>
                 </div>

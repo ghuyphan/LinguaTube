@@ -8,11 +8,13 @@ import { OptionPickerComponent, OptionItem } from '../../../shared/components/op
 import { DictionaryService, VocabularyService, SettingsService, TranslationService, I18nService } from '../../../services';
 import { Token, DictionaryEntry } from '../../../models';
 
+import { MascotComponent } from '../../../components/mascot/mascot.component';
+
 @Component({
   selector: 'app-word-popup',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent, OptionPickerComponent, MascotComponent],
   templateUrl: './word-popup.component.html',
   styleUrl: './word-popup.component.scss'
 })

@@ -8,11 +8,13 @@ import { VocabularyService, SettingsService, I18nService, AuthService } from '..
 
 import { VocabularyItem, WordLevel } from '../../../models';
 
+import { MascotComponent } from '../../../components/mascot/mascot.component';
+
 @Component({
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, MascotComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
