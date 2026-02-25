@@ -90,7 +90,7 @@ body::-webkit-scrollbar {
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-lg);
 }
 
 @media (max-width: 480px) {
@@ -267,7 +267,7 @@ body::-webkit-scrollbar {
 
 .page-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr minmax(340px, 25vw);
     gap: var(--space-md);
     align-items: start;
     max-width: 100%;

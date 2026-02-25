@@ -48,10 +48,10 @@ import { Token } from '../../../models';
 
     .layout {
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: 1fr minmax(340px, 25vw);
       gap: var(--space-lg);
       align-items: start;
-      max-width: 1280px;
+      max-width: 100%;
       margin: 0 auto;
     }
 
