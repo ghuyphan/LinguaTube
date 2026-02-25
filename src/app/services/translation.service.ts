@@ -178,10 +178,6 @@ export class TranslationService implements OnDestroy {
 
 
 
-    /**
-     * Get dual subtitles for a video
-     * Handles caching and API calls
-     */
     getDualSubtitles(videoId: string, sourceLang: string, targetLang: string, segments: { text: string; start: number; duration: number; }[], onlyCache = false): Observable<{ text: string; start: number; duration: number; translation?: string }[]> {
         return this.http.post<{ segments: { text: string; start: number; duration: number; translation?: string }[] }>(environment.api.dualSubtitles, {
             videoId,
@@ -190,9 +186,31 @@ export class TranslationService implements OnDestroy {
             segments,
             onlyCache
         }).pipe(
+            retry({
+                count: 3,
+                delay: (error, retryCount) => {
+                    // Only retry on 429 or 5xx, or if it timed out
+                    if (error.status !== 429 && !error.status.toString().startsWith('5') && error.status !== 0) {
+                        return throwError(() => error);
+                    }
+
+                    const retryAfterHeader = error.headers?.get('Retry-After');
+                    let delayMs = 2000 * Math.pow(2, retryCount - 1); // 2s, 4s, 8s
+
+                    if (retryAfterHeader) {
+                        const seconds = parseInt(retryAfterHeader, 10);
+                        if (!isNaN(seconds)) {
+                            delayMs = seconds * 1000;
+                        }
+                    }
+
+                    console.warn(`[Dual Subtitles] Request failed (${error.status}), retrying in ${delayMs}ms...`);
+                    return timer(delayMs);
+                }
+            }),
             map(response => response.segments || []),
             catchError(err => {
-                console.error('Dual subtitles failed:', err);
+                console.error('Dual subtitles failed after retries:', err);
                 return of([]);
             })
         );

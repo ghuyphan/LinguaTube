@@ -137,11 +137,7 @@ export async function onRequestPost(context) {
                 translatedTexts.push(...translations);
             } catch (e) {
                 console.error('Chunk translation failed:', e);
-                // Fill with nulls and track all indices as failed
-                for (let i = 0; i < chunk.length; i++) {
-                    failedIndices.push(currentIndex + i);
-                }
-                translatedTexts.push(...new Array(chunk.length).fill(null));
+                throw e; // Abort the whole request so we don't save a degraded/empty cache
             }
 
             currentIndex += chunk.length;
