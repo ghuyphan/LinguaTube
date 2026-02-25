@@ -263,7 +263,7 @@
     overflow: hidden;
     border-radius: var(--border-radius-lg);
     background: var(--bg-card);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     box-shadow: none;
     transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
     position: relative;
