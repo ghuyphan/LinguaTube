@@ -51,8 +51,8 @@ export async function onRequestGet({ env }) {
     return jsonResponse({
         status: 'ok',
         version: 'v4',
-        database: Boolean(env.DB),
-        storage: Boolean(env.TRANSCRIPT_R2)
+        database: Boolean(env.VOCAB_DB),
+        storage: Boolean(env.TRANSCRIPT_STORAGE)
     });
 }
 
@@ -78,8 +78,8 @@ export async function onRequestPost(context) {
         const tier = authResult.valid ? authResult.user.tier : 'anonymous';
 
         // Setup Services
-        const db = env.DB;
-        const r2 = env.TRANSCRIPT_R2;
+        const db = env.VOCAB_DB;
+        const r2 = env.TRANSCRIPT_STORAGE;
         const cache = env.TRANSCRIPT_CACHE;
         const _cacheManager = new CacheManager(cache);
 

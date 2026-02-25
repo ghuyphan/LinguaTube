@@ -88,14 +88,14 @@ body::-webkit-scrollbar {
    ============================================ */
 
 .container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--space-lg);
+    padding: 0 var(--space-md);
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-sm);
     }
 }
 
@@ -268,9 +268,9 @@ body::-webkit-scrollbar {
 .page-layout {
     display: grid;
     grid-template-columns: 1fr 340px;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     align-items: start;
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
