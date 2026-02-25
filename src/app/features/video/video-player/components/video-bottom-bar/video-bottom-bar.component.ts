@@ -1,4 +1,4 @@
-import { Component, input, output, computed } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
 import { PlaybackSpeed } from '../../video-player.constants';
@@ -44,7 +44,7 @@ export class VideoBottomBarComponent {
   playPauseClicked = output<MouseEvent>();
   seekRelative = output<{ amount: number, direction: 'left' | 'right' }>();
   toggleMute = output<void>();
-  volumeChange = output<Event>();
+  volumeChange = output<number>();
 
   // Outputs for Right Controls
   toggleSpeedMenu = output<MouseEvent>();
@@ -74,5 +74,29 @@ export class VideoBottomBarComponent {
     const current = this.langOptions().find(l => l.value === this.targetLang());
     return current?.iconUrl || '';
   }
-}
 
+  onVolumeSliderMouseDown(event: MouseEvent) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    const track = event.currentTarget as HTMLElement;
+    const updateVolume = (e: MouseEvent) => {
+      const rect = track.getBoundingClientRect();
+      const fraction = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      const value = Math.round(fraction * 100);
+      this.volumeChange.emit(value);
+    };
+
+    // Apply immediately on click
+    updateVolume(event);
+
+    const onMove = (e: MouseEvent) => updateVolume(e);
+    const onUp = () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    };
+
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  }
+}

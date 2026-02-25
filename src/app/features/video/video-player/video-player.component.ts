@@ -574,6 +574,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     // Simple version - CSS handles desktop vs mobile via pointer-events
     if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
+      this.isVolumeSliderVisible.set(false);
+      if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
       this.clearControlsTimeout();
     }
   }
@@ -600,6 +602,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       this.ngZone.run(() => {
         if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible() && !this.isDragging()) {
           this.areControlsVisible.set(false);
+          this.isVolumeSliderVisible.set(false);
+          if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
         }
       });
     }, ms);
@@ -876,8 +880,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     }, 500);
   }
 
-  onVolumeChange(event: Event) {
-    const value = parseInt((event.target as HTMLInputElement).value);
+  onVolumeChange(value: number) {
     this.volume.set(value);
     this.youtube.setVolume(value);
     if (value > 0 && this.youtube.isMuted()) {
