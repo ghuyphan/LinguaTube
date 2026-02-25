@@ -145,33 +145,95 @@ export async function translateText(text, source, target) {
  * @returns {Promise<string[]>}
  */
 export async function translateBatch(texts, source, target) {
-    const CONCURRENCY_LIMIT = 3; // Reduced from 5 to lower 429 pressure
-    const STAGGER_DELAY_MS = 150; // Small delay between requests within a worker
-    const results = new Array(texts.length);
-    const queue = texts.map((text, index) => ({ text, index }));
+    if (!texts || texts.length === 0) return [];
 
-    const worker = async (workerId) => {
-        while (queue.length > 0) {
-            const item = queue.shift();
-            if (!item || item.index === undefined) break;
+    const MAX_CHUNK_LENGTH = 1000;
+    const DELIMITER = '\n\n';
+
+    // 1. Group texts into length-safe chunks to drastically minimize API calls
+    const chunksData = [];
+    let currTexts = [];
+    let currIndices = [];
+    let currLen = 0;
+
+    for (let i = 0; i < texts.length; i++) {
+        const text = texts[i];
+        if (!text || !text.trim()) continue;
+
+        const trimmedText = text.trim();
+        if (currLen + trimmedText.length > MAX_CHUNK_LENGTH && currTexts.length > 0) {
+            chunksData.push({ texts: currTexts, indices: currIndices });
+            currTexts = [];
+            currIndices = [];
+            currLen = 0;
+        }
+
+        currTexts.push(trimmedText);
+        currIndices.push(i);
+        currLen += trimmedText.length + DELIMITER.length;
+    }
+
+    if (currTexts.length > 0) {
+        chunksData.push({ texts: currTexts, indices: currIndices });
+    }
+
+    const CONCURRENCY_LIMIT = 3;
+    const STAGGER_DELAY_MS = 200;
+    const results = new Array(texts.length).fill(null);
+
+    // Pre-fill empty slots
+    texts.forEach((text, i) => {
+        if (!text || !text.trim()) {
+            results[i] = text;
+        }
+    });
+
+    const worker = async () => {
+        while (chunksData.length > 0) {
+            const chunk = chunksData.shift();
+            if (!chunk) break;
 
             try {
-                results[item.index] = await translateText(item.text, source, target);
+                const joinedText = chunk.texts.join(DELIMITER);
+                const translated = await translateText(joinedText, source, target);
+
+                if (translated) {
+                    // Split back by 2+ newlines (allowing some whitespace in between)
+                    const splitTranslations = translated.split(/\n[\s]*\n/);
+
+                    if (splitTranslations.length === chunk.texts.length) {
+                        for (let j = 0; j < chunk.texts.length; j++) {
+                            results[chunk.indices[j]] = splitTranslations[j].trim();
+                        }
+                    } else {
+                        console.warn(`[Lingva] Chunk split mismatch: expected ${chunk.texts.length}, got ${splitTranslations.length}. Falling back to individual requests.`);
+                        // Fallback to individual
+                        for (let j = 0; j < chunk.texts.length; j++) {
+                            try {
+                                results[chunk.indices[j]] = await translateText(chunk.texts[j], source, target);
+                            } catch (e) { }
+                        }
+                    }
+                }
             } catch (error) {
-                console.warn(`[Lingva] Batch item ${item.index} failed: ${error.message}`);
-                results[item.index] = null;
+                console.warn(`[Lingva] Batch chunk failed: ${error.message}`);
+                // Fallback
+                for (let j = 0; j < chunk.texts.length; j++) {
+                    try {
+                        results[chunk.indices[j]] = await translateText(chunk.texts[j], source, target);
+                    } catch (e) { }
+                }
             }
 
-            // Small stagger delay to avoid burst requests
-            if (queue.length > 0) {
+            if (chunksData.length > 0) {
                 await new Promise(r => setTimeout(r, STAGGER_DELAY_MS));
             }
         }
     };
 
     const activeWorkers = Array.from(
-        { length: Math.min(CONCURRENCY_LIMIT, texts.length) },
-        (_, i) => worker(i)
+        { length: Math.min(CONCURRENCY_LIMIT, chunksData.length) },
+        () => worker()
     );
 
     await Promise.all(activeWorkers);
