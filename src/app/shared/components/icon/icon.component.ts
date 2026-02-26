@@ -20,7 +20,7 @@ export type IconName =
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical'
     | 'list' | 'list-video' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
-    | 'headphones' | 'clipboard-check';
+    | 'headphones' | 'clipboard-check' | 'coffee';
 
 @Component({
     selector: 'app-icon',

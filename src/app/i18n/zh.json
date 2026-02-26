@@ -15,7 +15,8 @@
         "settings": "设置",
         "newVideo": "新视频",
         "playlists": "播放列表",
-        "quickLinks": "快速链接"
+        "quickLinks": "快速链接",
+        "game": "多人游戏"
     },
     "commandPalette": {
         "placeholder": "粘贴YouTube链接或视频ID...",
@@ -394,5 +395,32 @@
         "yourAnswer": "你的答案",
         "retry": "重试",
         "next": "下一题"
+    },
+    "game": {
+        "title": "多人语言咖啡馆",
+        "subtitle": "与其他学习者实时练习语言",
+        "createRoom": "创建房间",
+        "joinRoom": "加入房间",
+        "chooseMode": "选择游戏模式",
+        "customer": "顾客",
+        "customerDesc": "点咖啡",
+        "barista": "咖啡师",
+        "baristaDesc": "为你接单",
+        "language": "练习语言",
+        "waiting": "等待玩家",
+        "waitingSub": "与您的伙伴分享此房间代码：",
+        "roomCode": "房间代码",
+        "enterCode": "输入房间代码",
+        "codePlaceholder": "例如：8A2B",
+        "playerJoined": "玩家已加入！",
+        "bothReady": "双方玩家已连接。",
+        "startGame": "开始游戏",
+        "roomFull": "房间已满",
+        "roomNotFound": "未找到房间",
+        "join": "加入",
+        "howToPlay": "怎么玩",
+        "howToPlayDesc": "和朋友一起练习口语和听力！",
+        "typing": "打字",
+        "voice": "语音"
     }
 }

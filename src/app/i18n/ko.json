@@ -15,7 +15,8 @@
         "settings": "설정",
         "newVideo": "새 동영상",
         "playlists": "재생목록",
-        "quickLinks": "빠른 링크"
+        "quickLinks": "빠른 링크",
+        "game": "멀티 게임"
     },
     "commandPalette": {
         "placeholder": "YouTube URL 또는 동영상 ID 붙여넣기...",
@@ -394,5 +395,32 @@
         "yourAnswer": "내 답변",
         "retry": "다시",
         "next": "다음"
+    },
+    "game": {
+        "title": "멀티플레이어 언어 카페",
+        "subtitle": "다른 학습자와 함께 실시간으로 언어 연습하기",
+        "createRoom": "방 만들기",
+        "joinRoom": "방 참여하기",
+        "chooseMode": "게임 모드 선택",
+        "customer": "손님",
+        "customerDesc": "커피를 주문합니다",
+        "barista": "바리스타",
+        "baristaDesc": "주문을 받습니다",
+        "language": "연습할 언어",
+        "waiting": "플레이어 대기 중",
+        "waitingSub": "파트너와 이 방 코드를 공유하세요:",
+        "roomCode": "방 코드",
+        "enterCode": "방 코드 입력",
+        "codePlaceholder": "예: 8A2B",
+        "playerJoined": "플레이어가 참여했습니다!",
+        "bothReady": "두 플레이어가 모두 연결되었습니다.",
+        "startGame": "게임 시작",
+        "roomFull": "방이 꽉 찼습니다",
+        "roomNotFound": "방을 찾을 수 없습니다",
+        "join": "참여",
+        "howToPlay": "게임 방법",
+        "howToPlayDesc": "친구와 함께 말하기와 듣기를 연습하세요!",
+        "typing": "타이핑",
+        "voice": "음성"
     }
 }

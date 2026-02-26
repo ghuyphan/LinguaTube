@@ -15,7 +15,8 @@
         "settings": "Cài đặt",
         "newVideo": "Video mới",
         "playlists": "Danh sách",
-        "quickLinks": "Truy cập nhanh"
+        "quickLinks": "Truy cập nhanh",
+        "game": "Trò chơi nhóm"
     },
     "commandPalette": {
         "placeholder": "Dán URL YouTube hoặc ID video...",
@@ -396,5 +397,32 @@
         "yourAnswer": "Câu trả lời của bạn",
         "retry": "Thử lại",
         "next": "Tiếp"
+    },
+    "game": {
+        "title": "Quán cà phê ngôn ngữ đa người chơi",
+        "subtitle": "Thực hành ngôn ngữ trong thời gian thực với những người học khác",
+        "createRoom": "Tạo phòng",
+        "joinRoom": "Vào phòng",
+        "chooseMode": "Chọn Chế độ Game",
+        "customer": "Khách hàng",
+        "customerDesc": "Bạn đang gọi cà phê",
+        "barista": "Pha chế",
+        "baristaDesc": "Bạn đang nhận yêu cầu",
+        "language": "Ngôn ngữ Thực hành",
+        "waiting": "Đang chờ Người chơi",
+        "waitingSub": "Chia sẻ mã phòng này với đối tác của bạn:",
+        "roomCode": "Mã phòng",
+        "enterCode": "Nhập mã phòng",
+        "codePlaceholder": "ví dụ: 8A2B",
+        "playerJoined": "Người chơi đã vào!",
+        "bothReady": "Cả hai người chơi đã được kết nối.",
+        "startGame": "Bắt đầu Game",
+        "roomFull": "Phòng đã đầy",
+        "roomNotFound": "Không tìm thấy phòng",
+        "join": "Tham gia",
+        "howToPlay": "Cách chơi",
+        "howToPlayDesc": "Luyện kỹ năng nói và nghe cùng bạn bè!",
+        "typing": "Gõ phím",
+        "voice": "Giọng nói"
     }
 }

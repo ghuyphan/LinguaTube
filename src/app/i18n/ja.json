@@ -15,7 +15,8 @@
         "settings": "設定",
         "newVideo": "新しい動画",
         "playlists": "プレイリスト",
-        "quickLinks": "クイックリンク"
+        "quickLinks": "クイックリンク",
+        "game": "マルチゲーム"
     },
     "commandPalette": {
         "placeholder": "YouTube URLまたは動画IDを貼り付け...",
@@ -394,5 +395,32 @@
         "yourAnswer": "あなたの回答",
         "retry": "もう一度",
         "next": "次へ"
+    },
+    "game": {
+        "title": "マルチプレイヤー言語カフェ",
+        "subtitle": "他の学習者とリアルタイムで言語を練習する",
+        "createRoom": "ルームを作成",
+        "joinRoom": "ルームに参加",
+        "chooseMode": "ゲームモードを選択",
+        "customer": "お客さん",
+        "customerDesc": "コーヒーを注文します",
+        "barista": "バリスタ",
+        "baristaDesc": "注文を受けます",
+        "language": "練習する言語",
+        "waiting": "プレイヤーを待機中",
+        "waitingSub": "このルームコードをパートナーと共有してください:",
+        "roomCode": "ルームコード",
+        "enterCode": "ルームコードを入力",
+        "codePlaceholder": "例: 8A2B",
+        "playerJoined": "プレイヤーが参加しました！",
+        "bothReady": "両方のプレイヤーが接続しました。",
+        "startGame": "ゲーム開始",
+        "roomFull": "ルームは満室です",
+        "roomNotFound": "ルームが見つかりません",
+        "join": "参加",
+        "howToPlay": "遊び方",
+        "howToPlayDesc": "友達とリスニングとスピーキングの練習をしましょう！",
+        "typing": "タイピング",
+        "voice": "音声"
     }
 }

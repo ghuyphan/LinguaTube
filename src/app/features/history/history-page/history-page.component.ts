@@ -27,9 +27,9 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
         <!-- Main History Panel -->
         <div class="card history-panel">
           <div class="panel-header">
-            <div class="header-row">
-              <app-icon name="clock" [size]="20" class="panel-icon" />
-              <h2 class="panel-title">{{ i18n.t('history.title') }}</h2>
+            <div class="panel-header__row">
+              <app-icon name="clock" [size]="20" class="panel-header__icon" />
+              <h2 class="panel-header__title">{{ i18n.t('history.title') }}</h2>
             </div>
             <div class="panel-badges">
               <span class="badge badge--primary">{{ historyItems().length }} {{ i18n.t('history.all') }}</span>
@@ -162,27 +162,6 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
       display: flex;
       flex-direction: column;
       overflow: hidden;
-    }
-
-    .panel-header {
-      padding: var(--space-sm) var(--space-md);
-      flex-shrink: 0;
-    }
-
-    .header-row {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-
-    .panel-icon {
-      color: var(--accent-primary);
-    }
-
-    .panel-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 0;
     }
 
     .panel-badges {

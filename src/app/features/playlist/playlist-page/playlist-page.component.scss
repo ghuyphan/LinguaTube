@@ -141,26 +141,6 @@
 // -------------------------
 // Header
 // -------------------------
-.panel-header {
-    padding: var(--space-sm) var(--space-md);
-}
-
-.header-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.panel-icon {
-    color: var(--accent-primary);
-}
-
-.panel-title {
-    font-size: var(--text-md);
-    font-weight: 600;
-    margin: 0;
-}
-
 .panel-badges {
     display: flex;
     flex-wrap: wrap;

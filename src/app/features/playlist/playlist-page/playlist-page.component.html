@@ -3,9 +3,9 @@
         <!-- Main Playlist Panel -->
         <div class="card playlist-panel" [class.panel-filled]="playlistService.isLoading() || currentList().length > 0">
             <div class="panel-header">
-                <div class="header-row">
-                    <app-icon name="list-video" [size]="20" class="panel-icon" />
-                    <h2 class="panel-title">{{ i18n.t('playlist.title') }}</h2>
+                <div class="panel-header__row">
+                    <app-icon name="list-video" [size]="20" class="panel-header__icon" />
+                    <h2 class="panel-header__title">{{ i18n.t('playlist.title') }}</h2>
                 </div>
                 <div class="panel-badges">
                     <span class="badge badge--primary">{{ playlists().length }} {{ i18n.t('playlist.myPlaylists')

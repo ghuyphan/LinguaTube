@@ -15,7 +15,8 @@
         "settings": "Settings",
         "newVideo": "New Video",
         "playlists": "Playlists",
-        "quickLinks": "Quick Links"
+        "quickLinks": "Quick Links",
+        "game": "Multiplayer Game"
     },
     "commandPalette": {
         "placeholder": "Paste YouTube URL or video ID...",
@@ -396,5 +397,32 @@
         "yourAnswer": "Your answer",
         "retry": "Retry",
         "next": "Next"
+    },
+    "game": {
+        "title": "Multiplayer Language Cafe",
+        "subtitle": "Practice languages in real-time with other learners",
+        "createRoom": "Create Room",
+        "joinRoom": "Join Room",
+        "chooseMode": "Choose Game Mode",
+        "customer": "Customer",
+        "customerDesc": "You are ordering coffee",
+        "barista": "Barista",
+        "baristaDesc": "You are taking the order",
+        "language": "Practice Language",
+        "waiting": "Waiting for Player",
+        "waitingSub": "Share this room code with your partner:",
+        "roomCode": "Room Code",
+        "enterCode": "Enter Room Code",
+        "codePlaceholder": "e.g., 8A2B",
+        "playerJoined": "Player Joined!",
+        "bothReady": "Both players are connected.",
+        "startGame": "Start Game",
+        "roomFull": "Room is full",
+        "roomNotFound": "Room not found",
+        "join": "Join",
+        "howToPlay": "How to Play",
+        "howToPlayDesc": "Practice your language speaking and listening skills with a friend!",
+        "typing": "Typing",
+        "voice": "Voice"
     }
 }

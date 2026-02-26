@@ -57,6 +57,12 @@
             <span>{{ i18n.t('history.title') }}</span>
             }
         </a>
+        <a class="nav-item" routerLink="/game" routerLinkActive="active">
+            <app-icon name="coffee" [size]="20" />
+            @if (!isCollapsed()) {
+            <span>{{ i18n.t('nav.game') }}</span>
+            }
+        </a>
     </nav>
 
     <!-- Language Selector -->
