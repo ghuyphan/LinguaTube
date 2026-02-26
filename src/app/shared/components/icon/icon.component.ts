@@ -33,4 +33,8 @@ export type IconName =
 export class IconComponent {
     name = input.required<IconName>();
     size = input<number>(20);
+
+    get href(): string {
+        return `assets/icons/sprite.svg#${this.name()}`;
+    }
 }

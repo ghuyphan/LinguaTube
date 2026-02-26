@@ -27,42 +27,32 @@ export class DictionaryService {
         const directSources = this.dictProvider.getSources(from, to);
         const englishSources = to !== 'en' ? this.dictProvider.getSources(from, 'en') : [];
 
-        // Build parallel fetch promises
-        const promises = [];
-        const promiseLabels = [];
-
-        // Primary sources (with fallback within the same pair)
-        if (directSources.length > 0) {
-            promises.push(this._fetchFromSources(directSources, word, this.dictProvider.primaryTimeout));
-            promiseLabels.push('direct');
-        }
-
-        // English fallback (runs in parallel, not after primary fails)
-        if (englishSources.length > 0) {
-            promises.push(this._fetchFromSources(englishSources, word, this.dictProvider.fallbackTimeout));
-            promiseLabels.push('english');
-        }
-
-        if (promises.length === 0) {
+        if (directSources.length === 0 && englishSources.length === 0) {
             return { entries: [], source: 'none' };
         }
 
-        // Race: Use Promise.allSettled to get all results, then pick best
-        const results = await Promise.allSettled(promises);
+        // Start both fetches in parallel
+        const directPromise = directSources.length > 0
+            ? this._fetchFromSources(directSources, word, this.dictProvider.primaryTimeout)
+            : Promise.resolve(null);
 
-        // Check direct sources first
-        const directIdx = promiseLabels.indexOf('direct');
-        if (directIdx !== -1 && results[directIdx].status === 'fulfilled') {
-            const direct = results[directIdx].value;
+        const englishPromise = englishSources.length > 0
+            ? this._fetchFromSources(englishSources, word, this.dictProvider.fallbackTimeout)
+            : Promise.resolve(null);
+
+        // 1. Wait for direct sources first
+        try {
+            const direct = await directPromise;
             if (direct?.entries?.length > 0) {
                 return { entries: direct.entries, source: direct.source };
             }
+        } catch (e) {
+            // Direct failed, silently fall through to English fallback
         }
 
-        // Fallback: Translate English definitions to target
-        const englishIdx = promiseLabels.indexOf('english');
-        if (englishIdx !== -1 && results[englishIdx].status === 'fulfilled') {
-            const english = results[englishIdx].value;
+        // 2. Fallback: Wait for English sources (already running in parallel)
+        try {
+            const english = await englishPromise;
             if (english?.entries?.length > 0) {
                 const translated = await this.transProvider.translateEntries(english.entries, to);
                 if (translated?.length > 0) {
@@ -75,6 +65,8 @@ export class DictionaryService {
                 }));
                 return { entries: fallbackEntries, source: `${english.source}+raw` };
             }
+        } catch (e) {
+            // English failed
         }
 
         return { entries: [], source: 'none' };

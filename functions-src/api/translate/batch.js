@@ -56,7 +56,11 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: `Max batch size is ${MAX_BATCH_SIZE}` }, 400);
         }
 
-        // Rate limit by number of texts
+        // Deduplicate texts before consuming rate limits (reduces usage for repetitive subtitles)
+        const uniqueTextsCount = new Set(texts.map(t => t?.trim()).filter(Boolean)).size;
+        const consumeAmount = Math.max(1, uniqueTextsCount || 1); // Consume at least 1 unit
+
+        // Rate limit by number of unique texts
         const authResult = await validateAuthToken(request, env);
         const tier = authResult.valid
             ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
@@ -65,10 +69,7 @@ export async function onRequestPost(context) {
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
         const clientId = getClientIdentifier(request, authResult);
 
-        // Deduct rate limit for ALL texts (simplifies logic, we credit back effectively by not charging for cache hits? 
-        // No, standard practice is to rate limit the REQUEST size regardless of cache hit to prevent abuse)
-        // Actually for now let's count against limit because it's a "service usage" unit.
-        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, texts.length);
+        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, consumeAmount);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }
