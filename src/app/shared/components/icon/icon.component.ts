@@ -20,7 +20,9 @@ export type IconName =
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical'
     | 'list' | 'list-video' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
-    | 'headphones' | 'clipboard-check' | 'coffee';
+    | 'headphones' | 'clipboard-check' | 'coffee'
+    // Multiplayer game icons
+    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'lightbulb' | 'leaf' | 'box' | 'droplet';
 
 @Component({
     selector: 'app-icon',

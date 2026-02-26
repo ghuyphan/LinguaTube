@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -23,13 +23,30 @@ export class GameLobbyComponent {
   joinRoomId: string = '';
   errorMessage: string = '';
 
+  constructor() {
+    // Auto-navigate when room becomes active AND game state is ready
+    effect(() => {
+      const room = this.gameService.currentRoom();
+      if (!room) return;
+
+      // Both players navigate when game_state has a currentOrder
+      if (room.status === 'active' && room.game_state?.currentOrder) {
+        if (this.gameService.role() === 'host') {
+          this.router.navigate(['/game/barista']);
+        } else {
+          this.router.navigate(['/game/customer']);
+        }
+      }
+    });
+  }
+
   async createRoom() {
     this.errorMessage = '';
     try {
       await this.gameService.createRoom(this.selectedMode, this.selectedLang);
     } catch (e: any) {
       console.error(e);
-      this.errorMessage = 'Failed to create room. Are you logged in?';
+      this.errorMessage = this.i18n.t('game.errorCreate');
     }
   }
 
@@ -38,18 +55,22 @@ export class GameLobbyComponent {
     this.errorMessage = '';
     try {
       const success = await this.gameService.joinRoom(this.joinRoomId.trim());
-      if (!success) this.errorMessage = 'Room not found or error joining.';
+      if (!success) this.errorMessage = this.i18n.t('game.errorJoinNotFound');
     } catch (e: any) {
       console.error(e);
-      this.errorMessage = 'Failed to join room.';
+      this.errorMessage = this.i18n.t('game.errorJoin');
     }
   }
 
-  startGame() {
-    if (this.gameService.role() === 'host') {
-      this.router.navigate(['/game/barista']);
-    } else {
-      this.router.navigate(['/game/customer']);
-    }
+  async startGame() {
+    // Only host can initialize the game state
+    if (this.gameService.role() !== 'host') return;
+
+    const { getRandomOrder } = await import('../services/order.data');
+    await this.gameService.syncGameState({
+      score: 0,
+      currentOrder: getRandomOrder()
+    });
+    // Navigation happens automatically via the effect above
   }
 }

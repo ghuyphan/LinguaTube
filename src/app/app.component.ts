@@ -94,24 +94,48 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               <app-icon name="graduation-cap" [size]="20" />
               <span>{{ i18n.t('nav.study') }}</span>
             </a>
-            <a
-              class="bottom-nav__item"
-              routerLink="/playlists"
-              [class.active]="!anySheetOpen() && isRouteActive('/playlists')"
-            >
-              <app-icon name="list-video" [size]="20" />
-              <span>{{ i18n.t('nav.playlists') }}</span>
-            </a>
             <button
               class="bottom-nav__item"
-              [class.active]="showSettingsSheet()"
-              (click)="toggleSettingsSheet()"
+              [class.active]="showMoreSheet() || isRouteActive('/playlists') || isRouteActive('/history') || isRouteActive('/game')"
+              (click)="toggleMoreSheet()"
             >
-              <app-icon name="settings" [size]="20" />
-              <span>{{ i18n.t('nav.settings') }}</span>
+              <app-icon name="more-horizontal" [size]="20" />
+              <span>{{ i18n.t('nav.more') }}</span>
             </button>
           </div>
         </nav>
+
+        <!-- More Menu Sheet -->
+        <app-bottom-sheet
+          [isOpen]="showMoreSheet()"
+          [showCloseButton]="true"
+          [maxHeight]="'auto'"
+          (closed)="showMoreSheet.set(false)"
+        >
+          <div class="more-menu">
+            <button class="more-menu__item" (click)="navigateFromMore('/game')">
+              <app-icon name="coffee" [size]="22" />
+              <span>{{ i18n.t('nav.game') }}</span>
+              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+            </button>
+            <button class="more-menu__item" (click)="navigateFromMore('/history')">
+              <app-icon name="clock" [size]="22" />
+              <span>{{ i18n.t('history.title') }}</span>
+              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+            </button>
+            <button class="more-menu__item" (click)="navigateFromMore('/playlists')">
+              <app-icon name="list-video" [size]="22" />
+              <span>{{ i18n.t('nav.playlists') }}</span>
+              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+            </button>
+            <div class="more-menu__divider"></div>
+            <button class="more-menu__item" (click)="showMoreSheet.set(false); showSettingsSheet.set(true)">
+              <app-icon name="settings" [size]="22" />
+              <span>{{ i18n.t('nav.settings') }}</span>
+              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+            </button>
+          </div>
+        </app-bottom-sheet>
 
         <!-- Bottom Sheets -->
         @defer (when showSettingsSheet()) {
@@ -337,6 +361,46 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         opacity: 0.9;
       }
     }
+
+    /* More Menu */
+    .more-menu {
+      padding: var(--space-xs) 0;
+    }
+
+    .more-menu__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-lg);
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    .more-menu__item:active {
+      background: var(--bg-secondary);
+    }
+
+    .more-menu__item span {
+      flex: 1;
+      text-align: left;
+    }
+
+    .more-menu__chevron {
+      color: var(--text-muted);
+    }
+
+    .more-menu__divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: var(--space-xs) var(--space-lg);
+    }
   `]
 })
 export class AppComponent implements OnDestroy {
@@ -438,6 +502,7 @@ export class AppComponent implements OnDestroy {
   showAiCreditsSheet = signal(false);
   showUpdateSheet = signal(false);
   showCommandPalette = signal(false);
+  showMoreSheet = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
 
@@ -459,7 +524,7 @@ export class AppComponent implements OnDestroy {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() =>
-    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet()
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showMoreSheet()
   );
 
   // Check if current route matches
@@ -486,6 +551,15 @@ export class AppComponent implements OnDestroy {
 
   toggleSettingsSheet(): void {
     this.showSettingsSheet.update(v => !v);
+  }
+
+  toggleMoreSheet(): void {
+    this.showMoreSheet.update(v => !v);
+  }
+
+  navigateFromMore(route: string): void {
+    this.showMoreSheet.set(false);
+    this.router.navigate([route]);
   }
 
   onCommandPaletteSearch(videoId: string): void {

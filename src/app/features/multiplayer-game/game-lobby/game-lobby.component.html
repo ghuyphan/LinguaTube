@@ -26,8 +26,8 @@
                                 <label>{{ i18n.t('game.chooseMode') }}</label>
                                 <div class="select-wrapper">
                                     <select [(ngModel)]="selectedMode" class="form-control">
-                                        <option value="typing">Typing</option>
-                                        <option value="speech">Voice (Speech-to-Text)</option>
+                                        <option value="typing">{{ i18n.t('game.typingMode') }}</option>
+                                        <option value="speech">{{ i18n.t('game.speechMode') }}</option>
                                     </select>
                                     <app-icon name="chevron-down" [size]="16" class="select-icon" />
                                 </div>
@@ -37,10 +37,10 @@
                                 <label>{{ i18n.t('game.language') }}</label>
                                 <div class="select-wrapper">
                                     <select [(ngModel)]="selectedLang" class="form-control">
-                                        <option value="ja">Japanese</option>
-                                        <option value="zh">Chinese</option>
-                                        <option value="ko">Korean</option>
-                                        <option value="en">English</option>
+                                        <option value="ja">{{ i18n.t('settings.japanese') }}</option>
+                                        <option value="zh">{{ i18n.t('settings.chinese') }}</option>
+                                        <option value="ko">{{ i18n.t('settings.korean') }}</option>
+                                        <option value="en">{{ i18n.t('settings.english') }}</option>
                                     </select>
                                     <app-icon name="chevron-down" [size]="16" class="select-icon" />
                                 </div>
@@ -80,7 +80,7 @@
                             <h3>{{ i18n.t('game.roomCode') }}</h3>
                             <div class="code-display">
                                 <span class="highlight">{{ gameService.currentRoomId() }}</span>
-                                <button class="btn btn-ghost btn-sm" title="Copy">
+                                <button class="btn btn-ghost btn-sm" [title]="i18n.t('game.copy')">
                                     <app-icon name="clipboard-check" [size]="16" />
                                 </button>
                             </div>
