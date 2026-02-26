@@ -112,6 +112,11 @@ export class VocabularyService {
         this.repo.markReviewed(id, quality);
     }
 
+    /** Restore a vocabulary item to a previous state (used for undo) */
+    restoreItem(snapshot: VocabularyItem): void {
+        this.repo.restoreItem(snapshot);
+    }
+
     addExample(id: string, example: string): void {
         this.repo.addExample(id, example);
     }

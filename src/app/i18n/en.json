@@ -138,7 +138,15 @@
         "importSuccess": "Vocabulary imported successfully!",
         "importError": "Failed to import. Check file format.",
         "filterByLevel": "Filter by Level",
-        "changeLevel": "Change Level"
+        "changeLevel": "Change Level",
+        "sortBy": "Sort",
+        "sortRecent": "Recent",
+        "sortAlphabetical": "A-Z",
+        "sortLevel": "Level",
+        "sortReview": "Review Date",
+        "dueToday": "Due today",
+        "overdue": "Overdue",
+        "dueInDays": "In {{days}}d"
     },
     "popup": {
         "translationLang": "Translation Language",
@@ -229,7 +237,12 @@
         "swipeHint": "Swipe left/right to answer",
         "sessionTime": "Session Time",
         "pressSpace": "Press Space to flip",
-        "keyboardHint": "Use 1-4 keys to answer"
+        "keyboardHint": "Use 1-4 keys to answer",
+        "browseVideos": "Browse Videos",
+        "undo": "Undo",
+        "accuracy": "Accuracy",
+        "wordsToReview": "Words to Review",
+        "practiceThese": "Practice These"
     },
     "streak": {
         "dayStreak": "Day Streak",

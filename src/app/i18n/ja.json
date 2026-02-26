@@ -136,7 +136,15 @@
         "importSuccess": "単語帳のインポートに成功しました！",
         "importError": "インポートに失敗しました。ファイル形式を確認してください。",
         "filterByLevel": "レベルで絞り込む",
-        "changeLevel": "レベルを変更"
+        "changeLevel": "レベルを変更",
+        "sortBy": "並べ替え",
+        "sortRecent": "最近",
+        "sortAlphabetical": "五十音順",
+        "sortLevel": "レベル",
+        "sortReview": "復習日",
+        "dueToday": "今日復習",
+        "overdue": "期限超過",
+        "dueInDays": "{{days}}日後"
     },
     "popup": {
         "translationLang": "翻訳言語",
@@ -227,7 +235,12 @@
         "swipeHint": "左右にスワイプで回答",
         "sessionTime": "学習時間",
         "pressSpace": "Spaceで反転",
-        "keyboardHint": "1-4キーで回答"
+        "keyboardHint": "1-4キーで回答",
+        "browseVideos": "動画を探す",
+        "undo": "元に戻す",
+        "accuracy": "正解率",
+        "wordsToReview": "復習する単語",
+        "practiceThese": "これを練習"
     },
     "streak": {
         "dayStreak": "連続学習日数",

@@ -1,5 +1,6 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
@@ -14,7 +15,7 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, MascotComponent],
+  imports: [CommonModule, RouterLink, FormsModule, IconComponent, OptionPickerComponent, MascotComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -37,9 +38,19 @@ export class VocabularyListComponent {
   private searchTimeout: ReturnType<typeof setTimeout> | null = null;
 
   levelFilter = signal<WordLevel | 'all'>('all');
+  sortBy = signal<'recent' | 'alphabetical' | 'level' | 'review'>('recent');
 
   // Filter picker state
   filterPickerOpen = signal(false);
+  sortPickerOpen = signal(false);
+
+  // Expand & Swipe state (Phase 3.1 & 3.2)
+  expandedItemId = signal<string | null>(null);
+  swipingItemId = signal<string | null>(null);
+  swipeOffset = signal(0);
+  private touchStartX = 0;
+  private touchStartY = 0;
+  private isSwipingList = false;
 
   // Level picker state (for individual items)
   levelPickerOpen = signal(false);
@@ -62,10 +73,24 @@ export class VocabularyListComponent {
     { value: 'ignored', label: this.i18n.t('vocab.ignored') }
   ]);
 
+  // Options for sort picker
+  sortOptions = computed<OptionItem[]>(() => [
+    { value: 'recent', label: this.i18n.t('vocab.sortRecent') },
+    { value: 'alphabetical', label: this.i18n.t('vocab.sortAlphabetical') },
+    { value: 'level', label: this.i18n.t('vocab.sortLevel') },
+    { value: 'review', label: this.i18n.t('vocab.sortReview') }
+  ]);
+
   onLevelFilterChange(value: string) {
     this.levelFilter.set(value as WordLevel | 'all');
     this.currentPage.set(1);
     this.filterPickerOpen.set(false);
+  }
+
+  onSortChange(value: string) {
+    this.sortBy.set(value as any);
+    this.currentPage.set(1);
+    this.sortPickerOpen.set(false);
   }
 
   openLevelPicker(itemId: string): void {
@@ -147,10 +172,43 @@ export class VocabularyListComponent {
       items = items.filter(item => item.level === this.levelFilter());
     }
 
-    return [...items].sort((a, b) =>
-      new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime()
-    );
+    // Sort by selected option
+    const sort = this.sortBy();
+    return [...items].sort((a, b) => {
+      switch (sort) {
+        case 'alphabetical':
+          return a.word.localeCompare(b.word);
+        case 'level': {
+          const levelOrder: Record<string, number> = { new: 0, learning: 1, known: 2, ignored: 3 };
+          return (levelOrder[a.level] ?? 4) - (levelOrder[b.level] ?? 4);
+        }
+        case 'review': {
+          const aDate = a.nextReviewDate ? new Date(a.nextReviewDate).getTime() : 0;
+          const bDate = b.nextReviewDate ? new Date(b.nextReviewDate).getTime() : 0;
+          return aDate - bDate;
+        }
+        case 'recent':
+        default:
+          return new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime();
+      }
+    });
   });
+
+  /** Get SRS due label for a vocabulary item */
+  getDueLabel(item: VocabularyItem): string | null {
+    if (item.level === 'ignored') return null;
+    if (!item.nextReviewDate) return this.i18n.t('vocab.dueToday');
+
+    const now = new Date();
+    const due = new Date(item.nextReviewDate);
+    const diffMs = due.getTime() - now.getTime();
+    const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+    if (diffDays <= 0) {
+      return diffDays < 0 ? this.i18n.t('vocab.overdue') : this.i18n.t('vocab.dueToday');
+    }
+    return this.i18n.t('vocab.dueInDays', { days: diffDays });
+  }
 
   paginatedWords = computed(() => {
     const words = this.filteredWords();
@@ -198,6 +256,81 @@ export class VocabularyListComponent {
 
   deleteWord(id: string): void {
     this.deleteRequest.emit(id);
+  }
+
+  // ==================== Expand & Swipe (Phase 3.1 & Phase 3.2) ====================
+
+  toggleExpand(id: string): void {
+    // Prevent expanding if currently swiping
+    if (this.swipingItemId() === id && Math.abs(this.swipeOffset()) > 5) return;
+    this.expandedItemId.update(current => current === id ? null : id);
+  }
+
+  onTouchStart(event: TouchEvent, id: string): void {
+    this.touchStartX = event.touches[0].clientX;
+    this.touchStartY = event.touches[0].clientY;
+    this.swipingItemId.set(id);
+    this.swipeOffset.set(0);
+    this.isSwipingList = false;
+  }
+
+  onTouchMove(event: TouchEvent): void {
+    if (!this.swipingItemId()) return;
+
+    const touchX = event.touches[0].clientX;
+    const touchY = event.touches[0].clientY;
+    const diffX = touchX - this.touchStartX;
+    const diffY = touchY - this.touchStartY;
+
+    // Determine if user is scrolling vertically vs swiping horizontally
+    if (!this.isSwipingList) {
+      if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 5) {
+        // Vertical scroll detected, cancel horizontal swipe
+        this.swipingItemId.set(null);
+        return;
+      }
+      if (Math.abs(diffX) > 5) {
+        this.isSwipingList = true;
+      }
+    }
+
+    if (this.isSwipingList) {
+      // Only allow swipe left (e.g. for delete) or maybe right (for edit/level)
+      // Let's allow both and cap the distance
+      const cappedDiff = Math.max(-80, Math.min(80, diffX));
+      this.swipeOffset.set(cappedDiff);
+
+      // Prevent default to stop scrolling while swiping horizontally
+      if (event.cancelable) {
+        event.preventDefault();
+      }
+    }
+  }
+
+  onTouchEnd(): void {
+    if (!this.swipingItemId()) return;
+
+    const offset = this.swipeOffset();
+    const id = this.swipingItemId()!;
+
+    if (offset < -50) {
+      // Swiped far left -> Trigger delete
+      this.deleteWord(id);
+    } else if (offset > 50) {
+      // Swiped far right -> Trigger level picker
+      this.openLevelPicker(id);
+    }
+
+    // Reset swipe
+    this.swipingItemId.set(null);
+    this.swipeOffset.set(0);
+    this.isSwipingList = false;
+  }
+
+  getFormatDate(dateStr?: string | Date): string {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString();
   }
 
   // Export methods (called by parent via ViewChild or service)

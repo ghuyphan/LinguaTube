@@ -23,6 +23,10 @@
             <span>{{ levelFilter() === 'all' ? i18n.t('vocab.allLevels') : i18n.t('vocab.' + levelFilter()) }}</span>
             <app-icon name="chevron-down" [size]="14" />
         </button>
+        <button class="filter-btn" (click)="sortPickerOpen.set(true)">
+            <app-icon name="layers" [size]="14" />
+            <span>{{ i18n.t('vocab.sortBy') }}</span>
+        </button>
         <button class="btn btn-icon btn-ghost menu-btn" (click)="menuRequest.emit()">
             <app-icon name="more-vertical" [size]="18" />
         </button>
@@ -58,6 +62,12 @@
                     <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                     <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
                 </div>
+                <div class="empty-state__action">
+                    <a routerLink="/" class="btn btn-secondary btn-sm">
+                        <app-icon name="play" [size]="16" />
+                        {{ i18n.t('study.browseVideos') }}
+                    </a>
+                </div>
                 } @else {
                 <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
                     <app-mascot mood="thinking"></app-mascot>
@@ -71,28 +81,79 @@
             } @else {
             <div class="vocab-items">
                 @for (item of paginatedWords(); track item.id) {
-                <div class="vocab-item">
-                    <div class="vocab-item__content">
-                        <div class="vocab-item__header">
-                            <span class="vocab-item__word" [class]="'text-' + item.language">
-                                {{ item.word }}
-                            </span>
-                            @if (item.reading || item.pinyin || item.romanization) {
-                            <span class="vocab-item__reading">
-                                {{ item.reading || item.pinyin || item.romanization }}
-                            </span>
-                            }
+                <div class="vocab-item" [class.expanded]="expandedItemId() === item.id"
+                    [class.swiping]="swipingItemId() === item.id">
+
+                    <!-- Swipe Background Actions -->
+                    <div class="vocab-item__swipe-bg">
+                        <div class="swipe-action swipe-action--left"
+                            [class.active]="swipingItemId() === item.id && swipeOffset() > 40">
+                            <app-icon name="layers" [size]="20" />
                         </div>
-                        <p class="vocab-item__meaning">{{ item.meaning || i18n.t('vocab.noDefinition') }}</p>
+                        <div class="swipe-action swipe-action--right"
+                            [class.active]="swipingItemId() === item.id && swipeOffset() < -40">
+                            <app-icon name="trash-2" [size]="20" />
+                        </div>
                     </div>
 
-                    <div class="vocab-item__actions">
-                        <button class="level-dot-btn" [class]="'level--' + item.level"
-                            (click)="openLevelPicker(item.id)" [title]="item.level">
-                        </button>
-                        <button class="btn btn-icon btn-ghost delete-btn" (click)="deleteWord(item.id)" title="Delete">
-                            <app-icon name="trash-2" [size]="16" />
-                        </button>
+                    <div class="vocab-item__inner"
+                        [style.transform]="swipingItemId() === item.id ? 'translateX(' + swipeOffset() + 'px)' : ''"
+                        (touchstart)="onTouchStart($event, item.id)" (touchmove)="onTouchMove($event)"
+                        (touchend)="onTouchEnd()" (click)="toggleExpand(item.id)">
+
+                        <div class="vocab-item__content">
+                            <div class="vocab-item__header">
+                                <span class="vocab-item__word" [class]="'text-' + item.language">
+                                    {{ item.word }}
+                                </span>
+                                @if (item.reading || item.pinyin || item.romanization) {
+                                <span class="vocab-item__reading">
+                                    {{ item.reading || item.pinyin || item.romanization }}
+                                </span>
+                                }
+                            </div>
+                            <p class="vocab-item__meaning" [class.expanded-text]="expandedItemId() === item.id">{{
+                                item.meaning || i18n.t('vocab.noDefinition') }}</p>
+
+                            <!-- Expanded Details -->
+                            @if (expandedItemId() === item.id) {
+                            <div class="vocab-item__details">
+                                @if (item.sourceSentence) {
+                                <div class="detail-row detail-row--sentence">
+                                    <span class="detail-label">{{ i18n.t('study.example') || 'Example' }}</span>
+                                    <span class="detail-value">{{ item.sourceSentence }}</span>
+                                </div>
+                                }
+                                <div class="detail-row">
+                                    <span class="detail-label">{{ i18n.t('vocab.added') || 'Added' }}</span>
+                                    <span class="detail-value">{{ getFormatDate(item.addedAt) }}</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">{{ i18n.t('vocab.reviews') || 'Reviews' }}</span>
+                                    <span class="detail-value">{{ item.reviewCount || 0 }}</span>
+                                </div>
+                            </div>
+                            }
+                        </div>
+
+                        <div class="vocab-item__actions" (click)="$event.stopPropagation()">
+                            @if (getDueLabel(item); as dueLabel) {
+                            <span class="due-badge" [class.due-badge--overdue]="dueLabel === i18n.t('vocab.overdue')"
+                                [class.due-badge--today]="dueLabel === i18n.t('vocab.dueToday')">{{ dueLabel }}</span>
+                            }
+                            <button class="level-dot-btn" [class]="'level--' + item.level"
+                                (click)="openLevelPicker(item.id)" [title]="item.level">
+                            </button>
+                            <button class="btn btn-icon btn-ghost delete-btn desktop-only" (click)="deleteWord(item.id)"
+                                title="Delete">
+                                <app-icon name="trash-2" [size]="16" />
+                            </button>
+                            <!-- Expand chevron -->
+                            <button class="btn btn-icon btn-ghost expand-btn">
+                                <app-icon name="chevron-down" [size]="16" class="expand-icon"
+                                    [class.rotated]="expandedItemId() === item.id" />
+                            </button>
+                        </div>
                     </div>
                 </div>
                 }
@@ -136,3 +197,7 @@
     <app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
         [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
         (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />
+
+    <!-- Sort Picker -->
+    <app-option-picker [options]="sortOptions()" [value]="sortBy()" [isOpen]="sortPickerOpen()"
+        [title]="i18n.t('vocab.sortBy')" (selected)="onSortChange($event)" (closed)="sortPickerOpen.set(false)" />

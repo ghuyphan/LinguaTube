@@ -136,7 +136,15 @@
         "importSuccess": "词汇导入成功！",
         "importError": "导入失败。请检查文件格式。",
         "filterByLevel": "按级别筛选",
-        "changeLevel": "更改级别"
+        "changeLevel": "更改级别",
+        "sortBy": "排序",
+        "sortRecent": "最近",
+        "sortAlphabetical": "字母顺序",
+        "sortLevel": "级别",
+        "sortReview": "复习日期",
+        "dueToday": "今天复习",
+        "overdue": "已逾期",
+        "dueInDays": "{{days}}天后"
     },
     "popup": {
         "translationLang": "翻译语言",
@@ -227,7 +235,12 @@
         "swipeHint": "左右滑动作答",
         "sessionTime": "学习时长",
         "pressSpace": "按空格翻转",
-        "keyboardHint": "按1-4键作答"
+        "keyboardHint": "按1-4键作答",
+        "browseVideos": "浏览视频",
+        "undo": "撤销",
+        "accuracy": "正确率",
+        "wordsToReview": "待复习词汇",
+        "practiceThese": "练习这些"
     },
     "streak": {
         "dayStreak": "连续学习天数",
