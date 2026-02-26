@@ -136,15 +136,7 @@
         "importSuccess": "단어장을 성공적으로 가져왔습니다!",
         "importError": "가져오기 실패. 파일 형식을 확인하세요.",
         "filterByLevel": "레벨별 필터",
-        "changeLevel": "레벨 변경",
-        "sortBy": "정렬",
-        "sortRecent": "최근",
-        "sortAlphabetical": "가나다순",
-        "sortLevel": "레벨",
-        "sortReview": "복습일",
-        "dueToday": "오늘 복습",
-        "overdue": "기한 초과",
-        "dueInDays": "{{days}}일 후"
+        "changeLevel": "레벨 변경"
     },
     "popup": {
         "translationLang": "번역 언어",
@@ -235,12 +227,7 @@
         "swipeHint": "좌우로 밀어서 응답",
         "sessionTime": "학습 시간",
         "pressSpace": "Space로 뒤집기",
-        "keyboardHint": "1-4 키로 응답",
-        "browseVideos": "동영상 탐색",
-        "undo": "되돌리기",
-        "accuracy": "정확도",
-        "wordsToReview": "복습할 단어",
-        "practiceThese": "이것들 연습"
+        "keyboardHint": "1-4 키로 응답"
     },
     "streak": {
         "dayStreak": "연속 학습일",

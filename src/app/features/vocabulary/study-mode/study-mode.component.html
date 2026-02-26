@@ -94,12 +94,6 @@
                     <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
                     <span class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</span>
                 </div>
-                <div class="empty-state__action">
-                    <a routerLink="/" class="btn btn-secondary btn-sm">
-                        <app-icon name="play" [size]="16" />
-                        {{ i18n.t('study.browseVideos') }}
-                    </a>
-                </div>
             </div>
             }
         </div>
@@ -130,8 +124,8 @@
         <!-- Flashcard with swipe support -->
         @if (currentCard()) {
         <div class="flashcard" [class.flipped]="currentCard()!.showAnswer" [class.swiping]="isSwiping()"
-            [class.card-entering]="cardAnimating()" [style.--swipe-offset.px]="swipeOffset()" (click)="flipCard()"
-            (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd()">
+            [style.--swipe-offset.px]="swipeOffset()" (click)="flipCard()" (touchstart)="onTouchStart($event)"
+            (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd()">
 
             <!-- Swipe indicators -->
             <div class="swipe-indicator swipe-indicator--left" [class.active]="swipeOffset() < -40">
@@ -145,14 +139,9 @@
                 <!-- Front (Word or Meaning based on reverseMode) -->
                 <div class="flashcard__front">
                     @if (!reverseMode) {
-                    <div class="card-word-container">
-                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                            {{ currentCard()!.item.word }}
-                        </span>
-                        <button class="btn btn-icon btn-ghost btn-sm volume-btn" (click)="playAudio($event)">
-                            <app-icon name="volume-2" [size]="18" />
-                        </button>
-                    </div>
+                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                        {{ currentCard()!.item.word }}
+                    </span>
                     @if (currentCard()!.item.reading) {
                     <span class="card-reading">{{ currentCard()!.item.reading }}</span>
                     }
@@ -173,26 +162,16 @@
                 <!-- Back (Meaning or Word based on reverseMode) -->
                 <div class="flashcard__back">
                     @if (!reverseMode) {
-                    <div class="card-word-container">
-                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                            {{ currentCard()!.item.word }}
-                        </span>
-                        <button class="btn btn-icon btn-ghost btn-sm volume-btn" (click)="playAudio($event)">
-                            <app-icon name="volume-2" [size]="18" />
-                        </button>
-                    </div>
+                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                        {{ currentCard()!.item.word }}
+                    </span>
                     <div class="card-meaning">
                         {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
                     } @else {
-                    <div class="card-word-container">
-                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                            {{ currentCard()!.item.word }}
-                        </span>
-                        <button class="btn btn-icon btn-ghost btn-sm volume-btn" (click)="playAudio($event)">
-                            <app-icon name="volume-2" [size]="18" />
-                        </button>
-                    </div>
+                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                        {{ currentCard()!.item.word }}
+                    </span>
                     @if (currentCard()!.item.reading) {
                     <span class="card-reading">{{ currentCard()!.item.reading }}</span>
                     }
@@ -241,14 +220,6 @@
         <!-- Mobile swipe hint -->
         <p class="swipe-hint mobile-only">{{ i18n.t('study.swipeHint') }}</p>
         }
-
-        <!-- Undo toast -->
-        @if (canUndo()) {
-        <div class="undo-toast" (click)="undoLastAnswer()">
-            <app-icon name="rotate-ccw" [size]="16" />
-            <span>{{ i18n.t('study.undo') }}</span>
-        </div>
-        }
         }
     </div>
     }
@@ -295,9 +266,8 @@
                 <span class="stat-label">{{ i18n.t('study.cardsReviewed') }}</span>
             </div>
             <div class="stat-badge stat-badge--known">
-                <span class="stat-value">{{ sessionStats().total > 0 ? Math.round(sessionStats().correct /
-                    sessionStats().total * 100) : 0 }}%</span>
-                <span class="stat-label">{{ i18n.t('study.accuracy') }}</span>
+                <span class="stat-value">{{ sessionStats().correct }}</span>
+                <span class="stat-label">{{ i18n.t('study.correct') }}</span>
             </div>
             <div class="stat-badge stat-badge--new">
                 <span class="stat-value">{{ sessionStats().incorrect }}</span>
@@ -313,25 +283,6 @@
         @if (cardsCompletedToday() >= dailyGoal()) {
         <div class="goal-achieved">
             <span>{{ i18n.t('study.goalComplete') }} 🎉</span>
-        </div>
-        }
-
-        <!-- Missed words list -->
-        @if (missedCards().length > 0) {
-        <div class="missed-words">
-            <h3 class="missed-words__title">{{ i18n.t('study.wordsToReview') }}</h3>
-            <div class="missed-words__list">
-                @for (card of missedCards(); track card.item.id) {
-                <div class="missed-word-item">
-                    <span class="missed-word" [class]="'text-' + card.item.language">{{ card.item.word }}</span>
-                    <span class="missed-meaning">{{ card.item.meaning }}</span>
-                </div>
-                }
-            </div>
-            <button class="btn btn-secondary btn-sm missed-words__btn" (click)="practicesMissed()">
-                <app-icon name="rotate-ccw" [size]="16" />
-                {{ i18n.t('study.practiceThese') }}
-            </button>
         </div>
         }
 

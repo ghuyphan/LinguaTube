@@ -209,16 +209,6 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         this.triggerSyncDebounced();
     }
 
-    /** Restore a vocabulary item to a previous snapshot (used for undo in study mode) */
-    restoreItem(snapshot: VocabularyItem): void {
-        const items = this.vocabulary();
-        const index = items.findIndex(i => i.id === snapshot.id);
-        if (index === -1) return;
-        const newItems = [...items];
-        newItems[index] = snapshot;
-        this.updateLocal(newItems);
-    }
-
     async deleteWord(id: string): Promise<void> {
         const items = this.vocabulary();
         const item = items.find(i => i.id === id);

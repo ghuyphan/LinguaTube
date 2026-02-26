@@ -138,15 +138,7 @@
         "importSuccess": "Nhập từ vựng thành công!",
         "importError": "Nhập thất bại. Kiểm tra định dạng file.",
         "filterByLevel": "Lọc theo cấp độ",
-        "changeLevel": "Đổi cấp độ",
-        "sortBy": "Sắp xếp",
-        "sortRecent": "Gần đây",
-        "sortAlphabetical": "A-Z",
-        "sortLevel": "Cấp độ",
-        "sortReview": "Ngày ôn",
-        "dueToday": "Hôm nay",
-        "overdue": "Quá hạn",
-        "dueInDays": "Sau {{days}} ngày"
+        "changeLevel": "Đổi cấp độ"
     },
     "popup": {
         "translationLang": "Ngôn ngữ dịch",
@@ -237,12 +229,7 @@
         "swipeHint": "Vuốt trái/phải để trả lời",
         "sessionTime": "Thời gian học",
         "pressSpace": "Nhấn Space để lật",
-        "keyboardHint": "Dùng phím 1-4 để trả lời",
-        "browseVideos": "Xem video",
-        "undo": "Hoàn tác",
-        "accuracy": "Độ chính xác",
-        "wordsToReview": "Từ cần ôn",
-        "practiceThese": "Luyện lại"
+        "keyboardHint": "Dùng phím 1-4 để trả lời"
     },
     "streak": {
         "dayStreak": "Chuỗi",

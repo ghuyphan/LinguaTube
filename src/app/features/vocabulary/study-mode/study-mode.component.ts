@@ -1,6 +1,5 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListener, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { VocabularyService, SettingsService, I18nService } from '../../../services';
@@ -21,7 +20,7 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, RouterLink, IconComponent, SwitchComponent, MascotComponent],
+    imports: [CommonModule, IconComponent, SwitchComponent, MascotComponent],
     templateUrl: './study-mode.component.html',
     styleUrl: './study-mode.component.scss'
 })
@@ -31,7 +30,6 @@ export class StudyModeComponent implements OnDestroy {
     settings = inject(SettingsService);
     i18n = inject(I18nService);
     streak = inject(StreakService);
-    Math = Math; // Expose for template
 
     // Options
     includeNew = true;
@@ -46,14 +44,6 @@ export class StudyModeComponent implements OnDestroy {
     currentIndex = signal(0);
 
     sessionStats = signal({ total: 0, correct: 0, incorrect: 0 });
-
-    // Undo state
-    canUndo = signal(false);
-    private undoSnapshot: { item: VocabularyItem; prevIndex: number; prevStats: { total: number; correct: number; incorrect: number }; wasCorrect: boolean } | null = null;
-    private undoTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    // Missed cards (for completion screen)
-    missedCards = signal<StudyCard[]>([]);
 
     // Session timer
     sessionStartTime = signal<Date | null>(null);
@@ -72,9 +62,6 @@ export class StudyModeComponent implements OnDestroy {
     touchStartY = 0;
     swipeOffset = signal(0);
     isSwiping = signal(false);
-
-    // Card animation
-    cardAnimating = signal(false);
 
     // Due today count
     dueToday = computed(() => {
@@ -242,17 +229,6 @@ export class StudyModeComponent implements OnDestroy {
         const card = this.currentCard();
         if (!card) return;
 
-        // Snapshot for undo (deep copy of current vocab item from service)
-        const currentItem = this.vocab.vocabulary().find(v => v.id === card.item.id);
-        if (currentItem) {
-            this.undoSnapshot = {
-                item: { ...currentItem },
-                prevIndex: this.currentIndex(),
-                prevStats: { ...this.sessionStats() },
-                wasCorrect: answer === 'good' || answer === 'easy'
-            };
-        }
-
         const stats = this.sessionStats();
         stats.total++;
 
@@ -262,12 +238,9 @@ export class StudyModeComponent implements OnDestroy {
         if (answer === 'wrong') {
             quality = 1;
             stats.incorrect++;
-            // Track missed cards
-            this.missedCards.update(cards => [...cards, card]);
         } else if (answer === 'hard') {
             quality = 2;
             stats.incorrect++;  // Hard counts as needing more practice
-            this.missedCards.update(cards => [...cards, card]);
         } else if (answer === 'good') {
             quality = 4;
             stats.correct++;
@@ -287,15 +260,9 @@ export class StudyModeComponent implements OnDestroy {
         // Reset swipe
         this.swipeOffset.set(0);
 
-        // Show undo button briefly
-        this.showUndoButton();
-
         // Next card or complete
         if (this.currentIndex() < this.studyCards().length - 1) {
             this.currentIndex.update(i => i + 1);
-            // Trigger card entrance animation
-            this.cardAnimating.set(true);
-            setTimeout(() => this.cardAnimating.set(false), 400);
         } else {
             this.stopTimer();
             this.isStudying.set(false);
@@ -304,87 +271,7 @@ export class StudyModeComponent implements OnDestroy {
             this.streak.recordActivity();
             // Show confetti
             this.triggerConfetti();
-            // Hide undo at completion
-            this.canUndo.set(false);
         }
-    }
-
-    undoLastAnswer(): void {
-        if (!this.undoSnapshot) return;
-
-        // Restore the vocabulary item to its pre-answer state
-        this.vocab.restoreItem(this.undoSnapshot.item);
-
-        // Restore session stats
-        this.sessionStats.set({ ...this.undoSnapshot.prevStats });
-
-        // Move back to the previous card
-        this.currentIndex.set(this.undoSnapshot.prevIndex);
-
-        // Un-flip the card
-        const cards = this.studyCards();
-        if (cards[this.undoSnapshot.prevIndex]) {
-            cards[this.undoSnapshot.prevIndex].showAnswer = false;
-            this.studyCards.set([...cards]);
-        }
-
-        // Remove from missed cards if it was added
-        if (!this.undoSnapshot.wasCorrect) {
-            this.missedCards.update(cards => cards.slice(0, -1));
-        }
-
-        // Decrement daily progress
-        this.cardsCompletedToday.update(c => Math.max(0, c - 1));
-        this.saveDailyProgress();
-
-        // Clear undo state
-        this.undoSnapshot = null;
-        this.canUndo.set(false);
-        if (this.undoTimeout) {
-            clearTimeout(this.undoTimeout);
-            this.undoTimeout = null;
-        }
-    }
-
-    private showUndoButton(): void {
-        this.canUndo.set(true);
-        if (this.undoTimeout) clearTimeout(this.undoTimeout);
-        this.undoTimeout = setTimeout(() => {
-            this.canUndo.set(false);
-            this.undoSnapshot = null;
-        }, 4000);
-    }
-
-    // ==================== Audio Pronunciation (Phase 3.3) ====================
-    playAudio(event?: Event): void {
-        if (event) {
-            event.stopPropagation();
-        }
-
-        const card = this.currentCard();
-        if (!card || !window.speechSynthesis) return;
-
-        // Cancel any ongoing speech
-        window.speechSynthesis.cancel();
-
-        const utterance = new SpeechSynthesisUtterance(card.item.word);
-
-        // Map app language code to BCP 47 tags for speech synthesis
-        const langMap: Record<string, string> = {
-            'ja': 'ja-JP',
-            'zh': 'zh-CN',
-            'ko': 'ko-KR',
-            'en': 'en-US'
-        };
-
-        if (langMap[card.item.language]) {
-            utterance.lang = langMap[card.item.language];
-        }
-
-        // Slightly slower rate often sounds better for learning
-        utterance.rate = 0.9;
-
-        window.speechSynthesis.speak(utterance);
     }
 
     endSession(): void {
@@ -396,26 +283,7 @@ export class StudyModeComponent implements OnDestroy {
     resetSession(): void {
         this.isComplete.set(false);
         this.showConfetti.set(false);
-        this.missedCards.set([]);
         this.startSession();
-    }
-
-    /** Start a new session with only the missed cards */
-    practicesMissed(): void {
-        const missed = this.missedCards();
-        if (missed.length === 0) return;
-
-        this.studyCards.set(missed.map(c => ({ item: c.item, showAnswer: false })));
-        this.currentIndex.set(0);
-        this.isStudying.set(true);
-        this.isComplete.set(false);
-        this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
-        this.missedCards.set([]);
-        this.swipeOffset.set(0);
-
-        this.sessionStartTime.set(new Date());
-        this.elapsedSeconds.set(0);
-        this.startTimer();
     }
 
     // Timer methods

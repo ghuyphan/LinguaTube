@@ -209,10 +209,6 @@
     margin-bottom: var(--space-md);
     position: relative;
 
-    &.card-entering {
-        animation: cardEnter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
     &.swiping {
         .flashcard__inner {
             transform: translateX(var(--swipe-offset, 0px));
@@ -255,33 +251,8 @@
     border: 1px solid var(--border-color);
 }
 
-[data-theme="dark"] .flashcard__front,
-[data-theme="dark"] .flashcard__back {
-    box-shadow: 0 0 24px rgba(var(--accent-primary-rgb), 0.06),
-        0 0 48px rgba(var(--accent-primary-rgb), 0.03);
-}
-
 .flashcard__back {
     transform: rotateY(180deg);
-}
-
-.card-word-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-}
-
-.volume-btn {
-    opacity: 0.5;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
-
-    @media (hover: hover) {
-        &:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-    }
 }
 
 .card-word {
@@ -379,7 +350,7 @@
 // ============================================
 .answer-buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.4fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-xs);
 }
 
@@ -393,7 +364,7 @@
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all var(--transition-fast);
     font-size: 0.6875rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -419,43 +390,31 @@
 .answer-btn--wrong {
     background: var(--word-new);
     color: var(--error);
-    box-shadow: 0 3px 0 rgba(var(--error-rgb), 0.3);
 }
 
 .answer-btn--hard {
     background: var(--word-learning);
     color: var(--word-learning-text);
-    box-shadow: 0 3px 0 rgba(var(--warning-rgb), 0.3);
 }
 
 .answer-btn--good {
     background: var(--word-known);
     color: var(--success);
-    box-shadow: 0 4px 0 rgba(var(--success-rgb), 0.4);
-    padding: var(--space-md) var(--space-sm);
-    font-size: 0.8125rem;
-    font-weight: 700;
 }
 
 .answer-btn--easy {
     background: var(--bg-secondary);
     color: var(--text-primary);
-    box-shadow: 0 3px 0 var(--border-color);
 }
 
 @media (hover: hover) {
     .answer-btn:hover {
-        transform: translateY(-2px);
-    }
-
-    .answer-btn--good:hover {
-        box-shadow: 0 6px 0 rgba(var(--success-rgb), 0.4);
+        filter: brightness(0.95);
     }
 }
 
 .answer-btn:active {
-    transform: translateY(3px) !important;
-    box-shadow: 0 0 0 transparent !important;
+    transform: scale(0.98);
 }
 
 .swipe-hint {
@@ -463,102 +422,6 @@
     font-size: 0.75rem;
     color: var(--text-muted);
     margin-top: var(--space-sm);
-}
-
-// ============================================
-// UNDO TOAST
-// ============================================
-.undo-toast {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-lg);
-    margin-top: var(--space-sm);
-    background: var(--bg-tertiary);
-    border-radius: var(--border-radius-pill);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    cursor: pointer;
-    animation: toastSlideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: background var(--transition-fast);
-
-    app-icon {
-        display: flex;
-    }
-
-    @media (hover: hover) {
-        &:hover {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-        }
-    }
-}
-
-@keyframes toastSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-// ============================================
-// MISSED WORDS LIST (Completion Screen)
-// ============================================
-.missed-words {
-    margin-bottom: var(--space-md);
-    text-align: left;
-}
-
-.missed-words__title {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-bottom: var(--space-sm);
-}
-
-.missed-words__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    margin-bottom: var(--space-sm);
-}
-
-.missed-word-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-xs) var(--space-sm);
-    background: var(--word-new);
-    border-radius: var(--border-radius-sm);
-}
-
-.missed-word {
-    font-weight: 600;
-    font-size: 0.9375rem;
-    color: var(--text-primary);
-    flex-shrink: 0;
-}
-
-.missed-meaning {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.missed-words__btn {
-    width: 100%;
-    justify-content: center;
 }
 
 // ============================================
@@ -816,18 +679,6 @@
     border-radius: 50%;
 }
 
-@keyframes cardEnter {
-    0% {
-        opacity: 0;
-        transform: translateY(12px) scale(0.97);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
 @keyframes confetti-fall {
     0% {
         opacity: 1;
@@ -886,20 +737,12 @@
     .answer-buttons {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-sm);
-
-        .answer-btn--good {
-            grid-column: span 2;
-        }
     }
 
     .answer-btn {
         flex-direction: row;
         justify-content: center;
         gap: var(--space-xs);
-        padding: var(--space-md);
-    }
-
-    .answer-btn--good {
         padding: var(--space-md);
     }
 
