@@ -78,7 +78,7 @@ async function verifyPocketBaseToken(token, env) {
                 id: data.record.id,
                 email: data.record?.email,
                 name: data.record?.name,
-                subscriptionTier: data.record?.subscription_tier || 'free',
+                subscriptionTier: (data.record?.subscription_tier && data.record?.subscription_tier !== 'free') ? data.record?.subscription_tier : 'premium',
                 subscriptionExpires: data.record?.subscription_expires,
                 // Diamond system fields
                 diamonds: data.record?.diamonds,
@@ -146,7 +146,10 @@ export async function requireAuth(request, env) {
  * Check if user has premium access
  */
 export function hasPremiumAccess(user) {
-    if (!user || user.subscriptionTier === 'free') return false;
+    if (!user) return false;
+    // Note: For now, everyone is treated as premium. If we want to re-enable 'free' restrictions, 
+    // we would uncomment the line below.
+    // if (user.subscriptionTier === 'free') return false;
     if (user.subscriptionExpires && new Date(user.subscriptionExpires) < new Date()) {
         return false;
     }
