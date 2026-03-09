@@ -35,21 +35,29 @@
                     <app-icon name="user" [size]="14" />
                     <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
                 </button>
-                @if (view() !== 'my') {
-                <button class="filter-chip filter-chip--circle" (click)="showLanguageFilter.set(true)"
-                    [attr.aria-label]="i18n.t('playlist.filterByLanguage')" [title]="i18n.t('playlist.filterByLanguage')">
-                    @if (languageFilter() !== 'all') {
-                    <img [src]="getFlagUrl(languageFilter())" class="lang-flag" alt="" />
-                    } @else {
-                    <app-icon name="languages" [size]="16" />
-                    }
-                </button>
-                }
                 <button class="btn btn-sm btn-primary" (click)="showCreateDialog.set(true)">
                     <app-icon name="list-plus" [size]="14" />
                     <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
                 </button>
             </div>
+
+            @if (view() !== 'my') {
+            <div class="filter-toolbar">
+                <button class="filter-select" type="button" (click)="showLanguageFilter.set(true)"
+                    [attr.aria-label]="i18n.t('playlist.filterByLanguage')" [title]="i18n.t('playlist.filterByLanguage')">
+                    <span class="filter-select__label">{{ i18n.t('playlist.filterByLanguage') }}</span>
+                    <span class="filter-select__value">
+                        @if (languageFilter() !== 'all') {
+                        <img [src]="getFlagUrl(languageFilter())" class="lang-flag" alt="" />
+                        } @else {
+                        <app-icon name="languages" [size]="16" />
+                        }
+                        <span>{{ getLanguageFilterLabel() }}</span>
+                    </span>
+                    <app-icon name="chevron-down" [size]="16" class="filter-select__chevron" />
+                </button>
+            </div>
+            }
 
             <div class="panel-content">
                 @if (playlistService.isLoading() && currentList().length === 0) {
@@ -169,10 +177,26 @@
 
             <div class="detail-tracklist">
                 <h3 class="tracklist-title">{{ i18n.t('playlist.videos') }}</h3>
-                @if (viewingPlaylist()!.videoIds.length > 0) {
+                @if (detailVideosLoading()) {
                 <div class="track-list">
                     @for (vid of viewingPlaylist()!.videoIds; track vid; let i = $index) {
-                    <div class="track-item" (click)="playSpecificVideo(vid)">
+                    <div class="track-item track-item--loading">
+                        <div class="track-index">
+                            <span class="index-num">{{ i + 1 }}</span>
+                        </div>
+                        <div class="track-thumbnail">
+                            <img [src]="'https://img.youtube.com/vi/' + vid + '/mqdefault.jpg'" alt="" loading="lazy">
+                        </div>
+                        <div class="track-details">
+                            <span class="track-name">Loading...</span>
+                        </div>
+                    </div>
+                    }
+                </div>
+                } @else if (detailVideos().length > 0) {
+                <div class="track-list">
+                    @for (video of detailVideos(); track video.videoId; let i = $index) {
+                    <div class="track-item" (click)="playSpecificVideo(video.videoId)">
                         <div class="track-index">
                             <span class="index-num">{{ i + 1 }}</span>
                             <button class="btn btn-icon btn-ghost play-btn">
@@ -180,11 +204,13 @@
                             </button>
                         </div>
                         <div class="track-thumbnail">
-                            <img [src]="'https://img.youtube.com/vi/' + vid + '/mqdefault.jpg'" alt="Video Thumbnail"
-                                loading="lazy">
+                            <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
                         </div>
                         <div class="track-details">
-                            <span class="track-name">Video ID: {{ vid }}</span>
+                            <span class="track-name">{{ video.title }}</span>
+                            @if (video.channel) {
+                            <span class="track-meta">{{ video.channel }}</span>
+                            }
                         </div>
                     </div>
                     }

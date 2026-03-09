@@ -7,7 +7,7 @@ import { CreatePlaylistDialogComponent } from '../../../shared/components/create
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../services';
-import { Playlist, PlaylistLanguage } from '../../../models';
+import { Playlist, PlaylistLanguage, PlaylistVideo } from '../../../models';
 import { MascotComponent } from '../../../components/mascot/mascot.component';
 
 const LANGUAGES = [
@@ -43,6 +43,8 @@ export class PlaylistPageComponent {
 
     // Detail View State
     viewingPlaylist = signal<Playlist | null>(null);
+    detailVideos = signal<PlaylistVideo[]>([]);
+    detailVideosLoading = signal(false);
 
     // Language Filter
     languageFilter = signal<'all' | PlaylistLanguage>('all');
@@ -185,13 +187,30 @@ export class PlaylistPageComponent {
     }
 
     // Detail View Methods
-    openPlaylistDetail(playlist: Playlist): void {
+    async openPlaylistDetail(playlist: Playlist): Promise<void> {
         this.viewingPlaylist.set(playlist);
+        this.detailVideos.set([]);
+        this.detailVideosLoading.set(true);
         this.scrollToTop();
+
+        try {
+            const videos = await this.playlistService.getPlaylistVideos(playlist.videoIds);
+            if (this.viewingPlaylist()?.id === playlist.id) {
+                this.detailVideos.set(videos);
+            }
+        } catch (error) {
+            console.error('[PlaylistPage] Failed to hydrate playlist videos:', error);
+        } finally {
+            if (this.viewingPlaylist()?.id === playlist.id) {
+                this.detailVideosLoading.set(false);
+            }
+        }
     }
 
     closeDetail(): void {
         this.viewingPlaylist.set(null);
+        this.detailVideos.set([]);
+        this.detailVideosLoading.set(false);
     }
 
     playAll(): void {
@@ -234,6 +253,15 @@ export class PlaylistPageComponent {
         if (lang === 'all') return '';
         const found = LANGUAGES.find(l => l.code === lang);
         return found?.flag || LANGUAGES[0].flag;
+    }
+
+    getLanguageFilterLabel(): string {
+        const filter = this.languageFilter();
+        if (filter === 'all') {
+            return this.i18n.t('playlist.allLanguages');
+        }
+
+        return LANGUAGES.find(language => language.code === filter)?.name || this.i18n.t('playlist.allLanguages');
     }
 
     onLanguageFilterChange(value: string): void {

@@ -141,17 +141,51 @@
     }
 }
 
-.filter-chip--circle {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    padding: 0 !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    animation: langFilterAppear 0.3s ease-out;
+.filter-toolbar {
+    padding: 0 var(--space-md) var(--space-sm);
+}
+
+.filter-select {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: 0.75rem 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: rgba(var(--accent-primary-rgb), 0.4);
+            background: var(--bg-tertiary);
+        }
+    }
+}
+
+.filter-select__label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.filter-select__value {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    min-width: 0;
+    margin-left: auto;
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.filter-select__chevron {
+    color: var(--text-muted);
+    flex-shrink: 0;
 }
 
 @keyframes langFilterAppear {
@@ -491,6 +525,10 @@
         }
     }
 
+    .track-item--loading {
+        cursor: default;
+    }
+
     .track-index {
         width: 32px;
         height: 32px;
@@ -545,6 +583,15 @@
             font-size: var(--text-base);
             font-weight: 500;
             color: var(--text-primary);
+            line-height: 1.35;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .track-meta {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;

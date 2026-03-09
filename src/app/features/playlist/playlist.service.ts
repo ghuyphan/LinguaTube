@@ -457,6 +457,10 @@ export class PlaylistService {
         }
     }
 
+    async getPlaylistVideos(videoIds: string[]): Promise<PlaylistVideo[]> {
+        return this.hydrateVideos(videoIds);
+    }
+
     /**
      * Set current video index
      */
