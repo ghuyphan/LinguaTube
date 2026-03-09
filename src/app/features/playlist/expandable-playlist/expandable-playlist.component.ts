@@ -25,7 +25,7 @@ export class ExpandablePlaylistComponent implements OnDestroy {
 
     // Outputs
     videoSelect = output<string>();
-    close = output<void>();
+    requestClose = output<void>();
     openMenu = output<{ videoId: string, index: number, event: Event }>();
     openCommandPalette = output<void>();
     addToPlaylist = output<void>();

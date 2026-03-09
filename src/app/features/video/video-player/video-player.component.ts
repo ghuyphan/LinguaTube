@@ -17,7 +17,6 @@ import {
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { finalize } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { OptionItem } from '../../../shared/components/option-picker/option-picker.component';
@@ -35,7 +34,14 @@ import {
 } from '../../../services';
 import { QuizService } from '../quiz.service';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Token, SubtitleCue, DictionaryEntry, GrammarPattern, GrammarMatch } from '../../../models';
+import {
+  Token,
+  DictionaryEntry,
+  GrammarPattern,
+  GrammarMatch,
+  ReadingDisplayMode,
+  SupportedLearningLanguage
+} from '../../../models';
 import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
@@ -187,6 +193,35 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     // Don't close immediately so user can see it's selected
   }
 
+  setReadingDisplayMode(mode: ReadingDisplayMode): void {
+    this.settings.setReadingDisplayMode(mode);
+  }
+
+  getReadingDisplayLabel(mode: ReadingDisplayMode): string {
+    const language = this.activeSubtitleLanguage();
+
+    if (language === 'en') {
+      return this.i18n.t('settings.textOnly');
+    }
+
+    switch (language) {
+      case 'ja':
+        if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
+        return this.i18n.t('settings.kanaOnly');
+      case 'zh':
+        if (mode === 'native') return this.i18n.t('settings.hanziOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
+        return this.i18n.t('settings.pinyinOnly');
+      case 'ko':
+        if (mode === 'native') return this.i18n.t('settings.hangulOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
+        return this.i18n.t('settings.romanizationOnly');
+      default:
+        return this.i18n.t('settings.textOnly');
+    }
+  }
+
   // Fullscreen popup state
   fsPopupVisible = signal(false);
   fsSelectedWord = signal<Token | null>(null);
@@ -222,20 +257,24 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     return (time / duration) * 100;
   });
 
+  activeSubtitleLanguage = computed<SupportedLearningLanguage>(() =>
+    (this.subtitles.loadedLanguage() || this.settings.settings().language) as SupportedLearningLanguage
+  );
+
   fullscreenTokens = computed(() => {
     const cue = this.subtitles.currentCue();
     if (!cue) return [];
-    const lang = this.subtitles.loadedLanguage();
+    const lang = this.activeSubtitleLanguage();
     return this.subtitles.getTokens(cue, lang);
   });
 
-  showFsReading = computed(() => {
-    const lang = this.subtitles.loadedLanguage();
-    if (!lang) return false;
-    return lang === 'ja'
-      ? this.settings.settings().showFurigana
-      : this.settings.settings().showPinyin;
-  });
+  supportsReadingDisplay = computed(() =>
+    this.settings.hasReadingSupport(this.activeSubtitleLanguage())
+  );
+
+  readingDisplayModes = computed<ReadingDisplayMode[]>(() =>
+    this.supportsReadingDisplay() ? ['native', 'annotated', 'reading'] : ['native']
+  );
 
   // Current translation for fullscreen
   currentTranslation = computed(() => {
@@ -249,8 +288,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     const tokens = this.fullscreenTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
 
-    const lang = this.subtitles.loadedLanguage();
-    if (!lang || lang === 'en') return [];
+    const lang = this.activeSubtitleLanguage();
+    if (lang === 'en') return [];
 
     return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
   });
@@ -675,7 +714,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.gestures.handleTouchMove(event);
   }
 
-  onOverlayTouchEnd(event: TouchEvent) {
+  onOverlayTouchEnd(_event: TouchEvent) {
     const container = this.videoContainerRef?.nativeElement;
     if (!container) return;
 
@@ -753,7 +792,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
 
 
-  onOverlayClick(event: MouseEvent) {
+  onOverlayClick(_event: MouseEvent) {
     const now = Date.now();
     const isDoubleClick = now - this.lastDesktopClickTime < DOUBLE_TAP_DELAY;
     this.lastDesktopClickTime = now;
@@ -1161,7 +1200,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.clearControlsTimeout();
   }
 
-  onSeekEnded(time: number) {
+  onSeekEnded(_time: number) {
     this.isDragging.set(false);
     this.startControlsAutoHide();
   }

@@ -187,6 +187,18 @@
         "vocabStats": "词汇统计",
         "totalWords": "总词汇数",
         "interfaceLanguage": "界面语言",
+        "learningDisplay": "Learning Display",
+        "learningDisplayHint": "Keep subtitles and study cards in the same script mode",
+        "kanjiOnly": "Kanji only",
+        "kanjiFurigana": "Kanji + Furigana",
+        "kanaOnly": "Kana only",
+        "hanziOnly": "Hanzi only",
+        "hanziPinyin": "Hanzi + Pinyin",
+        "pinyinOnly": "Pinyin only",
+        "hangulOnly": "Hangul only",
+        "hangulRomanization": "Hangul + Romanization",
+        "romanizationOnly": "Romanization only",
+        "textOnly": "Text only",
         "signOutConfirmTitle": "确定退出登录？",
         "signOutConfirmMessage": "您的词汇将保留在本地，但在重新登录之前不会同步。"
     },
@@ -227,7 +239,9 @@
         "swipeHint": "左右滑动作答",
         "sessionTime": "学习时长",
         "pressSpace": "按空格翻转",
-        "keyboardHint": "按1-4键作答"
+        "keyboardHint": "按1-4键作答",
+        "contextSentence": "Context sentence",
+        "focusWord": "Focus word"
     },
     "streak": {
         "dayStreak": "连续学习天数",

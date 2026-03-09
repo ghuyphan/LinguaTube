@@ -14,7 +14,7 @@
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->
             <div class="subtitle-center-wrapper">
-                <div class="subtitle-text" [ngClass]="'text-' + settings.settings().language"
+                <div class="subtitle-text" [ngClass]="'text-' + effectiveLanguage()"
                     [class.is-looping]="isLoopEnabled()">
                     @if (viewTokens().length === 0) {
                     <!-- Shimmer skeleton while tokens load -->
@@ -34,10 +34,10 @@
                             [class.word--known]="token.level === 'known'" [class.word--saved]="token.isSaved"
                             [class.word--grammar]="token.isGrammar"
                             (click)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">
-                            @if (showReading() && token.readingText) {
+                            @if (showReadingAnnotation() && token.readingText) {
                             <ruby>{{ token.surface }}<rt>{{ token.readingText }}</rt></ruby>
                             } @else {
-                            {{ token.surface }}
+                            {{ token.displayText }}
                             }
                         </span>
                         }
@@ -233,11 +233,13 @@
         <!-- Expandable section -->
         <div class="controls-expand" [class.expanded]="isControlsExpanded()">
             <!-- Reading Toggle -->
+            @if (supportsReadingDisplay()) {
             <button class="ctrl-btn" [class.active]="showReading()" (click)="toggleReading()"
                 [title]="'Toggle ' + readingLabel()">
                 <app-icon name="eye" [size]="16" />
                 <span class="ctrl-label">{{ readingLabel() }}</span>
             </button>
+            }
 
             <!-- Grammar Mode Toggle -->
             <button class="ctrl-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"

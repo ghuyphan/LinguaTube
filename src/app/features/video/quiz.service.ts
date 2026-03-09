@@ -1,7 +1,6 @@
 import { Injectable, computed, inject, signal, effect } from '@angular/core';
 import { SubtitleCue } from '../../models';
 import { SubtitleService, YoutubeService, I18nService } from '../../services';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 export type QuizMode = 'dictation' | 'translation';
 export type QuizState = 'idle' | 'active' | 'completed';
@@ -228,7 +227,7 @@ export class QuizService {
     private normalize(text: string): string {
         return text.toLowerCase()
             // Remove Western punctuation
-            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()'"?]/g, "")
+            .replace(/[.,/#!$%^&*;:{}=\-_`~()'"?]/g, "")
             // Remove CJK punctuation (Chinese, Japanese, Korean)
             .replace(/[。、！？「」『』【】（）《》〈〉・：；，""''～…—－]/g, "")
             // Remove Japanese-specific punctuation

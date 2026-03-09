@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, computed, effect, untracked } from '@angular/core';
+import { Injectable, inject, signal, computed } from '@angular/core';
 import {
     Playlist,
     PlaylistWithVideos,
@@ -11,9 +11,6 @@ import { AuthService } from '../../core/services';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
-
-// Note: storage key is now managed by the repository
-const MAX_LOCAL_PLAYLISTS = 10;
 
 /**
  * Playlist Service
@@ -178,8 +175,6 @@ export class PlaylistService {
         // 2. Prepare new video item
         const playerVideo = this.youtube.currentVideo();
         const cachedTitle = (playerVideo?.id === videoId && playerVideo.title) ? playerVideo.title : 'Loading...';
-        const cachedChannel = (playerVideo?.id === videoId && playerVideo.channel) ? playerVideo.channel : '';
-
         // Insert after current video
         const insertIndex = this.currentIndex() + 1;
 

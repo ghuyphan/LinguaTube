@@ -53,6 +53,20 @@
             </button>
         </div>
 
+        <div class="settings-section">
+            <h3 class="section-title">{{ i18n.t('settings.learningDisplay') }}</h3>
+            <button class="setting-row setting-row--clickable" (click)="showReadingModePicker.set(true)">
+                <div class="setting-row__content">
+                    <app-icon name="languages" [size]="20" class="setting-row__icon" />
+                    <div class="setting-row__group">
+                        <span class="setting-row__label">{{ currentReadingDisplay() }}</span>
+                        <span class="setting-row__hint">{{ i18n.t('settings.learningDisplayHint') }}</span>
+                    </div>
+                </div>
+                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
+            </button>
+        </div>
+
         <!-- Theme Toggle -->
         <div class="settings-section">
             <h3 class="section-title">{{ i18n.t('settings.appearance') }}</h3>
@@ -78,6 +92,11 @@
 <app-option-picker [options]="uiLangOptions()" [value]="i18n.currentLanguage()" [isOpen]="showUILangPicker()"
     [title]="i18n.t('settings.interfaceLanguage')" (selected)="onUILangSelected($event)"
     (closed)="showUILangPicker.set(false)" />
+
+<!-- Reading / Script Picker -->
+<app-option-picker [options]="readingDisplayOptions()" [value]="settings.getReadingDisplayMode(settings.settings().language)"
+    [isOpen]="showReadingModePicker()" [title]="i18n.t('settings.learningDisplay')"
+    (selected)="onReadingDisplaySelected($event)" (closed)="showReadingModePicker.set(false)" />
 
 <!-- Sign Out Confirmation -->
 <app-confirm-dialog [isOpen]="showSignOutConfirm()" [title]="i18n.t('settings.signOutConfirmTitle')"

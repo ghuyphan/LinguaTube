@@ -26,7 +26,7 @@ export class PlaylistPanelComponent implements AfterViewInit {
 
     isMobile = input<boolean>(false);
     shouldScrollIntoView = input<boolean>(true); // Default true for normal usage, parent can control
-    close = output<void>();
+    requestClose = output<void>();
     videoSelect = output<string>();
     openMenu = output<{ videoId: string, index: number, event: Event }>();
 

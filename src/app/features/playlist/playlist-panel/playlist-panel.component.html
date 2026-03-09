@@ -16,7 +16,7 @@
             </div>
 
             <!-- Desktop Close Button (Mobile uses bottom sheet handle/behavior) -->
-            <button class="close-btn desktop-only" (click)="close.emit()" [title]="i18n.t('playlist.closePlaylist')">
+            <button class="close-btn desktop-only" (click)="requestClose.emit()" [title]="i18n.t('playlist.closePlaylist')">
                 <app-icon name="x" [size]="20"></app-icon>
             </button>
         </div>

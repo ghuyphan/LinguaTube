@@ -122,7 +122,7 @@ export class HistoryService {
      * Import items (used by sync service)
      * Note: Deprecated in favor of Repo sync, but kept for interface compatibility if needed
      */
-    importItems(items: HistoryItem[]): void {
+    importItems(_items: HistoryItem[]): void {
         // this.history.set(items); // Read-only now
         console.warn('HistoryService.importItems is deprecated, use repository sync');
     }

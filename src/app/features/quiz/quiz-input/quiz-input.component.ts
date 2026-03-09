@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal, effect, computed, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { QuizService, QuestionState } from '../../video/quiz.service';
+import { QuizService } from '../../video/quiz.service';
 import { I18nService } from '../../../core/services/i18n.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { trigger, transition, style, animate, keyframes } from '@angular/animations';

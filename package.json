@@ -11,8 +11,9 @@
     "build": "npm run build:functions && ng build",
     "lint": "eslint \"src/**/*.{ts,html}\"",
     "lint:fix": "eslint \"src/**/*.{ts,html}\" --fix",
+    "test:ci": "ng test lingua-tube --configuration=ci",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test lingua-tube"
   },
   "private": true,
   "engines": {
@@ -46,11 +47,18 @@
     "@angular/cli": "^19.0.0",
     "@angular/compiler-cli": "^19.0.0",
     "@eslint/js": "^9.39.4",
+    "@types/jasmine": "^6.0.0",
     "@types/node": "^20.0.0",
     "angular-eslint": "^19.8.1",
     "concurrently": "^8.2.0",
     "esbuild": "^0.27.2",
     "eslint": "^9.39.4",
+    "jasmine-core": "^6.1.0",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-coverage": "^2.2.1",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.2.0",
     "typescript": "~5.6.0",
     "typescript-eslint": "^8.56.1"
   }

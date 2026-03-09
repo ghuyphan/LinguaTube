@@ -1,6 +1,6 @@
 import { Component, inject, input, output, signal, effect, computed, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';

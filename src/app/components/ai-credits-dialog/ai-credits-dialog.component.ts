@@ -17,5 +17,5 @@ export class AiCreditsDialogComponent {
     i18n = inject(I18nService);
     transcript = inject(TranscriptService);
 
-    close = output<void>();
+    dismissed = output<void>();
 }

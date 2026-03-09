@@ -189,6 +189,18 @@
         "vocabStats": "Thống kê từ vựng",
         "totalWords": "Tổng số từ",
         "interfaceLanguage": "Ngôn ngữ giao diện",
+        "learningDisplay": "Learning Display",
+        "learningDisplayHint": "Keep subtitles and study cards in the same script mode",
+        "kanjiOnly": "Kanji only",
+        "kanjiFurigana": "Kanji + Furigana",
+        "kanaOnly": "Kana only",
+        "hanziOnly": "Hanzi only",
+        "hanziPinyin": "Hanzi + Pinyin",
+        "pinyinOnly": "Pinyin only",
+        "hangulOnly": "Hangul only",
+        "hangulRomanization": "Hangul + Romanization",
+        "romanizationOnly": "Romanization only",
+        "textOnly": "Text only",
         "signOutConfirmTitle": "Đăng xuất?",
         "signOutConfirmMessage": "Từ vựng của bạn vẫn được lưu cục bộ, nhưng sẽ không đồng bộ cho đến khi bạn đăng nhập lại."
     },
@@ -229,7 +241,9 @@
         "swipeHint": "Vuốt trái/phải để trả lời",
         "sessionTime": "Thời gian học",
         "pressSpace": "Nhấn Space để lật",
-        "keyboardHint": "Dùng phím 1-4 để trả lời"
+        "keyboardHint": "Dùng phím 1-4 để trả lời",
+        "contextSentence": "Context sentence",
+        "focusWord": "Focus word"
     },
     "streak": {
         "dayStreak": "Chuỗi",

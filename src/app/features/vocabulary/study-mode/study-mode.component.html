@@ -10,6 +10,17 @@
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
         </div>
 
+        <div class="study-meta">
+            <div class="meta-pill">
+                <app-icon name="languages" [size]="14" />
+                <span>{{ currentLanguageLabel() }}</span>
+            </div>
+            <div class="meta-pill">
+                <app-icon name="eye" [size]="14" />
+                <span>{{ currentReadingDisplayLabel() }}</span>
+            </div>
+        </div>
+
         <div class="study-stats">
             <div class="stat-badge stat-badge--new">
                 <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).new }}</span>
@@ -138,19 +149,27 @@
             <div class="flashcard__inner">
                 <!-- Front (Word or Meaning based on reverseMode) -->
                 <div class="flashcard__front">
+                    @if (hasSentenceContext(currentCard()!.item)) {
+                    <div class="card-context card-context--front">
+                        <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
+                        <p class="card-context__sentence" [class]="'text-' + currentCard()!.item.language">
+                            {{ currentCard()!.item.sourceSentence }}
+                        </p>
+                        <div class="card-context__focus">
+                            <span>{{ i18n.t('study.focusWord') }}</span>
+                            <strong>{{ currentCard()!.item.word }}</strong>
+                        </div>
+                    </div>
+                    }
                     @if (!reverseMode) {
-                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                        {{ currentCard()!.item.word }}
-                    </span>
-                    @if (currentCard()!.item.reading) {
-                    <span class="card-reading">{{ currentCard()!.item.reading }}</span>
-                    }
-                    @if (currentCard()!.item.pinyin) {
-                    <span class="card-reading">{{ currentCard()!.item.pinyin }}</span>
-                    }
-                    @if (currentCard()!.item.romanization) {
-                    <span class="card-reading">{{ currentCard()!.item.romanization }}</span>
-                    }
+                    <div class="card-word-cluster">
+                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                            {{ getCardPrimaryText(currentCard()!.item) }}
+                        </span>
+                        @if (showCardReading(currentCard()!.item)) {
+                        <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
+                        }
+                    </div>
                     } @else {
                     <div class="card-meaning-front">
                         {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
@@ -162,29 +181,30 @@
                 <!-- Back (Meaning or Word based on reverseMode) -->
                 <div class="flashcard__back">
                     @if (!reverseMode) {
-                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                        {{ currentCard()!.item.word }}
-                    </span>
+                    <div class="card-word-cluster">
+                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                            {{ getCardPrimaryText(currentCard()!.item) }}
+                        </span>
+                        @if (showCardReading(currentCard()!.item)) {
+                        <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
+                        }
+                    </div>
                     <div class="card-meaning">
                         {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
                     } @else {
-                    <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                        {{ currentCard()!.item.word }}
-                    </span>
-                    @if (currentCard()!.item.reading) {
-                    <span class="card-reading">{{ currentCard()!.item.reading }}</span>
+                    <div class="card-word-cluster">
+                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
+                            {{ getCardPrimaryText(currentCard()!.item) }}
+                        </span>
+                        @if (showCardReading(currentCard()!.item)) {
+                        <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
+                        }
+                    </div>
                     }
-                    @if (currentCard()!.item.pinyin) {
-                    <span class="card-reading">{{ currentCard()!.item.pinyin }}</span>
-                    }
-                    @if (currentCard()!.item.romanization) {
-                    <span class="card-reading">{{ currentCard()!.item.romanization }}</span>
-                    }
-                    }
-                    @if (currentCard()!.item.sourceSentence) {
+                    @if (hasSentenceContext(currentCard()!.item)) {
                     <div class="card-sentence">
-                        <span class="sentence-label">{{ i18n.t('study.example') }}</span>
+                        <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
                         {{ currentCard()!.item.sourceSentence }}
                     </div>
                     }

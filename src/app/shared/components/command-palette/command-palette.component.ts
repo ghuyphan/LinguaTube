@@ -12,7 +12,6 @@ import {
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 import { IconComponent } from '../icon/icon.component';
 import { I18nService } from '../../../services';
 
@@ -190,8 +189,8 @@ import { I18nService } from '../../../services';
     }
 
     .palette__submit-btn {
-      color: var(--primary-color);
-      background: rgba(var(--primary-rgb), 0.1);
+      color: var(--accent-primary);
+      background: rgba(var(--accent-primary-rgb), 0.1);
     }
 
     @media (hover: hover) {
@@ -363,7 +362,7 @@ import { I18nService } from '../../../services';
 })
 export class CommandPaletteComponent {
   private platformId = inject(PLATFORM_ID);
-  search = output<string>();
+  submitted = output<string>();
   i18n = inject(I18nService);
   isOpen = input<boolean>(false);
   closed = output<void>();
@@ -418,8 +417,8 @@ export class CommandPaletteComponent {
       return;
     }
 
-    // Emit search intent
-    this.search.emit(videoId);
+    // Emit submit intent
+    this.submitted.emit(videoId);
 
     // Close the palette gracefully
     this.isClosing.set(true);

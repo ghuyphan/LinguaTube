@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, DestroyRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PlaylistService } from '../playlist.service';
@@ -8,8 +8,6 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../services';
 import { Playlist, PlaylistLanguage } from '../../../models';
-import { fromEvent } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
 import { MascotComponent } from '../../../components/mascot/mascot.component';
 
 const LANGUAGES = [

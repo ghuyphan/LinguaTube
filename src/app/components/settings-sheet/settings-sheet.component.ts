@@ -5,8 +5,8 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
-import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
+import { ReadingDisplayMode, SupportedLearningLanguage } from '../../models';
 
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { StatsRowComponent } from './stats-row/stats-row.component';
@@ -44,6 +44,7 @@ export class SettingsSheetComponent {
   showSignOutConfirm = signal(false);
   showLearningLangPicker = signal(false);
   showUILangPicker = signal(false);
+  showReadingModePicker = signal(false);
   isLoggingIn = false;
 
   // Learning language options with display info
@@ -69,6 +70,11 @@ export class SettingsSheetComponent {
   // Check if dark mode is active
   isDarkMode = computed(() => this.settings.getEffectiveTheme() === 'dark');
 
+  currentReadingDisplay = computed(() => {
+    const language = this.settings.settings().language;
+    return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
+  });
+
   // Computed options for OptionPicker
   learningLangOptions = computed<OptionItem[]>(() =>
     this.learningLanguages.map(l => ({
@@ -85,6 +91,18 @@ export class SettingsSheetComponent {
       iconUrl: l.flag
     }))
   );
+
+  readingDisplayOptions = computed<OptionItem[]>(() => {
+    const language = this.settings.settings().language;
+    const modes: ReadingDisplayMode[] = this.settings.hasReadingSupport(language)
+      ? ['native', 'annotated', 'reading']
+      : ['native'];
+
+    return modes.map(mode => ({
+      value: mode,
+      label: this.getReadingDisplayLabel(mode, language)
+    }));
+  });
 
   /**
    * Login with Google via PocketBase OAuth
@@ -128,6 +146,11 @@ export class SettingsSheetComponent {
     this.showUILangPicker.set(false);
   }
 
+  onReadingDisplaySelected(value: string): void {
+    this.settings.setReadingDisplayMode(value as ReadingDisplayMode);
+    this.showReadingModePicker.set(false);
+  }
+
   toggleTheme(): void {
     const effectiveTheme = this.settings.getEffectiveTheme();
     const next = effectiveTheme === 'dark' ? 'light' : 'dark';
@@ -159,5 +182,31 @@ export class SettingsSheetComponent {
 
   openAiCreditsDialog(): void {
     this.openAiCredits.emit();
+  }
+
+  private getReadingDisplayLabel(
+    mode: ReadingDisplayMode,
+    language: SupportedLearningLanguage
+  ): string {
+    if (language === 'en') {
+      return this.i18n.t('settings.textOnly');
+    }
+
+    switch (language) {
+      case 'ja':
+        if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
+        return this.i18n.t('settings.kanaOnly');
+      case 'zh':
+        if (mode === 'native') return this.i18n.t('settings.hanziOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
+        return this.i18n.t('settings.pinyinOnly');
+      case 'ko':
+        if (mode === 'native') return this.i18n.t('settings.hangulOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
+        return this.i18n.t('settings.romanizationOnly');
+      default:
+        return this.i18n.t('settings.textOnly');
+    }
   }
 }

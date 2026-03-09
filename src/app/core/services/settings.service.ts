@@ -1,5 +1,5 @@
 import { Injectable, signal, effect, untracked, OnDestroy, inject } from '@angular/core';
-import { UserSettings } from '../../models';
+import { ReadingDisplayMode, SupportedLearningLanguage, UserSettings } from '../../models';
 import { FontLoaderService } from './font-loader.service';
 
 const STORAGE_KEY = 'linguatube_settings';
@@ -9,6 +9,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   language: 'ja',
   showFurigana: true,
   showPinyin: true,
+  readingDisplayMode: 'annotated',
   autoAdvance: false,
   fontSize: 'medium',
   playbackSpeed: 1,
@@ -74,11 +75,57 @@ export class SettingsService implements OnDestroy {
   }
 
   toggleFurigana(): void {
-    this.updateSettings({ showFurigana: !this.settings().showFurigana });
+    this.setReadingDisplayMode(this.settings().showFurigana ? 'native' : 'annotated');
   }
 
   togglePinyin(): void {
-    this.updateSettings({ showPinyin: !this.settings().showPinyin });
+    this.setReadingDisplayMode(this.settings().showPinyin ? 'native' : 'annotated');
+  }
+
+  hasReadingSupport(language: SupportedLearningLanguage = this.settings().language): boolean {
+    return language !== 'en';
+  }
+
+  getReadingDisplayMode(language: SupportedLearningLanguage = this.settings().language): ReadingDisplayMode {
+    if (!this.hasReadingSupport(language)) {
+      return 'native';
+    }
+
+    return this.settings().readingDisplayMode;
+  }
+
+  showReadingAnnotation(language: SupportedLearningLanguage = this.settings().language): boolean {
+    return this.getReadingDisplayMode(language) === 'annotated';
+  }
+
+  showReadingText(language: SupportedLearningLanguage = this.settings().language): boolean {
+    return this.getReadingDisplayMode(language) !== 'native';
+  }
+
+  useReadingOnly(language: SupportedLearningLanguage = this.settings().language): boolean {
+    return this.getReadingDisplayMode(language) === 'reading';
+  }
+
+  setReadingDisplayMode(mode: ReadingDisplayMode): void {
+    const showReading = mode !== 'native';
+
+    this.updateSettings({
+      readingDisplayMode: mode,
+      showFurigana: showReading,
+      showPinyin: showReading
+    });
+  }
+
+  toggleReadingDisplay(language: SupportedLearningLanguage = this.settings().language): void {
+    if (!this.hasReadingSupport(language)) {
+      return;
+    }
+
+    const current = this.getReadingDisplayMode(language);
+    const next: ReadingDisplayMode =
+      current === 'native' ? 'annotated' : current === 'annotated' ? 'reading' : 'native';
+
+    this.setReadingDisplayMode(next);
   }
 
   setFontSize(fontSize: 'small' | 'medium' | 'large' | 'xlarge'): void {
@@ -114,7 +161,15 @@ export class SettingsService implements OnDestroy {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored) as Partial<UserSettings>;
-        this.settings.set({ ...DEFAULT_SETTINGS, ...parsed });
+        const readingDisplayMode = this.getStoredReadingDisplayMode(parsed);
+
+        this.settings.set({
+          ...DEFAULT_SETTINGS,
+          ...parsed,
+          readingDisplayMode,
+          showFurigana: readingDisplayMode !== 'native',
+          showPinyin: readingDisplayMode !== 'native'
+        });
       }
     } catch (err) {
       console.error('Failed to load settings:', err);
@@ -132,6 +187,18 @@ export class SettingsService implements OnDestroy {
     } catch (err) {
       console.error('Failed to save settings:', err);
     }
+  }
+
+  private getStoredReadingDisplayMode(settings: Partial<UserSettings>): ReadingDisplayMode {
+    if (settings.readingDisplayMode) {
+      return settings.readingDisplayMode;
+    }
+
+    if (settings.showFurigana === false || settings.showPinyin === false) {
+      return 'native';
+    }
+
+    return DEFAULT_SETTINGS.readingDisplayMode;
   }
 
   /**

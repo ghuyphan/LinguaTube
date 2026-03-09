@@ -1,6 +1,5 @@
 import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 
 // Import all translations statically for bundle efficiency
 import en from '../../i18n/en.json';

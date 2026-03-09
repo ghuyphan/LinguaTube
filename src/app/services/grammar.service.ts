@@ -1,5 +1,4 @@
-import { Injectable, signal, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable, signal } from '@angular/core';
 import { GrammarPattern, GrammarMatch } from '../models/grammar.model';
 import { Token } from '../models';
 

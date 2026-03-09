@@ -27,7 +27,7 @@
 
         <!-- Tab Content -->
         @if (sidebarTab() === 'playlist') {
-        <app-playlist-panel class="sidebar-content" (close)="closePlaylist()"
+        <app-playlist-panel class="sidebar-content" (requestClose)="closePlaylist()"
             (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)" />
         } @else {
         <app-vocabulary-list class="sidebar-content" (deleteRequest)="onVocabDeleteRequest($event)"
@@ -46,7 +46,7 @@
     <app-expandable-playlist class="desktop-none" [currentVideo]="youtube.currentVideo()"
         [playlist]="playlistService.currentPlaylist()" [currentIndex]="playlistService.currentIndex()"
         [isHidden]="showCommandPalette()" (videoSelect)="onPlaylistVideoSelect($event)"
-        (openMenu)="onOpenPlaylistMenu($event)" (close)="closePlaylist()" (openCommandPalette)="openCommandPalette()"
+        (openMenu)="onOpenPlaylistMenu($event)" (requestClose)="closePlaylist()" (openCommandPalette)="openCommandPalette()"
         (addToPlaylist)="openAddToPlaylist()" (prevVideo)="playlistService.playPrevious()"
         (nextVideo)="playlistService.playNext()" />
     }
@@ -60,7 +60,7 @@
 }
 
 <!-- Command Palette -->
-<app-command-palette [isOpen]="showCommandPalette()" (search)="onCommandPaletteSearch($event)"
+<app-command-palette [isOpen]="showCommandPalette()" (submitted)="onCommandPaletteSearch($event)"
     (closed)="onCommandPaletteClosed()" />
 
 <!-- Language Mismatch Alert -->

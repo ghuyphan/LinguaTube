@@ -380,7 +380,7 @@ export class TranscriptService {
     response: TranscriptResponse,
     videoId: string,
     lang: string,
-    preferAI: boolean
+    _preferAI: boolean
   ): Observable<SubtitleCue[]> {
 
     log('API Response:', response);

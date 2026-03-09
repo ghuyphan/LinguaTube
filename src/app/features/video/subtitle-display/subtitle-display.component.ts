@@ -5,7 +5,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyQuickViewComponent } from '../../vocabulary/vocabulary-quick-view/vocabulary-quick-view.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService, GrammarService, TranslationService } from '../../../services';
-import { SubtitleCue, Token, GrammarMatch, GrammarPattern } from '../../../models';
+import { SubtitleCue, Token, GrammarMatch, GrammarPattern, ReadingDisplayMode, SupportedLearningLanguage } from '../../../models';
 import { QuizService } from '../quiz.service';
 import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 
@@ -156,12 +156,21 @@ export class SubtitleDisplayComponent {
     return userLang;
   });
 
-  showReading = computed(() => {
-    const lang = this.effectiveLanguage();
-    return lang === 'ja'
-      ? this.settings.settings().showFurigana
-      : this.settings.settings().showPinyin;
-  });
+  readingDisplayMode = computed(() =>
+    this.settings.getReadingDisplayMode(this.effectiveLanguage() as SupportedLearningLanguage)
+  );
+
+  showReading = computed(() =>
+    this.settings.showReadingText(this.effectiveLanguage() as SupportedLearningLanguage)
+  );
+
+  showReadingAnnotation = computed(() =>
+    this.settings.showReadingAnnotation(this.effectiveLanguage() as SupportedLearningLanguage)
+  );
+
+  supportsReadingDisplay = computed(() =>
+    this.settings.hasReadingSupport(this.effectiveLanguage() as SupportedLearningLanguage)
+  );
 
   // ============================================
   // FIX 1: Stable token caching to prevent flicker
@@ -249,10 +258,15 @@ export class SubtitleDisplayComponent {
       else if (lang === 'zh') readingText = token.pinyin;
       else readingText = token.romanization || token.pinyin;
 
+      const displayText = this.settings.useReadingOnly(lang as SupportedLearningLanguage) && readingText
+        ? readingText
+        : token.surface;
+
       return {
         ...token,
         isGrammar: grammarIndices.has(index),
         readingText,
+        displayText,
         isSaved: this.vocab.hasWord(token.surface)
       };
     });
@@ -596,21 +610,39 @@ export class SubtitleDisplayComponent {
   }
 
   readingLabel = computed(() => {
-    const lang = this.effectiveLanguage();
-    switch (lang) {
-      case 'ja': return 'Furigana';
-      case 'zh': return 'Pinyin';
-      case 'ko': return 'Romanization';
-      default: return 'Reading';
-    }
+    return this.getReadingDisplayLabel(
+      this.readingDisplayMode(),
+      this.effectiveLanguage() as SupportedLearningLanguage
+    );
   });
 
   toggleReading(): void {
-    const lang = this.effectiveLanguage();
-    if (lang === 'ja') {
-      this.settings.toggleFurigana();
-    } else {
-      this.settings.togglePinyin();
+    this.settings.toggleReadingDisplay(this.effectiveLanguage() as SupportedLearningLanguage);
+  }
+
+  private getReadingDisplayLabel(
+    mode: ReadingDisplayMode,
+    language: SupportedLearningLanguage
+  ): string {
+    if (language === 'en') {
+      return this.i18n.t('settings.textOnly');
+    }
+
+    switch (language) {
+      case 'ja':
+        if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
+        return this.i18n.t('settings.kanaOnly');
+      case 'zh':
+        if (mode === 'native') return this.i18n.t('settings.hanziOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
+        return this.i18n.t('settings.pinyinOnly');
+      case 'ko':
+        if (mode === 'native') return this.i18n.t('settings.hangulOnly');
+        if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
+        return this.i18n.t('settings.romanizationOnly');
+      default:
+        return this.i18n.t('settings.textOnly');
     }
   }
 

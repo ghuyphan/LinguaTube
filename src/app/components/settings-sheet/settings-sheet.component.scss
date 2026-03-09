@@ -31,6 +31,21 @@
     margin-bottom: var(--space-xs);
 }
 
+.setting-row__group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.setting-row__icon {
+    color: var(--accent-primary);
+}
+
+.setting-row__hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
 /* ============================================
    Link Toggle styles (uses global styles)
    ============================================ */

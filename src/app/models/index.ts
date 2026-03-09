@@ -82,9 +82,12 @@ export interface VideoInfo {
   channel?: string;
 }
 
+export type SupportedLearningLanguage = 'ja' | 'zh' | 'ko' | 'en';
+export type ReadingDisplayMode = 'native' | 'annotated' | 'reading';
+
 // App state
 export interface AppState {
-  currentLanguage: 'ja' | 'zh' | 'ko' | 'en';
+  currentLanguage: SupportedLearningLanguage;
   currentVideo?: VideoInfo;
   subtitles: SubtitleCue[];
   vocabulary: VocabularyItem[];
@@ -95,9 +98,10 @@ export interface AppState {
 // Settings
 export interface UserSettings {
   theme: 'light' | 'dark' | 'system';
-  language: 'ja' | 'zh' | 'ko' | 'en';
+  language: SupportedLearningLanguage;
   showFurigana: boolean;
   showPinyin: boolean;
+  readingDisplayMode: ReadingDisplayMode;
   autoAdvance: boolean;
   fontSize: 'small' | 'medium' | 'large' | 'xlarge';
   playbackSpeed: number;

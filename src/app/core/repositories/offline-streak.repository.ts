@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, computed } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { IStreakRepository, StreakData, ActivityResult } from './streak.repository';
 import { AuthService, StorageService, PocketBaseService } from '../services';
 

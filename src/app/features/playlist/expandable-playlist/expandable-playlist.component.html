@@ -128,7 +128,7 @@
         <div class="sheet-content">
             @if (playlist()) {
             <app-playlist-panel [isMobile]="true" [shouldScrollIntoView]="isExpanded()"
-                (videoSelect)="onVideoSelect($event)" (openMenu)="openMenu.emit($event)" (close)="collapse()" />
+                (videoSelect)="onVideoSelect($event)" (openMenu)="openMenu.emit($event)" (requestClose)="collapse()" />
             }
         </div>
 

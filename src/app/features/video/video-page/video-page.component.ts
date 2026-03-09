@@ -786,7 +786,7 @@ export class VideoPageComponent implements OnInit {
     });
   }
 
-  onPlaylistVideoSelect(videoId: string): void {
+  onPlaylistVideoSelect(_videoId: string): void {
     // Navigation is handled by effect() reacting to service state change
     // so we don't need to do anything here other than what the panel component already did (update service)
   }
@@ -851,7 +851,7 @@ export class VideoPageComponent implements OnInit {
 
   // Listen for back button/gesture
   @HostListener('window:popstate', ['$event'])
-  onPopState(event: PopStateEvent) {
+  onPopState(_event: PopStateEvent) {
     if (this.showCommandPalette()) {
       // Palette is open and user pressed back -> close it
       // Don't call history.back() here because popstate means we already went back!

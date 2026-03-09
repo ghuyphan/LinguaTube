@@ -7,7 +7,7 @@ import {
     computed
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SubtitleCue, Token } from '../../../../../models';
+import { GrammarMatch, SubtitleCue, SupportedLearningLanguage, Token } from '../../../../../models';
 import { SettingsService, VocabularyService } from '../../../../../services';
 
 /**
@@ -48,10 +48,10 @@ import { SettingsService, VocabularyService } from '../../../../../services';
                     [attr.aria-label]="'Look up ' + token.surface"
                     (click)="onWordClick(token, cue.text, $index, $event)">
                     
-                    @if (showReading() && getReading(token)) {
+                    @if (showReadingAnnotation() && getReading(token)) {
                       <ruby>{{ token.surface }}<rt>{{ getReading(token) }}</rt></ruby>
                     } @else {
-                      {{ token.surface }}
+                      {{ getDisplayText(token) }}
                     }
                   </button>
                 }
@@ -82,6 +82,7 @@ export class FullscreenSubtitleComponent {
     // Inputs
     currentCue = input.required<SubtitleCue | null>();
     tokens = input<Token[]>([]);
+    language = input<SupportedLearningLanguage>('ja');
     isTokenizing = input<boolean>(false);
     areControlsVisible = input<boolean>(false);
     fsPopupVisible = input<boolean>(false);
@@ -93,18 +94,18 @@ export class FullscreenSubtitleComponent {
     currentTranslation = input<string | null>(null);
 
     // Grammar Inputs
-    grammarMatches = input<any[]>([]); // Using any[] to avoid strict type dependency cycle if possible
+    grammarMatches = input<GrammarMatch[]>([]);
 
     // Outputs
     wordClicked = output<{ token: Token; context: string; event: MouseEvent }>();
     grammarClicked = output<{ index: number; event: MouseEvent }>();
 
     // Computed
-    language = computed(() => this.settings.settings().language);
-    showReading = computed(() => this.settings.settings().showFurigana); // Or separate setting if needed
+    showReading = computed(() => this.settings.showReadingText(this.language()));
+    showReadingAnnotation = computed(() => this.settings.showReadingAnnotation(this.language()));
 
     isGrammarToken(index: number): boolean {
-        return this.grammarMatches().some(m => m.startIndex <= index && index < m.startIndex + m.length);
+        return this.grammarMatches().some(match => match.tokenIndices.includes(index));
     }
 
     getReading(token: Token): string | undefined {
@@ -112,6 +113,14 @@ export class FullscreenSubtitleComponent {
         if (lang === 'ja') return token.reading;
         if (lang === 'zh') return token.pinyin;
         return token.romanization || token.pinyin;
+    }
+
+    getDisplayText(token: Token): string {
+        if (this.settings.useReadingOnly(this.language())) {
+            return this.getReading(token) || token.surface;
+        }
+
+        return token.surface;
     }
 
     onWordClick(token: Token, context: string, index: number, event: MouseEvent): void {

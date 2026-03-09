@@ -808,8 +808,6 @@ export class SubtitleService {
   // ============================================================================
 
   private getCharType(char: string): string {
-    const code = char.charCodeAt(0);
-
     if (/[\u3040-\u309F]/.test(char)) return 'hiragana';
     if (/[\u30A0-\u30FF]/.test(char)) return 'katakana';
 

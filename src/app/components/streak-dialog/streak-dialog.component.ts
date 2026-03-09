@@ -16,7 +16,7 @@ export class StreakDialogComponent {
     streak = inject(StreakService);
     i18n = inject(I18nService);
 
-    close = output<void>();
+    dismissed = output<void>();
 
     weekDays = computed(() => {
         const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']; // Fixed Mon-Sun labels

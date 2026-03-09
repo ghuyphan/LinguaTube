@@ -1,7 +1,6 @@
-import { Component, ChangeDetectionStrategy, input, output, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { RecordModel } from 'pocketbase';
 
 @Component({
     selector: 'app-profile-card',

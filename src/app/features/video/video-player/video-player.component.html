@@ -109,6 +109,7 @@
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
     <app-fullscreen-subtitle [currentCue]="subtitles.currentCue()" [tokens]="fullscreenTokens()"
+      [language]="activeSubtitleLanguage()"
       [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
       [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
       [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
@@ -207,6 +208,24 @@
               }
             </div>
           </div>
+
+          @if (supportsReadingDisplay()) {
+          <div class="fs-settings-section">
+            <h4 class="fs-settings-title">{{ i18n.t('settings.learningDisplay') }}</h4>
+            <div class="fs-lang-grid">
+              @for (mode of readingDisplayModes(); track mode) {
+              <button class="fs-lang-btn"
+                [class.active]="settings.getReadingDisplayMode(activeSubtitleLanguage()) === mode"
+                (click)="setReadingDisplayMode(mode)">
+                <span class="fs-lang-name">{{ getReadingDisplayLabel(mode) }}</span>
+                @if (settings.getReadingDisplayMode(activeSubtitleLanguage()) === mode) {
+                <app-icon name="check" [size]="14" class="fs-lang-check" />
+                }
+              </button>
+              }
+            </div>
+          </div>
+          }
         </div>
       </div>
     </app-bottom-sheet>

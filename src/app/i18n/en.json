@@ -189,6 +189,18 @@
         "vocabStats": "Vocabulary Stats",
         "totalWords": "Total",
         "interfaceLanguage": "Interface Language",
+        "learningDisplay": "Learning Display",
+        "learningDisplayHint": "Keep subtitles and study cards in the same script mode",
+        "kanjiOnly": "Kanji only",
+        "kanjiFurigana": "Kanji + Furigana",
+        "kanaOnly": "Kana only",
+        "hanziOnly": "Hanzi only",
+        "hanziPinyin": "Hanzi + Pinyin",
+        "pinyinOnly": "Pinyin only",
+        "hangulOnly": "Hangul only",
+        "hangulRomanization": "Hangul + Romanization",
+        "romanizationOnly": "Romanization only",
+        "textOnly": "Text only",
         "signOutConfirmTitle": "Sign Out?",
         "signOutConfirmMessage": "Your vocabulary will remain saved locally, but changes won't sync until you sign in again."
     },
@@ -229,7 +241,9 @@
         "swipeHint": "Swipe left/right to answer",
         "sessionTime": "Session Time",
         "pressSpace": "Press Space to flip",
-        "keyboardHint": "Use 1-4 keys to answer"
+        "keyboardHint": "Use 1-4 keys to answer",
+        "contextSentence": "Context sentence",
+        "focusWord": "Focus word"
     },
     "streak": {
         "dayStreak": "Day Streak",

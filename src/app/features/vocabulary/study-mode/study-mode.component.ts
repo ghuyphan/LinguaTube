@@ -4,7 +4,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { VocabularyService, SettingsService, I18nService } from '../../../services';
 import { StreakService } from '../../../services/streak.service';
-import { VocabularyItem } from '../../../models';
+import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
 
 interface StudyCard {
     item: VocabularyItem;
@@ -95,6 +95,22 @@ export class StudyModeComponent implements OnDestroy {
         return cards[index] || null;
     });
 
+    currentLanguage = computed(() => this.settings.settings().language);
+
+    currentLanguageLabel = computed(() => {
+        switch (this.currentLanguage()) {
+            case 'ja': return this.i18n.t('settings.japanese');
+            case 'zh': return this.i18n.t('settings.chinese');
+            case 'ko': return this.i18n.t('settings.korean');
+            default: return this.i18n.t('settings.english');
+        }
+    });
+
+    currentReadingDisplayLabel = computed(() => {
+        const language = this.currentLanguage();
+        return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
+    });
+
     // Goal progress percentage
     goalProgress = computed(() => {
         const done = this.cardsCompletedToday();
@@ -110,6 +126,32 @@ export class StudyModeComponent implements OnDestroy {
 
     ngOnDestroy(): void {
         this.stopTimer();
+    }
+
+    getCardPrimaryText(item: VocabularyItem): string {
+        const reading = this.getCardReading(item);
+
+        if (this.settings.useReadingOnly(item.language) && reading) {
+            return reading;
+        }
+
+        return item.word;
+    }
+
+    getCardReading(item: VocabularyItem): string | null {
+        return item.reading || item.pinyin || item.romanization || null;
+    }
+
+    showCardReading(item: VocabularyItem): boolean {
+        const reading = this.getCardReading(item);
+
+        return !!reading
+            && reading !== item.word
+            && this.settings.showReadingAnnotation(item.language);
+    }
+
+    hasSentenceContext(item: VocabularyItem): boolean {
+        return !!item.sourceSentence?.trim();
     }
 
     // Keyboard shortcuts
@@ -304,6 +346,32 @@ export class StudyModeComponent implements OnDestroy {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
         return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    private getReadingDisplayLabel(
+        mode: ReadingDisplayMode,
+        language: SupportedLearningLanguage
+    ): string {
+        if (language === 'en') {
+            return this.i18n.t('settings.textOnly');
+        }
+
+        switch (language) {
+            case 'ja':
+                if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
+                if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
+                return this.i18n.t('settings.kanaOnly');
+            case 'zh':
+                if (mode === 'native') return this.i18n.t('settings.hanziOnly');
+                if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
+                return this.i18n.t('settings.pinyinOnly');
+            case 'ko':
+                if (mode === 'native') return this.i18n.t('settings.hangulOnly');
+                if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
+                return this.i18n.t('settings.romanizationOnly');
+            default:
+                return this.i18n.t('settings.textOnly');
+        }
     }
 
     // Daily goal methods

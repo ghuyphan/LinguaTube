@@ -1,8 +1,7 @@
-import { Injectable, inject, signal, computed, effect, untracked } from '@angular/core';
+import { Injectable, inject, signal, effect, untracked } from '@angular/core';
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
 import { AuthService, StorageService, PocketBaseService } from '../services';
-import type { RecordModel } from 'pocketbase';
 import { calculateHash, mergeByTimestamp, processBatch, withRetry } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
@@ -516,7 +515,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 .replace(/[^a-zA-Z0-9]/g, '')
                 .toLowerCase()
                 .slice(0, 15);
-        } catch (e) {
+        } catch {
             return Date.now().toString(36) + Math.random().toString(36).substring(2, 10);
         }
     }

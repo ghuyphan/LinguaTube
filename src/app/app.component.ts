@@ -153,7 +153,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [showCloseButton]="true"
             (closed)="showStreakSheet.set(false)"
           >
-            <app-streak-dialog (close)="sheetService.closeTop()" />
+            <app-streak-dialog (dismissed)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
@@ -163,14 +163,14 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             [showCloseButton]="true"
             (closed)="showAiCreditsSheet.set(false)"
           >
-            <app-ai-credits-dialog (close)="sheetService.closeTop()" />
+            <app-ai-credits-dialog (dismissed)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
         <!-- Command Palette -->
         <app-command-palette
           [isOpen]="showCommandPalette()"
-          (search)="onCommandPaletteSearch($event)"
+          (submitted)="onCommandPaletteSearch($event)"
           (closed)="showCommandPalette.set(false)"
         />
       }

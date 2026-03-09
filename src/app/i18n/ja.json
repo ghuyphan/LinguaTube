@@ -187,6 +187,18 @@
         "vocabStats": "単語帳の統計",
         "totalWords": "総単語数",
         "interfaceLanguage": "表示言語",
+        "learningDisplay": "Learning Display",
+        "learningDisplayHint": "Keep subtitles and study cards in the same script mode",
+        "kanjiOnly": "Kanji only",
+        "kanjiFurigana": "Kanji + Furigana",
+        "kanaOnly": "Kana only",
+        "hanziOnly": "Hanzi only",
+        "hanziPinyin": "Hanzi + Pinyin",
+        "pinyinOnly": "Pinyin only",
+        "hangulOnly": "Hangul only",
+        "hangulRomanization": "Hangul + Romanization",
+        "romanizationOnly": "Romanization only",
+        "textOnly": "Text only",
         "signOutConfirmTitle": "ログアウトしますか？",
         "signOutConfirmMessage": "単語帳はローカルに保存されますが、再度ログインするまで同期されません。"
     },
@@ -227,7 +239,9 @@
         "swipeHint": "左右にスワイプで回答",
         "sessionTime": "学習時間",
         "pressSpace": "Spaceで反転",
-        "keyboardHint": "1-4キーで回答"
+        "keyboardHint": "1-4キーで回答",
+        "contextSentence": "Context sentence",
+        "focusWord": "Focus word"
     },
     "streak": {
         "dayStreak": "連続学習日数",

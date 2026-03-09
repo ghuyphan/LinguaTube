@@ -4,7 +4,6 @@ import {
     signal,
     computed,
     output,
-    input,
     ElementRef,
     ViewChild,
     ChangeDetectionStrategy,
