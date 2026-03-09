@@ -9,9 +9,11 @@
     },
     "nav": {
         "video": "Video",
+        "learn": "Learn",
         "added": "Đã thêm",
         "words": "Từ vựng",
         "study": "Học",
+        "explore": "Explore",
         "settings": "Cài đặt",
         "newVideo": "Video mới",
         "playlists": "Danh sách",

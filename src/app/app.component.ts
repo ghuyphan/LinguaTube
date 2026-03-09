@@ -76,7 +76,15 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               [class.active]="!anySheetOpen() && isRouteActive('/video')"
             >
               <app-icon name="play-circle" [size]="20" />
-              <span>{{ i18n.t('nav.video') }}</span>
+              <span>{{ i18n.t('nav.learn') }}</span>
+            </a>
+            <a
+              class="bottom-nav__item"
+              routerLink="/study"
+              [class.active]="!anySheetOpen() && isRouteActive('/study')"
+            >
+              <app-icon name="graduation-cap" [size]="20" />
+              <span>{{ i18n.t('nav.study') }}</span>
             </a>
             <a
               class="bottom-nav__item"
@@ -88,15 +96,15 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             </a>
             <a
               class="bottom-nav__item"
-              routerLink="/study"
-              [class.active]="!anySheetOpen() && isRouteActive('/study')"
+              routerLink="/explore"
+              [class.active]="!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))"
             >
-              <app-icon name="graduation-cap" [size]="20" />
-              <span>{{ i18n.t('nav.study') }}</span>
+              <app-icon name="globe" [size]="20" />
+              <span>{{ i18n.t('nav.explore') }}</span>
             </a>
             <button
               class="bottom-nav__item"
-              [class.active]="showMoreSheet() || isRouteActive('/playlists') || isRouteActive('/history') || isRouteActive('/game')"
+              [class.active]="showMoreSheet() || isRouteActive('/history') || isRouteActive('/game')"
               (click)="toggleMoreSheet()"
             >
               <app-icon name="more-horizontal" [size]="20" />
@@ -113,6 +121,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           (closed)="showMoreSheet.set(false)"
         >
           <div class="more-menu">
+            <button class="more-menu__item" (click)="showMoreSheet.set(false); showCommandPalette.set(true)">
+              <app-icon name="search" [size]="22" />
+              <span>{{ i18n.t('nav.newVideo') }}</span>
+              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+            </button>
             <button class="more-menu__item" (click)="navigateFromMore('/game')">
               <app-icon name="coffee" [size]="22" />
               <span>{{ i18n.t('nav.game') }}</span>
@@ -121,11 +134,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             <button class="more-menu__item" (click)="navigateFromMore('/history')">
               <app-icon name="clock" [size]="22" />
               <span>{{ i18n.t('history.title') }}</span>
-              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
-            </button>
-            <button class="more-menu__item" (click)="navigateFromMore('/playlists')">
-              <app-icon name="list-video" [size]="22" />
-              <span>{{ i18n.t('nav.playlists') }}</span>
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
             <div class="more-menu__divider"></div>
@@ -263,7 +271,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: calc(var(--space-md) + var(--safe-area-top)) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
+        padding: var(--space-md) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {
@@ -287,7 +295,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: calc(var(--space-sm) + var(--safe-area-top)) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
+        padding: var(--space-sm) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {

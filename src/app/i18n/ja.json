@@ -9,9 +9,11 @@
     },
     "nav": {
         "video": "動画",
+        "learn": "学習",
         "added": "追加済み",
         "words": "単語",
         "study": "学習",
+        "explore": "探す",
         "settings": "設定",
         "newVideo": "新しい動画",
         "playlists": "プレイリスト",

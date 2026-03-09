@@ -30,7 +30,7 @@
         <a class="nav-item" routerLink="/video" routerLinkActive="active">
             <app-icon name="play-circle" [size]="20" />
             @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.video') }}</span>
+            <span>{{ i18n.t('nav.learn') }}</span>
             }
         </a>
         <a class="nav-item" routerLink="/dictionary" routerLinkActive="active">
@@ -45,10 +45,10 @@
             <span>{{ i18n.t('nav.study') }}</span>
             }
         </a>
-        <a class="nav-item" routerLink="/playlists" routerLinkActive="active">
-            <app-icon name="list-video" [size]="20" />
+        <a class="nav-item" routerLink="/explore" routerLinkActive="active">
+            <app-icon name="globe" [size]="20" />
             @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.playlists') || 'Playlists' }}</span>
+            <span>{{ i18n.t('nav.explore') }}</span>
             }
         </a>
         <a class="nav-item" routerLink="/history" routerLinkActive="active">

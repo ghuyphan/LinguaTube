@@ -9,9 +9,11 @@
     },
     "nav": {
         "video": "Video",
+        "learn": "Learn",
         "added": "Added",
         "words": "Words",
         "study": "Study",
+        "explore": "Explore",
         "settings": "Settings",
         "newVideo": "New Video",
         "playlists": "Playlists",

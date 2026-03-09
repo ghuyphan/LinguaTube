@@ -9,9 +9,11 @@
     },
     "nav": {
         "video": "동영상",
+        "learn": "학습",
         "added": "추가됨",
         "words": "단어",
         "study": "학습",
+        "explore": "탐색",
         "settings": "설정",
         "newVideo": "새 동영상",
         "playlists": "재생목록",

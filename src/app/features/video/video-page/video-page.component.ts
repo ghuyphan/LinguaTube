@@ -16,7 +16,7 @@ import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { ExpandablePlaylistComponent } from '../../playlist/expandable-playlist/expandable-playlist.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Token } from '../../../models';
+import { Playlist, Token } from '../../../models';
 
 @Component({
   selector: 'app-video-page',
@@ -123,10 +123,232 @@ import { Token } from '../../../models';
       display: block;
     }
 
-      .layout-main.has-video-bar {
-         /* Padding when video bar is visible */
-         padding-bottom: 72px;
-      }
+    .learn-home {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      overflow: hidden;
+    }
+
+    .learn-home__hero {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      border-radius: var(--border-radius-lg);
+      background:
+        radial-gradient(circle at top left, rgba(var(--accent-primary-rgb), 0.18), transparent 52%),
+        linear-gradient(180deg, rgba(var(--accent-primary-rgb), 0.08), rgba(var(--accent-primary-rgb), 0.03));
+      border: 1px solid rgba(var(--accent-primary-rgb), 0.12);
+    }
+
+    .learn-home__hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .learn-home__eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+    }
+
+    .learn-home__title {
+      margin: 0;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      color: var(--text-primary);
+    }
+
+    .learn-home__subtitle {
+      margin: 0;
+      color: var(--text-secondary);
+      max-width: 32rem;
+    }
+
+    .learn-home__hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .learn-home__quick-grid,
+    .learn-home__history-list,
+    .learn-home__playlist-grid {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .learn-home__quick-grid,
+    .learn-home__history-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .learn-home__playlist-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .quick-link-card,
+    .history-resume-card,
+    .featured-playlist-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      background: var(--bg-card);
+      color: inherit;
+    }
+
+    .quick-link-card {
+      display: flex;
+      align-items: start;
+      gap: var(--space-sm);
+      padding: var(--space-md);
+      text-align: left;
+    }
+
+    .quick-link-card div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .quick-link-card strong {
+      color: var(--text-primary);
+    }
+
+    .quick-link-card span {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .learn-home__section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .learn-home__section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .learn-home__section-header h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .learn-home__link-btn {
+      border: none;
+      background: none;
+      color: var(--accent-primary);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .history-resume-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm);
+      text-align: left;
+    }
+
+    .history-resume-card img {
+      width: 4.5rem;
+      height: 3.25rem;
+      border-radius: var(--border-radius);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .history-resume-card__copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      flex: 1;
+    }
+
+    .history-resume-card__copy strong,
+    .featured-playlist-card__body strong {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .history-resume-card__copy span,
+    .featured-playlist-card__body span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .featured-playlist-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .featured-playlist-card__thumb {
+      aspect-ratio: 16 / 9;
+      background: var(--bg-secondary);
+      overflow: hidden;
+    }
+
+    .featured-playlist-card__thumb img,
+    .featured-playlist-card__placeholder {
+      width: 100%;
+      height: 100%;
+    }
+
+    .featured-playlist-card__thumb img {
+      object-fit: cover;
+    }
+
+    .featured-playlist-card__placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .featured-playlist-card__body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: var(--space-md);
+    }
+
+    .learn-home__empty {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding: var(--space-md);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--border-radius-lg);
+      background: var(--bg-secondary);
+    }
+
+    .learn-home__empty p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .layout-main.has-video-bar {
+       /* Padding when video bar is visible */
+       padding-bottom: 72px;
+    }
 
       /* ============================================
          MOBILE VIDEO BAR - REMOVED (Replaced by ExpandablePlaylistComponent)
@@ -162,6 +384,22 @@ import { Token } from '../../../models';
       .layout-main {
         gap: var(--space-md);
         padding-bottom: 16px;
+      }
+
+      .learn-home {
+        padding: var(--space-md);
+      }
+
+      .learn-home__hero,
+      .learn-home__empty {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .learn-home__quick-grid,
+      .learn-home__history-list,
+      .learn-home__playlist-grid {
+        grid-template-columns: 1fr;
       }
       
       .layout-main.has-video-bar {
@@ -271,6 +509,18 @@ export class VideoPageComponent implements OnInit {
     return this.playlistService.currentIndex() < playlist.videos.length - 1 || this.playlistService.isLooping();
   });
 
+  showLearnHome = computed(() => !this.youtube.currentVideo() && !this.youtube.pendingVideoId());
+  currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
+  recentHistoryItems = computed(() => this.historyService.historyByLanguage().slice(0, 3));
+  featuredPlaylists = computed(() => {
+    const language = this.settings.settings().language;
+    const community = this.playlistService.communityPlaylists();
+    const featured = community.filter(playlist => playlist.language === language && playlist.isFeatured);
+    const fallback = community.filter(playlist => playlist.language === language);
+    const list = featured.length > 0 ? featured : fallback;
+    return list.slice(0, 3);
+  });
+
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
   isVideoFullscreen = signal(false);
@@ -320,6 +570,10 @@ export class VideoPageComponent implements OnInit {
   private skipNextMismatchDialog = false;
 
   constructor() {
+    if (this.playlistService.communityPlaylists().length === 0) {
+      void this.playlistService.loadCommunityPlaylists();
+    }
+
     // Watch for language changes and refetch captions when language changes
     effect(() => {
       const currentLang = this.settings.settings().language;
@@ -521,8 +775,34 @@ export class VideoPageComponent implements OnInit {
             }
           },
           error: (err) => console.error('[VideoPage] Manual AI error:', err)
-        });
+      });
     }
+  }
+
+  navigateTo(route: string): void {
+    void this.router.navigate([route]);
+  }
+
+  openExplore(): void {
+    void this.router.navigate(['/explore']);
+  }
+
+  resumeHistory(videoId: string): void {
+    void this.router.navigate(['/video'], { queryParams: { id: videoId } });
+  }
+
+  startPlaylist(playlist: Playlist): void {
+    const firstVideoId = playlist.videoIds[0];
+    if (!firstVideoId) {
+      return;
+    }
+
+    void this.router.navigate(['/video'], {
+      queryParams: {
+        id: firstVideoId,
+        playlist: playlist.id
+      }
+    });
   }
 
   // Playlist Menu Actions

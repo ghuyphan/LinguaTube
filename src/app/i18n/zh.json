@@ -9,9 +9,11 @@
     },
     "nav": {
         "video": "视频",
+        "learn": "学习",
         "added": "已添加",
         "words": "词汇",
         "study": "学习",
+        "explore": "发现",
         "settings": "设置",
         "newVideo": "新视频",
         "playlists": "播放列表",

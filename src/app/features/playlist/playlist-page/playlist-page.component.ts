@@ -33,7 +33,7 @@ export class PlaylistPageComponent {
     showCreateDialog = signal(false);
     editingPlaylist = signal<Playlist | null>(null);
 
-    view = signal<'my' | 'community'>('my');
+    view = signal<'community' | 'curated' | 'my'>('community');
 
     // Menu State
     menuOpen = signal(false);
@@ -57,13 +57,27 @@ export class PlaylistPageComponent {
 
     playlists = this.playlistService.myPlaylists;
     communityPlaylists = this.playlistService.communityPlaylists;
+    featuredPlaylists = computed(() => this.communityPlaylists().filter(playlist => playlist.isFeatured));
 
     currentList = computed(() => {
-        const list = this.view() === 'my' ? this.playlists() : this.communityPlaylists();
+        let list: Playlist[];
+        if (this.view() === 'my') {
+            list = this.playlists();
+        } else if (this.view() === 'curated') {
+            list = this.featuredPlaylists();
+        } else {
+            list = this.communityPlaylists();
+        }
+
         const filter = this.languageFilter();
         if (filter === 'all') return list;
         return list.filter(p => p.language === filter);
     });
+
+    constructor() {
+        void this.playlistService.loadUserPlaylists();
+        void this.playlistService.loadCommunityPlaylists();
+    }
 
     // Pagination
     currentPage = signal(1);
@@ -161,11 +175,11 @@ export class PlaylistPageComponent {
         this.editingPlaylist.set(null);
     }
 
-    setView(view: 'my' | 'community'): void {
+    setView(view: 'community' | 'curated' | 'my'): void {
         this.shouldAnimate.set(true);
         this.view.set(view);
         this.viewingPlaylist.set(null); // Reset detail view when switching tabs
-        if (view === 'community' && this.communityPlaylists().length === 0) {
+        if ((view === 'community' || view === 'curated') && this.communityPlaylists().length === 0) {
             this.playlistService.loadCommunityPlaylists();
         }
     }

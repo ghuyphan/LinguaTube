@@ -18,14 +18,19 @@ export const routes: Routes = [
             .then(m => m.StudyPageComponent)
     },
     {
+        path: 'explore',
+        loadComponent: () => import('./features/playlist/playlist-page/playlist-page.component')
+            .then(m => m.PlaylistPageComponent)
+    },
+    {
         path: 'history',
         loadComponent: () => import('./features/history/history-page/history-page.component')
             .then(m => m.HistoryPageComponent)
     },
     {
         path: 'playlists',
-        loadComponent: () => import('./features/playlist/playlist-page/playlist-page.component')
-            .then(m => m.PlaylistPageComponent)
+        redirectTo: 'explore',
+        pathMatch: 'full'
     },
     {
         path: 'game',

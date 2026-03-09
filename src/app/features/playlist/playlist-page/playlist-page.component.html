@@ -5,29 +5,37 @@
         <div class="card playlist-panel" [class.panel-filled]="playlistService.isLoading() || currentList().length > 0">
             <div class="panel-header">
                 <div class="panel-header__row">
-                    <app-icon name="list-video" [size]="20" class="panel-header__icon" />
-                    <h2 class="panel-header__title">{{ i18n.t('playlist.title') }}</h2>
+                    <app-icon name="globe" [size]="20" class="panel-header__icon" />
+                    <h2 class="panel-header__title">{{ i18n.t('nav.explore') }}</h2>
                 </div>
                 <div class="panel-badges">
-                    <span class="badge badge--primary">{{ playlists().length }} {{ i18n.t('playlist.myPlaylists')
-                        }}</span>
                     @if (communityPlaylists().length > 0) {
                     <span class="badge badge--accent">{{ communityPlaylists().length }} {{ i18n.t('playlist.community')
                         }}</span>
                     }
+                    @if (featuredPlaylists().length > 0) {
+                    <span class="badge badge--primary">{{ featuredPlaylists().length }} {{ i18n.t('playlist.curated')
+                        }}</span>
+                    }
+                    <span class="badge badge--primary">{{ playlists().length }} {{ i18n.t('playlist.myPlaylists')
+                        }}</span>
                 </div>
             </div>
 
             <div class="filter-chips">
-                <button class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')">
-                    <app-icon name="user" [size]="14" />
-                    <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
-                </button>
                 <button class="filter-chip" [class.active]="view() === 'community'" (click)="setView('community')">
                     <app-icon name="globe" [size]="14" />
                     <span class="chip-text">{{ i18n.t('playlist.community') }}</span>
                 </button>
-                @if (view() === 'community') {
+                <button class="filter-chip" [class.active]="view() === 'curated'" (click)="setView('curated')">
+                    <app-icon name="sparkles" [size]="14" />
+                    <span class="chip-text">{{ i18n.t('playlist.curated') }}</span>
+                </button>
+                <button class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')">
+                    <app-icon name="user" [size]="14" />
+                    <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
+                </button>
+                @if (view() !== 'my') {
                 <button class="filter-chip filter-chip--circle" (click)="showLanguageFilter.set(true)"
                     title="Filter by language">
                     @if (languageFilter() !== 'all') {
@@ -90,7 +98,7 @@
                                 <img [src]="getFlagUrl(playlist.language)" [alt]="playlist.language" class="lang-flag"
                                     loading="lazy">
                                 }
-                                <span>{{ (view() === 'my') ? i18n.t('playlist.myPlaylist') : (playlist.userName ||
+                                <span>{{ view() === 'my' ? i18n.t('playlist.myPlaylist') : (playlist.userName ||
                                     i18n.t('playlist.community')) }}</span>
                             </div>
                         </div>
@@ -212,9 +220,13 @@
 
     <aside class="page-layout__sidebar desktop-only">
         <div class="sidebar-card">
-            <h3 class="sidebar-card__title">{{ i18n.t('playlist.title') }}</h3>
+            <h3 class="sidebar-card__title">{{ i18n.t('nav.explore') }}</h3>
 
             <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-item__value">{{ featuredPlaylists().length }}</span>
+                    <span class="stat-item__label">{{ i18n.t('playlist.curated') }}</span>
+                </div>
                 <div class="stat-item">
                     <span class="stat-item__value">{{ playlists().length }}</span>
                     <span class="stat-item__label">{{ i18n.t('playlist.myPlaylists') }}</span>
