@@ -413,7 +413,7 @@ body::-webkit-scrollbar {
     bottom: 0;
     left: 0;
     right: 0;
-    height: var(--bottom-nav-height);
+    height: var(--bottom-nav-total-height);
     background: var(--bg-card);
     padding: 0;
     padding-bottom: var(--safe-area-bottom);
@@ -425,7 +425,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    height: calc(var(--bottom-nav-total-height) - var(--safe-area-bottom));
     max-width: 31.25rem;
     margin: 0 auto;
     padding: 0 var(--space-sm);

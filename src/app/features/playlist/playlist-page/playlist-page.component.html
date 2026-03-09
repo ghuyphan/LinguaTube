@@ -1,6 +1,7 @@
 <div class="page-layout">
     <div class="page-layout__main">
-        <!-- Main Playlist Panel -->
+
+        @if (!viewingPlaylist()) {
         <div class="card playlist-panel" [class.panel-filled]="playlistService.isLoading() || currentList().length > 0">
             <div class="panel-header">
                 <div class="panel-header__row">
@@ -17,7 +18,6 @@
                 </div>
             </div>
 
-            <!-- Filters & Actions -->
             <div class="filter-chips">
                 <button class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')">
                     <app-icon name="user" [size]="14" />
@@ -43,15 +43,12 @@
                 </button>
             </div>
 
-            <!-- Content Grid -->
             <div class="panel-content">
                 @if (playlistService.isLoading() && currentList().length === 0) {
-                <!-- Skeleton Loading State -->
                 <div class="grid skeleton-container">
                     @for (_ of [1,2,3,4,5,6,7,8]; track $index) {
                     <div class="card playlist-card playlist-card--skeleton">
                         <div class="card-thumbnail skeleton-box">
-                            <!-- Skeleton for video count badge -->
                             <div class="skeleton-badge"></div>
                         </div>
                         <div class="card-content">
@@ -66,10 +63,9 @@
                     }
                 </div>
                 } @else if (currentList().length > 0) {
-                <!-- Simple grid with CSS content-visibility for performance -->
                 <div class="grid" [class.animate-content]="shouldAnimate()">
                     @for (playlist of paginatedPlaylists(); track playlist.id) {
-                    <div class="card card-interactive playlist-card" (click)="playPlaylist(playlist)">
+                    <div class="card card-interactive playlist-card" (click)="openPlaylistDetail(playlist)">
                         <div class="card-thumbnail">
                             @if (playlist.thumbnail) {
                             <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" decoding="async">
@@ -83,7 +79,6 @@
                                 <span>{{ playlist.videoIds.length }}</span>
                             </div>
 
-                            <!-- Menu Button (Visible on Hover/Touch) -->
                             <button class="menu-btn" (click)="openMenu(playlist, $event)">
                                 <app-icon name="more-vertical" [size]="16" />
                             </button>
@@ -108,21 +103,100 @@
                         <app-mascot mood="thinking"></app-mascot>
                     </div>
                     <div class="empty-state__text" style="align-items: center; text-align: center;">
-                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle')
-                            :
+                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') :
                             i18n.t('playlist.empty.communityTitle') }}</p>
-                        <p class="empty-state__description">{{ view() === 'my' ?
-                            i18n.t('playlist.empty.myHint') :
+                        <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') :
                             i18n.t('playlist.empty.communityHint') }}</p>
                     </div>
                 </div>
                 }
             </div>
         </div>
+
+        } @else {
+
+        <div class="card playlist-detail-panel">
+            <div class="panel-header detail-nav">
+                <button class="btn btn-ghost btn-sm" (click)="closeDetail()">
+                    <app-icon name="arrow-left" [size]="20" />
+                    <span>{{ i18n.t('common.back') || 'Back' }}</span>
+                </button>
+                <div class="detail-actions-right">
+                    <button class="btn btn-icon btn-ghost" (click)="openMenu(viewingPlaylist()!, $event)">
+                        <app-icon name="more-vertical" [size]="20" />
+                    </button>
+                </div>
+            </div>
+
+            <div class="detail-hero">
+                <div class="detail-thumbnail">
+                    @if (viewingPlaylist()!.thumbnail) {
+                    <img [src]="viewingPlaylist()!.thumbnail" [alt]="viewingPlaylist()!.title">
+                    } @else {
+                    <div class="placeholder-icon">
+                        <app-icon name="list-video" [size]="48" />
+                    </div>
+                    }
+                </div>
+                <div class="detail-info">
+                    <h2 class="detail-title">{{ viewingPlaylist()!.title }}</h2>
+                    <div class="detail-meta">
+                        @if (viewingPlaylist()!.language) {
+                        <img [src]="getFlagUrl(viewingPlaylist()!.language)" class="lang-flag" alt="">
+                        }
+                        <span>{{ (view() === 'my') ? i18n.t('playlist.myPlaylist') : (viewingPlaylist()!.userName ||
+                            i18n.t('playlist.community')) }}</span>
+                        <span class="meta-dot">•</span>
+                        <span>{{ getVideoCountLabel(viewingPlaylist()!.videoIds.length) }}</span>
+                    </div>
+                    <div class="detail-controls">
+                        <button class="btn btn-primary btn-play-all" (click)="playAll()"
+                            [disabled]="viewingPlaylist()!.videoIds.length === 0">
+                            <app-icon name="play" [size]="18" />
+                            <span>{{ i18n.t('playlist.playAll') || 'Play All' }}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-tracklist">
+                <h3 class="tracklist-title">{{ i18n.t('playlist.videos') || 'Videos' }}</h3>
+                @if (viewingPlaylist()!.videoIds.length > 0) {
+                <div class="track-list">
+                    @for (vid of viewingPlaylist()!.videoIds; track vid; let i = $index) {
+                    <div class="track-item" (click)="playSpecificVideo(vid)">
+                        <div class="track-index">
+                            <span class="index-num">{{ i + 1 }}</span>
+                            <button class="btn btn-icon btn-ghost play-btn">
+                                <app-icon name="play" [size]="18" />
+                            </button>
+                        </div>
+                        <div class="track-thumbnail">
+                            <img [src]="'https://img.youtube.com/vi/' + vid + '/mqdefault.jpg'" alt="Video Thumbnail"
+                                loading="lazy">
+                        </div>
+                        <div class="track-details">
+                            <span class="track-name">Video ID: {{ vid }}</span>
+                        </div>
+                    </div>
+                    }
+                </div>
+                } @else {
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__mascot" style="width: 100px; height: 100px; margin-bottom: 1rem;">
+                        <app-mascot mood="sad"></app-mascot>
+                    </div>
+                    <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') || 'No videos have been added
+                        to this playlist yet.' }}</p>
+                </div>
+                }
+            </div>
+        </div>
+
+        }
     </div>
 
-    <!-- Pagination -->
-    @if (totalPages() > 1) {
+    @if (!viewingPlaylist() && totalPages() > 1) {
     <div class="playlist-pagination">
         <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === 1" (click)="prevPage()">
             <app-icon name="chevron-left" [size]="16" />
@@ -136,7 +210,6 @@
     </div>
     }
 
-    <!-- Desktop Sidebar -->
     <aside class="page-layout__sidebar desktop-only">
         <div class="sidebar-card">
             <h3 class="sidebar-card__title">{{ i18n.t('playlist.title') }}</h3>
@@ -159,7 +232,6 @@
     (created)="playlistService.loadUserPlaylists()" (updated)="playlistService.loadUserPlaylists()">
 </app-create-playlist-dialog>
 
-<!-- Menu Actions -->
 <app-bottom-sheet [isOpen]="menuOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="closeMenu()">
     <div class="menu-content">
         @if (selectedPlaylist(); as p) {
@@ -187,7 +259,6 @@
     </div>
 </app-bottom-sheet>
 
-<!-- Toast -->
 @if (toastMessage()) {
 <div class="toast toast--success">
     <app-icon name="check" [size]="16"></app-icon>
@@ -195,7 +266,6 @@
 </div>
 }
 
-<!-- Delete Confirmation -->
 <app-bottom-sheet [isOpen]="deleteConfirmationOpen()" [allowBackdropClose]="true" [showCloseButton]="true"
     (closed)="cancelDelete()">
     <div class="confirm-sheet">
@@ -217,7 +287,6 @@
     </div>
 </app-bottom-sheet>
 
-<!-- Language Filter Picker -->
 <app-option-picker [options]="languageFilterOptions" [value]="languageFilter()" [isOpen]="showLanguageFilter()"
     [title]="i18n.t('playlist.filterByLanguage') || 'Filter by Language'" (selected)="onLanguageFilterChange($event)"
     (closed)="showLanguageFilter.set(false)" />

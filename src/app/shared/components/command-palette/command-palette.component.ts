@@ -260,7 +260,7 @@ import { I18nService } from '../../../services';
 
       .palette {
         max-width: 100%;
-        height: 100vh;
+        height: var(--app-height, 100dvh);
         border-radius: 0;
         box-shadow: none;
         display: flex;

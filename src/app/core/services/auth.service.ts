@@ -12,6 +12,8 @@ export interface UserProfile {
     subscriptionExpires?: Date;
 }
 
+type OAuthPopup = Window | null;
+
 /**
  * Auth Service
  * Handles authentication via PocketBase with multi-provider support
@@ -72,12 +74,21 @@ export class AuthService {
      * Login with Google OAuth
      * Opens a popup for Google authentication
      */
-    async loginWithGoogle(): Promise<UserProfile> {
+    prepareOAuthPopup(): OAuthPopup {
+        return this.openOAuthPopup();
+    }
+
+    async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile> {
+        let oauthPopup = preopenedPopup;
+
         try {
             const client = await this.pb.getClient();
             const authData = await client.collection('users').authWithOAuth2({
                 provider: 'google',
-                scopes: ['email', 'profile']
+                scopes: ['email', 'profile'],
+                urlCallback: (url: string) => {
+                    oauthPopup = this.openOrReuseOAuthPopup(url, oauthPopup);
+                }
             });
 
             const profile = this.modelToProfile(authData.record);
@@ -97,6 +108,10 @@ export class AuthService {
         } catch (error) {
             console.error('[Auth] Google login failed:', error);
             throw error;
+        } finally {
+            if (oauthPopup && !oauthPopup.closed) {
+                oauthPopup.close();
+            }
         }
     }
 
@@ -226,5 +241,48 @@ export class AuthService {
         }
 
         return true;
+    }
+
+    private openOrReuseOAuthPopup(url: string, popup: OAuthPopup): Window {
+        const target = popup && !popup.closed ? popup : this.openOAuthPopup(url);
+
+        if (!target) {
+            throw new Error('Unable to open Google sign-in window. Please allow popups and try again.');
+        }
+
+        try {
+            target.location.href = url;
+        } catch {
+            const fallbackPopup = this.openOAuthPopup(url);
+            if (!fallbackPopup) {
+                throw new Error('Unable to open Google sign-in window. Please allow popups and try again.');
+            }
+            fallbackPopup.focus();
+            return fallbackPopup;
+        }
+
+        target.focus();
+        return target;
+    }
+
+    private openOAuthPopup(url = ''): OAuthPopup {
+        if (typeof window === 'undefined' || typeof window.open !== 'function') {
+            return null;
+        }
+
+        let width = 1024;
+        let height = 768;
+
+        width = Math.min(width, window.innerWidth);
+        height = Math.min(height, window.innerHeight);
+
+        const left = (window.innerWidth - width) / 2;
+        const top = (window.innerHeight - height) / 2;
+
+        return window.open(
+            url,
+            'google_oauth_popup',
+            `width=${width},height=${height},top=${top},left=${left},resizable,menubar=no`
+        );
     }
 }

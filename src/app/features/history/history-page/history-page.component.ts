@@ -184,13 +184,13 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
     app-history-list {
       display: block;
       /* Explicit height required for virtual scroll */
-      height: calc(100vh - 220px); 
+      height: calc(var(--app-height, 100dvh) - 220px); 
       overflow: hidden;
     }
     
     @media (max-width: 768px) {
       app-history-list {
-         height: calc(100vh - 280px); /* Account for bottom nav */
+         height: calc(var(--app-height, 100dvh) - 280px); /* Account for bottom nav */
       }
     }
 

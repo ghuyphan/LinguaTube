@@ -94,7 +94,7 @@
       - Full viewport minus video player area
       - Video area = 56.25vw (16:9 iframe) + ~40px (title bar on mobile)
     */
-    height: calc(100vh - 56.25vw - 0px);
+    height: calc(var(--app-height, 100dvh) - 56.25vw - 0px);
     border-radius: var(--sheet-radius) var(--sheet-radius) 0 0;
     border-left: none;
     border-right: none;

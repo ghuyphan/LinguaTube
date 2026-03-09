@@ -89,17 +89,22 @@ export class SettingsSheetComponent {
   /**
    * Login with Google via PocketBase OAuth
    */
-  async loginWithGoogle(): Promise<void> {
+  loginWithGoogle(): void {
     if (this.isLoggingIn) return;
     this.isLoggingIn = true;
-    try {
-      await this.auth.loginWithGoogle();
-      this.sheet.close(); // Close sheet after successful login
-    } catch (error) {
-      console.error('[Settings] Google login failed:', error);
-    } finally {
-      this.isLoggingIn = false;
-    }
+
+    const popup = this.auth.prepareOAuthPopup();
+
+    this.auth.loginWithGoogle(popup)
+      .then(() => {
+        this.sheet.close();
+      })
+      .catch(error => {
+        console.error('[Settings] Google login failed:', error);
+      })
+      .finally(() => {
+        this.isLoggingIn = false;
+      });
   }
 
   setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {

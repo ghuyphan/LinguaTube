@@ -4,6 +4,10 @@
    GLOBAL DEFAULTS & BASE STYLES
    ============================================ */
 
+html {
+    min-height: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,8 +31,18 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
-    min-height: 100dvh;
+    min-height: var(--app-height, 100dvh);
     overflow-x: hidden;
+}
+
+@supports (-webkit-touch-callout: none) {
+    html {
+        height: -webkit-fill-available;
+    }
+
+    body {
+        min-height: -webkit-fill-available;
+    }
 }
 
 /* ============================================

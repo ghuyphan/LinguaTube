@@ -204,6 +204,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
   styles: [`
     .app {
       min-height: 100vh;
+      min-height: var(--app-height, 100dvh);
       display: flex;
       flex-direction: column;
       background: var(--bg-primary);
@@ -262,7 +263,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: var(--space-md) 0 calc(64px + var(--space-sm)) 0;
+        padding: var(--space-md) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {
@@ -286,7 +287,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: var(--space-sm) 0 calc(64px + var(--space-sm)) 0;
+        padding: var(--space-sm) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {
@@ -416,18 +417,65 @@ export class AppComponent implements OnDestroy {
   private swUpdate = inject(SwUpdate);
 
   private destroy$ = new Subject<void>();
+  private cleanupFns: Array<() => void> = [];
   private lastUpdateCheck = 0;
   private readonly UPDATE_CHECK_INTERVAL = 60 * 60 * 1000; // 1 hour
   private readonly MIN_CHECK_INTERVAL = 10 * 60 * 1000; // 10 minutes minimum between checks
 
   constructor() {
+    this.initViewportSizing();
     this.initServiceWorkerUpdates();
     this.initKeyboardShortcuts();
   }
 
   ngOnDestroy(): void {
+    this.cleanupFns.forEach(cleanup => cleanup());
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  private initViewportSizing(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    afterNextRender(() => {
+      const root = this.document.documentElement;
+      const standaloneQuery = window.matchMedia('(display-mode: standalone)');
+      const updateViewportState = () => {
+        const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+        root.style.setProperty('--app-height', `${Math.round(viewportHeight)}px`);
+
+        const isStandalone = standaloneQuery.matches ||
+          (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
+
+        root.classList.toggle('standalone-mode', isStandalone);
+      };
+
+      updateViewportState();
+
+      const handleResize = () => updateViewportState();
+
+      window.addEventListener('resize', handleResize, { passive: true });
+      window.addEventListener('orientationchange', handleResize);
+      this.cleanupFns.push(() => {
+        window.removeEventListener('resize', handleResize);
+        window.removeEventListener('orientationchange', handleResize);
+      });
+
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', handleResize);
+        this.cleanupFns.push(() => window.visualViewport?.removeEventListener('resize', handleResize));
+      }
+
+      if (typeof standaloneQuery.addEventListener === 'function') {
+        standaloneQuery.addEventListener('change', handleResize);
+        this.cleanupFns.push(() => standaloneQuery.removeEventListener('change', handleResize));
+      } else {
+        standaloneQuery.addListener(handleResize);
+        this.cleanupFns.push(() => standaloneQuery.removeListener(handleResize));
+      }
+    }, { injector: this.injector });
   }
 
   /**

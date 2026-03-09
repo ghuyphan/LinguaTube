@@ -10,6 +10,7 @@ import { I18nService } from '../../../services';
 import { Playlist, PlaylistLanguage } from '../../../models';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { MascotComponent } from '../../../components/mascot/mascot.component';
 
 const LANGUAGES = [
     { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
@@ -17,8 +18,6 @@ const LANGUAGES = [
     { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
     { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
 ];
-
-import { MascotComponent } from '../../../components/mascot/mascot.component';
 
 @Component({
     selector: 'app-playlist-page',
@@ -44,6 +43,9 @@ export class PlaylistPageComponent {
     selectedPlaylist = signal<Playlist | null>(null);
     toastMessage = signal('');
 
+    // Detail View State
+    viewingPlaylist = signal<Playlist | null>(null);
+
     // Language Filter
     languageFilter = signal<'all' | PlaylistLanguage>('all');
     showLanguageFilter = signal(false);
@@ -53,8 +55,6 @@ export class PlaylistPageComponent {
     ];
 
     // Animation State
-    // Default to animating (true) only if we have NO data initially.
-    // If we have data, we skip the initial animation (false) to avoid "flash" on tab switch.
     shouldAnimate = signal(this.playlistService.myPlaylists().length === 0);
 
     playlists = this.playlistService.myPlaylists;
@@ -69,7 +69,7 @@ export class PlaylistPageComponent {
 
     // Pagination
     currentPage = signal(1);
-    pageSize = 24; // Grid usually fits 3-4 columns, 24 is a good multiple (3x8, 4x6)
+    pageSize = 24;
 
     paginatedPlaylists = computed(() => {
         const list = this.currentList();
@@ -134,7 +134,6 @@ export class PlaylistPageComponent {
 
     onDeletePlaylist(): void {
         this.closeMenu();
-        // Delay opening confirmation slightly to allow menu transition
         setTimeout(() => {
             this.deleteConfirmationOpen.set(true);
         }, 100);
@@ -147,6 +146,11 @@ export class PlaylistPageComponent {
         }
         this.deleteConfirmationOpen.set(false);
         this.selectedPlaylist.set(null);
+
+        // Return to list view if deleting the currently viewed playlist
+        if (this.viewingPlaylist()?.id === p?.id) {
+            this.viewingPlaylist.set(null);
+        }
     }
 
     cancelDelete(): void {
@@ -162,21 +166,44 @@ export class PlaylistPageComponent {
     setView(view: 'my' | 'community'): void {
         this.shouldAnimate.set(true);
         this.view.set(view);
+        this.viewingPlaylist.set(null); // Reset detail view when switching tabs
         if (view === 'community' && this.communityPlaylists().length === 0) {
             this.playlistService.loadCommunityPlaylists();
         }
     }
 
-    playPlaylist(playlist: Playlist): void {
-        if (playlist.videoIds.length === 0) return;
+    // Detail View Methods
+    openPlaylistDetail(playlist: Playlist): void {
+        this.viewingPlaylist.set(playlist);
+        this.scrollToTop();
+    }
 
-        // Navigate to video page, loading first video and setting playlist context
-        this.router.navigate(['/video'], {
-            queryParams: {
-                id: playlist.videoIds[0],
-                playlist: playlist.id
-            }
-        });
+    closeDetail(): void {
+        this.viewingPlaylist.set(null);
+    }
+
+    playAll(): void {
+        const p = this.viewingPlaylist();
+        if (p && p.videoIds.length > 0) {
+            this.router.navigate(['/video'], {
+                queryParams: {
+                    id: p.videoIds[0],
+                    playlist: p.id
+                }
+            });
+        }
+    }
+
+    playSpecificVideo(videoId: string): void {
+        const p = this.viewingPlaylist();
+        if (p) {
+            this.router.navigate(['/video'], {
+                queryParams: {
+                    id: videoId,
+                    playlist: p.id
+                }
+            });
+        }
     }
 
     getCreatorLabel(userId: string): string {

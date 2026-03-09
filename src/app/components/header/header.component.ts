@@ -34,16 +34,19 @@ export class HeaderComponent {
   /**
    * Login with Google via PocketBase OAuth
    */
-  async loginWithGoogle(): Promise<void> {
+  loginWithGoogle(): void {
     if (this.isLoggingIn) return;
     this.isLoggingIn = true;
-    try {
-      await this.auth.loginWithGoogle();
-    } catch (error) {
-      console.error('[Header] Google login failed:', error);
-    } finally {
-      this.isLoggingIn = false;
-    }
+
+    const popup = this.auth.prepareOAuthPopup();
+
+    this.auth.loginWithGoogle(popup)
+      .catch(error => {
+        console.error('[Header] Google login failed:', error);
+      })
+      .finally(() => {
+        this.isLoggingIn = false;
+      });
   }
 
   setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
@@ -83,4 +86,3 @@ export class HeaderComponent {
     this.showLangMenu = false;
   }
 }
-

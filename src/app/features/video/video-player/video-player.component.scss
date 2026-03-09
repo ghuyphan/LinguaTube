@@ -329,7 +329,7 @@ $transition-normal: 0.25s ease;
     position: fixed;
     inset: 0;
     width: 100vw;
-    height: 100vh;
+    height: var(--app-height, 100dvh);
     z-index: 9998;
     background: #000;
     border-radius: 0;
@@ -352,7 +352,7 @@ $transition-normal: 0.25s ease;
   .is-fullscreen & {
     aspect-ratio: auto;
     padding-bottom: 0;
-    height: 100vh;
+    height: var(--app-height, 100dvh);
   }
 }
 

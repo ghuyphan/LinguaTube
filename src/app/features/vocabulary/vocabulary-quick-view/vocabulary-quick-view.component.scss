@@ -101,7 +101,7 @@
     .quick-view {
         padding: var(--space-sm) var(--space-md);
         padding-bottom: var(--space-md);
-        max-height: calc(100vh - 120px);
+        max-height: calc(var(--app-height, 100dvh) - 120px);
     }
 
     .quick-view-header {

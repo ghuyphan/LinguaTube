@@ -86,15 +86,18 @@ export class SidebarComponent {
     /**
      * Login with Google via PocketBase OAuth
      */
-    async loginWithGoogle(): Promise<void> {
+    loginWithGoogle(): void {
         if (this.isLoggingIn) return;
         this.isLoggingIn = true;
-        try {
-            await this.auth.loginWithGoogle();
-        } catch (error) {
-            console.error('[Sidebar] Google login failed:', error);
-        } finally {
-            this.isLoggingIn = false;
-        }
+
+        const popup = this.auth.prepareOAuthPopup();
+
+        this.auth.loginWithGoogle(popup)
+            .catch(error => {
+                console.error('[Sidebar] Google login failed:', error);
+            })
+            .finally(() => {
+                this.isLoggingIn = false;
+            });
     }
 }
