@@ -195,7 +195,9 @@
         "learningDisplayHint": "Keep subtitles and study cards in the same script mode",
         "kanjiOnly": "Kanji only",
         "kanjiFurigana": "Kanji + Furigana",
+        "kanjiRomaji": "Kanji + Romaji",
         "kanaOnly": "Kana only",
+        "romajiOnly": "Romaji only",
         "hanziOnly": "Hanzi only",
         "hanziPinyin": "Hanzi + Pinyin",
         "pinyinOnly": "Pinyin only",
@@ -298,6 +300,9 @@
         "save": "Save",
         "videoCount": "{{count}} video{{plural}}",
         "updated": "Updated {{date}}",
+        "playAll": "Play All",
+        "videos": "Videos",
+        "emptyVideo": "No videos have been added to this playlist yet.",
         "empty": {
             "myTitle": "No playlists yet",
             "myHint": "Create one to get started!",
@@ -354,7 +359,8 @@
         "loading": "Loading...",
         "error": "Error",
         "success": "Success",
-        "off": "Off"
+        "off": "Off",
+        "back": "Back"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

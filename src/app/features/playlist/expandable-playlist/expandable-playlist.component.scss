@@ -62,7 +62,7 @@
     flex-direction: column;
 
     /* Default: Collapsed Pill State */
-    bottom: calc(var(--bottom-nav-height) + var(--bar-margin));
+    bottom: calc(var(--bottom-nav-total-height) + var(--bar-margin));
     left: var(--bar-margin);
     right: var(--bar-margin);
     height: var(--bar-height);

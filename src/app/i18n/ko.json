@@ -193,7 +193,9 @@
         "learningDisplayHint": "자막과 학습 카드의 표기를 동일하게 유지합니다",
         "kanjiOnly": "한자만",
         "kanjiFurigana": "한자 + 후리가나",
+        "kanjiRomaji": "한자 + 로마자",
         "kanaOnly": "가나만",
+        "romajiOnly": "로마자만",
         "hanziOnly": "한자만",
         "hanziPinyin": "한자 + 병음",
         "pinyinOnly": "병음만",
@@ -296,6 +298,9 @@
         "save": "저장",
         "videoCount": "동영상 {{count}}개",
         "updated": "{{date}}에 업데이트됨",
+        "playAll": "모두 재생",
+        "videos": "동영상",
+        "emptyVideo": "이 재생목록에는 아직 동영상이 없습니다.",
         "empty": {
             "myTitle": "재생목록이 없습니다",
             "myHint": "하나 만들어 시작하세요!",
@@ -352,7 +357,8 @@
         "loading": "로딩 중...",
         "error": "오류",
         "success": "성공",
-        "off": "끄기"
+        "off": "끄기",
+        "back": "뒤로"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

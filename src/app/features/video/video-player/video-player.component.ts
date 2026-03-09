@@ -208,6 +208,8 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
       case 'ja':
         if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
         if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
+        if (mode === 'annotatedRomanized') return this.i18n.t('settings.kanjiRomaji');
+        if (mode === 'romanized') return this.i18n.t('settings.romajiOnly');
         return this.i18n.t('settings.kanaOnly');
       case 'zh':
         if (mode === 'native') return this.i18n.t('settings.hanziOnly');
@@ -273,7 +275,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   );
 
   readingDisplayModes = computed<ReadingDisplayMode[]>(() =>
-    this.supportsReadingDisplay() ? ['native', 'annotated', 'reading'] : ['native']
+    this.settings.getAvailableReadingDisplayModes(this.activeSubtitleLanguage())
   );
 
   // Current translation for fullscreen
@@ -1274,10 +1276,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   // ============================================
 
   getFullscreenReading(token: Token): string | undefined {
-    const lang = this.settings.settings().language;
-    if (lang === 'ja') return token.reading;
-    if (lang === 'zh') return token.pinyin;
-    return token.romanization || token.pinyin;
+    return this.settings.getReadingText(this.activeSubtitleLanguage(), token) || undefined;
   }
 
   formatTime(seconds: number): string {

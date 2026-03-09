@@ -195,7 +195,9 @@
         "learningDisplayHint": "Giữ phụ đề và thẻ học cùng một kiểu chữ",
         "kanjiOnly": "Chỉ kanji",
         "kanjiFurigana": "Kanji + furigana",
+        "kanjiRomaji": "Kanji + romaji",
         "kanaOnly": "Chỉ kana",
+        "romajiOnly": "Chỉ romaji",
         "hanziOnly": "Chỉ hán tự",
         "hanziPinyin": "Hán tự + pinyin",
         "pinyinOnly": "Chỉ pinyin",
@@ -298,6 +300,9 @@
         "save": "Lưu",
         "videoCount": "{{count}} video",
         "updated": "Cập nhật {{date}}",
+        "playAll": "Phát tất cả",
+        "videos": "Video",
+        "emptyVideo": "Chưa có video nào trong danh sách này.",
         "empty": {
             "myTitle": "Chưa có danh sách phát nào",
             "myHint": "Tạo một danh sách để bắt đầu!",
@@ -354,7 +359,8 @@
         "loading": "Đang tải...",
         "error": "Lỗi",
         "success": "Thành công",
-        "off": "Tắt"
+        "off": "Tắt",
+        "back": "Quay lại"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

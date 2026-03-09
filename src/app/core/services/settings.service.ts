@@ -1,6 +1,7 @@
 import { Injectable, signal, effect, untracked, OnDestroy, inject } from '@angular/core';
 import { ReadingDisplayMode, SupportedLearningLanguage, UserSettings } from '../../models';
 import { FontLoaderService } from './font-loader.service';
+import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
 
 const STORAGE_KEY = 'linguatube_settings';
 
@@ -91,11 +92,12 @@ export class SettingsService implements OnDestroy {
       return 'native';
     }
 
-    return this.settings().readingDisplayMode;
+    return this.normalizeReadingDisplayMode(this.settings().readingDisplayMode, language);
   }
 
   showReadingAnnotation(language: SupportedLearningLanguage = this.settings().language): boolean {
-    return this.getReadingDisplayMode(language) === 'annotated';
+    const mode = this.getReadingDisplayMode(language);
+    return mode === 'annotated' || mode === 'annotatedRomanized';
   }
 
   showReadingText(language: SupportedLearningLanguage = this.settings().language): boolean {
@@ -103,14 +105,63 @@ export class SettingsService implements OnDestroy {
   }
 
   useReadingOnly(language: SupportedLearningLanguage = this.settings().language): boolean {
-    return this.getReadingDisplayMode(language) === 'reading';
+    const mode = this.getReadingDisplayMode(language);
+    return mode === 'reading' || mode === 'romanized';
+  }
+
+  prefersRomanizedReading(language: SupportedLearningLanguage = this.settings().language): boolean {
+    if (language !== 'ja') {
+      return false;
+    }
+
+    const mode = this.getReadingDisplayMode(language);
+    return mode === 'annotatedRomanized' || mode === 'romanized';
+  }
+
+  getAvailableReadingDisplayModes(
+    language: SupportedLearningLanguage = this.settings().language
+  ): ReadingDisplayMode[] {
+    if (!this.hasReadingSupport(language)) {
+      return ['native'];
+    }
+
+    if (language === 'ja') {
+      return ['native', 'annotated', 'annotatedRomanized', 'reading', 'romanized'];
+    }
+
+    return ['native', 'annotated', 'reading'];
+  }
+
+  getReadingText(
+    language: SupportedLearningLanguage,
+    source: { reading?: string; pinyin?: string; romanization?: string; surface?: string }
+  ): string | null {
+    if (language === 'ja') {
+      const kana = source.reading || (isJapaneseKanaText(source.surface) ? source.surface : undefined);
+      const romaji = source.romanization || getJapaneseRomaji(kana, source.surface);
+
+      return this.prefersRomanizedReading(language)
+        ? romaji || kana || null
+        : kana || romaji || null;
+    }
+
+    if (language === 'zh') {
+      return source.pinyin || null;
+    }
+
+    if (language === 'ko') {
+      return source.romanization || source.reading || null;
+    }
+
+    return source.reading || null;
   }
 
   setReadingDisplayMode(mode: ReadingDisplayMode): void {
-    const showReading = mode !== 'native';
+    const normalizedMode = this.normalizeReadingDisplayMode(mode, this.settings().language);
+    const showReading = normalizedMode !== 'native';
 
     this.updateSettings({
-      readingDisplayMode: mode,
+      readingDisplayMode: normalizedMode,
       showFurigana: showReading,
       showPinyin: showReading
     });
@@ -121,9 +172,10 @@ export class SettingsService implements OnDestroy {
       return;
     }
 
+    const modes = this.getAvailableReadingDisplayModes(language);
     const current = this.getReadingDisplayMode(language);
-    const next: ReadingDisplayMode =
-      current === 'native' ? 'annotated' : current === 'annotated' ? 'reading' : 'native';
+    const currentIndex = modes.indexOf(current);
+    const next = modes[(currentIndex + 1) % modes.length];
 
     this.setReadingDisplayMode(next);
   }
@@ -191,11 +243,34 @@ export class SettingsService implements OnDestroy {
 
   private getStoredReadingDisplayMode(settings: Partial<UserSettings>): ReadingDisplayMode {
     if (settings.readingDisplayMode) {
-      return settings.readingDisplayMode;
+      return this.normalizeReadingDisplayMode(
+        settings.readingDisplayMode,
+        settings.language ?? DEFAULT_SETTINGS.language
+      );
     }
 
     if (settings.showFurigana === false || settings.showPinyin === false) {
       return 'native';
+    }
+
+    return DEFAULT_SETTINGS.readingDisplayMode;
+  }
+
+  private normalizeReadingDisplayMode(
+    mode: ReadingDisplayMode,
+    language: SupportedLearningLanguage
+  ): ReadingDisplayMode {
+    const allowedModes = this.getAvailableReadingDisplayModes(language);
+    if (allowedModes.includes(mode)) {
+      return mode;
+    }
+
+    if (mode === 'annotatedRomanized') {
+      return 'annotated';
+    }
+
+    if (mode === 'romanized') {
+      return 'reading';
     }
 
     return DEFAULT_SETTINGS.readingDisplayMode;

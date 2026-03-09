@@ -16,7 +16,7 @@ export interface Token {
   surface: string;        // The word as it appears
   reading?: string;       // Hiragana reading (Japanese)
   pinyin?: string;        // Pinyin (Chinese)
-  romanization?: string;  // Romanization (Korean)
+  romanization?: string;  // Romanization (Japanese/Korean)
   baseForm?: string;      // Dictionary form
   partOfSpeech?: string;  // Noun, verb, etc.
   hasKanji?: boolean;     // Whether token contains kanji (Japanese)
@@ -30,7 +30,7 @@ export interface VocabularyItem {
   word: string;
   reading?: string;
   pinyin?: string;
-  romanization?: string;  // Korean romanization
+  romanization?: string;  // Japanese romaji / Korean romanization
   meaning: string;
   language: 'ja' | 'zh' | 'ko' | 'en';
   level: WordLevel;
@@ -59,7 +59,7 @@ export interface DictionaryEntry {
   word: string;
   reading?: string;
   pinyin?: string;
-  romanization?: string;  // Korean romanization
+  romanization?: string;  // Japanese romaji / Korean romanization
   meanings: DictionaryMeaning[];
   partOfSpeech?: string[];
   jlptLevel?: string;
@@ -83,7 +83,7 @@ export interface VideoInfo {
 }
 
 export type SupportedLearningLanguage = 'ja' | 'zh' | 'ko' | 'en';
-export type ReadingDisplayMode = 'native' | 'annotated' | 'reading';
+export type ReadingDisplayMode = 'native' | 'annotated' | 'reading' | 'annotatedRomanized' | 'romanized';
 
 // App state
 export interface AppState {

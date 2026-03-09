@@ -1,3 +1,5 @@
+import { getJapaneseRomaji } from './japanese-romaji.js';
+
 /**
  * Unified Dictionary Parsers (Cloudflare Function)
  * Parser functions for various dictionary API sources
@@ -9,6 +11,7 @@
  * @typedef {Object} DictEntry
  * @property {string} word - The word being defined
  * @property {string} [reading] - Reading/pronunciation (kana, pinyin, romanization)
+ * @property {string} [romanization] - Latin-script pronunciation when available
  * @property {string[]} definitions - Array of definitions
  * @property {string} [partOfSpeech] - Part of speech
  * @property {number} [level] - Proficiency level (JLPT, HSK, TOPIK)
@@ -64,6 +67,7 @@ export function parseJotoba(data) {
     return data.words.slice(0, 5).map(entry => {
         const word = entry.reading?.kanji || entry.reading?.kana || '';
         const reading = entry.reading?.kana || '';
+        const romanization = getJapaneseRomaji(reading, word);
 
         const definitions = [];
         entry.senses?.forEach(sense => {
@@ -79,7 +83,7 @@ export function parseJotoba(data) {
 
         const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
 
-        return { word, reading, definitions, partOfSpeech, level };
+        return { word, reading, romanization, definitions, partOfSpeech, level };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -98,6 +102,7 @@ export function parseJotobaJapanese(data) {
     return data.words.slice(0, 5).map(entry => {
         const word = entry.reading?.kanji || entry.reading?.kana || '';
         const reading = entry.reading?.kana || '';
+        const romanization = getJapaneseRomaji(reading, word);
 
         const definitions = [];
         entry.senses?.forEach(sense => {
@@ -113,7 +118,7 @@ export function parseJotobaJapanese(data) {
 
         const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
 
-        return { word, reading, definitions, partOfSpeech, level };
+        return { word, reading, romanization, definitions, partOfSpeech, level };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -135,6 +140,7 @@ export function parseMazii(response) {
     return results.slice(0, 5).map(entry => {
         const word = entry.word || '';
         const reading = entry.phonetic || entry.reading || '';
+        const romanization = getJapaneseRomaji(reading, word);
 
         // Extract definitions from means array or short_mean
         const definitions = [];
@@ -165,7 +171,7 @@ export function parseMazii(response) {
         const partOfSpeech = entry.means?.[0]?.kind || entry.type || '';
         const level = entry.level ? parseInt(String(entry.level).replace('N', '')) : null;
 
-        return { word, reading, definitions, partOfSpeech, level };
+        return { word, reading, romanization, definitions, partOfSpeech, level };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -363,6 +369,7 @@ export function parseJisho(data) {
         const japanese = entry.japanese?.[0] || {};
         const word = japanese.word || japanese.reading || '';
         const reading = japanese.reading || '';
+        const romanization = getJapaneseRomaji(reading, word);
 
         // Get definitions from senses
         const definitions = [];
@@ -383,7 +390,7 @@ export function parseJisho(data) {
         const jlptTag = entry.jlpt?.find(t => t.startsWith('jlpt-n'));
         const level = jlptTag ? parseInt(jlptTag.replace('jlpt-n', '')) : null;
 
-        return { word, reading, definitions: definitions.slice(0, 5), partOfSpeech, level };
+        return { word, reading, romanization, definitions: definitions.slice(0, 5), partOfSpeech, level };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -496,4 +503,3 @@ export async function parseKrdict(response) {
         return [];
     }
 }
-

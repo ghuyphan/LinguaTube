@@ -77,9 +77,9 @@
                             <span class="vocab-item__word" [class]="'text-' + item.language">
                                 {{ item.word }}
                             </span>
-                            @if (item.reading || item.pinyin || item.romanization) {
+                            @if (getItemReading(item); as reading) {
                             <span class="vocab-item__reading">
-                                {{ item.reading || item.pinyin || item.romanization }}
+                                {{ reading }}
                             </span>
                             }
                         </div>

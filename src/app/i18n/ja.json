@@ -193,7 +193,9 @@
         "learningDisplayHint": "字幕と学習カードの表記をそろえます",
         "kanjiOnly": "漢字のみ",
         "kanjiFurigana": "漢字 + ふりがな",
+        "kanjiRomaji": "漢字 + ローマ字",
         "kanaOnly": "かなのみ",
+        "romajiOnly": "ローマ字のみ",
         "hanziOnly": "漢字のみ",
         "hanziPinyin": "漢字 + ピンイン",
         "pinyinOnly": "ピンインのみ",
@@ -296,6 +298,9 @@
         "save": "保存",
         "videoCount": "{{count}} 本の動画",
         "updated": "{{date}} に更新",
+        "playAll": "すべて再生",
+        "videos": "動画",
+        "emptyVideo": "このプレイリストにはまだ動画がありません。",
         "empty": {
             "myTitle": "プレイリストはまだありません",
             "myHint": "作成して始めましょう！",
@@ -352,7 +357,8 @@
         "loading": "読み込み中...",
         "error": "エラー",
         "success": "成功",
-        "off": "オフ"
+        "off": "オフ",
+        "back": "戻る"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

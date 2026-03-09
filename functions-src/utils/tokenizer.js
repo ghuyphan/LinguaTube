@@ -6,6 +6,7 @@
 import * as kuromoji from '@patdx/kuromoji';
 import { pinyin } from 'pinyin-pro';
 import { convert as romanizeKorean } from 'hangul-romanization';
+import { getJapaneseRomaji, isJapaneseKanaText } from './japanese-romaji.js';
 
 // Kanji detection (CJK Unified Ideographs)
 const KANJI_REGEX = /[\u4E00-\u9FFF]/;
@@ -90,9 +91,19 @@ export async function tokenizeJapanese(text) {
             token.isPunctuation = true;
         }
 
+        const kanaReading = !isPunc && t.reading
+            ? katakanaToHiragana(t.reading)
+            : !isPunc && isJapaneseKanaText(t.surface_form)
+                ? katakanaToHiragana(t.surface_form)
+                : undefined;
+
         // Only add reading for tokens containing kanji (skip punctuation)
-        if (!isPunc && t.reading && hasKanji(t.surface_form)) {
-            token.reading = katakanaToHiragana(t.reading);
+        if (kanaReading && hasKanji(t.surface_form)) {
+            token.reading = kanaReading;
+        }
+
+        if (kanaReading) {
+            token.romanization = getJapaneseRomaji(kanaReading, t.surface_form);
         }
 
         // Add base form if different from surface
@@ -187,4 +198,3 @@ export async function tokenize(text, lang) {
 
     return tokenizeKoreanChinese(text, lang);
 }
-

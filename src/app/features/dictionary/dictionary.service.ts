@@ -4,6 +4,7 @@ import { DictionaryEntry } from '../../models';
 import { Observable, of, catchError, map, tap } from 'rxjs';
 import { I18nService, UILanguage } from '../../core/services';
 import { environment } from '../../../environments/environment';
+import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 
 @Injectable({
   providedIn: 'root'
@@ -104,6 +105,7 @@ export class DictionaryService {
         const result: DictionaryEntry = {
           word: entry.reading?.kanji || entry.reading?.kana || word,
           reading: reading,
+          romanization: getJapaneseRomaji(reading, entry.reading?.kanji || entry.reading?.kana || word),
           meanings: entry.senses?.map((sense: any) => ({
             definition: sense.glosses?.join(', ') || '',
             tags: sense.pos?.map((p: any) => extractPosString(p)).filter(Boolean) || []
@@ -289,7 +291,11 @@ export class DictionaryService {
           word: entry.word || word,
           reading: from === 'ja' || from === 'en' ? (entry.reading || '') : undefined,
           pinyin: from === 'zh' ? (entry.reading || '') : undefined,
-          romanization: from === 'ko' ? (entry.reading || '') : undefined,
+          romanization: from === 'ja'
+            ? (entry.romanization || getJapaneseRomaji(entry.reading || '', entry.word || word))
+            : from === 'ko'
+              ? (entry.romanization || entry.reading || '')
+              : undefined,
           meanings: entry.definitions?.map((def: string) => ({
             definition: def,
             examples: []
@@ -449,6 +455,7 @@ export class DictionaryService {
       '日本': {
         word: '日本',
         reading: 'にほん',
+        romanization: getJapaneseRomaji('にほん', '日本'),
         meanings: [{ definition: 'Japan' }],
         partOfSpeech: ['Noun'],
         jlptLevel: 'N5'
@@ -456,6 +463,7 @@ export class DictionaryService {
       '勉強': {
         word: '勉強',
         reading: 'べんきょう',
+        romanization: getJapaneseRomaji('べんきょう', '勉強'),
         meanings: [{ definition: 'study, diligence' }],
         partOfSpeech: ['Noun', 'Suru verb'],
         jlptLevel: 'N5'
@@ -463,6 +471,7 @@ export class DictionaryService {
       '食べる': {
         word: '食べる',
         reading: 'たべる',
+        romanization: getJapaneseRomaji('たべる', '食べる'),
         meanings: [{ definition: 'to eat' }],
         partOfSpeech: ['Ichidan verb'],
         jlptLevel: 'N5'
@@ -470,6 +479,7 @@ export class DictionaryService {
       '見る': {
         word: '見る',
         reading: 'みる',
+        romanization: getJapaneseRomaji('みる', '見る'),
         meanings: [{ definition: 'to see, to look, to watch' }],
         partOfSpeech: ['Ichidan verb'],
         jlptLevel: 'N5'
@@ -477,6 +487,7 @@ export class DictionaryService {
       '聞く': {
         word: '聞く',
         reading: 'きく',
+        romanization: getJapaneseRomaji('きく', '聞く'),
         meanings: [{ definition: 'to hear, to listen, to ask' }],
         partOfSpeech: ['Godan verb'],
         jlptLevel: 'N5'
@@ -484,6 +495,7 @@ export class DictionaryService {
       '今日': {
         word: '今日',
         reading: 'きょう',
+        romanization: getJapaneseRomaji('きょう', '今日'),
         meanings: [{ definition: 'today, this day' }],
         partOfSpeech: ['Noun'],
         jlptLevel: 'N5'
@@ -491,6 +503,7 @@ export class DictionaryService {
       'カード': {
         word: 'カード',
         reading: 'カード',
+        romanization: getJapaneseRomaji('カード', 'カード'),
         meanings: [{ definition: 'card' }],
         partOfSpeech: ['Noun'],
         jlptLevel: 'N4'
@@ -498,6 +511,7 @@ export class DictionaryService {
       'ゲーム': {
         word: 'ゲーム',
         reading: 'ゲーム',
+        romanization: getJapaneseRomaji('ゲーム', 'ゲーム'),
         meanings: [{ definition: 'game' }],
         partOfSpeech: ['Noun'],
         jlptLevel: 'N4'

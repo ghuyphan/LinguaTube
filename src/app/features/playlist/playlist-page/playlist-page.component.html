@@ -37,7 +37,7 @@
                 </button>
                 @if (view() !== 'my') {
                 <button class="filter-chip filter-chip--circle" (click)="showLanguageFilter.set(true)"
-                    title="Filter by language">
+                    [attr.aria-label]="i18n.t('playlist.filterByLanguage')" [title]="i18n.t('playlist.filterByLanguage')">
                     @if (languageFilter() !== 'all') {
                     <img [src]="getFlagUrl(languageFilter())" class="lang-flag" alt="" />
                     } @else {
@@ -125,9 +125,9 @@
 
         <div class="card playlist-detail-panel">
             <div class="panel-header detail-nav">
-                <button class="btn btn-ghost btn-sm" (click)="closeDetail()">
-                    <app-icon name="arrow-left" [size]="20" />
-                    <span>{{ i18n.t('common.back') || 'Back' }}</span>
+                <button class="btn btn-icon btn-ghost detail-back-btn" (click)="closeDetail()"
+                    [attr.aria-label]="i18n.t('common.back')" [title]="i18n.t('common.back')">
+                    <app-icon name="chevron-left" [size]="20" />
                 </button>
                 <div class="detail-actions-right">
                     <button class="btn btn-icon btn-ghost" (click)="openMenu(viewingPlaylist()!, $event)">
@@ -161,14 +161,14 @@
                         <button class="btn btn-primary btn-play-all" (click)="playAll()"
                             [disabled]="viewingPlaylist()!.videoIds.length === 0">
                             <app-icon name="play" [size]="18" />
-                            <span>{{ i18n.t('playlist.playAll') || 'Play All' }}</span>
+                            <span>{{ i18n.t('playlist.playAll') }}</span>
                         </button>
                     </div>
                 </div>
             </div>
 
             <div class="detail-tracklist">
-                <h3 class="tracklist-title">{{ i18n.t('playlist.videos') || 'Videos' }}</h3>
+                <h3 class="tracklist-title">{{ i18n.t('playlist.videos') }}</h3>
                 @if (viewingPlaylist()!.videoIds.length > 0) {
                 <div class="track-list">
                     @for (vid of viewingPlaylist()!.videoIds; track vid; let i = $index) {
@@ -194,8 +194,7 @@
                     <div class="empty-state__mascot" style="width: 100px; height: 100px; margin-bottom: 1rem;">
                         <app-mascot mood="sad"></app-mascot>
                     </div>
-                    <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') || 'No videos have been added
-                        to this playlist yet.' }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
                 </div>
                 }
             </div>

@@ -3,6 +3,7 @@ import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
 import { AuthService, StorageService, PocketBaseService } from '../services';
 import { calculateHash, mergeByTimestamp, processBatch, withRetry } from '../../shared/utils/sync.utils';
+import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
 const SAVE_DEBOUNCE_MS = 300;
@@ -83,7 +84,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             word,
             reading,
             pinyin,
-            romanization,
+            romanization: this.normalizeRomanization(language, reading, romanization, word),
             meaning,
             language,
             level: 'new',
@@ -230,7 +231,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         try {
             const items = JSON.parse(json) as VocabularyItem[];
             const existing = new Set(this.vocabulary().map(i => i.word));
-            const newItems = items.filter(i => !existing.has(i.word));
+            const newItems = items
+                .filter(i => !existing.has(i.word))
+                .map(item => this.normalizeVocabularyItem(item));
 
             if (newItems.length > 0) {
                 this.updateLocal([...this.vocabulary(), ...newItems]);
@@ -304,8 +307,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     private updateLocal(items: VocabularyItem[]): void {
-        this.vocabulary.set(items);
-        this.recalculateStats(items);
+        const normalizedItems = items.map(item => this.normalizeVocabularyItem(item));
+        this.vocabulary.set(normalizedItems);
+        this.recalculateStats(normalizedItems);
     }
 
     private triggerSyncDebounced() {
@@ -342,7 +346,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     private loadFromStorage(): void {
         const items = this.storage.get<VocabularyItem[]>(STORAGE_KEY);
         if (items) {
-            const parsed = items.map(item => ({
+            const parsed = items.map(item => this.normalizeVocabularyItem({
                 ...item,
                 addedAt: new Date(item.addedAt),
                 updatedAt: item.updatedAt ? new Date(item.updatedAt) : undefined,
@@ -371,7 +375,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             word: item.word,
             reading: item.reading,
             pinyin: item.pinyin,
-            romanization: item.romanization,
+            romanization: this.normalizeRomanization(item.language, item.reading, item.romanization, item.word),
             meaning: item.meaning,
             language: item.language,
             level: item.level,
@@ -391,7 +395,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
             const existing = this.vocabulary().find(v => v.id === item.id);
 
-            return {
+            return this.normalizeVocabularyItem({
                 id: item.id,
                 word: item.word,
                 reading: item.reading,
@@ -411,7 +415,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 lastReviewedAt: existing?.lastReviewedAt,
                 nextReviewDate: existing?.nextReviewDate,
                 sourceSentence: existing?.sourceSentence
-            };
+            });
         });
 
         this.updateLocal(vocabItems);
@@ -469,7 +473,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             word: item.word,
             reading: item.reading || '',
             pinyin: item.pinyin || '',
-            romanization: item.romanization || '',
+            romanization: this.normalizeRomanization(item.language as 'ja' | 'zh' | 'ko' | 'en', item.reading, item.romanization, item.word) || '',
             meaning: item.meaning,
             language: item.language,
             level: item.level,
@@ -518,5 +522,25 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         } catch {
             return Date.now().toString(36) + Math.random().toString(36).substring(2, 10);
         }
+    }
+
+    private normalizeVocabularyItem(item: VocabularyItem): VocabularyItem {
+        return {
+            ...item,
+            romanization: this.normalizeRomanization(item.language, item.reading, item.romanization, item.word)
+        };
+    }
+
+    private normalizeRomanization(
+        language: 'ja' | 'zh' | 'ko' | 'en',
+        reading?: string,
+        romanization?: string,
+        word?: string
+    ): string | undefined {
+        if (language !== 'ja') {
+            return romanization;
+        }
+
+        return romanization || getJapaneseRomaji(reading, word);
     }
 }

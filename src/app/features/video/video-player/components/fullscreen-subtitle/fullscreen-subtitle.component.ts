@@ -109,10 +109,7 @@ export class FullscreenSubtitleComponent {
     }
 
     getReading(token: Token): string | undefined {
-        const lang = this.language();
-        if (lang === 'ja') return token.reading;
-        if (lang === 'zh') return token.pinyin;
-        return token.romanization || token.pinyin;
+        return this.settings.getReadingText(this.language(), token) || undefined;
     }
 
     getDisplayText(token: Token): string {

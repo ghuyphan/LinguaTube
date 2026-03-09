@@ -193,7 +193,9 @@
         "learningDisplayHint": "让字幕和学习卡片保持同一种文字模式",
         "kanjiOnly": "仅汉字",
         "kanjiFurigana": "汉字 + 振假名",
+        "kanjiRomaji": "汉字 + 罗马字",
         "kanaOnly": "仅假名",
+        "romajiOnly": "仅罗马字",
         "hanziOnly": "仅汉字",
         "hanziPinyin": "汉字 + 拼音",
         "pinyinOnly": "仅拼音",
@@ -296,6 +298,9 @@
         "save": "保存",
         "videoCount": "{{count}} 个视频",
         "updated": "更新于 {{date}}",
+        "playAll": "全部播放",
+        "videos": "视频",
+        "emptyVideo": "这个播放列表里还没有视频。",
         "empty": {
             "myTitle": "暂无播放列表",
             "myHint": "创建一个开始使用吧！",
@@ -352,7 +357,8 @@
         "loading": "加载中...",
         "error": "错误",
         "success": "成功",
-        "off": "关闭"
+        "off": "关闭",
+        "back": "返回"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

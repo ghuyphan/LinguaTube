@@ -3,6 +3,7 @@ import { SubtitleCue, Token } from '../../models';
 import { YoutubeService } from './youtube.service';
 import { SettingsService } from '../../core/services/settings.service';
 import { environment } from '../../../environments/environment';
+import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
 
 // ============================================================================
 // Constants
@@ -589,10 +590,7 @@ export class SubtitleService {
       const type = this.getCharType(char);
 
       if (type !== currentType && current) {
-        tokens.push({
-          surface: current,
-          isPunctuation: this.isPunctuation(current)
-        });
+        tokens.push(this.buildFallbackJapaneseToken(current));
         current = '';
       }
 
@@ -601,13 +599,24 @@ export class SubtitleService {
     }
 
     if (current) {
-      tokens.push({
-        surface: current,
-        isPunctuation: this.isPunctuation(current)
-      });
+      tokens.push(this.buildFallbackJapaneseToken(current));
     }
 
     return tokens;
+  }
+
+  private buildFallbackJapaneseToken(surface: string): Token {
+    const isPunctuation = this.isPunctuation(surface);
+    const token: Token = {
+      surface,
+      isPunctuation
+    };
+
+    if (!isPunctuation && isJapaneseKanaText(surface)) {
+      token.romanization = getJapaneseRomaji(surface, surface);
+    }
+
+    return token;
   }
 
   private applyFallbackTokens(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en' | null): void {

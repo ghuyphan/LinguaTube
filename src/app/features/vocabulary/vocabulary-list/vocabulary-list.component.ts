@@ -124,6 +124,10 @@ export class VocabularyListComponent {
     return item.id;
   }
 
+  getItemReading(item: VocabularyItem): string | null {
+    return this.settings.getReadingText(item.language, item);
+  }
+
   filteredWords = computed(() => {
     let items = this.vocab.vocabulary();
 

@@ -139,7 +139,7 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     getCardReading(item: VocabularyItem): string | null {
-        return item.reading || item.pinyin || item.romanization || null;
+        return this.settings.getReadingText(item.language, item);
     }
 
     showCardReading(item: VocabularyItem): boolean {
@@ -360,6 +360,8 @@ export class StudyModeComponent implements OnDestroy {
             case 'ja':
                 if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
                 if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
+                if (mode === 'annotatedRomanized') return this.i18n.t('settings.kanjiRomaji');
+                if (mode === 'romanized') return this.i18n.t('settings.romajiOnly');
                 return this.i18n.t('settings.kanaOnly');
             case 'zh':
                 if (mode === 'native') return this.i18n.t('settings.hanziOnly');
