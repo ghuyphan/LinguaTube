@@ -148,7 +148,8 @@
     --safe-area-right: env(safe-area-inset-right, 0px);
     --app-height: 100dvh;
     --bottom-nav-height: 4.5rem;
-    --bottom-nav-total-height: calc(var(--bottom-nav-height) + var(--safe-area-bottom));
+    --bottom-nav-safe-area: var(--safe-area-bottom);
+    --bottom-nav-total-height: calc(var(--bottom-nav-height) + var(--bottom-nav-safe-area));
 
     /* AI/Generation colors */
     --ai-purple: #ce82ff;
@@ -170,6 +171,7 @@
 
 :root.standalone-mode {
     --bottom-nav-height: 4rem;
+    --bottom-nav-safe-area: min(var(--safe-area-bottom), 18px);
 }
 
 [data-theme="dark"] {
