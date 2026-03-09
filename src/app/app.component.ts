@@ -263,7 +263,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: var(--space-md) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
+        padding: calc(var(--space-md) + var(--safe-area-top)) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {
@@ -287,7 +287,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: var(--space-sm) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
+        padding: calc(var(--space-sm) + var(--safe-area-top)) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
       }
 
       .main.video-active {
