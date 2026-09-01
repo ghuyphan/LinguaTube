@@ -1,24 +1,18 @@
 <div class="study-mode">
     @if (!isStudying() && !isComplete()) {
     <!-- Study Start Screen -->
-    <div class="study-start">
+    <div class="card study-start">
         <div class="panel-header">
             <div class="panel-header__row">
-                <app-icon name="graduation-cap" [size]="24" class="panel-header__icon" />
+                <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
                 <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
             </div>
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
         </div>
 
-        <div class="study-meta">
-            <div class="meta-pill">
-                <app-icon name="languages" [size]="14" />
-                <span>{{ currentLanguageLabel() }}</span>
-            </div>
-            <div class="meta-pill">
-                <app-icon name="eye" [size]="14" />
-                <span>{{ currentReadingDisplayLabel() }}</span>
-            </div>
+        <div class="panel-badges">
+            <span class="badge badge--accent">{{ currentLanguageLabel() }}</span>
+            <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
         </div>
 
         <div class="study-stats">
@@ -58,30 +52,42 @@
             }
         </div>
 
-        <div class="study-options">
-            <div class="setting-row">
-                <div class="setting-row__content">
-                    <span class="setting-row__label">{{ i18n.t('study.includeNew') }}</span>
+        <div class="study-options-card">
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--new">
+                        <app-icon name="plus" [size]="16" />
+                    </div>
+                    <span class="study-option-title">{{ i18n.t('study.includeNew') }}</span>
                 </div>
                 <app-switch [checked]="includeNew" (checkedChange)="includeNew = $event" />
             </div>
-            <div class="setting-row">
-                <div class="setting-row__content">
-                    <span class="setting-row__label">{{ i18n.t('study.includeLearning') }}</span>
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--learning">
+                        <app-icon name="fire" [size]="16" />
+                    </div>
+                    <span class="study-option-title">{{ i18n.t('study.includeLearning') }}</span>
                 </div>
                 <app-switch [checked]="includeLearning" (checkedChange)="includeLearning = $event" />
             </div>
-            <div class="setting-row">
-                <div class="setting-row__content">
-                    <span class="setting-row__label">{{ i18n.t('study.reviewKnown') }}</span>
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--known">
+                        <app-icon name="check-circle" [size]="16" />
+                    </div>
+                    <span class="study-option-title">{{ i18n.t('study.reviewKnown') }}</span>
                 </div>
                 <app-switch [checked]="includeKnown" (checkedChange)="includeKnown = $event" />
             </div>
-            <div class="setting-row setting-row--highlight">
-                <div class="setting-row__content">
-                    <div class="setting-row__group">
-                        <span class="setting-row__label">{{ i18n.t('study.reverseMode') }}</span>
-                        <span class="setting-row__hint">{{ i18n.t('study.meaningFirst') }}</span>
+            <div class="study-option-row">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--reverse">
+                        <app-icon name="shuffle" [size]="16" />
+                    </div>
+                    <div class="study-option-text">
+                        <span class="study-option-title">{{ i18n.t('study.reverseMode') }}</span>
+                        <span class="study-option-hint">{{ i18n.t('study.meaningFirst') }}</span>
                     </div>
                 </div>
                 <app-switch [checked]="reverseMode" (checkedChange)="reverseMode = $event" />
@@ -91,20 +97,23 @@
         <div class="study-action">
             @if (availableCards() > 0) {
             <button class="btn btn-primary start-btn" (click)="startSession()">
-                <app-icon name="play" [size]="16" />
-                {{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})
+                <app-icon name="play" [size]="18" />
+                <span>{{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})</span>
             </button>
-            <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}
-            </p>
+            <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}</p>
             } @else {
             <div class="empty-state empty-state--centered">
-                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                    <app-mascot mood="sad"></app-mascot>
+                <div class="empty-state__icon-box">
+                    <app-icon name="graduation-cap" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <span class="empty-state__title">{{ i18n.t('study.noWords') }}</span>
                     <span class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</span>
                 </div>
+                <a routerLink="/video" class="btn btn-secondary empty-state__action">
+                    <app-icon name="play" [size]="16" />
+                    <span>{{ i18n.t('nav.learn') }}</span>
+                </a>
             </div>
             }
         </div>
@@ -246,7 +255,7 @@
 
     <!-- Session Complete -->
     @if (isComplete()) {
-    <div class="session-complete" [class.with-confetti]="showConfetti()">
+    <div class="card session-complete" [class.with-confetti]="showConfetti()">
         <!-- Confetti -->
         @if (showConfetti()) {
         <div class="confetti-container">

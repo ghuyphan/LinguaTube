@@ -15,10 +15,12 @@ select {
     line-height: normal;
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    /* Chunky shadow to match buttons */
-    box-shadow: 0 4px 0 var(--border-color);
+    box-shadow: none;
     background: var(--bg-card);
     color: var(--text-primary);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
     width: 100%;
     font-weight: 600;
@@ -44,9 +46,8 @@ input:focus,
 textarea:focus,
 select:focus {
     outline: none;
-    border-color: var(--accent-secondary);
-    /* Maintain chunky shadow and add focus ring */
-    box-shadow: 0 4px 0 var(--accent-secondary), 0 0 0 4px rgba(255, 107, 107, 0.2);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.15);
 }
 
 input::placeholder,

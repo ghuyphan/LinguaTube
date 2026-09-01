@@ -227,12 +227,10 @@ $transition-normal: 0.25s ease;
 
 // ============================================
 // INPUT STATE
-// ============================================
-
 .video-input {
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md);
   border: 1px solid var(--border-color);
   box-shadow: none;
 }
@@ -254,14 +252,14 @@ $transition-normal: 0.25s ease;
   width: 100%;
   height: var(--btn-height-md);
   font-size: 0.875rem;
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius-md);
-  background: var(--bg-card);
+  background: var(--bg-secondary);
   transition: all $transition-fast;
 
   &:focus {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.15);
   }
 }
 
@@ -279,9 +277,10 @@ $transition-normal: 0.25s ease;
   gap: var(--space-sm);
   margin-top: var(--space-md);
   padding: var(--space-sm) var(--space-md);
-  background: var(--word-new);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
   color: var(--error);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-md);
   font-size: 0.875rem;
   animation: errorSlideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -830,8 +829,8 @@ $transition-normal: 0.25s ease;
   left: 0;
   right: 0;
   width: 100%;
-  background: none;
-  padding: 0 1rem 0.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.1) 80%, transparent 100%);
+  padding: 3rem 1rem 0.625rem;
   z-index: $z-custom-controls;
   display: flex;
   flex-direction: column;
@@ -860,7 +859,7 @@ $transition-normal: 0.25s ease;
   }
 
   .is-fullscreen & {
-    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
     padding-left: max(1.5rem, env(safe-area-inset-left));
     padding-right: max(1.5rem, env(safe-area-inset-right));
   }
@@ -2007,9 +2006,12 @@ ruby {
 
   .video-title {
     font-size: 0.9375rem;
-    white-space: nowrap;
-    line-clamp: 1;
+    display: -webkit-box;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .fullscreen-subtitle {

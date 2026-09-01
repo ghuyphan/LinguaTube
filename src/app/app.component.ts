@@ -12,7 +12,8 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
-import { YoutubeService, I18nService, SettingsService } from './services';
+import { YoutubeService, I18nService, SettingsService, TranscriptService } from './services';
+import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
@@ -104,7 +105,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             </a>
             <button
               class="bottom-nav__item"
-              [class.active]="showMoreSheet() || isRouteActive('/history') || isRouteActive('/game')"
+              [class.active]="showMoreSheet() || isRouteActive('/history')"
               (click)="toggleMoreSheet()"
             >
               <app-icon name="more-horizontal" [size]="20" />
@@ -116,30 +117,59 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         <!-- More Menu Sheet -->
         <app-bottom-sheet
           [isOpen]="showMoreSheet()"
-          [showCloseButton]="true"
+          [showCloseButton]="false"
           [maxHeight]="'auto'"
           (closed)="showMoreSheet.set(false)"
         >
           <div class="more-menu">
+            <!-- Mobile Motivation & AI Credits Quick Bar -->
+            <div class="more-menu__stats">
+              <button class="more-stat-card" (click)="showMoreSheet.set(false); showStreakSheet.set(true)">
+                <app-icon name="fire" [size]="20" class="stat-icon--fire" />
+                <div class="more-stat-info">
+                  <span class="more-stat-val">{{ streak.currentStreak() }}</span>
+                  <span class="more-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
+                </div>
+              </button>
+              <button class="more-stat-card" (click)="showMoreSheet.set(false); showAiCreditsSheet.set(true)">
+                <app-icon name="diamond" [size]="20" class="stat-icon--diamond" />
+                <div class="more-stat-info">
+                  <span class="more-stat-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
+                  <span class="more-stat-lbl">{{ i18n.t('subtitle.aiCredits') }}</span>
+                </div>
+              </button>
+            </div>
+
+            <!-- Action Rows -->
             <button class="more-menu__item" (click)="showMoreSheet.set(false); showCommandPalette.set(true)">
-              <app-icon name="search" [size]="22" />
-              <span>{{ i18n.t('nav.newVideo') }}</span>
+              <div class="more-menu__item-icon">
+                <app-icon name="plus" [size]="18" />
+              </div>
+              <div class="more-menu__item-text">
+                <span class="more-menu__item-title">{{ i18n.t('nav.newVideo') }}</span>
+              </div>
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
-            <button class="more-menu__item" (click)="navigateFromMore('/game')">
-              <app-icon name="coffee" [size]="22" />
-              <span>{{ i18n.t('nav.game') }}</span>
-              <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
-            </button>
+
             <button class="more-menu__item" (click)="navigateFromMore('/history')">
-              <app-icon name="clock" [size]="22" />
-              <span>{{ i18n.t('history.title') }}</span>
+              <div class="more-menu__item-icon">
+                <app-icon name="clock" [size]="18" />
+              </div>
+              <div class="more-menu__item-text">
+                <span class="more-menu__item-title">{{ i18n.t('history.title') }}</span>
+              </div>
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
+
             <div class="more-menu__divider"></div>
+
             <button class="more-menu__item" (click)="showMoreSheet.set(false); showSettingsSheet.set(true)">
-              <app-icon name="settings" [size]="22" />
-              <span>{{ i18n.t('nav.settings') }}</span>
+              <div class="more-menu__item-icon">
+                <app-icon name="settings" [size]="18" />
+              </div>
+              <div class="more-menu__item-text">
+                <span class="more-menu__item-title">{{ i18n.t('nav.settings') }}</span>
+              </div>
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
           </div>
@@ -373,42 +403,124 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     /* More Menu */
     .more-menu {
-      padding: var(--space-xs) 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: var(--space-xs) 0 var(--space-sm);
+    }
+
+    .more-menu__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm);
+      padding: 0 var(--space-md) var(--space-xs);
+    }
+
+    .more-stat-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 0.75rem var(--space-sm);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      cursor: pointer;
+      text-align: left;
+      transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .more-stat-card:active {
+      background: var(--bg-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .stat-icon--fire {
+      color: #f59e0b;
+      flex-shrink: 0;
+    }
+
+    .stat-icon--diamond {
+      color: #60a5fa;
+      flex-shrink: 0;
+    }
+
+    .more-stat-info {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .more-stat-val {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
+
+    .more-stat-lbl {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .more-menu__item {
       display: flex;
       align-items: center;
       gap: var(--space-md);
-      padding: var(--space-md) var(--space-lg);
-      width: 100%;
+      padding: 0.625rem var(--space-md);
+      margin: 0 var(--space-xs);
+      width: calc(100% - var(--space-sm));
       background: none;
       border: none;
+      border-radius: var(--border-radius-md);
       color: var(--text-primary);
-      font-size: 0.9375rem;
-      font-weight: 500;
-      font-family: inherit;
       cursor: pointer;
-      transition: background var(--transition-fast);
+      transition: background-color var(--transition-fast);
     }
 
     .more-menu__item:active {
-      background: var(--bg-secondary);
+      background: var(--bg-hover);
     }
 
-    .more-menu__item span {
+    .more-menu__item-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: var(--border-radius-sm);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .more-menu__item-text {
       flex: 1;
+      display: flex;
+      flex-direction: column;
       text-align: left;
+      min-width: 0;
+    }
+
+    .more-menu__item-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
     .more-menu__chevron {
       color: var(--text-muted);
+      flex-shrink: 0;
     }
 
     .more-menu__divider {
       height: 1px;
       background: var(--border-color);
-      margin: var(--space-xs) var(--space-lg);
+      margin: var(--space-xs) var(--space-md);
     }
   `]
 })
@@ -420,6 +532,8 @@ export class AppComponent implements OnDestroy {
   private document = inject(DOCUMENT);
   i18n = inject(I18nService);
   settings = inject(SettingsService);
+  streak = inject(StreakService);
+  transcript = inject(TranscriptService);
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);

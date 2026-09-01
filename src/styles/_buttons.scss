@@ -22,12 +22,12 @@ button {
     padding: 0 var(--space-lg);
     font-family: var(--font-sans);
     font-size: var(--text-md);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1;
-    border: 2px solid transparent;
-    border-radius: var(--border-radius-lg);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-md);
     cursor: pointer;
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
     white-space: nowrap;
     flex-shrink: 0;
     user-select: none;
@@ -45,46 +45,48 @@ button {
 .btn-primary {
     background: var(--accent-primary);
     color: var(--text-inverse);
-    box-shadow: 0 4px 0 var(--accent-primary-shadow);
+    border: 1px solid transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 @media (hover: hover) {
     .btn-primary:hover:not(:disabled) {
         background: var(--accent-primary-hover);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 0 var(--accent-primary-shadow);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.25);
     }
 }
 
 .btn-primary:active:not(:disabled) {
-    transform: translateY(4px) !important;
-    box-shadow: 0 0 0 var(--accent-primary-shadow) !important;
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .btn-secondary {
     background: var(--bg-card);
     color: var(--text-primary);
-    border: 2px solid var(--border-color);
-    box-shadow: 0 4px 0 var(--border-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 @media (hover: hover) {
     .btn-secondary:hover:not(:disabled) {
-        background: var(--bg-secondary);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 0 var(--border-color);
+        background: var(--bg-hover);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 }
 
 .btn-secondary:active:not(:disabled) {
-    transform: translateY(4px) !important;
-    box-shadow: 0 0 0 var(--border-color) !important;
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .btn-ghost {
     background: transparent;
     color: var(--text-secondary);
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 
 @media (hover: hover) {
@@ -102,6 +104,31 @@ button {
 @media (hover: hover) {
     .btn-danger:hover:not(:disabled) {
         opacity: 0.9;
+    }
+}
+
+.btn-google {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    font-weight: 600;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+
+    app-icon {
+        color: inherit;
+    }
+
+    @media (hover: hover) {
+        &:hover:not(:disabled) {
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+            transform: translateY(-1px);
+        }
+    }
+
+    &:active:not(:disabled) {
+        transform: translateY(0);
     }
 }
 

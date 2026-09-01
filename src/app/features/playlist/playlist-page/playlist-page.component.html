@@ -115,8 +115,8 @@
                 </div>
                 } @else {
                 <div class="empty-state empty-state--centered">
-                    <div class="empty-state__mascot" style="width: 140px; height: 140px; margin-bottom: 1rem;">
-                        <app-mascot mood="thinking"></app-mascot>
+                    <div class="empty-state__icon-box">
+                        <app-icon name="list-video" [size]="28" />
                     </div>
                     <div class="empty-state__text" style="align-items: center; text-align: center;">
                         <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') :
@@ -217,8 +217,8 @@
                 </div>
                 } @else {
                 <div class="empty-state empty-state--centered">
-                    <div class="empty-state__mascot" style="width: 100px; height: 100px; margin-bottom: 1rem;">
-                        <app-mascot mood="sad"></app-mascot>
+                    <div class="empty-state__icon-box">
+                        <app-icon name="video" [size]="28" />
                     </div>
                     <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
                 </div>
@@ -244,8 +244,14 @@
     }
 
     <aside class="page-layout__sidebar desktop-only">
-        <div class="sidebar-card">
-            <h3 class="sidebar-card__title">{{ i18n.t('nav.explore') }}</h3>
+        <div class="card sidebar-card">
+            <div class="panel-header">
+                <div class="panel-header__row">
+                    <app-icon name="globe" [size]="20" class="panel-header__icon" />
+                    <h3 class="panel-header__title">{{ i18n.t('nav.explore') }}</h3>
+                </div>
+                <p class="panel-header__subtitle">{{ playlists().length + featuredPlaylists().length + communityPlaylists().length }} {{ i18n.t('playlist.myPlaylists') }}</p>
+            </div>
 
             <div class="stats-grid">
                 <div class="stat-item">

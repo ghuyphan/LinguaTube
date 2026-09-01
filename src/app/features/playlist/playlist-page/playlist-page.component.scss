@@ -142,7 +142,8 @@
 }
 
 .filter-toolbar {
-    padding: 0 var(--space-md) var(--space-sm);
+    padding: 0;
+    margin-bottom: var(--space-sm);
 }
 
 .filter-select {
@@ -213,7 +214,8 @@
 // -------------------------
 .panel-content {
     flex: 1;
-    padding: var(--space-md);
+    padding: 0;
+    margin-top: var(--space-xs);
     overflow-y: auto;
 }
 
@@ -223,7 +225,7 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: var(--space-md);
+    gap: var(--space-sm);
     width: 100%;
 
     &.animate-content {
@@ -289,7 +291,7 @@
     }
 
     .card-content {
-        padding: var(--space-md);
+        padding: var(--space-sm);
         flex: 1;
         display: flex;
         flex-direction: column;

@@ -61,14 +61,14 @@
         </div>
         } @else if (auth.isInitialized() && auth.isAuthEnabled()) {
         <!-- Desktop login button -->
-        <button class="btn btn-outline login-btn desktop-only" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
-            <app-icon name="google" [size]="18" />
-            <span>{{ i18n.t('header.signIn') }}</span>
+        <button class="btn btn-google login-btn desktop-only" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
+            <app-icon name="google" [size]="16" />
+            <span>{{ i18n.t('settings.signInGoogle') }}</span>
         </button>
         <!-- Mobile login button (icon only) -->
         <button class="btn btn-icon btn-ghost mobile-only" (click)="loginWithGoogle()" [disabled]="isLoggingIn"
-            [attr.aria-label]="i18n.t('header.signIn')">
-            <app-icon name="user" [size]="20" />
+            [attr.aria-label]="i18n.t('settings.signInGoogle')" [attr.title]="i18n.t('settings.signInGoogle')">
+            <app-icon name="google" [size]="18" />
         </button>
         }
 

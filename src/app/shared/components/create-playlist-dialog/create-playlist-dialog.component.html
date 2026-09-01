@@ -1,52 +1,62 @@
 <app-bottom-sheet [isOpen]="isOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="dialog-content">
         <div class="dialog-header">
-            <h2>{{ isEditing() ? (i18n.t('playlist.edit') || 'Edit Playlist') : i18n.t('playlist.createPlaylist') }}
-            </h2>
+            <div class="dialog-header__title-box">
+                <app-icon name="list-plus" [size]="20" class="dialog-header__icon" />
+                <h2 class="dialog-title">
+                    {{ isEditing() ? (i18n.t('playlist.edit') || 'Edit Playlist') : i18n.t('playlist.createPlaylist') }}
+                </h2>
+            </div>
         </div>
 
-        <form (submit)="onSubmit()">
+        <form (submit)="onSubmit()" class="dialog-form">
             <!-- Title -->
             <div class="form-group">
-                <label for="pl-title">{{ i18n.t('playlist.titleLabel') }}</label>
+                <label for="pl-title" class="form-label">{{ i18n.t('playlist.titleLabel') }}</label>
                 <input type="text" id="pl-title" [ngModel]="title()" (ngModelChange)="title.set($event)" name="title"
-                    required [placeholder]="i18n.t('playlist.titlePlaceholder')" autocomplete="off">
+                    required [placeholder]="i18n.t('playlist.titlePlaceholder')" autocomplete="off" class="dialog-input">
             </div>
 
             <!-- Visibility -->
             <div class="form-group">
-                <label>{{ i18n.t('playlist.visibilityLabel') }}</label>
+                <label class="form-label">{{ i18n.t('playlist.visibilityLabel') }}</label>
                 <div class="visibility-options">
                     <button type="button" class="visibility-option" [class.selected]="visibility() === 'private'"
                         (click)="visibility.set('private')">
-                        <app-icon name="lock" [size]="18" />
-                        <span>{{ i18n.t('playlist.visibility.private') }}</span>
+                        <div class="visibility-icon-box">
+                            <app-icon name="lock" [size]="18" />
+                        </div>
+                        <span class="visibility-name">{{ i18n.t('playlist.visibility.private') }}</span>
                     </button>
                     <button type="button" class="visibility-option" [class.selected]="visibility() === 'unlisted'"
                         [disabled]="!isLoggedIn()" (click)="visibility.set('unlisted')">
-                        <app-icon name="link" [size]="18" />
-                        <span>{{ i18n.t('playlist.visibility.unlisted') }}</span>
+                        <div class="visibility-icon-box">
+                            <app-icon name="link" [size]="18" />
+                        </div>
+                        <span class="visibility-name">{{ i18n.t('playlist.visibility.unlisted') }}</span>
                     </button>
                     <button type="button" class="visibility-option" [class.selected]="visibility() === 'published'"
                         [disabled]="!isLoggedIn()" (click)="visibility.set('published')">
-                        <app-icon name="globe" [size]="18" />
-                        <span>{{ i18n.t('playlist.visibility.public') }}</span>
+                        <div class="visibility-icon-box">
+                            <app-icon name="globe" [size]="18" />
+                        </div>
+                        <span class="visibility-name">{{ i18n.t('playlist.visibility.public') }}</span>
                     </button>
                 </div>
                 @if (!isLoggedIn()) {
-                <p class="form-hint">{{ i18n.t('playlist.loginForVisibility') || 'Login to share playlists with others'
-                    }}</p>
+                <p class="form-hint">{{ i18n.t('playlist.loginForVisibility') || 'Login to share playlists with others' }}</p>
                 }
             </div>
 
             <!-- Language -->
             <div class="form-group">
-                <label>{{ i18n.t('playlist.languageLabel') }}</label>
+                <label class="form-label">{{ i18n.t('playlist.languageLabel') }}</label>
                 <div class="language-options">
                     @for (lang of languages; track lang.code) {
                     <button type="button" class="language-option" [class.selected]="language() === lang.code"
                         (click)="language.set(lang.code)">
                         <img [src]="lang.flag" [alt]="lang.name" class="flag-icon">
+                        <span class="language-label">{{ lang.name }}</span>
                     </button>
                     }
                 </div>
@@ -54,14 +64,15 @@
 
             <!-- Actions -->
             <div class="dialog-actions">
-                <button type="button" class="btn btn-secondary" (click)="sheet.close()">
+                <button type="button" class="btn btn-ghost dialog-btn" (click)="sheet.close()">
                     {{ i18n.t('playlist.cancel') }}
                 </button>
-                <button type="submit" class="btn btn-primary" [disabled]="!title() || isSubmitting()">
+                <button type="submit" class="btn btn-primary dialog-btn" [disabled]="!title().trim() || isSubmitting()">
                     @if (isSubmitting()) {
-                    {{ isEditing() ? (i18n.t('playlist.saving') || 'Saving...') : i18n.t('playlist.creating') }}
+                    <app-icon name="loader" [size]="16" />
+                    <span>{{ isEditing() ? (i18n.t('playlist.saving') || 'Saving...') : i18n.t('playlist.creating') }}</span>
                     } @else {
-                    {{ isEditing() ? (i18n.t('playlist.save') || 'Save') : i18n.t('playlist.create') }}
+                    <span>{{ isEditing() ? (i18n.t('playlist.save') || 'Save') : i18n.t('playlist.create') }}</span>
                     }
                 </button>
             </div>

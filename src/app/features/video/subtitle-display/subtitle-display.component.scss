@@ -650,9 +650,9 @@
     height: 1.5em;
     border-radius: 6px;
     background: linear-gradient(90deg,
-            color-mix(in srgb, var(--text-secondary), transparent 92%) 25%,
-            color-mix(in srgb, var(--text-secondary), transparent 85%) 50%,
-            color-mix(in srgb, var(--text-secondary), transparent 92%) 75%);
+            rgba(var(--text-secondary-rgb), 0.08) 25%,
+            rgba(var(--text-secondary-rgb), 0.16) 50%,
+            rgba(var(--text-secondary-rgb), 0.08) 75%);
     background-size: 200% 100%;
     animation: skeleton-pulse 1.5s ease-in-out infinite;
     width: 60px;

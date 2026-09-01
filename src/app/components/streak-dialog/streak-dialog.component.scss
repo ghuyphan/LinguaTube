@@ -90,7 +90,7 @@
     gap: 0.75rem;
     padding: 1rem;
     background: var(--bg-secondary);
-    border-radius: 1rem;
+    border-radius: var(--border-radius-md);
     width: 100%;
     justify-content: space-between;
 }
@@ -156,7 +156,7 @@
 .stat-card {
     background: var(--bg-secondary);
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-md);
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
@@ -200,7 +200,7 @@
     gap: 1rem;
     background: var(--bg-secondary);
     padding: 1.25rem;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-md);
     width: 100%;
     text-align: left;
     border: 1px solid var(--border-color);

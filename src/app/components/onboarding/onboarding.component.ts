@@ -1,7 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { MascotComponent } from '../mascot/mascot.component';
 import { SettingsService, UILanguage, I18nService } from '../../services';
 
 interface DemoWord {
@@ -15,7 +14,7 @@ interface DemoWord {
     selector: 'app-onboarding',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, MascotComponent],
+    imports: [CommonModule, IconComponent],
     templateUrl: './onboarding.component.html',
     styleUrls: ['./onboarding.component.scss']
 })

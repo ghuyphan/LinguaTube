@@ -21,7 +21,7 @@ export type IconName =
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical'
     | 'list' | 'list-video' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
     | 'headphones' | 'clipboard-check' | 'coffee'
-    // Multiplayer game icons
+    // Audio & utility icons
     | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'lightbulb' | 'leaf' | 'box' | 'droplet';
 
 @Component({

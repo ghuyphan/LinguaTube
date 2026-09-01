@@ -7,12 +7,10 @@ import { PlaylistService } from '../playlist.service';
 import { Playlist } from '../../../models';
 import { I18nService } from '../../../services';
 
-import { MascotComponent } from '../../../components/mascot/mascot.component';
-
 @Component({
     selector: 'app-add-to-playlist-dialog',
     standalone: true,
-    imports: [CommonModule, BottomSheetComponent, IconComponent, CreatePlaylistDialogComponent, MascotComponent],
+    imports: [CommonModule, BottomSheetComponent, IconComponent, CreatePlaylistDialogComponent],
     templateUrl: './add-to-playlist-dialog.component.html',
     styleUrls: ['./add-to-playlist-dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

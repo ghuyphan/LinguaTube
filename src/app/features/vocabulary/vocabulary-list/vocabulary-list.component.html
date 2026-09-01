@@ -1,10 +1,10 @@
-<div class="vocab-panel">
-    <div class="vocab-header">
-        <div class="header-row">
-            <app-icon name="book-open" [size]="20" class="vocab-icon" />
-            <h2>{{ i18n.t('vocab.title') }}</h2>
+<div class="card vocab-panel">
+    <div class="panel-header">
+        <div class="panel-header__row">
+            <app-icon name="book-open" [size]="20" class="panel-header__icon" />
+            <h2 class="panel-header__title">{{ i18n.t('vocab.title') }}</h2>
         </div>
-        <p class="vocab-subtitle">{{ vocab.getStatsByLanguage(settings.settings().language).total }} {{
+        <p class="panel-header__subtitle">{{ vocab.getStatsByLanguage(settings.settings().language).total }} {{
             i18n.t('study.cards') }}</p>
     </div>
 
@@ -51,16 +51,16 @@
             } @else if (filteredWords().length === 0) {
             <div class="empty-state empty-state--centered">
                 @if (vocab.vocabulary().length === 0) {
-                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                    <app-mascot mood="sad"></app-mascot>
+                <div class="empty-state__icon-box">
+                    <app-icon name="book-open" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                     <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
                 </div>
                 } @else {
-                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                    <app-mascot mood="thinking"></app-mascot>
+                <div class="empty-state__icon-box">
+                    <app-icon name="search" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>

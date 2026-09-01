@@ -1,171 +1,151 @@
 <aside class="sidebar" [class.collapsed]="isCollapsed()">
-    <!-- Toggle Button (Floating) -->
+    <!-- Toggle Button (Floating outside the right border) -->
     <button class="sidebar-toggle" (click)="toggleCollapse()"
-        [attr.aria-label]="isCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'">
-        <app-icon [name]="isCollapsed() ? 'chevron-right' : 'chevron-left'" [size]="16" />
+        [attr.aria-label]="isCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
+        [attr.title]="isCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'">
+        <app-icon [name]="isCollapsed() ? 'chevron-right' : 'chevron-left'" [size]="14" />
     </button>
 
-    <!-- Logo / Brand -->
-    <div class="sidebar__brand">
-        <div class="sidebar__logo">
-            <span class="logo-text">言</span>
-        </div>
-        @if (!isCollapsed()) {
-        <div class="sidebar__title-group">
-            <h1 class="sidebar__title">{{ i18n.t('app.title') }}</h1>
-            <span class="sidebar__subtitle">{{ i18n.t('app.subtitle') }}</span>
-        </div>
-        }
-    </div>
-
-    <!-- Navigation -->
-    <nav class="sidebar__nav">
-        <button class="nav-item nav-item--new" (click)="openCommandPalette.emit()"
-            [attr.title]="i18n.t('nav.newVideo')">
-            <app-icon name="plus" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.newVideo') }}</span>
-            }
-        </button>
-        <a class="nav-item" routerLink="/video" routerLinkActive="active">
-            <app-icon name="play-circle" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.learn') }}</span>
-            }
-        </a>
-        <a class="nav-item" routerLink="/dictionary" routerLinkActive="active">
-            <app-icon name="book-open" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.words') }}</span>
-            }
-        </a>
-        <a class="nav-item" routerLink="/study" routerLinkActive="active">
-            <app-icon name="graduation-cap" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.study') }}</span>
-            }
-        </a>
-        <a class="nav-item" routerLink="/explore" routerLinkActive="active">
-            <app-icon name="globe" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.explore') }}</span>
-            }
-        </a>
-        <a class="nav-item" routerLink="/history" routerLinkActive="active">
-            <app-icon name="clock" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('history.title') }}</span>
-            }
-        </a>
-        <a class="nav-item" routerLink="/game" routerLinkActive="active">
-            <app-icon name="coffee" [size]="20" />
-            @if (!isCollapsed()) {
-            <span>{{ i18n.t('nav.game') }}</span>
-            }
-        </a>
-    </nav>
-
-    <!-- Language Selector -->
-    @if (!isCollapsed()) {
-    <div class="sidebar__section lang-section">
-        <h3 class="section-label">{{ i18n.t('settings.learningLanguage') }}</h3>
-        <button class="lang-row" (click)="showLangPicker.set(true)">
-            <img [src]="currentLang().flag" class="lang-row__flag" alt="" />
-            <span class="lang-row__name">{{ currentLang().name }}</span>
-            <app-icon name="chevron-right" [size]="16" class="lang-row__chevron" />
-        </button>
-    </div>
-    } @else {
-    <!-- Collapsed: Just show flag icon -->
-    <div class="sidebar__section lang-section-collapsed">
-        <button class="lang-flag-btn" (click)="showLangPicker.set(true)" [attr.title]="currentLang().name">
-            <img [src]="currentLang().flag" class="lang-flag-btn__flag" alt="" />
-        </button>
-    </div>
-    }
-
-    <!-- Streak Goal (Motivation) -->
-    @if (!isCollapsed()) {
-    <div class="sidebar__section sidebar__section--stats">
-        <div class="streak-card" [attr.title]="i18n.t('streak.clickDetails')" [class.active]="streak.practicedToday()"
-            (click)="openStreak.emit()">
-            <div class="streak-icon-wrapper">
-                <app-icon name="fire" [size]="20" class="streak-icon" />
+    <div class="sidebar__inner">
+        <!-- Logo / Brand -->
+        <div class="sidebar__brand">
+            <div class="sidebar__logo">
+                <span class="logo-text">言</span>
             </div>
-            <div class="streak-info">
-                <span class="streak-count">{{ streak.currentStreak() }}</span>
-                <span class="streak-label">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
-            </div>
-            @if (streak.freezesRemaining() > 0 && streak.currentStreak() > 0) {
-            <div class="streak-freezes" [attr.title]="i18n.t('streak.freezesRemaining')">
-                <app-icon name="snowflake" [size]="14" />
-                <span>{{ streak.freezesRemaining() }}</span>
+            @if (!isCollapsed()) {
+            <div class="sidebar__title-group">
+                <h1 class="sidebar__title">{{ i18n.t('app.title') }}</h1>
+                <span class="sidebar__subtitle">{{ i18n.t('app.subtitle') }}</span>
             </div>
             }
         </div>
 
-        <!-- Diamond Credits Card -->
-        <button class="diamond-credits-btn" (click)="openAiCredits.emit()" [attr.title]="i18n.t('subtitle.aiCredits')">
-            <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
-                [nextRegenAt]="transcript.nextRegenAt()" variant="card" [showLabel]="true" />
-        </button>
-    </div>
-    }
-
-    <!-- Footer Actions -->
-    <div class="sidebar__footer">
-        <!-- Collapsed Streak Indicator -->
-        @if (isCollapsed()) {
-        <button class="collapsed-streak" [attr.title]="i18n.t('streak.clickDetails')"
-            [class.active]="streak.practicedToday()" (click)="openStreak.emit()">
-            <app-icon name="fire" [size]="18" />
-            <span class="collapsed-streak-count">{{ streak.currentStreak() }}</span>
-        </button>
-        <!-- Collapsed Diamond Indicator -->
-        <button class="diamond-credits-btn collapsed-diamond-btn" (click)="openAiCredits.emit()"
-            [attr.title]="i18n.t('subtitle.aiCredits')">
-            <app-diamond-credits-card [diamonds]="transcript.diamonds()" [maxDiamonds]="transcript.maxDiamonds()"
-                [nextRegenAt]="transcript.nextRegenAt()" variant="collapsed" [showLabel]="false" />
-        </button>
-        }
-
-        @if (!auth.isInitialized()) {
-        <!-- Placeholder while auth initializes - matches user-settings-row structure -->
-        <div class="footer-placeholder">
-            <div class="footer-placeholder__avatar"></div>
-            @if (!isCollapsed()) {
-            <div class="footer-placeholder__text">
-                <div class="footer-placeholder__name"></div>
-                <div class="footer-placeholder__badge"></div>
-            </div>
-            }
-        </div>
-        } @else if (auth.isLoggedIn()) {
-        <button class="footer-btn user-settings-row" (click)="openSettings.emit()">
-            <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
-            @if (!isCollapsed()) {
-            <div class="user-info-stack">
-                <span class="user-name">{{ auth.user()?.name }}</span>
-                <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
-                    {{ auth.getSubscriptionTier() | uppercase }}
-                </span>
-            </div>
-            <app-icon name="settings" [size]="18" class="settings-icon" />
-            }
-        </button>
-        } @else if (auth.isAuthEnabled()) {
-        <div class="footer-guest-row" [class.collapsed]="isCollapsed()">
-            <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
-                <app-icon name="user" [size]="20" />
+        <!-- Navigation -->
+        <nav class="sidebar__nav">
+            <button class="nav-item nav-item--new" (click)="openCommandPalette.emit()"
+                [attr.title]="i18n.t('nav.newVideo')">
+                <app-icon name="plus" [size]="18" />
                 @if (!isCollapsed()) {
-                <span>{{ i18n.t('header.signIn') }}</span>
+                <span>{{ i18n.t('nav.newVideo') }}</span>
                 }
             </button>
-            <button class="footer-btn-icon" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
-                <app-icon name="settings" [size]="18" />
+            <a class="nav-item" routerLink="/video" routerLinkActive="active" [attr.title]="i18n.t('nav.learn')">
+                <app-icon name="play-circle" [size]="18" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('nav.learn') }}</span>
+                }
+            </a>
+            <a class="nav-item" routerLink="/dictionary" routerLinkActive="active" [attr.title]="i18n.t('nav.words')">
+                <app-icon name="book-open" [size]="18" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('nav.words') }}</span>
+                }
+            </a>
+            <a class="nav-item" routerLink="/study" routerLinkActive="active" [attr.title]="i18n.t('nav.study')">
+                <app-icon name="graduation-cap" [size]="18" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('nav.study') }}</span>
+                }
+            </a>
+            <a class="nav-item" routerLink="/explore" routerLinkActive="active" [attr.title]="i18n.t('nav.explore')">
+                <app-icon name="globe" [size]="18" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('nav.explore') }}</span>
+                }
+            </a>
+            <a class="nav-item" routerLink="/history" routerLinkActive="active" [attr.title]="i18n.t('history.title')">
+                <app-icon name="clock" [size]="18" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('history.title') }}</span>
+                }
+            </a>
+        </nav>
+
+        <!-- Bottom Controls -->
+        <div class="sidebar__bottom">
+            <!-- Learning Language Selector -->
+            @if (!isCollapsed()) {
+            <button class="lang-selector-btn" (click)="showLangPicker.set(true)" [attr.title]="i18n.t('settings.learningLanguage')">
+                <img [src]="currentLang().flag" class="lang-flag" alt="" />
+                <span class="lang-name">{{ currentLang().name }}</span>
+                <app-icon name="chevron-down" [size]="14" class="lang-chevron" />
             </button>
+            } @else {
+            <button class="lang-flag-btn" (click)="showLangPicker.set(true)" [attr.title]="currentLang().name">
+                <img [src]="currentLang().flag" class="lang-flag" alt="" />
+            </button>
+            }
+
+            <!-- Unified Motivation & Credits Bar -->
+            @if (!isCollapsed()) {
+            <div class="stats-bar">
+                <button class="stats-bar__item" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
+                    [attr.title]="i18n.t('streak.clickDetails')">
+                    <app-icon name="fire" [size]="16" class="stat-icon stat-icon--fire" />
+                    <span class="stats-bar__val">{{ streak.currentStreak() }}</span>
+                    <span class="stats-bar__label">{{ i18n.t('streak.dayStreak') || 'Streak' }}</span>
+                </button>
+                <div class="stats-bar__divider"></div>
+                <button class="stats-bar__item" (click)="openAiCredits.emit()" [attr.title]="i18n.t('subtitle.aiCredits')">
+                    <app-icon name="diamond" [size]="16" class="stat-icon stat-icon--diamond" />
+                    <span class="stats-bar__val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
+                </button>
+            </div>
+            } @else {
+            <!-- Collapsed Quick Badges -->
+            <div class="collapsed-stats-stack">
+                <button class="collapsed-stat-btn" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
+                    [attr.title]="i18n.t('streak.clickDetails')">
+                    <app-icon name="fire" [size]="16" class="stat-icon--fire" />
+                    <span>{{ streak.currentStreak() }}</span>
+                </button>
+                <button class="collapsed-stat-btn" (click)="openAiCredits.emit()" [attr.title]="i18n.t('subtitle.aiCredits')">
+                    <app-icon name="diamond" [size]="16" class="stat-icon--diamond" />
+                    <span>{{ transcript.diamonds() }}</span>
+                </button>
+            </div>
+            }
+
+            <!-- Footer: User / Settings -->
+            <div class="sidebar__footer">
+                @if (!auth.isInitialized()) {
+                <div class="footer-placeholder">
+                    <div class="footer-placeholder__avatar"></div>
+                    @if (!isCollapsed()) {
+                    <div class="footer-placeholder__text">
+                        <div class="footer-placeholder__name"></div>
+                        <div class="footer-placeholder__badge"></div>
+                    </div>
+                    }
+                </div>
+                } @else if (auth.isLoggedIn()) {
+                <button class="footer-btn user-settings-row" (click)="openSettings.emit()">
+                    <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+                    @if (!isCollapsed()) {
+                    <div class="user-info-stack">
+                        <span class="user-name">{{ auth.user()?.name }}</span>
+                        <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
+                            {{ auth.getSubscriptionTier() | uppercase }}
+                        </span>
+                    </div>
+                    <app-icon name="settings" [size]="16" class="settings-icon" />
+                    }
+                </button>
+                } @else if (auth.isAuthEnabled()) {
+                <div class="footer-guest-row" [class.collapsed]="isCollapsed()">
+                    <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn" [attr.title]="i18n.t('settings.signInGoogle')">
+                        <app-icon name="google" [size]="16" />
+                        @if (!isCollapsed()) {
+                        <span>{{ i18n.t('settings.signInGoogle') }}</span>
+                        }
+                    </button>
+                    <button class="footer-btn-icon" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+                        <app-icon name="settings" [size]="16" />
+                    </button>
+                </div>
+                }
+            </div>
         </div>
-        }
     </div>
 </aside>
 

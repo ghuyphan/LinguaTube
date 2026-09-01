@@ -30,8 +30,14 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
 
       <!-- Desktop sidebar with stats -->
       <aside class="page-layout__sidebar desktop-only">
-        <div class="sidebar-card">
-          <h3 class="sidebar-card__title">{{ i18n.t('vocab.title') }}</h3>
+        <div class="card sidebar-card">
+          <div class="panel-header">
+            <div class="panel-header__row">
+              <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
+              <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
+            </div>
+            <p class="panel-header__subtitle">{{ stats().total }} {{ i18n.t('study.cards') }}</p>
+          </div>
           
           <div class="stats-grid">
             <div class="stat-item">
@@ -61,12 +67,15 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
         </div>
 
         @if (recentSearches().length > 0) {
-          <div class="sidebar-card">
-            <div class="recent-header">
-              <h4 class="sidebar-card__subtitle m-0">{{ i18n.t('dictionary.recentSearches') }}</h4>
-              <button class="clear-all-btn" (click)="clearAllRecentSearches()">
-                {{ i18n.t('dictionary.clearAll') }}
-              </button>
+          <div class="card sidebar-card">
+            <div class="panel-header">
+              <div class="panel-header__row">
+                <app-icon name="clock" [size]="18" class="panel-header__icon" />
+                <h4 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('dictionary.recentSearches') }}</h4>
+                <button class="panel-header__link" (click)="clearAllRecentSearches()">
+                  {{ i18n.t('dictionary.clearAll') }}
+                </button>
+              </div>
             </div>
             <div class="recent-list">
               @for (term of recentSearches(); track term) {

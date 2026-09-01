@@ -8,8 +8,6 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../services';
 import { Playlist, PlaylistLanguage, PlaylistVideo } from '../../../models';
-import { MascotComponent } from '../../../components/mascot/mascot.component';
-
 const LANGUAGES = [
     { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
     { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
@@ -20,7 +18,7 @@ const LANGUAGES = [
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, BottomSheetComponent, OptionPickerComponent, MascotComponent],
+    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, BottomSheetComponent, OptionPickerComponent],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

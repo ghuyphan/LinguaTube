@@ -1,5 +1,5 @@
 .option-picker {
-    padding: var(--space-sm) 0;
+    padding: var(--space-xs) 0 var(--space-sm);
 }
 
 .option-picker__header {
@@ -9,8 +9,8 @@
 
     h3 {
         margin: 0;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 1.0625rem;
+        font-weight: 700;
         color: var(--text-primary);
     }
 }
@@ -18,24 +18,27 @@
 .option-picker__list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 var(--space-sm);
     max-height: 60vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .option-picker__item {
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: 0.6875rem var(--space-md);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
     color: var(--text-primary);
 
     @media (hover: hover) {
         &:hover {
             background-color: var(--bg-hover);
-            transform: translateX(4px);
         }
     }
 
@@ -45,7 +48,7 @@
     }
 
     &.selected {
-        background-color: var(--accent-primary-soft);
+        background-color: rgba(var(--accent-primary-rgb), 0.1);
         color: var(--accent-primary);
         font-weight: 700;
     }

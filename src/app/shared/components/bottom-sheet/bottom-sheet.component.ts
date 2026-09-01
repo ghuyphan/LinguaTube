@@ -28,7 +28,7 @@ import { BottomSheetService } from '../../../services/bottom-sheet.service';
 export class BottomSheetComponent implements OnDestroy {
   private sheetService = inject(BottomSheetService);
   private platformId = inject(PLATFORM_ID);
-
+  private elementRef = inject(ElementRef);
 
   // View children
   sheetEl = viewChild<ElementRef<HTMLElement>>('sheetEl');
@@ -55,6 +55,11 @@ export class BottomSheetComponent implements OnDestroy {
   isDragClosing = signal(false); // Tracks if closing via drag (uses transition, not animation)
   hasAnimated = signal(false); // Tracks if entry animation has completed
   dragOffset = signal(0);
+
+  // Teleportation state to escape parent stacking contexts
+  private originalParent: Node | null = null;
+  private nextSibling: Node | null = null;
+  private isTeleported = false;
 
   // Drag gesture state
   private touchStartY = 0;
@@ -85,6 +90,8 @@ export class BottomSheetComponent implements OnDestroy {
   constructor() {
     effect(() => {
       if (this.isOpen()) {
+        this.teleport();
+
         // Register with service - it handles scroll locking and history
         this.unregisterFn = this.sheetService.register({
           id: this.sheetId,
@@ -96,14 +103,55 @@ export class BottomSheetComponent implements OnDestroy {
         this.isDragClosing.set(false);
         // Reset hasAnimated when sheet opens (animation will play)
         this.hasAnimated.set(false);
-      } else if (this.unregisterFn) {
+      } else {
         // If closed externally (not by service), ensure unregister is called
-        // This is critical for cleaning up scroll locks if the parent component
-        // sets isOpen = false directly without calling close()
-        this.unregisterFn();
-        this.unregisterFn = null;
+        if (this.unregisterFn) {
+          this.unregisterFn();
+          this.unregisterFn = null;
+        }
+        this.restore();
       }
     });
+  }
+
+  /**
+   * Teleport sheet to document.body (or fullscreen element)
+   * so it escapes all ancestor stacking contexts, overflow:hidden, and transforms.
+   */
+  private teleport(): void {
+    if (!isPlatformBrowser(this.platformId) || this.isTeleported) return;
+    const host = this.elementRef.nativeElement as HTMLElement;
+    if (!host.parentNode) return;
+
+    const target = document.fullscreenElement || document.body;
+    if (host.parentNode === target) return;
+
+    this.originalParent = host.parentNode;
+    this.nextSibling = host.nextSibling;
+    target.appendChild(host);
+    this.isTeleported = true;
+  }
+
+  /**
+   * Restore sheet back to its original parent in the component tree.
+   */
+  private restore(): void {
+    if (!this.isTeleported || !this.originalParent) return;
+    const host = this.elementRef.nativeElement as HTMLElement;
+    try {
+      if (host.parentNode) {
+        if (this.nextSibling && this.originalParent.contains(this.nextSibling)) {
+          this.originalParent.insertBefore(host, this.nextSibling);
+        } else {
+          this.originalParent.appendChild(host);
+        }
+      }
+    } catch {
+      // Parent was detached, safe to ignore
+    }
+    this.isTeleported = false;
+    this.originalParent = null;
+    this.nextSibling = null;
   }
 
   /**
@@ -294,5 +342,6 @@ export class BottomSheetComponent implements OnDestroy {
       this.unregisterFn();
       this.unregisterFn = null;
     }
+    this.restore();
   }
 }

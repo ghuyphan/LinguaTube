@@ -16,19 +16,17 @@
     box-shadow: none;
     background: var(--bg-card);
     cursor: pointer;
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
-}
-
-.upload-zone:active {
-    transform: translateY(4px);
-    box-shadow: 0 0 0 transparent;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .upload-zone:hover {
     border-color: var(--accent-primary);
-    background: var(--bg-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0 var(--border-color-light);
+    background: var(--bg-hover);
+    transform: translateY(-1px);
+}
+
+.upload-zone:active {
+    transform: scale(0.99) translateY(0);
 }
 
 .upload-zone--dragover {

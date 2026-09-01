@@ -5,8 +5,8 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-md);
-    padding: var(--space-md) 0;
-    min-height: 4rem;
+    padding: var(--space-sm) 0 var(--space-xs);
+    min-height: 3.25rem;
 
     :host-context(.is-fullscreen) & {
         display: none;
@@ -24,12 +24,11 @@
     color: var(--text-primary);
     line-height: 1.4;
     display: -webkit-box;
-    line-clamp: 1;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
     margin-bottom: 0.25rem;
 }
 

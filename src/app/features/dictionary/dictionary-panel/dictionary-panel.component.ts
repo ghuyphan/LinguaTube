@@ -6,13 +6,11 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { DictionaryService, VocabularyService, SettingsService, I18nService } from '../../../services';
 import { DictionaryEntry } from '../../../models';
 
-import { MascotComponent } from '../../../components/mascot/mascot.component';
-
 @Component({
   selector: 'app-dictionary-panel',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, MascotComponent],
+  imports: [CommonModule, FormsModule, IconComponent],
   templateUrl: './dictionary-panel.component.html',
   styleUrl: './dictionary-panel.component.scss'
 })

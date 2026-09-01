@@ -5,12 +5,10 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { I18nService, YoutubeService } from '../../../services';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 
-import { MascotComponent } from '../../../components/mascot/mascot.component';
-
 @Component({
     selector: 'app-playlist-panel',
     standalone: true,
-    imports: [CommonModule, IconComponent, DragDropModule, MascotComponent],
+    imports: [CommonModule, IconComponent, DragDropModule],
     templateUrl: './playlist-panel.component.html',
     styleUrls: ['./playlist-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

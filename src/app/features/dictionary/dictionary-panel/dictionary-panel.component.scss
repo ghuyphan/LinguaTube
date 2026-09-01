@@ -4,17 +4,17 @@
 .dict-panel {
     display: flex;
     flex-direction: column;
+    padding: var(--space-md);
+    gap: var(--space-sm);
 }
-
-
 
 // ============================================
 // SEARCH BAR - Modern pill style
 // ============================================
 .dict-filters {
     display: flex;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-xs);
+    padding: 0;
 }
 
 .search-box {
@@ -43,8 +43,7 @@
 // RESULTS AREA
 // ============================================
 .dict-results {
-    padding: var(--space-lg);
-    // min-height: 10rem;
+    padding: 0;
 }
 
 .loading-state {

@@ -22,7 +22,7 @@ $z-seek-tooltip: 30;
     background: rgba(255, 255, 255, 0.2);
     position: relative;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 999px;
     transition: height $transition-fast;
     touch-action: none; // Prevent scroll while seeking
     overflow: visible;
@@ -53,12 +53,12 @@ $z-seek-tooltip: 30;
     left: 0;
     right: 0;
     bottom: 100%; // Start from top of container
-    height: 20px; // Extend 20px upwards
+    height: 24px; // Extend upwards
     z-index: 2;
     cursor: pointer;
     pointer-events: auto;
     -webkit-tap-highlight-color: transparent;
-    transform: translateY(50%); // Shift down slightly to cover the bar itself, but mostly up
+    transform: translateY(50%);
 }
 
 .progress-buffered {
@@ -67,8 +67,8 @@ $z-seek-tooltip: 30;
     left: 0;
     height: 100%;
     width: calc(var(--buffered) * 1%);
-    background: rgba(255, 255, 255, 0.35);
-    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
     pointer-events: none;
 }
 
@@ -79,7 +79,7 @@ $z-seek-tooltip: 30;
     height: 100%;
     width: calc(var(--progress) * 1%);
     background: var(--accent-primary);
-    border-radius: 2px;
+    border-radius: 999px;
     pointer-events: none;
 }
 
@@ -88,13 +88,15 @@ $z-seek-tooltip: 30;
     top: 50%;
     left: calc(var(--progress) * 1%);
     transform: translate(-50%, -50%) scale(0);
-    width: $progress-handle-size;
-    height: $progress-handle-size;
+    width: 14px;
+    height: 14px;
     background: var(--accent-primary);
+    border: 2px solid #ffffff;
     border-radius: 50%;
     pointer-events: none;
     transition: transform $transition-fast;
     z-index: 3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 10px rgba(var(--accent-primary-rgb), 0.5);
 }
 
 .seek-tooltip {

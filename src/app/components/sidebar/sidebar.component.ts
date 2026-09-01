@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
-import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
 
@@ -11,7 +10,7 @@ import { StreakService } from '../../services/streak.service';
     selector: 'app-sidebar',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent, OptionPickerComponent, DiamondCreditsCardComponent],
+    imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent, OptionPickerComponent],
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })

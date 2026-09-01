@@ -7,7 +7,9 @@
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    // height: 100%; /* Removed to allow shrink-to-fit content */
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    box-shadow: none;
     max-height: calc(var(--app-height, 100dvh) - 140px);
 }
 
@@ -15,7 +17,7 @@
 // HEADER - Clean and minimal (matches dict-header)
 // ============================================
 .vocab-header {
-    padding: var(--space-sm) var(--space-md);
+    padding: 0;
 }
 
 .header-row {
@@ -29,15 +31,16 @@
 }
 
 .vocab-header h2 {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.0625rem;
+    font-weight: 700;
     margin: 0;
+    color: var(--text-primary);
 }
 
 .vocab-subtitle {
     font-size: 0.8125rem;
     color: var(--text-muted);
-    margin-top: var(--space-xs);
+    margin-top: 2px;
     margin-bottom: 0;
 }
 
@@ -46,8 +49,8 @@
 // ============================================
 .vocab-filters {
     display: flex;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-xs);
+    padding: 0;
 }
 
 .search-box {
@@ -73,17 +76,23 @@
     font-weight: 600;
     color: var(--text-primary);
     background: var(--bg-card);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    box-shadow: 0 4px 0 var(--border-color);
+    box-shadow: none;
     cursor: pointer;
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
     flex-shrink: 0;
 
     @media (hover: hover) {
         &:hover {
-            background: var(--bg-secondary);
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+            transform: translateY(-1px);
         }
+    }
+
+    &:active {
+        transform: scale(0.99) translateY(0);
     }
 
     app-icon {

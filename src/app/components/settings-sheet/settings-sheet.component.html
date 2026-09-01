@@ -1,83 +1,153 @@
 <app-bottom-sheet [isOpen]="isOpen()" [showCloseButton]="true" (closed)="onSheetClosed()">
-    <div class="settings-sheet">
-        <div class="settings-header">
-            <h2>{{ i18n.t('settings.title') }}</h2>
+    <div class="settings-modal">
+        <!-- Modal Header -->
+        <div class="settings-modal__header">
+            <div class="settings-modal__title-box">
+                <app-icon name="settings" [size]="20" class="settings-modal__icon" />
+                <h2 class="settings-modal__title">{{ i18n.t('settings.title') }}</h2>
+            </div>
         </div>
 
-        <div class="settings-section">
-            <app-profile-card [user]="auth.user()" [subscriptionTier]="auth.getSubscriptionTier()"
-                [isSyncing]="vocab.isSyncing()" [isLoggingIn]="isLoggingIn" [signInLabel]="i18n.t('header.signIn')"
-                [signOutLabel]="i18n.t('header.signOut')" [syncHint]="i18n.t('settings.syncVocab')"
-                (signIn)="loginWithGoogle()" (signOut)="showSignOutModal()" />
-        </div>
-
-        <!-- Stats Section -->
-        <div class="settings-section">
-            <app-stats-row [streak]="streak.currentStreak()" [practicedToday]="streak.practicedToday()"
-                [diamonds]="transcript.diamonds()" [label]="i18n.t('streak.dayStreak')"
-                (openStreak)="openStreakDialog()" (openAiCredits)="openAiCreditsDialog()" />
-        </div>
-
-        <!-- Quick Navigation (Mobile Only) -->
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('nav.quickLinks') || 'Quick Links' }}</h3>
-            <button class="setting-row setting-row--clickable" (click)="goToHistory()">
-                <div class="setting-row__content">
-                    <app-icon name="clock" [size]="20" class="setting-row__icon" />
-                    <span class="setting-row__label">{{ i18n.t('history.title') }}</span>
-                </div>
-                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
-            </button>
-        </div>
-
-        <!-- Language Settings -->
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.learningLanguage') }}</h3>
-            <button class="setting-row setting-row--clickable" (click)="showLearningLangPicker.set(true)">
-                <div class="setting-row__content">
-                    <img [src]="currentLearningLang().flag" class="setting-row__flag" alt="" />
-                    <span class="setting-row__value">{{ currentLearningLang().name }}</span>
-                </div>
-                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
-            </button>
-        </div>
-
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.interfaceLanguage') }}</h3>
-            <button class="setting-row setting-row--clickable" (click)="showUILangPicker.set(true)">
-                <div class="setting-row__content">
-                    <img [src]="currentUILang().flag" class="setting-row__flag" alt="" />
-                    <span class="setting-row__value">{{ currentUILang().nativeName }}</span>
-                </div>
-                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
-            </button>
-        </div>
-
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.learningDisplay') }}</h3>
-            <button class="setting-row setting-row--clickable" (click)="showReadingModePicker.set(true)">
-                <div class="setting-row__content">
-                    <app-icon name="languages" [size]="20" class="setting-row__icon" />
-                    <div class="setting-row__group">
-                        <span class="setting-row__label">{{ currentReadingDisplay() }}</span>
-                        <span class="setting-row__hint">{{ i18n.t('settings.learningDisplayHint') }}</span>
+        <div class="settings-modal__body">
+            <!-- 1. Account & Motivation Card -->
+            <div class="settings-card settings-card--account">
+                @if (auth.isLoggedIn()) {
+                <div class="account-user-row">
+                    <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="account-avatar" />
+                    <div class="account-details">
+                        <div class="account-name-line">
+                            <span class="account-name">{{ auth.user()?.name }}</span>
+                            <span class="badge badge--sm" [class]="'badge--' + auth.getSubscriptionTier()">
+                                {{ auth.getSubscriptionTier() | uppercase }}
+                            </span>
+                        </div>
+                        <span class="account-email">{{ auth.user()?.email }}</span>
                     </div>
+                    <button class="account-signout-btn" (click)="showSignOutModal()" [attr.title]="i18n.t('header.signOut')">
+                        <app-icon name="log-out" [size]="16" />
+                    </button>
                 </div>
-                <app-icon name="chevron-right" [size]="18" class="setting-row__chevron" />
-            </button>
-        </div>
+                } @else {
+                <div class="account-guest-banner">
+                    <div class="account-guest-header">
+                        <div class="account-guest-icon">
+                            <app-icon name="cloud" [size]="20" />
+                        </div>
+                        <div class="account-guest-text">
+                            <strong class="account-guest-title">{{ i18n.t('settings.syncVocab') }}</strong>
+                            <span class="account-guest-hint">{{ i18n.t('app.subtitle') }}</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-google account-login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
+                        <app-icon name="google" [size]="18" />
+                        <span>{{ i18n.t('settings.signInGoogle') }}</span>
+                    </button>
+                </div>
+                }
 
-        <!-- Theme Toggle -->
-        <div class="settings-section">
-            <h3 class="section-title">{{ i18n.t('settings.appearance') }}</h3>
-            <div class="setting-row">
-                <div class="setting-row__content">
-                    <app-icon [name]="isDarkMode() ? 'sun' : 'moon'" [size]="20" class="setting-row__icon" />
-                    <span class="setting-row__label">
-                        {{ isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode') }}
-                    </span>
+                <!-- Motivation & AI Credits 2-Column Bar -->
+                <div class="settings-stats-grid">
+                    <button class="settings-stat-pill" (click)="openStreakDialog()" [class.active]="streak.practicedToday()"
+                        [attr.title]="i18n.t('streak.clickDetails')">
+                        <app-icon name="fire" [size]="18" class="stat-icon--fire" />
+                        <div class="settings-stat-text">
+                            <span class="settings-stat-val">{{ streak.currentStreak() }}</span>
+                            <span class="settings-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
+                        </div>
+                    </button>
+
+                    <button class="settings-stat-pill" (click)="openAiCreditsDialog()" [attr.title]="i18n.t('subtitle.aiCredits')">
+                        <app-icon name="diamond" [size]="18" class="stat-icon--diamond" />
+                        <div class="settings-stat-text">
+                            <span class="settings-stat-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
+                            <span class="settings-stat-lbl">{{ i18n.t('subtitle.aiCredits') }}</span>
+                        </div>
+                    </button>
                 </div>
-                <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" />
+            </div>
+
+            <!-- 2. Learning & Language Group Card -->
+            <div class="settings-group">
+                <span class="settings-group__label">{{ i18n.t('settings.learningLanguage') }} &amp; {{ i18n.t('settings.learningDisplay') }}</span>
+                <div class="settings-card settings-card--group">
+                    <!-- Learning Language -->
+                    <button class="settings-item-row" (click)="showLearningLangPicker.set(true)">
+                        <div class="settings-item-left">
+                            <img [src]="currentLearningLang().flag" class="settings-item-flag" alt="" />
+                            <span class="settings-item-title">{{ i18n.t('settings.learningLanguage') }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <span class="settings-item-value">{{ currentLearningLang().name }}</span>
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- Reading Mode Display -->
+                    <button class="settings-item-row" (click)="showReadingModePicker.set(true)">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon name="languages" [size]="16" />
+                            </div>
+                            <span class="settings-item-title">{{ i18n.t('settings.learningDisplay') }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <span class="settings-item-value">{{ currentReadingDisplay() }}</span>
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- Interface Language -->
+                    <button class="settings-item-row" (click)="showUILangPicker.set(true)">
+                        <div class="settings-item-left">
+                            <img [src]="currentUILang().flag" class="settings-item-flag" alt="" />
+                            <span class="settings-item-title">{{ i18n.t('settings.interfaceLanguage') }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <span class="settings-item-value">{{ currentUILang().nativeName }}</span>
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. Preferences & General Group Card -->
+            <div class="settings-group">
+                <span class="settings-group__label">{{ i18n.t('settings.appearance') }}</span>
+                <div class="settings-card settings-card--group">
+                    <!-- Dark / Light Mode -->
+                    <div class="settings-item-row">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon [name]="isDarkMode() ? 'moon' : 'sun'" [size]="16" />
+                            </div>
+                            <span class="settings-item-title">
+                                {{ isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode') }}
+                            </span>
+                        </div>
+                        <div class="settings-item-right">
+                            <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" />
+                        </div>
+                    </div>
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- History Quick Link -->
+                    <button class="settings-item-row" (click)="goToHistory()">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon name="clock" [size]="16" />
+                            </div>
+                            <span class="settings-item-title">{{ i18n.t('history.title') }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

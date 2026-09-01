@@ -43,13 +43,13 @@
 
     @media (hover: hover) {
         &:hover {
-            border-color: var(--text-muted);
-            background: var(--bg-secondary);
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
         }
     }
 
     &:active {
-        transform: scale(0.98);
+        transform: scale(0.99);
     }
 
     // Saved state - video is in this playlist

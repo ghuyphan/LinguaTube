@@ -32,26 +32,5 @@ export const routes: Routes = [
         redirectTo: 'explore',
         pathMatch: 'full'
     },
-    {
-        path: 'game',
-        children: [
-            {
-                path: 'lobby',
-                loadComponent: () => import('./features/multiplayer-game/game-lobby/game-lobby.component')
-                    .then(m => m.GameLobbyComponent)
-            },
-            {
-                path: 'barista',
-                loadComponent: () => import('./features/multiplayer-game/barista-view/barista-view.component')
-                    .then(m => m.BaristaViewComponent)
-            },
-            {
-                path: 'customer',
-                loadComponent: () => import('./features/multiplayer-game/customer-view/customer-view.component')
-                    .then(m => m.CustomerViewComponent)
-            },
-            { path: '', redirectTo: 'lobby', pathMatch: 'full' }
-        ]
-    },
     { path: '**', redirectTo: 'video' }
 ];

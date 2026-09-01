@@ -6,6 +6,8 @@ import { VocabularyService, SettingsService, I18nService } from '../../../servic
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
 
+import { RouterLink } from '@angular/router';
+
 interface StudyCard {
     item: VocabularyItem;
     showAnswer: boolean;
@@ -14,13 +16,11 @@ interface StudyCard {
 const DAILY_GOAL_KEY = 'linguatube_daily_goal';
 const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
 
-import { MascotComponent } from '../../../components/mascot/mascot.component';
-
 @Component({
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, SwitchComponent, MascotComponent],
+    imports: [CommonModule, RouterLink, IconComponent, SwitchComponent],
     templateUrl: './study-mode.component.html',
     styleUrl: './study-mode.component.scss'
 })

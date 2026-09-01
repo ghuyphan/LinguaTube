@@ -7,8 +7,6 @@ import { HistoryService, SettingsService, I18nService, AuthService } from '../..
 
 type FilterType = 'all' | 'favorites';
 
-import { MascotComponent } from '../../../components/mascot/mascot.component';
-
 @Component({
   selector: 'app-history-page',
   standalone: true,
@@ -17,8 +15,7 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
     CommonModule,
     IconComponent,
     BottomSheetComponent,
-    HistoryListComponent,
-    MascotComponent
+    HistoryListComponent
   ],
   template: `
     <div class="page-layout">
@@ -67,8 +64,8 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
             @if (filteredItems().length === 0 && historyItems().length > 0) {
               <!-- No favorites -->
               <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                  <app-mascot mood="sad"></app-mascot>
+                <div class="empty-state__icon-box">
+                  <app-icon name="heart" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                   <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
@@ -78,8 +75,8 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
             } @else if (historyItems().length === 0) {
               <!-- No history at all -->
               <div class="empty-state empty-state--centered">
-                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                  <app-mascot mood="sleeping"></app-mascot>
+                <div class="empty-state__icon-box">
+                  <app-icon name="clock" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                   <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
@@ -103,8 +100,14 @@ import { MascotComponent } from '../../../components/mascot/mascot.component';
 
       <!-- Desktop sidebar -->
       <aside class="page-layout__sidebar desktop-only">
-        <div class="sidebar-card">
-          <h3 class="sidebar-card__title">{{ i18n.t('history.title') }}</h3>
+        <div class="card sidebar-card">
+          <div class="panel-header">
+            <div class="panel-header__row">
+              <app-icon name="clock" [size]="20" class="panel-header__icon" />
+              <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
+            </div>
+            <p class="panel-header__subtitle">{{ historyItems().length }} {{ i18n.t('history.all') }}</p>
+          </div>
           
           <div class="stats-grid">
             <div class="stat-item">

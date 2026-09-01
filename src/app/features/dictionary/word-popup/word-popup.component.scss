@@ -121,9 +121,9 @@
     height: 1.25rem;
     border-radius: var(--border-radius-round);
     background: linear-gradient(90deg,
-            color-mix(in srgb, var(--text-secondary), transparent 92%) 25%,
-            color-mix(in srgb, var(--text-secondary), transparent 85%) 50%,
-            color-mix(in srgb, var(--text-secondary), transparent 92%) 75%);
+            rgba(var(--text-secondary-rgb), 0.08) 25%,
+            rgba(var(--text-secondary-rgb), 0.16) 50%,
+            rgba(var(--text-secondary-rgb), 0.08) 75%);
     background-size: 200% 100%;
     animation: skeleton-pulse 1.5s ease-in-out infinite;
     flex-shrink: 0;
@@ -134,9 +134,9 @@
     height: 1rem;
     border-radius: 6px;
     background: linear-gradient(90deg,
-            color-mix(in srgb, var(--text-secondary), transparent 92%) 25%,
-            color-mix(in srgb, var(--text-secondary), transparent 85%) 50%,
-            color-mix(in srgb, var(--text-secondary), transparent 92%) 75%);
+            rgba(var(--text-secondary-rgb), 0.08) 25%,
+            rgba(var(--text-secondary-rgb), 0.16) 50%,
+            rgba(var(--text-secondary-rgb), 0.08) 75%);
     background-size: 200% 100%;
     animation: skeleton-pulse 1.5s ease-in-out infinite;
 
@@ -387,26 +387,25 @@
     height: 44px;
     font-size: 0.8125rem;
     font-weight: 500;
-    border-radius: var(--border-radius-lg);
-    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
     background: var(--bg-card);
     color: var(--text-primary);
     cursor: pointer;
-    transition: all var(--transition-fast);
-    box-shadow: 0 4px 0 var(--border-color);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+    box-shadow: none;
     min-height: unset;
 
     @media (hover: hover) {
         &:hover {
-            background: var(--bg-secondary);
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
             transform: translateY(-1px);
-            box-shadow: 0 5px 0 var(--border-color);
         }
     }
 
     &:active {
-        transform: translateY(4px) !important;
-        box-shadow: 0 0 0 var(--border-color) !important;
+        transform: scale(0.99) translateY(0) !important;
     }
 
     app-icon {

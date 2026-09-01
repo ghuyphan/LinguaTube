@@ -6,104 +6,142 @@
             (closePlaylist)="closePlaylist()" />
 
         @if (showLearnHome()) {
-        <section class="card learn-home">
-            <div class="learn-home__hero">
-                <div class="learn-home__hero-copy">
-                    <span class="learn-home__eyebrow">{{ currentLearningLanguage() }}</span>
-                    <h2 class="learn-home__title">{{ i18n.t('nav.learn') }}</h2>
-                    <p class="learn-home__subtitle">{{ i18n.t('app.subtitle') }}</p>
-                </div>
-                <div class="learn-home__hero-actions">
-                    <button class="btn btn-primary" (click)="openExplore()">
-                        <app-icon name="globe" [size]="16" />
-                        {{ i18n.t('nav.explore') }}
-                    </button>
-                    <button class="btn btn-secondary" (click)="navigateTo('/study')">
-                        <app-icon name="graduation-cap" [size]="16" />
-                        {{ i18n.t('nav.study') }}
-                    </button>
-                </div>
-            </div>
-
-            <div class="learn-home__quick-grid">
-                <button class="quick-link-card" (click)="navigateTo('/dictionary')">
-                    <app-icon name="book-open" [size]="18" />
-                    <div>
-                        <strong>{{ i18n.t('nav.words') }}</strong>
-                        <span>{{ i18n.t('dictionary.subtitle') }}</span>
+        <div class="learn-home">
+            <!-- Learning Hub Overview Header Card -->
+            <div class="card learn-header-card">
+                <div class="panel-header">
+                    <div class="panel-header__row">
+                        <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
+                        <h2 class="panel-header__title">{{ i18n.t('nav.learn') }}</h2>
+                        <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
                     </div>
-                </button>
-                <button class="quick-link-card" (click)="openExplore()">
-                    <app-icon name="list-video" [size]="18" />
-                    <div>
-                        <strong>{{ i18n.t('playlist.community') }}</strong>
-                        <span>{{ i18n.t('playlist.curated') }}</span>
-                    </div>
-                </button>
-            </div>
-
-            @if (recentHistoryItems().length > 0) {
-            <div class="learn-home__section">
-                <div class="learn-home__section-header">
-                    <h3>{{ i18n.t('history.title') }}</h3>
-                    <button class="learn-home__link-btn" (click)="navigateTo('/history')">
-                        {{ i18n.t('history.title') }}
-                    </button>
+                    <p class="panel-header__subtitle">{{ i18n.t('app.subtitle') }}</p>
                 </div>
-                <div class="learn-home__history-list">
-                    @for (item of recentHistoryItems(); track item.id) {
-                    <button class="history-resume-card" (click)="resumeHistory(item.video_id)">
-                        <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" />
-                        <div class="history-resume-card__copy">
-                            <strong>{{ item.title }}</strong>
-                            <span>{{ item.channel || currentLearningLanguage() }}</span>
+
+                <!-- 3 Hub Feature Action Cards -->
+                <div class="learn-hub-grid">
+                    <button class="card-interactive hub-card" (click)="openExplore()">
+                        <div class="hub-card__icon-box">
+                            <app-icon name="list-video" [size]="20" />
                         </div>
-                        <app-icon name="play-circle" [size]="18" />
+                        <div class="hub-card__content">
+                            <strong>{{ i18n.t('nav.explore') }}</strong>
+                            <span>{{ i18n.t('playlist.curated') }} &amp; {{ i18n.t('playlist.community') }}</span>
+                        </div>
+                        <app-icon name="chevron-right" [size]="16" class="hub-card__arrow" />
+                    </button>
+
+                    <button class="card-interactive hub-card" (click)="navigateTo('/dictionary')">
+                        <div class="hub-card__icon-box">
+                            <app-icon name="book-open" [size]="20" />
+                        </div>
+                        <div class="hub-card__content">
+                            <strong>{{ i18n.t('nav.words') }}</strong>
+                            <span>{{ i18n.t('dictionary.subtitle') }}</span>
+                        </div>
+                        <app-icon name="chevron-right" [size]="16" class="hub-card__arrow" />
+                    </button>
+
+                    <button class="card-interactive hub-card" (click)="navigateTo('/study')">
+                        <div class="hub-card__icon-box">
+                            <app-icon name="graduation-cap" [size]="20" />
+                        </div>
+                        <div class="hub-card__content">
+                            <strong>{{ i18n.t('nav.study') }}</strong>
+                            <span>{{ i18n.t('study.subtitle') }}</span>
+                        </div>
+                        <app-icon name="chevron-right" [size]="16" class="hub-card__arrow" />
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent History / Continue Learning -->
+            @if (recentHistoryItems().length > 0) {
+            <div class="card learn-section-card">
+                <div class="panel-header">
+                    <div class="panel-header__row">
+                        <div class="panel-header__left">
+                            <app-icon name="clock" [size]="18" class="panel-header__icon" />
+                            <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
+                        </div>
+                        <button class="panel-header__link" (click)="navigateTo('/history')">
+                            <span>{{ i18n.t('history.title') }}</span>
+                            <app-icon name="arrow-right" [size]="14" />
+                        </button>
+                    </div>
+                </div>
+
+                <div class="history-grid">
+                    @for (item of recentHistoryItems(); track item.id) {
+                    <button class="card-interactive history-card" (click)="resumeHistory(item.video_id)">
+                        <div class="history-card__thumb-wrapper">
+                            <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" class="history-card__thumb" />
+                            <div class="history-card__play-badge">
+                                <app-icon name="play" [size]="14" />
+                            </div>
+                        </div>
+                        <div class="history-card__info">
+                            <strong class="history-card__title">{{ item.title }}</strong>
+                            <span class="history-card__channel">{{ item.channel || currentLearningLanguage() }}</span>
+                        </div>
                     </button>
                     }
                 </div>
             </div>
             }
 
-            <div class="learn-home__section">
-                <div class="learn-home__section-header">
-                    <h3>{{ i18n.t('playlist.curated') }}</h3>
-                    <button class="learn-home__link-btn" (click)="openExplore()">
-                        {{ i18n.t('nav.explore') }}
-                    </button>
+            <!-- Curated Immersion Playlists -->
+            <div class="card learn-section-card">
+                <div class="panel-header">
+                    <div class="panel-header__row">
+                        <div class="panel-header__left">
+                            <app-icon name="globe" [size]="18" class="panel-header__icon" />
+                            <h3 class="panel-header__title">{{ i18n.t('playlist.curated') }}</h3>
+                        </div>
+                        <button class="panel-header__link" (click)="openExplore()">
+                            <span>{{ i18n.t('nav.explore') }}</span>
+                            <app-icon name="arrow-right" [size]="14" />
+                        </button>
+                    </div>
                 </div>
 
                 @if (featuredPlaylists().length > 0) {
-                <div class="learn-home__playlist-grid">
+                <div class="playlist-feature-grid">
                     @for (playlist of featuredPlaylists(); track playlist.id) {
-                    <button class="featured-playlist-card" (click)="startPlaylist(playlist)">
-                        <div class="featured-playlist-card__thumb">
+                    <button class="card-interactive playlist-feature-card" (click)="startPlaylist(playlist)">
+                        <div class="playlist-feature-card__thumb">
                             @if (playlist.thumbnail) {
                             <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" />
                             } @else {
-                            <div class="featured-playlist-card__placeholder">
-                                <app-icon name="list-video" [size]="24" />
+                            <div class="playlist-feature-card__placeholder">
+                                <app-icon name="list-video" [size]="32" />
                             </div>
                             }
+                            <div class="playlist-feature-card__badge">
+                                <app-icon name="list-video" [size]="12" />
+                                <span>{{ playlist.videoIds.length }}</span>
+                            </div>
                         </div>
-                        <div class="featured-playlist-card__body">
-                            <strong>{{ playlist.title }}</strong>
-                            <span>{{ playlist.userName || i18n.t('playlist.community') }}</span>
+                        <div class="playlist-feature-card__body">
+                            <strong class="playlist-feature-card__title">{{ playlist.title }}</strong>
+                            <span class="playlist-feature-card__author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
                         </div>
                     </button>
                     }
                 </div>
                 } @else {
-                <div class="learn-home__empty">
-                    <p>{{ i18n.t('player.hint') }}</p>
-                    <button class="btn btn-secondary" (click)="openExplore()">
-                        <app-icon name="globe" [size]="16" />
-                        {{ i18n.t('nav.explore') }}
-                    </button>
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="list-video" [size]="24" />
+                    </div>
+                    <div class="empty-state__text" style="align-items: center; text-align: center;">
+                        <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
+                        <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
+                    </div>
                 </div>
                 }
             </div>
-        </section>
+        </div>
         } @else {
         <app-subtitle-display [isVideoFullscreen]="isVideoFullscreen()" (wordClicked)="onWordClicked($event)"
             (manualAITrigger)="onManualAITrigger()" />

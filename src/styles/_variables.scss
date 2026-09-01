@@ -23,18 +23,25 @@
     --accent-primary-rgb: 255, 107, 107;
     --accent-primary-hover: #e85555;
     --accent-primary-shadow: #cc584f;
+    --accent-primary-soft: rgba(255, 107, 107, 0.08);
 
     --accent-secondary: #a855f7;
     --accent-secondary-rgb: 168, 85, 247;
     --accent-secondary-shadow: #9333ea;
+    --accent-secondary-soft: rgba(168, 85, 247, 0.08);
 
     --accent-tertiary: #ffc800;
 
     /* Text colors */
     --text-primary: #374151;
+    --text-primary-rgb: 55, 65, 81;
     --text-secondary: #6b7280;
+    --text-secondary-rgb: 107, 114, 128;
     --text-muted: #9ca3af;
+    --text-muted-rgb: 156, 163, 175;
     --text-inverse: #FFFFFF;
+    --bg-card-rgb: 255, 255, 255;
+    --border-color-rgb: 229, 231, 235;
 
     /* Semantic colors */
     --success: #1cb0f6;
@@ -101,6 +108,8 @@
     --border-radius: 16px;
     --border-radius-md: 20px;
     --border-radius-lg: 24px;
+    --border-radius-xl: 28px;
+    --border-radius-2xl: 32px;
     --border-radius-pill: 999px;
     --border-radius-round: 50%;
 
@@ -147,7 +156,7 @@
     --safe-area-left: env(safe-area-inset-left, 0px);
     --safe-area-right: env(safe-area-inset-right, 0px);
     --app-height: 100dvh;
-    --bottom-nav-height: 4.25rem;
+    --bottom-nav-height: 3.5rem;
     --bottom-nav-safe-area: var(--safe-area-bottom);
     --bottom-nav-total-height: calc(var(--bottom-nav-height) + var(--bottom-nav-safe-area));
 
@@ -170,7 +179,7 @@
 }
 
 :root.standalone-mode {
-    --bottom-nav-height: 4rem;
+    --bottom-nav-height: 3.5rem;
     --bottom-nav-safe-area: min(var(--safe-area-bottom), 18px);
 }
 
@@ -179,15 +188,22 @@
     --bg-secondary: #181818;
     --bg-tertiary: #2a2a2a;
     --bg-card: #212121;
+    --bg-card-rgb: 33, 33, 33;
     --border-color: #383838;
+    --border-color-rgb: 56, 56, 56;
     --text-primary: #e5e5e5;
+    --text-primary-rgb: 229, 229, 229;
     --text-secondary: #a3a3a3;
+    --text-secondary-rgb: 163, 163, 163;
     --text-muted: #737373;
+    --text-muted-rgb: 115, 115, 115;
     --text-inverse: #171717;
     --bg-surface: #262626;
     --bg-hover: #333333;
     --text-tertiary: #525252;
     --border-color-light: #2a2a2a;
+    --accent-primary-soft: rgba(255, 107, 107, 0.15);
+    --accent-secondary-soft: rgba(168, 85, 247, 0.15);
 
     --word-new: rgba(255, 75, 75, 0.15);
     --word-new-text: #ff6b6b;

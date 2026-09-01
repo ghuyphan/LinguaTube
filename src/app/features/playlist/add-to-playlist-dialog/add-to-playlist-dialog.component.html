@@ -20,8 +20,8 @@
             </button>
             } @empty {
             <div class="empty-state empty-state--centered">
-                <div class="empty-state__mascot" style="width: 120px; height: 120px; margin-bottom: 1rem;">
-                    <app-mascot mood="thinking"></app-mascot>
+                <div class="empty-state__icon-box">
+                    <app-icon name="list-video" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <p class="empty-state__title">{{ i18n.t('playlist.empty.myTitle') }}</p>
