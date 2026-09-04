@@ -187,7 +187,7 @@
           }
           <button class="fs-popup-btn" (click)="resumeAndClose()">
             <app-icon name="play" [size]="16" />
-            Please Resume
+            <span>{{ i18n.t('player.resume') || 'Resume' }}</span>
           </button>
         </div>
       </div>
