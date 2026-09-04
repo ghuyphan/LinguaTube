@@ -64,134 +64,92 @@
 
         @if (showLearnHome()) {
         <div class="card home-dashboard">
-            <!-- Section 1: Tiếp tục học (Resume Learning / Recent History) -->
-            @if (recentHistoryItems().length > 0) {
-            <section class="dashboard-section">
-                <div class="panel-header">
-                    <div class="panel-header__row">
-                        <div class="panel-header__left">
-                            <app-icon name="clock" [size]="20" class="panel-header__icon" />
-                            <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
-                        </div>
-                        <button type="button" class="panel-header__link" (click)="navigateTo('/history')">
-                            <span>{{ i18n.t('history.title') }}</span>
-                            <app-icon name="arrow-right" [size]="14" />
-                        </button>
+            <div class="panel-header">
+                <div class="panel-header__row">
+                    <div class="panel-header__left">
+                        <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
+                        <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
+                        <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
                     </div>
+                    <button type="button" class="panel-header__link" (click)="openExplore()">
+                        <span>{{ i18n.t('nav.playlists') }}</span>
+                        <app-icon name="arrow-right" [size]="14" />
+                    </button>
                 </div>
+            </div>
 
-                <div class="horizontal-item-list">
-                    @for (item of recentHistoryItems(); track item.id; let i = $index) {
-                    <div class="home-row-item" [style.--item-index]="i" (click)="resumeHistory(item.video_id)">
-                        <div class="home-row-item__thumb">
-                            <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" />
-                            <div class="card-play-overlay">
-                                <div class="play-icon-circle">
-                                    <app-icon name="play" [size]="14" />
-                                </div>
-                            </div>
+            @if (isFeaturedLoading()) {
+            <div class="horizontal-item-list skeleton-container">
+                @for (_ of [1, 2, 3]; track $index) {
+                <div class="home-row-item home-row-item--skeleton">
+                    <div class="home-row-item__thumb"></div>
+                    <div class="home-row-item__content">
+                        <div class="skeleton-line skeleton-line--title"></div>
+                        <div class="skeleton-meta-row">
+                            <div class="skeleton-line skeleton-line--badge"></div>
+                            <div class="skeleton-line skeleton-line--meta"></div>
                         </div>
-                        <div class="home-row-item__content">
-                            <h4 class="home-row-item__title" [title]="item.title">{{ item.title }}</h4>
-                            <div class="home-row-item__meta">
-                                <span class="meta-channel">{{ item.channel || currentLearningLanguage() }}</span>
-                            </div>
+                    </div>
+                    <div class="skeleton-btn"></div>
+                </div>
+                }
+            </div>
+            } @else if (featuredPlaylists().length > 0) {
+            <div class="horizontal-item-list">
+                @for (playlist of featuredPlaylists(); track playlist.id; let i = $index) {
+                <div class="home-row-item" [style.--item-index]="i" (click)="startPlaylist(playlist)">
+                    <div class="home-row-item__thumb">
+                        @if (playlist.thumbnail) {
+                        <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" />
+                        } @else {
+                        <div class="placeholder-icon">
+                            <app-icon name="list-video" [size]="24" />
                         </div>
-                        <div class="home-row-item__action">
-                            <button type="button" class="action-btn" aria-label="Resume">
+                        }
+                        <div class="video-count">
+                            <app-icon name="list-video" [size]="11" />
+                            <span>{{ playlist.videoIds.length }}</span>
+                        </div>
+                        <div class="card-play-overlay">
+                            <div class="play-icon-circle">
                                 <app-icon name="play" [size]="14" />
-                            </button>
-                        </div>
-                    </div>
-                    }
-                </div>
-            </section>
-            }
-
-            <!-- Section 2: Tuyển chọn cho bạn (Curated Immersion Playlists) -->
-            <section class="dashboard-section">
-                <div class="panel-header">
-                    <div class="panel-header__row">
-                        <div class="panel-header__left">
-                            <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
-                            <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
-                            <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
-                        </div>
-                        <button type="button" class="panel-header__link" (click)="openExplore()">
-                            <span>{{ i18n.t('nav.playlists') }}</span>
-                            <app-icon name="arrow-right" [size]="14" />
-                        </button>
-                    </div>
-                </div>
-
-                @if (isFeaturedLoading()) {
-                <div class="horizontal-item-list skeleton-container">
-                    @for (_ of [1, 2, 3]; track $index) {
-                    <div class="home-row-item home-row-item--skeleton">
-                        <div class="home-row-item__thumb skeleton-box"></div>
-                        <div class="home-row-item__content">
-                            <div class="skeleton-line skeleton-line--title"></div>
-                            <div class="skeleton-meta-row">
-                                <div class="skeleton-line skeleton-line--badge"></div>
-                                <div class="skeleton-line skeleton-line--meta"></div>
                             </div>
                         </div>
                     </div>
-                    }
-                </div>
-                } @else if (featuredPlaylists().length > 0) {
-                <div class="horizontal-item-list">
-                    @for (playlist of featuredPlaylists(); track playlist.id; let i = $index) {
-                    <div class="home-row-item" [style.--item-index]="i" (click)="startPlaylist(playlist)">
-                        <div class="home-row-item__thumb">
-                            @if (playlist.thumbnail) {
-                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" />
-                            } @else {
-                            <div class="placeholder-icon">
-                                <app-icon name="list-video" [size]="24" />
-                            </div>
+                    <div class="home-row-item__content">
+                        <h4 class="home-row-item__title" [title]="playlist.title">{{ playlist.title }}</h4>
+                        <div class="home-row-item__meta">
+                            @if (playlist.language) {
+                            <span class="lang-badge">{{ playlist.language.toUpperCase() }}</span>
                             }
-                            <div class="video-count">
-                                <app-icon name="list-video" [size]="11" />
-                                <span>{{ playlist.videoIds.length }}</span>
-                            </div>
-                            <div class="card-play-overlay">
-                                <div class="play-icon-circle">
-                                    <app-icon name="play" [size]="14" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-row-item__content">
-                            <h4 class="home-row-item__title" [title]="playlist.title">{{ playlist.title }}</h4>
-                            <div class="home-row-item__meta">
-                                @if (playlist.language) {
-                                <span class="lang-badge">{{ playlist.language.toUpperCase() }}</span>
-                                }
-                                <span class="meta-author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
-                                <span class="separator">•</span>
-                                <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
-                            </div>
-                        </div>
-                        <div class="home-row-item__action">
-                            <button type="button" class="action-btn" aria-label="Play playlist">
-                                <app-icon name="play" [size]="14" />
-                            </button>
+                            <span class="meta-author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
+                            <span class="separator">•</span>
+                            <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
                         </div>
                     </div>
-                    }
-                </div>
-                } @else {
-                <div class="empty-state empty-state--centered">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="list-video" [size]="24" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
-                        <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
+                    <div class="home-row-item__action">
+                        <button type="button" class="action-btn" aria-label="Play playlist">
+                            <app-icon name="play" [size]="14" />
+                        </button>
                     </div>
                 </div>
                 }
-            </section>
+            </div>
+            } @else {
+            <div class="empty-state empty-state--centered">
+                <div class="empty-state__icon-box">
+                    <app-icon name="list-video" [size]="24" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="openExplore()">
+                    <app-icon name="globe" [size]="16" />
+                    <span>{{ i18n.t('nav.playlists') }}</span>
+                </button>
+            </div>
+            }
         </div>
         } @else {
         <app-subtitle-display [isVideoFullscreen]="isVideoFullscreen()" (wordClicked)="onWordClicked($event)"

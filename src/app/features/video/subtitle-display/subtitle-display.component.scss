@@ -767,91 +767,62 @@
    ============================================ */
 .word {
     cursor: pointer;
-    padding: 6px 8px;
-    /* Slightly chunkier padding */
-    margin: 2px 3px;
-    border-radius: 8px;
-    /* Larger radius */
-    font-weight: 700;
-    /* Bolder text */
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
+    padding: 4px 6px;
+    margin: 2px 2px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
     display: inline-block;
     vertical-align: baseline;
-    background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.06);
-    border: 2px solid transparent;
+    background: transparent;
+    border: 1px solid transparent;
     position: relative;
-}
-
-.word::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 2px;
-    background: var(--accent-primary);
-    opacity: 0.15;
-    border-radius: 1px;
-    transition: opacity 0.2s ease, width 0.2s ease;
-    pointer-events: none;
 }
 
 @media (hover: hover) {
     .word:hover {
-        background: var(--accent-tertiary);
-        border-color: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.2);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .word:hover::after {
-        opacity: 0.5;
-        width: 80%;
+        background: var(--bg-hover);
+        border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.35);
+        color: var(--text-primary);
     }
 }
 
 @media (hover: none) {
     .word:active {
-        background: var(--accent-tertiary);
-        border-color: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.2);
+        background: var(--bg-hover);
+        border-color: var(--border-color);
     }
 }
 
 .word:active {
-
-    background: var(--accent-tertiary);
-    box-shadow: 0 0 0 transparent !important;
+    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.15);
+    transform: scale(0.97);
 }
 
 .word--saved {
-    background: rgba(var(--accent-primary-rgb, 199, 62, 58), 0.1);
+    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
+    border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
+    color: var(--accent-primary);
+    font-weight: 700;
 }
 
-.word--saved::after {
-    display: none;
-    /* Removed the underline bar as it looks less "chunky" */
-}
-
-/* Gamified Word Levels with chunky borders and shadows */
+/* Gamified Word Levels with clean, harmonious borders */
 .word--new {
     background: var(--word-new);
-    border-color: rgba(var(--error-rgb, 255, 75, 75), 0.5);
+    border-color: rgba(var(--error-rgb, 255, 75, 75), 0.35);
     color: var(--word-new-text);
-    box-shadow: none;
 }
 
 .word--learning {
     background: var(--word-learning);
-    border-color: rgba(var(--warning-rgb, 255, 200, 0), 0.5);
+    border-color: rgba(var(--warning-rgb, 255, 200, 0), 0.35);
     color: var(--word-learning-text);
-    box-shadow: none;
 }
 
 .word--known {
     background: var(--word-known);
-    border-color: rgba(var(--success-rgb, 28, 176, 246), 0.5);
-    background-color: var(--word-known);
-    box-shadow: none;
+    border-color: rgba(var(--success-rgb, 28, 176, 246), 0.35);
+    color: var(--word-known-text);
 }
 
 .word--grammar {
@@ -860,11 +831,7 @@
     text-decoration-style: dotted;
     text-underline-offset: 3px;
     text-decoration-thickness: 2px;
-}
-
-.word--grammar::after {
-    background: var(--color-grammar, #8b5cf6);
-    opacity: 0.3;
+    background: rgba(139, 92, 246, 0.08);
 }
 
 /* Ruby styling */

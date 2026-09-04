@@ -33,6 +33,7 @@ interface TranscriptResponse {
   diamonds?: number;
   maxDiamonds?: number;
   nextRegenAt?: number | null;
+  regenIntervalMs?: number;
   // Other
   warning?: string;
   error?: string;
@@ -40,6 +41,14 @@ interface TranscriptResponse {
   status?: 'processing';
   resultUrl?: string;
   timing: number;
+}
+
+export interface DiamondStatusResponse {
+  success: boolean;
+  diamonds: number;
+  maxDiamonds: number;
+  nextRegenAt: number | null;
+  regenIntervalMs?: number;
 }
 
 interface RateLimitErrorResponse {
@@ -84,10 +93,12 @@ export class TranscriptService {
   /** Fallback info when server returned different language than requested */
   readonly fallbackInfo = signal<{ requested: string; returned: string } | null>(null);
 
-  /** Diamond credit system - 3 diamonds regenerate over 1 hour */
+  /** Diamond credit system - 1 diamond every 20 minutes (up to 3) */
   readonly diamonds = signal(3);
   readonly maxDiamonds = signal(3);
   readonly nextRegenAt = signal<number | null>(null);
+  readonly regenIntervalMs = signal<number>(20 * 60 * 1000);
+  readonly isDiamondLoading = signal(false);
 
   // Computed helpers for UI
   readonly status = computed(() => this.state().status);
@@ -139,7 +150,47 @@ export class TranscriptService {
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
   private cancelSubject = new Subject<void>();
 
-  constructor() { }
+  constructor() {
+    this.refreshDiamonds();
+  }
+
+  /**
+   * Fetch current diamond status from /api/diamonds
+   */
+  fetchDiamonds(): Observable<DiamondStatusResponse> {
+    this.isDiamondLoading.set(true);
+    return this.http.get<DiamondStatusResponse>('/api/diamonds').pipe(
+      tap((res) => {
+        if (res && res.success) {
+          this.diamonds.set(res.diamonds);
+          this.maxDiamonds.set(res.maxDiamonds);
+          this.nextRegenAt.set(res.nextRegenAt);
+          if (res.regenIntervalMs) {
+            this.regenIntervalMs.set(res.regenIntervalMs);
+          }
+        }
+        this.isDiamondLoading.set(false);
+      }),
+      catchError((err) => {
+        log('Failed to fetch diamonds:', err);
+        this.isDiamondLoading.set(false);
+        return of({
+          success: false,
+          diamonds: this.diamonds(),
+          maxDiamonds: this.maxDiamonds(),
+          nextRegenAt: this.nextRegenAt(),
+          regenIntervalMs: this.regenIntervalMs()
+        });
+      })
+    );
+  }
+
+  /**
+   * Refresh diamonds (e.g. called when countdown expires or dialog opens)
+   */
+  refreshDiamonds(): void {
+    this.fetchDiamonds().subscribe();
+  }
 
   // ============================================================================
   // Public Methods
@@ -399,6 +450,9 @@ export class TranscriptService {
     }
     if (response.nextRegenAt !== undefined) {
       this.nextRegenAt.set(response.nextRegenAt);
+    }
+    if (response.regenIntervalMs !== undefined) {
+      this.regenIntervalMs.set(response.regenIntervalMs);
     }
 
     // Handle processing state (AI job still running)

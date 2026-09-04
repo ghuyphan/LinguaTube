@@ -113,7 +113,11 @@
         "whatAreThey": "Điểm AI là gì?",
         "whatAreTheyDesc": "Điểm AI (Kim cương) cho phép bạn dùng Whisper AI để tạo phụ đề cho các video không có phụ đề tiếng Anh, Nhật, Hàn hoặc Trung.",
         "howDoIGetMore": "Làm sao để lấy thêm?",
-        "howDoIGetMoreDesc": "Điểm sẽ tự động phục hồi theo thời gian. Bạn không cần làm gì để nhận lại!"
+        "howDoIGetMoreDesc": "Điểm sẽ tự động hồi lại (+1 điểm mỗi 20 phút, tối đa 3 điểm). Bạn không cần thao tác gì!",
+        "nativeCaptionsFree": "Video thông thường có miễn phí không?",
+        "nativeCaptionsFreeDesc": "Có! Video đã có sẵn phụ đề YouTube hoàn toàn miễn phí 100% và không bao giờ tốn điểm AI.",
+        "allCreditsAvailable": "Đầy đủ điểm",
+        "depletedNotice": "Bạn đã dùng hết 3 điểm AI. Các video có sẵn phụ đề YouTube vẫn xem hoàn toàn miễn phí!"
     },
     "vocab": {
         "title": "Từ vựng",
@@ -290,6 +294,10 @@
         "favorites": "Yêu thích",
         "all": "Tất cả",
         "progress": "Tiến độ",
+        "inProgress": "Đang xem",
+        "completed": "Đã xong",
+        "videoSingular": "video",
+        "videoPlural": "video",
         "watchedAgo": "Đã xem",
         "continueWatching": "Tiếp tục xem",
         "removeFromHistory": "Xóa",

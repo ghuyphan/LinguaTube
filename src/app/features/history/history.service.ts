@@ -1,6 +1,6 @@
-import { Injectable, inject, computed } from '@angular/core';
+import { Injectable, inject, computed, effect, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HistoryItem, VideoInfo } from '../../models';
-import { SettingsService, AuthService } from '../../core/services';
 import { YoutubeService } from '../video';
 import { OfflineHistoryRepository } from '../../core/repositories';
 
@@ -12,8 +12,7 @@ import { OfflineHistoryRepository } from '../../core/repositories';
     providedIn: 'root'
 })
 export class HistoryService {
-    private settings = inject(SettingsService);
-    private auth = inject(AuthService);
+    private platformId = inject(PLATFORM_ID);
     private youtube = inject(YoutubeService);
     private repo = inject(OfflineHistoryRepository);
 
@@ -23,19 +22,93 @@ export class HistoryService {
     /** Computed: favorites only */
     readonly favorites = computed(() => this.history().filter(item => item.is_favorite));
 
-    /** Computed: history for current language */
-    readonly historyByLanguage = computed(() => {
-        const lang = this.settings.settings().language;
-        return this.history().filter(item => item.languages?.includes(lang) ?? item.language === lang);
-    });
-
-    /** Computed: count of history items */
-    readonly count = computed(() => this.history().length);
-
     readonly isLoading = this.repo.isLoading;
 
+    private progressInterval: any = null;
+    private lastRecordedProgress = -1;
+    private lastRecordedVideoId: string | null = null;
+
     constructor() {
-        // Repository handles loading
+        if (isPlatformBrowser(this.platformId)) {
+            // Automatically track any video loaded in the player
+            this.youtube.videoLoaded.subscribe(video => {
+                void this.onVideoLoaded(video);
+            });
+
+            // Reactive playback progress tracking
+            effect(() => {
+                const isPlaying = this.youtube.isPlaying();
+                const isEnded = this.youtube.isEnded();
+                const currentVideo = this.youtube.currentVideo();
+
+                if (isEnded && currentVideo) {
+                    this.stopProgressTracking();
+                    this.checkAndSaveProgress(100);
+                } else if (isPlaying && currentVideo) {
+                    this.startProgressTracking();
+                } else {
+                    this.stopProgressTracking();
+                    if (currentVideo) {
+                        this.checkAndSaveProgress();
+                    }
+                }
+            });
+
+            // Flush progress when closing tab or navigating away
+            window.addEventListener('beforeunload', () => {
+                this.checkAndSaveProgress();
+            });
+            window.addEventListener('pagehide', () => {
+                this.checkAndSaveProgress();
+            });
+        }
+    }
+
+    private async onVideoLoaded(video: VideoInfo): Promise<void> {
+        this.lastRecordedVideoId = video.id;
+        this.lastRecordedProgress = -1;
+        await this.addToHistory(video, []);
+    }
+
+    private startProgressTracking(): void {
+        if (this.progressInterval) return;
+
+        this.progressInterval = setInterval(() => {
+            this.checkAndSaveProgress();
+        }, 3000);
+    }
+
+    private stopProgressTracking(): void {
+        if (this.progressInterval) {
+            clearInterval(this.progressInterval);
+            this.progressInterval = null;
+        }
+    }
+
+    private checkAndSaveProgress(forceProgress?: number): void {
+        const video = this.youtube.currentVideo();
+        if (!video) return;
+
+        const duration = this.youtube.duration();
+        const currentTime = this.youtube.currentTime();
+
+        let progress: number;
+        if (forceProgress !== undefined) {
+            progress = forceProgress;
+        } else if (duration > 0 && currentTime > 0) {
+            progress = Math.min(100, Math.round((currentTime / duration) * 100));
+        } else {
+            return;
+        }
+
+        if (this.lastRecordedVideoId === video.id && this.lastRecordedProgress === progress) {
+            return;
+        }
+
+        this.lastRecordedVideoId = video.id;
+        this.lastRecordedProgress = progress;
+
+        void this.updateProgress(video.id, progress);
     }
 
     /**
@@ -43,23 +116,27 @@ export class HistoryService {
      * If the video already exists, updates watched_at, progress, and languages
      * @param availableLanguages - raw language codes from transcript API (will be filtered)
      */
-    async addToHistory(video: VideoInfo, availableLanguages: string[], progress: number = 0): Promise<void> {
+    async addToHistory(video: VideoInfo, availableLanguages: string[] = [], progress?: number): Promise<void> {
         const items = this.history();
         const existingItem = items.find(item => item.video_id === video.id);
         const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
-        const primaryLang = filteredLanguages[0] || 'en';
+        const primaryLang = filteredLanguages[0] || existingItem?.language || 'en';
+
+        const resolvedProgress = progress !== undefined
+            ? progress
+            : (existingItem ? existingItem.progress : 0);
 
         const historyItem: HistoryItem = {
             id: existingItem ? existingItem.id : this.generateId(),
             video_id: video.id,
-            title: video.title,
-            thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`,
-            channel: video.channel,
-            duration: video.duration,
+            title: video.title || existingItem?.title || 'YouTube Video',
+            thumbnail: video.thumbnail || existingItem?.thumbnail || `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`,
+            channel: video.channel || existingItem?.channel || 'Unknown Channel',
+            duration: video.duration || existingItem?.duration || 0,
             language: primaryLang,  // Keep for backward compatibility
-            languages: filteredLanguages,
+            languages: filteredLanguages.length > 0 ? filteredLanguages : (existingItem?.languages || []),
             watched_at: new Date(),
-            progress: existingItem ? Math.max(existingItem.progress, progress) : progress,
+            progress: resolvedProgress,
             is_favorite: existingItem ? existingItem.is_favorite : false
         };
 
@@ -76,9 +153,44 @@ export class HistoryService {
         if (item) {
             await this.repo.addToHistory({
                 ...item,
-                progress: Math.max(item.progress, progress),
+                progress,
                 watched_at: new Date()
             });
+        }
+    }
+
+    /**
+     * Touch a video to update its watched_at timestamp to now,
+     * ensuring it appears at the top of history.
+     */
+    async touchVideo(videoId: string): Promise<void> {
+        const items = this.history();
+        const item = items.find(i => i.video_id === videoId);
+
+        if (item) {
+            await this.repo.addToHistory({
+                ...item,
+                watched_at: new Date()
+            });
+        }
+    }
+
+    /**
+     * Update languages when captions are fetched
+     */
+    async updateLanguages(videoId: string, availableLanguages: string[]): Promise<void> {
+        const items = this.history();
+        const item = items.find(i => i.video_id === videoId);
+
+        if (item) {
+            const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
+            if (filteredLanguages.length > 0) {
+                await this.repo.addToHistory({
+                    ...item,
+                    languages: filteredLanguages,
+                    language: filteredLanguages[0] || item.language
+                });
+            }
         }
     }
 
@@ -130,22 +242,6 @@ export class HistoryService {
      */
     getByVideoId(videoId: string): HistoryItem | undefined {
         return this.history().find(item => item.video_id === videoId);
-    }
-
-    /**
-     * Import items (used by sync service)
-     * Note: Deprecated in favor of Repo sync, but kept for interface compatibility if needed
-     */
-    importItems(_items: HistoryItem[]): void {
-        // this.history.set(items); // Read-only now
-        console.warn('HistoryService.importItems is deprecated, use repository sync');
-    }
-
-    /**
-     * Get all items (for sync)
-     */
-    getAllItems(): HistoryItem[] {
-        return this.history();
     }
 
     // ==================== Private Methods ====================

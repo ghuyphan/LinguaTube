@@ -63,52 +63,79 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.history.set(newHistory);
         this.saveToStorage(newHistory);
 
-        // 2. Remote Sync
-        if (this.auth.isLoggedIn()) {
-            try {
-                const client = await this.pb.getClient();
+        // 2. Schedule debounced remote sync
+        this.scheduleRemoteItemPush(item);
+    }
 
-                // Check if record exists on server (by video_id and user)
-                // We use a listing to find if it exists because ID might be local-generated
-                const existing = await client.collection('history').getList(1, 1, {
-                    filter: `user="${this.auth.getUserId()}" && video_id="${item.video_id}"`
-                });
+    private remoteSyncTimers = new Map<string, any>();
 
-                if (existing.items.length > 0) {
-                    await client.collection('history').update(existing.items[0].id, {
-                        watched_at: item.watched_at,
-                        progress: item.progress,
-                        is_favorite: item.is_favorite,
-                        languages: item.languages
-                    });
-                } else {
-                    await client.collection('history').create({
-                        user: this.auth.getUserId(),
-                        video_id: item.video_id,
-                        title: item.title,
-                        thumbnail: item.thumbnail,
-                        channel: item.channel,
-                        duration: item.duration,
-                        languages: item.languages,
-                        watched_at: item.watched_at,
-                        progress: item.progress,
-                        is_favorite: item.is_favorite
-                    });
-                }
+    private scheduleRemoteItemPush(item: HistoryItem): void {
+        if (!this.auth.isLoggedIn()) return;
 
-                // Mark as synced
-                const updatedCurrent = this.history();
-                const updatedIndex = updatedCurrent.findIndex(i => i.video_id === item.video_id);
-                if (updatedIndex !== -1) {
-                    const updatedHistory = [...updatedCurrent];
-                    updatedHistory[updatedIndex] = { ...updatedHistory[updatedIndex], synced: true };
-                    this.history.set(updatedHistory);
-                    this.saveToStorage(updatedHistory);
-                }
+        const existingTimer = this.remoteSyncTimers.get(item.video_id);
+        if (existingTimer) {
+            clearTimeout(existingTimer);
+        }
 
-            } catch (error) {
-                console.error('[HistoryRepo] Failed to sync item:', error);
+        const timer = setTimeout(async () => {
+            this.remoteSyncTimers.delete(item.video_id);
+            await this.pushItemToRemote(item);
+        }, 1500);
+
+        this.remoteSyncTimers.set(item.video_id, timer);
+    }
+
+    private async pushItemToRemote(item: HistoryItem): Promise<void> {
+        if (!this.auth.isLoggedIn()) return;
+
+        try {
+            const client = await this.pb.getClient();
+            await this.upsertItemRemote(client, item);
+
+            // Mark as synced
+            const updatedCurrent = this.history();
+            const updatedIndex = updatedCurrent.findIndex(i => i.video_id === item.video_id);
+            if (updatedIndex !== -1) {
+                const updatedHistory = [...updatedCurrent];
+                updatedHistory[updatedIndex] = { ...updatedHistory[updatedIndex], synced: true };
+                this.history.set(updatedHistory);
+                this.saveToStorage(updatedHistory);
             }
+
+        } catch (error) {
+            console.error('[HistoryRepo] Failed to sync item:', error);
+        }
+    }
+
+    private async upsertItemRemote(client: any, item: HistoryItem): Promise<void> {
+        const watchedAtIso = item.watched_at instanceof Date
+            ? item.watched_at.toISOString()
+            : new Date(item.watched_at).toISOString();
+
+        const existing = await client.collection('history').getList(1, 1, {
+            filter: `user="${this.auth.getUserId()}" && video_id="${item.video_id}"`
+        });
+
+        if (existing.items.length > 0) {
+            await client.collection('history').update(existing.items[0].id, {
+                watched_at: watchedAtIso,
+                progress: item.progress,
+                is_favorite: item.is_favorite,
+                languages: item.languages
+            });
+        } else {
+            await client.collection('history').create({
+                user: this.auth.getUserId(),
+                video_id: item.video_id,
+                title: item.title,
+                thumbnail: item.thumbnail,
+                channel: item.channel,
+                duration: item.duration,
+                languages: item.languages,
+                watched_at: watchedAtIso,
+                progress: item.progress,
+                is_favorite: item.is_favorite
+            });
         }
     }
 
@@ -172,35 +199,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             const unsynced = this.history().filter(h => !h.synced);
             for (const item of unsynced) {
                 try {
-                    // Check existence first
-                    const existing = await client.collection('history').getList(1, 1, {
-                        filter: `user="${this.auth.getUserId()}" && video_id="${item.video_id}"`
-                    });
-
-                    if (existing.items.length > 0) {
-                        // Remote exists, update it (Client wins on sync push?) 
-                        // Or should we trust latest watched_at? 
-                        // For now, if we are pushing unsynced local, we assume it's newer or relevant
-                        await client.collection('history').update(existing.items[0].id, {
-                            watched_at: item.watched_at,
-                            progress: item.progress,
-                            is_favorite: item.is_favorite,
-                            languages: item.languages
-                        });
-                    } else {
-                        await client.collection('history').create({
-                            user: this.auth.getUserId(),
-                            video_id: item.video_id,
-                            title: item.title,
-                            thumbnail: item.thumbnail,
-                            channel: item.channel,
-                            duration: item.duration,
-                            languages: item.languages,
-                            watched_at: item.watched_at,
-                            progress: item.progress,
-                            is_favorite: item.is_favorite
-                        });
-                    }
+                    await this.upsertItemRemote(client, item);
                     console.debug('[HistoryRepo] Pushed unsynced item:', item.video_id);
                 } catch (err) {
                     console.error('[HistoryRepo] Failed to push item:', item.video_id, err);
@@ -215,20 +214,31 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
             const remoteItems = result.items.map(r => this.recordToHistoryItem(r));
 
-            // 3. Merge Strategy
-            // - Remote items are source of truth for synced data
-            // - Keep local items that are NOT synced yet (created while offline after the last sync attempt)
-            // - De-duplicate by video_id: if a local unsynced item has same video_id as remote, remote wins (assumed clearer state) 
-            //   OR we can say local wins if watched_at is newer?
-            //   Let's stick to safe merge: Remote wins if conflict, but keep unique local unsynced.
+            // 3. Merge Strategy: Map by video_id, local with newer/equal watched_at wins
+            const itemMap = new Map<string, HistoryItem>();
+            for (const r of remoteItems) {
+                itemMap.set(r.video_id, r);
+            }
 
-            const remoteVideoIds = new Set(remoteItems.map(i => i.video_id));
-            const localUnsyncedUnique = this.history().filter(i => !i.synced && !remoteVideoIds.has(i.video_id));
+            for (const local of this.history()) {
+                const remote = itemMap.get(local.video_id);
+                if (!remote) {
+                    itemMap.set(local.video_id, local);
+                } else {
+                    const localTime = new Date(local.watched_at).getTime();
+                    const remoteTime = new Date(remote.watched_at).getTime();
+                    if (localTime >= remoteTime) {
+                        itemMap.set(local.video_id, {
+                            ...local,
+                            id: remote.id || local.id,
+                            is_favorite: local.is_favorite || remote.is_favorite
+                        });
+                    }
+                }
+            }
 
-            const combined = [...remoteItems, ...localUnsyncedUnique];
-
-            // Re-sort
-            combined.sort((a, b) => b.watched_at.getTime() - a.watched_at.getTime());
+            const combined = Array.from(itemMap.values());
+            combined.sort((a, b) => new Date(b.watched_at).getTime() - new Date(a.watched_at).getTime());
 
             this.history.set(combined);
             this.saveToStorage(combined);

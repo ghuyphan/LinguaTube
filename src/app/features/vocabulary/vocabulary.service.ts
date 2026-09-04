@@ -173,20 +173,7 @@ export class VocabularyService {
         this.repo.importFromJSON(json);
     }
 
-    importItems(items: VocabularyItem[]): void {
-        // Deprecated: Use importFromJSON instead
-        // This method was previously used by SyncService which has been removed
-        console.warn('VocabularyService.importItems is deprecated, use importFromJSON instead');
-        if (items.length > 0) {
-            this.repo.importFromJSON(JSON.stringify(items));
-        }
-    }
-
     clear(): void {
         this.repo.clear();
-    }
-
-    getAllItems(): VocabularyItem[] {
-        return this.repo.getVocabulary();
     }
 }

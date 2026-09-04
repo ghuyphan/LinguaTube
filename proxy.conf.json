@@ -4,6 +4,11 @@
     "secure": false,
     "changeOrigin": true
   },
+  "/api/diamonds": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
   "/api/translate": {
     "target": "https://lingva.ml/api/v1",
     "secure": true,

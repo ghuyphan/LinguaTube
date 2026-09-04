@@ -2,11 +2,12 @@
  * Service for managing Diamond Credit System
  */
 
-const DIAMOND_CONFIG = {
-    regenIntervalHours: 1,      // How often diamonds regenerate
-    regenAmount: 3,             // How many diamonds to add per interval
-    maxDiamonds: 3,             // Maximum free diamonds a user can hold
-    cachePrefix: 'diamonds',    // KV cache prefix for anonymous users
+export const DIAMOND_CONFIG = {
+    regenIntervalMinutes: 20,           // How often diamonds regenerate (20 minutes)
+    regenIntervalMs: 20 * 60 * 1000,   // 20 minutes in ms
+    regenAmount: 1,                    // +1 diamond per interval
+    maxDiamonds: 3,                    // Maximum free diamonds a user can hold
+    cachePrefix: 'diamonds',           // KV cache prefix for anonymous users
 };
 
 export class DiamondService {
@@ -24,12 +25,12 @@ export class DiamondService {
      * 
      * @param {string} clientId - The IP or identifier for the unauthenticated user
      * @param {Object} [user=null] - The authenticated PocketBase user object
-     * @returns {Promise<{ diamonds: number, nextRegenAt: number | null, maxDiamonds: number }>}
+     * @returns {Promise<{ diamonds: number, nextRegenAt: number | null, maxDiamonds: number, regenIntervalMs: number }>}
      */
     async getDiamonds(clientId, user = null) {
         if (user) {
             // Authenticated user
-            let currentDiamonds = user.diamonds ?? DIAMOND_CONFIG.regenAmount; // Default 3 for new users
+            let currentDiamonds = user.diamonds ?? DIAMOND_CONFIG.maxDiamonds; // Default to max for new users
             let lastRegenDate = user.last_diamond_regen ? new Date(user.last_diamond_regen) : new Date();
             let nextRegenAt = null;
             let needsUpdate = false;
@@ -37,22 +38,21 @@ export class DiamondService {
             // Calculate regeneration if not at max
             if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
                 const now = new Date();
-                const msSinceLastRegen = now - lastRegenDate;
-                const hoursSinceLastRegen = msSinceLastRegen / (1000 * 60 * 60);
+                const msSinceLastRegen = now.getTime() - lastRegenDate.getTime();
 
-                if (hoursSinceLastRegen >= DIAMOND_CONFIG.regenIntervalHours) {
-                    const intervalsPassed = Math.floor(hoursSinceLastRegen / DIAMOND_CONFIG.regenIntervalHours);
+                if (msSinceLastRegen >= DIAMOND_CONFIG.regenIntervalMs) {
+                    const intervalsPassed = Math.floor(msSinceLastRegen / DIAMOND_CONFIG.regenIntervalMs);
                     const regeneratedAmount = intervalsPassed * DIAMOND_CONFIG.regenAmount;
                     currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, DIAMOND_CONFIG.maxDiamonds);
 
                     // Update last regen time by adding the intervals passed
-                    lastRegenDate = new Date(lastRegenDate.getTime() + (intervalsPassed * DIAMOND_CONFIG.regenIntervalHours * 60 * 60 * 1000));
+                    lastRegenDate = new Date(lastRegenDate.getTime() + (intervalsPassed * DIAMOND_CONFIG.regenIntervalMs));
                     needsUpdate = true;
                 }
 
                 // Calculate next regen time if still strictly below max
                 if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
-                    nextRegenAt = lastRegenDate.getTime() + (DIAMOND_CONFIG.regenIntervalHours * 60 * 60 * 1000);
+                    nextRegenAt = lastRegenDate.getTime() + DIAMOND_CONFIG.regenIntervalMs;
                 }
             }
 
@@ -61,7 +61,8 @@ export class DiamondService {
                 nextRegenAt,
                 needsUpdate,
                 lastRegenDate, // For passing to consumeDiamond
-                maxDiamonds: DIAMOND_CONFIG.maxDiamonds
+                maxDiamonds: DIAMOND_CONFIG.maxDiamonds,
+                regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
             };
         }
 
@@ -84,9 +85,10 @@ export class DiamondService {
         // New anonymous user
         if (!cacheData) {
             return {
-                diamonds: DIAMOND_CONFIG.regenAmount,
+                diamonds: DIAMOND_CONFIG.maxDiamonds,
                 nextRegenAt: null,
-                maxDiamonds: DIAMOND_CONFIG.maxDiamonds
+                maxDiamonds: DIAMOND_CONFIG.maxDiamonds,
+                regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
             };
         }
 
@@ -95,13 +97,12 @@ export class DiamondService {
         // Calculate regeneration
         if (currentDiamonds < DIAMOND_CONFIG.maxDiamonds) {
             const msSinceLastRegen = now - lastRegenTime;
-            const hoursSinceLastRegen = msSinceLastRegen / (1000 * 60 * 60);
 
-            if (hoursSinceLastRegen >= DIAMOND_CONFIG.regenIntervalHours) {
-                const intervalsPassed = Math.floor(hoursSinceLastRegen / DIAMOND_CONFIG.regenIntervalHours);
+            if (msSinceLastRegen >= DIAMOND_CONFIG.regenIntervalMs) {
+                const intervalsPassed = Math.floor(msSinceLastRegen / DIAMOND_CONFIG.regenIntervalMs);
                 const regeneratedAmount = intervalsPassed * DIAMOND_CONFIG.regenAmount;
                 currentDiamonds = Math.min(currentDiamonds + regeneratedAmount, DIAMOND_CONFIG.maxDiamonds);
-                lastRegenTime = lastRegenTime + (intervalsPassed * DIAMOND_CONFIG.regenIntervalHours * 60 * 60 * 1000);
+                lastRegenTime = lastRegenTime + (intervalsPassed * DIAMOND_CONFIG.regenIntervalMs);
 
                 // Opportunistically save to KV (fire and forget)
                 if (this.cacheManager && this.cacheManager.kv) {
@@ -113,13 +114,14 @@ export class DiamondService {
         }
 
         const nextRegenAt = currentDiamonds < DIAMOND_CONFIG.maxDiamonds
-            ? lastRegenTime + (DIAMOND_CONFIG.regenIntervalHours * 60 * 60 * 1000)
+            ? lastRegenTime + DIAMOND_CONFIG.regenIntervalMs
             : null;
 
         return {
             diamonds: currentDiamonds,
             nextRegenAt,
-            maxDiamonds: DIAMOND_CONFIG.maxDiamonds
+            maxDiamonds: DIAMOND_CONFIG.maxDiamonds,
+            regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
         };
     }
 
@@ -132,7 +134,7 @@ export class DiamondService {
      * @param {Object} context - Cloudflare execution context for waitUntil
      * @param {Object} env - Cloudflare environment bindings
      * @param {Object} [user=null] 
-     * @returns {Promise<{ success: boolean, diamonds: number, nextRegenAt: number | null }>}
+     * @returns {Promise<{ success: boolean, diamonds: number, nextRegenAt: number | null, regenIntervalMs: number }>}
      */
     async consumeDiamond(clientId, context, env, user = null) {
         // 1. Get current accurate count (including any pending regen)
@@ -142,7 +144,8 @@ export class DiamondService {
             return {
                 success: false,
                 diamonds: 0,
-                nextRegenAt: currentData.nextRegenAt
+                nextRegenAt: currentData.nextRegenAt,
+                regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
             };
         }
 
@@ -154,7 +157,7 @@ export class DiamondService {
             ? now
             : (user ? currentData.lastRegenDate.getTime() : (await this._getRawAnonymousLastRegen(clientId) || now));
 
-        const nextRegenAt = lastRegenTime + (DIAMOND_CONFIG.regenIntervalHours * 60 * 60 * 1000);
+        const nextRegenAt = lastRegenTime + DIAMOND_CONFIG.regenIntervalMs;
 
         // 2. Persist the new state
         if (user) {
@@ -191,7 +194,8 @@ export class DiamondService {
         return {
             success: true,
             diamonds: newDiamondCount,
-            nextRegenAt
+            nextRegenAt,
+            regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
         };
     }
 

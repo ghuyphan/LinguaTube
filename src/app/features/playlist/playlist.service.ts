@@ -57,6 +57,9 @@ export class PlaylistService {
     /** Specific loading state for community playlists */
     readonly isCommunityLoading = signal<boolean>(false);
 
+    /** Tracks whether the initial community playlist fetch has completed */
+    readonly hasLoadedCommunity = signal<boolean>(false);
+
     /** Specific loading state for user's owned playlists */
     readonly isUserPlaylistsLoading = signal<boolean>(true);
 
@@ -758,6 +761,7 @@ export class PlaylistService {
         } finally {
             this.isCommunityLoading.set(false);
             this.isLoading.set(false);
+            this.hasLoadedCommunity.set(true);
         }
     }
 

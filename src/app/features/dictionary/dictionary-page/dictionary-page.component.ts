@@ -33,8 +33,10 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
         <div class="card sidebar-card">
           <div class="panel-header">
             <div class="panel-header__row">
-              <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
-              <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
+              <div class="panel-header__left">
+                <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
+                <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
+              </div>
             </div>
             <p class="panel-header__subtitle">{{ stats().total }} {{ i18n.t('study.cards') }}</p>
           </div>
@@ -59,7 +61,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
           </div>
 
           @if (stats().total > 0) {
-            <a routerLink="/study" class="btn btn-primary study-btn">
+            <a routerLink="/study" class="btn btn-primary sidebar-action-btn">
               <app-icon name="graduation-cap" [size]="16" />
               {{ i18n.t('study.start') }}
             </a>
@@ -163,36 +165,6 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     .clear-all-btn:hover {
       color: var(--accent-primary);
       background: rgba(199, 62, 58, 0.1);
-    }
-
-    .stat-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .stat-new {
-      color: var(--accent-primary);
-    }
-
-    .stat-learning {
-      color: var(--word-learning-text);
-    }
-
-    .stat-known {
-      color: var(--success);
-    }
-
-    .stat-label {
-      font-size: 0.6875rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .study-btn {
-      width: 100%;
-      justify-content: center;
     }
 
     .recent-list {

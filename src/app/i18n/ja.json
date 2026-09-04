@@ -111,7 +111,11 @@
         "whatAreThey": "AIクレジットとは？",
         "whatAreTheyDesc": "AIクレジット（ダイヤモンド）を使用すると、Whisper AIを使って英語、日本語、韓国語、中国語の字幕がない動画を文字起こしできます。",
         "howDoIGetMore": "増やすには？",
-        "howDoIGetMoreDesc": "クレジットは時間が経つと自動的に回復します。何もする必要はありません！"
+        "howDoIGetMoreDesc": "クレジットは自動的に回復します（20分ごとに+1個、最大3個）。何もする必要はありません！",
+        "nativeCaptionsFree": "通常の動画は無料ですか？",
+        "nativeCaptionsFreeDesc": "はい！既存のYouTube字幕がある動画は完全無料で、AIクレジットを消費しません。",
+        "allCreditsAvailable": "全クレジット利用可能",
+        "depletedNotice": "AIクレジットを3つすべて使用しました。YouTube字幕付きの通常動画は引き続き完全無料です！"
     },
     "vocab": {
         "title": "単語帳",
@@ -288,6 +292,10 @@
         "favorites": "お気に入り",
         "all": "すべて",
         "progress": "進捗",
+        "inProgress": "視聴中",
+        "completed": "完了",
+        "videoSingular": "本",
+        "videoPlural": "本",
         "watchedAgo": "視聴",
         "continueWatching": "続きを見る",
         "removeFromHistory": "削除",

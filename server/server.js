@@ -580,6 +580,21 @@ app.get('/api/dict', async (req, res) => {
     }
 });
 
+// Diamond status check (dev mock)
+let devDiamonds = 3;
+let devLastRegen = Date.now();
+const DEV_REGEN_INTERVAL_MS = 20 * 60 * 1000;
+
+app.get('/api/diamonds', (req, res) => {
+    res.json({
+        success: true,
+        diamonds: devDiamonds,
+        maxDiamonds: 3,
+        nextRegenAt: devDiamonds < 3 ? devLastRegen + DEV_REGEN_INTERVAL_MS : null,
+        regenIntervalMs: DEV_REGEN_INTERVAL_MS
+    });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({

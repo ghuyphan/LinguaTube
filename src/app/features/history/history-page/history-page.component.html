@@ -73,29 +73,38 @@
     <div class="card sidebar-card">
       <div class="panel-header">
         <div class="panel-header__row">
-          <app-icon name="clock" [size]="20" class="panel-header__icon" />
-          <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
+          <div class="panel-header__left">
+            <app-icon name="clock" [size]="20" class="panel-header__icon" />
+            <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
+          </div>
+          @if (historyItems().length > 0) {
+            <button type="button" class="panel-header__link panel-header__link--danger" (click)="confirmClear()">
+              <app-icon name="trash-2" [size]="13" />
+              <span>{{ i18n.t('history.clearAll') }}</span>
+            </button>
+          }
         </div>
-        <p class="panel-header__subtitle">{{ historyItems().length }} {{ i18n.t('history.all') }}</p>
+        <p class="panel-header__subtitle">{{ historySubtitle() }}</p>
       </div>
 
       <div class="stats-grid">
         <div class="stat-item">
-          <span class="stat-item__value">{{ historyItems().length }}</span>
-          <span class="stat-item__label">{{ i18n.t('history.all') }}</span>
+          <span class="stat-value">{{ historyItems().length }}</span>
+          <span class="stat-label">{{ i18n.t('history.all') }}</span>
         </div>
         <div class="stat-item">
-          <span class="stat-item__value stat-item__value--favorite">{{ favorites().length }}</span>
-          <span class="stat-item__label">{{ i18n.t('history.favorites') }}</span>
+          <span class="stat-value">{{ inProgressCount() }}</span>
+          <span class="stat-label">{{ i18n.t('history.inProgress') }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">{{ completedCount() }}</span>
+          <span class="stat-label">{{ i18n.t('history.completed') }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value stat-favorite">{{ favorites().length }}</span>
+          <span class="stat-label">{{ i18n.t('history.favorites') }}</span>
         </div>
       </div>
-
-      @if (historyItems().length > 0) {
-        <button type="button" class="btn btn-secondary btn-sm sidebar-action-btn" (click)="confirmClear()">
-          <app-icon name="trash-2" [size]="14" />
-          <span>{{ i18n.t('history.clearAll') }}</span>
-        </button>
-      }
 
       @if (auth.isInitialized() && !auth.isLoggedIn()) {
         <div class="sync-hint">
@@ -110,10 +119,12 @@
     <div class="card sidebar-card continue-card">
       <div class="panel-header">
         <div class="panel-header__row">
-          <app-icon name="play" [size]="18" class="panel-header__icon" />
-          <h4 class="sidebar-card__title" style="font-size: 0.9375rem; margin: 0;">
-            {{ i18n.t('history.continueWatching') || 'Continue' }}
-          </h4>
+          <div class="panel-header__left">
+            <app-icon name="play" [size]="18" class="panel-header__icon" />
+            <h4 class="sidebar-card__title" style="font-size: 0.9375rem; margin: 0;">
+              {{ i18n.t('history.continueWatching') || 'Continue' }}
+            </h4>
+          </div>
         </div>
       </div>
 
@@ -139,8 +150,8 @@
         </div>
       </div>
 
-      <button type="button" class="btn btn-primary btn-sm resume-btn" (click)="resumeVideo(recent.video_id)">
-        <app-icon name="play" [size]="14" />
+      <button type="button" class="btn btn-primary resume-btn" (click)="resumeVideo(recent.video_id)">
+        <app-icon name="play" [size]="16" />
         <span>{{ i18n.t('history.continueWatching') || 'Continue' }}</span>
       </button>
     </div>

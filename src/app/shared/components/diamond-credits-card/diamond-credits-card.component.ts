@@ -1,4 +1,4 @@
-import { Component, Input, computed, signal, effect, inject, OnDestroy } from '@angular/core';
+import { Component, Input, computed, signal, effect, inject, output, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { I18nService } from '../../../services';
@@ -16,13 +16,16 @@ export class DiamondCreditsCardComponent implements OnDestroy {
     @Input() diamonds = 3;
     @Input() maxDiamonds = 3;
     @Input() nextRegenAt: number | null = null;
+    @Input() regenIntervalMs = 20 * 60 * 1000; // 20 minutes default
     @Input() variant: 'card' | 'compact' | 'inline' | 'collapsed' = 'card';
     @Input() showLabel = true;
 
+    regenCompleted = output<void>();
+
     private intervalId: number | null = null;
+    private hasEmittedRegen = false;
     readonly countdown = signal<string>('');
     readonly progress = signal<number>(0);
-    private readonly REGEN_TIME_MS = 30 * 60 * 1000; // 30 minutes
 
     // Array for rendering diamond icons
     readonly diamondArray = computed(() =>
@@ -35,11 +38,13 @@ export class DiamondCreditsCardComponent implements OnDestroy {
     constructor() {
         // Start countdown timer
         effect(() => {
+            this.hasEmittedRegen = false;
             this.updateCountdown();
 
             // Clear existing interval
             if (this.intervalId) {
                 clearInterval(this.intervalId);
+                this.intervalId = null;
             }
 
             // Start new interval if we have a regen time
@@ -54,12 +59,14 @@ export class DiamondCreditsCardComponent implements OnDestroy {
     ngOnDestroy(): void {
         if (this.intervalId) {
             clearInterval(this.intervalId);
+            this.intervalId = null;
         }
     }
 
     private updateCountdown(): void {
         if (!this.nextRegenAt) {
             this.countdown.set('');
+            this.progress.set(0);
             return;
         }
 
@@ -68,17 +75,35 @@ export class DiamondCreditsCardComponent implements OnDestroy {
 
         if (remaining <= 0) {
             this.countdown.set('');
+            this.progress.set(100);
+
+            if (!this.hasEmittedRegen) {
+                this.hasEmittedRegen = true;
+                this.regenCompleted.emit();
+            }
+
+            if (this.intervalId) {
+                clearInterval(this.intervalId);
+                this.intervalId = null;
+            }
             return;
         }
 
-        const minutes = Math.floor(remaining / 60000);
+        const hours = Math.floor(remaining / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
         const seconds = Math.floor((remaining % 60000) / 1000);
-
-        const m = minutes.toString().padStart(2, '0');
         const s = seconds.toString().padStart(2, '0');
-        this.countdown.set(`+1 in ${m}:${s}`);
 
-        const progressPercent = Math.max(0, Math.min(100, ((this.REGEN_TIME_MS - remaining) / this.REGEN_TIME_MS) * 100));
+        if (hours > 0) {
+            const m = minutes.toString().padStart(2, '0');
+            this.countdown.set(`+1 in ${hours}h ${m}m`);
+        } else {
+            const m = minutes.toString().padStart(2, '0');
+            this.countdown.set(`+1 in ${m}:${s}`);
+        }
+
+        const interval = this.regenIntervalMs > 0 ? this.regenIntervalMs : 20 * 60 * 1000;
+        const progressPercent = Math.max(0, Math.min(100, ((interval - remaining) / interval) * 100));
         this.progress.set(progressPercent);
     }
 }

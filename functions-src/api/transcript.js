@@ -108,7 +108,8 @@ export async function onRequestPost(context) {
         const diamondInfo = {
             diamonds: diamondStatus.diamonds,
             maxDiamonds: diamondStatus.maxDiamonds,
-            nextRegenAt: diamondStatus.nextRegenAt
+            nextRegenAt: diamondStatus.nextRegenAt,
+            regenIntervalMs: diamondStatus.regenIntervalMs
         };
 
         const orchestratorParams = { videoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user };

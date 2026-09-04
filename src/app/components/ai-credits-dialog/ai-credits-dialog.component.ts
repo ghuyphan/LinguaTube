@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { I18nService } from '../../services';
@@ -13,9 +13,17 @@ import { TranscriptService } from '../../features/video/transcript.service';
     templateUrl: './ai-credits-dialog.component.html',
     styleUrls: ['./ai-credits-dialog.component.scss']
 })
-export class AiCreditsDialogComponent {
-    i18n = inject(I18nService);
-    transcript = inject(TranscriptService);
+export class AiCreditsDialogComponent implements OnInit {
+    readonly i18n = inject(I18nService);
+    readonly transcript = inject(TranscriptService);
 
     dismissed = output<void>();
+
+    ngOnInit(): void {
+        this.transcript.refreshDiamonds();
+    }
+
+    onRegenCompleted(): void {
+        this.transcript.refreshDiamonds();
+    }
 }

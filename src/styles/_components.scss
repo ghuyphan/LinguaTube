@@ -197,6 +197,16 @@
     margin: 0;
 }
 
+.sidebar-action-btn {
+    width: 100%;
+    border-radius: var(--border-radius-pill);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
 /* ============================================
    BADGES
    ============================================ */
@@ -333,35 +343,45 @@
     padding: var(--space-sm);
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
+    text-align: center;
 }
 
+.stat-value,
 .stat-item__value {
-    font-size: var(--text-2xl);
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
+    line-height: 1.2;
 }
 
+.stat-new,
 .stat-item__value--new {
     color: var(--accent-primary);
 }
 
+.stat-learning,
 .stat-item__value--learning {
-    color: var(--word-learning-text);
+    color: var(--word-learning-text, #f59e0b);
 }
 
+.stat-known,
 .stat-item__value--known {
-    color: var(--success);
+    color: var(--success, #10b981);
 }
 
+.stat-favorite,
 .stat-item__value--favorite {
     color: var(--accent-primary);
 }
 
+.stat-label,
 .stat-item__label {
     font-size: 0.6875rem;
+    font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.3px;
+    margin-top: 3px;
 }
 
 /* ============================================
@@ -514,13 +534,24 @@
     cursor: pointer;
     padding: var(--space-2xs) var(--space-xs);
     border-radius: var(--border-radius-sm);
-    transition: opacity var(--transition-fast), background-color var(--transition-fast);
+    transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
     flex-shrink: 0;
 
     @media (hover: hover) {
         &:hover {
             opacity: 0.85;
             background: rgba(var(--accent-primary-rgb), 0.08);
+        }
+    }
+
+    &--danger {
+        color: var(--text-muted);
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--error);
+                background: rgba(var(--error-rgb), 0.08);
+            }
         }
     }
 }

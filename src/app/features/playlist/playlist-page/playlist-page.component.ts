@@ -65,6 +65,17 @@ export class PlaylistPageComponent {
         this.playlists().length + this.communityPlaylists().length
     );
 
+    playlistSubtitle = computed(() => {
+        const count = this.totalPlaylistsCount();
+        const lang = this.i18n.currentLanguage();
+        if (lang === 'vi') {
+            return `${count} danh sách phát`;
+        }
+        const singular = this.i18n.t('playlist.playlist')?.toLowerCase() || 'playlist';
+        const plural = this.i18n.t('playlist.title')?.toLowerCase() || 'playlists';
+        return `${count} ${count === 1 ? singular : plural}`;
+    });
+
     totalVideosCount = computed(() => {
         const userVideos = this.playlists().reduce((acc, p) => acc + (p.videoIds?.length || 0), 0);
         const commVideos = this.communityPlaylists().reduce((acc, p) => acc + (p.videoIds?.length || 0), 0);

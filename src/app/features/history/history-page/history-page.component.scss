@@ -123,11 +123,6 @@
 // -------------------------
 // Sidebar Elements
 // -------------------------
-.sidebar-action-btn {
-  width: 100%;
-  justify-content: center;
-}
-
 .continue-card {
   .recent-preview {
     display: flex;
@@ -235,7 +230,12 @@
 
   .resume-btn {
     width: 100%;
+    border-radius: var(--border-radius-pill);
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    gap: 8px;
+    font-weight: 600;
     margin-top: var(--space-sm);
   }
 }

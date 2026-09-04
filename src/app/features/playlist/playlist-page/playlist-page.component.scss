@@ -465,62 +465,6 @@
     }
 }
 
-// -------------------------
-// Sidebar Content & Stats (Consistent with dictionary-page)
-// -------------------------
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-md);
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--space-sm);
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.2;
-
-    &.stat-new {
-        color: var(--accent-primary);
-    }
-
-    &.stat-learning {
-        color: var(--word-learning-text, #f59e0b);
-    }
-
-    &.stat-known {
-        color: var(--success, #10b981);
-    }
-}
-
-.stat-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-top: 3px;
-}
-
-.sidebar-action-btn {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-}
-
 // Language Filter Chips (Identical to dictionary-page .recent-list & .recent-chip)
 .recent-list {
     display: flex;

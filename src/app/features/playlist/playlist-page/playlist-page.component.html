@@ -300,12 +300,12 @@
         <div class="card sidebar-card">
             <div class="panel-header">
                 <div class="panel-header__row">
-                    <app-icon name="list-video" [size]="20" class="panel-header__icon" />
-                    <h3 class="panel-header__title">{{ i18n.t('playlist.title') }}</h3>
+                    <div class="panel-header__left">
+                        <app-icon name="list-video" [size]="20" class="panel-header__icon" />
+                        <h3 class="panel-header__title">{{ i18n.t('playlist.title') }}</h3>
+                    </div>
                 </div>
-                <p class="panel-header__subtitle">
-                    {{ totalPlaylistsCount() }} {{ i18n.t('playlist.title') }}
-                </p>
+                <p class="panel-header__subtitle">{{ playlistSubtitle() }}</p>
             </div>
 
             <div class="stats-grid">
@@ -314,21 +314,21 @@
                     <span class="stat-label">{{ i18n.t('playlist.totalPlaylists') }}</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value stat-new">{{ totalVideosCount() }}</span>
+                    <span class="stat-value">{{ totalVideosCount() }}</span>
                     <span class="stat-label">{{ i18n.t('playlist.totalVideos') }}</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value stat-learning">{{ playlists().length }}</span>
+                    <span class="stat-value">{{ playlists().length }}</span>
                     <span class="stat-label">{{ i18n.t('playlist.myPlaylists') }}</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value stat-known">{{ featuredPlaylists().length }}</span>
+                    <span class="stat-value">{{ featuredPlaylists().length }}</span>
                     <span class="stat-label">{{ i18n.t('playlist.featured') }}</span>
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-sm sidebar-action-btn" (click)="showCreateDialog.set(true)">
-                <app-icon name="plus" [size]="14" />
+            <button type="button" class="btn btn-primary sidebar-action-btn" (click)="showCreateDialog.set(true)">
+                <app-icon name="plus" [size]="16" />
                 <span>{{ i18n.t('playlist.newPlaylist') }}</span>
             </button>
         </div>

@@ -111,7 +111,11 @@
         "whatAreThey": "이게 뭔가요?",
         "whatAreTheyDesc": "AI 크레딧(다이아몬드)을 사용하면 Whisper AI로 영어, 일본어, 한국어 또는 중국어 자막이 없는 동영상을 전사할 수 있습니다.",
         "howDoIGetMore": "어떻게 더 얻나요?",
-        "howDoIGetMoreDesc": "크레딧은 시간이 지남에 따라 자동으로 복구됩니다. 아무것도 하지 않으셔도 됩니다!"
+        "howDoIGetMoreDesc": "크레딧은 자동으로 복구됩니다(20분마다 +1개, 최대 3개). 아무것도 하지 않으셔도 됩니다!",
+        "nativeCaptionsFree": "일반 영상은 무료인가요?",
+        "nativeCaptionsFreeDesc": "네! 기존 유튜브 자막이 있는 동영상은 100% 무료이며 AI 크레딧을 전혀 사용하지 않습니다.",
+        "allCreditsAvailable": "모든 크레딧 사용 가능",
+        "depletedNotice": "AI 크레딧 3개를 모두 사용했습니다. 유튜브 자막이 있는 일반 영상은 언제나 무료입니다!"
     },
     "vocab": {
         "title": "단어장",
@@ -288,6 +292,10 @@
         "favorites": "즐겨찾기",
         "all": "전체",
         "progress": "진행률",
+        "inProgress": "시청 중",
+        "completed": "완료",
+        "videoSingular": "개",
+        "videoPlural": "개",
         "watchedAgo": "시청",
         "continueWatching": "계속 보기",
         "removeFromHistory": "삭제",

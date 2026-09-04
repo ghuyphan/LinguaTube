@@ -111,7 +111,11 @@
         "whatAreThey": "什么是AI积分？",
         "whatAreTheyDesc": "AI积分（钻石）让您可以使用Whisper AI来转录没有英语、日语、韩语或中文的视频。",
         "howDoIGetMore": "如何获得更多？",
-        "howDoIGetMoreDesc": "积分会随着时间自动恢复。您无需进行任何操作！"
+        "howDoIGetMoreDesc": "积分会自动恢复（每20分钟+1个，最多3个）。您无需进行任何操作！",
+        "nativeCaptionsFree": "普通视频免费吗？",
+        "nativeCaptionsFreeDesc": "是的！已有YouTube字幕的视频完全免费，永不扣除AI积分。",
+        "allCreditsAvailable": "额度已满",
+        "depletedNotice": "您已用完3个AI积分。带YouTube字幕的普通视频依然完全免费！"
     },
     "vocab": {
         "title": "词汇本",
@@ -288,6 +292,10 @@
         "favorites": "收藏",
         "all": "全部",
         "progress": "进度",
+        "inProgress": "观看中",
+        "completed": "已完成",
+        "videoSingular": "个视频",
+        "videoPlural": "个视频",
         "watchedAgo": "观看于",
         "continueWatching": "继续观看",
         "removeFromHistory": "移除",

@@ -111,9 +111,13 @@
         "ready": "Ready",
         "aiCreditsDescription": "AI credits are used to power intelligent features like generating transcripts for videos without captions.",
         "whatAreThey": "What are they?",
-        "whatAreTheyDesc": "AI credits (diamonds) allow you to use Whispher AI to transcribe videos that don't have English, Japanese, Korean, or Chinese captions.",
+        "whatAreTheyDesc": "AI credits (diamonds) allow you to use Whisper AI to transcribe videos that don't have English, Japanese, Korean, or Chinese captions.",
         "howDoIGetMore": "How do I get more?",
-        "howDoIGetMoreDesc": "Credits regenerate automatically over time. You don't need to do anything to get them back!"
+        "howDoIGetMoreDesc": "Credits regenerate automatically (+1 every 20 minutes, up to 3). You don't need to do anything to get them back!",
+        "nativeCaptionsFree": "Are regular videos free?",
+        "nativeCaptionsFreeDesc": "Yes! Videos with existing YouTube captions are 100% free and never use AI credits.",
+        "allCreditsAvailable": "All credits available",
+        "depletedNotice": "You've used all 3 AI credits. Videos with existing YouTube captions remain 100% free!"
     },
     "vocab": {
         "title": "Vocabulary",
@@ -290,6 +294,10 @@
         "favorites": "Favorites",
         "all": "All",
         "progress": "Progress",
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "videoSingular": "video",
+        "videoPlural": "videos",
         "watchedAgo": "Watched",
         "continueWatching": "Continue",
         "removeFromHistory": "Remove",

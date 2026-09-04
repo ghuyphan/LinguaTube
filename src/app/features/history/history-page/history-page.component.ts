@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { HistoryListComponent } from '../history-list/history-list.component';
-import { HistoryService, SettingsService, I18nService, AuthService } from '../../../services';
+import { HistoryService, I18nService, AuthService } from '../../../services';
 import { HistoryItem } from '../../../models';
 
 type FilterType = 'all' | 'favorites';
@@ -26,7 +26,6 @@ export class HistoryPageComponent implements OnInit {
   protected historyService = inject(HistoryService);
   private router = inject(Router);
 
-  settings = inject(SettingsService);
   i18n = inject(I18nService);
   auth = inject(AuthService);
 
@@ -41,6 +40,25 @@ export class HistoryPageComponent implements OnInit {
   historyItems = computed(() => this.historyService.history());
   favorites = computed(() => this.historyService.favorites());
   isLoading = computed(() => this.historyService.isLoading());
+
+  inProgressCount = computed(() =>
+    this.historyItems().filter(item => (item.progress || 0) > 0 && (item.progress || 0) < 90).length
+  );
+
+  completedCount = computed(() =>
+    this.historyItems().filter(item => (item.progress || 0) >= 90).length
+  );
+
+  historySubtitle = computed(() => {
+    const count = this.historyItems().length;
+    const lang = this.i18n.currentLanguage();
+    if (lang === 'vi') {
+      return `${count} video`;
+    }
+    const singular = this.i18n.t('history.videoSingular') || 'video';
+    const plural = this.i18n.t('history.videoPlural') || 'videos';
+    return `${count} ${count === 1 ? singular : plural}`;
+  });
 
   recentItem = computed(() => {
     const items = this.historyItems();

@@ -10,7 +10,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService, VocabularyService, DictionaryService } from '../../../services';
+import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService, VocabularyService } from '../../../services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
@@ -46,7 +46,6 @@ export class VideoPageComponent implements OnInit {
   private subtitles = inject(SubtitleService);
   protected transcript = inject(TranscriptService);
   private vocab = inject(VocabularyService); // Injected for main page actions
-  private dictionary = inject(DictionaryService); // Injected for main page actions
   private settings = inject(SettingsService);
   private historyService = inject(HistoryService);
   protected playlistService = inject(PlaylistService);
@@ -81,7 +80,6 @@ export class VideoPageComponent implements OnInit {
 
   showLearnHome = computed(() => !this.youtube.currentVideo() && !this.youtube.pendingVideoId());
   currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
-  recentHistoryItems = computed(() => this.historyService.historyByLanguage().slice(0, 3));
   featuredPlaylists = computed(() => {
     const language = this.settings.settings().language;
     const community = this.playlistService.communityPlaylists();
@@ -90,7 +88,10 @@ export class VideoPageComponent implements OnInit {
     const list = featured.length > 0 ? featured : fallback;
     return list.slice(0, 3);
   });
-  isFeaturedLoading = computed(() => this.playlistService.isCommunityLoading() && this.featuredPlaylists().length === 0);
+  isFeaturedLoading = computed(() =>
+    (!this.playlistService.hasLoadedCommunity() || this.playlistService.isCommunityLoading()) &&
+    this.featuredPlaylists().length === 0
+  );
   currentLangVocabCount = computed(() => {
     const lang = this.settings.settings().language;
     return this.vocab.vocabulary().filter(w => w.language === lang).length;
@@ -274,6 +275,10 @@ export class VideoPageComponent implements OnInit {
             } else {
               this.lastLang = currentLang;
             }
+
+            // Ensure video plays and updates history timestamp when re-visited
+            this.youtube.play();
+            void this.historyService.touchVideo(videoId);
           }
         } else {
           // No video ID in URL - clear current video and playlist so Learn Hub / Home is displayed cleanly
@@ -294,6 +299,24 @@ export class VideoPageComponent implements OnInit {
       this.youtube.pendingVideoId.set(videoId);
       await this.waitForElement('youtube-player');
       await this.youtube.initPlayer('youtube-player', videoId);
+
+      // Resume from saved progress or 't' query param if available
+      const urlTime = this.route.snapshot.queryParamMap.get('t');
+      if (urlTime) {
+        const parsedTime = parseInt(urlTime, 10);
+        if (!isNaN(parsedTime) && parsedTime > 0) {
+          this.youtube.seekTo(parsedTime);
+        }
+      } else {
+        const historyItem = this.historyService.getByVideoId(videoId);
+        if (historyItem && historyItem.progress > 0 && historyItem.progress < 95 && historyItem.duration) {
+          const resumeSeconds = Math.floor((historyItem.duration * historyItem.progress) / 100);
+          if (resumeSeconds > 3) {
+            this.youtube.seekTo(resumeSeconds);
+          }
+        }
+      }
+
       this.fetchCaptions(videoId);
     } catch (err) {
       console.error('Failed to load video from URL:', err);
@@ -394,10 +417,6 @@ export class VideoPageComponent implements OnInit {
 
   openExplore(): void {
     void this.router.navigate(['/explore']);
-  }
-
-  resumeHistory(videoId: string): void {
-    void this.router.navigate(['/video'], { queryParams: { id: videoId } });
   }
 
   startPlaylist(playlist: Playlist): void {
@@ -585,11 +604,11 @@ export class VideoPageComponent implements OnInit {
     this.subtitles.currentCueIndex.set(-1);
     this.subtitles.subtitles.set(cues);
 
-    // Track in history with actual available languages
+    // Enrich history with actual available languages
     const currentVideo = this.youtube.currentVideo();
     if (currentVideo) {
       const availableLangs = this.transcript.availableLanguages().native;
-      this.historyService.addToHistory(currentVideo, availableLangs);
+      void this.historyService.updateLanguages(currentVideo.id, availableLangs);
     }
 
     // Detect actual language returned by backend
