@@ -141,7 +141,7 @@ export class BottomSheetService {
     /**
      * Handle browser back button
      */
-    private onPopState(event: PopStateEvent): void {
+    private onPopState(_event: PopStateEvent): void {
         // Check if this popstate is for a bottom sheet
         // When back is pressed, we need to close the topmost sheet
         const stack = this.sheetStack();
@@ -149,14 +149,8 @@ export class BottomSheetService {
 
         // The popstate just occurred, meaning a sheet's history entry was popped
         // We need to close the topmost sheet
+        // Close the topmost sheet
         const topSheet = stack[stack.length - 1];
-
-        // Check if the popped state belongs to our sheet system
-        // If event.state is null or doesn't have our sheetId, the top sheet was popped
-        const newStateSheetId = event.state?.sheetId;
-
-        // Find if this sheetId is still in our stack
-        const isStillInStack = newStateSheetId && stack.some(s => s.id === newStateSheetId);
 
         // Don't manipulate history - it was already popped by the back button
         this.unregister(topSheet.id);

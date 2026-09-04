@@ -423,9 +423,7 @@ body::-webkit-scrollbar {
     right: 0;
     width: 100%;
     height: var(--bottom-nav-total-height);
-    background: rgba(var(--bg-card-rgb), 0.94);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: var(--bg-card);
     padding: 0;
     padding-bottom: var(--bottom-nav-safe-area);
     z-index: var(--z-nav);

@@ -7,6 +7,9 @@ export const environment = {
   // PocketBase/PocketHost URL - configure your instance URL here
   pocketbaseUrl: 'https://voca.pockethost.io',
 
+  // Cloudflare Turnstile CAPTCHA (Always-passes test key for development)
+  turnstileSiteKey: '1x00000000000000000000AA',
+
   // Centralized API Endpoints
   api: {
     // Dictionary

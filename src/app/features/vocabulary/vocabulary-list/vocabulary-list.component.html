@@ -1,138 +1,117 @@
-<div class="card vocab-panel">
-    <div class="panel-header">
-        <div class="panel-header__row">
-            <app-icon name="book-open" [size]="20" class="panel-header__icon" />
-            <h2 class="panel-header__title">{{ i18n.t('vocab.title') }}</h2>
+<div class="vocab-panel" [class.embedded]="embedded()">
+    <!-- Header (shown only when showHeader() is true) -->
+    @if (showHeader()) {
+    <div class="vocab-header">
+        <div class="vocab-header__left">
+            <app-icon name="book-open" [size]="18" class="vocab-header__icon" />
+            <h3 class="vocab-header__title">{{ i18n.t('vocab.title') }}</h3>
+            <span class="vocab-header__count">{{ currentLangVocabCount() }}</span>
         </div>
-        <p class="panel-header__subtitle">{{ vocab.getStatsByLanguage(settings.settings().language).total }} {{
-            i18n.t('study.cards') }}</p>
+        <button class="vocab-header__link" (click)="openDictionary()" [title]="i18n.t('dictionary.title')">
+            <span>{{ i18n.t('dictionary.title') }}</span>
+            <app-icon name="arrow-right" [size]="13" />
+        </button>
     </div>
+    }
 
-    <!-- Search / Filters -->
-    <div class="vocab-filters">
-        <div class="search-box input-group--icon">
-            <app-icon name="search" [size]="16" class="input-icon" />
-            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search')" class="search-input" />
+    <!-- Clean, Streamlined Search Row -->
+    <div class="vocab-toolbar">
+        <div class="search-box">
+            <app-icon name="search" [size]="15" class="search-icon" />
+            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search')" class="search-input" spellcheck="false" autocomplete="off" />
             @if (searchQuery) {
-            <button class="clear-btn" (click)="clearSearch()">
-                <app-icon name="x" [size]="14" />
+            <button type="button" class="clear-btn" (click)="clearSearch()" aria-label="Clear search">
+                <app-icon name="x" [size]="13" />
             </button>
             }
         </div>
-        <button class="filter-btn" (click)="filterPickerOpen.set(true)">
-            <span>{{ levelFilter() === 'all' ? i18n.t('vocab.allLevels') : i18n.t('vocab.' + levelFilter()) }}</span>
-            <app-icon name="chevron-down" [size]="14" />
-        </button>
+
+        @if (showMenu()) {
         <button class="btn btn-icon btn-ghost menu-btn" (click)="menuRequest.emit()">
             <app-icon name="more-vertical" [size]="18" />
         </button>
+        }
     </div>
 
     <!-- Word list -->
     <div class="word-list">
-        <div class="word-list__loading">
-            <!-- Show loading only if syncing and list is empty -->
-            @if (vocab.isSyncing() && vocab.vocabulary().length === 0 && auth.isLoggedIn()) {
-            <!-- Skeleton loading state during initial sync -->
-            <div class="vocab-items skeleton-container">
-                @for (i of [1, 2, 3, 4, 5]; track i) {
-                <div class="vocab-item vocab-item--skeleton">
-                    <div class="vocab-item__content">
-                        <div class="skeleton-line skeleton-line--word"></div>
-                        <div class="skeleton-line skeleton-line--reading"></div>
-                        <div class="skeleton-line skeleton-line--meaning"></div>
-                    </div>
-                    <div class="vocab-item__actions">
-                        <div class="skeleton-dot"></div>
-                    </div>
+        <!-- Show loading only if syncing and list is empty -->
+        @if (vocab.isSyncing() && vocab.vocabulary().length === 0 && auth.isLoggedIn()) {
+        <div class="vocab-items skeleton-container">
+            @for (i of [1, 2, 3, 4]; track i) {
+            <div class="vocab-item vocab-item--skeleton">
+                <div class="vocab-item__content">
+                    <div class="skeleton-line skeleton-line--word"></div>
+                    <div class="skeleton-line skeleton-line--meaning"></div>
                 </div>
-                }
-            </div>
-            } @else if (filteredWords().length === 0) {
-            <div class="empty-state empty-state--centered">
-                @if (vocab.vocabulary().length === 0) {
-                <div class="empty-state__icon-box">
-                    <app-icon name="book-open" [size]="28" />
-                </div>
-                <div class="empty-state__text" style="align-items: center; text-align: center;">
-                    <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
-                </div>
-                } @else {
-                <div class="empty-state__icon-box">
-                    <app-icon name="search" [size]="28" />
-                </div>
-                <div class="empty-state__text" style="align-items: center; text-align: center;">
-                    <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
-                </div>
-                }
-            </div>
-            } @else {
-            <div class="vocab-items">
-                @for (item of paginatedWords(); track item.id) {
-                <div class="vocab-item">
-                    <div class="vocab-item__content">
-                        <div class="vocab-item__header">
-                            <span class="vocab-item__word" [class]="'text-' + item.language">
-                                {{ item.word }}
-                            </span>
-                            @if (getItemReading(item); as reading) {
-                            <span class="vocab-item__reading">
-                                {{ reading }}
-                            </span>
-                            }
-                        </div>
-                        <p class="vocab-item__meaning">{{ item.meaning || i18n.t('vocab.noDefinition') }}</p>
-                    </div>
-
-                    <div class="vocab-item__actions">
-                        <button class="level-dot-btn" [class]="'level--' + item.level"
-                            (click)="openLevelPicker(item.id)" [title]="item.level">
-                        </button>
-                        <button class="btn btn-icon btn-ghost delete-btn" (click)="deleteWord(item.id)" title="Delete">
-                            <app-icon name="trash-2" [size]="16" />
-                        </button>
-                    </div>
-                </div>
-                }
             </div>
             }
         </div>
+        } @else if (filteredWords().length === 0) {
+        <div class="empty-state empty-state--centered">
+            @if (vocab.vocabulary().length === 0) {
+            <div class="empty-state__icon-box">
+                <app-icon name="book-open" [size]="24" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+                <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
+            </div>
+            } @else {
+            <div class="empty-state__icon-box">
+                <app-icon name="search" [size]="24" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
+                <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
+            </div>
+            }
+        </div>
+        } @else {
+        <div class="vocab-items">
+            @for (item of filteredWords(); track item.id; let i = $index) {
+            <div class="vocab-item" [style.--item-index]="i" (click)="onWordClick(item)">
+                <div class="vocab-item__content">
+                    <div class="vocab-item__header">
+                        <span class="vocab-item__word" [class]="'text-' + item.language">
+                            {{ item.word }}
+                        </span>
+                        @if (getItemReading(item); as reading) {
+                        <span class="vocab-item__reading">
+                            {{ reading }}
+                        </span>
+                        }
+                    </div>
+                    @if (item.meaning) {
+                    <p class="vocab-item__meaning">{{ item.meaning }}</p>
+                    }
+                </div>
 
-        <!-- Pagination -->
-        @if (totalPages() > 1) {
-        <div class="vocab-pagination">
-            <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === 1" (click)="prevPage()">
-                <app-icon name="chevron-left" [size]="16" />
-            </button>
-            <span class="pagination-info">
-                {{ currentPage() }} / {{ totalPages() }}
-            </span>
-            <button class="btn btn-icon btn-sm btn-ghost" [disabled]="currentPage() === totalPages()"
-                (click)="nextPage()">
-                <app-icon name="chevron-right" [size]="16" />
-            </button>
+                <div class="vocab-item__actions" (click)="$event.stopPropagation()">
+                    <!-- Level Indicator Dot (click to toggle level) -->
+                    <button type="button" class="level-dot-btn" [class]="'level--' + item.level"
+                        (click)="cycleLevel(item, $event)" [title]="item.level">
+                    </button>
+
+                    <!-- Direct Delete Button -->
+                    <button type="button" class="delete-btn" (click)="deleteWordDirect(item, $event)" title="Xoá từ">
+                        <app-icon name="trash-2" [size]="14" />
+                    </button>
+                </div>
+            </div>
+            }
         </div>
         }
     </div>
 
-
-
-    <!-- Toast Notification -->
+    <!-- Toast Notification (with Undo support) -->
     @if (toastMessage()) {
     <div class="toast" [class.toast--error]="toastType() === 'error'">
-        <app-icon [name]="toastType() === 'error' ? 'alert-circle' : 'check'" [size]="18" />
-        <span>{{ toastMessage() }}</span>
+        <app-icon [name]="toastType() === 'error' ? 'alert-circle' : 'check'" [size]="16" />
+        <span class="toast__text">{{ toastMessage() }}</span>
+        @if (lastDeletedItem) {
+        <button type="button" class="toast__undo-btn" (click)="undoDelete()">Hoàn tác</button>
+        }
     </div>
     }
-
-    <!-- Filter Picker -->
-    <app-option-picker [options]="filterOptions()" [value]="levelFilter()" [isOpen]="filterPickerOpen()"
-        [title]="i18n.t('vocab.filterByLevel')" (selected)="onLevelFilterChange($event)"
-        (closed)="filterPickerOpen.set(false)" />
-
-    <!-- Level Picker -->
-    <app-option-picker [options]="levelOptions()" [value]="getEditingItemLevel()" [isOpen]="levelPickerOpen()"
-        [title]="i18n.t('vocab.changeLevel')" (selected)="onLevelChange($event)"
-        (closed)="levelPickerOpen.set(false); editingItemId.set(null)" />
+</div>

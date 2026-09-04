@@ -125,6 +125,16 @@
     "secure": false,
     "changeOrigin": true
   },
+  "/api/krdict": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/dict": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
   "/api/tokenize": {
     "target": "http://localhost:3001",
     "secure": false,

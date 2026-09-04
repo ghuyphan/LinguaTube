@@ -4,7 +4,9 @@ import { RouterLink, Router, RouterLinkActive } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { SettingsService, VocabularyService, YoutubeService, SubtitleService, AuthService, I18nService, TranscriptService } from '../../services';
+import { PlaylistService } from '../../features/playlist/playlist.service';
 import { StreakService } from '../../services/streak.service';
+import { SUPPORTED_LANGUAGES } from '../../models';
 
 @Component({
     selector: 'app-sidebar',
@@ -24,6 +26,29 @@ export class SidebarComponent {
     i18n = inject(I18nService);
     transcript = inject(TranscriptService);
     streak = inject(StreakService);
+    playlistService = inject(PlaylistService);
+
+    onLearnClick(event: MouseEvent): void {
+        if (this.youtube.currentVideo() || this.playlistService.currentPlaylist() || this.router.url.includes('/video')) {
+            event.preventDefault();
+            this.playlistService.clearCurrentPlaylist();
+            this.youtube.reset();
+            this.subtitles.clear();
+            this.transcript.reset();
+            void this.router.navigate(['/video'], { queryParams: {} });
+        }
+    }
+
+    onNewVideoClick(): void {
+        if (this.router.url === '/video' && !this.youtube.currentVideo() && !this.youtube.pendingVideoId()) {
+            const inputEl = document.querySelector('.spotlight-input') as HTMLInputElement | null;
+            if (inputEl) {
+                inputEl.focus();
+                return;
+            }
+        }
+        this.openCommandPalette.emit();
+    }
 
     isCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
     openSettings = output<void>();
@@ -33,12 +58,7 @@ export class SidebarComponent {
     showLangPicker = signal(false);
 
     // Learning language options with display info
-    readonly learningLanguages = [
-        { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-        { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-        { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-        { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
-    ];
+    readonly learningLanguages = SUPPORTED_LANGUAGES;
 
     // Computed for current learning language display
     currentLang = computed(() => {

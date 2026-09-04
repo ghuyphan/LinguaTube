@@ -106,7 +106,8 @@ import { IconComponent } from '../icon/icon.component';
         }
 
         .confirm-dialog__btn--cancel {
-            background: var(--bg-secondary);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
             color: var(--text-primary);
         }
 
@@ -122,7 +123,7 @@ import { IconComponent } from '../icon/icon.component';
 
         @media (hover: hover) {
             .confirm-dialog__btn--cancel:hover {
-                background: var(--bg-card);
+                background: var(--bg-hover);
             }
 
             .confirm-dialog__btn--primary:hover,

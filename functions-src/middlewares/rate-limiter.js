@@ -39,51 +39,45 @@
  * @param {RateLimitConfig} config - Rate limit configuration
  * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
  */
-export async function consumeRateLimit(cache, clientIP, config) {
-    if (!cache || !clientIP) {
-        return { allowed: true, remaining: config.max, resetAt: 0 };
-    }
+// In-memory rate limiting map across warm Worker isolate requests
+// Prevents burning daily Cloudflare KV write quota (1,000 writes/day free limit)
+const memRateLimits = new Map();
+const MAX_MEM_ENTRIES = 1000;
+const KV_SYNC_INTERVAL_MS = 60 * 1000; // Sync to KV at most once every 60s per client
+const KV_SYNC_SAMPLE_RATE = 5;         // Or every 5 requests
 
-    const key = `ratelimit:${config.keyPrefix}:${clientIP}`;
-
-    try {
-        // Single read
-        let data = await cache.get(key, 'json');
-
-        const now = Date.now();
-
-        // Initialize or reset if expired
-        if (!data || now > data.resetAt) {
-            data = {
-                count: 0,
-                resetAt: now + config.windowSeconds * 1000
-            };
+function cleanMemoryCache(now) {
+    if (memRateLimits.size > MAX_MEM_ENTRIES) {
+        for (const [k, v] of memRateLimits.entries()) {
+            if (now > v.resetAt) {
+                memRateLimits.delete(k);
+            }
         }
-
-        // Increment count
-        data.count++;
-
-        // Check if allowed AFTER increment
-        const allowed = data.count <= config.max;
-        const remaining = Math.max(0, config.max - data.count);
-
-        // Single write (always write to track both allowed and denied)
-        await cache.put(key, JSON.stringify(data), {
-            expirationTtl: config.windowSeconds
-        });
-
-        return { allowed, remaining, resetAt: data.resetAt };
-
-    } catch (e) {
-        // Allow on error to prevent blocking legitimate requests
-        console.error('[RateLimit] Error:', e.message);
-        return { allowed: true, remaining: config.max, resetAt: 0 };
+        if (memRateLimits.size > MAX_MEM_ENTRIES) {
+            let count = 0;
+            for (const k of memRateLimits.keys()) {
+                memRateLimits.delete(k);
+                if (++count > 200) break;
+            }
+        }
     }
 }
 
 /**
+ * Consume one request from rate limit quota (atomic operation with in-memory fast-path)
+ * 
+ * @param {KVNamespace} cache - Cloudflare KV namespace
+ * @param {string} clientIP - Client IP address
+ * @param {RateLimitConfig} config - Rate limit configuration
+ * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
+ */
+export async function consumeRateLimit(cache, clientIP, config) {
+    return consumeRateLimitUnits(cache, clientIP, config, 1);
+}
+
+/**
  * Consume multiple units from rate limit quota (for batch operations)
- * Same as consumeRateLimit but increments by `units` instead of 1
+ * Uses in-memory caching + throttled KV persistence to preserve free tier quota
  * 
  * @param {KVNamespace} cache - Cloudflare KV namespace
  * @param {string} clientIP - Client IP address
@@ -92,42 +86,72 @@ export async function consumeRateLimit(cache, clientIP, config) {
  * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
  */
 export async function consumeRateLimitUnits(cache, clientIP, config, units = 1) {
-    if (!cache || !clientIP) {
+    if (!clientIP) {
         return { allowed: true, remaining: config.max, resetAt: 0 };
     }
 
     const key = `ratelimit:${config.keyPrefix}:${clientIP}`;
+    const now = Date.now();
+    cleanMemoryCache(now);
 
-    try {
-        let data = await cache.get(key, 'json');
-        const now = Date.now();
+    let mem = memRateLimits.get(key);
 
-        // Initialize or reset if expired
-        if (!data || now > data.resetAt) {
-            data = {
-                count: 0,
-                resetAt: now + config.windowSeconds * 1000
-            };
+    // If no memory record or window expired, check KV once or start fresh
+    if (!mem || now > mem.resetAt) {
+        let initialCount = 0;
+        let resetAt = now + config.windowSeconds * 1000;
+
+        if (cache) {
+            try {
+                const kvData = await cache.get(key, 'json');
+                if (kvData && now <= kvData.resetAt) {
+                    initialCount = kvData.count || 0;
+                    resetAt = kvData.resetAt;
+                }
+            } catch {
+                // KV read failed or unavailable, continue with 0
+            }
         }
 
-        // Check if this batch would exceed the limit
-        const newCount = data.count + units;
-        const allowed = newCount <= config.max;
-
-        // Always increment (even if denied, to track attempts)
-        data.count = newCount;
-        const remaining = Math.max(0, config.max - data.count);
-
-        await cache.put(key, JSON.stringify(data), {
-            expirationTtl: config.windowSeconds
-        });
-
-        return { allowed, remaining, resetAt: data.resetAt };
-
-    } catch (e) {
-        console.error('[RateLimit] Error:', e.message);
-        return { allowed: true, remaining: config.max, resetAt: 0 };
+        mem = {
+            count: initialCount,
+            resetAt,
+            lastKvSync: now,
+            kvKnownCount: initialCount
+        };
+        memRateLimits.set(key, mem);
     }
+
+    // Increment in-memory counter
+    mem.count += units;
+    const allowed = mem.count <= config.max;
+    const remaining = Math.max(0, config.max - mem.count);
+
+    // Determine if we should sync to KV:
+    // 1. If limit exceeded (block across all isolates)
+    // 2. If approaching limit (> 80%)
+    // 3. If count incremented by KV_SYNC_SAMPLE_RATE units since last sync
+    // 4. If KV_SYNC_INTERVAL_MS has passed since last sync
+    const approachingLimit = mem.count >= config.max * 0.8;
+    const unitThresholdReached = (mem.count - mem.kvKnownCount) >= KV_SYNC_SAMPLE_RATE;
+    const timeThresholdReached = (now - mem.lastKvSync) >= KV_SYNC_INTERVAL_MS;
+
+    const shouldSyncKv = cache && (!allowed || approachingLimit || unitThresholdReached || timeThresholdReached);
+
+    if (shouldSyncKv) {
+        mem.lastKvSync = now;
+        mem.kvKnownCount = mem.count;
+
+        // Fire-and-forget sync to KV so request latency and KV quota errors never block responses
+        cache.put(key, JSON.stringify({ count: mem.count, resetAt: mem.resetAt }), {
+            expirationTtl: Math.max(60, Math.ceil((mem.resetAt - now) / 1000))
+        }).catch(err => {
+            // Silently ignore KV quota or put errors
+            console.warn('[RateLimit] KV put throttled or failed:', err?.message || err);
+        });
+    }
+
+    return { allowed, remaining, resetAt: mem.resetAt };
 }
 
 // Deprecated functions removed - use consumeRateLimit() for all rate limiting

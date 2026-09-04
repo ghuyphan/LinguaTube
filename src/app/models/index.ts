@@ -2,6 +2,7 @@
 export * from './grammar.model';
 export * from './history.model';
 export * from './playlist.model';
+export * from './language.constants';
 
 export interface SubtitleCue {
   id: string;
@@ -84,17 +85,6 @@ export interface VideoInfo {
 
 export type SupportedLearningLanguage = 'ja' | 'zh' | 'ko' | 'en';
 export type ReadingDisplayMode = 'native' | 'annotated' | 'reading' | 'annotatedRomanized' | 'romanized';
-
-// App state
-export interface AppState {
-  currentLanguage: SupportedLearningLanguage;
-  currentVideo?: VideoInfo;
-  subtitles: SubtitleCue[];
-  vocabulary: VocabularyItem[];
-  isPlaying: boolean;
-  currentTime: number;
-}
-
 // Settings
 export interface UserSettings {
   theme: 'light' | 'dark' | 'system';

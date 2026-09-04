@@ -83,7 +83,7 @@ export class StreakService {
     // So we don't need to expose addToHistory publicly unless other components call it?
     // Looking at previous usages: `addToHistory` was private/internal in most cases or used by SyncService?
     // Verify usages of `addToHistory` on StreakService.
-    addToHistory(date: Date): void {
+    addToHistory(_date: Date): void {
         // No-op or delegate to repo if needed. 
         // Current repo implementation handles this internally in recordActivity/sync.
     }

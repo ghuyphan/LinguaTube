@@ -132,6 +132,26 @@ export async function translateText(text, source, target) {
         }
     }
 
+    // High-reliability fallback: Google Translate web GTX endpoint
+    try {
+        const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
+        const gtxRes = await fetch(gtxUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+            },
+            signal: AbortSignal.timeout(INSTANCE_TIMEOUT_MS)
+        });
+        if (gtxRes.ok) {
+            const data = await gtxRes.json();
+            if (Array.isArray(data?.[0])) {
+                const translated = data[0].map(item => item?.[0] || '').join('');
+                if (translated) return translated;
+            }
+        }
+    } catch (e) {
+        console.warn('[Translate] Google GTX fallback failed:', e?.message || e);
+    }
+
     return null;
 }
 

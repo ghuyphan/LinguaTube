@@ -125,7 +125,7 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
       flex-direction: column;
       gap: 6px;
       padding: var(--space-sm);
-      background: var(--bg-secondary);
+      background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-md);
     }

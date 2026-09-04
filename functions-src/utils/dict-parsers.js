@@ -1,4 +1,5 @@
 import { getJapaneseRomaji } from './japanese-romaji.js';
+import { pinyin } from 'pinyin-pro';
 
 /**
  * Unified Dictionary Parsers (Cloudflare Function)
@@ -212,142 +213,137 @@ export function parseFreeDictionary(data) {
 }
 
 /**
- * Parse MDBG Chinese dictionary HTML response using HTMLRewriter
+ * Parse MDBG Chinese dictionary HTML response
  * Used for: zh-en
- * Note: This returns a transformer, call with response object
+ * Extracts complete headword (all characters), space-separated pinyin, clean definitions, and HSK level
  * @param {Response} response - Fetch response from MDBG
  * @returns {Promise<DictEntry[]>}
  */
 export async function parseMdbg(response) {
     try {
+        const html = await response.text();
         const entries = [];
-        let currentEntry = null;
-        let captureText = null;
+        const rowSplits = html.split('<tr class="row">');
 
-        const rewriter = new HTMLRewriter()
-            .on('tr.row', {
-                element() {
-                    currentEntry = { word: '', reading: '', definitions: [], level: null };
-                    entries.push(currentEntry);
-                }
-            })
-            .on('tr.row .hanzi span', {
-                text(text) {
-                    if (currentEntry && !currentEntry.word) {
-                        if (text.text.trim()) currentEntry.word += text.text;
-                    }
-                }
-            })
-            .on('tr.row .pinyin span', {
-                text(text) {
-                    if (currentEntry) {
-                        if (text.text.trim()) currentEntry.reading += text.text;
-                    }
-                }
-            })
-            .on('tr.row .defs', {
-                element() { captureText = 'defs'; },
-                text(text) {
-                    if (currentEntry && captureText === 'defs') {
-                        if (!currentEntry._rawDefs) currentEntry._rawDefs = '';
-                        currentEntry._rawDefs += text.text;
-                    }
-                }
-            })
-            .on('tr.row .hsk', {
-                text(text) {
-                    if (currentEntry && text.text.includes('HSK')) {
-                        const match = text.text.match(/HSK\s*(\d+)/);
-                        if (match) currentEntry.level = parseInt(match[1]);
-                    }
-                }
-            });
+        for (let i = 1; i < rowSplits.length && entries.length < 5; i++) {
+            const rowFragment = rowSplits[i].split('</tr>')[0];
 
-        await rewriter.transform(response).arrayBuffer();
+            // 1. Extract headword: prefer otxtbot or concatenate all hanzi spans
+            const otxtMatch = rowFragment.match(/<td[^>]*class="[^"]*otxtbot[^"]*"[^>]*>([\s\S]*?)<\/td>/);
+            const hanziMatch = rowFragment.match(/<div class="hanzi">([\s\S]*?)<\/div>/);
+            let word = '';
+            if (otxtMatch && otxtMatch[1].replace(/<[^>]+>/g, '').trim()) {
+                word = otxtMatch[1].replace(/<[^>]+>/g, '').trim();
+            } else if (hanziMatch) {
+                word = [...hanziMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)]
+                    .map(m => m[1].trim())
+                    .join('');
+            }
+            if (!word) continue;
 
-        return entries.map(e => {
-            const definitions = e._rawDefs
-                ? e._rawDefs.split('/').map(d => d.trim()).filter(d => d)
-                : [];
+            // 2. Extract pinyin syllables (joined with spaces for readability)
+            const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>([\s\S]*?)<\/div>/);
+            const reading = pinyinMatch
+                ? [...pinyinMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)]
+                    .map(m => m[1].trim())
+                    .join(' ')
+                : '';
 
-            return {
-                word: e.word.trim(),
-                reading: e.reading.trim(),
-                definitions,
-                partOfSpeech: '',
-                level: e.level
-            };
-        }).filter(e => e.word && e.definitions.length > 0);
+            // 3. Extract definitions
+            const defsMatch = rowFragment.match(/<div class="defs">([\s\S]*?)<\/div>/);
+            let definitions = [];
+            if (defsMatch) {
+                definitions = defsMatch[1]
+                    .replace(/<[^>]+>/g, '/')
+                    .split('/')
+                    .map(d => d.trim())
+                    .filter(d => d && d !== '&nbsp;');
+            }
 
+            // 4. Extract HSK level
+            const hskMatch = rowFragment.match(/HSK\s*(\d+)/);
+            const level = hskMatch ? parseInt(hskMatch[1]) : null;
+
+            if (definitions.length > 0) {
+                entries.push({
+                    word,
+                    reading,
+                    definitions,
+                    partOfSpeech: '',
+                    level
+                });
+            }
+        }
+
+        return entries;
     } catch (err) {
-        console.error('[parseMdbg] HTMLRewriter error:', err.message);
+        console.error('[parseMdbg] parsing error:', err.message);
         return [];
     }
 }
 
 /**
- * Parse Glosbe dictionary HTML response using HTMLRewriter
- * Used for: zh-vi (replaces broken Hanzii parser - Hanzii is SPA, content unavailable via HTML)
+ * Parse Glosbe dictionary HTML response
+ * Used for: zh-vi, ko-vi fallback, en-vi, en-ko
  * @param {Response} response - Fetch response from Glosbe
+ * @param {string} [targetWord=''] - The word that was queried
  * @returns {Promise<DictEntry[]>}
  */
-export async function parseGlosbe(response) {
+export async function parseGlosbe(response, targetWord = '') {
     try {
+        const html = await response.text();
         const entries = [];
-        let summaryText = '';
+        const seenDefs = new Set();
 
-        const rewriter = new HTMLRewriter()
-            // Get summary translations from <strong> in content-summary
-            .on('#content-summary strong', {
-                text(text) {
-                    summaryText += text.text;
-                }
-            })
-            // Get individual translations from li[data-element="translation"] h3
-            .on('li[data-element="translation"] h3.translation__item__pharse', {
-                text(text) {
-                    const t = text.text.trim();
-                    if (t && !entries.some(e => e.definitions.includes(t))) {
-                        entries.push({
-                            word: '',
-                            reading: '',
-                            definitions: [t],
-                            partOfSpeech: ''
-                        });
-                    }
-                }
-            });
-
-        await rewriter.transform(response).arrayBuffer();
-
-        // If no individual entries, parse summary (fallback)
-        if (entries.length === 0 && summaryText) {
-            // Decode HTML entities and split by comma
-            const decoded = summaryText
-                .replace(/&agrave;/g, 'à')
-                .replace(/&aacute;/g, 'á')
-                .replace(/&egrave;/g, 'è')
-                .replace(/&eacute;/g, 'é')
-                .replace(/&ograve;/g, 'ò')
-                .replace(/&oacute;/g, 'ó')
-                .replace(/&ugrave;/g, 'ù')
-                .replace(/&uacute;/g, 'ú')
-                .replace(/&amp;/g, '&');
-            const defs = decoded.split(',').map(d => d.trim()).filter(Boolean);
-            if (defs.length > 0) {
+        // 1. Get individual translations from h3 tags (class contains translation__item__pharse or phrase)
+        const h3Matches = [...html.matchAll(/<h3[^>]*class="[^"]*translation__item__(?:pharse|phrase)[^"]*"[^>]*>([\s\S]*?)<\/h3>/g)];
+        for (const match of h3Matches) {
+            const def = match[1].replace(/<[^>]+>/g, '').trim();
+            if (def && !seenDefs.has(def.toLowerCase())) {
+                seenDefs.add(def.toLowerCase());
                 entries.push({
-                    word: '',
+                    word: targetWord,
                     reading: '',
-                    definitions: defs.slice(0, 5),
+                    definitions: [def],
                     partOfSpeech: ''
                 });
+                if (entries.length >= 5) break;
+            }
+        }
+
+        // 2. Fallback: parse summary in #content-summary
+        if (entries.length === 0) {
+            const summaryMatch = html.match(/id="content-summary"[\s\S]*?<strong>([\s\S]*?)<\/strong>/);
+            if (summaryMatch) {
+                const decoded = summaryMatch[1]
+                    .replace(/&agrave;/g, 'à').replace(/&aacute;/g, 'á')
+                    .replace(/&egrave;/g, 'è').replace(/&eacute;/g, 'é')
+                    .replace(/&ograve;/g, 'ò').replace(/&oacute;/g, 'ó')
+                    .replace(/&ugrave;/g, 'ù').replace(/&uacute;/g, 'ú')
+                    .replace(/&amp;/g, '&');
+                const defs = decoded.split(',').map(d => d.replace(/<[^>]+>/g, '').trim()).filter(Boolean);
+                if (defs.length > 0) {
+                    entries.push({
+                        word: targetWord,
+                        reading: '',
+                        definitions: defs.slice(0, 5),
+                        partOfSpeech: ''
+                    });
+                }
+            }
+        }
+
+        // 3. If targetWord has Chinese characters and reading is empty, compute pinyin
+        if (targetWord && /[\u4E00-\u9FFF]/.test(targetWord)) {
+            const py = pinyin(targetWord, { toneType: 'symbol' });
+            for (const e of entries) {
+                if (!e.reading) e.reading = py;
             }
         }
 
         return entries.slice(0, 5);
-
     } catch (err) {
-        console.error('[parseGlosbe] HTMLRewriter error:', err.message);
+        console.error('[parseGlosbe] parsing error:', err.message);
         return [];
     }
 }
@@ -399,107 +395,61 @@ export function parseJisho(data) {
  * Used for: ko-vi (official Korean government dictionary with Vietnamese translations)
  * URL: https://krdict.korean.go.kr/vie/dicMarinerSearch/search?nation=vie&nationCode=10&mainSearchWord={word}
  * 
- * NOTE: HTMLRewriter Timing
- * =========================
- * Text handlers may fire multiple times for chunked content.
- * We accumulate text in temporary objects and finalize entries
- * AFTER rewriter.transform() completes, using the final accumulated state.
- * 
  * @param {Response} response - Fetch response from KRDICT
  * @returns {Promise<DictEntry[]>}
  */
 export async function parseKrdict(response) {
     try {
-        // Accumulate data during parsing
-        const collectedData = {
-            entries: [],
-            current: {
-                word: '',
-                reading: '',
-                defs: [],
-                pos: ''
+        const html = await response.text();
+        const entries = [];
+
+        // Split by <dl> entries in search results
+        const dlMatches = html.split(/<dl[\s>]/).slice(1);
+
+        for (const dl of dlMatches) {
+            if (entries.length >= 5) break;
+            const dlContent = dl.split('</dl>')[0];
+
+            // 1. Extract word from <dt>
+            const wordMatch = dlContent.match(/<span class="word_type[^"]*">([\s\S]*?)<\/span>/)
+                || dlContent.match(/<dt[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/);
+            const word = wordMatch ? wordMatch[1].replace(/<[^>]+>/g, '').trim() : '';
+            if (!word) continue;
+
+            // 2. Extract pronunciation from search_sub (e.g. [한ː국])
+            const pronMatch = dlContent.match(/<span class="search_sub">([\s\S]*?)<\/span>/);
+            const reading = pronMatch
+                ? pronMatch[1].replace(/<[^>]+>/g, '').replace(/듣기/g, '').replace(/\[|\]/g, '').trim()
+                : '';
+
+            // 3. Extract part of speech (e.g. "Danh từ" or "명사")
+            const posMatch = dlContent.match(/<span class="word_att_type1">[\s\S]*?<span class="manyLang2">([\s\S]*?)<\/span>/)
+                || dlContent.match(/「([^」]+)」/);
+            const partOfSpeech = posMatch ? posMatch[1].trim() : '';
+
+            // 4. Extract Vietnamese definitions
+            const defs = [];
+            const ddMatches = [...dlContent.matchAll(/<dd[^>]*class="[^"]*manyLang2[^"]*"[^>]*>([\s\S]*?)<\/dd>/g)];
+            for (const dd of ddMatches) {
+                const defText = dd[1].replace(/<[^>]+>/g, '').trim();
+                if (defText && !defs.includes(defText)) {
+                    defs.push(defText);
+                }
             }
-        };
 
-        // Parse HTML using HTMLRewriter
-        const rewriter = new HTMLRewriter()
-            // Get the word headword
-            .on('.word_head .origin_word', {
-                text(text) {
-                    collectedData.current.word += text.text.trim();
-                }
-            })
-            // Get pronunciation (romanization)
-            .on('.word_head .sound_speaker', {
-                element(element) {
-                    // Reading is sometimes in title attribute
-                    const title = element.getAttribute('title');
-                    if (title) collectedData.current.reading = title;
-                }
-            })
-            // Get Vietnamese definitions
-            .on('.word_mean_vie', {
-                text(text) {
-                    const def = text.text.trim();
-                    if (def && def.length > 1) {
-                        collectedData.current.defs.push(def);
-                    }
-                }
-            })
-            // Alternative: meaning text
-            .on('.mean_tran', {
-                text(text) {
-                    const def = text.text.trim();
-                    if (def && def.length > 1 && !collectedData.current.defs.includes(def)) {
-                        collectedData.current.defs.push(def);
-                    }
-                }
-            })
-            // Get part of speech
-            .on('.word_att_view .att_val', {
-                text(text) {
-                    const pos = text.text.trim();
-                    if (pos && !collectedData.current.pos) {
-                        collectedData.current.pos = pos;
-                    }
-                }
-            })
-            // End of word entry (START of next .word_cont) - save current and reset
-            .on('.word_cont', {
-                element() {
-                    // Save previous entry if it has content
-                    const curr = collectedData.current;
-                    if (curr.word && curr.defs.length > 0) {
-                        collectedData.entries.push({
-                            word: curr.word,
-                            reading: curr.reading,
-                            definitions: curr.defs.slice(0, 5),
-                            partOfSpeech: curr.pos
-                        });
-                    }
-                    // Reset for next entry
-                    collectedData.current = { word: '', reading: '', defs: [], pos: '' };
-                }
-            });
-
-        // Run the rewriter to completion
-        await rewriter.transform(response).arrayBuffer();
-
-        // Push last entry if exists (not caught by boundary element)
-        const last = collectedData.current;
-        if (last.word && last.defs.length > 0) {
-            collectedData.entries.push({
-                word: last.word,
-                reading: last.reading,
-                definitions: last.defs.slice(0, 5),
-                partOfSpeech: last.pos
-            });
+            if (defs.length > 0) {
+                entries.push({
+                    word,
+                    reading,
+                    definitions: defs.slice(0, 5),
+                    partOfSpeech
+                });
+            }
         }
 
-        return collectedData.entries.slice(0, 5);
-
+        return entries;
     } catch (err) {
-        console.error('[parseKrdict] HTMLRewriter error:', err.message);
+        console.error('[parseKrdict] parsing error:', err.message);
         return [];
     }
 }

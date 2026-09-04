@@ -1,0 +1,174 @@
+<div class="page-layout">
+  <div class="page-layout__main">
+    <!-- Main History Panel -->
+    <div class="card history-panel">
+      <!-- Panel Header -->
+      <div class="panel-header">
+        <div class="panel-header__row">
+          <div class="panel-header__left">
+            <app-icon name="clock" [size]="20" class="panel-header__icon" />
+            <h2 class="panel-header__title">{{ i18n.t('history.title') }}</h2>
+          </div>
+          <div class="panel-badges">
+            <span class="badge badge--primary">{{ historyItems().length }} {{ i18n.t('history.all') }}</span>
+            @if (favorites().length > 0) {
+              <span class="badge badge--accent">{{ favorites().length }} {{ i18n.t('history.favorites') }}</span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Stable Filter Toolbar (Matches playlist-page) -->
+      <div class="history-toolbar">
+        <div class="view-tabs">
+          <button
+            type="button"
+            class="filter-chip"
+            [class.active]="filter() === 'all'"
+            (click)="filter.set('all')">
+            <span class="chip-text">{{ i18n.t('history.all') }}</span>
+          </button>
+          <button
+            type="button"
+            class="filter-chip"
+            [class.active]="filter() === 'favorites'"
+            (click)="filter.set('favorites')">
+            <app-icon name="heart" [size]="14" />
+            <span class="chip-text">{{ i18n.t('history.favorites') }}</span>
+          </button>
+        </div>
+
+        <div class="toolbar-actions">
+          @if (historyItems().length > 0) {
+            <button type="button" class="btn btn-sm btn-ghost clear-all-btn" (click)="confirmClear()">
+              <app-icon name="trash-2" [size]="14" />
+              <span class="btn-text">{{ i18n.t('history.clearAll') }}</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- History List -->
+      <div class="history-content">
+        <app-history-list
+          [items]="filteredItems()"
+          [filter]="filter()"
+          [isLoading]="isLoading()"
+          (itemRemoved)="onItemRemoved($event)" />
+      </div>
+    </div>
+
+    <!-- Sync hint for guests on mobile -->
+    @if (auth.isInitialized() && !auth.isLoggedIn()) {
+      <div class="sync-hint-mobile mobile-only">
+        <app-icon name="cloud" [size]="16" />
+        <span>{{ i18n.t('history.syncHint') }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Desktop sidebar -->
+  <aside class="page-layout__sidebar desktop-only">
+    <!-- Card 1: History Overview -->
+    <div class="card sidebar-card">
+      <div class="panel-header">
+        <div class="panel-header__row">
+          <app-icon name="clock" [size]="20" class="panel-header__icon" />
+          <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
+        </div>
+        <p class="panel-header__subtitle">{{ historyItems().length }} {{ i18n.t('history.all') }}</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-item__value">{{ historyItems().length }}</span>
+          <span class="stat-item__label">{{ i18n.t('history.all') }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value stat-item__value--favorite">{{ favorites().length }}</span>
+          <span class="stat-item__label">{{ i18n.t('history.favorites') }}</span>
+        </div>
+      </div>
+
+      @if (historyItems().length > 0) {
+        <button type="button" class="btn btn-secondary btn-sm sidebar-action-btn" (click)="confirmClear()">
+          <app-icon name="trash-2" [size]="14" />
+          <span>{{ i18n.t('history.clearAll') }}</span>
+        </button>
+      }
+
+      @if (auth.isInitialized() && !auth.isLoggedIn()) {
+        <div class="sync-hint">
+          <app-icon name="cloud" [size]="16" />
+          <span>{{ i18n.t('history.syncHint') }}</span>
+        </div>
+      }
+    </div>
+
+    <!-- Card 2: Continue Learning Quick-Card (if recent item exists) -->
+    @if (recentItem(); as recent) {
+    <div class="card sidebar-card continue-card">
+      <div class="panel-header">
+        <div class="panel-header__row">
+          <app-icon name="play" [size]="18" class="panel-header__icon" />
+          <h4 class="sidebar-card__title" style="font-size: 0.9375rem; margin: 0;">
+            {{ i18n.t('history.continueWatching') || 'Continue' }}
+          </h4>
+        </div>
+      </div>
+
+      <div class="recent-preview" (click)="resumeVideo(recent.video_id)">
+        <div class="recent-preview__thumb">
+          <img [src]="recent.thumbnail || ('https://i.ytimg.com/vi/' + recent.video_id + '/mqdefault.jpg')" [alt]="recent.title" loading="lazy" />
+          <div class="card-play-overlay">
+            <div class="play-icon-circle">
+              <app-icon name="play" [size]="13" />
+            </div>
+          </div>
+          @if (recent.progress > 0) {
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="recent.progress"></div>
+          </div>
+          }
+        </div>
+        <div class="recent-preview__info">
+          <span class="recent-preview__title" [title]="recent.title">{{ recent.title }}</span>
+          @if (recent.channel) {
+            <span class="recent-preview__channel">{{ recent.channel }}</span>
+          }
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-sm resume-btn" (click)="resumeVideo(recent.video_id)">
+        <app-icon name="play" [size]="14" />
+        <span>{{ i18n.t('history.continueWatching') || 'Continue' }}</span>
+      </button>
+    </div>
+    }
+  </aside>
+</div>
+
+<!-- Clear confirmation dialog -->
+<app-confirm-dialog
+  [isOpen]="showClearConfirm()"
+  [title]="i18n.t('history.clearConfirm')"
+  message=""
+  [confirmText]="i18n.t('history.clearAll')"
+  [cancelText]="i18n.t('vocab.cancel') || 'Cancel'"
+  variant="danger"
+  icon="trash-2"
+  (confirmed)="clearAll()"
+  (cancelled)="showClearConfirm.set(false)" />
+
+<!-- Toast Notification with Undo -->
+@if (toastMessage()) {
+<div class="toast">
+  <app-icon name="check" [size]="16" />
+  <span class="toast__text">{{ toastMessage() }}</span>
+  @if (lastDeletedItem) {
+    <button type="button" class="toast__undo-btn" (click)="undoDelete()">
+      {{ i18n.t('common.undo') || 'Undo' }}
+    </button>
+  }
+</div>
+}

@@ -208,7 +208,7 @@ export class TranscriptService {
   /**
    * Generate transcript using AI (Whisper/Gladia)
    */
-  generateWithAI(videoId: string, lang: string = 'ja', resultUrl?: string): Observable<SubtitleCue[]> {
+  generateWithAI(videoId: string, lang: string = 'ja', resultUrl?: string, turnstileToken?: string): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
     // If we're polling (resultUrl exists), mark as resuming
@@ -219,7 +219,7 @@ export class TranscriptService {
     });
     this.fallbackInfo.set(null);
 
-    return this.callTranscriptAPI(videoId, lang, true, resultUrl).pipe(
+    return this.callTranscriptAPI(videoId, lang, true, resultUrl, turnstileToken).pipe(
       takeUntil(this.cancelSubject),
       tap(cues => {
         if (cues.length > 0) {
@@ -346,7 +346,8 @@ export class TranscriptService {
     videoId: string,
     lang: string,
     preferAI: boolean,
-    resultUrl?: string
+    resultUrl?: string,
+    turnstileToken?: string
   ): Observable<SubtitleCue[]> {
 
     // Dedup ongoing requests (except for polling)
@@ -359,7 +360,8 @@ export class TranscriptService {
       videoId,
       lang,
       preferAI,
-      ...(resultUrl && { resultUrl })
+      ...(resultUrl && { resultUrl }),
+      ...(turnstileToken && { turnstileToken })
     }).pipe(
       switchMap(response => this.handleResponse(response, videoId, lang, preferAI)),
       finalize(() => this.pendingRequests.delete(requestKey)),

@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
 import { PlaybackSpeed } from '../../video-player.constants';
@@ -9,7 +9,8 @@ import { OptionItem } from '../../../../../shared/components/option-picker/optio
   standalone: true,
   imports: [CommonModule, IconComponent],
   templateUrl: './video-bottom-bar.component.html',
-  styleUrl: './video-bottom-bar.component.scss'
+  styleUrl: './video-bottom-bar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoBottomBarComponent {
   // Playback state
@@ -26,6 +27,7 @@ export class VideoBottomBarComponent {
   isFullscreen = input<boolean>(false);
   currentSpeed = input<PlaybackSpeed>(1);
   playbackSpeeds = input<PlaybackSpeed[]>([]);
+  subtitlesVisible = input<boolean>(true);
   showDualSubtitles = input<boolean>(false);
   targetLang = input<string>('');
   langOptions = input<OptionItem[]>([]);
@@ -47,6 +49,7 @@ export class VideoBottomBarComponent {
   volumeChange = output<number>();
 
   // Outputs for Right Controls
+  toggleSubtitles = output<void>();
   toggleSpeedMenu = output<MouseEvent>();
   setPlaybackSpeed = output<PlaybackSpeed>();
   cycleFontSize = output<void>();
@@ -54,6 +57,7 @@ export class VideoBottomBarComponent {
   disableDualSubtitles = output<void>();
   langSelected = output<string>();
   saveClick = output<void>();
+  openShortcutsDialog = output<void>();
   toggleFullscreen = output<void>();
 
   // Mouse event outputs for volume slider

@@ -12,7 +12,7 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
-import { YoutubeService, I18nService, SettingsService, TranscriptService } from './services';
+import { YoutubeService, I18nService, SettingsService, TranscriptService, SubtitleService } from './services';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
@@ -74,10 +74,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             <a
               class="bottom-nav__item"
               routerLink="/video"
+              (click)="onLearnNavClick($event)"
               [class.active]="!anySheetOpen() && isRouteActive('/video')"
             >
               <app-icon name="play-circle" [size]="20" />
-              <span>{{ i18n.t('nav.learn') }}</span>
+              <span>{{ i18n.t('nav.watch') }}</span>
             </a>
             <a
               class="bottom-nav__item"
@@ -85,7 +86,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               [class.active]="!anySheetOpen() && isRouteActive('/study')"
             >
               <app-icon name="graduation-cap" [size]="20" />
-              <span>{{ i18n.t('nav.study') }}</span>
+              <span>{{ i18n.t('nav.review') }}</span>
             </a>
             <a
               class="bottom-nav__item"
@@ -93,15 +94,15 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
             >
               <app-icon name="book-open" [size]="20" />
-              <span>{{ i18n.t('nav.words') }}</span>
+              <span>{{ i18n.t('nav.vocab') }}</span>
             </a>
             <a
               class="bottom-nav__item"
               routerLink="/explore"
               [class.active]="!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))"
             >
-              <app-icon name="globe" [size]="20" />
-              <span>{{ i18n.t('nav.explore') }}</span>
+              <app-icon name="list-video" [size]="20" />
+              <span>{{ i18n.t('nav.playlists') }}</span>
             </a>
             <button
               class="bottom-nav__item"
@@ -141,7 +142,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
             </div>
 
             <!-- Action Rows -->
-            <button class="more-menu__item" (click)="showMoreSheet.set(false); showCommandPalette.set(true)">
+            <button class="more-menu__item" (click)="openNewVideo()">
               <div class="more-menu__item-icon">
                 <app-icon name="plus" [size]="18" />
               </div>
@@ -534,6 +535,7 @@ export class AppComponent implements OnDestroy {
   settings = inject(SettingsService);
   streak = inject(StreakService);
   transcript = inject(TranscriptService);
+  private subtitles = inject(SubtitleService);
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);
@@ -719,12 +721,35 @@ export class AppComponent implements OnDestroy {
       });
   }
 
+  onLearnNavClick(event: MouseEvent): void {
+    if (this.youtube.currentVideo() || this.playlistService.currentPlaylist() || this.router.url.includes('/video')) {
+      event.preventDefault();
+      this.playlistService.clearCurrentPlaylist();
+      this.youtube.reset();
+      this.subtitles.clear();
+      this.transcript.reset();
+      void this.router.navigate(['/video'], { queryParams: {} });
+    }
+  }
+
   toggleSettingsSheet(): void {
     this.showSettingsSheet.update(v => !v);
   }
 
   toggleMoreSheet(): void {
     this.showMoreSheet.update(v => !v);
+  }
+
+  openNewVideo(): void {
+    this.showMoreSheet.set(false);
+    if (this.router.url === '/video' && !this.youtube.currentVideo() && !this.youtube.pendingVideoId()) {
+      const inputEl = this.document.querySelector('.spotlight-input') as HTMLInputElement | null;
+      if (inputEl) {
+        inputEl.focus();
+        return;
+      }
+    }
+    this.showCommandPalette.set(true);
   }
 
   navigateFromMore(route: string): void {

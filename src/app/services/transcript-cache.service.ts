@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SubtitleCue } from '../models';
 
 /**
@@ -260,7 +260,7 @@ export class TranscriptCacheService {
 
                 countRequest.onerror = () => resolve({ count: 0, size: 0 });
             });
-        } catch (e) {
+        } catch {
             return { count: 0, size: 0 };
         }
     }

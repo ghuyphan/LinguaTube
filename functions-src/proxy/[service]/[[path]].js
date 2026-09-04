@@ -163,16 +163,22 @@ export async function onRequest(context) {
         const response = await fetch(targetUrl, fetchOptions);
         const data = await response.text();
 
+        const responseHeaders = {
+            'Content-Type': response.headers.get('Content-Type') || 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': config.methods.join(', ') + ', OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'X-Proxied-Service': service,
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+        };
+
+        if (request.method === 'GET' && response.ok) {
+            responseHeaders['Cache-Control'] = 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400';
+        }
+
         return new Response(data, {
             status: response.status,
-            headers: {
-                'Content-Type': response.headers.get('Content-Type') || 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': config.methods.join(', ') + ', OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type',
-                'X-Proxied-Service': service,
-                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
-            }
+            headers: responseHeaders
         });
 
     } catch (error) {

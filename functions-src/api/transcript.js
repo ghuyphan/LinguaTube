@@ -30,6 +30,7 @@ import { GladiaProvider } from '../providers/gladia.js';
 import { SupadataProvider } from '../providers/supadata.js';
 import { DiamondService } from '../services/diamond.service.js';
 import { TranscriptService } from '../services/transcript.service.js';
+import { verifyTurnstileToken } from '../services/turnstile.service.js';
 
 const DEBUG = true;
 
@@ -62,7 +63,7 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, lang, preferAI, forceRefresh, resultUrl } = body;
+        const { videoId, lang, preferAI, forceRefresh, resultUrl, turnstileToken } = body;
 
         // Validation
         const validationError = await validateVideoRequest(videoId, lang);
@@ -179,6 +180,23 @@ export async function onRequestPost(context) {
         // -------------------------------------------------------------
         if (diamondStatus.diamonds <= 0) {
             return jsonResponse({ success: false, videoId, errorCode: 'NO_DIAMONDS', error: 'No diamonds left.', ...diamondInfo, timing: elapsed() }, 429);
+        }
+
+        // Verify Turnstile CAPTCHA for new AI generation jobs (prevent bot abuse of Gladia credits)
+        if (!resultUrl) {
+            const clientIP = request.headers.get('cf-connecting-ip') || '';
+            const captchaCheck = await verifyTurnstileToken(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIP);
+            if (!captchaCheck.valid) {
+                return jsonResponse({
+                    success: false,
+                    videoId,
+                    errorCode: 'CAPTCHA_FAILED',
+                    error: 'Human verification required to generate AI subtitles. Please try again.',
+                    availableLanguages,
+                    ...diamondInfo,
+                    timing: elapsed()
+                }, 403);
+            }
         }
 
         try {

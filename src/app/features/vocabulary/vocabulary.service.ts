@@ -26,7 +26,6 @@ export class VocabularyService {
     });
 
     readonly reviewQueue = computed(() => {
-        const now = new Date();
         return this.vocabulary()
             .filter(i => i.level === 'new' || i.level === 'learning')
             .sort((a, b) => {

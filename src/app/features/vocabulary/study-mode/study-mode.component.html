@@ -4,33 +4,58 @@
     <div class="card study-start">
         <div class="panel-header">
             <div class="panel-header__row">
-                <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
-                <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
+                <div class="panel-header__left">
+                    <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
+                    <h2 class="panel-header__title">{{ i18n.t('study.title') }}</h2>
+                </div>
+                @if (streak.currentStreak() > 0) {
+                <div class="panel-badges">
+                    <span class="badge badge--warning">
+                        <app-icon name="fire" [size]="12" />
+                        <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
+                    </span>
+                </div>
+                }
             </div>
             <p class="panel-header__subtitle">{{ i18n.t('study.subtitle') }}</p>
+            <div class="study-meta-tags">
+                <span class="badge badge--accent">{{ currentLanguageLabel() }}</span>
+                <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
+            </div>
         </div>
 
-        <div class="panel-badges">
-            <span class="badge badge--accent">{{ currentLanguageLabel() }}</span>
-            <span class="badge badge--primary">{{ currentReadingDisplayLabel() }}</span>
-        </div>
-
+        <!-- Stat Badges (interactive toggles) -->
         <div class="study-stats">
-            <div class="stat-badge stat-badge--new">
-                <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).new }}</span>
+            <button type="button" 
+                    class="stat-badge stat-badge--new" 
+                    [class.active]="includeNew()" 
+                    (click)="toggleDeck('new')"
+                    [attr.aria-pressed]="includeNew()"
+                    [title]="i18n.t('study.includeNew')">
+                <span class="stat-value">{{ deckStats().new }}</span>
                 <span class="stat-label">{{ i18n.t('study.new') }}</span>
-            </div>
-            <div class="stat-badge stat-badge--learning">
-                <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).learning }}</span>
+            </button>
+            <button type="button" 
+                    class="stat-badge stat-badge--learning" 
+                    [class.active]="includeLearning()" 
+                    (click)="toggleDeck('learning')"
+                    [attr.aria-pressed]="includeLearning()"
+                    [title]="i18n.t('study.includeLearning')">
+                <span class="stat-value">{{ deckStats().learning }}</span>
                 <span class="stat-label">{{ i18n.t('study.learning') }}</span>
-            </div>
-            <div class="stat-badge stat-badge--known">
-                <span class="stat-value">{{ vocab.getStatsByLanguage(settings.settings().language).known }}</span>
+            </button>
+            <button type="button" 
+                    class="stat-badge stat-badge--known" 
+                    [class.active]="includeKnown()" 
+                    (click)="toggleDeck('known')"
+                    [attr.aria-pressed]="includeKnown()"
+                    [title]="i18n.t('study.reviewKnown')">
+                <span class="stat-value">{{ deckStats().known }}</span>
                 <span class="stat-label">{{ i18n.t('study.known') }}</span>
-            </div>
+            </button>
         </div>
 
-        <!-- Due Today Badge (mobile only - sidebar shows on desktop) -->
+        <!-- Due Today Alert Banner (mobile only - desktop shows in sidebar) -->
         @if (dueToday() > 0) {
         <div class="due-today-banner mobile-only">
             <app-icon name="clock" [size]="16" />
@@ -38,7 +63,7 @@
         </div>
         }
 
-        <!-- Daily Goal Progress (mobile only - sidebar shows on desktop) -->
+        <!-- Daily Goal Progress (mobile only - desktop shows in sidebar) -->
         <div class="daily-goal mobile-only">
             <div class="goal-header">
                 <span class="goal-label">{{ i18n.t('study.dailyGoal') }}</span>
@@ -52,6 +77,7 @@
             }
         </div>
 
+        <!-- Grouped Options Card -->
         <div class="study-options-card">
             <div class="study-option-row">
                 <div class="study-option-info">
@@ -60,8 +86,9 @@
                     </div>
                     <span class="study-option-title">{{ i18n.t('study.includeNew') }}</span>
                 </div>
-                <app-switch [checked]="includeNew" (checkedChange)="includeNew = $event" />
+                <app-switch [checked]="includeNew()" (checkedChange)="includeNew.set($event)" />
             </div>
+
             <div class="study-option-row">
                 <div class="study-option-info">
                     <div class="study-option-icon study-option-icon--learning">
@@ -69,8 +96,9 @@
                     </div>
                     <span class="study-option-title">{{ i18n.t('study.includeLearning') }}</span>
                 </div>
-                <app-switch [checked]="includeLearning" (checkedChange)="includeLearning = $event" />
+                <app-switch [checked]="includeLearning()" (checkedChange)="includeLearning.set($event)" />
             </div>
+
             <div class="study-option-row">
                 <div class="study-option-info">
                     <div class="study-option-icon study-option-icon--known">
@@ -78,8 +106,41 @@
                     </div>
                     <span class="study-option-title">{{ i18n.t('study.reviewKnown') }}</span>
                 </div>
-                <app-switch [checked]="includeKnown" (checkedChange)="includeKnown = $event" />
+                <app-switch [checked]="includeKnown()" (checkedChange)="includeKnown.set($event)" />
             </div>
+
+            <!-- Session Size Row -->
+            <div class="study-option-row study-option-row--size">
+                <div class="study-option-info">
+                    <div class="study-option-icon study-option-icon--size">
+                        <app-icon name="layers" [size]="16" />
+                    </div>
+                    <div class="study-option-text">
+                        <span class="study-option-title">{{ i18n.t('study.sessionSize') }}</span>
+                        <span class="study-option-hint">
+                            {{ sessionCardCount() }} {{ i18n.t('study.cards') }} · {{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }}
+                        </span>
+                    </div>
+                </div>
+                <div class="session-size-pills">
+                    @for (size of [5, 10, 20]; track size) {
+                    <button type="button" 
+                            class="size-pill" 
+                            [class.active]="sessionSize() === size"
+                            (click)="setSessionSize(size)">
+                        {{ size }}
+                    </button>
+                    }
+                    <button type="button" 
+                            class="size-pill" 
+                            [class.active]="sessionSize() === 'all'"
+                            (click)="setSessionSize('all')">
+                        {{ i18n.t('study.allCards') }}
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reverse Mode Row -->
             <div class="study-option-row">
                 <div class="study-option-info">
                     <div class="study-option-icon study-option-icon--reverse">
@@ -90,15 +151,16 @@
                         <span class="study-option-hint">{{ i18n.t('study.meaningFirst') }}</span>
                     </div>
                 </div>
-                <app-switch [checked]="reverseMode" (checkedChange)="reverseMode = $event" />
+                <app-switch [checked]="reverseMode()" (checkedChange)="reverseMode.set($event)" />
             </div>
         </div>
 
+        <!-- Start CTA & Empty State -->
         <div class="study-action">
             @if (availableCards() > 0) {
             <button class="btn btn-primary start-btn" (click)="startSession()">
                 <app-icon name="play" [size]="18" />
-                <span>{{ i18n.t('study.start') }} ({{ availableCards() }} {{ i18n.t('study.cards') }})</span>
+                <span>{{ i18n.t('study.start') }} ({{ sessionCardCount() }} {{ i18n.t('study.cards') }})</span>
             </button>
             <p class="keyboard-hint desktop-only">{{ i18n.t('study.pressSpace') }} · {{ i18n.t('study.keyboardHint') }}</p>
             } @else {
@@ -112,7 +174,7 @@
                 </div>
                 <a routerLink="/video" class="btn btn-secondary empty-state__action">
                     <app-icon name="play" [size]="16" />
-                    <span>{{ i18n.t('nav.learn') }}</span>
+                    <span>{{ i18n.t('nav.watch') }}</span>
                 </a>
             </div>
             }
@@ -123,7 +185,7 @@
     @if (isStudying()) {
     <!-- Study Session -->
     <div class="study-session">
-        <!-- Progress -->
+        <!-- Progress Header -->
         <div class="study-progress">
             <div class="progress-bar">
                 <div class="progress-fill" [style.--progress]="(currentIndex() + 1) / studyCards().length * 100"></div>
@@ -135,9 +197,9 @@
                 <app-icon name="clock" [size]="14" />
                 {{ formatTime(elapsedSeconds()) }}
             </span>
-            <button class="btn btn-ghost btn-sm" (click)="endSession()">
+            <button class="btn btn-ghost btn-sm session-exit-btn" (click)="endSession()" [title]="i18n.t('study.end')">
                 <app-icon name="x" [size]="16" />
-                {{ i18n.t('study.end') }}
+                <span class="desktop-only">{{ i18n.t('study.end') }}</span>
             </button>
         </div>
 
@@ -158,6 +220,18 @@
             <div class="flashcard__inner">
                 <!-- Front (Word or Meaning based on reverseMode) -->
                 <div class="flashcard__front">
+                    <div class="flashcard-top-bar">
+                        <span class="badge badge--{{ currentCard()!.item.level }}">
+                            {{ currentCard()!.item.level }}
+                        </span>
+                        <button type="button" 
+                                class="card-speaker-btn" 
+                                [title]="i18n.t('study.listen')"
+                                (click)="playAudio(getCardPrimaryText(currentCard()!.item), currentCard()!.item.language, $event)">
+                            <app-icon name="volume-2" [size]="16" />
+                        </button>
+                    </div>
+
                     @if (hasSentenceContext(currentCard()!.item)) {
                     <div class="card-context card-context--front">
                         <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
@@ -170,7 +244,8 @@
                         </div>
                     </div>
                     }
-                    @if (!reverseMode) {
+
+                    @if (!reverseMode()) {
                     <div class="card-word-cluster">
                         <span class="card-word" [class]="'text-' + currentCard()!.item.language">
                             {{ getCardPrimaryText(currentCard()!.item) }}
@@ -184,12 +259,25 @@
                         {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
                     }
+
                     <p class="tap-hint">{{ i18n.t('study.tapToReveal') }}</p>
                 </div>
 
                 <!-- Back (Meaning or Word based on reverseMode) -->
                 <div class="flashcard__back">
-                    @if (!reverseMode) {
+                    <div class="flashcard-top-bar">
+                        <span class="badge badge--{{ currentCard()!.item.level }}">
+                            {{ currentCard()!.item.level }}
+                        </span>
+                        <button type="button" 
+                                class="card-speaker-btn" 
+                                [title]="i18n.t('study.listen')"
+                                (click)="playAudio(getCardPrimaryText(currentCard()!.item), currentCard()!.item.language, $event)">
+                            <app-icon name="volume-2" [size]="16" />
+                        </button>
+                    </div>
+
+                    @if (!reverseMode()) {
                     <div class="card-word-cluster">
                         <span class="card-word" [class]="'text-' + currentCard()!.item.language">
                             {{ getCardPrimaryText(currentCard()!.item) }}
@@ -210,7 +298,11 @@
                         <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
                         }
                     </div>
+                    <div class="card-meaning">
+                        {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
+                    </div>
                     }
+
                     @if (hasSentenceContext(currentCard()!.item)) {
                     <div class="card-sentence">
                         <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
@@ -256,7 +348,7 @@
     <!-- Session Complete -->
     @if (isComplete()) {
     <div class="card session-complete" [class.with-confetti]="showConfetti()">
-        <!-- Confetti -->
+        <!-- Confetti Particles -->
         @if (showConfetti()) {
         <div class="confetti-container">
             @for (i of [1,2,3,4,5,6,7,8,9,10,11,12]; track i) {
@@ -276,8 +368,7 @@
             <div class="streak-details">
                 @if (result.isNewRecord) {
                 <h3>{{ i18n.t('streak.newRecord') || 'New Streak Record! 🔥' }}</h3>
-                <p>{{ i18n.t('streak.reached') || 'You hit' }} {{ streak.currentStreak() }} {{ i18n.t('streak.days') ||
-                    'days!' }}</p>
+                <p>{{ i18n.t('streak.reached') || 'You hit' }} {{ streak.currentStreak() }} {{ i18n.t('streak.days') || 'days!' }}</p>
                 } @else if (result.freezeUsed) {
                 <h3>{{ i18n.t('streak.saved') || 'Streak Saved! ❄️' }}</h3>
                 <p>{{ i18n.t('streak.freezeUsed') || 'You used a streak freeze.' }}</p>
@@ -317,7 +408,7 @@
 
         <button class="btn btn-primary start-btn" (click)="resetSession()">
             <app-icon name="rotate-ccw" [size]="16" />
-            {{ i18n.t('study.studyAgain') }}
+            <span>{{ i18n.t('study.studyAgain') }}</span>
         </button>
     </div>
     }

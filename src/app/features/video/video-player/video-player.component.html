@@ -1,23 +1,27 @@
 <div class="player-wrapper">
   @if (!youtube.currentVideo() && !isLoading() && !youtube.pendingVideoId()) {
-  <!-- URL Input State -->
-  <div class="video-input" [class.animate-enter]="stateTransition() === 'to-input'">
-    <div class="input-group">
-      <div class="input-wrapper input-group--icon">
-        <app-icon name="search" [size]="16" class="input-icon" />
-        <input type="text" [(ngModel)]="videoUrl" [placeholder]="i18n.t('player.pasteUrl')" class="url-input"
-          (keyup.enter)="loadVideo()" />
-        @if (videoUrl) {
-        <button class="clear-btn" (click)="clearUrl()">
-          <app-icon name="x" [size]="14" />
-        </button>
-        }
-      </div>
-      <button class="btn btn-primary load-btn" (click)="loadVideo()" [disabled]="isLoading()">
+  <!-- Spotlight Search URL Bar (Single unified bar, no nested boxes) -->
+  <div class="spotlight-container" [class.animate-enter]="stateTransition() === 'to-input'">
+    <div class="spotlight-bar">
+      <app-icon name="link" [size]="18" class="spotlight-icon" />
+      <input type="text" [(ngModel)]="videoUrl" (ngModelChange)="error.set(null)" [placeholder]="i18n.t('player.pasteUrl')" class="spotlight-input"
+        (keyup.enter)="loadVideo()" spellcheck="false" autocomplete="off" />
+      @if (videoUrl) {
+      <button type="button" class="spotlight-clear-btn" (click)="clearUrl()" aria-label="Clear input">
+        <app-icon name="x" [size]="14" />
+      </button>
+      } @else {
+      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" title="Dán từ clipboard (⌘V)">
+        <app-icon name="clipboard-check" [size]="13" />
+        <span class="paste-label">Dán</span>
+      </button>
+      }
+      <button class="btn btn-primary spotlight-load-btn" (click)="loadVideo()" [disabled]="isLoading() || !videoUrl.trim()">
         @if (isLoading()) {
         <app-icon name="loader" [size]="16" />
         } @else {
-        {{ i18n.t('player.load') }}
+        <app-icon name="arrow-right" [size]="15" />
+        <span class="load-text">{{ i18n.t('player.load') }}</span>
         }
       </button>
     </div>
@@ -29,16 +33,15 @@
     </div>
     }
 
-    <div class="hints">
-      <p class="hint-text">
-        <app-icon name="info" [size]="14" />
-        {{ i18n.t('player.hint') }}
-      </p>
+    <div class="spotlight-hint">
+      <app-icon name="info" [size]="13" />
+      <span>{{ i18n.t('player.hint') }}</span>
     </div>
   </div>
   } @else {
   <!-- Video Loaded State -->
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
+    [class.controls-visible]="areControlsVisible()"
     [class.animate-enter]="stateTransition() === 'to-video'">
 
     <div class="video-embed-ratio">
@@ -54,7 +57,6 @@
     </div>
     }
 
-    <!-- Seek Feedback - positioned at container level -->
     <!-- Seek Feedback - positioned at container level -->
     <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()"
       (animationend)="onSeekAnimationEnd()">
@@ -86,12 +88,25 @@
     </div>
 
     <!-- Click Overlay (desktop only) - click handling only -->
-    <div class="player-overlay hover-only" (click)="onOverlayClick($event)"></div>
+    <div class="player-overlay hover-only" (click)="onOverlayClick($event)" (dblclick)="onOverlayDblClick($event)"></div>
+
+    <!-- Top OSD Pills for Speed & Captions (YouTube style) -->
+    @if (speedFeedback()) {
+    <div class="top-osd-pill speed-osd animate">
+      <span>{{ speedFeedbackText() }}</span>
+    </div>
+    }
+    @if (captionFeedback()) {
+    <div class="top-osd-pill caption-osd animate">
+      <span>{{ captionFeedbackText() }}</span>
+    </div>
+    }
 
     <!-- Center Controls -->
     <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.intendedPlayingState()"
       [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible()"
       [hasPlaylist]="hasPlaylist()" [canPlayPrev]="canPlayPrev()" [canPlayNext]="canPlayNext()"
+      [playPauseFeedback]="playPauseFeedback()" [playPauseFeedbackIcon]="playPauseFeedbackIcon()"
       [volumeFeedback]="volumeFeedback()" [volumeFeedbackIcon]="volumeFeedbackIcon()"
       [gestureSeekActive]="gestureSeekActive()" [gestureSeekTime]="gestureSeekTime()"
       [currentTime]="youtube.currentTime()" (playPauseClicked)="onPlayPauseButtonClick($event)"
@@ -109,7 +124,7 @@
     <!-- Fullscreen Subtitle Overlay -->
     @if (isFullscreen()) {
     <app-fullscreen-subtitle [currentCue]="subtitles.currentCue()" [tokens]="fullscreenTokens()"
-      [language]="activeSubtitleLanguage()"
+      [language]="activeSubtitleLanguage()" [subtitlesVisible]="subtitles.subtitlesVisible()"
       [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
       [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
       [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
@@ -181,9 +196,7 @@
 
     <!-- Fullscreen Grammar Popup -->
     @if (isFullscreen()) {
-    <app-bottom-sheet [isOpen]="fsGrammarPopupVisible()" [showCloseButton]="true" (closed)="closeFsGrammarPopup()">
-      <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="true" (closed)="closeFsGrammarPopup()" />
-    </app-bottom-sheet>
+    <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="fsGrammarPopupVisible()" (closed)="closeFsGrammarPopup()" />
     }
 
     <!-- Fullscreen Settings Sheet -->
@@ -231,6 +244,87 @@
     </app-bottom-sheet>
     }
 
+    <!-- Keyboard Shortcuts Cheat Sheet Modal (YouTube '?') -->
+    <app-bottom-sheet [isOpen]="showShortcutsDialog()" [maxWidth]="'680px'" [showCloseButton]="true" (closed)="closeShortcutsDialog()">
+      <div class="shortcuts-dialog-content">
+        <div class="shortcuts-dialog-header">
+          <div class="shortcuts-header-icon">
+            <app-icon name="keyboard" [size]="20" />
+          </div>
+          <h3 class="shortcuts-dialog-title">Keyboard shortcuts</h3>
+        </div>
+
+        <div class="shortcuts-grid">
+          <div class="shortcuts-section">
+            <h4 class="shortcuts-section-title">Playback</h4>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Toggle play / pause</span>
+              <span class="shortcut-keys"><kbd>k</kbd> or <kbd>Space</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Rewind 10s / Forward 10s</span>
+              <span class="shortcut-keys"><kbd>j</kbd> / <kbd>l</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Fine seek 5s</span>
+              <span class="shortcut-keys"><kbd>←</kbd> / <kbd>→</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Prev / Next frame (paused)</span>
+              <span class="shortcut-keys"><kbd>,</kbd> / <kbd>.</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Seek to % of video</span>
+              <span class="shortcut-keys"><kbd>0</kbd>.. <kbd>9</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Seek to start / end</span>
+              <span class="shortcut-keys"><kbd>Home</kbd> / <kbd>End</kbd></span>
+            </div>
+          </div>
+
+          <div class="shortcuts-section">
+            <h4 class="shortcuts-section-title">Audio & Subtitles</h4>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Volume up / down (5%)</span>
+              <span class="shortcut-keys"><kbd>↑</kbd> / <kbd>↓</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Mute / unmute</span>
+              <span class="shortcut-keys"><kbd>m</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Toggle subtitles (CC)</span>
+              <span class="shortcut-keys"><kbd>c</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Speed down / up</span>
+              <span class="shortcut-keys"><kbd>&lt;</kbd> / <kbd>&gt;</kbd></span>
+            </div>
+          </div>
+
+          <div class="shortcuts-section">
+            <h4 class="shortcuts-section-title">General & Playlists</h4>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Toggle full screen</span>
+              <span class="shortcut-keys"><kbd>f</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Exit full screen / Close modal</span>
+              <span class="shortcut-keys"><kbd>Esc</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Prev / Next in playlist</span>
+              <span class="shortcut-keys"><kbd>Shift</kbd>+<kbd>P</kbd> / <kbd>Shift</kbd>+<kbd>N</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">Keyboard shortcuts help</span>
+              <span class="shortcut-keys"><kbd>?</kbd></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-bottom-sheet>
 
     <!-- Custom Controls -->
     <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.intendedPlayingState()">
@@ -241,24 +335,28 @@
       <app-video-bottom-bar [isPlaying]="youtube.intendedPlayingState()" [currentTime]="formattedCurrentTime()"
         [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
         [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [currentSpeed]="currentSpeed()"
-        [playbackSpeeds]="playbackSpeeds" [showDualSubtitles]="settings.settings().showDualSubtitles"
+        [playbackSpeeds]="playbackSpeeds" [subtitlesVisible]="subtitles.subtitlesVisible()"
+        [showDualSubtitles]="settings.settings().showDualSubtitles"
         [targetLang]="targetLang()" [langOptions]="langOptions()" [fontSizeLabel]="getFontSizeLabel()"
         [isCJKLanguage]="['ja', 'zh', 'ko'].includes(settings.settings().language)"
         [isSpeedMenuOpen]="isSpeedMenuOpen()" [langPickerOpen]="langPickerOpen()"
         [isVolumeSliderVisible]="isVolumeSliderVisible()" [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
         (seekRelative)="seekRelative($event.amount); showSeekFeedback($event.direction, ($event.amount > 0 ? $event.amount : -$event.amount))"
-        (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSpeedMenu)="toggleSpeedMenu($event)"
-        (setPlaybackSpeed)="setPlaybackSpeed($event)" (cycleFontSize)="cycleFontSize()"
-        (toggleLangMenu)="toggleLangMenu($event)" (disableDualSubtitles)="disableDualSubtitles()"
-        (langSelected)="onLangSelected($event)" (saveClick)="onSaveClick()" (toggleFullscreen)="toggleFullscreen()"
-        (showVolumeSlider)="showVolumeSlider()" (hideVolumeSlider)="hideVolumeSlider()" />
+        (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
+        (toggleSpeedMenu)="toggleSpeedMenu($event)" (setPlaybackSpeed)="setPlaybackSpeed($event)"
+        (cycleFontSize)="cycleFontSize()" (toggleLangMenu)="toggleLangMenu($event)"
+        (disableDualSubtitles)="disableDualSubtitles()" (langSelected)="onLangSelected($event)"
+        (saveClick)="onSaveClick()" (openShortcutsDialog)="openShortcutsDialog()"
+        (toggleFullscreen)="toggleFullscreen()" (showVolumeSlider)="showVolumeSlider()"
+        (hideVolumeSlider)="hideVolumeSlider()" />
     </div>
   </div>
 
   <!-- Video Info -->
   @if (!isFullscreen()) {
-  <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel" />
+  <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
+    (closeVideo)="closeVideo()" />
   }
   }
 </div>

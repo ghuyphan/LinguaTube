@@ -1,0 +1,86 @@
+@if (isOpen() || isClosing()) {
+<div 
+  class="spotlight-overlay" 
+  [class.closing]="isClosing()"
+  (click)="onBackdropClick($event)"
+  (keydown.escape)="close()"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="i18n.t('commandPalette.placeholder')"
+>
+  <div 
+    class="spotlight-container" 
+    [class.closing]="isClosing()" 
+    (click)="$event.stopPropagation()"
+  >
+    <div class="spotlight-bar-row">
+      <div class="spotlight-bar" [class.has-error]="hasError()" [class.shake]="shakeError()">
+        <app-icon name="search" [size]="20" class="spotlight__icon" />
+        
+        <input
+          #urlInput
+          type="url"
+          class="spotlight__input"
+          [placeholder]="i18n.t('commandPalette.placeholder')"
+          [(ngModel)]="url"
+          (ngModelChange)="onInputChange()"
+          (keydown.enter)="submit()"
+          (keydown.escape)="close()"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          enterkeyhint="go"
+        />
+
+        @if (url()) {
+          <div class="spotlight__actions">
+            <button 
+              class="btn-icon spotlight__clear-btn" 
+              (click)="clearInput()" 
+              type="button"
+              aria-label="Clear input"
+            >
+              <app-icon name="x" [size]="14" />
+            </button>
+            <button 
+              class="btn-icon spotlight__action-btn" 
+              (click)="submit()" 
+              type="button"
+              [attr.aria-label]="i18n.t('commandPalette.load')"
+            >
+              <app-icon name="arrow-right" [size]="16" />
+            </button>
+          </div>
+        } @else {
+          <kbd class="spotlight__esc-badge">esc</kbd>
+          <button 
+            class="btn-icon spotlight__paste-btn" 
+            (click)="pasteFromClipboard()" 
+            type="button"
+            aria-label="Paste from clipboard"
+            title="Paste"
+          >
+            <app-icon name="clipboard-check" [size]="15" />
+          </button>
+        }
+      </div>
+
+      <button 
+        class="spotlight__cancel-btn" 
+        (click)="close()" 
+        type="button"
+      >
+        {{ i18n.t('commandPalette.cancel') }}
+      </button>
+    </div>
+
+    @if (error()) {
+      <div class="spotlight__error-pill" role="alert">
+        <app-icon name="alert-circle" [size]="14" />
+        <span>{{ error() }}</span>
+      </div>
+    }
+  </div>
+</div>
+}

@@ -26,6 +26,7 @@ import { DictionaryService } from '../services/dict.service.js';
 
 const CACHE_VERSION = 'v4';
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
+const memNegDictCache = new Set();
 
 export async function onRequest(context) {
     const { request, env } = context;
@@ -43,6 +44,15 @@ export async function onRequest(context) {
     if (!word) return jsonResponse({ error: 'Missing logic parameter: word' }, 400);
     if (!from) return jsonResponse({ error: 'Invalid or missing "from" parameter.' }, 400);
     if (!to) return jsonResponse({ error: 'Invalid or missing "to" parameter.' }, 400);
+
+    // Fast-path in-memory negative cache check (0 KV ops, 0 API calls)
+    const negKey = `dict:neg:${from}:${to}:${word}`;
+    if (memNegDictCache.has(negKey)) {
+        return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
+            'X-Cache': 'NEG',
+            'Cache-Control': 'public, max-age=3600, s-maxage=86400'
+        });
+    }
 
     // Rate limiting
     const authResult = await validateAuthToken(request, env);
@@ -74,19 +84,13 @@ export async function onRequest(context) {
         }, { forceRefresh: false, ttl: 7 * 24 * 60 * 60 }); // 7 days TTL
 
         if (!result) {
-            // Negative caching logic
-            const negKey = `dict:neg:${from}:${to}:${word}`;
-            if (env.TRANSCRIPT_CACHE) {
-                try {
-                    const knownNeg = await env.TRANSCRIPT_CACHE.get(negKey);
-                    if (knownNeg) {
-                        return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, { 'X-Cache': 'NEG' });
-                    }
-                    await env.TRANSCRIPT_CACHE.put(negKey, '1', { expirationTtl: 3600 });
-                } catch (e) { }
-            }
-
-            return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, { 'X-Cache': 'MISS' });
+            // Negative caching in-memory (avoids wasting KV write quota on misses)
+            memNegDictCache.add(negKey);
+            return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
+                'X-Cache': 'MISS',
+                'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+            });
         }
 
         const responseData = {
@@ -100,7 +104,7 @@ export async function onRequest(context) {
 
         return jsonResponse(responseData, 200, {
             'X-Cache': cacheHeader,
-            'Cache-Control': 'public, max-age=86400',
+            'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 

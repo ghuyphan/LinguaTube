@@ -9,6 +9,12 @@
 
         @if (quiz.isActive()) {
         <app-quiz-input />
+        } @else if (!subtitles.subtitlesVisible()) {
+        <div class="subtitle-off-placeholder">
+            <app-icon name="subtitles" [size]="16" />
+            <span>Subtitles turned off</span>
+            <kbd class="shortcut-kbd">c</kbd>
+        </div>
         } @else {
         <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()">
             @if (subtitles.currentCue(); as cue) {
@@ -119,15 +125,51 @@
                             'UNSUPPORTED_VIDEO_LANGUAGE') {
                             <span class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.unsupportedLanguageHint') }}</span>
+                            @if (hasNativeInOtherLanguage()) {
+                            <div class="empty-actions">
+                                <button class="empty-action-btn empty-action-btn--switch" (click)="onSwitchLanguage()">
+                                    <app-icon name="globe" [size]="14" />
+                                    <span>Switch to {{ getLanguageDisplayName(firstAvailableNativeLanguage() || '') }}</span>
+                                </button>
+                            </div>
+                            }
                             } @else if (transcript.error() === 'RATE_LIMITED') {
                             <span class="empty-title">{{ i18n.t('subtitle.rateLimitedTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.rateLimitedHint') }}</span>
                             } @else if (transcript.error() === 'NETWORK_ERROR') {
                             <span class="empty-title">{{ i18n.t('subtitle.networkErrorTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.networkErrorHint') }}</span>
+                            <div class="empty-actions">
+                                <button class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
+                                    <app-icon name="refresh-cw" [size]="14" />
+                                    <span>Retry</span>
+                                </button>
+                            </div>
                             } @else if (transcript.error() === 'SERVER_ERROR') {
                             <span class="empty-title">{{ i18n.t('subtitle.serverErrorTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.serverErrorHint') }}</span>
+                            <div class="empty-actions">
+                                <button class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
+                                    <app-icon name="refresh-cw" [size]="14" />
+                                    <span>Retry</span>
+                                </button>
+                            </div>
+                            } @else if (hasNativeInOtherLanguage()) {
+                            <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
+                            <span class="empty-hint">Captions are available in {{ getLanguageDisplayName(firstAvailableNativeLanguage() || '') }}</span>
+                            <div class="empty-actions">
+                                <button class="empty-action-btn empty-action-btn--switch" (click)="onSwitchLanguage()">
+                                    <app-icon name="globe" [size]="14" />
+                                    <span>Switch to {{ getLanguageDisplayName(firstAvailableNativeLanguage() || '') }}</span>
+                                </button>
+                                @if (transcript.diamonds() > 0) {
+                                <button class="try-ai-btn try-ai-btn--secondary" (click)="manualAITrigger.emit()">
+                                    <app-icon name="diamond" [size]="14" />
+                                    <span>{{ i18n.t('subtitle.useAITranscription') }}</span>
+                                    <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }})</span>
+                                </button>
+                                }
+                            </div>
                             } @else if (transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) {
                             <!-- No native captions but AI available -->
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
@@ -188,12 +230,11 @@
     </div>
     }
 
-    <!-- Controls -->
+    <!-- Controls Toolbar -->
     <div class="subtitle-controls" #subtitleControls>
-        <!-- Primary controls - always visible -->
-
         <!-- Loop Button -->
-        <button class="ctrl-btn ctrl-btn--responsive" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
+        <button class="ctrl-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
+            [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('subtitle.loop') + ' (L)'">
             <app-icon name="repeat" [size]="16" />
             <span class="ctrl-label">{{ i18n.t('subtitle.loop') }}</span>
@@ -202,8 +243,8 @@
             }
         </button>
 
-        <!-- Added Words Button -->
-        <button class="ctrl-btn ctrl-btn--responsive" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
+        <!-- Added Words Button (Always accessible) -->
+        <button class="ctrl-btn" (click)="toggleAddedSheet()" [title]="i18n.t('nav.added')">
             <app-icon name="bookmark-plus" [size]="16" />
             <span class="ctrl-label">{{ i18n.t('nav.added') }}</span>
             @if (recentCount() > 0) {
@@ -211,46 +252,117 @@
             }
         </button>
 
-        <!-- Quiz Mode Toggle -->
-        <button class="ctrl-btn ctrl-btn--responsive" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
+        <!-- Quiz Mode Toggle (Graduation Cap Icon) -->
+        <button class="ctrl-btn" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
+            [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('quiz.mode')">
-            <app-icon name="clipboard-check" [size]="16" />
+            <app-icon name="graduation-cap" [size]="16" />
             <span class="ctrl-label">{{ i18n.t('quiz.mode') }}</span>
         </button>
 
-        <!-- Font Size Button -->
-        <button class="ctrl-btn ctrl-btn--responsive" (click)="cycleFontSize()" [title]="i18n.t('subtitle.fontSize')">
-            <app-icon name="type" [size]="16" />
+        <!-- Mobile Options Button (Mobile only) -->
+        <button class="ctrl-btn mobile-only" (click)="openSubtitleOptions()"
+            [disabled]="subtitles.subtitles().length === 0"
+            title="Subtitle Options">
+            <app-icon name="settings" [size]="16" />
+            <span class="ctrl-label">Options</span>
+        </button>
+
+        <!-- Font Size Button (Desktop only, Aa glyph) -->
+        <button class="ctrl-btn desktop-only" (click)="cycleFontSize()"
+            [disabled]="subtitles.subtitles().length === 0"
+            [title]="i18n.t('subtitle.fontSize')">
+            <span class="font-size-glyph">Aa</span>
             <span class="ctrl-label">{{ getFontSizeLabel() }}</span>
         </button>
 
-        <!-- Expand toggle button -->
-        <button class="ctrl-btn ctrl-btn--expand" [class.active]="isControlsExpanded()"
-            (click)="toggleControlsExpanded()" [title]="i18n.t('subtitle.moreOptions')">
-            <app-icon name="more-horizontal" [size]="16" class="expand-icon" [class.rotated]="isControlsExpanded()" />
+        <!-- Reading Mode Toggle (Desktop only, Script glyph: あ/拼/한) -->
+        @if (supportsReadingDisplay()) {
+        <button class="ctrl-btn desktop-only" [class.active]="showReading()" (click)="toggleReading()"
+            [disabled]="subtitles.subtitles().length === 0"
+            [title]="'Toggle ' + readingLabel()">
+            <span class="reading-badge-icon">{{ getReadingScriptIcon() }}</span>
+            <span class="ctrl-label">{{ readingModeName() }}</span>
         </button>
+        }
 
-        <!-- Expandable section -->
-        <div class="controls-expand" [class.expanded]="isControlsExpanded()">
-            <!-- Reading Toggle -->
-            @if (supportsReadingDisplay()) {
-            <button class="ctrl-btn" [class.active]="showReading()" (click)="toggleReading()"
-                [title]="'Toggle ' + readingLabel()">
-                <app-icon name="eye" [size]="16" />
-                <span class="ctrl-label">{{ readingLabel() }}</span>
-            </button>
-            }
-
-            <!-- Grammar Mode Toggle -->
-            <button class="ctrl-btn" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
-                [title]="i18n.t('grammar.mode')">
-                <app-icon name="book-open" [size]="16" />
-                <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
-            </button>
-        </div>
+        <!-- Grammar Mode Toggle (Desktop only) -->
+        <button class="ctrl-btn desktop-only" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
+            [disabled]="subtitles.subtitles().length === 0"
+            [title]="i18n.t('grammar.mode')">
+            <app-icon name="book-open" [size]="16" />
+            <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
+        </button>
     </div>
     }
 </div>
+
+<!-- Subtitle Options Bottom Sheet (Mobile) -->
+<app-bottom-sheet [isOpen]="showSubtitleOptionsSheet()" [showCloseButton]="true" (closed)="closeSubtitleOptions()">
+    <div class="subtitle-options-sheet">
+        <div class="subtitle-options-header">
+            <app-icon name="settings" [size]="18" />
+            <h3 class="subtitle-options-title">Subtitle Display Options</h3>
+        </div>
+
+        <div class="subtitle-options-body">
+            <!-- 1. Font Size Segmented Control -->
+            <div class="option-row option-row--vertical">
+                <span class="option-label">Font Size</span>
+                <div class="size-segmented-control">
+                    @for (size of fontSizes; track size) {
+                    <button class="size-segment-btn" 
+                        [class.active]="settings.settings().fontSize === size"
+                        (click)="setFontSize(size)">
+                        <span class="size-segment-sample" [class]="'size-sample--' + size">Aa</span>
+                        <span class="size-segment-label">{{ size | titlecase }}</span>
+                    </button>
+                    }
+                </div>
+            </div>
+
+            <!-- 2. Furigana / Reading Toggle (if supported) -->
+            @if (supportsReadingDisplay()) {
+            <div class="option-row">
+                <div class="option-info">
+                    <div class="option-info__header">
+                        <span class="reading-badge-icon reading-badge-icon--sm">{{ getReadingScriptIcon() }}</span>
+                        <span class="option-label">{{ readingModeName() }}</span>
+                    </div>
+                    <span class="option-hint">Show pronunciation guide above characters</span>
+                </div>
+                <app-switch [checked]="showReading()" (checkedChange)="toggleReading()" />
+            </div>
+            }
+
+            <!-- 3. Grammar Patterns Toggle -->
+            <div class="option-row">
+                <div class="option-info">
+                    <div class="option-info__header">
+                        <app-icon name="book-open" [size]="16" />
+                        <span class="option-label">{{ i18n.t('grammar.mode') }}</span>
+                    </div>
+                    <span class="option-hint">Highlight grammar structures and patterns</span>
+                </div>
+                <app-switch [checked]="grammar.grammarModeEnabled()" (checkedChange)="toggleGrammarMode()" />
+            </div>
+
+            <!-- 4. Dual Subtitles Toggle (if JA / ZH / KO) -->
+            @if (['ja', 'zh', 'ko'].includes(effectiveLanguage())) {
+            <div class="option-row">
+                <div class="option-info">
+                    <div class="option-info__header">
+                        <app-icon name="languages" [size]="16" />
+                        <span class="option-label">Dual Subtitles</span>
+                    </div>
+                    <span class="option-hint">Show secondary translated subtitles</span>
+                </div>
+                <app-switch [checked]="settings.settings().showDualSubtitles" (checkedChange)="toggleDualSubtitles()" />
+            </div>
+            }
+        </div>
+    </div>
+</app-bottom-sheet>
 
 <!-- Vocabulary Quick View Sheet -->
 <app-vocabulary-quick-view [isOpen]="showAddedSheet()" (closed)="showAddedSheet.set(false)" />

@@ -6,14 +6,7 @@ import { PlaylistService } from '../../../features/playlist/playlist.service';
 import { AuthService } from '../../../core/services';
 import { I18nService } from '../../../services';
 import { IconComponent } from '../icon/icon.component';
-import { Playlist } from '../../../models';
-
-const LANGUAGES = [
-    { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-    { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-    { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-    { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
-];
+import { Playlist, SUPPORTED_LANGUAGES } from '../../../models';
 
 @Component({
     selector: 'app-create-playlist-dialog',
@@ -52,7 +45,7 @@ export class CreatePlaylistDialogComponent {
     isEditing = computed(() => !!this.playlist());
 
     // Language options
-    readonly languages = LANGUAGES;
+    readonly languages = SUPPORTED_LANGUAGES;
 
     constructor() {
         // Pre-fill form when editing
@@ -65,7 +58,7 @@ export class CreatePlaylistDialogComponent {
             } else {
                 this.resetForm();
             }
-        });
+        }, { allowSignalWrites: true });
     }
 
     async onSubmit() {

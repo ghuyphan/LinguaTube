@@ -27,6 +27,11 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.auth.loginEvent.subscribe(() => {
             this.syncWithRemote();
         });
+
+        // Sync on startup if already logged in
+        if (this.auth.isLoggedIn()) {
+            this.syncWithRemote();
+        }
     }
 
     getHistory(): Signal<HistoryItem[]> {

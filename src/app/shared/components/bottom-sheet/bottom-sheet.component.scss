@@ -40,11 +40,12 @@
     border-radius: var(--border-radius-xl);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     width: 100%;
-    max-width: 440px;
+    max-width: var(--max-width, 440px);
 
     // CSS Custom Property defaults
     --drag-offset: 0px;
     --max-height: 85vh;
+    --max-width: 440px;
 
     max-height: var(--max-height);
 
@@ -140,7 +141,7 @@
 }
 
 .sheet-close-btn:hover {
-    background: var(--bg-primary);
+    background: var(--bg-hover);
     color: var(--text-primary);
 }
 

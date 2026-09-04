@@ -6,6 +6,8 @@ import { IconComponent } from '../icon/icon.component';
 export interface OptionItem {
     value: string;
     label: string;
+    example?: string;   // Secondary example text (e.g. "日本語 (にほんご)")
+    description?: string;
     icon?: string;      // Emoji or icon name
     iconUrl?: string;   // Image URL (for flags)
 }

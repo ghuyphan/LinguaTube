@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -8,15 +8,14 @@ import { PlaylistPanelComponent } from '../../playlist/playlist-panel/playlist-p
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
-import { CommandPaletteComponent } from '../../../shared/components/command-palette/command-palette.component';
+import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService, VocabularyService, DictionaryService } from '../../../services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
-import { ExpandablePlaylistComponent } from '../../playlist/expandable-playlist/expandable-playlist.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Playlist, Token } from '../../../models';
+import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage } from '../../../models';
 
 @Component({
   selector: 'app-video-page',
@@ -33,538 +32,10 @@ import { Playlist, Token } from '../../../models';
     ConfirmDialogComponent,
     IconComponent,
     BottomSheetComponent,
-    CommandPaletteComponent,
-    ExpandablePlaylistComponent
+    TurnstileComponent
   ],
   templateUrl: './video-page.component.html',
-  styles: [`
-    /* Hidden file input for import */
-    .hidden-input {
-        display: none;
-    }
-    :host {
-      display: block;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr minmax(340px, 25vw);
-      gap: var(--space-md);
-      align-items: start;
-      max-width: 100%;
-      margin: 0 auto;
-    }
-
-    .layout-main {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      min-width: 0;
-    }
-
-    .layout-sidebar {
-      align-self: start;
-      position: sticky;
-      top: var(--space-md);
-      max-height: calc((min(100vw, 1280px) - 340px - 48px) * 0.5625);
-      overflow: hidden;
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Tab switcher */
-    .sidebar-tabs {
-      display: flex;
-      gap: 2px;
-      padding: 4px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      margin-bottom: var(--space-sm);
-      flex-shrink: 0;
-    }
-
-    .sidebar-tab {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-xs);
-      padding: 0.5rem var(--space-sm);
-      background: transparent;
-      border: none;
-      border-radius: var(--border-radius-sm);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: background-color var(--transition-fast), color var(--transition-fast);
-    }
-
-    .sidebar-tab:hover {
-      color: var(--text-primary);
-      background: var(--bg-hover);
-    }
-
-    .sidebar-tab.active {
-      background: var(--bg-card);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Tab content fills remaining space */
-    .sidebar-content {
-      flex: 1;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    .desktop-only {
-      display: block;
-    }
-
-    /* ============================================
-       LEARN HOME (OVERHAULED DASHBOARD)
-       ============================================ */
-    .learn-home {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      width: 100%;
-    }
-
-    .learn-header-card,
-    .learn-section-card {
-      padding: var(--space-md);
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      box-shadow: none;
-    }
-
-    /* 3 Hub Cards Grid */
-    .learn-hub-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-sm);
-    }
-
-    .hub-card {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      padding: var(--space-sm) var(--space-md);
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      text-align: left;
-      cursor: pointer;
-      width: 100%;
-      box-sizing: border-box;
-      transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
-
-      @media (hover: hover) {
-        &:hover {
-          border-color: var(--accent-primary);
-          background: var(--bg-hover);
-          transform: translateY(-2px);
-
-          .hub-card__icon-box {
-            background: var(--accent-primary);
-            color: white;
-          }
-
-          .hub-card__arrow {
-            color: var(--accent-primary);
-            transform: translateX(3px);
-          }
-        }
-      }
-
-      &:active {
-        transform: scale(0.99) translateY(0);
-      }
-    }
-
-    .hub-card__icon-box {
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: var(--border-radius-sm);
-      background: var(--bg-tertiary);
-      color: var(--accent-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background-color var(--transition-fast), color var(--transition-fast);
-    }
-
-    .hub-card__content {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      flex: 1;
-      min-width: 0;
-
-      strong {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-
-      span {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        line-height: 1.3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-    }
-
-    .hub-card__arrow {
-      color: var(--text-muted);
-      flex-shrink: 0;
-      transition: transform var(--transition-fast), color var(--transition-fast);
-    }
-
-    /* History Grid */
-    .history-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-sm);
-    }
-
-    .history-card {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      background: var(--bg-secondary);
-      text-align: left;
-      cursor: pointer;
-      padding: 0;
-      width: 100%;
-      box-sizing: border-box;
-
-      @media (hover: hover) {
-        &:hover {
-          border-color: var(--accent-primary);
-          background: var(--bg-hover);
-          transform: translateY(-2px);
-
-          .history-card__play-badge {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.05);
-          }
-        }
-      }
-
-      &:active {
-        transform: scale(0.99) translateY(0);
-      }
-    }
-
-    .history-card__thumb-wrapper {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      background: var(--bg-tertiary);
-      overflow: hidden;
-      border-radius: calc(var(--border-radius-md) - 1px) calc(var(--border-radius-md) - 1px) 0 0;
-    }
-
-    .history-card__thumb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .history-card__play-badge {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.8;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      transition: all var(--transition-fast);
-    }
-
-    .history-card__info {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding: var(--space-sm);
-      min-width: 0;
-    }
-
-    .history-card__title {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      line-height: 1.35;
-    }
-
-    .history-card__channel {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    /* Playlist Feature Grid */
-    .playlist-feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-sm);
-    }
-
-    .playlist-feature-card {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      background: var(--bg-secondary);
-      text-align: left;
-      cursor: pointer;
-      padding: 0;
-      width: 100%;
-      box-sizing: border-box;
-
-      @media (hover: hover) {
-        &:hover {
-          border-color: var(--accent-primary);
-          background: var(--bg-hover);
-          transform: translateY(-2px);
-        }
-      }
-
-      &:active {
-        transform: scale(0.99) translateY(0);
-      }
-    }
-
-    .playlist-feature-card__thumb {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      background: var(--bg-tertiary);
-      overflow: hidden;
-      border-radius: calc(var(--border-radius-md) - 1px) calc(var(--border-radius-md) - 1px) 0 0;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .playlist-feature-card__placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-    }
-
-    .playlist-feature-card__badge {
-      position: absolute;
-      bottom: var(--space-xs);
-      right: var(--space-xs);
-      background: rgba(0, 0, 0, 0.75);
-      color: white;
-      padding: 2px 6px;
-      border-radius: var(--border-radius-sm);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-
-    .playlist-feature-card__body {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding: var(--space-sm);
-      min-width: 0;
-    }
-
-    .playlist-feature-card__title {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      line-height: 1.35;
-    }
-
-    .playlist-feature-card__author {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .layout-main.has-video-bar {
-       /* Padding when video bar is visible */
-       padding-bottom: 72px;
-    }
-
-      /* ============================================
-         MOBILE VIDEO BAR - REMOVED (Replaced by ExpandablePlaylistComponent)
-         ============================================ */
-    @media (max-width: 1024px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .layout-sidebar {
-        position: static;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
-      .desktop-only {
-        display: none;
-      }
-      
-      .mobile-only {
-        display: block;
-      }
-
-      .desktop-none {
-        display: flex;
-      }
-
-      .layout {
-        gap: var(--space-md);
-      }
-      
-      .layout-main {
-        gap: var(--space-md);
-        padding-bottom: 16px;
-      }
-
-      .layout-main.has-video-bar {
-         /* Padding when video bar is visible (ExpandablePlaylistComponent) */
-         padding-bottom: 72px;
-      }
-
-      /* Learn Hub Mobile Grid Fix */
-      .learn-hub-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-xs);
-      }
-
-      .history-grid,
-      .playlist-feature-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-xs);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .layout-main {
-        gap: var(--space-md);
-      }
-
-      .history-grid,
-      .playlist-feature-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
-    /* Menu Sheet Styles */
-    .menu-sheet {
-        padding: var(--space-md);
-    }
-
-    .menu-sheet__title {
-        font-size: var(--text-md);
-        font-weight: 600;
-        color: var(--text-primary);
-        text-align: center;
-        margin: 0 0 var(--space-md);
-    }
-
-    .menu-sheet__options {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xs);
-    }
-
-    .menu-option {
-        display: flex;
-        align-items: center;
-        gap: var(--space-md);
-        padding: var(--space-md);
-        background: transparent;
-        border: none;
-        border-radius: var(--border-radius);
-        font-size: var(--text-base);
-        color: var(--text-primary);
-        cursor: pointer;
-        transition: background var(--transition-fast);
-    }
-
-    @media (hover: hover) {
-        .menu-option:hover:not(:disabled) {
-            background: var(--bg-secondary);
-        }
-    }
-
-    .menu-option app-icon {
-        color: var(--text-secondary);
-    }
-
-    .menu-option:disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
-    }
-
-    .menu-option--danger {
-        color: var(--error);
-    }
-
-    .menu-option--danger app-icon {
-        color: var(--error);
-    }
-
-    .menu-divider {
-        height: 1px;
-        background: var(--border-color);
-        margin: 4px 0;
-    }
-  `]
+  styleUrls: ['./video-page.component.scss']
 })
 export class VideoPageComponent implements OnInit {
   private router = inject(Router);
@@ -573,7 +44,7 @@ export class VideoPageComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
   protected youtube = inject(YoutubeService);
   private subtitles = inject(SubtitleService);
-  private transcript = inject(TranscriptService);
+  protected transcript = inject(TranscriptService);
   private vocab = inject(VocabularyService); // Injected for main page actions
   private dictionary = inject(DictionaryService); // Injected for main page actions
   private settings = inject(SettingsService);
@@ -581,10 +52,21 @@ export class VideoPageComponent implements OnInit {
   protected playlistService = inject(PlaylistService);
   i18n = inject(I18nService);
 
-  showCommandPalette = signal(false);
+  showAiConfirmDialog = signal(false);
+  aiCaptchaToken = signal<string | null>(null);
+  isSubmittingAi = signal(false);
 
   // Sidebar tab state (only used when playlist is active)
   sidebarTab = signal<'playlist' | 'vocab'>('playlist');
+
+  // Immediately read URL param to prevent initial layout shift while playlist fetches
+  readonly activePlaylistId = signal<string | null>(
+    this.route.snapshot.queryParamMap.get('playlist')
+  );
+
+  readonly hasPlaylist = computed(() => {
+    return !!this.playlistService.currentPlaylist() || !!this.activePlaylistId();
+  });
 
   // Playlist navigation helpers
   canPlayPrev = computed(() => {
@@ -608,10 +90,20 @@ export class VideoPageComponent implements OnInit {
     const list = featured.length > 0 ? featured : fallback;
     return list.slice(0, 3);
   });
+  isFeaturedLoading = computed(() => this.playlistService.isCommunityLoading() && this.featuredPlaylists().length === 0);
+  currentLangVocabCount = computed(() => {
+    const lang = this.settings.settings().language;
+    return this.vocab.vocabulary().filter(w => w.language === lang).length;
+  });
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
   isVideoFullscreen = signal(false);
+
+  onSidebarWordSelect(token: Token): void {
+    this.selectedWord.set(token);
+    this.currentSentence.set(token.surface);
+  }
 
   showAddToPlaylistDialog = signal(false);
 
@@ -623,6 +115,8 @@ export class VideoPageComponent implements OnInit {
   videoMenuOpen = signal(false);
   menuVideoIndex = signal(-1);
   menuVideoId = signal('');
+  mobilePlaylistExpanded = signal(false);
+  isShareCopied = signal(false);
 
   // Vocab State
   vocabDeleteOpen = signal(false);
@@ -697,7 +191,7 @@ export class VideoPageComponent implements OnInit {
       //   isLoading 
       // });
 
-      if (playlistVideo && (!currentVideo || currentVideo.id !== playlistVideo.videoId) && !isLoading) {
+      if (this.activePlaylistId() && playlistVideo && (!currentVideo || currentVideo.id !== playlistVideo.videoId) && !isLoading) {
         // Navigate to the video URL to keep URL in sync
         this.router.navigate([], {
           relativeTo: this.route,
@@ -716,6 +210,7 @@ export class VideoPageComponent implements OnInit {
       this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
         const videoId = params.get('id');
         const playlistId = params.get('playlist');
+        this.activePlaylistId.set(playlistId);
         const currentLang = this.settings.settings().language;
 
         // Load playlist if present and different
@@ -730,7 +225,6 @@ export class VideoPageComponent implements OnInit {
                 this.playlistService.setCurrentIndex(index);
 
                 // Safeguard: Ensure video is loaded if it matches the requested ID to prevent sync issues
-                // This handles race conditions where the outer video load might have been skipped or lost
                 if (videoId && this.youtube.currentVideo()?.id !== videoId && this.youtube.pendingVideoId() !== videoId) {
                   this.subtitles.clear();
                   this.transcript.reset();
@@ -756,22 +250,8 @@ export class VideoPageComponent implements OnInit {
               });
             });
         } else if (!playlistId) {
-          // Smart Recovery: If we have an active playlist and it contains this video,
-          // don't clear it. Instead, restore the URL param.
-          const currentPlaylist = this.playlistService.currentPlaylist();
-          const currentVideoId = videoId || this.youtube.currentVideo()?.id;
-
-          if (currentPlaylist && currentVideoId && currentPlaylist.videoIds.includes(currentVideoId)) {
-
-            this.router.navigate([], {
-              relativeTo: this.route,
-              queryParams: { playlist: currentPlaylist.id },
-              queryParamsHandling: 'merge',
-              replaceUrl: true // Don't create a new history entry for this fix
-            });
-          } else {
-            this.playlistService.clearCurrentPlaylist();
-          }
+          // If no playlist param in URL, clear active playlist to avoid ghost states
+          this.playlistService.clearCurrentPlaylist();
         }
 
         // Load Video Logic
@@ -780,7 +260,6 @@ export class VideoPageComponent implements OnInit {
 
           // If coming from playlist, we might already have the video set, check ID
           if (!currentVideo || currentVideo.id !== videoId) {
-            // this.youtube.currentVideo.set(null); // Removed to prevent UI flicker
             this.subtitles.clear();
             this.transcript.reset();
             this.lastLang = currentLang;
@@ -797,7 +276,9 @@ export class VideoPageComponent implements OnInit {
             }
           }
         } else {
-          // No video ID in URL - clear current video so Learn Hub / Home is displayed
+          // No video ID in URL - clear current video and playlist so Learn Hub / Home is displayed cleanly
+          this.playlistService.clearCurrentPlaylist();
+          this.activePlaylistId.set(null);
           if (this.youtube.currentVideo() || this.youtube.pendingVideoId()) {
             this.youtube.reset();
           }
@@ -843,26 +324,68 @@ export class VideoPageComponent implements OnInit {
   }
 
   /**
-   * Manual AI generation trigger (rate limited: 3/hour for anonymous, 5/hour for free, 30/hour for premium)
+   * Manual AI generation trigger - opens human verification dialog
    */
   onManualAITrigger(): void {
     const currentVideo = this.youtube.currentVideo();
-    const lang = this.settings.settings().language;
+    if (!currentVideo) return;
 
-    if (currentVideo) {
+    this.aiCaptchaToken.set(null);
+    this.isSubmittingAi.set(false);
+    this.showAiConfirmDialog.set(true);
+  }
 
-
-      this.transcript.generateWithAI(currentVideo.id, lang)
-        .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe({
-          next: (cues) => {
-            if (cues.length > 0) {
-              this.handleCaptionsSuccess(cues, lang);
-            }
-          },
-          error: (err) => console.error('[VideoPage] Manual AI error:', err)
-      });
+  onLanguageSwitchFromSubtitle(lang: string): void {
+    const validLangs: SupportedLearningLanguage[] = ['ja', 'zh', 'ko', 'en'];
+    if (validLangs.includes(lang as SupportedLearningLanguage)) {
+      this.skipNextMismatchDialog = true;
+      this.settings.setLanguage(lang as SupportedLearningLanguage);
     }
+  }
+
+  onRetryCaptions(): void {
+    const currentVideo = this.youtube.currentVideo();
+    if (currentVideo) {
+      this.subtitles.clear();
+      this.transcript.reset();
+      this.fetchCaptions(currentVideo.id);
+    }
+  }
+
+  onCaptchaResolved(token: string): void {
+    this.aiCaptchaToken.set(token);
+  }
+
+  onCloseAiConfirmDialog(): void {
+    this.showAiConfirmDialog.set(false);
+    this.aiCaptchaToken.set(null);
+    this.isSubmittingAi.set(false);
+  }
+
+  confirmGenerateAI(): void {
+    const currentVideo = this.youtube.currentVideo();
+    const lang = this.settings.settings().language;
+    const token = this.aiCaptchaToken();
+
+    if (!currentVideo || !token || this.isSubmittingAi()) return;
+
+    this.isSubmittingAi.set(true);
+    this.showAiConfirmDialog.set(false);
+
+    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (cues) => {
+          this.isSubmittingAi.set(false);
+          if (cues.length > 0) {
+            this.handleCaptionsSuccess(cues, lang);
+          }
+        },
+        error: (err) => {
+          this.isSubmittingAi.set(false);
+          console.error('[VideoPage] Manual AI error:', err);
+        }
+    });
   }
 
   navigateTo(route: string): void {
@@ -1143,6 +666,8 @@ export class VideoPageComponent implements OnInit {
   // Playlist Methods
 
   closePlaylist(): void {
+    this.activePlaylistId.set(null);
+    this.sidebarTab.set('vocab');
     this.playlistService.clearCurrentPlaylist();
     // Remove query param
     this.router.navigate([], {
@@ -1155,6 +680,36 @@ export class VideoPageComponent implements OnInit {
   onPlaylistVideoSelect(_videoId: string): void {
     // Navigation is handled by effect() reacting to service state change
     // so we don't need to do anything here other than what the panel component already did (update service)
+  }
+
+  toggleMobilePlaylist(): void {
+    this.mobilePlaylistExpanded.update(v => !v);
+  }
+
+  async onShareMobile(playlist: PlaylistWithVideos): Promise<void> {
+    const currentVideo = this.youtube.currentVideo();
+    const videoId = currentVideo?.id;
+    const shareUrl = this.playlistService.getShareUrl(playlist.id, videoId);
+    const shareData = {
+      title: playlist.title,
+      text: `Listen to ${playlist.title} on LinguaTube`,
+      url: shareUrl
+    };
+
+    if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // User cancelled or dismissed share sheet
+      }
+    }
+
+    const success = await this.playlistService.copyShareLink(playlist.id, videoId);
+    if (success) {
+      this.isShareCopied.set(true);
+      setTimeout(() => this.isShareCopied.set(false), 2000);
+    }
   }
 
   onPlaylistNext(): void {
@@ -1183,45 +738,5 @@ export class VideoPageComponent implements OnInit {
 
   toggleShuffle(): void {
     this.playlistService.toggleShuffle();
-  }
-
-  openCommandPalette(): void {
-    if (isPlatformBrowser(this.platformId) && !this.showCommandPalette()) {
-      // Push history state when opening
-      history.pushState({ commandPalette: true }, '');
-    }
-    this.showCommandPalette.set(true);
-  }
-
-  onCommandPaletteSearch(videoId: string): void {
-    if (this.playlistService.currentPlaylist()) {
-      // If in a playlist, queue the video instead of navigating away
-      this.playlistService.queueVideo(videoId);
-      this.showCommandPalette.set(false);
-    } else {
-      // Standard navigation
-      this.showCommandPalette.set(false);
-      this.router.navigate(['/video'], { queryParams: { id: videoId } });
-    }
-  }
-
-  onCommandPaletteClosed(): void {
-    // Called when palette emits 'closed' (manual close)
-    this.showCommandPalette.set(false);
-
-    // Revert history state if we initiated it
-    if (isPlatformBrowser(this.platformId)) {
-      history.back();
-    }
-  }
-
-  // Listen for back button/gesture
-  @HostListener('window:popstate', ['$event'])
-  onPopState(_event: PopStateEvent) {
-    if (this.showCommandPalette()) {
-      // Palette is open and user pressed back -> close it
-      // Don't call history.back() here because popstate means we already went back!
-      this.showCommandPalette.set(false);
-    }
   }
 }

@@ -4,21 +4,15 @@ import { Router } from '@angular/router';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
-import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService } from '../../../services';
-import { Playlist, PlaylistLanguage, PlaylistVideo } from '../../../models';
-const LANGUAGES = [
-    { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-    { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-    { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-    { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
-];
+import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '../../../models';
 
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, BottomSheetComponent, OptionPickerComponent],
+    imports: [CommonModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -33,8 +27,9 @@ export class PlaylistPageComponent {
 
     view = signal<'community' | 'curated' | 'my'>('community');
 
-    // Menu State
+    // Menu State (dropdown anchored to 3-dots)
     menuOpen = signal(false);
+    menuPosition = signal({ top: 0, left: 0 });
     deleteConfirmationOpen = signal(false);
     selectedPlaylist = signal<Playlist | null>(null);
     toastMessage = signal('');
@@ -49,7 +44,7 @@ export class PlaylistPageComponent {
     showLanguageFilter = signal(false);
     readonly languageFilterOptions = [
         { value: 'all', label: this.i18n.t('playlist.allLanguages') || 'All' },
-        ...LANGUAGES.map(l => ({ value: l.code, label: l.name, iconUrl: l.flag }))
+        ...SUPPORTED_LANGUAGES.map(l => ({ value: l.code, label: l.name, iconUrl: l.flag }))
     ];
 
     // Animation State
@@ -58,6 +53,66 @@ export class PlaylistPageComponent {
     playlists = this.playlistService.myPlaylists;
     communityPlaylists = this.playlistService.communityPlaylists;
     featuredPlaylists = computed(() => this.communityPlaylists().filter(playlist => playlist.isFeatured));
+
+    readonly supportedLanguages = SUPPORTED_LANGUAGES;
+
+    // Active playlist state for sidebar
+    activePlaylist = this.playlistService.currentPlaylist;
+    currentVideo = this.playlistService.currentVideo;
+    currentIndex = this.playlistService.currentIndex;
+
+    totalPlaylistsCount = computed(() =>
+        this.playlists().length + this.communityPlaylists().length
+    );
+
+    totalVideosCount = computed(() => {
+        const userVideos = this.playlists().reduce((acc, p) => acc + (p.videoIds?.length || 0), 0);
+        const commVideos = this.communityPlaylists().reduce((acc, p) => acc + (p.videoIds?.length || 0), 0);
+        return userVideos + commVideos;
+    });
+
+    languagePlaylistsCount = computed(() => {
+        const list = this.view() === 'my' ? this.playlists() : this.communityPlaylists();
+        const counts: Record<string, number> = { all: list.length };
+        for (const lang of SUPPORTED_LANGUAGES) {
+            counts[lang.code] = list.filter(p => p.language === lang.code).length;
+        }
+        return counts;
+    });
+
+    getActivePlaylistPercent(): number {
+        const p = this.activePlaylist();
+        if (!p) return 0;
+        const total = p.videos?.length || p.videoIds?.length || 1;
+        const current = this.currentIndex() + 1;
+        return Math.min(100, Math.round((current / total) * 100));
+    }
+
+    resumeActivePlaylist(): void {
+        const p = this.activePlaylist();
+        const v = this.currentVideo();
+        if (p && v) {
+            this.router.navigate(['/video'], {
+                queryParams: { id: v.videoId, playlist: p.id }
+            });
+        } else if (p && p.videoIds.length > 0) {
+            this.router.navigate(['/video'], {
+                queryParams: { id: p.videoIds[0], playlist: p.id }
+            });
+        }
+    }
+
+    isOwner(playlist?: Playlist | null): boolean {
+        if (!playlist) return false;
+        return this.playlists().some(p => p.id === playlist.id);
+    }
+
+    isListLoading = computed(() => {
+        if (this.view() === 'my') {
+            return this.playlistService.isUserPlaylistsLoading() && this.playlists().length === 0;
+        }
+        return this.playlistService.isCommunityLoading() && this.communityPlaylists().length === 0;
+    });
 
     currentList = computed(() => {
         let list: Playlist[];
@@ -106,15 +161,37 @@ export class PlaylistPageComponent {
     }
 
     private scrollToTop(): void {
-        const panel = document.querySelector('.panel-content');
+        const panel = document.querySelector('.panel-content') || document.querySelector('.playlist-detail-panel');
         if (panel) {
             panel.scrollTop = 0;
+        }
+        if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 
     openMenu(playlist: Playlist, event: Event): void {
         event.preventDefault();
         event.stopPropagation();
+
+        const btn = event.currentTarget as HTMLElement | null;
+        if (btn) {
+            const rect = btn.getBoundingClientRect();
+            const menuWidth = 160;
+            let left = rect.right - menuWidth;
+            if (left < 10) left = 10;
+            if (left + menuWidth > window.innerWidth - 10) {
+                left = window.innerWidth - menuWidth - 10;
+            }
+
+            let top = rect.bottom + 4;
+            if (top + 130 > window.innerHeight) {
+                top = Math.max(10, rect.top - 130);
+            }
+
+            this.menuPosition.set({ top, left });
+        }
+
         this.selectedPlaylist.set(playlist);
         this.menuOpen.set(true);
     }
@@ -124,7 +201,7 @@ export class PlaylistPageComponent {
     }
 
     async onSharePlaylist(): Promise<void> {
-        const p = this.selectedPlaylist();
+        const p = this.selectedPlaylist() || this.viewingPlaylist();
         this.closeMenu();
         if (p) {
             const success = await this.playlistService.copyShareLink(p.id);
@@ -136,7 +213,7 @@ export class PlaylistPageComponent {
     }
 
     onEditPlaylist(): void {
-        const p = this.selectedPlaylist();
+        const p = this.selectedPlaylist() || this.viewingPlaylist();
         this.closeMenu();
         if (p) {
             this.editingPlaylist.set(p);
@@ -146,9 +223,22 @@ export class PlaylistPageComponent {
 
     onDeletePlaylist(): void {
         this.closeMenu();
-        setTimeout(() => {
+        const p = this.selectedPlaylist() || this.viewingPlaylist();
+        if (p) {
+            this.selectedPlaylist.set(p);
             this.deleteConfirmationOpen.set(true);
-        }, 100);
+        }
+    }
+
+    async onPlaylistUpdated(): Promise<void> {
+        await this.playlistService.loadUserPlaylists();
+        const currentViewing = this.viewingPlaylist();
+        if (currentViewing) {
+            const updated = this.playlists().find(p => p.id === currentViewing.id);
+            if (updated) {
+                this.viewingPlaylist.set(updated);
+            }
+        }
     }
 
     confirmDelete(): void {
@@ -249,8 +339,8 @@ export class PlaylistPageComponent {
 
     getFlagUrl(lang: 'all' | PlaylistLanguage): string {
         if (lang === 'all') return '';
-        const found = LANGUAGES.find(l => l.code === lang);
-        return found?.flag || LANGUAGES[0].flag;
+        const found = SUPPORTED_LANGUAGES.find(l => l.code === lang);
+        return found?.flag || SUPPORTED_LANGUAGES[0].flag;
     }
 
     getLanguageFilterLabel(): string {
@@ -259,7 +349,7 @@ export class PlaylistPageComponent {
             return this.i18n.t('playlist.allLanguages');
         }
 
-        return LANGUAGES.find(language => language.code === filter)?.name || this.i18n.t('playlist.allLanguages');
+        return SUPPORTED_LANGUAGES.find(language => language.code === filter)?.name || this.i18n.t('playlist.allLanguages');
     }
 
     onLanguageFilterChange(value: string): void {

@@ -152,7 +152,7 @@ export class YoutubeService {
               this.startTimeTracking();
             }
           }
-        } catch (e) {
+        } catch {
           // Player might not be ready
         }
       }
@@ -240,14 +240,21 @@ export class YoutubeService {
 
   extractVideoId(url: string): string | null {
     if (!url) return null;
+    const trimmed = url.trim();
+
+    // Direct 11-char video ID
+    if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) {
+      return trimmed;
+    }
 
     const patterns = [
-      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([^&\n?#]+)/,
-      /^([a-zA-Z0-9_-]{11})$/
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/live\/([a-zA-Z0-9_-]{11})/
     ];
 
     for (const pattern of patterns) {
-      const match = url.trim().match(pattern);
+      const match = trimmed.match(pattern);
       if (match) return match[1];
     }
     return null;
@@ -298,7 +305,7 @@ export class YoutubeService {
           try {
             player.unloadModule('captions');
             player.unloadModule('cc');
-          } catch (e) {
+          } catch {
             // Module might not be loaded
           }
 
@@ -367,7 +374,7 @@ export class YoutubeService {
                 try {
                   event.target.unloadModule('captions');
                   event.target.unloadModule('cc');
-                } catch (e) {
+                } catch {
                   // Module might not be loaded
                 }
 
@@ -400,7 +407,7 @@ export class YoutubeService {
                   try {
                     event.target.unloadModule('captions');
                     event.target.unloadModule('cc');
-                  } catch (e) { }
+                  } catch { }
 
                   if ('mediaSession' in navigator) {
                     navigator.mediaSession.playbackState = 'playing';
@@ -466,7 +473,7 @@ export class YoutubeService {
           if (time !== this.currentTime()) {
             this.currentTime.set(time);
           }
-        } catch (e) {
+        } catch {
           // Player might be destroyed
         }
       }
@@ -484,14 +491,14 @@ export class YoutubeService {
     this.intendedPlayingState.set(true);
     try {
       this.player?.playVideo();
-    } catch (e) { }
+    } catch { }
   }
 
   pause(): void {
     this.intendedPlayingState.set(false);
     try {
       this.player?.pauseVideo();
-    } catch (e) { }
+    } catch { }
   }
 
 
@@ -514,7 +521,7 @@ export class YoutubeService {
 
     try {
       this.player?.seekTo(clampedTime, true);
-    } catch (e) { }
+    } catch { }
 
     this.seekingTimeout = setTimeout(() => {
       this.isSeeking = false;
@@ -530,13 +537,13 @@ export class YoutubeService {
   setPlaybackRate(rate: number): void {
     try {
       this.player?.setPlaybackRate(rate);
-    } catch (e) { }
+    } catch { }
   }
 
   getPlaybackRate(): number {
     try {
       return this.player?.getPlaybackRate() || 1;
-    } catch (e) {
+    } catch {
       return 1;
     }
   }
@@ -547,13 +554,13 @@ export class YoutubeService {
       if (volume > 0 && this.isMuted()) {
         this.unmute();
       }
-    } catch (e) { }
+    } catch { }
   }
 
   getVolume(): number {
     try {
       return this.player?.getVolume() || 100;
-    } catch (e) {
+    } catch {
       return 100;
     }
   }
@@ -562,14 +569,14 @@ export class YoutubeService {
     try {
       this.player?.mute();
       this.isMuted.set(true);
-    } catch (e) { }
+    } catch { }
   }
 
   unmute(): void {
     try {
       this.player?.unMute();
       this.isMuted.set(false);
-    } catch (e) { }
+    } catch { }
   }
 
 
@@ -582,7 +589,7 @@ export class YoutubeService {
 
     try {
       this.player?.destroy();
-    } catch (e) { }
+    } catch { }
 
     this.player = null;
     this.isPlaying.set(false);

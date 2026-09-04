@@ -17,8 +17,8 @@
         </div>
         } @else {
         <ul class="word-list">
-            @for (word of recentWords(); track word.id) {
-            <li class="word-item">
+            @for (word of recentWords(); track word.id; let i = $index) {
+            <li class="word-item" [style.--item-index]="i">
                 <div class="word-main">
                     <span class="word-surface" [class]="'text-' + word.language">
                         {{ word.word }}

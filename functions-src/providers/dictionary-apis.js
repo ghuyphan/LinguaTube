@@ -20,6 +20,7 @@ const BROWSER_HEADERS = {
 const DICT_SOURCES = {
     'ko-en': [{ url: 'https://en.dict.naver.com/api3/enko/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' }],
     'ko-vi': [
+        { url: 'https://ko.dict.naver.com/api3/kovi/search', method: 'GET', parser: 'naver', referer: 'https://ko.dict.naver.com/' },
         { url: 'https://krdict.korean.go.kr/vie/dicMarinerSearch/search', method: 'GET', parser: 'krdict', referer: 'https://krdict.korean.go.kr/' },
         { url: 'https://glosbe.com/ko/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/' }
     ],
@@ -139,7 +140,7 @@ export class DictionaryProvider {
                 case 'mazii': return parseMazii(await response.json());
                 case 'freedict': return parseFreeDictionary(await response.json());
                 case 'mdbg': return await parseMdbg(response);
-                case 'glosbe': return await parseGlosbe(response);
+                case 'glosbe': return await parseGlosbe(response, word);
                 case 'jisho': return parseJisho(await response.json());
                 case 'krdict': return await parseKrdict(response);
                 default: return [];

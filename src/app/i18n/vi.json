@@ -9,22 +9,25 @@
     },
     "nav": {
         "video": "Video",
-        "learn": "Học",
+        "watch": "Xem",
+        "learn": "Xem",
         "added": "Đã thêm",
         "words": "Từ vựng",
-        "study": "Học",
-        "explore": "Khám phá",
+        "vocab": "Từ vựng",
+        "study": "Ôn tập",
+        "review": "Ôn tập",
+        "explore": "Danh sách",
+        "playlists": "Danh sách",
         "settings": "Cài đặt",
         "newVideo": "Video mới",
-        "playlists": "Danh sách",
         "quickLinks": "Truy cập nhanh",
         "more": "Thêm"
     },
     "commandPalette": {
         "placeholder": "Dán URL YouTube hoặc ID video...",
         "invalid": "Vui lòng nhập URL YouTube hợp lệ",
-        "toLoad": "để tải",
-        "toClose": "để đóng"
+        "cancel": "Hủy",
+        "load": "Tải"
     },
     "header": {
         "words": "Từ",
@@ -36,7 +39,7 @@
         "switchToDark": "Chuyển sang chế độ tối"
     },
     "player": {
-        "pasteUrl": "Dán URL YouTube (VD: https://youtube.com/watch?v=...)",
+        "pasteUrl": "Dán URL YouTube...",
         "load": "Tải",
         "loading": "Đang tải",
         "loadingVideo": "Đang tải video...",
@@ -208,7 +211,7 @@
         "signOutConfirmMessage": "Từ vựng của bạn vẫn được lưu cục bộ, nhưng sẽ không đồng bộ cho đến khi bạn đăng nhập lại."
     },
     "study": {
-        "title": "Chế độ học",
+        "title": "Ôn tập",
         "subtitle": "Ôn từ vựng với flashcard",
         "new": "MỚI",
         "learning": "ĐANG HỌC",
@@ -246,10 +249,16 @@
         "pressSpace": "Nhấn Space để lật",
         "keyboardHint": "Dùng phím 1-4 để trả lời",
         "contextSentence": "Câu ngữ cảnh",
-        "focusWord": "Từ trọng tâm"
+        "focusWord": "Từ trọng tâm",
+        "sessionSize": "Số lượng thẻ",
+        "allCards": "Tất cả",
+        "estimatedMinutes": "~{{minutes}} phút",
+        "listen": "Phát âm",
+        "cardsToStudy": "Thẻ luyện tập"
     },
     "streak": {
         "dayStreak": "Chuỗi",
+        "currentStreak": "Chuỗi hiện tại",
         "longestStreak": "Chuỗi dài nhất",
         "freezesRemaining": "Bảo vệ chuỗi",
         "freezeUsed": "Đã dùng bảo vệ chuỗi!",
@@ -284,7 +293,9 @@
         "watchedAgo": "Đã xem",
         "continueWatching": "Tiếp tục xem",
         "removeFromHistory": "Xóa",
-        "syncHint": "Đăng nhập để đồng bộ lịch sử giữa các thiết bị",
+        "itemRemoved": "Đã xoá khỏi lịch sử",
+        "clearedAll": "Đã xoá toàn bộ lịch sử",
+        "syncHint": "Đăng nhập để đồng bộ lịch sử trên các thiết bị",
         "justNow": "Vừa xong"
     },
     "playlist": {
@@ -325,6 +336,8 @@
         "closePlaylist": "Đóng danh sách phát",
         "you": "Bạn",
         "curated": "Tuyển chọn",
+        "featured": "Nổi bật",
+        "forYou": "Dành cho bạn",
         "sharePlaylist": "Chia sẻ danh sách phát",
         "loopPlaylist": "Lặp lại danh sách phát",
         "shufflePlaylist": "Phát ngẫu nhiên",
@@ -352,14 +365,21 @@
         "filterByLanguage": "Lọc theo ngôn ngữ",
         "copyLink": "Sao chép liên kết",
         "linkCopied": "Đã sao chép liên kết!",
-        "loginForVisibility": "Đăng nhập để chia sẻ danh sách với người khác"
+        "loginForVisibility": "Đăng nhập để chia sẻ danh sách với người khác",
+        "totalPlaylists": "Danh sách",
+        "totalVideos": "Video",
+        "nowPlaying": "Đang phát",
+        "continueStudying": "Tiếp tục học",
+        "resume": "Tiếp tục",
+        "browseByLanguage": "Duyệt theo ngôn ngữ"
     },
     "common": {
         "loading": "Đang tải...",
         "error": "Lỗi",
         "success": "Thành công",
         "off": "Tắt",
-        "back": "Quay lại"
+        "back": "Quay lại",
+        "undo": "Hoàn tác"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

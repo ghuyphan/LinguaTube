@@ -54,6 +54,15 @@ export class PlaylistService {
     /** Loading state */
     readonly isLoading = signal<boolean>(false);
 
+    /** Specific loading state for community playlists */
+    readonly isCommunityLoading = signal<boolean>(false);
+
+    /** Specific loading state for user's owned playlists */
+    readonly isUserPlaylistsLoading = signal<boolean>(true);
+
+    /** Original un-shuffled video list (to restore when shuffle is toggled off) */
+    private unshuffledVideos: PlaylistVideo[] = [];
+
     // ==================== Computed ====================
 
     /** All playlists (owned + saved) */
@@ -425,6 +434,8 @@ export class PlaylistService {
                 isSaved
             };
 
+            this.unshuffledVideos = [...videos];
+            this.isShuffled.set(false);
             this.currentPlaylist.set(playlistWithVideos);
             this.currentIndex.set(0);
 
@@ -517,20 +528,56 @@ export class PlaylistService {
      * Toggle shuffle mode
      */
     toggleShuffle(): void {
-        this.isShuffled.set(!this.isShuffled());
+        const playlist = this.currentPlaylist();
+        if (!playlist || playlist.videos.length <= 1) {
+            this.isShuffled.update(v => !v);
+            return;
+        }
 
-        if (this.isShuffled()) {
-            const playlist = this.currentPlaylist();
-            if (playlist) {
-                // Shuffle the videos array (Fisher-Yates)
-                const shuffled = [...playlist.videos];
-                for (let i = shuffled.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-                }
-                this.currentPlaylist.set({ ...playlist, videos: shuffled });
-                this.currentIndex.set(0);
+        const currentlyShuffled = this.isShuffled();
+        const currentVideoId = playlist.videos[this.currentIndex()]?.videoId;
+
+        if (!currentlyShuffled) {
+            // Turning Shuffle ON:
+            if (this.unshuffledVideos.length === 0) {
+                this.unshuffledVideos = [...playlist.videos];
             }
+
+            const currentVid = playlist.videos[this.currentIndex()];
+            const remaining = playlist.videos.filter((_, idx) => idx !== this.currentIndex());
+
+            // Fisher-Yates shuffle remaining videos
+            for (let i = remaining.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+            }
+
+            // Put current video first so playback continues uninterrupted!
+            const newVideos = currentVid ? [currentVid, ...remaining] : remaining;
+
+            this.currentPlaylist.set({
+                ...playlist,
+                videos: newVideos,
+                videoIds: newVideos.map(v => v.videoId)
+            });
+            this.currentIndex.set(0);
+            this.isShuffled.set(true);
+        } else {
+            // Turning Shuffle OFF:
+            if (this.unshuffledVideos.length > 0) {
+                const original = [...this.unshuffledVideos];
+                const originalIndex = currentVideoId
+                    ? original.findIndex(v => v.videoId === currentVideoId)
+                    : 0;
+
+                this.currentPlaylist.set({
+                    ...playlist,
+                    videos: original,
+                    videoIds: original.map(v => v.videoId)
+                });
+                this.currentIndex.set(originalIndex >= 0 ? originalIndex : 0);
+            }
+            this.isShuffled.set(false);
         }
     }
 
@@ -538,7 +585,7 @@ export class PlaylistService {
      * Toggle loop mode
      */
     toggleLoop(): void {
-        this.isLooping.set(!this.isLooping());
+        this.isLooping.update(v => !v);
     }
 
     /**
@@ -547,6 +594,8 @@ export class PlaylistService {
     clearCurrentPlaylist(): void {
         this.currentPlaylist.set(null);
         this.currentIndex.set(0);
+        this.unshuffledVideos = [];
+        this.isShuffled.set(false);
     }
 
     // ==================== Sharing ====================
@@ -663,6 +712,7 @@ export class PlaylistService {
      * Load user's playlists from PocketBase
      */
     async loadUserPlaylists(): Promise<void> {
+        this.isUserPlaylistsLoading.set(true);
         // Only show full-screen loading/skeleton if we have no data
         if (this.myPlaylists().length === 0) {
             this.isLoading.set(true);
@@ -672,6 +722,7 @@ export class PlaylistService {
             // Delegated to repo refresh/sync
             await this.repo.refresh();
         } finally {
+            this.isUserPlaylistsLoading.set(false);
             this.isLoading.set(false);
         }
     }
@@ -680,6 +731,7 @@ export class PlaylistService {
      * Load community playlists (published)
      */
     async loadCommunityPlaylists(): Promise<void> {
+        this.isCommunityLoading.set(true);
         if (this.communityPlaylists().length === 0) {
             this.isLoading.set(true);
         }
@@ -687,17 +739,24 @@ export class PlaylistService {
         try {
             const client = await this.pb.getClient();
 
-            // Load published playlists with user name expanded
-            const result = await client.collection('playlists').getList(1, 50, {
+            // Load published playlists with user name expanded with a 5s safety timeout
+            const fetchPromise = client.collection('playlists').getList(1, 50, {
                 filter: 'visibility="published"',
                 sort: '-updated',
                 expand: 'user'
             });
 
+            const timeoutPromise = new Promise<never>((_, reject) =>
+                setTimeout(() => reject(new Error('Community playlists request timeout')), 5000)
+            );
+
+            const result = await Promise.race([fetchPromise, timeoutPromise]);
+
             this.communityPlaylists.set(result.items.map(r => this.recordToPlaylist(r)));
         } catch (error) {
             console.error('[Playlist] Failed to load community playlists:', error);
         } finally {
+            this.isCommunityLoading.set(false);
             this.isLoading.set(false);
         }
     }

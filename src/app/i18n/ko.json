@@ -9,22 +9,25 @@
     },
     "nav": {
         "video": "동영상",
-        "learn": "학습",
+        "watch": "시청",
+        "learn": "시청",
         "added": "추가됨",
         "words": "단어",
-        "study": "학습",
-        "explore": "탐색",
+        "vocab": "단어",
+        "study": "복습",
+        "review": "복습",
+        "explore": "재생목록",
+        "playlists": "재생목록",
         "settings": "설정",
         "newVideo": "새 동영상",
-        "playlists": "재생목록",
         "quickLinks": "빠른 링크",
         "more": "더보기"
     },
     "commandPalette": {
         "placeholder": "YouTube URL 또는 동영상 ID 붙여넣기...",
         "invalid": "유효한 YouTube URL을 입력하세요",
-        "toLoad": "로드",
-        "toClose": "닫기"
+        "cancel": "취소",
+        "load": "로드"
     },
     "header": {
         "words": "단어",
@@ -36,7 +39,7 @@
         "switchToDark": "다크 모드로 전환"
     },
     "player": {
-        "pasteUrl": "YouTube URL 붙여넣기 (예: https://youtube.com/watch?v=...)",
+        "pasteUrl": "YouTube URL 붙여넣기...",
         "load": "불러오기",
         "loading": "로딩 중",
         "loadingVideo": "동영상 로딩 중...",
@@ -206,7 +209,7 @@
         "signOutConfirmMessage": "단어장은 로컬에 저장되지만, 다시 로그인할 때까지 동기화되지 않습니다."
     },
     "study": {
-        "title": "학습 모드",
+        "title": "학습",
         "subtitle": "플래시카드로 어휘 복습",
         "new": "새 단어",
         "learning": "학습 중",
@@ -243,11 +246,17 @@
         "sessionTime": "학습 시간",
         "pressSpace": "Space로 뒤집기",
         "keyboardHint": "1-4 키로 응답",
-        "contextSentence": "문맥 문장",
-        "focusWord": "집중 단어"
+        "contextSentence": "예문",
+        "focusWord": "학습 단어",
+        "sessionSize": "학습 카드 수",
+        "allCards": "전체",
+        "estimatedMinutes": "약 {{minutes}}분",
+        "listen": "발음 듣기",
+        "cardsToStudy": "학습할 카드"
     },
     "streak": {
-        "dayStreak": "연속 학습일",
+        "dayStreak": "스트릭",
+        "currentStreak": "현재 기록",
         "longestStreak": "최장 기록",
         "freezesRemaining": "스트릭 프리즈",
         "freezeUsed": "프리즈가 사용되었습니다!",
@@ -282,7 +291,9 @@
         "watchedAgo": "시청",
         "continueWatching": "계속 보기",
         "removeFromHistory": "삭제",
-        "syncHint": "로그인하여 기기 간 기록 동기화",
+        "itemRemoved": "시청 기록에서 삭제되었습니다",
+        "clearedAll": "모든 시청 기록이 삭제되었습니다",
+        "syncHint": "기기 간 기록을 동기화하려면 로그인하세요",
         "justNow": "방금"
     },
     "playlist": {
@@ -322,7 +333,9 @@
         "tagsLabel": "태그 (최대 5개)",
         "closePlaylist": "재생목록 닫기",
         "you": "나",
-        "curated": "큐레이션",
+        "curated": "엄선",
+        "featured": "주요",
+        "forYou": "당신을 위한 추천",
         "sharePlaylist": "재생목록 공유",
         "loopPlaylist": "재생목록 반복",
         "shufflePlaylist": "셔플 재생",
@@ -350,14 +363,21 @@
         "filterByLanguage": "언어별 필터",
         "copyLink": "링크 복사",
         "linkCopied": "링크가 복사되었습니다!",
-        "loginForVisibility": "로그인하여 재생목록을 공유하세요"
+        "loginForVisibility": "로그인하여 재생목록을 공유하세요",
+        "totalPlaylists": "재생목록",
+        "totalVideos": "비디오",
+        "nowPlaying": "현재 재생 중",
+        "continueStudying": "학습 계속하기",
+        "resume": "이어보기",
+        "browseByLanguage": "언어별 탐색"
     },
     "common": {
         "loading": "로딩 중...",
         "error": "오류",
         "success": "성공",
         "off": "끄기",
-        "back": "뒤로"
+        "back": "뒤로",
+        "undo": "실행 취소"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

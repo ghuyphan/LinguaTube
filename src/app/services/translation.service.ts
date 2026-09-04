@@ -139,18 +139,33 @@ export class TranslationService implements OnDestroy {
             return of(results);
         }
 
+        // Deduplicate texts before sending to server (saves payload and translation quota)
+        const uniqueTexts: string[] = [];
+        const textToIndices = new Map<string, number[]>();
+
+        toTranslate.forEach(({ index, text }) => {
+            if (!textToIndices.has(text)) {
+                textToIndices.set(text, []);
+                uniqueTexts.push(text);
+            }
+            textToIndices.get(text)!.push(index);
+        });
+
         return new Observable(observer => {
             const requestContext = {
                 params: {
-                    texts: toTranslate.map(t => t.text),
+                    texts: uniqueTexts,
                     source,
                     target
                 },
                 observer: {
                     next: (response: { translations: (string | null)[] }) => {
                         response.translations.forEach((translation, i) => {
-                            const { index, text } = toTranslate[i];
-                            results[index] = translation;
+                            const text = uniqueTexts[i];
+                            const targetIndices = textToIndices.get(text) || [];
+                            targetIndices.forEach(idx => {
+                                results[idx] = translation;
+                            });
                             if (translation) {
                                 this.addToCache(`${source}:${target}:${text}`, translation);
                             }

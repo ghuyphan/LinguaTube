@@ -15,6 +15,7 @@
     display: flex;
     gap: var(--space-xs);
     padding: 0;
+    width: 100%;
 }
 
 .search-box {
@@ -23,20 +24,27 @@
     align-items: center;
     position: relative;
     min-width: 0;
+
+    .input-icon {
+        left: 0.875rem;
+    }
 }
 
 .search-input {
     height: var(--btn-height-md);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
+    padding-left: 2.375rem !important;
+    padding-right: 2.375rem !important;
+    border-radius: var(--border-radius-md);
 }
 
 .search-btn {
     height: var(--btn-height-md);
     min-width: 5rem;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     flex-shrink: 0;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
 }
 
 // ============================================
@@ -294,14 +302,6 @@
         border-bottom: none;
     }
 
-    .dict-filters {
-        padding: var(--space-sm) var(--space-md);
-    }
-
-    .dict-results {
-        padding: var(--space-md);
-    }
-
     .result-word {
         font-size: 2rem;
     }
@@ -319,18 +319,8 @@
 // MOBILE RESPONSIVE
 // ============================================
 @media (max-width: 480px) {
-
-
-    .dict-filters {
-        padding: var(--space-sm);
-    }
-
     .search-input {
         font-size: 16px; // Prevents zoom on iOS
-    }
-
-    .dict-results {
-        padding: var(--space-md);
     }
 
     .result-header {

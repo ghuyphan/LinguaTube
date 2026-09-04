@@ -74,84 +74,73 @@ export async function onRequestPost(context) {
             return rateLimitResponse(rateCheck.resetAt);
         }
 
-        // 1. Check Cache
-        const translations = new Array(texts.length).fill(null);
-        const indicesToTranslate = [];
-        const uniqueTextsToTranslate = new Set();
+        // 1. Check Batch-Level Cache (Single KV read instead of 50 individual subrequests)
+        let translations = new Array(texts.length).fill(null);
+        let batchKey = null;
 
-        // Only use cache if present
-        if (env.TRANSCRIPT_CACHE) {
-            // Generate cache keys
-            const cachePromises = texts.map(async (text, index) => {
-                if (!text || !text.trim()) {
-                    translations[index] = text; // preserve empty/whitespace
-                    return;
-                }
-                const hash = await sha256(text);
-                const key = `tr:${source}:${target}:${hash}`;
-                const cached = await env.TRANSCRIPT_CACHE.get(key);
+        if (env.TRANSCRIPT_CACHE && texts.length > 0) {
+            try {
+                const batchSignature = texts.join('\u001F');
+                const batchHash = await sha256(batchSignature);
+                batchKey = `trbatch:v1:${source}:${target}:${batchHash}`;
 
-                if (cached) {
-                    translations[index] = cached;
-                } else {
-                    indicesToTranslate.push(index);
-                    uniqueTextsToTranslate.add(text);
+                const cachedBatch = await env.TRANSCRIPT_CACHE.get(batchKey, 'json');
+                if (cachedBatch && Array.isArray(cachedBatch.translations) && cachedBatch.translations.length === texts.length) {
+                    return jsonResponse({ translations: cachedBatch.translations }, 200, {
+                        'X-Cache': 'HIT',
+                        ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+                    });
                 }
-            });
-
-            await Promise.all(cachePromises);
-        } else {
-            // No cache available, translate all non-empty
-            texts.forEach((text, index) => {
-                if (!text || !text.trim()) {
-                    translations[index] = text;
-                } else {
-                    indicesToTranslate.push(index);
-                    uniqueTextsToTranslate.add(text);
-                }
-            });
+            } catch (err) {
+                console.warn('[Translate Batch] Batch cache read failed:', err?.message || err);
+            }
         }
 
-        // 2. Translate Missing Items
+        // 2. Prepare Unique Texts to Translate
+        const uniqueTextsToTranslate = new Set();
+        texts.forEach((text) => {
+            if (text && text.trim()) {
+                uniqueTextsToTranslate.add(text);
+            }
+        });
+
+        // 3. Translate Missing Items
         if (uniqueTextsToTranslate.size > 0) {
             const batchToTranslate = Array.from(uniqueTextsToTranslate);
             const batchResults = await translateBatch(batchToTranslate, source, target);
 
-            // Map back to original indices and Cache results
-            const cacheWrites = [];
-
+            // Map results back to all occurrences
+            const translationMap = new Map();
             batchToTranslate.forEach((text, i) => {
-                const translation = batchResults[i];
-                if (translation) {
-                    // Fill all occurrences of this text in the original array
-                    texts.forEach((originalText, originalIndex) => {
-                        if (originalText === text) {
-                            translations[originalIndex] = translation;
-                        }
-                    });
-
-                    // Async cache write
-                    if (env.TRANSCRIPT_CACHE) {
-                        cacheWrites.push(async () => {
-                            const hash = await sha256(text);
-                            const key = `tr:${source}:${target}:${hash}`;
-                            await env.TRANSCRIPT_CACHE.put(key, translation, { expirationTtl: CACHE_TTL });
-                        });
-                    }
+                if (batchResults[i]) {
+                    translationMap.set(text, batchResults[i]);
                 }
             });
 
-            // Wait for cache writes? Cloudflare Workers usually wait for waitUntil, but here we can just fire and forget if specific context allows,
-            // but `context.waitUntil` is available safe practice.
-            if (context.waitUntil && cacheWrites.length > 0) {
-                context.waitUntil(Promise.all(cacheWrites.map(fn => fn())));
-            } else if (cacheWrites.length > 0) {
-                // If no waitUntil, we must await to ensure completion before runtime termination
-                await Promise.all(cacheWrites.map(fn => fn()));
+            translations = texts.map(text => {
+                if (!text || !text.trim()) return text; // Preserve whitespace/empty
+                return translationMap.get(text) || text; // Use translated or fallback to original
+            });
+
+            // 4. Save entire batch as ONE single KV write (preserves 1,000 writes/day quota)
+            if (env.TRANSCRIPT_CACHE && batchKey) {
+                const cachePayload = JSON.stringify({ translations });
+                if (context.waitUntil) {
+                    context.waitUntil(
+                        env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {})
+                    );
+                } else {
+                    env.TRANSCRIPT_CACHE.put(batchKey, cachePayload, { expirationTtl: CACHE_TTL }).catch(() => {});
+                }
             }
+        } else {
+            translations = [...texts];
         }
 
-        return jsonResponse({ translations }, 200, getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt));
+        return jsonResponse({ translations }, 200, {
+            'X-Cache': 'MISS',
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+        });
 
     } catch (error) {
         console.error('[Translate Batch] Error:', error);

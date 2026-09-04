@@ -1,330 +1,280 @@
-// History List Component Styles
-// =============================
-// iOS Mail-style swipe-to-delete
+// ============================================
+// HISTORY LIST COMPONENT STYLES
+// Unified with LinguaTube design system (_layout.scss & _components.scss)
+// Clean, modern video card list with refined mobile ergonomics
+// ============================================
 
 :host {
     display: block;
-    height: 100%;
-}
-
-.history-items {
-    height: 100%;
-}
-
-.history-viewport {
-    height: 100%;
     width: 100%;
 }
-
-// Note: Empty states use global .empty-state classes from styles.css
 
 // -------------------------
 // Skeleton Loading State
 // -------------------------
 .skeleton-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
     animation: skeletonFadeIn 0.3s ease-out;
+    width: 100%;
 }
 
 .history-item--skeleton {
     pointer-events: none;
-}
+    cursor: default;
 
-.skeleton-box {
-    background: var(--bg-tertiary);
-    animation: skeletonShimmer 1.5s ease-in-out infinite;
-}
-
-.skeleton-line {
-    background: var(--bg-tertiary);
-    border-radius: var(--border-radius-sm);
-    animation: skeletonShimmer 1.5s ease-in-out infinite;
-
-    &--title {
-        height: 1rem;
-        width: 80%;
-        margin-bottom: 4px;
+    .skeleton-box {
+        background: var(--bg-tertiary);
+        animation: skeletonShimmer 1.5s ease-in-out infinite;
     }
 
-    &--badge {
-        height: 1rem;
-        width: 28px;
+    .skeleton-line {
+        background: var(--bg-tertiary);
         border-radius: var(--border-radius-sm);
+        animation: skeletonShimmer 1.5s ease-in-out infinite;
+
+        &--title {
+            height: 0.9375rem;
+            width: 75%;
+            margin-bottom: 6px;
+        }
+
+        &--badge {
+            height: 0.8125rem;
+            width: 32px;
+            border-radius: var(--border-radius-sm);
+        }
+
+        &--meta {
+            height: 0.75rem;
+            width: 120px;
+        }
     }
 
-    &--meta {
-        height: 0.75rem;
-        width: 100px;
+    .skeleton-meta-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
     }
 }
 
 @keyframes skeletonShimmer {
-
-    0%,
-    100% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 0.8;
-    }
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 0.85; }
 }
 
 @keyframes skeletonFadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-// Mobile skeleton adjustments
-@media (max-width: 768px) {
-    .skeleton-line {
-        &--title {
-            height: 0.875rem;
-        }
-
-        &--meta {
-            height: 0.6875rem;
-            width: 80px;
-        }
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 // -------------------------
-// History Items Container
+// History Items List
 // -------------------------
-.history-items {
+.history-list-items {
     display: flex;
     flex-direction: column;
-    padding: 0 var(--space-md);
-    box-sizing: border-box;
-
-    &.filter-animate {
-        animation: filterFade 0.25s ease-out;
-    }
-}
-
-// -------------------------
-// Item Wrapper
-// -------------------------
-.history-item-wrapper {
-    position: relative;
-    overflow: hidden;
-
-    &.animate {
-        animation: fadeSlideIn 0.3s ease-out backwards;
-        animation-delay: var(--animation-delay, 0ms);
-    }
-
-    &.deleting {
-        animation: collapseOut 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-}
-
-// -------------------------
-// Swipe Action Container (behind card)
-// -------------------------
-.swipe-action-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    gap: var(--space-xs);
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    background: var(--error);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease;
-
-    &.revealed {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    &.past-threshold {
-        background: var(--error-dark);
-
-        .swipe-action {
-            width: 100%;
-        }
-    }
-
-    // Hide on desktop
-    @media (min-width: 769px) {
-        display: none;
-    }
-}
-
-.swipe-action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 72px;
-    height: 100%;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    transition: width 0.2s ease;
-
-    &:active {
-        opacity: 0.8;
-    }
 }
 
 // -------------------------
-// History Item (main card)
+// History Card Item (Unified with playlist-item)
 // -------------------------
 .history-item {
     position: relative;
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: 10px 14px;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    box-shadow: none;
-    border-radius: var(--border-radius-lg);
-    margin-bottom: var(--space-sm);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
-    will-change: transform;
-    // Smooth snap-back animation
-    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s;
-
-    // Disable transition during active swipe
-    &.swiping {
-        transition: none;
-    }
+    animation: historyItemIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(min(var(--item-index, 0), 8) * 35ms);
+    transition:
+        border-color var(--transition-fast),
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
 
     @media (hover: hover) {
         &:hover {
-
             border-color: var(--accent-primary);
-            box-shadow: none;
-        }
+            background: var(--bg-hover);
+            transform: translateY(-1px);
 
-        &:hover .action-btn--delete {
-            opacity: 1;
-        }
-    }
+            .card-play-overlay {
+                opacity: 1;
 
-    &:active:not(.swiping) {
+                .play-icon-circle {
+                    transform: scale(1);
+                }
+            }
 
-        box-shadow: none;
-    }
-
-    @media (hover: none) {
-        &:active:not(.swiping) {
-
-            box-shadow: none;
+            .action-btn--delete {
+                opacity: 1;
+            }
         }
     }
 
-    // Mobile: enable swipe gesture
-    @media (max-width: 768px) {
-        touch-action: pan-y pinch-zoom;
+    &:active {
+        transform: scale(0.995);
+    }
+
+    &.is-deleting {
+        animation: collapseOut 0.26s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        pointer-events: none;
     }
 }
 
 // -------------------------
-// Thumbnail
+// Thumbnail (16:9)
 // -------------------------
 .history-item__thumb {
     position: relative;
-    width: 100px;
-    aspect-ratio: 16/9;
-    flex-shrink: 0;
-    border-radius: var(--border-radius);
-    overflow: hidden;
+    width: 130px;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-sm);
     background: var(--bg-tertiary);
+    overflow: hidden;
+    flex-shrink: 0;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
+    }
+
+    .card-play-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity var(--transition-fast);
+        z-index: 1;
+
+        .play-icon-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform var(--transition-fast);
+        }
+    }
+
+    .duration-badge {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.625rem;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 3;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: var(--accent-primary);
+        border-radius: 0 1px 1px 0;
+        transition: width 0.3s ease;
     }
 }
 
-.progress-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.progress-fill {
-    height: 100%;
-    background: var(--accent-primary);
-    transition: width 0.3s ease;
-}
-
 // -------------------------
-// Content
+// Content info
 // -------------------------
 .history-item__content {
     flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 4px;
 }
 
 .history-item__title {
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-primary);
+    line-height: 1.35;
+    margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.4;
 }
 
 .history-item__meta {
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
+    gap: 4px;
     font-size: 0.75rem;
     color: var(--text-muted);
     flex-wrap: wrap;
 }
 
 .lang-badge {
-    padding: 2px 6px;
+    padding: 1px 5px;
     font-size: 0.625rem;
-    font-weight: 600;
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border-radius: var(--border-radius-sm);
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    background: rgba(var(--accent-primary-rgb), 0.12);
+    color: var(--accent-primary);
+    border-radius: 3px;
+    letter-spacing: 0.4px;
+    line-height: 1.2;
 }
 
 .channel-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 140px;
+    max-width: 160px;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
 .separator {
     color: var(--text-muted);
     opacity: 0.5;
+    font-size: 0.625rem;
 }
 
 .time-ago {
     color: var(--text-muted);
     white-space: nowrap;
+    font-size: 0.6875rem;
 }
 
 // -------------------------
@@ -333,180 +283,159 @@
 .history-item__actions {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     flex-shrink: 0;
-
-    &--desktop {
-        display: flex;
-    }
-
-    &--mobile {
-        display: none;
-    }
+    margin-left: auto;
 }
 
 .action-btn {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     padding: 0;
     border: none;
     background: transparent;
     color: var(--text-muted);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
-    overflow: hidden;
     transition:
         background-color var(--transition-fast),
         color var(--transition-fast),
         transform var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+    }
+
+    &:active {
+        transform: scale(0.92);
+    }
 
     &--favorite {
         &.active {
             color: var(--accent-primary);
 
-            app-icon ::ng-deep svg {
-                fill: currentColor;
-                filter: drop-shadow(0 0 6px var(--accent-primary));
+            app-icon {
+                filter: drop-shadow(0 0 4px rgba(var(--accent-primary-rgb), 0.35));
             }
         }
 
-        // Animation on favorite
-        &.animating {
-            app-icon ::ng-deep svg {
-                animation: heartPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-
-            // Burst effect
-            &::after {
-                content: '';
-                position: absolute;
-                inset: 4px;
-                border-radius: 50%;
-                background: var(--accent-primary);
-                opacity: 0;
-                animation: heartBurst 0.4s ease-out;
-                pointer-events: none;
-            }
+        &.animating app-icon {
+            animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
     }
 
     &--delete {
-        opacity: 0;
-        transition: opacity var(--transition-fast), background-color var(--transition-fast);
-    }
+        opacity: 0.7; // Visible by default on touch devices
 
-    @media (hover: hover) {
-        &:hover {
-            background: var(--bg-hover);
+        @media (min-width: 769px) {
+            opacity: 0; // Hidden on desktop until item hovered
         }
 
-        &--favorite:hover {
-            color: var(--accent-primary);
-        }
-
-        &--delete:hover {
-            color: var(--error);
-        }
-    }
-
-    &:active {
-        transform: translateY(2px);
-    }
-}
-
-// -------------------------
-// Mobile Optimizations
-// -------------------------
-@media (max-width: 768px) {
-    .history-item__actions {
-        &--desktop {
-            display: none !important;
-        }
-
-        &--mobile {
-            display: flex;
-        }
-    }
-
-    .history-item {
-        gap: var(--space-sm);
-        padding: var(--space-sm);
-    }
-
-    .history-item__thumb {
-        width: 80px;
-    }
-
-    .history-item__title {
-        font-size: 0.8125rem;
-        -webkit-line-clamp: 1;
-        line-clamp: 1;
-    }
-
-    .history-item__meta {
-        font-size: 0.6875rem;
-    }
-
-    .channel-name {
-        max-width: 100px;
-    }
-
-    .action-btn {
-        width: 40px;
-        height: 40px;
-
-        &--favorite.active {
-            app-icon ::ng-deep svg {
-                fill: currentColor;
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(var(--error-rgb), 0.1);
+                color: var(--error);
+                opacity: 1;
             }
         }
-    }
 
-    .separator {
-        display: none;
+        &:active {
+            background: rgba(var(--error-rgb), 0.15);
+            color: var(--error);
+            opacity: 1;
+        }
     }
 }
 
-// Very small screens
+// -------------------------
+// Mobile Responsive
+// -------------------------
+@media (max-width: 768px) {
+    .history-item {
+        gap: 10px;
+        padding: 8px 10px;
+
+        &__thumb {
+            width: 105px;
+        }
+
+        &__title {
+            font-size: 0.84375rem;
+            line-height: 1.3;
+        }
+
+        &__meta {
+            font-size: 0.6875rem;
+            gap: 3px;
+        }
+
+        .channel-name {
+            max-width: 130px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .history-item {
+        gap: 8px;
+        padding: 6px 8px;
+        border-radius: var(--border-radius-md);
+
+        &__thumb {
+            width: 96px;
+            border-radius: 6px;
+        }
+
+        &__title {
+            font-size: 0.8125rem;
+            line-height: 1.25;
+        }
+
+        .channel-name {
+            max-width: 110px;
+        }
+
+        &__actions {
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .action-btn {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}
+
 @media (max-width: 360px) {
     .history-item {
-        gap: var(--space-xs);
-    }
+        &__thumb {
+            width: 82px;
+        }
 
-    .history-item__thumb {
-        width: 64px;
-    }
-
-    .channel-name {
-        display: none;
+        .channel-name {
+            max-width: 80px;
+        }
     }
 }
 
 // -------------------------
-// Animations
+// Keyframe Animations
 // -------------------------
-@keyframes fadeSlideIn {
+@keyframes historyItemIn {
     from {
         opacity: 0;
         transform: translateY(8px);
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes filterFade {
-    from {
-        opacity: 0.5;
-
-    }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -516,16 +445,22 @@
 @keyframes collapseOut {
     0% {
         opacity: 1;
-        max-height: 100px;
+        transform: translateX(0);
+        max-height: 120px;
+        margin-bottom: var(--space-xs);
     }
-
+    40% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
     100% {
         opacity: 0;
         max-height: 0;
         padding-top: 0;
         padding-bottom: 0;
-        margin-top: 0;
         margin-bottom: 0;
+        border-width: 0;
+        transform: translateX(20px);
         overflow: hidden;
     }
 }
@@ -534,33 +469,17 @@
     0% {
         transform: scale(1);
     }
-
-    25% {
-        transform: scale(1.3);
+    30% {
+        transform: scale(1.35);
     }
-
-    50% {
+    60% {
         transform: scale(0.9);
     }
-
-    75% {
+    80% {
         transform: scale(1.1);
     }
-
     100% {
         transform: scale(1);
-    }
-}
-
-@keyframes heartBurst {
-    0% {
-        transform: scale(0.5);
-        opacity: 0.4;
-    }
-
-    100% {
-        transform: scale(1.8);
-        opacity: 0;
     }
 }
 
@@ -568,24 +487,17 @@
 // Reduced Motion
 // -------------------------
 @media (prefers-reduced-motion: reduce) {
-
-    .empty-state.animate,
-    .history-item-wrapper.animate,
-    .history-items.filter-animate {
+    .history-item {
         animation: none;
-    }
+        transition: none !important;
 
-    .history-item-wrapper.deleting {
-        animation: fadeOut 0.15s ease forwards;
-    }
-
-    @keyframes fadeOut {
-        to {
-            opacity: 0;
+        &.is-deleting {
+            animation: none;
+            display: none;
         }
     }
 
-    .history-item {
-        transition: none !important;
+    .action-btn--favorite.animating app-icon {
+        animation: none;
     }
 }

@@ -15,7 +15,14 @@
                 } @else if (option.icon) {
                 <span class="option-picker__icon">{{ option.icon }}</span>
                 }
-                <span class="option-picker__label">{{ option.label }}</span>
+                <div class="option-picker__text">
+                    <span class="option-picker__label">{{ option.label }}</span>
+                    @if (option.example) {
+                    <span class="option-picker__example">{{ option.example }}</span>
+                    } @else if (option.description) {
+                    <span class="option-picker__desc">{{ option.description }}</span>
+                    }
+                </div>
                 @if (option.value === value()) {
                 <app-icon name="check" [size]="18" class="option-picker__check" />
                 }

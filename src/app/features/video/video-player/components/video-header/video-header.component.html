@@ -4,6 +4,13 @@
         <h2 class="video-title">{{ title() }}</h2>
         <span class="video-channel">{{ channel() }}</span>
     </div>
+    <div class="video-actions">
+        <button type="button" class="btn-icon btn-close-video" (click)="closeVideo.emit()"
+            [attr.aria-label]="i18n.t('player.closeVideo') || 'Close video'"
+            [title]="i18n.t('player.closeVideo') || 'Close video'">
+            <app-icon name="x" [size]="14" />
+        </button>
+    </div>
     } @else {
     <!-- Skeleton loading with shimmer effect -->
     <div class="video-text">

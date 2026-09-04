@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input, ViewChildren, QueryList, ElementRef, AfterViewInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -16,6 +17,7 @@ import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 export class PlaylistPanelComponent implements AfterViewInit {
     private _playlistService = inject(PlaylistService);
     private _i18n = inject(I18nService);
+    private destroyRef = inject(DestroyRef);
     protected youtube = inject(YoutubeService);
 
     // Public getters for template binding
@@ -23,6 +25,7 @@ export class PlaylistPanelComponent implements AfterViewInit {
     get i18n() { return this._i18n; }
 
     isMobile = input<boolean>(false);
+    embedded = input<boolean>(false);
     shouldScrollIntoView = input<boolean>(true); // Default true for normal usage, parent can control
     requestClose = output<void>();
     videoSelect = output<string>();
@@ -52,8 +55,8 @@ export class PlaylistPanelComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        // Subscribe to changes in the list
-        this.playlistItems.changes.subscribe(() => {
+        // Subscribe to changes in the list with proper lifecycle cleanup
+        this.playlistItems.changes.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
             if (this.scrollPending) {
                 this.scrollToCurrentIndex();
             }
@@ -79,12 +82,30 @@ export class PlaylistPanelComponent implements AfterViewInit {
 
     async onShare(): Promise<void> {
         const playlist = this._playlistService.currentPlaylist();
-        if (playlist) {
-            const success = await this._playlistService.copyShareLink(playlist.id);
-            if (success) {
-                this.isCopied.set(true);
-                setTimeout(() => this.isCopied.set(false), 2000);
+        if (!playlist) return;
+
+        const currentVideo = this.youtube.currentVideo();
+        const videoId = currentVideo?.id;
+        const shareUrl = this._playlistService.getShareUrl(playlist.id, videoId);
+        const shareData = {
+            title: playlist.title,
+            text: `Listen to ${playlist.title} on LinguaTube`,
+            url: shareUrl
+        };
+
+        if (typeof navigator !== 'undefined' && navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+            try {
+                await navigator.share(shareData);
+                return;
+            } catch {
+                // User dismissed or failed; fall through to clipboard
             }
+        }
+
+        const success = await this._playlistService.copyShareLink(playlist.id, videoId);
+        if (success) {
+            this.isCopied.set(true);
+            setTimeout(() => this.isCopied.set(false), 2000);
         }
     }
 

@@ -6,7 +6,7 @@ import { BottomSheetComponent } from '../../shared/components/bottom-sheet/botto
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
-import { ReadingDisplayMode, SupportedLearningLanguage } from '../../models';
+import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
 import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, TranscriptService } from '../../services';
 import { StreakService } from '../../services/streak.service';
@@ -45,12 +45,7 @@ export class SettingsSheetComponent {
   isLoggingIn = false;
 
   // Learning language options with display info
-  readonly learningLanguages = [
-    { code: 'ja' as const, name: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-    { code: 'zh' as const, name: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-    { code: 'ko' as const, name: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-    { code: 'en' as const, name: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
-  ];
+  readonly learningLanguages = SUPPORTED_LANGUAGES;
 
   // Computed for current learning language display
   currentLearningLang = computed(() => {
@@ -95,7 +90,8 @@ export class SettingsSheetComponent {
 
     return modes.map(mode => ({
       value: mode,
-      label: this.getReadingDisplayLabel(mode, language)
+      label: this.getReadingDisplayLabel(mode, language),
+      example: this.getReadingDisplayExample(mode, language)
     }));
   });
 
@@ -204,6 +200,53 @@ export class SettingsSheetComponent {
         return this.i18n.t('settings.romanizationOnly');
       default:
         return this.i18n.t('settings.textOnly');
+    }
+  }
+
+  private getReadingDisplayExample(
+    mode: ReadingDisplayMode,
+    language: SupportedLearningLanguage
+  ): string | undefined {
+    switch (language) {
+      case 'ja':
+        switch (mode) {
+          case 'native':
+            return '日本語';
+          case 'annotated':
+            return '日本語 (にほんご)';
+          case 'annotatedRomanized':
+            return '日本語 (nihongo)';
+          case 'reading':
+            return 'にほんご';
+          case 'romanized':
+            return 'nihongo';
+          default:
+            return undefined;
+        }
+      case 'zh':
+        switch (mode) {
+          case 'native':
+            return '中文';
+          case 'annotated':
+            return '中文 (zhōngwén)';
+          case 'reading':
+            return 'zhōngwén';
+          default:
+            return undefined;
+        }
+      case 'ko':
+        switch (mode) {
+          case 'native':
+            return '한국어';
+          case 'annotated':
+            return '한국어 (hangugeo)';
+          case 'reading':
+            return 'hangugeo';
+          default:
+            return undefined;
+        }
+      default:
+        return undefined;
     }
   }
 }

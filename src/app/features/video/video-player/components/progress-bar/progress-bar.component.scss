@@ -19,13 +19,14 @@ $z-seek-tooltip: 30;
 
     width: 100%;
     height: $progress-height;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     position: relative;
     cursor: pointer;
-    border-radius: 999px;
+    border-radius: var(--border-radius-pill);
     transition: height $transition-fast;
     touch-action: none; // Prevent scroll while seeking
     overflow: visible;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 
     @media (hover: hover) {
         &:hover {
@@ -68,7 +69,7 @@ $z-seek-tooltip: 30;
     height: 100%;
     width: calc(var(--buffered) * 1%);
     background: rgba(255, 255, 255, 0.32);
-    border-radius: 999px;
+    border-radius: var(--border-radius-pill);
     pointer-events: none;
 }
 
@@ -79,7 +80,7 @@ $z-seek-tooltip: 30;
     height: 100%;
     width: calc(var(--progress) * 1%);
     background: var(--accent-primary);
-    border-radius: 999px;
+    border-radius: var(--border-radius-pill);
     pointer-events: none;
 }
 
@@ -118,6 +119,10 @@ $z-seek-tooltip: 30;
 
 // Touch / Mobile specific adjustments
 @media (hover: none) and (pointer: coarse) {
+    .progress-hit-area {
+        height: 32px;
+    }
+
     .progress-container .progress-handle {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);

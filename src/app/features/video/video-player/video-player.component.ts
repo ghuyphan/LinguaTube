@@ -11,12 +11,11 @@ import {
   computed,
   output,
   untracked,
-  NgZone,
-  AfterViewInit
+  NgZone
 } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { OptionItem } from '../../../shared/components/option-picker/option-picker.component';
@@ -45,7 +44,6 @@ import {
 import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
-  DOUBLE_TAP_DELAY,
   SEEK_STEP
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
@@ -66,9 +64,10 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
-export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
+export class VideoPlayerComponent implements OnDestroy {
   private document = inject(DOCUMENT);
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
   private ngZone = inject(NgZone);
   youtube = inject(YoutubeService);
   subtitles = inject(SubtitleService);
@@ -320,8 +319,22 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
   // Feedback animations
   rewindFeedback = signal(false);
   forwardFeedback = signal(false);
-  // feedbackIconName = signal<'play' | 'pause'>('play'); // Removed
-  // playPauseFeedback = signal(false); // Removed
+  playPauseFeedback = signal(false);
+  playPauseFeedbackIcon = signal<'play' | 'pause'>('play');
+  private playPauseTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  // Speed and Caption OSD pills (YouTube style)
+  speedFeedback = signal(false);
+  speedFeedbackText = signal('');
+  private speedFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  captionFeedback = signal(false);
+  captionFeedbackText = signal('');
+  private captionFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  // Shortcuts cheat sheet dialog
+  showShortcutsDialog = signal(false);
+
   leftRipple = signal(false);
   rightRipple = signal(false);
   ripplePos = signal({ x: 0, y: 0 });
@@ -370,8 +383,9 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     // Initialize player when video exists but player isn't ready
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
-      // Only restore if we have a current video, player is NOT ready, and we are NOT in the middle of loading a new one
-      if (currentVideo && !this.youtube.isReady() && !this.isLoading() && !this.youtube.pendingVideoId()) {
+      const hasUrlId = !!this.route.snapshot.queryParamMap.get('id');
+      // Only restore if we have a current video, URL explicitly has a video ID, player is NOT ready, and we are NOT in the middle of loading a new one
+      if (hasUrlId && currentVideo && !this.youtube.isReady() && !this.isLoading() && !this.youtube.pendingVideoId()) {
         const savedTime = this.youtube.currentTime();
         this.waitForElement('youtube-player').then(async () => {
           await this.restorePlayer(currentVideo.id);
@@ -495,10 +509,6 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    // Progress Bar Events - now handled by hit area element in template for Safari compatibility
-  }
-
   // Refactored onUserActivity to re-enter zone only when needed
   onUserActivity() {
     // Desktop only - mobile uses touch overlay with tap-to-toggle
@@ -536,6 +546,12 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
+    if (this.showShortcutsDialog() && event.code === 'Escape') {
+      event.preventDefault();
+      this.closeShortcutsDialog();
+      return;
+    }
+
     // Delegate to service. It returns true if it handled a command.
     const isFsPopupVisible = untracked(() => this.fsPopupVisible());
     const isFullscreen = untracked(() => this.isFullscreen());
@@ -547,6 +563,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     switch (event.type) {
       case 'toggle-play':
         this.togglePlay();
+        this.showPlayPauseFeedback();
         break;
       case 'seek':
         this.seekRelative(event.data.seconds);
@@ -572,6 +589,21 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
         } else {
           this.increaseSpeed();
         }
+        break;
+      case 'toggle-captions':
+        this.toggleSubtitles();
+        break;
+      case 'playlist-next':
+        this.playlistNext.emit();
+        break;
+      case 'playlist-prev':
+        this.playlistPrev.emit();
+        break;
+      case 'step-frame':
+        this.seekRelative(event.data.seconds);
+        break;
+      case 'toggle-shortcuts-dialog':
+        this.showShortcutsDialog.update(v => !v);
         break;
     }
   }
@@ -665,15 +697,50 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
   togglePlay() {
     this.youtube.togglePlay();
-    // this.showPlayPauseFeedback(); // Removed
     this.showControls();
   }
 
-  // private showPlayPauseFeedback() { // Removed
-  //   this.feedbackIconName.set(this.youtube.intendedPlayingState() ? 'pause' : 'play');
-  //   this.playPauseFeedback.set(true);
-  //   setTimeout(() => this.playPauseFeedback.set(false), 400);
-  // }
+  showPlayPauseFeedback() {
+    if (this.playPauseTimeout) clearTimeout(this.playPauseTimeout);
+    this.playPauseFeedbackIcon.set(this.youtube.intendedPlayingState() ? 'play' : 'pause');
+    this.playPauseFeedback.set(true);
+    this.playPauseTimeout = setTimeout(() => {
+      this.playPauseFeedback.set(false);
+    }, 400);
+  }
+
+  showSpeedFeedback(speed: PlaybackSpeed) {
+    if (this.speedFeedbackTimeout) clearTimeout(this.speedFeedbackTimeout);
+    this.speedFeedbackText.set(`${speed}x`);
+    this.speedFeedback.set(true);
+    this.speedFeedbackTimeout = setTimeout(() => {
+      this.speedFeedback.set(false);
+    }, 1200);
+  }
+
+  showCaptionFeedback(visible: boolean) {
+    if (this.captionFeedbackTimeout) clearTimeout(this.captionFeedbackTimeout);
+    this.captionFeedbackText.set(visible ? 'Subtitles on' : 'Subtitles off');
+    this.captionFeedback.set(true);
+    this.captionFeedbackTimeout = setTimeout(() => {
+      this.captionFeedback.set(false);
+    }, 1200);
+  }
+
+  toggleSubtitles() {
+    const next = this.subtitles.toggleSubtitlesVisible();
+    this.showCaptionFeedback(next);
+    this.showControls();
+  }
+
+  openShortcutsDialog() {
+    this.showShortcutsDialog.set(true);
+    this.showControls();
+  }
+
+  closeShortcutsDialog() {
+    this.showShortcutsDialog.set(false);
+  }
 
   seekRelative(seconds: number) {
     this.youtube.seekRelative(seconds);
@@ -794,24 +861,27 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
 
 
-  onOverlayClick(_event: MouseEvent) {
-    const now = Date.now();
-    const isDoubleClick = now - this.lastDesktopClickTime < DOUBLE_TAP_DELAY;
-    this.lastDesktopClickTime = now;
-
-    if (isDoubleClick) {
-      if (this.doubleTapTimeout) {
-        clearTimeout(this.doubleTapTimeout);
-        this.doubleTapTimeout = null;
-      }
-      this.toggleFullscreen();
-    } else {
-      this.doubleTapTimeout = setTimeout(() => {
-        this.togglePlay();
-        // this.showPlayPauseFeedback();
-        this.doubleTapTimeout = null;
-      }, DOUBLE_TAP_DELAY);
+  onOverlayClick(event: MouseEvent) {
+    event.stopPropagation();
+    if (this.doubleTapTimeout) {
+      clearTimeout(this.doubleTapTimeout);
+      this.doubleTapTimeout = null;
     }
+
+    this.doubleTapTimeout = setTimeout(() => {
+      this.togglePlay();
+      this.showPlayPauseFeedback();
+      this.doubleTapTimeout = null;
+    }, 220);
+  }
+
+  onOverlayDblClick(event: MouseEvent) {
+    event.stopPropagation();
+    if (this.doubleTapTimeout) {
+      clearTimeout(this.doubleTapTimeout);
+      this.doubleTapTimeout = null;
+    }
+    this.toggleFullscreen();
   }
 
   private triggerRipple(x: number, y: number, zone: 'left' | 'right') {
@@ -972,6 +1042,7 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.currentSpeed.set(speed);
     this.youtube.setPlaybackRate(speed);
     this.isSpeedMenuOpen.set(false);
+    this.showSpeedFeedback(speed);
   }
 
   private increaseSpeed() {
@@ -1155,6 +1226,14 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.saveClicked.emit();
   }
 
+  closeVideo(): void {
+    this.playlistService.clearCurrentPlaylist();
+    this.youtube.reset();
+    this.subtitles.clear();
+    this.transcript.reset();
+    void this.router.navigate(['/video'], { queryParams: {} });
+  }
+
   // ============================================
   // FONT SIZE CONTROL
   // ============================================
@@ -1240,6 +1319,20 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
     this.videoUrl = '';
   }
 
+  async pasteFromClipboard(): Promise<void> {
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard?.readText) {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          this.videoUrl = text.trim();
+          this.error.set(null);
+        }
+      }
+    } catch {
+      // Browser clipboard permission denied or not supported; gracefully ignore
+    }
+  }
+
   private async restorePlayer(videoId: string): Promise<void> {
     try {
       await this.youtube.initPlayer('youtube-player', videoId);
@@ -1301,6 +1394,9 @@ export class VideoPlayerComponent implements OnDestroy, AfterViewInit {
 
     if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
     if (this.doubleTapTimeout) clearTimeout(this.doubleTapTimeout);
+    if (this.playPauseTimeout) clearTimeout(this.playPauseTimeout);
+    if (this.speedFeedbackTimeout) clearTimeout(this.speedFeedbackTimeout);
+    if (this.captionFeedbackTimeout) clearTimeout(this.captionFeedbackTimeout);
 
     // Clean up video container and overlay event listeners
     this.eventCleanupFns.forEach(fn => fn());

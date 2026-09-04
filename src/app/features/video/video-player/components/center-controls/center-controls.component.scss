@@ -40,16 +40,14 @@ $z-center-controls: 15;
     flex-shrink: 0;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: rgba(18, 18, 22, 0.68);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--transition-fast);
+    transition: background-color var(--transition-fast), transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
     color: white;
     -webkit-tap-highlight-color: transparent;
 
@@ -62,15 +60,18 @@ $z-center-controls: 15;
     }
 
     &:hover {
-        background: rgba(30, 30, 36, 0.88);
-        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.85);
         transform: scale(1.08);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
     }
 
     &:disabled {
-        opacity: 0.35;
         cursor: not-allowed;
+        background: rgba(0, 0, 0, 0.45);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+        app-icon {
+            opacity: 0.35;
+        }
     }
 
     &:active:not(:disabled) {
@@ -101,7 +102,7 @@ $z-center-controls: 15;
     }
 }
 
-// Button group for prev/play/next
+// Button group for prev/play/next (mobile touch controls)
 .center-button-group {
     display: flex;
     align-items: center;
@@ -114,6 +115,11 @@ $z-center-controls: 15;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+    }
+
+    // On desktop, native YouTube leaves the video center clean and unobstructed when paused
+    @media (hover: hover) and (pointer: fine) {
+        display: none !important;
     }
 }
 
@@ -169,9 +175,10 @@ $z-center-controls: 15;
 
 .center-feedback {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background: $btn-bg;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba(0, 0, 0, 0.65);
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -191,7 +198,9 @@ $z-center-controls: 15;
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
-    background: $btn-bg;
+    background: rgba(0, 0, 0, 0.85);
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
     padding: 0.75rem 1rem;
     border-radius: var(--border-radius-lg);
     color: white;

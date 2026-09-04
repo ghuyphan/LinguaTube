@@ -76,6 +76,9 @@ export class SubtitleService {
   readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en' | null>(null);
   readonly requestedLanguage = signal<string | null>(null);
 
+  /** Master visibility toggle for subtitles/captions (toggled via 'c' key or CC button) */
+  readonly subtitlesVisible = signal(true);
+
   // Computed
   readonly currentCue = computed(() => {
     const index = this.currentCueIndex();
@@ -102,6 +105,16 @@ export class SubtitleService {
   setLanguageState(loaded: 'ja' | 'zh' | 'ko' | 'en' | null, requested: string): void {
     this.loadedLanguage.set(loaded);
     this.requestedLanguage.set(requested);
+  }
+
+  /**
+   * Toggle master subtitle visibility
+   * Returns the new visibility state (true = visible, false = hidden)
+   */
+  toggleSubtitlesVisible(): boolean {
+    const newState = !this.subtitlesVisible();
+    this.subtitlesVisible.set(newState);
+    return newState;
   }
 
   /**

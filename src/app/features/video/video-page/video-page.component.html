@@ -1,132 +1,183 @@
 <div class="layout">
-    <div class="layout-main" [class.has-video-bar]="!!youtube.currentVideo()">
+    <div class="layout-main">
         <app-video-player (fullscreenWordClicked)="onWordClicked($event)"
             (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
             (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()"
             (closePlaylist)="closePlaylist()" />
 
-        @if (showLearnHome()) {
-        <div class="learn-home">
-            <!-- Learning Hub Overview Header Card -->
-            <div class="card learn-header-card">
-                <div class="panel-header">
-                    <div class="panel-header__row">
-                        <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
-                        <h2 class="panel-header__title">{{ i18n.t('nav.learn') }}</h2>
-                        <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
+        <!-- Mobile Playlist Queue (In-flow directly below player, matching player width) -->
+        @if (hasPlaylist()) {
+        <div class="mobile-playlist-card mobile-only" [class.is-expanded]="mobilePlaylistExpanded()">
+            <div class="mobile-playlist-bar" (click)="toggleMobilePlaylist()">
+                <div class="mobile-playlist-header-left">
+                    <div class="mobile-playlist-badge">
+                        <app-icon name="list-video" [size]="18" />
                     </div>
-                    <p class="panel-header__subtitle">{{ i18n.t('app.subtitle') }}</p>
+                    <div class="mobile-playlist-meta">
+                        @if (playlistService.currentPlaylist(); as playlist) {
+                        <span class="mobile-playlist-title">{{ playlist.title }}</span>
+                        <span class="mobile-playlist-sub">
+                            {{ playlist.userName || (playlist.userId === 'local' ? i18n.t('playlist.you') : i18n.t('playlist.curated')) }} • {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
+                        </span>
+                        } @else {
+                        <span class="mobile-playlist-title">{{ i18n.t('common.loading') }}...</span>
+                        <span class="mobile-playlist-sub">{{ i18n.t('playlist.playlist') }}</span>
+                        }
+                    </div>
                 </div>
 
-                <!-- 3 Hub Feature Action Cards -->
-                <div class="learn-hub-grid">
-                    <button class="card-interactive hub-card" (click)="openExplore()">
-                        <div class="hub-card__icon-box">
-                            <app-icon name="list-video" [size]="20" />
-                        </div>
-                        <div class="hub-card__content">
-                            <strong>{{ i18n.t('nav.explore') }}</strong>
-                            <span>{{ i18n.t('playlist.curated') }} &amp; {{ i18n.t('playlist.community') }}</span>
-                        </div>
-                        <app-icon name="chevron-right" [size]="16" class="hub-card__arrow" />
+                <div class="mobile-playlist-controls" (click)="$event.stopPropagation()">
+                    @if (playlistService.currentPlaylist(); as playlist) {
+                    <button class="control-btn" [class.active]="isShareCopied()" [class.btn-copied]="isShareCopied()"
+                        (click)="$event.stopPropagation(); onShareMobile(playlist)" [title]="isShareCopied() ? 'Link copied!' : i18n.t('playlist.sharePlaylist')"
+                        aria-label="Share playlist">
+                        <app-icon [name]="isShareCopied() ? 'check' : 'share'" [size]="16"></app-icon>
                     </button>
-
-                    <button class="card-interactive hub-card" (click)="navigateTo('/dictionary')">
-                        <div class="hub-card__icon-box">
-                            <app-icon name="book-open" [size]="20" />
-                        </div>
-                        <div class="hub-card__content">
-                            <strong>{{ i18n.t('nav.words') }}</strong>
-                            <span>{{ i18n.t('dictionary.subtitle') }}</span>
-                        </div>
-                        <app-icon name="chevron-right" [size]="16" class="hub-card__arrow" />
+                    }
+                    <button class="control-btn" [class.active]="playlistService.isLooping()"
+                        (click)="$event.stopPropagation(); playlistService.toggleLoop()"
+                        [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
+                        aria-label="Loop playlist">
+                        <app-icon name="repeat" [size]="16"></app-icon>
                     </button>
-
-                    <button class="card-interactive hub-card" (click)="navigateTo('/study')">
-                        <div class="hub-card__icon-box">
-                            <app-icon name="graduation-cap" [size]="20" />
-                        </div>
-                        <div class="hub-card__content">
-                            <strong>{{ i18n.t('nav.study') }}</strong>
-                            <span>{{ i18n.t('study.subtitle') }}</span>
-                        </div>
-                        <app-icon name="chevron-right" [size]="16" class="hub-card__arrow" />
+                    <button class="control-btn" [class.active]="playlistService.isShuffled()"
+                        (click)="$event.stopPropagation(); playlistService.toggleShuffle()"
+                        [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
+                        aria-label="Shuffle playlist">
+                        <app-icon name="shuffle" [size]="16"></app-icon>
+                    </button>
+                    <button class="control-btn chevron-btn" (click)="toggleMobilePlaylist()" aria-label="Toggle playlist queue">
+                        <app-icon [name]="mobilePlaylistExpanded() ? 'chevron-up' : 'chevron-down'" [size]="18"></app-icon>
                     </button>
                 </div>
             </div>
 
-            <!-- Recent History / Continue Learning -->
+            @if (mobilePlaylistExpanded()) {
+            <div class="mobile-playlist-body">
+                <app-playlist-panel [isMobile]="true" [shouldScrollIntoView]="true"
+                    (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)"
+                    (requestClose)="toggleMobilePlaylist()" />
+            </div>
+            }
+        </div>
+        }
+
+        @if (showLearnHome()) {
+        <div class="card home-dashboard">
+            <!-- Section 1: Tiếp tục học (Resume Learning / Recent History) -->
             @if (recentHistoryItems().length > 0) {
-            <div class="card learn-section-card">
+            <section class="dashboard-section">
                 <div class="panel-header">
                     <div class="panel-header__row">
                         <div class="panel-header__left">
-                            <app-icon name="clock" [size]="18" class="panel-header__icon" />
+                            <app-icon name="clock" [size]="20" class="panel-header__icon" />
                             <h3 class="panel-header__title">{{ i18n.t('history.title') }}</h3>
                         </div>
-                        <button class="panel-header__link" (click)="navigateTo('/history')">
+                        <button type="button" class="panel-header__link" (click)="navigateTo('/history')">
                             <span>{{ i18n.t('history.title') }}</span>
                             <app-icon name="arrow-right" [size]="14" />
                         </button>
                     </div>
                 </div>
 
-                <div class="history-grid">
-                    @for (item of recentHistoryItems(); track item.id) {
-                    <button class="card-interactive history-card" (click)="resumeHistory(item.video_id)">
-                        <div class="history-card__thumb-wrapper">
-                            <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" class="history-card__thumb" />
-                            <div class="history-card__play-badge">
-                                <app-icon name="play" [size]="14" />
+                <div class="horizontal-item-list">
+                    @for (item of recentHistoryItems(); track item.id; let i = $index) {
+                    <div class="home-row-item" [style.--item-index]="i" (click)="resumeHistory(item.video_id)">
+                        <div class="home-row-item__thumb">
+                            <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" />
+                            <div class="card-play-overlay">
+                                <div class="play-icon-circle">
+                                    <app-icon name="play" [size]="14" />
+                                </div>
                             </div>
                         </div>
-                        <div class="history-card__info">
-                            <strong class="history-card__title">{{ item.title }}</strong>
-                            <span class="history-card__channel">{{ item.channel || currentLearningLanguage() }}</span>
+                        <div class="home-row-item__content">
+                            <h4 class="home-row-item__title" [title]="item.title">{{ item.title }}</h4>
+                            <div class="home-row-item__meta">
+                                <span class="meta-channel">{{ item.channel || currentLearningLanguage() }}</span>
+                            </div>
                         </div>
-                    </button>
+                        <div class="home-row-item__action">
+                            <button type="button" class="action-btn" aria-label="Resume">
+                                <app-icon name="play" [size]="14" />
+                            </button>
+                        </div>
+                    </div>
                     }
                 </div>
-            </div>
+            </section>
             }
 
-            <!-- Curated Immersion Playlists -->
-            <div class="card learn-section-card">
+            <!-- Section 2: Tuyển chọn cho bạn (Curated Immersion Playlists) -->
+            <section class="dashboard-section">
                 <div class="panel-header">
                     <div class="panel-header__row">
                         <div class="panel-header__left">
-                            <app-icon name="globe" [size]="18" class="panel-header__icon" />
-                            <h3 class="panel-header__title">{{ i18n.t('playlist.curated') }}</h3>
+                            <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
+                            <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
+                            <span class="badge badge--accent">{{ currentLearningLanguage() }}</span>
                         </div>
-                        <button class="panel-header__link" (click)="openExplore()">
-                            <span>{{ i18n.t('nav.explore') }}</span>
+                        <button type="button" class="panel-header__link" (click)="openExplore()">
+                            <span>{{ i18n.t('nav.playlists') }}</span>
                             <app-icon name="arrow-right" [size]="14" />
                         </button>
                     </div>
                 </div>
 
-                @if (featuredPlaylists().length > 0) {
-                <div class="playlist-feature-grid">
-                    @for (playlist of featuredPlaylists(); track playlist.id) {
-                    <button class="card-interactive playlist-feature-card" (click)="startPlaylist(playlist)">
-                        <div class="playlist-feature-card__thumb">
+                @if (isFeaturedLoading()) {
+                <div class="horizontal-item-list skeleton-container">
+                    @for (_ of [1, 2, 3]; track $index) {
+                    <div class="home-row-item home-row-item--skeleton">
+                        <div class="home-row-item__thumb skeleton-box"></div>
+                        <div class="home-row-item__content">
+                            <div class="skeleton-line skeleton-line--title"></div>
+                            <div class="skeleton-meta-row">
+                                <div class="skeleton-line skeleton-line--badge"></div>
+                                <div class="skeleton-line skeleton-line--meta"></div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                } @else if (featuredPlaylists().length > 0) {
+                <div class="horizontal-item-list">
+                    @for (playlist of featuredPlaylists(); track playlist.id; let i = $index) {
+                    <div class="home-row-item" [style.--item-index]="i" (click)="startPlaylist(playlist)">
+                        <div class="home-row-item__thumb">
                             @if (playlist.thumbnail) {
                             <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" />
                             } @else {
-                            <div class="playlist-feature-card__placeholder">
-                                <app-icon name="list-video" [size]="32" />
+                            <div class="placeholder-icon">
+                                <app-icon name="list-video" [size]="24" />
                             </div>
                             }
-                            <div class="playlist-feature-card__badge">
-                                <app-icon name="list-video" [size]="12" />
+                            <div class="video-count">
+                                <app-icon name="list-video" [size]="11" />
                                 <span>{{ playlist.videoIds.length }}</span>
                             </div>
+                            <div class="card-play-overlay">
+                                <div class="play-icon-circle">
+                                    <app-icon name="play" [size]="14" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="playlist-feature-card__body">
-                            <strong class="playlist-feature-card__title">{{ playlist.title }}</strong>
-                            <span class="playlist-feature-card__author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
+                        <div class="home-row-item__content">
+                            <h4 class="home-row-item__title" [title]="playlist.title">{{ playlist.title }}</h4>
+                            <div class="home-row-item__meta">
+                                @if (playlist.language) {
+                                <span class="lang-badge">{{ playlist.language.toUpperCase() }}</span>
+                                }
+                                <span class="meta-author">{{ playlist.userName || i18n.t('playlist.community') }}</span>
+                                <span class="separator">•</span>
+                                <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
+                            </div>
                         </div>
-                    </button>
+                        <div class="home-row-item__action">
+                            <button type="button" class="action-btn" aria-label="Play playlist">
+                                <app-icon name="play" [size]="14" />
+                            </button>
+                        </div>
+                    </div>
                     }
                 </div>
                 } @else {
@@ -134,61 +185,70 @@
                     <div class="empty-state__icon-box">
                         <app-icon name="list-video" [size]="24" />
                     </div>
-                    <div class="empty-state__text" style="align-items: center; text-align: center;">
+                    <div class="empty-state__text">
                         <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
                         <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
                     </div>
                 </div>
                 }
-            </div>
+            </section>
         </div>
         } @else {
         <app-subtitle-display [isVideoFullscreen]="isVideoFullscreen()" (wordClicked)="onWordClicked($event)"
-            (manualAITrigger)="onManualAITrigger()" />
+            (manualAITrigger)="onManualAITrigger()"
+            (switchLanguage)="onLanguageSwitchFromSubtitle($event)"
+            (retryRequested)="onRetryCaptions()" />
         }
     </div>
 
-    <!-- Desktop sidebar: Tab switcher when playlist active -->
+    <!-- Desktop sidebar: Unified card container -->
     <aside class="layout-sidebar desktop-only">
-        @if (playlistService.currentPlaylist()) {
-        <!-- Tab Switcher -->
-        <div class="sidebar-tabs">
-            <button class="sidebar-tab" [class.active]="sidebarTab() === 'playlist'"
-                (click)="sidebarTab.set('playlist')">
-                <app-icon name="list-video" [size]="16" />
-                {{ i18n.t('playlist.playlist') }}
-            </button>
-            <button class="sidebar-tab" [class.active]="sidebarTab() === 'vocab'" (click)="sidebarTab.set('vocab')">
-                <app-icon name="book-open" [size]="16" />
-                {{ i18n.t('vocab.vocabulary') }}
-            </button>
+        <div class="card unified-sidebar">
+            @if (hasPlaylist()) {
+            <!-- Segmented Control Tab Switcher -->
+            <div class="sidebar-segmented-bar">
+                <button class="segmented-tab" [class.active]="sidebarTab() === 'playlist'"
+                    (click)="sidebarTab.set('playlist')">
+                    <app-icon name="list-video" [size]="15" />
+                    <span>{{ i18n.t('playlist.playlist') }}</span>
+                    @if (playlistService.currentPlaylist(); as pl) {
+                    <span class="tab-count-pill">{{ pl.videos.length }}</span>
+                    }
+                </button>
+                <button class="segmented-tab" [class.active]="sidebarTab() === 'vocab'"
+                    (click)="sidebarTab.set('vocab')">
+                    <app-icon name="book-open" [size]="15" />
+                    <span>{{ i18n.t('vocab.vocabulary') }}</span>
+                    @if (currentLangVocabCount() > 0) {
+                    <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
+                    }
+                </button>
+            </div>
+
+            <!-- Tab Content: Keep both alive using hidden to eliminate destruction and layout shifts -->
+            <div class="sidebar-body">
+                <app-playlist-panel class="sidebar-pane" [class.hidden]="sidebarTab() !== 'playlist'"
+                    [embedded]="true"
+                    (requestClose)="closePlaylist()" (videoSelect)="onPlaylistVideoSelect($event)"
+                    (openMenu)="onOpenPlaylistMenu($event)" />
+                <app-vocabulary-list class="sidebar-pane" [class.hidden]="sidebarTab() !== 'vocab'"
+                    [embedded]="true"
+                    [showHeader]="false"
+                    (deleteRequest)="onVocabDeleteRequest($event)"
+                    (wordSelect)="onSidebarWordSelect($event)" />
+            </div>
+            } @else {
+            <!-- No playlist: Show vocab directly inside unified sidebar with its own clean header -->
+            <div class="sidebar-body">
+                <app-vocabulary-list class="sidebar-pane"
+                    [embedded]="true"
+                    [showHeader]="true"
+                    (deleteRequest)="onVocabDeleteRequest($event)"
+                    (wordSelect)="onSidebarWordSelect($event)" />
+            </div>
+            }
         </div>
-
-        <!-- Tab Content -->
-        @if (sidebarTab() === 'playlist') {
-        <app-playlist-panel class="sidebar-content" (requestClose)="closePlaylist()"
-            (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)" />
-        } @else {
-        <app-vocabulary-list class="sidebar-content" (deleteRequest)="onVocabDeleteRequest($event)"
-            (menuRequest)="vocabMenuOpen.set(true)" />
-        }
-        } @else {
-        <!-- No playlist: Show vocab directly without tabs -->
-        <app-vocabulary-list class="sidebar-content" (deleteRequest)="onVocabDeleteRequest($event)"
-            (menuRequest)="vocabMenuOpen.set(true)" />
-        }
     </aside>
-
-    <!-- Unified Expandable Playlist (Mobile) -->
-    <!-- Only show when we have a video involved (either single or playlist) -->
-    @if (youtube.currentVideo() || playlistService.currentPlaylist()) {
-    <app-expandable-playlist class="desktop-none" [currentVideo]="youtube.currentVideo()"
-        [playlist]="playlistService.currentPlaylist()" [currentIndex]="playlistService.currentIndex()"
-        [isHidden]="showCommandPalette()" (videoSelect)="onPlaylistVideoSelect($event)"
-        (openMenu)="onOpenPlaylistMenu($event)" (requestClose)="closePlaylist()" (openCommandPalette)="openCommandPalette()"
-        (addToPlaylist)="openAddToPlaylist()" (prevVideo)="playlistService.playPrevious()"
-        (nextVideo)="playlistService.playNext()" />
-    }
 </div>
 
 <!-- Add to Playlist Dialog -->
@@ -197,10 +257,6 @@
     (closed)="showAddToPlaylistDialog.set(false)">
 </app-add-to-playlist-dialog>
 }
-
-<!-- Command Palette -->
-<app-command-palette [isOpen]="showCommandPalette()" (submitted)="onCommandPaletteSearch($event)"
-    (closed)="onCommandPaletteClosed()" />
 
 <!-- Language Mismatch Alert -->
 @if (showLanguageMismatchDialog()) {
@@ -278,3 +334,58 @@
         </div>
     </div>
 </app-bottom-sheet>
+
+<!-- AI Subtitle Generation & Turnstile Verification Modal -->
+@if (showAiConfirmDialog() && youtube.currentVideo(); as video) {
+<app-bottom-sheet [isOpen]="showAiConfirmDialog()" [maxWidth]="'460px'" [showCloseButton]="true"
+    (closed)="onCloseAiConfirmDialog()">
+    <div class="ai-confirm-dialog">
+        <div class="ai-confirm-header">
+            <div class="ai-confirm-icon">
+                <app-icon name="sparkles" [size]="22" />
+            </div>
+            <div class="ai-confirm-title-group">
+                <h3 class="ai-confirm-title">{{ i18n.t('subtitle.generateAi') || 'Generate AI Subtitles' }}</h3>
+                <p class="ai-confirm-subtitle">
+                    {{ currentLearningLanguage() }} • {{ i18n.t('subtitle.whisperAi') || 'Powered by Whisper AI' }}
+                </p>
+            </div>
+        </div>
+
+        <div class="ai-confirm-details">
+            <div class="ai-confirm-row">
+                <span class="detail-label">{{ i18n.t('subtitle.video') || 'Video' }}</span>
+                <span class="detail-value text-truncate">{{ video.title }}</span>
+            </div>
+            <div class="ai-confirm-row">
+                <span class="detail-label">{{ i18n.t('subtitle.cost') || 'Cost' }}</span>
+                <span class="detail-badge">
+                    <app-icon name="diamond" [size]="13" class="gem-icon" />
+                    1 Diamond
+                </span>
+            </div>
+            <div class="ai-confirm-row">
+                <span class="detail-label">{{ i18n.t('subtitle.yourBalance') || 'Your Balance' }}</span>
+                <span class="detail-value">{{ transcript.diamonds() }} / {{ transcript.maxDiamonds() }}</span>
+            </div>
+        </div>
+
+        <!-- Cloudflare Turnstile CAPTCHA Widget -->
+        <div class="turnstile-section">
+            <app-turnstile (resolved)="onCaptchaResolved($event)" (expired)="aiCaptchaToken.set(null)"
+                (captchaError)="aiCaptchaToken.set(null)" />
+        </div>
+
+        <div class="ai-confirm-actions">
+            <button type="button" class="btn btn-secondary" (click)="onCloseAiConfirmDialog()">
+                {{ i18n.t('vocab.cancel') || 'Cancel' }}
+            </button>
+            <button type="button" class="btn btn-primary" [disabled]="!aiCaptchaToken() || isSubmittingAi()"
+                (click)="confirmGenerateAI()">
+                <app-icon name="sparkles" [size]="16" />
+                <span>{{ i18n.t('subtitle.generate') || 'Generate' }}</span>
+            </button>
+        </div>
+    </div>
+</app-bottom-sheet>
+}

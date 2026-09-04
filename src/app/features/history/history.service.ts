@@ -105,10 +105,24 @@ export class HistoryService {
     }
 
     /**
+     * Restore a deleted history item (used for undo)
+     */
+    async restoreItem(item: HistoryItem): Promise<void> {
+        await this.repo.addToHistory(item);
+    }
+
+    /**
      * Clear all history
      */
     async clearHistory(): Promise<void> {
         await this.repo.clearHistory();
+    }
+
+    /**
+     * Refresh / sync history with remote
+     */
+    async refresh(): Promise<void> {
+        await this.repo.refresh();
     }
 
     /**

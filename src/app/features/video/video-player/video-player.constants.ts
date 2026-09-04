@@ -50,8 +50,14 @@ export const FEEDBACK_DURATION = {
 // GESTURE CONSTANTS
 // ============================================
 
-/** Seek step in seconds for tap/keyboard seek */
+/** Seek step in seconds for tap/keyboard seek (J/L keys and mobile double tap) */
 export const SEEK_STEP = 10;
+
+/** Fine seek step in seconds for arrow keys (Left/Right) matching YouTube standard */
+export const ARROW_SEEK_STEP = 5;
+
+/** Frame step in seconds (~1 frame at 25-30fps) for paused frame-by-frame stepping */
+export const FRAME_STEP = 0.04;
 
 /** Pixels of movement before registering as swipe */
 export const SWIPE_THRESHOLD = 40;

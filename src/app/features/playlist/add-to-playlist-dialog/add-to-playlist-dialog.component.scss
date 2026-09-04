@@ -72,8 +72,9 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--bg-tertiary);
-    color: var(--text-muted);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;

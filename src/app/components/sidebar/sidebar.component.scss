@@ -20,14 +20,45 @@
     &.collapsed {
         width: 4.5rem;
 
+        .sidebar__inner {
+            align-items: center;
+        }
+
         .sidebar__brand {
             justify-content: center;
-            padding: var(--space-md) 0;
+            padding: 1.25rem 0 0.875rem;
+        }
+
+        .sidebar__logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .sidebar__nav {
+            padding: 0.5rem 0;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        // Common square item sizing for collapsed state
+        .nav-item,
+        .nav-item--new,
+        .lang-flag-btn,
+        .footer-btn-icon,
+        .user-settings-row,
+        .footer-guest-row.collapsed .login-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            min-height: 2.5rem;
+            padding: 0;
+            border-radius: var(--border-radius-sm);
+            margin: 0 auto;
         }
 
         .nav-item {
             justify-content: center;
-            padding: 0.625rem;
 
             span {
                 display: none;
@@ -36,14 +67,81 @@
             app-icon {
                 margin: 0;
             }
+
+            &.active {
+                background: var(--accent-primary);
+                color: var(--text-inverse);
+                box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.35);
+            }
         }
 
-        .footer-btn {
-            justify-content: center;
-            padding: 0.625rem;
+        .nav-item--new {
+            margin-bottom: 4px;
+        }
 
-            span {
-                display: none;
+        .sidebar__bottom {
+            padding: 0.875rem 0;
+            align-items: center;
+            width: 100%;
+            gap: 8px;
+        }
+
+        .collapsed-stats-stack {
+            gap: 6px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .collapsed-stat-btn {
+            width: 2.5rem;
+            height: 2.25rem;
+            border-radius: var(--border-radius-sm);
+            margin: 0 auto;
+        }
+
+        .sidebar__footer {
+            align-items: center;
+            width: 100%;
+            gap: 6px;
+        }
+
+        .footer-guest-row.collapsed {
+            align-items: center;
+            width: 100%;
+            gap: 6px;
+
+            .login-btn {
+                background: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media (hover: hover) {
+                    &:hover {
+                        background: var(--bg-hover);
+                        border-color: rgba(255, 255, 255, 0.2);
+                    }
+                }
+            }
+        }
+
+        .user-settings-row {
+            justify-content: center;
+
+            .user-avatar {
+                width: 2.125rem;
+                height: 2.125rem;
+            }
+        }
+
+        .footer-placeholder {
+            justify-content: center;
+            padding: 0.4375rem 0;
+            width: 100%;
+
+            .footer-placeholder__avatar {
+                margin: 0 auto;
             }
         }
     }
@@ -300,8 +398,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin: 0 auto;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -334,8 +432,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 0.5rem 0.625rem;
+    gap: 5px;
+    padding: 0.5rem 0.375rem;
     background: transparent;
     border: none;
     border-radius: calc(var(--border-radius-md) - 2px);
@@ -385,6 +483,7 @@
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .stats-bar__label {
@@ -394,6 +493,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1;
 }
 
 /* Collapsed Quick Badges Stack */
@@ -414,7 +514,7 @@
     height: 2.25rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-size: 0.75rem;
     font-weight: 700;

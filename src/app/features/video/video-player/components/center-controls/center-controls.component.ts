@@ -22,6 +22,14 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="center-controls" [class.has-playlist]="hasPlaylist()">
+      <!-- Play/Pause Feedback Pop (YouTube style) -->
+      @if (playPauseFeedback()) {
+        <div class="center-feedback play-pause-feedback animate">
+          <app-icon [name]="playPauseFeedbackIcon()" [size]="44" aria-hidden="true" />
+        </div>
+      }
+
+
       <!-- Volume Feedback -->
       @if (volumeFeedback()) {
         <div class="center-feedback volume-feedback animate">
@@ -143,6 +151,8 @@ export class CenterControlsComponent {
   isDesktop = input<boolean>(false);
 
   // Feedback inputs
+  playPauseFeedback = input<boolean>(false);
+  playPauseFeedbackIcon = input<IconName>('play');
   volumeFeedback = input<boolean>(false);
   volumeFeedbackIcon = input<IconName>('volume-2');
   gestureSeekActive = input<boolean>(false);

@@ -28,7 +28,7 @@ export class DictionaryService {
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
   private readonly RECENT_KEY = 'linguatube-recent-searches';
-  private readonly MAX_CACHE_SIZE = 200;
+  private readonly MAX_CACHE_SIZE = 500;
 
   constructor(private http: HttpClient) {
     // Load recent searches from localStorage on init

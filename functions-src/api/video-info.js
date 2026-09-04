@@ -38,14 +38,18 @@ export async function onRequestGet(context) {
     const kv = env.TRANSCRIPT_CACHE;
     const db = env.VOCAB_DB;
 
+    const CDN_CACHE_HEADER = 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400';
+
     try {
         // Step 1: Check KV cache (fast path)
         const kvResult = await getVideoInfoFromKV(kv, videoId);
         if (kvResult) {
-            return jsonResponse({ ...kvResult, source: 'cache:kv' }, 200, { 'X-Cache': 'HIT' });
+            return jsonResponse({ ...kvResult, source: 'cache:kv' }, 200, {
+                'X-Cache': 'HIT',
+                'Cache-Control': CDN_CACHE_HEADER
+            });
         }
 
-        // Step 2: Check D1 (persistent storage)
         // Step 2: Check D1 (persistent storage)
         const d1Result = await getVideoLanguages(db, videoId);
 
@@ -61,10 +65,10 @@ export async function onRequestGet(context) {
                 channel: d1Result.channel
             };
 
-            // Populate KV for faster future lookups
-            saveVideoInfoToKV(kv, videoId, result).catch(() => { });
-
-            return jsonResponse({ ...result, source: 'cache:d1' }, 200, { 'X-Cache': 'HIT' });
+            return jsonResponse({ ...result, source: 'cache:d1' }, 200, {
+                'X-Cache': 'HIT',
+                'Cache-Control': CDN_CACHE_HEADER
+            });
         }
 
         // Step 3: Fetch from YouTube oEmbed
@@ -88,19 +92,16 @@ export async function onRequestGet(context) {
             channel: metadata.author_name
         };
 
-        // Save to both D1 and KV
-        // Note: We save empty languages [] initially OR preserve existing ones.
-        // Actual languages are added incrementally by innertube.js as they are discovered/fetched.
-
+        // Save to D1 (D1 has 100,000 writes/day vs KV's 1,000 writes/day)
         // PRESERVE existing languages if the row already exists (but had missing metadata)
         const existingLangs = d1Result?.availableLanguages || [];
 
-        await Promise.allSettled([
-            saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false),
-            saveVideoInfoToKV(kv, videoId, result)
-        ]);
+        await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false);
 
-        return jsonResponse({ ...result, source: 'youtube' }, 200, { 'X-Cache': 'MISS' });
+        return jsonResponse({ ...result, source: 'youtube' }, 200, {
+            'X-Cache': 'MISS',
+            'Cache-Control': CDN_CACHE_HEADER
+        });
 
     } catch (error) {
         console.error('[VideoInfo] Error:', error.message);

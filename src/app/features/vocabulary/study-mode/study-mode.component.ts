@@ -22,7 +22,7 @@ const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, RouterLink, IconComponent, SwitchComponent],
     templateUrl: './study-mode.component.html',
-    styleUrl: './study-mode.component.scss'
+    styleUrls: ['./study-mode.component.scss']
 })
 export class StudyModeComponent implements OnDestroy {
     private platformId = inject(PLATFORM_ID);
@@ -31,11 +31,12 @@ export class StudyModeComponent implements OnDestroy {
     i18n = inject(I18nService);
     streak = inject(StreakService);
 
-    // Options
-    includeNew = true;
-    includeLearning = true;
-    includeKnown = false;
-    reverseMode = false;
+    // Options (reactive signals)
+    includeNew = signal(true);
+    includeLearning = signal(true);
+    includeKnown = signal(false);
+    reverseMode = signal(false);
+    sessionSize = signal<number | 'all'>(10);
 
     // State
     isStudying = signal(false);
@@ -63,9 +64,13 @@ export class StudyModeComponent implements OnDestroy {
     swipeOffset = signal(0);
     isSwiping = signal(false);
 
+    currentLanguage = computed(() => this.settings.settings().language);
+
+    deckStats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));
+
     // Due today count
     dueToday = computed(() => {
-        const currentLang = this.settings.settings().language;
+        const currentLang = this.currentLanguage();
         const today = new Date();
         today.setHours(23, 59, 59, 999);
 
@@ -78,15 +83,30 @@ export class StudyModeComponent implements OnDestroy {
     });
 
     availableCards = computed(() => {
-        const currentLang = this.settings.settings().language;
+        const currentLang = this.currentLanguage();
+        const incNew = this.includeNew();
+        const incLearning = this.includeLearning();
+        const incKnown = this.includeKnown();
+
         return this.vocab.vocabulary().filter(item => {
-            // Only include items matching current language
             if (item.language !== currentLang) return false;
-            if (item.level === 'new' && this.includeNew) return true;
-            if (item.level === 'learning' && this.includeLearning) return true;
-            if (item.level === 'known' && this.includeKnown) return true;
+            if (item.level === 'new' && incNew) return true;
+            if (item.level === 'learning' && incLearning) return true;
+            if (item.level === 'known' && incKnown) return true;
             return false;
         }).length;
+    });
+
+    sessionCardCount = computed(() => {
+        const avail = this.availableCards();
+        const limit = this.sessionSize();
+        if (limit === 'all') return avail;
+        return Math.min(avail, limit);
+    });
+
+    estimatedMinutes = computed(() => {
+        const count = this.sessionCardCount();
+        return Math.max(1, Math.round(count * 0.3));
     });
 
     currentCard = computed(() => {
@@ -94,8 +114,6 @@ export class StudyModeComponent implements OnDestroy {
         const index = this.currentIndex();
         return cards[index] || null;
     });
-
-    currentLanguage = computed(() => this.settings.settings().language);
 
     currentLanguageLabel = computed(() => {
         switch (this.currentLanguage()) {
@@ -205,42 +223,72 @@ export class StudyModeComponent implements OnDestroy {
         }
     }
 
+    toggleDeck(level: 'new' | 'learning' | 'known'): void {
+        if (level === 'new') this.includeNew.update(v => !v);
+        else if (level === 'learning') this.includeLearning.update(v => !v);
+        else if (level === 'known') this.includeKnown.update(v => !v);
+    }
+
+    setSessionSize(size: number | 'all'): void {
+        this.sessionSize.set(size);
+    }
+
+    playAudio(text: string, lang?: string, event?: Event): void {
+        if (event) event.stopPropagation();
+        if (!isPlatformBrowser(this.platformId)) return;
+        try {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            const targetLang = lang || this.currentLanguage();
+            utterance.lang = targetLang === 'ja' ? 'ja-JP' : targetLang === 'zh' ? 'zh-CN' : targetLang === 'ko' ? 'ko-KR' : 'en-US';
+            utterance.rate = 0.88;
+            window.speechSynthesis.speak(utterance);
+        } catch (e) {
+            console.warn('Speech synthesis not available:', e);
+        }
+    }
+
     startSession(): void {
-        const currentLang = this.settings.settings().language;
+        const currentLang = this.currentLanguage();
         const today = new Date();
         today.setHours(23, 59, 59, 999);
+        const incNew = this.includeNew();
+        const incLearning = this.includeLearning();
+        const incKnown = this.includeKnown();
 
-        let items = this.vocab.vocabulary().filter(item => {
-            // Only include items matching current language
+        const items = this.vocab.vocabulary().filter(item => {
             if (item.language !== currentLang) return false;
-            if (item.level === 'new' && this.includeNew) return true;
-            if (item.level === 'learning' && this.includeLearning) return true;
-            if (item.level === 'known' && this.includeKnown) return true;
+            if (item.level === 'new' && incNew) return true;
+            if (item.level === 'learning' && incLearning) return true;
+            if (item.level === 'known' && incKnown) return true;
             return false;
         });
+
+        if (items.length === 0) return;
 
         // Sort by overdue first, then by level priority
         items.sort((a, b) => {
             const aDate = a.nextReviewDate ? new Date(a.nextReviewDate) : new Date(0);
             const bDate = b.nextReviewDate ? new Date(b.nextReviewDate) : new Date(0);
 
-            // First priority: overdue items
             const aOverdue = aDate <= today;
             const bOverdue = bDate <= today;
             if (aOverdue && !bOverdue) return -1;
             if (!aOverdue && bOverdue) return 1;
 
-            // Second priority: by date (earlier first)
             if (aDate.getTime() !== bDate.getTime()) {
                 return aDate.getTime() - bDate.getTime();
             }
 
-            // Third priority: level (new > learning > known)
             const levelOrder = { new: 0, learning: 1, known: 2, ignored: 3 };
             return levelOrder[a.level] - levelOrder[b.level];
         });
 
-        this.studyCards.set(items.map(item => ({
+        // Apply session size limit
+        const limit = this.sessionSize();
+        const sessionItems = limit === 'all' ? items : items.slice(0, limit);
+
+        this.studyCards.set(sessionItems.map(item => ({
             item,
             showAnswer: false
         })));

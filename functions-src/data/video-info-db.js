@@ -9,7 +9,6 @@
 
 // KV cache TTLs
 const VIDEO_INFO_KV_TTL = 60 * 60 * 24; // 24 hours
-const NO_TRANSCRIPT_KV_TTL = 60 * 60; // 1 hour for negative cache
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -164,7 +163,7 @@ export async function isNoTranscript(db, kv, videoId, lang, source) {
         } catch { }
     }
 
-    // D1 fallback (persistent)
+    // D1 fallback (persistent, 100,000 writes/day free tier)
     if (db) {
         try {
             const row = await db.prepare(`
@@ -173,12 +172,6 @@ export async function isNoTranscript(db, kv, videoId, lang, source) {
             `).bind(videoId, lang, source).first();
 
             if (row) {
-                // Populate KV for faster future lookups
-                if (kv) {
-                    kv.put(`no-transcript:${videoId}:${lang}:${source}`, '1', {
-                        expirationTtl: NO_TRANSCRIPT_KV_TTL
-                    }).catch(() => { });
-                }
                 return true;
             }
         } catch { }
@@ -189,6 +182,7 @@ export async function isNoTranscript(db, kv, videoId, lang, source) {
 
 /**
  * Mark a video as having no transcript for given language/source
+ * Saves to D1 to preserve the 1,000 writes/day KV limit
  * @param {D1Database} db
  * @param {KVNamespace} kv
  * @param {string} videoId
@@ -196,28 +190,14 @@ export async function isNoTranscript(db, kv, videoId, lang, source) {
  * @param {string} source - 'youtube' or 'ai'
  */
 export async function markNoTranscript(db, kv, videoId, lang, source) {
-    const promises = [];
+    if (!db) return;
 
-    // Save to KV (fast cache)
-    if (kv) {
-        promises.push(
-            kv.put(`no-transcript:${videoId}:${lang}:${source}`, '1', {
-                expirationTtl: NO_TRANSCRIPT_KV_TTL
-            }).catch(() => { })
-        );
-    }
-
-    // Save to D1 (persistent)
-    if (db) {
-        promises.push(
-            db.prepare(`
-                INSERT OR IGNORE INTO no_transcript_cache (video_id, language, source)
-                VALUES (?, ?, ?)
-            `).bind(videoId, lang, source).run().catch(() => { })
-        );
-    }
-
-    await Promise.allSettled(promises);
+    try {
+        await db.prepare(`
+            INSERT OR IGNORE INTO no_transcript_cache (video_id, language, source)
+            VALUES (?, ?, ?)
+        `).bind(videoId, lang, source).run();
+    } catch { }
 }
 
 /**

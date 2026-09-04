@@ -9,22 +9,25 @@
     },
     "nav": {
         "video": "動画",
-        "learn": "学習",
+        "watch": "動画",
+        "learn": "動画",
         "added": "追加済み",
         "words": "単語",
-        "study": "学習",
-        "explore": "探す",
+        "vocab": "単語",
+        "study": "復習",
+        "review": "復習",
+        "explore": "プレイリスト",
+        "playlists": "プレイリスト",
         "settings": "設定",
         "newVideo": "新しい動画",
-        "playlists": "プレイリスト",
         "quickLinks": "クイックリンク",
         "more": "その他"
     },
     "commandPalette": {
         "placeholder": "YouTube URLまたは動画IDを貼り付け...",
         "invalid": "有効なYouTube URLを入力してください",
-        "toLoad": "で読み込み",
-        "toClose": "で閉じる"
+        "cancel": "キャンセル",
+        "load": "読み込む"
     },
     "header": {
         "words": "単語",
@@ -36,7 +39,7 @@
         "switchToDark": "ダークモードに切替"
     },
     "player": {
-        "pasteUrl": "YouTube URLを貼り付け（例：https://youtube.com/watch?v=...）",
+        "pasteUrl": "YouTube URLを貼り付け...",
         "load": "読込",
         "loading": "読込中",
         "loadingVideo": "動画を読み込み中...",
@@ -206,7 +209,7 @@
         "signOutConfirmMessage": "単語帳はローカルに保存されますが、再度ログインするまで同期されません。"
     },
     "study": {
-        "title": "学習モード",
+        "title": "学習",
         "subtitle": "フラッシュカードで語彙を復習",
         "new": "新規",
         "learning": "学習中",
@@ -243,11 +246,17 @@
         "sessionTime": "学習時間",
         "pressSpace": "Spaceで反転",
         "keyboardHint": "1-4キーで回答",
-        "contextSentence": "文脈文",
-        "focusWord": "注目単語"
+        "contextSentence": "例文",
+        "focusWord": "対象単語",
+        "sessionSize": "学習枚数",
+        "allCards": "すべて",
+        "estimatedMinutes": "約{{minutes}}分",
+        "listen": "発音",
+        "cardsToStudy": "練習するカード"
     },
     "streak": {
-        "dayStreak": "連続学習日数",
+        "dayStreak": "ストリーク",
+        "currentStreak": "現在の記録",
         "longestStreak": "最長記録",
         "freezesRemaining": "ストリークフリーズ",
         "freezeUsed": "フリーズを使用しました！",
@@ -282,7 +291,9 @@
         "watchedAgo": "視聴",
         "continueWatching": "続きを見る",
         "removeFromHistory": "削除",
-        "syncHint": "ログインして履歴をデバイス間で同期",
+        "itemRemoved": "履歴から削除しました",
+        "clearedAll": "すべての履歴を削除しました",
+        "syncHint": "ログインしてデバイス間で履歴を同期",
         "justNow": "たった今"
     },
     "playlist": {
@@ -322,7 +333,9 @@
         "tagsLabel": "タグ（最大5つ）",
         "closePlaylist": "プレイリストを閉じる",
         "you": "あなた",
-        "curated": "キュレーション",
+        "curated": "厳選",
+        "featured": "注目",
+        "forYou": "あなたへのおすすめ",
         "sharePlaylist": "プレイリストを共有",
         "loopPlaylist": "プレイリストをループ",
         "shufflePlaylist": "シャッフル再生",
@@ -350,14 +363,21 @@
         "filterByLanguage": "言語で絞り込む",
         "copyLink": "リンクをコピー",
         "linkCopied": "リンクがコピーされました!",
-        "loginForVisibility": "ログインしてプレイリストを共有"
+        "loginForVisibility": "ログインしてプレイリストを共有",
+        "totalPlaylists": "プレイリスト",
+        "totalVideos": "動画数",
+        "nowPlaying": "再生中",
+        "continueStudying": "学習を続ける",
+        "resume": "再開",
+        "browseByLanguage": "言語別で探す"
     },
     "common": {
         "loading": "読み込み中...",
         "error": "エラー",
         "success": "成功",
         "off": "オフ",
-        "back": "戻る"
+        "back": "戻る",
+        "undo": "元に戻す"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

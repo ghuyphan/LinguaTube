@@ -19,6 +19,6 @@ export async function onRequestGet(context) {
         clientId,
         enabled: !!clientId
     }, 200, {
-        'Cache-Control': 'public, max-age=3600'
+        'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400'
     });
 }

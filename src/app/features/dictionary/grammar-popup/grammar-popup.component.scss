@@ -71,7 +71,8 @@
 }
 
 .level-default {
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
 }
 
@@ -92,7 +93,8 @@
     font-family: var(--font-mono);
     font-size: 0.875rem;
     color: var(--accent-primary);
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--border-radius);
     text-align: center;
@@ -132,7 +134,8 @@
     font-size: 0.6875rem;
     font-weight: 600;
     color: var(--text-muted);
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-round);
     flex-shrink: 0;
 }

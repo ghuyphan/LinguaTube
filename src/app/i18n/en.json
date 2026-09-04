@@ -9,22 +9,25 @@
     },
     "nav": {
         "video": "Video",
-        "learn": "Learn",
+        "watch": "Watch",
+        "learn": "Watch",
         "added": "Added",
-        "words": "Words",
-        "study": "Study",
-        "explore": "Explore",
+        "words": "Vocab",
+        "vocab": "Vocab",
+        "study": "Review",
+        "review": "Review",
+        "explore": "Playlists",
+        "playlists": "Playlists",
         "settings": "Settings",
         "newVideo": "New Video",
-        "playlists": "Playlists",
         "quickLinks": "Quick Links",
         "more": "More"
     },
     "commandPalette": {
         "placeholder": "Paste YouTube URL or video ID...",
         "invalid": "Please enter a valid YouTube URL",
-        "toLoad": "to load",
-        "toClose": "to close"
+        "cancel": "Cancel",
+        "load": "Load"
     },
     "header": {
         "words": "Words",
@@ -36,7 +39,7 @@
         "switchToDark": "Switch to dark mode"
     },
     "player": {
-        "pasteUrl": "Paste YouTube URL (e.g., https://youtube.com/watch?v=...)",
+        "pasteUrl": "Paste YouTube URL...",
         "load": "Load",
         "loading": "Loading",
         "loadingVideo": "Loading video...",
@@ -208,7 +211,7 @@
         "signOutConfirmMessage": "Your vocabulary will remain saved locally, but changes won't sync until you sign in again."
     },
     "study": {
-        "title": "Study Mode",
+        "title": "Study",
         "subtitle": "Review your vocabulary with flashcards",
         "new": "NEW",
         "learning": "LEARNING",
@@ -246,10 +249,16 @@
         "pressSpace": "Press Space to flip",
         "keyboardHint": "Use 1-4 keys to answer",
         "contextSentence": "Context sentence",
-        "focusWord": "Focus word"
+        "focusWord": "Focus word",
+        "sessionSize": "Session Size",
+        "allCards": "All",
+        "estimatedMinutes": "~{{minutes}} min",
+        "listen": "Pronounce",
+        "cardsToStudy": "Cards to practice"
     },
     "streak": {
-        "dayStreak": "Day Streak",
+        "dayStreak": "Streak",
+        "currentStreak": "Current Streak",
         "longestStreak": "Longest Streak",
         "freezesRemaining": "Streak Freezes",
         "freezeUsed": "Streak Freeze Used!",
@@ -284,6 +293,8 @@
         "watchedAgo": "Watched",
         "continueWatching": "Continue",
         "removeFromHistory": "Remove",
+        "itemRemoved": "Removed from history",
+        "clearedAll": "All history cleared",
         "syncHint": "Sign in to sync history across devices",
         "justNow": "Just now"
     },
@@ -325,6 +336,8 @@
         "closePlaylist": "Close playlist",
         "you": "You",
         "curated": "Curated",
+        "featured": "Featured",
+        "forYou": "For You",
         "sharePlaylist": "Share playlist",
         "loopPlaylist": "Loop playlist",
         "shufflePlaylist": "Shuffle playlist",
@@ -352,14 +365,21 @@
         "filterByLanguage": "Filter by Language",
         "copyLink": "Copy Link",
         "linkCopied": "Link copied!",
-        "loginForVisibility": "Login to share playlists with others"
+        "loginForVisibility": "Login to share playlists with others",
+        "totalPlaylists": "Playlists",
+        "totalVideos": "Videos",
+        "nowPlaying": "Now Playing",
+        "continueStudying": "Continue Studying",
+        "resume": "Resume",
+        "browseByLanguage": "Browse by Language"
     },
     "common": {
         "loading": "Loading...",
         "error": "Error",
         "success": "Success",
         "off": "Off",
-        "back": "Back"
+        "back": "Back",
+        "undo": "Undo"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

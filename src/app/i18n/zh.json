@@ -9,22 +9,25 @@
     },
     "nav": {
         "video": "视频",
-        "learn": "学习",
+        "watch": "看视频",
+        "learn": "看视频",
         "added": "已添加",
         "words": "词汇",
-        "study": "学习",
-        "explore": "发现",
+        "vocab": "词汇",
+        "study": "复习",
+        "review": "复习",
+        "explore": "播放列表",
+        "playlists": "播放列表",
         "settings": "设置",
         "newVideo": "新视频",
-        "playlists": "播放列表",
         "quickLinks": "快速链接",
         "more": "更多"
     },
     "commandPalette": {
         "placeholder": "粘贴YouTube链接或视频ID...",
         "invalid": "请输入有效的YouTube链接",
-        "toLoad": "加载",
-        "toClose": "关闭"
+        "cancel": "取消",
+        "load": "加载"
     },
     "header": {
         "words": "词汇",
@@ -36,7 +39,7 @@
         "switchToDark": "切换到深色模式"
     },
     "player": {
-        "pasteUrl": "粘贴YouTube链接（例如：https://youtube.com/watch?v=...）",
+        "pasteUrl": "粘贴 YouTube 链接...",
         "load": "加载",
         "loading": "加载中",
         "loadingVideo": "正在加载视频...",
@@ -206,7 +209,7 @@
         "signOutConfirmMessage": "您的词汇将保留在本地，但在重新登录之前不会同步。"
     },
     "study": {
-        "title": "学习模式",
+        "title": "复习",
         "subtitle": "用闪卡复习词汇",
         "new": "新词",
         "learning": "学习中",
@@ -243,11 +246,17 @@
         "sessionTime": "学习时长",
         "pressSpace": "按空格翻转",
         "keyboardHint": "按1-4键作答",
-        "contextSentence": "语境句子",
-        "focusWord": "重点词"
+        "contextSentence": "例句",
+        "focusWord": "重点生词",
+        "sessionSize": "学习卡片数量",
+        "allCards": "全部",
+        "estimatedMinutes": "约 {{minutes}} 分钟",
+        "listen": "朗读发音",
+        "cardsToStudy": "待练习卡片"
     },
     "streak": {
-        "dayStreak": "连续学习天数",
+        "dayStreak": "连续天数",
+        "currentStreak": "当前记录",
         "longestStreak": "最长连续记录",
         "freezesRemaining": "连续保护",
         "freezeUsed": "已使用连续保护！",
@@ -282,6 +291,8 @@
         "watchedAgo": "观看于",
         "continueWatching": "继续观看",
         "removeFromHistory": "移除",
+        "itemRemoved": "已从历史记录中移除",
+        "clearedAll": "已清除所有历史记录",
         "syncHint": "登录以在设备间同步历史记录",
         "justNow": "刚刚"
     },
@@ -323,6 +334,8 @@
         "closePlaylist": "关闭播放列表",
         "you": "你",
         "curated": "精选",
+        "featured": "精选",
+        "forYou": "为你推荐",
         "sharePlaylist": "分享播放列表",
         "loopPlaylist": "循环播放列表",
         "shufflePlaylist": "随机播放",
@@ -350,14 +363,21 @@
         "filterByLanguage": "按语言筛选",
         "copyLink": "复制链接",
         "linkCopied": "链接已复制!",
-        "loginForVisibility": "登录后可与他人分享播放列表"
+        "loginForVisibility": "登录后可与他人分享播放列表",
+        "totalPlaylists": "所有播放列表",
+        "totalVideos": "视频总数",
+        "nowPlaying": "正在播放",
+        "continueStudying": "继续学习",
+        "resume": "继续",
+        "browseByLanguage": "按语言浏览"
     },
     "common": {
         "loading": "加载中...",
         "error": "错误",
         "success": "成功",
         "off": "关闭",
-        "back": "返回"
+        "back": "返回",
+        "undo": "撤销"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

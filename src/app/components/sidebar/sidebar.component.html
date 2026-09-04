@@ -8,7 +8,7 @@
 
     <div class="sidebar__inner">
         <!-- Logo / Brand -->
-        <div class="sidebar__brand">
+        <div class="sidebar__brand" (click)="onLearnClick($event)" role="button" tabindex="0" style="cursor: pointer;">
             <div class="sidebar__logo">
                 <span class="logo-text">言</span>
             </div>
@@ -22,35 +22,35 @@
 
         <!-- Navigation -->
         <nav class="sidebar__nav">
-            <button class="nav-item nav-item--new" (click)="openCommandPalette.emit()"
+            <button class="nav-item nav-item--new" (click)="onNewVideoClick()"
                 [attr.title]="i18n.t('nav.newVideo')">
                 <app-icon name="plus" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.newVideo') }}</span>
                 }
             </button>
-            <a class="nav-item" routerLink="/video" routerLinkActive="active" [attr.title]="i18n.t('nav.learn')">
+            <a class="nav-item" routerLink="/video" routerLinkActive="active" (click)="onLearnClick($event)" [attr.title]="i18n.t('nav.watch')">
                 <app-icon name="play-circle" [size]="18" />
                 @if (!isCollapsed()) {
-                <span>{{ i18n.t('nav.learn') }}</span>
+                <span>{{ i18n.t('nav.watch') }}</span>
                 }
             </a>
-            <a class="nav-item" routerLink="/dictionary" routerLinkActive="active" [attr.title]="i18n.t('nav.words')">
-                <app-icon name="book-open" [size]="18" />
-                @if (!isCollapsed()) {
-                <span>{{ i18n.t('nav.words') }}</span>
-                }
-            </a>
-            <a class="nav-item" routerLink="/study" routerLinkActive="active" [attr.title]="i18n.t('nav.study')">
+            <a class="nav-item" routerLink="/study" routerLinkActive="active" [attr.title]="i18n.t('nav.review')">
                 <app-icon name="graduation-cap" [size]="18" />
                 @if (!isCollapsed()) {
-                <span>{{ i18n.t('nav.study') }}</span>
+                <span>{{ i18n.t('nav.review') }}</span>
                 }
             </a>
-            <a class="nav-item" routerLink="/explore" routerLinkActive="active" [attr.title]="i18n.t('nav.explore')">
-                <app-icon name="globe" [size]="18" />
+            <a class="nav-item" routerLink="/dictionary" routerLinkActive="active" [attr.title]="i18n.t('nav.vocab')">
+                <app-icon name="book-open" [size]="18" />
                 @if (!isCollapsed()) {
-                <span>{{ i18n.t('nav.explore') }}</span>
+                <span>{{ i18n.t('nav.vocab') }}</span>
+                }
+            </a>
+            <a class="nav-item" routerLink="/explore" routerLinkActive="active" [attr.title]="i18n.t('nav.playlists')">
+                <app-icon name="list-video" [size]="18" />
+                @if (!isCollapsed()) {
+                <span>{{ i18n.t('nav.playlists') }}</span>
                 }
             </a>
             <a class="nav-item" routerLink="/history" routerLinkActive="active" [attr.title]="i18n.t('history.title')">

@@ -1,4 +1,4 @@
-import { Component, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener, input, untracked } from '@angular/core';
+import { Component, OnDestroy, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener, input, untracked } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -8,12 +8,14 @@ import { SubtitleService, YoutubeService, VocabularyService, SettingsService, Tr
 import { SubtitleCue, Token, GrammarMatch, GrammarPattern, ReadingDisplayMode, SupportedLearningLanguage } from '../../../models';
 import { QuizService } from '../quiz.service';
 import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
+import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 
 @Component({
   selector: 'app-subtitle-display',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent, GrammarPopupComponent, QuizInputComponent],
+  imports: [CommonModule, IconComponent, VocabularyQuickViewComponent, GrammarPopupComponent, QuizInputComponent, BottomSheetComponent, SwitchComponent],
   animations: [
     trigger('subtitleFade', [
       transition(':enter', [
@@ -25,7 +27,7 @@ import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
   templateUrl: './subtitle-display.component.html',
   styleUrl: './subtitle-display.component.scss'
 })
-export class SubtitleDisplayComponent {
+export class SubtitleDisplayComponent implements OnDestroy {
   subtitles = inject(SubtitleService);
   youtube = inject(YoutubeService);
   vocab = inject(VocabularyService);
@@ -56,6 +58,7 @@ export class SubtitleDisplayComponent {
   wordClicked = output<{ token: Token; sentence: string }>();
   manualAITrigger = output<void>();
   switchLanguage = output<string>();
+  retryRequested = output<void>();
 
   triggerManualAI(): void {
     this.manualAITrigger.emit();
@@ -112,12 +115,11 @@ export class SubtitleDisplayComponent {
   }
 
   showAddedSheet = signal(false);
+  showSubtitleOptionsSheet = signal(false);
   recentCount = computed(() => {
     const lang = this.settings.settings().language;
     return this.vocab.getByLanguage(lang).length;
   });
-
-  isControlsExpanded = signal(false);
 
   isLoopEnabled = signal(false);
   loopCount = signal(0);
@@ -645,7 +647,7 @@ export class SubtitleDisplayComponent {
     }
   }
 
-  private readonly fontSizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
+  readonly fontSizes: ('small' | 'medium' | 'large')[] = ['small', 'medium', 'large'];
 
   cycleFontSize(): void {
     const current = this.settings.settings().fontSize;
@@ -664,6 +666,42 @@ export class SubtitleDisplayComponent {
     }
   }
 
+  openSubtitleOptions(): void {
+    this.showSubtitleOptionsSheet.set(true);
+  }
+
+  closeSubtitleOptions(): void {
+    this.showSubtitleOptionsSheet.set(false);
+  }
+
+  readonly readingModeName = computed(() => {
+    const lang = this.effectiveLanguage();
+    if (lang === 'ja') return 'Furigana';
+    if (lang === 'zh') return 'Pinyin';
+    if (lang === 'ko') return 'Romanization';
+    return 'Reading';
+  });
+
+  setFontSize(size: 'small' | 'medium' | 'large'): void {
+    this.settings.setFontSize(size);
+  }
+
+  toggleDualSubtitles(): void {
+    this.settings.toggleDualSubtitles();
+  }
+
+  getReadingScriptIcon(): string {
+    const lang = this.effectiveLanguage();
+    if (lang === 'ja') return 'あ';
+    if (lang === 'zh') return '拼';
+    if (lang === 'ko') return '한';
+    return 'Aa';
+  }
+
+  retryCaptions(): void {
+    this.retryRequested.emit();
+  }
+
   seekToCue(cue: SubtitleCue): void {
     if (this.isLoopEnabled()) {
       this.disableLoop();
@@ -672,6 +710,8 @@ export class SubtitleDisplayComponent {
   }
 
   toggleLoop(): void {
+    if (this.subtitles.subtitles().length === 0) return;
+
     if (this.isLoopEnabled()) {
       this.disableLoop();
     } else {
@@ -703,19 +743,6 @@ export class SubtitleDisplayComponent {
 
   toggleAddedSheet(): void {
     this.showAddedSheet.update(v => !v);
-  }
-
-  toggleControlsExpanded(): void {
-    this.isControlsExpanded.update(v => !v);
-
-    if (this.isControlsExpanded() && this.subtitleControls?.nativeElement) {
-      setTimeout(() => {
-        this.subtitleControls.nativeElement.scrollTo({
-          left: this.subtitleControls.nativeElement.scrollWidth,
-          behavior: 'smooth'
-        });
-      }, 50);
-    }
   }
 
   trackByCue(index: number, cue: SubtitleCue): string {
@@ -768,6 +795,7 @@ export class SubtitleDisplayComponent {
     if (this.quiz.isActive()) {
       this.quiz.stopQuiz();
     } else {
+      if (this.subtitles.subtitles().length === 0) return;
       if (this.isLoopEnabled()) {
         this.disableLoop();
       }

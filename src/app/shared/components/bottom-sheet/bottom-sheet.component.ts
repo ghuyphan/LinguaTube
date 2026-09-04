@@ -37,6 +37,7 @@ export class BottomSheetComponent implements OnDestroy {
   // Inputs
   isOpen = input<boolean>(false);
   maxHeight = input<string>('85vh');
+  maxWidth = input<string>('440px');
   showDragHandle = input<boolean>(true);
   allowBackdropClose = input<boolean>(true);
   allowEscapeClose = input<boolean>(true);

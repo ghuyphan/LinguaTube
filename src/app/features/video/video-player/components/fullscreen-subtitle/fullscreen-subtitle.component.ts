@@ -27,9 +27,9 @@ import { SettingsService, VocabularyService } from '../../../../../services';
       [class.controls-visible]="areControlsVisible()" 
       [ngClass]="fontSizeClass()"
       [class.popup-open]="fsPopupVisible()" 
-      [class.has-content]="!!currentCue()">
+      [class.has-content]="subtitlesVisible() && !!currentCue()">
       
-      @if (currentCue(); as cue) {
+      @if (subtitlesVisible() && currentCue(); as cue) {
         <div class="fs-subtitle-inner">
           <div class="fs-subtitle-text" [class]="'text-' + language()">
             <!-- Direct text display if tokenizing -->
@@ -87,6 +87,7 @@ export class FullscreenSubtitleComponent {
     areControlsVisible = input<boolean>(false);
     fsPopupVisible = input<boolean>(false);
     fontSizeClass = input<string>('text-medium');
+    subtitlesVisible = input<boolean>(true);
 
     // Dual Subtitle Inputs
     showDualSubtitles = input<boolean>(false);

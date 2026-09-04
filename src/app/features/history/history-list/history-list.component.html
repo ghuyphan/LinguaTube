@@ -1,103 +1,118 @@
-@if (historyService.isLoading() && auth.isLoggedIn() && items().length === 0) {
-<!-- Skeleton loading state during initial sync -->
-<div class="history-items skeleton-container">
-    @for (i of [1, 2, 3, 4]; track i) {
-    <div class="history-item-wrapper">
+@if (isLoading() && items().length === 0) {
+    <!-- Skeleton loading state -->
+    <div class="skeleton-container">
+        @for (_ of [1, 2, 3, 4]; track $index) {
         <div class="history-item history-item--skeleton">
             <div class="history-item__thumb skeleton-box"></div>
             <div class="history-item__content">
                 <div class="skeleton-line skeleton-line--title"></div>
-                <div class="history-item__meta">
+                <div class="skeleton-meta-row">
                     <div class="skeleton-line skeleton-line--badge"></div>
                     <div class="skeleton-line skeleton-line--meta"></div>
                 </div>
             </div>
         </div>
+        }
     </div>
-    }
-</div>
 } @else if (items().length === 0) {
-<div class="empty-state empty-state--centered" [class.animate]="shouldAnimate()">
-    <div class="empty-state__icon-box">
-        <app-icon name="clock" [size]="28" />
-    </div>
-    <div class="empty-state__text" style="align-items: center; text-align: center;">
-        <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
-        <p class="empty-state__hint">{{ i18n.t('history.noHistoryHint') }}</p>
-    </div>
-</div>
-} @else {
-<div class="history-items">
-    <cdk-virtual-scroll-viewport itemSize="88" class="history-viewport">
-        <div *cdkVirtualFor="let item of items(); trackBy: trackByItemId; let i = index" class="history-item-wrapper"
-            [class.animate]="shouldAnimate()" [class.deleting]="isDeleting(item.id)">
-
-            <!-- Delete action (behind card) -->
-            <div class="swipe-action-container" [class.revealed]="isRevealed(item.id) || isSwiping(item.id)"
-                [class.past-threshold]="isPastThreshold(item.id)">
-                <button type="button" class="swipe-action" (click)="onRemoveItem(item, $event)"
-                    [attr.aria-label]="i18n.t('history.delete') || 'Delete'">
-                    <app-icon name="trash-2" [size]="22" />
-                </button>
+    <!-- Empty states -->
+    @if (filter() === 'favorites') {
+        <div class="empty-state empty-state--centered empty-state--animate">
+            <div class="empty-state__icon-box">
+                <app-icon name="heart" [size]="28" />
             </div>
-
-            <!-- Main card (swipeable) -->
-            <div class="history-item" [class.swiping]="isSwiping(item.id)"
-                [style.transform]="getSwipeTransform(item.id)" (touchstart)="onTouchStart($event, item)"
-                (touchmove)="onTouchMove($event, item)" (touchend)="onTouchEnd($event, item)"
-                (click)="onPlayVideo(item)">
-
-                <!-- Thumbnail -->
-                <div class="history-item__thumb">
-                    <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy"
-                        decoding="async" />
-                    @if (item.progress > 0) {
-                    <div class="progress-bar">
-                        <div class="progress-fill" [style.width.%]="item.progress"></div>
-                    </div>
-                    }
-                </div>
-
-                <!-- Content -->
-                <div class="history-item__content">
-                    <span class="history-item__title">{{ item.title }}</span>
-                    <div class="history-item__meta">
-                        @if (item.languages?.length) {
-                        @for (lang of item.languages; track lang) {
-                        <span class="lang-badge">{{ lang.toUpperCase() }}</span>
-                        }
-                        } @else {
-                        <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
-                        }
-                        <span class="channel-name">{{ item.channel }}</span>
-                        <span class="separator">•</span>
-                        <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
-                    </div>
-                </div>
-
-                <!-- Actions (desktop) -->
-                <div class="history-item__actions history-item__actions--desktop">
-                    <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
-                        [class.animating]="isAnimatingFavorite(item.id)" (click)="onToggleFavorite(item, $event)"
-                        [attr.aria-label]="i18n.t('history.favorites')" [attr.aria-pressed]="item.is_favorite">
-                        <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
-                    </button>
-                    <button type="button" class="action-btn action-btn--delete" (click)="onRemoveItem(item, $event)"
-                        [attr.aria-label]="i18n.t('history.removeFromHistory')">
-                        <app-icon name="x" [size]="18" />
-                    </button>
-                </div>
-
-                <!-- Actions (mobile - favorite only) -->
-                <div class="history-item__actions history-item__actions--mobile">
-                    <button type="button" class="action-btn action-btn--favorite" [class.active]="item.is_favorite"
-                        [class.animating]="isAnimatingFavorite(item.id)" (click)="onToggleFavorite(item, $event)"
-                        [attr.aria-label]="i18n.t('history.favorites')" [attr.aria-pressed]="item.is_favorite">
-                        <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
-                    </button>
-                </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
+                <p class="empty-state__description">{{ i18n.t('history.noFavoritesHint') }}</p>
             </div>
         </div>
-    </cdk-virtual-scroll-viewport>
-</div>
+    } @else {
+        <div class="empty-state empty-state--centered empty-state--animate">
+            <div class="empty-state__icon-box">
+                <app-icon name="clock" [size]="28" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
+                <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') }}</p>
+            </div>
+        </div>
+    }
+} @else {
+    <!-- History Items -->
+    <div class="history-list-items">
+        @for (item of items(); track item.id; let i = $index) {
+        <div class="history-item"
+            [class.is-deleting]="isDeleting(item.id)"
+            [style.--item-index]="i"
+            (click)="onPlayVideo(item)">
+
+            <!-- Thumbnail (16:9) -->
+            <div class="history-item__thumb">
+                <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy" decoding="async" />
+
+                <!-- Play Overlay on Hover -->
+                <div class="card-play-overlay">
+                    <div class="play-icon-circle">
+                        <app-icon name="play" [size]="15" />
+                    </div>
+                </div>
+
+                <!-- Duration Badge -->
+                @if (formatDuration(item.duration); as dur) {
+                <div class="duration-badge">
+                    <span>{{ dur }}</span>
+                </div>
+                }
+
+                <!-- Progress Bar -->
+                @if (item.progress > 0) {
+                <div class="progress-bar">
+                    <div class="progress-fill" [style.width.%]="item.progress"></div>
+                </div>
+                }
+            </div>
+
+            <!-- Content info -->
+            <div class="history-item__content">
+                <h3 class="history-item__title" [title]="item.title">{{ item.title }}</h3>
+                <div class="history-item__meta">
+                    @if (item.languages?.length) {
+                        @for (lang of item.languages; track lang) {
+                            <span class="lang-badge">{{ lang.toUpperCase() }}</span>
+                        }
+                    } @else if (item.language) {
+                        <span class="lang-badge">{{ item.language.toUpperCase() }}</span>
+                    }
+
+                    @if (item.channel) {
+                        <span class="channel-name" [title]="item.channel">{{ item.channel }}</span>
+                        <span class="separator">•</span>
+                    }
+
+                    <span class="time-ago">{{ getRelativeTime(item.watched_at) }}</span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="history-item__actions">
+                <button type="button" class="action-btn action-btn--favorite"
+                    [class.active]="item.is_favorite"
+                    [class.animating]="isAnimatingFavorite(item.id)"
+                    (click)="onToggleFavorite(item, $event)"
+                    [attr.aria-label]="i18n.t('history.favorites')"
+                    [attr.aria-pressed]="item.is_favorite"
+                    [title]="i18n.t('history.favorites')">
+                    <app-icon [name]="item.is_favorite ? 'heart-filled' : 'heart'" [size]="18" />
+                </button>
+
+                <button type="button" class="action-btn action-btn--delete"
+                    (click)="onRemoveItem(item, $event)"
+                    [attr.aria-label]="i18n.t('history.removeFromHistory')"
+                    [title]="i18n.t('history.removeFromHistory')">
+                    <app-icon name="trash-2" [size]="16" />
+                </button>
+            </div>
+        </div>
+        }
+    </div>
 }

@@ -1,8 +1,10 @@
 <div class="card dict-panel">
     <div class="panel-header">
         <div class="panel-header__row">
-            <app-icon name="book-open" [size]="20" class="panel-header__icon" />
-            <h2 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h2>
+            <div class="panel-header__left">
+                <app-icon name="book-open" [size]="20" class="panel-header__icon" />
+                <h2 class="panel-header__title">{{ i18n.t('dictionary.title') }}</h2>
+            </div>
         </div>
         <p class="panel-header__subtitle">{{ i18n.t('dictionary.subtitle') }}</p>
     </div>
