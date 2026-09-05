@@ -88,13 +88,15 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
-                    <!-- Level Indicator Dot (click to toggle level) -->
-                    <button type="button" class="level-dot-btn" [class]="'level--' + item.level"
-                        (click)="cycleLevel(item, $event)" [title]="item.level">
+                    <!-- Level Pill Badge (click to toggle level) -->
+                    <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
+                        (click)="cycleLevel(item, $event)"
+                        [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Đổi cấp độ')">
+                        <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
                     </button>
 
                     <!-- Direct Delete Button -->
-                    <button type="button" class="delete-btn" (click)="deleteWordDirect(item, $event)" title="Xoá từ">
+                    <button type="button" class="delete-btn" (click)="deleteWordDirect(item, $event)" [title]="i18n.t('vocab.deleteWord') || 'Xoá từ'">
                         <app-icon name="trash-2" [size]="14" />
                     </button>
                 </div>

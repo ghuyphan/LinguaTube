@@ -34,6 +34,9 @@
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.watch') }}</span>
                 }
+                @if (hasActiveVideoSession()) {
+                <span class="now-playing-dot"></span>
+                }
             </a>
             <a class="nav-item" routerLink="/study" routerLinkActive="active" [attr.title]="i18n.t('nav.review')">
                 <app-icon name="graduation-cap" [size]="18" />
@@ -131,18 +134,19 @@
                     <app-icon name="settings" [size]="16" class="settings-icon" />
                     }
                 </button>
-                } @else if (auth.isAuthEnabled()) {
-                <div class="footer-guest-row" [class.collapsed]="isCollapsed()">
-                    <button class="footer-btn login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn" [attr.title]="i18n.t('settings.signInGoogle')">
-                        <app-icon name="google" [size]="16" />
-                        @if (!isCollapsed()) {
-                        <span>{{ i18n.t('settings.signInGoogle') }}</span>
-                        }
-                    </button>
-                    <button class="footer-btn-icon" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
-                        <app-icon name="settings" [size]="16" />
-                    </button>
-                </div>
+                } @else {
+                <button class="footer-btn user-settings-row" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+                    <div class="guest-avatar-box">
+                        <app-icon name="user" [size]="16" />
+                    </div>
+                    @if (!isCollapsed()) {
+                    <div class="user-info-stack">
+                        <span class="user-name">{{ i18n.t('nav.settings') }}</span>
+                        <span class="badge badge--sm badge--free">{{ auth.isAuthEnabled() ? (i18n.t('header.signIn') || 'GUEST') : 'OFFLINE' }}</span>
+                    </div>
+                    <app-icon name="settings" [size]="16" class="settings-icon" />
+                    }
+                </button>
                 }
             </div>
         </div>

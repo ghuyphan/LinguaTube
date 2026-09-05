@@ -1,7 +1,7 @@
 import { Component, input, output, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { IconComponent } from '../icon/icon.component';
+import { IconComponent, IconName } from '../icon/icon.component';
 
 @Component({
     selector: 'app-confirm-dialog',
@@ -16,9 +16,9 @@ import { IconComponent } from '../icon/icon.component';
             [allowBackdropClose]="allowBackdropClose()"
             (closed)="onSheetClosed()">
             <div class="confirm-dialog">
-                @if (icon()) {
+                @if (icon(); as iconName) {
                 <div class="confirm-dialog__icon" [class]="'confirm-dialog__icon--' + variant()">
-                    <app-icon [name]="$any(icon())" [size]="28" />
+                    <app-icon [name]="iconName" [size]="28" />
                 </div>
                 }
                 
@@ -141,7 +141,7 @@ export class ConfirmDialogComponent {
     confirmText = input<string>('Confirm');
     cancelText = input<string>('Cancel');
     variant = input<'danger' | 'default'>('default');
-    icon = input<string>('');
+    icon = input<IconName | '' | null>('');
     showCancel = input<boolean>(true);
     allowBackdropClose = input<boolean>(true);
 

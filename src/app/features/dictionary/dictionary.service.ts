@@ -6,6 +6,60 @@ import { I18nService, UILanguage } from '../../core/services';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 
+interface JotobaReading {
+  kanji?: string;
+  kana?: string;
+}
+
+interface JotobaSense {
+  glosses?: string[];
+  pos?: (string | Record<string, unknown>)[];
+}
+
+interface JotobaWord {
+  reading?: JotobaReading;
+  common?: { jlpt?: number };
+  senses?: JotobaSense[];
+}
+
+interface JotobaResponse {
+  words?: JotobaWord[];
+}
+
+interface KrdictEntry {
+  word?: string;
+  romanization?: string;
+  definitions?: string[];
+  partOfSpeech?: string;
+}
+
+interface MdbgEntry {
+  word?: string;
+  pinyin?: string;
+  definitions?: string[];
+  hsk?: number;
+}
+
+interface UnifiedDictEntry {
+  word?: string;
+  reading?: string;
+  romanization?: string;
+  definitions?: string[];
+  partOfSpeech?: string;
+  level?: number;
+}
+
+interface UnifiedDictResponse {
+  entries?: UnifiedDictEntry[];
+}
+
+interface EndictEntry {
+  word?: string;
+  phonetic?: string;
+  definitions?: string[];
+  partOfSpeech?: string[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -84,7 +138,7 @@ export class DictionaryService {
       no_english: false
     };
 
-    return this.http.post<any>(this.JOTOBA_API, body).pipe(
+    return this.http.post<JotobaResponse>(this.JOTOBA_API, body).pipe(
       map(response => {
         this.isLoading.set(false);
 
@@ -106,11 +160,11 @@ export class DictionaryService {
           word: entry.reading?.kanji || entry.reading?.kana || word,
           reading: reading,
           romanization: getJapaneseRomaji(reading, entry.reading?.kanji || entry.reading?.kana || word),
-          meanings: entry.senses?.map((sense: any) => ({
+          meanings: entry.senses?.map(sense => ({
             definition: sense.glosses?.join(', ') || '',
-            tags: sense.pos?.map((p: any) => extractPosString(p)).filter(Boolean) || []
+            tags: sense.pos?.map(p => extractPosString(p)).filter(Boolean) || []
           })) || [],
-          partOfSpeech: entry.senses?.[0]?.pos?.map((p: any) => extractPosString(p)).filter(Boolean) || [],
+          partOfSpeech: entry.senses?.[0]?.pos?.map(p => extractPosString(p)).filter(Boolean) || [],
           jlptLevel
         };
 
@@ -142,7 +196,7 @@ export class DictionaryService {
 
     this.isLoading.set(true);
 
-    return this.http.get<any[]>(`${this.MDBG_API}?q=${encodeURIComponent(word)}`).pipe(
+    return this.http.get<MdbgEntry[]>(`${this.MDBG_API}?q=${encodeURIComponent(word)}`).pipe(
       map(response => {
         const result = this.parseMdbgResponse(response, word);
         if (result) {
@@ -176,7 +230,7 @@ export class DictionaryService {
 
     this.isLoading.set(true);
 
-    return this.http.get<any[]>(`${this.KRDICT_API}?q=${encodeURIComponent(word)}`).pipe(
+    return this.http.get<KrdictEntry[]>(`${this.KRDICT_API}?q=${encodeURIComponent(word)}`).pipe(
       map(response => {
         const result = this.parseKrdictResponse(response, word);
         if (result) {
@@ -198,7 +252,7 @@ export class DictionaryService {
   /**
    * Parse Naver Korean Dictionary response to DictionaryEntry format
    */
-  private parseKrdictResponse(response: any[], word: string): DictionaryEntry | null {
+  private parseKrdictResponse(response: KrdictEntry[], word: string): DictionaryEntry | null {
     if (!response || response.length === 0) {
       return this.localKoreanLookup(word);
     }
@@ -221,7 +275,7 @@ export class DictionaryService {
   /**
    * Parse MDBG Scraper response to DictionaryEntry format
    */
-  private parseMdbgResponse(response: any[], word: string): DictionaryEntry | null {
+  private parseMdbgResponse(response: MdbgEntry[], word: string): DictionaryEntry | null {
     if (!response || response.length === 0) {
       return this.localChineseLookup(word);
     }
@@ -275,7 +329,7 @@ export class DictionaryService {
 
     const url = `${this.UNIFIED_DICT_API}?word=${encodeURIComponent(word)}&from=${from}&to=${to}`;
 
-    return this.http.get<any>(url).pipe(
+    return this.http.get<UnifiedDictResponse>(url).pipe(
       map(response => {
         this.isLoading.set(false);
 
@@ -383,7 +437,7 @@ export class DictionaryService {
 
     this.isLoading.set(true);
 
-    return this.http.get<any[]>(`${this.ENDICT_API}?q=${encodeURIComponent(word)}`).pipe(
+    return this.http.get<EndictEntry[]>(`${this.ENDICT_API}?q=${encodeURIComponent(word)}`).pipe(
       map(response => {
         const result = this.parseEndictResponse(response, word);
         if (result) {
@@ -405,7 +459,7 @@ export class DictionaryService {
   /**
    * Parse Free Dictionary API response to DictionaryEntry format
    */
-  private parseEndictResponse(response: any[], word: string): DictionaryEntry | null {
+  private parseEndictResponse(response: EndictEntry[], word: string): DictionaryEntry | null {
     if (!response || response.length === 0) {
       return this.localEnglishLookup(word);
     }
@@ -758,13 +812,14 @@ export class DictionaryService {
  * Extract string from Jotoba's pos (part of speech) object
  * Jotoba returns pos as objects like { Pretty: "Noun", Short: "n" } or just strings
  */
-function extractPosString(pos: any): string {
+function extractPosString(pos: unknown): string {
   if (typeof pos === 'string') {
     return pos;
   }
   if (typeof pos === 'object' && pos !== null) {
-    // Try various property names Jotoba might use
-    return pos.Pretty || pos.Short || pos.name || pos.full || '';
+    const record = pos as Record<string, unknown>;
+    const val = record['Pretty'] || record['Short'] || record['name'] || record['full'];
+    return typeof val === 'string' ? val : '';
   }
   return '';
 }

@@ -1,6 +1,7 @@
 import { Injectable, inject, signal, computed } from '@angular/core';
 import {
     Playlist,
+    mapRecordToPlaylist,
     PlaylistWithVideos,
     PlaylistVideo,
     CreatePlaylistInput,
@@ -11,6 +12,7 @@ import { AuthService } from '../../core/services';
 import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
+import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
 
 /**
  * Playlist Service
@@ -124,7 +126,7 @@ export class PlaylistService {
      */
     async createPlaylist(input: CreatePlaylistInput): Promise<Playlist> {
         const playlist: Playlist = {
-            id: this.generateId(),
+            id: generateRandomId(),
             userId: this.auth.getUserId() || 'local',
             title: input.title,
             description: input.description,
@@ -213,7 +215,7 @@ export class PlaylistService {
         const newVideo: PlaylistVideo = {
             videoId,
             title: cachedTitle,
-            thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+            thumbnail: getYouTubeThumbnail(videoId),
             position: current.videos.length
         };
 
@@ -259,7 +261,7 @@ export class PlaylistService {
 
         const updatedVideoIds = [...playlist.videoIds, videoId];
         const thumbnail = playlist.thumbnail ||
-            (metadata?.thumbnail || `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
+            (metadata?.thumbnail || getYouTubeThumbnail(videoId));
 
         // Optimistic update for current playlist
         const current = this.currentPlaylist();
@@ -267,7 +269,7 @@ export class PlaylistService {
             const newVideo: PlaylistVideo = {
                 videoId,
                 title: metadata?.title || 'Unknown Video',
-                thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+                thumbnail: getYouTubeThumbnail(videoId),
                 channel: metadata?.channel,
                 position: current.videos.length
             };
@@ -306,7 +308,7 @@ export class PlaylistService {
 
         const updatedVideoIds = playlist.videoIds.filter(id => id !== videoId);
         const newThumbnail = updatedVideoIds.length > 0
-            ? `https://i.ytimg.com/vi/${updatedVideoIds[0]}/mqdefault.jpg`
+            ? getYouTubeThumbnail(updatedVideoIds[0])
             : undefined;
 
         // Optimistic update for current playlist
@@ -410,7 +412,7 @@ export class PlaylistService {
                 try {
                     const client = await this.pb.getClient();
                     const record = await client.collection('playlists').getOne(playlistId);
-                    playlist = this.recordToPlaylist(record);
+                    playlist = mapRecordToPlaylist(record as unknown as Record<string, unknown>);
                 } catch (error) {
                     console.error('[Playlist] Failed to fetch from PocketBase:', error);
                 }
@@ -464,7 +466,7 @@ export class PlaylistService {
                 }
             }
 
-            return this.recordToPlaylist(record);
+            return mapRecordToPlaylist(record as unknown as Record<string, unknown>);
         } catch (error) {
             console.error('[Playlist] Failed to fetch public playlist:', error);
             return null;
@@ -755,7 +757,7 @@ export class PlaylistService {
 
             const result = await Promise.race([fetchPromise, timeoutPromise]);
 
-            this.communityPlaylists.set(result.items.map(r => this.recordToPlaylist(r)));
+            this.communityPlaylists.set(result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>)));
         } catch (error) {
             console.error('[Playlist] Failed to load community playlists:', error);
         } finally {
@@ -767,29 +769,6 @@ export class PlaylistService {
 
     // ==================== Private Helpers ====================
 
-    private recordToPlaylist(record: any): Playlist {
-        // Extract user name from expanded relation if available
-        const userName = record.expand?.user?.name || record.expand?.user?.username;
-
-        return {
-            id: record.id,
-            userId: record.user,
-            userName: userName,
-            title: record.title,
-            description: record.description,
-            visibility: record.visibility,
-            language: record.language,
-            tags: record.tags || [],
-            videoIds: record.video_ids || [],
-            videoCount: record.video_count || 0,
-            thumbnail: record.thumbnail,
-            saveCount: record.save_count || 0,
-            isFeatured: record.is_featured || false,
-            createdAt: new Date(record.created),
-            updatedAt: new Date(record.updated)
-        };
-    }
-
     private async hydrateVideos(videoIds: string[]): Promise<PlaylistVideo[]> {
         // Fetch all video metadata in parallel for much faster loading
         const results = await Promise.allSettled(
@@ -798,7 +777,7 @@ export class PlaylistService {
                 return {
                     videoId,
                     title: metadata.title,
-                    thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+                    thumbnail: getYouTubeThumbnail(videoId),
                     channel: metadata.channel,
                     position
                 };
@@ -814,21 +793,9 @@ export class PlaylistService {
             return {
                 videoId: videoIds[position],
                 title: 'Unknown Video',
-                thumbnail: `https://i.ytimg.com/vi/${videoIds[position]}/mqdefault.jpg`,
+                thumbnail: getYouTubeThumbnail(videoIds[position]),
                 position
             };
         });
-    }
-
-    // Private persistence methods removed as they are handled by repository
-
-    private generateId(): string {
-        // Generate a 15-character random string (PocketBase compatible)
-        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-        let result = '';
-        for (let i = 0; i < 15; i++) {
-            result += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return result;
     }
 }

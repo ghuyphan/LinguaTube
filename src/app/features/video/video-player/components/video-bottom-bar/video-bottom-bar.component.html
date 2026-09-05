@@ -3,26 +3,17 @@
     <div class="controls-left">
         <!-- Play/Pause Button - Desktop only -->
         <button class="control-btn desktop-only" (click)="playPauseClicked.emit($event)"
-            [attr.aria-label]="isPlaying() ? 'Pause' : 'Play'">
+            [attr.aria-label]="t()('player.playPause') || (isPlaying() ? 'Pause' : 'Play')"
+            [title]="t()('player.playPause') || (isPlaying() ? 'Pause (k)' : 'Play (k)')">
             <app-icon [name]="isPlaying() ? 'pause' : 'play'" [size]="20" />
         </button>
-
-        <!-- Seek buttons group - desktop only -->
-        <div class="seek-group desktop-only">
-            <button class="control-btn" (click)="seekRelative.emit({ amount: -10, direction: 'left' })"
-                aria-label="Rewind 10 seconds">
-                <app-icon name="rewind" [size]="18" aria-hidden="true" />
-            </button>
-            <button class="control-btn" (click)="seekRelative.emit({ amount: 10, direction: 'right' })"
-                aria-label="Forward 10 seconds">
-                <app-icon name="fast-forward" [size]="18" aria-hidden="true" />
-            </button>
-        </div>
 
         <!-- Volume group - desktop only -->
         <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider.emit()"
             (mouseleave)="hideVolumeSlider.emit()">
-            <button class="control-btn" (click)="toggleMute.emit()" aria-label="Toggle mute">
+            <button class="control-btn" (click)="toggleMute.emit()"
+                [attr.aria-label]="t()('player.mute') || 'Mute (m)'"
+                [title]="t()('player.mute') || 'Mute (m)'">
                 <app-icon [name]="getVolumeIcon()" [size]="18" />
             </button>
             <div class="volume-slider-container" [class.visible]="isVolumeSliderVisible()">
@@ -42,7 +33,9 @@
         </div>
 
         <!-- Mute button - mobile only (standalone) -->
-        <button class="control-btn mobile-only" (click)="toggleMute.emit()" aria-label="Toggle mute">
+        <button class="control-btn mobile-only" (click)="toggleMute.emit()"
+            [attr.aria-label]="t()('player.mute') || 'Mute (m)'"
+            [title]="t()('player.mute') || 'Mute (m)'">
             <app-icon [name]="getVolumeIcon()" [size]="18" />
         </button>
     </div>
@@ -54,91 +47,41 @@
             <!-- Subtitles / CC Toggle (YouTube style) -->
             <button class="control-btn cc-btn" [class.is-active]="subtitlesVisible()"
                 (click)="toggleSubtitles.emit()"
-                [attr.aria-label]="subtitlesVisible() ? 'Turn off captions (c)' : 'Turn on captions (c)'"
-                [title]="subtitlesVisible() ? 'Subtitles/closed captions (c)' : 'Subtitles/closed captions (c)'">
+                [attr.aria-label]="t()('player.subtitles') || 'Subtitles/closed captions (c)'"
+                [title]="t()('player.subtitles') || 'Subtitles/closed captions (c)'">
                 <app-icon name="subtitles" [size]="18" />
                 <span class="cc-indicator" [class.visible]="subtitlesVisible()"></span>
             </button>
 
-            <!-- Playback Speed - desktop only -->
-            <div class="speed-control" [class.open]="isSpeedMenuOpen()">
-                <button class="control-btn speed-btn" (click)="toggleSpeedMenu.emit($event)"
-                    aria-label="Playback speed">
-                    <span class="speed-label">{{ currentSpeed() }}x</span>
-                </button>
-                @if (isSpeedMenuOpen()) {
-                <div class="speed-menu" (click)="clickMenuOption($event)">
-                    @for (speed of playbackSpeeds(); track speed) {
-                    <button class="speed-option" [class.active]="currentSpeed() === speed"
-                        (click)="setPlaybackSpeed.emit(speed)">
-                        {{ speed === 1 ? t()('player.normal') : speed + 'x' }}
-                    </button>
-                    }
-                </div>
-                }
-            </div>
-
-            <!-- Font Size - fullscreen only -->
-            @if (isFullscreen()) {
-            <button class="control-btn font-size-btn" (click)="cycleFontSize.emit()"
-                aria-label="Change subtitle font size">
-                <span class="font-size-label">{{ fontSizeLabel() }}</span>
-            </button>
-            }
-
-            <!-- Translation Language Picker - visible for CJK languages (desktop only) -->
+            <!-- Dual Subtitles Toggle (Outside) -->
             @if (isCJKLanguage()) {
-            <div class="lang-control" [class.open]="langPickerOpen()">
-                <button class="control-btn lang-btn" [class.is-dual-active]="showDualSubtitles()"
-                    (click)="toggleLangMenu.emit($event)" [title]="t()('subtitle.dualSubs')">
-                    @if (showDualSubtitles()) {
-                    <img [src]="getSelectedLangFlag()" class="lang-flag-img" alt="Language" />
-                    } @else {
-                    <app-icon name="languages" [size]="18" />
-                    }
-                </button>
-                @if (langPickerOpen()) {
-                <div class="lang-menu" (click)="clickMenuOption($event)">
-                    <button class="lang-option" [class.active]="!showDualSubtitles()"
-                        (click)="disableDualSubtitles.emit()">
-                        <app-icon name="x" [size]="16" class="lang-option-icon" />
-                        <span class="lang-option-name">{{ t()('common.off') }}</span>
-                        @if (!showDualSubtitles()) {
-                        <app-icon name="check" [size]="14" class="lang-check" />
-                        }
-                    </button>
-                    <div class="menu-divider"></div>
-                    @for (lang of langOptions(); track lang.value) {
-                    <button class="lang-option" [class.active]="showDualSubtitles() && targetLang() === lang.value"
-                        (click)="langSelected.emit(lang.value)">
-                        <img [src]="lang.iconUrl" [alt]="lang.label" class="lang-option-flag">
-                        <span class="lang-option-name">{{ lang.label }}</span>
-                        @if (showDualSubtitles() && targetLang() === lang.value) {
-                        <app-icon name="check" [size]="14" class="lang-check" />
-                        }
-                    </button>
-                    }
-                </div>
-                }
-            </div>
-            }
-
-            <!-- Add to Playlist - desktop only, hidden in fullscreen -->
-            @if (!isFullscreen()) {
-            <button class="control-btn desktop-only" (click)="saveClick.emit()" aria-label="Add to playlist">
-                <app-icon name="list-plus" [size]="18" />
+            <button class="control-btn dual-sub-btn" [class.is-active]="showDualSubtitles()"
+                (click)="toggleDualSubs.emit()"
+                [attr.aria-label]="t()('subtitle.dualSubs') || 'Dual Subtitles'"
+                [title]="t()('subtitle.dualSubs') || 'Dual Subtitles'">
+                <app-icon name="languages" [size]="18" />
+                <span class="cc-indicator" [class.visible]="showDualSubtitles()"></span>
             </button>
             }
 
-            <!-- Keyboard Shortcuts Cheat Sheet - desktop only -->
-            <button class="control-btn desktop-only" (click)="openShortcutsDialog.emit()"
-                aria-label="Keyboard shortcuts (?)" title="Keyboard shortcuts (?)">
-                <app-icon name="keyboard" [size]="18" />
+            <!-- Playback Speed Pill - Desktop only: shows speed & 1-click opens speed menu -->
+            <button class="control-btn speed-btn desktop-only" (click)="speedClick.emit($event)"
+                [attr.aria-label]="(t()('player.playbackSpeed') || 'Playback speed') + ': ' + (currentSpeed() === 1 ? (t()('player.normal') || 'Normal') : currentSpeed() + 'x')"
+                [title]="(t()('player.playbackSpeed') || 'Playback speed') + ': ' + (currentSpeed() === 1 ? (t()('player.normal') || 'Normal') : currentSpeed() + 'x')">
+                <span class="speed-pill-label">{{ currentSpeed() === 1 ? '1x' : currentSpeed() + 'x' }}</span>
+            </button>
+
+            <!-- Player Settings (YouTube style gear) -->
+            <button class="control-btn settings-btn" (click)="openSettings.emit($event)"
+                [attr.aria-label]="t()('player.settings') || t()('settings.title') || 'Settings'"
+                [title]="t()('player.settings') || t()('settings.title') || 'Settings'">
+                <app-icon name="settings" [size]="18" />
             </button>
 
             <!-- Fullscreen -->
             <button class="control-btn" (click)="toggleFullscreen.emit()"
-                [attr.aria-label]="isFullscreen() ? 'Exit fullscreen' : 'Fullscreen'">
+                [attr.aria-label]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen (f)' : 'Fullscreen (f)')"
+                [title]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen (f)' : 'Fullscreen (f)')">
                 <app-icon [name]="isFullscreen() ? 'minimize' : 'maximize'" [size]="18" />
             </button>
         </div>

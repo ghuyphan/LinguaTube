@@ -1,8 +1,7 @@
 import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
-import { PlaybackSpeed } from '../../video-player.constants';
-import { OptionItem } from '../../../../../shared/components/option-picker/option-picker.component';
+import { getVolumeIcon } from '../../../../../core/utils';
 
 @Component({
   selector: 'app-video-bottom-bar',
@@ -25,18 +24,12 @@ export class VideoBottomBarComponent {
 
   // Feature states
   isFullscreen = input<boolean>(false);
-  currentSpeed = input<PlaybackSpeed>(1);
-  playbackSpeeds = input<PlaybackSpeed[]>([]);
   subtitlesVisible = input<boolean>(true);
+  currentSpeed = input<number>(1);
   showDualSubtitles = input<boolean>(false);
-  targetLang = input<string>('');
-  langOptions = input<OptionItem[]>([]);
-  fontSizeLabel = input<string>('Standard');
   isCJKLanguage = input<boolean>(false);
 
   // UI States managed locally or passed down
-  isSpeedMenuOpen = input<boolean>(false);
-  langPickerOpen = input<boolean>(false);
   isVolumeSliderVisible = input<boolean>(false);
 
   // Translation function
@@ -44,39 +37,22 @@ export class VideoBottomBarComponent {
 
   // Outputs for Left Controls
   playPauseClicked = output<MouseEvent>();
-  seekRelative = output<{ amount: number, direction: 'left' | 'right' }>();
   toggleMute = output<void>();
   volumeChange = output<number>();
 
   // Outputs for Right Controls
   toggleSubtitles = output<void>();
-  toggleSpeedMenu = output<MouseEvent>();
-  setPlaybackSpeed = output<PlaybackSpeed>();
-  cycleFontSize = output<void>();
-  toggleLangMenu = output<MouseEvent>();
-  disableDualSubtitles = output<void>();
-  langSelected = output<string>();
-  saveClick = output<void>();
-  openShortcutsDialog = output<void>();
+  toggleDualSubs = output<void>();
+  speedClick = output<MouseEvent>();
+  openSettings = output<MouseEvent>();
   toggleFullscreen = output<void>();
 
   // Mouse event outputs for volume slider
   showVolumeSlider = output<void>();
   hideVolumeSlider = output<void>();
 
-  clickMenuOption(event: Event) {
-    event.stopPropagation();
-  }
-
   getVolumeIcon(): IconName {
-    if (this.isMuted() || this.volume() === 0) return 'volume-x';
-    if (this.volume() < 50) return 'volume-1';
-    return 'volume-2';
-  }
-
-  getSelectedLangFlag(): string {
-    const current = this.langOptions().find(l => l.value === this.targetLang());
-    return current?.iconUrl || '';
+    return getVolumeIcon(this.volume(), this.isMuted());
   }
 
   onVolumeSliderMouseDown(event: MouseEvent) {

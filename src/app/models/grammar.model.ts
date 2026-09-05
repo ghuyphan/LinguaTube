@@ -1,8 +1,10 @@
 // Grammar pattern models for language learning
 
+export type SupportedGrammarLang = 'ja' | 'zh' | 'ko' | 'en';
+
 export interface GrammarPattern {
     id: string;
-    language: 'ja' | 'zh' | 'ko';
+    language: SupportedGrammarLang;
 
     // Pattern info
     pattern: string;              // e.g., "ている", "是...的"
@@ -31,4 +33,12 @@ export interface GrammarMatch {
     tokenIndices: number[];       // Which tokens are part of this pattern
     startIndex: number;
     endIndex: number;
+}
+
+export interface GrammarTranslation {
+    title?: string;
+    shortExplanation?: string;
+    longExplanation?: string;
+    formation?: string;
+    examples?: { translation: string }[];
 }

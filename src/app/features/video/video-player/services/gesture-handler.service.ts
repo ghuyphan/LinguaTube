@@ -1,7 +1,6 @@
 import { Injectable, signal, inject, NgZone } from '@angular/core';
 import { YoutubeService } from '../../youtube.service';
 import {
-    DOUBLE_TAP_DELAY,
     LONG_PRESS_DELAY,
     SWIPE_THRESHOLD,
     GESTURE_SEEK_SENSITIVITY,
@@ -17,7 +16,6 @@ export interface TouchState {
     startTime: number;
     hasMoved: boolean;
     initialVideoTime: number;
-    initialVolume: number;
 }
 
 /**
@@ -36,7 +34,7 @@ export interface GestureEvent {
     data?: {
         seekTime?: number;
         tapPosition?: { x: number; y: number };
-        zone?: 'left' | 'right';
+        zone?: 'left' | 'right' | 'center';
         seconds?: number;
     };
 }
@@ -86,11 +84,12 @@ export class GestureHandlerService {
         startY: 0,
         startTime: 0,
         hasMoved: false,
-        initialVideoTime: 0,
-        initialVolume: 0
+        initialVideoTime: 0
     };
 
-    private lastTapInfo: { zone: string; time: number } | null = null;
+    private lastTapZone: 'left' | 'right' | null = null;
+    private lastTapTime = 0;
+    private pendingTapTimeout: ReturnType<typeof setTimeout> | null = null;
     private longPressTimeout: ReturnType<typeof setTimeout> | null = null;
     private longPressSpeed = 1;
 
@@ -111,7 +110,7 @@ export class GestureHandlerService {
     /**
      * Handle touch start event on the overlay
      */
-    handleTouchStart(event: TouchEvent, getCurrentVolume: () => number): void {
+    handleTouchStart(event: TouchEvent): void {
         if (event.touches.length !== 1) return;
 
         const touch = event.touches[0];
@@ -120,8 +119,7 @@ export class GestureHandlerService {
             startY: touch.clientY,
             startTime: Date.now(),
             hasMoved: false,
-            initialVideoTime: this.youtube.currentTime(),
-            initialVolume: getCurrentVolume()
+            initialVideoTime: this.youtube.currentTime()
         };
 
         // Start long-press detection
@@ -147,6 +145,7 @@ export class GestureHandlerService {
         if (absX > SWIPE_THRESHOLD || absY > SWIPE_THRESHOLD) {
             this.touchState.hasMoved = true;
             this.cancelLongPress();
+            this.clearPendingTap();
         }
 
         // Horizontal swipe = seek scrub
@@ -170,7 +169,7 @@ export class GestureHandlerService {
     /**
      * Handle touch end event on the overlay
      * @param containerRect - Bounding rect of the video container for zone detection
-     * @returns GestureEvent or null if no action taken
+     * @returns GestureEvent or null if buffered / no action taken
      */
     handleTouchEnd(containerRect: DOMRect): GestureEvent | null {
         this.cancelLongPress();
@@ -195,29 +194,57 @@ export class GestureHandlerService {
             return null;
         }
 
-        // Handle tap
+        // Handle tap with spatial zoning
         return this.handleTap(containerRect);
     }
 
     // ========================================
-    // TAP DETECTION
+    // TAP DETECTION (Spatial Zoning)
     // ========================================
 
     /**
-     * Process a tap and detect single vs double tap
+     * Process tap with spatial zones:
+     * - Center (40% width): Instant single-tap (0ms lag, no delay)
+     * - Left / Right Wings (30% width each): Double-tap seek with 250ms single-tap buffer
      */
-    private handleTap(containerRect: DOMRect): GestureEvent {
+    private handleTap(containerRect: DOMRect): GestureEvent | null {
         const x = this.touchState.startX - containerRect.left;
-        const zone: 'left' | 'right' = x < containerRect.width * 0.5 ? 'left' : 'right';
+        const width = containerRect.width;
         const now = Date.now();
 
-        // Check for double-tap
-        if (this.lastTapInfo &&
-            this.lastTapInfo.zone === zone &&
-            now - this.lastTapInfo.time < DOUBLE_TAP_DELAY) {
-            this.lastTapInfo = null;
+        // Determine zone:
+        // Left 35%: rewind wing
+        // Right 35%: forward wing
+        // Center 30%: zero-latency controls toggle
+        let zone: 'left' | 'right' | 'center';
+        if (x < width * 0.35) {
+            zone = 'left';
+        } else if (x > width * 0.65) {
+            zone = 'right';
+        } else {
+            zone = 'center';
+        }
 
-            // Double-tap: Seek in the tapped direction
+        // 1. CENTER: Zero-latency instant single tap!
+        if (zone === 'center') {
+            this.clearPendingTap();
+            this.lastTapZone = null;
+            const event: GestureEvent = {
+                type: 'single-tap',
+                data: { zone: 'center' }
+            };
+            this.onGesture?.(event);
+            return event;
+        }
+
+        // 2. WINGS: Double-tap detection
+        const isDoubleTap = this.lastTapZone === zone && (now - this.lastTapTime < 300);
+
+        if (isDoubleTap) {
+            // Second (or third) tap of double-tap sequence!
+            this.clearPendingTap();
+            this.lastTapTime = now;
+
             const seekSeconds = SEEK_STEP;
             if (zone === 'left') {
                 this.youtube.seekRelative(-seekSeconds);
@@ -225,7 +252,7 @@ export class GestureHandlerService {
                 this.youtube.seekRelative(seekSeconds);
             }
 
-            // Update accumulator for feedback animation
+            // Accumulate seek for feedback animation (+10s, +20s, +30s)
             if (this.seekDirection() === zone) {
                 this.seekAccumulator.update(v => v + seekSeconds);
             } else {
@@ -235,21 +262,39 @@ export class GestureHandlerService {
 
             const event: GestureEvent = {
                 type: zone === 'left' ? 'double-tap-left' : 'double-tap-right',
-                data: { zone, seconds: seekSeconds }
+                data: { zone, seconds: SEEK_STEP }
             };
             this.onGesture?.(event);
             return event;
         }
 
-        // Single tap - record for potential double-tap
-        this.lastTapInfo = { zone, time: now };
+        // First tap on a wing: buffer for 250ms before triggering single-tap
+        this.clearPendingTap();
+        this.lastTapZone = zone;
+        this.lastTapTime = now;
 
-        const event: GestureEvent = {
-            type: 'single-tap',
-            data: { zone }
-        };
-        this.onGesture?.(event);
-        return event;
+        this.pendingTapTimeout = setTimeout(() => {
+            this.pendingTapTimeout = null;
+            this.lastTapZone = null;
+            this.seekAccumulator.set(0);
+            this.seekDirection.set(null);
+
+            this.ngZone.run(() => {
+                this.onGesture?.({
+                    type: 'single-tap',
+                    data: { zone }
+                });
+            });
+        }, 250);
+
+        return null;
+    }
+
+    private clearPendingTap(): void {
+        if (this.pendingTapTimeout) {
+            clearTimeout(this.pendingTapTimeout);
+            this.pendingTapTimeout = null;
+        }
     }
 
     /**
@@ -300,6 +345,7 @@ export class GestureHandlerService {
     destroy(): void {
         this.cancelLongPress();
         this.deactivateLongPress();
+        this.clearPendingTap();
         this.gestureSeekActive.set(false);
     }
 }

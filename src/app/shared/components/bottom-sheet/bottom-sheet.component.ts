@@ -15,6 +15,7 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetService } from '../../../services/bottom-sheet.service';
+import { generateRandomId } from '../../../core/utils';
 
 
 @Component({
@@ -74,7 +75,7 @@ export class BottomSheetComponent implements OnDestroy {
   private readonly ANIMATION_DURATION = 250;
 
   // Unique ID for this sheet instance
-  private readonly sheetId = Math.random().toString(36).substring(2, 9);
+  private readonly sheetId = generateRandomId(8);
 
   // Unregister function from service (called when sheet closes)
   private unregisterFn: (() => void) | null = null;

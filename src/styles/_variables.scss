@@ -38,11 +38,16 @@
     --text-primary-rgb: 55, 65, 81;
     --text-secondary: #6b7280;
     --text-secondary-rgb: 107, 114, 128;
-    --text-muted: #9ca3af;
-    --text-muted-rgb: 156, 163, 175;
+    --text-muted: #64748b;
+    --text-muted-rgb: 100, 116, 139;
     --text-inverse: #FFFFFF;
     --bg-card-rgb: 255, 255, 255;
     --border-color-rgb: 229, 231, 235;
+
+    /* Primary button tokens (WCAG AA compliant contrast with white text) */
+    --btn-primary-bg: #dc2626;
+    --btn-primary-hover: #b91c1c;
+    --btn-primary-text: #ffffff;
 
     /* Semantic colors */
     --success: #1cb0f6;
@@ -197,8 +202,8 @@
     --text-primary-rgb: 229, 229, 229;
     --text-secondary: #a3a3a3;
     --text-secondary-rgb: 163, 163, 163;
-    --text-muted: #737373;
-    --text-muted-rgb: 115, 115, 115;
+    --text-muted: #a1a1aa;
+    --text-muted-rgb: 161, 161, 170;
     --text-inverse: #171717;
     --bg-surface: #262626;
     --bg-inverse: #0f172a;

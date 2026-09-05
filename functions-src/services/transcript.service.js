@@ -25,8 +25,10 @@ import {
 
 import { jsonResponse } from '../utils/utils.js';
 import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
+import { fetchYouTubeDuration } from '../middlewares/video-validator.js';
 
-const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours
+const MAX_VIDEO_DURATION_SECONDS = 3 * 60 * 60; // 3 hours (native captions)
+const MAX_AI_VIDEO_DURATION_SECONDS = 20 * 60;   // 20 minutes (AI speech-to-text cap)
 
 export class TranscriptService {
     /**
@@ -95,8 +97,12 @@ export class TranscriptService {
 
         // 1. Validate video length
         let duration = await getVideoDuration(db, videoId) || body.duration;
-        if (duration && duration > MAX_VIDEO_DURATION_SECONDS) {
-            throw new Error(`VIDEO_TOO_LONG: Video exceeds ${MAX_VIDEO_DURATION_SECONDS / 60} minute limit`);
+        if (!duration) {
+            duration = await fetchYouTubeDuration(videoId);
+        }
+
+        if (duration && duration > MAX_AI_VIDEO_DURATION_SECONDS) {
+            throw new Error(`VIDEO_TOO_LONG: Video exceeds ${MAX_AI_VIDEO_DURATION_SECONDS / 60} minute limit for AI transcription`);
         }
 
         // 2. Check for existing pending job
@@ -105,9 +111,16 @@ export class TranscriptService {
             return await this.pollAIJob(context, { ...params, resultUrl: existingJob.result_url });
         }
 
-        // 3. Consume diamond
-        const consumeResult = await this.diamondService.consumeDiamond(clientId, context, env, user);
+        // 3. Scaled diamond cost based on video length:
+        // <= 10 minutes: 1 diamond; 10 to 20 minutes: 2 diamonds
+        const requiredDiamonds = (duration && duration > 10 * 60) ? 2 : 1;
+
+        // 4. Consume diamond(s)
+        const consumeResult = await this.diamondService.consumeDiamond(clientId, context, env, user, requiredDiamonds);
         if (!consumeResult.success) {
+            if (consumeResult.reason === 'insufficient_diamonds') {
+                throw new Error(`INSUFFICIENT_DIAMONDS: Requires ${consumeResult.requiredDiamonds} AI diamonds (you have ${consumeResult.diamonds}).`);
+            }
             throw new Error('NO_DIAMONDS: No diamonds remaining for AI transcription.');
         }
 

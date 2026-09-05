@@ -14,11 +14,12 @@ import {
   NgZone
 } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
+import { Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
-import { OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { formatTime, getVolumeIcon } from '../../../core/utils';
 
 import {
   YoutubeService,
@@ -38,13 +39,18 @@ import {
   DictionaryEntry,
   GrammarPattern,
   GrammarMatch,
-  ReadingDisplayMode,
-  SupportedLearningLanguage
+  SupportedLearningLanguage,
+  SupportedGrammarLang
 } from '../../../models';
 import {
   PlaybackSpeed,
   PLAYBACK_SPEEDS,
-  SEEK_STEP
+  FontSize,
+  FONT_SIZES,
+  SEEK_STEP,
+  FullscreenDocument,
+  FullscreenElement,
+  ScreenOrientationWithLock
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
 import { VideoKeyboardShortcutService } from './services/video-keyboard-shortcut.service';
@@ -83,48 +89,19 @@ export class VideoPlayerComponent implements OnDestroy {
   private gestures = inject(GestureHandlerService);
   private keyboardShortcuts = inject(VideoKeyboardShortcutService);
 
-  // Translation language picker state
-  langPickerOpen = signal(false);
+  // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
-  langOptions = computed<OptionItem[]>(() => {
-    const currentLang = this.subtitles.loadedLanguage();
-    return this.translation.getSupportedTargetLanguages()
-      .filter(lang => lang.code !== currentLang)
-      .map(lang => ({
-        value: lang.code,
-        label: lang.name,
-        iconUrl: lang.flagUrl
-      }));
-  });
-
-  getSelectedLangFlag(): string {
-    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === this.targetLang());
-    return lang ? lang.flagUrl : '';
-  }
+  isCJKLanguage = computed(() => ['ja', 'zh', 'ko'].includes(this.settings.settings().language));
 
   onLangSelected(value: string): void {
     this.settings.setDualSubtitleTargetLang(value); // Update shared state
     this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
     this.settings.updateSettings({ showDualSubtitles: true }); // Auto-enable dual subs
-    this.langPickerOpen.set(false);
   }
 
   disableDualSubtitles(): void {
     this.settings.updateSettings({ showDualSubtitles: false });
-    this.langPickerOpen.set(false);
   }
-
-  toggleLangMenu(event: Event): void {
-    event.stopPropagation();
-    this.langPickerOpen.update(v => !v);
-    this.isSpeedMenuOpen.set(false); // Close speed menu if open
-    this.showControls();
-  }
-
-  // Dual subtitle loading state - Now using SubtitleService
-
-
-
 
   // Playlist navigation
   hasPlaylist = computed(() => !!this.playlistService.currentPlaylist());
@@ -144,8 +121,7 @@ export class VideoPlayerComponent implements OnDestroy {
   saveClicked = output<void>();
   playlistNext = output<void>();
   playlistPrev = output<void>();
-  closePlaylist = output<void>();
-  addToPlaylist = output<void>();
+  videoEnded = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -155,73 +131,20 @@ export class VideoPlayerComponent implements OnDestroy {
   areControlsVisible = signal(true);
   isFullscreen = signal(false);
   isVolumeSliderVisible = signal(false);
-  isSpeedMenuOpen = signal(false);
+  isPlayerSettingsOpen = signal(false);
+  playerSettingsView = signal<'main' | 'speed' | 'fontSize'>('main');
+  isMobile = signal<boolean>(typeof window !== 'undefined' ? (window.innerWidth <= 768 || window.innerHeight <= 500) : false);
+  readonly fontSizes = FONT_SIZES;
   volume = signal(100);
   volumePercent = computed(() => {
     return this.youtube.isMuted() ? 0 : this.volume();
   });
-  currentSpeed = signal<PlaybackSpeed>(1);
+  currentSpeed = signal<PlaybackSpeed>((this.settings.settings().playbackSpeed as PlaybackSpeed) || 1);
 
   // Seeking State (managed by ProgressBarComponent, tracked here for visibility)
   isDragging = signal(false);
 
   @ViewChild('progressBarComponent') progressBarComponent!: ProgressBarComponent;
-
-  // Fullscreen Settings Sheet
-  fsSettingsVisible = signal(false);
-
-  openFsSettings(): void {
-    if (this.isFullscreen()) {
-      this.fsSettingsVisible.set(true);
-      this.areControlsVisible.set(false); // Hide main controls
-    }
-  }
-
-  closeFsSettings(): void {
-    this.fsSettingsVisible.set(false);
-  }
-
-  onFsSettingsTouchStart(event: TouchEvent): void {
-    event.stopPropagation();
-  }
-
-  onFsLangSelected(langCode: string): void {
-    this.settings.setDualSubtitleTargetLang(langCode); // Update shared state
-    this.subtitles.cueTranslations.set(new Map()); // Clear existing translations to show loading state
-    this.settings.updateSettings({ showDualSubtitles: true });
-    // Don't close immediately so user can see it's selected
-  }
-
-  setReadingDisplayMode(mode: ReadingDisplayMode): void {
-    this.settings.setReadingDisplayMode(mode);
-  }
-
-  getReadingDisplayLabel(mode: ReadingDisplayMode): string {
-    const language = this.activeSubtitleLanguage();
-
-    if (language === 'en') {
-      return this.i18n.t('settings.textOnly');
-    }
-
-    switch (language) {
-      case 'ja':
-        if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
-        if (mode === 'annotatedRomanized') return this.i18n.t('settings.kanjiRomaji');
-        if (mode === 'romanized') return this.i18n.t('settings.romajiOnly');
-        return this.i18n.t('settings.kanaOnly');
-      case 'zh':
-        if (mode === 'native') return this.i18n.t('settings.hanziOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
-        return this.i18n.t('settings.pinyinOnly');
-      case 'ko':
-        if (mode === 'native') return this.i18n.t('settings.hangulOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
-        return this.i18n.t('settings.romanizationOnly');
-      default:
-        return this.i18n.t('settings.textOnly');
-    }
-  }
 
   // Fullscreen popup state
   fsPopupVisible = signal(false);
@@ -230,6 +153,7 @@ export class VideoPlayerComponent implements OnDestroy {
   fsEntry = signal<DictionaryEntry | null>(null);
   fsLookupLoading = signal(false);
   fsWordSaved = signal(false);
+  private fsLookupSub?: Subscription;
 
 
 
@@ -269,14 +193,6 @@ export class VideoPlayerComponent implements OnDestroy {
     return this.subtitles.getTokens(cue, lang);
   });
 
-  supportsReadingDisplay = computed(() =>
-    this.settings.hasReadingSupport(this.activeSubtitleLanguage())
-  );
-
-  readingDisplayModes = computed<ReadingDisplayMode[]>(() =>
-    this.settings.getAvailableReadingDisplayModes(this.activeSubtitleLanguage())
-  );
-
   // Current translation for fullscreen
   currentTranslation = computed(() => {
     const cue = this.subtitles.currentCue();
@@ -286,35 +202,21 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Grammar detection for fullscreen
   fsGrammarMatches = computed(() => {
+    // Read reactive signal to auto-recompute when pattern lazy loading finishes
+    this.grammar.loadedLanguages();
+
     const tokens = this.fullscreenTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
 
     const lang = this.activeSubtitleLanguage();
-    if (lang === 'en') return [];
+    if (!lang || !['ja', 'zh', 'ko', 'en'].includes(lang)) return [];
 
-    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
-  });
-
-  fsGrammarTokenIndices = computed(() => {
-    const matches = this.fsGrammarMatches();
-    const indices = new Set<number>();
-    for (const match of matches) {
-      for (const idx of match.tokenIndices) {
-        indices.add(idx);
-      }
-    }
-    return indices;
+    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko' | 'en');
   });
 
   // Fullscreen grammar popup state
   fsGrammarPopupVisible = signal(false);
   fsSelectedGrammarPattern = signal<GrammarPattern | null>(null);
-
-  // Popup overlay touch tracking (to distinguish tap vs scroll)
-  private popupTouchState = {
-    startY: 0,
-    hasMoved: false
-  };
 
   // Feedback animations
   rewindFeedback = signal(false);
@@ -380,6 +282,14 @@ export class VideoPlayerComponent implements OnDestroy {
   @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
 
   constructor() {
+    // Proactively preload grammar patterns for active learning language in background
+    effect(() => {
+      const lang = this.activeSubtitleLanguage();
+      if (lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
+        this.grammar.preloadPatterns(lang as SupportedGrammarLang);
+      }
+    });
+
     // Initialize player when video exists but player isn't ready
     effect(() => {
       const currentVideo = this.youtube.currentVideo();
@@ -400,11 +310,16 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Sync volume and speed when player is ready
+    // Sync speed reactively whenever youtube.playbackRate changes
+    effect(() => {
+      const rate = this.youtube.playbackRate();
+      this.currentSpeed.set(rate as PlaybackSpeed);
+    });
+
+    // Sync volume when player is ready
     effect(() => {
       if (this.youtube.isReady()) {
         this.volume.set(this.youtube.getVolume());
-        this.currentSpeed.set(this.youtube.getPlaybackRate() as PlaybackSpeed);
         this.startBufferedTracking();
       }
     });
@@ -413,6 +328,13 @@ export class VideoPlayerComponent implements OnDestroy {
     effect(() => {
       if (!this.youtube.currentVideo()) {
         this.videoUrl = '';
+      }
+    });
+
+    // Notify parent when video ends (for playlist auto-advance)
+    effect(() => {
+      if (this.youtube.isEnded()) {
+        untracked(() => this.videoEnded.emit());
       }
     });
 
@@ -467,6 +389,11 @@ export class VideoPlayerComponent implements OnDestroy {
       });
       return () => sub.unsubscribe();
     });
+
+    // Wire up touch gesture handler callback
+    this.gestures.onGesture = (event) => {
+      this.handleGestureEvent(event);
+    };
   }
 
   private _videoContainerRef?: ElementRef<HTMLDivElement>;
@@ -544,8 +471,21 @@ export class VideoPlayerComponent implements OnDestroy {
     this.videoUrl = '';
   }
 
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    if (typeof window !== 'undefined') {
+      this.isMobile.set(window.innerWidth <= 768 || window.innerHeight <= 500);
+    }
+  }
+
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
+    if (this.isPlayerSettingsOpen() && event.code === 'Escape') {
+      event.preventDefault();
+      this.closePlayerSettings();
+      return;
+    }
+
     if (this.showShortcutsDialog() && event.code === 'Escape') {
       event.preventDefault();
       this.closeShortcutsDialog();
@@ -605,22 +545,19 @@ export class VideoPlayerComponent implements OnDestroy {
       case 'toggle-shortcuts-dialog':
         this.showShortcutsDialog.update(v => !v);
         break;
+      case 'toggle-subtitle-position':
+        this.toggleFullscreenSubtitlePosition();
+        break;
     }
   }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     const target = event.target as HTMLElement;
-    if (!target.closest('.speed-control')) {
-      this.isSpeedMenuOpen.set(false);
-    }
-    if (!target.closest('.lang-control')) {
-      this.langPickerOpen.set(false);
-    }
 
     if (this.youtube.currentVideo() && this.areControlsVisible()) {
       const videoContainer = this.videoContainerRef?.nativeElement;
-      if (videoContainer && !videoContainer.contains(target)) {
+      if (videoContainer && !videoContainer.contains(target) && !this.isPlayerSettingsOpen()) {
         this.areControlsVisible.set(false);
         this.clearControlsTimeout();
       }
@@ -630,7 +567,7 @@ export class VideoPlayerComponent implements OnDestroy {
   @HostListener('document:fullscreenchange')
   @HostListener('document:webkitfullscreenchange')
   onFullscreenChange() {
-    const doc = this.document as any;
+    const doc = this.document as FullscreenDocument;
     const isFs = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
     this.isFullscreen.set(isFs);
     this.fullscreenChanged.emit(isFs);
@@ -645,7 +582,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   onMouseLeave() {
     // Simple version - CSS handles desktop vs mobile via pointer-events
-    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+    if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.isDragging()) {
       this.areControlsVisible.set(false);
       this.isVolumeSliderVisible.set(false);
       if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
@@ -661,7 +598,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private startControlsAutoHide() {
-    if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible()) {
+    if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible()) {
       this.hideControlsAfterDelay(3000);
     }
   }
@@ -673,7 +610,7 @@ export class VideoPlayerComponent implements OnDestroy {
     this.controlsTimeout = setTimeout(() => {
       // Re-enter zone for the check and update
       this.ngZone.run(() => {
-        if (this.youtube.intendedPlayingState() && !this.isSpeedMenuOpen() && !this.langPickerOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+        if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.isDragging()) {
           this.areControlsVisible.set(false);
           this.isVolumeSliderVisible.set(false);
           if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
@@ -776,7 +713,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   onOverlayTouchStart(event: TouchEvent) {
-    this.gestures.handleTouchStart(event, () => this.volume());
+    this.gestures.handleTouchStart(event);
   }
 
   onOverlayTouchMove(event: TouchEvent) {
@@ -788,71 +725,58 @@ export class VideoPlayerComponent implements OnDestroy {
     if (!container) return;
 
     const rect = container.getBoundingClientRect();
-    const gestureEvent = this.gestures.handleTouchEnd(rect);
-
-    if (gestureEvent) {
-      this.handleGestureEvent(gestureEvent);
-    }
+    this.gestures.handleTouchEnd(rect);
   }
 
   /**
    * Handle gesture events from GestureHandlerService
    */
   private handleGestureEvent(event: GestureEvent): void {
-    const container = this.videoContainerRef?.nativeElement;
-    const rect = container?.getBoundingClientRect();
+    this.ngZone.run(() => {
+      switch (event.type) {
+        case 'double-tap-left':
+          if (this.quiz.isActive()) {
+            this.quiz.replaySegment();
+          } else {
+            this.showSeekFeedback('left', event.data?.seconds || SEEK_STEP);
+          }
+          this.triggerRipple('left');
+          this.areControlsVisible.set(true);
+          this.lastControlsShowTime = Date.now();
+          this.clearControlsTimeout();
+          this.hideControlsAfterDelay(1500);
+          break;
 
-    switch (event.type) {
-      case 'double-tap-left':
-        if (this.quiz.isActive()) {
-          this.quiz.replaySegment();
-        } else {
-          this.showSeekFeedback('left', event.data?.seconds || SEEK_STEP);
-        }
-        if (rect) {
-          const x = rect.width * 0.25;
-          const y = rect.height * 0.5;
-          this.triggerRipple(x, y, 'left');
-        }
-        this.areControlsVisible.set(true);
-        this.lastControlsShowTime = Date.now();
-        this.clearControlsTimeout();
-        this.hideControlsAfterDelay(1500);
-        break;
+        case 'double-tap-right':
+          if (this.quiz.isActive()) {
+            this.quiz.skipQuestion();
+          } else {
+            this.showSeekFeedback('right', event.data?.seconds || SEEK_STEP);
+          }
+          this.triggerRipple('right');
+          this.areControlsVisible.set(true);
+          this.lastControlsShowTime = Date.now();
+          this.clearControlsTimeout();
+          this.hideControlsAfterDelay(1500);
+          break;
 
-      case 'double-tap-right':
-        if (this.quiz.isActive()) {
-          this.quiz.skipQuestion();
-        } else {
-          this.showSeekFeedback('right', event.data?.seconds || SEEK_STEP);
-        }
-        if (rect) {
-          const x = rect.width * 0.25;
-          const y = rect.height * 0.5;
-          this.triggerRipple(x, y, 'right');
-        }
-        this.areControlsVisible.set(true);
-        this.lastControlsShowTime = Date.now();
-        this.clearControlsTimeout();
-        this.hideControlsAfterDelay(1500);
-        break;
+        case 'single-tap':
+          this.toggleControlsVisibility();
+          break;
 
-      case 'single-tap':
-        this.toggleControlsVisibility();
-        break;
+        case 'gesture-seek-complete':
+          // Seek already handled by service
+          break;
 
-      case 'gesture-seek-complete':
-        // Seek already handled by service
-        break;
+        case 'long-press-start':
+          this.longPressActive.set(true);
+          break;
 
-      case 'long-press-start':
-        this.longPressActive.set(true);
-        break;
-
-      case 'long-press-end':
-        this.longPressActive.set(false);
-        break;
-    }
+        case 'long-press-end':
+          this.longPressActive.set(false);
+          break;
+      }
+    });
   }
 
   // Expose gesture service state to template
@@ -884,8 +808,7 @@ export class VideoPlayerComponent implements OnDestroy {
     this.toggleFullscreen();
   }
 
-  private triggerRipple(x: number, y: number, zone: 'left' | 'right') {
-    this.ripplePos.set({ x, y });
+  private triggerRipple(zone: 'left' | 'right') {
     if (zone === 'left') {
       this.leftRipple.set(false);
       requestAnimationFrame(() => {
@@ -907,30 +830,14 @@ export class VideoPlayerComponent implements OnDestroy {
     const now = Date.now();
     this.lastToggleTime = now;
 
-    if (this.youtube.intendedPlayingState()) {
-      const newValue = !this.areControlsVisible();
-      this.areControlsVisible.set(newValue);
-      this.lastControlsShowTime = now;
-      this.clearControlsTimeout();
-
-      if (newValue) {
-        this.hideControlsAfterDelay(3000);
-      }
-    } else {
-      this.areControlsVisible.set(true);
-      this.lastControlsShowTime = now;
-      this.clearControlsTimeout();
-    }
-  }
-
-  onPlayPauseButtonTouch(event: Event) {
-    event.stopPropagation();
-    event.preventDefault();
-
-    this.togglePlay();
-    this.lastControlsShowTime = Date.now();
+    const newValue = !this.areControlsVisible();
+    this.areControlsVisible.set(newValue);
+    this.lastControlsShowTime = now;
     this.clearControlsTimeout();
-    this.hideControlsAfterDelay(3000);
+
+    if (newValue && this.youtube.intendedPlayingState()) {
+      this.hideControlsAfterDelay(3000);
+    }
   }
 
   onPlayPauseButtonClick(event: Event) {
@@ -941,6 +848,9 @@ export class VideoPlayerComponent implements OnDestroy {
       this.doubleTapTimeout = null;
     }
     this.togglePlay();
+    this.lastControlsShowTime = Date.now();
+    this.clearControlsTimeout();
+    this.hideControlsAfterDelay(3000);
   }
 
   onReplayClick(event: Event) {
@@ -975,9 +885,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   getVolumeIcon(): 'volume-2' | 'volume-1' | 'volume-x' {
-    if (this.youtube.isMuted() || this.volume() === 0) return 'volume-x';
-    if (this.volume() < 50) return 'volume-1';
-    return 'volume-2';
+    return getVolumeIcon(this.volume(), this.youtube.isMuted());
   }
 
   showVolumeSlider() {
@@ -1028,20 +936,63 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   // ============================================
-  // PLAYBACK SPEED
+  // PLAYER SETTINGS & PLAYBACK SPEED
   // ============================================
 
-  toggleSpeedMenu(event: Event) {
-    event.stopPropagation();
-    this.isSpeedMenuOpen.update(v => !v);
-    this.langPickerOpen.set(false); // Close lang menu if open
+  openPlayerSettings(event?: Event): void {
+    event?.stopPropagation();
+    this.playerSettingsView.set('main');
+    this.isPlayerSettingsOpen.set(true);
+    this.clearControlsTimeout();
     this.showControls();
+  }
+
+  openSpeedMenu(event?: MouseEvent): void {
+    event?.stopPropagation();
+    this.playerSettingsView.set('speed');
+    this.isPlayerSettingsOpen.set(true);
+    this.clearControlsTimeout();
+    this.showControls();
+  }
+
+  toggleDualSubtitles(): void {
+    if (this.settings.settings().showDualSubtitles) {
+      this.disableDualSubtitles();
+    } else {
+      const target = this.targetLang() || this.settings.settings().dualSubtitleTargetLang || 'en';
+      this.onLangSelected(target);
+    }
+  }
+
+  closePlayerSettings(): void {
+    this.isPlayerSettingsOpen.set(false);
+    this.playerSettingsView.set('main');
+    this.startControlsAutoHide();
+  }
+
+  selectSpeedFromSheet(speed: PlaybackSpeed): void {
+    this.setPlaybackSpeed(speed);
+    this.closePlayerSettings();
+  }
+
+  setFontSizeFromSheet(size: FontSize): void {
+    this.settings.setFontSize(size);
+    this.closePlayerSettings();
+  }
+
+  getFontSizeName(size: FontSize): string {
+    switch (size) {
+      case 'small': return this.i18n.t('fontSize.small') || 'Small';
+      case 'medium': return this.i18n.t('fontSize.medium') || 'Normal';
+      case 'large': return this.i18n.t('fontSize.large') || 'Large';
+      case 'xlarge': return this.i18n.t('fontSize.xlarge') || 'Extra Large';
+    }
   }
 
   setPlaybackSpeed(speed: PlaybackSpeed) {
     this.currentSpeed.set(speed);
     this.youtube.setPlaybackRate(speed);
-    this.isSpeedMenuOpen.set(false);
+    this.settings.setPlaybackSpeed(speed);
     this.showSpeedFeedback(speed);
   }
 
@@ -1067,8 +1018,8 @@ export class VideoPlayerComponent implements OnDestroy {
     const container = this.videoContainerRef?.nativeElement;
     if (!container) return;
 
-    const doc = this.document as any;
-    const elem = container as any;
+    const doc = this.document as FullscreenDocument;
+    const elem = container as FullscreenElement;
     const isCurrentlyFullscreen = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
 
     try {
@@ -1078,14 +1029,14 @@ export class VideoPlayerComponent implements OnDestroy {
         } else if (doc.webkitExitFullscreen) {
           await doc.webkitExitFullscreen();
         }
-        try { (screen.orientation as any)?.unlock?.(); } catch { }
+        try { (screen.orientation as ScreenOrientationWithLock | undefined)?.unlock?.(); } catch { }
       } else {
         if (elem.requestFullscreen) {
           await elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) {
           await elem.webkitRequestFullscreen();
         }
-        try { await (screen.orientation as any)?.lock?.('landscape'); } catch { }
+        try { await (screen.orientation as ScreenOrientationWithLock | undefined)?.lock?.('landscape'); } catch { }
       }
     } catch {
       const newState = !this.isFullscreen();
@@ -1117,8 +1068,9 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsEntry.set(null);
     this.fsLookupLoading.set(true);
 
-    const lang = this.settings.settings().language;
-    this.dictionary.lookup(token.surface, lang).subscribe({
+    const lang = this.activeSubtitleLanguage();
+    this.fsLookupSub?.unsubscribe();
+    this.fsLookupSub = this.dictionary.lookup(token.surface, lang).subscribe({
       next: (entry) => {
         this.fsEntry.set(entry);
         this.fsLookupLoading.set(false);
@@ -1130,14 +1082,10 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   closeFsPopup(): void {
+    this.fsLookupSub?.unsubscribe();
     this.fsPopupVisible.set(false);
     this.fsSelectedWord.set(null);
     this.fsEntry.set(null);
-  }
-
-  // Grammar methods for fullscreen
-  isFsGrammarToken(index: number): boolean {
-    return this.fsGrammarTokenIndices().has(index);
   }
 
   getFsGrammarMatchForToken(index: number): GrammarMatch | undefined {
@@ -1162,42 +1110,8 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsSelectedGrammarPattern.set(null);
   }
 
-  // Popup overlay touch handlers - distinguish tap from scroll
-  onPopupOverlayTouchStart(event: TouchEvent): void {
-    this.popupTouchState = {
-      startY: event.touches[0].clientY,
-      hasMoved: false
-    };
-  }
-
-  onPopupOverlayTouchMove(event: TouchEvent): void {
-    const deltaY = Math.abs(event.touches[0].clientY - this.popupTouchState.startY);
-    // Consider it a scroll if moved more than 10px
-    if (deltaY > 10) {
-      this.popupTouchState.hasMoved = true;
-    }
-  }
-
   onFullscreenComponentWordClick(event: { token: Token; context: string; event: MouseEvent }): void {
     this.onFullscreenWordClick(event.token, event.context, event.event);
-  }
-
-  onWordPopupOverlayTouchEnd(event: TouchEvent): void {
-    // Only close if this was a tap (no scroll movement) and touch is on overlay (not popup)
-    if (!this.popupTouchState.hasMoved && event.target === event.currentTarget) {
-      event.preventDefault();
-      this.closeFsPopup();
-    }
-    this.popupTouchState = { startY: 0, hasMoved: false };
-  }
-
-  onGrammarPopupOverlayTouchEnd(event: TouchEvent): void {
-    // Only close if this was a tap (no scroll movement) and touch is on overlay (not popup)
-    if (!this.popupTouchState.hasMoved && event.target === event.currentTarget) {
-      event.preventDefault();
-      this.closeFsGrammarPopup();
-    }
-    this.popupTouchState = { startY: 0, hasMoved: false };
   }
 
   saveFsWord(): void {
@@ -1238,8 +1152,6 @@ export class VideoPlayerComponent implements OnDestroy {
   // FONT SIZE CONTROL
   // ============================================
 
-  readonly fontSizes: ('small' | 'medium' | 'large' | 'xlarge')[] = ['small', 'medium', 'large', 'xlarge'];
-
   cycleFontSize(): void {
     const current = this.settings.settings().fontSize;
     const currentIndex = this.fontSizes.indexOf(current);
@@ -1256,6 +1168,14 @@ export class VideoPlayerComponent implements OnDestroy {
       case 'xlarge': return 'XL';
       default: return 'M';
     }
+  }
+
+  onSubtitlePositionChanged(percent: number): void {
+    this.settings.setFullscreenSubtitleYPercent(percent);
+  }
+
+  toggleFullscreenSubtitlePosition(): void {
+    this.settings.toggleFullscreenSubtitlePosition();
   }
 
   // ============================================
@@ -1373,15 +1293,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   formatTime(seconds: number): string {
-    if (!seconds || isNaN(seconds)) return '0:00';
-    const hours = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-
-    if (hours > 0) {
-      return `${hours}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    }
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return formatTime(seconds);
   }
 
   // ============================================
@@ -1389,6 +1301,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   ngOnDestroy(): void {
+    this.fsLookupSub?.unsubscribe();
     this.clearControlsTimeout();
     this.gestures.destroy();
 

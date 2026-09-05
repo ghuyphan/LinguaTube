@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { AppComponent } from './app/app.component';
@@ -16,7 +16,7 @@ if (!isDevMode()) {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
-    provideAnimations(),
+    provideAnimationsAsync(),
     provideHttpClient(withInterceptors([timeoutInterceptor, cacheInterceptor])),
     provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     provideServiceWorker('ngsw-worker.js', {

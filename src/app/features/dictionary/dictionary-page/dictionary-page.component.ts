@@ -325,13 +325,11 @@ export class DictionaryPageComponent {
   }
 
   exportVocabJSON(): void {
-    const json = this.vocab.exportToJSON();
-    this.downloadFile(json, 'voca-vocabulary.json', 'application/json');
+    this.vocab.exportAsFile('json');
   }
 
   exportVocabAnki(): void {
-    const tsv = this.vocab.exportToAnki();
-    this.downloadFile(tsv, 'voca-anki.tsv', 'text/tab-separated-values');
+    this.vocab.exportAsFile('anki');
   }
 
   importVocabJSON(event: Event): void {
@@ -339,26 +337,9 @@ export class DictionaryPageComponent {
     const file = input.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const content = e.target?.result as string;
-      try {
-        this.vocab.importFromJSON(content);
-      } catch (err) {
-        console.error('Import failed', err);
-      }
-    };
-    reader.readAsText(file);
+    void this.vocab.importFromFile(file).catch(err => {
+      console.error('Import failed', err);
+    });
     input.value = '';
-  }
-
-  private downloadFile(content: string, filename: string, type: string): void {
-    const blob = new Blob([content], { type });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
   }
 }

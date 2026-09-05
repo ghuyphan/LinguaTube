@@ -205,7 +205,7 @@ export class TranscriptService {
    * 2. Check IndexedDB (persistent across sessions)
    * 3. Fetch from API (network)
    */
-  fetchTranscript(videoId: string, lang: string = 'ja'): Observable<SubtitleCue[]> {
+  fetchTranscript(videoId: string, lang: string = 'ja', duration?: number): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
     // 1. Check client-side memory cache first (fastest)
@@ -237,7 +237,7 @@ export class TranscriptService {
         this.state.set({ status: 'loading' });
         this.fallbackInfo.set(null);
 
-        return this.callTranscriptAPI(videoId, lang, false).pipe(
+        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration).pipe(
           takeUntil(this.cancelSubject),
           tap(cues => {
             if (cues.length > 0) {
@@ -259,7 +259,13 @@ export class TranscriptService {
   /**
    * Generate transcript using AI (Whisper/Gladia)
    */
-  generateWithAI(videoId: string, lang: string = 'ja', resultUrl?: string, turnstileToken?: string): Observable<SubtitleCue[]> {
+  generateWithAI(
+    videoId: string,
+    lang: string = 'ja',
+    resultUrl?: string,
+    turnstileToken?: string,
+    duration?: number
+  ): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
 
     // If we're polling (resultUrl exists), mark as resuming
@@ -270,7 +276,7 @@ export class TranscriptService {
     });
     this.fallbackInfo.set(null);
 
-    return this.callTranscriptAPI(videoId, lang, true, resultUrl, turnstileToken).pipe(
+    return this.callTranscriptAPI(videoId, lang, true, resultUrl, turnstileToken, duration).pipe(
       takeUntil(this.cancelSubject),
       tap(cues => {
         if (cues.length > 0) {
@@ -360,10 +366,11 @@ export class TranscriptService {
       // Handle client errors (400-499)
       if (err.status >= 400) {
         const errorCode = err.error?.errorCode || 'REQUEST_ERROR';
+        const isAIBlocked = errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS';
         this.state.set({
           status: 'error',
           code: errorCode,
-          whisperAvailable: err.error?.whisperAvailable ?? whisperAvailable
+          whisperAvailable: isAIBlocked ? false : (err.error?.whisperAvailable ?? whisperAvailable)
         });
         return of([]);
       }
@@ -398,7 +405,8 @@ export class TranscriptService {
     lang: string,
     preferAI: boolean,
     resultUrl?: string,
-    turnstileToken?: string
+    turnstileToken?: string,
+    duration?: number
   ): Observable<SubtitleCue[]> {
 
     // Dedup ongoing requests (except for polling)
@@ -411,6 +419,7 @@ export class TranscriptService {
       videoId,
       lang,
       preferAI,
+      ...(duration !== undefined && duration > 0 && { duration }),
       ...(resultUrl && { resultUrl }),
       ...(turnstileToken && { turnstileToken })
     }).pipe(

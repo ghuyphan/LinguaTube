@@ -60,7 +60,7 @@ export class SubtitleService {
   // by scheduleTokenSave() which runs with a debounce whenever tokens are computed.
 
   // State
-  private tokenSaveTimer: any = null;
+  private tokenSaveTimer: ReturnType<typeof setTimeout> | null = null;
   private pendingSaveArgs: { videoId: string, lang: string } | null = null;
   readonly subtitles = signal<SubtitleCue[]>([]);
   readonly currentCueIndex = signal(-1);

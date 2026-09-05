@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Subject } from 'rxjs';
 import { VideoInfo } from '../../models';
+import { getYouTubeThumbnail } from '../../core/utils';
 
 interface YTPlayer {
   playVideo(): void;
@@ -18,18 +19,45 @@ interface YTPlayer {
   getPlaybackRate(): number;
   loadVideoById(videoId: string): void;
   unloadModule(module: string): void;
+  getVideoLoadedFraction?(): number;
   getIframe(): HTMLIFrameElement;
   destroy(): void;
 }
 
 interface YTEvent {
   target: YTPlayer;
-  data: number;
+  data?: number;
+}
+
+interface YTPlayerOptions {
+  width?: string | number;
+  height?: string | number;
+  videoId?: string;
+  host?: string;
+  playerVars?: Record<string, unknown>;
+  events?: {
+    onReady?: (event: YTEvent) => void;
+    onStateChange?: (event: YTEvent) => void;
+    onPlaybackRateChange?: (event: { target: YTPlayer; data: number }) => void;
+    onError?: (event: YTEvent) => void;
+  };
+}
+
+interface YTNamespace {
+  Player: new (id: string | HTMLElement, options: YTPlayerOptions) => YTPlayer;
+  PlayerState: {
+    UNSTARTED: number;
+    ENDED: number;
+    PLAYING: number;
+    PAUSED: number;
+    BUFFERING: number;
+    CUED: number;
+  };
 }
 
 declare global {
   interface Window {
-    YT: any;
+    YT: YTNamespace;
     onYouTubeIframeAPIReady: () => void;
   }
 }
@@ -53,7 +81,7 @@ export class YoutubeService {
   private apiReady = signal(false);
   private apiReadyPromise: Promise<void>;
   private resolveApiReady!: () => void;
-  private timeUpdateInterval: any = null;
+  private timeUpdateInterval: number | null = null;
 
   /** Guard to prevent concurrent initPlayer calls */
   private pendingInit: Promise<void> | null = null;
@@ -71,6 +99,8 @@ export class YoutubeService {
   readonly pendingVideoId = signal<string | null>(null);
   readonly intendedPlayingState = signal(false);
   readonly isMuted = signal(false);
+  readonly playbackRate = signal<number>(1);
+  private desiredPlaybackRate = 1;
 
   /** Emits when a video is successfully loaded (for history tracking) */
   readonly videoLoaded = new Subject<VideoInfo>();
@@ -315,6 +345,12 @@ export class YoutubeService {
 
           // Update application state
           this.updateVideoState(videoId, metadata, duration);
+
+          if (this.desiredPlaybackRate !== 1) {
+            try {
+              player.setPlaybackRate(this.desiredPlaybackRate);
+            } catch { }
+          }
           return;
         } catch (e) {
           console.warn('Failed to reuse player, falling back to recreation', e);
@@ -344,6 +380,7 @@ export class YoutubeService {
           }
 
           this.player = new window.YT.Player(elementId, {
+            host: 'https://www.youtube.com',
             videoId,
             width: '100%',
             height: '100%',
@@ -359,8 +396,7 @@ export class YoutubeService {
               disablekb: 0,
               showinfo: 0,
               origin: window.location.origin,
-              enablejsapi: 1,
-              host: 'https://www.youtube.com'
+              enablejsapi: 1
             },
             events: {
               onReady: async (event: YTEvent) => {
@@ -378,6 +414,12 @@ export class YoutubeService {
                   // Module might not be loaded
                 }
 
+                if (this.desiredPlaybackRate !== 1) {
+                  try {
+                    event.target.setPlaybackRate(this.desiredPlaybackRate);
+                  } catch { }
+                }
+
                 this.isReady.set(true); // Explicitly set ready here for new players
 
                 // Restore playing state if intended
@@ -388,6 +430,13 @@ export class YoutubeService {
                 }
 
                 resolve();
+              },
+              onPlaybackRateChange: (event: YTEvent) => {
+                const newRate = Number(event.data);
+                if (!isNaN(newRate) && newRate > 0) {
+                  this.playbackRate.set(newRate);
+                  this.desiredPlaybackRate = newRate;
+                }
               },
               onStateChange: (event: YTEvent) => {
                 const state = event.data;
@@ -409,6 +458,15 @@ export class YoutubeService {
                     event.target.unloadModule('cc');
                   } catch { }
 
+                  if (this.desiredPlaybackRate !== 1) {
+                    try {
+                      const actualRate = event.target.getPlaybackRate();
+                      if (actualRate !== this.desiredPlaybackRate) {
+                        event.target.setPlaybackRate(this.desiredPlaybackRate);
+                      }
+                    } catch { }
+                  }
+
                   if ('mediaSession' in navigator) {
                     navigator.mediaSession.playbackState = 'playing';
                   }
@@ -419,7 +477,10 @@ export class YoutubeService {
                   }
                   this.isPlaying.set(false);
                   this.intendedPlayingState.set(false);
-                  cancelAnimationFrame(this.timeUpdateInterval);
+                  if (this.timeUpdateInterval !== null) {
+                    cancelAnimationFrame(this.timeUpdateInterval);
+                    this.timeUpdateInterval = null;
+                  }
                 }
 
                 this.isEnded.set(state === window.YT.PlayerState.ENDED);
@@ -442,7 +503,8 @@ export class YoutubeService {
                   101: 'Video cannot be embedded',
                   150: 'Video cannot be embedded'
                 };
-                const msg = errorMessages[event.data] || 'Unknown error';
+                const code = typeof event.data === 'number' ? event.data : -1;
+                const msg = errorMessages[code] || 'Unknown error';
                 this.error.set(msg);
                 reject(new Error(msg));
               }
@@ -483,7 +545,10 @@ export class YoutubeService {
       }
     };
 
-    cancelAnimationFrame(this.timeUpdateInterval);
+    if (this.timeUpdateInterval !== null) {
+      cancelAnimationFrame(this.timeUpdateInterval);
+      this.timeUpdateInterval = null;
+    }
     this.timeUpdateInterval = requestAnimationFrame(track);
   }
 
@@ -535,16 +600,33 @@ export class YoutubeService {
   }
 
   setPlaybackRate(rate: number): void {
+    const numRate = Number(rate);
+    if (isNaN(numRate) || numRate <= 0) return;
+    this.desiredPlaybackRate = numRate;
+    this.playbackRate.set(numRate);
     try {
-      this.player?.setPlaybackRate(rate);
-    } catch { }
+      this.player?.setPlaybackRate(numRate);
+    } catch (e) {
+      console.warn('[YoutubeService] setPlaybackRate error:', e);
+    }
   }
 
   getPlaybackRate(): number {
     try {
-      return this.player?.getPlaybackRate() || 1;
+      return this.player?.getPlaybackRate() || this.desiredPlaybackRate || 1;
     } catch {
-      return 1;
+      return this.desiredPlaybackRate || 1;
+    }
+  }
+
+  getVideoLoadedFraction(): number {
+    try {
+      if (this.player && typeof this.player.getVideoLoadedFraction === 'function') {
+        return this.player.getVideoLoadedFraction() || 0;
+      }
+      return 0;
+    } catch {
+      return 0;
     }
   }
 
@@ -618,7 +700,7 @@ export class YoutubeService {
       title: metadata.title,
       duration,
       channel: metadata.channel,
-      thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+      thumbnail: getYouTubeThumbnail(videoId, 'hqdefault')
     };
 
     this.currentVideo.set(video);
@@ -641,8 +723,8 @@ export class YoutubeService {
         title: metadata.title,
         artist: metadata.channel,
         artwork: [
-          { src: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`, sizes: '320x180', type: 'image/jpeg' },
-          { src: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, sizes: '480x360', type: 'image/jpeg' }
+          { src: getYouTubeThumbnail(videoId, 'mqdefault'), sizes: '320x180', type: 'image/jpeg' },
+          { src: getYouTubeThumbnail(videoId, 'hqdefault'), sizes: '480x360', type: 'image/jpeg' }
         ]
       });
     }

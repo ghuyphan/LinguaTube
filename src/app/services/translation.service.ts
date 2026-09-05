@@ -12,6 +12,22 @@ export interface LanguageOption {
     flagUrl: string;
 }
 
+interface BatchResponse {
+    translations: (string | null)[];
+}
+
+interface BatchRequestObserver {
+    next: (response: BatchResponse) => void;
+    error: (err: unknown) => void;
+    complete: () => void;
+}
+
+interface BatchRequest {
+    params: { texts: string[]; source: string; target: string };
+    observer: BatchRequestObserver;
+    cancelled?: boolean;
+}
+
 // Cache configuration
 const CACHE_KEY = 'linguatube_translations';
 const MAX_CACHE_SIZE = 1000;
@@ -24,14 +40,10 @@ export class TranslationService implements OnDestroy {
 
     // In-memory cache for translations
     private translationCache = new Map<string, string>();
-    private storageSaveTimer: any = null;
+    private storageSaveTimer: ReturnType<typeof setTimeout> | null = null;
 
     // Request queue for batch translations
-    private requestQueue$ = new Subject<{
-        params: { texts: string[]; source: string; target: string };
-        observer: any; // Keep any here for RxJS observer flexibility or properly type it later
-        cancelled?: boolean;
-    }>();
+    private requestQueue$ = new Subject<BatchRequest>();
 
     constructor(private http: HttpClient) {
         this.loadCacheFromStorage();
@@ -60,7 +72,7 @@ export class TranslationService implements OnDestroy {
         ).subscribe();
     }
 
-    private processBatchRequest(request: { params: { texts: string[]; source: string; target: string }, observer: any }): Observable<void> {
+    private processBatchRequest(request: BatchRequest): Observable<void> {
         const { params, observer } = request;
 
         return this.http.post<{ translations: (string | null)[] }>(environment.api.translateBatch, {
@@ -176,7 +188,7 @@ export class TranslationService implements OnDestroy {
                         observer.next(results);
                         observer.complete();
                     },
-                    error: (err: any) => observer.error(err),
+                    error: (err: unknown) => observer.error(err),
                     complete: () => observer.complete()
                 },
                 cancelled: false

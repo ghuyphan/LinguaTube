@@ -15,12 +15,15 @@
     &.icon--heart-filled,
     &.icon--star-filled,
     &.icon--fire,
-    &.icon--bookmark-filled {
+    &.icon--bookmark-filled,
+    &.icon--languages {
         fill: currentColor;
     }
 
     &.icon--heart-filled,
-    &.icon--star-filled {
+    &.icon--star-filled,
+    &.icon--google,
+    &.icon--languages {
         stroke: none;
     }
 }

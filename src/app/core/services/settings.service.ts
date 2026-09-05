@@ -17,7 +17,8 @@ const DEFAULT_SETTINGS: UserSettings = {
   sidebarCollapsed: false,
   showDualSubtitles: false,
   dualSubtitleTargetLang: 'en',
-  hasCompletedOnboarding: false
+  hasCompletedOnboarding: false,
+  fullscreenSubtitleYPercent: 82
 };
 
 @Injectable({
@@ -230,10 +231,10 @@ export class SettingsService implements OnDestroy {
 
   private saveToStorage(settings: UserSettings): void {
     try {
-      const toSave = { ...settings };
+      const toSave: Partial<UserSettings> = { ...settings };
       // Don't persist dual subtitle state or target language to avoid accidental API usage on reload
-      delete (toSave as any).showDualSubtitles;
-      delete (toSave as any).dualSubtitleTargetLang;
+      delete toSave.showDualSubtitles;
+      delete toSave.dualSubtitleTargetLang;
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
     } catch (err) {
@@ -274,6 +275,17 @@ export class SettingsService implements OnDestroy {
     }
 
     return DEFAULT_SETTINGS.readingDisplayMode;
+  }
+
+  setFullscreenSubtitleYPercent(percent: number): void {
+    const clamped = Math.max(8, Math.min(85, Math.round(percent)));
+    this.updateSettings({ fullscreenSubtitleYPercent: clamped });
+  }
+
+  toggleFullscreenSubtitlePosition(): void {
+    const current = this.settings().fullscreenSubtitleYPercent ?? 82;
+    const next = current < 50 ? 82 : 12;
+    this.updateSettings({ fullscreenSubtitleYPercent: next });
   }
 
   /**

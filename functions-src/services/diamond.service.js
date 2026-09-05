@@ -134,22 +134,25 @@ export class DiamondService {
      * @param {Object} context - Cloudflare execution context for waitUntil
      * @param {Object} env - Cloudflare environment bindings
      * @param {Object} [user=null] 
-     * @returns {Promise<{ success: boolean, diamonds: number, nextRegenAt: number | null, regenIntervalMs: number }>}
+     * @param {number} [amount=1] - Number of diamonds to consume (e.g. 1 for short, 2 for longer videos)
+     * @returns {Promise<{ success: boolean, reason?: string, requiredDiamonds?: number, diamonds: number, nextRegenAt: number | null, regenIntervalMs: number }>}
      */
-    async consumeDiamond(clientId, context, env, user = null) {
+    async consumeDiamond(clientId, context, env, user = null, amount = 1) {
         // 1. Get current accurate count (including any pending regen)
         const currentData = await this.getDiamonds(clientId, user);
 
-        if (currentData.diamonds <= 0) {
+        if (currentData.diamonds < amount) {
             return {
                 success: false,
-                diamonds: 0,
+                reason: 'insufficient_diamonds',
+                requiredDiamonds: amount,
+                diamonds: currentData.diamonds,
                 nextRegenAt: currentData.nextRegenAt,
                 regenIntervalMs: DIAMOND_CONFIG.regenIntervalMs
             };
         }
 
-        const newDiamondCount = currentData.diamonds - 1;
+        const newDiamondCount = Math.max(0, currentData.diamonds - amount);
         const now = Date.now();
         // If they were at max, the regen timer starts NOW.
         // If they were below max, the regen timer continues from lastRegenDate

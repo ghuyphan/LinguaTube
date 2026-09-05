@@ -1,15 +1,17 @@
 import { Component, OnDestroy, inject, effect, output, signal, computed, ViewChild, ElementRef, ChangeDetectionStrategy, HostListener, input, untracked } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyQuickViewComponent } from '../../vocabulary/vocabulary-quick-view/vocabulary-quick-view.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { SubtitleService, YoutubeService, VocabularyService, SettingsService, TranscriptService, I18nService, GrammarService, TranslationService } from '../../../services';
-import { SubtitleCue, Token, GrammarMatch, GrammarPattern, ReadingDisplayMode, SupportedLearningLanguage } from '../../../models';
+import { SubtitleCue, Token, GrammarMatch, GrammarPattern, ReadingDisplayMode, SupportedLearningLanguage, SupportedGrammarLang } from '../../../models';
 import { QuizService } from '../quiz.service';
 import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
+import { formatTime } from '../../../core/utils';
 
 @Component({
   selector: 'app-subtitle-display',
@@ -227,15 +229,18 @@ export class SubtitleDisplayComponent implements OnDestroy {
     return result;
   });
 
-  // Grammar detection
+  // Grammar detection (reacts to loadedLanguages so first cue highlights immediately upon lazy load)
   grammarMatches = computed(() => {
+    // Read reactive signal to auto-recompute when pattern lazy loading finishes
+    this.grammar.loadedLanguages();
+
     const tokens = this.currentTokens();
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
 
     const lang = this.effectiveLanguage();
-    if (lang === 'en') return [];
+    if (!lang || !['ja', 'zh', 'ko', 'en'].includes(lang)) return [];
 
-    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko');
+    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko' | 'en');
   });
 
   grammarTokenIndices = computed(() => {
@@ -287,8 +292,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
   // FIX 4: Throttled lazy loading
   // ============================================
   private isLazyLoadPending = false;
-  private lazyLoadSubscription: any = null; // Subscription type
-  private dualSubSubscription: any = null; // Subscription type
+  private lazyLoadSubscription: Subscription | null = null;
+  private dualSubSubscription: Subscription | null = null;
 
   private lazyLoadUpcomingCues(): void {
     if (this.isLazyLoadPending) return;
@@ -385,6 +390,14 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   constructor() {
+    // Proactively preload grammar patterns for the active learning language
+    effect(() => {
+      const lang = this.effectiveLanguage();
+      if (lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
+        this.grammar.preloadPatterns(lang as SupportedGrammarLang);
+      }
+    });
+
     // Auto-scroll to active cue in the list
     effect(() => {
       if (this.isVideoFullscreen()) return;
@@ -524,7 +537,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
                   const newMap = new Map<string, string>();
                   let hasContent = false;
 
-                  translatedSegments.forEach((seg: any, index: number) => {
+                  translatedSegments.forEach((seg, index: number) => {
                     if (index < cues.length && seg.translation) {
                       newMap.set(cues[index].id, seg.translation);
                       hasContent = true;
@@ -735,10 +748,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   formatTime(seconds: number): string {
-    if (!seconds || isNaN(seconds)) return '0:00';
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return formatTime(seconds);
   }
 
   toggleAddedSheet(): void {

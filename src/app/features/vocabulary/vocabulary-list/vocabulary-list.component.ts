@@ -41,7 +41,12 @@ export class VocabularyListComponent {
 
   currentLangVocabCount = computed(() => {
     const lang = this.settings.settings().language;
-    return this.vocab.vocabulary().filter(w => w.language === lang).length;
+    const words = new Set(
+      this.vocab.vocabulary()
+        .filter(w => w.language === lang)
+        .map(w => w.word.trim().toLowerCase())
+    );
+    return words.size;
   });
 
   cycleLevel(item: VocabularyItem, event: Event): void {
@@ -135,9 +140,19 @@ export class VocabularyListComponent {
       );
     }
 
-    return [...items].sort((a, b) =>
+    // Sort by newest added first
+    const sorted = [...items].sort((a, b) =>
       new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime()
     );
+
+    // Deduplicate so identical words don't repeat in the list
+    const seen = new Set<string>();
+    return sorted.filter(item => {
+      const key = item.word.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   });
 
   deleteWord(id: string): void {
@@ -146,13 +161,11 @@ export class VocabularyListComponent {
 
   // Export methods (called by parent via ViewChild or service)
   exportJSON(): void {
-    const json = this.vocab.exportToJSON();
-    this.downloadFile(json, 'voca-vocabulary.json', 'application/json');
+    this.vocab.exportAsFile('json');
   }
 
   exportAnki(): void {
-    const tsv = this.vocab.exportToAnki();
-    this.downloadFile(tsv, 'voca-anki.tsv', 'text/tab-separated-values');
+    this.vocab.exportAsFile('anki');
   }
 
   importJSON(event: Event): void {
@@ -160,30 +173,14 @@ export class VocabularyListComponent {
     const file = input.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const content = e.target?.result as string;
-      try {
-        this.vocab.importFromJSON(content);
+    this.vocab.importFromFile(file)
+      .then(() => {
         this.showToast('Vocabulary imported successfully!', 'success');
-      } catch {
+      })
+      .catch(() => {
         this.showToast('Failed to import. Check file format.', 'error');
-      }
-    };
-    reader.readAsText(file);
+      });
     input.value = '';
-  }
-
-
-
-  private downloadFile(content: string, filename: string, type: string): void {
-    const blob = new Blob([content], { type });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
   }
 
   private showToast(message: string, type: 'success' | 'error'): void {

@@ -24,3 +24,21 @@ export interface LocalHistoryData {
     items: HistoryItem[];
     updatedAt: string;
 }
+
+/**
+ * PocketBase history record schema
+ */
+export interface HistoryRecord {
+    id: string;
+    video_id: string;
+    title: string;
+    thumbnail?: string;
+    channel?: string;
+    duration?: number;
+    language?: 'ja' | 'zh' | 'ko' | 'en';
+    languages?: ('ja' | 'zh' | 'ko' | 'en')[];
+    watched_at: string | Date;
+    progress: number;
+    is_favorite: boolean;
+    [key: string]: unknown;
+}

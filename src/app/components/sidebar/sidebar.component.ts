@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, output, ViewChild, ElementRef } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
@@ -28,14 +28,30 @@ export class SidebarComponent {
     streak = inject(StreakService);
     playlistService = inject(PlaylistService);
 
+    hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
+
     onLearnClick(event: MouseEvent): void {
-        if (this.youtube.currentVideo() || this.playlistService.currentPlaylist() || this.router.url.includes('/video')) {
+        const isOnVideoPage = this.router.url.startsWith('/video');
+        const activeVideo = this.youtube.currentVideo();
+
+        if (isOnVideoPage) {
+            // Already on video page: Clicking Watch again clears current video to return to search/spotlight
             event.preventDefault();
             this.playlistService.clearCurrentPlaylist();
             this.youtube.reset();
             this.subtitles.clear();
             this.transcript.reset();
             void this.router.navigate(['/video'], { queryParams: {} });
+        } else if (activeVideo) {
+            // Navigating back from another page while video is active: Resume current video
+            event.preventDefault();
+            const playlistId = this.playlistService.currentPlaylist()?.id;
+            void this.router.navigate(['/video'], {
+                queryParams: {
+                    id: activeVideo.id,
+                    ...(playlistId ? { playlist: playlistId } : {})
+                }
+            });
         }
     }
 
@@ -95,28 +111,5 @@ export class SidebarComponent {
         const effectiveTheme = this.settings.getEffectiveTheme();
         const next = effectiveTheme === 'dark' ? 'light' : 'dark';
         this.settings.setTheme(next);
-    }
-
-    @ViewChild('googleBtnCollapsed') googleBtnCollapsed!: ElementRef;
-    @ViewChild('googleBtnExpanded') googleBtnExpanded!: ElementRef;
-
-    isLoggingIn = false;
-
-    /**
-     * Login with Google via PocketBase OAuth
-     */
-    loginWithGoogle(): void {
-        if (this.isLoggingIn) return;
-        this.isLoggingIn = true;
-
-        const popup = this.auth.prepareOAuthPopup();
-
-        this.auth.loginWithGoogle(popup)
-            .catch(error => {
-                console.error('[Sidebar] Google login failed:', error);
-            })
-            .finally(() => {
-                this.isLoggingIn = false;
-            });
     }
 }

@@ -93,3 +93,59 @@ export interface LocalPlaylistData {
     playlists: Playlist[];
     updatedAt: string;
 }
+
+/**
+ * PocketBase playlist record schema
+ */
+export interface PlaylistRecord {
+    id: string;
+    user?: string;
+    title?: string;
+    description?: string;
+    visibility?: PlaylistVisibility;
+    language?: PlaylistLanguage;
+    tags?: string[];
+    video_ids?: string[];
+    video_count?: number;
+    thumbnail?: string;
+    save_count?: number;
+    is_featured?: boolean;
+    created: string;
+    updated: string;
+    expand?: {
+        user?: {
+            name?: string;
+            username?: string;
+        };
+        [key: string]: unknown;
+    };
+    [key: string]: unknown;
+}
+
+/**
+ * Maps a PocketBase record to a Playlist entity
+ */
+export function mapRecordToPlaylist(record: PlaylistRecord | Record<string, unknown>): Playlist {
+    const r = record as PlaylistRecord;
+    const userName = r.expand?.user?.name || r.expand?.user?.username;
+
+    return {
+        id: r.id,
+        userId: r.user || '',
+        userName: userName,
+        title: r.title || '',
+        description: r.description,
+        visibility: r.visibility || 'private',
+        language: r.language || 'en',
+        tags: r.tags || [],
+        videoIds: r.video_ids || [],
+        videoCount: r.video_count || 0,
+        thumbnail: r.thumbnail,
+        saveCount: r.save_count || 0,
+        isFeatured: r.is_featured || false,
+        createdAt: r.created ? new Date(r.created) : new Date(),
+        updatedAt: r.updated ? new Date(r.updated) : new Date(),
+        synced: true
+    };
+}
+

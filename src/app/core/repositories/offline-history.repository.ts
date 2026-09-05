@@ -1,9 +1,10 @@
 import { Injectable, inject, signal, Signal } from '@angular/core';
 import { IHistoryRepository } from './history.repository';
-import { HistoryItem } from '../../models';
+import { HistoryItem, HistoryRecord } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
+import type PocketBase from 'pocketbase';
 
 const STORAGE_KEY = 'linguatube_history';
 const MAX_LOCAL_HISTORY = 50;
@@ -67,7 +68,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.scheduleRemoteItemPush(item);
     }
 
-    private remoteSyncTimers = new Map<string, any>();
+    private remoteSyncTimers = new Map<string, ReturnType<typeof setTimeout>>();
 
     private scheduleRemoteItemPush(item: HistoryItem): void {
         if (!this.auth.isLoggedIn()) return;
@@ -107,7 +108,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         }
     }
 
-    private async upsertItemRemote(client: any, item: HistoryItem): Promise<void> {
+    private async upsertItemRemote(client: PocketBase, item: HistoryItem): Promise<void> {
         const watchedAtIso = item.watched_at instanceof Date
             ? item.watched_at.toISOString()
             : new Date(item.watched_at).toISOString();
@@ -212,7 +213,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
                 sort: '-watched_at'
             });
 
-            const remoteItems = result.items.map(r => this.recordToHistoryItem(r));
+            const remoteItems = result.items.map(r => this.recordToHistoryItem(r as unknown as HistoryRecord));
 
             // 3. Merge Strategy: Map by video_id, local with newer/equal watched_at wins
             const itemMap = new Map<string, HistoryItem>();
@@ -270,19 +271,20 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.storage.set(STORAGE_KEY, data);
     }
 
-    private recordToHistoryItem(record: any): HistoryItem {
+    private recordToHistoryItem(record: HistoryRecord | Record<string, unknown>): HistoryItem {
+        const r = record as HistoryRecord;
         return {
-            id: record.id,
-            video_id: record.video_id,
-            title: record.title,
-            thumbnail: record.thumbnail,
-            channel: record.channel,
-            duration: record.duration,
-            languages: record.languages,
-            language: (record.languages && record.languages.length > 0) ? record.languages[0] : 'en', // Compat
-            watched_at: new Date(record.watched_at),
-            progress: record.progress,
-            is_favorite: record.is_favorite,
+            id: r.id,
+            video_id: r.video_id,
+            title: r.title,
+            thumbnail: r.thumbnail,
+            channel: r.channel,
+            duration: r.duration,
+            languages: r.languages,
+            language: (r.languages && r.languages.length > 0) ? r.languages[0] : 'en', // Compat
+            watched_at: new Date(r.watched_at),
+            progress: r.progress,
+            is_favorite: r.is_favorite,
             synced: true
         };
     }

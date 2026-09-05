@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
-import { DictionaryService, VocabularyService, SettingsService, TranslationService, I18nService } from '../../../services';
+import { DictionaryService, VocabularyService, SettingsService, TranslationService, I18nService, SubtitleService } from '../../../services';
 import { Token, DictionaryEntry } from '../../../models';
 
 @Component({
@@ -24,6 +24,7 @@ export class WordPopupComponent implements OnDestroy {
   settings = inject(SettingsService);
   translation = inject(TranslationService);
   i18n = inject(I18nService);
+  subtitles = inject(SubtitleService);
 
   selectedWord = input<Token | null>(null);
   currentSentence = input<string>('');
@@ -115,7 +116,7 @@ export class WordPopupComponent implements OnDestroy {
     this.lookupSubscription?.unsubscribe();
     this.lookupError.set(null);
 
-    const lang = this.settings.settings().language;
+    const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
     this.lookupSubscription = this.dictionary.lookup(word, lang).subscribe({
       next: result => {
         this.entry.set(result);

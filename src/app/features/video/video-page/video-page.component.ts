@@ -15,7 +15,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage } from '../../../models';
+import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue } from '../../../models';
 
 @Component({
   selector: 'app-video-page',
@@ -96,6 +96,9 @@ export class VideoPageComponent implements OnInit {
     const lang = this.settings.settings().language;
     return this.vocab.vocabulary().filter(w => w.language === lang).length;
   });
+
+  aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
+  isVideoTooLongForAI = computed(() => this.youtube.duration() > 20 * 60);
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
@@ -390,12 +393,14 @@ export class VideoPageComponent implements OnInit {
     const lang = this.settings.settings().language;
     const token = this.aiCaptchaToken();
 
-    if (!currentVideo || !token || this.isSubmittingAi()) return;
+    if (!currentVideo || !token || this.isSubmittingAi() || this.isVideoTooLongForAI() || this.transcript.diamonds() < this.aiDiamondCost()) return;
 
     this.isSubmittingAi.set(true);
     this.showAiConfirmDialog.set(false);
 
-    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token)
+    const duration = Math.round(this.youtube.duration()) || undefined;
+
+    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {
@@ -515,13 +520,11 @@ export class VideoPageComponent implements OnInit {
   }
 
   exportVocabJSON(): void {
-    const json = this.vocab.exportToJSON();
-    this.downloadFile(json, 'voca-vocabulary.json', 'application/json');
+    this.vocab.exportAsFile('json');
   }
 
   exportVocabAnki(): void {
-    const tsv = this.vocab.exportToAnki();
-    this.downloadFile(tsv, 'voca-anki.tsv', 'text/tab-separated-values');
+    this.vocab.exportAsFile('anki');
   }
 
   importVocabJSON(event: Event): void {
@@ -529,33 +532,16 @@ export class VideoPageComponent implements OnInit {
     const file = input.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const content = e.target?.result as string;
-      try {
-        this.vocab.importFromJSON(content);
-        // Toast handled via service or simple alert for now? relying on list to update
-      } catch (err) {
-        console.error('Import failed', err);
-      }
-    };
-    reader.readAsText(file);
+    void this.vocab.importFromFile(file).catch(err => {
+      console.error('Import failed', err);
+    });
     input.value = '';
-  }
-
-  private downloadFile(content: string, filename: string, type: string): void {
-    const blob = new Blob([content], { type });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
   }
 
   private fetchCaptions(videoId: string): void {
     const lang = this.settings.settings().language;
-    this.transcript.fetchTranscript(videoId, lang)
+    const duration = Math.round(this.youtube.duration()) || undefined;
+    this.transcript.fetchTranscript(videoId, lang, duration)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {
@@ -599,7 +585,7 @@ export class VideoPageComponent implements OnInit {
       });
   }
 
-  private handleCaptionsSuccess(cues: any[], requestedLang: string) {
+  private handleCaptionsSuccess(cues: SubtitleCue[], requestedLang: string) {
     // Reset index first to prevent showing old cue during transition
     this.subtitles.currentCueIndex.set(-1);
     this.subtitles.subtitles.set(cues);

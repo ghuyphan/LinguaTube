@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService, I18nService, AuthService } from '../../../services';
 import { HistoryItem } from '../../../models';
+import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
 
 @Component({
     selector: 'app-history-list',
@@ -97,19 +98,12 @@ export class HistoryListComponent {
     // ─────────────────────────────────────────────────────────────
 
     getThumbnail(videoId: string): string {
-        return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+        return getYouTubeThumbnail(videoId);
     }
 
     formatDuration(seconds?: number): string {
         if (!seconds || seconds <= 0) return '';
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        if (mins >= 60) {
-            const hrs = Math.floor(mins / 60);
-            const remainingMins = mins % 60;
-            return `${hrs}:${remainingMins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
+        return formatTime(seconds);
     }
 
     getRelativeTime(date: Date): string {

@@ -169,6 +169,38 @@ export class VocabularyService {
             .join('\n');
     }
 
+    exportAsFile(format: 'json' | 'anki'): void {
+        const isJson = format === 'json';
+        const content = isJson ? this.exportToJSON() : this.exportToAnki();
+        const filename = isJson ? 'voca-vocabulary.json' : 'voca-anki.tsv';
+        const type = isJson ? 'application/json' : 'text/tab-separated-values';
+
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    importFromFile(file: File): Promise<void> {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const content = e.target?.result as string;
+                try {
+                    this.importFromJSON(content);
+                    resolve();
+                } catch (err) {
+                    reject(err);
+                }
+            };
+            reader.onerror = () => reject(new Error('Failed to read file'));
+            reader.readAsText(file);
+        });
+    }
+
     importFromJSON(json: string): void {
         this.repo.importFromJSON(json);
     }

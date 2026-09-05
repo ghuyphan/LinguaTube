@@ -63,13 +63,20 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, lang, preferAI, forceRefresh, resultUrl, turnstileToken } = body;
+        const { videoId, lang, preferAI, forceRefresh, resultUrl, turnstileToken, duration } = body;
 
         // Validation
-        const validationError = await validateVideoRequest(videoId, lang);
+        const validationError = await validateVideoRequest(videoId, lang, duration, preferAI ? 'whisper' : 'innertube');
         if (validationError) {
             return jsonResponse({
-                success: false, videoId, requestedLanguage: lang, segments: [], errorCode: 'INVALID_REQUEST', error: validationError.error, timing: elapsed()
+                success: false,
+                videoId,
+                requestedLanguage: lang,
+                segments: [],
+                errorCode: validationError.error === 'video_too_long' ? 'VIDEO_TOO_LONG' : 'INVALID_REQUEST',
+                error: validationError.error,
+                maxDurationMinutes: validationError.maxDurationMinutes,
+                timing: elapsed()
             }, 400);
         }
 
@@ -207,10 +214,12 @@ export async function onRequestPost(context) {
             return jsonResponse({ success: true, ...aiJobRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
 
         } catch (aiErr) {
+            const errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
+            const status = (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS') ? 400 : 500;
             return jsonResponse({
-                success: false, videoId, requestedLanguage: lang, errorCode: aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR',
+                success: false, videoId, requestedLanguage: lang, errorCode,
                 error: aiErr.message, availableLanguages, ...diamondInfo, timing: elapsed()
-            }, 500);
+            }, status);
         }
 
     } catch (error) {

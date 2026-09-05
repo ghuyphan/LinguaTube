@@ -13,6 +13,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { YoutubeService } from '../../../youtube.service';
 import { BUFFERED_TRACKING_INTERVAL } from '../../video-player.constants';
+import { formatTime } from '../../../../../core/utils';
 
 /**
  * Seek preview state for the tooltip
@@ -218,16 +219,7 @@ export class ProgressBarComponent implements OnDestroy {
      * Format time in M:SS or H:MM:SS
      */
     formatTime(seconds: number): string {
-        if (!seconds || !isFinite(seconds)) return '0:00';
-
-        const hrs = Math.floor(seconds / 3600);
-        const mins = Math.floor((seconds % 3600) / 60);
-        const secs = Math.floor(seconds % 60);
-
-        if (hrs > 0) {
-            return `${hrs}: ${mins.toString().padStart(2, '0')}: ${secs.toString().padStart(2, '0')}`;
-        }
-        return `${mins}: ${secs.toString().padStart(2, '0')}`;
+        return formatTime(seconds);
     }
 
     // ========================================
@@ -293,15 +285,7 @@ export class ProgressBarComponent implements OnDestroy {
     private getLoadedFraction(): number {
         const duration = this.youtube.duration();
         if (!duration) return 0;
-
-        const player = (this.youtube as any).player;
-        if (!player?.getVideoLoadedFraction) return 0;
-
-        try {
-            return player.getVideoLoadedFraction() || 0;
-        } catch {
-            return 0;
-        }
+        return this.youtube.getVideoLoadedFraction();
     }
 
     // ========================================

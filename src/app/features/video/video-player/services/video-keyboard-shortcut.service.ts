@@ -15,7 +15,8 @@ export type KeyboardShortcutEvent =
     | { type: 'playlist-next' }
     | { type: 'playlist-prev' }
     | { type: 'step-frame'; data: { seconds: number } }
-    | { type: 'toggle-shortcuts-dialog' };
+    | { type: 'toggle-shortcuts-dialog' }
+    | { type: 'toggle-subtitle-position' };
 
 @Injectable({
     providedIn: 'root'
@@ -31,8 +32,8 @@ export class VideoKeyboardShortcutService {
     handleKeyDown(event: KeyboardEvent, isFsPopupVisible: boolean, isFullscreen: boolean): boolean {
         if (!this.youtube.currentVideo()) return false;
 
-        const target = event.target as HTMLElement;
-        if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable) {
+        const target = event.target as HTMLElement | null;
+        if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable)) {
             return false;
         }
 
@@ -146,14 +147,17 @@ export class VideoKeyboardShortcutService {
                 }
                 break;
 
-            // Jump to 0%
-            case 'Digit0':
-            case 'Numpad0':
-                event.preventDefault();
-                this.youtube.seekTo(0);
-                return true;
+            // Toggle Subtitle Position in Fullscreen (V)
+            case 'KeyV':
+                if (isFullscreen) {
+                    event.preventDefault();
+                    this.eventSubject.next({ type: 'toggle-subtitle-position' });
+                    return true;
+                }
+                break;
 
-            // Jump to 10% - 90% (supports both Digit and Numpad)
+            // Jump to 0% - 90% (supports both Digit and Numpad)
+            case 'Digit0':
             case 'Digit1':
             case 'Digit2':
             case 'Digit3':
@@ -163,6 +167,7 @@ export class VideoKeyboardShortcutService {
             case 'Digit7':
             case 'Digit8':
             case 'Digit9':
+            case 'Numpad0':
             case 'Numpad1':
             case 'Numpad2':
             case 'Numpad3':

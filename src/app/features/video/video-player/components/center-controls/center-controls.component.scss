@@ -8,20 +8,15 @@
 }
 
 // Variables (match parent component)
-$btn-bg: rgba(0, 0, 0, 0.5);
-$btn-bg-hover: rgba(0, 0, 0, 0.7);
-$transition-fast: 0.15s ease;
 $transition-normal: 0.3s ease;
 
 // Button sizes
-$btn-size-xs: 1.75rem;
 $btn-size-sm: 2rem;
 $btn-size-md: 2.5rem;
 $btn-size-lg: 3.5rem;
 $btn-size-xl: 4rem;
 
 // Icon sizes
-$icon-size-md: 1.125rem;
 $icon-size-lg: 1.5rem;
 $icon-size-2xl: 2.75rem;
 
@@ -118,7 +113,7 @@ $z-center-controls: 15;
     }
 
     // On desktop, native YouTube leaves the video center clean and unobstructed when paused
-    @media (hover: hover) and (pointer: fine) {
+    @media (min-width: 769px) and (hover: hover) and (pointer: fine) {
         display: none !important;
     }
 }
@@ -216,26 +211,6 @@ $z-center-controls: 15;
         font-size: 0.875rem;
         opacity: 0.8;
         font-variant-numeric: tabular-nums;
-    }
-}
-
-// ============================================
-// VISIBILITY HELPERS
-// ============================================
-
-.touch-only {
-    display: flex;
-
-    @media (hover: hover) and (pointer: fine) {
-        display: none !important;
-    }
-}
-
-.hover-only {
-    display: none;
-
-    @media (hover: hover) and (pointer: fine) {
-        display: flex;
     }
 }
 

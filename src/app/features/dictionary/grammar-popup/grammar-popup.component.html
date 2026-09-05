@@ -1,6 +1,6 @@
 <app-bottom-sheet [isOpen]="isOpen()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="popup-content">
-        @if (pattern(); as p) {
+        @if (displayPattern(); as p) {
         <!-- Header -->
         <div class="popup-header">
             <h2 class="popup-word">{{ p.pattern }}</h2>

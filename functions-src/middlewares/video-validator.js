@@ -9,8 +9,36 @@ export const SUPPORTED_LANGUAGES = ['ja', 'ko', 'zh', 'en'];
 // Max video duration limits (in seconds)
 export const MAX_DURATION = {
     innertube: 3 * 60 * 60,  // 3 hours for regular captions
-    whisper: 60 * 60         // 1 hour for AI transcription
+    whisper: 20 * 60         // 20 minutes for AI transcription
 };
+
+/**
+ * Scrape approximate video duration from YouTube public page (free, no API key required)
+ * @param {string} videoId - YouTube video ID
+ * @returns {Promise<number | null>} Duration in seconds, or null
+ */
+export async function fetchYouTubeDuration(videoId) {
+    if (!videoId) return null;
+    try {
+        const res = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept-Language': 'en-US,en;q=0.9'
+            },
+            signal: AbortSignal.timeout(4000)
+        });
+        if (!res.ok) return null;
+        const html = await res.text();
+        const match = html.match(/"approxDurationMs":"(\d+)"/);
+        if (match && match[1]) {
+            const seconds = Math.round(parseInt(match[1], 10) / 1000);
+            if (!isNaN(seconds) && seconds > 0) return seconds;
+        }
+        return null;
+    } catch {
+        return null;
+    }
+}
 
 /**
  * Fetch video metadata from YouTube oEmbed (free, no API key required)
@@ -79,12 +107,19 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
         };
     }
 
-    // 2. Validate duration if provided
+    // 2. Validate duration
     const maxDuration = MAX_DURATION[endpoint];
-    if (duration && duration > maxDuration) {
+    let effectiveDuration = duration;
+
+    // For whisper (AI transcription), if client duration is missing or needs verification, attempt server check
+    if (!effectiveDuration && endpoint === 'whisper') {
+        effectiveDuration = await fetchYouTubeDuration(videoId);
+    }
+
+    if (effectiveDuration && effectiveDuration > maxDuration) {
         return {
             error: 'video_too_long',
-            duration,
+            duration: effectiveDuration,
             maxDuration,
             maxDurationMinutes: Math.round(maxDuration / 60)
         };

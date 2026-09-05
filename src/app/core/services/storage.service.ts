@@ -79,7 +79,7 @@ export class StorageService {
         // Or simply clear non-critical keys?
     }
 
-    private isQuotaExceededError(e: any): boolean {
+    private isQuotaExceededError(e: unknown): boolean {
         return e instanceof DOMException && (
             e.code === 22 ||
             e.name === 'QuotaExceededError' ||

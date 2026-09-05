@@ -8,3 +8,4 @@
 // - grammar-ja.ts: Japanese JLPT N5-N1 patterns (828 patterns)
 // - grammar-ko.ts: Korean 1-6 patterns (744 patterns)  
 // - grammar-zh.ts: Chinese grammar patterns (691 patterns)
+// - grammar-en.ts: English CEFR A1-C2 grammar patterns (143 patterns)

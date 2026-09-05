@@ -1,9 +1,11 @@
 import { Injectable, inject, signal, effect, untracked } from '@angular/core';
+import type PocketBase from 'pocketbase';
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
 import { AuthService, StorageService, PocketBaseService } from '../services';
 import { calculateHash, mergeByTimestamp, processBatch, withRetry } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
+import { generateRandomId } from '../utils';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
 const SAVE_DEBOUNCE_MS = 300;
@@ -15,8 +17,8 @@ interface SyncItem {
     pinyin?: string;
     romanization?: string;
     meaning: string;
-    language: string;
-    level: string;
+    language: 'ja' | 'zh' | 'ko' | 'en';
+    level: WordLevel;
     examples: string[];
     created?: string;
     updated?: string;
@@ -307,7 +309,16 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     private updateLocal(items: VocabularyItem[]): void {
-        const normalizedItems = items.map(item => this.normalizeVocabularyItem(item));
+        const seen = new Set<string>();
+        const uniqueItems: VocabularyItem[] = [];
+        for (const item of items) {
+            const key = `${item.language}:${item.word.trim().toLowerCase()}`;
+            if (!seen.has(key)) {
+                seen.add(key);
+                uniqueItems.push(item);
+            }
+        }
+        const normalizedItems = uniqueItems.map(item => this.normalizeVocabularyItem(item));
         this.vocabulary.set(normalizedItems);
         this.recalculateStats(normalizedItems);
     }
@@ -402,8 +413,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 pinyin: item.pinyin,
                 romanization: item.romanization,
                 meaning: item.meaning,
-                language: item.language as any,
-                level: item.level as any,
+                language: item.language,
+                level: item.level,
                 examples: item.examples,
                 addedAt: item.created ? new Date(item.created) : new Date(),
                 updatedAt: item.updated ? new Date(item.updated) : new Date(),
@@ -438,8 +449,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             pinyin: record['pinyin'],
             romanization: record['romanization'],
             meaning: record['meaning'],
-            language: record['language'],
-            level: record['level'],
+            language: record['language'] as 'ja' | 'zh' | 'ko' | 'en',
+            level: record['level'] as WordLevel,
             examples: record['examples'],
             created: record['created'],
             updated: record['updated']
@@ -468,12 +479,12 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         await withRetry(() => this.syncItem(client, userId, syncItem));
     }
 
-    private async syncItem(client: any, userId: string, item: SyncItem): Promise<void> {
+    private async syncItem(client: PocketBase, userId: string, item: SyncItem): Promise<void> {
         const data = {
             word: item.word,
             reading: item.reading || '',
             pinyin: item.pinyin || '',
-            romanization: this.normalizeRomanization(item.language as 'ja' | 'zh' | 'ko' | 'en', item.reading, item.romanization, item.word) || '',
+            romanization: this.normalizeRomanization(item.language, item.reading, item.romanization, item.word) || '',
             meaning: item.meaning,
             language: item.language,
             level: item.level,
@@ -484,10 +495,11 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         try {
             // Try to create with deterministic ID
             await client.collection('vocabulary').create({ ...data, id: item.id });
-        } catch (err: any) {
+        } catch (err: unknown) {
             // If exists, update
             // 400 or 404 details? Pocketbase throws 400 for duplicate ID
-            if (err.status === 400 || err.status === 404) { // Actually usually 400 for unique constraint
+            const status = (err && typeof err === 'object' && 'status' in err) ? (err as { status: number }).status : undefined;
+            if (status === 400 || status === 404) { // Actually usually 400 for unique constraint
                 await client.collection('vocabulary').update(item.id, data);
             } else {
                 // Try legacy update by query? 
@@ -520,7 +532,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 .toLowerCase()
                 .slice(0, 15);
         } catch {
-            return Date.now().toString(36) + Math.random().toString(36).substring(2, 10);
+            return generateRandomId();
         }
     }
 

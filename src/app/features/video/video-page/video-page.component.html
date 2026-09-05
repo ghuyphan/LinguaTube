@@ -2,8 +2,7 @@
     <div class="layout-main">
         <app-video-player (fullscreenWordClicked)="onWordClicked($event)"
             (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
-            (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()"
-            (closePlaylist)="closePlaylist()" />
+            (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()" />
 
         <!-- Mobile Playlist Queue (In-flow directly below player, matching player width) -->
         @if (hasPlaylist()) {
@@ -319,7 +318,7 @@
                 <span class="detail-label">{{ i18n.t('subtitle.cost') || 'Cost' }}</span>
                 <span class="detail-badge">
                     <app-icon name="diamond" [size]="13" class="gem-icon" />
-                    1 Diamond
+                    {{ aiDiamondCost() }} {{ aiDiamondCost() === 1 ? (i18n.t('subtitle.diamond') || 'Diamond') : (i18n.t('subtitle.diamonds') || 'Diamonds') }}
                 </span>
             </div>
             <div class="ai-confirm-row">
@@ -328,17 +327,31 @@
             </div>
         </div>
 
+        @if (isVideoTooLongForAI()) {
+        <div class="alert alert-warning text-xs mt-2" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #ef4444; padding: 8px 12px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 6px;">
+            <app-icon name="alert-circle" [size]="15" />
+            <span>{{ i18n.t('subtitle.videoTooLongForAI') || 'AI transcription is limited to videos under 20 minutes.' }}</span>
+        </div>
+        } @else if (transcript.diamonds() < aiDiamondCost()) {
+        <div class="alert alert-warning text-xs mt-2" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 8px 12px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 6px;">
+            <app-icon name="alert-circle" [size]="15" />
+            <span>{{ i18n.t('subtitle.needMoreDiamonds') || 'Not enough diamonds for this video duration.' }}</span>
+        </div>
+        }
+
         <!-- Cloudflare Turnstile CAPTCHA Widget -->
+        @if (!isVideoTooLongForAI() && transcript.diamonds() >= aiDiamondCost()) {
         <div class="turnstile-section">
             <app-turnstile (resolved)="onCaptchaResolved($event)" (expired)="aiCaptchaToken.set(null)"
                 (captchaError)="aiCaptchaToken.set(null)" />
         </div>
+        }
 
         <div class="ai-confirm-actions">
             <button type="button" class="btn btn-secondary" (click)="onCloseAiConfirmDialog()">
                 {{ i18n.t('vocab.cancel') || 'Cancel' }}
             </button>
-            <button type="button" class="btn btn-primary" [disabled]="!aiCaptchaToken() || isSubmittingAi()"
+            <button type="button" class="btn btn-primary" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || transcript.diamonds() < aiDiamondCost()"
                 (click)="confirmGenerateAI()">
                 <app-icon name="sparkles" [size]="16" />
                 <span>{{ i18n.t('subtitle.generate') || 'Generate' }}</span>

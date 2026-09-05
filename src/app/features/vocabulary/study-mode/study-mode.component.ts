@@ -5,6 +5,7 @@ import { SwitchComponent } from '../../../shared/components/switch/switch.compon
 import { VocabularyService, SettingsService, I18nService } from '../../../services';
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
+import { formatTime } from '../../../core/utils';
 
 import { RouterLink } from '@angular/router';
 
@@ -391,9 +392,7 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     formatTime(seconds: number): string {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
+        return formatTime(seconds);
     }
 
     private getReadingDisplayLabel(

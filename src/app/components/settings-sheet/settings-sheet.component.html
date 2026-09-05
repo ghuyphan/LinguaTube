@@ -38,8 +38,8 @@
                             <span class="account-guest-hint">{{ i18n.t('app.subtitle') }}</span>
                         </div>
                     </div>
-                    <button class="btn btn-google account-login-btn" (click)="loginWithGoogle()" [disabled]="isLoggingIn">
-                        <app-icon name="google" [size]="18" />
+                    <button class="btn btn-google account-login-btn" (click)="loginWithGoogle()" [disabled]="auth.isLoggingIn()">
+                        <app-icon name="google" [size]="20" />
                         <span>{{ i18n.t('settings.signInGoogle') }}</span>
                     </button>
                 </div>
@@ -132,21 +132,6 @@
                             <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" />
                         </div>
                     </div>
-
-                    <div class="settings-item-divider"></div>
-
-                    <!-- History Quick Link -->
-                    <button class="settings-item-row" (click)="goToHistory()">
-                        <div class="settings-item-left">
-                            <div class="settings-item-icon-box">
-                                <app-icon name="clock" [size]="16" />
-                            </div>
-                            <span class="settings-item-title">{{ i18n.t('history.title') }}</span>
-                        </div>
-                        <div class="settings-item-right">
-                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
-                        </div>
-                    </button>
                 </div>
             </div>
         </div>

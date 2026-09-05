@@ -28,6 +28,7 @@ export class AuthService {
     readonly user = signal<UserProfile | null>(null);
     readonly isLoggedIn = computed(() => this.user() !== null);
     readonly isInitialized = signal(false);
+    readonly isLoggingIn = signal(false);
 
     /** Emits when user successfully logs in */
     readonly loginEvent = new Subject<UserProfile>();
@@ -78,8 +79,10 @@ export class AuthService {
         return this.openOAuthPopup();
     }
 
-    async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile> {
-        let oauthPopup = preopenedPopup;
+    async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
+        if (this.isLoggingIn()) return null;
+        this.isLoggingIn.set(true);
+        let oauthPopup = preopenedPopup || this.openOAuthPopup();
 
         try {
             const client = await this.pb.getClient();
@@ -109,6 +112,7 @@ export class AuthService {
             console.error('[Auth] Google login failed:', error);
             throw error;
         } finally {
+            this.isLoggingIn.set(false);
             if (oauthPopup && !oauthPopup.closed) {
                 oauthPopup.close();
             }

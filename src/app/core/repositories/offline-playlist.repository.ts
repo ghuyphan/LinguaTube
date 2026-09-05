@@ -1,6 +1,6 @@
 import { Injectable, inject, signal, Signal } from '@angular/core';
 import { IPlaylistRepository } from './playlist.repository';
-import { Playlist } from '../../models';
+import { Playlist, mapRecordToPlaylist } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { PocketBaseService } from '../services/pocketbase.service';
 import { AuthService } from '../services/auth.service';
@@ -47,7 +47,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             try {
                 const client = await this.pb.getClient();
                 const record = await client.collection('playlists').getOne(id);
-                return this.recordToPlaylist(record);
+                return mapRecordToPlaylist(record as unknown as Record<string, unknown>);
             } catch {
                 return null;
             }
@@ -192,7 +192,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                 sort: '-updated'
             });
 
-            const remotePlaylists = owned.items.map(r => this.recordToPlaylist(r));
+            const remotePlaylists = owned.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
 
             // Safe Merge Strategy:
             // 1. Remote is the source of truth for anything that has synced.
@@ -231,26 +231,5 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             updatedAt: new Date().toISOString()
         };
         this.storage.set(STORAGE_KEY, data);
-    }
-
-    private recordToPlaylist(record: any): Playlist {
-        return {
-            id: record.id,
-            userId: record.user,
-            userName: record.expand?.user?.name || record.expand?.user?.username,
-            title: record.title,
-            description: record.description,
-            visibility: record.visibility,
-            language: record.language,
-            tags: record.tags || [],
-            videoIds: record.video_ids || [],
-            videoCount: record.video_count || 0,
-            thumbnail: record.thumbnail,
-            saveCount: record.save_count || 0,
-            isFeatured: record.is_featured || false,
-            createdAt: new Date(record.created),
-            updatedAt: new Date(record.updated),
-            synced: true
-        };
     }
 }

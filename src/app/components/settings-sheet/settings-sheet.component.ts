@@ -1,6 +1,5 @@
 import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
@@ -20,7 +19,6 @@ import { StreakService } from '../../services/streak.service';
   styleUrl: './settings-sheet.component.scss'
 })
 export class SettingsSheetComponent {
-  private router = inject(Router);
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
   auth = inject(AuthService);
@@ -42,7 +40,7 @@ export class SettingsSheetComponent {
   showLearningLangPicker = signal(false);
   showUILangPicker = signal(false);
   showReadingModePicker = signal(false);
-  isLoggingIn = false;
+  showThemeMenu = false;
 
   // Learning language options with display info
   readonly learningLanguages = SUPPORTED_LANGUAGES;
@@ -99,21 +97,11 @@ export class SettingsSheetComponent {
    * Login with Google via PocketBase OAuth
    */
   loginWithGoogle(): void {
-    if (this.isLoggingIn) return;
-    this.isLoggingIn = true;
-
-    const popup = this.auth.prepareOAuthPopup();
-
-    this.auth.loginWithGoogle(popup)
-      .then(() => {
+    void this.auth.loginWithGoogle().then(profile => {
+      if (profile) {
         this.sheet.close();
-      })
-      .catch(error => {
-        console.error('[Settings] Google login failed:', error);
-      })
-      .finally(() => {
-        this.isLoggingIn = false;
-      });
+      }
+    });
   }
 
   setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
@@ -156,11 +144,6 @@ export class SettingsSheetComponent {
     this.showSignOutConfirm.set(false);
     this.auth.signOut();
     this.sheet.close();
-  }
-
-  goToHistory(): void {
-    this.sheet.close();
-    this.router.navigate(['/history']);
   }
 
   onSheetClosed(): void {

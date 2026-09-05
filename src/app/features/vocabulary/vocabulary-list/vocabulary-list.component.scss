@@ -268,39 +268,7 @@
     }
 }
 
-// Level Dot Button
-.level-dot-btn {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    background: var(--text-muted);
-    flex-shrink: 0;
-    padding: 0;
-
-    &:hover {
-        transform: scale(1.35);
-    }
-
-    &.level--new {
-        background: var(--word-new, #3b82f6);
-    }
-
-    &.level--learning {
-        background: var(--word-learning, #eab308);
-    }
-
-    &.level--known {
-        background: var(--word-known, #22c55e);
-    }
-
-    &.level--ignored {
-        background: var(--text-muted);
-        opacity: 0.5;
-    }
-}
+// Level badge button is globally defined in _components.scss (.level-badge-btn)
 
 // Delete action button (subtle hover)
 .delete-btn {

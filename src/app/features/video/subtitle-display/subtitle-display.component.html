@@ -179,7 +179,7 @@
                                 <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds()
                                     }})</span>
                             </button>
-                            } @else if (transcript.error() === 'NO_DIAMONDS') {
+                            } @else if (transcript.error() === 'NO_DIAMONDS' || transcript.error() === 'INSUFFICIENT_DIAMONDS') {
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.noDiamondsLeft') }}</span>
                             } @else {

@@ -471,6 +471,25 @@ body::-webkit-scrollbar {
         white-space: nowrap;
     }
 
+    .bottom-nav__icon-wrap {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        .now-playing-dot {
+            position: absolute;
+            top: -1px;
+            right: -3px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            box-shadow: 0 0 6px rgba(var(--accent-primary-rgb), 0.8);
+            animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    }
+
     app-icon {
         display: inline-flex;
         align-items: center;

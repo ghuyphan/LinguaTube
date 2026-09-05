@@ -77,12 +77,12 @@
     <div class="player-overlay touch-only" #playerOverlay>
       <div class="zone zone-left">
         @if (leftRipple()) {
-        <div class="ripple-effect" [style.--x]="ripplePos().x + 'px'" [style.--y]="ripplePos().y + 'px'"></div>
+        <div class="ripple-effect"></div>
         }
       </div>
       <div class="zone zone-right">
         @if (rightRipple()) {
-        <div class="ripple-effect" [style.--x]="ripplePos().x + 'px'" [style.--y]="ripplePos().y + 'px'"></div>
+        <div class="ripple-effect"></div>
         }
       </div>
     </div>
@@ -102,6 +102,9 @@
     </div>
     }
 
+    <!-- Player Vignette Backdrop (Darkens when controls are visible) -->
+    <div class="player-vignette" [class.visible]="areControlsVisible()"></div>
+
     <!-- Center Controls -->
     <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.intendedPlayingState()"
       [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible()"
@@ -110,11 +113,10 @@
       [volumeFeedback]="volumeFeedback()" [volumeFeedbackIcon]="volumeFeedbackIcon()"
       [gestureSeekActive]="gestureSeekActive()" [gestureSeekTime]="gestureSeekTime()"
       [currentTime]="youtube.currentTime()" (playPauseClicked)="onPlayPauseButtonClick($event)"
-      (playPauseTouched)="onPlayPauseButtonTouch($event)" (replayClicked)="onReplayClick($event)"
-      (replayTouched)="onReplayClick($event)" (prevClicked)="playlistPrev.emit()" (nextClicked)="playlistNext.emit()" />
+      (replayClicked)="onReplayClick($event)" (prevClicked)="playlistPrev.emit()" (nextClicked)="playlistNext.emit()" />
 
     <!-- Mini Progress Bar -->
-    <div class="mini-progress" [class.visible]="!areControlsVisible() && youtube.intendedPlayingState()"
+    <div class="mini-progress" [class.visible]="!areControlsVisible()"
       [style.--progress]="progressPercentage()" (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
       <div class="mini-progress-mask">
         <div class="mini-progress__fill"></div>
@@ -127,10 +129,13 @@
       [language]="activeSubtitleLanguage()" [subtitlesVisible]="subtitles.subtitlesVisible()"
       [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
       [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
+      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? 82"
       [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
       [currentTranslation]="currentTranslation()" [grammarMatches]="fsGrammarMatches()"
       (wordClicked)="onFullscreenComponentWordClick($event)"
-      (grammarClicked)="onFsGrammarClick($event.index, $event.event)" />
+      (grammarClicked)="onFsGrammarClick($event.index, $event.event)"
+      (positionChanged)="onSubtitlePositionChanged($event)"
+      (togglePosition)="toggleFullscreenSubtitlePosition()" />
     }
 
     <!-- Fullscreen Word Popup -->
@@ -199,51 +204,6 @@
     <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="fsGrammarPopupVisible()" (closed)="closeFsGrammarPopup()" />
     }
 
-    <!-- Fullscreen Settings Sheet -->
-    @if (isFullscreen()) {
-    <app-bottom-sheet [isOpen]="fsSettingsVisible()" [showCloseButton]="true" (closed)="closeFsSettings()">
-      <div class="fs-popup-content fs-settings-popup">
-        <h3 class="fs-popup-title">{{ i18n.t('settings.title') }}</h3>
-
-        <div class="fs-popup-body">
-          <div class="fs-settings-section">
-            <h4 class="fs-settings-title">{{ i18n.t('settings.targetLanguage') }}</h4>
-            <div class="fs-lang-grid">
-              @for (lang of langOptions(); track lang.value) {
-              <button class="fs-lang-btn" [class.active]="targetLang() === lang.value"
-                (click)="onFsLangSelected(lang.value)">
-                <img [src]="lang.iconUrl" [alt]="lang.label" class="fs-lang-flag">
-                <span class="fs-lang-name">{{ lang.label }}</span>
-                @if (targetLang() === lang.value) {
-                <app-icon name="check" [size]="14" class="fs-lang-check" />
-                }
-              </button>
-              }
-            </div>
-          </div>
-
-          @if (supportsReadingDisplay()) {
-          <div class="fs-settings-section">
-            <h4 class="fs-settings-title">{{ i18n.t('settings.learningDisplay') }}</h4>
-            <div class="fs-lang-grid">
-              @for (mode of readingDisplayModes(); track mode) {
-              <button class="fs-lang-btn"
-                [class.active]="settings.getReadingDisplayMode(activeSubtitleLanguage()) === mode"
-                (click)="setReadingDisplayMode(mode)">
-                <span class="fs-lang-name">{{ getReadingDisplayLabel(mode) }}</span>
-                @if (settings.getReadingDisplayMode(activeSubtitleLanguage()) === mode) {
-                <app-icon name="check" [size]="14" class="fs-lang-check" />
-                }
-              </button>
-              }
-            </div>
-          </div>
-          }
-        </div>
-      </div>
-    </app-bottom-sheet>
-    }
-
     <!-- Keyboard Shortcuts Cheat Sheet Modal (YouTube '?') -->
     <app-bottom-sheet [isOpen]="showShortcutsDialog()" [maxWidth]="'680px'" [showCloseButton]="true" (closed)="closeShortcutsDialog()">
       <div class="shortcuts-dialog-content">
@@ -251,74 +211,78 @@
           <div class="shortcuts-header-icon">
             <app-icon name="keyboard" [size]="20" />
           </div>
-          <h3 class="shortcuts-dialog-title">Keyboard shortcuts</h3>
+          <h3 class="shortcuts-dialog-title">{{ i18n.t('shortcuts.title') || 'Keyboard shortcuts' }}</h3>
         </div>
 
         <div class="shortcuts-grid">
           <div class="shortcuts-section">
-            <h4 class="shortcuts-section-title">Playback</h4>
+            <h4 class="shortcuts-section-title">{{ i18n.t('shortcuts.playback') || 'Playback' }}</h4>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Toggle play / pause</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.togglePlay') || 'Toggle play / pause' }}</span>
               <span class="shortcut-keys"><kbd>k</kbd> or <kbd>Space</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Rewind 10s / Forward 10s</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.seek10') || 'Rewind 10s / Forward 10s' }}</span>
               <span class="shortcut-keys"><kbd>j</kbd> / <kbd>l</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Fine seek 5s</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.seek5') || 'Fine seek 5s' }}</span>
               <span class="shortcut-keys"><kbd>←</kbd> / <kbd>→</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Prev / Next frame (paused)</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.frameStep') || 'Prev / Next frame (paused)' }}</span>
               <span class="shortcut-keys"><kbd>,</kbd> / <kbd>.</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Seek to % of video</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.seekPercent') || 'Seek to % of video' }}</span>
               <span class="shortcut-keys"><kbd>0</kbd>.. <kbd>9</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Seek to start / end</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.seekEdges') || 'Seek to start / end' }}</span>
               <span class="shortcut-keys"><kbd>Home</kbd> / <kbd>End</kbd></span>
             </div>
           </div>
 
           <div class="shortcuts-section">
-            <h4 class="shortcuts-section-title">Audio & Subtitles</h4>
+            <h4 class="shortcuts-section-title">{{ i18n.t('shortcuts.audioSubtitles') || 'Audio & Subtitles' }}</h4>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Volume up / down (5%)</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.volume') || 'Volume up / down (5%)' }}</span>
               <span class="shortcut-keys"><kbd>↑</kbd> / <kbd>↓</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Mute / unmute</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.mute') || 'Mute / unmute' }}</span>
               <span class="shortcut-keys"><kbd>m</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Toggle subtitles (CC)</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.toggleSubtitles') || 'Toggle subtitles (CC)' }}</span>
               <span class="shortcut-keys"><kbd>c</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Speed down / up</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.speed') || 'Speed down / up' }}</span>
               <span class="shortcut-keys"><kbd>&lt;</kbd> / <kbd>&gt;</kbd></span>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.moveSubtitle') || 'Move subtitle top / bottom' }}</span>
+              <span class="shortcut-keys"><kbd>v</kbd></span>
             </div>
           </div>
 
           <div class="shortcuts-section">
-            <h4 class="shortcuts-section-title">General & Playlists</h4>
+            <h4 class="shortcuts-section-title">{{ i18n.t('shortcuts.general') || 'General & Playlists' }}</h4>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Toggle full screen</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.fullscreen') || 'Toggle full screen' }}</span>
               <span class="shortcut-keys"><kbd>f</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Exit full screen / Close modal</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.exitModal') || 'Exit full screen / Close modal' }}</span>
               <span class="shortcut-keys"><kbd>Esc</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Prev / Next in playlist</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.playlistNav') || 'Prev / Next in playlist' }}</span>
               <span class="shortcut-keys"><kbd>Shift</kbd>+<kbd>P</kbd> / <kbd>Shift</kbd>+<kbd>N</kbd></span>
             </div>
             <div class="shortcut-row">
-              <span class="shortcut-desc">Keyboard shortcuts help</span>
+              <span class="shortcut-desc">{{ i18n.t('shortcuts.help') || 'Keyboard shortcuts help' }}</span>
               <span class="shortcut-keys"><kbd>?</kbd></span>
             </div>
           </div>
@@ -326,28 +290,142 @@
       </div>
     </app-bottom-sheet>
 
+    <!-- Settings Menu Content Template (Shared by Desktop Popup & Mobile Sheet) -->
+    <ng-template #playerSettingsTemplate>
+      <div class="player-settings-menu">
+        @if (playerSettingsView() === 'main') {
+        <div class="sheet-section-header">
+          <div class="sheet-title-group">
+            <app-icon name="settings" [size]="16" />
+            <h3 class="sheet-title">{{ i18n.t('player.settings') || i18n.t('settings.title') || 'Settings' }}</h3>
+          </div>
+        </div>
+        <div class="settings-menu-list">
+          <!-- Playback Speed -->
+          <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('speed')">
+            <div class="menu-item-left">
+              <app-icon name="fast-forward" [size]="18" />
+              <span class="menu-item-label">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</span>
+            </div>
+            <div class="menu-item-right">
+              <span class="menu-item-value">{{ currentSpeed() === 1 ? (i18n.t('player.normal') || 'Normal') : currentSpeed() + 'x' }}</span>
+              <app-icon name="chevron-right" [size]="16" />
+            </div>
+          </button>
+
+          <!-- Subtitle Font Size -->
+          <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('fontSize')">
+            <div class="menu-item-left">
+              <app-icon name="type" [size]="18" />
+              <span class="menu-item-label">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</span>
+            </div>
+            <div class="menu-item-right">
+              <span class="menu-item-value">{{ getFontSizeName(settings.settings().fontSize) }}</span>
+              <app-icon name="chevron-right" [size]="16" />
+            </div>
+          </button>
+
+          <!-- Add to Playlist -->
+          <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
+            <div class="menu-item-left">
+              <app-icon name="list-plus" [size]="18" />
+              <span class="menu-item-label">{{ i18n.t('playlist.saveToPlaylist') || 'Save to playlist' }}</span>
+            </div>
+            <div class="menu-item-right">
+              <app-icon name="chevron-right" [size]="16" />
+            </div>
+          </button>
+
+          <!-- Keyboard Shortcuts helper -->
+          <button type="button" class="settings-menu-item desktop-only-item" (click)="closePlayerSettings(); openShortcutsDialog()">
+            <div class="menu-item-left">
+              <app-icon name="keyboard" [size]="18" />
+              <span class="menu-item-label">{{ i18n.t('player.keyboardShortcuts') || 'Keyboard shortcuts' }}</span>
+            </div>
+            <div class="menu-item-right">
+              <span class="menu-item-value"><kbd>?</kbd></span>
+              <app-icon name="chevron-right" [size]="16" />
+            </div>
+          </button>
+        </div>
+        }
+
+        @if (playerSettingsView() === 'speed') {
+        <div class="sheet-section-header with-back">
+          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" aria-label="Back">
+            <app-icon name="chevron-left" [size]="18" />
+          </button>
+          <h3 class="sheet-title">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</h3>
+        </div>
+        <div class="settings-options-list">
+          @for (speed of playbackSpeeds; track speed) {
+          <button type="button" class="settings-option-row" [class.active]="currentSpeed() === speed"
+            (click)="selectSpeedFromSheet(speed)">
+            <span class="option-label">{{ speed === 1 ? (i18n.t('player.normal') || 'Normal') : speed + 'x' }}</span>
+            @if (currentSpeed() === speed) {
+            <app-icon name="check" [size]="16" class="option-check" />
+            }
+          </button>
+          }
+        </div>
+        }
+
+        @if (playerSettingsView() === 'fontSize') {
+        <div class="sheet-section-header with-back">
+          <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" aria-label="Back">
+            <app-icon name="chevron-left" [size]="18" />
+          </button>
+          <h3 class="sheet-title">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</h3>
+        </div>
+        <div class="settings-options-list">
+          @for (size of fontSizes; track size) {
+          <button type="button" class="settings-option-row" [class.active]="settings.settings().fontSize === size"
+            (click)="setFontSizeFromSheet(size)">
+            <span class="option-label">{{ getFontSizeName(size) }}</span>
+            @if (settings.settings().fontSize === size) {
+            <app-icon name="check" [size]="16" class="option-check" />
+            }
+          </button>
+          }
+        </div>
+        }
+      </div>
+    </ng-template>
+
+    <!-- Desktop: Floating YouTube settings menu anchored above gear icon -->
+    @if (isPlayerSettingsOpen() && !isMobile()) {
+    <div class="player-settings-scrim" (click)="closePlayerSettings()"></div>
+    <div class="player-settings-popup" (click)="$event.stopPropagation()">
+      <ng-container *ngTemplateOutlet="playerSettingsTemplate" />
+    </div>
+    }
+
+    <!-- Mobile: Native YouTube Bottom Sheet -->
+    @if (isMobile()) {
+    <app-bottom-sheet [isOpen]="isPlayerSettingsOpen()" [maxWidth]="'440px'" [showCloseButton]="false"
+      [zIndex]="9999" (closed)="closePlayerSettings()">
+      <div class="player-settings-sheet">
+        <ng-container *ngTemplateOutlet="playerSettingsTemplate" />
+      </div>
+    </app-bottom-sheet>
+    }
+
     <!-- Custom Controls -->
-    <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() && youtube.intendedPlayingState()">
+    <div class="custom-controls" [class.controls-hidden]="!areControlsVisible()">
       <!-- Progress Bar -->
       <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
       </app-progress-bar>
 
       <app-video-bottom-bar [isPlaying]="youtube.intendedPlayingState()" [currentTime]="formattedCurrentTime()"
         [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
-        [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [currentSpeed]="currentSpeed()"
-        [playbackSpeeds]="playbackSpeeds" [subtitlesVisible]="subtitles.subtitlesVisible()"
-        [showDualSubtitles]="settings.settings().showDualSubtitles"
-        [targetLang]="targetLang()" [langOptions]="langOptions()" [fontSizeLabel]="getFontSizeLabel()"
-        [isCJKLanguage]="['ja', 'zh', 'ko'].includes(settings.settings().language)"
-        [isSpeedMenuOpen]="isSpeedMenuOpen()" [langPickerOpen]="langPickerOpen()"
-        [isVolumeSliderVisible]="isVolumeSliderVisible()" [t]="i18n.t.bind(i18n)"
+        [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [subtitlesVisible]="subtitles.subtitlesVisible()"
+        [currentSpeed]="currentSpeed()" [isVolumeSliderVisible]="isVolumeSliderVisible()"
+        [showDualSubtitles]="settings.settings().showDualSubtitles" [isCJKLanguage]="isCJKLanguage()"
+        [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
-        (seekRelative)="seekRelative($event.amount); showSeekFeedback($event.direction, ($event.amount > 0 ? $event.amount : -$event.amount))"
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
-        (toggleSpeedMenu)="toggleSpeedMenu($event)" (setPlaybackSpeed)="setPlaybackSpeed($event)"
-        (cycleFontSize)="cycleFontSize()" (toggleLangMenu)="toggleLangMenu($event)"
-        (disableDualSubtitles)="disableDualSubtitles()" (langSelected)="onLangSelected($event)"
-        (saveClick)="onSaveClick()" (openShortcutsDialog)="openShortcutsDialog()"
+        (toggleDualSubs)="toggleDualSubtitles()"
+        (speedClick)="openSpeedMenu($event)" (openSettings)="openPlayerSettings($event)"
         (toggleFullscreen)="toggleFullscreen()" (showVolumeSlider)="showVolumeSlider()"
         (hideVolumeSlider)="hideVolumeSlider()" />
     </div>

@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { HistoryItem, VideoInfo } from '../../models';
 import { YoutubeService } from '../video';
 import { OfflineHistoryRepository } from '../../core/repositories';
+import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
 
 /**
  * History Service
@@ -24,7 +25,7 @@ export class HistoryService {
 
     readonly isLoading = this.repo.isLoading;
 
-    private progressInterval: any = null;
+    private progressInterval: ReturnType<typeof setInterval> | null = null;
     private lastRecordedProgress = -1;
     private lastRecordedVideoId: string | null = null;
 
@@ -127,10 +128,10 @@ export class HistoryService {
             : (existingItem ? existingItem.progress : 0);
 
         const historyItem: HistoryItem = {
-            id: existingItem ? existingItem.id : this.generateId(),
+            id: existingItem ? existingItem.id : generateRandomId(),
             video_id: video.id,
             title: video.title || existingItem?.title || 'YouTube Video',
-            thumbnail: video.thumbnail || existingItem?.thumbnail || `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`,
+            thumbnail: video.thumbnail || existingItem?.thumbnail || getYouTubeThumbnail(video.id),
             channel: video.channel || existingItem?.channel || 'Unknown Channel',
             duration: video.duration || existingItem?.duration || 0,
             language: primaryLang,  // Keep for backward compatibility
@@ -147,8 +148,7 @@ export class HistoryService {
      * Update watch progress for a video
      */
     async updateProgress(videoId: string, progress: number): Promise<void> {
-        const items = this.history();
-        const item = items.find(i => i.video_id === videoId);
+        const item = this.getByVideoId(videoId);
 
         if (item) {
             await this.repo.addToHistory({
@@ -164,14 +164,9 @@ export class HistoryService {
      * ensuring it appears at the top of history.
      */
     async touchVideo(videoId: string): Promise<void> {
-        const items = this.history();
-        const item = items.find(i => i.video_id === videoId);
-
+        const item = this.getByVideoId(videoId);
         if (item) {
-            await this.repo.addToHistory({
-                ...item,
-                watched_at: new Date()
-            });
+            await this.updateProgress(videoId, item.progress);
         }
     }
 
@@ -257,15 +252,5 @@ export class HistoryService {
             .filter(l => supported.includes(l));
         // Return unique values only
         return [...new Set(normalized)] as ('ja' | 'zh' | 'ko' | 'en')[];
-    }
-
-    private generateId(): string {
-        // Generate a 15-character random string (PocketBase compatible)
-        const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-        let result = '';
-        for (let i = 0; i < 15; i++) {
-            result += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return result;
     }
 }

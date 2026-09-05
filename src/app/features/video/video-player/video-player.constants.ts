@@ -97,8 +97,10 @@ export interface FullscreenElement extends HTMLElement {
     webkitRequestFullscreen?: () => Promise<void>;
 }
 
-// Note: ScreenOrientation lock/unlock is handled via 'any' casts in the component
-// since the API is not universally supported and has complex types
+export interface ScreenOrientationWithLock {
+    lock?(orientation: string): Promise<void>;
+    unlock?(): void;
+}
 
 // ============================================
 // PLAYBACK SPEED TYPE

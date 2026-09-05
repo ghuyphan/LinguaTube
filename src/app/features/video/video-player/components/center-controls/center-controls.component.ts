@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
+import { formatTime } from '../../../../../core/utils';
 
 /**
  * CenterControlsComponent
@@ -42,18 +43,14 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
         <div class="gesture-seek-preview">
           <span class="gesture-seek-time">{{ formattedSeekTime() }}</span>
           <span class="gesture-seek-delta">
-            @if (seekDelta() > 0) {
-              +{{ formattedSeekDelta() }}
-            } @else {
-              -{{ formattedSeekDeltaAbs() }}
-            }
+            {{ seekDelta() > 0 ? '+' : '-' }}{{ formattedSeekDelta() }}
           </span>
         </div>
       }
 
       <!-- Main Button Group -->
       @if (isReady() && !isEnded()) {
-        <div class="center-button-group" [class.controls-hidden]="!areControlsVisible() && isPlaying()">
+        <div class="center-button-group" [class.controls-hidden]="!areControlsVisible()">
           <!-- Previous Button (Playlist only) -->
           @if (hasPlaylist()) {
             <button 
@@ -70,7 +67,6 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
           <button class="big-play-btn fade-in" 
               [attr.aria-label]="isPlaying() ? 'Pause video' : 'Play video'"
               (touchstart)="$event.stopPropagation()"
-              (touchend)="onPlayPauseTouch($event)"
               (click)="onPlayPauseClick($event)">
               
               <!-- Icon Container for Animation -->
@@ -117,7 +113,6 @@ import { IconComponent, IconName } from '../../../../../shared/components/icon/i
 
           <button class="big-play-btn replay-btn" aria-label="Replay video"
             (touchstart)="$event.stopPropagation()"
-            (touchend)="onReplayTouch($event)"
             (click)="onReplayClick($event)">
             <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
           </button>
@@ -148,7 +143,6 @@ export class CenterControlsComponent {
   hasPlaylist = input.required<boolean>();
   canPlayPrev = input.required<boolean>();
   canPlayNext = input.required<boolean>();
-  isDesktop = input<boolean>(false);
 
   // Feedback inputs
   playPauseFeedback = input<boolean>(false);
@@ -161,37 +155,24 @@ export class CenterControlsComponent {
 
   // Outputs
   playPauseClicked = output<MouseEvent>();
-  playPauseTouched = output<TouchEvent>();
   replayClicked = output<MouseEvent>();
-  replayTouched = output<TouchEvent>();
   prevClicked = output<void>();
   nextClicked = output<void>();
 
   // Computed values for seek preview
   seekDelta = computed(() => this.gestureSeekTime() - this.currentTime());
 
-  formattedSeekTime = computed(() => this.formatTime(this.gestureSeekTime()));
-  formattedSeekDelta = computed(() => this.formatTime(Math.abs(this.seekDelta())));
-  formattedSeekDeltaAbs = computed(() => this.formatTime(Math.abs(this.seekDelta())));
+  formattedSeekTime = computed(() => formatTime(this.gestureSeekTime()));
+  formattedSeekDelta = computed(() => formatTime(Math.abs(this.seekDelta())));
 
   onPlayPauseClick(event: MouseEvent): void {
     event.stopPropagation();
     this.playPauseClicked.emit(event);
   }
 
-  onPlayPauseTouch(event: TouchEvent): void {
-    event.stopPropagation();
-    this.playPauseTouched.emit(event);
-  }
-
   onReplayClick(event: MouseEvent): void {
     event.stopPropagation();
     this.replayClicked.emit(event);
-  }
-
-  onReplayTouch(event: TouchEvent): void {
-    event.stopPropagation();
-    this.replayTouched.emit(event);
   }
 
   onPrevClick(event: MouseEvent): void {
@@ -202,12 +183,5 @@ export class CenterControlsComponent {
   onNextClick(event: MouseEvent): void {
     event.stopPropagation();
     this.nextClicked.emit();
-  }
-
-  private formatTime(seconds: number): string {
-    if (!seconds || !isFinite(seconds)) return '0:00';
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
   }
 }

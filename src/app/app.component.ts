@@ -3,7 +3,6 @@ import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith, interval, Subject, takeUntil, fromEvent } from 'rxjs';
-import { HeaderComponent } from './components/header/header.component';
 import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -26,7 +25,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
     CommonModule,
     RouterOutlet,
     RouterLink,
-    HeaderComponent,
     IconComponent,
     SettingsSheetComponent,
     SidebarComponent,
@@ -58,9 +56,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         }
 
         <div class="app__content">
-          <!-- Desktop only header (hidden when sidebar is visible) -->
-          <app-header class="desktop-header" />
-
           <main class="main" [class.video-active]="hasVideo()">
             <div class="container">
               <router-outlet />
@@ -77,7 +72,12 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               (click)="onLearnNavClick($event)"
               [class.active]="!anySheetOpen() && isRouteActive('/video')"
             >
-              <app-icon name="play-circle" [size]="20" />
+              <div class="bottom-nav__icon-wrap">
+                <app-icon name="play-circle" [size]="20" />
+                @if (hasActiveVideoSession()) {
+                  <span class="now-playing-dot"></span>
+                }
+              </div>
               <span>{{ i18n.t('nav.watch') }}</span>
             </a>
             <a
@@ -206,12 +206,14 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           </app-bottom-sheet>
         }
 
-        <!-- Command Palette -->
-        <app-command-palette
-          [isOpen]="showCommandPalette()"
-          (submitted)="onCommandPaletteSearch($event)"
-          (closed)="showCommandPalette.set(false)"
-        />
+        <!-- Command Palette (lazy loaded on demand) -->
+        @defer (when showCommandPalette()) {
+          <app-command-palette
+            [isOpen]="showCommandPalette()"
+            (submitted)="onCommandPaletteSearch($event)"
+            (closed)="showCommandPalette.set(false)"
+          />
+        }
       }
 
       <!-- Update Available Sheet (always available, even during onboarding) -->
@@ -276,11 +278,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         padding-left: 4.5rem; /* Match .sidebar.collapsed width exactly */
       }
 
-      /* Hide old header when sidebar is visible */
-      .desktop-header {
-        display: none !important;
-      }
-
       .bottom-nav {
         display: none !important;
       }
@@ -288,10 +285,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     /* Mobile portrait: hide sidebar, show bottom nav */
     @media (max-width: 768px) {
-      .desktop-header {
-        display: none !important;
-      }
-
       .desktop-sidebar {
         display: none !important;
       }
@@ -312,10 +305,6 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 
     /* Landscape phones: treat as mobile */
     @media (max-height: 500px) and (orientation: landscape) {
-      .desktop-header {
-        display: none !important;
-      }
-
       .desktop-sidebar {
         display: none !important;
       }
@@ -540,6 +529,8 @@ export class AppComponent implements OnDestroy {
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);
 
+  hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
+
   private destroy$ = new Subject<void>();
   private cleanupFns: Array<() => void> = [];
   private lastUpdateCheck = 0;
@@ -722,13 +713,27 @@ export class AppComponent implements OnDestroy {
   }
 
   onLearnNavClick(event: MouseEvent): void {
-    if (this.youtube.currentVideo() || this.playlistService.currentPlaylist() || this.router.url.includes('/video')) {
+    const isOnVideoPage = this.router.url.startsWith('/video');
+    const activeVideo = this.youtube.currentVideo();
+
+    if (isOnVideoPage) {
+      // Already on video page: Clicking Watch again clears current video to return to search/spotlight
       event.preventDefault();
       this.playlistService.clearCurrentPlaylist();
       this.youtube.reset();
       this.subtitles.clear();
       this.transcript.reset();
       void this.router.navigate(['/video'], { queryParams: {} });
+    } else if (activeVideo) {
+      // Navigating back from another page while video is active: Resume current video
+      event.preventDefault();
+      const playlistId = this.playlistService.currentPlaylist()?.id;
+      void this.router.navigate(['/video'], {
+        queryParams: {
+          id: activeVideo.id,
+          ...(playlistId ? { playlist: playlistId } : {})
+        }
+      });
     }
   }
 

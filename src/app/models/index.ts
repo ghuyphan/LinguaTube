@@ -99,4 +99,5 @@ export interface UserSettings {
   showDualSubtitles: boolean;
   dualSubtitleTargetLang: string;
   hasCompletedOnboarding: boolean;
+  fullscreenSubtitleYPercent?: number;
 }

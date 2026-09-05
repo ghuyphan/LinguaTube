@@ -73,18 +73,4 @@ export class StreakService {
     getWeekActivity(): boolean[] {
         return this.repo.getWeekActivity();
     }
-
-    // History Helpers maintained for compatibility if needed, 
-    // but addToHistory should conceptually belong to History Repo?
-    // The previous implementation had `addToHistory(date)` calling local storage directly.
-    // Ideally this should use HistoryRepository if it means "Watch History".
-    // But here it means "Streak Activity History".
-    // The Repo now handles `addToLocalHistory` internally on recordActivity.
-    // So we don't need to expose addToHistory publicly unless other components call it?
-    // Looking at previous usages: `addToHistory` was private/internal in most cases or used by SyncService?
-    // Verify usages of `addToHistory` on StreakService.
-    addToHistory(_date: Date): void {
-        // No-op or delegate to repo if needed. 
-        // Current repo implementation handles this internally in recordActivity/sync.
-    }
 }
