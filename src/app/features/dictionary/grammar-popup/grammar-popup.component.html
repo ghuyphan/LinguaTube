@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isOpen()" [title]="displayPattern()?.pattern || i18n.t('grammar.mode') || 'Grammar'" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="popup-content">
         @if (displayPattern(); as p) {
         <!-- Header -->

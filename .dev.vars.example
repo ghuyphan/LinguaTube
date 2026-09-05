@@ -1,0 +1,18 @@
+# Cloudflare Pages local development environment variables
+# Copy this file to .dev.vars and fill in your actual values:
+# cp .dev.vars.example .dev.vars
+
+# Optional: YouTube cookies for inner-tube client authentication if needed
+YOUTUBE_COOKIE=""
+
+# Gladia API Key (https://gladia.io)
+GLADIA_API_KEY=""
+
+# Cloudflare Turnstile Secret Key (https://developers.cloudflare.com/turnstile)
+# For local dev testing, Cloudflare provides: 1x00000000000000000000000000000000BB
+TURNSTILE_SECRET_KEY="1x00000000000000000000000000000000BB"
+
+# Supadata API Keys
+SUPADATA_API_KEY=""
+SUPADATA_API_KEY_2=""
+SUPADATA_API_KEY_3=""

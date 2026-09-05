@@ -74,7 +74,7 @@ export class VocabularyListComponent {
     event.stopPropagation();
     this.lastDeletedItem = item;
     this.vocab.deleteWord(item.id);
-    this.showToast(this.i18n.t('vocab.deleteSuccess') || `Đã xoá "${item.word}"`, 'success');
+    this.showToast(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, 'success');
   }
 
   undoDelete(): void {
@@ -175,10 +175,10 @@ export class VocabularyListComponent {
 
     this.vocab.importFromFile(file)
       .then(() => {
-        this.showToast('Vocabulary imported successfully!', 'success');
+        this.showToast(this.i18n.t('vocab.importSuccess') || 'Vocabulary imported successfully!', 'success');
       })
       .catch(() => {
-        this.showToast('Failed to import. Check file format.', 'error');
+        this.showToast(this.i18n.t('vocab.importError') || 'Failed to import. Check file format.', 'error');
       });
     input.value = '';
   }

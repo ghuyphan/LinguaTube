@@ -854,6 +854,29 @@
         }
     }
 
+    .ai-confirm-alert {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: var(--border-radius-md);
+        font-size: var(--font-size-xs);
+        line-height: 1.4;
+        margin-top: var(--space-xs);
+
+        &--danger {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        &--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+    }
+
     .turnstile-section {
         display: flex;
         flex-direction: column;

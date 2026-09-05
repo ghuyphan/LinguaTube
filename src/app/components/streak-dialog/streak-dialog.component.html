@@ -14,7 +14,7 @@
 
     <!-- Week View -->
     <div class="week-view">
-        @for (day of weekDays(); track day.day) {
+        @for (day of weekDays(); track $index) {
         <div class="day-item" [class.today]="day.isToday">
             <span class="day-name">{{ day.day }}</span>
             <div class="day-circle" [class.active]="day.active" [class.missed]="!day.active && !day.isToday">

@@ -36,6 +36,9 @@ export class BottomSheetService {
     private boundPopStateHandler = this.onPopState.bind(this);
     private boundKeyDownHandler = this.onKeyDown.bind(this);
 
+    // Track when history.back() is called programmatically to ignore the resulting popstate event
+    private poppingSheetId: string | null = null;
+
     /**
      * Get current stack depth (useful for z-index calculation)
      */
@@ -76,17 +79,31 @@ export class BottomSheetService {
         this.bodyScroll.lock();
 
         // Return unregister function
-        return () => this.unregister(sheet.id);
+        return () => this.unregister(sheet.id, true);
     }
 
     /**
      * Unregister a sheet (removes from stack without triggering close callback)
+     * @param id The sheet ID
+     * @param popHistory Whether to pop the browser history state if this sheet pushed it
      */
-    private unregister(id: string): void {
+    private unregister(id: string, popHistory = false): void {
         this.sheetStack.update(stack => stack.filter(s => s.id !== id));
 
         // Unlock scroll
         this.bodyScroll.unlock();
+
+        // Pop history entry if it belongs to this sheet and wasn't already popped by back button
+        if (popHistory && isPlatformBrowser(this.platformId)) {
+            try {
+                if (window.history.state?.bottomSheet && window.history.state?.sheetId === id) {
+                    this.poppingSheetId = id;
+                    window.history.back();
+                }
+            } catch {
+                // history navigation might fail in restricted environments
+            }
+        }
 
         // Clean up listeners if no more sheets
         if (this.sheetStack().length === 0 && this.historyListenerActive) {
@@ -106,8 +123,8 @@ export class BottomSheetService {
 
         const topSheet = stack[stack.length - 1];
 
-        // Remove from stack first to prevent double-close
-        this.unregister(topSheet.id);
+        // Remove from stack and cleanly pop history
+        this.unregister(topSheet.id, true);
 
         // Call the close callback
         topSheet.close();
@@ -123,12 +140,9 @@ export class BottomSheetService {
 
         // Close from top to bottom
         for (let i = stack.length - 1; i >= 0; i--) {
-            this.unregister(stack[i].id);
+            this.unregister(stack[i].id, true);
             stack[i].close();
         }
-
-        // Clean up any remaining history states
-        // Note: This is a best-effort cleanup
     }
 
     /**
@@ -142,18 +156,20 @@ export class BottomSheetService {
      * Handle browser back button
      */
     private onPopState(_event: PopStateEvent): void {
-        // Check if this popstate is for a bottom sheet
-        // When back is pressed, we need to close the topmost sheet
+        // If this popstate was triggered programmatically by our own unregister(), ignore it
+        if (this.poppingSheetId) {
+            this.poppingSheetId = null;
+            return;
+        }
+
         const stack = this.sheetStack();
         if (stack.length === 0) return;
 
-        // The popstate just occurred, meaning a sheet's history entry was popped
-        // We need to close the topmost sheet
-        // Close the topmost sheet
+        // The popstate just occurred, meaning a sheet's history entry was already popped by the browser
         const topSheet = stack[stack.length - 1];
 
-        // Don't manipulate history - it was already popped by the back button
-        this.unregister(topSheet.id);
+        // Don't call history.back() - it was already popped by the back button
+        this.unregister(topSheet.id, false);
         topSheet.close();
     }
 

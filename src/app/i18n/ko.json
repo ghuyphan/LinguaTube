@@ -39,6 +39,8 @@
         "switchToDark": "다크 모드로 전환"
     },
     "player": {
+        "paste": "붙여넣기",
+        "pasteFromClipboard": "클립보드에서 붙여넣기 (⌘V)",
         "pasteUrl": "YouTube URL 붙여넣기...",
         "load": "불러오기",
         "loading": "로딩 중",
@@ -69,6 +71,8 @@
         "mediumFont": "중간 글꼴",
         "largeFont": "큰 글꼴",
         "fontSize": "자막 크기",
+        "subtitlesOff": "자막이 꺼져 있습니다",
+        "captionsAvailableIn": "{{language}} 자막을 이용할 수 있습니다",
         "dualSubs": "이중 자막",
         "waitingForSubtitles": "자막 대기 중...",
         "noSubtitlesLoaded": "자막이 로드되지 않았습니다",
@@ -160,7 +164,8 @@
         "importSuccess": "단어장을 성공적으로 가져왔습니다!",
         "importError": "가져오기 실패. 파일 형식을 확인하세요.",
         "filterByLevel": "레벨별 필터",
-        "changeLevel": "레벨 변경"
+        "changeLevel": "레벨 변경",
+        "deleteSuccess": "\"{{word}}\" 삭제됨"
     },
     "popup": {
         "translationLang": "번역 언어",
@@ -401,7 +406,8 @@
         "success": "성공",
         "off": "끄기",
         "back": "뒤로",
-        "undo": "실행 취소"
+        "undo": "실행 취소",
+        "retry": "다시 시도"
     },
     "onboarding": {
         "welcomeTitle": "Voca에 오신 것을 환영합니다",

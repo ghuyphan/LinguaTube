@@ -5,7 +5,8 @@
         [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile"
         [class.square-corners]="squareCorners()" [style.--drag-offset]="dragOffset() + 'px'"
         [style.--max-height]="maxHeight()" [style.--max-width]="maxWidth()" (click)="$event.stopPropagation()" (animationend)="onAnimationEnd($event)"
-        (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)">
+        (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)"
+        role="dialog" aria-modal="true" [attr.aria-label]="effectiveAriaLabel()">
 
         <!-- Drag Handle - visible on mobile -->
         @if (showDragHandle()) {

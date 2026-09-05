@@ -80,10 +80,36 @@ export async function onRequestPost(context) {
             }, 400);
         }
 
+        // Security: Early validation of resultUrl if provided
+        if (resultUrl) {
+            try {
+                const parsed = new URL(resultUrl);
+                if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
+                    return jsonResponse({
+                        success: false,
+                        videoId,
+                        errorCode: 'INVALID_RESULT_URL',
+                        error: 'Invalid resultUrl: must be a gladia.io URL',
+                        timing: elapsed()
+                    }, 400);
+                }
+            } catch {
+                return jsonResponse({
+                    success: false,
+                    videoId,
+                    errorCode: 'INVALID_RESULT_URL',
+                    error: 'Invalid resultUrl format',
+                    timing: elapsed()
+                }, 400);
+            }
+        }
+
         // Auth
         const authResult = await validateAuthToken(request, env);
         const clientId = getClientIdentifier(request, authResult);
-        const tier = authResult.valid ? authResult.user.tier : 'anonymous';
+        const tier = authResult.valid
+            ? (hasPremiumAccess(authResult.user) ? 'premium' : authResult.user.subscriptionTier || 'free')
+            : 'anonymous';
 
         // Setup Services
         const db = env.VOCAB_DB;

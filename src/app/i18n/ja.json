@@ -39,6 +39,8 @@
         "switchToDark": "ダークモードに切替"
     },
     "player": {
+        "paste": "貼り付け",
+        "pasteFromClipboard": "クリップボードから貼り付け (⌘V)",
         "pasteUrl": "YouTube URLを貼り付け...",
         "load": "読込",
         "loading": "読込中",
@@ -69,6 +71,8 @@
         "mediumFont": "中くらいの文字",
         "largeFont": "大きい文字",
         "fontSize": "文字サイズ",
+        "subtitlesOff": "字幕はオフです",
+        "captionsAvailableIn": "{{language}}の字幕が利用可能です",
         "dualSubs": "二重字幕",
         "waitingForSubtitles": "字幕を待機中...",
         "noSubtitlesLoaded": "字幕が読み込まれていません",
@@ -160,7 +164,8 @@
         "importSuccess": "単語帳のインポートに成功しました！",
         "importError": "インポートに失敗しました。ファイル形式を確認してください。",
         "filterByLevel": "レベルで絞り込む",
-        "changeLevel": "レベルを変更"
+        "changeLevel": "レベルを変更",
+        "deleteSuccess": "「{{word}}」を削除しました"
     },
     "popup": {
         "translationLang": "翻訳言語",
@@ -401,7 +406,8 @@
         "success": "成功",
         "off": "オフ",
         "back": "戻る",
-        "undo": "元に戻す"
+        "undo": "元に戻す",
+        "retry": "再試行"
     },
     "onboarding": {
         "welcomeTitle": "Vocaへようこそ",

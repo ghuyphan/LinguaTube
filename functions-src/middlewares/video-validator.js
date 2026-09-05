@@ -73,9 +73,12 @@ export function detectTitleLanguage(title) {
     // Chinese: Contains CJK characters but no Japanese kana
     if (/[\u4E00-\u9FFF]/.test(title) && !/[\u3040-\u309F\u30A0-\u30FF]/.test(title)) return 'zh';
 
-    // English: Mostly ASCII characters
-    const asciiRatio = (title.match(/[a-zA-Z\s]/g) || []).length / title.length;
-    if (asciiRatio > 0.7) return 'en';
+    // English: Mostly Latin letters after stripping emojis/punctuation/numbers
+    const cleanLetters = title.replace(/[\p{Emoji}\p{Symbol}\p{Punctuation}\d\s]/gu, '');
+    if (cleanLetters.length > 0) {
+        const latinRatio = (cleanLetters.match(/[a-zA-Z]/g) || []).length / cleanLetters.length;
+        if (latinRatio > 0.7) return 'en';
+    }
 
     return 'unknown';
 }
@@ -130,14 +133,14 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     if (metadata?.title) {
         const detectedLang = detectTitleLanguage(metadata.title);
 
-        // If title clearly suggests a non-supported language, reject
+        // Only reject if the title is clearly in an unsupported non-Latin/non-CJK script (e.g. Cyrillic, Arabic, Thai, Devanagari)
         if (detectedLang === 'unknown') {
-            // Title might be in French, German, etc. - check if it has CJK/EN characters
-            const hasCJK = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/.test(metadata.title);
-            const isAscii = /^[\x00-\x7F]+$/.test(metadata.title);
+            const cleanTitle = metadata.title.replace(/[\p{Emoji}\p{Symbol}\p{Punctuation}\d\s]/gu, '');
+            const hasCJK = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/.test(cleanTitle);
+            const hasLatin = /[a-zA-Z]/.test(cleanTitle);
+            const hasUnsupportedScript = /[\u0400-\u04FF\u0600-\u06FF\u0E00-\u0E7F\u0900-\u097F]/.test(cleanTitle);
 
-            if (!hasCJK && !isAscii) {
-                // Title contains non-ASCII, non-CJK characters (likely other language)
+            if (hasUnsupportedScript && !hasCJK && !hasLatin) {
                 return {
                     error: 'unsupported_video_language',
                     videoTitle: metadata.title,

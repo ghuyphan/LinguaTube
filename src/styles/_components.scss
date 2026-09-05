@@ -733,6 +733,10 @@
     white-space: nowrap;
     max-width: 90vw;
 
+    @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
+        bottom: calc(var(--bottom-nav-total-height) + var(--space-sm));
+    }
+
     app-icon {
         color: #34d399;
         display: flex;

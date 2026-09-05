@@ -59,9 +59,12 @@ async function build() {
     console.log('Copying _shared files...');
     copyDir(`${srcDir}/_shared`, `${outDir}/_shared`);
 
-    // Find and bundle entry points
-    const entryPoints = findJsFiles(srcDir);
-    console.log(`Bundling ${entryPoints.length} functions...\n`);
+    // In Cloudflare Pages Functions, every file in functions/ is treated as a public HTTP route.
+    // Therefore, only route handlers (in api/ and proxy/) must be bundled as entry points.
+    // Internal modules (data, middlewares, providers, services, utils) are bundled into entry points by esbuild.
+    const routeDirs = ['api', 'proxy'];
+    const entryPoints = routeDirs.flatMap(dir => findJsFiles(path.join(srcDir, dir)));
+    console.log(`Bundling ${entryPoints.length} route functions (skipping internal modules)...\n`);
 
     let success = 0;
     let failed = 0;

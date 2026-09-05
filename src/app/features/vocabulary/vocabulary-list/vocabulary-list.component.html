@@ -91,12 +91,12 @@
                     <!-- Level Pill Badge (click to toggle level) -->
                     <button type="button" class="level-badge-btn" [class]="'badge--' + item.level"
                         (click)="cycleLevel(item, $event)"
-                        [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Đổi cấp độ')">
+                        [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
                         <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
                     </button>
 
                     <!-- Direct Delete Button -->
-                    <button type="button" class="delete-btn" (click)="deleteWordDirect(item, $event)" [title]="i18n.t('vocab.deleteWord') || 'Xoá từ'">
+                    <button type="button" class="delete-btn" (click)="deleteWordDirect(item, $event)" [title]="i18n.t('vocab.deleteWord') || 'Delete word'">
                         <app-icon name="trash-2" [size]="14" />
                     </button>
                 </div>
@@ -112,7 +112,7 @@
         <app-icon [name]="toastType() === 'error' ? 'alert-circle' : 'check'" [size]="16" />
         <span class="toast__text">{{ toastMessage() }}</span>
         @if (lastDeletedItem) {
-        <button type="button" class="toast__undo-btn" (click)="undoDelete()">Hoàn tác</button>
+        <button type="button" class="toast__undo-btn" (click)="undoDelete()">{{ i18n.t('common.undo') || 'Undo' }}</button>
         }
     </div>
     }

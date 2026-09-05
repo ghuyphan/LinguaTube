@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isVisible()" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isVisible()" [title]="selectedWord()?.surface || i18n.t('vocab.title') || 'Word Details'" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="popup-content">
 
         <div class="popup-header">

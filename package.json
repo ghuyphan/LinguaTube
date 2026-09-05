@@ -11,7 +11,8 @@
     "build": "npm run build:functions && ng build",
     "lint": "eslint \"src/**/*.{ts,html}\"",
     "lint:fix": "eslint \"src/**/*.{ts,html}\" --fix",
-    "test:ci": "ng test lingua-tube --configuration=ci",
+    "test:backend": "node --test tests/backend-security.test.mjs",
+    "test:ci": "npm run test:backend && ng test lingua-tube --configuration=ci",
     "watch": "ng build --watch --configuration development",
     "test": "ng test lingua-tube"
   },

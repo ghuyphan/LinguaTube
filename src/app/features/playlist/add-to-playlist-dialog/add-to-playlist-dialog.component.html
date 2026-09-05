@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('playlist.saveToPlaylist') || 'Save to Playlist'" [allowBackdropClose]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="dialog-content">
         <h2 class="dialog-title">{{ i18n.t('playlist.saveToPlaylist') }}</h2>
 

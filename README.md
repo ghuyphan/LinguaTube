@@ -56,6 +56,20 @@ LinguaTube is a modern, immersive web application designed to help you learn **J
     ```
     This command runs both the Angular frontend (at `http://localhost:4200`) and the local API server backend.
 
+## 📖 Documentation
+
+For detailed architectural diagrams, technology breakdowns, API specifications, and agent design rules, explore our documentation portal:
+
+- **[AI Agent Operating Guide (AGENTS.md)](AGENTS.md)**: Critical invariants, architecture map, workflows, and rules for AI coding assistants.
+- **[Documentation Portal (doc/README.md)](doc/README.md)**: Complete guide index.
+  - [System Architecture & Component Map](doc/map.md)
+  - [Technology Stack & Tooling](doc/tech.md)
+  - [Backend API & Serverless Edge](doc/backend-api.md)
+  - [Frontend Architecture & UI System](doc/frontend-architecture.md)
+  - [Feature Specifications & Deep Dive](doc/features.md)
+  - [Database & Storage Architecture](doc/database-and-storage.md)
+  - [Developer & Operations Guide](doc/development-guide.md)
+
 ## 🛠️ Architecture & Tech Stack
 
 LinguaTube is built as a **Progressive Web App (PWA)** leveraging edge computing for performance.
@@ -64,9 +78,9 @@ LinguaTube is built as a **Progressive Web App (PWA)** leveraging edge computing
 -   **Backend**: Cloudflare Pages Functions (Serverless).
 -   **Tokenization**:
     -   **Japanese**: `@patdx/kuromoji` (Morphological Analyzer)
-    -   **Chinese**: `jieba-js` (Text Segmentation)
-    -   **Korean**: Space-based + API
--   **Data & Caching**: Cloudflare KV (Key-Value storage) for caching tokenization results and AI transcripts to minimize latency and API costs.
+    -   **Chinese**: `Intl.Segmenter` + `pinyin-pro`
+    -   **Korean**: `Intl.Segmenter` + `hangul-romanization`
+-   **Data & Caching**: Cloudflare D1 (SQLite), Cloudflare R2 (Transcripts), Cloudflare KV (Rate limits & Caching).
 
 ## ⌨️ Keyboard Shortcuts
 

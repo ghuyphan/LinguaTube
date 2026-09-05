@@ -39,6 +39,8 @@
         "switchToDark": "Switch to dark mode"
     },
     "player": {
+        "paste": "Paste",
+        "pasteFromClipboard": "Paste from clipboard (⌘V)",
         "pasteUrl": "Paste YouTube URL...",
         "load": "Load",
         "loading": "Loading",
@@ -118,7 +120,8 @@
         "noCaptionsInLanguage": "No {language} captions",
         "transcriptAvailableIn": "This video has {language} captions available",
         "switchTo": "Switch to {language}",
-        "orUseAI": "Or use AI",
+        "subtitlesOff": "Subtitles turned off",
+        "captionsAvailableIn": "Captions are available in {{language}}",
         "dualSubs": "Dual Subtitles",
         "aiCredits": "AI Credits",
         "creditsAvailable": "Credits Available",
@@ -160,7 +163,8 @@
         "importSuccess": "Vocabulary imported successfully!",
         "importError": "Failed to import. Check file format.",
         "filterByLevel": "Filter by Level",
-        "changeLevel": "Change Level"
+        "changeLevel": "Change Level",
+        "deleteSuccess": "Deleted \"{{word}}\""
     },
     "popup": {
         "translationLang": "Translation Language",
@@ -401,7 +405,8 @@
         "success": "Success",
         "off": "Off",
         "back": "Back",
-        "undo": "Undo"
+        "undo": "Undo",
+        "retry": "Retry"
     },
     "onboarding": {
         "welcomeTitle": "Welcome to Voca",

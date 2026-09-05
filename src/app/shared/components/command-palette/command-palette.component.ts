@@ -8,12 +8,13 @@ import {
   ElementRef,
   viewChild,
   effect,
-  PLATFORM_ID
+  PLATFORM_ID,
+  OnDestroy
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
-import { I18nService } from '../../../services';
+import { I18nService, BodyScrollService } from '../../../services';
 import { YoutubeService } from '../../../features/video/youtube.service';
 
 @Component({
@@ -24,9 +25,10 @@ import { YoutubeService } from '../../../features/video/youtube.service';
   templateUrl: './command-palette.component.html',
   styleUrl: './command-palette.component.scss'
 })
-export class CommandPaletteComponent {
+export class CommandPaletteComponent implements OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private youtube = inject(YoutubeService);
+  private bodyScroll = inject(BodyScrollService);
   i18n = inject(I18nService);
 
   isOpen = input<boolean>(false);
@@ -41,17 +43,36 @@ export class CommandPaletteComponent {
 
   private urlInputRef = viewChild<ElementRef<HTMLInputElement>>('urlInput');
   private shakeTimeoutId?: ReturnType<typeof setTimeout>;
+  private isLocked = false;
 
   constructor() {
     effect(() => {
-      if (this.isOpen() && isPlatformBrowser(this.platformId)) {
-        this.isClosing.set(false);
-        this.resetError();
-        setTimeout(() => {
-          this.urlInputRef()?.nativeElement?.focus();
-        }, 50);
+      if (this.isOpen()) {
+        if (isPlatformBrowser(this.platformId)) {
+          if (!this.isLocked) {
+            this.bodyScroll.lock();
+            this.isLocked = true;
+          }
+          this.isClosing.set(false);
+          this.resetError();
+          setTimeout(() => {
+            this.urlInputRef()?.nativeElement?.focus();
+          }, 50);
+        }
+      } else {
+        if (this.isLocked) {
+          this.bodyScroll.unlock();
+          this.isLocked = false;
+        }
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.isLocked) {
+      this.bodyScroll.unlock();
+      this.isLocked = false;
+    }
   }
 
   onBackdropClick(event: MouseEvent): void {

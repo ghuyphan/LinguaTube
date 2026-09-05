@@ -27,6 +27,18 @@ app.post('/api/whisper', async (req, res) => {
 
     let resultUrl = providedResultUrl;
 
+    // Security: Validate result_url to prevent SSRF and API key leakage
+    if (providedResultUrl) {
+        try {
+            const parsed = new URL(providedResultUrl);
+            if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
+                return res.status(400).json({ error: 'Invalid result_url: must be a gladia.io URL' });
+            }
+        } catch {
+            return res.status(400).json({ error: 'Invalid result_url format' });
+        }
+    }
+
     if (!resultUrl) {
         if (!videoId) {
             return res.status(400).json({ error: 'videoId is required' });

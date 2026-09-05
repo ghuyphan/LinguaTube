@@ -1,11 +1,13 @@
 <div class="quiz-container" [ngClass]="stateClass()">
     <!-- Header: Floating overlay -->
     <div class="quiz-header">
-        <div class="mode-badge" (click)="toggleMode()" title="Click to switch mode">
+        <button type="button" class="mode-badge" (click)="toggleMode()"
+            [title]="i18n.t('quiz.mode') + ': ' + (quiz.mode() === 'dictation' ? i18n.t('quiz.dictation') : i18n.t('quiz.translation'))"
+            [attr.aria-label]="i18n.t('quiz.mode') + ': ' + (quiz.mode() === 'dictation' ? i18n.t('quiz.dictation') : i18n.t('quiz.translation'))">
             <app-icon [name]="quiz.mode() === 'dictation' ? 'headphones' : 'languages'" [size]="14" />
             <span>{{ quiz.mode() === 'dictation' ? i18n.t('quiz.dictation') : i18n.t('quiz.translation') }}</span>
             <app-icon name="refresh-cw" [size]="10" class="switch-icon" />
-        </div>
+        </button>
 
         <div class="stats-badge" [class.has-streak]="quiz.streak() > 2">
             @if (quiz.streak() > 0) {
@@ -45,11 +47,11 @@
                     </div>
 
                     <div class="action-buttons">
-                        <button class="btn-retry" (click)="onRetry()">
+                        <button type="button" class="btn-retry" (click)="onRetry()">
                             <app-icon name="rotate-ccw" [size]="16" />
                             {{ i18n.t('quiz.retry') }}
                         </button>
-                        <button class="btn-next" (click)="quiz.nextQuestion()">
+                        <button type="button" class="btn-next" (click)="quiz.nextQuestion()">
                             {{ i18n.t('quiz.next') }}
                             <app-icon name="arrow-right" [size]="16" />
                         </button>
@@ -68,15 +70,21 @@
 
     <!-- Controls: Floating overlay -->
     <div class="quiz-controls">
-        <button class="btn-icon" (click)="quiz.replaySegment()" [title]="i18n.t('quiz.replay') + ' (R)'">
+        <button type="button" class="btn-icon" (click)="quiz.replaySegment()"
+            [title]="i18n.t('quiz.replay') + ' (R)'"
+            [attr.aria-label]="i18n.t('quiz.replay')">
             <app-icon name="rotate-ccw" [size]="20" />
         </button>
 
-        <button class="btn-icon" (click)="quiz.skipQuestion()" [title]="i18n.t('quiz.skip')">
+        <button type="button" class="btn-icon" (click)="quiz.skipQuestion()"
+            [title]="i18n.t('quiz.skip')"
+            [attr.aria-label]="i18n.t('quiz.skip')">
             <app-icon name="skip-forward" [size]="20" />
         </button>
 
-        <button class="btn-icon btn-check" (click)="onSubmit()" [title]="i18n.t('quiz.check') + ' (Enter)'">
+        <button type="button" class="btn-icon btn-check" (click)="onSubmit()"
+            [title]="i18n.t('quiz.check') + ' (Enter)'"
+            [attr.aria-label]="i18n.t('quiz.check')">
             <app-icon name="check" [size]="20" />
         </button>
     </div>

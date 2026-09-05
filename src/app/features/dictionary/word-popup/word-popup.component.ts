@@ -138,7 +138,7 @@ export class WordPopupComponent implements OnDestroy {
   saveWord(): void {
     const word = this.selectedWord();
     const entryData = this.entry();
-    const lang = this.settings.settings().language;
+    const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
     const sentence = this.currentSentence();
 
     if (!word) return;

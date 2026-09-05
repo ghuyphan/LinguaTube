@@ -25,6 +25,12 @@ button::-moz-focus-inner,
     padding: 0;
 }
 
+/* Accessible focus ring for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
 :root {
     background-color: var(--bg-primary);
     color: var(--text-primary);

@@ -118,6 +118,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         <!-- More Menu Sheet -->
         <app-bottom-sheet
           [isOpen]="showMoreSheet()"
+          [title]="i18n.t('nav.more') || 'More'"
           [showCloseButton]="false"
           [maxHeight]="'auto'"
           (closed)="showMoreSheet.set(false)"
@@ -189,6 +190,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         @defer (when showStreakSheet()) {
           <app-bottom-sheet
             [isOpen]="showStreakSheet()"
+            [title]="i18n.t('streak.dayStreak') || 'Streak'"
             [showCloseButton]="true"
             (closed)="showStreakSheet.set(false)"
           >
@@ -199,6 +201,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         @defer (when showAiCreditsSheet()) {
           <app-bottom-sheet
             [isOpen]="showAiCreditsSheet()"
+            [title]="i18n.t('subtitle.aiCredits') || 'AI Credits'"
             [showCloseButton]="true"
             (closed)="showAiCreditsSheet.set(false)"
           >
@@ -219,6 +222,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       <!-- Update Available Sheet (always available, even during onboarding) -->
       <app-bottom-sheet
         [isOpen]="showUpdateSheet()"
+        [title]="i18n.t('app.updateAvailable') || 'Update Available'"
         [showCloseButton]="true"
         [maxHeight]="'auto'"
         (closed)="showUpdateSheet.set(false)"

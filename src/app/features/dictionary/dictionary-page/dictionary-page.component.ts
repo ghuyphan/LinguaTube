@@ -17,7 +17,6 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     RouterLink,
     DictionaryPanelComponent,
     VocabularyListComponent,
-    VocabularyListComponent,
     IconComponent,
     BottomSheetComponent,
     ConfirmDialogComponent
@@ -108,15 +107,15 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       (cancelled)="vocabDeleteOpen.set(false)" />
 
     <!-- Vocab Menu Sheet -->
-    <app-bottom-sheet [isOpen]="vocabMenuOpen()" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
+    <app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
       <div class="menu-sheet">
         <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
         <div class="menu-sheet__options">
-          <button class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
+          <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
             <app-icon name="download" [size]="18" />
             <span>{{ i18n.t('vocab.exportJson') }}</span>
           </button>
-          <button class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
+          <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
             <app-icon name="download" [size]="18" />
             <span>{{ i18n.t('vocab.exportAnki') }}</span>
           </button>

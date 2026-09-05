@@ -39,6 +39,8 @@
         "switchToDark": "Chuyển sang chế độ tối"
     },
     "player": {
+        "paste": "Dán",
+        "pasteFromClipboard": "Dán từ clipboard (⌘V)",
         "pasteUrl": "Dán URL YouTube...",
         "load": "Tải",
         "loading": "Đang tải",
@@ -118,7 +120,8 @@
         "noCaptionsInLanguage": "Không có phụ đề {language}",
         "transcriptAvailableIn": "Video này có phụ đề {language}",
         "switchTo": "Chuyển sang {language}",
-        "orUseAI": "Hoặc dùng AI",
+        "subtitlesOff": "Đã tắt phụ đề",
+        "captionsAvailableIn": "Có phụ đề bằng {{language}}",
         "dualSubs": "Phụ đề đôi",
         "aiCredits": "Điểm AI",
         "creditsAvailable": "Điểm hiện có",
@@ -160,7 +163,8 @@
         "importSuccess": "Nhập từ vựng thành công!",
         "importError": "Nhập thất bại. Kiểm tra định dạng file.",
         "filterByLevel": "Lọc theo cấp độ",
-        "changeLevel": "Đổi cấp độ"
+        "changeLevel": "Đổi cấp độ",
+        "deleteSuccess": "Đã xoá \"{{word}}\""
     },
     "popup": {
         "translationLang": "Ngôn ngữ dịch",
@@ -401,7 +405,8 @@
         "success": "Thành công",
         "off": "Tắt",
         "back": "Quay lại",
-        "undo": "Hoàn tác"
+        "undo": "Hoàn tác",
+        "retry": "Thử lại"
     },
     "onboarding": {
         "welcomeTitle": "Chào mừng đến với Voca",

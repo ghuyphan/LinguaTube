@@ -62,10 +62,4 @@ export class VocabularyQuickViewComponent {
     const item = this.vocab.vocabulary().find(w => w.id === itemId);
     return item?.level || 'new';
   }
-
-  updateLevel(id: string, event: Event): void {
-    const select = event.target as HTMLSelectElement;
-    const level = select.value as 'new' | 'learning' | 'known' | 'ignored';
-    this.vocab.updateLevel(id, level);
-  }
 }

@@ -11,9 +11,9 @@
         <app-icon name="x" [size]="14" />
       </button>
       } @else {
-      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" title="Dán từ clipboard (⌘V)">
+      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard (⌘V)'">
         <app-icon name="clipboard-check" [size]="13" />
-        <span class="paste-label">Dán</span>
+        <span class="paste-label">{{ i18n.t('player.paste') || 'Paste' }}</span>
       </button>
       }
       <button class="btn btn-primary spotlight-load-btn" (click)="loadVideo()" [disabled]="isLoading() || !videoUrl.trim()">
@@ -140,7 +140,7 @@
 
     <!-- Fullscreen Word Popup -->
     @if (isFullscreen()) {
-    <app-bottom-sheet [isOpen]="fsPopupVisible()" [showCloseButton]="true" (closed)="closeFsPopup()">
+    <app-bottom-sheet [isOpen]="fsPopupVisible()" [title]="fsSelectedWord()?.surface || i18n.t('vocab.title') || 'Word Details'" [showCloseButton]="true" (closed)="closeFsPopup()">
       <div class="fs-popup-content">
         @if (fsSelectedWord(); as word) {
         <div class="fs-popup-header">
@@ -205,7 +205,7 @@
     }
 
     <!-- Keyboard Shortcuts Cheat Sheet Modal (YouTube '?') -->
-    <app-bottom-sheet [isOpen]="showShortcutsDialog()" [maxWidth]="'680px'" [showCloseButton]="true" (closed)="closeShortcutsDialog()">
+    <app-bottom-sheet [isOpen]="showShortcutsDialog()" [title]="i18n.t('shortcuts.title') || 'Keyboard shortcuts'" [maxWidth]="'680px'" [showCloseButton]="true" (closed)="closeShortcutsDialog()">
       <div class="shortcuts-dialog-content">
         <div class="shortcuts-dialog-header">
           <div class="shortcuts-header-icon">
@@ -402,7 +402,7 @@
 
     <!-- Mobile: Native YouTube Bottom Sheet -->
     @if (isMobile()) {
-    <app-bottom-sheet [isOpen]="isPlayerSettingsOpen()" [maxWidth]="'440px'" [showCloseButton]="false"
+    <app-bottom-sheet [isOpen]="isPlayerSettingsOpen()" [title]="i18n.t('player.settings') || 'Settings'" [maxWidth]="'440px'" [showCloseButton]="false"
       [zIndex]="9999" (closed)="closePlayerSettings()">
       <div class="player-settings-sheet">
         <ng-container *ngTemplateOutlet="playerSettingsTemplate" />

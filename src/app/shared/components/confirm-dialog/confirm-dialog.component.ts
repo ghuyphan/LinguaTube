@@ -11,6 +11,7 @@ import { IconComponent, IconName } from '../icon/icon.component';
     template: `
         <app-bottom-sheet 
             [isOpen]="isOpen()" 
+            [title]="title()"
             [showDragHandle]="false" 
             [showCloseButton]="false"
             [allowBackdropClose]="allowBackdropClose()"

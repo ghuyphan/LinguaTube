@@ -39,6 +39,8 @@
         "switchToDark": "切换到深色模式"
     },
     "player": {
+        "paste": "粘贴",
+        "pasteFromClipboard": "从剪贴板粘贴 (⌘V)",
         "pasteUrl": "粘贴 YouTube 链接...",
         "load": "加载",
         "loading": "加载中",
@@ -119,6 +121,8 @@
         "noCaptionsInLanguage": "没有{language}字幕",
         "transcriptAvailableIn": "此视频有{language}字幕可用",
         "switchTo": "切换到{language}",
+        "subtitlesOff": "字幕已关闭",
+        "captionsAvailableIn": "提供{{language}}字幕",
         "orUseAI": "或使用AI",
         "aiCredits": "AI积分",
         "creditsAvailable": "可用额度",
@@ -160,7 +164,8 @@
         "importSuccess": "词汇导入成功！",
         "importError": "导入失败。请检查文件格式。",
         "filterByLevel": "按级别筛选",
-        "changeLevel": "更改级别"
+        "changeLevel": "更改级别",
+        "deleteSuccess": "已删除 \"{{word}}\""
     },
     "popup": {
         "translationLang": "翻译语言",
@@ -401,7 +406,8 @@
         "success": "成功",
         "off": "关闭",
         "back": "返回",
-        "undo": "撤销"
+        "undo": "撤销",
+        "retry": "重试"
     },
     "onboarding": {
         "welcomeTitle": "欢迎使用 Voca",

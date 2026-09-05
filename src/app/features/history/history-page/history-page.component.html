@@ -25,14 +25,19 @@
             type="button"
             class="filter-chip"
             [class.active]="filter() === 'all'"
-            (click)="filter.set('all')">
+            (click)="filter.set('all')"
+            [attr.aria-label]="i18n.t('history.all')"
+            [title]="i18n.t('history.all')">
+            <app-icon name="list" [size]="14" />
             <span class="chip-text">{{ i18n.t('history.all') }}</span>
           </button>
           <button
             type="button"
             class="filter-chip"
             [class.active]="filter() === 'favorites'"
-            (click)="filter.set('favorites')">
+            (click)="filter.set('favorites')"
+            [attr.aria-label]="i18n.t('history.favorites')"
+            [title]="i18n.t('history.favorites')">
             <app-icon name="heart" [size]="14" />
             <span class="chip-text">{{ i18n.t('history.favorites') }}</span>
           </button>
@@ -40,7 +45,8 @@
 
         <div class="toolbar-actions">
           @if (historyItems().length > 0) {
-            <button type="button" class="btn btn-sm btn-ghost clear-all-btn" (click)="confirmClear()">
+            <button type="button" class="btn btn-sm btn-ghost clear-all-btn" (click)="confirmClear()"
+              [attr.aria-label]="i18n.t('history.clearAll')" [title]="i18n.t('history.clearAll')">
               <app-icon name="trash-2" [size]="14" />
               <span class="btn-text">{{ i18n.t('history.clearAll') }}</span>
             </button>

@@ -37,6 +37,8 @@ export class BottomSheetComponent implements OnDestroy {
 
   // Inputs
   isOpen = input<boolean>(false);
+  title = input<string>('');
+  ariaLabel = input<string>('');
   maxHeight = input<string>('85vh');
   maxWidth = input<string>('440px');
   showDragHandle = input<boolean>(true);
@@ -47,6 +49,9 @@ export class BottomSheetComponent implements OnDestroy {
 
   // Optional manual z-index override
   zIndex = input<number | undefined>(undefined);
+
+  // Computed accessibility label
+  effectiveAriaLabel = computed(() => this.title() || this.ariaLabel() || 'Dialog');
 
   // Outputs
   closed = output<void>();

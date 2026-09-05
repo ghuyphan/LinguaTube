@@ -60,6 +60,12 @@
     &:hover {
         color: var(--text-primary);
     }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-primary);
+        outline-offset: 2px;
+        border-radius: var(--radius-xs);
+    }
 }
 
 .switch-icon {

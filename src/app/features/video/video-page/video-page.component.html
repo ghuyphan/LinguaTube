@@ -230,7 +230,7 @@
 
 <!-- Playlist Video Options Menu -->
 @if (playlistService.currentPlaylist(); as playlist) {
-<app-bottom-sheet [isOpen]="videoMenuOpen()" [showCloseButton]="true" (closed)="videoMenuOpen.set(false)">
+<app-bottom-sheet [isOpen]="videoMenuOpen()" [title]="i18n.t('playlist.videoOptions') || 'Video Options'" [showCloseButton]="true" (closed)="videoMenuOpen.set(false)">
     <div class="menu-sheet">
         <h3 class="menu-sheet__title">{{ i18n.t('playlist.videoOptions') }}</h3>
         <div class="menu-sheet__options">
@@ -270,7 +270,7 @@
     (cancelled)="vocabDeleteOpen.set(false)" />
 
 <!-- Vocab Menu Sheet -->
-<app-bottom-sheet [isOpen]="vocabMenuOpen()" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
+<app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
     <div class="menu-sheet">
         <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
         <div class="menu-sheet__options">
@@ -294,7 +294,7 @@
 
 <!-- AI Subtitle Generation & Turnstile Verification Modal -->
 @if (showAiConfirmDialog() && youtube.currentVideo(); as video) {
-<app-bottom-sheet [isOpen]="showAiConfirmDialog()" [maxWidth]="'460px'" [showCloseButton]="true"
+<app-bottom-sheet [isOpen]="showAiConfirmDialog()" [title]="i18n.t('subtitle.generateAi') || 'Generate AI Subtitles'" [maxWidth]="'460px'" [showCloseButton]="true"
     (closed)="onCloseAiConfirmDialog()">
     <div class="ai-confirm-dialog">
         <div class="ai-confirm-header">
@@ -328,12 +328,12 @@
         </div>
 
         @if (isVideoTooLongForAI()) {
-        <div class="alert alert-warning text-xs mt-2" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #ef4444; padding: 8px 12px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 6px;">
+        <div class="ai-confirm-alert ai-confirm-alert--danger">
             <app-icon name="alert-circle" [size]="15" />
             <span>{{ i18n.t('subtitle.videoTooLongForAI') || 'AI transcription is limited to videos under 20 minutes.' }}</span>
         </div>
         } @else if (transcript.diamonds() < aiDiamondCost()) {
-        <div class="alert alert-warning text-xs mt-2" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 8px 12px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 6px;">
+        <div class="ai-confirm-alert ai-confirm-alert--warning">
             <app-icon name="alert-circle" [size]="15" />
             <span>{{ i18n.t('subtitle.needMoreDiamonds') || 'Not enough diamonds for this video duration.' }}</span>
         </div>
