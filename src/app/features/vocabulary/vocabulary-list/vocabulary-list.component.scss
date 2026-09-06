@@ -36,8 +36,6 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--space-sm);
-    padding-bottom: var(--space-xs);
-    border-bottom: 1px solid var(--border-color);
     flex-shrink: 0;
 
     &__left {

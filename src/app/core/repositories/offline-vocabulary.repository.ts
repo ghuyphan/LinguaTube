@@ -111,9 +111,11 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     async addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string): Promise<VocabularyItem> {
+        const meaningText = entry.meanings.map(m => m.definition).filter(Boolean).slice(0, 3).join('; ')
+            || entry.meanings[0]?.definition || '';
         return this.addWord(
             entry.word,
-            entry.meanings[0]?.definition || '',
+            meaningText,
             language,
             entry.reading,
             entry.pinyin,

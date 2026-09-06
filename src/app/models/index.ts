@@ -61,6 +61,7 @@ export interface DictionaryEntry {
   reading?: string;
   pinyin?: string;
   romanization?: string;  // Japanese romaji / Korean romanization
+  audio?: string;         // Authentic dictionary audio URL
   meanings: DictionaryMeaning[];
   partOfSpeech?: string[];
   jlptLevel?: string;

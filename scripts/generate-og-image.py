@@ -31,21 +31,23 @@ for radius in range(120, 70, -5):
     draw.ellipse([80 - (radius - 70), 90 - (radius - 70), 220 + (radius - 70), 230 + (radius - 70)],
                  outline=(199, 62, 58))
 
-# Logo rounded square
-logo_box = [100, 100, 210, 210]
-draw.rounded_rectangle(logo_box, radius=28, fill=(199, 62, 58))
-
-# Logo interior accent
-draw.rounded_rectangle([104, 104, 206, 206], radius=24, outline=(255, 107, 107), width=2)
+# Logo image: load the official Kikyo Kamon icon
+logo_path = os.path.join(os.path.dirname(__file__), "..", "public", "icons", "icon-128x128.png")
+if os.path.exists(logo_path):
+    logo_img = Image.open(logo_path).convert("RGBA").resize((110, 110), Image.Resampling.LANCZOS)
+    img.paste(logo_img, (100, 100), logo_img)
+else:
+    logo_box = [100, 100, 210, 210]
+    draw.rounded_rectangle(logo_box, radius=28, fill=(217, 92, 100))
 
 # Load fonts - try standard system sans-serif fonts
 font_title = None
 font_sub = None
 font_pills = None
 font_small = None
-font_logo = None
 
 font_paths = [
+    "/System/Library/Fonts/Hiragino Sans GB.ttc",
     "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
     "/System/Library/Fonts/SFNS.ttf",
     "/Library/Fonts/Arial.ttf",
@@ -60,7 +62,6 @@ for p in font_paths:
             font_sub = ImageFont.truetype(p, 28)
             font_pills = ImageFont.truetype(p, 20)
             font_small = ImageFont.truetype(p, 18)
-            font_logo = ImageFont.truetype(p, 72)
             break
         except Exception:
             continue
@@ -70,10 +71,6 @@ if not font_title:
     font_sub = ImageFont.load_default()
     font_pills = ImageFont.load_default()
     font_small = ImageFont.load_default()
-    font_logo = ImageFont.load_default()
-
-# Draw logo text (Speech / Character "言" or "V")
-draw.text((155, 155), "言", fill=(255, 255, 255), font=font_logo, anchor="mm")
 
 # App Brand Title
 draw.text((245, 125), "Voca", fill=(255, 255, 255), font=font_title)

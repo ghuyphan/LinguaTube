@@ -206,7 +206,10 @@
         "enterWordAbove": "搜索词汇",
         "enterWordHint": "在上方输入词汇查询释义",
         "saveToVocab": "保存到词汇本",
-        "clearAll": "清除全部"
+        "clearAll": "清除全部",
+        "grammarPatterns": "相关语法结构",
+        "playPronunciation": "听发音",
+        "removeRecent": "删除搜索记录"
     },
     "settings": {
         "title": "设置",
@@ -513,5 +516,15 @@
         "exitModal": "退出全屏 / 关闭窗口",
         "playlistNav": "播放列表上一首 / 下一首",
         "help": "快捷键帮助"
+    },
+    "pwa": {
+        "installApp": "安装应用",
+        "installDesc": "添加到主屏幕以获得全屏流畅体验",
+        "app": "应用程序",
+        "iosGuideTitle": "在 iOS 上安装 Voca",
+        "iosStep1": "在 Safari 中点击“分享”按钮",
+        "iosStep2": "向下滚动并选择“添加到主屏幕”",
+        "iosStep3": "点击右上角的“添加”",
+        "gotIt": "知道了"
     }
 }

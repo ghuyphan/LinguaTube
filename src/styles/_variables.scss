@@ -173,7 +173,7 @@
     --safe-area-left: env(safe-area-inset-left, 0px);
     --safe-area-right: env(safe-area-inset-right, 0px);
     --app-height: 100dvh;
-    --bottom-nav-height: 3.5rem;
+    --bottom-nav-height: 4rem;
     --bottom-nav-safe-area: var(--safe-area-bottom);
     --bottom-nav-total-height: calc(var(--bottom-nav-height) + var(--bottom-nav-safe-area));
 
@@ -196,8 +196,8 @@
 }
 
 :root.standalone-mode {
-    --bottom-nav-height: 3.5rem;
-    --bottom-nav-safe-area: min(var(--safe-area-bottom), 18px);
+    --bottom-nav-height: 4rem;
+    --bottom-nav-safe-area: var(--safe-area-bottom);
 }
 
 [data-theme="dark"] {

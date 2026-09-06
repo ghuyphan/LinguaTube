@@ -1352,3 +1352,4 @@ export class VideoPlayerComponent implements OnDestroy {
     this.youtube.destroy();
   }
 }
+

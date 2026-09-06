@@ -14,16 +14,17 @@
         <div class="search-box input-group--icon">
             <app-icon name="search" [size]="16" class="input-icon" />
             <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
-                class="search-input" (keyup.enter)="search()" />
+                class="search-input" (keyup.enter)="search()" aria-label="Dictionary search" />
             @if (searchQuery) {
-            <button class="clear-btn" (click)="clearSearch()">
+            <button type="button" class="clear-btn" (click)="clearSearch()" aria-label="Clear search">
                 <app-icon name="x" [size]="14" />
             </button>
             }
         </div>
         <button class="btn btn-primary search-btn" (click)="search()" [disabled]="!searchQuery.trim() || isLoading()">
             @if (isLoading()) {
-            <app-icon name="loader" [size]="16" />
+            <app-icon name="loader" [size]="16" class="loading-spinner" />
+            <span class="sr-only">Searching...</span>
             } @else {
             {{ i18n.t('dictionary.search') }}
             }
@@ -31,42 +32,97 @@
     </div>
 
     <!-- Results -->
-    <div class="dict-results">
+    <div class="dict-results" aria-live="polite">
         @if (isLoading()) {
         <div class="loading-state">
             <app-icon name="loader" [size]="32" class="loading-spinner" />
         </div>
-        } @else if (result()) {
+        } @else if (currentEntry() || grammarMatches().length > 0) {
+        
+        <!-- Multi-entry selector tabs if multiple words match -->
+        @if (entries().length > 1) {
+        <div class="entry-tabs">
+            @for (entry of entries(); track $index) {
+            <button type="button" class="entry-tab" [class.active]="$index === activeEntryIndex()"
+                (click)="selectEntry($index)">
+                <span class="entry-tab__num">{{ $index + 1 }}</span>
+                <span class="entry-tab__word">{{ entry.word }}</span>
+                @if (entry.reading || entry.pinyin) {
+                <span class="entry-tab__reading">({{ entry.reading || entry.pinyin }})</span>
+                }
+            </button>
+            }
+        </div>
+        }
+
+        <!-- Word Result Card -->
+        @if (currentEntry(); as entry) {
         <div class="result-content">
             <div class="result-header">
-                <h3 class="result-word" [class]="'text-' + settings.settings().language">
-                    {{ result()!.word }}
-                </h3>
-                @if (result()!.reading) {
-                <span class="result-reading">{{ result()!.reading }}</span>
-                }
-                @if (result()!.pinyin) {
-                <span class="result-reading">{{ result()!.pinyin }}</span>
-                }
-                @if (result()!.romanization) {
-                <span class="result-reading">{{ result()!.romanization }}</span>
-                }
+                <div class="result-header__main">
+                    <div class="result-word-row">
+                        <h3 class="result-word" [class]="'text-' + settings.settings().language">
+                            {{ entry.word }}
+                        </h3>
 
-                <div class="result-badges">
-                    @if (result()!.jlptLevel) {
-                    <span class="badge">{{ result()!.jlptLevel }}</span>
-                    }
-                    @if (result()!.hskLevel) {
-                    <span class="badge">HSK {{ result()!.hskLevel }}</span>
-                    }
-                    @if (result()!.topikLevel) {
-                    <span class="badge">TOPIK {{ result()!.topikLevel }}</span>
+                        <!-- Authentic Dictionary Audio Button -->
+                        @if (entry.audio) {
+                        <button type="button" class="audio-btn" (click)="playAudio(entry.audio, $event)"
+                            [class.playing]="isPlayingAudio()" [attr.title]="i18n.t('dictionary.playPronunciation') || 'Listen to pronunciation'" [attr.aria-label]="i18n.t('dictionary.playPronunciation') || 'Listen to pronunciation'">
+                            <app-icon [name]="isPlayingAudio() ? 'volume-2' : 'volume-1'" [size]="20" />
+                        </button>
+                        }
+                    </div>
+
+                    <div class="result-readings-row">
+                        @if (entry.reading) {
+                        <span class="result-reading">{{ entry.reading }}</span>
+                        }
+                        @if (entry.pinyin) {
+                        <span class="result-reading result-reading--pinyin">{{ entry.pinyin }}</span>
+                        }
+                        @if (entry.romanization) {
+                        <span class="result-reading result-reading--romaji">{{ entry.romanization }}</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Quick Action: Save / Cycle Level directly in header -->
+                <div class="result-header__action">
+                    @if (isSaved()) {
+                    <button type="button" class="btn btn-sm save-badge-btn" [class]="'badge--' + (savedWordLevel() || 'learning')"
+                        (click)="cycleLevel($event)" [title]="'Level: ' + (savedWordLevel() || 'learning') + ' • Click to change'">
+                        <app-icon name="check" [size]="14" />
+                        <span>{{ i18n.t('vocab.' + (savedWordLevel() || 'learning')) || savedWordLevel() }}</span>
+                    </button>
+                    } @else {
+                    <button type="button" class="btn btn-primary btn-sm" (click)="saveWord()" [disabled]="isLoading()">
+                        <app-icon name="plus" [size]="14" />
+                        <span>{{ i18n.t('dictionary.saveToVocab') }}</span>
+                    </button>
                     }
                 </div>
             </div>
 
+            <!-- Badges: Proficiency Levels + Parts of Speech -->
+            <div class="result-badges">
+                @if (entry.jlptLevel) {
+                <span class="badge badge--level">{{ entry.jlptLevel }}</span>
+                }
+                @if (entry.hskLevel) {
+                <span class="badge badge--level">HSK {{ entry.hskLevel }}</span>
+                }
+                @if (entry.topikLevel) {
+                <span class="badge badge--level">TOPIK {{ entry.topikLevel }}</span>
+                }
+                @for (pos of entry.partOfSpeech; track pos) {
+                <span class="badge badge--pos">{{ pos }}</span>
+                }
+            </div>
+
+            <!-- Definitions List -->
             <div class="result-meanings">
-                @for (meaning of result()!.meanings; track $index) {
+                @for (meaning of entry.meanings; track $index) {
                 <div class="meaning-item">
                     <span class="meaning-num">{{ $index + 1 }}</span>
                     <div class="meaning-content">
@@ -78,38 +134,76 @@
                             }
                         </div>
                         }
+                        @if (meaning.examples && meaning.examples.length > 0) {
+                        <div class="meaning-examples">
+                            @for (ex of meaning.examples; track ex) {
+                            <p class="meaning-example">{{ ex }}</p>
+                            }
+                        </div>
+                        }
                     </div>
                 </div>
                 }
             </div>
+        </div>
+        }
 
-            <div class="result-actions">
-                @if (isSaved()) {
-                <button class="btn btn-secondary" disabled>
-                    <app-icon name="check" [size]="14" />
-                    {{ i18n.t('popup.saved') }}
-                </button>
-                } @else {
-                <button class="btn btn-primary" (click)="saveWord()" [disabled]="isLoading()">
-                    <app-icon name="plus" [size]="14" />
-                    {{ i18n.t('dictionary.saveToVocab') }}
-                </button>
+        <!-- Matching Grammar Patterns Section -->
+        @if (grammarMatches().length > 0) {
+        <div class="grammar-matches">
+            <div class="section-title-row">
+                <app-icon name="book-open" [size]="16" class="section-title-icon" />
+                <h4 class="section-title">{{ i18n.t('dictionary.grammarPatterns') || 'Grammar Patterns' }}</h4>
+                <span class="badge badge--grammar-count">{{ grammarMatches().length }}</span>
+            </div>
+
+            <div class="grammar-cards-list">
+                @for (gm of grammarMatches(); track gm.id) {
+                <div class="card grammar-card">
+                    <div class="grammar-card__header">
+                        <div class="grammar-card__title-row">
+                            <h5 class="grammar-card__title">{{ gm.title }}</h5>
+                            @if (gm.formation) {
+                            <span class="grammar-card__formation">{{ gm.formation }}</span>
+                            }
+                        </div>
+                        @if (gm.level) {
+                        <span class="badge badge--grammar-level">{{ gm.level }}</span>
+                        }
+                    </div>
+                    <p class="grammar-card__explanation">{{ gm.shortExplanation }}</p>
+                    @if (gm.examples && gm.examples.length > 0) {
+                    <div class="grammar-card__examples">
+                        <div class="grammar-example-item">
+                            <span class="grammar-example-sentence">{{ gm.examples[0].sentence }}</span>
+                            <span class="grammar-example-trans">{{ gm.examples[0].translation }}</span>
+                        </div>
+                    </div>
+                    }
+                </div>
                 }
             </div>
         </div>
+        }
+
         } @else if (hasSearched() && !isLoading()) {
         <div class="empty-state empty-state--centered">
             <div class="empty-state__icon-box">
                 <app-icon name="alert-circle" [size]="28" />
             </div>
             <div class="empty-state__text" style="align-items: center; text-align: center;">
-                <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"
-                </p>
+                <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
                 <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
+                @if (lookupError()) {
+                <button type="button" class="btn btn-secondary btn-sm mt-sm" (click)="search()">
+                    <app-icon name="refresh-cw" [size]="14" />
+                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
+                </button>
+                }
             </div>
         </div>
         } @else if (!hasSearched()) {
-        <!-- Empty state - always visible -->
+        <!-- Clean Initial Guidance -->
         <div class="empty-state empty-state--centered">
             <div class="empty-state__icon-box">
                 <app-icon name="book-open" [size]="28" />
@@ -119,23 +213,26 @@
                 <p class="empty-state__description">{{ i18n.t('dictionary.enterWordHint') }}</p>
             </div>
         </div>
-        <!-- Recent searches - mobile only -->
+        <!-- Mobile Recent Searches -->
         @if (recentSearches().length > 0) {
         <div class="dict-recent">
             <div class="recent-header">
                 <h4>{{ i18n.t('dictionary.recentSearches') }}</h4>
-                <button class="clear-all-btn" (click)="clearAllRecentSearches()">
+                <button type="button" class="clear-all-btn" (click)="clearAllRecentSearches()">
                     {{ i18n.t('dictionary.clearAll') }}
                 </button>
             </div>
             <div class="recent-list">
                 @for (term of recentSearches(); track term) {
-                <button class="recent-item" (click)="searchRecent(term)">
-                    <span class="recent-term">{{ term }}</span>
-                    <span class="recent-delete" (click)="removeRecentSearch(term, $event)">
+                <div class="recent-chip">
+                    <button type="button" class="recent-term-btn" (click)="searchRecent(term)">
+                        <span class="recent-term">{{ term }}</span>
+                    </button>
+                    <button type="button" class="recent-delete-btn" (click)="removeRecentSearch(term, $event)"
+                        [attr.aria-label]="i18n.t('dictionary.removeRecent') || 'Delete recent search'">
                         <app-icon name="x" [size]="12" />
-                    </span>
-                </button>
+                    </button>
+                </div>
                 }
             </div>
         </div>

@@ -206,7 +206,10 @@
         "enterWordAbove": "単語を検索",
         "enterWordHint": "上に単語を入力して意味を調べる",
         "saveToVocab": "単語帳に保存",
-        "clearAll": "すべて削除"
+        "clearAll": "すべて削除",
+        "grammarPatterns": "関連する文法パターン",
+        "playPronunciation": "発音を聞く",
+        "removeRecent": "検索履歴を削除"
     },
     "settings": {
         "title": "設定",
@@ -513,5 +516,15 @@
         "exitModal": "全画面終了 / モーダルを閉じる",
         "playlistNav": "再生リストの前 / 次の動画",
         "help": "ショートカットのヘルプ"
+    },
+    "pwa": {
+        "installApp": "アプリをインストール",
+        "installDesc": "ホーム画面に追加してフルスクリーンで快適に学習",
+        "app": "アプリ",
+        "iosGuideTitle": "iOSでVocaをインストール",
+        "iosStep1": "Safariの「共有」ボタンをタップ",
+        "iosStep2": "下にスクロールして「ホーム画面に追加」を選択",
+        "iosStep3": "右上の「追加」をタップ",
+        "gotIt": "了解"
     }
 }

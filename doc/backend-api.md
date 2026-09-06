@@ -120,7 +120,8 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
         "reading": "べんきょう",
         "definitions": ["study", "diligence", "discount"],
         "partOfSpeech": "noun, suru verb",
-        "level": 5
+        "level": 5,
+        "audio": "https://jotoba.de/audio/..."
       }
     ],
     "timestamp": 1725513600000

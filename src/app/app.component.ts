@@ -12,7 +12,7 @@ import { CommandPaletteComponent } from './shared/components/command-palette/com
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
 import { YoutubeService, I18nService, SettingsService, TranscriptService, SubtitleService } from './services';
-import { SeoService } from './core/services';
+import { SeoService, PwaService } from './core/services';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
@@ -64,7 +64,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
           </main>
         </div>
 
-        <!-- Mobile Bottom Navigation -->
+        <!-- Mobile Bottom Navigation (Material 3) -->
         <nav class="bottom-nav">
           <div class="bottom-nav__items">
             <a
@@ -72,9 +72,10 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               routerLink="/video"
               (click)="onLearnNavClick($event)"
               [class.active]="!anySheetOpen() && isRouteActive('/video')"
+              [attr.aria-current]="(!anySheetOpen() && isRouteActive('/video')) ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon name="play-circle" [size]="20" />
+                <app-icon [name]="(!anySheetOpen() && isRouteActive('/video')) ? 'play-circle-filled' : 'play-circle'" [size]="22" />
                 @if (hasActiveVideoSession()) {
                   <span class="now-playing-dot"></span>
                 }
@@ -85,32 +86,47 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               class="bottom-nav__item"
               routerLink="/study"
               [class.active]="!anySheetOpen() && isRouteActive('/study')"
+              [attr.aria-current]="(!anySheetOpen() && isRouteActive('/study')) ? 'page' : null"
             >
-              <app-icon name="graduation-cap" [size]="20" />
+              <div class="bottom-nav__icon-wrap">
+                <app-icon [name]="(!anySheetOpen() && isRouteActive('/study')) ? 'graduation-cap-filled' : 'graduation-cap'" [size]="22" />
+              </div>
               <span>{{ i18n.t('nav.review') }}</span>
             </a>
             <a
               class="bottom-nav__item"
               routerLink="/dictionary"
               [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
+              [attr.aria-current]="(!anySheetOpen() && isRouteActive('/dictionary')) ? 'page' : null"
             >
-              <app-icon name="book-open" [size]="20" />
+              <div class="bottom-nav__icon-wrap">
+                <app-icon [name]="(!anySheetOpen() && isRouteActive('/dictionary')) ? 'book-open-filled' : 'book-open'" [size]="22" />
+              </div>
               <span>{{ i18n.t('nav.vocab') }}</span>
             </a>
             <a
               class="bottom-nav__item"
               routerLink="/explore"
               [class.active]="!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))"
+              [attr.aria-current]="(!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))) ? 'page' : null"
             >
-              <app-icon name="list-video" [size]="20" />
+              <div class="bottom-nav__icon-wrap">
+                <app-icon [name]="(!anySheetOpen() && (isRouteActive('/explore') || isRouteActive('/playlists'))) ? 'list-video-filled' : 'list-video'" [size]="22" />
+              </div>
               <span>{{ i18n.t('nav.playlists') }}</span>
             </a>
             <button
               class="bottom-nav__item"
+              type="button"
               [class.active]="showMoreSheet() || isRouteActive('/history')"
               (click)="toggleMoreSheet()"
+              aria-haspopup="dialog"
+              [attr.aria-expanded]="showMoreSheet()"
+              [attr.aria-label]="i18n.t('nav.more') || 'More'"
             >
-              <app-icon name="more-horizontal" [size]="20" />
+              <div class="bottom-nav__icon-wrap">
+                <app-icon [name]="(showMoreSheet() || isRouteActive('/history')) ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
+              </div>
               <span>{{ i18n.t('nav.more') }}</span>
             </button>
           </div>
@@ -163,6 +179,19 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
               </div>
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
+
+            @if (pwa.canInstall()) {
+              <button class="more-menu__item more-menu__item--install" (click)="installAppFromMore()">
+                <div class="more-menu__item-icon more-menu__item-icon--install">
+                  <app-icon name="download" [size]="18" />
+                </div>
+                <div class="more-menu__item-text">
+                  <span class="more-menu__item-title">{{ i18n.t('pwa.installApp') }}</span>
+                  <span class="more-menu__item-desc">{{ i18n.t('pwa.installDesc') }}</span>
+                </div>
+                <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
+              </button>
+            }
 
             <div class="more-menu__divider"></div>
 
@@ -245,6 +274,71 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         </div>
       </app-bottom-sheet>
 
+      <!-- iOS Install Guide Sheet -->
+      <app-bottom-sheet
+        [isOpen]="pwa.showIosInstallGuide()"
+        [title]="i18n.t('pwa.iosGuideTitle') || 'Install Voca'"
+        [showCloseButton]="true"
+        [maxHeight]="'auto'"
+        (closed)="pwa.closeIosInstallGuide()"
+      >
+        <div class="ios-install-sheet">
+          <div class="ios-install-sheet__header">
+            <div class="ios-install-sheet__icon">
+              <svg class="ios-install-logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <path id="ios-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#F5F0E8"/>
+                </defs>
+                <g transform="translate(256, 256) scale(0.68)">
+                  <use href="#ios-kikyou-petal" transform="rotate(0)"/>
+                  <use href="#ios-kikyou-petal" transform="rotate(72)"/>
+                  <use href="#ios-kikyou-petal" transform="rotate(144)"/>
+                  <use href="#ios-kikyou-petal" transform="rotate(216)"/>
+                  <use href="#ios-kikyou-petal" transform="rotate(288)"/>
+                  <circle cx="0" cy="0" r="50" fill="#F5F0E8" stroke="#D95C64" stroke-width="6"/>
+                  <circle cx="0" cy="0" r="20" fill="#D95C64"/>
+                </g>
+              </svg>
+            </div>
+            <h3 class="ios-install-sheet__title">{{ i18n.t('pwa.iosGuideTitle') }}</h3>
+            <p class="ios-install-sheet__desc">{{ i18n.t('pwa.installDesc') }}</p>
+          </div>
+
+          <div class="ios-install-steps">
+            <div class="ios-step-card">
+              <div class="ios-step-num">1</div>
+              <div class="ios-step-text">
+                <span>{{ i18n.t('pwa.iosStep1') }}</span>
+                <span class="ios-step-hint">
+                  <app-icon name="share" [size]="16" />
+                </span>
+              </div>
+            </div>
+
+            <div class="ios-step-card">
+              <div class="ios-step-num">2</div>
+              <div class="ios-step-text">
+                <span>{{ i18n.t('pwa.iosStep2') }}</span>
+                <span class="ios-step-hint">
+                  <app-icon name="plus" [size]="16" />
+                </span>
+              </div>
+            </div>
+
+            <div class="ios-step-card">
+              <div class="ios-step-num">3</div>
+              <div class="ios-step-text">
+                <span>{{ i18n.t('pwa.iosStep3') }}</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="ios-install-btn" (click)="pwa.closeIosInstallGuide()">
+            {{ i18n.t('pwa.gotIt') }}
+          </button>
+        </div>
+      </app-bottom-sheet>
+
     </div>
   `,
   styles: [`
@@ -320,7 +414,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       }
 
       .main {
-        padding: var(--space-sm) 0 calc(var(--bottom-nav-total-height) + var(--space-xs)) 0;
+        padding: var(--space-sm) 0 calc(var(--safe-area-bottom) + var(--space-xs)) 0;
       }
 
       .main.video-active {
@@ -517,6 +611,138 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
       background: var(--border-color);
       margin: var(--space-xs) var(--space-md);
     }
+
+    .more-menu__item-icon--install {
+      color: var(--accent-primary);
+      background: var(--accent-primary-soft);
+      border-color: rgba(var(--accent-primary-rgb), 0.2);
+    }
+
+    .more-menu__item-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* iOS Install Guide Sheet */
+    .ios-install-sheet {
+      padding: var(--space-md) var(--space-lg) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .ios-install-sheet__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .ios-install-sheet__icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: var(--border-radius-md);
+      background: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-sm);
+      box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.25);
+    }
+
+    .ios-install-logo-kikyou {
+      width: 2.25rem;
+      height: 2.25rem;
+      display: block;
+    }
+
+    .ios-install-sheet__title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 4px;
+    }
+
+    .ios-install-sheet__desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .ios-install-steps {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .ios-step-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      text-align: left;
+    }
+
+    .ios-step-num {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: var(--border-radius-round);
+      background: var(--accent-primary);
+      color: white;
+      font-weight: 700;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ios-step-text {
+      flex: 1;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ios-step-hint {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      color: var(--text-secondary);
+    }
+
+    .ios-install-btn {
+      width: 100%;
+      padding: var(--space-md);
+      border-radius: var(--border-radius);
+      background: var(--accent-primary);
+      color: white;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+    }
+
+    .ios-install-btn:active {
+      opacity: 0.85;
+    }
   `]
 })
 export class AppComponent implements OnDestroy {
@@ -534,6 +760,7 @@ export class AppComponent implements OnDestroy {
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);
   private seo = inject(SeoService);
+  pwa = inject(PwaService);
 
   hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
 
@@ -723,13 +950,11 @@ export class AppComponent implements OnDestroy {
     const activeVideo = this.youtube.currentVideo();
 
     if (isOnVideoPage) {
-      // Already on video page: Clicking Watch again clears current video to return to search/spotlight
+      // Already on video page: preserve active playback session and scroll smoothly to top
       event.preventDefault();
-      this.playlistService.clearCurrentPlaylist();
-      this.youtube.reset();
-      this.subtitles.clear();
-      this.transcript.reset();
-      void this.router.navigate(['/video'], { queryParams: {} });
+      if (isPlatformBrowser(this.platformId)) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } else if (activeVideo) {
       // Navigating back from another page while video is active: Resume current video
       event.preventDefault();
@@ -767,6 +992,11 @@ export class AppComponent implements OnDestroy {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
     void this.router.navigate([route], { replaceUrl: true });
+  }
+
+  async installAppFromMore(): Promise<void> {
+    this.showMoreSheet.set(false);
+    await this.pwa.install();
   }
 
   onCommandPaletteSearch(videoId: string): void {

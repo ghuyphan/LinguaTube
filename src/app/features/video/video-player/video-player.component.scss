@@ -115,25 +115,26 @@ $transition-normal: 0.25s ease;
 .spotlight-container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 8px;
   width: 100%;
 }
 
 .spotlight-bar {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 10px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-pill);
-  padding: 5px 6px 5px 16px;
+  padding: 0 8px 0 16px;
   height: 52px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: border-color $transition-fast, box-shadow $transition-fast;
+  box-sizing: border-box;
 
   &:focus-within {
     border-color: var(--accent-primary);
-    box-shadow: 0 4px 20px rgba(var(--accent-primary-rgb), 0.2);
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.16), 0 4px 16px rgba(0, 0, 0, 0.1);
 
     .spotlight-icon {
       color: var(--accent-primary);
@@ -143,6 +144,8 @@ $transition-normal: 0.25s ease;
   .spotlight-icon {
     color: var(--text-muted);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
     transition: color $transition-fast;
   }
 
@@ -168,18 +171,25 @@ $transition-normal: 0.25s ease;
 
     &::placeholder {
       color: var(--text-muted);
-      opacity: 0.7;
+      opacity: 0.75;
     }
   }
 
+  .spotlight-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
   .spotlight-clear-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    border: 1px solid var(--border-color);
+    border: none;
     background: var(--bg-surface);
     color: var(--text-muted);
     cursor: pointer;
@@ -190,14 +200,19 @@ $transition-normal: 0.25s ease;
       background: var(--bg-hover);
       color: var(--text-primary);
     }
+
+    &:active {
+      transform: scale(0.92);
+    }
   }
 
   .spotlight-paste-btn {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    font-size: 0.75rem;
+    gap: 6px;
+    height: 36px;
+    padding: 0 12px;
+    font-size: 0.8125rem;
     font-weight: 600;
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
@@ -211,15 +226,43 @@ $transition-normal: 0.25s ease;
       background: var(--bg-hover);
       border-color: var(--accent-primary);
       color: var(--accent-primary);
+
+      .paste-kbd {
+        border-color: rgba(var(--accent-primary-rgb), 0.3);
+        color: var(--accent-primary);
+      }
     }
 
     &:active {
-      transform: scale(0.95);
+      transform: scale(0.96);
+    }
+
+    .paste-label {
+      line-height: 1;
+    }
+
+    .paste-kbd {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 20px;
+      padding: 0 5px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 0.6875rem;
+      font-family: var(--font-mono, monospace);
+      font-weight: 600;
+      color: var(--text-muted);
+      line-height: 1;
+      margin-left: 2px;
+      user-select: none;
+      transition: all $transition-fast;
     }
   }
 
   .spotlight-load-btn {
-    height: 40px;
+    height: 38px;
     padding: 0 16px;
     font-size: 0.875rem;
     font-weight: 600;
@@ -229,10 +272,12 @@ $transition-normal: 0.25s ease;
     justify-content: center;
     gap: 6px;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.25);
     transition: all $transition-fast;
 
     &:hover:not(:disabled) {
       transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.35);
     }
 
     &:active:not(:disabled) {
@@ -240,12 +285,9 @@ $transition-normal: 0.25s ease;
     }
 
     &:disabled {
-      background: var(--bg-surface) !important;
-      border: 1px solid var(--border-color) !important;
-      color: var(--text-muted) !important;
       opacity: 0.6;
+      cursor: not-allowed;
       box-shadow: none !important;
-      filter: none !important;
     }
   }
 }
@@ -278,19 +320,7 @@ $transition-normal: 0.25s ease;
   }
 }
 
-.spotlight-hint {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 var(--space-xs);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.4;
 
-  app-icon {
-    flex-shrink: 0;
-  }
-}
 
 // ============================================
 // VIDEO CONTAINER
@@ -957,59 +987,47 @@ $transition-normal: 0.25s ease;
   }
 
   .spotlight-bar {
-    height: 46px;
-    padding: 4px 5px 4px 12px;
-    gap: 6px;
+    height: 48px;
+    padding: 0 6px 0 14px;
+    gap: 8px;
 
     .spotlight-input {
       font-size: 0.875rem;
     }
 
+    .spotlight-actions {
+      gap: 5px;
+    }
+
     .spotlight-paste-btn {
-      width: 32px;
-      height: 32px;
-      padding: 0;
-      border-radius: 50%;
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all $transition-fast;
+      height: 34px;
+      padding: 0 10px;
+      gap: 5px;
+      font-size: 0.8125rem;
 
-      &:hover {
-        background: var(--bg-hover);
-        color: var(--text-primary);
-      }
-
-      .paste-label {
+      .paste-kbd {
         display: none;
       }
     }
 
     .spotlight-clear-btn {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
     }
 
     .spotlight-load-btn {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      min-height: 36px;
-      padding: 0;
-      border-radius: 50%;
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 34px;
+      padding: 0 12px;
+      gap: 4px;
+      font-size: 0.8125rem;
 
       .load-text {
-        display: none;
+        display: inline;
       }
     }
   }
+
+
 
   .video-info {
     padding: var(--space-sm) 0;
@@ -1122,9 +1140,7 @@ $transition-normal: 0.25s ease;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-md);
 
   .shortcuts-header-icon {
     width: 2rem;

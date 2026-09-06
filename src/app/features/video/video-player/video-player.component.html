@@ -6,37 +6,35 @@
       <app-icon name="link" [size]="18" class="spotlight-icon" />
       <input type="text" [(ngModel)]="videoUrl" (ngModelChange)="error.set(null)" [placeholder]="i18n.t('player.pasteUrl')" class="spotlight-input"
         (keyup.enter)="loadVideo()" spellcheck="false" autocomplete="off" />
-      @if (videoUrl) {
-      <button type="button" class="spotlight-clear-btn" (click)="clearUrl()" [attr.aria-label]="i18n.t('common.clear') || 'Clear input'">
-        <app-icon name="x" [size]="16" />
-      </button>
+      @if (videoUrl.trim()) {
+      <div class="spotlight-actions">
+        <button type="button" class="spotlight-clear-btn" (click)="clearUrl()" [attr.aria-label]="i18n.t('common.clear') || 'Clear input'">
+          <app-icon name="x" [size]="14" />
+        </button>
+        <button class="btn btn-primary spotlight-load-btn" (click)="loadVideo()" [disabled]="isLoading()" [attr.aria-label]="i18n.t('player.load') || 'Load video'">
+          @if (isLoading()) {
+          <app-icon name="loader" [size]="15" class="loading-spinner" />
+          } @else {
+          <app-icon name="arrow-right" [size]="15" />
+          <span class="load-text">{{ i18n.t('player.load') }}</span>
+          }
+        </button>
+      </div>
       } @else {
-      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard (⌘V)'">
-        <app-icon name="clipboard-check" [size]="13" />
+      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard (⌘V)'" [attr.aria-label]="i18n.t('player.paste') || 'Paste'">
+        <app-icon name="clipboard-check" [size]="15" />
         <span class="paste-label">{{ i18n.t('player.paste') || 'Paste' }}</span>
+        <kbd class="paste-kbd">⌘V</kbd>
       </button>
       }
-      <button class="btn btn-primary spotlight-load-btn" (click)="loadVideo()" [disabled]="isLoading() || !videoUrl.trim()">
-        @if (isLoading()) {
-        <app-icon name="loader" [size]="16" />
-        } @else {
-        <app-icon name="arrow-right" [size]="15" />
-        <span class="load-text">{{ i18n.t('player.load') }}</span>
-        }
-      </button>
     </div>
 
     @if (error()) {
     <div class="error-banner">
-      <app-icon name="alert-circle" [size]="16" />
+      <app-icon name="alert-circle" [size]="15" />
       <span>{{ error() }}</span>
     </div>
     }
-
-    <div class="spotlight-hint">
-      <app-icon name="info" [size]="13" />
-      <span>{{ i18n.t('player.hint') }}</span>
-    </div>
   </div>
   } @else {
   <!-- Video Loaded State -->

@@ -139,8 +139,13 @@ graph TD
   - Displays detected grammatical structures (e.g. `〜てはいけない`, `虽然...但是...`).
   - Shows formation rules, explanations, level badges, and contextual example sentences.
   - Automatically loads multi-language translation packs or native-to-native explanations on demand.
-- **`DictionaryPageComponent`**:
-  - Standalone full-screen dictionary search page with search history, language selectors, and comprehensive definitions.
+- **`DictionaryPageComponent` & `DictionaryPanelComponent`**:
+  - Standalone full-screen dictionary search page with isolated reactive signals (`screenQuery`, `screenEntries`).
+  - Supports deep linking via URL query parameter (`/dictionary?q=...`) and vocabulary word click-to-search.
+  - Multi-entry disambiguation tabs for queries matching multiple homonyms.
+  - Authentic dictionary audio pronunciation using HTML5 `Audio` elements with animated audio speaker buttons.
+  - Integrated grammar pattern matches from `GrammarService`.
+  - Language-scoped search history (`linguatube_recent_searches_${lang}`) and direct SRS level cycling in result headers.
 
 ---
 
@@ -245,3 +250,36 @@ The application styling is organized using modular SCSS located in `src/styles/`
     --accent-color: #38bdf8;
   }
   ```
+
+### Card & Panel Design Conventions
+- **Clean Surface Architecture**: All cards (`.card`, `.sidebar-card`, `.vocab-panel`, `.dict-panel`, `.playlist-panel`, `.history-panel`) share unified surface tokens: `background: var(--bg-card);`, `border: 1px solid var(--border-color);`, and `border-radius: var(--border-radius-lg);`.
+- **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
+
+### Material Design 3 Mobile Navigation Bar (`.bottom-nav`)
+- **Structure & Ergonomics**: A 5-tab responsive navigation bar constrained to `max-width: 32rem` (`margin: 0 auto`) with `--bottom-nav-height: 4rem` (64px) + full iOS/Android safe area padding (`--bottom-nav-safe-area: var(--safe-area-bottom)`).
+- **M3 Blooming Pill Indicator**: Uses a capsule active indicator (`.bottom-nav__icon-wrap::before`, `width: 56px`, `height: 32px`, `border-radius: 9999px`) that expands horizontally using the official M3 Emphasized Decelerate curve (`cubic-bezier(0.05, 0.7, 0.1, 1)`) from `scaleX(0.32)` to `scale(1)` with `opacity: 1` in brand tint `rgba(var(--accent-primary-rgb), 0.16)`.
+- **Outline vs. Solid Icon Duality**: Navigation tabs display outline icons when inactive (`play-circle`, `graduation-cap`, `book-open`, `list-video`, `more-horizontal`) and dynamically switch to solid filled variants when active (`play-circle-filled`, `graduation-cap-filled`, etc.).
+- **Frosted Glass Surface**: Container uses `rgba(var(--bg-card-rgb), 0.88)` with `backdrop-filter: blur(20px) saturate(180%)` to provide a native frosted-glass blur over scrolling page content.
+- **Landscape Phone Optimization**: On compact landscape viewports (`max-height: 500px`), the bottom navigation bar is automatically hidden (`display: none !important`), freeing up ~20% vertical space for video playback and synchronized subtitles.
+- **Safe Session Handling**: Tapping the active "Watch" tab while watching a video preserves the current playback state and smoothly scrolls to top rather than resetting the active session.
+
+---
+
+## 7. Progressive Web App (PWA) & Mobile Installation
+
+### 7.1. Installation Architecture (`PwaService`)
+- Located in `src/app/core/services/pwa.service.ts`.
+- Captures browser `beforeinstallprompt` event, saves the prompt, and maintains reactive signals:
+  - `canInstall`: Computed signal verifying the app is not already running standalone (`(display-mode: standalone)` and `navigator.standalone`), and either has an available install prompt or is running on iOS.
+  - `isStandalone`: Reactive signal tracking standalone display state.
+  - `isIOS`: Identifies Apple iOS devices (iPhone/iPad/iPod).
+- Triggered seamlessly from the **Mobile "More" sheet** (`app.component.ts`), and automatically hidden when the user is already operating in standalone PWA mode.
+- **iOS Safari Support**: Because WebKit on iOS does not support programmatic install prompts, clicking "Install App" triggers an iOS guidance modal showing visual steps to tap the Safari "Share" button and select "Add to Home Screen".
+
+### 7.2. Brand Identity & Vector Iconography (Kikyo Kamon)
+- **Heritage Design**: The app icon is modeled after the authentic Japanese **Kikyo Kamon (桔梗紋 / Bellflower Crest)**, a celebrated samurai family crest (Akechi Mitsuhide) representing elegance, focus, and cultural scholarship.
+- **Mathematical 5-Fold Symmetry**: Crafted with 5-fold rotational symmetry ($72^\circ$ intervals), defining a single master petal rotated around origin `(256, 256)` and smoothly capped by a concentric circular pistil ring.
+- **Colorway & Container**: Features Voca's signature Coral (`#D95C64`) squircle container (`rx="115"` on 512x512) framing a warm Cream (`#F5F0E8`) flower.
+- **Multi-Resolution PWA Icons**: Full suite of 11 raster resolutions rendered via native `sips` in `public/icons/` (`icon-72x72.png` through `icon-512x512.png`, `apple-icon-180.png`, and full-bleed `manifest-icon-*.maskable.png` with 80% safe zone padding).
+- **Universal Application**: Unified across `src/favicon.svg`, `src/assets/icon.svg`, the desktop sidebar header (`sidebar.component.html`), the iOS install sheet (`app.component.ts`), and the Open Graph card (`public/og-image.png`).
+

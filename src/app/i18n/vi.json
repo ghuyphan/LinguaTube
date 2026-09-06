@@ -206,7 +206,10 @@
         "enterWordAbove": "Tìm kiếm từ",
         "enterWordHint": "Nhập từ ở trên để tra nghĩa",
         "saveToVocab": "Lưu vào từ vựng",
-        "clearAll": "Xóa tất cả"
+        "clearAll": "Xóa tất cả",
+        "grammarPatterns": "Ngữ pháp phù hợp",
+        "playPronunciation": "Nghe phát âm",
+        "removeRecent": "Xóa tìm kiếm"
     },
     "settings": {
         "title": "Cài đặt",
@@ -513,5 +516,15 @@
         "exitModal": "Thoát toàn màn hình / Đóng cửa sổ",
         "playlistNav": "Video trước / sau trong danh sách",
         "help": "Trợ giúp phím tắt"
+    },
+    "pwa": {
+        "installApp": "Cài đặt ứng dụng",
+        "installDesc": "Thêm vào Màn hình chính để dùng toàn màn hình",
+        "app": "Ứng dụng",
+        "iosGuideTitle": "Cài đặt Voca trên iOS",
+        "iosStep1": "Nhấn nút Chia sẻ trong Safari",
+        "iosStep2": "Cuộn xuống và chọn 'Thêm vào MH chính'",
+        "iosStep3": "Nhấn 'Thêm' ở góc trên bên phải",
+        "gotIt": "Đã hiểu"
     }
 }

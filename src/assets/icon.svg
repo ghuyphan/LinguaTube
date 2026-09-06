@@ -1,18 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="115" fill="#D95C64"/>
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#c73e3a"/>
-      <stop offset="100%" stop-color="#ff6b6b"/>
-    </linearGradient>
+    <path id="kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#F5F0E8"/>
   </defs>
-  <!-- Gradient rounded square background matching sidebar -->
-  <rect x="0" y="0" width="512" height="512" rx="142" fill="url(#bgGradient)"/>
-  
-  <!-- Chinese character 言 (language/speech) -->
-  <text x="256" y="340" 
-        font-family="Noto Sans SC, Noto Sans JP, sans-serif" 
-        font-size="280" 
-        font-weight="800" 
-        fill="#ffffff" 
-        text-anchor="middle">言</text>
+  <g transform="translate(256, 256) scale(0.63)">
+    <use href="#kikyou-petal" transform="rotate(0)"/>
+    <use href="#kikyou-petal" transform="rotate(72)"/>
+    <use href="#kikyou-petal" transform="rotate(144)"/>
+    <use href="#kikyou-petal" transform="rotate(216)"/>
+    <use href="#kikyou-petal" transform="rotate(288)"/>
+    <circle cx="0" cy="0" r="50" fill="#F5F0E8" stroke="#D95C64" stroke-width="6"/>
+    <circle cx="0" cy="0" r="20" fill="#D95C64"/>
+  </g>
 </svg>

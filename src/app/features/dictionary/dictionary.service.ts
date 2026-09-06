@@ -10,6 +10,7 @@ interface UnifiedDictEntry {
   word?: string;
   reading?: string;
   romanization?: string;
+  audio?: string;
   definitions?: string[];
   partOfSpeech?: string;
   level?: number;
@@ -24,9 +25,15 @@ interface UnifiedDictResponse {
 })
 export class DictionaryService {
   readonly isLoading = signal(false);
+  // Kept for backward compatibility
   readonly lastLookup = signal<DictionaryEntry | null>(null);
-  readonly lastQuery = signal<string>(''); // Persistence for search term
-  readonly recentSearches = signal<string[]>([]); // Shared recent searches state
+  readonly lastQuery = signal<string>('');
+  readonly recentSearches = signal<string[]>([]);
+
+  // Dedicated isolated screen persistence (never polluted by subtitle popups)
+  readonly screenQuery = signal<string>('');
+  readonly screenEntries = signal<DictionaryEntry[]>([]);
+  readonly screenError = signal<string | null>(null);
 
   // Unified API endpoint
   private readonly UNIFIED_DICT_API = environment.api.dict;
@@ -41,42 +48,91 @@ export class DictionaryService {
   private readonly MAX_CACHE_SIZE = 500;
 
   constructor() {
-    // Load recent searches from localStorage on init
     this.loadRecentSearches();
   }
 
-  private loadRecentSearches(): void {
+  private getRecentKey(lang?: string): string {
+    return lang ? `${this.RECENT_KEY}_${lang}` : this.RECENT_KEY;
+  }
+
+  loadRecentSearches(lang?: string): void {
     try {
-      const saved = localStorage.getItem(this.RECENT_KEY);
+      const key = this.getRecentKey(lang);
+      const saved = localStorage.getItem(key);
       if (saved) {
         this.recentSearches.set(JSON.parse(saved));
+        return;
+      }
+      // Fallback: check legacy global key if language-specific not yet created
+      const legacy = localStorage.getItem(this.RECENT_KEY);
+      if (legacy) {
+        this.recentSearches.set(JSON.parse(legacy));
+      } else {
+        this.recentSearches.set([]);
+      }
+    } catch {
+      this.recentSearches.set([]);
+    }
+  }
+
+  addToRecentSearches(term: string, lang?: string): void {
+    const trimmed = term.trim();
+    if (!trimmed) return;
+    const current = this.recentSearches();
+    const updated = [trimmed, ...current.filter(t => t !== trimmed)].slice(0, 10);
+    this.recentSearches.set(updated);
+    try {
+      localStorage.setItem(this.getRecentKey(lang), JSON.stringify(updated));
+    } catch { }
+  }
+
+  removeRecentSearch(term: string, lang?: string): void {
+    const updated = this.recentSearches().filter(t => t !== term);
+    this.recentSearches.set(updated);
+    try {
+      localStorage.setItem(this.getRecentKey(lang), JSON.stringify(updated));
+    } catch { }
+  }
+
+  clearAllRecentSearches(lang?: string): void {
+    this.recentSearches.set([]);
+    try {
+      localStorage.removeItem(this.getRecentKey(lang));
+      if (!lang) {
+        localStorage.removeItem(this.RECENT_KEY);
       }
     } catch { }
   }
 
-  addToRecentSearches(term: string): void {
-    const current = this.recentSearches();
-    const updated = [term, ...current.filter(t => t !== term)].slice(0, 10);
-    this.recentSearches.set(updated);
-    localStorage.setItem(this.RECENT_KEY, JSON.stringify(updated));
+  /**
+   * Helper to map a raw backend entry to a normalized DictionaryEntry
+   */
+  private mapRawEntry(entry: UnifiedDictEntry, word: string, from: 'ja' | 'zh' | 'ko' | 'en'): DictionaryEntry {
+    return {
+      word: entry.word || word,
+      reading: from === 'ja' || from === 'en' ? (entry.reading || '') : undefined,
+      pinyin: from === 'zh' ? (entry.reading || '') : undefined,
+      romanization: from === 'ja'
+        ? (entry.romanization || getJapaneseRomaji(entry.reading || '', entry.word || word))
+        : from === 'ko'
+          ? (entry.romanization || entry.reading || '')
+          : undefined,
+      audio: entry.audio || undefined,
+      meanings: entry.definitions?.map((def: string) => ({
+        definition: def,
+        examples: []
+      })) || [],
+      partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : [],
+      jlptLevel: from === 'ja' && entry.level ? `N${entry.level}` : undefined,
+      hskLevel: from === 'zh' ? entry.level : undefined,
+      topikLevel: from === 'ko' ? entry.level : undefined
+    };
   }
-
-  removeRecentSearch(term: string): void {
-    const updated = this.recentSearches().filter(t => t !== term);
-    this.recentSearches.set(updated);
-    localStorage.setItem(this.RECENT_KEY, JSON.stringify(updated));
-  }
-
-  clearAllRecentSearches(): void {
-    this.recentSearches.set([]);
-    localStorage.removeItem(this.RECENT_KEY);
-  }
-
-
 
   /**
    * Auto-detect language and look up using unified endpoint
-   * Definitions will be returned in user's UI language
+   * Returns first matching entry (compatible with word-popup and video-player)
+   * Pure query: DOES NOT mutate global screen state!
    */
   lookup(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry | null> {
     const fromLang = language || this.detectLanguage(word);
@@ -86,68 +142,70 @@ export class DictionaryService {
   }
 
   /**
-   * Unified dictionary lookup - definitions in user's UI language
+   * Multi-entry lookup for the Dictionary Screen
+   * Returns all matching entries with audio, POS, levels, and definitions
+   * Pure query: DOES NOT mutate global screen state!
+   */
+  lookupEntries(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry[]> {
+    const fromLang = language || this.detectLanguage(word);
+    const toLang = this.i18n.currentLanguage();
+
+    return this.lookupUnifiedEntries(word, fromLang, toLang);
+  }
+
+  /**
+   * Unified dictionary lookup - single entry
    */
   private lookupUnified(
     word: string,
     from: 'ja' | 'zh' | 'ko' | 'en',
     to: UILanguage
   ): Observable<DictionaryEntry | null> {
-    if (!word.trim()) return of(null);
+    return this.lookupUnifiedEntries(word, from, to).pipe(
+      map(entries => entries.length > 0 ? entries[0] : null)
+    );
+  }
+
+  /**
+   * Unified dictionary lookup - all matching entries
+   */
+  private lookupUnifiedEntries(
+    word: string,
+    from: 'ja' | 'zh' | 'ko' | 'en',
+    to: UILanguage
+  ): Observable<DictionaryEntry[]> {
+    const trimmed = word.trim();
+    if (!trimmed) return of([]);
 
     // Check cache with language pair
-    const cacheKey = `${from}:${to}:${word}`;
+    const cacheKey = `${from}:${to}:${trimmed}`;
     const cached = this.getFromCacheWithKey(cacheKey);
-    if (cached) {
-      this.lastLookup.set(cached);
+    if (cached && cached.length > 0) {
       return of(cached);
     }
 
     this.isLoading.set(true);
 
-    const url = `${this.UNIFIED_DICT_API}?word=${encodeURIComponent(word)}&from=${from}&to=${to}`;
+    const url = `${this.UNIFIED_DICT_API}?word=${encodeURIComponent(trimmed)}&from=${from}&to=${to}`;
 
     return this.http.get<UnifiedDictResponse>(url).pipe(
       map(response => {
         this.isLoading.set(false);
 
         if (!response.entries || response.entries.length === 0) {
-          // Fallback to language-specific local lookup
-          return this.getLocalFallback(word, from);
+          const fallback = this.getLocalFallback(trimmed, from);
+          return fallback ? [fallback] : [];
         }
 
-        const entry = response.entries[0];
-
-        // Set pronunciation field based on source language to avoid triple display
-        const result: DictionaryEntry = {
-          word: entry.word || word,
-          reading: from === 'ja' || from === 'en' ? (entry.reading || '') : undefined,
-          pinyin: from === 'zh' ? (entry.reading || '') : undefined,
-          romanization: from === 'ja'
-            ? (entry.romanization || getJapaneseRomaji(entry.reading || '', entry.word || word))
-            : from === 'ko'
-              ? (entry.romanization || entry.reading || '')
-              : undefined,
-          meanings: entry.definitions?.map((def: string) => ({
-            definition: def,
-            examples: []
-          })) || [],
-          partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : [],
-          jlptLevel: from === 'ja' && entry.level ? `N${entry.level}` : undefined,
-          hskLevel: from === 'zh' ? entry.level : undefined,
-          topikLevel: from === 'ko' ? entry.level : undefined
-        };
-
-        this.lastLookup.set(result);
-        this.saveToCacheWithKey(cacheKey, result);
-        return result;
+        const results = response.entries.map(e => this.mapRawEntry(e, trimmed, from));
+        this.saveToCacheWithKey(cacheKey, results);
+        return results;
       }),
       catchError(err => {
         this.isLoading.set(false);
         console.log(`Unified dict lookup failed (${from}->${to}):`, err.message);
-        const result = this.getLocalFallback(word, from);
-        if (result) this.lastLookup.set(result);
-        return of(result);
+        const fallback = this.getLocalFallback(trimmed, from);
+        return of(fallback ? [fallback] : []);
       })
     );
   }
@@ -165,40 +223,7 @@ export class DictionaryService {
     }
   }
 
-  /**
-   * Cache helpers with custom key
-   */
-  private getFromCacheWithKey(key: string): DictionaryEntry | null {
-    try {
-      const cache = this.loadCache();
-      const entry = cache[key];
-      if (entry) {
-        entry.accessTime = Date.now();
-        this.saveCache(cache);
-        return entry.data;
-      }
-    } catch (e) {
-      console.warn('[Dictionary] Cache read error:', e);
-    }
-    return null;
-  }
 
-  private saveToCacheWithKey(key: string, data: DictionaryEntry): void {
-    try {
-      const cache = this.loadCache();
-      cache[key] = { data, accessTime: Date.now() };
-
-      const keys = Object.keys(cache);
-      if (keys.length > this.MAX_CACHE_SIZE) {
-        const sorted = keys.sort((a, b) => cache[a].accessTime - cache[b].accessTime);
-        sorted.slice(0, keys.length - this.MAX_CACHE_SIZE).forEach(k => delete cache[k]);
-      }
-
-      this.saveCache(cache);
-    } catch (e) {
-      console.warn('[Dictionary] Cache write error:', e);
-    }
-  }
 
 
 
@@ -465,10 +490,39 @@ export class DictionaryService {
   // Cache helpers (localStorage with LRU eviction)
   // ─────────────────────────────────────────────────────────────
 
-  /**
-   * Get cached dictionary entry from localStorage
-   */
-  private loadCache(): Record<string, { data: DictionaryEntry; accessTime: number }> {
+  private getFromCacheWithKey(key: string): DictionaryEntry[] | null {
+    try {
+      const cache = this.loadCache();
+      const entry = cache[key];
+      if (entry) {
+        entry.accessTime = Date.now();
+        this.saveCache(cache);
+        return Array.isArray(entry.data) ? entry.data : [entry.data];
+      }
+    } catch (e) {
+      console.warn('[Dictionary] Cache read error:', e);
+    }
+    return null;
+  }
+
+  private saveToCacheWithKey(key: string, data: DictionaryEntry[]): void {
+    try {
+      const cache = this.loadCache();
+      cache[key] = { data, accessTime: Date.now() };
+
+      const keys = Object.keys(cache);
+      if (keys.length > this.MAX_CACHE_SIZE) {
+        const sorted = keys.sort((a, b) => cache[a].accessTime - cache[b].accessTime);
+        sorted.slice(0, keys.length - this.MAX_CACHE_SIZE).forEach(k => delete cache[k]);
+      }
+
+      this.saveCache(cache);
+    } catch (e) {
+      console.warn('[Dictionary] Cache write error:', e);
+    }
+  }
+
+  private loadCache(): Record<string, { data: DictionaryEntry | DictionaryEntry[]; accessTime: number }> {
     try {
       const stored = localStorage.getItem(this.CACHE_KEY);
       return stored ? JSON.parse(stored) : {};
@@ -477,8 +531,10 @@ export class DictionaryService {
     }
   }
 
-  private saveCache(cache: Record<string, { data: DictionaryEntry; accessTime: number }>): void {
-    localStorage.setItem(this.CACHE_KEY, JSON.stringify(cache));
+  private saveCache(cache: Record<string, { data: DictionaryEntry | DictionaryEntry[]; accessTime: number }>): void {
+    try {
+      localStorage.setItem(this.CACHE_KEY, JSON.stringify(cache));
+    } catch { }
   }
 }
 

@@ -185,8 +185,7 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--space-xs);
-    padding: var(--space-xs) 0 var(--space-sm);
-    border-bottom: 1px solid var(--border-color);
+    padding: 0 0 var(--space-xs);
     flex-shrink: 0;
 
     .header-info {

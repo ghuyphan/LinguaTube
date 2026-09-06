@@ -50,7 +50,16 @@ export function parseNaver(data) {
         // Extract part of speech
         const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
 
-        return { word, reading, definitions, partOfSpeech };
+        // Extract authentic audio URL from Naver
+        const audio = item.searchPhoneticSymbolList?.[0]?.phoneticSymbolAudioList?.[0]?.url
+            || item.searchSearchResultAudioList?.[0]?.url
+            || item.searchSearchResultAudioList?.[0]?.audioUrl
+            || item.phoneticSigns?.[0]?.signFile
+            || item.pronFile
+            || item.audioUrl
+            || '';
+
+        return { word, reading, definitions, partOfSpeech, ...(audio ? { audio } : {}) };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -83,8 +92,9 @@ export function parseJotoba(data) {
             .join(', ') || '';
 
         const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
+        const audio = entry.audio?.url || (typeof entry.audio === 'string' ? entry.audio : '') || entry.pitch?.audio || '';
 
-        return { word, reading, romanization, definitions, partOfSpeech, level };
+        return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -118,8 +128,9 @@ export function parseJotobaJapanese(data) {
             .join(', ') || '';
 
         const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
+        const audio = entry.audio?.url || (typeof entry.audio === 'string' ? entry.audio : '') || entry.pitch?.audio || '';
 
-        return { word, reading, romanization, definitions, partOfSpeech, level };
+        return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -172,7 +183,12 @@ export function parseMazii(response) {
         const partOfSpeech = entry.means?.[0]?.kind || entry.type || '';
         const level = entry.level ? parseInt(String(entry.level).replace('N', '')) : null;
 
-        return { word, reading, romanization, definitions, partOfSpeech, level };
+        let audio = entry.audio || entry.phonetic_audio || entry.mobile_audio || '';
+        if (audio && !audio.startsWith('http')) {
+            audio = `https://data.mazii.net/audios/${audio}`;
+        }
+
+        return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -203,11 +219,16 @@ export function parseFreeDictionary(data) {
             });
         });
 
+        const audio = entry.phonetics?.find(p => p.audio && p.audio.endsWith('.mp3'))?.audio
+            || entry.phonetics?.find(p => p.audio)?.audio
+            || '';
+
         return {
             word,
             reading,
             definitions: definitions.slice(0, 5),
-            partOfSpeech: posList.join(', ')
+            partOfSpeech: posList.join(', '),
+            ...(audio ? { audio } : {})
         };
     }).filter(e => e.word && e.definitions.length > 0);
 }
@@ -416,11 +437,19 @@ export async function parseKrdict(response) {
             const word = wordMatch ? wordMatch[1].replace(/<[^>]+>/g, '').trim() : '';
             if (!word) continue;
 
-            // 2. Extract pronunciation from search_sub (e.g. [한ː국])
+            // 2. Extract pronunciation and authentic audio
             const pronMatch = dlContent.match(/<span class="search_sub">([\s\S]*?)<\/span>/);
             const reading = pronMatch
                 ? pronMatch[1].replace(/<[^>]+>/g, '').replace(/듣기/g, '').replace(/\[|\]/g, '').trim()
                 : '';
+
+            const audioMatch = dlContent.match(/fnSound\('([^']+)'\)/)
+                || dlContent.match(/playAudio\('([^']+)'\)/)
+                || dlContent.match(/href="([^"]+\.mp3)"/);
+            let audio = audioMatch ? audioMatch[1] : '';
+            if (audio && !audio.startsWith('http')) {
+                audio = `https://krdict.korean.go.kr${audio.startsWith('/') ? '' : '/'}${audio}`;
+            }
 
             // 3. Extract part of speech (e.g. "Danh từ" or "명사")
             const posMatch = dlContent.match(/<span class="word_att_type1">[\s\S]*?<span class="manyLang2">([\s\S]*?)<\/span>/)
@@ -442,7 +471,8 @@ export async function parseKrdict(response) {
                     word,
                     reading,
                     definitions: defs.slice(0, 5),
-                    partOfSpeech
+                    partOfSpeech,
+                    ...(audio ? { audio } : {})
                 });
             }
         }

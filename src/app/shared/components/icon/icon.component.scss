@@ -17,12 +17,16 @@
     &.icon--heart-filled,
     &.icon--star-filled,
     &.icon--fire,
-    &.icon--bookmark-filled {
+    &.icon--bookmark-filled,
+    &.icon--play-circle-filled,
+    &.icon--graduation-cap-filled,
+    &.icon--book-open-filled,
+    &.icon--list-video-filled,
+    &.icon--more-horizontal-filled {
         fill: currentColor;
+        stroke: none;
     }
 
-    &.icon--heart-filled,
-    &.icon--star-filled,
     &.icon--google {
         stroke: none;
     }

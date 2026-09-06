@@ -206,7 +206,10 @@
         "enterWordAbove": "Search for a word",
         "enterWordHint": "Type a word above to look up its meaning",
         "saveToVocab": "Save to Vocabulary",
-        "clearAll": "Clear All"
+        "clearAll": "Clear All",
+        "grammarPatterns": "Matching Grammar Patterns",
+        "playPronunciation": "Listen to pronunciation",
+        "removeRecent": "Remove search term"
     },
     "settings": {
         "title": "Settings",
@@ -513,5 +516,15 @@
         "exitModal": "Exit full screen / Close modal",
         "playlistNav": "Prev / Next in playlist",
         "help": "Keyboard shortcuts help"
+    },
+    "pwa": {
+        "installApp": "Install App",
+        "installDesc": "Add to Home Screen for a faster, full-screen experience",
+        "app": "Application",
+        "iosGuideTitle": "Install Voca on iOS",
+        "iosStep1": "Tap the Share button in Safari",
+        "iosStep2": "Scroll down and select 'Add to Home Screen'",
+        "iosStep3": "Tap 'Add' in the top-right corner",
+        "gotIt": "Got it"
     }
 }

@@ -12,15 +12,16 @@ export type IconName =
     | 'repeat' | 'languages' | 'subtitles' | 'captions'
     | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle' | 'refresh-cw'
     | 'chevron-left' | 'chevron-right' | 'chevron-up' | 'chevrons-up' | 'chevrons-down' | 'arrow-left' | 'arrow-right' | 'layers'
-    | 'sparkles' | 'wand' | 'play-circle' | 'eye' | 'eye-off'
+    | 'sparkles' | 'wand' | 'play-circle' | 'play-circle-filled' | 'eye' | 'eye-off'
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'globe'
     | 'user' | 'google' | 'log-in'
     | 'clock' | 'heart' | 'heart-filled' | 'cloud'
     // Gamification & cute icons
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond'
-    | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-vertical'
-    | 'list' | 'list-video' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
+    | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-horizontal-filled' | 'more-vertical'
+    | 'list' | 'list-video' | 'list-video-filled' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
     | 'headphones' | 'clipboard-check' | 'coffee'
+    | 'graduation-cap-filled' | 'book-open-filled'
     // Audio & utility icons
     | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'lightbulb' | 'leaf' | 'box' | 'droplet';
 

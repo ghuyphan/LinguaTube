@@ -227,13 +227,17 @@ async function fetchDictLocal(word, from, to) {
             });
             if (res.ok) {
                 const data = await res.json();
-                entries = (data.words || []).slice(0, 5).map(e => ({
-                    word: e.reading?.kanji || e.reading?.kana || word,
-                    reading: e.reading?.kana || '',
-                    definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
-                    partOfSpeech: (e.senses?.[0]?.pos || []).map(p => typeof p === 'string' ? p : p.Pretty || '').filter(Boolean).join(', '),
-                    level: e.common?.jlpt ? parseInt(e.common.jlpt) : null
-                })).filter(e => e.word && e.definitions.length > 0);
+                entries = (data.words || []).slice(0, 5).map(e => {
+                    const audio = e.audio?.url || (typeof e.audio === 'string' ? e.audio : '') || e.pitch?.audio || '';
+                    return {
+                        word: e.reading?.kanji || e.reading?.kana || word,
+                        reading: e.reading?.kana || '',
+                        definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
+                        partOfSpeech: (e.senses?.[0]?.pos || []).map(p => typeof p === 'string' ? p : p.Pretty || '').filter(Boolean).join(', '),
+                        level: e.common?.jlpt ? parseInt(e.common.jlpt) : null,
+                        ...(audio ? { audio } : {})
+                    };
+                }).filter(e => e.word && e.definitions.length > 0);
                 if (entries.length > 0) source = 'jotoba';
             }
         } else if (pair === 'ja-vi') {
@@ -257,12 +261,17 @@ async function fetchDictLocal(word, from, to) {
                         });
                     }
                     if (defs.length === 0 && e.short_mean) defs.push(e.short_mean);
+                    let audio = e.audio || e.phonetic_audio || e.mobile_audio || '';
+                    if (audio && !audio.startsWith('http')) {
+                        audio = `https://data.mazii.net/audios/${audio}`;
+                    }
                     return {
                         word: e.word || word,
                         reading: e.phonetic || '',
                         definitions: defs,
                         partOfSpeech: e.means?.[0]?.kind || '',
-                        level: e.level ? parseInt(String(e.level).replace('N', '')) : null
+                        level: e.level ? parseInt(String(e.level).replace('N', '')) : null,
+                        ...(audio ? { audio } : {})
                     };
                 }).filter(e => e.word && e.definitions.length > 0);
                 if (entries.length > 0) source = 'mazii';
@@ -284,7 +293,14 @@ async function fetchDictLocal(word, from, to) {
                         });
                     });
                     const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
-                    return { word: w, reading, definitions, partOfSpeech };
+                    const audio = item.searchPhoneticSymbolList?.[0]?.phoneticSymbolAudioList?.[0]?.url
+                        || item.searchSearchResultAudioList?.[0]?.url
+                        || item.searchSearchResultAudioList?.[0]?.audioUrl
+                        || item.phoneticSigns?.[0]?.signFile
+                        || item.pronFile
+                        || item.audioUrl
+                        || '';
+                    return { word: w, reading, definitions, partOfSpeech, ...(audio ? { audio } : {}) };
                 }).filter(e => e.word && e.definitions.length > 0);
                 if (entries.length > 0) source = 'naver';
             }
@@ -317,7 +333,14 @@ async function fetchDictLocal(word, from, to) {
                             });
                         });
                         const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
-                        return { word: w, reading, definitions, partOfSpeech };
+                        const audio = item.searchPhoneticSymbolList?.[0]?.phoneticSymbolAudioList?.[0]?.url
+                            || item.searchSearchResultAudioList?.[0]?.url
+                            || item.searchSearchResultAudioList?.[0]?.audioUrl
+                            || item.phoneticSigns?.[0]?.signFile
+                            || item.pronFile
+                            || item.audioUrl
+                            || '';
+                        return { word: w, reading, definitions, partOfSpeech, ...(audio ? { audio } : {}) };
                     }).filter(e => e.word && e.definitions.length > 0);
                     if (entries.length > 0) source = 'naver';
                 }
@@ -408,11 +431,15 @@ async function fetchDictLocal(word, from, to) {
                                     if (m.partOfSpeech && !posList.includes(m.partOfSpeech)) posList.push(m.partOfSpeech);
                                     (m.definitions || []).forEach(d => { if (d.definition) defs.push(d.definition); });
                                 });
+                                const audio = entry.phonetics?.find(p => p.audio && p.audio.endsWith('.mp3'))?.audio
+                                    || entry.phonetics?.find(p => p.audio)?.audio
+                                    || '';
                                 return {
                                     word: entry.word || word,
                                     reading: entry.phonetics?.find(p => p.text)?.text || '',
                                     definitions: defs.slice(0, 5),
-                                    partOfSpeech: posList.join(', ')
+                                    partOfSpeech: posList.join(', '),
+                                    ...(audio ? { audio } : {})
                                 };
                             }).filter(e => e.word && e.definitions.length > 0);
                             if (entries.length > 0) source = 'freedict';

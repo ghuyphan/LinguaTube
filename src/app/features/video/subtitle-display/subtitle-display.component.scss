@@ -1195,9 +1195,7 @@ ruby rt {
         display: flex;
         align-items: center;
         gap: 8px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--border-color);
-        margin-bottom: 16px;
+        margin-bottom: var(--space-md);
         color: var(--text-primary);
 
         .subtitle-options-title {

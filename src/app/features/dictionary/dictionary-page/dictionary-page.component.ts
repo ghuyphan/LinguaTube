@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DictionaryPanelComponent } from '../dictionary-panel/dictionary-panel.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -24,7 +25,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
   template: `
     <div class="page-layout">
       <div class="page-layout__main">
-        <app-dictionary-panel />
+        <app-dictionary-panel #panel />
       </div>
 
       <!-- Desktop sidebar with stats -->
@@ -80,12 +81,18 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
             </div>
             <div class="recent-list">
               @for (term of recentSearches(); track term) {
-                <button class="recent-chip" (click)="searchTerm(term)">
-                  <span class="recent-term">{{ term }}</span>
-                  <span class="recent-delete" (click)="removeRecentSearch(term, $event)">
+                <div class="recent-chip">
+                  <button type="button" class="recent-term-btn" (click)="searchTerm(term)">
+                    {{ term }}
+                  </button>
+                  <button
+                    type="button"
+                    class="recent-delete-btn"
+                    [attr.aria-label]="i18n.t('dictionary.removeRecent') || 'Remove search term'"
+                    (click)="removeRecentSearch(term, $event)">
                     <app-icon name="x" [size]="12" />
-                  </span>
-                </button>
+                  </button>
+                </div>
               }
             </div>
           </div>
@@ -95,6 +102,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       <!-- Mobile: vocabulary list below dictionary -->
       <div class="vocab-section mobile-only">
         <app-vocabulary-list 
+          (wordSelect)="searchTerm($event.surface)"
           (deleteRequest)="onVocabDeleteRequest($event)"
           (menuRequest)="vocabMenuOpen.set(true)"
         />
@@ -134,38 +142,6 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
       display: block;
     }
 
-    .recent-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: var(--space-sm);
-    }
-
-    .recent-header h4 {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 0;
-    }
-
-    .clear-all-btn {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--border-radius);
-      transition: all var(--transition-fast);
-    }
-
-    .clear-all-btn:hover {
-      color: var(--accent-primary);
-      background: rgba(199, 62, 58, 0.1);
-    }
-
     .recent-list {
       display: flex;
       flex-wrap: wrap;
@@ -175,46 +151,54 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     .recent-chip {
       display: inline-flex;
       align-items: center;
-      gap: 0.375rem;
-      padding: 0.375rem 0.5rem 0.375rem 0.75rem;
-      font-size: 0.875rem;
       background: var(--bg-secondary);
-      color: var(--text-primary);
       border: 1px solid var(--border-color);
       border-radius: 100px;
-      cursor: pointer;
+      overflow: hidden;
       transition: all var(--transition-fast);
-    }
 
-    @media (hover: hover) {
-      .recent-chip:hover {
+      &:hover {
         border-color: var(--accent-primary);
-        color: var(--accent-primary);
         background: var(--bg-card);
-        transform: translateY(-1px);
       }
     }
 
-    .recent-term {
-      line-height: 1;
+    .recent-term-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.375rem 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      line-height: 1.2;
+      transition: color var(--transition-fast);
+
+      &:hover {
+        color: var(--accent-primary);
+      }
     }
 
-    .recent-delete {
+    .recent-delete-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 1.125rem;
-      height: 1.125rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-right: 0.375rem;
       border-radius: 50%;
       background: transparent;
+      border: none;
       color: var(--text-muted);
+      cursor: pointer;
       transition: all var(--transition-fast);
       flex-shrink: 0;
-    }
 
-    .recent-delete:hover {
-      background: rgba(199, 62, 58, 0.15);
-      color: var(--accent-primary);
+      &:hover {
+        background: rgba(199, 62, 58, 0.15);
+        color: var(--accent-primary);
+      }
     }
 
     .desktop-only {
@@ -274,11 +258,16 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
     }
   `]
 })
-export class DictionaryPageComponent {
+export class DictionaryPageComponent implements OnInit, OnDestroy {
+  @ViewChild('panel') panel?: DictionaryPanelComponent;
+
   private vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
+  private route = inject(ActivatedRoute);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+
+  private routeSub?: Subscription;
 
   stats = computed(() => {
     return this.vocab.getStatsByLanguage(this.settings.settings().language);
@@ -287,11 +276,31 @@ export class DictionaryPageComponent {
   // Use shared service state for recent searches (sliced to 6 for sidebar display)
   recentSearches = computed(() => this.dictionary.recentSearches().slice(0, 6));
 
+  ngOnInit(): void {
+    this.routeSub = this.route.queryParamMap.subscribe(params => {
+      const q = params.get('q');
+      if (q) {
+        this.searchTerm(q);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.routeSub?.unsubscribe();
+  }
+
   searchTerm(term: string): void {
-    // Set the query in dictionary service, which the panel will pick up
-    this.dictionary.lastQuery.set(term);
-    // Trigger a re-render by updating localStorage timestamp
-    localStorage.setItem('linguatube-search-trigger', Date.now().toString());
+    const clean = term?.trim();
+    if (!clean) return;
+
+    this.dictionary.screenQuery.set(clean);
+    if (this.panel) {
+      this.panel.search(clean);
+    }
+
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   removeRecentSearch(term: string, event: Event): void {

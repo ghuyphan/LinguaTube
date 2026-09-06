@@ -250,8 +250,7 @@ Executed server-side on PocketBase:
 | `linguatube_translations` | `TranslationService` | `[string, string][]` | Client-side cached text translations (max 1000) |
 | `linguatube_tokens` | `SubtitleService` | `Record<string, Token[]>` | Pre-parsed subtitle token cache |
 | `linguatube_dict_cache` | `DictionaryService` | `Record<string, CacheEntry>` | Client-side dictionary search cache |
-| `linguatube-recent-searches`| `DictionaryService` | `string[]` | Recent search query history |
-| `linguatube-search-trigger` | `DictionaryPageComponent` | `string` (timestamp) | Cross-component search event trigger |
+| `linguatube_recent_searches_{lang}`| `DictionaryService` | `string[]` | Language-scoped recent search query history |
 | `lingua-tube-last-video` | `YoutubeService` | `string` (videoId) | Video ID for resuming last session |
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |

@@ -412,7 +412,7 @@ body::-webkit-scrollbar {
 }
 
 /* ============================================
-   BOTTOM NAVIGATION (Mobile)
+   BOTTOM NAVIGATION (Mobile - Material 3)
    ============================================ */
 
 .bottom-nav {
@@ -423,19 +423,21 @@ body::-webkit-scrollbar {
     right: 0;
     width: 100%;
     height: var(--bottom-nav-total-height);
-    background: var(--bg-card);
+    background: rgba(var(--bg-card-rgb), 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 0;
     padding-bottom: var(--bottom-nav-safe-area);
     z-index: var(--z-nav);
     border-top: 1px solid var(--border-color);
-    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04), 0 -4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .bottom-nav__items {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: calc(var(--bottom-nav-total-height) - var(--bottom-nav-safe-area));
+    height: var(--bottom-nav-height);
     max-width: 32rem;
     margin: 0 auto;
     padding: 0 var(--space-xs);
@@ -446,16 +448,13 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-    padding: 0.375rem 0.25rem;
+    gap: 4px;
+    padding: 4px 0;
     margin: 0;
     background: none;
     border: none;
     color: var(--text-muted);
-    font-size: 0.6875rem;
-    font-weight: 500;
     cursor: pointer;
-    transition: color var(--transition-fast), transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
     flex: 1;
     min-width: 0;
     text-decoration: none;
@@ -464,67 +463,130 @@ body::-webkit-scrollbar {
     -webkit-tap-highlight-color: transparent;
 
     span {
-        font-size: 0.6875rem;
-        line-height: 1;
+        font-size: 0.75rem;
+        line-height: 1.2;
+        font-weight: 500;
         letter-spacing: 0.01em;
+        color: var(--text-muted);
         transition: color var(--transition-fast), font-weight var(--transition-fast);
         white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
     }
 
+    /* Material 3 Active Indicator Pill */
     .bottom-nav__icon-wrap {
         position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        width: 56px;
+        height: 32px;
+        border-radius: var(--border-radius-pill, 9999px);
+        color: var(--text-muted);
+        transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1),
+                    color 0.2s cubic-bezier(0.2, 0, 0, 1);
+
+        /* M3 Pill Blooming State Layer */
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--border-radius-pill, 9999px);
+            background: rgba(var(--accent-primary-rgb), 0.16);
+            transform: scaleX(0.32) scaleY(0.7);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.05, 0.7, 0.1, 1),
+                        opacity 0.2s cubic-bezier(0.05, 0.7, 0.1, 1),
+                        background-color 0.2s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
 
         .now-playing-dot {
             position: absolute;
-            top: -1px;
-            right: -3px;
-            width: 6px;
-            height: 6px;
+            top: 2px;
+            right: 11px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: var(--accent-primary);
-            box-shadow: 0 0 6px rgba(var(--accent-primary-rgb), 0.8);
+            box-shadow: 0 0 6px rgba(var(--accent-primary-rgb), 0.9);
             animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            z-index: 2;
         }
     }
 
     app-icon {
+        position: relative;
+        z-index: 1;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color var(--transition-fast);
+        transition: transform 0.3s cubic-bezier(0.05, 0.7, 0.1, 1),
+                    color 0.2s cubic-bezier(0.2, 0, 0, 1);
     }
 
     @media (hover: hover) {
-        &:hover {
-            color: var(--text-primary);
+        &:hover:not(.active) {
+            .bottom-nav__icon-wrap::before {
+                opacity: 0.5;
+                transform: scaleX(0.8) scaleY(0.85);
+                background: rgba(var(--accent-primary-rgb), 0.08);
+            }
+            .bottom-nav__icon-wrap {
+                color: var(--text-primary);
+            }
+            span {
+                color: var(--text-primary);
+            }
         }
     }
 
+    /* Touch feedback focused on the icon pill */
     &:active {
-        transform: scale(0.92);
+        .bottom-nav__icon-wrap {
+            transform: scale(0.92);
+            transition-duration: 0.1s;
+        }
     }
 
+    /* Active Tab (Material 3 State) */
     &.active {
         color: var(--accent-primary);
+
+        .bottom-nav__icon-wrap {
+            color: var(--accent-primary);
+
+            &::before {
+                transform: scale(1);
+                opacity: 1;
+                background: rgba(var(--accent-primary-rgb), 0.16);
+            }
+
+            app-icon {
+                color: var(--accent-primary);
+                transform: scale(1.04);
+            }
+        }
 
         span {
             font-weight: 700;
             color: var(--accent-primary);
         }
-
-        app-icon {
-            transform: scale(1.12);
-            color: var(--accent-primary);
-        }
     }
 }
 
-@media (max-width: 768px),
-(max-height: 500px) and (orientation: landscape) {
+@media (max-width: 768px) {
     .bottom-nav {
         display: block;
+    }
+}
+
+/* Landscape phones: hide bottom navigation to maximize video and subtitle view */
+@media (max-height: 500px) and (orientation: landscape) {
+    .bottom-nav {
+        display: none !important;
     }
 }

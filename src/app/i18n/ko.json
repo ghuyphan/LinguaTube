@@ -206,7 +206,10 @@
         "enterWordAbove": "단어 검색",
         "enterWordHint": "위에 단어를 입력하여 의미를 찾아보세요",
         "saveToVocab": "단어장에 저장",
-        "clearAll": "모두 삭제"
+        "clearAll": "모두 삭제",
+        "grammarPatterns": "관련 문법 패턴",
+        "playPronunciation": "발음 듣기",
+        "removeRecent": "검색어 삭제"
     },
     "settings": {
         "title": "설정",
@@ -513,5 +516,15 @@
         "exitModal": "전체화면 종료 / 창 닫기",
         "playlistNav": "재생목록 이전 / 다음 동영상",
         "help": "키보드 단축키 도움말"
+    },
+    "pwa": {
+        "installApp": "앱 설치",
+        "installDesc": "홈 화면에 추가하여 전체 화면으로 쾌적하게 학습",
+        "app": "애플리케이션",
+        "iosGuideTitle": "iOS에서 Voca 설치하기",
+        "iosStep1": "Safari에서 '공유' 버튼 탭",
+        "iosStep2": "아래로 스크롤하여 '홈 화면에 추가' 선택",
+        "iosStep3": "오른쪽 상단의 '추가' 탭",
+        "gotIt": "확인"
     }
 }

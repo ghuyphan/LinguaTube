@@ -8,3 +8,4 @@ export * from './error-handler.service';
 export * from './loading.service';
 export * from './font-loader.service';
 export * from './seo.service';
+export * from './pwa.service';
