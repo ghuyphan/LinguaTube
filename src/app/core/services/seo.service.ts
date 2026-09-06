@@ -110,7 +110,10 @@ export class SeoService {
    */
   resetVideoSeo(): void {
     this.isCustomVideoMeta = false;
-    this.updateFromCurrentRoute();
+    // Only update immediately if still on /video route; if navigating away, NavigationEnd handles it cleanly
+    if (this.router.url.includes('/video')) {
+      this.updateFromCurrentRoute();
+    }
   }
 
   /**

@@ -366,21 +366,28 @@ export class StudyPageComponent {
   }
 
   private loadDailyProgress(): void {
-    const today = new Date().toDateString();
-    const stored = localStorage.getItem(DAILY_PROGRESS_KEY);
+    try {
+      const today = new Date().toDateString();
+      const stored = localStorage.getItem(DAILY_PROGRESS_KEY);
 
-    if (stored) {
-      const data = JSON.parse(stored);
-      if (data.date === today) {
-        this.cardsCompletedToday.set(data.count);
-      } else {
-        this.cardsCompletedToday.set(0);
+      if (stored) {
+        const data = JSON.parse(stored);
+        if (data && data.date === today) {
+          this.cardsCompletedToday.set(Number(data.count) || 0);
+        } else {
+          this.cardsCompletedToday.set(0);
+        }
       }
-    }
 
-    const goalStored = localStorage.getItem(DAILY_GOAL_KEY);
-    if (goalStored) {
-      this.dailyGoal.set(parseInt(goalStored, 10));
+      const goalStored = localStorage.getItem(DAILY_GOAL_KEY);
+      if (goalStored) {
+        const parsedGoal = parseInt(goalStored, 10);
+        if (!isNaN(parsedGoal) && parsedGoal > 0) {
+          this.dailyGoal.set(parsedGoal);
+        }
+      }
+    } catch (err) {
+      console.warn('[StudyPage] Failed to load daily progress:', err);
     }
   }
 }

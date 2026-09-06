@@ -58,7 +58,7 @@ export class CreatePlaylistDialogComponent {
             } else {
                 this.resetForm();
             }
-        }, { allowSignalWrites: true });
+        });
     }
 
     async onSubmit() {
