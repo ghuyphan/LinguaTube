@@ -1,0 +1,15 @@
+# Robots.txt for Voca (https://lingua-tube.pages.dev)
+User-agent: *
+Allow: /
+Allow: /video
+Allow: /dictionary
+Allow: /study
+Allow: /explore
+Allow: /history
+
+# Disallow internal backend APIs and serverless proxies
+Disallow: /api/
+Disallow: /proxy/
+
+# Sitemap location
+Sitemap: https://lingua-tube.pages.dev/sitemap.xml

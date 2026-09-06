@@ -12,6 +12,7 @@ import { CommandPaletteComponent } from './shared/components/command-palette/com
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
 import { YoutubeService, I18nService, SettingsService, TranscriptService, SubtitleService } from './services';
+import { SeoService } from './core/services';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
@@ -532,6 +533,7 @@ export class AppComponent implements OnDestroy {
   protected playlistService = inject(PlaylistService);
   protected sheetService = inject(BottomSheetService);
   private swUpdate = inject(SwUpdate);
+  private seo = inject(SeoService);
 
   hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !this.router.url.startsWith('/video'));
 

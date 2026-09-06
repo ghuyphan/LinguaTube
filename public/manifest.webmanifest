@@ -1,17 +1,50 @@
 {
-  "name": "Voca",
+  "name": "Voca - Learn Languages with YouTube",
   "short_name": "Voca",
   "id": "lingua-tube",
+  "lang": "en",
+  "orientation": "any",
   "categories": [
     "education",
-    "utilities"
+    "utilities",
+    "entertainment"
   ],
-  "description": "Learn Japanese, Chinese, Korean, and English from YouTube videos with interactive subtitles",
-  "theme_color": "#6366f1",
+  "description": "Learn Japanese, Chinese, Korean, and English from YouTube videos with interactive dual subtitles, real-time tokenization, and spaced repetition",
+  "theme_color": "#0f172a",
   "background_color": "#0f172a",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "shortcuts": [
+    {
+      "name": "Watch & Learn",
+      "short_name": "Watch",
+      "description": "Watch YouTube videos with interactive dual subtitles",
+      "url": "./video",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Dictionary",
+      "short_name": "Dictionary",
+      "description": "Look up words with grammar and pitch accents",
+      "url": "./dictionary",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Flashcards (SRS)",
+      "short_name": "Study",
+      "description": "Practice vocabulary with spaced repetition",
+      "url": "./study",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Explore Playlists",
+      "short_name": "Explore",
+      "description": "Discover curated language learning playlists",
+      "url": "./explore",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
   "icons": [
     {
       "src": "icons/icon-72x72.png",

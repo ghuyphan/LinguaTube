@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, OnDestroy, effect, computed, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -11,6 +11,7 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService, VocabularyService } from '../../../services';
+import { SeoService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
@@ -37,7 +38,7 @@ import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, Subtitl
   templateUrl: './video-page.component.html',
   styleUrls: ['./video-page.component.scss']
 })
-export class VideoPageComponent implements OnInit {
+export class VideoPageComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private platformId = inject(PLATFORM_ID);
@@ -50,6 +51,7 @@ export class VideoPageComponent implements OnInit {
   private historyService = inject(HistoryService);
   protected playlistService = inject(PlaylistService);
   i18n = inject(I18nService);
+  private seo = inject(SeoService);
 
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
@@ -158,6 +160,16 @@ export class VideoPageComponent implements OnInit {
   private skipNextMismatchDialog = false;
 
   constructor() {
+    // Sync active video with page SEO title & Open Graph metadata
+    effect(() => {
+      const video = this.youtube.currentVideo();
+      if (video && video.title && video.id) {
+        this.seo.updateVideoSeo(video.title, video.id);
+      } else if (!video) {
+        this.seo.resetVideoSeo();
+      }
+    });
+
     // Automatically fetch server-side recommended playlists when active language changes
     effect(() => {
       const currentLang = this.settings.settings().language;
@@ -299,6 +311,10 @@ export class VideoPageComponent implements OnInit {
         }
       });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.seo.resetVideoSeo();
   }
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {

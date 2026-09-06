@@ -216,3 +216,22 @@ Every saved word retains `sourceSentence`, ensuring learners always review vocab
   - Automatically re-fetches when learning language changes and caches results in memory per language.
   - Falls back to `video_count >= 1` if a new language does not yet have multi-video collections.
 
+---
+
+## 10. Search Engine Optimization (SEO) & Web Discovery Architecture
+
+- **Root Metadata & Social Protocol**:
+  - `src/index.html` implements Open Graph (`og:type`, `og:title`, `og:description`, `og:image`, `og:locale`, alternate locales) and Twitter Cards (`summary_large_image`).
+  - Embeds Schema.org JSON-LD structured data for `WebApplication` and `EducationalApplication`, enumerating supported languages, interactive subtitle capabilities, and free tier offers.
+  - Canonical URL `<link rel="canonical">` points to `https://lingua-tube.pages.dev`.
+- **Search Engine Discovery Assets**:
+  - `public/robots.txt`: Explicitly permits search crawlers on learning routes (`/video`, `/dictionary`, `/study`, `/explore`, `/history`) while restricting internal serverless functions (`/api/`, `/proxy/`).
+  - `public/sitemap.xml`: Declares priority and change frequencies for all public views, with `xhtml:link` multi-language `hreflang` alternates (`en`, `vi`, `ja`, `ko`, `zh`, and `x-default`).
+  - `public/og-image.png`: High-resolution 1200x630 branded social share card with brand badge, typography, feature pills, and subtitle preview.
+- **Dynamic Angular `SeoService` (`src/app/core/services/seo.service.ts`)**:
+  - Automatically listens to Angular Router `NavigationEnd` events and updates document title, description, keywords, Open Graph, and Twitter metadata per route.
+  - **Dynamic Video Metadata**: When a YouTube video is actively loaded in `VideoPageComponent`, `updateVideoSeo(title, id, desc)` updates document title (`"${videoTitle} | Voca"`), sets `og:type` to `video.other`, and sets `og:image` to the video's high-resolution YouTube thumbnail. Resets cleanly when navigating away or destroying the component.
+- **PWA Discoverability & App Shortcuts**:
+  - `public/manifest.webmanifest` specifies education/utilities categories, standalone display, and PWA shortcuts for instant launch into Watch, Dictionary, Flashcards, and Explore.
+
+
