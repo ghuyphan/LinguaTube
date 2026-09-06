@@ -1,4 +1,4 @@
-import { Component, input, output, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../icon/icon.component';
@@ -31,14 +31,14 @@ export class OptionPickerComponent {
     closed = output<void>();
     selected = output<string>();
 
-    @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
+    readonly sheet = viewChild(BottomSheetComponent);
 
     // Internal state to track selection until animation completes
     private selectedValue: string | null = null;
 
     selectOption(value: string): void {
         this.selectedValue = value;
-        this.sheet.close();
+        this.sheet()?.close();
     }
 
     onSheetClosed(): void {
@@ -51,6 +51,6 @@ export class OptionPickerComponent {
 
     onClose(): void {
         // Triggered by back button or close button or background click
-        this.sheet.close();
+        this.sheet()?.close();
     }
 }

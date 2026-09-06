@@ -2,7 +2,7 @@ import {
   Component,
   ChangeDetectionStrategy,
   ElementRef,
-  ViewChild,
+  viewChild,
   OnInit,
   OnDestroy,
   input,
@@ -65,8 +65,7 @@ export class TurnstileComponent implements OnInit, OnDestroy {
   private ngZone = inject(NgZone);
   private platformId = inject(PLATFORM_ID);
 
-  @ViewChild('turnstileContainer', { static: true })
-  private container!: ElementRef<HTMLDivElement>;
+  private container = viewChild<ElementRef<HTMLDivElement>>('turnstileContainer');
 
   siteKey = input<string>(environment.turnstileSiteKey);
   theme = input<'auto' | 'light' | 'dark'>('auto');
@@ -136,7 +135,8 @@ export class TurnstileComponent implements OnInit, OnDestroy {
   }
 
   private renderWidget(): void {
-    if (!window.turnstile || !this.container?.nativeElement) return;
+    const containerEl = this.container()?.nativeElement;
+    if (!window.turnstile || !containerEl) return;
 
     if (this.widgetId) {
       try {
@@ -146,7 +146,7 @@ export class TurnstileComponent implements OnInit, OnDestroy {
     }
 
     try {
-      this.widgetId = window.turnstile.render(this.container.nativeElement, {
+      this.widgetId = window.turnstile.render(containerEl, {
         sitekey: this.siteKey(),
         theme: this.theme(),
         action: this.action(),

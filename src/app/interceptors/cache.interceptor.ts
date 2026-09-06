@@ -16,9 +16,7 @@ const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 // Patterns to cache (dictionary lookups only - these are safe to cache)
 const CACHEABLE_PATTERNS = [
-    environment.api.mdbg,
-    environment.api.krdict,
-    environment.api.jotobaProxy
+    environment.api.dict
 ];
 
 // Cache storage

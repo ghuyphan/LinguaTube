@@ -49,6 +49,7 @@ export class WordPopupComponent implements OnDestroy {
 
   // Track active API call for cancellation
   private lookupSubscription: Subscription | null = null;
+  private translationSubscriptions = new Map<number, Subscription>();
 
   // Computed options for pickers
   langOptions = computed<OptionItem[]>(() =>
@@ -217,8 +218,11 @@ export class WordPopupComponent implements OnDestroy {
     this.toggleTranslating(index, true);
 
     const targetLang = this.targetLang();
-    this.translation.translateBatch([text], 'en', targetLang).subscribe({
+    this.translationSubscriptions.get(index)?.unsubscribe();
+
+    const sub = this.translation.translateBatch([text], 'en', targetLang).subscribe({
       next: results => {
+        this.translationSubscriptions.delete(index);
         const translatedText = results[0];
         if (translatedText) {
           this.translatedDefinitions.update(map => {
@@ -230,6 +234,7 @@ export class WordPopupComponent implements OnDestroy {
         this.toggleTranslating(index, false);
       },
       error: () => {
+        this.translationSubscriptions.delete(index);
         this.toggleTranslating(index, false);
         this.translationErrors.update(set => {
           const newSet = new Set(set);
@@ -238,6 +243,8 @@ export class WordPopupComponent implements OnDestroy {
         });
       }
     });
+
+    this.translationSubscriptions.set(index, sub);
   }
 
   isTranslating(index: number): boolean {
@@ -276,9 +283,12 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   onSheetClosed(): void {
-    // Cancel in-flight API request if popup closes while fetching
+    // Cancel in-flight API requests if popup closes
     this.lookupSubscription?.unsubscribe();
     this.lookupSubscription = null;
+
+    this.translationSubscriptions.forEach(sub => sub.unsubscribe());
+    this.translationSubscriptions.clear();
 
     this.isVisible.set(false);
     this.entry.set(null);
@@ -291,5 +301,7 @@ export class WordPopupComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.lookupSubscription?.unsubscribe();
+    this.translationSubscriptions.forEach(sub => sub.unsubscribe());
+    this.translationSubscriptions.clear();
   }
 }

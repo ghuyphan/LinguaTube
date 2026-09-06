@@ -167,8 +167,8 @@ export class VideoPlayerComponent implements OnDestroy {
     return this.youtube.currentTime();
   });
 
-  formattedCurrentTime = computed(() => this.formatTime(this.displayTime()));
-  formattedDuration = computed(() => this.formatTime(this.youtube.duration()));
+  formattedCurrentTime = computed(() => formatTime(this.displayTime()));
+  formattedDuration = computed(() => formatTime(this.youtube.duration()));
 
   fontSizeClass = computed(() => {
     const size = this.settings.settings().fontSize;
@@ -279,8 +279,6 @@ export class VideoPlayerComponent implements OnDestroy {
 
   private lastDesktopClickTime = 0;
   private lastControlsShowTime = 0;
-
-  @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
 
   constructor() {
     // Proactively preload grammar patterns for active learning language in background
@@ -1220,18 +1218,8 @@ export class VideoPlayerComponent implements OnDestroy {
   // PROGRESS BAR
   // ============================================
 
-
-
-  hideSeekPreview() {
-    this.progressBarComponent?.hideSeekPreview();
-  }
-
   startSeeking(event: MouseEvent | TouchEvent) {
     this.progressBarComponent?.startSeeking(event);
-  }
-
-  updateSeekPreview(event: MouseEvent) {
-    this.progressBarComponent?.updateSeekPreview(event);
   }
 
   onSeekStarted() {
@@ -1330,10 +1318,6 @@ export class VideoPlayerComponent implements OnDestroy {
     return this.settings.getReadingText(this.activeSubtitleLanguage(), token) || undefined;
   }
 
-  formatTime(seconds: number): string {
-    return formatTime(seconds);
-  }
-
   // ============================================
   // CLEANUP
   // ============================================
@@ -1350,6 +1334,18 @@ export class VideoPlayerComponent implements OnDestroy {
     if (this.captionFeedbackTimeout) clearTimeout(this.captionFeedbackTimeout);
 
     // Clean up video container and overlay event listeners
+    if (this._videoContainerEl) {
+      this._videoContainerEl.removeEventListener('mousemove', this._moveHandler);
+      this._videoContainerEl.removeEventListener('mouseleave', this._leaveHandler);
+      this._videoContainerEl = null;
+    }
+    if (this._playerOverlayEl) {
+      this._playerOverlayEl.removeEventListener('touchstart', this._touchStartHandler);
+      this._playerOverlayEl.removeEventListener('touchmove', this._touchMoveHandler);
+      this._playerOverlayEl.removeEventListener('touchend', this._touchEndHandler);
+      this._playerOverlayEl.removeEventListener('touchcancel', this._touchEndHandler);
+      this._playerOverlayEl = null;
+    }
     this.eventCleanupFns.forEach(fn => fn());
     this.eventCleanupFns = [];
 

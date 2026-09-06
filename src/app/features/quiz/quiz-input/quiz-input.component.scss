@@ -86,7 +86,7 @@
     color: var(--text-muted);
 
     .stats-badge.has-streak & {
-        color: #f59e0b;
+        color: var(--color-fire);
     }
 }
 

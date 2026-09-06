@@ -210,8 +210,8 @@
 }
 
 .subtitle-translation--error {
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
+    background: rgba(var(--error-rgb, 255, 75, 75), 0.1);
+    color: var(--error);
     display: inline-flex;
     align-items: center;
     gap: 6px;

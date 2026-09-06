@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, effect, computed, ElementRef, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, effect, computed, ElementRef, viewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { QuizService } from '../../video/quiz.service';
@@ -38,7 +38,7 @@ export class QuizInputComponent implements OnDestroy {
     quiz = inject(QuizService);
     i18n = inject(I18nService);
 
-    @ViewChild('inputField') inputField!: ElementRef<HTMLInputElement>;
+    readonly inputField = viewChild<ElementRef<HTMLInputElement>>('inputField');
 
     inputValue = signal('');
     isShake = signal(false);
@@ -68,7 +68,7 @@ export class QuizInputComponent implements OnDestroy {
 
             if (state === 'answering') {
                 this.scheduleTimeout(() => {
-                    this.inputField?.nativeElement?.focus();
+                    this.inputField()?.nativeElement?.focus();
                 }, 100);
             } else if (state === 'success') {
                 // Clear input after brief delay so user sees their correct answer
@@ -101,21 +101,21 @@ export class QuizInputComponent implements OnDestroy {
 
     onReplay(): void {
         this.quiz.playSegment();
-        this.inputField?.nativeElement?.focus();
+        this.inputField()?.nativeElement?.focus();
     }
 
     toggleMode(): void {
         const newMode = this.quiz.mode() === 'dictation' ? 'translation' : 'dictation';
         this.quiz.switchMode(newMode);
         // Refocus input
-        this.scheduleTimeout(() => this.inputField?.nativeElement?.focus(), 100);
+        this.scheduleTimeout(() => this.inputField()?.nativeElement?.focus(), 100);
     }
 
     onRetry(): void {
         // Reset to answering state so user can try again
         this.quiz.retryQuestion();
         this.inputValue.set('');
-        this.scheduleTimeout(() => this.inputField?.nativeElement?.focus(), 100);
+        this.scheduleTimeout(() => this.inputField()?.nativeElement?.focus(), 100);
     }
 
     private triggerShake(): void {

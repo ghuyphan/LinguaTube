@@ -64,7 +64,7 @@
 
             <!-- Actions -->
             <div class="dialog-actions">
-                <button type="button" class="btn btn-ghost dialog-btn" (click)="sheet.close()">
+                <button type="button" class="btn btn-ghost dialog-btn" (click)="sheet()?.close()">
                     {{ i18n.t('playlist.cancel') }}
                 </button>
                 <button type="submit" class="btn btn-primary dialog-btn" [disabled]="!title().trim() || isSubmitting()">

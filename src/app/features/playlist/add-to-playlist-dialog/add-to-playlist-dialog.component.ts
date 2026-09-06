@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, output, inject, signal, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -25,8 +25,6 @@ export class AddToPlaylistDialogComponent {
 
     // Outputs
     closed = output<void>();
-
-    @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
 
     // State
     showCreateDialog = signal(false);

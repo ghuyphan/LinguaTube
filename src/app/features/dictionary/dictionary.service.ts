@@ -1,44 +1,10 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../../models';
-import { Observable, of, catchError, map, tap } from 'rxjs';
+import { Observable, of, catchError, map } from 'rxjs';
 import { I18nService, UILanguage } from '../../core/services';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
-
-interface JotobaReading {
-  kanji?: string;
-  kana?: string;
-}
-
-interface JotobaSense {
-  glosses?: string[];
-  pos?: (string | Record<string, unknown>)[];
-}
-
-interface JotobaWord {
-  reading?: JotobaReading;
-  common?: { jlpt?: number };
-  senses?: JotobaSense[];
-}
-
-interface JotobaResponse {
-  words?: JotobaWord[];
-}
-
-interface KrdictEntry {
-  word?: string;
-  romanization?: string;
-  definitions?: string[];
-  partOfSpeech?: string;
-}
-
-interface MdbgEntry {
-  word?: string;
-  pinyin?: string;
-  definitions?: string[];
-  hsk?: number;
-}
 
 interface UnifiedDictEntry {
   word?: string;
@@ -53,13 +19,6 @@ interface UnifiedDictResponse {
   entries?: UnifiedDictEntry[];
 }
 
-interface EndictEntry {
-  word?: string;
-  phonetic?: string;
-  definitions?: string[];
-  partOfSpeech?: string[];
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -69,14 +28,11 @@ export class DictionaryService {
   readonly lastQuery = signal<string>(''); // Persistence for search term
   readonly recentSearches = signal<string[]>([]); // Shared recent searches state
 
-  // Use centralized API endpoints from environment
-  private readonly JOTOBA_API = environment.api.jotobaProxy;
-  private readonly MDBG_API = environment.api.mdbg;
-  private readonly KRDICT_API = environment.api.krdict;
-  private readonly ENDICT_API = environment.api.endict;
+  // Unified API endpoint
   private readonly UNIFIED_DICT_API = environment.api.dict;
 
-  // Inject I18nService to get user's UI language
+  // Services
+  private readonly http = inject(HttpClient);
   private readonly i18n = inject(I18nService);
 
   // Cache settings
@@ -84,7 +40,7 @@ export class DictionaryService {
   private readonly RECENT_KEY = 'linguatube-recent-searches';
   private readonly MAX_CACHE_SIZE = 500;
 
-  constructor(private http: HttpClient) {
+  constructor() {
     // Load recent searches from localStorage on init
     this.loadRecentSearches();
   }
@@ -116,185 +72,7 @@ export class DictionaryService {
     localStorage.removeItem(this.RECENT_KEY);
   }
 
-  /**
-   * Look up a Japanese word using Jotoba API
-   */
-  lookupJapanese(word: string): Observable<DictionaryEntry | null> {
-    if (!word.trim()) return of(null);
 
-    // Check cache first
-    const cached = this.getFromCache(word, 'ja');
-    if (cached) {
-      this.lastLookup.set(cached);
-      return of(cached);
-    }
-
-    this.isLoading.set(true);
-
-    // Jotoba uses POST with JSON body
-    const body = {
-      query: word,
-      language: 'English',
-      no_english: false
-    };
-
-    return this.http.post<JotobaResponse>(this.JOTOBA_API, body).pipe(
-      map(response => {
-        this.isLoading.set(false);
-
-        // Jotoba returns { words: [...], kanji: [...], ... }
-        if (!response.words || response.words.length === 0) {
-          return this.localJapaneseLookup(word);
-        }
-
-        const entry = response.words[0];
-        const reading = entry.reading?.kana || '';
-
-        // Get JLPT level if available
-        let jlptLevel: string | undefined;
-        if (entry.common?.jlpt) {
-          jlptLevel = `N${entry.common.jlpt}`;
-        }
-
-        const result: DictionaryEntry = {
-          word: entry.reading?.kanji || entry.reading?.kana || word,
-          reading: reading,
-          romanization: getJapaneseRomaji(reading, entry.reading?.kanji || entry.reading?.kana || word),
-          meanings: entry.senses?.map(sense => ({
-            definition: sense.glosses?.join(', ') || '',
-            tags: sense.pos?.map(p => extractPosString(p)).filter(Boolean) || []
-          })) || [],
-          partOfSpeech: entry.senses?.[0]?.pos?.map(p => extractPosString(p)).filter(Boolean) || [],
-          jlptLevel
-        };
-
-        this.lastLookup.set(result);
-        this.saveToCache(word, 'ja', result);
-        return result;
-      }),
-      catchError(err => {
-        this.isLoading.set(false);
-        console.error('Jotoba lookup failed:', err);
-        // Fallback to local dictionary
-        return of(this.localJapaneseLookup(word));
-      })
-    );
-  }
-
-  /**
-   * Look up a Chinese word using MDBG Scraper Proxy
-   */
-  lookupChinese(word: string): Observable<DictionaryEntry | null> {
-    if (!word.trim()) return of(null);
-
-    // Check cache first
-    const cached = this.getFromCache(word, 'zh');
-    if (cached) {
-      this.lastLookup.set(cached);
-      return of(cached);
-    }
-
-    this.isLoading.set(true);
-
-    return this.http.get<MdbgEntry[]>(`${this.MDBG_API}?q=${encodeURIComponent(word)}`).pipe(
-      map(response => {
-        const result = this.parseMdbgResponse(response, word);
-        if (result) {
-          this.saveToCache(word, 'zh', result);
-        }
-        return result;
-      }),
-      tap(() => this.isLoading.set(false)),
-      catchError(err => {
-        this.isLoading.set(false);
-        console.log('MDBG lookup failed, using local:', err.message);
-        const result = this.localChineseLookup(word);
-        if (result) this.lastLookup.set(result);
-        return of(result);
-      })
-    );
-  }
-
-  /**
-   * Look up a Korean word using Naver Korean-English Dictionary
-   */
-  lookupKorean(word: string): Observable<DictionaryEntry | null> {
-    if (!word.trim()) return of(null);
-
-    // Check cache first
-    const cached = this.getFromCache(word, 'ko');
-    if (cached) {
-      this.lastLookup.set(cached);
-      return of(cached);
-    }
-
-    this.isLoading.set(true);
-
-    return this.http.get<KrdictEntry[]>(`${this.KRDICT_API}?q=${encodeURIComponent(word)}`).pipe(
-      map(response => {
-        const result = this.parseKrdictResponse(response, word);
-        if (result) {
-          this.saveToCache(word, 'ko', result);
-        }
-        return result;
-      }),
-      tap(() => this.isLoading.set(false)),
-      catchError(err => {
-        this.isLoading.set(false);
-        console.log('Naver lookup failed, using local:', err.message);
-        const result = this.localKoreanLookup(word);
-        if (result) this.lastLookup.set(result);
-        return of(result);
-      })
-    );
-  }
-
-  /**
-   * Parse Naver Korean Dictionary response to DictionaryEntry format
-   */
-  private parseKrdictResponse(response: KrdictEntry[], word: string): DictionaryEntry | null {
-    if (!response || response.length === 0) {
-      return this.localKoreanLookup(word);
-    }
-
-    const entry = response[0];
-    const result: DictionaryEntry = {
-      word: entry.word || word,
-      romanization: entry.romanization || '',
-      meanings: entry.definitions?.map((def: string) => ({
-        definition: def,
-        examples: []
-      })) || [],
-      partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : []
-    };
-
-    this.lastLookup.set(result);
-    return result;
-  }
-
-  /**
-   * Parse MDBG Scraper response to DictionaryEntry format
-   */
-  private parseMdbgResponse(response: MdbgEntry[], word: string): DictionaryEntry | null {
-    if (!response || response.length === 0) {
-      return this.localChineseLookup(word);
-    }
-
-    const entry = response[0];
-    const result: DictionaryEntry = {
-      word: entry.word || word,
-      pinyin: entry.pinyin || '',
-      meanings: entry.definitions?.map((def: string) => ({
-        definition: def,
-        examples: []
-      })) || [],
-      partOfSpeech: [], // MDBG doesn't reliably provide POS in the scraper yet
-      hskLevel: entry.hsk
-    };
-
-    this.lastLookup.set(result);
-    return result;
-  }
 
   /**
    * Auto-detect language and look up using unified endpoint
@@ -422,64 +200,7 @@ export class DictionaryService {
     }
   }
 
-  /**
-   * Look up an English word using Free Dictionary API
-   */
-  lookupEnglish(word: string): Observable<DictionaryEntry | null> {
-    if (!word.trim()) return of(null);
 
-    // Check cache first
-    const cached = this.getFromCache(word, 'en');
-    if (cached) {
-      this.lastLookup.set(cached);
-      return of(cached);
-    }
-
-    this.isLoading.set(true);
-
-    return this.http.get<EndictEntry[]>(`${this.ENDICT_API}?q=${encodeURIComponent(word)}`).pipe(
-      map(response => {
-        const result = this.parseEndictResponse(response, word);
-        if (result) {
-          this.saveToCache(word, 'en', result);
-        }
-        return result;
-      }),
-      tap(() => this.isLoading.set(false)),
-      catchError(err => {
-        this.isLoading.set(false);
-        console.log('English dictionary lookup failed, using local:', err.message);
-        const result = this.localEnglishLookup(word);
-        if (result) this.lastLookup.set(result);
-        return of(result);
-      })
-    );
-  }
-
-  /**
-   * Parse Free Dictionary API response to DictionaryEntry format
-   */
-  private parseEndictResponse(response: EndictEntry[], word: string): DictionaryEntry | null {
-    if (!response || response.length === 0) {
-      return this.localEnglishLookup(word);
-    }
-
-    const entry = response[0];
-    const result: DictionaryEntry = {
-      word: entry.word || word,
-      reading: entry.phonetic || '', // IPA phonetic
-      meanings: entry.definitions?.map((def: string) => ({
-        definition: def,
-        examples: []
-      })) || [],
-      partOfSpeech: entry.partOfSpeech || []
-    };
-
-    this.lastLookup.set(result);
-    return result;
-  }
-
-  /* method removed */
 
   /**
    * Simple language detection based on character types
@@ -747,53 +468,6 @@ export class DictionaryService {
   /**
    * Get cached dictionary entry from localStorage
    */
-  private getFromCache(word: string, lang: 'ja' | 'zh' | 'ko' | 'en'): DictionaryEntry | null {
-    try {
-      const cache = this.loadCache();
-      const key = `${lang}:${word}`;
-      const entry = cache[key];
-      if (entry) {
-        // Update access time for LRU
-        entry.accessTime = Date.now();
-        this.saveCache(cache);
-        console.log('[Dictionary] Cache hit:', word);
-        return entry.data;
-      }
-    } catch (e) {
-      console.warn('[Dictionary] Cache read error:', e);
-    }
-    return null;
-  }
-
-  /**
-   * Save dictionary entry to localStorage cache
-   */
-  private saveToCache(word: string, lang: 'ja' | 'zh' | 'ko' | 'en', data: DictionaryEntry): void {
-    try {
-      const cache = this.loadCache();
-      const key = `${lang}:${word}`;
-
-      // Add new entry
-      cache[key] = {
-        data,
-        accessTime: Date.now()
-      };
-
-      // Evict oldest entries if over limit (LRU)
-      const keys = Object.keys(cache);
-      if (keys.length > this.MAX_CACHE_SIZE) {
-        const sorted = keys.sort((a, b) => cache[a].accessTime - cache[b].accessTime);
-        const toRemove = sorted.slice(0, keys.length - this.MAX_CACHE_SIZE);
-        toRemove.forEach(k => delete cache[k]);
-      }
-
-      this.saveCache(cache);
-      console.log('[Dictionary] Cached:', word);
-    } catch (e) {
-      console.warn('[Dictionary] Cache write error:', e);
-    }
-  }
-
   private loadCache(): Record<string, { data: DictionaryEntry; accessTime: number }> {
     try {
       const stored = localStorage.getItem(this.CACHE_KEY);
@@ -808,18 +482,3 @@ export class DictionaryService {
   }
 }
 
-/**
- * Extract string from Jotoba's pos (part of speech) object
- * Jotoba returns pos as objects like { Pretty: "Noun", Short: "n" } or just strings
- */
-function extractPosString(pos: unknown): string {
-  if (typeof pos === 'string') {
-    return pos;
-  }
-  if (typeof pos === 'object' && pos !== null) {
-    const record = pos as Record<string, unknown>;
-    const val = record['Pretty'] || record['Short'] || record['name'] || record['full'];
-    return typeof val === 'string' ? val : '';
-  }
-  return '';
-}

@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, catchError, of, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -37,6 +37,7 @@ const MAX_CACHE_SIZE = 1000;
 })
 export class TranslationService implements OnDestroy {
     private readonly API_URL = environment.api.translate;
+    private readonly http = inject(HttpClient);
 
     // In-memory cache for translations
     private translationCache = new Map<string, string>();
@@ -45,7 +46,7 @@ export class TranslationService implements OnDestroy {
     // Request queue for batch translations
     private requestQueue$ = new Subject<BatchRequest>();
 
-    constructor(private http: HttpClient) {
+    constructor() {
         this.loadCacheFromStorage();
         this.initializeRequestQueue();
     }

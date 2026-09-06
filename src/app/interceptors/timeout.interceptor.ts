@@ -13,10 +13,11 @@ const DEFAULT_TIMEOUT_MS = 30000; // 30 seconds
 const WHISPER_TIMEOUT_MS = 120000; // 2 minutes
 
 export const timeoutInterceptor: HttpInterceptorFn = (req, next) => {
-    // Determine timeout based on endpoint
-    const timeoutMs = req.url.includes('/api/whisper')
-        ? WHISPER_TIMEOUT_MS
-        : DEFAULT_TIMEOUT_MS;
+    // Determine timeout based on endpoint (AI transcription and dual-subtitles can take longer)
+    const isLongTask = req.url.includes('/api/transcript') ||
+        req.url.includes('/api/whisper') ||
+        req.url.includes('/api/dual-subtitles');
+    const timeoutMs = isLongTask ? WHISPER_TIMEOUT_MS : DEFAULT_TIMEOUT_MS;
 
     return next(req).pipe(
         timeout(timeoutMs),

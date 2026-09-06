@@ -242,7 +242,7 @@
     }
 
     <!-- Controls Toolbar -->
-    <div class="subtitle-controls" #subtitleControls>
+    <div class="subtitle-controls">
         <!-- Loop Button -->
         <button type="button" class="ctrl-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
             [disabled]="subtitles.subtitles().length === 0"

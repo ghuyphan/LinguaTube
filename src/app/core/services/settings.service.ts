@@ -1,4 +1,5 @@
-import { Injectable, signal, effect, untracked, OnDestroy, inject } from '@angular/core';
+import { Injectable, signal, effect, untracked, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ReadingDisplayMode, SupportedLearningLanguage, UserSettings } from '../../models';
 import { FontLoaderService } from './font-loader.service';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
@@ -26,11 +27,16 @@ const DEFAULT_SETTINGS: UserSettings = {
 })
 export class SettingsService implements OnDestroy {
   private fontLoader = inject(FontLoaderService);
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
 
   readonly settings = signal<UserSettings>(DEFAULT_SETTINGS);
 
   // Store reference for cleanup
-  private mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  private mediaQuery = this.isBrowser && typeof window !== 'undefined' && window.matchMedia
+    ? window.matchMedia('(prefers-color-scheme: dark)')
+    : null;
+
   private themeChangeHandler = () => {
     if (this.settings().theme === 'system') {
       this.applyTheme();
@@ -55,11 +61,11 @@ export class SettingsService implements OnDestroy {
     });
 
     // Listen for system theme changes (with cleanup support)
-    this.mediaQuery.addEventListener('change', this.themeChangeHandler);
+    this.mediaQuery?.addEventListener('change', this.themeChangeHandler);
   }
 
   ngOnDestroy(): void {
-    this.mediaQuery.removeEventListener('change', this.themeChangeHandler);
+    this.mediaQuery?.removeEventListener('change', this.themeChangeHandler);
   }
 
   updateSettings(partial: Partial<UserSettings>): void {
@@ -294,14 +300,18 @@ export class SettingsService implements OnDestroy {
   getEffectiveTheme(): 'light' | 'dark' {
     const { theme } = this.settings();
     if (theme === 'system') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
+      if (this.isBrowser && typeof window !== 'undefined' && window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      }
+      return 'dark';
     }
     return theme;
   }
 
   private applyTheme(): void {
+    if (!this.isBrowser || typeof document === 'undefined') return;
     const effectiveTheme = this.getEffectiveTheme();
     document.documentElement.setAttribute('data-theme', effectiveTheme);
   }

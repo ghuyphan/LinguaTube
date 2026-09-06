@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input, ViewChildren, QueryList, ElementRef, AfterViewInit, DestroyRef } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Component, ChangeDetectionStrategy, inject, output, signal, effect, input, viewChildren, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -14,10 +13,9 @@ import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
     styleUrls: ['./playlist-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlaylistPanelComponent implements AfterViewInit {
+export class PlaylistPanelComponent {
     private _playlistService = inject(PlaylistService);
     private _i18n = inject(I18nService);
-    private destroyRef = inject(DestroyRef);
     protected youtube = inject(YoutubeService);
 
     // Public getters for template binding
@@ -34,8 +32,8 @@ export class PlaylistPanelComponent implements AfterViewInit {
     // UI State
     isCopied = signal(false);
 
-    // ViewChildren for scroll management
-    @ViewChildren('playlistItem') playlistItems!: QueryList<ElementRef<HTMLDivElement>>;
+    // Signal query for playlist item elements
+    readonly playlistItems = viewChildren<ElementRef<HTMLDivElement>>('playlistItem');
 
     private scrollPending = false;
 
@@ -45,20 +43,12 @@ export class PlaylistPanelComponent implements AfterViewInit {
             const index = this._playlistService.currentIndex();
             const playlist = this._playlistService.currentPlaylist();
             const shouldScroll = this.shouldScrollIntoView();
+            const items = this.playlistItems();
 
-            if (playlist && index >= 0 && shouldScroll) {
+            if (playlist && index >= 0 && shouldScroll && items.length > 0) {
                 this.scrollPending = true;
                 // Defer scroll to after view update
                 queueMicrotask(() => this.scrollToCurrentIndex());
-            }
-        });
-    }
-
-    ngAfterViewInit(): void {
-        // Subscribe to changes in the list with proper lifecycle cleanup
-        this.playlistItems.changes.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
-            if (this.scrollPending) {
-                this.scrollToCurrentIndex();
             }
         });
     }
@@ -67,7 +57,7 @@ export class PlaylistPanelComponent implements AfterViewInit {
         if (!this.scrollPending) return;
 
         const index = this._playlistService.currentIndex();
-        const items = this.playlistItems?.toArray();
+        const items = this.playlistItems();
 
         if (items && items[index]) {
             items[index].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });

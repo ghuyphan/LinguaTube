@@ -483,11 +483,11 @@
 
     &.active {
         .stat-icon--fire {
-            color: #f59e0b;
+            color: var(--color-fire);
         }
 
         .stats-bar__val {
-            color: #f59e0b;
+            color: var(--color-fire);
         }
     }
 }
@@ -500,12 +500,12 @@
 }
 
 .stat-icon--fire {
-    color: #f59e0b;
+    color: var(--color-fire);
     flex-shrink: 0;
 }
 
 .stat-icon--diamond {
-    color: #60a5fa;
+    color: var(--color-diamond);
     flex-shrink: 0;
 }
 
@@ -559,8 +559,8 @@
     }
 
     &.active {
-        border-color: rgba(245, 158, 11, 0.4);
-        color: #f59e0b;
+        border-color: rgba(var(--color-fire-rgb, 245, 158, 11), 0.4);
+        color: var(--color-fire);
     }
 }
 

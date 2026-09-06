@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, output, inject, signal, ViewChild, computed, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, inject, signal, viewChild, computed, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
@@ -33,7 +33,7 @@ export class CreatePlaylistDialogComponent {
     created = output<void>();
     updated = output<void>();
 
-    @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
+    readonly sheet = viewChild(BottomSheetComponent);
 
     // Form State
     title = signal('');
@@ -83,7 +83,7 @@ export class CreatePlaylistDialogComponent {
                 this.created.emit();
             }
 
-            this.sheet.close();
+            this.sheet()?.close();
         } catch (error) {
             console.error('Failed to save playlist:', error);
         } finally {

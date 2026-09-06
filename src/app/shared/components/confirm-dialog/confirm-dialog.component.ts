@@ -1,4 +1,4 @@
-import { Component, input, output, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent, IconName } from '../icon/icon.component';
@@ -150,19 +150,19 @@ export class ConfirmDialogComponent {
     confirmed = output<void>();
     cancelled = output<void>();
 
-    @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
+    readonly sheet = viewChild(BottomSheetComponent);
 
     // Track which action triggered the close
     private closingAction: 'confirm' | 'cancel' | null = null;
 
     onConfirm(): void {
         this.closingAction = 'confirm';
-        this.sheet.close();
+        this.sheet()?.close();
     }
 
     onCancel(): void {
         this.closingAction = 'cancel';
-        this.sheet.close();
+        this.sheet()?.close();
     }
 
     onSheetClosed(): void {

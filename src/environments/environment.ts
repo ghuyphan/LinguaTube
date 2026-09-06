@@ -14,10 +14,6 @@ export const environment = {
   api: {
     // Dictionary
     dict: '/api/dict',
-    jotobaProxy: '/proxy/jotoba/api/search/words',
-    mdbg: '/api/mdbg',
-    krdict: '/api/krdict',
-    endict: '/api/endict',
 
     // Subtitles & Translation
     tokenizeBatch: '/api/tokenize-batch',

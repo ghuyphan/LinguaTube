@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, output, input } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, output, input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ import { VocabularyItem, WordLevel, Token } from '../../../models';
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
-export class VocabularyListComponent {
+export class VocabularyListComponent implements OnDestroy {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
@@ -196,5 +196,16 @@ export class VocabularyListComponent {
     this.toastTimeout = setTimeout(() => {
       this.toastMessage.set(null);
     }, 3000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+      this.searchTimeout = null;
+    }
+    if (this.toastTimeout) {
+      clearTimeout(this.toastTimeout);
+      this.toastTimeout = null;
+    }
   }
 }

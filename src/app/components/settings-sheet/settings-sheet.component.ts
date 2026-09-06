@@ -1,4 +1,4 @@
-import { Component, inject, input, output, ChangeDetectionStrategy, signal, ViewChild, ElementRef, computed } from '@angular/core';
+import { Component, inject, input, output, signal, computed, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
@@ -28,8 +28,7 @@ export class SettingsSheetComponent {
   transcript = inject(TranscriptService);
   streak = inject(StreakService);
 
-  @ViewChild('googleBtnSettings') googleBtnSettings!: ElementRef;
-  @ViewChild(BottomSheetComponent) sheet!: BottomSheetComponent;
+  readonly sheet = viewChild(BottomSheetComponent);
 
   isOpen = input<boolean>(false);
   closed = output<void>();
@@ -98,7 +97,7 @@ export class SettingsSheetComponent {
   loginWithGoogle(): void {
     void this.auth.loginWithGoogle().then(profile => {
       if (profile) {
-        this.sheet.close();
+        this.sheet()?.close();
       }
     });
   }
@@ -142,7 +141,7 @@ export class SettingsSheetComponent {
   confirmSignOut(): void {
     this.showSignOutConfirm.set(false);
     this.auth.signOut();
-    this.sheet.close();
+    this.sheet()?.close();
   }
 
   onSheetClosed(): void {

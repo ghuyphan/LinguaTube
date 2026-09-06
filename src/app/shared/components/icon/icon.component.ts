@@ -1,4 +1,4 @@
-import { Component, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type IconName =
@@ -36,7 +36,5 @@ export class IconComponent {
     name = input.required<IconName>();
     size = input<number>(20);
 
-    get href(): string {
-        return `assets/icons/sprite.svg#${this.name()}`;
-    }
+    readonly href = computed(() => `assets/icons/sprite.svg#${this.name()}`);
 }
