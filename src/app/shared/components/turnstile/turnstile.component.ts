@@ -77,6 +77,9 @@ export class TurnstileComponent implements OnInit, OnDestroy {
 
   status = signal<'loading' | 'ready' | 'resolved' | 'error' | 'expired'>('loading');
   private widgetId: string | null = null;
+  private checkReadyTimer: ReturnType<typeof setTimeout> | null = null;
+  private checkReadyAttempts = 0;
+  private readonly MAX_CHECK_ATTEMPTS = 100; // 5s timeout
 
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;
@@ -84,6 +87,10 @@ export class TurnstileComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this.checkReadyTimer) {
+      clearTimeout(this.checkReadyTimer);
+      this.checkReadyTimer = null;
+    }
     if (this.widgetId && window.turnstile) {
       try {
         window.turnstile.remove(this.widgetId);
@@ -126,8 +133,13 @@ export class TurnstileComponent implements OnInit, OnDestroy {
     const checkReady = () => {
       if (window.turnstile) {
         this.renderWidget();
+      } else if (this.checkReadyAttempts < this.MAX_CHECK_ATTEMPTS) {
+        this.checkReadyAttempts++;
+        this.checkReadyTimer = setTimeout(checkReady, 50);
       } else {
-        setTimeout(checkReady, 50);
+        console.warn('[Turnstile] Script load timed out');
+        this.status.set('error');
+        this.captchaError.emit('TIMEOUT');
       }
     };
 

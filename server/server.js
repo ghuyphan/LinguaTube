@@ -13,6 +13,20 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Singleton Innertube instance
+let innertubePromise = null;
+async function getInnertube() {
+    if (!innertubePromise) {
+        const { Innertube } = require('youtubei.js');
+        innertubePromise = Innertube.create({ generate_session_locally: true }).catch(err => {
+            console.error('[Innertube] Init error:', err.message);
+            innertubePromise = null;
+            throw err;
+        });
+    }
+    return innertubePromise;
+}
+
 /**
  * POST /api/whisper
  * Transcribe YouTube video using Gladia API
@@ -158,30 +172,46 @@ app.post('/api/whisper', async (req, res) => {
 });
 
 /**
-                    if (collector.means) {
-                        collector.means.forEach(mean => {
-                            const def = (mean.value || '').replace(/<[^>]+>/g, '').trim();
-                            if (def) definitions.push(def);
-                        });
-                    }
-                });
-            }
+ * GET /api/auth-config
+ * Return public auth config (Google Client ID)
+ */
+app.get('/api/auth-config', (req, res) => {
+    res.json({
+        googleClientId: process.env.GOOGLE_CLIENT_ID || ''
+    });
+});
 
-            // Extract part of speech
-            const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
-
-            return {
-                word,
-                romanization,
-                definitions,
-                partOfSpeech
-            };
-        }).filter(e => e.word && e.definitions.length > 0);
-
-        res.json(entries);
-
+/**
+ * POST /api/translate/batch
+ * Translate an array of subtitle strings using GTX in local development
+ */
+app.post('/api/translate/batch', async (req, res) => {
+    try {
+        const { texts, source, target } = req.body || {};
+        if (!Array.isArray(texts)) {
+            return res.status(400).json({ error: 'texts must be an array' });
+        }
+        const translations = await Promise.all(
+            texts.map(t => translateWithGtx(t, source || 'auto', target || 'en'))
+        );
+        res.json({ translations });
     } catch (error) {
-        console.error('[KRDict Local] Error:', error.message);
+        console.error('[Translate Batch Local] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+/**
+ * GET /api/translate/:source/:target/:query
+ * Translate single text in local development
+ */
+app.get('/api/translate/:source/:target/:query', async (req, res) => {
+    try {
+        const { source, target, query } = req.params;
+        const translation = await translateWithGtx(query, source, target);
+        res.json({ translation });
+    } catch (error) {
+        console.error('[Translate Single Local] Error:', error.message);
         res.status(500).json({ error: error.message });
     }
 });
@@ -535,10 +565,16 @@ if (!fs.existsSync(TRANSCRIPTS_CACHE_DIR)) {
     try { fs.mkdirSync(TRANSCRIPTS_CACHE_DIR, { recursive: true }); } catch {}
 }
 
+function isValidVideoId(id) {
+    if (!id || typeof id !== 'string') return false;
+    if (id === 'demo' || id === 'test') return true;
+    return /^[a-zA-Z0-9_-]{11}$/.test(id);
+}
+
 function getCachedTranscript(videoId, lang) {
     try {
-        if (!videoId) return null;
-        const normLang = (lang || '').split('-')[0].toLowerCase();
+        if (!isValidVideoId(videoId)) return null;
+        const normLang = (lang || '').replace(/[^a-zA-Z0-9_-]/g, '').split('-')[0].toLowerCase();
         if (normLang) {
             const file = path.join(TRANSCRIPTS_CACHE_DIR, `${videoId}_${normLang}.json`);
             if (fs.existsSync(file)) {
@@ -557,7 +593,8 @@ function getCachedTranscript(videoId, lang) {
 
 function saveCachedTranscript(videoId, lang, data) {
     try {
-        const normLang = (lang || 'ja').split('-')[0].toLowerCase();
+        if (!isValidVideoId(videoId)) return;
+        const normLang = (lang || 'ja').replace(/[^a-zA-Z0-9_-]/g, '').split('-')[0].toLowerCase();
         const file = path.join(TRANSCRIPTS_CACHE_DIR, `${videoId}_${normLang}.json`);
         fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8');
     } catch (e) {
@@ -664,8 +701,7 @@ app.get('/api/video-info', async (req, res) => {
     // Check native tracks using Innertube
     let nativeTracks = [];
     try {
-        const { Innertube } = require('youtubei.js');
-        const yt = await Innertube.create({ generate_session_locally: true });
+        const yt = await getInnertube();
         const info = await yt.getInfo(videoId);
         const tracks = info.captions?.caption_tracks || [];
         nativeTracks = tracks.map(t => t.language_code).filter(Boolean);
@@ -1085,8 +1121,7 @@ app.post('/api/transcript', async (req, res) => {
     // -------------------------------------------------------------
     if (videoId !== 'demo' && videoId !== 'test') {
         try {
-            const { Innertube } = require('youtubei.js');
-            const yt = await Innertube.create({ generate_session_locally: true });
+            const yt = await getInnertube();
             const info = await yt.getInfo(videoId);
 
 

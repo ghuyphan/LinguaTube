@@ -107,9 +107,9 @@ export function sanitizeWord(word) {
  */
 export function sanitizeVideoId(id) {
     if (!id || typeof id !== 'string') return null;
-    // YouTube IDs are exactly 11 chars: alphanumeric, dash, underscore
-    const cleaned = id.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 11);
-    return cleaned.length === 11 ? cleaned : null;
+    const trimmed = id.trim();
+    // YouTube IDs are strictly 11 chars: alphanumeric, dash, underscore
+    return /^[a-zA-Z0-9_-]{11}$/.test(trimmed) ? trimmed : null;
 }
 
 /**

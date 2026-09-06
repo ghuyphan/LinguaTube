@@ -5,6 +5,7 @@
  */
 
 import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
+import { checkBot } from '../../middlewares/bot-defense.js';
 import {
     consumeRateLimit,
     getClientIP,
@@ -92,6 +93,15 @@ export async function onRequest(context) {
     const service = params.service;
     const pathSegments = params.path || [];
 
+    // Bot defense
+    const botCheck = checkBot(request);
+    if (botCheck.isBot) {
+        return jsonResponse(
+            { error: 'Access denied: automated requests not allowed', code: 'BOT_DETECTED' },
+            403
+        );
+    }
+
     // Rate limiting
     const clientIP = getClientIP(request);
     const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientIP, RATE_LIMIT_CONFIG);
@@ -152,12 +162,18 @@ export async function onRequest(context) {
 
         const fetchOptions = {
             method: request.method,
-            headers
+            headers,
+            signal: AbortSignal.timeout(8000),
+            redirect: 'error'
         };
 
-        // Forward body for POST requests
+        // Forward body for POST requests (cap payload at 64KB)
         if (request.method === 'POST') {
-            fetchOptions.body = await request.text();
+            const bodyText = await request.text();
+            if (bodyText.length > 65536) {
+                return jsonResponse({ error: 'Payload too large' }, 413);
+            }
+            fetchOptions.body = bodyText;
         }
 
         const response = await fetch(targetUrl, fetchOptions);

@@ -992,7 +992,7 @@ $transition-normal: 0.25s ease;
     gap: 8px;
 
     .spotlight-input {
-      font-size: 0.875rem;
+      font-size: 1rem; // Min 16px prevents iOS Safari auto-zoom
     }
 
     .spotlight-actions {

@@ -3,7 +3,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { StudyModeComponent } from '../study-mode/study-mode.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { VocabularyService, SettingsService, I18nService } from '../../../services';
+import { VocabularyService } from '../vocabulary.service';
+import { SettingsService, I18nService } from '../../../core/services';
 
 const DAILY_GOAL_KEY = 'linguatube_daily_goal';
 const DAILY_PROGRESS_KEY = 'linguatube_daily_progress';

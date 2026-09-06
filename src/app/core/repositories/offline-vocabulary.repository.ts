@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, effect, untracked } from '@angular/core';
+import { Injectable, inject, signal, effect, untracked, computed } from '@angular/core';
 import type PocketBase from 'pocketbase';
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
@@ -8,7 +8,15 @@ import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 import { generateRandomId } from '../utils';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
+const TOMBSTONES_KEY = 'linguatube_deleted_vocab_tombstones';
 const SAVE_DEBOUNCE_MS = 300;
+
+interface DeletionTombstone {
+    id: string;
+    word: string;
+    language: string;
+    deletedAt: number;
+}
 
 interface SyncItem {
     id: string; // Deterministic ID
@@ -22,6 +30,14 @@ interface SyncItem {
     examples: string[];
     created?: string;
     updated?: string;
+    // SRS spaced repetition fields
+    easeFactor?: number;
+    interval?: number;
+    repetitions?: number;
+    reviewCount?: number;
+    lastReviewedAt?: string;
+    nextReviewDate?: string;
+    sourceSentence?: string;
 }
 
 @Injectable({
@@ -38,7 +54,26 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
     // Initial empty stats
     private readonly initialStats = { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0 };
-    readonly stats = signal<typeof this.initialStats>(this.initialStats);
+    
+    // Pure computed stats based on reactive vocabulary signal
+    readonly stats = computed(() => {
+        const items = this.vocabulary();
+        return items.reduce(
+            (acc, item) => {
+                acc.total++;
+                if (item.level === 'new') acc.new++;
+                else if (item.level === 'learning') acc.learning++;
+                else if (item.level === 'known') acc.known++;
+                else if (item.level === 'ignored') acc.ignored++;
+
+                if (item.language === 'ja') acc.japanese++;
+                else if (item.language === 'zh') acc.chinese++;
+                else if (item.language === 'ko') acc.korean++;
+                return acc;
+            },
+            { ...this.initialStats }
+        );
+    });
 
     private saveTimeout: ReturnType<typeof setTimeout> | null = null;
     private lastPushedHash = '';
@@ -218,11 +253,16 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         const item = items.find(i => i.id === id);
         if (!item) return;
 
+        // Record deletion tombstone to prevent zombie resurrection on sync
+        this.addDeletionTombstone(item.id, item.word, item.language);
+
         const newItems = items.filter(i => i.id !== id);
         this.updateLocal(newItems);
 
         if (this.auth.isLoggedIn()) {
-            this.deleteFromServer(item.word, item.language).catch(err => console.error('[VocabRepo] Failed to delete on server:', err));
+            this.deleteFromServer(item.word, item.language)
+                .then(() => this.removeDeletionTombstone(item.id))
+                .catch(err => console.error('[VocabRepo] Failed to delete on server:', err));
         }
     }
 
@@ -266,24 +306,48 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             const remoteItems = await this.fetchFromPocketBase();
             console.log(`[VocabRepo] Fetched ${remoteItems.length} items from server`);
 
-            // 2. Local State
+            // 2. Handle deletion tombstones (prevent zombie resurrection)
+            const tombstones = this.getDeletionTombstones();
+            if (tombstones.length > 0) {
+                for (const t of tombstones) {
+                    try {
+                        await this.deleteFromServer(t.word, t.language);
+                        this.removeDeletionTombstone(t.id);
+                    } catch (err) {
+                        console.warn('[VocabRepo] Retry tombstone delete failed:', err);
+                    }
+                }
+            }
+            const activeRemote = remoteItems.filter(r => !tombstones.some(t => t.id === r.id));
+
+            // 3. Local State
             const localItems = this.vocabulary();
             const localSyncItems = this.convertToSyncItems(localItems);
 
-            // 3. Merge (Safe strategy)
+            // 4. Merge (Safe strategy)
             const mergedSyncItems = mergeByTimestamp(
                 localSyncItems,
-                remoteItems,
+                activeRemote,
                 item => item.id,
                 item => item.updated ? new Date(item.updated).getTime() : 0
             );
 
-            // 4. Update Local
+            // 5. Update Local
             this.importSyncItemsToLocal(mergedSyncItems);
 
-            // 5. Push Merged State to Server (to ensure server catches up with local changes)
-            // Only if hash changed or if we want to ensure consistency
-            await this.pushToPocketBase(mergedSyncItems);
+            // 6. Push ONLY modified/new items to Server (prevents O(N) request storms)
+            const remoteMap = new Map(remoteItems.map(r => [r.id, r]));
+            const dirtyItems = mergedSyncItems.filter(localItem => {
+                const remote = remoteMap.get(localItem.id);
+                if (!remote) return true; // New local item
+                if (!localItem.updated || !remote.updated) return true;
+                return new Date(localItem.updated).getTime() > new Date(remote.updated).getTime();
+            });
+
+            if (dirtyItems.length > 0) {
+                console.log(`[VocabRepo] Pushing ${dirtyItems.length} modified items to server`);
+                await this.pushToPocketBase(dirtyItems);
+            }
 
             this.lastPushedHash = calculateHash(this.vocabulary(), i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`);
             console.log('[VocabRepo] Sync complete.');
@@ -322,36 +386,31 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         }
         const normalizedItems = uniqueItems.map(item => this.normalizeVocabularyItem(item));
         this.vocabulary.set(normalizedItems);
-        this.recalculateStats(normalizedItems);
     }
 
     private triggerSyncDebounced() {
-        // Simple debounce for sync trigger
-        // In a real app, might want a separate robust queue
         if (this.auth.isLoggedIn()) {
-            // We don't want to spam syncWithRemote on every keystroke
-            // We'll let the background sync or 'pushSingleItem' handle critical stuff
-            // But for bulk updates, we can verify sync status eventually
+            // Auto sync can trigger if needed
         }
     }
 
-    private recalculateStats(items: VocabularyItem[]): void {
-        const stats = items.reduce(
-            (acc, item) => {
-                acc.total++;
-                if (item.level === 'new') acc.new++;
-                else if (item.level === 'learning') acc.learning++;
-                else if (item.level === 'known') acc.known++;
-                else if (item.level === 'ignored') acc.ignored++;
+    // ==================== Deletion Tombstones ====================
 
-                if (item.language === 'ja') acc.japanese++;
-                else if (item.language === 'zh') acc.chinese++;
-                else if (item.language === 'ko') acc.korean++;
-                return acc;
-            },
-            { ...this.initialStats }
-        );
-        this.stats.set(stats);
+    private getDeletionTombstones(): DeletionTombstone[] {
+        return this.storage.get<DeletionTombstone[]>(TOMBSTONES_KEY) || [];
+    }
+
+    private addDeletionTombstone(id: string, word: string, language: string): void {
+        const tombstones = this.getDeletionTombstones();
+        if (!tombstones.some(t => t.id === id)) {
+            tombstones.push({ id, word, language, deletedAt: Date.now() });
+            this.storage.set(TOMBSTONES_KEY, tombstones);
+        }
+    }
+
+    private removeDeletionTombstone(id: string): void {
+        const tombstones = this.getDeletionTombstones().filter(t => t.id !== id);
+        this.storage.set(TOMBSTONES_KEY, tombstones);
     }
 
     // ==================== Persistence ====================
@@ -363,7 +422,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 ...item,
                 addedAt: new Date(item.addedAt),
                 updatedAt: item.updatedAt ? new Date(item.updatedAt) : undefined,
-                lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : undefined
+                lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : undefined,
+                nextReviewDate: item.nextReviewDate ? new Date(item.nextReviewDate) : undefined
             }));
             this.updateLocal(parsed);
         }
@@ -394,18 +454,19 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             level: item.level,
             examples: item.examples || [],
             updated: item.updatedAt ? new Date(item.updatedAt).toISOString() : undefined,
-            created: item.addedAt ? new Date(item.addedAt).toISOString() : undefined
+            created: item.addedAt ? new Date(item.addedAt).toISOString() : undefined,
+            easeFactor: item.easeFactor,
+            interval: item.interval,
+            repetitions: item.repetitions,
+            reviewCount: item.reviewCount,
+            lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt).toISOString() : undefined,
+            nextReviewDate: item.nextReviewDate ? new Date(item.nextReviewDate).toISOString() : undefined,
+            sourceSentence: item.sourceSentence
         }));
     }
 
     private importSyncItemsToLocal(syncItems: SyncItem[]): void {
         const vocabItems: VocabularyItem[] = syncItems.map(item => {
-            // Preserve local SRS state if possible could be complex, 
-            // but for now we assume SyncItem is truth. 
-            // However, SyncItem doesn't carry SRS data (easeFactor etc) in the interface defined in SyncService?
-            // Wait, the SyncService definition of SyncItem LOST the SRS data!
-            // I need to make sure SyncItem carries SRS data or I recover it from local.
-
             const existing = this.vocabulary().find(v => v.id === item.id);
 
             return this.normalizeVocabularyItem({
@@ -420,14 +481,14 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 examples: item.examples,
                 addedAt: item.created ? new Date(item.created) : new Date(),
                 updatedAt: item.updated ? new Date(item.updated) : new Date(),
-                // Recover SRS or default
-                reviewCount: existing?.reviewCount || 0,
-                easeFactor: existing?.easeFactor || 2.5,
-                interval: existing?.interval || 0,
-                repetitions: existing?.repetitions || 0,
-                lastReviewedAt: existing?.lastReviewedAt,
-                nextReviewDate: existing?.nextReviewDate,
-                sourceSentence: existing?.sourceSentence
+                // Fully recover SRS progress: remote first, then local fallback, then standard defaults
+                reviewCount: item.reviewCount ?? existing?.reviewCount ?? 0,
+                easeFactor: item.easeFactor ?? existing?.easeFactor ?? 2.5,
+                interval: item.interval ?? existing?.interval ?? 0,
+                repetitions: item.repetitions ?? existing?.repetitions ?? 0,
+                lastReviewedAt: item.lastReviewedAt ? new Date(item.lastReviewedAt) : existing?.lastReviewedAt,
+                nextReviewDate: item.nextReviewDate ? new Date(item.nextReviewDate) : existing?.nextReviewDate,
+                sourceSentence: item.sourceSentence ?? existing?.sourceSentence
             });
         });
 
@@ -455,7 +516,14 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             level: record['level'] as WordLevel,
             examples: record['examples'],
             created: record['created'],
-            updated: record['updated']
+            updated: record['updated'],
+            easeFactor: record['ease_factor'] ?? record['easeFactor'],
+            interval: record['interval'],
+            repetitions: record['repetitions'],
+            reviewCount: record['review_count'] ?? record['reviewCount'],
+            lastReviewedAt: record['last_reviewed_at'] ?? record['lastReviewedAt'],
+            nextReviewDate: record['next_review_date'] ?? record['nextReviewDate'],
+            sourceSentence: record['source_sentence'] ?? record['sourceSentence']
         }));
     }
 
@@ -463,9 +531,6 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         const client = await this.pb.getClient();
         const userId = client.authStore.model?.id;
         if (!userId) return;
-
-        // Note: In a real efficient sync, we'd diff 'items' vs 'remote' again or track clean/dirty.
-        // For safe-unification, we'll use batch processing.
 
         await processBatch(items, async (item) => {
             await withRetry(() => this.syncItem(client, userId, item));
@@ -482,7 +547,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     private async syncItem(client: PocketBase, userId: string, item: SyncItem): Promise<void> {
-        const data = {
+        const data: Record<string, unknown> = {
             word: item.word,
             reading: item.reading || '',
             pinyin: item.pinyin || '',
@@ -491,22 +556,23 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             language: item.language,
             level: item.level,
             examples: item.examples,
-            user: userId
+            user: userId,
+            ease_factor: item.easeFactor ?? 2.5,
+            interval: item.interval ?? 0,
+            repetitions: item.repetitions ?? 0,
+            review_count: item.reviewCount ?? 0,
+            last_reviewed_at: item.lastReviewedAt || null,
+            next_review_date: item.nextReviewDate || null,
+            source_sentence: item.sourceSentence || ''
         };
 
         try {
-            // Try to create with deterministic ID
             await client.collection('vocabulary').create({ ...data, id: item.id });
         } catch (err: unknown) {
-            // If exists, update
-            // 400 or 404 details? Pocketbase throws 400 for duplicate ID
             const status = (err && typeof err === 'object' && 'status' in err) ? (err as { status: number }).status : undefined;
-            if (status === 400 || status === 404) { // Actually usually 400 for unique constraint
+            if (status === 400 || status === 404) {
                 await client.collection('vocabulary').update(item.id, data);
             } else {
-                // Try legacy update by query? 
-                // We shouldn't need legacy query if we standardized IDs.
-                // But for migration:
                 throw err;
             }
         }
@@ -527,12 +593,14 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     private generateVocabId(userId: string, word: string, language: string): string {
-        const raw = `${userId}|${word}|${language}`;
+        const raw = `${userId}|${word.trim().toLowerCase()}|${language}`;
         try {
-            return btoa(unescape(encodeURIComponent(raw)))
-                .replace(/[^a-zA-Z0-9]/g, '')
-                .toLowerCase()
-                .slice(0, 15);
+            // PocketBase IDs require strictly 15 alphanumeric characters
+            let hash = btoa(encodeURIComponent(raw)).replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            while (hash.length < 15) {
+                hash += hash + '0';
+            }
+            return hash.slice(0, 15);
         } catch {
             return generateRandomId();
         }

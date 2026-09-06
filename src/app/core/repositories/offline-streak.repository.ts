@@ -35,9 +35,14 @@ export class OfflineStreakRepository implements IStreakRepository {
     async recordActivity(): Promise<ActivityResult | null> {
         let result: ActivityResult | null = null;
 
-        // 1. Optimistic Update Local
+        // 1. Optimistic Update Local (fallback to local if offline or network drops)
         if (this.auth.isLoggedIn()) {
-            result = await this.recordActivityOnServer();
+            try {
+                result = await this.recordActivityOnServer();
+            } catch (err) {
+                console.warn('[StreakRepo] Network error while recording on server, falling back to local recording:', err);
+                result = this.recordActivityLocally();
+            }
         } else {
             result = this.recordActivityLocally();
         }
@@ -233,9 +238,15 @@ export class OfflineStreakRepository implements IStreakRepository {
         return this.startOfDay(date1).getTime() === this.startOfDay(date2).getTime();
     }
     private isYesterday(today: Date, other: Date): boolean {
-        return today.getTime() - other.getTime() === (24 * 60 * 60 * 1000);
+        const d1 = this.startOfDay(today);
+        const d2 = this.startOfDay(other);
+        const yesterday = new Date(d1);
+        yesterday.setDate(yesterday.getDate() - 1);
+        return yesterday.getTime() === d2.getTime();
     }
     private daysBetween(date1: Date, date2: Date): number {
-        return Math.floor((date1.getTime() - date2.getTime()) / (24 * 60 * 60 * 1000));
+        const d1 = this.startOfDay(date1);
+        const d2 = this.startOfDay(date2);
+        return Math.round((d1.getTime() - d2.getTime()) / (24 * 60 * 60 * 1000));
     }
 }

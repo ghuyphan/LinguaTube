@@ -132,7 +132,14 @@ export class TranscriptService {
 
         // 4. Submit to Gladia
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        const resultUrl = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl);
+        let resultUrl;
+        try {
+            resultUrl = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl);
+        } catch (gladiaError) {
+            // Refund consumed diamond on submission failure
+            await this.diamondService.refundDiamond(clientId, context, env, user, requiredDiamonds);
+            throw gladiaError;
+        }
 
         // 5. Save pending job state
         await Promise.allSettled([

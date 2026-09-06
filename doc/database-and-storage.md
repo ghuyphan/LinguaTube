@@ -270,8 +270,11 @@ Executed server-side on PocketBase:
 | Key | Service / Repository | Type / Schema | Purpose |
 | :--- | :--- | :--- | :--- |
 | `linguatube_vocabulary` | `OfflineVocabularyRepository` | `VocabularyItem[]` | Offline vocabulary notebook items |
+| `linguatube_deleted_vocab_tombstones` | `OfflineVocabularyRepository` | `Record<string, number>` | Remote sync deletion tombstones (ID -> timestamp) |
 | `linguatube_playlists` | `OfflinePlaylistRepository` | `Playlist[]` | User-created and bookmarked playlists |
+| `linguatube_deleted_playlist_ids` | `OfflinePlaylistRepository` | `string[]` | Deletion tombstones for syncing playlist removals |
 | `linguatube_history` | `OfflineHistoryRepository` | `HistoryEntry[]` | Video watch progress and timestamps |
+| `linguatube_deleted_history_ids` | `OfflineHistoryRepository` | `string[]` | Deletion tombstones for syncing history removals |
 | `linguatube_streaks` | `OfflineStreakRepository` | `StreakData` | Local streak count and activity calendar |
 | `linguatube_settings` | `SettingsService` | `UserSettings` | User preferences, theme, and reading modes |
 | `linguatube-ui-language` | `I18nService` | `'en' \| 'vi' \| 'ja' \| 'ko' \| 'zh'` | Selected UI localization language |
@@ -283,3 +286,12 @@ Executed server-side on PocketBase:
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
 | `pocketbase_auth` | `PocketBaseService` | `{ token: string, model: User }` | User auth session token and profile |
+
+### 6.3. Storage Quota Eviction Policy (`StorageService`)
+When client-side `localStorage` approaches browser quota thresholds and throws a `QuotaExceededError`:
+- **Automated Eviction (`handleQuotaExceeded`)**: `StorageService` catches the exception and purges transient caches in order of priority:
+  1. `linguatube_dict_cache` (temporary dictionary lookup cache)
+  2. `linguatube_tokens` (pre-parsed subtitle word segmentations)
+  3. `lingvatranslate_cache` / `linguatube_translations` (cached UI and batch translations)
+  4. Scoped search histories (`linguatube_recent_searches_*`)
+- **Write Retry**: Following non-critical cache purging, the original write operation is retried seamlessly without throwing unhandled exceptions to the UI layer. Essential user entities (`vocabulary`, `playlists`, `history`, `streaks`, `settings`) are never purged.

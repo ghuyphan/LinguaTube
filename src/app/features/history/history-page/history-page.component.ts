@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { HistoryListComponent } from '../history-list/history-list.component';
-import { HistoryService, I18nService, AuthService } from '../../../services';
+import { HistoryService } from '../history.service';
+import { I18nService, AuthService } from '../../../core/services';
 import { HistoryItem } from '../../../models';
 
 type FilterType = 'all' | 'favorites';

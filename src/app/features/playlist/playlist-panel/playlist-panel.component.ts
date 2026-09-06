@@ -2,7 +2,8 @@ import { Component, ChangeDetectionStrategy, inject, output, signal, effect, inp
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { I18nService, YoutubeService } from '../../../services';
+import { I18nService } from '../../../core/services';
+import { YoutubeService } from '../../video';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({

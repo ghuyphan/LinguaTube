@@ -31,7 +31,7 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 | **Word Segmentation** | `Intl.Segmenter` | Built-in ECMAScript | Zero-dependency word boundary segmentation for ZH, KO, EN |
 | **Visual Assets** | Circle Flags | SVG CDN | Consistent cross-platform SVG national flag badges |
 | **Linter** | ESLint + angular-eslint | `^9.39.4` | Code style, accessibility, and TypeScript linting |
-| **Testing** | Node.js Test Runner / Karma | `Node 20+ / Karma 6.4` | Backend security unit tests and Angular Karma specs |
+| **Testing** | Node.js Test Runner / Karma | `Node 20+ / Karma 6.4` | Automated backend security tests & sync utility test runner (`node --test tests/*.test.mjs`) |
 
 ---
 
@@ -40,7 +40,8 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 ### 2.1. Angular 19 Modern Primitives
 Voca fully embraces modern Angular paradigms:
 - **Standalone Components Everywhere**: Zero `NgModule` overhead; every component, directive, and pipe is standalone.
-- **Angular Signals (`signal`, `computed`, `effect`)**: Native fine-grained reactivity driving all component state without heavy state libraries.
+- **Angular Signals (`signal`, `computed`, `effect`, `linkedSignal`, `model`)**: Native fine-grained reactivity driving all component state without heavy state libraries.
+- **Modern Query Signals (`viewChild`, `viewChild.required`)**: Replaces legacy `@ViewChild` decorator queries with type-safe reactive signals.
 - **`ChangeDetectionStrategy.OnPush`**: Configured on all components for optimal rendering performance.
 - **Dependency Injection**: Functional `inject(ServiceName)` pattern used throughout services, repositories, and components.
 - **RequestAnimationFrame Gestures**: Smooth draggable subtitle overlays with pointer capture and zero frame drops.

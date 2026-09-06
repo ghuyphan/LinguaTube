@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -7,7 +7,9 @@ import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabu
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
-import { VocabularyService, SettingsService, I18nService, DictionaryService } from '../../../services';
+import { DictionaryService } from '../dictionary.service';
+import { VocabularyService } from '../../vocabulary';
+import { SettingsService, I18nService } from '../../../core/services';
 
 @Component({
   selector: 'app-dictionary-page',
@@ -259,7 +261,7 @@ import { VocabularyService, SettingsService, I18nService, DictionaryService } fr
   `]
 })
 export class DictionaryPageComponent implements OnInit, OnDestroy {
-  @ViewChild('panel') panel?: DictionaryPanelComponent;
+  readonly panel = viewChild(DictionaryPanelComponent);
 
   private vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
@@ -294,9 +296,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
     if (!clean) return;
 
     this.dictionary.screenQuery.set(clean);
-    if (this.panel) {
-      this.panel.search(clean);
-    }
+    this.panel()?.search(clean);
 
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
       window.scrollTo({ top: 0, behavior: 'smooth' });

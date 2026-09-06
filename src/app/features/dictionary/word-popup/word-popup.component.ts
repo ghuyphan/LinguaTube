@@ -1,11 +1,15 @@
-import { Component, inject, input, output, signal, effect, computed, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Component, inject, input, output, signal, effect, computed, linkedSignal, ChangeDetectionStrategy, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
-import { DictionaryService, VocabularyService, SettingsService, TranslationService, I18nService, SubtitleService } from '../../../services';
+import { DictionaryService } from '../dictionary.service';
+import { VocabularyService } from '../../vocabulary';
+import { SubtitleService } from '../../video';
+import { SettingsService, I18nService } from '../../../core/services';
+import { TranslationService } from '../../../services';
 import { Token, DictionaryEntry } from '../../../models';
 
 @Component({
@@ -32,13 +36,16 @@ export class WordPopupComponent implements OnDestroy {
 
   entry = signal<DictionaryEntry | null>(null);
   isVisible = signal(false);
-  isSaved = signal(false);
+  readonly isSaved = computed(() => {
+    const word = this.selectedWord();
+    return word ? this.vocab.hasWord(word.surface) : false;
+  });
 
   // Error state
   lookupError = signal<string | null>(null);
 
-  // Translation state
-  targetLang = signal(this.getDefaultTargetLang());
+  // Translation state (linkedSignal automatically synchronizes when UI language changes)
+  readonly targetLang = linkedSignal(() => this.getDefaultTargetLang());
   translatedDefinitions = signal<Map<number, { text: string; lang: string }>>(new Map());
   translatingIndices = signal<Set<number>>(new Set());
   translationErrors = signal<Set<number>>(new Set());
@@ -88,20 +95,10 @@ export class WordPopupComponent implements OnDestroy {
   }
 
   constructor() {
-    // Update targetLang when UI language changes
-    effect(() => {
-      const uiLang = this.i18n.currentLanguage();
-      const supported = this.translation.getSupportedTargetLanguages().map(l => l.code);
-      if (supported.includes(uiLang)) {
-        this.targetLang.set(uiLang);
-      }
-    });
-
     effect(() => {
       const word = this.selectedWord();
       if (word) {
         this.isVisible.set(true);
-        this.isSaved.set(this.vocab.hasWord(word.surface));
         // Reset all state when word changes
         this.translatedDefinitions.set(new Map());
         this.translatingIndices.set(new Set());
@@ -149,8 +146,6 @@ export class WordPopupComponent implements OnDestroy {
     } else {
       this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence);
     }
-
-    this.isSaved.set(true);
   }
 
   updateLevel(event: Event): void {

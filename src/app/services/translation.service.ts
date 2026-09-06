@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, catchError, of, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
+import { Observable, Subscription, map, catchError, of, timer, switchMap, retry, throwError, Subject, concatMap, delay } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 
@@ -45,6 +45,7 @@ export class TranslationService implements OnDestroy {
 
     // Request queue for batch translations
     private requestQueue$ = new Subject<BatchRequest>();
+    private queueSubscription: Subscription | null = null;
 
     constructor() {
         this.loadCacheFromStorage();
@@ -52,7 +53,7 @@ export class TranslationService implements OnDestroy {
     }
 
     private initializeRequestQueue() {
-        this.requestQueue$.pipe(
+        this.queueSubscription = this.requestQueue$.pipe(
             // Process requests sequentially with a delay between them
             concatMap(request => {
                 // Check if request was cancelled while waiting in queue
@@ -291,6 +292,8 @@ export class TranslationService implements OnDestroy {
     }
 
     ngOnDestroy(): void {
+        this.queueSubscription?.unsubscribe();
+        this.requestQueue$.complete();
         // Flush pending save on destroy
         if (this.storageSaveTimer) {
             clearTimeout(this.storageSaveTimer);

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, computed, signal, effect, inject, input, output, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { I18nService } from '../../../services';
+import { I18nService } from '../../../core/services';
 
 @Component({
     selector: 'app-diamond-credits-card',

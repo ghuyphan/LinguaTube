@@ -164,6 +164,7 @@
         </div>
 
         } @else {
+            @if (viewingPlaylist(); as playlist) {
 
         <!-- Playlist Detail View -->
         <div class="card playlist-detail-panel">
@@ -174,12 +175,12 @@
                     <span>{{ i18n.t('common.back') || 'Playlists' }}</span>
                 </button>
                 <div class="detail-nav-actions">
-                    @if (viewingPlaylist()!.visibility !== 'private') {
+                    @if (playlist.visibility !== 'private') {
                     <button class="btn btn-icon btn-sm btn-ghost" (click)="onSharePlaylist()" [title]="i18n.t('playlist.copyLink')">
                         <app-icon name="share" [size]="18" />
                     </button>
                     }
-                    <button class="btn btn-icon btn-sm btn-ghost" (click)="openMenu(viewingPlaylist()!, $event)" title="Options">
+                    <button class="btn btn-icon btn-sm btn-ghost" (click)="openMenu(playlist, $event)" title="Options">
                         <app-icon name="more-vertical" [size]="18" />
                     </button>
                 </div>
@@ -188,8 +189,8 @@
             <!-- Hero Section -->
             <div class="detail-hero">
                 <div class="detail-hero__thumb">
-                    @if (viewingPlaylist()!.thumbnail) {
-                    <img [src]="viewingPlaylist()!.thumbnail" [alt]="viewingPlaylist()!.title">
+                    @if (playlist.thumbnail) {
+                    <img [src]="playlist.thumbnail" [alt]="playlist.title">
                     } @else {
                     <div class="thumb-placeholder">
                         <app-icon name="list-video" [size]="48" />
@@ -197,7 +198,7 @@
                     }
                     <div class="video-count-badge">
                         <app-icon name="list-video" [size]="12" />
-                        <span>{{ viewingPlaylist()!.videoIds.length }} {{ viewingPlaylist()!.videoIds.length === 1 ? 'video' : 'videos' }}</span>
+                        <span>{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
                     </div>
                 </div>
 
@@ -205,26 +206,26 @@
                     <div class="detail-badge-row">
                         <span class="badge badge--accent">{{ (view() === 'my') ? i18n.t('playlist.myPlaylist') : i18n.t('playlist.title') }}</span>
                     </div>
-                    <h1 class="detail-title">{{ viewingPlaylist()!.title }}</h1>
-                    @if (viewingPlaylist()!.description) {
-                    <p class="detail-desc">{{ viewingPlaylist()!.description }}</p>
+                    <h1 class="detail-title">{{ playlist.title }}</h1>
+                    @if (playlist.description) {
+                    <p class="detail-desc">{{ playlist.description }}</p>
                     }
                     <div class="detail-meta-row">
-                        @if (viewingPlaylist()!.language) {
-                        <img [src]="getFlagUrl(viewingPlaylist()!.language)" class="lang-flag" alt="">
+                        @if (playlist.language) {
+                        <img [src]="getFlagUrl(playlist.language)" class="lang-flag" alt="">
                         }
-                        <span class="author-label">{{ (view() === 'my') ? i18n.t('playlist.you') : (viewingPlaylist()!.userName || i18n.t('playlist.community')) }}</span>
+                        <span class="author-label">{{ (view() === 'my') ? i18n.t('playlist.you') : (playlist.userName || i18n.t('playlist.community')) }}</span>
                         <span class="meta-dot">•</span>
-                        <span>{{ getVideoCountLabel(viewingPlaylist()!.videoIds.length) }}</span>
+                        <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
                     </div>
 
                     <div class="detail-actions-row">
                         <button class="btn btn-primary detail-btn-play" (click)="playAll()"
-                            [disabled]="viewingPlaylist()!.videoIds.length === 0">
+                            [disabled]="playlist.videoIds.length === 0">
                             <app-icon name="play" [size]="16" />
                             <span>{{ i18n.t('playlist.playAll') }}</span>
                         </button>
-                        @if (viewingPlaylist()!.visibility !== 'private') {
+                        @if (playlist.visibility !== 'private') {
                         <button class="btn btn-secondary detail-btn-share" (click)="onSharePlaylist()">
                             <app-icon name="share" [size]="16" />
                             <span>{{ i18n.t('playlist.copyLink') || 'Share' }}</span>
@@ -239,13 +240,13 @@
                 <div class="tracklist-header">
                     <div class="tracklist-title-group">
                         <h3 class="tracklist-title">{{ i18n.t('playlist.videos') }}</h3>
-                        <span class="tracklist-badge">{{ viewingPlaylist()!.videoIds.length }}</span>
+                        <span class="tracklist-badge">{{ playlist.videoIds.length }}</span>
                     </div>
                 </div>
 
                 @if (detailVideosLoading()) {
                 <div class="track-list">
-                    @for (vid of viewingPlaylist()!.videoIds; track vid; let i = $index) {
+                    @for (vid of playlist.videoIds; track vid; let i = $index) {
                     <div class="track-row track-row--loading">
                         <div class="track-index">
                             <span class="num">{{ i + 1 }}</span>
@@ -291,6 +292,7 @@
             </div>
         </div>
 
+            }
         }
     </div>
 

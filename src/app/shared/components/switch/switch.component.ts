@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, model } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
             [checked]="checked()" 
             (change)="onToggle($event)"
             [disabled]="disabled()"
+            [attr.aria-label]="label()"
         />
         <span class="slider"></span>
     </label>
@@ -69,13 +70,12 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwitchComponent {
-  checked = input<boolean>(false);
-  disabled = input<boolean>(false);
-
-  checkedChange = output<boolean>();
+  readonly checked = model<boolean>(false);
+  readonly disabled = input<boolean>(false);
+  readonly label = input<string>('Toggle switch');
 
   onToggle(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
-    this.checkedChange.emit(inputElement.checked);
+    this.checked.set(inputElement.checked);
   }
 }

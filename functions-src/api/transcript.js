@@ -12,7 +12,7 @@ import { validateAuthToken, hasPremiumAccess } from '../middlewares/auth.js';
 import { validateVideoRequest } from '../middlewares/video-validator.js';
 import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
-    jsonResponse, handleOptions, errorResponse, logError
+    jsonResponse, handleOptions, errorResponse, logError, sanitizeVideoId
 } from '../utils/utils.js';
 import { cleanTranscriptSegments } from '../utils/transcript-utils.js';
 import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitResponse } from '../middlewares/rate-limiter.js';
@@ -37,8 +37,9 @@ const DEBUG = true;
 function log(...args) { if (DEBUG) console.log('[Transcript API]', ...args); }
 function timer() { const start = Date.now(); return () => Date.now() - start; }
 
-// Rate limiting for native captions
-const NATIVE_RATE_LIMIT = { max: { anonymous: 20, free: 30, pro: 60, premium: 60 }, windowSeconds: 3600, keyPrefix: 'transcript' };
+// Rate limiting for transcript requests and polling
+const TRANSCRIPT_RATE_LIMIT = { max: { anonymous: 20, free: 40, pro: 80, premium: 100 }, windowSeconds: 3600, keyPrefix: 'transcript' };
+const POLL_RATE_LIMIT = { max: { anonymous: 60, free: 120, pro: 240, premium: 300 }, windowSeconds: 3600, keyPrefix: 'transcript_poll' };
 const CACHE_CONTROL = {
     R2_HIT: 'public, max-age=86400, stale-while-revalidate=86400',
     NATIVE: 'public, max-age=604800, stale-while-revalidate=86400',
@@ -65,12 +66,25 @@ export async function onRequestPost(context) {
         const body = await request.json();
         const { videoId, lang, preferAI, forceRefresh, resultUrl, turnstileToken, duration } = body;
 
-        // Validation
-        const validationError = await validateVideoRequest(videoId, lang, duration, preferAI ? 'whisper' : 'innertube');
-        if (validationError) {
+        const cleanVideoId = sanitizeVideoId(videoId);
+        if (!cleanVideoId) {
             return jsonResponse({
                 success: false,
                 videoId,
+                requestedLanguage: lang,
+                segments: [],
+                errorCode: 'INVALID_VIDEO_ID',
+                error: 'Invalid YouTube video ID format',
+                timing: elapsed()
+            }, 400);
+        }
+
+        // Validation
+        const validationError = await validateVideoRequest(cleanVideoId, lang, duration, preferAI ? 'whisper' : 'innertube');
+        if (validationError) {
+            return jsonResponse({
+                success: false,
+                videoId: cleanVideoId,
                 requestedLanguage: lang,
                 segments: [],
                 errorCode: validationError.error === 'video_too_long' ? 'VIDEO_TOO_LONG' : 'INVALID_REQUEST',
@@ -87,7 +101,7 @@ export async function onRequestPost(context) {
                 if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
                     return jsonResponse({
                         success: false,
-                        videoId,
+                        videoId: cleanVideoId,
                         errorCode: 'INVALID_RESULT_URL',
                         error: 'Invalid resultUrl: must be a gladia.io URL',
                         timing: elapsed()
@@ -96,7 +110,7 @@ export async function onRequestPost(context) {
             } catch {
                 return jsonResponse({
                     success: false,
-                    videoId,
+                    videoId: cleanVideoId,
                     errorCode: 'INVALID_RESULT_URL',
                     error: 'Invalid resultUrl format',
                     timing: elapsed()
@@ -117,6 +131,11 @@ export async function onRequestPost(context) {
         const cache = env.TRANSCRIPT_CACHE;
         const _cacheManager = new CacheManager(cache);
 
+        // Rate Limiting (enforced on ALL operations including AI polling and creation)
+        const rateLimitConfig = getTieredConfig(resultUrl ? POLL_RATE_LIMIT : TRANSCRIPT_RATE_LIMIT, tier);
+        const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig);
+        if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
+
         // Providers
         const supadataKeys = [env.SUPADATA_API_KEY, env.SUPADATA_API_KEY_2, env.SUPADATA_API_KEY_3];
         const rotator = { getNextApiKey, markKeyRateLimited };
@@ -132,9 +151,9 @@ export async function onRequestPost(context) {
         // Diamond status immediately
         const user = authResult.valid ? authResult.user : null;
         const diamondStatus = await diamondService.getDiamonds(clientId, user);
-        log(`Request: ${videoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}`);
+        log(`Request: ${cleanVideoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}`);
 
-        const knownInfo = await getVideoLanguages(db, videoId);
+        const knownInfo = await getVideoLanguages(db, cleanVideoId);
         const nativeLanguages = knownInfo?.availableLanguages || [];
         const availableLanguages = { native: nativeLanguages, ai: [] };
 
@@ -145,7 +164,7 @@ export async function onRequestPost(context) {
             regenIntervalMs: diamondStatus.regenIntervalMs
         };
 
-        const orchestratorParams = { videoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user };
+        const orchestratorParams = { videoId: cleanVideoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user };
 
         // -------------------------------------------------------------
         // Polling existing AI
@@ -160,50 +179,43 @@ export async function onRequestPost(context) {
         // Step 1: Cache (R2 Hit)
         // -------------------------------------------------------------
         if (!forceRefresh) {
-            const cached = await getTranscriptFromR2(r2, videoId, lang);
+            const cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
             if (cached?.segments?.length > 0) {
                 return jsonResponse({
-                    success: true, videoId, language: lang, requestedLanguage: lang, segments: cached.segments,
+                    success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
                     source: 'cache', sourceDetail: cached.source, availableLanguages, whisperAvailable: diamondInfo.diamonds > 0,
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
             }
         }
 
-        // Rate Limit specific to native checks
-        if (!preferAI) {
-            const rateLimitConfig = getTieredConfig(NATIVE_RATE_LIMIT, tier);
-            const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig);
-            if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
-        }
-
         // -------------------------------------------------------------
         // Step 2: Native
         // -------------------------------------------------------------
         if (!preferAI) {
-            if (!forceRefresh && await isNoTranscript(db, cache, videoId, lang, 'native')) {
+            if (!forceRefresh && await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
                 // Negative cache hit, but maybe AI fallback exists
                 return jsonResponse({
-                    success: false, videoId, requestedLanguage: lang, segments: [], source: 'none',
+                    success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
                     errorCode: 'NO_NATIVE', error: 'No native captions.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'X-Cache': 'NEG' });
             }
 
-            const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, videoId, lang);
+            const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang);
             if (nativeResult) {
-                const updatedInfo = await getVideoLanguages(db, videoId);
+                const updatedInfo = await getVideoLanguages(db, cleanVideoId);
                 availableLanguages.native = updatedInfo?.availableLanguages || [lang];
 
                 return jsonResponse({
-                    success: true, videoId, language: lang, requestedLanguage: lang, segments: nativeResult.segments,
+                    success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: nativeResult.segments,
                     source: 'native', sourceDetail: nativeResult.source, availableLanguages, whisperAvailable: diamondInfo.diamonds > 0,
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'Cache-Control': CACHE_CONTROL.NATIVE });
             }
 
             return jsonResponse({
-                success: false, videoId, requestedLanguage: lang, segments: [], source: 'none',
+                success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
                 availableLanguages, whisperAvailable: diamondStatus.diamonds > 0, ...diamondInfo,
                 errorCode: 'NO_NATIVE', error: 'No native captions found. AI available.', timing: elapsed()
             });
@@ -213,17 +225,17 @@ export async function onRequestPost(context) {
         // Step 3: AI
         // -------------------------------------------------------------
         if (diamondStatus.diamonds <= 0) {
-            return jsonResponse({ success: false, videoId, errorCode: 'NO_DIAMONDS', error: 'No diamonds left.', ...diamondInfo, timing: elapsed() }, 429);
+            return jsonResponse({ success: false, videoId: cleanVideoId, errorCode: 'NO_DIAMONDS', error: 'No diamonds left.', ...diamondInfo, timing: elapsed() }, 429);
         }
 
         // Verify Turnstile CAPTCHA for new AI generation jobs (prevent bot abuse of Gladia credits)
         if (!resultUrl) {
             const clientIP = request.headers.get('cf-connecting-ip') || '';
-            const captchaCheck = await verifyTurnstileToken(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIP);
+            const captchaCheck = await verifyTurnstileToken(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIP, env.ENVIRONMENT);
             if (!captchaCheck.valid) {
                 return jsonResponse({
                     success: false,
-                    videoId,
+                    videoId: cleanVideoId,
                     errorCode: 'CAPTCHA_FAILED',
                     error: 'Human verification required to generate AI subtitles. Please try again.',
                     availableLanguages,
@@ -243,7 +255,7 @@ export async function onRequestPost(context) {
             const errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
             const status = (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS') ? 400 : 500;
             return jsonResponse({
-                success: false, videoId, requestedLanguage: lang, errorCode,
+                success: false, videoId: cleanVideoId, requestedLanguage: lang, errorCode,
                 error: aiErr.message, availableLanguages, ...diamondInfo, timing: elapsed()
             }, status);
         }

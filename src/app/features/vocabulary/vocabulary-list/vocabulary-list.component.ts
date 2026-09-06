@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 
-import { VocabularyService, SettingsService, I18nService, AuthService } from '../../../services';
+import { VocabularyService } from '../vocabulary.service';
+import { SettingsService, I18nService, AuthService } from '../../../core/services';
 
 import { VocabularyItem, WordLevel, Token } from '../../../models';
 

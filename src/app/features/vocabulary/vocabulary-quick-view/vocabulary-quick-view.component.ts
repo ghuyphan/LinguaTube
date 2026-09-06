@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
-import { VocabularyService, SettingsService, I18nService } from '../../../services';
+import { VocabularyService } from '../vocabulary.service';
+import { SettingsService, I18nService } from '../../../core/services';
 
 @Component({
   selector: 'app-vocabulary-quick-view',

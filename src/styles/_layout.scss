@@ -90,12 +90,16 @@ body::-webkit-scrollbar {
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--space-lg);
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: max(var(--space-lg), env(safe-area-inset-left));
+    padding-right: max(var(--space-lg), env(safe-area-inset-right));
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 var(--space-sm);
+        padding-left: max(var(--space-sm), env(safe-area-inset-left));
+        padding-right: max(var(--space-sm), env(safe-area-inset-right));
     }
 }
 

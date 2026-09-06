@@ -122,7 +122,7 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 
 ## 5. Testing & Code Quality Assurance
 
-### 5.1. Backend Security Tests
+### 5.1. Backend Security & Sync Utility Tests
 ```bash
 npm run test:backend
 ```
@@ -130,6 +130,9 @@ Verifies:
 - Script and title language detection algorithms.
 - Supported language whitelist (`ja`, `ko`, `zh`, `en`).
 - SSRF defense preventing malicious host redirections for Gladia polling.
+- Strict 11-character YouTube video ID regex and path traversal sanitization.
+- Turnstile verification mode (production enforcement vs dev token bypass).
+- Offline synchronization utilities (`mergeByTimestamp`, PocketBase filter sanitization, batch processor, change detection hashes).
 
 ### 5.2. Linting
 ```bash

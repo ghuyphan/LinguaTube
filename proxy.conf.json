@@ -5,12 +5,9 @@
     "changeOrigin": true
   },
   "/api/translate": {
-    "target": "https://lingva.ml/api/v1",
-    "secure": true,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/api/translate": ""
-    }
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
   },
   "/api/transcript": {
     "target": "http://localhost:3001",
@@ -38,6 +35,16 @@
     "changeOrigin": true
   },
   "/api/tokenize": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/auth-config": {
+    "target": "http://localhost:3001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/proxy": {
     "target": "http://localhost:3001",
     "secure": false,
     "changeOrigin": true

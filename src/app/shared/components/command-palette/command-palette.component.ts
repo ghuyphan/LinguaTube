@@ -14,7 +14,8 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
-import { I18nService, BodyScrollService } from '../../../services';
+import { I18nService } from '../../../core/services';
+import { BodyScrollService } from '../../../services';
 import { YoutubeService } from '../../../features/video/youtube.service';
 
 @Component({

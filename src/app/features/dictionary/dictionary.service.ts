@@ -2,7 +2,7 @@ import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../../models';
 import { Observable, of, catchError, map } from 'rxjs';
-import { I18nService, UILanguage } from '../../core/services';
+import { I18nService, SettingsService, UILanguage } from '../../core/services';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 
@@ -41,6 +41,7 @@ export class DictionaryService {
   // Services
   private readonly http = inject(HttpClient);
   private readonly i18n = inject(I18nService);
+  private readonly settings = inject(SettingsService);
 
   // Cache settings
   private readonly CACHE_KEY = 'linguatube_dict_cache';
@@ -239,8 +240,12 @@ export class DictionaryService {
     if (/[\u3040-\u309F\u30A0-\u30FF]/.test(text)) {
       return 'ja';
     }
-    // Check for CJK ideographs (Chinese)
+    // Check for CJK ideographs (Chinese / Japanese Kanji)
     if (/[\u4E00-\u9FFF]/.test(text)) {
+      const activeLang = this.settings.settings().language;
+      if (activeLang === 'ja' || activeLang === 'zh') {
+        return activeLang;
+      }
       return 'zh';
     }
     // Default to English for Latin characters

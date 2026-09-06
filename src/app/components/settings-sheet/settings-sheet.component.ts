@@ -7,7 +7,9 @@ import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/c
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
 import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
-import { SettingsService, VocabularyService, AuthService, YoutubeService, SubtitleService, I18nService, UILanguage, TranscriptService } from '../../services';
+import { SettingsService, AuthService, I18nService, UILanguage } from '../../core/services';
+import { YoutubeService, SubtitleService, TranscriptService } from '../../features/video';
+import { VocabularyService } from '../../features/vocabulary';
 import { StreakService } from '../../services/streak.service';
 
 @Component({

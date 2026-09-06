@@ -2,7 +2,7 @@ import { Component, inject, computed, ChangeDetectionStrategy, output } from '@a
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { StreakService } from '../../services/streak.service';
-import { I18nService } from '../../services';
+import { I18nService } from '../../core/services';
 
 @Component({
     selector: 'app-streak-dialog',

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { SettingsService, UILanguage, I18nService } from '../../services';
+import { SettingsService, UILanguage, I18nService } from '../../core/services';
 
 interface DemoWord {
     surface: string;

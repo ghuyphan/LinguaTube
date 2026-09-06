@@ -570,16 +570,32 @@ export class SubtitleService {
     if (!text.trim()) return [];
 
     switch (lang) {
-      case 'zh':
+      case 'zh': {
+        if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
+          const segmenter = new Intl.Segmenter('zh', { granularity: 'word' });
+          return Array.from(segmenter.segment(text)).map(seg => ({
+            surface: seg.segment,
+            isPunctuation: this.isPunctuation(seg.segment)
+          }));
+        }
         return text.split('').map(char => ({
           surface: char,
           isPunctuation: this.isPunctuation(char)
         }));
-      case 'ko':
+      }
+      case 'ko': {
+        if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
+          const segmenter = new Intl.Segmenter('ko', { granularity: 'word' });
+          return Array.from(segmenter.segment(text)).map(seg => ({
+            surface: seg.segment,
+            isPunctuation: this.isPunctuation(seg.segment)
+          }));
+        }
         return text.split(/\s+/).filter(Boolean).map(word => ({
           surface: word,
           isPunctuation: this.isPunctuation(word)
         }));
+      }
       case 'en':
         // Match words (letters, numbers, apostrophes, hyphens) OR non-word sequences
         // allowing us to preserve punctuation/spaces
@@ -749,16 +765,26 @@ export class SubtitleService {
       const stored = this.getStoredTokens();
       const prefix = `${lang}:`;
 
-      // Collect tokens for this video that match the language
+      // Collect tokens for this video's cues specifically (prevent session cache bleed)
       const videoTokens: Record<string, Token[]> = {};
       let count = 0;
 
-      this.tokenCache.forEach((tokens, key) => {
-        if (key.startsWith(prefix)) {
-          videoTokens[key] = tokens;
-          count++;
+      const cues = this.subtitles();
+      for (const cue of cues) {
+        const key = `${prefix}${cue.text}`;
+        if (cue.tokens && cue.tokens.length > 0) {
+          if (!videoTokens[key]) {
+            videoTokens[key] = cue.tokens;
+            count++;
+          }
+        } else {
+          const cached = this.tokenCache.get(key);
+          if (cached && !videoTokens[key]) {
+            videoTokens[key] = cached;
+            count++;
+          }
         }
-      });
+      }
 
       if (count === 0) return;
 

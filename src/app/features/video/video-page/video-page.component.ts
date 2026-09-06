@@ -10,8 +10,11 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { YoutubeService, SubtitleService, SettingsService, TranscriptService, I18nService, VocabularyService } from '../../../services';
-import { SeoService } from '../../../core/services';
+import { YoutubeService } from '../youtube.service';
+import { SubtitleService } from '../subtitle.service';
+import { TranscriptService } from '../transcript.service';
+import { VocabularyService } from '../../vocabulary';
+import { SettingsService, I18nService, SeoService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';

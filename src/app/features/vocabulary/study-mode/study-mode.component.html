@@ -204,8 +204,8 @@
         </div>
 
         <!-- Flashcard with swipe support -->
-        @if (currentCard()) {
-        <div class="flashcard" [class.flipped]="currentCard()!.showAnswer" [class.swiping]="isSwiping()"
+        @if (cardViewModel(); as vm) {
+        <div class="flashcard" [class.flipped]="vm.showAnswer" [class.swiping]="isSwiping()"
             [style.--swipe-offset.px]="swipeOffset()" (click)="flipCard()" (touchstart)="onTouchStart($event)"
             (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd()">
 
@@ -221,42 +221,42 @@
                 <!-- Front (Word or Meaning based on reverseMode) -->
                 <div class="flashcard__front">
                     <div class="flashcard-top-bar">
-                        <span class="badge badge--{{ currentCard()!.item.level }}">
-                            {{ currentCard()!.item.level }}
+                        <span class="badge badge--{{ vm.item.level }}">
+                            {{ vm.item.level }}
                         </span>
                         <button type="button" 
                                 class="card-speaker-btn" 
                                 [title]="i18n.t('study.listen')"
-                                (click)="playAudio(getCardPrimaryText(currentCard()!.item), currentCard()!.item.language, $event)">
+                                (click)="playAudio(vm.primaryText, vm.item.language, $event)">
                             <app-icon name="volume-2" [size]="16" />
                         </button>
                     </div>
 
-                    @if (hasSentenceContext(currentCard()!.item)) {
+                    @if (vm.hasContext) {
                     <div class="card-context card-context--front">
                         <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
-                        <p class="card-context__sentence" [class]="'text-' + currentCard()!.item.language">
-                            {{ currentCard()!.item.sourceSentence }}
+                        <p class="card-context__sentence" [class]="'text-' + vm.item.language">
+                            {{ vm.item.sourceSentence }}
                         </p>
                         <div class="card-context__focus">
                             <span>{{ i18n.t('study.focusWord') }}</span>
-                            <strong>{{ currentCard()!.item.word }}</strong>
+                            <strong>{{ vm.item.word }}</strong>
                         </div>
                     </div>
                     }
 
                     @if (!reverseMode()) {
                     <div class="card-word-cluster">
-                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                            {{ getCardPrimaryText(currentCard()!.item) }}
+                        <span class="card-word" [class]="'text-' + vm.item.language">
+                            {{ vm.primaryText }}
                         </span>
-                        @if (showCardReading(currentCard()!.item)) {
-                        <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
+                        @if (vm.showReading) {
+                        <span class="card-reading">{{ vm.reading }}</span>
                         }
                     </div>
                     } @else {
                     <div class="card-meaning-front">
-                        {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
+                        {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
                     }
 
@@ -266,47 +266,47 @@
                 <!-- Back (Meaning or Word based on reverseMode) -->
                 <div class="flashcard__back">
                     <div class="flashcard-top-bar">
-                        <span class="badge badge--{{ currentCard()!.item.level }}">
-                            {{ currentCard()!.item.level }}
+                        <span class="badge badge--{{ vm.item.level }}">
+                            {{ vm.item.level }}
                         </span>
                         <button type="button" 
                                 class="card-speaker-btn" 
                                 [title]="i18n.t('study.listen')"
-                                (click)="playAudio(getCardPrimaryText(currentCard()!.item), currentCard()!.item.language, $event)">
+                                (click)="playAudio(vm.primaryText, vm.item.language, $event)">
                             <app-icon name="volume-2" [size]="16" />
                         </button>
                     </div>
 
                     @if (!reverseMode()) {
                     <div class="card-word-cluster">
-                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                            {{ getCardPrimaryText(currentCard()!.item) }}
+                        <span class="card-word" [class]="'text-' + vm.item.language">
+                            {{ vm.primaryText }}
                         </span>
-                        @if (showCardReading(currentCard()!.item)) {
-                        <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
+                        @if (vm.showReading) {
+                        <span class="card-reading">{{ vm.reading }}</span>
                         }
                     </div>
                     <div class="card-meaning">
-                        {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
+                        {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
                     } @else {
                     <div class="card-word-cluster">
-                        <span class="card-word" [class]="'text-' + currentCard()!.item.language">
-                            {{ getCardPrimaryText(currentCard()!.item) }}
+                        <span class="card-word" [class]="'text-' + vm.item.language">
+                            {{ vm.primaryText }}
                         </span>
-                        @if (showCardReading(currentCard()!.item)) {
-                        <span class="card-reading">{{ getCardReading(currentCard()!.item) }}</span>
+                        @if (vm.showReading) {
+                        <span class="card-reading">{{ vm.reading }}</span>
                         }
                     </div>
                     <div class="card-meaning">
-                        {{ currentCard()!.item.meaning || i18n.t('vocab.noDefinition') }}
+                        {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
                     </div>
                     }
 
-                    @if (hasSentenceContext(currentCard()!.item)) {
+                    @if (vm.hasContext) {
                     <div class="card-sentence">
                         <span class="sentence-label">{{ i18n.t('study.contextSentence') }}</span>
-                        {{ currentCard()!.item.sourceSentence }}
+                        {{ vm.item.sourceSentence }}
                     </div>
                     }
                 </div>
@@ -314,7 +314,7 @@
         </div>
 
         <!-- Answer Buttons -->
-        @if (currentCard()!.showAnswer) {
+        @if (vm.showAnswer) {
         <div class="answer-buttons">
             <button class="answer-btn answer-btn--wrong" (click)="markAnswer('wrong')">
                 <app-icon name="x" [size]="18" />

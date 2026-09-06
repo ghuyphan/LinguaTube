@@ -163,9 +163,10 @@ export class DiamondService {
         const nextRegenAt = lastRegenTime + DIAMOND_CONFIG.regenIntervalMs;
 
         // 2. Persist the new state
+        const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
         if (user) {
             // Authenticated user -> Update PocketBase via background task
-            if (env.PB_URL && env.PB_ADMIN_EMAIL && env.PB_ADMIN_PASSWORD) {
+            if (pbUrl && env.PB_ADMIN_EMAIL && env.PB_ADMIN_PASSWORD) {
                 const updateTask = this._updatePocketBaseUser(
                     env,
                     user.id,
@@ -202,6 +203,48 @@ export class DiamondService {
         };
     }
 
+    /**
+     * Refund consumed diamond(s) on transaction failure
+     */
+    async refundDiamond(clientId, context, env, user = null, amount = 1) {
+        try {
+            const currentData = await this.getDiamonds(clientId, user);
+            const newDiamondCount = Math.min(DIAMOND_CONFIG.maxDiamonds, currentData.diamonds + amount);
+            const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
+            if (user) {
+                if (pbUrl && env.PB_ADMIN_EMAIL && env.PB_ADMIN_PASSWORD) {
+                    const updateTask = this._updatePocketBaseUser(
+                        env,
+                        user.id,
+                        newDiamondCount,
+                        currentData.lastRegenDate ? currentData.lastRegenDate.toISOString() : new Date().toISOString()
+                    );
+                    if (context && context.waitUntil) {
+                        context.waitUntil(updateTask);
+                    } else {
+                        await updateTask;
+                    }
+                }
+            } else {
+                if (this.cacheManager && this.cacheManager.kv) {
+                    const cacheKey = `${DIAMOND_CONFIG.cachePrefix}:${clientId}`;
+                    const raw = await this._getRawAnonymousLastRegen(clientId);
+                    const newCacheData = { d: newDiamondCount, l: raw || Date.now() };
+                    const kvTask = this.cacheManager.kv.put(cacheKey, JSON.stringify(newCacheData), { expirationTtl: 30 * 24 * 60 * 60 });
+                    if (context && context.waitUntil) {
+                        context.waitUntil(kvTask.catch(e => console.error(`[DiamondCache] refund error: ${e.message}`)));
+                    } else {
+                        await kvTask.catch(e => console.error(`[DiamondCache] refund error: ${e.message}`));
+                    }
+                }
+            }
+            return { success: true, diamonds: newDiamondCount };
+        } catch (err) {
+            console.error('[DiamondService] Error refunding diamonds:', err);
+            return { success: false, error: err.message };
+        }
+    }
+
     async _getRawAnonymousLastRegen(clientId) {
         if (!this.cacheManager || !this.cacheManager.kv) return null;
         const cacheKey = `${DIAMOND_CONFIG.cachePrefix}:${clientId}`;
@@ -213,9 +256,10 @@ export class DiamondService {
     }
 
     async _updatePocketBaseUser(env, userId, diamonds, lastRegenIsoString) {
+        const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
         try {
             // Simple generic approach, abstract this better if more PB operations are needed natively
-            const authRes = await fetch(`${env.PB_URL}/api/admins/auth-with-password`, {
+            const authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ identity: env.PB_ADMIN_EMAIL, password: env.PB_ADMIN_PASSWORD })
@@ -225,7 +269,7 @@ export class DiamondService {
             const authData = await authRes.json();
             const token = authData.token;
 
-            const updateRes = await fetch(`${env.PB_URL}/api/collections/users/records/${userId}`, {
+            const updateRes = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

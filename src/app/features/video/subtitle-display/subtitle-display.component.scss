@@ -47,7 +47,8 @@
     background: var(--bg-surface);
     position: relative;
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: height 0.3s cubic-bezier(0.2, 0, 0, 1);
+    will-change: height;
 
     // Expand height when showing dual subtitles
     &.has-dual-subtitles {

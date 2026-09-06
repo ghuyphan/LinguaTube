@@ -228,6 +228,9 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         const itemToRemove = current.find(i => i.id === id);
         if (!itemToRemove) return;
 
+        // Record deletion tombstone to prevent zombie resurrection on sync
+        this.addDeletionTombstone(itemToRemove.video_id);
+
         const newHistory = current.filter(i => i.id !== id);
         this.history.set(newHistory);
         this.saveToStorage(newHistory);
@@ -236,10 +239,6 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         if (this.auth.isLoggedIn()) {
             try {
                 const client = await this.pb.getClient();
-                // If we have the specific ID and it matches PB format, try delete directly
-                // Otherwise find by video_id
-
-                // Simplest strategy: try finding by video_id first as our local ID might be uuid
                 const existing = await client.collection('history').getList(1, 1, {
                     filter: `user="${this.auth.getUserId()}" && video_id="${itemToRemove.video_id}"`,
                     requestKey: null
@@ -247,22 +246,36 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
                 if (existing.items.length > 0) {
                     await client.collection('history').delete(existing.items[0].id, { requestKey: null });
+                    this.removeDeletionTombstone(itemToRemove.video_id);
                 }
             } catch (error) {
-                console.error('[HistoryRepo] Failed to delete on server:', error);
+                console.warn('[HistoryRepo] Failed to delete on server (offline):', error);
             }
         }
     }
 
     async clearHistory(): Promise<void> {
+        const current = this.history();
+        for (const item of current) {
+            this.addDeletionTombstone(item.video_id);
+        }
         this.history.set([]);
         this.saveToStorage([]);
 
         if (this.auth.isLoggedIn()) {
-            // Note: PocketBase doesn't have bulk delete easily exposed in JS SDK without loop
-            // For now we might just want to support local clear or implement bulk delete later
-            // TODO: Implement server-side clear
-            console.warn('[HistoryRepo] Clear history on server not fully implemented');
+            try {
+                const client = await this.pb.getClient();
+                const all = await client.collection('history').getFullList({
+                    filter: `user="${this.auth.getUserId()}"`,
+                    requestKey: null
+                });
+                for (const rec of all) {
+                    await client.collection('history').delete(rec.id, { requestKey: null });
+                }
+                this.storage.remove('linguatube_deleted_history_video_ids');
+            } catch (error) {
+                console.warn('[HistoryRepo] Clear history on server failed:', error);
+            }
         }
     }
 
@@ -271,6 +284,23 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     }
 
     // ================= Private Helpers =================
+
+    private getDeletionTombstones(): string[] {
+        return this.storage.get<string[]>('linguatube_deleted_history_video_ids') || [];
+    }
+
+    private addDeletionTombstone(videoId: string): void {
+        const tombstones = this.getDeletionTombstones();
+        if (!tombstones.includes(videoId)) {
+            tombstones.push(videoId);
+            this.storage.set('linguatube_deleted_history_video_ids', tombstones);
+        }
+    }
+
+    private removeDeletionTombstone(videoId: string): void {
+        const tombstones = this.getDeletionTombstones().filter(v => v !== videoId);
+        this.storage.set('linguatube_deleted_history_video_ids', tombstones);
+    }
 
     private async syncWithRemote(): Promise<void> {
         if (!this.auth.isLoggedIn()) return;
@@ -282,6 +312,23 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             if (!userId) {
                 console.warn('[HistoryRepo] Cannot sync history without authenticated user ID');
                 return;
+            }
+
+            // 0. Process pending deletion tombstones
+            const tombstones = this.getDeletionTombstones();
+            for (const videoId of tombstones) {
+                try {
+                    const existing = await client.collection('history').getList(1, 1, {
+                        filter: `user="${userId}" && video_id="${videoId}"`,
+                        requestKey: null
+                    });
+                    if (existing.items.length > 0) {
+                        await client.collection('history').delete(existing.items[0].id, { requestKey: null });
+                    }
+                    this.removeDeletionTombstone(videoId);
+                } catch {
+                    // Retry next sync
+                }
             }
 
             // 1. Push unsynced local items
@@ -306,7 +353,10 @@ export class OfflineHistoryRepository implements IHistoryRepository {
                 requestKey: null
             });
 
-            const remoteItems = result.items.map(r => this.recordToHistoryItem(r as unknown as HistoryRecord));
+            const activeTombstones = new Set(this.getDeletionTombstones());
+            const remoteItems = result.items
+                .map(r => this.recordToHistoryItem(r as unknown as HistoryRecord))
+                .filter(r => !activeTombstones.has(r.video_id));
 
             // 3. Merge Strategy: Map by video_id, local with newer/equal watched_at wins
             const itemMap = new Map<string, HistoryItem>();

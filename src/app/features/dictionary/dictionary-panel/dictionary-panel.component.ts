@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { DictionaryService, VocabularyService, SettingsService, I18nService, GrammarService } from '../../../services';
+import { DictionaryService } from '../dictionary.service';
+import { VocabularyService } from '../../vocabulary';
+import { SettingsService, I18nService } from '../../../core/services';
+import { GrammarService } from '../../../services';
 import { DictionaryEntry, WordLevel } from '../../../models';
 import { GrammarPattern, SupportedGrammarLang } from '../../../models/grammar.model';
 

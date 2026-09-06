@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { I18nService } from '../../services';
+import { I18nService } from '../../core/services';
 import { DiamondCreditsCardComponent } from '../../shared/components/diamond-credits-card/diamond-credits-card.component';
 import { TranscriptService } from '../../features/video/transcript.service';
 

@@ -31,9 +31,14 @@ export class StorageService {
         } catch (error) {
             if (this.isQuotaExceededError(error)) {
                 console.warn(`[Storage] Quota exceeded while writing to "${key}"`);
-                // We could implement cleanup logic here if needed,
-                // or emit an event for the application to handle.
                 this.handleQuotaExceeded();
+                // Retry once after eviction
+                try {
+                    localStorage.setItem(key, JSON.stringify(value));
+                    return true;
+                } catch (retryError) {
+                    console.error(`[Storage] Write failed after quota eviction for "${key}":`, retryError);
+                }
             } else {
                 console.error(`[Storage] Error writing key "${key}":`, error);
             }
@@ -67,16 +72,37 @@ export class StorageService {
      * Check if exists
      */
     has(key: string): boolean {
-        return localStorage.getItem(key) !== null;
+        try {
+            return localStorage.getItem(key) !== null;
+        } catch {
+            return false;
+        }
     }
 
     /**
-     * Handle Quota Exceeded
-     * (Placeholder for future implementation - e.g. clear generic caches)
+     * Handle Quota Exceeded by purging non-critical transient caches
      */
     private handleQuotaExceeded(): void {
-        // In future: Inject specific services to request cleanup? 
-        // Or simply clear non-critical keys?
+        try {
+            const nonCriticalKeys = [
+                'linguatube_dict_cache',
+                'linguatube_tokens',
+                'lingvatranslate_cache',
+                'linguatube_translations'
+            ];
+            for (const k of nonCriticalKeys) {
+                localStorage.removeItem(k);
+            }
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const k = localStorage.key(i);
+                if (k && (k.startsWith('linguatube-recent-searches') || k.includes('_cache'))) {
+                    localStorage.removeItem(k);
+                }
+            }
+            console.warn('[Storage] Non-critical caches evicted to free localStorage space');
+        } catch (err) {
+            console.error('[Storage] Failed to evict caches on quota exceeded:', err);
+        }
     }
 
     private isQuotaExceededError(e: unknown): boolean {

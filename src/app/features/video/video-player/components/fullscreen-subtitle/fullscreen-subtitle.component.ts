@@ -10,7 +10,8 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GrammarMatch, SubtitleCue, SupportedLearningLanguage, Token } from '../../../../../models';
-import { SettingsService, VocabularyService } from '../../../../../services';
+import { SettingsService } from '../../../../../core/services';
+import { VocabularyService } from '../../../../vocabulary';
 
 /**
  * FullscreenSubtitleComponent

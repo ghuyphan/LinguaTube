@@ -6,7 +6,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
-import { I18nService } from '../../../services';
+import { I18nService } from '../../../core/services';
 import { Playlist, PlaylistLanguage, PlaylistVideo, SUPPORTED_LANGUAGES } from '../../../models';
 
 @Component({

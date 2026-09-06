@@ -46,8 +46,18 @@ function decodeJwtPayload(token) {
  * - Token lifetime extension is capped by PocketBase server settings
  * - Inactive users' tokens still expire naturally
  */
+// In-memory token cache to avoid making outbound HTTP requests on every single subrequest
+const memTokenCache = new Map();
+const TOKEN_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
 async function verifyPocketBaseToken(token, env) {
-    const pocketbaseUrl = env.POCKETHOST_URL || 'https://voca.pockethost.io';
+    const pocketbaseUrl = env.POCKETHOST_URL || env.PB_URL || 'https://voca.pockethost.io';
+    const now = Date.now();
+
+    const cached = memTokenCache.get(token);
+    if (cached && now < cached.expiresAt) {
+        return cached.result;
+    }
 
     try {
         const response = await fetch(`${pocketbaseUrl}/api/collections/users/auth-refresh`, {
@@ -71,7 +81,7 @@ async function verifyPocketBaseToken(token, env) {
             return { valid: false, error: 'Invalid authentication response' };
         }
 
-        return {
+        const result = {
             valid: true,
             userId: data.record.id,
             user: {
@@ -85,6 +95,15 @@ async function verifyPocketBaseToken(token, env) {
                 diamondsUpdatedAt: data.record?.diamonds_updated_at
             }
         };
+
+        // Cache in memory (cap at 200 items to bound isolate memory)
+        if (memTokenCache.size > 200) {
+            const oldestKey = memTokenCache.keys().next().value;
+            memTokenCache.delete(oldestKey);
+        }
+        memTokenCache.set(token, { result, expiresAt: now + TOKEN_CACHE_TTL_MS });
+
+        return result;
     } catch (error) {
         // FAIL CLOSED - do not trust unverified tokens
         console.error('[Auth] PocketBase verification failed:', error.message);

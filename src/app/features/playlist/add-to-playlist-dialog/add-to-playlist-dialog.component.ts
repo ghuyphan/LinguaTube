@@ -5,7 +5,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { PlaylistService } from '../playlist.service';
 import { Playlist } from '../../../models';
-import { I18nService } from '../../../services';
+import { I18nService } from '../../../core/services';
 
 @Component({
     selector: 'app-add-to-playlist-dialog',

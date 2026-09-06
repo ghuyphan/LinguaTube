@@ -2,7 +2,8 @@ import { Component, inject, signal, computed, ChangeDetectionStrategy, HostListe
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
-import { VocabularyService, SettingsService, I18nService } from '../../../services';
+import { VocabularyService } from '../vocabulary.service';
+import { SettingsService, I18nService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem } from '../../../models';
 import { formatTime } from '../../../core/utils';
@@ -114,6 +115,26 @@ export class StudyModeComponent implements OnDestroy {
         const cards = this.studyCards();
         const index = this.currentIndex();
         return cards[index] || null;
+    });
+
+    readonly cardViewModel = computed(() => {
+        const card = this.currentCard();
+        if (!card) return null;
+        const item = card.item;
+        const reading = this.getCardReading(item);
+        const primaryText = this.settings.useReadingOnly(item.language) && reading ? reading : item.word;
+        const showReading = !!reading && reading !== item.word && this.settings.showReadingAnnotation(item.language);
+        const hasContext = !!item.sourceSentence?.trim();
+
+        return {
+            card,
+            item,
+            showAnswer: card.showAnswer,
+            reading,
+            primaryText,
+            showReading,
+            hasContext
+        };
     });
 
     currentLanguageLabel = computed(() => {

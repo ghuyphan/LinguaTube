@@ -11,6 +11,9 @@
 const COOLDOWN_TTL = 300; // 5 minutes cooldown for failed keys
 const COUNTER_TTL = 3600; // 1 hour for rotation counter
 
+// In-memory counter per worker isolate to avoid consuming Cloudflare KV write quotas
+const memKeyIndices = new Map();
+
 /**
  * Get the next available API key using round-robin rotation
  * Skips keys that are currently in cooldown (rate-limited)
@@ -42,22 +45,12 @@ export async function getNextApiKey(cache, prefix, keys) {
         return validKeys[0];
     }
 
-    // Round-robin among available keys
-    const counterKey = `${prefix}:keyIndex`;
-    let index = 0;
+    // In-memory round-robin (Zero KV writes, preserves Rule 2 free quota)
+    const currentIndex = memKeyIndices.get(prefix) || 0;
+    const selectedKey = availableKeys[currentIndex % availableKeys.length];
+    memKeyIndices.set(prefix, (currentIndex + 1) % availableKeys.length);
 
-    try {
-        const stored = await cache?.get(counterKey);
-        index = stored ? parseInt(stored, 10) : 0;
-
-        // Increment for next call
-        const nextIndex = (index + 1) % availableKeys.length;
-        await cache?.put(counterKey, String(nextIndex), { expirationTtl: COUNTER_TTL });
-    } catch (e) {
-        console.log(`[${prefix}] Counter error:`, e.message);
-    }
-
-    return availableKeys[index % availableKeys.length];
+    return selectedKey;
 }
 
 /**

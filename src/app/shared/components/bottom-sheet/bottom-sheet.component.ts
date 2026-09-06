@@ -96,9 +96,16 @@ export class BottomSheetComponent implements OnDestroy {
     return window.innerWidth <= 768 || window.innerHeight <= 500;
   }
 
+  private previouslyFocusedElement: HTMLElement | null = null;
+  private keydownListener: ((e: KeyboardEvent) => void) | null = null;
+
   constructor() {
     effect(() => {
       if (this.isOpen()) {
+        if (isPlatformBrowser(this.platformId) && document.activeElement instanceof HTMLElement) {
+          this.previouslyFocusedElement = document.activeElement;
+        }
+
         this.teleport();
 
         // Register with service - it handles scroll locking and history
@@ -112,12 +119,14 @@ export class BottomSheetComponent implements OnDestroy {
         this.isDragClosing.set(false);
         // Reset hasAnimated when sheet opens (animation will play)
         this.hasAnimated.set(false);
+        this.setupFocusTrap();
       } else {
         // If closed externally (not by service), ensure unregister is called
         if (this.unregisterFn) {
           this.unregisterFn();
           this.unregisterFn = null;
         }
+        this.restoreFocus();
         this.restore();
       }
     });
@@ -341,11 +350,73 @@ export class BottomSheetComponent implements OnDestroy {
       this.isClosing.set(false);
       this.isDragClosing.set(false);
       this.dragOffset.set(0);
+      this.restoreFocus();
       this.closed.emit();
     }, this.ANIMATION_DURATION);
   }
 
+  private setupFocusTrap(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.removeFocusTrap();
+
+    this.keydownListener = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      const host = this.sheetEl()?.nativeElement;
+      if (!host) return;
+
+      const focusable = host.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', this.keydownListener);
+
+    // Initial focus into sheet
+    setTimeout(() => {
+      const host = this.sheetEl()?.nativeElement;
+      if (!host) return;
+      const first = host.querySelector<HTMLElement>(
+        'button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      first?.focus();
+    }, 50);
+  }
+
+  private removeFocusTrap(): void {
+    if (this.keydownListener) {
+      window.removeEventListener('keydown', this.keydownListener);
+      this.keydownListener = null;
+    }
+  }
+
+  private restoreFocus(): void {
+    this.removeFocusTrap();
+    if (this.previouslyFocusedElement && typeof this.previouslyFocusedElement.focus === 'function') {
+      try {
+        this.previouslyFocusedElement.focus();
+      } catch { }
+      this.previouslyFocusedElement = null;
+    }
+  }
+
   ngOnDestroy(): void {
+    this.restoreFocus();
     // Clean up - unregister if still open
     if (this.unregisterFn) {
       this.unregisterFn();

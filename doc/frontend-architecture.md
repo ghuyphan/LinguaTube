@@ -33,7 +33,12 @@ Voca uses Angular Signals as the single source of truth for all synchronous and 
 - **Granular DOM Updates**: Angular's runtime updates only the specific DOM nodes bound to changed signals.
 - **OnPush Compatibility**: Works seamlessly with `ChangeDetectionStrategy.OnPush` without requiring manual `ChangeDetectorRef.markForCheck()`.
 
-### 2.2. Core State Signals Examples
+### 2.2. Modern Angular 19 Primitives
+- **`linkedSignal()`**: Used for form controls and dialog states (e.g. `CreatePlaylistDialogComponent`, `WordPopupComponent.targetLang`) that require an initial derivation from input signals while allowing independent user edits, eliminating manual lifecycle synchronization effects.
+- **`model()`**: Implements two-way signal binding on standalone form primitives (e.g. `SwitchComponent.checked = model<boolean>(false);`).
+- **`viewChild()` & `viewChild.required()`**: Query signals replacing `@ViewChild` decorator queries (e.g. `ProgressBarComponent`, `DictionaryPanelComponent`), enabling fully type-safe, reactive template references.
+
+### 2.3. Core State Signals Examples
 ```typescript
 // SubtitleService
 readonly subtitles = signal<SubtitleCue[]>([]);
@@ -53,7 +58,27 @@ readonly readingDisplayMode = computed(() =>
 // VideoPlayerComponent
 readonly playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub'>('main');
 readonly isFullscreen = signal<boolean>(false);
+readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 ```
+
+---
+
+## 3. Accessibility, Focus Management & Mobile Stability
+
+### 3.1. Modal Focus Traps (`BottomSheetComponent`)
+- **Focus Cycling**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet modal container.
+- **Focus Restoration**: Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element upon dismissal, ensuring full WCAG 2.1 compliance for screen readers and keyboard users.
+
+### 3.2. WAI-ARIA Slider Navigation (`ProgressBarComponent`)
+- **Semantic Role**: Configured with `role="slider"`, `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="duration()"`, and formatted `[attr.aria-valuetext]`.
+- **Keyboard Navigation**:
+  - `ArrowLeft` / `ArrowRight`: Steps playback backward or forward by 5 seconds.
+  - `Home` / `End`: Seeks instantly to video start (`0s`) or end (`duration`).
+
+### 3.3. Viewport Stability & Mobile Polish
+- **iOS Safari Auto-Zoom Fix**: All mobile inputs (notably `.spotlight-input` in `VideoPlayerComponent`) enforce `font-size: 1rem` (16px), eliminating WebKit's automatic zoom on focus.
+- **Notch & Safe Area Protection**: Container gutters use `max(var(--space-md), env(safe-area-inset-left))` to prevent UI clipping by device camera cutouts in landscape.
+- **Dynamic HTML Language Attribute**: `I18nService` runs a reactive signal effect syncing `document.documentElement.lang = lang`, ensuring screen readers and phonetic engines correctly parse active language phonemes.
 
 ---
 

@@ -5,7 +5,7 @@ import {
     computed,
     output,
     ElementRef,
-    ViewChild,
+    viewChild,
     ChangeDetectionStrategy,
     OnDestroy,
     NgZone
@@ -47,6 +47,7 @@ export interface SeekPreview {
          [attr.aria-valuetext]="formatTime(displayTime()) + ' of ' + formatTime(youtube.duration())"
          aria-label="Video progress"
          tabindex="0"
+         (keydown)="onKeyDown($event)"
          [class.seeking]="isDragging()"
          [style.--progress]="progressPercentage()"
          [style.--buffered]="bufferedPercentage()"
@@ -84,7 +85,7 @@ export class ProgressBarComponent implements OnDestroy {
     private ngZone = inject(NgZone);
     youtube = inject(YoutubeService);
 
-    @ViewChild('progressBar') progressBar!: ElementRef<HTMLDivElement>;
+    readonly progressBar = viewChild.required<ElementRef<HTMLDivElement>>('progressBar');
 
     // ========================================
     // STATE
@@ -144,12 +145,54 @@ export class ProgressBarComponent implements OnDestroy {
     // ========================================
 
     /**
+     * Handle keyboard navigation on the slider (Arrow keys, Home, End)
+     */
+    onKeyDown(event: KeyboardEvent): void {
+        const duration = this.youtube.duration();
+        if (!duration) return;
+
+        const current = this.youtube.currentTime();
+        const step = 5;
+
+        switch (event.key) {
+            case 'ArrowLeft':
+            case 'ArrowDown': {
+                event.preventDefault();
+                const newTime = Math.max(0, current - step);
+                this.youtube.seekTo(newTime);
+                this.seekEnded.emit(newTime);
+                break;
+            }
+            case 'ArrowRight':
+            case 'ArrowUp': {
+                event.preventDefault();
+                const newTime = Math.min(duration, current + step);
+                this.youtube.seekTo(newTime);
+                this.seekEnded.emit(newTime);
+                break;
+            }
+            case 'Home': {
+                event.preventDefault();
+                this.youtube.seekTo(0);
+                this.seekEnded.emit(0);
+                break;
+            }
+            case 'End': {
+                event.preventDefault();
+                this.youtube.seekTo(duration);
+                this.seekEnded.emit(duration);
+                break;
+            }
+        }
+    }
+
+    /**
      * Update seek preview on hover (before drag starts)
      */
     updateSeekPreview(event: MouseEvent): void {
         if (this.isDragging()) return;
 
-        const progressBar = this.progressBar?.nativeElement;
+        const progressBar = this.progressBar().nativeElement;
         if (!progressBar || !this.youtube.duration()) return;
 
         const rect = progressBar.getBoundingClientRect();
@@ -227,7 +270,7 @@ export class ProgressBarComponent implements OnDestroy {
     // ========================================
 
     private calculateSeekTime(event: MouseEvent | TouchEvent): void {
-        const progressBar = this.progressBar?.nativeElement;
+        const progressBar = this.progressBar().nativeElement;
         if (!progressBar) return;
 
         const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
@@ -248,7 +291,7 @@ export class ProgressBarComponent implements OnDestroy {
         event.preventDefault();
 
         this.ngZone.run(() => {
-            const progressBar = this.progressBar?.nativeElement;
+            const progressBar = this.progressBar().nativeElement;
             if (!progressBar) return;
 
             const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;

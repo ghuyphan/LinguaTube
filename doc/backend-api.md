@@ -26,8 +26,8 @@ Voca uses a dual backend model to maximize both developer productivity and produ
 
 ### Local Dev Server Highlights (`server/server.js`)
 - **Innertube Client**: Uses `youtubei.js` to fetch real YouTube timed-text tracks directly in local development without needing Cloudflare bindings.
-- **Local Disk Cache**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` to minimize duplicate network traffic.
-- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize-batch/:lang`, `/api/translate`, `/api/diamonds`, and `/api/mdbg`.
+- **Local Disk Cache with Traversal Defense**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` sanitized against path traversal attacks.
+- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/dual-subtitles`, `/api/tokenize-batch/:lang`, `/api/translate`, `/api/translate/batch` (GTX fallback), `/api/auth-config`, `/api/diamonds`, and `/proxy`.
 
 ---
 
@@ -60,9 +60,12 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 ### 2.3. PocketBase JWT Authentication (`auth.js`)
 - Validates `Authorization: Bearer <token>` header.
 - Decodes JWT payload locally to verify signature and expiration (`exp`).
-- Calls PocketHost API (`/api/collections/users/auth-refresh`) to verify validity and obtain user profile (`id`, `subscriptionTier`, `diamonds`).
+- **Warm-Isolate Token Cache**: Maintains an in-memory `memTokenCache` with a 5-minute TTL per edge worker isolate to eliminate redundant upstream PocketBase auth-refresh HTTP calls.
+- Calls PocketHost API (`/api/collections/users/auth-refresh`) on cache miss to verify validity and obtain user profile (`id`, `subscriptionTier`, `diamonds`).
 
-### 2.4. Video Validator (`video-validator.js`)
+### 2.4. Video Validator & Path Sanitization (`video-validator.js` & `utils.js`)
+- **Strict Video ID Validation**: Rejects any `videoId` that fails `/^[a-zA-Z0-9_-]{11}$/`.
+- **Path Traversal Defense**: `sanitizeVideoId` strips invalid characters and rejects strings with directory traversal patterns (`..`, `/`, `\`).
 - Rejects requests for videos exceeding maximum durations:
   - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
   - AI transcription (`gladia`): Max 20 minutes (1,200s).
@@ -93,12 +96,15 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
   2. **Native Captions Fetch (Supadata)**: If `preferAI: false`, queries Supadata native captions. If found, caches to R2 and records in D1 `video_meta` and `video_languages`.
   3. **Negative Cache Check**: If previously marked as having no native captions in D1 `no_transcript_cache`, returns `NO_NATIVE` immediately.
   4. **AI Generation (Gladia)**: If `preferAI: true`:
-     - Verifies Turnstile token (`verifyTurnstileToken`).
+     - Verifies Turnstile token (`verifyTurnstileToken`): Developer bypass token (`cf-turnstile-dev-token`) is strictly restricted to `ENVIRONMENT === 'development'`. Production requests require valid Cloudflare Turnstile token validation.
      - Verifies Diamond balance ($> 0$).
+     - Multi-key API rotation (`api-key-rotator.js`): Uses in-memory round-robin isolate rotation across configured Gladia keys to distribute load without burning Cloudflare KV write limits.
      - Submits YouTube audio URL to Gladia API.
      - Deducts Diamond credit.
      - Returns `{ status: 'processing', resultUrl }`.
-  5. **AI Polling**: Subsequent requests passing `resultUrl` poll Gladia until `status: 'done'`, then write final transcript to R2.
+  5. **AI Polling & Failure Auto-Refund**:
+     - Subsequent requests passing `resultUrl` poll Gladia until `status: 'done'`, then write final transcript to R2.
+     - **Automated Diamond Refund**: If Gladia reports job error or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
 
 ---
 
@@ -246,7 +252,10 @@ To protect against DDoS and API credit depletion while strictly observing Cloudf
 ### 3.10. Safe Reverse Proxy
 - **Route**: `ALL /proxy/[service]/[[path]]`
 - **Source**: `functions-src/proxy/[service]/[[path]].js`
-- **SSRF Protections**:
-  - Whitelisted services only: `invidious1` (`yewtu.be`), `jisho` (`jisho.org`), `jotoba` (`jotoba.de`), `piped1` (`pipedapi.kavin.rocks`).
-  - Path sanitization filtering out `..` and hidden files (`.`).
-  - Strict host check blocking private/loopback IP ranges (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `localhost`).
+- **SSRF & Abuse Protections**:
+  - **Bot Defense**: Integrated with `checkBot` middleware on proxy requests.
+  - **Whitelisted Services Only**: `invidious1` (`yewtu.be`), `jisho` (`jisho.org`), `jotoba` (`jotoba.de`), `piped1` (`pipedapi.kavin.rocks`).
+  - **Path Sanitization**: Filters out directory traversal sequences (`..`), slashes, and hidden dot files (`.`).
+  - **Network Perimeter Guards**: Blocks private and loopback IP ranges (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `localhost`).
+  - **Redirect Policy**: Enforces `redirect: 'error'` preventing redirect-based open proxy smuggling.
+  - **Timeout & Payload Limits**: Strict 8-second request timeout (`AbortSignal.timeout(8000)`) and maximum 64KB upstream body cap to prevent memory exhaustion.

@@ -1,6 +1,8 @@
 import { Injectable, computed, inject, signal, effect } from '@angular/core';
 import { SubtitleCue } from '../../models';
-import { SubtitleService, YoutubeService, I18nService } from '../../services';
+import { SubtitleService } from './subtitle.service';
+import { YoutubeService } from './youtube.service';
+import { I18nService } from '../../core/services';
 
 export type QuizMode = 'dictation' | 'translation';
 export type QuizState = 'idle' | 'active' | 'completed';

@@ -12,20 +12,33 @@ const CLOUDFLARE_TEST_SECRET = '1x00000000000000000000000000000000BB';
  * @param {string} token - The client turnstile response token
  * @param {string} [secretKey] - Cloudflare Turnstile secret key (from env)
  * @param {string} [remoteIp] - Client IP address
+ * @param {string} [environment] - Environment name ('development' | 'production')
  * @returns {Promise<{ valid: boolean, error?: string }>}
  */
-export async function verifyTurnstileToken(token, secretKey, remoteIp) {
+export async function verifyTurnstileToken(token, secretKey, remoteIp, environment = 'production') {
     // If no token is provided, reject immediately
     if (!token) {
         return { valid: false, error: 'Missing turnstile token' };
     }
 
-    const key = secretKey || CLOUDFLARE_TEST_SECRET;
+    const isDev = environment === 'development';
 
-    // Handle local development test token bypass
+    // Allow local development test token bypass ONLY in dev environment
     if (token === 'cf-turnstile-dev-token') {
-        return { valid: true };
+        if (isDev) {
+            return { valid: true };
+        }
+        console.warn('[Turnstile] Dev token rejected in production environment');
+        return { valid: false, error: 'Invalid turnstile token' };
     }
+
+    // In production, secret key must be configured
+    if (!secretKey && !isDev) {
+        console.error('[Turnstile] TURNSTILE_SECRET_KEY is not configured in production');
+        return { valid: false, error: 'Turnstile service misconfigured' };
+    }
+
+    const key = secretKey || CLOUDFLARE_TEST_SECRET;
 
     try {
         const formData = new URLSearchParams();
@@ -44,7 +57,7 @@ export async function verifyTurnstileToken(token, secretKey, remoteIp) {
         if (!res.ok) {
             console.error(`[Turnstile] Verification HTTP error: ${res.status}`);
             // In dev mode with test keys, fail open if network to CF fails
-            if (key === CLOUDFLARE_TEST_SECRET) {
+            if (isDev && key === CLOUDFLARE_TEST_SECRET) {
                 return { valid: true };
             }
             return { valid: false, error: 'Turnstile service unavailable' };
@@ -63,8 +76,8 @@ export async function verifyTurnstileToken(token, secretKey, remoteIp) {
 
     } catch (err) {
         console.error('[Turnstile] Network exception during verification:', err?.message || err);
-        // Fall back gracefully in testing
-        if (key === CLOUDFLARE_TEST_SECRET) {
+        // Fall back gracefully ONLY in dev environment
+        if (isDev && key === CLOUDFLARE_TEST_SECRET) {
             return { valid: true };
         }
         return { valid: false, error: err?.message || 'Verification error' };

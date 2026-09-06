@@ -9,7 +9,8 @@ import {
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { HistoryService, I18nService, AuthService } from '../../../services';
+import { HistoryService } from '../history.service';
+import { I18nService, AuthService } from '../../../core/services';
 import { HistoryItem } from '../../../models';
 import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
 

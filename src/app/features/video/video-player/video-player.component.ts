@@ -6,6 +6,7 @@ import {
   effect,
   ChangeDetectionStrategy,
   ViewChild,
+  viewChild,
   ElementRef,
   HostListener,
   computed,
@@ -13,6 +14,7 @@ import {
   untracked,
   NgZone
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
@@ -21,17 +23,13 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { formatTime, getVolumeIcon } from '../../../core/utils';
 
-import {
-  YoutubeService,
-  SubtitleService,
-  SettingsService,
-  TranscriptService,
-  VocabularyService,
-  DictionaryService,
-  I18nService,
-  GrammarService,
-  TranslationService
-} from '../../../services';
+import { YoutubeService } from '../youtube.service';
+import { SubtitleService } from '../subtitle.service';
+import { TranscriptService } from '../transcript.service';
+import { VocabularyService } from '../../vocabulary';
+import { DictionaryService } from '../../dictionary';
+import { SettingsService, I18nService } from '../../../core/services';
+import { GrammarService, TranslationService } from '../../../services';
 import { QuizService } from '../quiz.service';
 import { PlaylistService } from '../../playlist/playlist.service';
 import {
@@ -139,12 +137,14 @@ export class VideoPlayerComponent implements OnDestroy {
   volumePercent = computed(() => {
     return this.youtube.isMuted() ? 0 : this.volume();
   });
-  currentSpeed = signal<PlaybackSpeed>((this.settings.settings().playbackSpeed as PlaybackSpeed) || 1);
+  readonly currentSpeed = computed<PlaybackSpeed>(() =>
+    (this.youtube.playbackRate() as PlaybackSpeed) || (this.settings.settings().playbackSpeed as PlaybackSpeed) || 1
+  );
 
   // Seeking State (managed by ProgressBarComponent, tracked here for visibility)
   isDragging = signal(false);
 
-  @ViewChild('progressBarComponent') progressBarComponent!: ProgressBarComponent;
+  readonly progressBarComponent = viewChild(ProgressBarComponent);
 
   // Fullscreen popup state
   fsPopupVisible = signal(false);
@@ -309,11 +309,6 @@ export class VideoPlayerComponent implements OnDestroy {
       }
     });
 
-    // Sync speed reactively whenever youtube.playbackRate changes
-    effect(() => {
-      const rate = this.youtube.playbackRate();
-      this.currentSpeed.set(rate as PlaybackSpeed);
-    });
 
     // Sync volume when player is ready
     effect(() => {
@@ -380,13 +375,10 @@ export class VideoPlayerComponent implements OnDestroy {
     // Auto-translate subtitles when dual subs enabled or language changes
 
     // Wire up keyboard shortcuts
-    effect(() => {
-      const sub = this.keyboardShortcuts.events$.subscribe(event => {
-        this.ngZone.run(() => {
-          this.handleKeyboardEvent(event);
-        });
+    this.keyboardShortcuts.events$.pipe(takeUntilDestroyed()).subscribe(event => {
+      this.ngZone.run(() => {
+        this.handleKeyboardEvent(event);
       });
-      return () => sub.unsubscribe();
     });
 
     // Wire up touch gesture handler callback
@@ -1016,7 +1008,6 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   setPlaybackSpeed(speed: PlaybackSpeed) {
-    this.currentSpeed.set(speed);
     this.youtube.setPlaybackRate(speed);
     this.settings.setPlaybackSpeed(speed);
     this.showSpeedFeedback(speed);
@@ -1219,7 +1210,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
 
   startSeeking(event: MouseEvent | TouchEvent) {
-    this.progressBarComponent?.startSeeking(event);
+    this.progressBarComponent()?.startSeeking(event);
   }
 
   onSeekStarted() {
@@ -1236,11 +1227,11 @@ export class VideoPlayerComponent implements OnDestroy {
 
 
   private startBufferedTracking() {
-    this.progressBarComponent?.startBufferedTracking();
+    this.progressBarComponent()?.startBufferedTracking();
   }
 
   private stopBufferedTracking() {
-    this.progressBarComponent?.stopBufferedTracking();
+    this.progressBarComponent()?.stopBufferedTracking();
   }
 
 

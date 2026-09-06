@@ -1,10 +1,9 @@
-import { Component, ChangeDetectionStrategy, input, output, inject, signal, viewChild, computed, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, inject, signal, viewChild, computed, linkedSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { PlaylistService } from '../../../features/playlist/playlist.service';
-import { AuthService } from '../../../core/services';
-import { I18nService } from '../../../services';
+import { AuthService, I18nService } from '../../../core/services';
 import { IconComponent } from '../icon/icon.component';
 import { Playlist, SUPPORTED_LANGUAGES } from '../../../models';
 
@@ -35,31 +34,19 @@ export class CreatePlaylistDialogComponent {
 
     readonly sheet = viewChild(BottomSheetComponent);
 
-    // Form State
-    title = signal('');
-    visibility = signal<'private' | 'unlisted' | 'published'>('unlisted');
-    language = signal<'ja' | 'zh' | 'ko' | 'en'>('ja');
-    isSubmitting = signal(false);
+    // Form State (linkedSignal synchronizes whenever the playlist input changes)
+    readonly title = linkedSignal(() => this.playlist()?.title || '');
+    readonly visibility = linkedSignal<'private' | 'unlisted' | 'published'>(() =>
+        this.playlist()?.visibility || (this.auth.isLoggedIn() ? 'unlisted' : 'private')
+    );
+    readonly language = linkedSignal<'ja' | 'zh' | 'ko' | 'en'>(() => this.playlist()?.language || 'ja');
+    readonly isSubmitting = signal(false);
 
     // Computed
     isEditing = computed(() => !!this.playlist());
 
     // Language options
     readonly languages = SUPPORTED_LANGUAGES;
-
-    constructor() {
-        // Pre-fill form when editing
-        effect(() => {
-            const p = this.playlist();
-            if (p) {
-                this.title.set(p.title);
-                this.visibility.set(p.visibility);
-                this.language.set(p.language);
-            } else {
-                this.resetForm();
-            }
-        });
-    }
 
     async onSubmit() {
         if (!this.title() || this.isSubmitting()) return;

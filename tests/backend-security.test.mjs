@@ -53,3 +53,51 @@ test('Gladia resultUrl security validation prevents SSRF & exfiltration', () => 
   assert.equal(isValidGladiaUrl('javascript:alert(1)'), false); // javascript scheme
   assert.equal(isValidGladiaUrl('file:///etc/passwd'), false); // file scheme
 });
+
+test('sanitizeVideoId & validateVideoRequest: prevents path traversal and malformed video IDs', async () => {
+  const { validateVideoRequest } = await import('../functions-src/middlewares/video-validator.js');
+  const { sanitizeVideoId } = await import('../functions-src/utils/utils.js');
+
+  // Valid YouTube video IDs (11 chars)
+  assert.equal(sanitizeVideoId('dQw4w9WgXcQ'), 'dQw4w9WgXcQ');
+  assert.equal(sanitizeVideoId('abcdefghijk'), 'abcdefghijk');
+
+  // Path traversal & injection attempts
+  assert.equal(sanitizeVideoId('../../etc/passwd'), null);
+  assert.equal(sanitizeVideoId('dQw4w9WgXcQ/../../'), null);
+  assert.equal(sanitizeVideoId(''), null);
+  assert.equal(sanitizeVideoId('tooShort'), null);
+  assert.equal(sanitizeVideoId('tooLongStringWithMoreThan11Chars'), null);
+
+  // validateVideoRequest checks
+  const validRes = await validateVideoRequest('dQw4w9WgXcQ', 'ja', 120, 'innertube');
+  assert.equal(validRes, null);
+
+  const traversalRes = await validateVideoRequest('../../payload', 'ja', 120, 'innertube');
+  assert.equal(traversalRes?.error, 'invalid_video_id');
+
+  const shortIdRes = await validateVideoRequest('short', 'ja', 120, 'innertube');
+  assert.equal(shortIdRes?.error, 'invalid_video_id');
+});
+
+test('verifyTurnstileToken: enforces strict security in production', async () => {
+  const { verifyTurnstileToken } = await import('../functions-src/services/turnstile.service.js');
+
+  // Missing token fails
+  const noToken = await verifyTurnstileToken('', 'secret', '1.1.1.1', 'production');
+  assert.equal(noToken.valid, false);
+
+  // Dev bypass is rejected in production!
+  const prodDevBypass = await verifyTurnstileToken('cf-turnstile-dev-token', 'secret', '1.1.1.1', 'production');
+  assert.equal(prodDevBypass.valid, false);
+  assert.equal(prodDevBypass.error, 'Invalid turnstile token');
+
+  // Dev bypass is accepted in development
+  const devDevBypass = await verifyTurnstileToken('cf-turnstile-dev-token', 'secret', '1.1.1.1', 'development');
+  assert.equal(devDevBypass.valid, true);
+
+  // Production fails closed if secret key is missing
+  const missingSecretProd = await verifyTurnstileToken('valid-looking-token', '', '1.1.1.1', 'production');
+  assert.equal(missingSecretProd.valid, false);
+});
+

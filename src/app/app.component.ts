@@ -11,8 +11,8 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { CommandPaletteComponent } from './shared/components/command-palette/command-palette.component';
 import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.component';
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
-import { YoutubeService, I18nService, SettingsService, TranscriptService, SubtitleService } from './services';
-import { SeoService, PwaService } from './core/services';
+import { I18nService, SettingsService, SeoService, PwaService } from './core/services';
+import { YoutubeService, TranscriptService, SubtitleService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
@@ -371,6 +371,7 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
         /* Use exact sidebar width - content adjusts smoothly when sidebar toggles */
         padding-left: 15.625rem; /* Match .sidebar width exactly */
         transition: padding-left 0.3s cubic-bezier(0.2, 0, 0, 1);
+        will-change: padding-left;
       }
 
       .app.has-sidebar.sidebar-collapsed .app__content {

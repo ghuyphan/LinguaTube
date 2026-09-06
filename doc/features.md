@@ -71,6 +71,8 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
   - Romanization computed using `hangul-romanization`.
 - **English (`en`)**:
   - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')`.
+- **Client Fallback Tokenizer**:
+  - If network requests to backend tokenization endpoints fail or operate offline, `SubtitleService` employs a robust fallback tokenizer powered by native ECMAScript `Intl.Segmenter('zh')` and `Intl.Segmenter('ko')` to produce proper multi-character word tokens rather than crude single-character splits.
 
 ### 2.3. Subtitle Customization & Vocabulary Highlighting
 - **Four Size Modes**: `small`, `medium`, `large`, and `xlarge`, dynamically responsive across mobile, tablet, and desktop layouts.
@@ -94,12 +96,14 @@ graph TD
     G --> H{Gladia Status?}
     H -->|processing| G
     H -->|done| I[Convert Utterances to SubtitleCue Segments]
+    H -->|error / failed| R[Auto-Refund Diamond Credit via PocketBase]
     I --> J[Save to Cloudflare R2 Bucket]
     J --> K[Render Interactive Subtitles on Player]
 ```
 
 - **SSRF Hardening**: The polling endpoint validates that all `result_url` inputs match `https://api.gladia.io/` strictly.
 - **Duration Limits**: Restricted to videos $\le 20$ minutes.
+- **Automated Failure Refund**: If Gladia job execution fails or errors out during transcription, the server immediately triggers `refundDiamond()`, returning the deducted Diamond credit back to the user without manual support intervention.
 - **Cost Scaling**:
   - $\le 10$ minutes: **1 Diamond credit**
   - $> 10$ minutes (up to 20 mins): **2 Diamond credits**
@@ -145,6 +149,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
 ```
 
 - **Authentic Dictionary Pronunciation**: Rather than using synthetic browser Web Speech API (`speechSynthesis`), audio is sourced directly from authentic native recordings from upstream dictionary providers (Naver, Mazii, FreeDictionary, Jotoba, KRDict).
+- **Context-Aware CJK Kanji Detection**: When inspecting pure ideographs (`\u4E00-\u9FFF` without Kana or Hangul), `DictionaryService.detectLanguage()` checks the user's active learning language (`settings.language`) so Japanese learners query Japanese dictionaries (Jotoba/Mazii) rather than erroneously defaulting to Chinese dictionaries.
 - **Isolated Screen State**: Standalone dictionary searches are decoupled from in-video subtitle clicks, ensuring subtitle queries never leak into or overwrite standalone search history or panels.
 - **Multi-Entry Disambiguation**: When queries match multiple dictionary entries or homonyms, tabbed selectors allow learners to explore all matching entries.
 - **Integrated Grammar Detection**: Searching words or grammatical stems also queries `GrammarService` to surface relevant grammar patterns, formation rules, and example sentences directly beneath definitions.
@@ -189,6 +194,9 @@ When a user reviews a flashcard and provides a recall quality score $q \in [0, 5
 
 ### 7.2. Contextual Sentence Memory
 Every saved word retains `sourceSentence`, ensuring learners always review vocabulary in the context of the authentic video dialogue where it was found.
+
+### 7.3. 60fps Touch Gesture Optimization
+Flashcard card swiping and flip animations run at full 60fps on mobile by encapsulating card derivations into a single `cardViewModel = computed(...)` signal. This eliminates re-evaluating readings, phonetic annotations, and sentence context templates during rapid pointer moves.
 
 ---
 

@@ -101,6 +101,14 @@ export function isLanguageSupported(lang) {
  * @returns {Promise<{error: string, [key: string]: any} | null>}
  */
 export async function validateVideoRequest(videoId, requestedLang, duration, endpoint = 'innertube') {
+    // 0. Validate videoId format
+    if (!videoId || !/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
+        return {
+            error: 'invalid_video_id',
+            message: 'Invalid YouTube video ID format'
+        };
+    }
+
     // 1. Validate requested language is supported
     if (!isLanguageSupported(requestedLang)) {
         return {
