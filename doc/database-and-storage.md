@@ -216,7 +216,35 @@ Hosted at `https://voca.pockethost.io`.
   - `last_freeze_used`: DateTime
   - `activity_log`: JSON Array of ISO date strings (`YYYY-MM-DD`)
 
-### 5.4. PocketBase Server Hooks (`streaks.pb.js`)
+### 5.4. Collection: `history`
+- Synchronized video watch history:
+  - `user`: Relation $\rightarrow$ `users.id` (Single, Nonempty)
+  - `video_id`: String (YouTube video ID, Nonempty)
+  - `title`: String (Video title, Nonempty)
+  - `thumbnail`: URL string
+  - `channel`: String (Channel name)
+  - `duration`: Number (Seconds)
+  - `language`: Select (`ja | zh | ko | en`, Single, Nonempty)
+  - `languages`: Select (`ja | zh | ko | en`, Multiple, Max Select: 4)
+  - `progress`: Number (Percentage `0` to `100`)
+  - `is_favorite`: Boolean
+  - `watched_at`: DateTime (Nonempty)
+
+### 5.5. Collection: `playlists`
+- Synchronized user playlists:
+  - `user`: Relation $\rightarrow$ `users.id`
+  - `title`: String
+  - `description`: String
+  - `visibility`: `'public' | 'unlisted' | 'private'`
+  - `language`: `'ja' | 'zh' | 'ko' | 'en' | 'all'`
+  - `tags`: JSON Array of strings
+  - `video_ids`: JSON Array of strings
+  - `video_count`: Integer
+  - `thumbnail`: URL string
+  - `save_count`: Integer
+  - `is_featured`: Boolean
+
+### 5.6. PocketBase Server Hooks (`streaks.pb.js`)
 Executed server-side on PocketBase:
 - `POST /api/streaks/record-activity`: Records daily user practice, awards freeze items at milestones (7, 30, 100 days), and increments streaks.
 - `GET /api/streaks/me`: Retrieves current streak status and activity calendar.

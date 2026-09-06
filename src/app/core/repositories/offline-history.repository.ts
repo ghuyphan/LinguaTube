@@ -9,6 +9,64 @@ import type PocketBase from 'pocketbase';
 const STORAGE_KEY = 'linguatube_history';
 const MAX_LOCAL_HISTORY = 50;
 
+const ALLOWED_LANGS = ['ja', 'zh', 'ko', 'en'] as const;
+type SupportedHistoryLang = typeof ALLOWED_LANGS[number];
+
+function sanitizeLang(lang?: string | null): SupportedHistoryLang {
+    if (!lang) return 'en';
+    const clean = lang.toLowerCase().split('-')[0].trim();
+    return (ALLOWED_LANGS as readonly string[]).includes(clean) ? (clean as SupportedHistoryLang) : 'en';
+}
+
+function sanitizeLangs(langs?: string[] | null, fallback: SupportedHistoryLang = 'en', maxSelect = 4): SupportedHistoryLang[] {
+    if (!Array.isArray(langs)) return [fallback];
+    const cleaned = langs
+        .map(l => typeof l === 'string' ? l.toLowerCase().split('-')[0].trim() : '')
+        .filter((l): l is SupportedHistoryLang => (ALLOWED_LANGS as readonly string[]).includes(l));
+    const unique = [...new Set(cleaned)];
+    // Ensure primary language (fallback) is prioritized at index 0
+    if (fallback && unique.includes(fallback)) {
+        unique.splice(unique.indexOf(fallback), 1);
+        unique.unshift(fallback);
+    }
+    // PocketBase history collection supports up to 4 languages
+    const sliced = unique.slice(0, maxSelect);
+    return sliced.length > 0 ? sliced : [fallback];
+}
+
+function sanitizeThumbnail(videoId: string, thumb?: string | null): string {
+    if (thumb && /^https?:\/\//i.test(thumb.trim())) {
+        return thumb.trim();
+    }
+    return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+}
+
+function sanitizeTitle(title?: string | null): string {
+    return (title && title.trim()) ? title.trim() : 'YouTube Video';
+}
+
+function sanitizeChannel(channel?: string | null): string {
+    return (channel && channel.trim()) ? channel.trim() : 'YouTube';
+}
+
+function sanitizeProgress(progress?: number | null): number {
+    const num = Number(progress);
+    if (isNaN(num)) return 0;
+    return Math.max(0, Math.min(100, Math.round(num)));
+}
+
+function sanitizeDuration(duration?: number | null): number {
+    const num = Number(duration);
+    if (isNaN(num)) return 0;
+    return Math.max(0, Math.round(num));
+}
+
+function sanitizeWatchedAt(date?: Date | string | null): string {
+    if (!date) return new Date().toISOString();
+    const d = date instanceof Date ? date : new Date(date);
+    return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -104,39 +162,63 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             }
 
         } catch (error) {
-            console.error('[HistoryRepo] Failed to sync item:', error);
+            const errData = (error && typeof error === 'object' && 'data' in error)
+                ? JSON.stringify((error as { data: unknown }).data)
+                : '';
+            console.error('[HistoryRepo] Failed to sync item:', item.video_id, error, 'Validation details:', errData);
         }
     }
 
     private async upsertItemRemote(client: PocketBase, item: HistoryItem): Promise<void> {
-        const watchedAtIso = item.watched_at instanceof Date
-            ? item.watched_at.toISOString()
-            : new Date(item.watched_at).toISOString();
+        const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
+        if (!userId) {
+            console.warn('[HistoryRepo] Cannot push history item without authenticated user ID');
+            return;
+        }
+
+        const language = sanitizeLang(item.language || item.languages?.[0]);
+        const languages = sanitizeLangs(item.languages, language);
+        const progress = sanitizeProgress(item.progress);
+        const watchedAtIso = sanitizeWatchedAt(item.watched_at);
+        const thumbnail = sanitizeThumbnail(item.video_id, item.thumbnail);
+        const title = sanitizeTitle(item.title);
+        const channel = sanitizeChannel(item.channel);
+        const duration = sanitizeDuration(item.duration);
+        const is_favorite = Boolean(item.is_favorite);
+
+        const payload = {
+            user: userId,
+            video_id: item.video_id,
+            title,
+            thumbnail,
+            channel,
+            duration,
+            language,
+            languages,
+            watched_at: watchedAtIso,
+            progress,
+            is_favorite
+        };
 
         const existing = await client.collection('history').getList(1, 1, {
-            filter: `user="${this.auth.getUserId()}" && video_id="${item.video_id}"`
+            filter: `user="${userId}" && video_id="${item.video_id}"`,
+            requestKey: null
         });
 
         if (existing.items.length > 0) {
             await client.collection('history').update(existing.items[0].id, {
                 watched_at: watchedAtIso,
-                progress: item.progress,
-                is_favorite: item.is_favorite,
-                languages: item.languages
-            });
+                progress,
+                is_favorite,
+                language,
+                languages,
+                title,
+                thumbnail,
+                channel,
+                duration
+            }, { requestKey: null });
         } else {
-            await client.collection('history').create({
-                user: this.auth.getUserId(),
-                video_id: item.video_id,
-                title: item.title,
-                thumbnail: item.thumbnail,
-                channel: item.channel,
-                duration: item.duration,
-                languages: item.languages,
-                watched_at: watchedAtIso,
-                progress: item.progress,
-                is_favorite: item.is_favorite
-            });
+            await client.collection('history').create(payload, { requestKey: null });
         }
     }
 
@@ -159,11 +241,12 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
                 // Simplest strategy: try finding by video_id first as our local ID might be uuid
                 const existing = await client.collection('history').getList(1, 1, {
-                    filter: `user="${this.auth.getUserId()}" && video_id="${itemToRemove.video_id}"`
+                    filter: `user="${this.auth.getUserId()}" && video_id="${itemToRemove.video_id}"`,
+                    requestKey: null
                 });
 
                 if (existing.items.length > 0) {
-                    await client.collection('history').delete(existing.items[0].id);
+                    await client.collection('history').delete(existing.items[0].id, { requestKey: null });
                 }
             } catch (error) {
                 console.error('[HistoryRepo] Failed to delete on server:', error);
@@ -195,22 +278,32 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.isLoading.set(true);
         try {
             const client = await this.pb.getClient();
+            const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
+            if (!userId) {
+                console.warn('[HistoryRepo] Cannot sync history without authenticated user ID');
+                return;
+            }
 
             // 1. Push unsynced local items
             const unsynced = this.history().filter(h => !h.synced);
             for (const item of unsynced) {
                 try {
                     await this.upsertItemRemote(client, item);
+                    item.synced = true;
                     console.debug('[HistoryRepo] Pushed unsynced item:', item.video_id);
-                } catch (err) {
-                    console.error('[HistoryRepo] Failed to push item:', item.video_id, err);
+                } catch (err: unknown) {
+                    const errData = (err && typeof err === 'object' && 'data' in err)
+                        ? JSON.stringify((err as { data: unknown }).data)
+                        : '';
+                    console.error('[HistoryRepo] Failed to push item:', item.video_id, err, 'Validation details:', errData);
                 }
             }
 
             // 2. Fetch all history from server
             const result = await client.collection('history').getList(1, 100, {
-                filter: `user="${this.auth.getUserId()}"`,
-                sort: '-watched_at'
+                filter: `user="${userId}"`,
+                sort: '-watched_at',
+                requestKey: null
             });
 
             const remoteItems = result.items.map(r => this.recordToHistoryItem(r as unknown as HistoryRecord));
@@ -255,11 +348,23 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     private loadFromStorage(): void {
         const stored = this.storage.get<{ items: HistoryItem[], updatedAt: string }>(STORAGE_KEY);
         if (stored && stored.items) {
-            const items = stored.items.map(item => ({
-                ...item,
-                watched_at: new Date(item.watched_at)
-            }));
+            const items = stored.items.map(item => {
+                const lang = sanitizeLang(item.language || item.languages?.[0]);
+                const langs = sanitizeLangs(item.languages, lang);
+                return {
+                    ...item,
+                    language: lang,
+                    languages: langs,
+                    progress: sanitizeProgress(item.progress),
+                    duration: sanitizeDuration(item.duration),
+                    title: sanitizeTitle(item.title),
+                    thumbnail: sanitizeThumbnail(item.video_id, item.thumbnail),
+                    channel: sanitizeChannel(item.channel),
+                    watched_at: item.watched_at ? new Date(item.watched_at) : new Date()
+                };
+            });
             this.history.set(items);
+            this.saveToStorage(items);
         }
     }
 
@@ -273,18 +378,21 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
     private recordToHistoryItem(record: HistoryRecord | Record<string, unknown>): HistoryItem {
         const r = record as HistoryRecord;
+        const language = sanitizeLang(r.language || (r.languages && r.languages.length > 0 ? r.languages[0] : 'en'));
+        const languages = sanitizeLangs(r.languages, language);
+
         return {
             id: r.id,
             video_id: r.video_id,
-            title: r.title,
-            thumbnail: r.thumbnail,
-            channel: r.channel,
-            duration: r.duration,
-            languages: r.languages,
-            language: (r.languages && r.languages.length > 0) ? r.languages[0] : 'en', // Compat
-            watched_at: new Date(r.watched_at),
-            progress: r.progress,
-            is_favorite: r.is_favorite,
+            title: sanitizeTitle(r.title),
+            thumbnail: sanitizeThumbnail(r.video_id, r.thumbnail),
+            channel: sanitizeChannel(r.channel),
+            duration: sanitizeDuration(r.duration),
+            languages,
+            language,
+            watched_at: r.watched_at ? new Date(r.watched_at) : new Date(),
+            progress: sanitizeProgress(r.progress),
+            is_favorite: !!r.is_favorite,
             synced: true
         };
     }

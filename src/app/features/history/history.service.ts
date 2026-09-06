@@ -121,7 +121,10 @@ export class HistoryService {
         const items = this.history();
         const existingItem = items.find(item => item.video_id === video.id);
         const filteredLanguages = this.filterSupportedLanguages(availableLanguages);
-        const primaryLang = filteredLanguages[0] || existingItem?.language || 'en';
+        const candidateLang = existingItem?.language ? this.filterSupportedLanguages([existingItem.language])[0] : undefined;
+        const primaryLang = filteredLanguages[0] || candidateLang || 'en';
+        const existingLanguages = existingItem?.languages ? this.filterSupportedLanguages(existingItem.languages) : [];
+        const languages = filteredLanguages.length > 0 ? filteredLanguages : (existingLanguages.length > 0 ? existingLanguages : [primaryLang]);
 
         const resolvedProgress = progress !== undefined
             ? progress
@@ -135,7 +138,7 @@ export class HistoryService {
             channel: video.channel || existingItem?.channel || 'Unknown Channel',
             duration: video.duration || existingItem?.duration || 0,
             language: primaryLang,  // Keep for backward compatibility
-            languages: filteredLanguages.length > 0 ? filteredLanguages : (existingItem?.languages || []),
+            languages,
             watched_at: new Date(),
             progress: resolvedProgress,
             is_favorite: existingItem ? existingItem.is_favorite : false

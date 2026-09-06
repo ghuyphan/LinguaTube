@@ -135,8 +135,11 @@
                     }
                 </div>
                 } @else if (auth.isLoggedIn()) {
-                <button class="footer-btn user-settings-row" (click)="openSettings.emit()">
-                    <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+                <button class="footer-btn user-settings-row" (click)="openSettings.emit()"
+                    [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.getSubscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
+                    <div class="avatar-ring" [class]="'avatar-ring--' + auth.getSubscriptionTier()">
+                        <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+                    </div>
                     @if (!isCollapsed()) {
                     <div class="user-info-stack">
                         <span class="user-name">{{ auth.user()?.name }}</span>
@@ -149,8 +152,10 @@
                 </button>
                 } @else {
                 <button class="footer-btn user-settings-row" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
-                    <div class="guest-avatar-box">
-                        <app-icon name="user" [size]="16" />
+                    <div class="avatar-ring avatar-ring--guest">
+                        <div class="guest-avatar-box">
+                            <app-icon name="user" [size]="16" />
+                        </div>
                     </div>
                     @if (!isCollapsed()) {
                     <div class="user-info-stack">
